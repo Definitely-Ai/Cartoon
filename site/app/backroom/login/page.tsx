@@ -13,6 +13,12 @@ export const metadata: Metadata = {
 export default function BackroomLogin() {
   return (
     <main id="content" className="br-doorway">
+      {/* The door page carries its own small nameplate — the staff chrome
+          (nav, logout) belongs to the other side of the door. */}
+      <div className="br-door-head">
+        <p className="br-title">The Back Room</p>
+        <p className="br-sub">Employees only</p>
+      </div>
       <div className="br-door" aria-hidden="true">
         <span className="br-door-panel" />
         <span className="br-door-panel" />

@@ -82,6 +82,9 @@ export default function PublishPanel(props: {
             </>
           )}
         </p>
+        <p className="br-done-links">
+          <a href="/backroom/ledger">Back to the ledger</a> · <a href="/">See the front page</a>
+        </p>
       </div>
     );
   }

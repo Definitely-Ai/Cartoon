@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { getDeskDay, getOptionDays } from "@/lib/options";
-import LightTable from "./LightTable";
+import LightTable from "../LightTable";
 
 // The desk: the newest day still awaiting a decision (or the newest day,
 // if everything has run). One glance, one choice, done — the ledger holds

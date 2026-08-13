@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { getOptionDay, getOptionDays } from "@/lib/options";
-import LightTable from "../../LightTable";
+import LightTable from "../../../LightTable";
 
 // One day's light table, permanent address — the ledger links here so any
 // past day can still be reviewed (or, if it never ran, decided late).
