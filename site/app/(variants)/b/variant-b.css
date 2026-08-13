@@ -268,16 +268,18 @@
   .variant-b .vb-plate-art {
     animation: vb-settle 600ms ease-out 1 backwards;
   }
-}
 
-@keyframes vb-settle {
-  from {
-    opacity: 0;
-    transform: translateY(-2px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  /* Declared inside the guard so no future reuse can leak motion to
+     reduced-motion users. */
+  @keyframes vb-settle {
+    from {
+      opacity: 0;
+      transform: translateY(-2px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 }
 
@@ -333,9 +335,33 @@
   background: var(--paper-white); /* paper-white loading placeholder */
 }
 
-.variant-b .vb-thumb-date {
+/* Thumbnail figcaption: the caption IS the figcaption (a quiet italic line,
+   clamped to two lines so the sheet stays uniform), with the AP date beneath
+   as secondary matter. */
+.variant-b .vb-thumb-cap {
   display: block;
   margin-top: calc(var(--vb-rhythm) * 0.4);
+}
+
+.variant-b .vb-thumb-caption {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  font-style: italic;
+  font-size: var(--vb-step--1);
+  line-height: 1.35;
+}
+
+.variant-b .vb-thumb-date {
+  display: block;
+  margin-top: calc(var(--vb-rhythm) * 0.2);
+}
+
+/* The archive filter's live result count, folio-quiet. */
+.variant-b .vb-filter-count {
+  text-align: center;
+  margin-top: calc(var(--vb-rhythm) * 0.5);
 }
 
 /* At phone widths the teaser cells run ~100px; ease the tracking (still
@@ -545,6 +571,10 @@
   .variant-b {
     background: #fff;
     color: #000;
+    /* Decouple the printed sheet from the screen's viewport-fill flex box —
+       a box pinned to exactly page height invites a trailing blank page. */
+    min-height: 0;
+    display: block;
   }
 
   .variant-b .vb-masthead {

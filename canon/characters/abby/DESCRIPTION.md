@@ -1,5 +1,7 @@
 # Abby — Canonical Description
 
+<!-- BRAND: replace when final — "The Swinging Door" is the working series/bar name throughout this document -->
+
 Purpose: the single authoritative physical description of Abby, written so the exact same block can be pasted into every image prompt and every artist brief without edits.
 
 ## Canonical Description Block

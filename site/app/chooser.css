@@ -11,17 +11,22 @@
   font-family: var(--font-news-serif), Georgia, serif;
 }
 
+/* The header sits OUTSIDE <main> so it maps to the banner landmark;
+   header and main share the same column geometry. */
+.chooser-header {
+  width: 100%;
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: clamp(2rem, 6vw, 4.5rem) 1.25rem 0;
+  text-align: center;
+}
+
 .chooser-main {
   flex: 1;
   width: 100%;
   max-width: 72rem;
   margin: 0 auto;
-  padding: clamp(2rem, 6vw, 4.5rem) 1.25rem 3rem;
-}
-
-.chooser-header {
-  text-align: center;
-  margin-bottom: clamp(2rem, 5vw, 3.5rem);
+  padding: clamp(2rem, 5vw, 3.5rem) 1.25rem 3rem;
 }
 
 .chooser-brand {
@@ -287,5 +292,11 @@
 .chooser-desk {
   font-style: italic;
   margin-top: 0.3rem;
+  letter-spacing: 0.04em;
+}
+
+.chooser-credit {
+  margin-top: 0.4rem;
+  font-size: 0.72rem;
   letter-spacing: 0.04em;
 }

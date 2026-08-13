@@ -1,5 +1,7 @@
 # Style Bible
 
+<!-- BRAND: replace when final — "The Swinging Door" is the working series/bar name throughout this document -->
+
 Purpose: the visual law of the strip — every drawing decision that must be identical from cartoon number one to cartoon number one thousand lives here. Source: the founder's series bible for "The Swinging Door."
 
 ## Line & Ink

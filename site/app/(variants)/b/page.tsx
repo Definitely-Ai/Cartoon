@@ -84,8 +84,9 @@ export default function HomePage() {
                           />
                         </span>
                       </span>
-                      <figcaption className="vb-thumb-date vb-caps-tiny">
-                        {formatDateAP(cartoon.date)}
+                      <figcaption className="vb-thumb-cap">
+                        <span className="vb-thumb-caption">{cartoon.caption}</span>
+                        <span className="vb-thumb-date vb-caps-tiny">{formatDateAP(cartoon.date)}</span>
                       </figcaption>
                     </figure>
                   </TransitionLink>

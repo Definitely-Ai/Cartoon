@@ -1,5 +1,7 @@
 # Comedy Bible
 
+<!-- BRAND: replace when final — "The Swinging Door" is the working series/bar name throughout this document -->
+
 Purpose: what this strip finds funny and what it refuses to — the editorial line every gag is checked against before it ships. Source: the founder's series bible for "The Swinging Door."
 
 ## The series, in one paragraph

@@ -10,6 +10,7 @@ import { getCharacters } from "@/lib/canon";
 
 export const metadata: Metadata = {
   title: "Meet the Cast",
+  // BRAND: replace when final
   description: "The regulars of the Swinging Door: Drew, Mango, and Abby behind the bar.",
 };
 

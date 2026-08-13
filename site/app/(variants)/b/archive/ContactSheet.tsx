@@ -39,6 +39,11 @@ export default function ContactSheet({ cartoons }: { cartoons: Cartoon[] }) {
         ))}
       </nav>
 
+      <p className="vb-filter-count vb-caps-tiny" role="status">
+        Showing {filtered.length} of {cartoons.length} panels
+        {tag ? `, filed under ${tag}` : ""}
+      </p>
+
       {filtered.length === 0 ? (
         <p className="vb-empty-note">Nothing filed under that heading yet. The founder is on it.</p>
       ) : (
@@ -61,8 +66,9 @@ export default function ContactSheet({ cartoons }: { cartoons: Cartoon[] }) {
                       />
                     </span>
                   </span>
-                  <figcaption className="vb-thumb-date vb-caps-tiny">
-                    {formatDateAP(cartoon.date)}
+                  <figcaption className="vb-thumb-cap">
+                    <span className="vb-thumb-caption">{cartoon.caption}</span>
+                    <span className="vb-thumb-date vb-caps-tiny">{formatDateAP(cartoon.date)}</span>
                   </figcaption>
                 </figure>
               </TransitionLink>

@@ -16,7 +16,9 @@ import "./chooser.css";
 // face, its real texture, its real cover treatment, rendered small.
 
 export const metadata: Metadata = {
-  title: "Choose your edition", // BRAND suffix comes from the root title template
+  // Set in full here: Next's title.template does not apply to the page in
+  // the segment that defines it.
+  title: "Choose your edition · The Swinging Door", // BRAND: replace when final
 };
 
 export default function VariantChooser() {
@@ -24,14 +26,15 @@ export default function VariantChooser() {
     <div
       className={`chooser ${newsSerif.variable} ${blackletter.variable} ${newsCondensed.variable} ${displaySerif.variable} ${textSerif.variable} ${comicSlab.variable}`}
     >
-      <main id="content" className="chooser-main">
-        <header className="chooser-header">
-          {/* BRAND: replace when final */}
-          <h1 className="chooser-brand">The Swinging Door</h1>
-          <p className="chooser-line">Choose your edition.</p>
-        </header>
+      <header className="chooser-header">
+        {/* BRAND: replace when final */}
+        <h1 className="chooser-brand">The Swinging Door</h1>
+        <p className="chooser-line">Choose your edition.</p>
+      </header>
 
-        <ul className="chooser-grid">
+      <main id="content" className="chooser-main">
+        <nav aria-label="Editions">
+          <ul className="chooser-grid">
           <li>
             <Link href="/a" className="chooser-card">
               <span className="specimen specimen-a" aria-hidden="true">
@@ -95,13 +98,17 @@ export default function VariantChooser() {
               </span>
             </Link>
           </li>
-        </ul>
+          </ul>
+        </nav>
       </main>
 
       <footer className="chooser-footer">
         {/* BRAND: replace when final */}
         <p>© {new Date().getFullYear()} The Swinging Door · All characters and cartoons are property of the company.</p>
         <p className="chooser-desk">Published from the desk of the founder</p>
+        <p className="chooser-credit">
+          Site built by <a href="https://aidreambuilders.com">aidreambuilders.com</a>
+        </p>
       </footer>
     </div>
   );

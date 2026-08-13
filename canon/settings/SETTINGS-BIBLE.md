@@ -1,5 +1,7 @@
 # Settings Bible
 
+<!-- BRAND: replace when final — "The Swinging Door" is the working series/bar name throughout this document -->
+
 Purpose: where the strip happens, drawn the same way every time. Source: the founder's series bible for "The Swinging Door."
 
 ## The Swinging Door (primary setting)

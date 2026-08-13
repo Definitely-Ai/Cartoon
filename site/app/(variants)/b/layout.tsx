@@ -32,6 +32,9 @@ export default function VariantBLayout({ children }: { children: React.ReactNode
         </p>
         <p className="vb-footer-line">All characters and cartoons are property of the company.</p>
         <p className="vb-footer-desk vb-caps-tiny">Published from the desk of the founder</p>
+        <p className="vb-footer-line">
+          Site built by <a href="https://aidreambuilders.com">aidreambuilders.com</a>
+        </p>
       </footer>
     </div>
   );

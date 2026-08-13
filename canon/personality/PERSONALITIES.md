@@ -1,5 +1,7 @@
 # Personalities
 
+<!-- BRAND: replace when final — "The Swinging Door" is the working series/bar name throughout this document -->
+
 Purpose: who these three are when they open their mouths — the voice document writers and prompt-authors consult before putting words under a drawing. Source: the founder's series bible for "The Swinging Door"; example lines are drafts in that voice, pending founder approval.
 
 ## Drew

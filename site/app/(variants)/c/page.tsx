@@ -14,6 +14,7 @@ import Starburst from "./Starburst";
 export const metadata: Metadata = {
   title: "The Funny Pages",
   description:
+    // BRAND: replace when final
     "Today’s strip from the Swinging Door — politics, markets and American life in black ink on white paper — plus the three strips before it.",
 };
 

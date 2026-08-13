@@ -31,6 +31,9 @@ export default function VariantCLayout({ children }: { children: ReactNode }) {
           characters and cartoons are property of the company.
         </p>
         <p className="vc-footer-desk">Published from the desk of the founder</p>
+        <p>
+          Site built by <a href="https://aidreambuilders.com">aidreambuilders.com</a>
+        </p>
       </footer>
     </div>
   );

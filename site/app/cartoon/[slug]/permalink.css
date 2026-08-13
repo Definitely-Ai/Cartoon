@@ -153,6 +153,12 @@
   letter-spacing: 0.04em;
 }
 
+.permalink-credit {
+  margin-top: 0.4rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+}
+
 /* — Print: one Letter page, pure ink. The panel large and centered, caption
    beneath, title and date, a one-line masthead — nothing else. — */
 @media print {

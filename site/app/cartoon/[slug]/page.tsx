@@ -84,6 +84,9 @@ export default async function CartoonPermalink({ params }: { params: Promise<{ s
         {/* BRAND: replace when final */}
         <p>© {new Date().getFullYear()} The Swinging Door · All characters and cartoons are property of the company.</p>
         <p className="permalink-desk">Published from the desk of the founder</p>
+        <p className="permalink-credit">
+          Site built by <a href="https://aidreambuilders.com">aidreambuilders.com</a>
+        </p>
       </footer>
     </div>
   );

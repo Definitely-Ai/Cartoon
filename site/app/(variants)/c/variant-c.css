@@ -79,6 +79,10 @@
   font-family: var(--vc-body);
   font-size: var(--vc-size-0);
   line-height: 1.6;
+  /* The paste-up deliberately hangs tape and the starburst past the panel
+     edges; clip here so decorative overhang can never mint a horizontal
+     scrollbar at any width. */
+  overflow-x: clip;
 }
 
 .variant-c .vc-board {
@@ -170,7 +174,8 @@
 .variant-c .vc-tab-link.is-active {
   background: var(--ink);
   color: var(--paper-white);
-  --focus-ink: var(--paper-white);
+  /* No --focus-ink override: the 2px ring draws OUTSIDE the chip, on the
+     white masthead, so the default black ring is the visible one. */
 }
 
 /* ------------------------------------------- 4. Paste-up primitives */
@@ -549,7 +554,8 @@
 .variant-c .vc-stamp[aria-pressed="true"] {
   background: var(--ink);
   color: var(--paper-white);
-  --focus-ink: var(--paper-white);
+  /* No --focus-ink override: the ring draws outside the stamp on the paper
+     board, so the default black ring stays visible. */
 }
 
 .variant-c .vc-archive-count {

@@ -11,6 +11,7 @@ import { getCharacters } from "@/lib/canon";
 export const metadata: Metadata = {
   title: "The Cast",
   description:
+    // BRAND: replace when final
     "The regulars of the Swinging Door — Drew, Mango, and Abby — with model sheets and bios as the canon gets written.",
 };
 

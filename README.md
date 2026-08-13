@@ -1,6 +1,6 @@
 # The Swinging Door <!-- BRAND: replace when final -->
 
-A single-panel, strictly black-and-white barroom cartoon about politics, markets, and American life — Drew the flamingo, Mango the golden retriever, and Abby behind the bar of the Swinging Door. This repo is the company's entire digital home: the canon that keeps the strip consistent, the cartoons themselves, and the website that publishes them. There is no CMS — **the filesystem is the CMS**. Add a folder under `/cartoons`, push, and the site rebuilds and deploys itself.
+A single-panel, strictly black-and-white barroom cartoon about politics, markets, and American life — Drew the flamingo, Mango the golden retriever, and Abby behind the bar of the Swinging Door. <!-- BRAND: replace when final --> This repo is the company's entire digital home: the canon that keeps the strip consistent, the cartoons themselves, and the website that publishes them. There is no CMS — **the filesystem is the CMS**. Add a folder under `/cartoons`, push, and the site rebuilds and deploys itself.
 
 ## Folder map
 
@@ -33,5 +33,5 @@ The site currently ships three complete, deliberately distinct designs so the fo
 - Real artwork — every panel currently reads "ARTWORK PENDING."
 - Model sheets for Drew, Mango, and Abby (drop PNGs beside each `DESCRIPTION.md`; the characters pages pick them up automatically).
 - Line-weight/style decisions flagged "pending founder sign-off" in the style bible, and the Example Approved Gags slots in the comedy bible.
-- Final brand confirmation — every branded string is greppable via `BRAND:` for a clean find-and-replace if "The Swinging Door" changes.
+- Final brand confirmation — every branded string is greppable via `BRAND:` for a clean find-and-replace if "The Swinging Door" changes. <!-- BRAND: replace when final -->
 - Variant selection — when one of `/a` `/b` `/c` wins, it becomes `/`.
