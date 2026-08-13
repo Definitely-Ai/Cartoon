@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import TransitionLink from "@/components/TransitionLink";
 import { getAdjacent, getAllCartoons, getLatest } from "@/lib/cartoons";
-import { formatDateAP, formatDateline } from "@/lib/format";
+import { formatDateline } from "@/lib/format";
 import Starburst from "./Starburst";
 
 // The paste-up board: today's strip in a thick-inked panel, taped down and
@@ -88,7 +88,9 @@ export default function FunnyPagesHome() {
             >
               <TransitionLink href={`/cartoon/${cartoon.slug}?from=c`} className="vc-teaser-link">
                 <article className="vc-panel vc-teaser-panel">
-                  <span className="vc-tab">{formatDateAP(cartoon.date)}</span>
+                  {/* Edition sticker instead of a date tab — one label per
+                      panel; the archive wall keeps the dates. */}
+                  <span className="vc-sticker">No. {cartoon.edition}</span>
                   <h3 className="vc-teaser-title">{cartoon.title}</h3>
                   <figure style={{ viewTransitionName: `panel-${cartoon.slug}` }}>
                     <Image
@@ -106,6 +108,21 @@ export default function FunnyPagesHome() {
             </li>
           ))}
         </ul>
+
+        {/* The bar's chalkboard, pinned at the rail — a prop, not a
+            section. White chalk on solid ink is the one legal inversion. */}
+        <aside className="vc-pin vc-chalk-pin" style={{ "--tilt": "1" } as CSSProperties}>
+          <div className="vc-chalkboard">
+            <span className="vc-tape vc-tape-center" aria-hidden="true" />
+            <p className="vc-chalk-title">Today’s Specials</p>
+            <ul className="vc-chalk-list">
+              <li>Old fashioned — $7</li>
+              <li>Gin martini, three olives — $9</li>
+              <li>Market commentary — free, unfortunately</li>
+              <li>Ask Abby about the house view</li>
+            </ul>
+          </div>
+        </aside>
       </section>
     </main>
   );

@@ -4,6 +4,7 @@ import TransitionLink from "@/components/TransitionLink";
 import { getAdjacent, getAllCartoons, getLatest } from "@/lib/cartoons";
 import { formatDateAP, formatDateLong } from "@/lib/format";
 import Fleuron from "./Fleuron";
+import { plateNumeral } from "./plate";
 
 // The cover moment: an issue line, the newest cartoon presented as a framed
 // plate — thin black frame, generous white matte, italic caption beneath —
@@ -27,21 +28,26 @@ export default function HomePage() {
 
   return (
     <main id="content">
+      <Fleuron small />
       <p className="vb-issue vb-caps-tiny">The {issueMonth} Issue — Weekly</p>
 
       <article className="vb-cover">
         <h1 className="vb-cover-title">{latest.title}</h1>
         <figure className="vb-plate" style={{ viewTransitionName: `panel-${latest.slug}` }}>
           <div className="vb-plate-frame">
-            <Image
-              src={latest.src}
-              alt={latest.alt}
-              width={latest.width}
-              height={latest.height}
-              priority
-              sizes="(max-width: 45rem) 92vw, 640px"
-              className="vb-plate-art"
-            />
+            {/* Double frame — the gallery plate mount: 2px outer frame, a few
+                px of white, then an inner hairline around the matte. */}
+            <div className="vb-plate-mount">
+              <Image
+                src={latest.src}
+                alt={latest.alt}
+                width={latest.width}
+                height={latest.height}
+                priority
+                sizes="(max-width: 45rem) 92vw, 640px"
+                className="vb-plate-art"
+              />
+            </div>
           </div>
           <figcaption className="vb-caption">{latest.caption}</figcaption>
         </figure>
@@ -87,6 +93,9 @@ export default function HomePage() {
                       <figcaption className="vb-thumb-cap">
                         <span className="vb-thumb-caption">{cartoon.caption}</span>
                         <span className="vb-thumb-date vb-caps-tiny">{formatDateAP(cartoon.date)}</span>
+                        <span className="vb-thumb-plate vb-caps-tiny">
+                          Pl. {plateNumeral(cartoon.edition)}
+                        </span>
                       </figcaption>
                     </figure>
                   </TransitionLink>

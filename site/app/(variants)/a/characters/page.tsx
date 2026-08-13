@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { getCharacters } from "@/lib/canon";
 
-// The cast, done as a feature spread: two profiles separated by a
-// column rule, each with its model-sheet plates and a bio from the
-// canon data layer. While the canon is pending (null bio, null sheet
-// sources) we run the placeholders in house voice; nothing here needs
-// touching when the real canon lands.
+// The cast, done as a feature spread: one profile per character,
+// separated by column rules, each with its model-sheet plates and a
+// bio from the canon data layer. Anything the canon has not written
+// yet (a null bio, a null sheet source) degrades to a placeholder in
+// house voice; nothing here needs touching as the canon fills in.
 
 export const metadata: Metadata = {
   title: "Meet the Cast",

@@ -1,0 +1,551 @@
+/* THE BACK ROOM — the after-hours staff side of the Swinging Door.
+   The room is dark (ink), the proofs are paper-white cards on the table,
+   the accents are chalk. Strictly B&W like everything else; white on ink
+   is the one legal inversion, and it belongs to this room.
+
+   Mobile-first: he reviews proofs on his phone. One column, big tap
+   targets, nothing precious. Scoped under .backroom throughout.
+
+   Structure:
+     1. Room base + tokens
+     2. Header / nav / footer chrome
+     3. The door (login)
+     4. The light table (proof cards)
+     5. The publish panel
+     6. The ledger
+*/
+
+/* ------------------------------------------------------ 1. Room base */
+
+.backroom {
+  --br-room: var(--ink-soft); /* #1a1a1a — the dark of the room */
+  --br-paper: var(--paper-white);
+  --br-chalk: var(--font-comic-hand), "Segoe Print", cursive;
+  --br-caps: var(--font-news-condensed), "Arial Narrow", sans-serif;
+  --br-serif: var(--font-news-serif), Georgia, serif;
+
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--br-room);
+  color: var(--br-paper);
+  font-family: var(--br-serif);
+  line-height: 1.55;
+  /* Focus rings live on dark here — the global ring reads its ink from
+     this variable. */
+  --focus-ink: var(--paper-white);
+}
+
+.backroom a {
+  color: inherit;
+}
+
+.backroom code {
+  font-size: 0.85em;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  padding: 0 0.3em;
+}
+
+/* --------------------------------------------- 2. Header / nav / foot */
+
+.br-head {
+  text-align: center;
+  padding: 1.5rem 1rem 1.1rem;
+  border-bottom: 1px solid var(--br-paper);
+}
+
+.br-title {
+  font-family: var(--br-caps);
+  font-size: clamp(1.6rem, 6vw, 2.2rem);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+}
+
+.br-sub {
+  font-family: var(--br-chalk);
+  font-size: 0.95rem;
+  letter-spacing: 0.06em;
+  margin-top: 0.2rem;
+}
+
+.br-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: baseline;
+  gap: 0.4rem 1.4rem;
+  margin-top: 0.9rem;
+}
+
+.br-nav a,
+.br-logout button {
+  font-family: var(--br-caps);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  padding: 0.2rem 0;
+  background: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  cursor: pointer;
+}
+
+.br-nav a:hover,
+.br-logout button:hover {
+  border-bottom-color: var(--br-paper);
+}
+
+.br-foot {
+  text-align: center;
+  padding: 1.25rem 1rem 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.4);
+  font-family: var(--br-chalk);
+  font-size: 0.85rem;
+}
+
+.br-main {
+  flex: 1;
+  width: 100%;
+  max-width: 46rem;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+}
+
+/* ----------------------------------------------------- 3. The door */
+
+.br-doorway {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.75rem;
+  padding: 2.5rem 1.25rem 3.5rem;
+}
+
+/* A speakeasy door drawn in white line on the dark: two tall panels and a
+   peephole slot. */
+.br-door {
+  width: min(11rem, 55vw);
+  aspect-ratio: 11 / 16;
+  border: 3px solid var(--br-paper);
+  position: relative;
+  display: grid;
+  grid-template-rows: 1fr 1.3fr;
+  gap: 0.75rem;
+  padding: 0.9rem;
+}
+
+.br-door-panel {
+  border: 1px solid rgba(255, 255, 255, 0.75);
+}
+
+.br-peephole {
+  position: absolute;
+  top: 22%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 42%;
+  height: 0.8rem;
+  background: var(--br-room);
+  border: 2px solid var(--br-paper);
+}
+
+.br-knock {
+  width: min(22rem, 100%);
+  text-align: center;
+}
+
+.br-knock-label {
+  display: block;
+  font-family: var(--br-chalk);
+  font-size: 1.35rem;
+  margin-bottom: 0.8rem;
+}
+
+.br-knock-input {
+  width: 100%;
+  font: inherit;
+  font-size: 1.1rem;
+  color: var(--br-paper);
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid var(--br-paper);
+  padding: 0.45rem 0.25rem;
+  text-align: center;
+  letter-spacing: 0.35em;
+}
+
+.br-knock-btn {
+  margin-top: 1.1rem;
+  font-family: var(--br-caps);
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  background: var(--br-paper);
+  color: var(--ink);
+  border: none;
+  padding: 0.7rem 2.6rem;
+  cursor: pointer;
+  min-height: 48px;
+}
+
+.br-door-note {
+  margin-top: 1rem;
+  font-style: italic;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* ----------------------------------------------- 4. The light table */
+
+.br-backlog {
+  font-family: var(--br-chalk);
+  font-size: 0.95rem;
+  text-align: center;
+  margin-bottom: 1.25rem;
+}
+
+.br-table-head {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.br-date {
+  font-family: var(--br-caps);
+  font-size: clamp(1.3rem, 5vw, 1.8rem);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.br-status {
+  font-style: italic;
+  font-size: 0.95rem;
+  margin-top: 0.35rem;
+}
+
+.br-status-ran {
+  font-style: normal;
+  font-family: var(--br-chalk);
+}
+
+.br-see-public {
+  margin-top: 0.4rem;
+  font-size: 0.9rem;
+}
+
+.br-proofs {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2.25rem;
+}
+
+.br-proof {
+  position: relative;
+}
+
+.br-proof-no {
+  font-family: var(--br-chalk);
+  font-size: 1.2rem;
+  margin-bottom: 0.4rem;
+}
+
+/* A proof is a paper card on the dark table. */
+.br-proof-card {
+  background: var(--br-paper);
+  color: var(--ink);
+  padding: 0.75rem 0.75rem 0.9rem;
+  border: 1px solid var(--br-paper);
+  position: relative;
+}
+
+.br-proof-img {
+  width: 100%;
+  height: auto;
+  background: var(--paper-cream);
+}
+
+.br-proof-cap {
+  font-size: 0.95rem;
+  line-height: 1.45;
+  margin-top: 0.6rem;
+}
+
+.br-proof-tools {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-top: 0.5rem;
+}
+
+.br-fullsize {
+  font-family: var(--br-caps);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.br-spiked-note {
+  font-family: var(--br-chalk);
+  font-size: 0.85rem;
+  opacity: 0.75;
+}
+
+/* Decided days: the winner is stamped, the rest recede. */
+.br-proof-spiked .br-proof-card {
+  opacity: 0.55;
+}
+
+.br-stamp {
+  position: absolute;
+  top: 0.9rem;
+  right: 0.9rem;
+  z-index: 2;
+  font-family: var(--br-caps);
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--ink);
+  border: 3px double var(--ink);
+  padding: 0.15rem 0.7rem;
+  transform: rotate(-8deg);
+  background: rgba(255, 255, 255, 0.82);
+}
+
+/* -------------------------------------------- 5. The publish panel */
+
+.br-open-btn {
+  margin-top: 0.9rem;
+  width: 100%;
+  min-height: 52px;
+  font-family: var(--br-caps);
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--br-paper);
+  background: transparent;
+  border: 2px solid var(--br-paper);
+  cursor: pointer;
+}
+
+.br-open-btn:hover {
+  background: var(--br-paper);
+  color: var(--ink);
+}
+
+.br-panel {
+  margin-top: 0.9rem;
+  border: 1px solid var(--br-paper);
+  padding: 1rem;
+}
+
+.br-field {
+  display: block;
+  margin-bottom: 0.9rem;
+}
+
+.br-field span {
+  display: block;
+  font-family: var(--br-caps);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  margin-bottom: 0.35rem;
+}
+
+.br-field input,
+.br-field textarea {
+  width: 100%;
+  font-family: var(--br-serif);
+  font-size: 1rem;
+  color: var(--ink);
+  background: var(--br-paper);
+  border: none;
+  padding: 0.6rem 0.65rem;
+  line-height: 1.45;
+}
+
+.br-error {
+  font-style: italic;
+  font-size: 0.95rem;
+  border: 1px solid var(--br-paper);
+  padding: 0.5rem 0.7rem;
+  margin-bottom: 0.9rem;
+}
+
+.br-panel-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.br-run-btn {
+  min-height: 52px;
+  font-family: var(--br-caps);
+  font-size: 1.05rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  background: var(--br-paper);
+  color: var(--ink);
+  border: none;
+  cursor: pointer;
+}
+
+.br-run-btn:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+/* Armed: the button goes reversed-out so the second tap feels like a
+   different, deliberate act. */
+.br-run-armed {
+  background: transparent;
+  color: var(--br-paper);
+  border: 2px solid var(--br-paper);
+}
+
+.br-cancel-btn {
+  min-height: 44px;
+  font-family: var(--br-caps);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  background: transparent;
+  color: var(--br-paper);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+}
+
+.br-hint {
+  font-style: italic;
+  font-size: 0.85rem;
+  margin-top: 0.6rem;
+}
+
+.br-panel-done {
+  text-align: center;
+}
+
+.br-done-line {
+  font-family: var(--br-chalk);
+  font-size: 1.6rem;
+  margin-bottom: 0.4rem;
+}
+
+/* ---------------------------------------------------- 6. The ledger */
+
+.br-ledger {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.br-ledger-link {
+  display: block;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  padding: 0.9rem;
+}
+
+.br-ledger-link:hover {
+  border-color: var(--br-paper);
+}
+
+.br-ledger-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 0.7rem;
+}
+
+.br-ledger-date {
+  font-family: var(--br-caps);
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.br-chip {
+  font-family: var(--br-chalk);
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+.br-chip-ran {
+  border: 1px solid var(--br-paper);
+  padding: 0.1rem 0.5rem;
+}
+
+.br-chip-open {
+  font-style: italic;
+  opacity: 0.85;
+}
+
+.br-ledger-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.6rem;
+}
+
+.br-ledger-thumb {
+  position: relative;
+  display: block;
+  background: var(--br-paper);
+  padding: 0.25rem;
+}
+
+.br-ledger-thumb img {
+  width: 100%;
+  height: auto;
+  background: var(--paper-cream);
+}
+
+.br-ledger-thumb-ran {
+  outline: 2px solid var(--br-paper);
+  outline-offset: 2px;
+}
+
+.br-stamp-small {
+  font-size: 0.72rem;
+  top: 0.35rem;
+  right: 0.35rem;
+  padding: 0.05rem 0.35rem;
+  border-width: 2px;
+  letter-spacing: 0.12em;
+}
+
+/* Wider rooms: proofs keep a comfortable reading width; the table never
+   becomes a grid — one proof at a time is the point. */
+@media (min-width: 48rem) {
+  .br-main {
+    padding-top: 2.25rem;
+  }
+
+  .br-proof-card {
+    padding: 1rem 1rem 1.1rem;
+  }
+
+  .br-panel-actions {
+    flex-direction: row;
+  }
+
+  .br-run-btn {
+    flex: 2;
+  }
+
+  .br-cancel-btn {
+    flex: 1;
+  }
+}

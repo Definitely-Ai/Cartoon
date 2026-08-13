@@ -7,10 +7,11 @@ site/out/
 site/next-env.d.ts
 
 # Assets copied into the site by the prebuild script.
-# These are generated from /cartoons and /canon on every build,
-# so they never need to be committed.
+# These are generated from /cartoons, /canon, and /options on every
+# build, so they never need to be committed.
 site/public/cartoons/
 site/public/canon/
+site/public/backroom-assets/
 
 # Local env and editor noise
 .env*

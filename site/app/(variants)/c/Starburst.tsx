@@ -44,6 +44,30 @@ export default function Starburst() {
           <span>Strip</span>
         </p>
       </div>
+      {/* Hand-drawn arrow from the badge down toward the hero panel.
+          Sibling of .vc-burst so the stamp animation moves ONLY the badge;
+          desktop-only via CSS, decorative. */}
+      <svg
+        className="vc-burst-arrow"
+        viewBox="0 0 100 110"
+        aria-hidden="true"
+        focusable="false"
+      >
+        <path
+          d="M88 8 C 62 20, 76 50, 48 72 C 42 77, 34 84, 26 92"
+          fill="none"
+          stroke="#000"
+          strokeWidth="3.5"
+          strokeLinecap="round"
+        />
+        <path
+          d="M26 92 l17 -7 M26 92 l6 -18"
+          fill="none"
+          stroke="#000"
+          strokeWidth="3.5"
+          strokeLinecap="round"
+        />
+      </svg>
     </div>
   );
 }

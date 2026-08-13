@@ -47,3 +47,33 @@ Every later `git push` to the production branch rebuilds and redeploys automatic
 ### Manual redeploy
 
 Vercel dashboard → the project → **Deployments** tab → the ⋯ menu on the latest deployment → **Redeploy**. Useful after changing a Vercel setting, since settings only apply to new builds.
+
+## The Back Room (owner login + publishing)
+
+The staff side lives at **`/backroom`**: the owner logs in, reviews each day's candidate cartoons on the light table, and taps RUN IT — which commits the winner into `/cartoons` on `main` (one atomic commit via the GitHub API), and Vercel redeploys the public site automatically.
+
+It needs three environment variables in the Vercel project (Settings → Environment Variables), then a redeploy:
+
+| Variable | What it is |
+| --- | --- |
+| `ADMIN_PASSWORD` | The word at the door — the owner's login password. Pick a long one. |
+| `AUTH_SECRET` | Any long random string (e.g. `openssl rand -hex 32`). Signs the login cookie; rotating it logs every device out. |
+| `GITHUB_TOKEN` | A [fine-grained personal access token](https://github.com/settings/personal-access-tokens/new) scoped to **this repo only** with **Contents: Read and write**. Lets the publish button commit. |
+
+Optional: `GITHUB_REPO` (defaults to `Definitely-Ai/Cartoon`) if the repo ever moves.
+
+### The daily options contract (for the art-generating agent)
+
+Each day's candidates are pushed to the repo as:
+
+```
+/options/2026-08-14/
+  option-1.png        ← required; B&W, ≥1200px long side
+  option-1.json       ← optional: {"title": "…", "caption": "…", "tags": ["…"]}
+  option-2.png
+  option-2.json
+  option-3.png
+  option-3.json
+```
+
+Any number of options per day works; the owner can edit the suggested title/caption before publishing. `selected.json` in the same folder is written automatically when an option runs — the agent should never create or touch it. Malformed option JSON never breaks the site; it just arrives with no suggestion attached.

@@ -7,7 +7,8 @@ A single-panel, strictly black-and-white barroom cartoon about politics, markets
 | Folder | What it is |
 | --- | --- |
 | `/canon/` | The source of truth for how the strip looks, sounds, and jokes: character descriptions (`characters/`), style bible (`style/`), settings bible (`settings/`), personalities (`personality/`), comedy bible (`comedy/`), and the repeatable creation workflow (`creation/`). Written from the founder's series bible. |
-| `/cartoons/` | One folder per published cartoon (`YYYY-MM-DD-slug/` with `cartoon.png` + `meta.json`). `_TEMPLATE/` is the starting point for new ones and never ships. |
+| `/cartoons/` | One folder per **published** cartoon (`YYYY-MM-DD-slug/` with `cartoon.png` + `meta.json`) — this is the public side. `_TEMPLATE/` is the starting point for manual additions and never ships. |
+| `/options/` | The daily inbox: each day's candidate cartoons (`YYYY-MM-DD/option-N.png` + optional suggestion JSON). Private — only visible in the Back Room until one runs. |
 | `/site/` | The Next.js website. Static generation only; it reads `/cartoons` and `/canon` at build time and fails loudly on bad data. |
 | `/docs/` | [How to publish a cartoon](docs/PUBLISHING.md) and [local dev + Vercel setup](docs/SETUP.md). |
 
@@ -20,6 +21,10 @@ The site currently ships three complete, deliberately distinct designs so the fo
 - **`/c` — The Funny Pages.** A Sunday-comics paste-up board: halftone dots, taped and tilted panels, starburst badge, rubber-stamp tag filters.
 
 `/` is the chooser; `/cartoon/<folder-name>` is every cartoon's permanent, print-ready address.
+
+## The Back Room
+
+The owner's side, at `/backroom`, behind a login (the speakeasy asks: "What's the word?"). Each day he reviews the day's candidate cartoons on **the light table**, edits the title or caption if needed, and taps **RUN IT** — one atomic commit later the winner is in `/cartoons` and the public site redeploys itself. **The ledger** keeps every option from every day, with the one that ran stamped. Mobile-first, since decisions happen over coffee. Setup (three env vars) in [docs/SETUP.md](docs/SETUP.md).
 
 ## Current status
 

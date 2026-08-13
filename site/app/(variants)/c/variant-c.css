@@ -45,12 +45,12 @@
      offset block behind a solid-white chip — never under text), mid = the
      shadow under every pinned panel, faint = the paper itself. Grayscale
      exists only the way print makes it: black dots, or ink at low opacity. */
-  --vc-ht-dense: radial-gradient(circle, var(--ink) 1.6px, transparent 1.75px);
-  --vc-ht-dense-size: 5px 5px;
+  --vc-ht-dense: radial-gradient(circle, var(--ink) 1.9px, transparent 2.05px);
+  --vc-ht-dense-size: 5.5px 5.5px;
   --vc-ht-mid: radial-gradient(circle, var(--ink) 1.15px, transparent 1.3px);
   --vc-ht-mid-size: 8px 8px;
-  --vc-ht-faint: radial-gradient(circle, rgba(0, 0, 0, 0.09) 1px, transparent 1.15px);
-  --vc-ht-faint-size: 26px 26px;
+  --vc-ht-faint: radial-gradient(circle, rgba(0, 0, 0, 0.07) 1px, transparent 1.15px);
+  --vc-ht-faint-size: 28px 28px;
 
   /* Paste-up geometry. Tilts are set inline as unitless numbers (--tilt)
      and multiplied by --vc-tilt-unit, so mobile can flatten every rotation
@@ -62,8 +62,10 @@
   --vc-line-heavy: 5px; /* hero panel, masthead rule */
   --vc-line-light: 2.5px; /* stamps, tabs, sheet frames */
 
-  /* Hand-drawn squiggle underline, inlined so it needs no request. */
+  /* Hand-drawn squiggle underline, inlined so it needs no request — and a
+     chalk (white) twin for the chalkboard title. */
   --vc-squiggle: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='9' viewBox='0 0 120 9'%3E%3Cpath d='M2 6 C 18 2.5, 40 8.5, 60 5 S 96 8.5, 118 6' fill='none' stroke='%23000' stroke-width='2.2' stroke-linecap='round'/%3E%3C/svg%3E");
+  --vc-squiggle-chalk: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='9' viewBox='0 0 120 9'%3E%3Cpath d='M2 6 C 18 2.5, 40 8.5, 60 5 S 96 8.5, 118 6' fill='none' stroke='%23fff' stroke-width='2.2' stroke-linecap='round'/%3E%3C/svg%3E");
 }
 
 /* ------------------------------------------------------------ 2. Board base */
@@ -256,6 +258,12 @@
   transform: rotate(38deg);
 }
 
+.variant-c .vc-tape-center {
+  top: -13px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-4deg);
+}
+
 /* Torn-paper date tab: white, black outline (drop-shadow ring survives the
    clip), jagged bottom edge. */
 .variant-c .vc-tab {
@@ -359,6 +367,23 @@
 
 .variant-c .vc-burst-label span {
   display: block;
+}
+
+/* Hand-drawn arrow from the burst toward the hero panel. Anchored to the
+   burst itself (not the page grid) so it tracks the badge at every width
+   it appears at; desktop only. */
+.variant-c .vc-burst-arrow {
+  position: absolute;
+  left: -78px;
+  bottom: -30px;
+  width: 84px;
+  transform: rotate(calc(6 * var(--vc-tilt-unit)));
+}
+
+@media (max-width: 900px) {
+  .variant-c .vc-burst-arrow {
+    display: none;
+  }
 }
 
 /* The ONLY orchestrated motion on the site: one small rubber-stamp
@@ -465,7 +490,7 @@
 }
 
 .variant-c .vc-teaser-panel {
-  padding-top: 1.6rem;
+  padding-top: 1.25rem;
 }
 
 .variant-c .vc-teaser-title {
@@ -474,6 +499,79 @@
   font-size: var(--vc-size-1);
   line-height: 1.2;
   margin: 0.2rem 0 0.7rem;
+}
+
+/* Edition sticker on the teasers' corners (replaces the torn date tab
+   there — one label per panel; dates stay on the archive wall, where
+   they're the organizing principle). */
+.variant-c .vc-sticker {
+  position: absolute;
+  top: -12px;
+  right: -10px;
+  z-index: 2;
+  font-family: var(--vc-hand);
+  font-size: var(--vc-size--1);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background: var(--paper-white);
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  padding: 0.12rem 0.6rem 0.18rem;
+  transform: rotate(calc(2.5 * var(--vc-tilt-unit)));
+}
+
+.variant-c .vc-teaser-row li:nth-child(even) .vc-sticker {
+  transform: rotate(calc(-2 * var(--vc-tilt-unit)));
+}
+
+/* The chalkboard: a small pinned prop at the board's right rail. Solid ink
+   panel, thin white inner rule, chalk lines in the hand face — white on
+   black is the one place ink inverts, and it stays dot-free under text. */
+.variant-c .vc-chalk-pin {
+  max-width: min(340px, 100%);
+  margin: 3.75rem 0 0 auto;
+}
+
+.variant-c .vc-chalkboard {
+  position: relative;
+  background: var(--ink);
+  color: var(--paper-white);
+  padding: 1.2rem 1.4rem 1.3rem;
+}
+
+.variant-c .vc-chalkboard::after {
+  content: "";
+  position: absolute;
+  inset: 7px;
+  border: 1.5px solid rgba(255, 255, 255, 0.85);
+  pointer-events: none;
+}
+
+.variant-c .vc-chalk-title {
+  font-family: var(--vc-hand);
+  font-size: var(--vc-size-1);
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  text-align: center;
+  padding-bottom: 11px;
+  background-image: var(--vc-squiggle-chalk);
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 120px 9px;
+}
+
+.variant-c .vc-chalk-list {
+  list-style: none;
+  margin: 0.7rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.4rem;
+  font-family: var(--vc-hand);
+  font-size: var(--vc-size-0);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.35;
 }
 
 /* ------------------------------- 7. Archive wall + rubber stamps */
@@ -707,6 +805,7 @@
 /* ---------------------------------------------------------- 10. Footer */
 
 .variant-c .vc-footer {
+  position: relative;
   background: var(--ink);
   color: var(--paper-white);
   --focus-ink: var(--paper-white);
@@ -714,6 +813,21 @@
   padding: 1.6rem 1.25rem 1.9rem;
   font-size: var(--vc-size-0);
   line-height: 1.6;
+}
+
+/* The ink strip's top edge halftones out — paper showing through the ink,
+   the way a printed black rules off. A thin band only; the footer's top
+   padding keeps every line of text well below it. */
+.variant-c .vc-footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 11px;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.4) 1px, transparent 1.15px);
+  background-size: 6px 6px;
+  pointer-events: none;
 }
 
 .variant-c .vc-footer-desk {
@@ -796,6 +910,17 @@
     right: -14px;
   }
 
+  /* Stickers and the chalkboard tuck in — nothing leans on overflow-x
+     clipping at small widths. */
+  .variant-c .vc-sticker {
+    top: -10px;
+    right: -6px;
+  }
+
+  .variant-c .vc-chalk-pin {
+    margin: 2.75rem auto 0;
+  }
+
   .variant-c .vc-sheet-row {
     gap: 0.9rem;
   }
@@ -831,9 +956,12 @@
   .variant-c .vc-tabs,
   .variant-c .vc-tagline,
   .variant-c .vc-burst-pin,
+  .variant-c .vc-burst-arrow,
   .variant-c .vc-tape,
   .variant-c .vc-yesterday,
   .variant-c .vc-earlier,
+  .variant-c .vc-chalk-pin,
+  .variant-c .vc-sticker,
   .variant-c .vc-footer,
   .variant-c .vc-stamp-row,
   .variant-c .vc-archive-count {

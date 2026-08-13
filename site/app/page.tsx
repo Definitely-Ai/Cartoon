@@ -109,6 +109,8 @@ export default function VariantChooser() {
         <p className="chooser-desk">Published from the desk of the founder</p>
         <p className="chooser-credit">
           Site built by <a href="https://aidreambuilders.com">aidreambuilders.com</a>
+          {" · "}
+          <Link href="/backroom">Staff entrance</Link>
         </p>
       </footer>
     </div>

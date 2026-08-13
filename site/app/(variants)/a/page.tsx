@@ -6,9 +6,10 @@ import { getAdjacent, getAllCartoons, getLatest } from "@/lib/cartoons";
 import { dayOfYear, formatDateAP, formatDateline } from "@/lib/format";
 
 // The front page. Today's cartoon runs as the lead story under the
-// blackletter masthead; the right rail carries the classified archive
-// teaser and THE FORECAST, a boxed one-liner that rotates by day of
-// year — deterministic per build, never random.
+// blackletter masthead (eared at desktop, plain at mobile); the right
+// rail carries the classified archive teaser, THE FORECAST — a boxed
+// one-liner that rotates by day of year, deterministic per build,
+// never random — and the NOTICES box from behind the bar.
 
 export const metadata: Metadata = {
   title: "Front Page",
@@ -33,19 +34,42 @@ export default function FrontPage() {
     .slice(0, 5);
   const quip = FORECAST_QUIPS[dayOfYear(new Date().toISOString().slice(0, 10)) % FORECAST_QUIPS.length];
 
+  // "retirement and planning" / "markets, meetings and clients" — the
+  // deck reads the filing tags out as prose.
+  const tagPhrase =
+    latest.tags.length === 0
+      ? null
+      : latest.tags.length === 1
+        ? latest.tags[0]
+        : `${latest.tags.slice(0, -1).join(", ")} and ${latest.tags[latest.tags.length - 1]}`;
+
   return (
     <main id="content" className="va-shell">
       <header className="va-masthead">
-        <h1 className="va-masthead-title va-ink-spread">
-          {/* BRAND: replace when final */}
-          The Swinging Door
-        </h1>
-        <p className="va-masthead-motto">All the gags that are fit to print.</p>
+        <div className="va-nameplate">
+          <p className="va-ear va-ear-left">Inside: The Morgue · The Cast</p>
+          <div>
+            <h1 className="va-masthead-title va-ink-spread">
+              {/* BRAND: replace when final */}
+              The Swinging Door
+            </h1>
+            <p className="va-masthead-motto">All the gags that are fit to print.</p>
+          </div>
+          <p className="va-ear va-ear-right">Outlook: Partly Bullish</p>
+        </div>
         <p className="va-dateline va-onum">
           <span className="va-dateline-vol">
             Vol. 1 · No. {latest.edition}
           </span>
-          <span className="va-dateline-date">{formatDateline(latest.date)}</span>
+          <span className="va-dateline-date">
+            <span className="va-stars" aria-hidden="true">
+              * * *
+            </span>
+            {formatDateline(latest.date)}
+            <span className="va-stars" aria-hidden="true">
+              * * *
+            </span>
+          </span>
           <span className="va-dateline-price">Price: One Good Laugh</span>
         </p>
       </header>
@@ -56,6 +80,10 @@ export default function FrontPage() {
           <h2 className="va-lead-headline va-ink-spread">
             <TransitionLink href={`/cartoon/${latest.slug}?from=a`}>{latest.title}</TransitionLink>
           </h2>
+          <p className="va-deck va-onum">
+            {tagPhrase ? `Filed under ${tagPhrase} · ` : ""}Edition No. {latest.edition} of a
+            continuing series.
+          </p>
           <figure className="va-figure" style={{ viewTransitionName: `panel-${latest.slug}` }}>
             <TransitionLink
               href={`/cartoon/${latest.slug}?from=a`}
@@ -73,9 +101,6 @@ export default function FrontPage() {
             </TransitionLink>
             <figcaption className="va-caption">{latest.caption}</figcaption>
           </figure>
-          {latest.tags.length > 0 && (
-            <p className="va-lead-tags">Filed under: {latest.tags.join(", ")}</p>
-          )}
           {older && (
             <p className="va-prev va-onum">
               <TransitionLink href={`/cartoon/${older.slug}?from=a`}>
@@ -106,11 +131,20 @@ export default function FrontPage() {
             </p>
           </section>
 
-          <section className="va-forecast" aria-label="The forecast">
-            <div className="va-forecast-inner">
-              <h2 className="va-forecast-head">The Forecast</h2>
+          <section className="va-box va-forecast" aria-label="The forecast">
+            <div className="va-box-inner">
+              <h2 className="va-box-head">The Forecast</h2>
               <p className="va-forecast-quip">{quip}</p>
               <p className="va-forecast-note">Outlook subject to revision without notice.</p>
+            </div>
+          </section>
+
+          <section className="va-box va-notices" aria-label="Notices">
+            <div className="va-box-inner">
+              <h2 className="va-box-head">Notices</h2>
+              <p className="va-notices-line">
+                Happy hour coincides with the closing bell. This is called liquidity.
+              </p>
             </div>
           </section>
         </aside>

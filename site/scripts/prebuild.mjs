@@ -61,4 +61,25 @@ if (fs.existsSync(canonSrc)) {
   }
 }
 
-console.log(`prebuild: copied ${copied} cartoon(s), ${sheets} model sheet(s)`);
+// The Back Room's inbox: option artwork is copied under /backroom-assets,
+// which middleware gates behind the owner's login — drafts never leak to
+// the public side.
+const optionsSrc = path.join(repoRoot, "options");
+const optionsDest = path.resolve(here, "..", "public", "backroom-assets", "options");
+fs.rmSync(optionsDest, { recursive: true, force: true });
+let optionFiles = 0;
+if (fs.existsSync(optionsSrc)) {
+  for (const day of fs.readdirSync(optionsSrc, { withFileTypes: true })) {
+    if (!day.isDirectory() || !/^\d{4}-\d{2}-\d{2}$/.test(day.name)) continue;
+    const dayDir = path.join(optionsSrc, day.name);
+    for (const file of fs.readdirSync(dayDir)) {
+      if (!/^option-\d+\.png$/.test(file)) continue;
+      const dest = path.join(optionsDest, day.name);
+      fs.mkdirSync(dest, { recursive: true });
+      fs.copyFileSync(path.join(dayDir, file), path.join(dest, file));
+      optionFiles++;
+    }
+  }
+}
+
+console.log(`prebuild: copied ${copied} cartoon(s), ${sheets} model sheet(s), ${optionFiles} option proof(s)`);

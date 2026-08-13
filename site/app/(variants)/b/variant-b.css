@@ -43,9 +43,12 @@
   --vb-display: var(--font-display-serif), Georgia, serif;
   --vb-text: var(--font-text-serif), Georgia, serif;
 
-  /* Tracking pairs: negative on large display, positive on small caps. */
+  /* Tracking pairs: negative on large display, positive on small caps.
+     The tight caps value is for caps that step up a size (cover title at
+     desk widths) — still positive, just less air. */
   --vb-track-display: -0.015em;
   --vb-track-caps: 0.16em;
+  --vb-track-caps-tight: 0.12em;
 
   /* The only shadow in the variant: ink at low opacity, archive hover only. */
   --vb-ink-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
@@ -164,7 +167,7 @@
 
 .variant-b .vb-nav a:hover {
   text-decoration: underline;
-  text-underline-offset: 0.35em;
+  text-underline-offset: 0.45em;
   text-decoration-thickness: 1px;
 }
 
@@ -175,6 +178,11 @@
   justify-content: center;
   color: var(--ink);
   margin-block: calc(var(--vb-rhythm) * 2);
+}
+
+/* The engraving-sized fleuron above the cover's issue line — used once. */
+.variant-b .vb-divider-small {
+  margin-block: 0 calc(var(--vb-rhythm) * 0.5);
 }
 
 /* ---------------------------------------------------------------- 6. Footer */
@@ -219,10 +227,27 @@
   margin-bottom: calc(var(--vb-rhythm) * 0.75);
 }
 
-/* The framed plate: thin black frame, generous white matte that tightens on
-   small screens via clamp. */
+/* At desk widths the cover title takes one step up the scale and its
+   tracking eases — more presence, same voice. */
+@media (min-width: 56.25rem) {
+  .variant-b .vb-cover-title {
+    font-size: var(--vb-step-0);
+    letter-spacing: var(--vb-track-caps-tight);
+  }
+}
+
+/* The framed plate as a gallery mount: a 2px outer frame, a few px of white
+   slip, an inner hairline, then the generous matte (clamped so it tightens
+   on small screens) around the artwork. Home cover only — thumbnails keep
+   their single hairlines. */
 .variant-b .vb-plate-frame {
   border: 2px solid var(--ink);
+  background: var(--paper-white);
+  padding: 5px;
+}
+
+.variant-b .vb-plate-mount {
+  border: 1px solid var(--ink);
   background: var(--paper-white);
   padding: clamp(1rem, 5vw, 2.75rem);
 }
@@ -250,14 +275,16 @@
   margin-top: var(--vb-rhythm);
 }
 
+/* The back link wears its hairline underline at rest (it is the affordance),
+   set with a generous offset so it reads as a rule, not a scribble. */
 .variant-b .vb-prev-link a {
   font-size: var(--vb-step--2);
   font-weight: 600;
   letter-spacing: var(--vb-track-caps);
   text-transform: uppercase;
-  text-decoration: none;
-  border-bottom: 1px solid var(--ink);
-  padding-bottom: 0.15em;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.45em;
 }
 
 /* -------------------------------------------------------- 8. Signature motion */
@@ -358,6 +385,12 @@
   margin-top: calc(var(--vb-rhythm) * 0.2);
 }
 
+/* Plate numeral under the date — folio-quiet. */
+.variant-b .vb-thumb-plate {
+  display: block;
+  margin-top: calc(var(--vb-rhythm) * 0.1);
+}
+
 /* The archive filter's live result count, folio-quiet. */
 .variant-b .vb-filter-count {
   text-align: center;
@@ -406,13 +439,13 @@
 
 .variant-b .vb-filter-btn:hover {
   text-decoration: underline;
-  text-underline-offset: 0.35em;
+  text-underline-offset: 0.45em;
   text-decoration-thickness: 1px;
 }
 
 .variant-b .vb-filter-btn[aria-pressed="true"] {
   text-decoration: underline;
-  text-underline-offset: 0.35em;
+  text-underline-offset: 0.45em;
   text-decoration-thickness: 1px;
 }
 
@@ -594,7 +627,9 @@
     max-width: 6.5in;
   }
 
-  .variant-b .vb-plate-frame {
+  /* The outer frame keeps its 5px slip; the matte inside the hairline is
+     what tightens for the page. */
+  .variant-b .vb-plate-mount {
     padding: 0.375in;
   }
 

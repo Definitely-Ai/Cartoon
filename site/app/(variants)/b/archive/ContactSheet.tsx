@@ -5,6 +5,7 @@ import TransitionLink from "@/components/TransitionLink";
 import type { Cartoon } from "@/lib/cartoons";
 import { formatDateAP } from "@/lib/format";
 import { useTagFilter } from "@/lib/useTagFilter";
+import { plateNumeral } from "../plate";
 
 // The archive's client half: the tag filter (a quiet letterspaced row of
 // buttons) and the contact-sheet grid it filters. Hover lifts a panel 2px
@@ -69,6 +70,9 @@ export default function ContactSheet({ cartoons }: { cartoons: Cartoon[] }) {
                   <figcaption className="vb-thumb-cap">
                     <span className="vb-thumb-caption">{cartoon.caption}</span>
                     <span className="vb-thumb-date vb-caps-tiny">{formatDateAP(cartoon.date)}</span>
+                    <span className="vb-thumb-plate vb-caps-tiny">
+                      Pl. {plateNumeral(cartoon.edition)}
+                    </span>
                   </figcaption>
                 </figure>
               </TransitionLink>

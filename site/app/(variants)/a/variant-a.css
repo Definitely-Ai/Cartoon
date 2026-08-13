@@ -216,6 +216,53 @@
   line-height: 1.15;
 }
 
+/* Ears: the two small boxed items flanking a broadsheet nameplate.
+   Desktop furniture only — below 900px the masthead stays clean. */
+.variant-a .va-ear {
+  display: none;
+}
+
+@media (min-width: 900px) {
+  .variant-a .va-nameplate {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .variant-a .va-ear {
+    display: block;
+    border: var(--hairline);
+    max-width: 13rem;
+    padding: calc(var(--baseline) / 4) 0.75rem;
+    font-family: var(--condensed);
+    font-size: var(--scale-0);
+    letter-spacing: var(--track-1);
+    line-height: calc(var(--baseline) * 0.75);
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  .variant-a .va-ear-left {
+    justify-self: start;
+  }
+
+  .variant-a .va-ear-right {
+    justify-self: end;
+  }
+
+  /* At nameplate size the ink spreads a touch further, so the big
+     blackletter reads pressed into the sheet rather than laid on it.
+     Same specificity as .va-ink-spread but later in the file, so it
+     wins here; the print block (last) still zeroes it out. */
+  .variant-a .va-masthead-title {
+    text-shadow:
+      0.4px 0.5px 0 rgba(0, 0, 0, 0.38),
+      -0.4px -0.25px 0 rgba(0, 0, 0, 0.2),
+      0 0 0.5px rgba(0, 0, 0, 0.22);
+  }
+}
+
 .variant-a .va-masthead-motto {
   font-style: italic;
   font-size: var(--scale-1);
@@ -244,6 +291,21 @@
 
 .variant-a .va-dateline-price {
   text-align: right;
+}
+
+/* Edition stars: serif asterisks, letterspaced, flanking the date.
+   Desktop dateline furniture; the two-ruled mobile dateline stays
+   uncrowded without them. */
+.variant-a .va-stars {
+  font-family: var(--serif);
+  letter-spacing: 0.35em;
+  padding-inline: 0.5rem 0.15rem; /* trailing space of the last star */
+}
+
+@media (max-width: 699px) {
+  .variant-a .va-stars {
+    display: none;
+  }
 }
 
 /* Mobile dateline: two ruled lines — date on top, vol/price
@@ -363,14 +425,14 @@
   margin: calc(var(--baseline) / 2) auto 0;
 }
 
-.variant-a .va-lead-tags {
+/* The deck: one italic serif line under the headline, built from
+   the filing tags and edition number, the way a real deck reads. */
+.variant-a .va-deck {
   margin-top: calc(var(--baseline) / 4);
   text-align: center;
-  font-family: var(--condensed);
-  font-size: var(--scale-0);
-  letter-spacing: var(--track-1);
-  text-transform: uppercase;
-  color: var(--ink-soft);
+  text-wrap: balance;
+  font-style: italic;
+  font-size: var(--scale-1);
 }
 
 .variant-a .va-prev {
@@ -463,19 +525,19 @@
   text-transform: uppercase;
 }
 
-/* THE FORECAST: a boxed feature — heavy frame, hairline inner
-   frame, reversed section head. */
-.variant-a .va-forecast {
+/* Boxed rail features — THE FORECAST and NOTICES share the same
+   construction: heavy frame, hairline inner frame, reversed head. */
+.variant-a .va-box {
   margin-top: var(--baseline);
   border: 2px solid var(--ink);
 }
 
-.variant-a .va-forecast-inner {
+.variant-a .va-box-inner {
   border: var(--hairline);
   margin: 3px;
 }
 
-.variant-a .va-forecast-head {
+.variant-a .va-box-head {
   background: var(--ink);
   color: var(--paper-white);
   font-family: var(--condensed);
@@ -500,6 +562,13 @@
   font-size: var(--scale-0);
   text-align: center;
   padding: calc(var(--baseline) / 4) 1rem;
+}
+
+/* NOTICES runs quieter than the forecast: one roman line. */
+.variant-a .va-notices-line {
+  font-size: var(--scale-1);
+  text-align: center;
+  padding: calc(var(--baseline) / 2) 1rem;
 }
 
 /* 6. The Morgue --------------------------------------------- */
@@ -664,9 +733,13 @@
 }
 
 @media (min-width: 900px) {
+  /* One row, one equal column per profile, however many the canon
+     bills — never wraps, so the column rules always sit between
+     neighbors. */
   .variant-a .va-cast {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(0, 1fr);
   }
 
   .variant-a .va-profile {
@@ -809,13 +882,14 @@
     color: #000;
   }
 
-  /* Chrome, rails, textures, motion: gone. */
+  /* Chrome, rails, ears, textures, motion: gone. */
   .variant-a .va-head,
   .variant-a .va-foot,
   .variant-a .va-rail,
+  .variant-a .va-ear,
   .variant-a .va-masthead-motto,
   .variant-a .va-eyebrow,
-  .variant-a .va-lead-tags,
+  .variant-a .va-deck,
   .variant-a .va-prev,
   .variant-a .va-index,
   .variant-a .va-index-status {
