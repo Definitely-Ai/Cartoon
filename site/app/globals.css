@@ -1,0 +1,129 @@
+/* Shared base for every page. Structure:
+   1. Reset — the few rules every browser needs overridden.
+   2. Ink tokens — the ONLY colors that exist anywhere in this site.
+   3. Focus, skip link, screen-reader utility.
+   4. View-transition plumbing (disabled under reduced motion).
+   Variant identities live in their own stylesheets, every rule scoped
+   under .variant-a / .variant-b / .variant-c so nothing leaks between
+   variants during client-side navigation. */
+
+/* 1. Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+h1,
+h2,
+h3,
+p,
+figure,
+blockquote,
+ul,
+ol {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+}
+
+/* 2. Ink tokens — the whole palette. No color anywhere; grayscale only
+   where physical print would create it (texture, halftone, ink at low
+   opacity). If a new "accent" is ever needed, the answer is texture,
+   weight, or type — not a hex value. */
+:root {
+  --ink: #000000;
+  --ink-soft: #1a1a1a;
+  --paper-white: #ffffff;
+  --paper-warm: #faf7f0;
+  --paper-cream: #faf7f2;
+}
+
+body {
+  background: var(--paper-white);
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* 3. Focus, skip link, sr-only.
+   A 2px black offset ring reads as "ink" and fits all three variants.
+   Components that sit on solid black chrome set --focus-ink: var(--paper-white)
+   on themselves so the ring stays visible. */
+:focus-visible {
+  outline: 2px solid var(--focus-ink, var(--ink));
+  outline-offset: 2px;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  padding: 0.5rem 1rem;
+  background: var(--paper-white);
+  color: var(--ink);
+  border: 2px solid var(--ink);
+  font-family: Georgia, serif;
+  text-decoration: none;
+}
+
+.skip-link:focus-visible {
+  left: 0.5rem;
+  top: 0.5rem;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* 4. View transitions. TransitionLink only runs when motion is allowed and
+   the browser supports startViewTransition; this CSS shapes the two flows
+   it serves (thumbnail → permalink morph via per-slug names on the cartoon
+   figure; prev/next as a quick page-turn cross-fade). The reduced-motion
+   block is belt-and-braces on top of the JS guard. */
+@media (prefers-reduced-motion: no-preference) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: 180ms;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*),
+  ::view-transition-image-pair(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
+}
