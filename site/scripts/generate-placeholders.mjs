@@ -1,6 +1,6 @@
-// Generates clearly labelled, canon-informed mock artwork for every cartoon.
-// These are layout/demo assets only; final commissioned art should overwrite
-// cartoon.png in each cartoon folder. Run from /site with `npm run placeholders`.
+// Generates canon-informed art studies for every cartoon. These are deliberately
+// labelled placeholders; commissioned art should replace cartoon.png in place.
+// Run from /site with `npm run placeholders -- --force`.
 
 import fs from "node:fs";
 import path from "node:path";
@@ -12,89 +12,85 @@ const cartoonsDir = path.resolve(here, "..", "..", "cartoons");
 const force = process.argv.includes("--force");
 
 const concepts = {
-  1: { tv: "MARKET / FED", board: "TODAY: MIXED SIGNALS", prop: "pie", speaker: "drew" },
-  2: { tv: "FEES ↓*", board: "EXPLANATIONS: MARKET PRICE", prop: "receipt", speaker: "drew" },
-  3: { tv: "OPEN 1:00:00", board: "PATIENCE ON TAP", prop: "clock", speaker: "mango" },
-  4: { tv: "CRYPTO ↑↓↑", board: "NEW! DIGITAL COASTERS", prop: "coin", speaker: "drew" },
-  5: { tv: "WEEK AHEAD: ?", board: "FORECAST: WEATHER", prop: "chart", speaker: "drew" },
-  6: { tv: "RETIREMENT", board: "HAPPY HOUR: 65–?", prop: "calendar", speaker: "mango" },
+  1: { tv: "DOW  −312", board: "HOUSE RULE / No hot tips", prop: "papers", drew: "arch", mango: "listening" },
+  2: { tv: "MANAGED / ASSETS", board: "TODAY'S SPECIAL / COMPOUND INTEREST", prop: "receipt", drew: "explaining", mango: "reading" },
+  3: { tv: "MARKETS OPEN", board: "PATIENCE / served daily", prop: "clock", drew: "dry", mango: "watching" },
+  4: { tv: "COIN  ↑  ↓", board: "NOW ACCEPTING / actual money", prop: "coin", drew: "explaining", mango: "phone" },
+  5: { tv: "WEEK AHEAD", board: "FORECAST / partly certain", prop: "chart", drew: "arch", mango: "listening" },
+  6: { tv: "RETIREMENT", board: "HAPPY HOUR / 4–?", prop: "calendar", drew: "dry", mango: "reading" },
 };
 
 const esc = (value) => String(value).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&apos;" })[c]);
 
-function captionLines(caption, max = 62) {
-  const lines = [];
-  for (const word of caption.split(/\s+/)) {
-    const current = lines.at(-1);
-    if (!current || `${current} ${word}`.length > max) lines.push(word);
-    else lines[lines.length - 1] = `${current} ${word}`;
-  }
-  return lines.map((line, index) => `<tspan x="600" dy="${index === 0 ? 0 : 42}">${esc(line)}</tspan>`).join("");
+function propSvg(kind) {
+  if (kind === "papers") return `<g transform="translate(862 785) rotate(-5)"><path class="paper" d="M-65-52h130v104H-65z"/><path class="fine" d="M-45-27h91M-45-5h70M-45 17h83"/><path class="ink" d="M-12-11l25 22M13-11l-25 22"/></g>`;
+  if (kind === "receipt") return `<g transform="translate(858 775) rotate(4)"><path class="paper" d="M-52-86h104v157l-13-9-13 9-13-9-13 9-13-9-13 9-13-9-13 9z"/><path class="fine" d="M-32-55h64M-32-31h64M-32-7h47M-32 28h64"/><text class="tiny" y="52">1%</text></g>`;
+  if (kind === "clock") return `<g transform="translate(876 760)"><circle r="65" class="paper"/><path class="ink" d="M0-49v12M49 0H37M0 49V37M-49 0h12M0 0V-34M0 0l30 9"/></g>`;
+  if (kind === "coin") return `<g transform="translate(866 778) rotate(-8)"><circle r="58" class="wash"/><circle r="49" class="fine nofill"/><path class="ink" d="M-15-30v60M9-30v60M-28-20h42q24 0 8 20 19 19-10 23h-40"/></g>`;
+  if (kind === "chart") return `<g transform="translate(858 790)"><path class="fine" d="M-75-55v115H80"/><path class="ink nofill" d="M-61 40l31-35 30 17 32-61 34 25"/><path class="fine" d="M58-21l8 7-4 10"/></g>`;
+  return `<g transform="translate(866 775) rotate(2)"><path class="paper" d="M-64-68h128V65H-64z"/><path class="ink" d="M-64-35H64M-35-82v28M35-82v28"/><text class="number" y="35">65?</text></g>`;
 }
 
-function propSvg(kind, x, y) {
-  if (kind === "pie") return `<circle cx="${x}" cy="${y}" r="54" fill="#eee" stroke="#111" stroke-width="5"/><path d="M${x} ${y}L${x} ${y-54}A54 54 0 0 1 ${x+47} ${y+27}Z" fill="#777" stroke="#111" stroke-width="4"/>`;
-  if (kind === "receipt") return `<path d="M${x-42} ${y-72}h84v118l-14-9-14 9-14-9-14 9-14-9-14 9z" fill="#fff" stroke="#111" stroke-width="5"/><path d="M${x-25} ${y-42}h50m-50 22h50m-50 22h36" stroke="#111" stroke-width="4"/>`;
-  if (kind === "clock") return `<circle cx="${x}" cy="${y}" r="55" fill="#fff" stroke="#111" stroke-width="6"/><path d="M${x} ${y}v-37m0 37l34 8" stroke="#111" stroke-width="6" stroke-linecap="round"/>`;
-  if (kind === "coin") return `<circle cx="${x}" cy="${y}" r="50" fill="#ddd" stroke="#111" stroke-width="7"/><text x="${x}" y="${y+17}" text-anchor="middle" font-family="serif" font-size="52">₿?</text>`;
-  if (kind === "chart") return `<path d="M${x-65} ${y+48}V${y-55}M${x-65} ${y+48}h130" stroke="#111" stroke-width="5"/><path d="M${x-53} ${y+28}l30-32 27 19 28-53 24 24" fill="none" stroke="#111" stroke-width="7"/>`;
-  return `<rect x="${x-57}" y="${y-55}" width="114" height="105" rx="5" fill="#fff" stroke="#111" stroke-width="6"/><path d="M${x-57} ${y-24}h114M${x-30} ${y-68}v25M${x+30} ${y-68}v25" stroke="#111" stroke-width="6"/><text x="${x}" y="${y+28}" text-anchor="middle" font-family="serif" font-size="54">65</text>`;
-}
-
-function panelSvg({ width, height, meta }) {
+function panelSvg(meta) {
   const c = concepts[meta.edition] ?? concepts[1];
-  const speech = c.speaker === "mango" ? meta.caption : meta.caption;
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 1200 1500">
-  <rect width="1200" height="1500" fill="#fff"/>
-  <rect x="18" y="18" width="1164" height="1464" fill="none" stroke="#111" stroke-width="8"/>
-  <!-- permanent, unmistakable mock-art label -->
-  <rect x="18" y="18" width="1164" height="58" fill="#111"/>
-  <text x="600" y="57" text-anchor="middle" font-family="monospace" font-size="25" letter-spacing="5" fill="#fff">PLACEHOLDER ART • NOT FOR PUBLICATION • EDITION ${meta.edition}</text>
+  const odd = meta.edition % 2;
+  const tvX = odd ? 112 : 815;
+  const chalkX = odd ? 785 : 92;
+  const drewX = odd ? 350 : 430;
+  const mangoX = odd ? 650 : 690;
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 1200 1200">
+  <defs>
+    <filter id="wobble" x="-3%" y="-3%" width="106%" height="106%"><feTurbulence baseFrequency=".012" numOctaves="2" seed="${meta.edition + 7}" result="noise"/><feDisplacementMap in="SourceGraphic" in2="noise" scale="1.5"/></filter>
+    <filter id="wash"><feTurbulence type="fractalNoise" baseFrequency=".035" numOctaves="3" seed="${meta.edition}" result="raw"/><feColorMatrix in="raw" type="saturate" values="0" result="n"/><feComposite in="n" in2="SourceGraphic" operator="in" result="t"/><feBlend in="SourceGraphic" in2="t" mode="multiply"/></filter>
+    <style>
+      .ink{fill:none;stroke:#161616;stroke-width:7;stroke-linecap:round;stroke-linejoin:round}.fine{fill:none;stroke:#242424;stroke-width:3.5;stroke-linecap:round;stroke-linejoin:round}.hair{fill:none;stroke:#191919;stroke-width:2.2;stroke-linecap:round}.wash{fill:#b8b8b8;stroke:#171717;stroke-width:6;filter:url(#wash)}.lightwash{fill:#dedede;stroke:#171717;stroke-width:5;filter:url(#wash)}.paper{fill:#f7f7f7;stroke:#171717;stroke-width:5}.nofill{fill:none}.sign{font:700 23px Georgia,serif;letter-spacing:1px;text-anchor:middle;fill:#161616}.small{font:italic 17px Georgia,serif;text-anchor:middle;fill:#222}.tiny{font:700 22px Georgia,serif;text-anchor:middle;fill:#111}.number{font:700 43px Georgia,serif;text-anchor:middle;fill:#111}
+    </style>
+  </defs>
+  <rect width="1200" height="1200" fill="#f7f7f7"/>
+  <g filter="url(#wobble)">
+    <!-- restrained, old American bar: paneling, window, television, chalkboard -->
+    <path class="fine" d="M30 70h1140v1080H30zM45 680h1110M45 350h1110M60 365v300m180-300v300m720-300v300m180-300v300"/>
+    <path class="lightwash" d="M448 95h305v348H448z"/><path class="fine" d="M600 96v347M449 264h304"/>
+    <g transform="translate(600 235) scale(-1 1)"><text class="sign">THE SWINGING DOOR</text></g>
+    <g transform="translate(${tvX} 105)"><path class="wash" d="M0 0h270v160H0z"/><path class="fine" d="M24 26h222v92H24zM102 160l-18 31m84-31 18 31m-111 0h120"/><text class="sign" x="135" y="67">${esc(c.tv.split(" / ")[0])}</text><text class="small" x="135" y="98">${esc(c.tv.split(" / ")[1] ?? "LIVE")}</text></g>
+    <g transform="translate(${chalkX} 430) rotate(${odd ? 1 : -1})"><path d="M0 0h280v145H0z" fill="#282827" stroke="#111" stroke-width="7"/><text x="140" y="54" fill="#f2f2f2" class="sign">${esc(c.board.split(" / ")[0])}</text><text x="140" y="94" fill="#f2f2f2" class="small">${esc(c.board.split(" / ")[1] ?? "")}</text><path d="M35 117q75-13 145 1t65-5" stroke="#eee" stroke-width="2" fill="none"/></g>
+    <path class="fine" d="M72 312l55-65 55 65zM95 312v38m64-38v38"/><path class="hair" d="M510 165h70m40 0h70M72 625q70-28 142 0"/>
 
-  <!-- the warm, established Swinging Door bar -->
-  <path d="M40 980H1160M40 1100H1160M80 1100v280m1010-280v280" stroke="#111" stroke-width="9"/>
-  <path d="M40 750h1120M110 750V290h280v460M810 750V250h300v500" fill="none" stroke="#555" stroke-width="5"/>
-  <path d="M825 270h270v250H825z" fill="#eee" stroke="#111" stroke-width="7"/>
-  <text x="960" y="365" text-anchor="middle" font-family="serif" font-size="34">ROOD GNIGNIWS</text>
-  <text x="960" y="410" text-anchor="middle" font-family="serif" font-size="19">(reversed window sign)</text>
-  <rect x="90" y="155" width="320" height="170" rx="9" fill="#ddd" stroke="#111" stroke-width="8"/>
-  <text x="250" y="218" text-anchor="middle" font-family="monospace" font-size="26">ON THE TV</text>
-  <text x="250" y="270" text-anchor="middle" font-family="monospace" font-size="27" font-weight="bold">${esc(c.tv)}</text>
-  <rect x="760" y="555" width="350" height="150" fill="#333" stroke="#111" stroke-width="7"/>
-  <text x="935" y="615" text-anchor="middle" font-family="monospace" font-size="19" fill="#fff">CHALKBOARD SPECIAL</text>
-  <text x="935" y="660" text-anchor="middle" font-family="monospace" font-size="20" fill="#fff">${esc(c.board)}</text>
+    <!-- solid mahogany bar and fixtures -->
+    <path class="wash" d="M36 820Q590 797 1164 820v245H36z"/><path class="ink" d="M36 820q555-23 1128 0M38 885h1125M115 893v160m970-160v160"/><path class="hair" d="M66 930h1060M66 953h1060M66 976h1060M66 999h1060"/>
+    <ellipse class="lightwash" cx="${drewX + 58}" cy="840" rx="91" ry="18"/><ellipse class="lightwash" cx="${mangoX + 37}" cy="840" rx="88" ry="18"/>
 
-  <!-- Drew: elegant flamingo, bowtie, martini with three olives -->
-  <path d="M420 865c-76-50-77-153-13-222 42-45 55-91 16-127" fill="none" stroke="#111" stroke-width="18" stroke-linecap="round"/>
-  <ellipse cx="427" cy="478" rx="60" ry="49" fill="#eee" stroke="#111" stroke-width="7"/>
-  <path d="M376 480l-108 35 101 28" fill="#ddd" stroke="#111" stroke-width="7"/>
-  <circle cx="447" cy="463" r="7"/>
-  <path d="M405 580l-35-22v46zM411 580l35-22v46z" fill="#111"/>
-  <path d="M412 864v240m25-240l47 240" stroke="#111" stroke-width="11"/>
-  <path d="M384 1104h52m27 0h58" stroke="#111" stroke-width="10" stroke-linecap="round"/>
-  <path d="M500 983h105l-52 76zM553 1059v42m-35 0h70" fill="#fff" stroke="#111" stroke-width="6"/>
-  <circle cx="532" cy="1007" r="7"/><circle cx="553" cy="1007" r="7"/><circle cx="574" cy="1007" r="7"/>
+    <!-- Drew: elegant, anthropomorphic flamingo; expressive ink anatomy -->
+    <g transform="translate(${drewX} 0)">
+      <path class="ink" d="M53 706q-29-77 1-143 31-70 10-129-18-50-6-89"/><path class="hair" d="M43 697q-17-75 17-133M67 541q22-57 5-104"/>
+      <path class="lightwash" d="M27 337q-5-56 43-79 49-21 91 6 31 20 25 58-7 45-68 52-61 7-91-37z"/>
+      <path class="wash" d="M29 309l-116 31 111 30q17-24 5-61z"/><path class="fine" d="M-86 340l83 2"/>
+      <circle cx="126" cy="303" r="6" fill="#111"/><path class="fine" d="M105 283q23-15 44 1"/>
+      <path d="M52 404l-37-24-3 48 40-19 41 19-3-48z" fill="#232323"/>
+      <path class="ink" d="M54 704l-5 177m21-177 44 174M17 881h67m6-3h63"/>
+      <path class="fine" d="M20 545q-34 63-13 125M87 541q49 42 66 101"/>
+      <path class="paper" d="M122 673h102l-51 94z"/><path class="fine" d="M173 767v62m-40 1h80"/>
+      <circle cx="151" cy="703" r="6" fill="#333"/><circle cx="173" cy="703" r="6" fill="#333"/><circle cx="195" cy="703" r="6" fill="#333"/>
+      ${c.drew === "explaining" ? '<path class="ink" d="M91 545q78-42 137-12"/><path class="fine" d="M221 520l18 12-20 8"/>' : '<path class="fine" d="M91 544q34 28 59 28"/>'}
+    </g>
 
-  <!-- Mango: earnest retriever, jacket, flag pin, old fashioned -->
-  <circle cx="700" cy="710" r="112" fill="#ddd" stroke="#111" stroke-width="8"/>
-  <path d="M620 640q-90 10-78 113q50-25 88-68M780 640q90 10 78 113q-50-25-88-68" fill="#aaa" stroke="#111" stroke-width="7"/>
-  <ellipse cx="700" cy="748" rx="61" ry="48" fill="#eee" stroke="#111" stroke-width="5"/>
-  <circle cx="662" cy="692" r="8"/><circle cx="738" cy="692" r="8"/><ellipse cx="700" cy="730" rx="18" ry="13"/>
-  <path d="M610 825q90-55 180 0l64 275H548z" fill="#bbb" stroke="#111" stroke-width="8"/>
-  <path d="M700 838l-45 150m45-150l45 150" stroke="#fff" stroke-width="6"/>
-  <rect x="762" y="863" width="32" height="23" fill="#fff" stroke="#111" stroke-width="3"/><path d="M773 864v21m-10-11h30" stroke="#111" stroke-width="3"/>
-  <rect x="800" y="987" width="82" height="92" rx="8" fill="#ddd" stroke="#111" stroke-width="6"/><path d="M810 1022h62" stroke="#111" stroke-width="4"/>
-
-  <!-- edition-specific visual-gag prop -->
-  ${propSvg(c.prop, 995, 955)}
-  <ellipse cx="595" cy="1130" rx="90" ry="16" fill="#ddd" stroke="#111" stroke-width="4"/>
-  <ellipse cx="830" cy="1130" rx="80" ry="16" fill="#ddd" stroke="#111" stroke-width="4"/>
-
-  <!-- caption is inside the mock image only to make exported assets self-identifying -->
-  <rect x="80" y="1210" width="1040" height="190" rx="18" fill="#fff" stroke="#111" stroke-width="5"/>
-  <text x="600" y="1260" text-anchor="middle" font-family="monospace" font-size="20" letter-spacing="3">MOCK COMPOSITION — FINAL CAPTION WILL BE SET BY THE SITE</text>
-  <text x="600" y="1320" text-anchor="middle" font-family="serif" font-style="italic" font-size="29">${captionLines(`“${speech}”`)}</text>
-  <text x="1110" y="1440" text-anchor="end" font-family="monospace" font-size="20">PLACEHOLDER / No. ${meta.edition}</text>
+    <!-- Mango: tailored retriever patron, jacket, lapel pin, old fashioned -->
+    <g transform="translate(${mangoX} 0)">
+      <path class="wash" d="M-20 781q8-171 58-218 73-68 153 0 53 47 64 218z"/>
+      <path class="lightwash" d="M21 470q-3-81 91-100 94 18 92 100-2 96-92 112-88-18-91-112z"/>
+      <path class="wash" d="M40 415q-79 5-91 91 43 6 87-42M184 415q79 5 91 91-43 6-87-42"/>
+      <path class="paper" d="M62 482q8-58 50-58 44 0 54 58-9 62-54 67-43-7-50-67z"/>
+      <ellipse cx="112" cy="464" rx="17" ry="13" fill="#171717"/><path class="fine" d="M112 477q-13 29-38 11m38-11q13 29 38 11"/>
+      <circle cx="75" cy="426" r="7" fill="#111"/><circle cx="151" cy="426" r="7" fill="#111"/><path class="fine" d="M52 401q24-17 48-3m26 0q24-14 47 4"/>
+      <path class="paper" d="M39 563l73 98 78-98-21 218H56z"/><path class="fine" d="M112 661v120M70 579l42 82m58-82-58 82"/>
+      <g transform="translate(151 635)"><path class="paper" d="M0 0h38v27H0z"/><path class="hair" d="M19 1v25M2 13h34"/></g>
+      <path class="paper" d="M190 695h86v98q-43 15-86 0z"/><path class="fine" d="M197 730q38 12 72 0"/><rect x="212" y="707" width="24" height="16" rx="5" fill="#bbb"/>
+      ${c.mango === "phone" ? '<path class="ink" d="M-1 622q-53 19-52 87"/><rect class="paper" x="-83" y="684" width="53" height="83" rx="7"/><circle cx="-57" cy="751" r="3"/>' : c.mango === "reading" ? '<path class="fine" d="M18 619q-48 20-61 73"/>' : '<path class="fine" d="M10 610q-45 15-61 52"/>'}
+    </g>
+    ${propSvg(c.prop)}
+    <path class="hair" d="M48 1117q198-8 387 0t360 0 357 0"/>
+  </g>
+  <g transform="translate(600 1161)"><rect x="-208" y="-21" width="416" height="32" fill="#f7f7f7"/><text x="0" y="2" text-anchor="middle" font-family="Arial,sans-serif" font-size="15" letter-spacing="3" fill="#333">PLACEHOLDER STUDY • NOT FOR PUBLICATION • ${String(meta.edition).padStart(2, "0")}</text></g>
   </svg>`;
 }
 
@@ -108,13 +104,9 @@ for (const folder of folders) {
   const out = path.join(dir, "cartoon.png");
   if (fs.existsSync(out) && !force) continue;
   const meta = JSON.parse(fs.readFileSync(path.join(dir, "meta.json"), "utf8"));
-  const portrait = meta.edition % 2 === 1;
-  const width = portrait ? 1200 : 1400;
-  const height = portrait ? 1500 : 1400;
-  const svg = panelSvg({ width, height, meta });
-  await sharp(Buffer.from(svg)).resize(width, height, { fit: "fill" }).png().toFile(out);
-  console.log(`generated labelled placeholder: ${folder}/cartoon.png (${width}x${height})`);
+  await sharp(Buffer.from(panelSvg(meta))).png({ compressionLevel: 9 }).toFile(out);
+  console.log(`generated editorial placeholder: ${folder}/cartoon.png (1200x1200)`);
   generated++;
 }
 
-console.log(generated === 0 ? "all cartoon placeholders already present" : `done: ${generated} labelled placeholder(s)`);
+console.log(generated === 0 ? "all cartoon placeholders already present" : `done: ${generated} editorial placeholder(s)`);

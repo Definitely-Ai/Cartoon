@@ -1,6 +1,8 @@
 # Placeholder artwork inventory
 
-Every `cartoon.png` currently in the dated folders is **placeholder art**, not approved or publishable final artwork. The files are deliberately labelled inside the image so they cannot be mistaken for commissioned cartoons.
+Every `cartoon.png` currently in the dated folders is **placeholder art**, not approved or publishable final artwork. The files carry a discreet label inside the image so they cannot be mistaken for commissioned cartoons.
+
+The current studies follow the visual direction in the canon: strictly monochrome editorial linework, textured gray ink wash, an established Wall Street barroom, and dry American business-magazine restraint. Their captions are intentionally absent from the image because the website typesets captions below the panel from `meta.json`.
 
 ## Organization
 
