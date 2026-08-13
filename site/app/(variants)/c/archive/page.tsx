@@ -9,7 +9,7 @@ import ArchiveWall from "./ArchiveWall";
 export const metadata: Metadata = {
   title: "The Archive",
   description:
-    "Every strip so far — single-panel business cartoons filed by date, with rubber-stamp filters by subject.",
+    "Every strip so far — single-panel barroom cartoons filed by date, with rubber-stamp filters by subject.",
 };
 
 export default function ArchivePage() {

@@ -16,9 +16,9 @@ export default function VariantCLayout({ children }: { children: ReactNode }) {
         <div className="vc-mast-row">
           <p className="vc-brand">
             {/* BRAND: replace when final */}
-            <Link href="/c">Flamingo &amp; Dog</Link>
+            <Link href="/c">The Swinging Door</Link>
           </p>
-          <p className="vc-tagline vc-underline">The business funny pages, strictly black &amp; white</p>
+          <p className="vc-tagline vc-underline">The barroom funny pages, strictly black &amp; white</p>
         </div>
         <BoardTabs />
       </header>
@@ -27,7 +27,7 @@ export default function VariantCLayout({ children }: { children: ReactNode }) {
 
       <footer className="vc-footer">
         <p>
-          {/* BRAND: replace when final */}© {new Date().getFullYear()} Flamingo &amp; Dog · All
+          {/* BRAND: replace when final */}© {new Date().getFullYear()} The Swinging Door · All
           characters and cartoons are property of the company.
         </p>
         <p className="vc-footer-desk">Published from the desk of the founder</p>

@@ -11,10 +11,11 @@ const productionUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
 export const metadata: Metadata = {
   metadataBase: new URL(productionUrl),
   title: {
-    default: "Flamingo & Dog", // BRAND: replace when final
-    template: "%s · Flamingo & Dog", // BRAND: replace when final
+    default: "The Swinging Door", // BRAND: replace when final
+    template: "%s · The Swinging Door", // BRAND: replace when final
   },
-  description: "Single-panel business cartoons, strictly black and white.",
+  description:
+    "A single-panel barroom cartoon about politics, markets, and American life — strictly black and white.",
   openGraph: {
     images: ["/og.png"],
   },

@@ -27,7 +27,7 @@ export default function VariantChooser() {
       <main id="content" className="chooser-main">
         <header className="chooser-header">
           {/* BRAND: replace when final */}
-          <h1 className="chooser-brand">Flamingo &amp; Dog</h1>
+          <h1 className="chooser-brand">The Swinging Door</h1>
           <p className="chooser-line">Choose your edition.</p>
         </header>
 
@@ -36,7 +36,7 @@ export default function VariantChooser() {
             <Link href="/a" className="chooser-card">
               <span className="specimen specimen-a" aria-hidden="true">
                 {/* BRAND: replace when final */}
-                <span className="spec-a-masthead">Flamingo &amp; Dog</span>
+                <span className="spec-a-masthead">The Swinging Door</span>
                 <span className="spec-a-rules"></span>
                 <span className="spec-a-dateline">Vol. 1 · Every morning · Price: one good laugh</span>
                 <span className="spec-a-body">
@@ -100,7 +100,7 @@ export default function VariantChooser() {
 
       <footer className="chooser-footer">
         {/* BRAND: replace when final */}
-        <p>© {new Date().getFullYear()} Flamingo &amp; Dog · All characters and cartoons are property of the company.</p>
+        <p>© {new Date().getFullYear()} The Swinging Door · All characters and cartoons are property of the company.</p>
         <p className="chooser-desk">Published from the desk of the founder</p>
       </footer>
     </div>

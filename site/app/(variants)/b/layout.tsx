@@ -13,7 +13,7 @@ export default function VariantBLayout({ children }: { children: React.ReactNode
       <header className="vb-masthead">
         <p className="vb-brand">
           {/* BRAND: replace when final */}
-          <Link href="/b">Flamingo &amp; Dog</Link>
+          <Link href="/b">The Swinging Door</Link>
         </p>
         <nav className="vb-nav" aria-label="Site sections">
           <Link href="/b">The Panel</Link>
@@ -28,7 +28,7 @@ export default function VariantBLayout({ children }: { children: React.ReactNode
       <footer className="vb-footer">
         <Fleuron />
         <p className="vb-footer-line">
-          {/* BRAND: replace when final */}© {new Date().getFullYear()} Flamingo &amp; Dog
+          {/* BRAND: replace when final */}© {new Date().getFullYear()} The Swinging Door
         </p>
         <p className="vb-footer-line">All characters and cartoons are property of the company.</p>
         <p className="vb-footer-desk vb-caps-tiny">Published from the desk of the founder</p>

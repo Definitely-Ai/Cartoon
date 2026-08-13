@@ -1,6 +1,6 @@
-<!-- BRAND: replace when final — monogram favicon -->
+<!-- BRAND: replace when final — monogram favicon for The Swinging Door -->
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
   <rect width="64" height="64" fill="#ffffff"/>
   <rect x="4" y="4" width="56" height="56" fill="none" stroke="#000000" stroke-width="6"/>
-  <text x="32" y="43" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-weight="bold" font-size="25" fill="#000000">F&amp;D</text>
+  <text x="32" y="43" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-weight="bold" font-size="26" fill="#000000">SD</text>
 </svg>

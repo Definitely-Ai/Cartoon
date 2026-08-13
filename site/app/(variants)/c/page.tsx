@@ -14,7 +14,7 @@ import Starburst from "./Starburst";
 export const metadata: Metadata = {
   title: "The Funny Pages",
   description:
-    "Today’s single-panel business cartoon — markets, money and retirement in black ink on white paper — plus the three strips before it.",
+    "Today’s strip from the Swinging Door — politics, markets and American life in black ink on white paper — plus the three strips before it.",
 };
 
 // Alternating, deliberately small tilts for the three teasers (unitless;

@@ -10,14 +10,15 @@ import { getCharacters } from "@/lib/canon";
 
 export const metadata: Metadata = {
   title: "Meet the Cast",
-  description: "The paper's two staff characters: a flamingo, a dog, and their positions on everything.",
+  description: "The regulars of the Swinging Door: Drew, Mango, and Abby behind the bar.",
 };
 
-// Masthead titles for the feature spread. Anyone the canon adds later
-// gets the general-assignment line.
+// Masthead titles for the feature spread, drawn from the series bible.
+// Anyone the canon adds later gets the general-assignment line.
 const POSITIONS: Record<string, string> = {
-  flamingo: "Senior Partner — Markets & Opinions",
-  dog: "Partner — Clients & Loyalty",
+  flamingo: "First Billing — Markets & Opinions",
+  dog: "First Billing — Stories & Loyalty",
+  abby: "Behind the Bar — Appears Sparingly",
 };
 
 export default function CharactersPage() {

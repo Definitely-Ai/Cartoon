@@ -11,16 +11,17 @@ import { getCharacters } from "@/lib/canon";
 export const metadata: Metadata = {
   title: "The Cast",
   description:
-    "The two professionals of the strip — one flamingo, one dog — with model sheets and bios as the canon gets written.",
+    "The regulars of the Swinging Door — Drew, Mango, and Abby — with model sheets and bios as the canon gets written.",
 };
 
-const BILLING = ["Top billing", "Second billing"];
+const BILLING = ["Top billing", "Top billing", "Behind the bar"];
 
 // Placeholder bios in brand voice, used while canon bios are null.
 const PLACEHOLDER_BIOS: Record<string, string> = {
   flamingo:
-    "The tall one. Sees opportunity everywhere, reads the prospectus nowhere, and has never once doubted himself in print. His official biography is still being written with the founder.",
-  dog: "The sensible one. Keeps the books balanced, the receipts filed, and one skeptical eyebrow permanently raised at his partner’s latest sure thing. His official biography is still being written with the founder.",
+    "The tall one. Bowtie, martini, three olives, and a raised eyebrow for every institution on the TV. His official biography is still being written with the founder.",
+  dog: "The earnest one. Flag on the lapel, old fashioned in paw, and a story about his grandfather queued for every occasion. His official biography is still being written with the founder.",
+  abby: "The bartender. Wise, brief, and right. She appears rarely, which is how she likes it. Her official biography is still being written with the founder.",
 };
 
 export default function CharactersPage() {
@@ -32,7 +33,7 @@ export default function CharactersPage() {
         <h1 className="vc-sechead">
           <span>The Cast</span>
         </h1>
-        <p className="vc-page-intro">Two professionals. One of them is a flamingo.</p>
+        <p className="vc-page-intro">The regulars. Two on stools, one behind the bar.</p>
       </header>
 
       <ul className="vc-cast-row">

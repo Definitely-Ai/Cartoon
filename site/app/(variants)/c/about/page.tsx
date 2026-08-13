@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   // BRAND: replace when final
   title: "About",
   description:
-    "About Flamingo & Dog — single-panel business cartoons from the desk of a retired financial advisor.",
+    "About The Swinging Door — single-panel barroom cartoons about politics, markets, and American life.",
 };
 
 export default function AboutPage() {
@@ -27,16 +27,17 @@ export default function AboutPage() {
           <span className="vc-tape vc-tape-right" aria-hidden="true" />
           <p className="vc-about-copy">
             {/* BRAND: replace when final */}
-            Flamingo &amp; Dog publishes one cartoon at a time: a single panel, black ink on white
-            paper, about the ordinary comedy of money. Markets, meetings, quarterly forecasts, the
-            client who is certain that this time is different — the same material the financial
-            pages print daily, taken exactly as seriously as it deserves.
+            The Swinging Door runs one strip at a time: a single panel, black ink wash on white
+            paper, from a corner bar where the news plays on a small TV and receives exactly the
+            respect it has earned. Drew the flamingo brings the skepticism, Mango the golden
+            retriever brings the stories, and Abby the bartender brings the last word — sparingly,
+            which is why it works.
           </p>
           <p className="vc-about-copy">
             The founder spent four decades as a financial advisor, which is to say four decades of
             explaining, patiently and for a modest fee, that nobody knows anything for certain. On
-            retiring he concluded that the funniest thing about money is everything, and engaged a
-            flamingo and a dog to put that finding in print. They have yet to disagree with him.
+            retiring he concluded that the funniest thing about money is everything, and opened a
+            bar on paper to prove it. The regulars have yet to disagree with him.
           </p>
           <p className="vc-about-sign">New strips run regularly. Tell a friend who owns bonds.</p>
         </article>

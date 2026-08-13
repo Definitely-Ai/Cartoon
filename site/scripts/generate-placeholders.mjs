@@ -71,9 +71,9 @@ if (!fs.existsSync(ogOut) || force) {
   <rect x="24" y="24" width="1152" height="582" fill="none" stroke="#000000" stroke-width="6"/>
   <line x1="120" y1="150" x2="1080" y2="150" stroke="#000000" stroke-width="3"/>
   <line x1="120" y1="158" x2="1080" y2="158" stroke="#000000" stroke-width="1"/>
-  <text x="600" y="330" text-anchor="middle" font-family="serif" font-size="110" font-weight="bold" letter-spacing="4" fill="#000000">FLAMINGO &amp; DOG</text>
-  <text x="600" y="430" text-anchor="middle" font-family="monospace" font-size="30" letter-spacing="4" fill="#000000">SINGLE-PANEL BUSINESS CARTOONS</text>
-  <text x="600" y="478" text-anchor="middle" font-family="monospace" font-size="30" letter-spacing="4" fill="#000000">STRICTLY BLACK AND WHITE</text>
+  <text x="600" y="330" text-anchor="middle" font-family="serif" font-size="96" font-weight="bold" letter-spacing="4" fill="#000000">THE SWINGING DOOR</text>
+  <text x="600" y="430" text-anchor="middle" font-family="monospace" font-size="28" letter-spacing="4" fill="#000000">POLITICS · MARKETS · AMERICAN LIFE</text>
+  <text x="600" y="478" text-anchor="middle" font-family="monospace" font-size="28" letter-spacing="4" fill="#000000">A BARROOM CARTOON, STRICTLY BLACK AND WHITE</text>
   <line x1="120" y1="520" x2="1080" y2="520" stroke="#000000" stroke-width="1"/>
   <line x1="120" y1="528" x2="1080" y2="528" stroke="#000000" stroke-width="3"/>
 </svg>`;

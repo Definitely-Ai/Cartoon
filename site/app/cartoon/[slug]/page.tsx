@@ -42,8 +42,8 @@ export default async function CartoonPermalink({ params }: { params: Promise<{ s
     <div className={`permalink ${newsSerif.variable}`}>
       <header className="permalink-masthead">
         {/* BRAND: replace when final */}
-        <p className="permalink-brand">Flamingo &amp; Dog</p>
-        <p className="permalink-tagline">Single-panel business cartoons, strictly black and white</p>
+        <p className="permalink-brand">The Swinging Door</p>
+        <p className="permalink-tagline">A single-panel barroom cartoon — politics, markets, and American life</p>
       </header>
 
       <main id="content">
@@ -82,7 +82,7 @@ export default async function CartoonPermalink({ params }: { params: Promise<{ s
 
       <footer className="permalink-footer">
         {/* BRAND: replace when final */}
-        <p>© {new Date().getFullYear()} Flamingo &amp; Dog · All characters and cartoons are property of the company.</p>
+        <p>© {new Date().getFullYear()} The Swinging Door · All characters and cartoons are property of the company.</p>
         <p className="permalink-desk">Published from the desk of the founder</p>
       </footer>
     </div>

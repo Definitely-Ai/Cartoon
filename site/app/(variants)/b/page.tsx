@@ -13,7 +13,7 @@ import Fleuron from "./Fleuron";
 export const metadata: Metadata = {
   title: "The Panel",
   description:
-    "One single-panel business cartoon at a time, in black and white. A flamingo, a dog, and the long slow comedy of money.",
+    "One single-panel cartoon at a time, in black and white. Drew, Mango, and the long slow comedy of American life.",
 };
 
 export default function HomePage() {

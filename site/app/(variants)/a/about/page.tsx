@@ -6,7 +6,8 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "About the Paper",
-  description: "A very small newspaper about money, published daily from the desk of a retired financial advisor.",
+  description:
+    "A very small newspaper reporting from one bar stool: politics, markets, and American life, in black-and-white ink wash.",
 };
 
 export default function AboutPage() {
@@ -20,17 +21,20 @@ export default function AboutPage() {
       <article className="va-about">
         <p className="va-about-body">
           {/* BRAND: replace when final */}
-          Flamingo &amp; Dog is a very small newspaper with a very narrow beat: money, and the things
-          it does to otherwise sensible people. Each edition is one panel, drawn in black and white,
-          concerning markets, meetings, retirement, and clients who would like both perfect safety
-          and forty percent a year. The cast is a flamingo and a dog. One of them is usually right,
-          and it is not always the same one.
+          The Swinging Door is a very small newspaper with one bar on its beat. Each edition is one
+          panel, drawn in black-and-white ink wash, filed from inside the Swinging Door — a classic
+          American bar where the TV runs the news, the chalkboard runs the specials, and the
+          regulars run commentary on politics, markets, and American life. The cast: Drew, a
+          flamingo with a bowtie and a martini; Mango, a golden retriever with a flag on his lapel
+          and a story already underway; and Abby behind the bar, who appears rarely and is right
+          constantly.
         </p>
         <p className="va-about-body">
           The founder spent the better part of four decades as a financial advisor, which is long
-          enough to notice that the funniest thing about money is everything. He has since retired —
-          in the sense that he now draws the meetings instead of billing for them. The paper goes out
-          from his desk, one panel at a time. Corrections are printed rarely, and regretted always.
+          enough to notice that the funniest thing about money is everything, and that most of it
+          is on the news by six. He has since retired — in the sense that he now draws the
+          conversation instead of billing for it. The paper goes out from his desk, one panel at a
+          time. Corrections are printed rarely, and regretted always.
         </p>
         <p className="va-thirty" aria-hidden="true">
           — 30 —

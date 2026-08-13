@@ -7,7 +7,7 @@ import { getCharacters } from "@/lib/canon";
 
 export const metadata: Metadata = {
   title: "Dramatis Personae",
-  description: "The cast of the panel — a flamingo and a dog — in order of billing.",
+  description: "The cast of the panel — Drew, Mango, and Abby — in order of billing.",
 };
 
 const ORDINALS = ["First", "Second", "Third", "Fourth", "Fifth"];
@@ -17,8 +17,9 @@ const ORDINALS = ["First", "Second", "Third", "Fourth", "Fifth"];
 // members get a tailored line; anyone added later gets the general notice.
 const PLACEHOLDER_BIOS: Record<string, string> = {
   flamingo:
-    "The flamingo's formal biography is still being taken down at the founder's desk, where it is reportedly running long. Until the wording is settled, the record shows one flamingo, strictly black and white, with a standing interest in other people's money.",
-  dog: "The dog's formal biography awaits the founder's sign-off, and the dog is in no hurry. For now the file holds a single note: good with clients, better at lunch.",
+    "Drew's formal biography is still being taken down at the founder's desk, where it is reportedly running long. Until the wording is settled, the record shows one flamingo, one bowtie, one martini with three olives, and a standing interest in the absurdity of institutions.",
+  dog: "Mango's formal biography awaits the founder's sign-off, and Mango is in no hurry — he is mid-story. For now the file holds a single note: golden retriever, flag on the lapel, old fashioned in hand, believes in the country and reads the fine print anyway.",
+  abby: "Abby's formal biography is short by design: westie, bartender, wise. She appears rarely, pours precisely, and has already heard the end of whatever argument is currently underway.",
 };
 
 function placeholderBio(id: string): string {

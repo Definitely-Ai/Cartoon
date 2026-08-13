@@ -16,7 +16,7 @@ export default function VariantALayout({ children }: { children: ReactNode }) {
         <nav className="va-strip" aria-label="Sections">
           <Link href="/a" className="va-strip-mark" aria-label="Front page">
             {/* BRAND: replace when final */}
-            F&amp;D
+            SD
           </Link>
           <ul className="va-strip-list">
             <li>
@@ -42,10 +42,10 @@ export default function VariantALayout({ children }: { children: ReactNode }) {
         <footer className="va-footer">
           <p className="va-folio">
             {/* BRAND: replace when final */}
-            Flamingo &amp; Dog Publishing Co. — All Rights Reserved
+            The Swinging Door Publishing Co. — All Rights Reserved
           </p>
           <p className="va-legal va-onum">
-            {/* BRAND: replace when final */}© {new Date().getFullYear()} Flamingo &amp; Dog · All characters
+            {/* BRAND: replace when final */}© {new Date().getFullYear()} The Swinging Door · All characters
             and cartoons are property of the company.
           </p>
           <p className="va-desk">Published from the desk of the founder</p>

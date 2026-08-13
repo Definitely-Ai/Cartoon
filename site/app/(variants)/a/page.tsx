@@ -13,7 +13,7 @@ import { dayOfYear, formatDateAP, formatDateline } from "@/lib/format";
 export const metadata: Metadata = {
   title: "Front Page",
   description:
-    "Today's single-panel business cartoon, printed in black and white, plus the forecast and the classified archive.",
+    "Today's single-panel barroom cartoon, printed in black and white, plus the forecast and the classified archive.",
 };
 
 // Five market outlooks in house voice. Rotation is dayOfYear % 5.
@@ -38,7 +38,7 @@ export default function FrontPage() {
       <header className="va-masthead">
         <h1 className="va-masthead-title va-ink-spread">
           {/* BRAND: replace when final */}
-          Flamingo &amp; Dog
+          The Swinging Door
         </h1>
         <p className="va-masthead-motto">All the gags that are fit to print.</p>
         <p className="va-dateline va-onum">
