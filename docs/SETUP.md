@@ -27,7 +27,13 @@ npm run placeholders          # fills in cartoon.png for any folder missing one
 node scripts/generate-placeholders.mjs --force   # regenerates all of them
 ```
 
-## Vercel import, in order
+## Vercel: zero-config deploys (already wired)
+
+The repo root ships a `vercel.json` with a `builds` entry pointing at `site/package.json`. That lets Vercel build the Next.js app from the `/site` subdirectory **with no dashboard settings at all** — import the repo, deploy, done. Every push then deploys automatically (production from the default branch, previews for other branches). The full repo is present during the build, so the `/cartoons` and `/canon` reads just work.
+
+If you'd rather use project settings instead (Vercel's dashboard warns that `builds` in `vercel.json` overrides them), delete `vercel.json` and follow the import steps below — both paths are equivalent.
+
+## Vercel import via project settings (alternative)
 
 1. Vercel dashboard → **Add New… → Project** → import the `Cartoon` GitHub repo.
 2. In the project settings during import, find **Root Directory** and set it to **`site`**.
