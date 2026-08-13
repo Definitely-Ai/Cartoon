@@ -1,0 +1,582 @@
+/* Variant B — "The Gag Panel"
+   Mid-century magazine single-panel cartoon; gallery-quiet sophistication.
+   Pristine paper white, true black ink, one hairline rule used sparingly.
+   The restraint IS the texture: no grain, no noise, no shadows except the
+   archive hover's soft ink lift.
+
+   Every rule is scoped under .variant-b (variant stylesheets coexist after
+   client-side navigation). Keyframes cannot be scoped, so they carry the
+   vb- prefix instead.
+
+   Structure:
+     1. Tokens — modular type scale, rhythm, families, tracking
+     2. Base — wrapper, body copy, links
+     3. Utility caps — the letterspaced small-caps voice
+     4. Masthead + nav
+     5. Fleuron divider
+     6. Footer
+     7. Home — the cover moment
+     8. Signature motion (the ONLY orchestrated animation)
+     9. Previously in the Panel (teaser row)
+    10. Archive — contact sheet, filter, folio
+    11. Characters — dramatis personae plates
+    12. About
+    13. Print — home page as one clean Letter plate */
+
+/* ---------------------------------------------------------------- 1. Tokens */
+
+.variant-b {
+  /* Modular scale: major third (×1.25) on an 18px base. Every font-size in
+     this variant references a step — no one-off sizes anywhere. */
+  --vb-step--2: 0.72rem; /* folio lines, tiny utility */
+  --vb-step--1: 0.9rem; /* utility caps, datelines, nav */
+  --vb-step-0: 1.125rem; /* body */
+  --vb-step-1: 1.4063rem; /* captions, lead lines */
+  --vb-step-2: 1.7578rem; /* brand, section display */
+  --vb-step-3: 2.1973rem; /* page titles (narrow viewports) */
+  --vb-step-4: 2.7466rem; /* page titles (wide viewports) */
+
+  /* Baseline rhythm: one line of body copy (1.5 × step 0). All vertical
+     margins are multiples or simple fractions of this. */
+  --vb-rhythm: 1.6875rem;
+
+  --vb-display: var(--font-display-serif), Georgia, serif;
+  --vb-text: var(--font-text-serif), Georgia, serif;
+
+  /* Tracking pairs: negative on large display, positive on small caps. */
+  --vb-track-display: -0.015em;
+  --vb-track-caps: 0.16em;
+
+  /* The only shadow in the variant: ink at low opacity, archive hover only. */
+  --vb-ink-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+/* ------------------------------------------------------------------ 2. Base */
+
+.variant-b {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+  background: var(--paper-white);
+  color: var(--ink);
+  font-family: var(--vb-text);
+  font-size: var(--vb-step-0);
+  line-height: 1.5;
+}
+
+.variant-b > main {
+  flex: 1;
+  width: 100%;
+  max-width: 70rem;
+  margin-inline: auto;
+  padding-inline: clamp(1rem, 5vw, 3rem);
+  padding-block: calc(var(--vb-rhythm) * 1.5) calc(var(--vb-rhythm) * 2);
+}
+
+.variant-b a {
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+
+/* Shared page-head treatment for archive / characters / about. */
+.variant-b .vb-page-title {
+  font-family: var(--vb-display);
+  font-weight: 400;
+  font-size: var(--vb-step-3);
+  letter-spacing: var(--vb-track-display);
+  line-height: 1.15;
+  text-align: center;
+}
+
+@media (min-width: 48rem) {
+  .variant-b .vb-page-title {
+    font-size: var(--vb-step-4);
+  }
+}
+
+.variant-b .vb-page-head {
+  text-align: center;
+  margin-bottom: calc(var(--vb-rhythm) * 2);
+}
+
+.variant-b .vb-page-sub {
+  margin-top: calc(var(--vb-rhythm) * 0.5);
+}
+
+/* ---------------------------------------------------------- 3. Utility caps */
+
+/* The variant's small voice: letterspaced uppercase Crimson Pro. Positive
+   tracking + uppercase ONLY at these small sizes, never on display type. */
+.variant-b .vb-caps,
+.variant-b .vb-caps-tiny {
+  font-family: var(--vb-text);
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: var(--vb-track-caps);
+  text-transform: uppercase;
+}
+
+.variant-b .vb-caps {
+  font-size: var(--vb-step--1);
+}
+
+.variant-b .vb-caps-tiny {
+  font-size: var(--vb-step--2);
+}
+
+/* --------------------------------------------------------- 4. Masthead + nav */
+
+.variant-b .vb-masthead {
+  text-align: center;
+  padding: calc(var(--vb-rhythm) * 1.25) 1rem var(--vb-rhythm);
+  /* The variant's one hairline rule, worn like a masthead should wear it. */
+  border-bottom: 1px solid var(--ink);
+}
+
+.variant-b .vb-brand {
+  font-family: var(--vb-display);
+  font-weight: 400;
+  font-size: var(--vb-step-2);
+  letter-spacing: var(--vb-track-display);
+  line-height: 1.15;
+}
+
+.variant-b .vb-brand a {
+  text-decoration: none;
+}
+
+.variant-b .vb-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: clamp(1.25rem, 4vw, 2.75rem);
+  row-gap: calc(var(--vb-rhythm) * 0.25);
+  margin-top: calc(var(--vb-rhythm) * 0.5);
+}
+
+.variant-b .vb-nav a {
+  font-size: var(--vb-step--2);
+  font-weight: 600;
+  letter-spacing: var(--vb-track-caps);
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.variant-b .vb-nav a:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.35em;
+  text-decoration-thickness: 1px;
+}
+
+/* -------------------------------------------------------- 5. Fleuron divider */
+
+.variant-b .vb-divider {
+  display: flex;
+  justify-content: center;
+  color: var(--ink);
+  margin-block: calc(var(--vb-rhythm) * 2);
+}
+
+/* ---------------------------------------------------------------- 6. Footer */
+
+.variant-b .vb-footer {
+  text-align: center;
+  padding: 0 1rem calc(var(--vb-rhythm) * 1.5);
+}
+
+.variant-b .vb-footer .vb-divider {
+  margin-block: 0 var(--vb-rhythm);
+}
+
+.variant-b .vb-footer-line {
+  font-size: var(--vb-step--1);
+  line-height: 1.5;
+}
+
+.variant-b .vb-footer-desk {
+  margin-top: calc(var(--vb-rhythm) * 0.5);
+}
+
+/* ------------------------------------------------- 7. Home — the cover moment */
+
+.variant-b .vb-issue {
+  text-align: center;
+  margin-bottom: var(--vb-rhythm);
+}
+
+.variant-b .vb-cover {
+  max-width: 40rem; /* the plate: centered, ~640px */
+  margin-inline: auto;
+  text-align: center;
+}
+
+.variant-b .vb-cover-title {
+  /* Small caps above the plate — deliberately quiet for an h1. */
+  font-size: var(--vb-step--1);
+  font-weight: 600;
+  letter-spacing: var(--vb-track-caps);
+  text-transform: uppercase;
+  margin-bottom: calc(var(--vb-rhythm) * 0.75);
+}
+
+/* The framed plate: thin black frame, generous white matte that tightens on
+   small screens via clamp. */
+.variant-b .vb-plate-frame {
+  border: 2px solid var(--ink);
+  background: var(--paper-white);
+  padding: clamp(1rem, 5vw, 2.75rem);
+}
+
+.variant-b .vb-plate-frame img {
+  width: 100%;
+  height: auto;
+  background: var(--paper-white); /* paper-white loading placeholder */
+}
+
+.variant-b .vb-caption {
+  font-family: var(--vb-text);
+  font-style: italic; /* Crimson Pro's true italics — the gag-panel voice */
+  font-size: var(--vb-step-1);
+  line-height: 1.4;
+  max-width: 34ch;
+  margin: var(--vb-rhythm) auto 0;
+}
+
+.variant-b .vb-plate-folio {
+  margin-top: calc(var(--vb-rhythm) * 0.75);
+}
+
+.variant-b .vb-prev-link {
+  margin-top: var(--vb-rhythm);
+}
+
+.variant-b .vb-prev-link a {
+  font-size: var(--vb-step--2);
+  font-weight: 600;
+  letter-spacing: var(--vb-track-caps);
+  text-transform: uppercase;
+  text-decoration: none;
+  border-bottom: 1px solid var(--ink);
+  padding-bottom: 0.15em;
+}
+
+/* -------------------------------------------------------- 8. Signature motion */
+
+/* The ONLY orchestrated animation in the variant: the home plate fades and
+   settles into its frame once, on load. Reduced-motion users get none. */
+@media (prefers-reduced-motion: no-preference) {
+  .variant-b .vb-plate-art {
+    animation: vb-settle 600ms ease-out 1 backwards;
+  }
+}
+
+@keyframes vb-settle {
+  from {
+    opacity: 0;
+    transform: translateY(-2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ------------------------------------------------ 9. Previously in the Panel */
+
+.variant-b .vb-previously {
+  text-align: center;
+}
+
+.variant-b .vb-previously-title {
+  font-size: var(--vb-step--1);
+  font-weight: 600;
+  letter-spacing: var(--vb-track-caps);
+  text-transform: uppercase;
+  margin-bottom: var(--vb-rhythm);
+}
+
+.variant-b .vb-previously-row {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(0.75rem, 3vw, 2rem);
+  max-width: 44rem;
+  margin-inline: auto;
+}
+
+/* Shared thumbnail anatomy (teasers + archive): hairline frame, small white
+   matte, square window so mixed aspect ratios sit uniformly, like a contact
+   sheet. */
+.variant-b .vb-thumb-link {
+  display: block;
+  text-decoration: none;
+}
+
+.variant-b .vb-thumb-frame {
+  display: block;
+  border: 1px solid var(--ink);
+  background: var(--paper-white);
+  padding: clamp(0.375rem, 1.5vw, 0.75rem);
+}
+
+.variant-b .vb-thumb-window {
+  display: block;
+  aspect-ratio: 1 / 1;
+  background: var(--paper-white);
+}
+
+.variant-b .vb-thumb-window img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: var(--paper-white); /* paper-white loading placeholder */
+}
+
+.variant-b .vb-thumb-date {
+  display: block;
+  margin-top: calc(var(--vb-rhythm) * 0.4);
+}
+
+/* At phone widths the teaser cells run ~100px; ease the tracking (still
+   positive) so an AP date holds one line. */
+@media (max-width: 30rem) {
+  .variant-b .vb-thumb-date {
+    letter-spacing: 0.08em;
+  }
+}
+
+/* ---------------------------------------- 10. Archive — contact sheet + folio */
+
+.variant-b .vb-filter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: baseline;
+  column-gap: clamp(0.875rem, 2.5vw, 1.75rem);
+  row-gap: calc(var(--vb-rhythm) * 0.35);
+  margin-bottom: calc(var(--vb-rhythm) * 2);
+}
+
+.variant-b .vb-filter-label {
+  font-size: var(--vb-step--2);
+  font-weight: 600;
+  letter-spacing: var(--vb-track-caps);
+  text-transform: uppercase;
+}
+
+.variant-b .vb-filter-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: var(--vb-text);
+  font-size: var(--vb-step--2);
+  font-weight: 600;
+  letter-spacing: var(--vb-track-caps);
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.variant-b .vb-filter-btn:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.35em;
+  text-decoration-thickness: 1px;
+}
+
+.variant-b .vb-filter-btn[aria-pressed="true"] {
+  text-decoration: underline;
+  text-underline-offset: 0.35em;
+  text-decoration-thickness: 1px;
+}
+
+.variant-b .vb-sheet {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(10rem, 40vw), 1fr));
+  gap: clamp(1rem, 3vw, 2rem);
+}
+
+.variant-b .vb-sheet figcaption {
+  text-align: center;
+}
+
+/* The 2px lift: transform + soft shadow-as-ink; the transition itself only
+   runs when motion is allowed. Nothing bouncier. */
+@media (prefers-reduced-motion: no-preference) {
+  .variant-b .vb-sheet .vb-thumb-frame {
+    transition:
+      transform 160ms ease-out,
+      box-shadow 160ms ease-out;
+  }
+}
+
+.variant-b .vb-sheet .vb-thumb-link:hover .vb-thumb-frame,
+.variant-b .vb-sheet .vb-thumb-link:focus-visible .vb-thumb-frame {
+  transform: translateY(-2px);
+  box-shadow: var(--vb-ink-shadow);
+}
+
+.variant-b .vb-empty-note {
+  text-align: center;
+  font-style: italic;
+  margin-block: calc(var(--vb-rhythm) * 2);
+}
+
+.variant-b .vb-folio {
+  text-align: center;
+  margin-top: calc(var(--vb-rhythm) * 2);
+}
+
+/* ------------------------------------- 11. Characters — dramatis personae */
+
+.variant-b .vb-cast {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: calc(var(--vb-rhythm) * 2.5);
+  max-width: 60rem;
+  margin-inline: auto;
+}
+
+@media (min-width: 44rem) {
+  .variant-b .vb-cast {
+    grid-template-columns: 1fr 1fr;
+    column-gap: clamp(2rem, 6vw, 5rem);
+  }
+}
+
+.variant-b .vb-cast-member {
+  text-align: center;
+}
+
+.variant-b .vb-cast-name {
+  font-family: var(--vb-display);
+  font-weight: 400;
+  font-size: var(--vb-step-2);
+  letter-spacing: var(--vb-track-display);
+  line-height: 1.15;
+}
+
+.variant-b .vb-cast-billing {
+  margin-top: calc(var(--vb-rhythm) * 0.35);
+}
+
+.variant-b .vb-cast-bio {
+  max-width: 38ch;
+  margin: var(--vb-rhythm) auto 0;
+  text-align: center;
+}
+
+.variant-b .vb-sheets {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(0.75rem, 2vw, 1.25rem);
+  margin-top: calc(var(--vb-rhythm) * 1.5);
+}
+
+.variant-b .vb-sheet-slot {
+  text-align: center;
+}
+
+.variant-b .vb-sheet-slot-frame {
+  display: block;
+  border: 1px solid var(--ink);
+  background: var(--paper-white);
+  padding: clamp(0.375rem, 1.5vw, 0.75rem);
+}
+
+.variant-b .vb-sheet-slot-window {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1 / 1;
+  background: var(--paper-white);
+}
+
+.variant-b .vb-sheet-slot-window img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: var(--paper-white); /* paper-white loading placeholder */
+}
+
+.variant-b .vb-sheet-slot-empty {
+  padding-inline: 0.75rem;
+}
+
+.variant-b .vb-sheet-slot figcaption {
+  margin-top: calc(var(--vb-rhythm) * 0.4);
+}
+
+/* ----------------------------------------------------------------- 12. About */
+
+.variant-b .vb-prose {
+  max-width: 56ch;
+  margin-inline: auto;
+}
+
+.variant-b .vb-prose p + p {
+  margin-top: var(--vb-rhythm);
+}
+
+.variant-b .vb-about-close {
+  text-align: center;
+  margin-top: calc(var(--vb-rhythm) * 2);
+}
+
+/* ------------------------------------------- 13. Print — one clean Letter page */
+
+/* Printing the home page yields one plate: small one-line masthead, title,
+   the framed cartoon large and centered, caption in italic, date. Nav,
+   teasers, footer, and all motion disappear. Black on white — which is the
+   site anyway. */
+@media print {
+  .variant-b .vb-nav,
+  .variant-b .vb-prev-link,
+  .variant-b .vb-divider,
+  .variant-b .vb-previously,
+  .variant-b .vb-footer {
+    display: none;
+  }
+
+  .variant-b {
+    background: #fff;
+    color: #000;
+  }
+
+  .variant-b .vb-masthead {
+    padding: 0 0 calc(var(--vb-rhythm) * 0.5);
+  }
+
+  .variant-b .vb-brand {
+    font-size: var(--vb-step-1);
+  }
+
+  .variant-b > main {
+    padding: var(--vb-rhythm) 0 0;
+  }
+
+  .variant-b .vb-cover {
+    break-inside: avoid;
+    max-width: 6.5in;
+  }
+
+  .variant-b .vb-plate-frame {
+    padding: 0.375in;
+  }
+
+  /* Matches the specificity of the screen rule (.vb-plate-frame img) so the
+     print sizing actually wins: width goes auto, both max constraints hold,
+     and the aspect ratio survives. display:block + auto margins center it. */
+  .variant-b .vb-plate-frame img {
+    animation: none;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 5.5in;
+    margin-inline: auto;
+  }
+}
