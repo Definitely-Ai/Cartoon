@@ -30,12 +30,12 @@ The owner's side, at `/backroom`, behind a login (the speakeasy asks: "What's th
 
 **Built and verified:**
 - Repository structure, canon documents (filled from the founder's series bible: cast, settings, comedy rules, boundaries, creation workflow), and the publishing template with a 90-second how-to.
-- Six placeholder cartoons with series-consistent captions (mixed 4:5 and square, generated B&W via `site/scripts/generate-placeholders.mjs` — script kept for future placeholders).
+- Six clearly labelled, canon-informed mock cartoons with series-consistent captions (mixed 4:5 and square, generated in B&W via `site/scripts/generate-placeholders.mjs`; see the [placeholder artwork inventory](cartoons/PLACEHOLDER-ART.md)).
 - The full static site: validated data layer (bad `meta.json` fails the build naming the folder), three variants, chooser, permalinks with print stylesheet, view-transition page turns, `prefers-reduced-motion` support throughout.
 - Zero-config Vercel deploys via the root `vercel.json`; every push to the default branch deploys automatically.
 
 **Pending (waiting on the founder):**
-- Real artwork — every panel currently reads "ARTWORK PENDING."
+- Real artwork — every panel is visibly labelled placeholder art and must be replaced before publication.
 - Model sheets for Drew, Mango, and Abby (drop PNGs beside each `DESCRIPTION.md`; the characters pages pick them up automatically).
 - Line-weight/style decisions flagged "pending founder sign-off" in the style bible, and the Example Approved Gags slots in the comedy bible.
 - Final brand confirmation — every branded string is greppable via `BRAND:` for a clean find-and-replace if "The Swinging Door" changes. <!-- BRAND: replace when final -->
