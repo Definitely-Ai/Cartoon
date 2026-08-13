@@ -64,11 +64,21 @@
 }
 
 .permalink-figure {
+  position: relative;
   margin: 2rem auto 0;
   max-width: 40rem;
   border: 1px solid var(--ink);
-  padding: clamp(0.75rem, 4vw, 1.75rem);
+  padding: clamp(0.9rem, 4vw, 1.9rem);
   background: var(--paper-white);
+}
+
+/* Inner hairline: the classic double mount of a framed print. */
+.permalink-figure::before {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  border: 1px solid var(--ink);
+  pointer-events: none;
 }
 
 .permalink-image {

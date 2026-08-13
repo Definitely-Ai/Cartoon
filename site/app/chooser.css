@@ -6,7 +6,10 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background: var(--paper-cream);
+  background-color: var(--paper-cream);
+  /* The same feTurbulence paper grain the print variants wear, barely-there:
+     the proof sheet is itself a printed thing. */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='2'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23g)' opacity='0.035'/%3E%3C/svg%3E");
   color: var(--ink);
   font-family: var(--font-news-serif), Georgia, serif;
 }
@@ -29,18 +32,42 @@
   padding: clamp(2rem, 5vw, 3.5rem) 1.25rem 3rem;
 }
 
+.chooser-eyebrow {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  margin-bottom: 0.9rem;
+}
+
 .chooser-brand {
   font-size: clamp(2.1rem, 6vw, 3.75rem);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.14em;
   line-height: 1.1;
+  /* Ink spread: the title reads pressed into the sheet, not rendered on it. */
+  text-shadow:
+    0.3px 0 0 rgba(0, 0, 0, 0.35),
+    -0.3px 0 0 rgba(0, 0, 0, 0.35);
 }
 
 .chooser-line {
   margin-top: 0.9rem;
   font-style: italic;
   font-size: clamp(1rem, 2vw, 1.2rem);
+  padding-bottom: 1.4rem;
+  border-bottom: 2px solid var(--ink);
+  position: relative;
+}
+
+/* The Ochs double rule closing the header. */
+.chooser-line::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -5px;
+  border-bottom: 1px solid var(--ink);
 }
 
 /* — Grid of specimens — */
@@ -67,11 +94,17 @@
   background: var(--paper-white);
 }
 
-/* Ink inversion on hover — a print move, not a motion move. */
+/* Ink inversion + a hard offset ink shadow on hover — print moves, not
+   motion moves (no transition; the state simply changes, like a stamp). */
 .chooser-card:hover .chooser-label,
 .chooser-card:focus-visible .chooser-label {
   background: var(--ink);
   color: var(--paper-white);
+}
+
+.chooser-card:hover,
+.chooser-card:focus-visible {
+  box-shadow: 6px 6px 0 0 var(--ink);
 }
 
 .chooser-label {

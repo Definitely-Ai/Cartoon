@@ -27,6 +27,7 @@ export default function VariantChooser() {
       className={`chooser ${newsSerif.variable} ${blackletter.variable} ${newsCondensed.variable} ${displaySerif.variable} ${textSerif.variable} ${comicSlab.variable}`}
     >
       <header className="chooser-header">
+        <p className="chooser-eyebrow">Proof sheet · Three editions of one strip</p>
         {/* BRAND: replace when final */}
         <h1 className="chooser-brand">The Swinging Door</h1>
         <p className="chooser-line">Choose your edition.</p>
