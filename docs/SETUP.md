@@ -52,15 +52,14 @@ Vercel dashboard → the project → **Deployments** tab → the ⋯ menu on the
 
 The staff side lives at **`/backroom`**: the owner logs in, reviews each day's candidate cartoons on the light table, and taps RUN IT — which commits the winner into `/cartoons` on `main` (one atomic commit via the GitHub API), and Vercel redeploys the public site automatically.
 
-It needs three environment variables in the Vercel project (Settings → Environment Variables), then a redeploy:
+It needs two environment variables in the Vercel project (Settings → Environment Variables), then a redeploy:
 
 | Variable | What it is |
 | --- | --- |
 | `ADMIN_PASSWORD` | The word at the door — the owner's login password. Pick a long one. |
-| `AUTH_SECRET` | Any long random string (e.g. `openssl rand -hex 32`). Signs the login cookie; rotating it logs every device out. |
-| `GITHUB_TOKEN` | A [fine-grained personal access token](https://github.com/settings/personal-access-tokens/new) scoped to **this repo only** with **Contents: Read and write**. Lets the publish button commit. |
+| `GITHUB_TOKEN` | A [fine-grained personal access token](https://github.com/settings/personal-access-tokens/new) scoped to **this repo only** with **Contents: Read and write**. Lets the publish button commit. Fine-grained tokens expire (a year at most) — when publishing someday fails with a permissions error, mint a fresh token and replace this value. |
 
-Optional: `GITHUB_REPO` (defaults to `Definitely-Ai/Cartoon`) if the repo ever moves.
+Optional extras: `AUTH_SECRET` (any long random string; signs the login cookie — when unset it is derived from the password, and setting it separately lets you log every device out without changing the password) and `GITHUB_REPO` (defaults to `Definitely-Ai/Cartoon`, for if the repo ever moves).
 
 ### The daily options contract (for the art-generating agent)
 

@@ -7,6 +7,26 @@
 export const BACKROOM_COOKIE = "sd_backroom";
 const DOOR_PHRASE = "backroom-door-v1";
 
+/**
+ * The cookie-signing secret. AUTH_SECRET when set; otherwise derived from
+ * ADMIN_PASSWORD. For a single-owner site the derivation adds no attack
+ * surface — anyone who knows the password can simply log in — and it keeps
+ * setup to two env vars. Set AUTH_SECRET explicitly to rotate sessions
+ * independently of the password.
+ */
+export async function activeSecret(): Promise<string | null> {
+  if (process.env.AUTH_SECRET) return process.env.AUTH_SECRET;
+  const password = process.env.ADMIN_PASSWORD;
+  if (!password) return null;
+  const digest = await crypto.subtle.digest(
+    "SHA-256",
+    new TextEncoder().encode(`sd-derived-secret:${password}`)
+  );
+  return Array.from(new Uint8Array(digest))
+    .map((b) => b.toString(16).padStart(2, "0"))
+    .join("");
+}
+
 export async function doorToken(secret: string): Promise<string> {
   const key = await crypto.subtle.importKey(
     "raw",
@@ -30,7 +50,7 @@ export function tokensEqual(a: string, b: string): boolean {
 }
 
 export async function isDoorOpen(cookieValue: string | undefined): Promise<boolean> {
-  const secret = process.env.AUTH_SECRET;
+  const secret = await activeSecret();
   if (!secret || !cookieValue) return false;
   return tokensEqual(cookieValue, await doorToken(secret));
 }

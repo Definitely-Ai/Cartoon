@@ -20,6 +20,6 @@ export async function middleware(request: NextRequest) {
 
   const url = request.nextUrl.clone();
   url.pathname = "/backroom/login";
-  url.search = process.env.AUTH_SECRET && process.env.ADMIN_PASSWORD ? "" : "?setup=1";
+  url.search = process.env.ADMIN_PASSWORD ? "" : "?setup=1";
   return NextResponse.redirect(url);
 }

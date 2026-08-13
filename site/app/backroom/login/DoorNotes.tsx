@@ -15,9 +15,9 @@ export default function DoorNotes() {
   if (params.get("setup")) {
     return (
       <p className="br-door-note" role="alert">
-        The door has no lock yet. Set <code>ADMIN_PASSWORD</code> and <code>AUTH_SECRET</code> in
-        the Vercel project&rsquo;s environment variables, redeploy, then knock again — details in
-        docs/SETUP.md, &ldquo;The Back Room.&rdquo;
+        The door has no lock yet. Set <code>ADMIN_PASSWORD</code> (and <code>GITHUB_TOKEN</code>,
+        for publishing) in the Vercel project&rsquo;s environment variables, redeploy, then knock
+        again — details in docs/SETUP.md, &ldquo;The Back Room.&rdquo;
       </p>
     );
   }

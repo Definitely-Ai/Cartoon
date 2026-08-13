@@ -1,6 +1,6 @@
 import { timingSafeEqual } from "node:crypto";
 import { NextResponse, type NextRequest } from "next/server";
-import { BACKROOM_COOKIE, doorToken } from "@/lib/backroom-auth";
+import { activeSecret, BACKROOM_COOKIE, doorToken } from "@/lib/backroom-auth";
 
 // The knock. One owner, one password (ADMIN_PASSWORD env), one signed
 // cookie. Wrong answers go back to the door with a dry note; missing env
@@ -22,7 +22,7 @@ function safeEqual(a: string, b: string): boolean {
 export async function POST(request: NextRequest) {
   const password = (await request.formData()).get("password");
   const expected = process.env.ADMIN_PASSWORD;
-  const secret = process.env.AUTH_SECRET;
+  const secret = await activeSecret();
 
   const door = new URL("/backroom/login", request.url);
   if (!expected || !secret) {
