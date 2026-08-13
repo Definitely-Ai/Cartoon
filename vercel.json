@@ -1,3 +1,4 @@
 {
-  "builds": [{ "src": "site/package.json", "use": "@vercel/next" }]
+  "builds": [{ "src": "site/package.json", "use": "@vercel/next" }],
+  "routes": [{ "src": "/(.*)", "dest": "site/$1" }]
 }
