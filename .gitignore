@@ -1,0 +1,18 @@
+# Dependencies
+node_modules/
+
+# Next.js build output
+site/.next/
+site/out/
+site/next-env.d.ts
+
+# Assets copied into the site by the prebuild script.
+# These are generated from /cartoons and /canon on every build,
+# so they never need to be committed.
+site/public/cartoons/
+site/public/canon/
+
+# Local env and editor noise
+.env*
+.DS_Store
+*.log
