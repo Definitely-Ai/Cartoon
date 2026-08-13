@@ -1,0 +1,26 @@
+{
+  "name": "cartoon-site",
+  "private": true,
+  "description": "Static site for the cartoon company. The repo's filesystem is the CMS: /cartoons and /canon are read at build time.",
+  "scripts": {
+    "predev": "node scripts/prebuild.mjs",
+    "dev": "next dev",
+    "prebuild": "node scripts/prebuild.mjs",
+    "build": "next build",
+    "start": "next start",
+    "typecheck": "tsc --noEmit",
+    "placeholders": "node scripts/generate-placeholders.mjs"
+  },
+  "dependencies": {
+    "next": "^15.3.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "sharp": "^0.34.1",
+    "typescript": "^5"
+  }
+}
