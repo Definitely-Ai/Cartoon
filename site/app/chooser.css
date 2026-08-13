@@ -218,13 +218,23 @@
 }
 
 .spec-c-header {
+  position: relative;
   display: inline-block;
   font-family: var(--font-comic-slab), Georgia, serif;
   font-size: 0.95rem;
   padding: 0.15rem 0.5rem;
   border: 2px solid var(--ink);
-  background-color: var(--paper-white);
-  /* Header-density halftone: loud. */
+  background: var(--paper-white);
+}
+
+/* Header-density halftone as a drop-shadow block — dots stay loud without
+   running under the letters. */
+.spec-c-header::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translate(5px, 5px);
+  z-index: -1;
   background-image: radial-gradient(var(--ink) 1px, transparent 1.15px);
   background-size: 5px 5px;
 }
