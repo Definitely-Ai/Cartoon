@@ -9,9 +9,11 @@ import { usePathname } from "next/navigation";
 
 const TABS = [
   { href: "/c", label: "Today’s Strip" },
-  { href: "/c/archive", label: "The Archive" },
+  { href: "/c/archive", label: "Archive" },
   { href: "/c/characters", label: "The Cast" },
   { href: "/c/about", label: "About" },
+  // The way back to the chooser — every variant carries one.
+  { href: "/", label: "All Editions" },
 ];
 
 export default function BoardTabs() {

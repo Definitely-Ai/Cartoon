@@ -18,21 +18,26 @@ export default function VariantALayout({ children }: { children: ReactNode }) {
             {/* BRAND: replace when final */}
             SD
           </Link>
+          {/* Plain-language section names — the flavor titles ("The
+              Morgue") stay on the pages themselves, where a reader can
+              enjoy them without having to decode the navigation. */}
           <ul className="va-strip-list">
             <li>
               <Link href="/a">Front Page</Link>
             </li>
             <li>
-              <Link href="/a/archive">The Morgue</Link>
+              <Link href="/a/archive">Archive</Link>
             </li>
             <li>
               <Link href="/a/characters">The Cast</Link>
             </li>
             <li>
-              <Link href="/a/about">About the Paper</Link>
+              <Link href="/a/about">About</Link>
             </li>
           </ul>
-          <span className="va-strip-est va-onum">Est. 2026</span>
+          <Link href="/" className="va-strip-est">
+            All Editions
+          </Link>
         </nav>
       </div>
 
@@ -50,7 +55,8 @@ export default function VariantALayout({ children }: { children: ReactNode }) {
           </p>
           <p className="va-desk">Published from the desk of the founder</p>
           <p className="va-desk">
-            Site built by <a href="https://aidreambuilders.com">aidreambuilders.com</a>
+            Site built by <a href="https://aidreambuilders.com">aidreambuilders.com</a> ·{" "}
+            <Link href="/">Choose a different edition</Link>
           </p>
         </footer>
       </div>

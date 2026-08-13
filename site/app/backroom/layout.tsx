@@ -27,7 +27,7 @@ export default function BackroomLayout({ children }: { children: ReactNode }) {
         <nav className="br-nav" aria-label="Back room">
           <Link href="/backroom">The light table</Link>
           <Link href="/backroom/ledger">The ledger</Link>
-          <Link href="/">Front of house</Link>
+          <Link href="/">Public site</Link>
           <form action="/api/backroom/logout" method="post" className="br-logout">
             <button type="submit">Leave by the back door</button>
           </form>

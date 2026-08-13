@@ -31,6 +31,10 @@ export default function VariantChooser() {
         {/* BRAND: replace when final */}
         <h1 className="chooser-brand">The Swinging Door</h1>
         <p className="chooser-line">Choose your edition.</p>
+        <p className="chooser-explain">
+          Same cartoons, three different papers. Pick whichever suits you — you can always come
+          back and try another.
+        </p>
       </header>
 
       <main id="content" className="chooser-main">
@@ -52,6 +56,7 @@ export default function VariantChooser() {
               <span className="chooser-label">
                 <span className="chooser-name chooser-name-a">The Daily Paper</span>
                 <span className="chooser-desc">Front-page news, funny on purpose.</span>
+                <span className="chooser-go">Read this edition ›</span>
               </span>
             </Link>
           </li>
@@ -68,6 +73,7 @@ export default function VariantChooser() {
               <span className="chooser-label">
                 <span className="chooser-name chooser-name-b">The Gag Panel</span>
                 <span className="chooser-desc">One panel. Plenty of white space. No mercy.</span>
+                <span className="chooser-go">Read this edition ›</span>
               </span>
             </Link>
           </li>
@@ -96,6 +102,7 @@ export default function VariantChooser() {
               <span className="chooser-label">
                 <span className="chooser-name chooser-name-c">The Funny Pages</span>
                 <span className="chooser-desc">The section you actually read first.</span>
+                <span className="chooser-go">Read this edition ›</span>
               </span>
             </Link>
           </li>

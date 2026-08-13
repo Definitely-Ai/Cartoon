@@ -28,8 +28,10 @@
 .variant-b {
   /* Modular scale: major third (×1.25) on an 18px base. Every font-size in
      this variant references a step — no one-off sizes anywhere. */
-  --vb-step--2: 0.72rem; /* folio lines, tiny utility */
-  --vb-step--1: 0.9rem; /* utility caps, datelines, nav */
+  /* Readability floor for a 45–75 audience: nothing renders below 0.8rem,
+     and the workhorse utility size is just under 1rem. */
+  --vb-step--2: 0.8rem; /* folio lines, tiny utility */
+  --vb-step--1: 0.975rem; /* utility caps, datelines, nav */
   --vb-step-0: 1.125rem; /* body */
   --vb-step-1: 1.4063rem; /* captions, lead lines */
   --vb-step-2: 1.7578rem; /* brand, section display */
@@ -47,8 +49,9 @@
      The tight caps value is for caps that step up a size (cover title at
      desk widths) — still positive, just less air. */
   --vb-track-display: -0.015em;
-  --vb-track-caps: 0.16em;
-  --vb-track-caps-tight: 0.12em;
+  --vb-track-caps: 0.11em; /* was 0.16 — wide tracking at small sizes is
+                              the single hardest thing on older eyes */
+  --vb-track-caps-tight: 0.08em;
 
   /* The only shadow in the variant: ink at low opacity, archive hover only. */
   --vb-ink-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
@@ -64,6 +67,9 @@
   color: var(--ink);
   font-family: var(--vb-text);
   font-size: var(--vb-step-0);
+  /* Crimson Pro is a light-cutting face; 450 on the variable axis gives it
+     the ink of a printed page without reading bold. */
+  font-weight: 450;
   line-height: 1.5;
 }
 
@@ -158,11 +164,14 @@
 }
 
 .variant-b .vb-nav a {
-  font-size: var(--vb-step--2);
+  font-size: var(--vb-step--1);
   font-weight: 600;
   letter-spacing: var(--vb-track-caps);
   text-transform: uppercase;
   text-decoration: none;
+  /* Comfortable touch target on phones. */
+  display: inline-block;
+  padding: 0.35rem 0.15rem;
 }
 
 .variant-b .vb-nav a:hover {

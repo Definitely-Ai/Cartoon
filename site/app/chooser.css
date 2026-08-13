@@ -33,9 +33,9 @@
 }
 
 .chooser-eyebrow {
-  font-size: 0.72rem;
+  font-size: 0.8rem;
   text-transform: uppercase;
-  letter-spacing: 0.28em;
+  letter-spacing: 0.16em;
   margin-bottom: 0.9rem;
 }
 
@@ -54,14 +54,21 @@
 .chooser-line {
   margin-top: 0.9rem;
   font-style: italic;
-  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-size: clamp(1.15rem, 2.4vw, 1.4rem);
+}
+
+.chooser-explain {
+  margin: 0.5rem auto 0;
+  max-width: 34rem;
+  font-size: 1rem;
+  line-height: 1.5;
   padding-bottom: 1.4rem;
   border-bottom: 2px solid var(--ink);
   position: relative;
 }
 
 /* The Ochs double rule closing the header. */
-.chooser-line::after {
+.chooser-explain::after {
   content: "";
   position: absolute;
   left: 0;
@@ -138,8 +145,19 @@
 .chooser-desc {
   display: block;
   margin-top: 0.35rem;
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   font-style: italic;
+}
+
+/* The "this is a link" affordance — quiet, but unmistakable. */
+.chooser-go {
+  display: block;
+  margin-top: 0.55rem;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
 }
 
 /* — Shared specimen canvas — */

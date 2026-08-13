@@ -32,7 +32,8 @@ export default function VariantCLayout({ children }: { children: ReactNode }) {
         </p>
         <p className="vc-footer-desk">Published from the desk of the founder</p>
         <p>
-          Site built by <a href="https://aidreambuilders.com">aidreambuilders.com</a>
+          Site built by <a href="https://aidreambuilders.com">aidreambuilders.com</a> ·{" "}
+          <Link href="/">Choose a different edition</Link>
         </p>
       </footer>
     </div>

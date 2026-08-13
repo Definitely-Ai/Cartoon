@@ -26,8 +26,10 @@
   /* Strict modular scale: ratio 1.25 on a 1rem base. EVERY font-size in
      this file references these stops; fluid sizes clamp BETWEEN two stops,
      never to arbitrary values. */
-  --vc-size--1: 0.8rem;
-  --vc-size-0: 1rem;
+  /* Readability floor for a 45–75 audience: labels never render below
+     0.875rem and body copy sits just above 1rem. */
+  --vc-size--1: 0.875rem;
+  --vc-size-0: 1.0625rem;
   --vc-size-1: 1.25rem;
   --vc-size-2: 1.5625rem;
   --vc-size-3: 1.953rem;

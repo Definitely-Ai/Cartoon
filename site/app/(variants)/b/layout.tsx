@@ -15,11 +15,15 @@ export default function VariantBLayout({ children }: { children: React.ReactNode
           {/* BRAND: replace when final */}
           <Link href="/b">The Swinging Door</Link>
         </p>
+        {/* Plain-language sections; "Dramatis Personae" stays as the
+            characters page's own headline, where it can charm instead of
+            confuse. */}
         <nav className="vb-nav" aria-label="Site sections">
-          <Link href="/b">The Panel</Link>
-          <Link href="/b/archive">The Archive</Link>
-          <Link href="/b/characters">Dramatis Personae</Link>
+          <Link href="/b">Today&rsquo;s Panel</Link>
+          <Link href="/b/archive">Archive</Link>
+          <Link href="/b/characters">The Cast</Link>
           <Link href="/b/about">About</Link>
+          <Link href="/">All Editions</Link>
         </nav>
       </header>
 
@@ -33,7 +37,8 @@ export default function VariantBLayout({ children }: { children: React.ReactNode
         <p className="vb-footer-line">All characters and cartoons are property of the company.</p>
         <p className="vb-footer-desk vb-caps-tiny">Published from the desk of the founder</p>
         <p className="vb-footer-line">
-          Site built by <a href="https://aidreambuilders.com">aidreambuilders.com</a>
+          Site built by <a href="https://aidreambuilders.com">aidreambuilders.com</a> ·{" "}
+          <Link href="/">Choose a different edition</Link>
         </p>
       </footer>
     </div>

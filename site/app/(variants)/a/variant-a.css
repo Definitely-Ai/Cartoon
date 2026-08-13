@@ -23,8 +23,11 @@
   /* Modular scale: perfect fourth (1.333) on a 1rem body.
      Every font-size in this file is one of these tokens or a
      clamp() between two of them — no one-off sizes. */
-  --scale-0: 0.75rem;
-  --scale-1: 1rem;
+  /* Readability floor for a 45–75 audience: the utility stop is 0.85rem
+     (13.6px) — nothing on the page renders smaller — and body copy sits
+     just above 1rem. The scale stays modular above these two stops. */
+  --scale-0: 0.85rem;
+  --scale-1: 1.0625rem;
   --scale-2: 1.333rem;
   --scale-3: 1.777rem;
   --scale-4: 2.369rem;
@@ -36,8 +39,10 @@
      positions are multiples (or clean halves/quarters) of it. */
   --baseline: 1.5rem;
 
-  --track-1: 0.08em;  /* utility caps            */
-  --track-2: 0.18em;  /* eyebrows, folios        */
+  --track-1: 0.07em;  /* utility caps            */
+  --track-2: 0.11em;  /* eyebrows, folios — wide enough to read as
+                         letterspaced caps, tight enough to stay legible
+                         at the utility size */
   --hairline: 1px solid var(--ink);
 
   --serif: var(--font-news-serif), "Old Standard TT", Georgia, "Times New Roman", serif;
@@ -158,14 +163,9 @@
   padding: 0;
 }
 
+/* The way back to the chooser — always visible, every viewport. */
 .variant-a .va-strip-est {
   white-space: nowrap;
-}
-
-@media (max-width: 699px) {
-  .variant-a .va-strip-est {
-    display: none;
-  }
 }
 
 .variant-a .va-foot {
