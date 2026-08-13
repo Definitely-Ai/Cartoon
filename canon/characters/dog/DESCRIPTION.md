@@ -1,24 +1,22 @@
-# The Dog — Canonical Description
+# Mango — Canonical Description
 
-<!-- BRAND: replace when final — character name pending -->
-
-Purpose: the single authoritative physical description of the dog, written so the exact same block can be pasted into every image prompt and every artist brief without edits.
+Purpose: the single authoritative physical description of Mango, written so the exact same block can be pasted into every image prompt and every artist brief without edits.
 
 ## Canonical Description Block
 
-> Write the exact prose block used verbatim in every image prompt: breed or build, head and face features, eyes, attire, distinguishing marks, and line weight. One paragraph, no synonyms, no alternatives — the block is copied, never paraphrased.
+Mango is a golden retriever. He is one of the two primary characters. He is drawn anthropomorphic — seated companionably at the bar — in black-and-white ink wash with a dry American magazine cartoon feel. He usually wears a jacket with an American flag lapel pin, and he is usually drinking an old fashioned. His face is earnest and open: brows up, ears attentive, the look of a dog who believes the story he is telling and has told it before.
 
-_(pending — to be written with the founder)_
+> Pending founder sign-off: exact build, muzzle proportions, and line weight (see `/canon/style/STYLE-BIBLE.md`). Everything above is canon from the founder's series bible; nothing here may be contradicted by a prompt.
 
 ## Model Sheets
 
-> List the image files that will live beside this document, one line each, with what each sheet must show.
-
-- `identity-sheet.png` — _(pending)_ head and face from the canonical angles, expressions locked.
-- `full-body-sheet.png` — _(pending)_ full figure, standing and seated, attire complete.
+- `identity-sheet.png` — _(pending)_ head and face from the canonical angles, expressions locked (earnest, mid-story, world-weary-but-happy).
+- `full-body-sheet.png` — _(pending)_ full figure at the bar, seated on a stool, jacket, lapel pin, and old fashioned present.
 
 ## Never
 
-> List the drift the model must never introduce — features, props, poses, or styling that are out of bounds even when a prompt seems to invite them.
-
-_(pending — to be written with the founder)_
+- Never without the American flag lapel pin when the jacket is on.
+- Never a different drink than the old fashioned, unless the gag is specifically about the drink.
+- Never mean, smug, or defeated — world-weary at most, and happy underneath it.
+- Never in color; the strip is strictly black-and-white ink wash.
+- Never drawn as a naturalistic zoo animal — Mango is a bar patron who happens to be a golden retriever.

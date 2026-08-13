@@ -1,61 +1,61 @@
 # Personalities
 
-Purpose: who these two are when they open their mouths — the voice document writers and prompt-authors consult before putting words under a drawing.
+Purpose: who these three are when they open their mouths — the voice document writers and prompt-authors consult before putting words under a drawing. Source: the founder's series bible for "The Swinging Door"; example lines are drafts in that voice, pending founder approval.
 
-## The Flamingo
-
-<!-- BRAND: replace when final — character name pending -->
+## Drew
 
 ### Role in the duo
 
-> Straight man or agent of chaos — to be decided. One sentence once decided.
-
-_(pending — TBD)_
+Drew is the arch observer — the one who watches the absurdity, names it precisely, and orders another martini.
 
 ### Voice
 
-> One paragraph: how this character talks — vocabulary, rhythm, what they care about, what they never say.
+Drew is elegant, observant, arch, happy, and skeptical without being nihilistic. He speaks in complete, well-made sentences and never raises his voice; the sting is in the placement, not the volume. He is financially and politically literate and assumes you are too. He is amused by institutions, not wounded by them — the world is a show he has excellent seats for.
 
-_(pending)_
+### Five example lines (drafts)
 
-### Five example lines
+1. "They've renamed the fee. That's usually the whole reform."
+2. "The market priced it in, Mango. Then it priced it back out. It's been a big week for pricing."
+3. "I'm not cynical. I'm just early."
+4. "The committee has released a statement saying it will release a statement."
+5. "Three olives, Abby. It's a hearing day."
 
-> Five lines of dialogue this character would plausibly say, numbered, one sentence each.
-
-1. _(pending)_
-2. _(pending)_
-3. _(pending)_
-4. _(pending)_
-5. _(pending)_
-
-## The Dog
-
-<!-- BRAND: replace when final — character name pending -->
+## Mango
 
 ### Role in the duo
 
-> Straight man or agent of chaos — to be decided. One sentence once decided.
-
-_(pending — TBD)_
+Mango is the earnest heart — the believer whose stories and loyalties set up the gag, and who sometimes lands it by accident.
 
 ### Voice
 
-> One paragraph: how this character talks — vocabulary, rhythm, what they care about, what they never say.
+Mango is earnest, patriotic, story-prone, institution-skeptical, sometimes world-weary, and happy. He talks in stories — where he was, who was there, what it used to cost. He loves the country the way you love a family member: completely, and with a list of concerns. His skepticism is lived-in, never bitter; his world-weariness always loses to his good mood by the second drink.
 
-_(pending)_
+### Five example lines (drafts)
 
-### Five example lines
+1. "My grandfather bought his house for what I paid for these tickets. He also never forgave the umpire. Different times."
+2. "I read the whole bill, Drew. Well. I read about the whole bill."
+3. "The debt clock's a beautiful thing if you don't look at the numbers."
+4. "I still stand for the anthem. I just sit for the commentary."
+5. "This round's on me. The economy needs consumer confidence."
 
-> Five lines of dialogue this character would plausibly say, numbered, one sentence each.
+## Abby
 
-1. _(pending)_
-2. _(pending)_
-3. _(pending)_
-4. _(pending)_
-5. _(pending)_
+### Role in the cast
+
+Abby is the house — the wise bartender who appears sparingly, keeps the glasses full, and occasionally settles an argument with one line.
+
+### Voice
+
+Abby is very wise, helpful, and respectful of Drew and Mango — sometimes a little condescending, never unkind. She speaks least and lands hardest: short declarative sentences, usually while doing something else. She has heard every version of this conversation and still likes the regulars. She is not a primary character and should not appear in most cartoons.
+
+### Five example lines (drafts)
+
+1. "Last call was a metaphor, gentlemen. This one's real."
+2. "I don't give financial advice. I just stop pouring."
+3. "The chalkboard special is whatever you two are arguing about, half off."
+4. "You've both been right all night. Separately."
+5. "The TV has a mute button. So does the bar."
 
 ## Duo Dynamic
 
-> One paragraph on how the two play off each other: who sets up, who lands, what the recurring friction is.
-
-_(pending — to be written with the founder)_
+Drew sets the angle; Mango supplies the belief. Mango tells the story, Drew names what the story is actually about, and neither ever wins permanently — the friction is affectionate and the argument continues tomorrow, same stools. Abby, on her rare appearances, closes the loop the two of them have been circling all night. Nobody in the room is a villain; the institutions on the TV do that work for free.
