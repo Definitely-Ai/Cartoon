@@ -64,7 +64,9 @@ function requireDialogueArtwork(file) {
   }
   const width = header.readUInt32BE(16);
   const height = header.readUInt32BE(20);
-  if (height === width + 264) return;
+  const squareFinishedHeight = width + 264;
+  const portraitFinishedHeight = Math.round((width * 5) / 4) + 264;
+  if (height === squareFinishedHeight || height === portraitFinishedHeight) return;
   console.error(
     `prebuild: dialogue is not embedded in ${path.relative(repoRoot, file)}.\n` +
       "Cartoons must use the finished square-panel-plus-dialogue format; run `npm run dialogue` to create or refresh it."

@@ -16,13 +16,7 @@ Purpose: the repeatable path from "new topic" to "published cartoon," per the fo
 
 ## Image-prompt template
 
-> Compose in this order; paste the canonical blocks exactly as written.
-
-1. Style: single-frame black-and-white ink wash editorial cartoon, dry American magazine cartoon feel (see `/canon/style/STYLE-BIBLE.md`).
-2. Setting block from `/canon/settings/SETTINGS-BIBLE.md` — inside the bar: wooden paneling, stools, coasters, framed Americana (walls not crowded), chalkboard with a special, small TV showing news or sports, bar name reversed in the window.
-3. Character block(s), verbatim from `/canon/characters/*/DESCRIPTION.md`, for whoever appears.
-4. The scene: one sentence placing the joke.
-5. The caption, exactly as it will print, supplied to the deterministic dialogue pass rather than rendered by the image model.
+**Use `/canon/MASTER-PROMPT.md`.** It is the pre-assembled base block — style, room map, and character anchors already composed — with three slots (`[SCENE]`, `[TV]`, `[BOARD]`) and the pre-flight checklist. Paste it verbatim; do not re-derive a prompt from the individual bibles, which is how drift happens. The individual documents remain the source of truth the master prompt is built from — when the founder changes a bible, update the master prompt to match. Supply the exact final caption to the deterministic dialogue pass after the image model returns the text-free illustration.
 
 ## Delivery — the exact file contract
 
@@ -41,7 +35,7 @@ When the founder asks for a cartoon ("I want a cartoon about X"), produce **thre
 Rules for the generator:
 
 - Three distinct takes on the same request — different visual scenes or different speakers, not three crops of one image.
-- Each PNG is a finished cartoon: square illustrated panel plus its exact dialogue typeset in the warm-white caption field below. No title, date, proof label, or watermark is baked in.
+- Each PNG is a finished cartoon: square or 4:5 illustrated panel plus its exact dialogue typeset in the warm-white caption field below. No title, date, proof label, or watermark is baked in.
 - Each JSON's `caption` is print-ready and must match the dialogue in the PNG exactly. If the wording changes, edit the JSON and rerun `npm run dialogue`; the script preserves the square art region and rebuilds only the dialogue field.
 - `tags`: up to five lowercase subjects ("markets", "retirement", "media"…).
 - **Never create or modify `selected.json`** — the site writes it when the founder publishes.

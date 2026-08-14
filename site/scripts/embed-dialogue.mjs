@@ -1,7 +1,7 @@
 // Typeset exact dialogue beneath each source panel without redrawing the art.
-// It accepts either a square source panel or a portrait produced by this script.
-// Reruns always rebuild from the untouched square art region, so edited captions
-// never stack a second strip or redraw the illustration.
+// It accepts a square or 4:5 source panel, plus portraits produced by this script.
+// Reruns always rebuild from the untouched art region, so edited captions never
+// stack a second strip or redraw the illustration.
 //
 // Run from /site:
 //   npm run dialogue
@@ -97,26 +97,29 @@ async function render(record, output) {
   const source = sharp(record.image);
   const metadata = await source.metadata();
   if (!metadata.width || !metadata.height) throw new Error(`cannot read dimensions: ${record.relative}`);
-  const acceptedHeight =
-    metadata.height === metadata.width ||
-    metadata.height === metadata.width + stripHeight ||
-    metadata.height === metadata.width + legacyStripHeight ||
-    metadata.height === metadata.width + legacyStripHeight + stripHeight;
-  if (!acceptedHeight) {
+  const supportedArtHeights = [metadata.width, Math.round((metadata.width * 5) / 4)];
+  const artHeight = supportedArtHeights.find(
+    (candidate) =>
+      metadata.height === candidate ||
+      metadata.height === candidate + stripHeight ||
+      metadata.height === candidate + legacyStripHeight ||
+      metadata.height === candidate + legacyStripHeight + stripHeight
+  );
+  if (!artHeight) {
     throw new Error(`refusing an unknown artwork shape for ${record.relative} (${metadata.width}x${metadata.height})`);
   }
 
-  const artwork = await source.extract({ left: 0, top: 0, width: metadata.width, height: metadata.width }).png().toBuffer();
+  const artwork = await source.extract({ left: 0, top: 0, width: metadata.width, height: artHeight }).png().toBuffer();
   const composed = sharp({
     create: {
       width: metadata.width,
-      height: metadata.width + stripHeight,
+      height: artHeight + stripHeight,
       channels: 3,
       background: "#f8f5ee",
     },
   }).composite([
     { input: artwork, left: 0, top: 0 },
-    { input: dialogueSvg(metadata.width, stripHeight, record.caption), left: 0, top: metadata.width },
+    { input: dialogueSvg(metadata.width, stripHeight, record.caption), left: 0, top: artHeight },
   ]);
   const finished = sharp(await composed.png().toBuffer()).flatten({ background: "#f8f5ee" });
 

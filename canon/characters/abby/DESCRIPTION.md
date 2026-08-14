@@ -10,7 +10,12 @@ Abby is a westie. She is the bartender of The Swinging Door — thinly built and
 
 Abby is not a primary character and should not appear in most cartoons. When she appears, she is behind the bar.
 
-> Pending founder sign-off: exact build, coat rendering, and line weight (see `/canon/style/STYLE-BIBLE.md`). Everything above is canon from the founder's series bible; nothing here may be contradicted by a prompt.
+## Visual anchors (working defaults — approve or veto in the style session)
+
+- Small westie — her head and shoulders show above the bar line, no more.
+- Bar towel over one shoulder; always mid-task (polishing a glass, setting a coaster).
+- Bright dot eyes, one cocked ear; faint amusement, never a broad smile.
+- Behind the bar only, roughly one cartoon in ten.
 
 ## Model Sheets
 

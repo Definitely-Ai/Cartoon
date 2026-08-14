@@ -27,11 +27,15 @@ if (editions.length === 0) throw new Error("brand-assets: no published cartoons 
 
 const latestArtwork = path.join(editions[0].directory, "cartoon.png");
 const latestMetadata = await sharp(latestArtwork).metadata();
-if (!latestMetadata.width || !latestMetadata.height || latestMetadata.height < latestMetadata.width) {
+if (!latestMetadata.width || !latestMetadata.height) {
   throw new Error(`brand-assets: cannot read the illustrated panel in ${latestArtwork}`);
 }
+const illustratedHeight = latestMetadata.height - 264;
+if (![latestMetadata.width, Math.round((latestMetadata.width * 5) / 4)].includes(illustratedHeight)) {
+  throw new Error(`brand-assets: cannot identify the illustrated panel in ${latestArtwork}`);
+}
 const artwork = await sharp(latestArtwork)
-  .extract({ left: 0, top: 0, width: latestMetadata.width, height: latestMetadata.width })
+  .extract({ left: 0, top: 0, width: latestMetadata.width, height: illustratedHeight })
   .resize({ width: 408, height: 408, fit: "cover", position: "centre" })
   .grayscale()
   .png()

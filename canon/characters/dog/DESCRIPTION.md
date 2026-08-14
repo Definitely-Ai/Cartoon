@@ -6,7 +6,15 @@ Purpose: the single authoritative physical description of Mango, written so the 
 
 Mango is a golden retriever. He is one of the two primary characters. He is drawn anthropomorphic — seated companionably at the bar — in black-and-white ink wash with a dry American magazine cartoon feel. He usually wears a jacket with an American flag lapel pin, and he is usually drinking an old fashioned. His face is earnest and open: brows up, ears attentive, the look of a dog who believes the story he is telling and has told it before.
 
-> Pending founder sign-off: exact build, muzzle proportions, and line weight (see `/canon/style/STYLE-BIBLE.md`). Everything above is canon from the founder's series bible; nothing here may be contradicted by a prompt.
+## Visual anchors (working defaults — approve or veto in the style session)
+
+The repeatable geometry an image model can lock onto:
+
+- Broad-shouldered and friendly; big head, floppy ears, soft cheek fur.
+- Seated on a stool, forepaws on the bar — Mango sits, Drew stands; that contrast is the duo's silhouette.
+- Rumpled jacket (tweed suggested by wash, not pattern), small American-flag pin on the **left** lapel, rendered by shape in ink — never color.
+- Earnest face: brows up, mouth soft; mid-story with one raised paw is his signature pose.
+- The old fashioned sits in a lowball glass in front of him, garnish minimal.
 
 ## Model Sheets
 

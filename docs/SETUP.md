@@ -30,8 +30,8 @@ The social card is deterministic rather than AI-typeset. Prebuild refreshes it
 from the latest public cartoon; `npm run brand-assets` is also available when
 working on the brand treatment by itself.
 
-Finished cartoons carry their dialogue inside the PNG. Start from square,
-text-free illustrated panels whose JSON captions are final, then run
+Finished cartoons carry their dialogue inside the PNG. Start from square or
+4:5 text-free illustrated panels whose JSON captions are final, then run
 `npm run dialogue`. The script appends an exact warm-white dialogue field. It
 can safely rerun a finished cartoon after a caption edit: it keeps the untouched
 square art region and rebuilds the dialogue field instead of stacking strips.
