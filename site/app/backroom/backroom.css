@@ -627,3 +627,79 @@
     flex: 1;
   }
 }
+
+/* ------------------------------------------------------- 7. The wire */
+
+.br-wire-section {
+  margin-bottom: 2rem;
+}
+
+.br-wire-head {
+  font-family: var(--br-caps);
+  font-size: 1.05rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  padding-bottom: 0.35rem;
+  margin-bottom: 0.75rem;
+}
+
+/* The connector address: monospace-adjacent, wraps anywhere, obviously
+   selectable. */
+.br-address code {
+  display: block;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  word-break: break-all;
+  padding: 0.7rem 0.8rem;
+  border: 1px solid var(--br-paper);
+  background: rgba(255, 255, 255, 0.06);
+  user-select: all;
+}
+
+.br-copy-row {
+  margin-top: 0.7rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.br-copy-btn {
+  font-family: var(--br-caps);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  background: var(--br-paper);
+  color: var(--ink);
+  border: none;
+  padding: 0.55rem 1.4rem;
+  min-height: 44px;
+  cursor: pointer;
+}
+
+.br-copy-hint {
+  font-style: italic;
+  font-size: 0.9rem;
+}
+
+.br-warn {
+  margin-top: 0.8rem;
+  font-family: var(--br-chalk);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.br-steps {
+  padding-left: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  line-height: 1.55;
+}
+
+.br-wire-note {
+  margin-top: 0.9rem;
+  font-style: italic;
+}

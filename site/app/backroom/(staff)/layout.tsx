@@ -19,6 +19,7 @@ export default function BackroomStaffLayout({ children }: { children: ReactNode 
           <Link href="/backroom/ledger">
             The ledger{open > 0 && <span className="br-nav-count"> · {open} open</span>}
           </Link>
+          <Link href="/backroom/connect">The wire</Link>
           <Link href="/">The front page</Link>
           <form action="/api/backroom/logout" method="post" className="br-logout">
             <button type="submit">Leave by the back door</button>
