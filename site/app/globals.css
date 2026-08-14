@@ -3,9 +3,8 @@
    2. Ink tokens — the ONLY colors that exist anywhere in this site.
    3. Focus, skip link, screen-reader utility.
    4. View-transition plumbing (disabled under reduced motion).
-   Variant identities live in their own stylesheets, every rule scoped
-   under .variant-a / .variant-b / .variant-c so nothing leaks between
-   variants during client-side navigation. */
+   The paper's identity lives in (paper)/variant-a.css (scoped under
+   .variant-a) and the staff side's in backroom/backroom.css. */
 
 /* 1. Reset */
 *,

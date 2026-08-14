@@ -1,18 +1,17 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { Suspense } from "react";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getAdjacent, getAllCartoons, getBySlug } from "@/lib/cartoons";
 import { formatDateLong } from "@/lib/format";
 import { newsSerif } from "@/app/fonts";
-import PermalinkNav from "./PermalinkNav";
+import TransitionLink from "@/components/TransitionLink";
 import "./permalink.css";
 
-// The permanent address of one cartoon, framed print-neutral (black on
-// white, generous margins) so a single permalink page serves visitors from
-// all three variants. The variant the reader came from arrives as ?from=a|b|c,
-// which is read ONLY in the client-side <PermalinkNav> — the server page
-// never touches searchParams, keeping every permalink fully static.
+// The permanent address of one cartoon: a clean print frame (black on
+// white, generous margins) with prev/next edition navigation and the way
+// back to the front page. Fully static; Ctrl+P produces the corkboard
+// artifact this audience actually makes.
 
 export function generateStaticParams() {
   return getAllCartoons().map(({ slug }) => ({ slug }));
@@ -36,8 +35,6 @@ export default async function CartoonPermalink({ params }: { params: Promise<{ s
   if (!cartoon) notFound();
   const { newer, older } = getAdjacent(slug);
 
-  const pick = (c?: { slug: string; title: string }) => (c ? { slug: c.slug, title: c.title } : null);
-
   return (
     <div className={`permalink ${newsSerif.variable}`}>
       <header className="permalink-masthead">
@@ -54,8 +51,8 @@ export default async function CartoonPermalink({ params }: { params: Promise<{ s
           </p>
           <figure
             className="permalink-figure"
-            // Per-slug name: the archive thumbnail that was clicked carries
-            // the same name, so the panel itself morphs small → large.
+            // Same per-slug name as the archive thumbnail that was clicked,
+            // so the panel itself morphs small → large.
             style={{ viewTransitionName: `panel-${cartoon.slug}` }}
           >
             <Image
@@ -75,9 +72,29 @@ export default async function CartoonPermalink({ params }: { params: Promise<{ s
           )}
         </article>
 
-        <Suspense fallback={<PermalinkNav newer={pick(newer)} older={pick(older)} staticFallback />}>
-          <PermalinkNav newer={pick(newer)} older={pick(older)} />
-        </Suspense>
+        <nav className="permalink-nav" aria-label="Edition navigation">
+          <div className="permalink-adjacent">
+            {older ? (
+              <TransitionLink href={`/cartoon/${older.slug}`} className="permalink-prev">
+                <span aria-hidden="true">‹ </span>Previous edition
+                <span className="permalink-nav-title">{older.title}</span>
+              </TransitionLink>
+            ) : (
+              <span className="permalink-end">This is the first edition.</span>
+            )}
+            {newer ? (
+              <TransitionLink href={`/cartoon/${newer.slug}`} className="permalink-next">
+                Next edition<span aria-hidden="true"> ›</span>
+                <span className="permalink-nav-title">{newer.title}</span>
+              </TransitionLink>
+            ) : (
+              <span className="permalink-end">This is the latest edition.</span>
+            )}
+          </div>
+          <p className="permalink-back">
+            <Link href="/">Back to the front page</Link>
+          </p>
+        </nav>
       </main>
 
       <footer className="permalink-footer">

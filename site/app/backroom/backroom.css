@@ -250,6 +250,15 @@
   font-size: 0.9rem;
 }
 
+/* The one-sentence instruction under the date — chalk, friendly, plain. */
+.br-howto {
+  font-family: var(--br-chalk);
+  font-size: 1.05rem;
+  max-width: 26rem;
+  margin: 0.7rem auto 0;
+  line-height: 1.5;
+}
+
 /* The compare strip: three small proofs that jump down the table. */
 .br-jump {
   display: flex;

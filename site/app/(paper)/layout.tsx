@@ -14,7 +14,7 @@ export default function VariantALayout({ children }: { children: ReactNode }) {
     <div className={`variant-a ${blackletter.variable} ${newsSerif.variable} ${newsCondensed.variable}`}>
       <div className="va-shell va-head">
         <nav className="va-strip" aria-label="Sections">
-          <Link href="/a" className="va-strip-mark" aria-label="Front page">
+          <Link href="/" className="va-strip-mark" aria-label="Front page">
             {/* BRAND: replace when final */}
             SD
           </Link>
@@ -23,20 +23,22 @@ export default function VariantALayout({ children }: { children: ReactNode }) {
               enjoy them without having to decode the navigation. */}
           <ul className="va-strip-list">
             <li>
-              <Link href="/a">Front Page</Link>
+              <Link href="/">Front Page</Link>
             </li>
             <li>
-              <Link href="/a/archive">Archive</Link>
+              <Link href="/archive">Archive</Link>
             </li>
             <li>
-              <Link href="/a/characters">The Cast</Link>
+              <Link href="/cast">The Cast</Link>
             </li>
             <li>
-              <Link href="/a/about">About</Link>
+              <Link href="/about">About</Link>
             </li>
           </ul>
-          <Link href="/" className="va-strip-est">
-            All Editions
+          {/* The owner's door, one click from anywhere. Locked to everyone
+              else, so it can live in plain sight. */}
+          <Link href="/backroom" className="va-strip-est">
+            Back Room
           </Link>
         </nav>
       </div>
@@ -56,7 +58,7 @@ export default function VariantALayout({ children }: { children: ReactNode }) {
           <p className="va-desk">Published from the desk of the founder</p>
           <p className="va-desk">
             Site built by <a href="https://aidreambuilders.com">aidreambuilders.com</a> ·{" "}
-            <Link href="/">Choose a different edition</Link>
+            <Link href="/backroom">Staff entrance</Link>
           </p>
         </footer>
       </div>

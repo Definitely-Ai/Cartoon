@@ -40,7 +40,7 @@ export default function MorgueClassifieds({ cartoons }: { cartoons: Cartoon[] })
       <ul className="va-classifieds">
         {filtered.map((cartoon) => (
           <li key={cartoon.slug} className="va-listing">
-            <TransitionLink href={`/cartoon/${cartoon.slug}?from=a`} className="va-listing-link">
+            <TransitionLink href={`/cartoon/${cartoon.slug}`} className="va-listing-link">
               <span className="va-listing-date va-onum">
                 {formatDateAP(cartoon.date)} · No. {cartoon.edition}
               </span>

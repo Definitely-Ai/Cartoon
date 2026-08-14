@@ -24,9 +24,17 @@ export default function LightTable({ day }: { day: OptionDay }) {
             {published ? <> — &ldquo;{published.title}&rdquo;, Edition No.&nbsp;{published.edition}</> : null}
           </p>
         ) : (
-          <p className="br-status">
-            {day.options.length} proof{day.options.length === 1 ? "" : "s"} on the table · undecided
-          </p>
+          <>
+            <p className="br-status">
+              {day.options.length} proof{day.options.length === 1 ? "" : "s"} on the table · undecided
+            </p>
+            {/* One plain sentence of instructions — the owner should never
+                have to wonder what this page wants from him. */}
+            <p className="br-howto">
+              Tap a cartoon to see it big. When you&rsquo;ve picked your favorite, tap{" "}
+              <strong>Run this one</strong> — it goes straight to the front page.
+            </p>
+          </>
         )}
         {ran && published && (
           <p className="br-see-public">

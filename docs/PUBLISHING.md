@@ -37,7 +37,7 @@ Audience: the technical maintainer. The repo's filesystem is the CMS — publish
    git add -A && git commit -m "cartoon: The Quarterly Call" && git push
    ```
 
-   Vercel rebuilds automatically. The cartoon is live in about a minute, on all three variants at once.
+   Vercel rebuilds automatically. The cartoon is live on the front page in about a minute.
 
 ## Troubleshooting
 

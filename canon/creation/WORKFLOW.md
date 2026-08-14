@@ -24,6 +24,27 @@ Purpose: the repeatable path from "new topic" to "published cartoon," per the fo
 4. The scene: one sentence placing the joke.
 5. The caption, exactly as it will print.
 
-## Delivery
+## Delivery — the exact file contract
 
-Each concept cartoon package for the founder includes: caption options, the current-event idea behind the gag, the assembled image prompt, and the chosen caption — then the published folder under `/cartoons/` per `/docs/PUBLISHING.md`.
+When the founder asks for a cartoon ("I want a cartoon about X"), produce **three finished candidates** and commit them to this repo as the day's proofs:
+
+```
+/options/YYYY-MM-DD/          ← today's date
+  option-1.png                ← finished cartoon, B&W ink wash, ≥1200px long side
+  option-1.json               ← {"title": "…", "caption": "…", "tags": ["…", "…"]}
+  option-2.png
+  option-2.json
+  option-3.png
+  option-3.json
+```
+
+Rules for the generator:
+
+- Three distinct takes on the same request — different visual scenes or different speakers, not three crops of one image.
+- Each PNG is the panel artwork only: no caption text baked in, no date, no watermark. The site sets the caption below the panel.
+- Each JSON's `caption` is print-ready (the founder can edit it before publishing, but it should not need editing).
+- `tags`: up to five lowercase subjects ("markets", "retirement", "media"…).
+- **Never create or modify `selected.json`** — the site writes it when the founder publishes.
+- Never write into `/cartoons/` directly; publishing is the founder's decision, made in the Back Room.
+
+The moment the options are pushed, they appear on the founder's light table at the website's `/backroom`. He picks one, taps RUN IT, and the site publishes it to the front page automatically.

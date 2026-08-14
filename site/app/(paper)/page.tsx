@@ -78,7 +78,7 @@ export default function FrontPage() {
         <article className="va-lead">
           <p className="va-eyebrow">Today&rsquo;s Cartoon</p>
           <h2 className="va-lead-headline va-ink-spread">
-            <TransitionLink href={`/cartoon/${latest.slug}?from=a`}>{latest.title}</TransitionLink>
+            <TransitionLink href={`/cartoon/${latest.slug}`}>{latest.title}</TransitionLink>
           </h2>
           <p className="va-deck va-onum">
             {tagPhrase ? `Filed under ${tagPhrase} · ` : ""}Edition No. {latest.edition} of a
@@ -86,7 +86,7 @@ export default function FrontPage() {
           </p>
           <figure className="va-figure" style={{ viewTransitionName: `panel-${latest.slug}` }}>
             <TransitionLink
-              href={`/cartoon/${latest.slug}?from=a`}
+              href={`/cartoon/${latest.slug}`}
               className="va-figure-link"
               aria-label={`See this edition's plate: ${latest.title}`}
             >
@@ -103,7 +103,7 @@ export default function FrontPage() {
           </figure>
           {older && (
             <p className="va-prev va-onum">
-              <TransitionLink href={`/cartoon/${older.slug}?from=a`}>
+              <TransitionLink href={`/cartoon/${older.slug}`}>
                 Turn to the previous edition — &ldquo;{older.title},&rdquo; {formatDateAP(older.date)}
               </TransitionLink>
             </p>
@@ -116,7 +116,7 @@ export default function FrontPage() {
             <ul className="va-teasers">
               {previous.map((cartoon) => (
                 <li key={cartoon.slug}>
-                  <TransitionLink href={`/cartoon/${cartoon.slug}?from=a`} className="va-teaser">
+                  <TransitionLink href={`/cartoon/${cartoon.slug}`} className="va-teaser">
                     <span className="va-teaser-date va-onum">
                       {formatDateAP(cartoon.date)} · No. {cartoon.edition}
                     </span>
@@ -127,7 +127,7 @@ export default function FrontPage() {
               ))}
             </ul>
             <p className="va-rail-more">
-              <Link href="/a/archive">Consult the Morgue — every edition ever printed</Link>
+              <Link href="/archive">Consult the Morgue — every edition ever printed</Link>
             </p>
           </section>
 
