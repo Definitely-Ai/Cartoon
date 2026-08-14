@@ -24,17 +24,13 @@ export default function LightTable({ day }: { day: OptionDay }) {
             {published ? <> — &ldquo;{published.title}&rdquo;, Edition No.&nbsp;{published.edition}</> : null}
           </p>
         ) : (
-          <>
-            <p className="br-status">
-              {day.options.length} proof{day.options.length === 1 ? "" : "s"} on the table · undecided
-            </p>
-            {/* One plain sentence of instructions — the owner should never
-                have to wonder what this page wants from him. */}
-            <p className="br-howto">
-              Tap a cartoon to see it big. When you&rsquo;ve picked your favorite, tap{" "}
-              <strong>Run this one</strong> — it goes straight to the front page.
-            </p>
-          </>
+          /* One line does all the explaining — count, zoom hint, and what
+             the page wants from him. */
+          <p className="br-howto">
+            {day.options.length} proof{day.options.length === 1 ? "" : "s"} on the table. Tap a
+            picture to see it big; pick your favorite and tap <strong>Run this one</strong> — it
+            goes straight to the front page.
+          </p>
         )}
         {ran && published && (
           <p className="br-see-public">
@@ -105,12 +101,9 @@ export default function LightTable({ day }: { day: OptionDay }) {
                   {option.caption ?? (option.title ? "" : "No suggested caption filed.")}
                 </figcaption>
               </figure>
-              <p className="br-proof-tools">
-                <a href={option.src} target="_blank" rel="noopener" className="br-fullsize">
-                  Open full size
-                </a>
-                {ran && !isChosen && <span className="br-spiked-note">Spiked</span>}
-              </p>
+              {/* The image itself is the zoom affordance; no duplicate
+                  text link. Decided days mark their also-rans. */}
+              {ran && !isChosen && <p className="br-proof-tools"><span className="br-spiked-note">Spiked</span></p>}
               {!ran && (
                 <PublishPanel
                   day={day.day}

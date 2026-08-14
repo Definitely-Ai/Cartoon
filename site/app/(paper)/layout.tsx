@@ -56,9 +56,9 @@ export default function VariantALayout({ children }: { children: ReactNode }) {
             and cartoons are property of the company.
           </p>
           <p className="va-desk">Published from the desk of the founder</p>
+          {/* No staff link here — the header's Back Room is the one door. */}
           <p className="va-desk">
-            Site built by <a href="https://aidreambuilders.com">aidreambuilders.com</a> ·{" "}
-            <Link href="/backroom">Staff entrance</Link>
+            Site built by <a href="https://aidreambuilders.com">aidreambuilders.com</a>
           </p>
         </footer>
       </div>

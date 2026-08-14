@@ -703,3 +703,29 @@
   margin-top: 0.9rem;
   font-style: italic;
 }
+
+/* ------------------------------------------- 8. Staff footer links */
+
+/* Occasional destinations, out of the top nav's way: a quiet centered row
+   above the room's motto footer, staff pages only. */
+.br-staff-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem 2rem;
+  padding: 0.5rem 1rem 1.5rem;
+}
+
+.br-staff-links a {
+  font-family: var(--br-caps);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  padding: 0.25rem 0;
+}
+
+.br-staff-links a:hover {
+  border-bottom-color: var(--br-paper);
+}
