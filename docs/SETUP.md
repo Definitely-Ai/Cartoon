@@ -61,6 +61,20 @@ It needs two environment variables in the Vercel project (Settings → Environme
 
 Optional extras: `AUTH_SECRET` (any long random string; signs the login cookie — when unset it is derived from the password, and setting it separately lets you log every device out without changing the password) and `GITHUB_REPO` (defaults to `Definitely-Ai/Cartoon`, for if the repo ever moves).
 
+## Chat publishing (MCP connector)
+
+The site also exposes the Back Room as an **MCP server** at `/api/mcp`, so the founder can review and publish entirely from a conversation — ChatGPT or Claude with the site added as a connector. Two tools: `get_light_table` (lists a day's candidates and whether it already ran) and `publish_cartoon` (the same atomic publish the RUN IT button performs — it can only run existing options, never write anything else).
+
+Setup:
+
+1. Add a third environment variable in Vercel: **`MCP_SECRET`** — any long random string (e.g. `openssl rand -hex 24`). Redeploy.
+2. The connector URL is `https://<your-domain>/api/mcp?key=<MCP_SECRET>`. Treat the full URL like a password.
+3. **ChatGPT**: Settings → Connectors → Advanced → enable Developer mode, then Create connector → paste the URL (no authentication — the key is in the URL).
+   **Claude**: Settings → Connectors → Add custom connector → paste the URL.
+4. Then, in chat: the AI generates the day's three cartoons into `/options` as usual, the founder looks at them right there in the conversation, says "run number two," and the connector publishes it. The Back Room website shows the same ledger either way.
+
+Without `MCP_SECRET` set, the endpoint refuses all requests.
+
 ### The daily options contract (for the art-generating agent)
 
 Each day's candidates are pushed to the repo as:
