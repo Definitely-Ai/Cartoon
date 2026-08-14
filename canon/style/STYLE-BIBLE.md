@@ -8,7 +8,11 @@ Purpose: the visual law of the strip — every drawing decision that must be ide
 
 The cartoon is a single-frame **black-and-white ink wash** editorial cartoon with a dry American magazine cartoon feel. Confident editorial linework over wash tones; grayscale exists only as ink wash, never as color.
 
-> Pending founder sign-off: nib/brush character, how line weight varies, and how loose the wash is allowed to get.
+Working defaults (approve or veto in the style session):
+
+- **Three values only**: paper white, one mid-gray wash, solid black ink. A second, darker wash is allowed in shadows sparingly; never a smooth digital gradient.
+- **Brush-pen line**, variable weight — thick where forms sit (the bar, shoulders), thin for features and detail. Loose but certain; no sketchy multiple strokes, no cross-hatching.
+- **Faces do little and mean much**: dot eyes, single brow strokes, small mouths. The gag is in posture and placement, not grimaces.
 
 ## Black & White Rules
 
@@ -16,7 +20,9 @@ Strictly black and white. Ink wash (grayscale tone) is the shading method — th
 
 ## Panel Format
 
-Single frame. Most cartoons are set inside The Swinging Door bar (see `/canon/settings/SETTINGS-BIBLE.md`). Border style and approved aspect ratios pending the style pass; the site handles portrait (4:5) and square today.
+Single frame. Most cartoons are set inside The Swinging Door bar (see `/canon/settings/SETTINGS-BIBLE.md`).
+
+Working defaults: portrait 4:5 preferred, square allowed; a single hand-ruled border line (slightly imperfect, never a perfect vector stroke); the drawing breathes — generous margin inside the border, one focal action, no edge-to-edge clutter.
 
 ## Caption Convention
 
@@ -24,7 +30,7 @@ Every cartoon has a caption (see the Comedy Bible's caption rules). Working conv
 
 ## Signature / Watermark
 
-> Pending — what the signature looks like and exactly where it sits in the panel.
+Working default: a small hand-drawn monogram, lower right, inside the border — quiet enough to miss on first read. Final mark pending the founder's own hand.
 
 ## The bar window rule
 

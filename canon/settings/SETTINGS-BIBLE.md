@@ -17,6 +17,17 @@ Most cartoons occur inside **The Swinging Door**, a classic American bar. It sho
 
 Standing arrangement: Drew and Mango at the bar (Drew often standing, Mango on a stool); Abby, when she appears at all, behind it.
 
+## The room, mapped (working default — fix it once and it never moves)
+
+Continuity comes from the room being the same room every day. Camera: eye level, from across the room, the bar running along the lower third.
+
+- **Front window** — upper right, the bar's name lettered in reverse.
+- **TV** — high on the left wall, small, slightly angled down.
+- **Chalkboard** — behind the bar, right of center.
+- **Framed Americana** — a few pieces on the wood paneling, never crowded.
+- **Bar** — dark wood, stools in front, shelves and a mirror behind.
+- Regulars would notice if a stool moved; so should the model.
+
 ## Away games (secondary settings)
 
 The setting may also leave the bar, staying Americana-adjacent:

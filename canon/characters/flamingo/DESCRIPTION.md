@@ -6,7 +6,16 @@ Purpose: the single authoritative physical description of Drew, written so the e
 
 Drew is a flamingo who wears a bowtie. He is one of the two primary characters. He is drawn anthropomorphic — standing at the bar on long legs, posture elegant and unhurried — in black-and-white ink wash with a dry American magazine cartoon feel. Typically he drinks a gin martini with three olives, the glass on a coaster within reach. His expression is observant and arch: a raised brow, a knowing tilt of the head, amusement without malice.
 
-> Pending founder sign-off: exact head/beak proportions, eye treatment, and line weight (see `/canon/style/STYLE-BIBLE.md`). Everything above is canon from the founder's series bible; nothing here may be contradicted by a prompt.
+## Visual anchors (working defaults — approve or veto in the style session)
+
+The repeatable geometry an image model can lock onto:
+
+- Tall — Drew's head rides above Mango's even when Mango sits tall.
+- One smooth S-curved neck line; small round head; thin, straight beak.
+- Dot eyes with a single brow stroke each — the brow does all the acting.
+- Black bowtie exactly where the neck meets the body.
+- Stands on thin reed legs, one knee sometimes flexed; never perched, never wading.
+- The martini (three olives on a pick) sits on a coaster within reach — he gestures with a wingtip, not the glass.
 
 ## Model Sheets
 

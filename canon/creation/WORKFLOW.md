@@ -16,13 +16,7 @@ Purpose: the repeatable path from "new topic" to "published cartoon," per the fo
 
 ## Image-prompt template
 
-> Compose in this order; paste the canonical blocks exactly as written.
-
-1. Style: single-frame black-and-white ink wash editorial cartoon, dry American magazine cartoon feel (see `/canon/style/STYLE-BIBLE.md`).
-2. Setting block from `/canon/settings/SETTINGS-BIBLE.md` — inside the bar: wooden paneling, stools, coasters, framed Americana (walls not crowded), chalkboard with a special, small TV showing news or sports, bar name reversed in the window.
-3. Character block(s), verbatim from `/canon/characters/*/DESCRIPTION.md`, for whoever appears.
-4. The scene: one sentence placing the joke.
-5. The caption, exactly as it will print.
+**Use `/canon/MASTER-PROMPT.md`.** It is the pre-assembled base block — style, room map, and character anchors already composed — with three slots (`[SCENE]`, `[TV]`, `[BOARD]`) and the pre-flight checklist. Paste it verbatim; do not re-derive a prompt from the individual bibles, which is how drift happens. The individual documents remain the source of truth the master prompt is built from — when the founder changes a bible, update the master prompt to match.
 
 ## Delivery — the exact file contract
 

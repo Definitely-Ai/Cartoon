@@ -56,18 +56,22 @@ Standing subject matter: politics, financial markets, sports, media, civic habit
 
 ## Example Approved Gags
 
-> Five to ten gags read aloud and approved by the founder, each in one line: setup in the drawing, punchline in the caption.
+> Drafts in the house voice, written for the founder to read aloud — keep the ones that land, strike the rest. Format: setup in the drawing → punchline in the caption.
 
-1. _(slot)_
-2. _(slot)_
-3. _(slot)_
-4. _(slot)_
-5. _(slot)_
-6. _(slot)_
-7. _(slot)_
-8. _(slot)_
-9. _(slot)_
-10. _(slot)_
+1. TV reads MARKETS OPEN; both watching. → "We're long-term investors, Mango. The market has been open for an hour."
+2. Drew holds a one-page fee statement at wing's length. → "The fee is one percent, which mostly covers the cost of explaining the fee."
+3. TV reads SOFT LANDING; neither has moved. → "They've achieved a soft landing, Mango. Nobody can say on what."
+4. Mango squints at his phone; TV shows a jagged coin chart. → "It's called crypto. Now we can lose money without leaving the bar."
+5. Abby polishing a glass between the two of them, mid-argument. → "The house view is that you should both switch to water."
+6. Chalkboard reads HAPPY HOUR 4–?; Drew checking his wrist (no watch). → "Happy hour coincides with the closing bell. This is called liquidity."
+7. TV reads BREAKING; the room is peaceful. → "Turn it up, Abby. I want to hear nothing, louder."
+8. Mango mid-story, paw raised; Drew signaling Abby without looking away. → "Three olives, Abby. It's a hearing day."
+
+## Caption formulas (the shapes that keep working)
+
+- **The reclassification** — describe the absurd thing in perfect institutional language ("This is called liquidity.").
+- **The literalist** — take a financial metaphor at face value (the soft landing, the long term).
+- **The understatement** — enormous news on the TV, tiny human (canine, avian) reaction at the bar.
 
 ## Target Reader
 
