@@ -1,6 +1,9 @@
-<!-- BRAND: replace when final — monogram favicon for The Swinging Door -->
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" fill="#ffffff"/>
-  <rect x="4" y="4" width="56" height="56" fill="none" stroke="#000000" stroke-width="6"/>
-  <text x="32" y="43" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-weight="bold" font-size="26" fill="#000000">SD</text>
+  <rect width="64" height="64" rx="9" fill="#f4f0e6"/>
+  <path d="M7 8h50v48H7z" fill="none" stroke="#111" stroke-width="4"/>
+  <path d="M9 16h20v23c-8-5-14-5-20-1zm46 0H35v23c8-5 14-5 20-1z" fill="#111"/>
+  <path d="M22 24h20L32 37zM32 37v10m-7 0h14" fill="#f4f0e6" stroke="#111" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="28" cy="29" r="1.7" fill="#111"/>
+  <circle cx="32" cy="30" r="1.7" fill="#111"/>
+  <circle cx="36" cy="29" r="1.7" fill="#111"/>
 </svg>
