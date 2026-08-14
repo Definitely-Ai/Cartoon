@@ -9,7 +9,8 @@
     "build": "next build",
     "start": "next start",
     "typecheck": "tsc --noEmit",
-    "brand-assets": "node scripts/generate-brand-assets.mjs"
+    "brand-assets": "node scripts/generate-brand-assets.mjs",
+    "dialogue": "node scripts/embed-dialogue.mjs"
   },
   "dependencies": {
     "next": "^15.3.0",

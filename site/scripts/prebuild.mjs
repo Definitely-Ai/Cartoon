@@ -54,6 +54,24 @@ function rejectRetiredAsset(file) {
   process.exit(1);
 }
 
+function requireDialogueArtwork(file) {
+  const header = Buffer.alloc(24);
+  const handle = fs.openSync(file, "r");
+  try {
+    fs.readSync(handle, header, 0, header.length, 0);
+  } finally {
+    fs.closeSync(handle);
+  }
+  const width = header.readUInt32BE(16);
+  const height = header.readUInt32BE(20);
+  if (height === width + 264) return;
+  console.error(
+    `prebuild: dialogue is not embedded in ${path.relative(repoRoot, file)}.\n` +
+      "Cartoons must use the finished square-panel-plus-dialogue format; run `npm run dialogue` to create or refresh it."
+  );
+  process.exit(1);
+}
+
 if (!fs.existsSync(cartoonsSrc)) {
   console.error(
     `prebuild: cannot find ${cartoonsSrc}.\n` +
@@ -72,6 +90,7 @@ for (const entry of fs.readdirSync(cartoonsSrc, { withFileTypes: true })) {
   const png = path.join(cartoonsSrc, entry.name, "cartoon.png");
   if (!fs.existsSync(png)) continue; // data layer reports the missing file with a clear error
   rejectRetiredAsset(png);
+  requireDialogueArtwork(png);
   fs.copyFileSync(png, path.join(cartoonsDest, `${entry.name}.png`));
   copied++;
 }
@@ -109,6 +128,7 @@ if (fs.existsSync(optionsSrc)) {
       fs.mkdirSync(dest, { recursive: true });
       const source = path.join(dayDir, file);
       rejectRetiredAsset(source);
+      requireDialogueArtwork(source);
       fs.copyFileSync(source, path.join(dest, file));
       optionFiles++;
     }

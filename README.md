@@ -30,7 +30,7 @@ Setup (two env vars) in [docs/SETUP.md](docs/SETUP.md).
 
 **Built and verified:**
 - Repository structure, canon documents (filled from the founder's series bible: cast, settings, comedy rules, boundaries, creation workflow), and the publishing template with a 90-second how-to.
-- Seven fully illustrated, canon-informed sample cartoons with series-consistent captions, nine distinct illustrated Back Room proofs, and identity/full-body model sheets for Drew, Mango, and Abby. See the [sample artwork record](cartoons/SAMPLE-ART.md).
+- Seven fully illustrated, canon-informed sample cartoons and nine distinct illustrated Back Room proofs, all with their exact dialogue typeset into the finished cartoon, plus identity/full-body model sheets for Drew, Mango, and Abby. See the [sample artwork record](cartoons/SAMPLE-ART.md).
 - The full static site: validated data layer (bad `meta.json` fails the build naming the folder), the broadsheet front page and archive, print-ready permalinks, view-transition page turns, `prefers-reduced-motion` support throughout — plus the login-gated Back Room publishing flow.
 - Zero-config Vercel deploys via the root `vercel.json`; every push to the default branch deploys automatically.
 

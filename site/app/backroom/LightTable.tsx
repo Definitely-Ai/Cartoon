@@ -100,9 +100,8 @@ export default function LightTable({ day }: { day: OptionDay }) {
                   />
                 </a>
                 <figcaption className="br-proof-cap">
-                  {option.title && <strong>{option.title}</strong>}
-                  {option.title && option.caption ? " — " : ""}
-                  {option.caption ?? (option.title ? "" : "No suggested caption filed.")}
+                  {option.title ? <strong>{option.title}</strong> : "Untitled proof"}
+                  {option.caption && <span className="sr-only"> — {option.caption}</span>}
                 </figcaption>
               </figure>
               <p className="br-proof-tools">

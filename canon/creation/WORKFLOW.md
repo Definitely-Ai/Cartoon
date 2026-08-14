@@ -11,8 +11,8 @@ Purpose: the repeatable path from "new topic" to "published cartoon," per the fo
 3. **Use the characters' personalities to decide who speaks** (see `/canon/personality/PERSONALITIES.md`). Drew names the absurdity; Mango believes his way into it; Abby closes an argument, rarely.
 4. **Write 3–5 caption options.** Short, dry, underplayed; the caption deepens the visual gag rather than explaining it (see `/canon/comedy/COMEDY-BIBLE.md`).
 5. **Choose the strongest caption.** Read the boundaries list before committing.
-6. **Create an image prompt that preserves character continuity and includes the caption.** Assemble it from the template below — canonical description blocks verbatim, never paraphrased.
-7. **Maintain a catalog by date.** In this repo, publishing IS cataloging: each cartoon lives in `/cartoons/YYYY-MM-DD-slug/` with its `meta.json` (date, edition, tags), and the site renders the catalog/dating line below the artwork — displayed below the cartoon but not part of the cartoon.
+6. **Create the illustrated panel, then typeset the exact dialogue into it.** Generate the character scene without model-rendered words, then append the print-ready caption deterministically with `cd site && npm run dialogue`. This preserves character continuity and prevents misspellings.
+7. **Maintain a catalog by date.** In this repo, publishing IS cataloging: each cartoon lives in `/cartoons/YYYY-MM-DD-slug/` with its `meta.json` (date, edition, tags). The JSON caption must exactly match the dialogue printed in the artwork; the site supplies titles, dates, and catalog lines outside the image.
 
 ## Image-prompt template
 
@@ -22,7 +22,7 @@ Purpose: the repeatable path from "new topic" to "published cartoon," per the fo
 2. Setting block from `/canon/settings/SETTINGS-BIBLE.md` — inside the bar: wooden paneling, stools, coasters, framed Americana (walls not crowded), chalkboard with a special, small TV showing news or sports, bar name reversed in the window.
 3. Character block(s), verbatim from `/canon/characters/*/DESCRIPTION.md`, for whoever appears.
 4. The scene: one sentence placing the joke.
-5. The caption, exactly as it will print.
+5. The caption, exactly as it will print, supplied to the deterministic dialogue pass rather than rendered by the image model.
 
 ## Delivery — the exact file contract
 
@@ -41,8 +41,8 @@ When the founder asks for a cartoon ("I want a cartoon about X"), produce **thre
 Rules for the generator:
 
 - Three distinct takes on the same request — different visual scenes or different speakers, not three crops of one image.
-- Each PNG is the panel artwork only: no caption text baked in, no date, no watermark. The site sets the caption below the panel.
-- Each JSON's `caption` is print-ready (the founder can edit it before publishing, but it should not need editing).
+- Each PNG is a finished cartoon: square illustrated panel plus its exact dialogue typeset in the warm-white caption field below. No title, date, proof label, or watermark is baked in.
+- Each JSON's `caption` is print-ready and must match the dialogue in the PNG exactly. If the wording changes, edit the JSON and rerun `npm run dialogue`; the script preserves the square art region and rebuilds only the dialogue field.
 - `tags`: up to five lowercase subjects ("markets", "retirement", "media"…).
 - **Never create or modify `selected.json`** — the site writes it when the founder publishes.
 - Never write into `/cartoons/` directly; publishing is the founder's decision, made in the Back Room.

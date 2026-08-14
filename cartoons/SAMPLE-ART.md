@@ -3,8 +3,8 @@
 The dated cartoons are polished sample panels used to exercise the real
 publishing, archive, print, social-card, and Back Room flows. They follow the
 series canon, but remain subject to the founder's final character and ink
-approval. Captions, titles, dates, and edition numbers are typeset by the site;
-they are intentionally absent from the artwork itself.
+approval. Dialogue is typeset into each finished PNG; titles, dates, edition
+numbers, proof labels, and catalog lines remain site-native.
 
 ## Art system
 
@@ -12,9 +12,11 @@ they are intentionally absent from the artwork itself.
 - Confident varied line, economical interior detail, and readable silhouettes.
 - Drew keeps his bowtie and three-olive martini; Mango keeps his jacket, lapel
   pin, and old fashioned; Abby remains behind the bar and appears sparingly.
-- No baked caption, title, date, catalog line, proof label, watermark, or UI
-  texture. The public paper and Back Room supply their own framing and effects.
+- Each panel ends with a warm-white dialogue field using the exact caption from
+  its JSON metadata. No title, date, catalog line, proof label, watermark, or UI
+  texture is baked in. The public paper and Back Room supply their framing.
 - The retired clip-art and blank-proof file hashes are blocked by the prebuild.
+- Square art without embedded dialogue is also blocked by the prebuild.
 
 ## Current editions
 
