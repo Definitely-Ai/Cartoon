@@ -47,12 +47,18 @@ clarify Drew's anatomy or a structural overlap.
   for scene-specific clothing fit, `scene-continuity-sheet.png` for environment
   changes, and `proportion-style-sheet.png` for construction and drift checks.
   These review references never overrule the locked master.
-- **Mango identity:** six consistent head-and-shoulder studies: front,
-  three-quarter, profile, earnest, mid-story, and world-weary-but-happy.
-  Unmistakable golden retriever with long muzzle and feathered drop ears.
-- **Mango full body:** dominant seated pose on one classic bar stool plus small
-  gesture studies; tailored jacket, monochrome flag lapel pin, one old fashioned
-  on one coaster, coherent paws, feet, and tail.
+- **Mango identity:** follow `canon/characters/dog/DESCRIPTION.md` and
+  `identity-sheet.png`: consistent adult head studies with a moderate muzzle,
+  feathered drop ears, textured facial fur, thin beard-free neck, and
+  human-readable monochrome eyes whose white sclera, gray iris, black pupil,
+  and catchlights remain visibly separate.
+- **Mango full body:** follow `full-body-sheet.png`: 46-year-old upright
+  anthropomorphic golden retriever, solid and softly built rather than fat or
+  muscular, thin neck, human-shaped five-finger hands with canine cues, broad
+  canine feet, and **no tail**. The sheet is the clothing-neutral body authority.
+  In the standard bar scene, layer on the rumpled jacket, exact waving USA pin
+  from `lapel-pin-bible.png` on the left lapel, and one old fashioned on one
+  coaster. Scene-specific clothing may change; the underlying body never does.
 - **Abby identity:** six consistent head-and-neck studies: front, three-quarter,
   profile, wise, helpful, and faintly amused. Slim adult westie, triangular ears,
   tufted muzzle, feminine without glamour treatment.

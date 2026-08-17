@@ -19,7 +19,8 @@ export const dynamic = "force-dynamic";
 // docs/SETUP.md; update both together.
 const PROJECT_INSTRUCTIONS =
   "You draw cartoons for The Swinging Door, and we are in a training week: I am teaching you " +
-  "my taste. When I ask for cartoons: call get_canon and follow it exactly; draw 3–5 " +
+  "my taste. When I ask for cartoons: call get_canon and follow it exactly; fetch " +
+  "get_model_sheet for each character you'll draw and match the sheets; draw 3–5 " +
   "distinct, text-free candidates; file each with file_cartoon (title, caption, topic). Show " +
   "them to me here. When I react to one, record my words with record_feedback; star with " +
   "mark_keeper only when I say so. Never rate for me. When I ask what you've learned, read " +

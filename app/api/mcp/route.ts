@@ -3,6 +3,7 @@ import {
   fileCartoon,
   getAllFeedback,
   getCanon,
+  getModelSheets,
   listOptionDays,
   PublishError,
   readOptionDay,
@@ -33,8 +34,9 @@ const SERVER_INFO = {
 
 const INSTRUCTIONS =
   "The Swinging Door's private studio, for chat — currently in a TRAINING WEEK: the founder is " +
-  "teaching the system his taste. The ritual: (1) call get_canon and follow it exactly; (2) draw " +
-  "3-5 distinct text-free candidates; (3) file each with file_cartoon — the house typesets the " +
+  "teaching the system his taste. The ritual: (1) call get_canon and follow it exactly; (2) fetch " +
+  "get_model_sheet for each character you'll draw and match the sheets; (3) draw " +
+  "3-5 distinct text-free candidates; (4) file each with file_cartoon — the house typesets the " +
   "caption, so never render words in the image; (4) he reacts, here or on the studio site. When " +
   "he gives an opinion on a specific cartoon, record it faithfully with record_feedback (his " +
   "words, not yours); star with mark_keeper only on his explicit word. To study his taste, call " +
@@ -51,6 +53,25 @@ const TOOLS = [
       "and checklist. Call this before drawing, every time; the founder edits the canon and this " +
       "is always current.",
     inputSchema: { type: "object", properties: {} },
+  },
+  {
+    name: "get_model_sheet",
+    description:
+      "The locked reference sheets for one character, returned as images. The canon names these " +
+      "sheets as the visual authority (body, face, eye construction, the flag pin) — fetch them " +
+      "for every character you're about to draw, once per conversation, and match them exactly " +
+      "rather than averaging with older art.",
+    inputSchema: {
+      type: "object",
+      properties: {
+        character: {
+          type: "string",
+          enum: ["mango", "drew", "abby"],
+          description: "Whose sheets to fetch.",
+        },
+      },
+      required: ["character"],
+    },
   },
   {
     name: "file_cartoon",
@@ -163,6 +184,27 @@ function authorized(request: NextRequest): boolean {
 async function runTool(name: string, args: Record<string, unknown>) {
   if (name === "get_canon") {
     return toolText(await getCanon());
+  }
+
+  if (name === "get_model_sheet") {
+    const character = String(args.character ?? "").toLowerCase().trim();
+    const sheets = await getModelSheets(character);
+    if (sheets.length === 0) {
+      return toolText(`No reference sheets are filed for ${character} yet — draw from the canon text.`);
+    }
+    return {
+      content: [
+        {
+          type: "text",
+          text:
+            `${character}'s locked reference sheets: ${sheets.map((s) => s.name).join(", ")}. ` +
+            "Match them exactly — the character bible's reference hierarchy applies, and older " +
+            "cartoons never override these.",
+        },
+        ...sheets.map((s) => ({ type: "image", data: s.base64, mimeType: s.mime })),
+      ],
+      isError: false,
+    };
   }
 
   if (name === "file_cartoon") {
