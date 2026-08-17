@@ -14,6 +14,21 @@ export const metadata = {
 // at build time would tie the page's truth to build-order coincidences.
 export const dynamic = "force-dynamic";
 
+// The once-only briefing for his ChatGPT Project — kept here, next to the
+// address, so the whole hookup happens from this one page. Mirrors
+// docs/SETUP.md; update both together.
+const PROJECT_INSTRUCTIONS =
+  "You draw cartoons for The Swinging Door, and we are in a training week: I am teaching you " +
+  "my taste. When I ask for cartoons: call get_canon and follow it exactly; draw 3–5 " +
+  "distinct, text-free candidates; file each with file_cartoon (title, caption, topic). Show " +
+  "them to me here. When I react to one, record my words with record_feedback; star with " +
+  "mark_keeper only when I say so. Never rate for me. When I ask what you've learned, read " +
+  "get_feedback and tell me the patterns. Every couple of days we'll revise the bibles from " +
+  "that data — then your next batches should test the revision, and the love-rate trend " +
+  "tells us if it took. On the last day we run the graduation test: before I rate a fresh " +
+  "batch, you predict my verdict for each cartoon and show me the predictions; four out of " +
+  "five right means the bible is ready to present, and any miss tells us which chapter to fix.";
+
 export default function ConnectPage() {
   const secret = process.env.MCP_SECRET;
   const host = process.env.VERCEL_PROJECT_PRODUCTION_URL
@@ -48,8 +63,9 @@ export default function ConnectPage() {
             </p>
             <CopyButton value={url} />
             <p className="br-warn">
-              This address is a key: anyone holding it can publish to the front page. Paste it only
-              into your own AI accounts, never anywhere public.
+              This address is a key: anyone holding it can file cartoons into the studio and read
+              the week&rsquo;s feedback. Paste it only into your own AI accounts, never anywhere
+              public.
             </p>
           </section>
 
@@ -61,6 +77,17 @@ export default function ConnectPage() {
               <li>Choose Create connector, give it a name like &ldquo;The Swinging Door&rdquo;, and paste the address above. No authentication — the key is inside the address.</li>
               <li>Save. In a new chat, enable the connector and you&rsquo;re on the wire.</li>
             </ol>
+          </section>
+
+          <section className="br-wire-section">
+            <h2 className="br-wire-head">Teach it the ritual (once)</h2>
+            <p>
+              In ChatGPT, make a Project for the cartoons, open its instructions, and paste this
+              in. It tells the AI how the training week works — draw, file, listen, and never
+              rate on your behalf.
+            </p>
+            <p className="br-instructions">{PROJECT_INSTRUCTIONS}</p>
+            <CopyButton value={PROJECT_INSTRUCTIONS} label="Copy the instructions" />
           </section>
 
           <section className="br-wire-section">

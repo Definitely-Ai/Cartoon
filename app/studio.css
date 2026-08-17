@@ -723,6 +723,19 @@
   line-height: 1.5;
 }
 
+/* The paste-once Project instructions — a readable serif block the copy
+   button lifts whole. */
+.br-instructions {
+  font-family: var(--br-serif);
+  font-size: 0.98rem;
+  line-height: 1.6;
+  padding: 0.8rem 0.9rem;
+  border: 1px solid var(--br-paper);
+  background: rgba(255, 255, 255, 0.06);
+  margin: 0.9rem 0 0.6rem;
+  user-select: all;
+}
+
 .br-steps {
   padding-left: 1.4rem;
   display: flex;
