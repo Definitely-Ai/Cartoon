@@ -14,7 +14,7 @@ A single-panel, strictly black-and-white barroom cartoon about politics, markets
 
 ## The site — a private studio
 
-The whole site sits behind one login; only the founder gets in. `/login` is the door ("What's the word?"); `/` is **Today** — the newest batch of cartoons laid out big, each with a **Keep this one** star; `/collection` catalogs every day ever generated, grouped by month; `/keepers` is everything he starred; `/connect` shows the AI-connector address and hookup steps. The old public newspaper is parked (still gorgeous) at `/paper`, ready for the day the strip goes public.
+The whole site sits behind one login; only the founder gets in. `/login` is the door ("What's the word?"); `/` is **Today** — the newest batch of cartoons laid out big, each with a **Keep this one** star; `/collection` catalogs every day ever generated, grouped by month; `/keepers` is everything he starred; `/connect` shows the AI-connector address and hookup steps. There is no public side — nothing exists outside the login until the founder decides the strip is ready for the world (the newspaper design lives in git history for that day).
 
 ## The daily flow
 

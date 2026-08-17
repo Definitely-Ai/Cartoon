@@ -177,6 +177,7 @@ export async function publishOption(input: PublishInput): Promise<PublishResult>
 export async function readOptionDay(day: string): Promise<{
   day: string;
   selected: { option: number; slug: string } | null;
+  keepers: number[];
   options: { n: number; title: string | null; caption: string | null; tags: string[] }[];
 }> {
   const { token, repo } = requiredEnv();
@@ -185,6 +186,22 @@ export async function readOptionDay(day: string): Promise<{
   if (listing.status === 404) throw new PublishError(404, `No proofs filed under ${day}.`);
   if (!listing.ok) throw new PublishError(502, `GitHub said ${listing.status} listing ${day}.`);
   const files = ((await listing.json()) as { name: string }[]).map((f) => f.name);
+
+  let keepers: number[] = [];
+  if (files.includes("keepers.json")) {
+    const res = await api(`/repos/${repo}/contents/options/${day}/keepers.json?ref=${BRANCH}`);
+    if (res.ok) {
+      try {
+        const file = (await res.json()) as { content: string };
+        const parsed = JSON.parse(Buffer.from(file.content, "base64").toString("utf8"));
+        if (Array.isArray(parsed.keepers)) {
+          keepers = parsed.keepers.filter((k: unknown): k is number => Number.isInteger(k));
+        }
+      } catch {
+        // tolerate a mangled keepers file
+      }
+    }
+  }
 
   let selected: { option: number; slug: string } | null = null;
   if (files.includes("selected.json")) {
@@ -226,7 +243,107 @@ export async function readOptionDay(day: string): Promise<{
     options.push({ n, title, caption, tags });
   }
 
-  return { day, selected, options };
+  return { day, selected, keepers, options };
+}
+
+/** The master prompt, live from the repo — canon can't go stale in chat. */
+export async function getCanon(): Promise<string> {
+  const { token, repo } = requiredEnv();
+  const api = gh(token);
+  const res = await api(`/repos/${repo}/contents/canon/MASTER-PROMPT.md?ref=${BRANCH}`);
+  if (!res.ok) throw new PublishError(502, `GitHub said ${res.status} fetching the canon.`);
+  const file = (await res.json()) as { content: string };
+  return Buffer.from(file.content, "base64").toString("utf8");
+}
+
+/**
+ * File one finished cartoon into today's batch: auto-numbered, one atomic
+ * commit (finished PNG + suggestion JSON). The PNG arrives here already
+ * typeset by lib/dialogue — this function only numbers and commits.
+ */
+export async function fileCartoon(input: {
+  day: string;
+  title: string;
+  caption: string;
+  topic: string | null;
+  tags: string[];
+  finishedPng: Buffer;
+}): Promise<{ day: string; option: number }> {
+  const { token, repo } = requiredEnv();
+  const { day, title, caption, topic, tags, finishedPng } = input;
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(day)) throw new PublishError(400, "Bad day — use YYYY-MM-DD.");
+  if (!title.trim()) throw new PublishError(400, "The cartoon needs a title.");
+  if (!caption.trim()) throw new PublishError(400, "The cartoon needs its caption.");
+  const api = gh(token);
+
+  // Next free option number for the day (batches can arrive in waves).
+  const listing = await api(`/repos/${repo}/contents/options/${day}?ref=${BRANCH}`);
+  let next = 1;
+  if (listing.ok) {
+    const names = ((await listing.json()) as { name: string }[]).map((f) => f.name);
+    const used = names
+      .map((name) => name.match(/^option-(\d+)\.png$/)?.[1])
+      .filter((n): n is string => Boolean(n))
+      .map(Number);
+    next = used.length ? Math.max(...used) + 1 : 1;
+  } else if (listing.status !== 404) {
+    throw new PublishError(502, `GitHub said ${listing.status} listing ${day}.`);
+  }
+
+  const headRes = await api(`/repos/${repo}/git/ref/${encodeURIComponent(`heads/${BRANCH}`)}`);
+  if (!headRes.ok) throw new PublishError(502, `GitHub said ${headRes.status} reading ${BRANCH}.`);
+  const headSha = ((await headRes.json()) as { object: { sha: string } }).object.sha;
+
+  const blobRes = await api(`/repos/${repo}/git/blobs`, {
+    method: "POST",
+    body: JSON.stringify({ content: finishedPng.toString("base64"), encoding: "base64" }),
+  });
+  if (!blobRes.ok) throw new PublishError(502, `GitHub said ${blobRes.status} uploading the artwork.`);
+  const blobSha = ((await blobRes.json()) as { sha: string }).sha;
+
+  const suggestion = {
+    title: title.trim(),
+    caption: caption.trim(),
+    tags: tags.slice(0, 5),
+    ...(topic ? { topic: topic.trim().toLowerCase() } : {}),
+  };
+
+  const treeRes = await api(`/repos/${repo}/git/trees`, {
+    method: "POST",
+    body: JSON.stringify({
+      base_tree: headSha,
+      tree: [
+        { path: `options/${day}/option-${next}.png`, mode: "100644", type: "blob", sha: blobSha },
+        {
+          path: `options/${day}/option-${next}.json`,
+          mode: "100644",
+          type: "blob",
+          content: `${JSON.stringify(suggestion, null, 2)}\n`,
+        },
+      ],
+    }),
+  });
+  if (!treeRes.ok) throw new PublishError(502, `GitHub said ${treeRes.status} building the tree.`);
+  const treeSha = ((await treeRes.json()) as { sha: string }).sha;
+
+  const commitRes = await api(`/repos/${repo}/git/commits`, {
+    method: "POST",
+    body: JSON.stringify({
+      message: `file: ${title.trim()} (option ${next} of ${day})`,
+      tree: treeSha,
+      parents: [headSha],
+    }),
+  });
+  if (!commitRes.ok) throw new PublishError(502, `GitHub said ${commitRes.status} writing the commit.`);
+  const commitSha = ((await commitRes.json()) as { sha: string }).sha;
+
+  const refRes = await api(`/repos/${repo}/git/refs/${encodeURIComponent(`heads/${BRANCH}`)}`, {
+    method: "PATCH",
+    body: JSON.stringify({ sha: commitSha }),
+  });
+  if (!refRes.ok) throw new PublishError(409, "The presses were busy — file it again.");
+
+  return { day, option: next };
 }
 
 /**

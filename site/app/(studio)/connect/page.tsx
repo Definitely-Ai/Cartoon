@@ -31,10 +31,11 @@ export default function ConnectPage() {
       <section className="br-wire-section">
         <h2 className="br-wire-head">What this does</h2>
         <p>
-          Once your AI (ChatGPT or Claude) is connected to the wire, the whole daily routine can
-          happen in one conversation: ask for a cartoon, look at the three it draws, say
-          &ldquo;run the second one&rdquo; — and it publishes to the front page for you. Same
-          presses as the RUN IT button; this room&rsquo;s ledger records it either way.
+          Once your AI (ChatGPT or Claude) is connected to the wire, the whole daily routine
+          happens in one conversation: it reads the character bibles straight from the vault,
+          draws the day&rsquo;s cartoons, files them here — the house typesets the words — and
+          stars the ones you say you like. Everything it files lands on Today at the same time,
+          bigger and easier to compare.
         </p>
       </section>
 
@@ -74,13 +75,13 @@ export default function ConnectPage() {
           <section className="br-wire-section">
             <h2 className="br-wire-head">Then, any morning</h2>
             <ol className="br-steps">
-              <li>&ldquo;Make me a Swinging Door cartoon about the jobs report.&rdquo;</li>
-              <li>It reads the character bible, draws three takes, and shows them to you right in the chat.</li>
-              <li>&ldquo;Run the second one.&rdquo; It publishes; the front page updates in about a minute.</li>
+              <li>&ldquo;I want them fishing today.&rdquo;</li>
+              <li>It reads the character bibles, draws three to five takes, files them, and shows you right in the chat.</li>
+              <li>&ldquo;I like the second and the last one.&rdquo; It stars them — your Keepers gallery grows.</li>
             </ol>
             <p className="br-wire-note">
-              Prefer pictures on a bigger table? Everything also lands here on the light table, same
-              as always. Two doors, one bar.
+              Prefer a bigger table? Everything it files is already waiting on Today. Two doors,
+              one bar.
             </p>
           </section>
         </>

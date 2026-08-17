@@ -70,9 +70,13 @@ It needs two environment variables in the Vercel project (Settings → Environme
 
 Optional extras: `AUTH_SECRET` (any long random string; signs the login cookie — when unset it is derived from the password, and setting it separately lets you log every device out without changing the password) and `GITHUB_REPO` (defaults to `Definitely-Ai/Cartoon`, for if the repo ever moves).
 
-## Chat publishing (MCP connector)
+## The chat connector (MCP)
 
-The site also exposes the Back Room as an **MCP server** at `/api/mcp`, so the founder can review and publish entirely from a conversation — ChatGPT or Claude with the site added as a connector. Two tools: `get_light_table` (lists a day's candidates and whether it already ran) and `publish_cartoon` (the same atomic publish the RUN IT button performs — it can only run existing options, never write anything else).
+The site is an **MCP server** at `/api/mcp` — the whole daily ritual can run inside one ChatGPT conversation. Four tools: `get_canon` (the live master prompt from the repo — canon can never go stale), `file_cartoon` (accepts text-free artwork; the server typesets the dialogue in the house style and commits it into today's batch), `get_light_table` (lists a day, stars marked), and `mark_keeper` (stars on the founder's word).
+
+**The founder's ChatGPT Project instructions** (paste once into a Project with this connector enabled):
+
+> You draw cartoons for The Swinging Door. When I ask for cartoons: call get_canon and follow it exactly; draw 3–5 distinct, text-free candidates; file each with file_cartoon (title, caption, topic). Show them to me here. Star with mark_keeper only when I say which ones I like.
 
 Setup:
 
@@ -80,7 +84,7 @@ Setup:
 2. The connector URL is `https://<your-domain>/api/mcp?key=<MCP_SECRET>`. Treat the full URL like a password.
 3. **ChatGPT**: Settings → Connectors → Advanced → enable Developer mode, then Create connector → paste the URL (no authentication — the key is in the URL).
    **Claude**: Settings → Connectors → Add custom connector → paste the URL.
-4. Then, in chat: the AI generates the day's three cartoons into `/options` as usual, the founder looks at them right there in the conversation, says "run number two," and the connector publishes it. The Back Room website shows the same ledger either way.
+4. Then, in chat: "I want them fishing today" → it fetches the canon, draws 3–5, files them (they appear on the studio's Today page at the same time), and stars whichever ones he says he likes.
 
 Without `MCP_SECRET` set, the endpoint refuses all requests.
 

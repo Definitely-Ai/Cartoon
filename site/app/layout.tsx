@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { ViewTransitionCompleter } from "@/components/TransitionLink";
 import "./globals.css";
 
 // Absolute URLs for OG tags: Vercel provides the production hostname at
@@ -30,7 +29,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <a className="skip-link" href="#content">
           Skip to content
         </a>
-        <ViewTransitionCompleter />
         {children}
       </body>
     </html>

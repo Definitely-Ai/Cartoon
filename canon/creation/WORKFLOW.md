@@ -18,27 +18,13 @@ Purpose: the repeatable path from "new topic" to "published cartoon," per the fo
 
 **Use `/canon/MASTER-PROMPT.md`.** It is the pre-assembled base block — style, room map, and character anchors already composed — with three slots (`[SCENE]`, `[TV]`, `[BOARD]`) and the pre-flight checklist. Paste it verbatim; do not re-derive a prompt from the individual bibles, which is how drift happens. The individual documents remain the source of truth the master prompt is built from — when the founder changes a bible, update the master prompt to match. Supply the exact final caption to the deterministic dialogue pass after the image model returns the text-free illustration.
 
-## Delivery — the exact file contract
+## Delivery — through the studio connector
 
-When the founder asks for a cartoon ("I want a cartoon about X"), produce **three finished candidates** and commit them to this repo as the day's proofs:
+The primary path is the studio's own MCP connector (the founder's ChatGPT Project has it installed):
 
-```
-/options/YYYY-MM-DD/          ← today's date
-  option-1.png                ← finished cartoon, B&W ink wash, ≥1200px long side
-  option-1.json               ← {"title": "…", "caption": "…", "tags": ["…", "…"]}
-  option-2.png
-  option-2.json
-  option-3.png
-  option-3.json
-```
+1. Call `get_canon` and follow it exactly — every request, no exceptions.
+2. Draw **3–5 distinct, text-free candidates** (different scenes or speakers, never crops of one image). No words in the artwork: the house typesets the dialogue.
+3. File each one with `file_cartoon` (the raw image plus `title`, `caption`, `topic`, `tags`). The server typesets the caption beneath the art in the house style and commits it; options auto-number within the day.
+4. Show the founder the candidates in the conversation. When he says which he likes, call `mark_keeper` for those — never before he chooses.
 
-Rules for the generator:
-
-- Three distinct takes on the same request — different visual scenes or different speakers, not three crops of one image.
-- Each PNG is a finished cartoon: square or 4:5 illustrated panel plus its exact dialogue typeset in the warm-white caption field below. No title, date, proof label, or watermark is baked in.
-- Each JSON's `caption` is print-ready and must match the dialogue in the PNG exactly. If the wording changes, edit the JSON and rerun `npm run dialogue`; the script preserves the square art region and rebuilds only the dialogue field.
-- `tags`: up to five lowercase subjects ("markets", "retirement", "media"…).
-- **Never create or modify `selected.json`** — the site writes it when the founder publishes.
-- Never write into `/cartoons/` directly; publishing is the founder's decision, made in the Back Room.
-
-The moment the options are pushed, they appear on the founder's light table at the website's `/backroom`. He picks one, taps RUN IT, and the site publishes it to the front page automatically.
+Fallback (no connector): commit files directly as `/options/YYYY-MM-DD/option-N.png` + `option-N.json` `{"title","caption","topic","tags"}` — PNGs must then already be in the finished dialogue format (see `/docs/PUBLISHING.md`). Never create or modify `keepers.json` or `selected.json` by hand.

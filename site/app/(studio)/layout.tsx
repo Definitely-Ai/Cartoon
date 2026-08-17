@@ -32,7 +32,6 @@ export default function StudioLayout({ children }: { children: ReactNode }) {
 
       <nav className="br-staff-links" aria-label="Elsewhere">
         <Link href="/connect">Connect your AI</Link>
-        <Link href="/paper">The paper (preview)</Link>
         <form action="/api/backroom/logout" method="post" className="br-logout">
           <button type="submit">Lock up on the way out</button>
         </form>

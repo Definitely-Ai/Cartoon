@@ -1,17 +1,19 @@
 import { NextResponse, type NextRequest } from "next/server";
 import {
+  fileCartoon,
+  getCanon,
   listOptionDays,
   PublishError,
-  publishOption,
   readOptionDay,
   setKeeper,
-  validatePublishInput,
 } from "@/lib/githubPublish";
+import { finishCartoon } from "@/lib/dialogue";
 
-// The chat door: a minimal MCP server (streamable HTTP, stateless, no
-// dependencies) so the founder can review and publish straight from a
-// conversation — ChatGPT or Claude with this site added as a connector.
-// Two tools, same publish core as the RUN IT button.
+// The chat door: a minimal MCP server (streamable HTTP, stateless) so the
+// founder's whole ritual can happen in one conversation — the AI fetches
+// the live canon, draws, files each finished cartoon into today's batch
+// (the house typesets the dialogue server-side), and stars keepers on the
+// founder's word. The studio site shows the same batches, bigger.
 //
 // Auth: the URL carries ?key=<MCP_SECRET> (or an Authorization: Bearer
 // header). Without MCP_SECRET set in the environment the endpoint refuses
@@ -28,17 +30,46 @@ const SERVER_INFO = {
 };
 
 const INSTRUCTIONS =
-  "The Swinging Door's studio, for chat. get_light_table lists a day's cartoons (the founder has " +
-  "already seen the images — they were generated in this conversation). mark_keeper stars the " +
-  "ones he likes — his private best-of. publish_cartoon runs one on the parked public paper and " +
-  "is rarely needed for now. NEVER star or publish until the founder explicitly says which one.";
+  "The Swinging Door's private studio, for chat. The ritual: (1) call get_canon and follow it " +
+  "exactly; (2) draw 3-5 distinct text-free candidates; (3) file each with file_cartoon — the " +
+  "house typesets the caption into the artwork, so never render words in the image; (4) the " +
+  "founder looks, here or on the studio site; (5) mark_keeper ONLY when he explicitly says " +
+  "which ones he likes. Everything stays private to him.";
 
 const TOOLS = [
   {
+    name: "get_canon",
+    description:
+      "Fetch the live master prompt from the repo — the exact base block, slots, never-draw list, " +
+      "and checklist. Call this before drawing, every time; the founder edits the canon and this " +
+      "is always current.",
+    inputSchema: { type: "object", properties: {} },
+  },
+  {
+    name: "file_cartoon",
+    description:
+      "File one finished candidate into the day's batch. Send the TEXT-FREE artwork (square or " +
+      "portrait; PNG or JPEG; base64) — the house typesets the caption beneath it in the strip's " +
+      "house style, so never draw words into the image. Auto-numbers within the day. If the " +
+      "payload is rejected as too large, re-encode as JPEG quality 85 and retry.",
+    inputSchema: {
+      type: "object",
+      properties: {
+        image_base64: { type: "string", description: "The artwork file, base64-encoded. No data: prefix." },
+        title: { type: "string", description: "Short title for the cartoon." },
+        caption: { type: "string", description: "The exact dialogue to typeset (≤ ~140 characters)." },
+        topic: { type: "string", description: "The founder's request in a word or two, e.g. \"fishing\"." },
+        tags: { type: "array", items: { type: "string" }, description: "Up to five lowercase subjects." },
+        day: { type: "string", description: "ISO date YYYY-MM-DD; omit for today (UTC)." },
+      },
+      required: ["image_base64", "title", "caption"],
+    },
+  },
+  {
     name: "get_light_table",
     description:
-      "List the candidate cartoons (proofs) filed for a day, with their suggested titles and captions, " +
-      "and whether the day already ran. Omit `day` to get the newest day still awaiting a decision.",
+      "List the cartoons filed for a day, with titles, captions, topics, and which are starred " +
+      "keepers. Omit `day` for the newest day.",
     inputSchema: {
       type: "object",
       properties: {
@@ -59,24 +90,6 @@ const TOOLS = [
         on: { type: "boolean", description: "true to star (default), false to unstar." },
       },
       required: ["day", "option"],
-    },
-  },
-  {
-    name: "publish_cartoon",
-    description:
-      "Publish one candidate to the public front page. Call ONLY after the founder explicitly chose " +
-      "the option number. The title and caption print exactly as given; prefer the filed suggestions " +
-      "unless the founder edited them. Publishing is permanent for the day (one edition per day).",
-    inputSchema: {
-      type: "object",
-      properties: {
-        day: { type: "string", description: "ISO date YYYY-MM-DD of the proofs." },
-        option: { type: "integer", description: "Which option to run (1, 2, 3…)." },
-        title: { type: "string", description: "The edition's title, exactly as it should print." },
-        caption: { type: "string", description: "The caption, exactly as it should print." },
-        tags: { type: "array", items: { type: "string" }, description: "Up to five lowercase subjects." },
-      },
-      required: ["day", "option", "title", "caption"],
     },
   },
 ];
@@ -104,32 +117,53 @@ function authorized(request: NextRequest): boolean {
 }
 
 async function runTool(name: string, args: Record<string, unknown>) {
+  if (name === "get_canon") {
+    return toolText(await getCanon());
+  }
+
+  if (name === "file_cartoon") {
+    const imageB64 = typeof args.image_base64 === "string" ? args.image_base64 : "";
+    if (!imageB64) throw new PublishError(400, "image_base64 is required.");
+    const caption = typeof args.caption === "string" ? args.caption : "";
+    const title = typeof args.title === "string" ? args.title : "";
+    const day =
+      typeof args.day === "string" && /^\d{4}-\d{2}-\d{2}$/.test(args.day)
+        ? args.day
+        : new Date().toISOString().slice(0, 10);
+    const tags = Array.isArray(args.tags)
+      ? args.tags.filter((t): t is string => typeof t === "string").map((t) => t.toLowerCase())
+      : [];
+    const finishedPng = await finishCartoon(Buffer.from(imageB64, "base64"), caption);
+    const filed = await fileCartoon({
+      day,
+      title,
+      caption,
+      topic: typeof args.topic === "string" ? args.topic : null,
+      tags,
+      finishedPng,
+    });
+    return toolText(
+      `Filed as option ${filed.option} of ${filed.day} — dialogue typeset, on the founder's ` +
+        `light table within a minute.`
+    );
+  }
+
   if (name === "get_light_table") {
     let day = typeof args.day === "string" ? args.day : undefined;
     if (!day) {
-      // Newest day still awaiting a decision, else the newest day.
       const days = await listOptionDays();
-      if (days.length === 0) return toolText("No proofs are on file yet — /options is empty.");
-      for (const candidate of days.slice(0, 7)) {
-        const read = await readOptionDay(candidate);
-        if (!read.selected) {
-          day = candidate;
-          break;
-        }
-      }
-      day = day ?? days[0];
+      if (days.length === 0) return toolText("Nothing filed yet — /options is empty.");
+      day = days[0];
     }
     const table = await readOptionDay(day);
     const lines = [
-      `Proofs for ${table.day}:`,
+      `Cartoons of ${table.day}:`,
       ...table.options.map(
         (o) =>
-          `  Option ${o.n}: ${o.title ?? "(untitled)"} — "${o.caption ?? "no suggested caption"}"` +
-          (o.tags.length ? ` [${o.tags.join(", ")}]` : "")
+          `  Option ${o.n}${table.keepers.includes(o.n) ? " ★" : ""}: ${o.title ?? "(untitled)"} — ` +
+          `"${o.caption ?? "no caption"}"` + (o.tags.length ? ` [${o.tags.join(", ")}]` : "")
       ),
-      table.selected
-        ? `Already ran: option ${table.selected.option} → /cartoon/${table.selected.slug}. A day runs only one edition.`
-        : "Undecided. Ask the founder which option should run; publish only after an explicit choice.",
+      "Ask the founder which ones he likes; star only after an explicit choice.",
     ];
     return toolText(lines.join("\n"));
   }
@@ -142,15 +176,6 @@ async function runTool(name: string, args: Record<string, unknown>) {
     return toolText(
       `${on ? "Starred" : "Unstarred"} option ${option} of ${day}. Keepers for that day: ` +
         `${keepers.length ? keepers.join(", ") : "none"}. The studio site reflects it within a minute.`
-    );
-  }
-
-  if (name === "publish_cartoon") {
-    const input = validatePublishInput(args);
-    const { slug, edition } = await publishOption(input);
-    return toolText(
-      `It ran. Option ${input.option} of ${input.day} is now Edition No. ${edition}. ` +
-        `The front page updates in about a minute; its permanent address is /cartoon/${slug}.`
     );
   }
 

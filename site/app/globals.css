@@ -2,7 +2,7 @@
    1. Reset — the few rules every browser needs overridden.
    2. Ink tokens — the ONLY colors that exist anywhere in this site.
    3. Focus, skip link, screen-reader utility.
-   4. View-transition plumbing (disabled under reduced motion).
+   4. Reduced-motion safety net.
    The paper's identity lives in (paper)/variant-a.css (scoped under
    .variant-a) and the staff side's in backroom/backroom.css. */
 
@@ -106,23 +106,11 @@ body {
   border: 0;
 }
 
-/* 4. View transitions. TransitionLink only runs when motion is allowed and
-   the browser supports startViewTransition; this CSS shapes the two flows
-   it serves (thumbnail → permalink morph via per-slug names on the cartoon
-   figure; prev/next as a quick page-turn cross-fade). The reduced-motion
-   block is belt-and-braces on top of the JS guard. */
-@media (prefers-reduced-motion: no-preference) {
-  ::view-transition-old(root),
-  ::view-transition-new(root) {
-    animation-duration: 180ms;
-  }
-}
-
+/* 4. Reduced-motion safety net for any future animation. */
 @media (prefers-reduced-motion: reduce) {
-  ::view-transition-group(*),
-  ::view-transition-image-pair(*),
-  ::view-transition-old(*),
-  ::view-transition-new(*) {
+  *,
+  *::before,
+  *::after {
     animation: none !important;
   }
 }
