@@ -12,7 +12,7 @@ Working defaults (approve or veto in the style session):
 
 - **Three values only**: paper white, one mid-gray wash, solid black ink. A second, darker wash is allowed in shadows sparingly; never a smooth digital gradient.
 - **Brush-pen line**, variable weight — thick where forms sit (the bar, shoulders), thin for features and detail. Loose but certain; no sketchy multiple strokes, no cross-hatching.
-- **Faces do little and mean much**: dot eyes, single brow strokes, small mouths. The gag is in posture and placement, not grimaces.
+- **Faces do little and mean much**: small mouths, controlled lids and brows, and no grimaces. Eye construction follows each approved character sheet rather than one generic dot-eye rule. Mango specifically uses visible paper-white sclera, a separate gray iris, a separate black pupil, and controlled catchlights so his gaze and emotion remain readable; this detail stays restrained and monochrome. The gag is still in posture and placement, not exaggerated reaction faces.
 
 ## Black & White Rules
 
