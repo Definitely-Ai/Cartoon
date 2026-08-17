@@ -88,15 +88,6 @@
   background: var(--paper-cream);
 }
 
-.permalink-caption {
-  font-style: italic;
-  text-align: center;
-  font-size: 1.2rem;
-  line-height: 1.45;
-  margin-top: 1.1rem;
-  padding: 0 0.5rem;
-}
-
 .permalink-tags {
   text-align: center;
   font-size: 0.8rem;
@@ -208,7 +199,4 @@
     background: none;
   }
 
-  .permalink-caption {
-    font-size: 13pt;
-  }
 }

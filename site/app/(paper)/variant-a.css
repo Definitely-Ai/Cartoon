@@ -413,18 +413,6 @@
   height: auto;
 }
 
-/* The caption is the joke — set as the subhead. Pure black on
-   paper white/warm: comfortably WCAG AA. */
-.variant-a .va-caption {
-  font-style: italic;
-  font-size: var(--scale-2);
-  line-height: calc(var(--baseline) * 1.25);
-  text-align: center;
-  text-wrap: balance;
-  max-width: 40em;
-  margin: calc(var(--baseline) / 2) auto 0;
-}
-
 /* The deck: one italic serif line under the headline, built from
    the filing tags and edition number, the way a real deck reads. */
 .variant-a .va-deck {
