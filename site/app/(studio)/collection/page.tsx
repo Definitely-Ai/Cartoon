@@ -57,6 +57,7 @@ export default function CollectionPage() {
                         <span className="br-ledger-date">{formatDateAP(day.day)}</span>
                         <span className="br-chip">
                           {topics.length > 0 ? `“${topics.join("” · “")}”` : `${day.options.length} cartoons`}
+                          {` · rated ${day.ratedCount}/${day.options.length}`}
                           {day.keepers.length > 0 && ` · ★ ${day.keepers.length}`}
                         </span>
                       </span>

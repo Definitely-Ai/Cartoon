@@ -16,6 +16,10 @@ A single-panel, strictly black-and-white barroom cartoon about politics, markets
 
 The whole site sits behind one login; only the founder gets in. `/login` is the door ("What's the word?"); `/` is **Today** — the newest batch of cartoons laid out big, each with a **Keep this one** star; `/collection` catalogs every day ever generated, grouped by month; `/keepers` is everything he starred; `/connect` shows the AI-connector address and hookup steps. There is no public side — nothing exists outside the login until the founder decides the strip is ready for the world (the newspaper design lives in git history for that day).
 
+## The training week
+
+Right now the product is being perfected before it's shown to anyone: the founder generates many batches a day, and **every cartoon gets a verdict** — Love it / It's fine / Not for me — a keeper star for the exceptional, and an optional note on why. All of it lands in `options/<day>/feedback.json`. At the end of the week the AI reads the whole corpus (`get_feedback`) and proposes bible revisions that actually represent his style and humor.
+
 ## The daily flow
 
 1. The founder tells his AI (ChatGPT, connected to this repo): *"I want them fishing today."*

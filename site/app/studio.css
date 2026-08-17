@@ -798,3 +798,110 @@
   margin-top: 1.5rem;
   font-size: 0.95rem;
 }
+
+/* ------------------------------------------- 10. The feedback loop */
+
+.br-progress {
+  font-family: var(--br-chalk);
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
+}
+
+.br-topic-group + .br-topic-group {
+  margin-top: 2.5rem;
+}
+
+.br-feedback {
+  margin-top: 0.8rem;
+  text-align: center;
+}
+
+.br-verdicts {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.br-verdict {
+  min-height: 48px;
+  padding: 0.5rem 1.1rem;
+  font-family: var(--br-caps);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--br-paper);
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.55);
+  cursor: pointer;
+}
+
+.br-verdict-on {
+  background: var(--br-paper);
+  color: var(--ink);
+  border-color: var(--br-paper);
+}
+
+.br-note-view {
+  margin-top: 0.6rem;
+  font-size: 0.95rem;
+}
+
+.br-note-text {
+  font-family: var(--br-chalk);
+  font-size: 1.05rem;
+}
+
+.br-note-link {
+  font-family: var(--br-caps);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--br-paper);
+  background: none;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  padding: 0.2rem 0;
+  cursor: pointer;
+}
+
+.br-note-edit {
+  margin-top: 0.7rem;
+}
+
+.br-note-edit textarea {
+  width: 100%;
+  font-family: var(--br-serif);
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--ink);
+  background: var(--br-paper);
+  border: none;
+  padding: 0.65rem 0.7rem;
+}
+
+.br-note-actions {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+.br-note-save {
+  min-height: 44px;
+  padding: 0.45rem 1.4rem;
+  font-family: var(--br-caps);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  background: var(--br-paper);
+  color: var(--ink);
+  border: none;
+  cursor: pointer;
+}
+
+.br-note-saved {
+  font-family: var(--br-chalk);
+  font-size: 0.95rem;
+}

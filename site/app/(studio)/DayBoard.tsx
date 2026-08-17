@@ -1,29 +1,40 @@
 import Image from "next/image";
-import type { OptionDay } from "@/lib/options";
+import type { CartoonOption, OptionDay } from "@/lib/options";
 import { formatDateline } from "@/lib/format";
+import FeedbackPanel from "./FeedbackPanel";
 import StarButton from "./StarButton";
 
-// One day's cartoons on the table: big cards, tap to zoom, star to keep.
-// The topic (the founder's request — "fishing") headlines the batch, the
-// way an assignment headlines a contact sheet.
+// One day's cartoons on the table, grouped by the request that produced
+// them. Under every card: the keeper star and the training-week verdict
+// chips — the whole feedback loop, one glance per cartoon.
+
+function groupByTopic(options: CartoonOption[]): { topic: string | null; options: CartoonOption[] }[] {
+  const groups: { topic: string | null; options: CartoonOption[] }[] = [];
+  for (const option of options) {
+    const bucket = groups.find((g) => g.topic === option.topic);
+    if (bucket) bucket.options.push(option);
+    else groups.push({ topic: option.topic, options: [option] });
+  }
+  return groups;
+}
 
 export default function DayBoard({ day }: { day: OptionDay }) {
-  const topics = Array.from(new Set(day.options.map((o) => o.topic).filter(Boolean))) as string[];
+  const groups = groupByTopic(day.options);
+  const remaining = day.options.length - day.ratedCount;
 
   return (
     <section className="br-table" aria-label={`Cartoons of ${day.day}`}>
       <div className="br-table-head">
         <h1 className="br-date">{formatDateline(day.day)}</h1>
-        {topics.length > 0 && (
-          <p className="br-topic">
-            {"“"}
-            {topics.join("” · “")}
-            {"”"}
-          </p>
-        )}
         <p className="br-howto">
-          {day.options.length} cartoon{day.options.length === 1 ? "" : "s"}. Tap a picture to see it
-          big; star the ones worth keeping.
+          {day.options.length} cartoon{day.options.length === 1 ? "" : "s"}. Tap a picture to see
+          it big. Give each one a verdict — and when you can, a line about why. That&rsquo;s what
+          teaches the AI your taste.
+        </p>
+        <p className="br-progress" role="status">
+          {remaining === 0
+            ? "All rated — good work."
+            : `${day.ratedCount} of ${day.options.length} rated · ${remaining} to go`}
         </p>
       </div>
 
@@ -38,8 +49,12 @@ export default function DayBoard({ day }: { day: OptionDay }) {
         </nav>
       )}
 
+      {groups.map((group) => (
+        <div key={group.topic ?? "general"} className="br-topic-group">
+          {groups.length > 1 && group.topic && <h2 className="br-topic">“{group.topic}”</h2>}
+          {groups.length === 1 && group.topic && <p className="br-topic">“{group.topic}”</p>}
       <ul className="br-proofs">
-        {day.options.map((option) => (
+        {group.options.map((option) => (
           <li key={option.n} id={`proof-${day.day}-${option.n}`} className="br-proof">
             <p className="br-proof-no" aria-hidden="true">
               № {option.n}
@@ -75,9 +90,17 @@ export default function DayBoard({ day }: { day: OptionDay }) {
               </figcaption>
             </figure>
             <StarButton day={day.day} option={option.n} initial={option.keeper} />
+            <FeedbackPanel
+              day={day.day}
+              option={option.n}
+              initialRating={option.rating}
+              initialNote={option.note}
+            />
           </li>
         ))}
       </ul>
+        </div>
+      ))}
     </section>
   );
 }

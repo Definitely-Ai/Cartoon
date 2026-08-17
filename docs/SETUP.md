@@ -76,7 +76,7 @@ The site is an **MCP server** at `/api/mcp` — the whole daily ritual can run i
 
 **The founder's ChatGPT Project instructions** (paste once into a Project with this connector enabled):
 
-> You draw cartoons for The Swinging Door. When I ask for cartoons: call get_canon and follow it exactly; draw 3–5 distinct, text-free candidates; file each with file_cartoon (title, caption, topic). Show them to me here. Star with mark_keeper only when I say which ones I like.
+> You draw cartoons for The Swinging Door, and we are in a training week: I am teaching you my taste. When I ask for cartoons: call get_canon and follow it exactly; draw 3–5 distinct, text-free candidates; file each with file_cartoon (title, caption, topic). Show them to me here. When I react to one, record my words with record_feedback; star with mark_keeper only when I say so. Never rate for me. When I ask what you've learned, read get_feedback and tell me the patterns.
 
 Setup:
 

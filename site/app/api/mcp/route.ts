@@ -1,10 +1,12 @@
 import { NextResponse, type NextRequest } from "next/server";
 import {
   fileCartoon,
+  getAllFeedback,
   getCanon,
   listOptionDays,
   PublishError,
   readOptionDay,
+  setFeedback,
   setKeeper,
 } from "@/lib/githubPublish";
 import { finishCartoon } from "@/lib/dialogue";
@@ -30,11 +32,13 @@ const SERVER_INFO = {
 };
 
 const INSTRUCTIONS =
-  "The Swinging Door's private studio, for chat. The ritual: (1) call get_canon and follow it " +
-  "exactly; (2) draw 3-5 distinct text-free candidates; (3) file each with file_cartoon — the " +
-  "house typesets the caption into the artwork, so never render words in the image; (4) the " +
-  "founder looks, here or on the studio site; (5) mark_keeper ONLY when he explicitly says " +
-  "which ones he likes. Everything stays private to him.";
+  "The Swinging Door's private studio, for chat — currently in a TRAINING WEEK: the founder is " +
+  "teaching the system his taste. The ritual: (1) call get_canon and follow it exactly; (2) draw " +
+  "3-5 distinct text-free candidates; (3) file each with file_cartoon — the house typesets the " +
+  "caption, so never render words in the image; (4) he reacts, here or on the studio site. When " +
+  "he gives an opinion on a specific cartoon, record it faithfully with record_feedback (his " +
+  "words, not yours); star with mark_keeper only on his explicit word. To study his taste, call " +
+  "get_feedback — it returns every verdict and note of the week. Never rate on his behalf.";
 
 const TOOLS = [
   {
@@ -76,6 +80,31 @@ const TOOLS = [
         day: { type: "string", description: "ISO date YYYY-MM-DD. Optional." },
       },
     },
+  },
+  {
+    name: "record_feedback",
+    description:
+      "Record the founder's verdict and/or note for one cartoon — ONLY what he actually said, " +
+      "never your own opinion. rating: 3 = love it, 2 = it's fine, 1 = not for me. The note " +
+      "should be his reasoning, near-verbatim.",
+    inputSchema: {
+      type: "object",
+      properties: {
+        day: { type: "string", description: "ISO date YYYY-MM-DD of the batch." },
+        option: { type: "integer", description: "Which option he's reacting to." },
+        rating: { type: "integer", enum: [1, 2, 3], description: "3 love it · 2 it's fine · 1 not for me." },
+        note: { type: "string", description: "His words on why, near-verbatim. Optional." },
+      },
+      required: ["day", "option"],
+    },
+  },
+  {
+    name: "get_feedback",
+    description:
+      "The whole training corpus: every cartoon of every day with its verdict, keeper star, " +
+      "topic, caption, and the founder's notes. Use it to analyze his taste or to draft bible " +
+      "revisions at the end of the week.",
+    inputSchema: { type: "object", properties: {} },
   },
   {
     name: "mark_keeper",
@@ -146,6 +175,23 @@ async function runTool(name: string, args: Record<string, unknown>) {
       `Filed as option ${filed.option} of ${filed.day} — dialogue typeset, on the founder's ` +
         `light table within a minute.`
     );
+  }
+
+  if (name === "record_feedback") {
+    const day = typeof args.day === "string" ? args.day : "";
+    const option = Number(args.option);
+    const patch: { rating?: 1 | 2 | 3; note?: string } = {};
+    if (args.rating !== undefined) patch.rating = Number(args.rating) as 1 | 2 | 3;
+    if (typeof args.note === "string" && args.note.trim()) patch.note = args.note.trim();
+    if (patch.rating === undefined && patch.note === undefined) {
+      throw new PublishError(400, "Record a rating, a note, or both.");
+    }
+    await setFeedback(day, option, patch);
+    return toolText(`Recorded for option ${option} of ${day}. The studio reflects it within a minute.`);
+  }
+
+  if (name === "get_feedback") {
+    return toolText(await getAllFeedback());
   }
 
   if (name === "get_light_table") {

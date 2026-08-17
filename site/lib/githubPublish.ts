@@ -178,7 +178,7 @@ export async function readOptionDay(day: string): Promise<{
   day: string;
   selected: { option: number; slug: string } | null;
   keepers: number[];
-  options: { n: number; title: string | null; caption: string | null; tags: string[] }[];
+  options: { n: number; title: string | null; caption: string | null; tags: string[]; topic: string | null }[];
 }> {
   const { token, repo } = requiredEnv();
   const api = gh(token);
@@ -226,6 +226,7 @@ export async function readOptionDay(day: string): Promise<{
     let title: string | null = null;
     let caption: string | null = null;
     let tags: string[] = [];
+    let topic: string | null = null;
     if (files.includes(`option-${n}.json`)) {
       const res = await api(`/repos/${repo}/contents/options/${day}/option-${n}.json?ref=${BRANCH}`);
       if (res.ok) {
@@ -235,12 +236,13 @@ export async function readOptionDay(day: string): Promise<{
           if (typeof parsed.title === "string") title = parsed.title;
           if (typeof parsed.caption === "string") caption = parsed.caption;
           if (Array.isArray(parsed.tags)) tags = parsed.tags.filter((t: unknown): t is string => typeof t === "string");
+          if (typeof parsed.topic === "string" && parsed.topic.trim()) topic = parsed.topic.trim().toLowerCase();
         } catch {
           // a malformed suggestion never blocks the listing
         }
       }
     }
-    options.push({ n, title, caption, tags });
+    options.push({ n, title, caption, tags, topic });
   }
 
   return { day, selected, keepers, options };
@@ -344,6 +346,113 @@ export async function fileCartoon(input: {
   if (!refRes.ok) throw new PublishError(409, "The presses were busy — file it again.");
 
   return { day, option: next };
+}
+
+export type FeedbackEntry = { rating?: 1 | 2 | 3; note?: string; at?: string };
+
+/**
+ * Record the founder's verdict and/or note for one option — the training
+ * week's core write. Merges into options/<day>/feedback.json (one file per
+ * day, one entry per option) so a whole week of taste survives as data.
+ */
+export async function setFeedback(
+  day: string,
+  option: number,
+  patch: { rating?: 1 | 2 | 3; note?: string }
+): Promise<FeedbackEntry> {
+  const { token, repo } = requiredEnv();
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(day)) throw new PublishError(400, "Bad day — use YYYY-MM-DD.");
+  if (!Number.isInteger(option) || option < 1 || option > 50) throw new PublishError(400, "Bad option number.");
+  if (patch.rating !== undefined && ![1, 2, 3].includes(patch.rating)) {
+    throw new PublishError(400, "Rating must be 1 (not for me), 2 (fine), or 3 (love it).");
+  }
+  const api = gh(token);
+
+  const optionRes = await api(`/repos/${repo}/contents/options/${day}/option-${option}.png?ref=${BRANCH}`);
+  if (optionRes.status === 404) throw new PublishError(404, `No option-${option}.png filed under ${day}.`);
+  if (!optionRes.ok) throw new PublishError(502, `GitHub said ${optionRes.status} checking the option.`);
+
+  const feedbackPath = `options/${day}/feedback.json`;
+  const existingRes = await api(`/repos/${repo}/contents/${feedbackPath}?ref=${BRANCH}`);
+  let sha: string | undefined;
+  let all: Record<string, FeedbackEntry> = {};
+  if (existingRes.ok) {
+    const file = (await existingRes.json()) as { sha: string; content: string };
+    sha = file.sha;
+    try {
+      const parsed = JSON.parse(Buffer.from(file.content, "base64").toString("utf8"));
+      if (parsed && typeof parsed === "object") all = parsed;
+    } catch {
+      // a mangled feedback file gets rewritten cleanly
+    }
+  }
+
+  const entry: FeedbackEntry = { ...all[String(option)] };
+  if (patch.rating !== undefined) entry.rating = patch.rating;
+  if (patch.note !== undefined) {
+    const note = patch.note.trim();
+    if (note) entry.note = note;
+    else delete entry.note;
+  }
+  entry.at = new Date().toISOString();
+  all[String(option)] = entry;
+
+  const putRes = await api(`/repos/${repo}/contents/${feedbackPath}`, {
+    method: "PUT",
+    body: JSON.stringify({
+      message: `feedback: option ${option} of ${day}`,
+      content: Buffer.from(`${JSON.stringify(all, null, 2)}\n`).toString("base64"),
+      branch: BRANCH,
+      ...(sha ? { sha } : {}),
+    }),
+  });
+  if (!putRes.ok) throw new PublishError(502, `GitHub said ${putRes.status} saving the feedback.`);
+  return entry;
+}
+
+/**
+ * The whole training corpus in one read: every day, every option, with
+ * title, caption, topic, verdict, keeper flag, and note. This is what the
+ * bible-refinement session consumes.
+ */
+export async function getAllFeedback(): Promise<string> {
+  const days = await listOptionDays();
+  const lines: string[] = [];
+  let rated = 0;
+  let total = 0;
+  const RATING_WORDS: Record<number, string> = { 3: "LOVE IT", 2: "IT'S FINE", 1: "NOT FOR ME" };
+  for (const day of days) {
+    const table = await readOptionDay(day);
+    const feedback = await readFeedbackFile(day);
+    lines.push(`\n## ${day}`);
+    for (const option of table.options) {
+      total++;
+      const entry = feedback[String(option.n)] ?? {};
+      const verdict = entry.rating ? RATING_WORDS[entry.rating] : "unrated";
+      if (entry.rating) rated++;
+      lines.push(
+        `- Option ${option.n}${table.keepers.includes(option.n) ? " ★KEEPER" : ""} ` +
+          `[${verdict}]${option.topic ? ` (topic: ${option.topic})` : ""}: ` +
+          `${option.title ?? "untitled"} — "${option.caption ?? ""}"` +
+          (entry.note ? `\n  His note: ${entry.note}` : "")
+      );
+    }
+  }
+  return `Founder feedback — ${rated} of ${total} rated so far.${lines.join("\n")}`;
+}
+
+async function readFeedbackFile(day: string): Promise<Record<string, FeedbackEntry>> {
+  const { token, repo } = requiredEnv();
+  const api = gh(token);
+  const res = await api(`/repos/${repo}/contents/options/${day}/feedback.json?ref=${BRANCH}`);
+  if (!res.ok) return {};
+  try {
+    const file = (await res.json()) as { content: string };
+    const parsed = JSON.parse(Buffer.from(file.content, "base64").toString("utf8"));
+    return parsed && typeof parsed === "object" ? parsed : {};
+  } catch {
+    return {};
+  }
 }
 
 /**

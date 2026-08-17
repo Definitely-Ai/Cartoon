@@ -31,6 +31,10 @@ export type CartoonOption = {
   topic: string | null;
   /** Starred by the founder (keepers.json). */
   keeper: boolean;
+  /** Training-week verdict: 3 love, 2 fine, 1 not for me (feedback.json). */
+  rating: 1 | 2 | 3 | null;
+  /** His optional note on why. */
+  note: string | null;
 };
 
 export type OptionDay = {
@@ -39,6 +43,8 @@ export type OptionDay = {
   options: CartoonOption[];
   /** Option numbers the founder starred. */
   keepers: number[];
+  /** How many options carry a verdict. */
+  ratedCount: number;
   selected: { option: number; slug: string; publishedAt?: string } | null;
 };
 
@@ -90,6 +96,7 @@ function readDay(root: string, day: string): OptionDay | null {
   const files = fs.readdirSync(dir);
   const options: CartoonOption[] = [];
 
+  const feedbackRaw = readJsonLoose(path.join(dir, "feedback.json")) ?? {};
   const keepersRaw = readJsonLoose(path.join(dir, "keepers.json"));
   const keepers = Array.isArray(keepersRaw?.keepers)
     ? (keepersRaw!.keepers as unknown[]).filter((k): k is number => Number.isInteger(k))
@@ -121,6 +128,14 @@ function readDay(root: string, day: string): OptionDay | null {
       topic:
         typeof meta?.topic === "string" && meta.topic.trim() ? (meta.topic as string).trim().toLowerCase() : null,
       keeper: keepers.includes(n),
+      rating: (() => {
+        const entry = (feedbackRaw as Record<string, { rating?: unknown }>)[String(n)];
+        return entry && [1, 2, 3].includes(entry.rating as number) ? (entry.rating as 1 | 2 | 3) : null;
+      })(),
+      note: (() => {
+        const entry = (feedbackRaw as Record<string, { note?: unknown }>)[String(n)];
+        return entry && typeof entry.note === "string" && entry.note.trim() ? (entry.note as string).trim() : null;
+      })(),
     });
   }
 
@@ -137,7 +152,13 @@ function readDay(root: string, day: string): OptionDay | null {
         }
       : null;
 
-  return { day, options, keepers: keepers.filter((k) => options.some((o) => o.n === k)), selected };
+  return {
+    day,
+    options,
+    keepers: keepers.filter((k) => options.some((o) => o.n === k)),
+    ratedCount: options.filter((o) => o.rating !== null).length,
+    selected,
+  };
 }
 
 /** Every starred cartoon across all days, newest first. */
