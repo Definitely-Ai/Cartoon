@@ -8,7 +8,7 @@ Purpose: the one page an AI reads before drawing. The BASE block below is assemb
 
 1. Paste the BASE block exactly as written.
 2. Fill the three slots: `[SCENE]`, `[TV]`, `[BOARD]`.
-3. The caption is **never** part of the image — the site typesets it below the panel. See the checklist before filing.
+3. The caption is **never sent to the image model**. After the text-free illustration is approved, `npm run dialogue` typesets the exact JSON caption below the panel. See the checklist before filing.
 
 ## BASE block
 
@@ -35,7 +35,7 @@ Add **only when the gag needs her** (about one cartoon in ten): *Abby, a small w
 
 1. Bowtie ✓ flag pin ✓ window lettering reversed ✓.
 2. Three values, strictly B&W, single panel, generous margins.
-3. No balloons; no caption baked into the artwork.
+3. No balloons and no model-rendered caption in the illustrated panel; add the exact JSON caption afterward with `npm run dialogue`.
 4. The visual gag reads in two seconds without the caption; the caption deepens it rather than explaining it (≤ 20 words, dry, underplayed).
 5. The boundaries in `/canon/comedy/COMEDY-BIBLE.md` all pass.
 6. Three genuinely distinct takes filed per `/canon/creation/WORKFLOW.md` — different scenes or speakers, not three crops.

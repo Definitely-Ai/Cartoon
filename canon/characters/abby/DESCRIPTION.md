@@ -19,8 +19,8 @@ Abby is not a primary character and should not appear in most cartoons. When she
 
 ## Model Sheets
 
-- `identity-sheet.png` — _(pending)_ head and face from the canonical angles, expressions locked (wise, helpful, faintly amused).
-- `full-body-sheet.png` — _(pending)_ full figure behind the bar, mid-task, apron or bar towel as decided in the style pass.
+- `identity-sheet.png` — current working head and face reference from the canonical angles (wise, helpful, faintly amused).
+- `full-body-sheet.png` — current working full-figure reference behind the bar, mid-task with apron and bar towel.
 
 ## Never
 

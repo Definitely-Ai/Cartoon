@@ -18,8 +18,8 @@ The repeatable geometry an image model can lock onto:
 
 ## Model Sheets
 
-- `identity-sheet.png` — _(pending)_ head and face from the canonical angles, expressions locked (earnest, mid-story, world-weary-but-happy).
-- `full-body-sheet.png` — _(pending)_ full figure at the bar, seated on a stool, jacket, lapel pin, and old fashioned present.
+- `identity-sheet.png` — current working head and face reference from the canonical angles (earnest, mid-story, world-weary-but-happy).
+- `full-body-sheet.png` — current working full-figure reference, seated on a stool with jacket, lapel pin, and old fashioned present.
 
 ## Never
 
