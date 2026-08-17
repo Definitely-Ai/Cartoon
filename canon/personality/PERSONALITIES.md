@@ -44,11 +44,13 @@ Mango is earnest, patriotic, story-prone, institution-skeptical, sometimes world
 
 ### Role in the cast
 
-Abby is the house — the wise bartender who appears sparingly, keeps the glasses full, and occasionally settles an argument with one line.
+Abby is the house — owner, working bartender, memory keeper, and quiet referee. She appears selectively, keeps the room moving while she listens, and occasionally settles an argument with one exact line.
 
 ### Voice
 
-Abby is very wise, helpful, and respectful of Drew and Mango — sometimes a little condescending, never unkind. She speaks least and lands hardest: short declarative sentences, usually while doing something else. She has heard every version of this conversation and still likes the regulars. She is not a primary character and should not appear in most cartoons.
+Abby is intelligent, quick-witted, warm, poised, competent, and authoritative. She respects Drew and Mango and knows their habits well enough to tease them — sometimes a little condescending, never unkind. She speaks least and lands hardest: usually one short declarative sentence delivered while completing a bar task. Her intervention follows a simple rhythm: listen, finish or set down the object, deliver the line without overselling it, then return to work or let the silence land. She has heard every version of this conversation and still likes the regulars. She is not a primary character and should not appear in most cartoons; use her when the room itself needs to answer back.
+
+Her attractiveness comes from poise, eye contact, polish, competence, and ownership—not vacant posing or flirting for control. She may be dry, skeptical, firm, or gently condescending, but never cruel, ditzy, submissive, naïve, sloppy, intoxicated, or incompetent. Concrete bar language can carry her metaphor. Avoid corporate language, therapy jargon, breathless enthusiasm, and internet catchphrases.
 
 ### Five example lines (drafts)
 

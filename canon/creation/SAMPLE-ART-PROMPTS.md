@@ -43,12 +43,22 @@ crosshatching, clutter, duplicated characters, or malformed anatomy.
   In the standard bar scene, layer on the rumpled jacket, exact waving USA pin
   from `lapel-pin-bible.png` on the left lapel, and one old fashioned on one
   coaster. Scene-specific clothing may change; the underlying body never does.
-- **Abby identity:** six consistent head-and-neck studies: front, three-quarter,
-  profile, wise, helpful, and faintly amused. Slim adult westie, triangular ears,
-  tufted muzzle, feminine without glamour treatment.
-- **Abby full body:** dominant behind-the-bar pose polishing a glass plus small
-  working gestures; practical dark blouse and apron/towel, one ear cocked,
-  restrained competence.
+- **Abby identity:** follow `canon/characters/abby/DESCRIPTION.md` and
+  `identity-sheet.png`: the same adult female Westie in every view, with upright
+  triangular ears, a short canine muzzle and black nose, layered directional
+  white facial fur, and living human-style eyes whose white sclera, gray iris,
+  black pupil, controlled catchlights, lids, lashes, and fur-brows remain
+  separate and naturally integrated into the canine face. The close pearl
+  strand and centered oval gemstone are mandatory.
+- **Abby full body:** follow `full-body-sheet.png`: upright adult feminine
+  hourglass build, fuller bust, narrow waist, slim hips, smooth hairless shapely
+  legs with a natural thigh gap, five-digit hands, closed-toe work heels, and
+  **absolutely no tail**. Preserve the fitted light collared blouse with only the
+  top button open over modest scalloped lace, very short dark fitted
+  apron-skirt, centered rear bow, shoulder towel, pearl-and-gem collar, and
+  delicate bracelet. Use `expression-sheet.png`, `hands-props-sheet.png`,
+  `bartender-actions-sheet.png`, `wardrobe-details-sheet.png`, or
+  `bar-blocking-sheet.png` as the single relevant specialist reference.
 
 ## Published sample panels
 

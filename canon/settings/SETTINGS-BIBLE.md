@@ -15,7 +15,7 @@ Most cartoons occur inside **The Swinging Door**, a classic American bar. It sho
 - A small TV usually appears; news or sporting events should generally be on it. The TV is how the day's events enter the room.
 - When inside the bar, the bar name appears in the window **as a reverse image** — lettered as it would normally read from outside.
 
-Standing arrangement: Drew and Mango at the bar (Drew often standing, Mango on a stool); Abby, when she appears at all, behind it.
+Standing arrangement: Drew and Mango at the bar (Drew often standing, Mango on a stool); Abby, when she appears, ordinarily behind it with the counter at her upper hip. Because she owns the bar, she may leave that position for an explicit owner task—opening or closing, greeting at the double swinging doors, checking the room, carrying stock, or solving a practical problem. She is never placed patron-side casually during a normal shift.
 
 ## The room, mapped (working default — fix it once and it never moves)
 
