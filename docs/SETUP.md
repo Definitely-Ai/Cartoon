@@ -48,9 +48,9 @@ Every later `git push` to the production branch rebuilds and redeploys automatic
 
 Vercel dashboard → the project → **Deployments** tab → the ⋯ menu on the latest deployment → **Redeploy**. Useful after changing a Vercel setting, since settings only apply to new builds.
 
-## The Back Room (owner login + publishing)
+## The studio login + actions
 
-The staff side lives at **`/backroom`**: the owner logs in, reviews each day's candidate cartoons on the light table, and taps RUN IT — which commits the winner into `/cartoons` on `main` (one atomic commit via the GitHub API), and Vercel redeploys the public site automatically.
+**The whole site is private now** — every page sits behind the owner's login at `/login` (old `/backroom` addresses redirect). Inside: Today's batch with **Keep this one** stars (each star is a small commit to `options/<day>/keepers.json`), the Collection, Keepers, and the connector page. The RUN IT publish machinery still exists under the hood (MCP `publish_cartoon`) for when the public paper at `/paper` un-parks.
 
 It needs two environment variables in the Vercel project (Settings → Environment Variables), then a redeploy:
 

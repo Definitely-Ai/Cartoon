@@ -127,7 +127,7 @@ export default function FrontPage() {
               ))}
             </ul>
             <p className="va-rail-more">
-              <Link href="/archive">Consult the Morgue — every edition ever printed</Link>
+              <Link href="/paper/archive">Consult the Morgue — every edition ever printed</Link>
             </p>
           </section>
 

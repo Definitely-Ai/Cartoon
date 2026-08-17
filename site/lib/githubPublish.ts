@@ -229,6 +229,56 @@ export async function readOptionDay(day: string): Promise<{
   return { day, selected, options };
 }
 
+/**
+ * Star or unstar an option — the founder's "keeper" mark. One small file
+ * per day (keepers.json), updated via the contents API; the site rebuilds
+ * on the commit and the star shows everywhere.
+ */
+export async function setKeeper(day: string, option: number, on: boolean): Promise<number[]> {
+  const { token, repo } = requiredEnv();
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(day)) throw new PublishError(400, "Bad day — use YYYY-MM-DD.");
+  if (!Number.isInteger(option) || option < 1 || option > 50) throw new PublishError(400, "Bad option number.");
+  const api = gh(token);
+
+  const optionRes = await api(`/repos/${repo}/contents/options/${day}/option-${option}.png?ref=${BRANCH}`);
+  if (optionRes.status === 404) throw new PublishError(404, `No option-${option}.png filed under ${day}.`);
+  if (!optionRes.ok) throw new PublishError(502, `GitHub said ${optionRes.status} checking the option.`);
+
+  const keepersPath = `options/${day}/keepers.json`;
+  const existingRes = await api(`/repos/${repo}/contents/${keepersPath}?ref=${BRANCH}`);
+  let sha: string | undefined;
+  let keepers: number[] = [];
+  if (existingRes.ok) {
+    const file = (await existingRes.json()) as { sha: string; content: string };
+    sha = file.sha;
+    try {
+      const parsed = JSON.parse(Buffer.from(file.content, "base64").toString("utf8"));
+      if (Array.isArray(parsed.keepers)) {
+        keepers = parsed.keepers.filter((k: unknown): k is number => Number.isInteger(k));
+      }
+    } catch {
+      // a mangled keepers file gets rewritten cleanly
+    }
+  }
+
+  const next = on
+    ? Array.from(new Set([...keepers, option])).sort((a, b) => a - b)
+    : keepers.filter((k) => k !== option);
+  if (next.length === keepers.length && next.every((k, i) => k === keepers[i])) return next;
+
+  const putRes = await api(`/repos/${repo}/contents/${keepersPath}`, {
+    method: "PUT",
+    body: JSON.stringify({
+      message: `keeper: ${on ? "star" : "unstar"} option ${option} of ${day}`,
+      content: Buffer.from(`${JSON.stringify({ keepers: next }, null, 2)}\n`).toString("base64"),
+      branch: BRANCH,
+      ...(sha ? { sha } : {}),
+    }),
+  });
+  if (!putRes.ok) throw new PublishError(502, `GitHub said ${putRes.status} saving the star.`);
+  return next;
+}
+
 /** The days on file, newest first (names only — cheap). */
 export async function listOptionDays(): Promise<string[]> {
   const { token, repo } = requiredEnv();

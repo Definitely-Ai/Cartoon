@@ -14,7 +14,7 @@ export default function VariantALayout({ children }: { children: ReactNode }) {
     <div className={`variant-a ${blackletter.variable} ${newsSerif.variable} ${newsCondensed.variable}`}>
       <div className="va-shell va-head">
         <nav className="va-strip" aria-label="Sections">
-          <Link href="/" className="va-strip-mark" aria-label="Front page">
+          <Link href="/paper" className="va-strip-mark" aria-label="Front page">
             {/* BRAND: replace when final */}
             SD
           </Link>
@@ -23,22 +23,22 @@ export default function VariantALayout({ children }: { children: ReactNode }) {
               enjoy them without having to decode the navigation. */}
           <ul className="va-strip-list">
             <li>
-              <Link href="/">Front Page</Link>
+              <Link href="/paper">Front Page</Link>
             </li>
             <li>
-              <Link href="/archive">Archive</Link>
+              <Link href="/paper/archive">Archive</Link>
             </li>
             <li>
-              <Link href="/cast">The Cast</Link>
+              <Link href="/paper/cast">The Cast</Link>
             </li>
             <li>
-              <Link href="/about">About</Link>
+              <Link href="/paper/about">About</Link>
             </li>
           </ul>
-          {/* The owner's door, one click from anywhere. Locked to everyone
-              else, so it can live in plain sight. */}
-          <Link href="/backroom" className="va-strip-est">
-            Back Room
+          {/* The way back to the studio — the paper is a parked preview of
+              the someday-public edition. */}
+          <Link href="/" className="va-strip-est">
+            The Studio
           </Link>
         </nav>
       </div>

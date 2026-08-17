@@ -92,7 +92,7 @@ export default async function CartoonPermalink({ params }: { params: Promise<{ s
             )}
           </div>
           <p className="permalink-back">
-            <Link href="/">Back to the front page</Link>
+            <Link href="/paper">Back to the front page</Link>
           </p>
         </nav>
       </main>

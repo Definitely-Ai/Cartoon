@@ -39,6 +39,16 @@ const DAYS = {
       { title: "Breaking News", caption: "Turn it up, Abby. I want to hear nothing, louder." },
     ],
   },
+  // A five-cartoon topical batch — the "I want them fishing today" demo.
+  "2026-08-14": {
+    options: [
+      { title: "Catch and Release", caption: "I release everything I catch, Mango. It's the fees I can't get back.", topic: "fishing" },
+      { title: "The Bite", caption: "They're not biting. Have you considered quantitative easing?", topic: "fishing" },
+      { title: "Patience", caption: "Fishing is the market with mosquitoes, Mango.", topic: "fishing" },
+      { title: "The One That Got Away", caption: "It was this big before the correction.", topic: "fishing" },
+      { title: "Off the Grid", caption: "Turn the phone off, Mango. The Dow can flounder without us.", topic: "fishing" },
+    ],
+  },
 };
 
 function proofSvg({ width, height, n }) {
@@ -68,7 +78,7 @@ for (const [day, spec] of Object.entries(DAYS)) {
       console.log(`generated options/${day}/option-${n}.png`);
     }
     if (!fs.existsSync(jsonPath)) {
-      fs.writeFileSync(jsonPath, `${JSON.stringify({ ...spec.options[i], tags: [] }, null, 2)}\n`);
+      fs.writeFileSync(jsonPath, `${JSON.stringify({ tags: [], ...spec.options[i] }, null, 2)}\n`);
     }
   }
 

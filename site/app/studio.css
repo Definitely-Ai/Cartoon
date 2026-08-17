@@ -729,3 +729,72 @@
 .br-staff-links a:hover {
   border-bottom-color: var(--br-paper);
 }
+
+/* ------------------------------------------------- 9. Studio additions */
+
+/* The batch's topic — the founder's request, quoted in chalk. */
+.br-topic {
+  font-family: var(--br-chalk);
+  font-size: 1.25rem;
+  margin-top: 0.4rem;
+}
+
+/* The keeper star: a big honest toggle under each card. */
+.br-star-row {
+  margin-top: 0.7rem;
+  text-align: center;
+}
+
+.br-star {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  min-height: 48px;
+  padding: 0.55rem 1.5rem;
+  font-family: var(--br-caps);
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--br-paper);
+  background: transparent;
+  border: 2px solid var(--br-paper);
+  cursor: pointer;
+}
+
+.br-star-on {
+  background: var(--br-paper);
+  color: var(--ink);
+}
+
+.br-star:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.br-star-glyph {
+  width: 1.2em;
+  height: 1.2em;
+}
+
+/* Month groups in the collection. */
+.br-month {
+  margin-bottom: 2rem;
+}
+
+.br-month-head {
+  font-family: var(--br-caps);
+  font-size: 1.05rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  padding-bottom: 0.35rem;
+  margin-bottom: 0.9rem;
+}
+
+/* Prev/next-day and cross links, quiet and centered. */
+.br-more-days {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 0.95rem;
+}

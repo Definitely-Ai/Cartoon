@@ -24,7 +24,7 @@ export async function POST(request: NextRequest) {
   const expected = process.env.ADMIN_PASSWORD;
   const secret = await activeSecret();
 
-  const door = new URL("/backroom/login", request.url);
+  const door = new URL("/login", request.url);
   if (!expected || !secret) {
     door.search = "?setup=1";
     return NextResponse.redirect(door, 303);
@@ -34,7 +34,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.redirect(door, 303);
   }
 
-  const response = NextResponse.redirect(new URL("/backroom", request.url), 303);
+  const response = NextResponse.redirect(new URL("/", request.url), 303);
   response.cookies.set(BACKROOM_COOKIE, await doorToken(secret), {
     httpOnly: true,
     secure: process.env.NODE_ENV === "production",

@@ -4,6 +4,7 @@ import {
   PublishError,
   publishOption,
   readOptionDay,
+  setKeeper,
   validatePublishInput,
 } from "@/lib/githubPublish";
 
@@ -27,10 +28,10 @@ const SERVER_INFO = {
 };
 
 const INSTRUCTIONS =
-  "The Swinging Door's back room, for chat. get_light_table shows a day's candidate cartoons " +
-  "(the founder has already seen the images — they were generated in this conversation). " +
-  "publish_cartoon runs one of them on the public front page. NEVER call publish_cartoon until " +
-  "the founder has explicitly said which option to run.";
+  "The Swinging Door's studio, for chat. get_light_table lists a day's cartoons (the founder has " +
+  "already seen the images — they were generated in this conversation). mark_keeper stars the " +
+  "ones he likes — his private best-of. publish_cartoon runs one on the parked public paper and " +
+  "is rarely needed for now. NEVER star or publish until the founder explicitly says which one.";
 
 const TOOLS = [
   {
@@ -43,6 +44,21 @@ const TOOLS = [
       properties: {
         day: { type: "string", description: "ISO date YYYY-MM-DD. Optional." },
       },
+    },
+  },
+  {
+    name: "mark_keeper",
+    description:
+      "Star (or unstar) a cartoon as a keeper — the founder's private best-of. Call ONLY after " +
+      "the founder explicitly says which option he likes. on=false removes the star.",
+    inputSchema: {
+      type: "object",
+      properties: {
+        day: { type: "string", description: "ISO date YYYY-MM-DD of the batch." },
+        option: { type: "integer", description: "Which option to star (1, 2, 3…)." },
+        on: { type: "boolean", description: "true to star (default), false to unstar." },
+      },
+      required: ["day", "option"],
     },
   },
   {
@@ -116,6 +132,17 @@ async function runTool(name: string, args: Record<string, unknown>) {
         : "Undecided. Ask the founder which option should run; publish only after an explicit choice.",
     ];
     return toolText(lines.join("\n"));
+  }
+
+  if (name === "mark_keeper") {
+    const day = typeof args.day === "string" ? args.day : "";
+    const option = Number(args.option);
+    const on = args.on !== false;
+    const keepers = await setKeeper(day, option, on);
+    return toolText(
+      `${on ? "Starred" : "Unstarred"} option ${option} of ${day}. Keepers for that day: ` +
+        `${keepers.length ? keepers.join(", ") : "none"}. The studio site reflects it within a minute.`
+    );
   }
 
   if (name === "publish_cartoon") {

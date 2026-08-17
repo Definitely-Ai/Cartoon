@@ -10,6 +10,8 @@ const productionUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
 
 export const metadata: Metadata = {
   metadataBase: new URL(productionUrl),
+  // The whole site is private now — keep it out of every index.
+  robots: { index: false, follow: false },
   title: {
     default: "The Swinging Door", // BRAND: replace when final
     template: "%s · The Swinging Door", // BRAND: replace when final

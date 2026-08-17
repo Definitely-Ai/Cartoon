@@ -12,19 +12,19 @@ A single-panel, strictly black-and-white barroom cartoon about politics, markets
 | `/site/` | The Next.js website. Static generation only; it reads `/cartoons` and `/canon` at build time and fails loudly on bad data. |
 | `/docs/` | [How to publish a cartoon](docs/PUBLISHING.md) and [local dev + Vercel setup](docs/SETUP.md). |
 
-## The site
+## The site — a private studio
 
-One public design: a 1930s–60s American broadsheet. `/` is the front page with each day's chosen cartoon as the lead story, plus **THE FORECAST** and **NOTICES** boxes in the rail; `/archive` is the classified-column archive ("The Morgue"); `/cast` introduces Drew, Mango, and Abby; `/about` tells the story; `/cartoon/<folder-name>` is every cartoon's permanent, print-ready address (Ctrl+P gives a clean one-page printout). A **Back Room** link sits in the header — locked to everyone but the owner.
+The whole site sits behind one login; only the founder gets in. `/login` is the door ("What's the word?"); `/` is **Today** — the newest batch of cartoons laid out big, each with a **Keep this one** star; `/collection` catalogs every day ever generated, grouped by month; `/keepers` is everything he starred; `/connect` shows the AI-connector address and hookup steps. The old public newspaper is parked (still gorgeous) at `/paper`, ready for the day the strip goes public.
 
 ## The daily flow
 
-1. The founder tells his AI (ChatGPT, connected to this repo): *"I want a cartoon about X."*
-2. The AI reads `/canon` (characters, settings, comedy rules) and commits **three finished candidates** to `/options/YYYY-MM-DD/` — the exact file contract is in [canon/creation/WORKFLOW.md](canon/creation/WORKFLOW.md).
-3. The founder opens the website, taps **Back Room** in the header, and gives the door the word.
-4. The three candidates are waiting on **the light table**. He taps his favorite, taps **RUN IT**, and the cartoon is published — one atomic commit into `/cartoons`, automatic redeploy, live on the front page in about a minute.
-5. **The ledger** keeps every candidate from every day, with the one that ran stamped.
+1. The founder tells his AI (ChatGPT, connected to this repo): *"I want them fishing today."*
+2. The AI reads `/canon` (the master prompt, characters, settings, comedy rules) and commits **3–5 finished cartoons** to `/options/YYYY-MM-DD/` — file contract in [canon/creation/WORKFLOW.md](canon/creation/WORKFLOW.md), with a `topic` field naming the request.
+3. He looks at them right there in the chat — or opens the site, where the batch is waiting on **Today**, bigger and easier.
+4. He stars the ones he likes (site button or by telling the AI); stars land in the repo and the **Keepers** gallery grows.
+5. Everything stays cataloged forever in **The Collection**, by month and day.
 
-Setup (two env vars) in [docs/SETUP.md](docs/SETUP.md).
+Setup (env vars, connector) in [docs/SETUP.md](docs/SETUP.md).
 
 ## Current status
 

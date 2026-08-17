@@ -20,19 +20,25 @@ import path from "node:path";
 export type CartoonOption = {
   day: string;
   n: number;
-  /** Auth-gated static asset (middleware guards /backroom-assets). */
+  /** Auth-gated static asset (middleware guards the whole site now). */
   src: string;
   width: number;
   height: number;
   title: string | null;
   caption: string | null;
   tags: string[];
+  /** The request that produced this batch, e.g. "fishing" — from the JSON. */
+  topic: string | null;
+  /** Starred by the founder (keepers.json). */
+  keeper: boolean;
 };
 
 export type OptionDay = {
   /** ISO YYYY-MM-DD — the folder name. */
   day: string;
   options: CartoonOption[];
+  /** Option numbers the founder starred. */
+  keepers: number[];
   selected: { option: number; slug: string; publishedAt?: string } | null;
 };
 
@@ -84,6 +90,11 @@ function readDay(root: string, day: string): OptionDay | null {
   const files = fs.readdirSync(dir);
   const options: CartoonOption[] = [];
 
+  const keepersRaw = readJsonLoose(path.join(dir, "keepers.json"));
+  const keepers = Array.isArray(keepersRaw?.keepers)
+    ? (keepersRaw!.keepers as unknown[]).filter((k): k is number => Number.isInteger(k))
+    : [];
+
   for (const file of files) {
     const match = file.match(OPTION_PNG_RE);
     if (!match) continue;
@@ -107,6 +118,9 @@ function readDay(root: string, day: string): OptionDay | null {
       caption:
         typeof meta?.caption === "string" && meta.caption.trim() ? (meta.caption as string).trim() : null,
       tags,
+      topic:
+        typeof meta?.topic === "string" && meta.topic.trim() ? (meta.topic as string).trim().toLowerCase() : null,
+      keeper: keepers.includes(n),
     });
   }
 
@@ -123,7 +137,12 @@ function readDay(root: string, day: string): OptionDay | null {
         }
       : null;
 
-  return { day, options, selected };
+  return { day, options, keepers: keepers.filter((k) => options.some((o) => o.n === k)), selected };
+}
+
+/** Every starred cartoon across all days, newest first. */
+export function getKeepers(): CartoonOption[] {
+  return getOptionDays().flatMap((day) => day.options.filter((option) => option.keeper));
 }
 
 let cache: OptionDay[] | null = null;
