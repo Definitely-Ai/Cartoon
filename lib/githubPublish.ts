@@ -260,6 +260,44 @@ export async function getCanon(): Promise<string> {
   return Buffer.from(file.content, "base64").toString("utf8");
 }
 
+// The canon references reference-sheet PNGs by filename (see the Mango
+// bible) — but text can't show a drawing. These fetch the sheets live so
+// the wire can hand them into the conversation as images.
+const CHARACTER_DIRS: Record<string, string> = {
+  mango: "dog",
+  drew: "flamingo",
+  abby: "abby",
+};
+
+export async function getModelSheets(
+  character: string
+): Promise<{ name: string; base64: string }[]> {
+  const folder = CHARACTER_DIRS[character.toLowerCase().trim()];
+  if (!folder) {
+    throw new PublishError(400, `Unknown character "${character}" — use mango, drew, or abby.`);
+  }
+  const { token, repo } = requiredEnv();
+  const api = gh(token);
+  const listRes = await api(`/repos/${repo}/contents/canon/characters/${folder}?ref=${BRANCH}`);
+  if (!listRes.ok) {
+    throw new PublishError(502, `GitHub said ${listRes.status} listing the character folder.`);
+  }
+  const entries = (await listRes.json()) as { name: string; path: string; size: number; type: string }[];
+  // The contents API inlines base64 only for files under ~1MB — sheets are
+  // committed smaller than that on purpose.
+  const pngs = entries.filter((f) => f.type === "file" && /\.png$/i.test(f.name) && f.size < 990_000);
+  const sheets: { name: string; base64: string }[] = [];
+  for (const f of pngs) {
+    const res = await api(`/repos/${repo}/contents/${f.path}?ref=${BRANCH}`);
+    if (!res.ok) continue;
+    const file = (await res.json()) as { content?: string; encoding?: string };
+    if (file.content && file.encoding === "base64") {
+      sheets.push({ name: f.name, base64: file.content.replace(/\n/g, "") });
+    }
+  }
+  return sheets;
+}
+
 /**
  * File one finished cartoon into today's batch: auto-numbered, one atomic
  * commit (finished PNG + suggestion JSON). The PNG arrives here already
