@@ -49,8 +49,7 @@ export default function KeepersPage() {
               </a>
               <figcaption className="br-proof-cap">
                 {option.title && <strong>{option.title}</strong>}
-                {option.title && option.caption ? " — " : ""}
-                {option.caption ?? ""}
+                {option.caption && <span className="sr-only"> — {option.caption}</span>}
               </figcaption>
             </figure>
             <p className="br-more-days">

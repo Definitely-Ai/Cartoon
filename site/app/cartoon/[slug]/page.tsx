@@ -63,7 +63,7 @@ export default async function CartoonPermalink({ params }: { params: Promise<{ s
               priority
               className="permalink-image"
             />
-            <figcaption className="permalink-caption">{cartoon.caption}</figcaption>
+            <figcaption className="sr-only">{cartoon.caption}</figcaption>
           </figure>
           {cartoon.tags.length > 0 && (
             <p className="permalink-tags">

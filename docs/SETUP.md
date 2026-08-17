@@ -16,16 +16,25 @@ Open http://localhost:3000. That's all — no database, no environment variables
 
 - every `/cartoons/<folder>/cartoon.png` → `site/public/cartoons/<folder>.png`
 - every model-sheet image in `/canon/characters/*` → `site/public/canon/<character>/`
+- every `/options/<date>/option-N.png` → the login-gated Back Room asset directory
 
-Both destinations are gitignored — they're derived from the repo's source folders on every build. The data layer (`site/lib/cartoons.ts`) separately reads and validates every `meta.json` at build time; a bad one fails the build with the folder named (see [PUBLISHING.md](PUBLISHING.md) → Troubleshooting).
+These destinations are gitignored — they're derived from the repo's source folders on every build. The data layer (`site/lib/cartoons.ts`) separately reads and validates every `meta.json` at build time; a bad one fails the build with the folder named (see [PUBLISHING.md](PUBLISHING.md) → Troubleshooting).
 
-### Regenerating placeholder artwork
+### Artwork safety
 
-```bash
-cd site
-npm run placeholders          # fills in cartoon.png for any folder missing one
-node scripts/generate-placeholders.mjs --force   # regenerates all of them
-```
+The old SVG placeholder and blank-proof generators were retired. The prebuild
+fingerprints those legacy PNGs and fails if any of them reappear, so a local
+script cannot silently overwrite illustrated art with the former mockups.
+
+The social card is deterministic rather than AI-typeset. Prebuild refreshes it
+from the latest public cartoon; `npm run brand-assets` is also available when
+working on the brand treatment by itself.
+
+Finished cartoons carry their dialogue inside the PNG. Start from square or
+4:5 text-free illustrated panels whose JSON captions are final, then run
+`npm run dialogue`. The script appends an exact warm-white dialogue field. It
+can safely rerun a finished cartoon after a caption edit: it keeps the untouched
+square art region and rebuilds the dialogue field instead of stacking strips.
 
 ## Vercel: zero-config deploys (already wired)
 

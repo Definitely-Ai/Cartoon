@@ -67,10 +67,11 @@ export default function DayBoard({ day }: { day: OptionDay }) {
                   className="br-proof-img"
                 />
               </a>
+              {/* The dialogue is typeset inside the finished PNG — the visible
+                  line is just the title; the words stay for screen readers. */}
               <figcaption className="br-proof-cap">
                 {option.title && <strong>{option.title}</strong>}
-                {option.title && option.caption ? " — " : ""}
-                {option.caption ?? ""}
+                {option.caption && <span className="sr-only"> — {option.caption}</span>}
               </figcaption>
             </figure>
             <StarButton day={day.day} option={option.n} initial={option.keeper} />

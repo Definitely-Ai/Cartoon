@@ -99,7 +99,7 @@ export default function FrontPage() {
                 className="va-img"
               />
             </TransitionLink>
-            <figcaption className="va-caption">{latest.caption}</figcaption>
+            <figcaption className="sr-only">{latest.caption}</figcaption>
           </figure>
           {older && (
             <p className="va-prev va-onum">
