@@ -36,11 +36,15 @@ Setup (env vars, connector) in [docs/SETUP.md](docs/SETUP.md).
 
 **Built and verified:**
 - Repository structure, canon documents (filled from the founder's series bible: cast, settings, comedy rules, boundaries, creation workflow), and the publishing template with a 90-second how-to.
-- Seven fully illustrated, canon-informed sample cartoons and nine distinct illustrated Back Room proofs, all with their exact dialogue typeset into the finished cartoon, plus identity/full-body model sheets for Drew, Mango, and Abby. See the [sample artwork record](cartoons/SAMPLE-ART.md).
+- Seven fully illustrated, canon-informed sample cartoons and nine distinct illustrated Back Room proofs, all with their exact dialogue typeset into the finished cartoon, plus identity/full-body model sheets for Drew, Mango, and Abby. Drew now also has a locked master model, an in-depth production bible, prompt/QC contracts, and five focused continuity sheets. See the [sample artwork record](cartoons/SAMPLE-ART.md) and [Drew's canon](canon/characters/flamingo/DESCRIPTION.md).
 - The full static site: validated data layer (bad `meta.json` fails the build naming the folder), the broadsheet front page and archive, print-ready permalinks, view-transition page turns, `prefers-reduced-motion` support throughout — plus the login-gated Back Room publishing flow.
-- Zero-config Vercel deploys via the root `vercel.json`; every push to the default branch deploys automatically.
+- Zero-config Vercel deploys — the app lives at the repo root; every push to the default branch deploys automatically.
+
+**Approved and locked:**
+- Drew's base character model and written canon: 46-year-old male flamingo, mature average build, expressive avian eyes, long slim rounded S-neck, feathered wing-arms and feather-hands, natural-plumage base body, and permanent black bow tie. `npm run canon:check` guards the required assets and fingerprints.
 
 **Pending (waiting on the founder):**
-- Founder approval of the working character and ink direction. The current sample art is polished enough to exercise the real site, but it is not represented as commissioned final art.
+- Review/sign-off on Drew's supporting expression, anatomy, pose, wardrobe, scene-continuity, and proportion sheets; the locked master remains authoritative meanwhile.
+- Founder approval of the remaining working character and ink direction for Mango and Abby. The current sample art is polished enough to exercise the real site, but their sheets are not represented as commissioned final art.
 - Line-weight/style decisions flagged "pending founder sign-off" in the style bible, and the Example Approved Gags slots in the comedy bible.
 - Final brand confirmation — every branded string is greppable via `BRAND:` for a clean find-and-replace if "The Swinging Door" changes. <!-- BRAND: replace when final -->

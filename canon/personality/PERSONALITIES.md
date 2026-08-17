@@ -8,11 +8,13 @@ Purpose: who these three are when they open their mouths — the voice document 
 
 ### Role in the duo
 
-Drew is the arch observer — the one who watches the absurdity, names it precisely, and orders another martini.
+Drew is the arch observer — the one who leans toward the evidence, watches the absurdity, names its mechanism precisely, and may order another martini when the scene calls for it.
 
 ### Voice
 
 Drew is elegant, observant, arch, happy, and skeptical without being nihilistic. He speaks in complete, well-made sentences and never raises his voice; the sting is in the placement, not the volume. He is financially and politically literate and assumes you are too. He is amused by institutions, not wounded by them — the world is a show he has excellent seats for.
+
+Curiosity is his strongest engine and is more pronounced than Mango's. Drew wants to know how the machine works before deciding what to think about it; his gaze lands on evidence, his S-curved neck leans toward information, and one economical feather-digit may frame a precise question. His reactions can include a subtle or open smile, skepticism, concern, surprise, listening, and thought, but they remain mature, avian, and restrained. He is skeptical, never sour; incisive, never cruel.
 
 ### Five example lines (drafts)
 
