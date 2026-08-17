@@ -171,24 +171,53 @@
   text-align: center;
 }
 
-.br-knock-label {
-  display: block;
-  font-family: var(--br-chalk);
-  font-size: 1.35rem;
-  margin-bottom: 0.8rem;
+.br-field {
+  text-align: left;
+  margin-bottom: 1.15rem;
 }
 
-.br-knock-input {
+.br-field-label {
+  display: block;
+  font-family: var(--br-caps);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  margin-bottom: 0.4rem;
+}
+
+/* Ink on paper, same as the publish panel's fields — solid white boxes
+   read as "type here" from across the room, which is the point. Scoped
+   under .br-knock to outrank the shared .br-field input rule. */
+.br-knock .br-knock-input {
   width: 100%;
   font: inherit;
-  font-size: 1.1rem;
-  color: var(--br-paper);
-  background: transparent;
+  font-size: 1.15rem;
+  color: var(--ink);
+  background: var(--br-paper);
   border: none;
-  border-bottom: 2px solid var(--br-paper);
-  padding: 0.45rem 0.25rem;
-  text-align: center;
-  letter-spacing: 0.35em;
+  padding: 0.6rem 0.65rem;
+  min-height: 48px;
+}
+
+/* A big honest checkbox — the whole line is the tap target. */
+.br-remember {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  margin: 1.1rem 0 0.15rem;
+  font-size: 1rem;
+  line-height: 1.4;
+  cursor: pointer;
+  min-height: 44px;
+}
+
+.br-remember input {
+  width: 1.4rem;
+  height: 1.4rem;
+  flex: none;
+  accent-color: var(--br-paper);
+  cursor: pointer;
 }
 
 .br-knock-btn {

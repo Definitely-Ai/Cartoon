@@ -59,13 +59,14 @@ Vercel dashboard → the project → **Deployments** tab → the ⋯ menu on the
 
 ## The studio login + actions
 
-**The whole site is private now** — every page sits behind the owner's login at `/login` (old `/backroom` addresses redirect). Inside: Today's batch with **Keep this one** stars (each star is a small commit to `options/<day>/keepers.json`), the Collection, Keepers, and the connector page. The RUN IT publish machinery still exists under the hood (MCP `publish_cartoon`) for when the public paper at `/paper` un-parks.
+**The whole site is private now** — every page sits behind the owner's login at `/login` (old `/backroom` addresses redirect). The door is a standard **username + password** form with a checked-by-default **"Keep me signed in on this device"**: remembered devices stay signed in for a year, and because the form uses the standard field names, every phone and browser offers to save the login on first sign-in — after that it fills itself in. He logs in once per device (phone, iPad, laptop) and never again. Inside: Today's batch with **Keep this one** stars (each star is a small commit to `options/<day>/keepers.json`), the Collection, Keepers, and the connector page. The RUN IT publish machinery still exists under the hood (MCP `publish_cartoon`) for when the public paper at `/paper` un-parks.
 
-It needs two environment variables in the Vercel project (Settings → Environment Variables), then a redeploy:
+It needs these environment variables in the Vercel project (Settings → Environment Variables), then a redeploy:
 
 | Variable | What it is |
 | --- | --- |
-| `ADMIN_PASSWORD` | The word at the door — the owner's login password. Pick a long one. |
+| `ADMIN_USERNAME` | The founder's username — pick anything he'll remember (`walt`, `theboss`…). Case and stray spaces are forgiven at the door. Until this is set, the door checks only the password. |
+| `ADMIN_PASSWORD` | The founder's password. Pick a long one; stray spaces are forgiven here too. Changing it signs every device out. |
 | `GITHUB_TOKEN` | A [fine-grained personal access token](https://github.com/settings/personal-access-tokens/new) scoped to **this repo only** with **Contents: Read and write**. Lets the publish button commit. Fine-grained tokens expire (a year at most) — when publishing someday fails with a permissions error, mint a fresh token and replace this value. |
 
 Optional extras: `AUTH_SECRET` (any long random string; signs the login cookie — when unset it is derived from the password, and setting it separately lets you log every device out without changing the password) and `GITHUB_REPO` (defaults to `Definitely-Ai/Cartoon`, for if the repo ever moves).
