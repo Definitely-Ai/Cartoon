@@ -33,6 +33,8 @@ export type CartoonOption = {
   keeper: boolean;
   /** Training-week verdict: 3 love, 2 fine, 1 not for me (feedback.json). */
   rating: 1 | 2 | 3 | null;
+  /** What was off, when he said so ("drawing", "caption", "idea", "characters"). */
+  issues: string[];
   /** His optional note on why. */
   note: string | null;
 };
@@ -131,6 +133,12 @@ function readDay(root: string, day: string): OptionDay | null {
       rating: (() => {
         const entry = (feedbackRaw as Record<string, { rating?: unknown }>)[String(n)];
         return entry && [1, 2, 3].includes(entry.rating as number) ? (entry.rating as 1 | 2 | 3) : null;
+      })(),
+      issues: (() => {
+        const entry = (feedbackRaw as Record<string, { issues?: unknown }>)[String(n)];
+        return entry && Array.isArray(entry.issues)
+          ? (entry.issues as unknown[]).filter((i): i is string => typeof i === "string")
+          : [];
       })(),
       note: (() => {
         const entry = (feedbackRaw as Record<string, { note?: unknown }>)[String(n)];

@@ -905,3 +905,36 @@
   font-family: var(--br-chalk);
   font-size: 0.95rem;
 }
+
+/* Attribution chips — smaller than verdicts, hand-labelled. */
+.br-issues {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.6rem;
+}
+
+.br-issues-label {
+  font-family: var(--br-chalk);
+  font-size: 0.95rem;
+  margin-right: 0.2rem;
+}
+
+.br-issue {
+  min-height: 40px;
+  padding: 0.35rem 0.8rem;
+  font-family: var(--br-chalk);
+  font-size: 0.95rem;
+  color: var(--br-paper);
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  cursor: pointer;
+}
+
+.br-issue-on {
+  background: var(--br-paper);
+  color: var(--ink);
+  border-color: var(--br-paper);
+}

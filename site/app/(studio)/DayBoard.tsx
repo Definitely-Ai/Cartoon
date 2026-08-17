@@ -94,6 +94,7 @@ export default function DayBoard({ day }: { day: OptionDay }) {
               day={day.day}
               option={option.n}
               initialRating={option.rating}
+              initialIssues={option.issues}
               initialNote={option.note}
             />
           </li>

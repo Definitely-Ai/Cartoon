@@ -63,6 +63,13 @@ const TOOLS = [
         title: { type: "string", description: "Short title for the cartoon." },
         caption: { type: "string", description: "The exact dialogue to typeset (≤ ~140 characters)." },
         topic: { type: "string", description: "The founder's request in a word or two, e.g. \"fishing\"." },
+        style_notes: {
+          type: "string",
+          description:
+            "REQUIRED in the training week: what this candidate deliberately varies, in a phrase " +
+            "— e.g. \"looser wash\", \"8-word caption\", \"no TV, prop-driven gag\". This turns " +
+            "his reactions into controlled experiments.",
+        },
         tags: { type: "array", items: { type: "string" }, description: "Up to five lowercase subjects." },
         day: { type: "string", description: "ISO date YYYY-MM-DD; omit for today (UTC)." },
       },
@@ -93,6 +100,11 @@ const TOOLS = [
         day: { type: "string", description: "ISO date YYYY-MM-DD of the batch." },
         option: { type: "integer", description: "Which option he's reacting to." },
         rating: { type: "integer", enum: [1, 2, 3], description: "3 love it · 2 it's fine · 1 not for me." },
+        issues: {
+          type: "array",
+          items: { type: "string", enum: ["drawing", "caption", "idea", "characters"] },
+          description: "What he said was off, if he said so.",
+        },
         note: { type: "string", description: "His words on why, near-verbatim. Optional." },
       },
       required: ["day", "option"],
@@ -169,6 +181,7 @@ async function runTool(name: string, args: Record<string, unknown>) {
       caption,
       topic: typeof args.topic === "string" ? args.topic : null,
       tags,
+      styleNotes: typeof args.style_notes === "string" ? args.style_notes : null,
       finishedPng,
     });
     return toolText(
@@ -180,8 +193,9 @@ async function runTool(name: string, args: Record<string, unknown>) {
   if (name === "record_feedback") {
     const day = typeof args.day === "string" ? args.day : "";
     const option = Number(args.option);
-    const patch: { rating?: 1 | 2 | 3; note?: string } = {};
+    const patch: { rating?: 1 | 2 | 3; issues?: string[]; note?: string } = {};
     if (args.rating !== undefined) patch.rating = Number(args.rating) as 1 | 2 | 3;
+    if (Array.isArray(args.issues)) patch.issues = args.issues.filter((i): i is string => typeof i === "string");
     if (typeof args.note === "string" && args.note.trim()) patch.note = args.note.trim();
     if (patch.rating === undefined && patch.note === undefined) {
       throw new PublishError(400, "Record a rating, a note, or both.");

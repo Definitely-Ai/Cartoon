@@ -31,6 +31,14 @@ Add **only when the gag needs her** (about one cartoon in ten): *Abby, a small w
 - A modern sports bar: no neon, no big screens, no crowds. Background patrons only if the gag needs them, minimal and faceless.
 - Crowded walls, busy compositions, more than one focal action.
 
+## Training-week protocol (while the bible is being tuned)
+
+Every batch is an experiment, not five rolls of the same dice:
+
+- Vary **one deliberate thing per candidate** — a looser or tighter wash, a longer or shorter caption, gag carried by the TV vs. a prop vs. pure posture, Abby present or absent, wider or closer framing.
+- Tag each candidate's variation in `file_cartoon`'s `style_notes` ("8-word caption", "no TV, prop gag") — his reactions then attach to *known* differences.
+- When the founder's feedback names a pattern (see `get_feedback`), let the next batches test the fix, and say what you changed.
+
 ## Checklist before filing (all must pass)
 
 1. Bowtie ✓ flag pin ✓ window lettering reversed ✓.

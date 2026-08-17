@@ -178,7 +178,7 @@ export async function readOptionDay(day: string): Promise<{
   day: string;
   selected: { option: number; slug: string } | null;
   keepers: number[];
-  options: { n: number; title: string | null; caption: string | null; tags: string[]; topic: string | null }[];
+  options: { n: number; title: string | null; caption: string | null; tags: string[]; topic: string | null; styleNotes: string | null }[];
 }> {
   const { token, repo } = requiredEnv();
   const api = gh(token);
@@ -227,6 +227,7 @@ export async function readOptionDay(day: string): Promise<{
     let caption: string | null = null;
     let tags: string[] = [];
     let topic: string | null = null;
+    let styleNotes: string | null = null;
     if (files.includes(`option-${n}.json`)) {
       const res = await api(`/repos/${repo}/contents/options/${day}/option-${n}.json?ref=${BRANCH}`);
       if (res.ok) {
@@ -237,12 +238,13 @@ export async function readOptionDay(day: string): Promise<{
           if (typeof parsed.caption === "string") caption = parsed.caption;
           if (Array.isArray(parsed.tags)) tags = parsed.tags.filter((t: unknown): t is string => typeof t === "string");
           if (typeof parsed.topic === "string" && parsed.topic.trim()) topic = parsed.topic.trim().toLowerCase();
+          if (typeof parsed.style_notes === "string" && parsed.style_notes.trim()) styleNotes = parsed.style_notes.trim();
         } catch {
           // a malformed suggestion never blocks the listing
         }
       }
     }
-    options.push({ n, title, caption, tags, topic });
+    options.push({ n, title, caption, tags, topic, styleNotes });
   }
 
   return { day, selected, keepers, options };
@@ -269,10 +271,12 @@ export async function fileCartoon(input: {
   caption: string;
   topic: string | null;
   tags: string[];
+  styleNotes: string | null;
   finishedPng: Buffer;
 }): Promise<{ day: string; option: number }> {
   const { token, repo } = requiredEnv();
   const { day, title, caption, topic, tags, finishedPng } = input;
+  void input.styleNotes;
   if (!/^\d{4}-\d{2}-\d{2}$/.test(day)) throw new PublishError(400, "Bad day — use YYYY-MM-DD.");
   if (!title.trim()) throw new PublishError(400, "The cartoon needs a title.");
   if (!caption.trim()) throw new PublishError(400, "The cartoon needs its caption.");
@@ -308,6 +312,7 @@ export async function fileCartoon(input: {
     caption: caption.trim(),
     tags: tags.slice(0, 5),
     ...(topic ? { topic: topic.trim().toLowerCase() } : {}),
+    ...(input.styleNotes ? { style_notes: input.styleNotes.trim() } : {}),
   };
 
   const treeRes = await api(`/repos/${repo}/git/trees`, {
@@ -348,7 +353,9 @@ export async function fileCartoon(input: {
   return { day, option: next };
 }
 
-export type FeedbackEntry = { rating?: 1 | 2 | 3; note?: string; at?: string };
+export type FeedbackEntry = { rating?: 1 | 2 | 3; issues?: string[]; note?: string; at?: string };
+
+export const ISSUE_KEYS = ["drawing", "caption", "idea", "characters"] as const;
 
 /**
  * Record the founder's verdict and/or note for one option — the training
@@ -358,7 +365,7 @@ export type FeedbackEntry = { rating?: 1 | 2 | 3; note?: string; at?: string };
 export async function setFeedback(
   day: string,
   option: number,
-  patch: { rating?: 1 | 2 | 3; note?: string }
+  patch: { rating?: 1 | 2 | 3; issues?: string[]; note?: string }
 ): Promise<FeedbackEntry> {
   const { token, repo } = requiredEnv();
   if (!/^\d{4}-\d{2}-\d{2}$/.test(day)) throw new PublishError(400, "Bad day — use YYYY-MM-DD.");
@@ -389,6 +396,13 @@ export async function setFeedback(
 
   const entry: FeedbackEntry = { ...all[String(option)] };
   if (patch.rating !== undefined) entry.rating = patch.rating;
+  if (patch.issues !== undefined) {
+    const clean = patch.issues.filter((i): i is (typeof ISSUE_KEYS)[number] =>
+      (ISSUE_KEYS as readonly string[]).includes(i)
+    );
+    if (clean.length) entry.issues = clean;
+    else delete entry.issues;
+  }
   if (patch.note !== undefined) {
     const note = patch.note.trim();
     if (note) entry.note = note;
@@ -418,6 +432,7 @@ export async function setFeedback(
 export async function getAllFeedback(): Promise<string> {
   const days = await listOptionDays();
   const lines: string[] = [];
+  const trend: string[] = [];
   let rated = 0;
   let total = 0;
   const RATING_WORDS: Record<number, string> = { 3: "LOVE IT", 2: "IT'S FINE", 1: "NOT FOR ME" };
@@ -425,20 +440,41 @@ export async function getAllFeedback(): Promise<string> {
     const table = await readOptionDay(day);
     const feedback = await readFeedbackFile(day);
     lines.push(`\n## ${day}`);
+    let dayLoves = 0;
+    let dayRated = 0;
     for (const option of table.options) {
       total++;
       const entry = feedback[String(option.n)] ?? {};
       const verdict = entry.rating ? RATING_WORDS[entry.rating] : "unrated";
-      if (entry.rating) rated++;
+      if (entry.rating) {
+        rated++;
+        dayRated++;
+        if (entry.rating === 3) dayLoves++;
+      }
       lines.push(
         `- Option ${option.n}${table.keepers.includes(option.n) ? " ★KEEPER" : ""} ` +
           `[${verdict}]${option.topic ? ` (topic: ${option.topic})` : ""}: ` +
           `${option.title ?? "untitled"} — "${option.caption ?? ""}"` +
+          (option.styleNotes ? `\n  Deliberate variation: ${option.styleNotes}` : "") +
+          (entry.issues?.length ? `\n  What was off: ${entry.issues.join(", ")}` : "") +
           (entry.note ? `\n  His note: ${entry.note}` : "")
       );
     }
+    trend.push(
+      `${day}: ${table.options.length} filed, ${dayRated} rated, ` +
+        `${dayLoves} loved, ${table.keepers.length} keepers` +
+        (dayRated ? ` (love rate ${Math.round((dayLoves / dayRated) * 100)}%)` : "")
+    );
   }
-  return `Founder feedback — ${rated} of ${total} rated so far.${lines.join("\n")}`;
+  return (
+    `Founder feedback — ${rated} of ${total} rated so far.\n\n` +
+    `TREND (is the bible converging? love rate should rise as revisions land):\n` +
+    trend.map((t) => `  ${t}`).join("\n") +
+    `\n\nAnalysis hints: compare siblings within the same day and topic — they shared a prompt, so ` +
+    `differences in verdict are style signal. "What was off" chips attribute failures; "deliberate ` +
+    `variation" tags are the controlled experiments.` +
+    lines.join("\n")
+  );
 }
 
 async function readFeedbackFile(day: string): Promise<Record<string, FeedbackEntry>> {

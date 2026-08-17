@@ -13,13 +13,23 @@ const VERDICTS: { value: 1 | 2 | 3; label: string }[] = [
   { value: 1, label: "Not for me" },
 ];
 
+// Attribution — the difference between "he didn't like it" and knowing WHY.
+const ISSUES: { key: string; label: string }[] = [
+  { key: "drawing", label: "The drawing" },
+  { key: "caption", label: "The caption" },
+  { key: "idea", label: "The idea" },
+  { key: "characters", label: "The characters" },
+];
+
 export default function FeedbackPanel(props: {
   day: string;
   option: number;
   initialRating: 1 | 2 | 3 | null;
+  initialIssues: string[];
   initialNote: string | null;
 }) {
   const [rating, setRating] = useState(props.initialRating);
+  const [issues, setIssues] = useState<string[]>(props.initialIssues);
   const [note, setNote] = useState(props.initialNote ?? "");
   const [savedNote, setSavedNote] = useState(props.initialNote ?? "");
   const [editing, setEditing] = useState(false);
@@ -53,6 +63,13 @@ export default function FeedbackPanel(props: {
     if (!(await post({ rating: value }))) setRating(previous);
   }
 
+  async function toggleIssue(key: string) {
+    const previous = issues;
+    const next = issues.includes(key) ? issues.filter((i) => i !== key) : [...issues, key];
+    setIssues(next);
+    if (!(await post({ issues: next }))) setIssues(previous);
+  }
+
   async function saveNote() {
     setNoteState("saving");
     if (await post({ note })) {
@@ -81,6 +98,25 @@ export default function FeedbackPanel(props: {
           </button>
         ))}
       </div>
+
+      {/* Attribution chips, only when something wasn't a full love — one
+          extra second exactly where the data needs it. */}
+      {rating !== null && rating < 3 && (
+        <div className="br-issues" role="group" aria-label="What was off?">
+          <span className="br-issues-label">What&rsquo;s off?</span>
+          {ISSUES.map(({ key, label }) => (
+            <button
+              key={key}
+              type="button"
+              className={`br-issue${issues.includes(key) ? " br-issue-on" : ""}`}
+              aria-pressed={issues.includes(key)}
+              onClick={() => toggleIssue(key)}
+            >
+              {label}
+            </button>
+          ))}
+        </div>
+      )}
 
       {!editing && savedNote && (
         <p className="br-note-view">
