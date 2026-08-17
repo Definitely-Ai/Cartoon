@@ -26,7 +26,9 @@ export async function POST(request: NextRequest) {
   const remember = form.get("remember") === "on";
 
   const expectedPassword = (process.env.ADMIN_PASSWORD ?? "").trim();
-  const expectedUsername = (process.env.ADMIN_USERNAME ?? "").trim();
+  // The password has no default; the username does — the bar's own name.
+  // BRAND: replace when final. ADMIN_USERNAME overrides it.
+  const expectedUsername = (process.env.ADMIN_USERNAME ?? "theswingingdoor").trim();
   const secret = await activeSecret();
 
   const door = new URL("/login", request.url);
@@ -39,7 +41,7 @@ export async function POST(request: NextRequest) {
   // on the username, and stray spaces on the password.
   const passwordOk = typeof password === "string" && safeEqual(password.trim(), expectedPassword);
   const usernameOk =
-    expectedUsername === "" || // until ADMIN_USERNAME is set, the password alone decides
+    expectedUsername === "" || // ADMIN_USERNAME set to blank turns the check off
     (typeof username === "string" &&
       safeEqual(username.trim().toLowerCase(), expectedUsername.toLowerCase()));
 

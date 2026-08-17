@@ -65,7 +65,7 @@ It needs these environment variables in the Vercel project (Settings → Environ
 
 | Variable | What it is |
 | --- | --- |
-| `ADMIN_USERNAME` | The founder's username — pick anything he'll remember (`walt`, `theboss`…). Case and stray spaces are forgiven at the door. Until this is set, the door checks only the password. |
+| `ADMIN_USERNAME` | Optional — the founder's username at the door. **Defaults to `theswingingdoor`** when unset, so there's nothing to configure to start. Case and stray spaces are forgiven. |
 | `ADMIN_PASSWORD` | The founder's password. Pick a long one; stray spaces are forgiven here too. Changing it signs every device out. |
 | `GITHUB_TOKEN` | A [fine-grained personal access token](https://github.com/settings/personal-access-tokens/new) scoped to **this repo only** with **Contents: Read and write**. Lets the publish button commit. Fine-grained tokens expire (a year at most) — when publishing someday fails with a permissions error, mint a fresh token and replace this value. |
 

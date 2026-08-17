@@ -19,10 +19,10 @@ export default function DoorNotes() {
   if (params.get("setup")) {
     return (
       <p className="br-door-note" role="alert">
-        The door has no lock yet. Set <code>ADMIN_USERNAME</code> and <code>ADMIN_PASSWORD</code>{" "}
-        (and <code>GITHUB_TOKEN</code>, for filing cartoons) in the Vercel project&rsquo;s
-        environment variables, redeploy, then try again — details in docs/SETUP.md,
-        &ldquo;The studio login.&rdquo;
+        The door has no lock yet. Set <code>ADMIN_PASSWORD</code> (and <code>GITHUB_TOKEN</code>,
+        for filing cartoons) in the Vercel project&rsquo;s environment variables, redeploy, then
+        try again — details in docs/SETUP.md, &ldquo;The studio login.&rdquo; The username is{" "}
+        <code>theswingingdoor</code> unless <code>ADMIN_USERNAME</code> says otherwise.
       </p>
     );
   }
