@@ -15,7 +15,7 @@ import { fileURLToPath } from "node:url";
 import sharp from "sharp";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
-const repoRoot = path.resolve(here, "..", "..");
+const repoRoot = path.resolve(here, "..");
 const previewPrefix = "--preview=";
 const previewArg = process.argv.find((arg) => arg.startsWith(previewPrefix));
 const previewRelative = previewArg?.slice(previewPrefix.length).replaceAll("\\", "/");

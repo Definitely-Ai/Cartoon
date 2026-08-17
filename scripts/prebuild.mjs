@@ -1,12 +1,12 @@
 // Prebuild asset copy — runs automatically before `next build` and `next dev`
 // (npm pre-scripts). The repo's filesystem is the CMS: cartoons live in
 // /cartoons/<YYYY-MM-DD-slug>/cartoon.png, and this script copies each one to
-// site/public/cartoons/<folder-name>.png so the static site can serve it.
+// public/cartoons/<folder-name>.png so the static site can serve it.
 // The folder name IS the slug IS the public filename — never date-stripped,
 // because date-stripped slugs collide across dates.
 //
 // It also copies any canon model-sheet images (canon/characters/*/[name].png)
-// to site/public/canon/<character>/ so the cast page can show them the moment
+// to public/canon/<character>/ so the cast page can show them the moment
 // they exist. Both destination folders are gitignored; they are
 // regenerated on every build.
 //
@@ -19,7 +19,7 @@ import { createHash } from "node:crypto";
 import { fileURLToPath } from "node:url";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
-const repoRoot = path.resolve(here, "..", "..");
+const repoRoot = path.resolve(here, "..");
 const cartoonsSrc = path.join(repoRoot, "cartoons");
 const canonSrc = path.join(repoRoot, "canon", "characters");
 const cartoonsDest = path.resolve(here, "..", "public", "cartoons");
@@ -77,8 +77,7 @@ function requireDialogueArtwork(file) {
 if (!fs.existsSync(cartoonsSrc)) {
   console.error(
     `prebuild: cannot find ${cartoonsSrc}.\n` +
-      `The site expects the full repo checkout (it reads /cartoons and /canon above /site).\n` +
-      `On Vercel: set Root Directory to "site" AND enable "Include source files outside of the Root Directory in the Build Step".`
+      `The site expects the full repo checkout — /cartoons, /canon, and /options beside the app at the repo root.`
   );
   process.exit(1);
 }

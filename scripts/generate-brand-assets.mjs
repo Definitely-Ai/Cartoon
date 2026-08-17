@@ -7,7 +7,7 @@ import { fileURLToPath } from "node:url";
 import sharp from "sharp";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
-const repoRoot = path.resolve(here, "..", "..");
+const repoRoot = path.resolve(here, "..");
 const cartoonsDir = path.join(repoRoot, "cartoons");
 const output = path.resolve(here, "..", "public", "og.png");
 

@@ -15,7 +15,7 @@ Audience: the technical maintainer. The repo's filesystem is the CMS — publish
 
 2. **Name the folder correctly.** The pattern is `YYYY-MM-DD-slug`. Slug rules: lowercase, hyphens, 2–4 words. The full folder name is the permalink (`/cartoon/2026-08-13-the-quarterly-call`), so make it worth reading. The date prefix must match the `date` field inside `meta.json` — the build checks.
 
-3. **Add the finished cartoon** as `cartoon.png` inside the folder. Create a black-and-white square or 4:5 illustration at least 1200px wide, finalize the `caption` in `meta.json`, then run `cd site && npm run dialogue`. That appends the exact words in a magazine-style field below the art. The finished portrait PNG and the JSON caption must match; art without its dialogue is blocked by the build.
+3. **Add the finished cartoon** as `cartoon.png` inside the folder. Create a black-and-white square or 4:5 illustration at least 1200px wide, finalize the `caption` in `meta.json`, then run `npm run dialogue`. That appends the exact words in a magazine-style field below the art. The finished portrait PNG and the JSON caption must match; art without its dialogue is blocked by the build.
 
 4. **Fill in `meta.json`.** The schema, one line per field:
 
@@ -53,7 +53,7 @@ The build validates every cartoon and **fails loudly rather than shipping bad da
    Two cartoons claim the same edition number. Editions are unique across the whole archive (they're the sort tiebreaker and the "No. N" folio). Give the new cartoon the next unused number.
 
 4. **`prebuild: dialogue is not embedded in cartoons/<folder>/cartoon.png`**
-   The PNG is still the square, text-free source panel or is not in the finished cartoon format. Confirm that `meta.json` contains the final wording, then run `cd site && npm run dialogue`, commit the finished portrait PNG, and build again. The command is safe to rerun after a caption edit.
+   The PNG is still the square, text-free source panel or is not in the finished cartoon format. Confirm that `meta.json` contains the final wording, then run `npm run dialogue`, commit the finished portrait PNG, and build again. The command is safe to rerun after a caption edit.
 
 ## No-terminal option
 

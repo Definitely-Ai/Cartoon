@@ -2,17 +2,17 @@
 node_modules/
 
 # Next.js build output
-site/.next/
-site/out/
-site/next-env.d.ts
-site/*.tsbuildinfo
+.next/
+out/
+next-env.d.ts
+*.tsbuildinfo
 
 # Assets copied into the site by the prebuild script.
 # These are generated from /cartoons, /canon, and /options on every
 # build, so they never need to be committed.
-site/public/cartoons/
-site/public/canon/
-site/public/backroom-assets/
+public/cartoons/
+public/canon/
+public/backroom-assets/
 
 # Local env and editor noise
 .env*

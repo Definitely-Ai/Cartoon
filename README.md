@@ -8,8 +8,8 @@ A single-panel, strictly black-and-white barroom cartoon about politics, markets
 | --- | --- |
 | `/canon/` | The source of truth for how the strip looks, sounds, and jokes: character descriptions (`characters/`), style bible (`style/`), settings bible (`settings/`), personalities (`personality/`), comedy bible (`comedy/`), and the repeatable creation workflow (`creation/`). Written from the founder's series bible. |
 | `/cartoons/` | One folder per **published** cartoon (`YYYY-MM-DD-slug/` with `cartoon.png` + `meta.json`) — this is the public side. `_TEMPLATE/` is the starting point for manual additions and never ships. |
-| `/options/` | The daily inbox: each day's candidate cartoons (`YYYY-MM-DD/option-N.png` + optional suggestion JSON). Private — only visible in the Back Room until one runs. |
-| `/site/` | The Next.js website. Static generation only; it reads `/cartoons` and `/canon` at build time and fails loudly on bad data. |
+| `/options/` | The daily inbox: each day's candidate cartoons (`YYYY-MM-DD/option-N.png` + optional suggestion JSON). Private — only visible inside the studio login. |
+| `/app`, `/lib`, `/scripts`, `/public` | The Next.js website, at the repo root so Vercel builds it zero-config and the login middleware guards every request. It reads `/cartoons`, `/canon`, and `/options` at build time and fails loudly on bad data. |
 | `/docs/` | [How to publish a cartoon](docs/PUBLISHING.md) and [local dev + Vercel setup](docs/SETUP.md). |
 
 ## The site — a private studio
