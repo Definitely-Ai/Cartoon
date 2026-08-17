@@ -11,8 +11,8 @@ The cartoon is a single-frame **black-and-white ink wash** editorial cartoon wit
 Working defaults (approve or veto in the style session):
 
 - **Three values only**: paper white, one mid-gray wash, solid black ink. A second, darker wash is allowed in shadows sparingly; never a smooth digital gradient.
-- **Brush-pen line**, variable weight — thick where forms sit (the bar, shoulders), thin for features and detail. Loose but certain; no sketchy multiple strokes, no cross-hatching.
-- **Faces do little and mean much**: dot eyes, single brow strokes, small mouths. The gag is in posture and placement, not grimaces.
+- **Brush-pen line**, variable weight — thick where forms sit (the bar, shoulders), thin for features and detail. Loose but certain; no sketchy multiple strokes. Selective controlled crosshatching and short feather/fur strokes may clarify anatomy or overlap, but never become dense all-over texture.
+- **Faces do little and mean much**: keep acting restrained and specific. Species-specific eye, lid, muzzle, beak, and mouth construction comes from each locked model sheet; never replace it with a generic dot-eye system or human facial anatomy. The gag is in gaze, posture, and placement, not grimaces.
 
 ## Black & White Rules
 

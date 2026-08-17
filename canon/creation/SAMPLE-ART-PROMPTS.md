@@ -21,16 +21,32 @@ signage, brand marks, or color. Append the exact caption afterward with
 `npm run dialogue` so spelling and punctuation remain deterministic. Avoid clip
 art, flat vector geometry, mascots, 3D, photorealism,
 anime, childish proportions, cloudy noise fills, muddy all-over wash, dense
-crosshatching, clutter, duplicated characters, or malformed anatomy.
+crosshatching, clutter, duplicated characters, or malformed anatomy. Selective
+short feather marks and controlled crosshatching are allowed only where they
+clarify Drew's anatomy or a structural overlap.
 
 ## Character sheets
 
-- **Drew identity:** six consistent head-and-neck studies: front, three-quarter,
-  profile, observant, arch/skeptical, and quietly amused. Long S-neck,
-  black-tipped beak, expressive brows, and bowtie. Clean 4:3 field, no labels.
-- **Drew full body:** dominant elegant standing pose plus small gesture studies;
-  very long coherent legs, bowtie, and one martini on a coaster with exactly
-  three olives on one pick. Clean portrait field, no labels.
+- **Drew locked master (`characters/flamingo/full-body-sheet.png`):** the primary
+  authority for every Drew generation. Preserve the 46-year-old male flamingo's
+  average healthy build, compact mature head, pale-and-dark angular downturned
+  beak, long slim rounded S-neck, small expressive avian eyes, feathered
+  wing-arms, three feather-digits with tiny pale nail tips, long bird legs,
+  webbed feet, natural plumage, and permanent black bow tie. The base model has
+  no other clothing; the martini is optional and has exactly three olives when
+  present.
+- **Drew identity (`characters/flamingo/identity-sheet.png`):** supporting face
+  and gaze reference for neutral, curious, subtle smile, open smile, skeptical,
+  amused, concerned, surprised, thinking, listening, and speaking. Eyes stay
+  small and avian with controlled white, iris, pupil, one catchlight, and fine
+  lids; smiles use the beak seam and posture, never human lips or teeth.
+- **Drew wing-hand (`characters/flamingo/wing-hand-sheet.png`):** attach whenever
+  a wing-hand, gesture, or prop grip is visible. Arms remain layered wings; the
+  feather-hand uses one short thumb-feather and two longer finger-feathers.
+- **Drew support sheets:** use `pose-sheet.png` for action, `wardrobe-sheet.png`
+  for scene-specific clothing fit, `scene-continuity-sheet.png` for environment
+  changes, and `proportion-style-sheet.png` for construction and drift checks.
+  These review references never overrule the locked master.
 - **Mango identity:** six consistent head-and-shoulder studies: front,
   three-quarter, profile, earnest, mid-story, and world-weary-but-happy.
   Unmistakable golden retriever with long muzzle and feathered drop ears.

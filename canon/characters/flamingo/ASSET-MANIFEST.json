@@ -1,0 +1,71 @@
+{
+  "characterId": "drew",
+  "canonVersion": "1.0.0",
+  "lockedMaster": "full-body-sheet.png",
+  "referencePolicy": "The locked master and DESCRIPTION.md outrank all review support sheets.",
+  "assets": [
+    {
+      "file": "full-body-sheet.png",
+      "sourceId": "drew-master-model-v1",
+      "status": "locked",
+      "role": "Primary master model, turnaround, proportions, anatomy, and bar pose",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "05bee27b53eec9ec850235da0337380a5e116713de5733cbdfef2ce2ac0508c4"
+    },
+    {
+      "file": "identity-sheet.png",
+      "sourceId": "drew-expression-library-v1",
+      "status": "review",
+      "role": "Facial expression and gaze support",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "7162c3e2f0837d0e15e601223d797223735eb5e552f4eb56e4449ea6bc8f3639"
+    },
+    {
+      "file": "wing-hand-sheet.png",
+      "sourceId": "drew-wing-hand-anatomy-v1",
+      "status": "review",
+      "role": "Wing-arm construction, feather-digits, nail scale, gestures, and grips",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "ca90432f9ad9458bb21982f6d2ba6ca222bc85c730c8253735fffeee9557eb6f"
+    },
+    {
+      "file": "pose-sheet.png",
+      "sourceId": "drew-pose-library-v1",
+      "status": "review",
+      "role": "Pose, action, and silhouette support",
+      "width": 1672,
+      "height": 941,
+      "sha256": "ea5b4147ecec64f3c57f4799803580e09e4ea34085039cfe3615a86e87b5c9b9"
+    },
+    {
+      "file": "wardrobe-sheet.png",
+      "sourceId": "drew-wardrobe-fit-v1",
+      "status": "review",
+      "role": "Scene-specific wardrobe fit without anatomy drift",
+      "width": 1774,
+      "height": 887,
+      "sha256": "1e68b61cad2146588f2a885eb9e100a585d3fd6403d99e32d81d337737a460b9"
+    },
+    {
+      "file": "scene-continuity-sheet.png",
+      "sourceId": "drew-scene-continuity-v1",
+      "status": "review",
+      "role": "Identity preservation across locations and scene types",
+      "width": 1774,
+      "height": 887,
+      "sha256": "baa559231e6465ea2c9e6e5a2a7666885aa65be4071c683ec5791af92df8bb75"
+    },
+    {
+      "file": "proportion-style-sheet.png",
+      "sourceId": "drew-proportion-style-v1",
+      "status": "review",
+      "role": "Proportion anchors, rendering rules, and drift examples",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "61e10f3283d79f009c341c43b4bcc9379850a7d910e281b8b3175480fec7b794"
+    }
+  ]
+}

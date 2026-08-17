@@ -1,31 +1,85 @@
 # Drew — Canonical Description
 
-Purpose: the single authoritative physical description of Drew, written so the exact same block can be pasted into every image prompt and every artist brief without edits.
+**Canon version:** 1.0.0
+
+**Status:** locked
+
+**Effective date:** 2026-08-14
+
+Purpose: this is the repository's single authoritative physical description of Drew. Paste the canonical block into every Drew image prompt without paraphrasing, then attach the required model sheets. The extended performance and production rules live in [CHARACTER-BIBLE.md](CHARACTER-BIBLE.md).
 
 ## Canonical Description Block
 
-Drew is a flamingo who wears a bowtie. He is one of the two primary characters. He is drawn anthropomorphic — standing at the bar on long legs, posture elegant and unhurried — in black-and-white ink wash with a dry American magazine cartoon feel. Typically he drinks a gin martini with three olives, the glass on a coaster within reach. His expression is observant and arch: a raised brow, a knowing tilt of the head, amusement without malice.
+Drew is a 46-year-old male anthropomorphic flamingo with an average, healthy build. He has a compact mature flamingo head; a recognizable pale-and-dark beak that is deep at the base, angular, and strongly downturned through a compact dark distal section; and a long, slim neck with a pronounced, smooth flamingo S-curve. His eyes are small, lively, and avian: controlled visible white, a distinct iris and darker pupil, one restrained catchlight, fine lid contours, and a clearly directed gaze—never black bead eyes, giant alien circles, or pasted-on human eyes. His arms are flexible feathered wing-arms built from overlapping contour and flight feathers. Each functional feather-hand ends in one short thumb-feather and two longer finger-feathers with tiny, pale, understated avian nail tips—never bare human palms, five fingers, manicured nails, claws, or talons. His long slim bird legs end in webbed flamingo feet. His entire G-rated base body is covered in natural plumage, and his permanent accessory is a small solid-black bow tie. The base model wears no other clothing; every additional garment is dictated by the current scene and never carries into another scene by default. Drew is rendered as a sophisticated hand-drawn black-and-white editorial cartoon with confident variable line, restrained gray ink wash, selective controlled crosshatching, and warm off-white paper.
 
-## Visual anchors (working defaults — approve or veto in the style session)
+## Locked Visual Anchors
 
-The repeatable geometry an image model can lock onto:
+- **Silhouette:** compact head, downturned beak, long S-neck, moderate torso, wing-arms, long bird legs.
+- **Age and bearing:** mature 46-year-old man; poised and composed, never juvenile, glamorous, grotesque, or mascot-cute.
+- **Build:** average and healthy for this anthropomorphic flamingo design; neither emaciated nor muscular.
+- **Eyes:** small relative to the head, visibly alive, species-appropriate, and capable of controlled expression.
+- **Neck:** long, slim, tapered, and continuously curved; never short, straight, thick, swan-like, or kinked.
+- **Wing-hands:** feather anatomy first, functional gesture second; never solved by morphing into human hands.
+- **Bow tie:** solid black, centered at the neck base, and always present—even when scene clothing is added.
+- **Style:** strictly monochrome hand-drawn ink and restrained wash; no color, 3D, anime, photorealism, or flat vector rendering.
 
-- Tall — Drew's head rides above Mango's even when Mango sits tall.
-- One smooth S-curved neck line; small round head; thin, straight beak.
-- Dot eyes with a single brow stroke each — the brow does all the acting.
-- Black bowtie exactly where the neck meets the body.
-- Stands on thin reed legs, one knee sometimes flexed; never perched, never wading.
-- The martini (three olives on a pick) sits on a coaster within reach — he gestures with a wingtip, not the glass.
+## Character Read
 
-## Model Sheets
+Drew is curious before he is judgmental. He is observant, elegant, precise, financially and politically literate, skeptical without becoming cynical, and quietly amused by institutions. His curiosity is stronger than Mango's: Drew leans toward information and mechanisms; Mango leans toward people and stories. Drew usually acts economically—a focused gaze, a small neck lean, or one raised feather-digit can carry the joke.
 
-- `identity-sheet.png` — current working head and face reference from the canonical angles (observant, arch, amused).
-- `full-body-sheet.png` — current working full-figure reference with bowtie and three-olive martini present.
+## Controlled Performance
+
+Drew may be neutral, curious, subtly smiling, openly smiling, skeptical, amused, concerned, surprised, thinking, listening, or speaking. His face remains recognizably avian in every state.
+
+- Emotion uses lid aperture, iris direction, head pitch, beak seam, neck compression or extension, and wing posture.
+- A smile uses a slight lift in the rear beak seam, a soft lower-lid response, brighter focus, and open posture.
+- A speaking or open-smile beak may part slightly, but never reveals teeth, lips, or a human mouth.
+- Curiosity points the gaze at a specific object or person and leans the S-neck toward it without straightening the neck.
+- Surprise may widen the eye and briefly lengthen the neck, but the eye stays small and the face does not become alien.
+
+## Scene Variables
+
+Only the following may change when a scene explicitly requires them:
+
+- clothing beyond the bow tie;
+- location, weather, and time of day;
+- pose, action, camera angle, and crop;
+- expression from the approved range;
+- props, drink, and interaction partner.
+
+Scene-variable details never become permanent canon. A suit in one cartoon does not make Drew's base model suited; no drink in one cartoon does not remove his recurring martini from canon.
+
+## Signature Prop
+
+Drew's recurring drink is a classic clear martini in a stemmed triangular glass. When it appears, it contains **exactly three olives on one pick**. It is optional unless the gag or scene calls for it.
+
+## Model Sheet Index
+
+| File | Authority | Use |
+| --- | --- | --- |
+| `full-body-sheet.png` | **Locked master** | Primary identity, turnaround, proportion, neck, beak, body, feet, and bar-pose reference. Attach to every Drew generation. |
+| `identity-sheet.png` | Review support | Facial performance range. Attach whenever Drew's face is visible. |
+| `wing-hand-sheet.png` | Review support | Wing-arm construction, feather-digits, nail scale, gestures, and prop grips. Attach when a hand, gesture, or held object is visible. |
+| `pose-sheet.png` | Review support | Standing, seated, leaning, walking, listening, speaking, and silhouette behavior. |
+| `wardrobe-sheet.png` | Review support | How scene-specific clothes fit over the same body and wing anatomy while preserving the bow tie. |
+| `scene-continuity-sheet.png` | Review support | Identity preservation across bar, golf, fishing, and travel environments. |
+| `proportion-style-sheet.png` | Review support | Proportion anchors, value hierarchy, line treatment, and common drift failures. |
+
+The locked master outranks every support sheet. If references disagree, follow `full-body-sheet.png` and this description, then flag the support sheet for review.
 
 ## Never
 
-- Never without the bowtie.
-- Never a different drink than the gin martini with three olives, unless the gag is specifically about the drink.
-- Never cynical or nihilistic in expression — skeptical, yes; sour, no.
-- Never in color; the strip is strictly black-and-white ink wash.
-- Never drawn as a naturalistic zoo animal — Drew is a bar patron who happens to be a flamingo.
+- Never omit, recolor, pattern, or replace the black bow tie.
+- Never use a human head, human nose, hair, ears, lips, teeth, moustache, or human jaw.
+- Never use a duck bill, parrot hook, pelican pouch, stork beak, or a thin straight beak.
+- Never use giant eyes, all-black bead eyes, concentric alien eyes, glamour lashes, or photoreal human eyes.
+- Never use human arms, bare palms, five fingers, extra wings behind the wing-arms, long claws, talons, manicure shapes, or nail polish.
+- Never use a bodybuilder, fashion-model, pot-bellied, childlike, or extremely thin body.
+- Never bake a suit, shirt, or other scene clothing into the base anatomy.
+- Never make Drew mean, cruel, frantic, foolish, sour, or nihilistic by default.
+- Never show more or fewer than three olives when the signature martini appears.
+- Never import Mango's or Abby's traits, clothes, props, silhouette, or expressions into Drew.
+
+## One-Second Canon Test
+
+Hide the bow tie and caption. If the neck, beak, eyes, wing-arms, proportions, and restrained acting do not still read immediately as the same Drew, reject the image and revise it.
