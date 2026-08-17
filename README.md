@@ -20,6 +20,8 @@ The whole site sits behind one login; only the founder gets in. `/login` is the 
 
 Right now the product is being perfected before it's shown to anyone: the founder generates many batches a day, and **every cartoon gets a verdict** — Love it / It's fine / Not for me — a keeper star for the exceptional, and an optional note on why. All of it lands in `options/<day>/feedback.json`. At the end of the week the AI reads the whole corpus (`get_feedback`) and proposes bible revisions that actually represent his style and humor.
 
+The week ends with a **graduation test**: on the last day, the AI predicts his verdict for a fresh batch *before* he rates it. Four out of five right means the bible reads his taste well enough to present; each miss names the chapter that still needs work.
+
 ## The daily flow
 
 1. The founder tells his AI (ChatGPT, connected to this repo): *"I want them fishing today."*

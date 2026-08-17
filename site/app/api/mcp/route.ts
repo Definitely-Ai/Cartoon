@@ -38,7 +38,10 @@ const INSTRUCTIONS =
   "caption, so never render words in the image; (4) he reacts, here or on the studio site. When " +
   "he gives an opinion on a specific cartoon, record it faithfully with record_feedback (his " +
   "words, not yours); star with mark_keeper only on his explicit word. To study his taste, call " +
-  "get_feedback — it returns every verdict and note of the week. Never rate on his behalf.";
+  "get_feedback — it returns every verdict and note of the week. Never rate on his behalf. " +
+  "Graduation test, last day of the week: before he rates a fresh batch, study get_feedback and " +
+  "state your predicted verdict for each candidate; 4 of 5 correct means the bible is ready to " +
+  "present — each miss names the chapter still to fix.";
 
 const TOOLS = [
   {

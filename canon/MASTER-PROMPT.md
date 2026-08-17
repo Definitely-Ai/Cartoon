@@ -39,6 +39,8 @@ Every batch is an experiment, not five rolls of the same dice:
 - Tag each candidate's variation in `file_cartoon`'s `style_notes` ("8-word caption", "no TV, prop gag") — his reactions then attach to *known* differences.
 - When the founder's feedback names a pattern (see `get_feedback`), let the next batches test the fix, and say what you changed.
 
+**The graduation test (end of the week).** The bible is done when the AI can call his shots. On the last day, before filing a fresh batch, study `get_feedback` and *predict his verdict for each candidate* — love it, fine, or not for me — writing the predictions down before he sees anything. Then let him rate as usual and compare. **Four right out of five means the bible reads his taste well enough to present.** Fewer than that: the misses say exactly which chapter is still thin — revise it and test again the next day.
+
 ## Checklist before filing (all must pass)
 
 1. Bowtie ✓ flag pin ✓ window lettering reversed ✓.
