@@ -201,7 +201,7 @@ async function runTool(name: string, args: Record<string, unknown>) {
             "Match them exactly — the character bible's reference hierarchy applies, and older " +
             "cartoons never override these.",
         },
-        ...sheets.map((s) => ({ type: "image", data: s.base64, mimeType: "image/png" })),
+        ...sheets.map((s) => ({ type: "image", data: s.base64, mimeType: s.mime })),
       ],
       isError: false,
     };

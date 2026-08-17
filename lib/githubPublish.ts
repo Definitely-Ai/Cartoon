@@ -4,6 +4,8 @@
 // commit/ref), so a partial failure can never leave a half-published
 // folder that breaks the public build.
 
+import sharp from "sharp";
+
 const API = "https://api.github.com";
 const BRANCH = "main"; // the production branch Vercel deploys
 
@@ -271,7 +273,7 @@ const CHARACTER_DIRS: Record<string, string> = {
 
 export async function getModelSheets(
   character: string
-): Promise<{ name: string; base64: string }[]> {
+): Promise<{ name: string; base64: string; mime: string }[]> {
   const folder = CHARACTER_DIRS[character.toLowerCase().trim()];
   if (!folder) {
     throw new PublishError(400, `Unknown character "${character}" — use mango, drew, or abby.`);
@@ -282,18 +284,28 @@ export async function getModelSheets(
   if (!listRes.ok) {
     throw new PublishError(502, `GitHub said ${listRes.status} listing the character folder.`);
   }
-  const entries = (await listRes.json()) as { name: string; path: string; size: number; type: string }[];
-  // The contents API inlines base64 only for files under ~1MB — sheets are
-  // committed smaller than that on purpose.
-  const pngs = entries.filter((f) => f.type === "file" && /\.png$/i.test(f.name) && f.size < 990_000);
-  const sheets: { name: string; base64: string }[] = [];
+  const entries = (await listRes.json()) as { name: string; sha: string; type: string }[];
+  const pngs = entries.filter((f) => f.type === "file" && /\.png$/i.test(f.name));
+  const sheets: { name: string; base64: string; mime: string }[] = [];
   for (const f of pngs) {
-    const res = await api(`/repos/${repo}/contents/${f.path}?ref=${BRANCH}`);
+    // The blobs API inlines any size (the contents API stops at ~1MB, and
+    // sheet exports routinely exceed that).
+    const res = await api(`/repos/${repo}/git/blobs/${f.sha}`);
     if (!res.ok) continue;
-    const file = (await res.json()) as { content?: string; encoding?: string };
-    if (file.content && file.encoding === "base64") {
-      sheets.push({ name: f.name, base64: file.content.replace(/\n/g, "") });
-    }
+    const blob = (await res.json()) as { content?: string; encoding?: string };
+    if (!blob.content || blob.encoding !== "base64") continue;
+    // Normalize for the wire: these are working references, not print
+    // masters — grayscale JPEG within 1500px travels light no matter how
+    // heavy the committed export was, and keeps a full character set far
+    // inside Vercel's response ceiling.
+    const raw = Buffer.from(blob.content, "base64");
+    const normalized = await sharp(raw)
+      .flatten({ background: "#ffffff" })
+      .grayscale()
+      .resize(1500, 1500, { fit: "inside", withoutEnlargement: true })
+      .jpeg({ quality: 88 })
+      .toBuffer();
+    sheets.push({ name: f.name, base64: normalized.toString("base64"), mime: "image/jpeg" });
   }
   return sheets;
 }
