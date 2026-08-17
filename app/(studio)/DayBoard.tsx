@@ -89,7 +89,8 @@ export default function DayBoard({ day }: { day: OptionDay }) {
                 {option.caption && <span className="sr-only"> — {option.caption}</span>}
               </figcaption>
             </figure>
-            <StarButton day={day.day} option={option.n} initial={option.keeper} />
+            {/* Verdict first — that's the daily job; the star is for the
+                exceptional one, so it follows. */}
             <FeedbackPanel
               day={day.day}
               option={option.n}
@@ -97,6 +98,7 @@ export default function DayBoard({ day }: { day: OptionDay }) {
               initialIssues={option.issues}
               initialNote={option.note}
             />
+            <StarButton day={day.day} option={option.n} initial={option.keeper} />
           </li>
         ))}
       </ul>

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getOptionDay, getOptionDays } from "@/lib/options";
+import { formatDateAP } from "@/lib/format";
 import DayBoard from "../../DayBoard";
 
 // One day of the collection, permanent address. Prev/next day links keep
@@ -31,11 +32,11 @@ export default async function StudioDayPage({ params }: { params: Promise<{ day:
     <main id="content" className="br-main">
       <DayBoard day={optionDay} />
       <p className="br-more-days">
-        {older && <Link href={`/day/${older.day}`}>‹ {older.day}</Link>}
+        {older && <Link href={`/day/${older.day}`}>‹ {formatDateAP(older.day)}</Link>}
         {older && " · "}
-        <Link href="/collection">the collection</Link>
+        <Link href="/collection">The Collection</Link>
         {newer && " · "}
-        {newer && <Link href={`/day/${newer.day}`}>{newer.day} ›</Link>}
+        {newer && <Link href={`/day/${newer.day}`}>{formatDateAP(newer.day)} ›</Link>}
       </p>
     </main>
   );

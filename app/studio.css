@@ -280,12 +280,15 @@
 }
 
 /* The one-sentence instruction under the date — chalk, friendly, plain. */
+/* Instructions are sentences — set them in the serif, not the chalk
+   caps; small-caps prose tires older eyes fast. Chalk stays for short
+   labels only. */
 .br-howto {
-  font-family: var(--br-chalk);
+  font-family: var(--br-serif);
   font-size: 1.05rem;
   max-width: 26rem;
   margin: 0.7rem auto 0;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 /* The compare strip: three small proofs that jump down the table. */
@@ -877,15 +880,14 @@
 }
 
 .br-note-text {
-  font-family: var(--br-chalk);
+  font-family: var(--br-serif);
+  font-style: italic;
   font-size: 1.05rem;
 }
 
 .br-note-link {
-  font-family: var(--br-caps);
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+  font-family: var(--br-serif);
+  font-size: 1rem;
   color: var(--br-paper);
   background: none;
   border: none;
@@ -931,7 +933,8 @@
 }
 
 .br-note-saved {
-  font-family: var(--br-chalk);
+  font-family: var(--br-serif);
+  font-style: italic;
   font-size: 0.95rem;
 }
 

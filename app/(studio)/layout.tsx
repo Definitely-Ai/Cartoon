@@ -18,7 +18,7 @@ export default function StudioLayout({ children }: { children: ReactNode }) {
       <header className="br-head">
         {/* BRAND: replace when final */}
         <p className="br-title">The Swinging Door</p>
-        <p className="br-sub">The studio · members: one</p>
+        <p className="br-sub">The private studio</p>
         <nav className="br-nav" aria-label="Studio">
           <Link href="/">Today</Link>
           <Link href="/collection">The Collection</Link>

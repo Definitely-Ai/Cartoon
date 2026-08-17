@@ -25,7 +25,7 @@ export default function ConnectPage() {
     <main id="content" className="br-main br-wire">
       <header className="br-table-head">
         <h1 className="br-date">The Wire</h1>
-        <p className="br-status">Publish from chat — connect your AI to the bar.</p>
+        <p className="br-status">Your AI files the day&rsquo;s cartoons through here.</p>
       </header>
 
       <section className="br-wire-section">
