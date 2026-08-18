@@ -8,9 +8,9 @@ Purpose: the visual law of the strip — every drawing decision that must be ide
 
 The cartoon is a single-frame **black-and-white ink wash** editorial cartoon with a dry American magazine cartoon feel. Confident editorial linework over wash tones; grayscale exists only as ink wash, never as color.
 
-Working defaults (approve or veto in the style session):
+The rules below are law for daily production. Anything still awaiting the founder's style session is marked **TENTATIVE** — treat it as law until he changes it.
 
-- **Three values only**: paper white, one mid-gray wash, solid black ink. A second, darker wash is allowed in shadows sparingly; never a smooth digital gradient.
+- **Exactly three values** (paper white, one mid-gray wash, solid black ink) — the same law the master prompt pastes into every request. Never a smooth digital gradient.
 - **Brush-pen line**, variable weight — thick where forms sit (the bar, shoulders), thin for features and detail. Loose but certain; no sketchy multiple strokes. Selective controlled crosshatching and short feather/fur strokes may clarify anatomy or overlap, but never become dense all-over texture.
 - **Faces do little and mean much**: keep acting restrained and specific with small mouths or beak openings, controlled lids and brows, and no grimaces. Species-specific eye, lid, muzzle, beak, and mouth construction comes from each locked model sheet; never replace it with a generic dot-eye system or human facial anatomy. Mango specifically uses visible paper-white sclera, a separate gray iris, a separate black pupil, and controlled catchlights so his gaze and emotion remain readable; this detail stays restrained and monochrome. The gag is in gaze, posture, and placement, not exaggerated reaction faces.
 
@@ -22,7 +22,7 @@ Strictly black and white. Ink wash (grayscale tone) is the shading method — th
 
 Single frame. Most cartoons are set inside The Swinging Door bar (see `/canon/settings/SETTINGS-BIBLE.md`).
 
-Working defaults: portrait 4:5 preferred, square allowed; a single hand-ruled border line (slightly imperfect, never a perfect vector stroke); the drawing breathes — generous margin inside the border, one focal action, no edge-to-edge clutter.
+Portrait 4:5 preferred, square allowed. **TENTATIVE** (not yet in production): a single hand-ruled border line — until the founder approves the frame, **generate with no drawn border or outer frame**. The drawing breathes — generous margin, one focal action, no edge-to-edge clutter.
 The deterministic dialogue field is appended below either supported illustration shape, so the finished PNG is taller than the drawn panel.
 
 ## Caption Convention
@@ -31,7 +31,7 @@ Every cartoon has dialogue (see the Comedy Bible's caption rules). Working conve
 
 ## Signature / Watermark
 
-Working default: a small hand-drawn monogram, lower right, inside the border — quiet enough to miss on first read. Final mark pending the founder's own hand.
+**TENTATIVE — not yet in production.** The planned mark is a small hand-drawn monogram, lower right — but until the founder supplies his own hand, **generate with no signature, watermark, or proof label** (the per-character QUALITY-CONTROL files are authoritative on this and already forbid them).
 
 ## The bar window rule
 

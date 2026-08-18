@@ -67,6 +67,37 @@ export async function finishCartoon(artBytes: Buffer, caption: string): Promise<
   if (ratio < 0.8 || ratio > 1.6) {
     throw new PublishError(400, "Send square or portrait artwork (between 1:1 and about 2:3).");
   }
+  if (meta.width < 900) {
+    throw new PublishError(
+      400,
+      `The artwork is only ${meta.width}px wide — generate at 1200px or wider so the print holds up.`
+    );
+  }
+
+  // The strip is strictly black-and-white. A colorful submission is a
+  // canon violation, not a conversion job — reject it loudly so the
+  // drawing AI regenerates in ink wash instead of shipping muddy grays.
+  const probe = await sharp(artBytes)
+    .flatten({ background: "#ffffff" })
+    .resize(64, 64, { fit: "inside" })
+    .removeAlpha()
+    .toColorspace("srgb")
+    .raw()
+    .toBuffer();
+  let colorful = 0;
+  const pixels = probe.length / 3;
+  for (let i = 0; i < probe.length; i += 3) {
+    const r = probe[i], g = probe[i + 1], b = probe[i + 2];
+    const spread = Math.max(r, g, b) - Math.min(r, g, b);
+    if (spread > 24) colorful++;
+  }
+  if (colorful / pixels > 0.02) {
+    throw new PublishError(
+      400,
+      "The panel has color in it — the strip is strictly black-and-white ink wash (paper white, " +
+        "one mid-gray wash, solid black). Regenerate in pure grayscale; do not just desaturate."
+    );
+  }
 
   // Nearest house shape: square below 1.125, else 4:5 portrait.
   const artHeight = ratio < 1.125 ? TARGET_WIDTH : Math.round((TARGET_WIDTH * 5) / 4);

@@ -1,0 +1,35 @@
+{
+  "characterId": "mango",
+  "canonVersion": "1.0.0",
+  "lockedMaster": "full-body-sheet.png",
+  "referencePolicy": "The locked master and the written canon (DESCRIPTION.md, CHARACTER-BIBLE.md) outrank all support sheets and older cartoons. Never average; match the master and flag the conflict.",
+  "assets": [
+    {
+      "file": "full-body-sheet.png",
+      "sourceId": "mango-master-model-v1",
+      "status": "locked",
+      "role": "Primary body, silhouette, neck, hands, feet, facial texture, eye construction, and no-tail authority",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "d52615de92f92158519e47cb6e5c928beaafe591c996d08a4d924864d34cf4aa"
+    },
+    {
+      "file": "identity-sheet.png",
+      "sourceId": "mango-identity-sheet-v1",
+      "status": "support",
+      "role": "Close identity check for face, eyes, expression, muzzle, ears, and fur texture",
+      "width": 1440,
+      "height": 1080,
+      "sha256": "e0c085bc6140d9da271f91b5738049061a2f675d82bcc08d03ca725d99bf3c8d"
+    },
+    {
+      "file": "lapel-pin-bible.png",
+      "sourceId": "mango-lapel-pin-bible-v1",
+      "status": "support",
+      "role": "Exact USA pin design and left-lapel placement authority",
+      "width": 1024,
+      "height": 1536,
+      "sha256": "4ad722572ed82115c20ac0379cc2e4dfb750a2499e4cdd644a69bfceca00bd22"
+    }
+  ]
+}

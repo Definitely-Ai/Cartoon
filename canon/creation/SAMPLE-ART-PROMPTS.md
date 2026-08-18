@@ -13,11 +13,13 @@ Use an economical mid-century American magazine gag-panel line, confident varied
 nib strokes, large readable silhouettes, an 8% safe margin, and a composition
 that remains clear at a 220-pixel thumbnail. Preserve the working Drew, Mango,
 and Abby identities from the referenced model sheets. Suggest The Swinging Door
-with only the bar details needed for the gag. <!-- BRAND: replace when final -->
+with only the bar details needed for the gag.
+<!-- BRAND: replace when final — keep this comment OUTSIDE any text pasted to an image model -->
 
 Do not ask the image model to render captions, titles, dates, catalog lines,
 proof labels, speech balloons, signatures, watermarks, outer frames, readable
-signage, brand marks, or color. Append the exact caption afterward with
+color anywhere, and no readable signage beyond the setting's canonical short-text carriers
+(in the bar: reversed window name, short chalkboard lines, TV words). Append the exact caption afterward with
 `npm run dialogue` so spelling and punctuation remain deterministic. Avoid clip
 art, flat vector geometry, mascots, 3D, photorealism,
 anime, childish proportions, cloudy noise fills, muddy all-over wash, dense

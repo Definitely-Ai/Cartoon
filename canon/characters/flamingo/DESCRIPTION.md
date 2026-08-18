@@ -6,9 +6,11 @@
 
 **Effective date:** 2026-08-14
 
-Purpose: this is the repository's single authoritative physical description of Drew. Paste the canonical block into every Drew image prompt without paraphrasing, then attach the required model sheets. The extended performance and production rules live in [CHARACTER-BIBLE.md](CHARACTER-BIBLE.md).
+Purpose: this is the compact authority for Drew. The single paste-ready identity text is the DREW paragraph inside the BASE block of [`canon/MASTER-PROMPT.md`](../../MASTER-PROMPT.md); [PROMPT-BLOCKS.md](PROMPT-BLOCKS.md) carries it verbatim with the other paste blocks. The deep construction and performance rules live in [CHARACTER-BIBLE.md](CHARACTER-BIBLE.md); the approval gates live in [QUALITY-CONTROL.md](QUALITY-CONTROL.md). Do not average Drew with a generic flamingo, a mascot, or an earlier repository image.
 
-## Canonical Description Block
+## Reading Summary (non-normative)
+
+This paragraph is for human readers; the master prompt paragraph is the paste text.
 
 Drew is a 46-year-old male anthropomorphic flamingo with an average, healthy build. He has a compact mature flamingo head; a recognizable pale-and-dark beak that is deep at the base, angular, and strongly downturned through a compact dark distal section; and a long, slim neck with a pronounced, smooth flamingo S-curve. His eyes are small, lively, and avian: controlled visible white, a distinct iris and darker pupil, one restrained catchlight, fine lid contours, and a clearly directed gaze—never black bead eyes, giant alien circles, or pasted-on human eyes. His arms are flexible feathered wing-arms built from overlapping contour and flight feathers. Each functional feather-hand ends in one short thumb-feather and two longer finger-feathers with tiny, pale, understated avian nail tips—never bare human palms, five fingers, manicured nails, claws, or talons. His long slim bird legs end in webbed flamingo feet. His entire G-rated base body is covered in natural plumage, and his permanent accessory is a small solid-black bow tie. The base model wears no other clothing; every additional garment is dictated by the current scene and never carries into another scene by default. Drew is rendered as a sophisticated hand-drawn black-and-white editorial cartoon with confident variable line, restrained gray ink wash, selective controlled crosshatching, and warm off-white paper.
 
@@ -21,7 +23,7 @@ Drew is a 46-year-old male anthropomorphic flamingo with an average, healthy bui
 - **Neck:** long, slim, tapered, and continuously curved; never short, straight, thick, swan-like, or kinked.
 - **Wing-hands:** feather anatomy first, functional gesture second; never solved by morphing into human hands.
 - **Bow tie:** solid black, centered at the neck base, and always present—even when scene clothing is added.
-- **Style:** strictly monochrome hand-drawn ink and restrained wash; no color, 3D, anime, photorealism, or flat vector rendering.
+- **Style:** strictly black-and-white hand-drawn ink — exactly three values (paper white, one mid-gray wash, solid black ink); no color, 3D, anime, photorealism, or flat vector rendering.
 
 ## Character Read
 
@@ -53,7 +55,21 @@ Scene-variable details never become permanent canon. A suit in one cartoon does 
 
 Drew's recurring drink is a classic clear martini in a stemmed triangular glass. When it appears, it contains **exactly three olives on one pick**. It is optional unless the gag or scene calls for it.
 
+## Reference Hierarchy
+
+When references disagree, use this order:
+
+1. `full-body-sheet.png` — locked master model.
+2. The written canon — this document and `CHARACTER-BIBLE.md`.
+3. `canon/MASTER-PROMPT.md` — the assembled BASE block and its DREW paragraph.
+4. The relevant specialist/support sheet (see the sheet index below).
+5. Older cartoons — story history only; never use them to override the sheets or documents above.
+
+Never average conflicting references; match the master and flag the conflict for review. Do not blend old and new models — if the current sheets are attached, match them rather than inventing a compromise.
+
 ## Model Sheet Index
+
+Reference sheets are fetched with `get_model_sheet` over the studio connector, or attached directly when working in-repo.
 
 | File | Authority | Use |
 | --- | --- | --- |

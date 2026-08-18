@@ -262,6 +262,41 @@ export async function getCanon(): Promise<string> {
   return Buffer.from(file.content, "base64").toString("utf8");
 }
 
+/** Any canon document, live from the repo — so the whole bible, not just
+ *  the master prompt, is reachable over the wire. */
+const DOC_PATHS: Record<string, string> = {
+  "canon-guide": "canon/README.md",
+  comedy: "canon/comedy/COMEDY-BIBLE.md",
+  settings: "canon/settings/SETTINGS-BIBLE.md",
+  style: "canon/style/STYLE-BIBLE.md",
+  personalities: "canon/personality/PERSONALITIES.md",
+  workflow: "canon/creation/WORKFLOW.md",
+  "scene-qc": "canon/creation/SCENE-QC.md",
+  "drew-bible": "canon/characters/flamingo/CHARACTER-BIBLE.md",
+  "drew-qc": "canon/characters/flamingo/QUALITY-CONTROL.md",
+  "mango-bible": "canon/characters/dog/CHARACTER-BIBLE.md",
+  "mango-qc": "canon/characters/dog/QUALITY-CONTROL.md",
+  "abby-bible": "canon/characters/abby/CHARACTER-BIBLE.md",
+  "abby-qc": "canon/characters/abby/QUALITY-CONTROL.md",
+};
+
+export const DOC_NAMES = Object.keys(DOC_PATHS);
+
+export async function getDoc(name: string): Promise<string> {
+  const path = DOC_PATHS[name];
+  if (!path) {
+    throw new PublishError(400, `Unknown document "${name}" — one of: ${DOC_NAMES.join(", ")}.`);
+  }
+  const { token, repo } = requiredEnv();
+  const res = await gh(token)(`/repos/${repo}/contents/${path}?ref=${BRANCH}`);
+  if (res.status === 404) {
+    throw new PublishError(404, `${path} is not in the repo yet.`);
+  }
+  if (!res.ok) throw new PublishError(502, `GitHub said ${res.status} fetching ${path}.`);
+  const file = (await res.json()) as { content: string };
+  return Buffer.from(file.content, "base64").toString("utf8");
+}
+
 // The canon references reference-sheet PNGs by filename (see the Mango
 // bible) — but text can't show a drawing. These fetch the sheets live so
 // the wire can hand them into the conversation as images.
@@ -271,9 +306,18 @@ const CHARACTER_DIRS: Record<string, string> = {
   abby: "abby",
 };
 
+/** Authority notes per sheet, mirrored from each bible's reference
+ *  hierarchy: the full-body sheet is always the locked master. */
+function sheetAuthority(name: string): string {
+  if (name === "full-body-sheet.png") return "LOCKED MASTER — outranks every other reference";
+  if (name === "identity-sheet.png") return "identity check for face and eyes";
+  if (name === "lapel-pin-bible.png") return "the exact pin design, left lapel";
+  return "specialist support — consult when its subject is in the scene";
+}
+
 export async function getModelSheets(
   character: string
-): Promise<{ name: string; base64: string; mime: string }[]> {
+): Promise<{ name: string; authority: string; base64: string; mime: string }[]> {
   const folder = CHARACTER_DIRS[character.toLowerCase().trim()];
   if (!folder) {
     throw new PublishError(400, `Unknown character "${character}" — use mango, drew, or abby.`);
@@ -285,8 +329,15 @@ export async function getModelSheets(
     throw new PublishError(502, `GitHub said ${listRes.status} listing the character folder.`);
   }
   const entries = (await listRes.json()) as { name: string; sha: string; type: string }[];
-  const pngs = entries.filter((f) => f.type === "file" && /\.png$/i.test(f.name));
-  const sheets: { name: string; base64: string; mime: string }[] = [];
+  // Locked master first — the order the reference hierarchy reads in.
+  const pngs = entries
+    .filter((f) => f.type === "file" && /\.png$/i.test(f.name))
+    .sort((a, b) => {
+      const rank = (n: string) =>
+        n === "full-body-sheet.png" ? 0 : n === "identity-sheet.png" ? 1 : 2;
+      return rank(a.name) - rank(b.name) || a.name.localeCompare(b.name);
+    });
+  const sheets: { name: string; authority: string; base64: string; mime: string }[] = [];
   for (const f of pngs) {
     // The blobs API inlines any size (the contents API stops at ~1MB, and
     // sheet exports routinely exceed that).
@@ -305,7 +356,12 @@ export async function getModelSheets(
       .resize(1500, 1500, { fit: "inside", withoutEnlargement: true })
       .jpeg({ quality: 88 })
       .toBuffer();
-    sheets.push({ name: f.name, base64: normalized.toString("base64"), mime: "image/jpeg" });
+    sheets.push({
+      name: f.name,
+      authority: sheetAuthority(f.name),
+      base64: normalized.toString("base64"),
+      mime: "image/jpeg",
+    });
   }
   return sheets;
 }

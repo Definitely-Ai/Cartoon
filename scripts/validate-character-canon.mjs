@@ -1,25 +1,24 @@
 import { createHash } from "node:crypto";
-import { readFile, stat } from "node:fs/promises";
+import { readdir, readFile, stat } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const drewDir = path.join(root, "canon", "characters", "flamingo");
+const charactersRoot = path.join(root, "canon", "characters");
 const errors = [];
 
-const requiredFiles = [
+const characters = [
+  { folder: "flamingo", characterId: "drew" },
+  { folder: "dog", characterId: "mango" },
+  { folder: "abby", characterId: "abby" },
+];
+
+const requiredDocuments = [
   "DESCRIPTION.md",
   "CHARACTER-BIBLE.md",
   "PROMPT-BLOCKS.md",
   "QUALITY-CONTROL.md",
   "ASSET-MANIFEST.json",
-  "full-body-sheet.png",
-  "identity-sheet.png",
-  "wing-hand-sheet.png",
-  "pose-sheet.png",
-  "wardrobe-sheet.png",
-  "scene-continuity-sheet.png",
-  "proportion-style-sheet.png",
 ];
 
 async function isFile(filePath) {
@@ -27,12 +26,6 @@ async function isFile(filePath) {
     return (await stat(filePath)).isFile();
   } catch {
     return false;
-  }
-}
-
-for (const file of requiredFiles) {
-  if (!(await isFile(path.join(drewDir, file)))) {
-    errors.push(`Missing required Drew canon file: canon/characters/flamingo/${file}`);
   }
 }
 
@@ -49,75 +42,97 @@ function readPngDimensions(buffer, file) {
   };
 }
 
-if (errors.length === 0) {
-  const manifestPath = path.join(drewDir, "ASSET-MANIFEST.json");
+let sheetCount = 0;
+
+async function validateCharacter({ folder, characterId }) {
+  const dir = path.join(charactersRoot, folder);
+  const rel = `canon/characters/${folder}`;
+  let complete = true;
+
+  for (const file of requiredDocuments) {
+    if (!(await isFile(path.join(dir, file)))) {
+      errors.push(`Missing required canon file: ${rel}/${file}`);
+      complete = false;
+    }
+  }
+
+  if (!complete) return;
+
+  const manifestPath = path.join(dir, "ASSET-MANIFEST.json");
   let manifest;
 
   try {
     manifest = JSON.parse(await readFile(manifestPath, "utf8"));
   } catch (error) {
-    errors.push(`ASSET-MANIFEST.json is invalid JSON: ${error.message}`);
+    errors.push(`${rel}/ASSET-MANIFEST.json is invalid JSON: ${error.message}`);
+    return;
   }
 
-  if (manifest) {
-    if (manifest.characterId !== "drew" || manifest.canonVersion !== "1.0.0") {
-      errors.push("ASSET-MANIFEST.json must identify Drew canon version 1.0.0.");
+  if (manifest.characterId !== characterId) {
+    errors.push(`${rel}/ASSET-MANIFEST.json must identify characterId "${characterId}", got ${JSON.stringify(manifest.characterId)}.`);
+  }
+
+  if (manifest.lockedMaster !== "full-body-sheet.png") {
+    errors.push(`${rel}/ASSET-MANIFEST.json must designate full-body-sheet.png as the locked master.`);
+  }
+
+  if (!Array.isArray(manifest.assets) || manifest.assets.length === 0) {
+    errors.push(`${rel}/ASSET-MANIFEST.json must declare at least one reference asset.`);
+    return;
+  }
+
+  const files = new Set();
+
+  for (const asset of manifest.assets) {
+    if (typeof asset.file !== "string" || path.basename(asset.file) !== asset.file) {
+      errors.push(`Unsafe or invalid asset filename in ${rel}/ASSET-MANIFEST.json: ${String(asset.file)}`);
+      continue;
     }
 
-    if (manifest.lockedMaster !== "full-body-sheet.png") {
-      errors.push("ASSET-MANIFEST.json must designate full-body-sheet.png as the locked master.");
+    if (files.has(asset.file)) {
+      errors.push(`Duplicate asset in ${rel}/ASSET-MANIFEST.json: ${asset.file}`);
+      continue;
+    }
+    files.add(asset.file);
+
+    const assetPath = path.join(dir, asset.file);
+    if (!(await isFile(assetPath))) {
+      errors.push(`Manifest asset is missing: ${rel}/${asset.file}`);
+      continue;
     }
 
-    if (!Array.isArray(manifest.assets) || manifest.assets.length !== 7) {
-      errors.push("ASSET-MANIFEST.json must declare exactly seven Drew reference assets.");
-    } else {
-      const files = new Set();
+    const buffer = await readFile(assetPath);
+    const dimensions = readPngDimensions(buffer, `${rel}/${asset.file}`);
+    const sha256 = createHash("sha256").update(buffer).digest("hex");
 
-      for (const asset of manifest.assets) {
-        if (typeof asset.file !== "string" || path.basename(asset.file) !== asset.file) {
-          errors.push(`Unsafe or invalid asset filename in manifest: ${String(asset.file)}`);
-          continue;
-        }
+    if (dimensions && (dimensions.width !== asset.width || dimensions.height !== asset.height)) {
+      errors.push(
+        `${rel}/${asset.file} dimensions changed: expected ${asset.width}x${asset.height}, got ${dimensions.width}x${dimensions.height}.`,
+      );
+    }
 
-        if (files.has(asset.file)) {
-          errors.push(`Duplicate asset in manifest: ${asset.file}`);
-          continue;
-        }
-        files.add(asset.file);
+    if (sha256 !== asset.sha256) {
+      errors.push(`${rel}/${asset.file} fingerprint changed: update the image intentionally and revise ASSET-MANIFEST.json.`);
+    }
 
-        const assetPath = path.join(drewDir, asset.file);
-        if (!(await isFile(assetPath))) {
-          errors.push(`Manifest asset is missing: ${asset.file}`);
-          continue;
-        }
+    sheetCount += 1;
+  }
 
-        const buffer = await readFile(assetPath);
-        const dimensions = readPngDimensions(buffer, asset.file);
-        const sha256 = createHash("sha256").update(buffer).digest("hex");
-
-        if (dimensions && (dimensions.width !== asset.width || dimensions.height !== asset.height)) {
-          errors.push(
-            `${asset.file} dimensions changed: expected ${asset.width}x${asset.height}, got ${dimensions.width}x${dimensions.height}.`,
-          );
-        }
-
-        if (sha256 !== asset.sha256) {
-          errors.push(`${asset.file} fingerprint changed: update the image intentionally and revise ASSET-MANIFEST.json.`);
-        }
-      }
-
-      for (const file of requiredFiles.filter((name) => name.endsWith(".png"))) {
-        if (!files.has(file)) {
-          errors.push(`Required image is not declared in ASSET-MANIFEST.json: ${file}`);
-        }
-      }
-
-      const locked = manifest.assets.filter((asset) => asset.status === "locked");
-      if (locked.length !== 1 || locked[0].file !== manifest.lockedMaster) {
-        errors.push("Only full-body-sheet.png may be marked as the locked master; support sheets remain review references.");
-      }
+  const pngsInFolder = (await readdir(dir)).filter((name) => name.toLowerCase().endsWith(".png"));
+  for (const png of pngsInFolder) {
+    if (!files.has(png)) {
+      errors.push(`Undeclared sheet in folder: ${rel}/${png} is not listed in ASSET-MANIFEST.json.`);
     }
   }
+
+  const locked = manifest.assets.filter((asset) => asset.status === "locked");
+  if (locked.length !== 1 || locked[0].file !== manifest.lockedMaster) {
+    errors.push(`${rel}: exactly one asset may be marked "locked", and it must be the locked master (${manifest.lockedMaster}).`);
+  }
+}
+
+for (const character of characters) {
+  await validateCharacter(character);
 }
 
 async function checkText(relativePath, required, forbidden) {
@@ -166,10 +181,25 @@ await checkText(
   ["small round head, thin straight beak, dot eyes with single brow strokes"],
 );
 
+// Light no-tail guards for the newer characters.
+{
+  const dogDescriptionPath = path.join(charactersRoot, "dog", "DESCRIPTION.md");
+  if (await isFile(dogDescriptionPath)) {
+    const text = await readFile(dogDescriptionPath, "utf8");
+    if (!text.includes("absolutely no tail") && !text.includes("no tail")) {
+      errors.push('canon/characters/dog/DESCRIPTION.md must state "absolutely no tail" or "no tail".');
+    }
+  }
+}
+
+await checkText("canon/characters/abby/DESCRIPTION.md", ["no tail"], []);
+
 if (errors.length > 0) {
-  console.error("Drew canon validation failed:\n");
+  console.error("Character canon validation failed:\n");
   for (const error of errors) console.error(`- ${error}`);
   process.exit(1);
 }
 
-console.log("Drew canon valid: 4 documents, 7 fingerprinted model sheets, and master prompt are consistent.");
+console.log(
+  `Character canon valid: ${characters.length} characters (drew, mango, abby), ${sheetCount} fingerprinted model sheets, documents and master prompt are consistent.`,
+);

@@ -47,7 +47,7 @@ Vercel dashboard → the project → **Deployments** tab → the ⋯ menu on the
 
 ## The studio login + actions
 
-**The whole site is private now** — every page sits behind the owner's login at `/login` (old `/backroom` addresses redirect). The door is a standard **username + password** form with a checked-by-default **"Keep me signed in on this device"**: remembered devices stay signed in for a year, and because the form uses the standard field names, every phone and browser offers to save the login on first sign-in — after that it fills itself in. He logs in once per device (phone, iPad, laptop) and never again. Inside: Today's batch with **Keep this one** stars (each star is a small commit to `options/<day>/keepers.json`), the Collection, Keepers, and the connector page. The RUN IT publish machinery still exists under the hood (MCP `publish_cartoon`) for when the public paper at `/paper` un-parks.
+**The whole site is private now** — every page sits behind the owner's login at `/login` (old `/backroom` addresses redirect). The door is a standard **username + password** form with a checked-by-default **"Keep me signed in on this device"**: remembered devices stay signed in for a year, and because the form uses the standard field names, every phone and browser offers to save the login on first sign-in — after that it fills itself in. He logs in once per device (phone, iPad, laptop) and never again. Inside: Today's batch with **Keep this one** stars (each star is a small commit to `options/<day>/keepers.json`), the Collection, Keepers, and the connector page. The publish core (`lib/githubPublish.ts` → `publishOption`) is kept for when the public paper someday un-parks; it is not currently exposed as a button or an MCP tool.
 
 It needs these environment variables in the Vercel project (Settings → Environment Variables), then a redeploy:
 
@@ -61,11 +61,11 @@ Optional extras: `AUTH_SECRET` (any long random string; signs the login cookie �
 
 ## The chat connector (MCP)
 
-The site is an **MCP server** at `/api/mcp` — the whole daily ritual can run inside one ChatGPT conversation. Four tools: `get_canon` (the live master prompt from the repo — canon can never go stale), `file_cartoon` (accepts text-free artwork; the server typesets the dialogue in the house style and commits it into today's batch), `get_light_table` (lists a day, stars marked), and `mark_keeper` (stars on the founder's word).
+The site is an **MCP server** at `/api/mcp` — the whole daily ritual runs inside one ChatGPT conversation. The tools cover the whole loop: `get_canon` (the live master prompt — canon can never go stale), `get_doc` (any deeper bible: comedy boundaries, stage rules, scene-qc, per-character bibles), `get_model_sheet` (a character's locked reference sheets, as images), `file_cartoon` (text-free artwork in; the server enforces B&W and size, typesets the dialogue, and commits into today's batch), `get_light_table` (a day at a glance), `record_feedback` + `get_feedback` (his verdicts in, the taste corpus out), and `mark_keeper` (stars on the founder's word).
 
 **The founder's ChatGPT Project instructions** (paste once into a Project with this connector enabled):
 
-> You draw cartoons for The Swinging Door, and we are in a training week: I am teaching you my taste. When I ask for cartoons: call get_canon and follow it exactly; fetch get_model_sheet for each character you'll draw and match the sheets; draw 3–5 distinct, text-free candidates; file each with file_cartoon (title, caption, topic). Show them to me here. When I react to one, record my words with record_feedback; star with mark_keeper only when I say so. Never rate for me. When I ask what you've learned, read get_feedback and tell me the patterns. Every couple of days we'll revise the bibles from that data — then your next batches should test the revision, and the love-rate trend tells us if it took. On the last day we run the graduation test: before I rate a fresh batch, you predict my verdict for each cartoon and show me the predictions; four out of five right means the bible is ready to present, and any miss tells us which chapter to fix.
+> You draw cartoons for The Swinging Door, and we are in a training week: I am teaching you my taste. When I ask for cartoons: call get_canon and follow it exactly; fetch get_model_sheet for each character you'll draw and match the sheets; draw 3–5 distinct, text-free candidates; then LOOK at each image and check it against the canon's checklist and scene-qc (get_doc scene-qc) — right side of the bar, everyone really on their stools, nothing floating or merged — and redraw any failure before filing; file each survivor with file_cartoon (title, caption, topic, and style_notes naming what that candidate deliberately varies). Show them to me here. When I react to one, record my words with record_feedback; star with mark_keeper only when I say so. Never rate for me. When I ask what you've learned, read get_feedback and tell me the patterns. Every couple of days we'll revise the bibles from that data — then your next batches should test the revision, and the love-rate trend tells us if it took. On the last day we run the graduation test: before I rate a fresh batch, you predict my verdict for each cartoon and show me the predictions; four out of five right means the bible is ready to present, and any miss tells us which chapter to fix.
 
 Setup:
 
@@ -84,7 +84,7 @@ Each day's candidates are pushed to the repo as:
 ```
 /options/2026-08-14/
   option-1.png        ← required; B&W, ≥1200px long side
-  option-1.json       ← optional: {"title": "…", "caption": "…", "tags": ["…"]}
+  option-1.json       ← optional: {"title","caption","topic","tags","style_notes"}
   option-2.png
   option-2.json
   option-3.png

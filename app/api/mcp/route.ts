@@ -3,6 +3,7 @@ import {
   fileCartoon,
   getAllFeedback,
   getCanon,
+  getDoc,
   getModelSheets,
   listOptionDays,
   PublishError,
@@ -36,14 +37,19 @@ const INSTRUCTIONS =
   "The Swinging Door's private studio, for chat — currently in a TRAINING WEEK: the founder is " +
   "teaching the system his taste. The ritual: (1) call get_canon and follow it exactly; (2) fetch " +
   "get_model_sheet for each character you'll draw and match the sheets; (3) draw " +
-  "3-5 distinct text-free candidates; (4) file each with file_cartoon — the house typesets the " +
-  "caption, so never render words in the image; (4) he reacts, here or on the studio site. When " +
-  "he gives an opinion on a specific cartoon, record it faithfully with record_feedback (his " +
-  "words, not yours); star with mark_keeper only on his explicit word. To study his taste, call " +
-  "get_feedback — it returns every verdict and note of the week. Never rate on his behalf. " +
-  "Graduation test, last day of the week: before he rates a fresh batch, study get_feedback and " +
-  "state your predicted verdict for each candidate; 4 of 5 correct means the bible is ready to " +
-  "present — each miss names the chapter still to fix.";
+  "3-5 distinct text-free candidates; (4) LOOK at each generated image and inspect it against " +
+  "the canon's checklist and the scene-qc document (get_doc name=scene-qc): correct side of the " +
+  "bar, seated characters actually on stools, real grips, nothing clipping or merged, identity " +
+  "matching the sheets — redraw any failure, never file a visible fault; (5) file survivors with " +
+  "file_cartoon, style_notes naming each candidate's one deliberate variation — the house " +
+  "typesets the caption, so never render words in the image; (6) he reacts, here or on the " +
+  "studio site. When he gives an opinion on a specific cartoon, record it faithfully with " +
+  "record_feedback (his words, not yours); star with mark_keeper only on his explicit word. To " +
+  "study his taste, call get_feedback — it returns every verdict and note of the week. Never " +
+  "rate on his behalf. Deeper rules live in get_doc (comedy boundaries, settings/stage rules, " +
+  "per-character bibles). Graduation test, last day of the week: before he rates a fresh batch, " +
+  "study get_feedback and state your predicted verdict for each candidate; 4 of 5 correct means " +
+  "the bible is ready to present — each miss names the chapter still to fix.";
 
 const TOOLS = [
   {
@@ -74,12 +80,48 @@ const TOOLS = [
     },
   },
   {
+    name: "get_doc",
+    description:
+      "Fetch any canon document beyond the master prompt: the canon guide and reading order, " +
+      "comedy boundaries, settings and stage rules, style law, personalities/voices, the " +
+      "workflow, the scene-qc inspection list, and each character's deep bible and " +
+      "quality-control gates. Everything the master prompt's checklist cites is reachable here.",
+    inputSchema: {
+      type: "object",
+      properties: {
+        name: {
+          type: "string",
+          enum: [
+            "canon-guide",
+            "comedy",
+            "settings",
+            "style",
+            "personalities",
+            "workflow",
+            "scene-qc",
+            "drew-bible",
+            "drew-qc",
+            "mango-bible",
+            "mango-qc",
+            "abby-bible",
+            "abby-qc",
+          ],
+          description: "Which document to fetch.",
+        },
+      },
+      required: ["name"],
+    },
+  },
+  {
     name: "file_cartoon",
     description:
-      "File one finished candidate into the day's batch. Send the TEXT-FREE artwork (square or " +
-      "portrait; PNG or JPEG; base64) — the house typesets the caption beneath it in the strip's " +
-      "house style, so never draw words into the image. Auto-numbers within the day. If the " +
-      "payload is rejected as too large, re-encode as JPEG quality 85 and retry.",
+      "File one finished candidate into the day's batch — ONLY after it passed your visual " +
+      "inspection against scene-qc (get_doc name=scene-qc): sides of the bar, seating, grips, " +
+      "no clipping, identity vs the sheets. Send the TEXT-FREE artwork (square or portrait, " +
+      "strictly black-and-white, 1200px+ long side preferred; PNG or JPEG; base64) — the house " +
+      "typesets the caption beneath it in the strip's house style, so never draw words into the " +
+      "image. Auto-numbers within the day. If the payload is rejected as too large, re-encode " +
+      "as JPEG quality 85 and retry.",
     inputSchema: {
       type: "object",
       properties: {
@@ -186,6 +228,10 @@ async function runTool(name: string, args: Record<string, unknown>) {
     return toolText(await getCanon());
   }
 
+  if (name === "get_doc") {
+    return toolText(await getDoc(String(args.name ?? "")));
+  }
+
   if (name === "get_model_sheet") {
     const character = String(args.character ?? "").toLowerCase().trim();
     const sheets = await getModelSheets(character);
@@ -197,9 +243,10 @@ async function runTool(name: string, args: Record<string, unknown>) {
         {
           type: "text",
           text:
-            `${character}'s locked reference sheets: ${sheets.map((s) => s.name).join(", ")}. ` +
-            "Match them exactly — the character bible's reference hierarchy applies, and older " +
-            "cartoons never override these.",
+            `${character}'s reference sheets, in authority order:\n` +
+            sheets.map((s, i) => `${i + 1}. ${s.name} — ${s.authority}`).join("\n") +
+            "\nMatch the locked master exactly; support sheets never override it, and older " +
+            "cartoons never override any of these. The images follow in the same order.",
         },
         ...sheets.map((s) => ({ type: "image", data: s.base64, mimeType: s.mime })),
       ],
@@ -229,9 +276,15 @@ async function runTool(name: string, args: Record<string, unknown>) {
       styleNotes: typeof args.style_notes === "string" ? args.style_notes : null,
       finishedPng,
     });
+    const untagged =
+      typeof args.style_notes === "string" && args.style_notes.trim()
+        ? ""
+        : " NOTE: this candidate arrived without style_notes — in the training week every " +
+          "candidate must name its one deliberate variation, or his reactions can't attach " +
+          "to known differences. Tag the next ones.";
     return toolText(
       `Filed as option ${filed.option} of ${filed.day} — dialogue typeset, on the founder's ` +
-        `light table within a minute.`
+        `light table within a minute.${untagged}`
     );
   }
 

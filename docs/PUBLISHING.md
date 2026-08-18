@@ -2,7 +2,7 @@
 
 Audience: the technical maintainer. The repo's filesystem is the CMS — publishing a cartoon is adding one folder and pushing.
 
-> **The usual way is the Back Room.** The owner reviews each day's candidate cartoons at `/backroom` (login required) and taps RUN IT — that commits the winner into `/cartoons` automatically and the site redeploys. The daily candidates land in `/options/YYYY-MM-DD/` (contract in [SETUP.md](SETUP.md) → "The Back Room"). Everything below is the manual path: publishing by hand, fixing mistakes, or working without the Back Room configured.
+> **The usual way is the Back Room.** The owner reviews each day's candidate cartoons at `/backroom` (login required) and taps RUN IT — that commits the winner into `/cartoons` automatically and the site redeploys. The daily candidates land in `/options/YYYY-MM-DD/` (contract in [SETUP.md](SETUP.md) → "The studio login + actions"). Everything below is the manual path: publishing by hand, fixing mistakes, or working without the Back Room configured.
 
 ## The steps
 

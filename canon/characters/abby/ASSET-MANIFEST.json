@@ -1,0 +1,71 @@
+{
+  "characterId": "abby",
+  "canonVersion": "1.0.0",
+  "lockedMaster": "full-body-sheet.png",
+  "referencePolicy": "The locked master and the written canon (DESCRIPTION.md, CHARACTER-BIBLE.md) outrank all specialist support sheets. Attach the master and identity-sheet.png to every generation plus exactly one specialist sheet.",
+  "assets": [
+    {
+      "file": "full-body-sheet.png",
+      "sourceId": "abby-master-model-v1",
+      "status": "locked",
+      "role": "Primary master model: five canonical views, proportions, outfit, no-tail rear silhouette, facial construction, expressions, and behind-the-bar context",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "094e665038bcca65c1b93dac89d75ddb031d4a38210225c4abaa3f7fad0bde35"
+    },
+    {
+      "file": "identity-sheet.png",
+      "sourceId": "abby-identity-closeup-v1",
+      "status": "support",
+      "role": "Close authority for skull, muzzle, nose, eyes, lashes, brow-fur, facial-fur direction, and pearl-and-gem collar",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "ad2bf1b51e8144100154ba42415ac6c132bf72b49efd5e36557334936960994d"
+    },
+    {
+      "file": "expression-sheet.png",
+      "sourceId": "abby-expression-library-v1",
+      "status": "support",
+      "role": "Canonical emotional range without identity drift",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "f4ecd4ec70cb1c22dfa6480f84cf9193fd327abefee64e7e1c7616e497ff8a26"
+    },
+    {
+      "file": "wardrobe-details-sheet.png",
+      "sourceId": "abby-wardrobe-details-v1",
+      "status": "support",
+      "role": "Blouse, lace, pearls, gemstone, bracelet, towel, apron-skirt, back bow, legs, and heels; clothing and rear views",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "de1dee2e553eb0b77ce2350b1a10fdd854e99bbc0f1048ad5479a10ac8efb82c"
+    },
+    {
+      "file": "hands-props-sheet.png",
+      "sourceId": "abby-hands-props-v1",
+      "status": "support",
+      "role": "Five-digit hand construction, gestures, and bar-prop grips",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "369f47638c06c5c046d2b21cec849163f032231ae35d3e99c5c8d8094effe6f0"
+    },
+    {
+      "file": "bartender-actions-sheet.png",
+      "sourceId": "abby-bartender-actions-v1",
+      "status": "support",
+      "role": "Full-body motion and working poses, including polishing, pouring, serving, and carrying",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "1a66c0961f8442289125205ce4a3de565c0227f067f27a449be105d743db2581"
+    },
+    {
+      "file": "bar-blocking-sheet.png",
+      "sourceId": "abby-bar-blocking-v1",
+      "status": "support",
+      "role": "Scale, counter height and occlusion, room ownership, and approved positions",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "c0a0d40398e5e32e715379f227f470fd08eb2bb5df74b87f0990eb88d918d585"
+    }
+  ]
+}

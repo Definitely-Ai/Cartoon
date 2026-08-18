@@ -14,7 +14,7 @@ This document turns Drew's locked model into repeatable production decisions. `D
 | Permanent accessory | Small solid-black bow tie |
 | Role | Arch observer, precise skeptic, and dry analyst |
 | Default state | Alert neutral with quiet curiosity |
-| Rendering | Hand-drawn black ink, restrained gray wash, warm off-white paper |
+| Rendering | Hand-drawn black ink, exactly three values (paper white, one mid-gray wash, solid black ink), warm off-white paper |
 
 Drew notices the mechanism behind the headline: incentives, language, financing, status, and unintended consequences. He is curious before he is judgmental. His skepticism is intelligent and constructive, not bitter. He retains dignity when he is wrong, surprised, worried, or caught off guard.
 
@@ -25,21 +25,22 @@ The audience should understand within one second that Drew is a mature, attentiv
 When two references disagree, use this order:
 
 1. `full-body-sheet.png` — locked master model.
-2. `DESCRIPTION.md` — locked written canon.
-3. `CHARACTER-BIBLE.md` — construction and performance rules.
-4. The most relevant support sheet.
-5. The current scene brief.
-6. Model improvisation — only for information not governed above.
+2. The written canon — `DESCRIPTION.md` and this bible.
+3. `canon/MASTER-PROMPT.md` — the assembled BASE block and its DREW paragraph.
+4. The most relevant specialist/support sheet.
+5. Older cartoons — story history only.
 
-Never average conflicting images together. Match the master, record the conflict, and correct the lower-authority reference later.
+Never average conflicting images together. Match the master, record the conflict, and correct the lower-authority reference later. Do not blend old and new models; if the current sheets are attached, match them rather than inventing a compromise.
 
 ### Minimum reference stack
+
+Sheets are fetched with `get_model_sheet` over the studio connector, or attached directly when working in-repo.
 
 - Always attach `full-body-sheet.png`.
 - Attach `identity-sheet.png` whenever the face is readable.
 - Attach `wing-hand-sheet.png` whenever a wing-hand, gesture, or held object is readable.
 - Add only the one or two other sheets needed for the requested shot.
-- Never substitute a previous generated scene for the locked master.
+- Never substitute a previously generated scene for the locked master.
 
 ## 3. Construction
 
@@ -216,7 +217,7 @@ Drew may appear front, three-quarter, profile, back three-quarter, back, seated,
 
 ## 10. Style Translation
 
-- Strictly black, white, and restrained gray wash on warm off-white paper.
+- Strict black-and-white hand-drawn ink wash on warm off-white paper: exactly three values (paper white, one mid-gray wash, solid black ink).
 - Confident variable-weight line: heavier at structural overlaps, finer at facial and feather details.
 - Selective short feather marks and controlled crosshatching may describe anatomy; never fill every surface with noise.
 - Eyes, beak tip, bow tie, and the gag's essential prop receive the strongest useful contrast.
@@ -234,7 +235,7 @@ Drew may appear front, three-quarter, profile, back three-quarter, back, seated,
 7. Construct the setting without redesigning Drew.
 8. Apply ink, wash, and contrast hierarchy.
 9. Reserve the deterministic dialogue area; do not ask the image model to typeset the caption.
-10. Run `QUALITY-CONTROL.md` and `npm run canon:check`.
+10. Run `QUALITY-CONTROL.md` and `canon/creation/SCENE-QC.md` against the actual pixels.
 
 ## 12. Forbidden Drift
 

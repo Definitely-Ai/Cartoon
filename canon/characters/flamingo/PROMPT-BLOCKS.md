@@ -1,23 +1,27 @@
 # Drew Prompt Blocks
 
-Use these blocks with `canon/MASTER-PROMPT.md`. They are designed to keep identity separate from scene variables and to make reference use explicit.
+Use these blocks with `canon/MASTER-PROMPT.md`. In a normal cartoon the whole BASE block is pasted verbatim and already contains Drew's locked identity paragraph; the blocks below are for Drew-only work (sheet regeneration, solo panels, tests) and for tightening a scene where a specific feature keeps drifting.
 
-## Required Attachments
+## Required References
 
-For every Drew image:
+For every Drew image, fetch the sheets with `get_model_sheet` over the studio connector (or attach the files when working directly in the repo):
 
-1. attach `full-body-sheet.png` as the primary identity reference;
-2. attach `identity-sheet.png` when the face is readable;
-3. attach `wing-hand-sheet.png` when a wing-hand, gesture, or held object is readable;
-4. attach at most two additional Drew support sheets relevant to the shot.
+1. `full-body-sheet.png` — the locked master, always;
+2. `identity-sheet.png` — when the face is readable;
+3. `wing-hand-sheet.png` — when a wing-hand, gesture, or held object is readable;
+4. at most two additional Drew support sheets relevant to the shot.
 
 State that the locked master outranks all other references. Never use a previously generated scene as the sole identity reference.
 
 ## Locked Identity Block
 
-Paste verbatim whenever Drew appears:
+This is the DREW paragraph from the BASE block of `canon/MASTER-PROMPT.md`, byte-identical. It is the ONE canonical identity text. Paste it verbatim whenever Drew appears outside a full BASE-block prompt; never paraphrase it from memory. (Every other prose summary of Drew in this folder is non-normative — for human readers; this paragraph is the paste text.)
 
-> Preserve Drew exactly from the attached locked master: a 46-year-old male anthropomorphic flamingo of average healthy build, with a compact mature head, a pale-and-dark angular downturned flamingo beak, and a long slim neck held in a pronounced smooth S-curve. His small lively avian eyes have controlled visible white, a distinct iris and darker pupil, one restrained catchlight, fine lid contours, and a clearly directed gaze. His arms are layered feathered wing-arms ending in three articulated feather-digits—one short thumb-feather and two longer finger-feathers—with only tiny pale avian nail tips. He has long slim bird legs, webbed flamingo feet, natural feather covering, and one small solid-black bow tie at the neck base. Keep his mature proportions, species anatomy, and poised restrained bearing unchanged.
+```text
+DREW. Preserve Drew exactly from the attached locked master: a 46-year-old male anthropomorphic flamingo of average healthy build, with a compact mature head, a pale-and-dark angular downturned flamingo beak, a long slim neck held in a pronounced smooth S-curve, and small lively avian eyes with controlled visible white, distinct iris and darker pupil, one restrained catchlight, fine lid contours, and clearly directed gaze. His arms are layered feathered wing-arms ending in three articulated feather-digits with only tiny pale avian nail tips; he stands on long slim bird legs with webbed flamingo feet. His permanent accessory is one small solid-black bow tie; unless the scene explicitly specifies clothing, Drew's G-rated feathered base model wears only the bow tie. In the standard bar scene he stands or leans at the room side of the bar. His recurring martini is optional; when the scene calls for it, use exactly three olives on one pick, the glass on a coaster or held in his feather-digit grip.
+```
+
+If `canon/MASTER-PROMPT.md` and this file ever differ, the master prompt wins; fix this file.
 
 ## Base-Model Block
 
@@ -65,7 +69,7 @@ Suggested `[SHOT]`: close-up, head-and-neck, medium, full figure, wide, seated t
 
 ## Style Block
 
-> Render as a sophisticated hand-drawn black-and-white American editorial cartoon: confident variable-weight black line, restrained transparent gray ink wash, warm off-white paper, selective short feather marks, and controlled crosshatching only where it clarifies anatomy or overlap. Keep Drew and the gag dominant; render the background one step lighter and looser. No color, photorealism, glossy 3D, anime, flat vector art, clip-art mascot style, muddy all-over wash, dense texture, watermark, or signature.
+> Render as a sophisticated hand-drawn black-and-white American editorial cartoon: confident variable-weight black line over soft gray washes; exactly three values (paper white, one mid-gray wash, solid black ink); warm off-white paper, selective short feather marks, and controlled crosshatching only where it clarifies anatomy or overlap. Keep Drew and the gag dominant; render the background one step lighter and looser. No color, photorealism, glossy 3D, anime, flat vector art, clip-art mascot style, muddy all-over wash, dense texture, watermark, or signature.
 
 ## Negative Block
 

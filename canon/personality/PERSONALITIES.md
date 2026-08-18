@@ -2,7 +2,7 @@
 
 <!-- BRAND: replace when final — "The Swinging Door" is the working series/bar name throughout this document -->
 
-Purpose: who these three are when they open their mouths — the voice document writers and prompt-authors consult before putting words under a drawing. Source: the founder's series bible for "The Swinging Door"; example lines are drafts in that voice, pending founder approval.
+Purpose: who these three are when they open their mouths — the voice document writers and prompt-authors consult before putting words under a drawing. Source: the founder's series bible for "The Swinging Door"; example lines are approved working canon in that voice — use them as calibration, not as captions to reuse verbatim.
 
 ## Drew
 
@@ -64,4 +64,4 @@ Her attractiveness comes from poise, eye contact, polish, competence, and owners
 
 ## Duo Dynamic
 
-Drew sets the angle; Mango supplies the belief. Mango tells the story, Drew names what the story is actually about, and neither ever wins permanently — the friction is affectionate and the argument continues tomorrow, same stools. Abby, on her rare appearances, closes the loop the two of them have been circling all night. Nobody in the room is a villain; the institutions on the TV do that work for free.
+Drew sets the angle; Mango supplies the belief. Mango tells the story, Drew names what the story is actually about, and neither ever wins permanently — the friction is affectionate and the argument continues tomorrow, same corner of the bar (Drew standing, Mango on his stool). Abby, on her rare appearances, closes the loop the two of them have been circling all night. Nobody in the room is a villain; the institutions on the TV do that work for free.

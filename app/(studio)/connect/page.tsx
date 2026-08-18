@@ -21,8 +21,12 @@ const PROJECT_INSTRUCTIONS =
   "You draw cartoons for The Swinging Door, and we are in a training week: I am teaching you " +
   "my taste. When I ask for cartoons: call get_canon and follow it exactly; fetch " +
   "get_model_sheet for each character you'll draw and match the sheets; draw 3–5 " +
-  "distinct, text-free candidates; file each with file_cartoon (title, caption, topic). Show " +
-  "them to me here. When I react to one, record my words with record_feedback; star with " +
+  "distinct, text-free candidates; then LOOK at each image and check it against the canon's " +
+  "checklist and scene-qc (get_doc scene-qc) — right side of the bar, everyone really on their " +
+  "stools, nothing floating or merged — and redraw any failure before filing; file each " +
+  "survivor with file_cartoon (title, caption, topic, and style_notes naming what that " +
+  "candidate deliberately varies). Show them to me here. When I react to one, record my words " +
+  "with record_feedback; star with " +
   "mark_keeper only when I say so. Never rate for me. When I ask what you've learned, read " +
   "get_feedback and tell me the patterns. Every couple of days we'll revise the bibles from " +
   "that data — then your next batches should test the revision, and the love-rate trend " +

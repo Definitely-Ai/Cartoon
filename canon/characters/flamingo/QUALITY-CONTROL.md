@@ -1,6 +1,6 @@
 # Drew Production Quality Control
 
-An output is approved only when every critical identity gate passes. A good joke or attractive rendering never excuses character drift.
+An output is approved only when every critical gate passes **against the actual generated pixels**, with the fetched sheets open beside it — reading the prompt back is not inspection. A good joke or attractive rendering never excuses character drift. Any failure means **reject and redraw with the fault named in the prompt** — never a filing. This checklist merges Drew's identity gates with the stage rules of `canon/creation/SCENE-QC.md`; run both.
 
 ## Critical Identity Gates — All Must Pass
 
@@ -18,6 +18,18 @@ An output is approved only when every critical identity gate passes. A good joke
 - [ ] No anatomy, clothing, prop, or expression trait has migrated from Mango, Abby, or another character.
 
 Any failure above means **reject and revise**.
+
+## Scene Physics Gates — All Must Pass
+
+Consistent with `canon/creation/SCENE-QC.md`; that file's stage rules apply to the whole panel.
+
+- [ ] **Side of the bar.** Drew is a patron on the room side. Only the bartender occupies the service side; Drew never reaches from behind the counter.
+- [ ] **Standing or leaning blocking.** In the standard bar scene Drew stands or leans at the room side of the bar, weight believable and legs resolved. If a scene explicitly seats him, the stool is visibly or plausibly under him — hips on the seat; empty foreground stools do not count as his seat.
+- [ ] **Martini resting or gripped.** The martini (and every other glass or bottle) rests flat on the bar, a coaster, or a shelf — or sits in a real closed feather-digit grip. Nothing floats or tips without a story reason.
+- [ ] **Plausible contact points.** Feather-digits actually wrap what they hold — thumb-feather opposing the finger-feathers, right digit count; wings touch props where hands would. No mitten blobs, no pass-through grips.
+- [ ] **No interpenetration.** No limb, prop, garment, or glass merges, clips, or passes through the bar, a stool, or another character; nothing fused into a surface or a body.
+- [ ] **Correct occlusion.** Near objects hide far ones: the bar edge hides what stands behind it, his feather-hand hides the martini stem where it wraps it, the counter and stools overlap him correctly.
+- [ ] **Scale holds.** Drew stays consistent with the counter, the stools, Mango, Abby, and props, panel to panel.
 
 ## Performance Checks
 
@@ -41,7 +53,7 @@ Any failure above means **reject and revise**.
 
 ## Style Checks
 
-- [ ] Image is strictly black, white, and restrained gray wash on warm off-white paper.
+- [ ] Image is strictly black-and-white: exactly three values (paper white, one mid-gray wash, solid black ink) on warm off-white paper; no color anywhere.
 - [ ] Linework looks hand-drawn with confident natural variation.
 - [ ] Feather strokes and selective crosshatching clarify anatomy rather than fill surfaces randomly.
 - [ ] Eyes, beak tip, bow tie, and essential gag prop carry the strongest useful contrast.
@@ -56,7 +68,7 @@ Any failure above means **reject and revise**.
 - [ ] Crop preserves the anatomy or gesture required for the gag.
 - [ ] Clean negative space exists for deterministic dialogue.
 - [ ] Image model did not render the caption or speech balloon.
-- [ ] Exact dialogue is appended afterward with `npm run dialogue`.
+- [ ] The house typesets the exact caption afterward — `file_cartoon` over the connector; `npm run dialogue` when working in-repo.
 - [ ] Panel obeys `canon/comedy/COMEDY-BIBLE.md` and `canon/creation/WORKFLOW.md`.
 
 ## Drift Comparison
@@ -75,7 +87,7 @@ Do not judge from memory alone.
 
 ## Scoring After Critical Gates Pass
 
-| Area | Weight | Minimum |
+| Area | Max points | Minimum |
 | --- | ---: | ---: |
 | Identity fidelity | 20 | 19 |
 | Anatomy and expression | 20 | 18 |
@@ -83,7 +95,7 @@ Do not judge from memory alone.
 | Scene continuity | 20 | 17 |
 | Style, composition, and dialogue readiness | 20 | 18 |
 
-Approval threshold: **90/100**, with no critical failure and no category below its minimum.
+Approve only when every category meets its minimum, with no critical failure.
 
 ## Review Record
 
@@ -100,12 +112,12 @@ For every approved or instructive rejected image, record:
 
 Rejected images may remain in a dated review folder, but must never be promoted as an identity reference.
 
-## Repository Check
+## Maintainer-side Repository Check
 
-Run before generating, publishing, or changing Drew canon:
+For humans working in the repo (not part of AI self-inspection). Before generating, publishing, or changing Drew canon, run:
 
 ```bash
 npm run canon:check
 ```
 
-The command verifies that all required Drew documents and sheets exist, that image dimensions and SHA-256 fingerprints match `ASSET-MANIFEST.json`, and that the master prompt does not contain superseded design language.
+The command verifies that all required Drew documents and sheets exist, that image dimensions and SHA-256 fingerprints match `ASSET-MANIFEST.json`, and that the master prompt does not contain superseded design language. When working directly in the repo, the deterministic caption is applied with `npm run dialogue`.

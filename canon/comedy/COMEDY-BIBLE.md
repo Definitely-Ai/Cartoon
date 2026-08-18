@@ -62,10 +62,10 @@ Standing subject matter: politics, financial markets, sports, media, civic habit
 2. Drew holds a one-page fee statement at wing's length. → "The fee is one percent, which mostly covers the cost of explaining the fee."
 3. TV reads SOFT LANDING; neither has moved. → "They've achieved a soft landing, Mango. Nobody can say on what."
 4. Mango squints at his phone; TV shows a jagged coin chart. → "It's called crypto. Now we can lose money without leaving the bar."
-5. Abby polishing a glass between the two of them, mid-argument. → "The house view is that you should both switch to water."
+5. Abby polishing a glass between the two of them, mid-argument. → "The house position is that both of you need water." (Abby's canonical line — one wording, kept in her bible's voice list.)
 6. Chalkboard reads HAPPY HOUR 4–?; Drew checking his wrist (no watch). → "Happy hour coincides with the closing bell. This is called liquidity."
 7. TV reads BREAKING; the room is peaceful. → "Turn it up, Abby. I want to hear nothing, louder."
-8. Mango mid-story, paw raised; Drew signaling Abby without looking away. → "Three olives, Abby. It's a hearing day."
+8. Mango mid-story, hand raised; Drew signaling Abby without looking away. → "Three olives, Abby. It's a hearing day."
 
 ## Caption formulas (the shapes that keep working)
 

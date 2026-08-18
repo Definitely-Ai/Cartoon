@@ -45,6 +45,6 @@ Setup (env vars, connector) in [docs/SETUP.md](docs/SETUP.md).
 
 **Pending (waiting on the founder):**
 - Review/sign-off on Drew's supporting expression, anatomy, pose, wardrobe, scene-continuity, and proportion sheets; the locked master remains authoritative meanwhile.
-- Founder approval of the remaining working character and ink direction for Mango and Abby. The current sample art is polished enough to exercise the real site, but their sheets are not represented as commissioned final art.
+- Mango and Abby are **founder-approved working models, locked 2026-08-17 for daily production** (see their character bibles); final commissioned art may still supersede the sheets later. The single source for lock status is the cast table in [canon/README.md](canon/README.md).
 - Line-weight/style decisions flagged "pending founder sign-off" in the style bible, and the Example Approved Gags slots in the comedy bible.
 - Final brand confirmation — every branded string is greppable via `BRAND:` for a clean find-and-replace if "The Swinging Door" changes. <!-- BRAND: replace when final -->

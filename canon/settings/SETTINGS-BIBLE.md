@@ -8,38 +8,48 @@ Purpose: where the strip happens, drawn the same way every time. Source: the fou
 
 Most cartoons occur inside **The Swinging Door**, a classic American bar. It should feel established, comfortable, and slightly old-fashioned:
 
-- Wooden paneling and bar stools.
+- Wooden paneling and bar stools; darts on the wall if the gag wants them.
 - Drink coasters on the bar.
 - Framed Americana on the walls — but the walls should **not** be overly crowded.
 - A chalkboard with daily specials and clever jokes (the chalkboard is a legitimate place for a secondary gag).
-- A small TV usually appears; news or sporting events should generally be on it. The TV is how the day's events enter the room.
+- A small TV always appears in the bar (position fixed by the room map); news or sporting events should generally be on it. The TV is how the day's events enter the room.
 - When inside the bar, the bar name appears in the window **as a reverse image** — lettered as it would normally read from outside.
 
-Standing arrangement: Drew and Mango at the bar (Drew often standing, Mango on a stool); Abby, when she appears, ordinarily behind it with the counter at her upper hip. Because she owns the bar, she may leave that position for an explicit owner task—opening or closing, greeting at the double swinging doors, checking the room, carrying stock, or solving a practical problem. She is never placed patron-side casually during a normal shift.
+## The room, mapped (fixed — it never moves)
 
-## The room, mapped (working default — fix it once and it never moves)
-
-Continuity comes from the room being the same room every day. Camera: eye level, from across the room, the bar running along the lower third.
+Continuity comes from the room being the same room every day. Camera: eye level, from across the room, the **straight** dark-wood bar running along the lower third. Regulars would notice if a stool moved; so should the model.
 
 - **Front window** — upper right, the bar's name lettered in reverse.
 - **TV** — high on the left wall, small, slightly angled down.
 - **Chalkboard** — behind the bar, right of center.
 - **Framed Americana** — a few pieces on the wood paneling, never crowded.
-- **Bar** — dark wood, stools in front, shelves and a mirror behind.
-- Regulars would notice if a stool moved; so should the model.
+- **Bar** — dark wood, straight, stools on the room side, shelves and a mirror behind.
+
+## Stage rules (the physics of every panel)
+
+These are laws, not suggestions — `creation/SCENE-QC.md` inspects every generated image against them:
+
+- **Two sides, one rule.** Behind the bar is the service side: Abby's territory, no one else's. Patrons — Drew, Mango, anyone — stay on the room side. Abby leaves her position only for an explicit owner action named in the scene (opening or closing, greeting at the double swinging doors, checking the room, carrying stock, solving a practical problem); she is never a casual patron.
+- **The counter, from both sides.** The counter top hits standing Abby at the upper hip and seated patrons at forearm height; patrons' forearms and glasses rest ON the counter between them. The floor behind the bar is level with the room.
+- **Occlusion is correct.** Behind the bar, the counter hides Abby from the upper hip down. That is the right drawing — never render her lower body through or in front of the counter, and never move her patron-side just to show it.
+- **Blocking defaults.** Drew stands or leans at the room side of the bar; Mango sits on a stool with human posture. A seated character's hips are ON the seat, weight believable, legs resolved — nobody hovers beside their stool.
+- **Support and grip.** Every glass and bottle rests flat on the bar, a coaster, or a shelf, or sits in a closed plausible grip; hands meet props at real contact points.
+- **No interpenetration.** No limb, prop, or garment passes through furniture, glassware, or another character; nothing fuses into a surface.
+- **Scale holds.** Character heights stay consistent with the counter, the stools, and each other, panel to panel.
 
 ## Away games (secondary settings)
 
-The setting may also leave the bar, staying Americana-adjacent:
+The setting may leave the bar, staying Americana-adjacent: sporting events, fishing, golf, parades, and other places in the same spirit. Use the pre-written outdoor setting passage in `MASTER-PROMPT.md` → "Away games" — character identity never changes with the scenery.
 
-- Sporting events.
-- Fishing.
-- Darts inside the bar.
-- Parades.
-- Other Americana-adjacent places in the same spirit.
+**Away games, staged.** The stage rules above apply identically outdoors, translated:
+
+- **Fishing** — a pier rail or a small boat (two bench thwarts); rods actually held or wedged against a rail; the cooler is the prop surface; water and horizon level.
+- **Golf** — tee box or green; clubs gripped or leaning on the bag; the cart parked level.
+- **Parade / street** — curb or folding chairs; flags held, not floating.
+- **The news enters by prop** — a folded newspaper, a portable radio, a phone at reading distance with two or three short words at most. No TV, no chalkboard outdoors.
 
 ## Rules of the room
 
 - The bar is warm and familiar — never seedy, never sleek.
 - Props earn their place: everything visible should be able to carry a gag someday.
-- The room stays consistent between cartoons; regulars would notice if a stool moved.
+- The room stays consistent between cartoons — same bar, same walls, same map.

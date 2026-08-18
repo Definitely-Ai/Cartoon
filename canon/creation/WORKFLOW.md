@@ -11,8 +11,8 @@ Purpose: the repeatable path from "new topic" to "published cartoon," per the fo
 3. **Use the characters' personalities to decide who speaks** (see `/canon/personality/PERSONALITIES.md`). Drew names the absurdity; Mango believes his way into it; Abby closes an argument, rarely.
 4. **Write 3–5 caption options.** Short, dry, underplayed; the caption deepens the visual gag rather than explaining it (see `/canon/comedy/COMEDY-BIBLE.md`).
 5. **Choose the strongest caption.** Read the boundaries list before committing.
-6. **Create the illustrated panel, then typeset the exact dialogue into it.** Generate the character scene without model-rendered words, then append the print-ready caption deterministically with `npm run dialogue`. This preserves character continuity and prevents misspellings.
-7. **Maintain a catalog by date.** In this repo, publishing IS cataloging: each cartoon lives in `/cartoons/YYYY-MM-DD-slug/` with its `meta.json` (date, edition, tags). The JSON caption must exactly match the dialogue printed in the artwork; the site supplies titles, dates, and catalog lines outside the image.
+6. **Create the illustrated panel, then typeset the exact dialogue into it.** Generate the character scene without model-rendered words, then append the print-ready caption deterministically (`file_cartoon` over the connector; `npm run dialogue` in-repo). This preserves character continuity and prevents misspellings.
+7. **Maintain a catalog by date.** During the training week everything files into `/options/YYYY-MM-DD/` (the studio's daily inbox) — filing IS cataloging, and the founder's verdicts attach to each option. The public `/cartoons/YYYY-MM-DD-slug/` side is parked until he decides the strip is ready. Either way, the JSON caption must exactly match the dialogue printed in the artwork; the site supplies titles, dates, and catalog lines outside the image.
 
 ## Image-prompt template
 
@@ -23,8 +23,10 @@ Purpose: the repeatable path from "new topic" to "published cartoon," per the fo
 The primary path is the studio's own MCP connector (the founder's ChatGPT Project has it installed):
 
 1. Call `get_canon` and follow it exactly — every request, no exceptions.
-2. Draw **3–5 distinct, text-free candidates** (different scenes or speakers, never crops of one image). No words in the artwork: the house typesets the dialogue.
-3. File each one with `file_cartoon` (the raw image plus `title`, `caption`, `topic`, `tags`). The server typesets the caption beneath the art in the house style and commits it; options auto-number within the day.
-4. Show the founder the candidates in the conversation. When he says which he likes, call `mark_keeper` for those — never before he chooses.
+2. Call `get_model_sheet` for **every character in the scene** and use the returned sheets as generation references — match them exactly, never average with older art.
+3. Draw **3–5 distinct, text-free candidates** (different scenes or speakers, never crops of one image). No words in the artwork: the house typesets the dialogue.
+4. **Inspect each generated image** against `/canon/creation/SCENE-QC.md` and the master prompt's checklist — sides of the bar, real seating, real grips, nothing clipping, identity vs the sheets. Redraw any failure with the fault named; never file a visible fault.
+5. File each survivor with `file_cartoon` (the raw image plus `title`, `caption`, `topic`, `tags`, and `style_notes` naming its one deliberate variation). The server typesets the caption beneath the art in the house style and commits it; options auto-number within the day.
+6. Show the founder the candidates in the conversation. When he says which he likes, call `mark_keeper` for those — never before he chooses.
 
 Fallback (no connector): commit files directly as `/options/YYYY-MM-DD/option-N.png` + `option-N.json` `{"title","caption","topic","tags"}` — PNGs must then already be in the finished dialogue format (see `/docs/PUBLISHING.md`). Never create or modify `keepers.json` or `selected.json` by hand.
