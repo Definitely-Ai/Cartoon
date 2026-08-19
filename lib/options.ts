@@ -31,10 +31,10 @@ export type CartoonOption = {
   topic: string | null;
   /** Starred by the founder (keepers.json). */
   keeper: boolean;
-  /** Training-week verdict: 3 love, 2 fine, 1 not for me (feedback.json). */
-  rating: 1 | 2 | 3 | null;
-  /** What was off, when he said so ("drawing", "caption", "idea", "characters"). */
-  issues: string[];
+  /** Training-week score for the drawing, 1-10 (feedback.json). */
+  artScore: number | null;
+  /** Training-week score for the caption/joke, 1-10 (feedback.json). */
+  captionScore: number | null;
   /** His optional note on why. */
   note: string | null;
 };
@@ -45,8 +45,10 @@ export type OptionDay = {
   options: CartoonOption[];
   /** Option numbers the founder starred. */
   keepers: number[];
-  /** How many options carry a verdict. */
+  /** How many options carry both scores. */
   ratedCount: number;
+  /** How many rated options landed (both scores >= 6). */
+  landedCount: number;
   selected: { option: number; slug: string; publishedAt?: string } | null;
 };
 
@@ -130,15 +132,15 @@ function readDay(root: string, day: string): OptionDay | null {
       topic:
         typeof meta?.topic === "string" && meta.topic.trim() ? (meta.topic as string).trim().toLowerCase() : null,
       keeper: keepers.includes(n),
-      rating: (() => {
-        const entry = (feedbackRaw as Record<string, { rating?: unknown }>)[String(n)];
-        return entry && [1, 2, 3].includes(entry.rating as number) ? (entry.rating as 1 | 2 | 3) : null;
+      artScore: (() => {
+        const entry = (feedbackRaw as Record<string, { art?: unknown }>)[String(n)];
+        const v = entry?.art;
+        return Number.isInteger(v) && (v as number) >= 1 && (v as number) <= 10 ? (v as number) : null;
       })(),
-      issues: (() => {
-        const entry = (feedbackRaw as Record<string, { issues?: unknown }>)[String(n)];
-        return entry && Array.isArray(entry.issues)
-          ? (entry.issues as unknown[]).filter((i): i is string => typeof i === "string")
-          : [];
+      captionScore: (() => {
+        const entry = (feedbackRaw as Record<string, { caption?: unknown }>)[String(n)];
+        const v = entry?.caption;
+        return Number.isInteger(v) && (v as number) >= 1 && (v as number) <= 10 ? (v as number) : null;
       })(),
       note: (() => {
         const entry = (feedbackRaw as Record<string, { note?: unknown }>)[String(n)];
@@ -164,7 +166,8 @@ function readDay(root: string, day: string): OptionDay | null {
     day,
     options,
     keepers: keepers.filter((k) => options.some((o) => o.n === k)),
-    ratedCount: options.filter((o) => o.rating !== null).length,
+    ratedCount: options.filter((o) => o.artScore !== null && o.captionScore !== null).length,
+    landedCount: options.filter((o) => (o.artScore ?? 0) >= 6 && (o.captionScore ?? 0) >= 6).length,
     selected,
   };
 }

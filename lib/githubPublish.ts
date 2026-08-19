@@ -459,25 +459,38 @@ export async function fileCartoon(input: {
   return { day, option: next };
 }
 
-export type FeedbackEntry = { rating?: 1 | 2 | 3; issues?: string[]; note?: string; at?: string };
+// Two dials per cartoon, the founder's spec: art 1-10 and caption 1-10.
+// A cartoon LANDS when both are >= 6; the studio goal is a 60% landed rate.
+export type FeedbackEntry = { art?: number; caption?: number; note?: string; at?: string };
 
-export const ISSUE_KEYS = ["drawing", "caption", "idea", "characters"] as const;
+export const LANDED_MIN = 6;
+
+export function landed(entry: FeedbackEntry | undefined): boolean {
+  return !!entry && (entry.art ?? 0) >= LANDED_MIN && (entry.caption ?? 0) >= LANDED_MIN;
+}
+
+function validScore(n: unknown): n is number {
+  return Number.isInteger(n) && (n as number) >= 1 && (n as number) <= 10;
+}
 
 /**
- * Record the founder's verdict and/or note for one option — the training
+ * Record the founder's scores and/or note for one option — the training
  * week's core write. Merges into options/<day>/feedback.json (one file per
  * day, one entry per option) so a whole week of taste survives as data.
  */
 export async function setFeedback(
   day: string,
   option: number,
-  patch: { rating?: 1 | 2 | 3; issues?: string[]; note?: string }
+  patch: { art?: number; caption?: number; note?: string }
 ): Promise<FeedbackEntry> {
   const { token, repo } = requiredEnv();
   if (!/^\d{4}-\d{2}-\d{2}$/.test(day)) throw new PublishError(400, "Bad day — use YYYY-MM-DD.");
   if (!Number.isInteger(option) || option < 1 || option > 50) throw new PublishError(400, "Bad option number.");
-  if (patch.rating !== undefined && ![1, 2, 3].includes(patch.rating)) {
-    throw new PublishError(400, "Rating must be 1 (not for me), 2 (fine), or 3 (love it).");
+  if (patch.art !== undefined && !validScore(patch.art)) {
+    throw new PublishError(400, "The art score must be a whole number from 1 to 10.");
+  }
+  if (patch.caption !== undefined && !validScore(patch.caption)) {
+    throw new PublishError(400, "The caption score must be a whole number from 1 to 10.");
   }
   const api = gh(token);
 
@@ -501,14 +514,8 @@ export async function setFeedback(
   }
 
   const entry: FeedbackEntry = { ...all[String(option)] };
-  if (patch.rating !== undefined) entry.rating = patch.rating;
-  if (patch.issues !== undefined) {
-    const clean = patch.issues.filter((i): i is (typeof ISSUE_KEYS)[number] =>
-      (ISSUE_KEYS as readonly string[]).includes(i)
-    );
-    if (clean.length) entry.issues = clean;
-    else delete entry.issues;
-  }
+  if (patch.art !== undefined) entry.art = patch.art;
+  if (patch.caption !== undefined) entry.caption = patch.caption;
   if (patch.note !== undefined) {
     const note = patch.note.trim();
     if (note) entry.note = note;
@@ -541,44 +548,63 @@ export async function getAllFeedback(): Promise<string> {
   const trend: string[] = [];
   let rated = 0;
   let total = 0;
-  const RATING_WORDS: Record<number, string> = { 3: "LOVE IT", 2: "IT'S FINE", 1: "NOT FOR ME" };
+  let landedTotal = 0;
   for (const day of days) {
     const table = await readOptionDay(day);
     const feedback = await readFeedbackFile(day);
     lines.push(`\n## ${day}`);
-    let dayLoves = 0;
     let dayRated = 0;
+    let dayLanded = 0;
+    let artSum = 0;
+    let captionSum = 0;
     for (const option of table.options) {
       total++;
       const entry = feedback[String(option.n)] ?? {};
-      const verdict = entry.rating ? RATING_WORDS[entry.rating] : "unrated";
-      if (entry.rating) {
+      const hasBoth = validScore(entry.art) && validScore(entry.caption);
+      const didLand = landed(entry);
+      if (hasBoth) {
         rated++;
         dayRated++;
-        if (entry.rating === 3) dayLoves++;
+        artSum += entry.art as number;
+        captionSum += entry.caption as number;
+        if (didLand) {
+          dayLanded++;
+          landedTotal++;
+        }
       }
+      const scoreText = hasBoth
+        ? `art ${entry.art}/10, caption ${entry.caption}/10 — ${didLand ? "LANDED" : `MISS (${(entry.art as number) < LANDED_MIN && (entry.caption as number) < LANDED_MIN ? "both" : (entry.art as number) < LANDED_MIN ? "art" : "caption"})`}`
+        : validScore(entry.art)
+          ? `art ${entry.art}/10, caption unscored`
+          : validScore(entry.caption)
+            ? `caption ${entry.caption}/10, art unscored`
+            : "unrated";
       lines.push(
         `- Option ${option.n}${table.keepers.includes(option.n) ? " ★KEEPER" : ""} ` +
-          `[${verdict}]${option.topic ? ` (topic: ${option.topic})` : ""}: ` +
+          `[${scoreText}]${option.topic ? ` (topic: ${option.topic})` : ""}: ` +
           `${option.title ?? "untitled"} — "${option.caption ?? ""}"` +
           (option.styleNotes ? `\n  Deliberate variation: ${option.styleNotes}` : "") +
-          (entry.issues?.length ? `\n  What was off: ${entry.issues.join(", ")}` : "") +
           (entry.note ? `\n  His note: ${entry.note}` : "")
       );
     }
     trend.push(
       `${day}: ${table.options.length} filed, ${dayRated} rated, ` +
-        `${dayLoves} loved, ${table.keepers.length} keepers` +
-        (dayRated ? ` (love rate ${Math.round((dayLoves / dayRated) * 100)}%)` : "")
+        `${dayLanded} landed, ${table.keepers.length} keepers` +
+        (dayRated
+          ? ` (landed ${Math.round((dayLanded / dayRated) * 100)}% · art avg ${(artSum / dayRated).toFixed(1)} · caption avg ${(captionSum / dayRated).toFixed(1)})`
+          : "")
     );
   }
+  const overallRate = rated ? Math.round((landedTotal / rated) * 100) : 0;
   return (
-    `Founder feedback — ${rated} of ${total} rated so far.\n\n` +
-    `TREND (is the bible converging? love rate should rise as revisions land):\n` +
+    `Founder feedback — ${rated} of ${total} fully rated. A cartoon LANDS when art >= ${LANDED_MIN} ` +
+    `AND caption >= ${LANDED_MIN}. STUDIO GOAL: 60% landed. Currently: ${overallRate}% landed.\n\n` +
+    `TREND (is the bible converging? the landed rate should climb as revisions take):\n` +
     trend.map((t) => `  ${t}`).join("\n") +
-    `\n\nAnalysis hints: compare siblings within the same day and topic — they shared a prompt, so ` +
-    `differences in verdict are style signal. "What was off" chips attribute failures; "deliberate ` +
-    `variation" tags are the controlled experiments.` +
+    `\n\nAnalysis hints: the two dials attribute failures — a low art average points at the visual ` +
+    `bibles and the image prompt, a low caption average at the comedy bible and caption style. ` +
+    `Compare siblings within the same day and topic (shared prompt, so score differences are pure ` +
+    `signal), and read "deliberate variation" tags as the controlled experiments they are.` +
     lines.join("\n")
   );
 }

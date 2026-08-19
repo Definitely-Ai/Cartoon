@@ -18,16 +18,16 @@ The whole site sits behind one login; only the founder gets in. `/login` is the 
 
 ## The training week
 
-Right now the product is being perfected before it's shown to anyone: the founder generates many batches a day, and **every cartoon gets a verdict** — Love it / It's fine / Not for me — a keeper star for the exceptional, and an optional note on why. All of it lands in `options/<day>/feedback.json`. At the end of the week the AI reads the whole corpus (`get_feedback`) and proposes bible revisions that actually represent his style and humor.
+Right now the product is being perfected before it's shown to anyone: the founder asks his chat AI for cartoons in plain words, **the studio generates the art itself** (hosted FLUX.1 conditioned on the locked character sheets — the chat AI only sends text, so phones work), and **every cartoon gets two scores** — 1–10 for the art, 1–10 for the caption — plus a keeper star for the exceptional and an optional note on why. A cartoon **lands** when both scores hit 6; the studio goal is **60% landing**. All of it lives in `options/<day>/feedback.json`; the AI reads the corpus (`get_feedback`) and proposes bible revisions that actually represent his style and humor.
 
-The week ends with a **graduation test**: on the last day, the AI predicts his verdict for a fresh batch *before* he rates it. Four out of five right means the bible reads his taste well enough to present; each miss names the chapter that still needs work.
+The week ends with a **graduation test**: on the last day, the AI predicts land-or-miss for a fresh batch *before* he scores it. Four out of five right means the bible reads his taste well enough to present; each miss names the chapter that still needs work.
 
 ## The daily flow
 
-1. The founder tells his AI (ChatGPT, connected to this repo): *"I want them fishing today."*
-2. The AI reads `/canon` (the master prompt, characters, settings, comedy rules) and commits **3–5 finished cartoons** to `/options/YYYY-MM-DD/` — file contract in [canon/creation/WORKFLOW.md](canon/creation/WORKFLOW.md), with a `topic` field naming the request.
-3. He looks at them right there in the chat — or opens the site, where the batch is waiting on **Today**, bigger and easier.
-4. He stars the ones he likes (site button or by telling the AI); stars land in the repo and the **Keepers** gallery grows.
+1. The founder tells his AI (ChatGPT with the studio connector): *"Make one where they're on a boat."*
+2. The AI talks the idea through with him, writes 3–5 candidates from `/canon`, and calls the studio's `make_cartoons` — **the server generates the art** (FLUX.1 on the locked sheets), typesets each caption, and commits everything to `/options/YYYY-MM-DD/`.
+3. He opens **Today** and scores each cartoon twice: 1–10 for the art, 1–10 for the caption. Stars for the exceptional.
+4. His scores, notes, and stars land in the repo; the AI reads them with `get_feedback` and the bible gets sharper.
 5. Everything stays cataloged forever in **The Collection**, by month and day.
 
 Setup (env vars, connector) in [docs/SETUP.md](docs/SETUP.md).

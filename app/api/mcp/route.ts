@@ -12,6 +12,11 @@ import {
   setKeeper,
 } from "@/lib/githubPublish";
 import { finishCartoon } from "@/lib/dialogue";
+import { assemblePrompt, generateCartoonArt } from "@/lib/generate";
+
+// Image generation happens in this route now (make_cartoons) — give the
+// function room for a full 5-candidate batch.
+export const maxDuration = 300;
 
 // The chat door: a minimal MCP server (streamable HTTP, stateless) so the
 // founder's whole ritual can happen in one conversation — the AI fetches
@@ -34,22 +39,24 @@ const SERVER_INFO = {
 };
 
 const INSTRUCTIONS =
-  "The Swinging Door's private studio, for chat — currently in a TRAINING WEEK: the founder is " +
-  "teaching the system his taste. The ritual: (1) call get_canon and follow it exactly; (2) fetch " +
-  "get_model_sheet for each character you'll draw and match the sheets; (3) draw " +
-  "3-5 distinct text-free candidates; (4) LOOK at each generated image and inspect it against " +
-  "the canon's checklist and the scene-qc document (get_doc name=scene-qc): correct side of the " +
-  "bar, seated characters actually on stools, real grips, nothing clipping or merged, identity " +
-  "matching the sheets — redraw any failure, never file a visible fault; (5) file survivors with " +
-  "file_cartoon, style_notes naming each candidate's one deliberate variation — the house " +
-  "typesets the caption, so never render words in the image; (6) he reacts, here or on the " +
-  "studio site. When he gives an opinion on a specific cartoon, record it faithfully with " +
-  "record_feedback (his words, not yours); star with mark_keeper only on his explicit word. To " +
-  "study his taste, call get_feedback — it returns every verdict and note of the week. Never " +
-  "rate on his behalf. Deeper rules live in get_doc (comedy boundaries, settings/stage rules, " +
-  "per-character bibles). Graduation test, last day of the week: before he rates a fresh batch, " +
-  "study get_feedback and state your predicted verdict for each candidate; 4 of 5 correct means " +
-  "the bible is ready to present — each miss names the chapter still to fix.";
+  "The Swinging Door's private studio, for chat — currently in a TRAINING WEEK: the founder " +
+  "(not a technical man; hold his hand, one step at a time) is teaching the system his taste. " +
+  "When he asks for cartoons: (1) call get_canon; (2) talk the idea through with him in plain " +
+  "words — if he has no topic, offer two or three from the day's news — and confirm the angle " +
+  "in one sentence before drawing; (3) write 3-5 distinct candidates from the canon (scene " +
+  "sentence in canon vocabulary, exact caption ≤20 words, title, who's in the scene, " +
+  "style_notes naming each one's single deliberate variation); (4) call make_cartoons with " +
+  "them — the studio draws the art itself on the locked character sheets, typesets the " +
+  "caption, and files everything; warn him it takes a minute or two per cartoon; (5) then say: " +
+  "'They're on your Today page — give each one two scores, 1-10 for the art and 1-10 for the " +
+  "caption, and tell me anything you'd change.' When he reacts here in chat, record it " +
+  "faithfully with record_feedback (art 1-10, caption 1-10, his words as the note — never your " +
+  "own opinion); star with mark_keeper only on his explicit word. A cartoon LANDS when both " +
+  "scores are 6+; the studio goal is 60% landed. To study his taste call get_feedback; deeper " +
+  "rules live in get_doc (comedy boundaries, settings/stage rules, per-character bibles). " +
+  "Graduation test, last day of the week: before he scores a fresh batch, predict land or miss " +
+  "for each candidate; 4 of 5 right means the bible is ready to present — each miss names the " +
+  "chapter still to fix.";
 
 const TOOLS = [
   {
@@ -77,6 +84,51 @@ const TOOLS = [
         },
       },
       required: ["character"],
+    },
+  },
+  {
+    name: "make_cartoons",
+    description:
+      "THE way to draw for the founder: the studio generates the artwork server-side (hosted " +
+      "FLUX conditioned on the locked character sheets), typesets the caption, and files each " +
+      "cartoon into today's batch — you send only text. Write 1–5 distinct candidates from the " +
+      "canon (call get_canon first). Each candidate: the [SCENE] sentence in canon vocabulary, " +
+      "the exact caption (≤20 words), a short title, who is in the scene, style_notes naming " +
+      "its one deliberate variation, and either tv+board words (bar scene) or setting (away " +
+      "game). Takes a minute or two per candidate — tell the founder they're being drawn.",
+    inputSchema: {
+      type: "object",
+      properties: {
+        topic: { type: "string", description: "The founder's request in a word or two, e.g. \"on a boat\"." },
+        candidates: {
+          type: "array",
+          minItems: 1,
+          maxItems: 5,
+          items: {
+            type: "object",
+            properties: {
+              scene: { type: "string", description: "One [SCENE] sentence — who is doing what." },
+              title: { type: "string", description: "Short title." },
+              caption: { type: "string", description: "The exact dialogue to typeset (≤ 20 words)." },
+              characters: {
+                type: "array",
+                items: { type: "string", enum: ["drew", "mango", "abby"] },
+                description: "Everyone in the scene — their locked sheets condition the image.",
+              },
+              style_notes: { type: "string", description: "The one deliberate variation this candidate tests." },
+              tv: { type: "string", description: "Bar scenes: 2–3 words on the TV." },
+              board: { type: "string", description: "Bar scenes: 2–4 chalk words." },
+              setting: {
+                type: "string",
+                description: "Away games only: one phrase naming the place, e.g. \"a small two-thwart fishing boat on calm water\". Omit for bar scenes.",
+              },
+              tags: { type: "array", items: { type: "string" }, description: "Up to five lowercase subjects." },
+            },
+            required: ["scene", "title", "caption", "characters", "style_notes"],
+          },
+        },
+      },
+      required: ["topic", "candidates"],
     },
   },
   {
@@ -157,20 +209,16 @@ const TOOLS = [
   {
     name: "record_feedback",
     description:
-      "Record the founder's verdict and/or note for one cartoon — ONLY what he actually said, " +
-      "never your own opinion. rating: 3 = love it, 2 = it's fine, 1 = not for me. The note " +
-      "should be his reasoning, near-verbatim.",
+      "Record the founder's scores and/or note for one cartoon — ONLY what he actually said, " +
+      "never your own opinion. Two dials, 1–10 each: art (the drawing) and caption (the joke). " +
+      "A cartoon lands when both are 6+. The note should be his reasoning, near-verbatim.",
     inputSchema: {
       type: "object",
       properties: {
         day: { type: "string", description: "ISO date YYYY-MM-DD of the batch." },
         option: { type: "integer", description: "Which option he's reacting to." },
-        rating: { type: "integer", enum: [1, 2, 3], description: "3 love it · 2 it's fine · 1 not for me." },
-        issues: {
-          type: "array",
-          items: { type: "string", enum: ["drawing", "caption", "idea", "characters"] },
-          description: "What he said was off, if he said so.",
-        },
+        art: { type: "integer", minimum: 1, maximum: 10, description: "His 1–10 score for the drawing." },
+        caption: { type: "integer", minimum: 1, maximum: 10, description: "His 1–10 score for the caption/joke." },
         note: { type: "string", description: "His words on why, near-verbatim. Optional." },
       },
       required: ["day", "option"],
@@ -232,6 +280,77 @@ async function runTool(name: string, args: Record<string, unknown>) {
     return toolText(await getDoc(String(args.name ?? "")));
   }
 
+  if (name === "make_cartoons") {
+    const topic = typeof args.topic === "string" ? args.topic : null;
+    const candidates = Array.isArray(args.candidates) ? args.candidates : [];
+    if (candidates.length === 0 || candidates.length > 5) {
+      throw new PublishError(400, "Send 1–5 candidates.");
+    }
+    const masterPrompt = await getCanon();
+    const day = new Date().toISOString().slice(0, 10);
+    const lines: string[] = [];
+
+    for (const [i, c] of candidates.entries()) {
+      const label = typeof c.title === "string" && c.title ? c.title : `candidate ${i + 1}`;
+      try {
+        const characters = Array.isArray(c.characters)
+          ? c.characters.filter((x: unknown): x is string => typeof x === "string")
+          : [];
+        if (characters.length === 0) throw new PublishError(400, "characters is required.");
+        if (typeof c.scene !== "string" || !c.scene.trim()) throw new PublishError(400, "scene is required.");
+        if (typeof c.caption !== "string" || !c.caption.trim()) throw new PublishError(400, "caption is required.");
+
+        const prompt = assemblePrompt(masterPrompt, {
+          scene: c.scene,
+          tv: typeof c.tv === "string" ? c.tv : undefined,
+          board: typeof c.board === "string" ? c.board : undefined,
+          setting: typeof c.setting === "string" && c.setting.trim() ? c.setting : undefined,
+          characters,
+        });
+
+        // Generate, then run the house filters; one retry with the fault
+        // named — the same redraw discipline the canon demands of a chat AI.
+        let finished: Buffer;
+        try {
+          finished = await finishCartoon(await generateCartoonArt({ prompt, characters }), c.caption);
+        } catch (err) {
+          if (err instanceof PublishError && err.status === 400) {
+            const retryPrompt = `${prompt}\n\nPrevious attempt failed inspection: ${err.message} Fix exactly that.`;
+            finished = await finishCartoon(await generateCartoonArt({ prompt: retryPrompt, characters }), c.caption);
+          } else {
+            throw err;
+          }
+        }
+
+        const filed = await fileCartoon({
+          day,
+          title: typeof c.title === "string" ? c.title : "",
+          caption: c.caption,
+          topic,
+          tags: Array.isArray(c.tags)
+            ? c.tags.filter((t: unknown): t is string => typeof t === "string").map((t: string) => t.toLowerCase())
+            : [],
+          styleNotes: typeof c.style_notes === "string" ? c.style_notes : null,
+          finishedPng: finished,
+        });
+        lines.push(`✓ "${label}" filed as option ${filed.option} of ${filed.day}.`);
+      } catch (err) {
+        const message = err instanceof PublishError ? err.message : "unexpected error";
+        lines.push(`✗ "${label}" failed: ${message}`);
+      }
+    }
+
+    const host = process.env.VERCEL_PROJECT_PRODUCTION_URL
+      ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+      : "the studio";
+    const filedCount = lines.filter((l) => l.startsWith("✓")).length;
+    return toolText(
+      `${lines.join("\n")}\n\n${filedCount} of ${candidates.length} filed for ${day}. ` +
+        `Tell the founder they're on his Today page (${host}) — each one takes two scores, ` +
+        `1–10 for the art and 1–10 for the caption.`
+    );
+  }
+
   if (name === "get_model_sheet") {
     const character = String(args.character ?? "").toLowerCase().trim();
     const sheets = await getModelSheets(character);
@@ -291,12 +410,12 @@ async function runTool(name: string, args: Record<string, unknown>) {
   if (name === "record_feedback") {
     const day = typeof args.day === "string" ? args.day : "";
     const option = Number(args.option);
-    const patch: { rating?: 1 | 2 | 3; issues?: string[]; note?: string } = {};
-    if (args.rating !== undefined) patch.rating = Number(args.rating) as 1 | 2 | 3;
-    if (Array.isArray(args.issues)) patch.issues = args.issues.filter((i): i is string => typeof i === "string");
+    const patch: { art?: number; caption?: number; note?: string } = {};
+    if (args.art !== undefined) patch.art = Number(args.art);
+    if (args.caption !== undefined) patch.caption = Number(args.caption);
     if (typeof args.note === "string" && args.note.trim()) patch.note = args.note.trim();
-    if (patch.rating === undefined && patch.note === undefined) {
-      throw new PublishError(400, "Record a rating, a note, or both.");
+    if (patch.art === undefined && patch.caption === undefined && patch.note === undefined) {
+      throw new PublishError(400, "Record an art score, a caption score, a note — something he said.");
     }
     await setFeedback(day, option, patch);
     return toolText(`Recorded for option ${option} of ${day}. The studio reflects it within a minute.`);

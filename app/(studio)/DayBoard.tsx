@@ -5,7 +5,7 @@ import FeedbackPanel from "./FeedbackPanel";
 import StarButton from "./StarButton";
 
 // One day's cartoons on the table, grouped by the request that produced
-// them. Under every card: the keeper star and the training-week verdict
+// them. Under every card: the two 1-10 dials and the keeper star
 // chips — the whole feedback loop, one glance per cartoon.
 
 function groupByTopic(options: CartoonOption[]): { topic: string | null; options: CartoonOption[] }[] {
@@ -28,12 +28,12 @@ export default function DayBoard({ day }: { day: OptionDay }) {
         <h1 className="br-date">{formatDateline(day.day)}</h1>
         <p className="br-howto">
           {day.options.length} cartoon{day.options.length === 1 ? "" : "s"}. Tap a picture to see
-          it big. Give each one a verdict — and when you can, a line about why. That&rsquo;s what
-          teaches the AI your taste.
+          it big. Score each one twice — 1 to 10 for the art, 1 to 10 for the caption — and when
+          you can, a line about why. That&rsquo;s what teaches the AI your taste.
         </p>
         <p className="br-progress" role="status">
           {remaining === 0
-            ? "All rated — good work."
+            ? `All rated — ${day.landedCount} of ${day.options.length} landed. Good work.`
             : `${day.ratedCount} of ${day.options.length} rated · ${remaining} to go`}
         </p>
       </div>
@@ -89,13 +89,13 @@ export default function DayBoard({ day }: { day: OptionDay }) {
                 {option.caption && <span className="sr-only"> — {option.caption}</span>}
               </figcaption>
             </figure>
-            {/* Verdict first — that's the daily job; the star is for the
+            {/* Scores first — that's the daily job; the star is for the
                 exceptional one, so it follows. */}
             <FeedbackPanel
               day={day.day}
               option={option.n}
-              initialRating={option.rating}
-              initialIssues={option.issues}
+              initialArt={option.artScore}
+              initialCaption={option.captionScore}
               initialNote={option.note}
             />
             <StarButton day={day.day} option={option.n} initial={option.keeper} />

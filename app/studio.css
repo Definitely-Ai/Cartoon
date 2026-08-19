@@ -861,30 +861,66 @@
   text-align: center;
 }
 
-.br-verdicts {
-  display: flex;
-  justify-content: center;
-  gap: 0.5rem;
-  flex-wrap: wrap;
+/* The two 1-10 dials — big honest tap targets, ten across on a phone.
+   6 is the bar: the passing half of the row carries a slightly stronger
+   border so the threshold reads at a glance. */
+.br-dial {
+  margin-top: 0.55rem;
 }
 
-.br-verdict {
-  min-height: 48px;
-  padding: 0.5rem 1.1rem;
+.br-dial-label {
+  display: block;
   font-family: var(--br-caps);
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.16em;
+  margin-bottom: 0.3rem;
+  text-align: left;
+}
+
+.br-dial-row {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 0.25rem;
+}
+
+.br-dial-btn {
+  min-height: 44px;
+  padding: 0;
+  font-family: var(--br-caps);
+  font-size: 0.95rem;
   color: var(--br-paper);
   background: transparent;
-  border: 2px solid rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.4);
   cursor: pointer;
 }
 
-.br-verdict-on {
+.br-dial-pass {
+  border-color: rgba(255, 255, 255, 0.75);
+}
+
+.br-dial-on {
   background: var(--br-paper);
   color: var(--ink);
   border-color: var(--br-paper);
+  font-weight: 700;
+}
+
+.br-landed {
+  margin-top: 0.55rem;
+  font-family: var(--br-serif);
+  font-style: italic;
+  font-size: 0.98rem;
+  opacity: 0.85;
+}
+
+.br-landed-yes {
+  opacity: 1;
+  font-style: normal;
+  font-family: var(--br-caps);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
 }
 
 .br-note-view {
@@ -951,35 +987,4 @@
   font-size: 0.95rem;
 }
 
-/* Attribution chips — smaller than verdicts, hand-labelled. */
-.br-issues {
-  display: flex;
-  justify-content: center;
-  align-items: baseline;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-  margin-top: 0.6rem;
-}
 
-.br-issues-label {
-  font-family: var(--br-chalk);
-  font-size: 0.95rem;
-  margin-right: 0.2rem;
-}
-
-.br-issue {
-  min-height: 40px;
-  padding: 0.35rem 0.8rem;
-  font-family: var(--br-chalk);
-  font-size: 0.95rem;
-  color: var(--br-paper);
-  background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.55);
-  cursor: pointer;
-}
-
-.br-issue-on {
-  background: var(--br-paper);
-  color: var(--ink);
-  border-color: var(--br-paper);
-}

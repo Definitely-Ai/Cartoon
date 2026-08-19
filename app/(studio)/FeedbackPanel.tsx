@@ -2,34 +2,48 @@
 
 import { useRef, useState } from "react";
 
-// The training week's instrument, one cartoon at a time: three verdict
-// chips in his own words, and an optional why-note. Every tap and every
-// saved note is a commit — a week of taste becomes data the AI can read
-// when it's time to rewrite the bibles.
+// The training week's instrument, one cartoon at a time: two 1–10 dials —
+// the art and the caption — plus an optional why-note. Every tap and every
+// saved note is a commit; a cartoon LANDS when both dials hit 6+, and the
+// studio's goal is 60% landed. A week of taps becomes the data that
+// rewrites the bibles.
 
-const VERDICTS: { value: 1 | 2 | 3; label: string }[] = [
-  { value: 3, label: "Love it" },
-  { value: 2, label: "It’s fine" },
-  { value: 1, label: "Not for me" },
-];
+const SCORES = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] as const;
 
-// Attribution — the difference between "he didn't like it" and knowing WHY.
-const ISSUES: { key: string; label: string }[] = [
-  { key: "drawing", label: "The drawing" },
-  { key: "caption", label: "The caption" },
-  { key: "idea", label: "The idea" },
-  { key: "characters", label: "The characters" },
-];
+function Dial(props: {
+  label: string;
+  value: number | null;
+  onPick: (n: number) => void;
+}) {
+  return (
+    <div className="br-dial" role="group" aria-label={`${props.label} score, 1 to 10`}>
+      <span className="br-dial-label">{props.label}</span>
+      <div className="br-dial-row">
+        {SCORES.map((n) => (
+          <button
+            key={n}
+            type="button"
+            className={`br-dial-btn${props.value === n ? " br-dial-on" : ""}${n >= 6 ? " br-dial-pass" : ""}`}
+            aria-pressed={props.value === n}
+            onClick={() => props.onPick(n)}
+          >
+            {n}
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+}
 
 export default function FeedbackPanel(props: {
   day: string;
   option: number;
-  initialRating: 1 | 2 | 3 | null;
-  initialIssues: string[];
+  initialArt: number | null;
+  initialCaption: number | null;
   initialNote: string | null;
 }) {
-  const [rating, setRating] = useState(props.initialRating);
-  const [issues, setIssues] = useState<string[]>(props.initialIssues);
+  const [art, setArt] = useState(props.initialArt);
+  const [caption, setCaption] = useState(props.initialCaption);
   const [note, setNote] = useState(props.initialNote ?? "");
   const [savedNote, setSavedNote] = useState(props.initialNote ?? "");
   const [editing, setEditing] = useState(false);
@@ -57,17 +71,16 @@ export default function FeedbackPanel(props: {
     }
   }
 
-  async function pickVerdict(value: 1 | 2 | 3) {
-    const previous = rating;
-    setRating(value);
-    if (!(await post({ rating: value }))) setRating(previous);
+  async function pickArt(value: number) {
+    const previous = art;
+    setArt(value);
+    if (!(await post({ art: value }))) setArt(previous);
   }
 
-  async function toggleIssue(key: string) {
-    const previous = issues;
-    const next = issues.includes(key) ? issues.filter((i) => i !== key) : [...issues, key];
-    setIssues(next);
-    if (!(await post({ issues: next }))) setIssues(previous);
+  async function pickCaption(value: number) {
+    const previous = caption;
+    setCaption(value);
+    if (!(await post({ caption: value }))) setCaption(previous);
   }
 
   async function saveNote() {
@@ -83,39 +96,18 @@ export default function FeedbackPanel(props: {
     }
   }
 
+  const landed = (art ?? 0) >= 6 && (caption ?? 0) >= 6;
+  const bothScored = art !== null && caption !== null;
+
   return (
     <div className="br-feedback">
-      <div className="br-verdicts" role="group" aria-label="Your verdict">
-        {VERDICTS.map(({ value, label }) => (
-          <button
-            key={value}
-            type="button"
-            className={`br-verdict${rating === value ? " br-verdict-on" : ""}`}
-            aria-pressed={rating === value}
-            onClick={() => pickVerdict(value)}
-          >
-            {label}
-          </button>
-        ))}
-      </div>
+      <Dial label="The art" value={art} onPick={pickArt} />
+      <Dial label="The caption" value={caption} onPick={pickCaption} />
 
-      {/* Attribution chips, only when something wasn't a full love — one
-          extra second exactly where the data needs it. */}
-      {rating !== null && rating < 3 && (
-        <div className="br-issues" role="group" aria-label="What was off?">
-          <span className="br-issues-label">What&rsquo;s off?</span>
-          {ISSUES.map(({ key, label }) => (
-            <button
-              key={key}
-              type="button"
-              className={`br-issue${issues.includes(key) ? " br-issue-on" : ""}`}
-              aria-pressed={issues.includes(key)}
-              onClick={() => toggleIssue(key)}
-            >
-              {label}
-            </button>
-          ))}
-        </div>
+      {bothScored && (
+        <p className={`br-landed${landed ? " br-landed-yes" : ""}`}>
+          {landed ? "Landed — both 6 or better." : "Not there yet — 6+ on both is the bar."}
+        </p>
       )}
 
       {!editing && savedNote && (

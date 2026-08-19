@@ -41,12 +41,14 @@ Every character folder follows the five-file standard: `DESCRIPTION.md` (compact
 ## The ritual (over the studio connector)
 
 1. `get_canon` — always fresh, never from memory.
-2. `get_model_sheet` for **every character in the scene**; match the returned sheets exactly.
-3. Draw **3–5 distinct, text-free candidates** — different scenes or speakers, never crops of one image.
-4. **Inspect each image** against `creation/SCENE-QC.md` and the master prompt's checklist. Redraw failures; never file a visible fault.
-5. `file_cartoon` each survivor — title, caption, topic, and `style_notes` naming its one deliberate variation.
-6. The founder reacts. `record_feedback` his words near-verbatim; `mark_keeper` only on his explicit word. Never rate on his behalf.
-7. To study his taste or draft bible revisions: `get_feedback`.
+2. Talk the idea through with the founder in plain words; confirm the angle before drawing.
+3. Write **3–5 distinct candidates** — scene sentence (canon vocabulary), exact caption (≤20 words), title, who's in the scene, and `style_notes` naming each one's single deliberate variation.
+4. Call **`make_cartoons`** — the studio generates the art itself (hosted FLUX conditioned on the locked sheets), runs the house filters, typesets the caption, and files everything. Text in, cartoons out.
+5. Point the founder at his Today page: two scores per cartoon, 1–10 for the art and 1–10 for the caption. A cartoon **lands** at 6+ on both; the goal is 60% landing.
+6. When he reacts in chat, `record_feedback` his scores and words near-verbatim; `mark_keeper` only on his explicit word. Never rate on his behalf.
+7. To study his taste or draft bible revisions: `get_feedback` — it carries the landed-rate trend.
+
+AI clients that can see images (Claude, repo-side agents) may instead draw directly and file with `file_cartoon`, inspecting each image against `creation/SCENE-QC.md` first — the make_cartoons path exists because ChatGPT cannot pass images to tools.
 
 Over the wire, `get_doc` serves the topic bibles, `scene-qc`, and each character's `CHARACTER-BIBLE` and `QUALITY-CONTROL` (`drew-bible`, `drew-qc`, …). A character's `DESCRIPTION.md` and `PROMPT-BLOCKS.md` are repo-side conveniences — over the connector, the CHARACTER-BIBLE supersets them and the identity paste text is already inside the master prompt.
 
