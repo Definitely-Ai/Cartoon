@@ -1,7 +1,6 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
 import { comicHand, newsCondensed, newsSerif } from "@/app/fonts";
-import { getOptionDays } from "@/lib/options";
 import "../studio.css";
 
 // THE STUDIO — the whole site now, private to the founder. Three places
@@ -11,7 +10,6 @@ import "../studio.css";
 // still cool.
 
 export default function StudioLayout({ children }: { children: ReactNode }) {
-  const keeperCount = getOptionDays().reduce((sum, day) => sum + day.keepers.length, 0);
 
   return (
     <div className={`backroom ${newsCondensed.variable} ${newsSerif.variable} ${comicHand.variable}`}>
@@ -22,9 +20,7 @@ export default function StudioLayout({ children }: { children: ReactNode }) {
         <nav className="br-nav" aria-label="Studio">
           <Link href="/">Today</Link>
           <Link href="/collection">The Collection</Link>
-          <Link href="/keepers">
-            Keepers{keeperCount > 0 && <span className="br-nav-count"> · {keeperCount}</span>}
-          </Link>
+          <Link href="/keepers">Keepers</Link>
         </nav>
       </header>
 

@@ -1,16 +1,14 @@
 import { NextResponse, type NextRequest } from "next/server";
+import { getCanon, getDoc, getModelSheets, PublishError } from "@/lib/githubPublish";
 import {
-  fileCartoon,
-  getAllFeedback,
-  getCanon,
-  getDoc,
-  getModelSheets,
-  listOptionDays,
-  PublishError,
-  readOptionDay,
-  setFeedback,
-  setKeeper,
-} from "@/lib/githubPublish";
+  createBatch,
+  fileToStudio,
+  getStudioDay,
+  getStudioDays,
+  getStudioDigest,
+  setKeeperFlag,
+  setScores,
+} from "@/lib/db";
 import { finishCartoon } from "@/lib/dialogue";
 import { assemblePrompt, generateCartoonArt } from "@/lib/generate";
 
@@ -46,7 +44,8 @@ const INSTRUCTIONS =
   "in one sentence before drawing; (3) write 3-5 distinct candidates from the canon (scene " +
   "sentence in canon vocabulary, exact caption ≤20 words, title, who's in the scene, " +
   "style_notes naming each one's single deliberate variation); (4) call make_cartoons with " +
-  "them — the studio draws the art itself on the locked character sheets, typesets the " +
+  "them, passing his EXACT WORDS as request — it heads the batch on his site. The studio " +
+  "draws the art itself on the locked character sheets, typesets the " +
   "caption, and files everything; warn him it takes a minute or two per cartoon; (5) then say: " +
   "'They're on your Today page — give each one two scores, 1-10 for the art and 1-10 for the " +
   "caption, and tell me anything you'd change.' When he reacts here in chat, record it " +
@@ -99,7 +98,11 @@ const TOOLS = [
     inputSchema: {
       type: "object",
       properties: {
-        topic: { type: "string", description: "The founder's request in a word or two, e.g. \"on a boat\"." },
+        request: {
+          type: "string",
+          description: "The founder's ask in HIS OWN WORDS, verbatim — this heads the batch on his site.",
+        },
+        topic: { type: "string", description: "The request in a word or two, e.g. \"on a boat\"." },
         candidates: {
           type: "array",
           minItems: 1,
@@ -128,7 +131,7 @@ const TOOLS = [
           },
         },
       },
-      required: ["topic", "candidates"],
+      required: ["request", "topic", "candidates"],
     },
   },
   {
@@ -178,6 +181,7 @@ const TOOLS = [
       type: "object",
       properties: {
         image_base64: { type: "string", description: "The artwork file, base64-encoded. No data: prefix." },
+        request: { type: "string", description: "The founder's ask in his own words — heads the batch on his site. Optional." },
         title: { type: "string", description: "Short title for the cartoon." },
         caption: { type: "string", description: "The exact dialogue to typeset (≤ ~140 characters)." },
         topic: { type: "string", description: "The founder's request in a word or two, e.g. \"fishing\"." },
@@ -281,6 +285,8 @@ async function runTool(name: string, args: Record<string, unknown>) {
   }
 
   if (name === "make_cartoons") {
+    const request = typeof args.request === "string" ? args.request.trim() : "";
+    if (!request) throw new PublishError(400, "request is required — the founder's ask, verbatim.");
     const topic = typeof args.topic === "string" ? args.topic : null;
     const candidates = Array.isArray(args.candidates) ? args.candidates : [];
     if (candidates.length === 0 || candidates.length > 5) {
@@ -288,6 +294,7 @@ async function runTool(name: string, args: Record<string, unknown>) {
     }
     const masterPrompt = await getCanon();
     const day = new Date().toISOString().slice(0, 10);
+    const batch = await createBatch({ day, request, topic });
     const lines: string[] = [];
 
     for (const [i, c] of candidates.entries()) {
@@ -322,18 +329,22 @@ async function runTool(name: string, args: Record<string, unknown>) {
           }
         }
 
-        const filed = await fileCartoon({
+        const filed = await fileToStudio({
+          batchId: batch.id,
           day,
           title: typeof c.title === "string" ? c.title : "",
           caption: c.caption,
-          topic,
+          scene: c.scene,
+          styleNotes: typeof c.style_notes === "string" ? c.style_notes : null,
+          characters,
           tags: Array.isArray(c.tags)
             ? c.tags.filter((t: unknown): t is string => typeof t === "string").map((t: string) => t.toLowerCase())
             : [],
-          styleNotes: typeof c.style_notes === "string" ? c.style_notes : null,
           finishedPng: finished,
+          width: finished.readUInt32BE(16),
+          height: finished.readUInt32BE(20),
         });
-        lines.push(`✓ "${label}" filed as option ${filed.option} of ${filed.day}.`);
+        lines.push(`✓ "${label}" filed as cartoon ${filed.n} of ${filed.day}.`);
       } catch (err) {
         const message = err instanceof PublishError ? err.message : "unexpected error";
         lines.push(`✗ "${label}" failed: ${message}`);
@@ -345,9 +356,9 @@ async function runTool(name: string, args: Record<string, unknown>) {
       : "the studio";
     const filedCount = lines.filter((l) => l.startsWith("✓")).length;
     return toolText(
-      `${lines.join("\n")}\n\n${filedCount} of ${candidates.length} filed for ${day}. ` +
-        `Tell the founder they're on his Today page (${host}) — each one takes two scores, ` +
-        `1–10 for the art and 1–10 for the caption.`
+      `${lines.join("\n")}\n\n${filedCount} of ${candidates.length} filed for ${day} under the batch ` +
+        `"${request}". They are on his Today page RIGHT NOW (${host}) — no wait. Each one takes two ` +
+        `scores, 1–10 for the art and 1–10 for the caption.`
     );
   }
 
@@ -386,14 +397,24 @@ async function runTool(name: string, args: Record<string, unknown>) {
       ? args.tags.filter((t): t is string => typeof t === "string").map((t) => t.toLowerCase())
       : [];
     const finishedPng = await finishCartoon(Buffer.from(imageB64, "base64"), caption);
-    const filed = await fileCartoon({
+    const topic = typeof args.topic === "string" ? args.topic : null;
+    const request =
+      typeof args.request === "string" && args.request.trim()
+        ? args.request.trim()
+        : `filed directly: ${title || topic || "untitled"}`;
+    const batch = await createBatch({ day, request, topic });
+    const filed = await fileToStudio({
+      batchId: batch.id,
       day,
       title,
       caption,
-      topic: typeof args.topic === "string" ? args.topic : null,
-      tags,
+      scene: null,
       styleNotes: typeof args.style_notes === "string" ? args.style_notes : null,
+      characters: [],
+      tags,
       finishedPng,
+      width: finishedPng.readUInt32BE(16),
+      height: finishedPng.readUInt32BE(20),
     });
     const untagged =
       typeof args.style_notes === "string" && args.style_notes.trim()
@@ -402,8 +423,8 @@ async function runTool(name: string, args: Record<string, unknown>) {
           "candidate must name its one deliberate variation, or his reactions can't attach " +
           "to known differences. Tag the next ones.";
     return toolText(
-      `Filed as option ${filed.option} of ${filed.day} — dialogue typeset, on the founder's ` +
-        `light table within a minute.${untagged}`
+      `Filed as cartoon ${filed.n} of ${filed.day} — dialogue typeset, live on the founder's ` +
+        `Today page immediately.${untagged}`
     );
   }
 
@@ -417,43 +438,45 @@ async function runTool(name: string, args: Record<string, unknown>) {
     if (patch.art === undefined && patch.caption === undefined && patch.note === undefined) {
       throw new PublishError(400, "Record an art score, a caption score, a note — something he said.");
     }
-    await setFeedback(day, option, patch);
-    return toolText(`Recorded for option ${option} of ${day}. The studio reflects it within a minute.`);
+    await setScores(day, option, patch);
+    return toolText(`Recorded for cartoon ${option} of ${day} — live on the studio site immediately.`);
   }
 
   if (name === "get_feedback") {
-    return toolText(await getAllFeedback());
+    return toolText(await getStudioDigest());
   }
 
   if (name === "get_light_table") {
     let day = typeof args.day === "string" ? args.day : undefined;
     if (!day) {
-      const days = await listOptionDays();
-      if (days.length === 0) return toolText("Nothing filed yet — /options is empty.");
+      const days = await getStudioDays();
+      if (days.length === 0) return toolText("Nothing filed yet — the studio is empty.");
       day = days[0];
     }
-    const table = await readOptionDay(day);
-    const lines = [
-      `Cartoons of ${table.day}:`,
-      ...table.options.map(
-        (o) =>
-          `  Option ${o.n}${table.keepers.includes(o.n) ? " ★" : ""}: ${o.title ?? "(untitled)"} — ` +
-          `"${o.caption ?? "no caption"}"` + (o.tags.length ? ` [${o.tags.join(", ")}]` : "")
-      ),
-      "Ask the founder which ones he likes; star only after an explicit choice.",
-    ];
+    const table = await getStudioDay(day);
+    if (!table) return toolText(`Nothing filed under ${day}.`);
+    const lines = [`Cartoons of ${table.day} — ${table.batches.length} batch(es):`];
+    for (const batch of table.batches) {
+      lines.push(`\nHe asked: "${batch.request}"${batch.topic ? ` (${batch.topic})` : ""}`);
+      for (const c of batch.cartoons) {
+        const score =
+          c.artScore !== null || c.captionScore !== null
+            ? ` [art ${c.artScore ?? "—"}/10, caption ${c.captionScore ?? "—"}/10]`
+            : "";
+        lines.push(`  #${c.n}${c.keeper ? " ★" : ""}${score}: ${c.title ?? "(untitled)"} — "${c.caption ?? ""}"`);
+      }
+    }
+    lines.push("\nAsk the founder for his two 1–10 scores per cartoon; star only after an explicit choice.");
     return toolText(lines.join("\n"));
   }
+
 
   if (name === "mark_keeper") {
     const day = typeof args.day === "string" ? args.day : "";
     const option = Number(args.option);
     const on = args.on !== false;
-    const keepers = await setKeeper(day, option, on);
-    return toolText(
-      `${on ? "Starred" : "Unstarred"} option ${option} of ${day}. Keepers for that day: ` +
-        `${keepers.length ? keepers.join(", ") : "none"}. The studio site reflects it within a minute.`
-    );
+    await setKeeperFlag(day, option, on);
+    return toolText(`${on ? "Starred" : "Unstarred"} cartoon ${option} of ${day} — live on the studio site immediately.`);
   }
 
   return toolText(`Unknown tool: ${name}`, true);

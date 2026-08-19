@@ -24,7 +24,7 @@ const PROJECT_INSTRUCTIONS =
   "have a topic, offer me two or three from today's news) and confirm the angle in one " +
   "sentence before drawing; then write 3\u20135 distinct candidates — scene, exact caption of 20 " +
   "words or less, title, who's in the scene, and style_notes naming what each one deliberately " +
-  "varies — and send them through make_cartoons. The studio draws the art itself on my locked " +
+  "varies — and send them through make_cartoons with my exact words as the request (that heads the batch on my site). The studio draws the art itself on my locked " +
   "character sheets and files everything; tell me it takes a minute or two per cartoon. When " +
   "they're filed, tell me: 'They're on your Today page — give each one two scores, 1\u201310 for " +
   "the art and 1\u201310 for the caption.' If I react here in chat, record my words with " +
@@ -106,6 +106,15 @@ export default function ConnectPage() {
               <li>Choose Add custom connector and paste the address above.</li>
               <li>Save — done.</li>
             </ol>
+          </section>
+
+          <section className="br-wire-section">
+            <h2 className="br-wire-head">Housekeeping</h2>
+            <p>
+              One-time move-in: <a href="/api/backroom/backfill">copy the old git-era days into
+              the studio database</a> so the Collection is complete. Safe to run twice — it
+              skips days that already moved.
+            </p>
           </section>
 
           <section className="br-wire-section">

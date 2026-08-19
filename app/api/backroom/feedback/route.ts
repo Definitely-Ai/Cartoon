@@ -1,10 +1,10 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { BACKROOM_COOKIE, isDoorOpen } from "@/lib/backroom-auth";
-import { PublishError, setFeedback } from "@/lib/githubPublish";
+import { PublishError } from "@/lib/githubPublish";
+import { setScores } from "@/lib/db";
 
 // The training week's write: an art score, a caption score, or a why-note,
-// merged into the day's feedback.json. Optimistic on the client; permanent
-// within a minute.
+// upserted straight into the studio database. Instant — no rebuild wait.
 
 export const runtime = "nodejs";
 
@@ -29,12 +29,10 @@ export async function POST(request: NextRequest) {
   }
 
   try {
-    const entry = await setFeedback(
-      typeof body.day === "string" ? body.day : "",
-      Number(body.option),
-      patch
-    );
-    return NextResponse.json({ ok: true, entry });
+    const day = typeof body.day === "string" ? body.day : "";
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(day)) throw new PublishError(400, "Bad day — use YYYY-MM-DD.");
+    await setScores(day, Number(body.option), patch);
+    return NextResponse.json({ ok: true });
   } catch (err) {
     if (err instanceof PublishError) {
       return NextResponse.json({ error: err.message }, { status: err.status });

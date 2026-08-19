@@ -112,29 +112,9 @@ if (fs.existsSync(canonSrc)) {
   }
 }
 
-// The Back Room's inbox: option artwork is copied under /backroom-assets,
-// which middleware gates behind the owner's login — drafts never leak to
-// the public side.
-const optionsSrc = path.join(repoRoot, "options");
-const optionsDest = path.resolve(here, "..", "public", "backroom-assets", "options");
-fs.rmSync(optionsDest, { recursive: true, force: true });
-let optionFiles = 0;
-if (fs.existsSync(optionsSrc)) {
-  for (const day of fs.readdirSync(optionsSrc, { withFileTypes: true })) {
-    if (!day.isDirectory() || !/^\d{4}-\d{2}-\d{2}$/.test(day.name)) continue;
-    const dayDir = path.join(optionsSrc, day.name);
-    for (const file of fs.readdirSync(dayDir)) {
-      if (!/^option-\d+\.png$/.test(file)) continue;
-      const dest = path.join(optionsDest, day.name);
-      fs.mkdirSync(dest, { recursive: true });
-      const source = path.join(dayDir, file);
-      rejectRetiredAsset(source);
-      requireDialogueArtwork(source);
-      fs.copyFileSync(source, path.join(dest, file));
-      optionFiles++;
-    }
-  }
-}
+// The /options git era is over — daily cartoons live in the studio
+// database (Supabase) now; the legacy folders stay in the repo as history
+// and are no longer copied into the build.
 
 const ogImage = path.resolve(here, "..", "public", "og.png");
 if (fs.existsSync(ogImage)) rejectRetiredAsset(ogImage);
@@ -143,4 +123,4 @@ if (fs.existsSync(ogImage)) rejectRetiredAsset(ogImage);
 // import runs the deterministic Sharp/SVG generator as part of every build.
 await import("./generate-brand-assets.mjs");
 
-console.log(`prebuild: copied ${copied} cartoon(s), ${sheets} model sheet(s), ${optionFiles} option proof(s)`);
+console.log(`prebuild: copied ${copied} cartoon(s), ${sheets} model sheet(s)`);

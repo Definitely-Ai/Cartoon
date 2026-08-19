@@ -1,10 +1,10 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { BACKROOM_COOKIE, isDoorOpen } from "@/lib/backroom-auth";
-import { PublishError, setKeeper } from "@/lib/githubPublish";
+import { PublishError } from "@/lib/githubPublish";
+import { setKeeperFlag } from "@/lib/db";
 
-// The star: mark (or unmark) a cartoon as a keeper. Commits keepers.json;
-// the site rebuilds and the star shows everywhere within a minute — the
-// button meanwhile shows it optimistically.
+// The star: mark (or unmark) a cartoon as a keeper — upserted straight
+// into the studio database. Instant; the button shows it optimistically.
 
 export const runtime = "nodejs";
 
@@ -21,12 +21,10 @@ export async function POST(request: NextRequest) {
   }
 
   try {
-    const keepers = await setKeeper(
-      typeof body.day === "string" ? body.day : "",
-      Number(body.option),
-      body.on !== false
-    );
-    return NextResponse.json({ ok: true, keepers });
+    const day = typeof body.day === "string" ? body.day : "";
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(day)) throw new PublishError(400, "Bad day — use YYYY-MM-DD.");
+    await setKeeperFlag(day, Number(body.option), body.on !== false);
+    return NextResponse.json({ ok: true });
   } catch (err) {
     if (err instanceof PublishError) {
       return NextResponse.json({ error: err.message }, { status: err.status });

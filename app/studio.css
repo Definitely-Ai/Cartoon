@@ -777,11 +777,44 @@
 
 /* ------------------------------------------------- 9. Studio additions */
 
-/* The batch's topic — the founder's request, quoted in chalk. */
-.br-topic {
+/* Batch sections — the day organized the way it happened: what he
+   asked for, and what the studio did with it. */
+.br-batch + .br-batch {
+  margin-top: 3rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  padding-top: 1.6rem;
+}
+
+.br-batch-head {
+  text-align: center;
+  margin-bottom: 1.4rem;
+}
+
+.br-batch-label {
+  display: block;
+  font-family: var(--br-caps);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  opacity: 0.8;
+  margin-bottom: 0.25rem;
+}
+
+.br-batch-ask {
   font-family: var(--br-chalk);
-  font-size: 1.25rem;
-  margin-top: 0.4rem;
+  font-size: 1.3rem;
+  line-height: 1.4;
+  max-width: 30rem;
+  margin: 0 auto;
+}
+
+.br-batch-meta {
+  margin-top: 0.35rem;
+  font-family: var(--br-caps);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  opacity: 0.75;
 }
 
 /* The keeper star: a big honest toggle under each card. */
@@ -850,10 +883,6 @@
   font-family: var(--br-chalk);
   font-size: 0.95rem;
   margin-top: 0.5rem;
-}
-
-.br-topic-group + .br-topic-group {
-  margin-top: 2.5rem;
 }
 
 .br-feedback {

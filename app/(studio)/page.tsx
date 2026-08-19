@@ -1,26 +1,39 @@
 import Link from "next/link";
-import { getOptionDays } from "@/lib/options";
+import { getStudioDays, getStudioToday, type StudioDay } from "@/lib/db";
+import { PublishError } from "@/lib/githubPublish";
+import { formatDateAP } from "@/lib/format";
 import DayBoard from "./DayBoard";
 
-// Today: the newest batch, straight onto the table. If the day's run
-// hasn't arrived, the empty state says exactly what to do about it.
+// Today: the newest day's batches, straight onto the table, live from the
+// studio database — a new batch appears the moment it's drawn.
 
 export const metadata = {
   title: "Today",
 };
 
-export default function StudioToday() {
-  const days = getOptionDays();
-  const today = days[0];
+export const dynamic = "force-dynamic";
+
+export default async function StudioToday() {
+  let today: StudioDay | null = null;
+  let days: string[] = [];
+  let setupNote: string | null = null;
+  try {
+    days = await getStudioDays();
+    today = days.length ? await getStudioToday() : null;
+  } catch (err) {
+    setupNote = err instanceof PublishError ? err.message : "The studio database isn't answering.";
+  }
+
+  const previous = today ? days.filter((d) => d !== today.day)[0] : undefined;
 
   return (
     <main id="content" className="br-main">
       {today ? (
         <>
           <DayBoard day={today} />
-          {days.length > 1 && (
+          {previous && (
             <p className="br-more-days">
-              <Link href={`/day/${days[1].day}`}>‹ {days[1].day}</Link> ·{" "}
+              <Link href={`/day/${previous}`}>‹ {formatDateAP(previous)}</Link> ·{" "}
               <Link href="/collection">the whole collection</Link>
             </p>
           )}
@@ -30,9 +43,9 @@ export default function StudioToday() {
           <div className="br-table-head">
             <h1 className="br-date">Nothing on the table</h1>
             <p className="br-status">
-              Ask your AI for cartoons — &ldquo;I want them fishing today&rdquo; — and the batch
-              lands here on its own. (Hookup lives under{" "}
-              <Link href="/connect">Connect your AI</Link>.)
+              {setupNote ??
+                "Ask your AI for cartoons — “make one where they’re on a boat” — and the batch lands here the moment it’s drawn."}{" "}
+              (Hookup lives under <Link href="/connect">Connect your AI</Link>.)
             </p>
           </div>
         </section>

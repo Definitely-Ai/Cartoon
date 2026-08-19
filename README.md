@@ -8,7 +8,7 @@ A single-panel, strictly black-and-white barroom cartoon about politics, markets
 | --- | --- |
 | `/canon/` | The source of truth for how the strip looks, sounds, and jokes: character descriptions (`characters/`), style bible (`style/`), settings bible (`settings/`), personalities (`personality/`), comedy bible (`comedy/`), and the repeatable creation workflow (`creation/`). Written from the founder's series bible. |
 | `/cartoons/` | One folder per **published** cartoon (`YYYY-MM-DD-slug/` with `cartoon.png` + `meta.json`) — this is the public side. `_TEMPLATE/` is the starting point for manual additions and never ships. |
-| `/options/` | The daily inbox: each day's candidate cartoons (`YYYY-MM-DD/option-N.png` + optional suggestion JSON). Private — only visible inside the studio login. |
+| `/options/` | Historical: the git-era daily inbox. Live cartoons, batches, and scores now live in the **Supabase studio database** (Postgres + private image bucket) and appear on the site instantly. |
 | `/app`, `/lib`, `/scripts`, `/public` | The Next.js website, at the repo root so Vercel builds it zero-config and the login middleware guards every request. It reads `/cartoons`, `/canon`, and `/options` at build time and fails loudly on bad data. |
 | `/docs/` | [How to publish a cartoon](docs/PUBLISHING.md) and [local dev + Vercel setup](docs/SETUP.md). |
 
@@ -18,16 +18,16 @@ The whole site sits behind one login; only the founder gets in. `/login` is the 
 
 ## The training week
 
-Right now the product is being perfected before it's shown to anyone: the founder asks his chat AI for cartoons in plain words, **the studio generates the art itself** (hosted FLUX.1 conditioned on the locked character sheets — the chat AI only sends text, so phones work), and **every cartoon gets two scores** — 1–10 for the art, 1–10 for the caption — plus a keeper star for the exceptional and an optional note on why. A cartoon **lands** when both scores hit 6; the studio goal is **60% landing**. All of it lives in `options/<day>/feedback.json`; the AI reads the corpus (`get_feedback`) and proposes bible revisions that actually represent his style and humor.
+Right now the product is being perfected before it's shown to anyone: the founder asks his chat AI for cartoons in plain words, **the studio generates the art itself** (hosted FLUX.1 conditioned on the locked character sheets — the chat AI only sends text, so phones work), and **every cartoon gets two scores** — 1–10 for the art, 1–10 for the caption — plus a keeper star for the exceptional and an optional note on why. A cartoon **lands** when both scores hit 6; the studio goal is **60% landing**. All of it lives in the studio database and appears on the site the moment it happens — organized by batch, each headed by what he asked for in his own words; the AI reads the corpus (`get_feedback`) and proposes bible revisions that actually represent his style and humor.
 
 The week ends with a **graduation test**: on the last day, the AI predicts land-or-miss for a fresh batch *before* he scores it. Four out of five right means the bible reads his taste well enough to present; each miss names the chapter that still needs work.
 
 ## The daily flow
 
 1. The founder tells his AI (ChatGPT with the studio connector): *"Make one where they're on a boat."*
-2. The AI talks the idea through with him, writes 3–5 candidates from `/canon`, and calls the studio's `make_cartoons` — **the server generates the art** (FLUX.1 on the locked sheets), typesets each caption, and commits everything to `/options/YYYY-MM-DD/`.
-3. He opens **Today** and scores each cartoon twice: 1–10 for the art, 1–10 for the caption. Stars for the exceptional.
-4. His scores, notes, and stars land in the repo; the AI reads them with `get_feedback` and the bible gets sharper.
+2. The AI talks the idea through with him, writes 3–5 candidates from `/canon`, and calls the studio's `make_cartoons` with his exact words — **the server generates the art** (FLUX.1 on the locked sheets), typesets each caption, and files the batch in the studio database.
+3. He opens **Today** — the batch is already there, headed by what he asked — and scores each cartoon twice: 1–10 for the art, 1–10 for the caption. Stars for the exceptional.
+4. His scores, notes, and stars save instantly; the AI reads them with `get_feedback` and the bible gets sharper.
 5. Everything stays cataloged forever in **The Collection**, by month and day.
 
 Setup (env vars, connector) in [docs/SETUP.md](docs/SETUP.md).

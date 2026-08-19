@@ -48,3 +48,12 @@ export function dayOfYear(iso: string): number {
   const today = Date.UTC(y, m - 1, d);
   return Math.round((today - start) / 86_400_000) + 1;
 }
+
+/** "3:42 PM" in the founder's timezone (Eastern) — batch headers. */
+export function formatTimeET(iso: string): string {
+  return new Intl.DateTimeFormat("en-US", {
+    hour: "numeric",
+    minute: "2-digit",
+    timeZone: "America/New_York",
+  }).format(new Date(iso));
+}
