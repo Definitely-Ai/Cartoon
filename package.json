@@ -11,7 +11,11 @@
     "typecheck": "tsc --noEmit",
     "brand-assets": "node scripts/generate-brand-assets.mjs",
     "dialogue": "node scripts/embed-dialogue.mjs",
-    "canon:check": "node scripts/validate-character-canon.mjs"
+    "canon:check": "node scripts/validate-character-canon.mjs",
+    "training:detect": "node scripts/training/detect-figures.mjs",
+    "training:variants": "node scripts/training/make-setting-variants.mjs",
+    "training:build": "node scripts/training/build-training-set.mjs",
+    "check:prompt": "node scripts/check-prompt-assembly.mjs"
   },
   "dependencies": {
     "next": "^15.3.0",

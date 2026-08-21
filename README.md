@@ -10,7 +10,8 @@ A single-panel, strictly black-and-white barroom cartoon about politics, markets
 | `/cartoons/` | One folder per **published** cartoon (`YYYY-MM-DD-slug/` with `cartoon.png` + `meta.json`) — this is the public side. `_TEMPLATE/` is the starting point for manual additions and never ships. |
 | `/options/` | Historical: the git-era daily inbox. Live cartoons, batches, and scores now live in the **Supabase studio database** (Postgres + private image bucket) and appear on the site instantly. |
 | `/app`, `/lib`, `/scripts`, `/public` | The Next.js website, at the repo root so Vercel builds it zero-config and the login middleware guards every request. It reads `/cartoons`, `/canon`, and `/options` at build time and fails loudly on bad data. |
-| `/docs/` | [How to publish a cartoon](docs/PUBLISHING.md) and [local dev + Vercel setup](docs/SETUP.md). |
+| `/scripts/training/` | The training set for the character model: a hand-curated crop manifest, the builder that turns the locked sheets into captioned studies, and the balance check that refuses a lopsided corpus. See [docs/TRAINING.md](docs/TRAINING.md). |
+| `/docs/` | [How to publish a cartoon](docs/PUBLISHING.md), [local dev + Vercel setup](docs/SETUP.md), and [training the character model](docs/TRAINING.md). |
 
 ## The site — a private studio
 
@@ -42,6 +43,9 @@ Setup (env vars, connector) in [docs/SETUP.md](docs/SETUP.md).
 
 **Approved and locked:**
 - Drew's base character model and written canon: 46-year-old male flamingo, mature average build, expressive avian eyes, long slim rounded S-neck, feathered wing-arms and feather-hands, natural-plumage base body, and permanent black bow tie. `npm run canon:check` guards the required assets and fingerprints.
+
+**Ready to train:**
+- A custom character model. The studio draws with hosted FLUX either way; `IMAGE_MODEL` decides whether that is Kontext conditioned on the locked sheets (today) or a fine-tune that knows the cast by name (one $2 training run away). The dataset is built from the sheets and the finished cartoons, and the whole design turns on one line: **the model owns who they are and how they're drawn; his sentence owns the setting, the joke, and the details.** Captions name every background out loud, the build fails if the corpus tips too far toward the bar, and the prompt drops the barroom paragraph the moment a scene leaves the bar. [docs/TRAINING.md](docs/TRAINING.md).
 
 **Pending (waiting on the founder):**
 - Review/sign-off on Drew's supporting expression, anatomy, pose, wardrobe, scene-continuity, and proportion sheets; the locked master remains authoritative meanwhile.

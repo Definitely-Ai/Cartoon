@@ -1,0 +1,335 @@
+{
+  "$doctrine": [
+    "This file decides what the fine-tuned image model learns — and, just as much, what it must NOT learn.",
+    "",
+    "WHAT IT LEARNS: who Drew, Mango and Abby are, and how the house draws them. Each character has a",
+    "trigger token that appears in every caption showing them. Whatever a caption leaves unsaid is what the",
+    "token absorbs, so captions never mention anatomy, faces, permanent wardrobe, or the black-and-white look.",
+    "",
+    "WHAT IT MUST NOT LEARN: the setting, the props, the framing, or how busy the panel is. Rick's sentence",
+    "owns all of that. So every caption names its background out loud — the barroom included, described like",
+    "any other place — and the crops deliberately mix close-ups, waist-ups, full bodies and two-shots.",
+    "",
+    "THE STYLE TOKEN is separate. SWDINK means the finished house cartoon: a rendered scene with a real",
+    "background. It appears only on finished cartoons and on the fully-rendered scene panels — never on a",
+    "model-sheet study, whose blank paper and lighter rendering would otherwise become part of what SWDINK",
+    "means. Studies still carry their character token, so identity is learned from every image while the",
+    "house look is learned only from images that actually have it.",
+    "",
+    "Boxes are [left, top, width, height] in the source image's own pixels. They started as proposals from",
+    "detect-figures.mjs and were corrected by eye; `columns` splits an evenly-spaced row into that many crops,",
+    "one caption each. `skip` records what was deliberately left out and why — those judgements are the point",
+    "of this file, not clutter in it."
+  ],
+
+  "triggers": {
+    "drew": "SWDDREW",
+    "mango": "SWDMANGO",
+    "abby": "SWDABBY",
+    "style": "SWDINK"
+  },
+
+  "sheets": [
+    {
+      "file": "canon/characters/flamingo/full-body-sheet.png",
+      "crops": [
+        { "box": [123, 54, 189, 537], "caption": "SWDDREW standing straight, facing the viewer, full body, model sheet study on blank pale paper" },
+        { "box": [390, 84, 180, 510], "caption": "SWDDREW standing at a three-quarter front angle, full body, model sheet study on blank pale paper" },
+        { "box": [666, 84, 108, 513], "caption": "SWDDREW standing in side profile, full body, model sheet study on blank pale paper" },
+        { "box": [879, 84, 249, 510], "caption": "SWDDREW standing at a three-quarter back angle, full body, model sheet study on blank pale paper" },
+        { "box": [1233, 60, 189, 531], "caption": "SWDDREW standing with his back to the viewer, full body, model sheet study on blank pale paper" },
+        { "box": [747, 628, 519, 337], "caption": "SWDDREW leaning one elbow on a wooden bar counter with a martini glass on it, other wing raised, waist-up, model sheet study on blank pale paper" }
+      ],
+      "skip": [
+        "The two head studies duplicate the expression library, which covers the same angles better.",
+        "The lone pair of swinging doors is a prop with no character in it."
+      ]
+    },
+
+    {
+      "file": "canon/characters/flamingo/identity-sheet.png",
+      "crops": [
+        { "box": [207, 90, 123, 249], "caption": "SWDDREW head and neck, neutral expression, close study on blank pale paper" },
+        { "box": [543, 105, 135, 234], "caption": "SWDDREW head and neck, curious, head tilted forward, close study on blank pale paper" },
+        { "box": [882, 96, 126, 243], "caption": "SWDDREW head and neck, a subtle closed-beak smile, close study on blank pale paper" },
+        { "box": [1212, 96, 132, 243], "caption": "SWDDREW head and neck, an open smile, beak parted, close study on blank pale paper" },
+        { "box": [189, 396, 144, 252], "caption": "SWDDREW head and neck, skeptical, one brow raised, close study on blank pale paper" },
+        { "box": [519, 399, 141, 249], "caption": "SWDDREW head and neck, amused, eyes half-lidded, close study on blank pale paper" },
+        { "box": [876, 405, 129, 243], "caption": "SWDDREW head and neck, concerned, brows drawn together, close study on blank pale paper" },
+        { "box": [1209, 399, 129, 249], "caption": "SWDDREW head and neck, surprised, eyes wide and beak open, close study on blank pale paper" },
+        { "box": [183, 696, 141, 252], "caption": "SWDDREW head and neck, thinking, looking off to one side, close study on blank pale paper" },
+        { "box": [501, 696, 132, 252], "caption": "SWDDREW head and neck, listening attentively, close study on blank pale paper" },
+        { "box": [864, 699, 141, 249], "caption": "SWDDREW head and neck, speaking, beak open mid-word, close study on blank pale paper" },
+        { "box": [1206, 696, 141, 252], "caption": "SWDDREW head and neck, quietly pleased, close study on blank pale paper" }
+      ]
+    },
+
+    {
+      "file": "canon/characters/flamingo/pose-sheet.png",
+      "crops": [
+        { "box": [33, 163, 180, 568], "caption": "SWDDREW standing at rest, weight even, full body, pose study on blank pale paper" },
+        {
+          "box": [232, 163, 395, 571],
+          "columns": 2,
+          "captions": [
+            "SWDDREW leaning forward from the waist, curious, full body, pose study on blank pale paper",
+            "SWDDREW standing upright and listening, wings at his sides, full body, pose study on blank pale paper"
+          ]
+        },
+        {
+          "box": [650, 163, 389, 571],
+          "columns": 2,
+          "captions": [
+            "SWDDREW explaining, one wing lifted and open, full body, pose study on blank pale paper",
+            "SWDDREW walking mid-stride, full body, pose study on blank pale paper"
+          ]
+        },
+        {
+          "box": [1084, 163, 565, 581],
+          "columns": 3,
+          "captions": [
+            "SWDDREW sitting on a wooden bar stool, legs crossed, full body, pose study on blank pale paper",
+            "SWDDREW leaning on a wooden bar counter with a martini glass on it, full body, pose study on blank pale paper",
+            "SWDDREW standing with a subtle smile, wings relaxed, full body, pose study on blank pale paper"
+          ]
+        }
+      ]
+    },
+
+    {
+      "file": "canon/characters/flamingo/wardrobe-sheet.png",
+      "crops": [
+        { "box": [24, 125, 222, 644], "caption": "SWDDREW standing in nothing but his bow tie, full body, wardrobe study on blank pale paper" },
+        { "box": [284, 128, 222, 641], "caption": "SWDDREW wearing a dark bar jacket, full body, wardrobe study on blank pale paper" },
+        { "box": [534, 128, 222, 641], "caption": "SWDDREW wearing a three-piece business suit with a pocket square, full body, wardrobe study on blank pale paper" },
+        { "box": [776, 128, 201, 641], "caption": "SWDDREW wearing a golf polo, belt and slacks, full body, wardrobe study on blank pale paper" },
+        { "box": [1005, 125, 218, 644], "caption": "SWDDREW wearing a fishing vest, shorts and a bucket hat, full body, wardrobe study on blank pale paper" },
+        { "box": [1251, 128, 225, 641], "caption": "SWDDREW wearing a long travel overcoat, full body, wardrobe study on blank pale paper" },
+        { "box": [1514, 128, 211, 644], "caption": "SWDDREW wearing a black tuxedo, full body, wardrobe study on blank pale paper" }
+      ]
+    },
+
+    {
+      "file": "canon/characters/flamingo/scene-continuity-sheet.png",
+      "note": "The most valuable sheet in the repo for keeping the setting promptable: the same character in four plainly different places.",
+      "crops": [
+        {
+          "box": [22, 145, 1730, 700],
+          "columns": 4,
+          "inset": 10,
+          "captions": [
+            "SWDINK cartoon, SWDDREW leaning on the counter of a dim wood-panelled barroom, bottles on the back bar, a martini beside him and an empty stool at his side",
+            "SWDINK cartoon, SWDDREW standing on a golf course fairway in a polo and cap, putter in hand and ball at his feet, trees and a distant flag behind him",
+            "SWDINK cartoon, SWDDREW sitting on a tackle box at the end of a wooden dock, fishing rod out over the water, pines across the lake",
+            "SWDINK cartoon, SWDDREW standing in an airport terminal in a travel coat, suitcase at his side, departure board and parked planes behind the window"
+          ]
+        }
+      ]
+    },
+
+    {
+      "file": "canon/characters/flamingo/wing-hand-sheet.png",
+      "note": "Hands are where generated art fails first, so the wing-hand gets its own studies.",
+      "crops": [
+        { "box": [66, 147, 144, 312], "caption": "SWDDREW's wing-hand relaxed at rest, close study on blank pale paper" },
+        { "box": [279, 108, 258, 351], "caption": "SWDDREW's wing-hand raised in a questioning gesture, close study on blank pale paper" },
+        { "box": [603, 147, 396, 216], "caption": "SWDDREW's wing-hand open and extended, explaining, close study on blank pale paper" },
+        { "box": [1041, 156, 432, 213], "caption": "SWDDREW's wing-hand pointing, close study on blank pale paper" },
+        { "box": [36, 564, 189, 333], "caption": "SWDDREW's wing-hand gripping the stem of a martini glass, close study on blank pale paper" },
+        { "box": [294, 606, 303, 309], "caption": "SWDDREW's wing-hand draped over the edge of a wooden bar counter, close study" },
+        { "box": [648, 627, 237, 243], "caption": "SWDDREW's wing-hand holding a pen and writing, close study on blank pale paper" },
+        { "box": [927, 549, 258, 366], "caption": "SWDDREW's wing-hand shrugging, palm turned up, close study on blank pale paper" },
+        { "box": [1269, 516, 116, 390], "caption": "SWDDREW's wing-hand spread to show its feather groups, close study on blank pale paper" }
+      ]
+    },
+
+    {
+      "file": "canon/characters/flamingo/proportion-style-sheet.png",
+      "skip": [
+        "Whole sheet. The figures carry a measuring grid of dashed rules and numerals across them, the silhouettes are filled solid black, and the rest is line-and-wash swatches and a labelled construction diagram with arrows.",
+        "None of it is a drawing of the character in the house manner, and all of it is the kind of thing a model will happily reproduce on top of a cartoon."
+      ]
+    },
+
+    {
+      "file": "canon/characters/dog/full-body-sheet.png",
+      "note": "Mango's base-body sheet is clean line art of an unclothed figure — captioned as such, so neither the line weight nor the nudity attaches to his token.",
+      "crops": [
+        { "box": [151, 126, 202, 525], "caption": "SWDMANGO standing straight, facing the viewer, unclothed base-body construction study, clean line art on blank white paper" },
+        { "box": [420, 126, 186, 525], "caption": "SWDMANGO standing at a three-quarter front angle, unclothed base-body construction study, clean line art on blank white paper" },
+        { "box": [702, 132, 135, 519], "caption": "SWDMANGO standing in side profile, unclothed base-body construction study, clean line art on blank white paper" },
+        { "box": [987, 129, 177, 519], "caption": "SWDMANGO standing at a three-quarter back angle, unclothed base-body construction study, clean line art on blank white paper" },
+        { "box": [1245, 126, 201, 522], "caption": "SWDMANGO standing with his back to the viewer, unclothed base-body construction study, clean line art on blank white paper" },
+        { "box": [1040, 668, 270, 322], "caption": "SWDMANGO sitting on a plain wooden stool, unclothed base-body construction study, clean line art on blank white paper" },
+        { "box": [110, 700, 255, 265], "caption": "SWDMANGO head and shoulders, neutral expression, clean line art study on blank white paper" },
+        { "box": [375, 708, 189, 165], "caption": "SWDMANGO head and shoulders, happy open-mouthed smile, clean line art study on blank white paper" }
+      ],
+      "skip": [
+        "The measured front figure keeps its dashed leader lines and SHOULDER/CHEST/WAIST labels outside the crop.",
+        "The two paw studies are body parts with no body, and the swinging doors are a prop with no character."
+      ]
+    },
+
+    {
+      "file": "canon/characters/dog/identity-sheet.png",
+      "crops": [
+        {
+          "box": [211, 188, 1117, 428],
+          "columns": 2,
+          "captions": [
+            "SWDMANGO head and shoulders, neutral expression, close study on blank white paper",
+            "SWDMANGO head and shoulders, happy, mouth open and tongue showing, close study on blank white paper"
+          ]
+        }
+      ]
+    },
+
+    {
+      "file": "canon/characters/dog/lapel-pin-bible.png",
+      "note": "The only sheet showing Mango dressed, which is how he appears in every cartoon.",
+      "crops": [
+        { "box": [34, 920, 310, 304], "caption": "SWDMANGO wearing a grey sport coat over an open-collar shirt with a small American flag pin on the left lapel, facing the viewer, waist-up study on blank white paper" },
+        { "box": [382, 920, 282, 306], "caption": "SWDMANGO wearing a grey sport coat with the flag pin on the left lapel, at a three-quarter angle, waist-up study on blank white paper" },
+        { "box": [678, 924, 244, 302], "caption": "SWDMANGO wearing a grey sport coat with the flag pin on the left lapel, in side profile, waist-up study on blank white paper" }
+      ],
+      "skip": [
+        "The flag diagrams, the size-test row and the lapel close-up are specification drawings, not drawings of the character.",
+        "The NEVER row at the foot of the sheet is a set of wrong versions crossed out — the one thing on any sheet that must never reach a training set."
+      ]
+    },
+
+    {
+      "file": "canon/characters/abby/full-body-sheet.png",
+      "crops": [
+        { "box": [120, 75, 162, 507], "caption": "SWDABBY standing straight, facing the viewer, full body, model sheet study on blank pale paper" },
+        { "box": [411, 90, 144, 492], "caption": "SWDABBY standing at a three-quarter front angle, full body, model sheet study on blank pale paper" },
+        { "box": [675, 90, 99, 492], "caption": "SWDABBY standing in side profile, full body, model sheet study on blank pale paper" },
+        { "box": [951, 90, 144, 489], "caption": "SWDABBY standing at a three-quarter back angle, full body, model sheet study on blank pale paper" },
+        { "box": [1254, 96, 144, 486], "caption": "SWDABBY standing with her back to the viewer, full body, model sheet study on blank pale paper" },
+        { "box": [740, 540, 215, 400], "caption": "SWDABBY polishing a glass with a towel behind a bar counter, waist-up, model sheet study on blank pale paper" },
+        { "box": [87, 624, 141, 294], "caption": "SWDABBY head and shoulders, neutral expression, close study on blank pale paper" },
+        { "box": [306, 630, 141, 285], "caption": "SWDABBY head and shoulders, a wise and knowing look, close study on blank pale paper" },
+        { "box": [519, 627, 141, 288], "caption": "SWDABBY head and shoulders, faintly amused, close study on blank pale paper" },
+        { "box": [993, 606, 279, 341], "caption": "SWDABBY setting a coaster down on a bar counter, both hands on the wood, waist-up, model sheet study on blank pale paper" }
+      ],
+      "skip": ["The far view from a patron's seat is too small to read as a drawing of anyone."]
+    },
+
+    {
+      "file": "canon/characters/abby/identity-sheet.png",
+      "crops": [
+        { "box": [36, 126, 231, 405], "caption": "SWDABBY head and shoulders, facing the viewer, close study on blank pale paper" },
+        { "box": [303, 123, 216, 408], "caption": "SWDABBY head and shoulders at a three-quarter angle, close study on blank pale paper" },
+        { "box": [552, 123, 219, 408], "caption": "SWDABBY head and shoulders in profile, close study on blank pale paper" },
+        { "box": [801, 150, 216, 381], "caption": "SWDABBY head and shoulders, chin lifted, looking up, close study on blank pale paper" },
+        { "box": [1059, 156, 204, 375], "caption": "SWDABBY head and shoulders, looking down, close study on blank pale paper" },
+        { "box": [1299, 147, 189, 384], "caption": "SWDABBY head and shoulders, glancing sideways, close study on blank pale paper" }
+      ],
+      "skip": ["The five eye close-ups are a pair of eyes with no face around them."]
+    },
+
+    {
+      "file": "canon/characters/abby/expression-sheet.png",
+      "crops": [
+        { "box": [159, 81, 171, 282], "caption": "SWDABBY head and shoulders, a welcoming smile, close study on blank pale paper" },
+        { "box": [498, 81, 171, 282], "caption": "SWDABBY head and shoulders, laughing warmly, eyes closed, close study on blank pale paper" },
+        { "box": [834, 81, 168, 282], "caption": "SWDABBY head and shoulders, listening attentively, close study on blank pale paper" },
+        { "box": [1197, 81, 165, 282], "caption": "SWDABBY head and shoulders, a quick-witted smirk, close study on blank pale paper" },
+        { "box": [141, 390, 168, 279], "caption": "SWDABBY head and shoulders, one brow raised, close study on blank pale paper" },
+        { "box": [483, 393, 171, 276], "caption": "SWDABBY head and shoulders, a skeptical side-eye, close study on blank pale paper" },
+        { "box": [825, 393, 168, 276], "caption": "SWDABBY head and shoulders, amused but holding it in, close study on blank pale paper" },
+        { "box": [1194, 393, 168, 276], "caption": "SWDABBY head and shoulders, thoughtful concern, close study on blank pale paper" },
+        { "box": [135, 696, 171, 276], "caption": "SWDABBY head and shoulders, firm and unimpressed, close study on blank pale paper" },
+        { "box": [483, 696, 168, 273], "caption": "SWDABBY head and shoulders, dry deadpan, close study on blank pale paper" },
+        { "box": [825, 696, 168, 276], "caption": "SWDABBY head and shoulders, surprised but composed, close study on blank pale paper" },
+        { "box": [1194, 696, 171, 276], "caption": "SWDABBY head and shoulders, reassuring and kind, close study on blank pale paper" }
+      ]
+    },
+
+    {
+      "file": "canon/characters/abby/hands-props-sheet.png",
+      "crops": [
+        { "box": [72, 54, 183, 381], "caption": "SWDABBY standing with her hands relaxed at her sides, waist-up, gesture study on blank pale paper" },
+        { "box": [363, 81, 213, 354], "caption": "SWDABBY standing with one hand on her hip, waist-up, gesture study on blank pale paper" },
+        { "box": [636, 60, 246, 375], "caption": "SWDABBY with one arm swept open in welcome, waist-up, gesture study on blank pale paper" },
+        { "box": [939, 81, 219, 354], "caption": "SWDABBY raising one finger to make a point, waist-up, gesture study on blank pale paper" },
+        { "box": [1245, 81, 225, 354], "caption": "SWDABBY explaining with an upturned palm, waist-up, gesture study on blank pale paper" },
+        { "box": [66, 504, 177, 327], "caption": "SWDABBY with her arms folded, waist-up, gesture study on blank pale paper" },
+        { "box": [318, 501, 198, 324], "caption": "SWDABBY polishing a tumbler with a towel, waist-up, gesture study on blank pale paper" },
+        { "box": [543, 510, 261, 348], "caption": "SWDABBY setting a coaster down on a counter, leaning on both hands, waist-up, gesture study on blank pale paper" },
+        { "box": [849, 507, 273, 312], "caption": "SWDABBY holding a rocks glass in one hand and a pint glass in the other, waist-up, gesture study on blank pale paper" },
+        { "box": [1191, 516, 252, 309], "caption": "SWDABBY shaking out a folded towel, waist-up, gesture study on blank pale paper" }
+      ]
+    },
+
+    {
+      "file": "canon/characters/abby/bartender-actions-sheet.png",
+      "crops": [
+        { "box": [123, 69, 276, 435], "caption": "SWDABBY holding a swinging door open in welcome, full body, action study on blank pale paper" },
+        { "box": [700, 90, 150, 400], "caption": "SWDABBY polishing a rocks glass with a towel, full body, action study on blank pale paper" },
+        { "box": [852, 87, 171, 417], "caption": "SWDABBY pouring from a bottle into a glass, full body, action study on blank pale paper" },
+        { "box": [1182, 84, 204, 420], "caption": "SWDABBY carrying a small round tray with a drink on it, full body, action study on blank pale paper" },
+        { "box": [153, 555, 186, 384], "caption": "SWDABBY leaning in with a hand cupped to her ear, full body, action study on blank pale paper" },
+        { "box": [480, 552, 189, 387], "caption": "SWDABBY delivering an aside, one finger up and one hand on her hip, full body, action study on blank pale paper" },
+        { "box": [816, 552, 240, 387], "caption": "SWDABBY calling last round, one arm out with the palm forward, full body, action study on blank pale paper" },
+        { "box": [1086, 561, 372, 378], "caption": "SWDABBY standing behind a bar counter with a glass on the wood, waist-up, action study on blank pale paper" }
+      ]
+    },
+
+    {
+      "file": "canon/characters/abby/wardrobe-details-sheet.png",
+      "crops": [
+        {
+          "box": [132, 60, 966, 405],
+          "columns": 4,
+          "captions": [
+            "SWDABBY standing facing the viewer, full body, wardrobe study on blank pale paper",
+            "SWDABBY standing at a three-quarter front angle, full body, wardrobe study on blank pale paper",
+            "SWDABBY standing in side profile, full body, wardrobe study on blank pale paper",
+            "SWDABBY standing with her back to the viewer, full body, wardrobe study on blank pale paper"
+          ]
+        }
+      ],
+      "skip": ["The nine detail crops are a sleeve, a collar, a bracelet, a hem and a shoe — garment fragments with no figure in them."]
+    },
+
+    {
+      "file": "canon/characters/abby/bar-blocking-sheet.png",
+      "note": "Six fully-rendered views of the actual barroom. These carry SWDINK, and every one names the room out loud so the room stays a caption's business.",
+      "crops": [
+        { "box": [72, 87, 363, 378], "inset": 8, "caption": "SWDINK cartoon, SWDABBY standing just inside the swinging doors of a dim wood-panelled barroom, daylight behind her" },
+        { "box": [522, 87, 426, 378], "inset": 8, "caption": "SWDINK cartoon, SWDABBY walking from the doors toward the bar counter of a dim wood-panelled barroom, empty stools along the rail" },
+        { "box": [969, 87, 474, 378], "inset": 8, "caption": "SWDINK cartoon, SWDABBY behind the counter of a dim wood-panelled barroom, both hands on the wood, shelves of bottles behind her" },
+        { "box": [66, 516, 342, 406], "inset": 8, "caption": "SWDINK cartoon, SWDABBY leaning across the bar counter to listen, chin on one hand, bottles and mirror behind her" },
+        { "box": [435, 513, 267, 432], "inset": 8, "caption": "SWDINK cartoon, SWDABBY seen from behind in a dim wood-panelled barroom, reaching up to a back-bar shelf lined with bottles" },
+        { "box": [717, 510, 537, 424], "inset": 8, "caption": "SWDINK cartoon, a wide view of a dim wood-panelled barroom, SWDABBY behind the long counter, a row of empty stools in the foreground and a mirror behind her" }
+      ],
+      "skip": ["The counter-height diagram is a measured drawing with dimension arrows."]
+    }
+  ],
+
+  "cartoons": [
+    { "file": "options/2026-08-11/option-2.png", "caption": "SWDINK cartoon, SWDDREW and SWDMANGO half-buried in an avalanche of paper tape at a barroom counter, SWDDREW holding up one blank page" },
+    { "file": "options/2026-08-11/option-3.png", "caption": "SWDINK cartoon, SWDDREW and SWDMANGO side by side on stools at a barroom counter, a coat on a rack and a wall clock behind them" },
+    { "file": "options/2026-08-12/option-1.png", "caption": "SWDINK cartoon, SWDDREW peering at a towering stack of paper on a barroom counter while SWDMANGO sits on a stool beside it, clock on the wall" },
+    { "file": "options/2026-08-12/option-2.png", "caption": "SWDINK cartoon, SWDDREW dropping a slip into a wooden ballot box on a barroom counter as SWDMANGO watches from a stool" },
+    { "file": "options/2026-08-13/option-1.png", "caption": "SWDINK cartoon, SWDDREW and SWDMANGO watching a wall-mounted television showing a briefcase under a parachute, seen from behind at a barroom counter" },
+    { "file": "options/2026-08-17/option-1.png", "caption": "SWDINK cartoon, SWDDREW and SWDMANGO at a barroom counter under a heat-index sign, a melting glass of ice between them" },
+    { "file": "options/2026-08-17/option-2.png", "caption": "SWDINK cartoon, SWDDREW holding a test vial up to the light at a barroom counter, SWDMANGO opposite him, a red-tide notice board on the wall" },
+    { "file": "options/2026-08-17/option-3.png", "caption": "SWDINK cartoon, SWDDREW casting a fishing line over a model pier on a barroom counter while SWDMANGO watches from a stool" },
+    { "file": "options/2026-08-17/option-4.png", "caption": "SWDINK cartoon, SWDDREW and SWDMANGO at a barroom counter, a school bus and traffic passing the window behind them" },
+    { "file": "cartoons/2026-07-24-diversification/cartoon.png", "caption": "SWDINK cartoon, SWDDREW gesturing at a chart while SWDMANGO holds up a pie chart across a barroom counter, an old telephone beside them" },
+    { "file": "cartoons/2026-07-28-the-fee-structure/cartoon.png", "caption": "SWDINK cartoon, SWDDREW on a stool at a barroom counter reading a long ribbon of paper that spills to the floor, SWDMANGO holding the other end" },
+    { "file": "cartoons/2026-08-01-the-long-term/cartoon.png", "caption": "SWDINK cartoon, SWDDREW and SWDMANGO on stools at a barroom counter, a wall clock and a framed chart behind them" },
+    { "file": "cartoons/2026-08-04-an-emerging-asset/cartoon.png", "caption": "SWDINK cartoon, SWDDREW watching coins pour out of a phone in SWDMANGO's hand across a barroom counter" },
+
+    { "file": "options/2026-08-11/option-1.png", "skip": "Abby is drawn in a dark blazer, well off her locked model — training on it would teach two different Abbys." },
+    { "file": "options/2026-08-12/option-3.png", "skip": "Off-model Abby, as above." },
+    { "file": "options/2026-08-13/option-2.png", "skip": "Off-model Abby, as above." },
+    { "file": "options/2026-08-13/option-3.png", "skip": "Off-model Abby, as above." },
+    { "file": "options/2026-08-17/option-5.png", "skip": "Off-model Abby, as above." },
+    { "file": "cartoons/2026-08-08-the-forecast/cartoon.png", "skip": "The television carries a photorealistic human face — the one thing in the corpus drawn in a different medium entirely." },
+    { "file": "cartoons/2026-08-11-the-retirement-number/cartoon.png", "skip": "Byte-identical to options/2026-08-11/option-2.png; a duplicate would simply weigh that image twice." },
+    { "file": "cartoons/2026-08-12-index-funds/cartoon.png", "skip": "Byte-identical to options/2026-08-12/option-2.png." }
+  ]
+}

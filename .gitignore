@@ -18,3 +18,10 @@ public/backroom-assets/
 .env*
 .DS_Store
 *.log
+
+# LoRA training artefacts. The manifest and the scripts are the source; the
+# crops, the detector's previews, and the archive are all regenerated from
+# them. setting-variants/ is NOT ignored — those images cost money to make.
+scripts/training/training-set/
+scripts/training/training-set.zip
+scripts/training/.detect/

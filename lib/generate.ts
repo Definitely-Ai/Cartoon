@@ -11,8 +11,36 @@ import { PublishError, getModelSheets } from "./githubPublish";
 const REPLICATE_API = "https://api.replicate.com/v1";
 
 // FLUX.1 Kontext takes one conditioning image + an instruction prompt —
-// the strongest hosted option for "match these exact characters".
+// the strongest hosted option for "match these exact characters" before any
+// fine-tune exists. Once one does, IMAGE_MODEL points at it instead.
 const DEFAULT_MODEL = "black-forest-labs/flux-kontext-pro";
+
+// The trigger words baked into the fine-tune by scripts/training. They are the
+// whole point of it: the model knows who these three are, so the prompt can
+// stop describing them and spend its weight on what Rick actually asked for.
+const TRIGGERS: Record<string, string> = {
+  drew: "SWDDREW",
+  mango: "SWDMANGO",
+  abby: "SWDABBY",
+};
+const STYLE_TRIGGER = "SWDINK";
+
+/**
+ * Which kind of model IMAGE_MODEL names. Kontext is conditioned on a reference
+ * board and must be told, in words, what everyone looks like. A fine-tune
+ * already knows, and telling it again only fights the tokens.
+ */
+export function isFineTuned(): boolean {
+  return !imageModel().includes("kontext");
+}
+
+// How hard the fine-tune is applied. This is the dial to reach for first when
+// something is wrong: identity slipping means turn it up, a boat that keeps
+// coming back as a barroom means turn it down.
+function loraScale(): number {
+  const raw = Number(process.env.LORA_SCALE);
+  return Number.isFinite(raw) && raw > 0 ? raw : 0.9;
+}
 
 function replicateToken(): string {
   const token = process.env.REPLICATE_API_TOKEN;
@@ -103,8 +131,24 @@ export async function generateCartoonArt(input: {
   characters: string[];
 }): Promise<Buffer> {
   const token = replicateToken();
-  const board = await buildReferenceBoard(input.characters);
-  const boardUrl = await uploadToReplicate(board, token);
+
+  // A fine-tune carries the cast in its weights, so there is no board to
+  // build and nothing to upload — just a prompt and the strength dial.
+  const modelInput: Record<string, unknown> = isFineTuned()
+    ? {
+        prompt: input.prompt,
+        lora_scale: loraScale(),
+        aspect_ratio: "4:5",
+        output_format: "png",
+      }
+    : {
+        prompt: input.prompt,
+        input_image: await uploadToReplicate(await buildReferenceBoard(input.characters), token),
+        aspect_ratio: "4:5",
+        output_format: "png",
+        // The strip is a dry gag cartoon — nothing here should trip
+        // conservative filters, so keep the default tolerance.
+      };
 
   const model = imageModel();
   const createRes = await fetch(`${REPLICATE_API}/models/${model}/predictions`, {
@@ -114,16 +158,7 @@ export async function generateCartoonArt(input: {
       "Content-Type": "application/json",
       Prefer: "wait",
     },
-    body: JSON.stringify({
-      input: {
-        prompt: input.prompt,
-        input_image: boardUrl,
-        aspect_ratio: "4:5",
-        output_format: "png",
-        // The strip is a dry gag cartoon — nothing here should trip
-        // conservative filters, so keep the default tolerance.
-      },
-    }),
+    body: JSON.stringify({ input: modelInput }),
   });
   if (!createRes.ok) {
     const detail = await createRes.text().catch(() => "");
@@ -162,31 +197,94 @@ export async function generateCartoonArt(input: {
 
 // ---------------------------------------------------------------- prompt
 
-/**
- * Assemble the final image prompt from the live master prompt: the
- * verbatim BASE fence with slots filled; for away games the ROOM+STAGE
- * paragraphs are swapped for the outdoor setting passage; the ABBY fence
- * is appended when she's in the scene. The canon file is the single
- * source — edits to the bible reach the next generation automatically.
- */
-export function assemblePrompt(
-  masterPrompt: string,
-  candidate: {
-    scene: string;
-    tv?: string;
-    board?: string;
-    setting?: string;
-    characters: string[];
-  }
-): string {
+type Candidate = {
+  scene: string;
+  tv?: string;
+  board?: string;
+  setting?: string;
+  characters: string[];
+};
+
+function fencesOf(masterPrompt: string) {
   const fences = [...masterPrompt.matchAll(/```text\n([\s\S]*?)```/g)].map((m) => m[1].trim());
   if (fences.length < 1) {
     throw new PublishError(500, "The master prompt has no BASE fence — canon/MASTER-PROMPT.md is malformed.");
   }
-  const base = fences[0];
-  const abbyBlock = fences[1] ?? "";
-  const awayBlock = fences[2] ?? "";
+  return { base: fences[0], abbyBlock: fences[1] ?? "", awayBlock: fences[2] ?? "" };
+}
 
+// replaceAll, not replace: [SCENE] appears twice once Abby's fence is in play.
+function fillSlots(text: string, candidate: Candidate): string {
+  return text
+    .replaceAll("[TV]", (candidate.tv ?? "BREAKING").trim())
+    .replaceAll("[BOARD]", (candidate.board ?? "HAPPY HOUR 4–?").trim())
+    .replaceAll("[SCENE]", candidate.scene.trim());
+}
+
+/**
+ * The prompt for a fine-tuned model, which is a different document from the
+ * prompt for Kontext rather than a variation on it.
+ *
+ * What the fine-tune knows, the prompt stops saying: the style paragraph
+ * becomes one style token, and the DREW/MANGO/ABBY paragraphs become three
+ * trigger words. What the fine-tune does not know stays in full — the stage
+ * physics, the no-lettering rules, and above all the scene Rick asked for,
+ * which lands last and with nothing competing for the model's attention.
+ *
+ * The room is the point of the exercise. It is included only when the scene
+ * is actually in the bar; carrying a paragraph of barroom into a prompt about
+ * a boat is the model arguing with itself, and the boat usually loses.
+ */
+function fineTunedPrompt(masterPrompt: string, candidate: Candidate): string {
+  const { base, awayBlock } = fencesOf(masterPrompt);
+  const paragraphs = base.split("\n\n");
+  const find = (prefix: string) => paragraphs.find((p) => p.startsWith(prefix));
+
+  const cast = candidate.characters
+    .map((c) => TRIGGERS[c.toLowerCase().trim()])
+    .filter(Boolean);
+  if (cast.length === 0) {
+    throw new PublishError(400, "No known characters in the scene — use mango, drew, or abby.");
+  }
+
+  const parts = [`${STYLE_TRIGGER} single-panel cartoon. In the scene: ${cast.join(", ")}.`];
+
+  if (candidate.setting) {
+    if (!awayBlock) {
+      throw new PublishError(500, "The master prompt has no away-game fence — cannot stage an outdoor scene.");
+    }
+    parts.push(awayBlock.replace("[SETTING]", candidate.setting.trim()));
+  } else {
+    const room = find("THE ROOM.");
+    const stage = find("THE STAGE.");
+    if (room) parts.push(room);
+    if (stage) parts.push(stage);
+  }
+
+  // The closing paragraph carries the text rules and the [SCENE] slot.
+  const rules = paragraphs[paragraphs.length - 1];
+  if (rules) parts.push(rules);
+
+  return fillSlots(parts.join("\n\n"), candidate);
+}
+
+/**
+ * Assemble the final image prompt from the live master prompt. The canon file
+ * is the single source — edits to the bible reach the next generation
+ * automatically — but how much of it goes out depends on what is drawing.
+ *
+ * For Kontext: the verbatim BASE fence with slots filled, the ROOM+STAGE
+ * paragraphs swapped for the outdoor passage on away games, and the ABBY fence
+ * appended when she is in the scene.
+ */
+export function assemblePrompt(
+  masterPrompt: string,
+  candidate: Candidate,
+  fineTuned: boolean = isFineTuned()
+): string {
+  if (fineTuned) return fineTunedPrompt(masterPrompt, candidate);
+
+  const { base, abbyBlock, awayBlock } = fencesOf(masterPrompt);
   let prompt = base;
   if (candidate.setting) {
     if (!awayBlock) {
@@ -198,16 +296,15 @@ export function assemblePrompt(
     const away = awayBlock.replace("[SETTING]", candidate.setting.trim());
     kept.splice(1, 0, away);
     prompt = kept.join("\n\n");
-  } else {
-    prompt = prompt
-      .replace("[TV]", (candidate.tv ?? "BREAKING").trim())
-      .replace("[BOARD]", (candidate.board ?? "HAPPY HOUR 4–?").trim());
   }
-  prompt = prompt.replace("[SCENE]", candidate.scene.trim());
 
+  // Abby's fence is appended before the slots are filled, not after: it refers
+  // to [SCENE] itself, and appending it later sent a literal "[SCENE]" to the
+  // model every time she was in the cast.
   if (candidate.characters.map((c) => c.toLowerCase()).includes("abby") && abbyBlock) {
     prompt = `${prompt}\n\n${abbyBlock}`;
   }
+  prompt = fillSlots(prompt, candidate);
 
   // Kontext is instruction-driven: tell it what the conditioning image is.
   return (

@@ -59,7 +59,14 @@ It needs these environment variables in the Vercel project (Settings → Environ
 | `SUPABASE_URL` | The Supabase project URL (`https://<ref>.supabase.co`). The studio database: batches, cartoons, scores, and the private image bucket live here — every filing and every 1–10 tap shows up on the site instantly, no rebuild. |
 | `SUPABASE_SERVICE_KEY` | The **service_role** key from the Supabase dashboard (Settings → API keys). Server-side only; the database has row-level security on with no public access, so this key is the only way in. After setup, also rotate the database *password* in Supabase (Settings → Database) — it passed through chat once and nothing uses it. |
 
-Optional extras: `AUTH_SECRET` (any long random string; signs the login cookie — when unset it is derived from the password, and setting it separately lets you log every device out without changing the password) `GITHUB_REPO` (defaults to `Definitely-Ai/Cartoon`, for if the repo ever moves), and `IMAGE_MODEL` (defaults to `black-forest-labs/flux-kontext-pro`; later this is where the fine-tuned LoRA model goes).
+Optional extras: `AUTH_SECRET` (any long random string; signs the login cookie — when unset it is derived from the password, and setting it separately lets you log every device out without changing the password) and `GITHUB_REPO` (defaults to `Definitely-Ai/Cartoon`, for if the repo ever moves).
+
+Two more control the drawing itself:
+
+| Variable | What it is |
+| --- | --- |
+| `IMAGE_MODEL` | Which model draws. Defaults to `black-forest-labs/flux-kontext-pro`, which is conditioned on a reference board built from the locked sheets. Set it to a trained model version (`<account>/swinging-door:<hash>`) and the studio switches to the fine-tuned path instead: no board, no prose description, just trigger words and the scene. See [TRAINING.md](TRAINING.md). |
+| `LORA_SCALE` | How hard the fine-tune is applied, default `0.9`. Ignored on the Kontext path. Faces slipping off-model → raise toward 1.1. Settings and props ignoring what was asked for → lower to 0.7–0.85. |
 
 ## The chat connector (MCP)
 
