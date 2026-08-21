@@ -62,12 +62,40 @@ function parseArgs() {
 
 // Pad to square on the artwork's own paper rather than pure white: a warm
 // sheet on a white square trains a rectangle-inside-a-rectangle.
+//
+// The paper is the most common colour in the crop, not the colour of a corner
+// — a tight crop's corner is as likely to hold a shoulder as a shoulder's
+// worth of blank sheet, and padding a whole image with the wrong grey leaves a
+// visible band down both sides.
 async function paperColor(image, box) {
-  const { data } = await sharp(await image.clone().extract(box).toBuffer())
-    .resize(1, 1, { fit: "cover", position: "left top" })
+  const { data, info } = await sharp(await image.clone().extract(box).toBuffer())
+    .resize(64, 64, { fit: "fill" })
+    .removeAlpha()
     .raw()
     .toBuffer({ resolveWithObject: true });
-  return { r: data[0], g: data[1], b: data[2] };
+
+  const counts = new Uint32Array(256);
+  const channels = info.channels;
+  for (let i = 0; i < data.length; i += channels) {
+    counts[Math.round((data[i] + data[i + 1] + data[i + 2]) / 3)]++;
+  }
+  let mode = 0;
+  for (let v = 1; v < 256; v++) if (counts[v] > counts[mode]) mode = v;
+
+  // Average the pixels sitting at that level rather than returning a flat
+  // grey, so a warm sheet stays warm.
+  let r = 0;
+  let g = 0;
+  let b = 0;
+  let n = 0;
+  for (let i = 0; i < data.length; i += channels) {
+    if (Math.abs(Math.round((data[i] + data[i + 1] + data[i + 2]) / 3) - mode) > 2) continue;
+    r += data[i];
+    g += data[i + 1];
+    b += data[i + 2];
+    n++;
+  }
+  return { r: Math.round(r / n), g: Math.round(g / n), b: Math.round(b / n) };
 }
 
 // Printed labels sit close under every figure on these sheets, and sheet
@@ -77,9 +105,10 @@ async function paperColor(image, box) {
 // crop ever touches a label, paint the lettering out afterwards.
 //
 // Only marks lying wholly outside the main drawing's own bounding box are
-// erased. That is what makes it safe: a label below the feet or a title above
-// the head is outside, while an eye, a button or a bow tie is inside and is
-// never touched, however small it is.
+// erased, plus mark-shaped scraps clipped by the top or bottom edge — the tail
+// of a heading's rule, the top of a caption from the row below. That is what
+// makes it safe: the drawing itself is one connected shape and is never a
+// candidate, so an eye, a button or a bow tie is never touched however small.
 async function eraseLettering(buffer, background) {
   const { data, info } = await sharp(buffer).grayscale().raw().toBuffer({ resolveWithObject: true });
   const { width: w, height: h } = info;
@@ -87,11 +116,11 @@ async function eraseLettering(buffer, background) {
   if (!blobs.length) return buffer;
 
   const subject = blobs.reduce((a, b) => (b.area > a.area ? b : a));
+  const outsideSubject = (b) =>
+    b.maxX < subject.minX || b.minX > subject.maxX || b.maxY < subject.minY || b.minY > subject.maxY;
+  const clippedByEdge = (b) => b.minY === 0 || b.maxY === h - 1;
   const marks = blobs.filter(
-    (b) =>
-      b !== subject &&
-      isMark(b, w, h) &&
-      (b.maxX < subject.minX || b.minX > subject.maxX || b.maxY < subject.minY || b.minY > subject.maxY)
+    (b) => b !== subject && isMark(b, w, h) && (outsideSubject(b) || clippedByEdge(b))
   );
   if (!marks.length) return buffer;
 
