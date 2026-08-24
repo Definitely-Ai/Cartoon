@@ -16,6 +16,13 @@ export const config = {
   matcher: [
     "/((?!login|api/backroom/login|api/backroom/logout|api/mcp|_next/static|_next/image|icon.svg|favicon.ico|og.png).*)",
   ],
+  // Node runtime, deliberately. Vercel's Routing Middleware pipeline began
+  // wrapping edge middleware in a namespace module that references __dirname —
+  // fatal on the Edge runtime, where this crashed production with
+  // MIDDLEWARE_INVOCATION_FAILED. This middleware is pure Web Crypto and runs
+  // identically on Node (crypto.subtle is global there), so nothing changes
+  // except which pipeline packages it. Stable in Next 15.5.
+  runtime: "nodejs",
 };
 
 export async function middleware(request: NextRequest) {
