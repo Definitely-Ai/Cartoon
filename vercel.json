@@ -1,0 +1,4 @@
+{
+  "$comment": "Exactly one key, on purpose. The project's dashboard setting had no framework preset, and when Vercel rolled out their generic Routing Middleware pipeline it started intercepting middleware.ts — transpiling it from source and running it standalone — instead of letting the Next.js builder handle it. That took the site down (see docs/SETUP.md, history notes). Declaring the framework here pins the correct builder in git, immune to dashboard drift. NEVER add legacy 'builds' or 'routes' keys: they bypass the login middleware entirely — that was the original production auth hole.",
+  "framework": "nextjs"
+}
