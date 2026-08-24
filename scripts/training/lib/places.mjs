@@ -22,7 +22,11 @@ export const PLACES = [
     match: /barroom|back bar|swinging doors|bar counter/i,
     describe: "standing at the counter of a dim wood-panelled barroom, shelves of bottles on the back bar behind",
   },
-  { id: "golf course", match: /golf course|fairway/i },
+  {
+    id: "golf course",
+    match: /golf course|fairway/i,
+    describe: "standing on a golf course fairway, a putting-green flag and trees behind",
+  },
   { id: "dock", match: /\bdock\b|jetty|pier/i },
   { id: "airport", match: /airport|departure board|terminal/i },
 

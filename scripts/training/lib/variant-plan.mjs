@@ -25,7 +25,7 @@ export const REF_DIR = "scripts/training/variant-refs";
 // The absolute ceiling on committed variant images, enforced server-side by
 // the route. Deleting a rejected image frees its slot; nothing can push the
 // count past this. 30 x ~$0.055 also bounds the money this plan can spend.
-export const MAX_VARIANTS = 30;
+export const MAX_VARIANTS = 34;
 
 // Reference boards. Each cast's board is tiled from repo crops by
 // make-variant-refs.mjs; `tiles` name the training-set crops (or for Mango,
@@ -117,12 +117,19 @@ export const CASTS = [
 ];
 
 // cast id -> place ids. Every id in here must exist in VARIANT_PLACES.
+//
+// The first three rows are the CHARACTER-PERFECTION PROBES — the founder's own
+// three test scenes (golf, boat, his bar), kept first so one click of
+// /api/backroom/variants?limit=3 generates exactly these. They double as
+// training images once they pass his eye.
 export const PLAN = [
-  ["mango", ["boat", "park", "office", "beach", "street", "empty", "courtroom", "diner", "barroom", "barroom-2"]],
+  ["drew-mango", ["golf course", "boat"]],
+  ["trio", ["barroom"]],
+  ["mango", ["park", "office", "beach", "street", "empty", "courtroom", "diner", "barroom-2", "boat"]],
   ["abby", ["boat", "park", "street", "diner"]],
   ["drew", ["office", "beach", "courtroom", "empty"]],
   ["mango-abby", ["boat", "park", "office", "empty"]],
-  ["drew-mango", ["beach", "street", "diner", "barroom"]],
+  ["drew-mango", ["beach", "street", "diner", "barroom"]],  // barroom here = a second bar composition
   ["drew-abby", ["park", "diner"]],
   ["trio", ["empty"]],
 ];
@@ -144,7 +151,9 @@ export function runs() {
     const cast = byId.get(castId);
     if (!cast) throw new Error(`variant plan names unknown cast "${castId}"`);
     for (const placeId of placeIds) {
-      all.push({ id: `${castId}-${placeId}`, cast, placeId, place: placeOf(placeId) });
+      // Ids become filenames and ?only= values — no spaces.
+      const slug = placeId.replace(/\s+/g, "-");
+      all.push({ id: `${castId}-${slug}`, cast, placeId, place: placeOf(placeId) });
     }
   }
   if (all.length > MAX_VARIANTS) {
@@ -155,11 +164,20 @@ export function runs() {
   return all;
 }
 
+// Per-run staging notes, for the few scenes where canon fixes who stands
+// where. Keyed by run id.
+const STAGING = {
+  "trio-barroom":
+    "The terrier woman works BEHIND the counter, mid-task; the flamingo and the retriever are on the room " +
+    "side of the counter, the retriever seated on a stool. ",
+};
+
 /** The Kontext instruction for one run. */
 export function instruction(run) {
   return (
     `${run.cast.tileNote} Redraw ${run.cast.who} exactly as drawn — same construction, same face, same ` +
     `proportions, unchanged in every detail. ${run.cast.extra} Place the scene somewhere new: ${run.place}. ` +
+    (STAGING[run.id] ?? "") +
     `Single-panel black-and-white cartoon, confident ink line with soft grey wash, no colour, no lettering, ` +
     `no speech balloons, no panel border.`
   );
