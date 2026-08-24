@@ -15,7 +15,8 @@
     "training:detect": "node scripts/training/detect-figures.mjs",
     "training:variants": "node scripts/training/make-setting-variants.mjs",
     "training:build": "node scripts/training/build-training-set.mjs",
-    "check:prompt": "node scripts/check-prompt-assembly.mjs"
+    "check:prompt": "node scripts/check-prompt-assembly.mjs",
+    "training:refs": "node scripts/training/make-variant-refs.mjs"
   },
   "dependencies": {
     "next": "^15.3.0",

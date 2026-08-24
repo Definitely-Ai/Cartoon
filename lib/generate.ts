@@ -1,5 +1,6 @@
 import sharp from "sharp";
 import { PublishError, getModelSheets } from "./githubPublish";
+import { generateImage, uploadFile } from "./replicate";
 
 // The art department. ChatGPT (or any connected chat AI) never touches
 // image bytes — it sends text through make_cartoons, and this module
@@ -8,7 +9,6 @@ import { PublishError, getModelSheets } from "./githubPublish";
 // model (Replicate). Only the server ever holds pixels, which is the
 // whole reason the phone flow works.
 
-const REPLICATE_API = "https://api.replicate.com/v1";
 
 // FLUX.1 Kontext takes one conditioning image + an instruction prompt —
 // the strongest hosted option for "match these exact characters" before any
@@ -40,17 +40,6 @@ export function isFineTuned(): boolean {
 function loraScale(): number {
   const raw = Number(process.env.LORA_SCALE);
   return Number.isFinite(raw) && raw > 0 ? raw : 0.9;
-}
-
-function replicateToken(): string {
-  const token = process.env.REPLICATE_API_TOKEN;
-  if (!token) {
-    throw new PublishError(
-      500,
-      "REPLICATE_API_TOKEN is not set — create a Replicate account, add the token in Vercel, redeploy. See docs/SETUP.md."
-    );
-  }
-  return token;
 }
 
 function imageModel(): string {
@@ -96,45 +85,23 @@ export async function buildReferenceBoard(characters: string[]): Promise<Buffer>
     .toBuffer();
 }
 
-/** Upload a file to Replicate's file store; returns a URL usable as a model input. */
-async function uploadToReplicate(bytes: Buffer, token: string): Promise<string> {
-  const form = new FormData();
-  form.append("content", new Blob([new Uint8Array(bytes)], { type: "image/jpeg" }), "reference-board.jpg");
-  const res = await fetch(`${REPLICATE_API}/files`, {
-    method: "POST",
-    headers: { Authorization: `Bearer ${token}` },
-    body: form,
-  });
-  if (!res.ok) {
-    throw new PublishError(502, `Replicate file upload failed (${res.status}).`);
-  }
-  const file = (await res.json()) as { urls?: { get?: string } };
-  if (!file.urls?.get) throw new PublishError(502, "Replicate file upload returned no URL.");
-  return file.urls.get;
-}
-
-type Prediction = {
-  id: string;
-  status: "starting" | "processing" | "succeeded" | "failed" | "canceled";
-  output?: string | string[];
-  error?: string | null;
-  urls?: { get?: string };
-};
-
 /**
- * Generate one panel: prompt + reference board in, PNG bytes out.
- * Synchronous from the caller's point of view; polls Replicate until the
- * prediction settles (or ~110s pass).
+ * Generate one panel: prompt (+ reference board on the Kontext path) in,
+ * PNG bytes out. Synchronous from the caller's point of view.
  */
 export async function generateCartoonArt(input: {
   prompt: string;
   characters: string[];
+  /** Override the model for this one call — the smoke-test route injects a
+   *  freshly trained version here before IMAGE_MODEL is promoted to it. */
+  model?: string;
 }): Promise<Buffer> {
-  const token = replicateToken();
+  const model = input.model ?? imageModel();
+  const fineTuned = !model.includes("kontext");
 
   // A fine-tune carries the cast in its weights, so there is no board to
   // build and nothing to upload — just a prompt and the strength dial.
-  const modelInput: Record<string, unknown> = isFineTuned()
+  const modelInput: Record<string, unknown> = fineTuned
     ? {
         prompt: input.prompt,
         lora_scale: loraScale(),
@@ -143,56 +110,14 @@ export async function generateCartoonArt(input: {
       }
     : {
         prompt: input.prompt,
-        input_image: await uploadToReplicate(await buildReferenceBoard(input.characters), token),
+        input_image: await uploadFile(await buildReferenceBoard(input.characters), "reference-board.jpg", "image/jpeg"),
         aspect_ratio: "4:5",
         output_format: "png",
         // The strip is a dry gag cartoon — nothing here should trip
         // conservative filters, so keep the default tolerance.
       };
 
-  const model = imageModel();
-  const createRes = await fetch(`${REPLICATE_API}/models/${model}/predictions`, {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${token}`,
-      "Content-Type": "application/json",
-      Prefer: "wait",
-    },
-    body: JSON.stringify({ input: modelInput }),
-  });
-  if (!createRes.ok) {
-    const detail = await createRes.text().catch(() => "");
-    throw new PublishError(
-      502,
-      `Replicate said ${createRes.status} starting the generation${detail ? `: ${detail.slice(0, 200)}` : "."}`
-    );
-  }
-  let prediction = (await createRes.json()) as Prediction;
-
-  const startedAt = Date.now();
-  while (prediction.status === "starting" || prediction.status === "processing") {
-    if (Date.now() - startedAt > 110_000) {
-      throw new PublishError(504, "The image model is taking too long — try the batch again.");
-    }
-    await new Promise((r) => setTimeout(r, 2500));
-    const pollUrl = prediction.urls?.get ?? `${REPLICATE_API}/predictions/${prediction.id}`;
-    const pollRes = await fetch(pollUrl, { headers: { Authorization: `Bearer ${token}` } });
-    if (!pollRes.ok) throw new PublishError(502, `Replicate said ${pollRes.status} while waiting.`);
-    prediction = (await pollRes.json()) as Prediction;
-  }
-
-  if (prediction.status !== "succeeded") {
-    throw new PublishError(
-      502,
-      `The image model ${prediction.status}${prediction.error ? `: ${String(prediction.error).slice(0, 200)}` : "."}`
-    );
-  }
-  const outputUrl = Array.isArray(prediction.output) ? prediction.output[0] : prediction.output;
-  if (!outputUrl) throw new PublishError(502, "The image model returned no output.");
-
-  const imageRes = await fetch(outputUrl);
-  if (!imageRes.ok) throw new PublishError(502, `Could not download the generated image (${imageRes.status}).`);
-  return Buffer.from(await imageRes.arrayBuffer());
+  return generateImage(model, modelInput);
 }
 
 // ---------------------------------------------------------------- prompt

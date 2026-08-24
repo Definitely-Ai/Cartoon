@@ -171,7 +171,11 @@ asyncChecks.push([
       assert.equal(body.length, 1);
       assert.ok(!("input_image" in body[0].input), "a fine-tune takes no conditioning image");
       assert.equal(body[0].input.lora_scale, 0.9, "the strength dial defaults to 0.9");
-      assert.match(calls[0], /rick\/swinging-door:abc123/);
+      // A versioned model goes to POST /predictions with the version hash in
+      // the body — the /models/<name>/predictions form is for latest-version
+      // names only and 404s when a hash is appended.
+      assert.match(calls[0], /\/v1\/predictions$/);
+      assert.equal(body[0].version, "abc123");
     } finally {
       globalThis.fetch = realFetch;
       delete process.env.REPLICATE_API_TOKEN;

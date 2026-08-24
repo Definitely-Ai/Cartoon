@@ -686,3 +686,101 @@ export async function listOptionDays(): Promise<string[]> {
     .sort()
     .reverse();
 }
+
+// ------------------------------------------------- generic repo file access
+// The training pipeline runs half in the repo (curation, zipping) and half in
+// production (generation, training) — these two helpers are the bridge: the
+// deployed app commits generated images INTO the repo so they can be pulled
+// and inspected, and reads big binaries (reference boards, the training zip)
+// OUT of it without ever needing a checkout.
+
+/**
+ * One atomic commit of small files to the production branch. Retries once
+ * when a concurrent push moves the head between read and update; a second
+ * loss surfaces as 409 and the caller simply runs again — every caller of
+ * this is idempotent by design.
+ */
+export async function commitFiles(
+  files: { path: string; content: Buffer | string }[],
+  message: string
+): Promise<string> {
+  const { token, repo } = requiredEnv();
+  const api = gh(token);
+
+  for (let attempt = 0; attempt < 2; attempt++) {
+    const headRes = await api(`/repos/${repo}/git/ref/${encodeURIComponent(`heads/${BRANCH}`)}`);
+    if (!headRes.ok) throw new PublishError(502, `GitHub said ${headRes.status} reading ${BRANCH}.`);
+    const headSha = ((await headRes.json()) as { object: { sha: string } }).object.sha;
+
+    // Binary content goes up as blobs first; text can ride in the tree.
+    const tree: Record<string, unknown>[] = [];
+    for (const file of files) {
+      if (typeof file.content === "string") {
+        tree.push({ path: file.path, mode: "100644", type: "blob", content: file.content });
+      } else {
+        const blobRes = await api(`/repos/${repo}/git/blobs`, {
+          method: "POST",
+          body: JSON.stringify({ content: file.content.toString("base64"), encoding: "base64" }),
+        });
+        if (!blobRes.ok) throw new PublishError(502, `GitHub said ${blobRes.status} uploading ${file.path}.`);
+        tree.push({ path: file.path, mode: "100644", type: "blob", sha: ((await blobRes.json()) as { sha: string }).sha });
+      }
+    }
+
+    const treeRes = await api(`/repos/${repo}/git/trees`, {
+      method: "POST",
+      body: JSON.stringify({ base_tree: headSha, tree }),
+    });
+    if (!treeRes.ok) throw new PublishError(502, `GitHub said ${treeRes.status} building the tree.`);
+
+    const commitRes = await api(`/repos/${repo}/git/commits`, {
+      method: "POST",
+      body: JSON.stringify({
+        message,
+        tree: ((await treeRes.json()) as { sha: string }).sha,
+        parents: [headSha],
+      }),
+    });
+    if (!commitRes.ok) throw new PublishError(502, `GitHub said ${commitRes.status} writing the commit.`);
+    const commitSha = ((await commitRes.json()) as { sha: string }).sha;
+
+    const refRes = await api(`/repos/${repo}/git/refs/${encodeURIComponent(`heads/${BRANCH}`)}`, {
+      method: "PATCH",
+      body: JSON.stringify({ sha: commitSha }),
+    });
+    if (refRes.ok) return commitSha;
+    if (attempt === 0) continue; // a concurrent push won the race — re-read head and retry once
+  }
+  throw new PublishError(409, "The repo is busy — run the request again.");
+}
+
+/**
+ * Read one file from the production branch, any size the blobs API allows
+ * (the contents API alone stops inlining past ~1MB). Returns null when the
+ * path does not exist.
+ */
+export async function readRepoFile(filePath: string): Promise<{ bytes: Buffer; sha: string } | null> {
+  const { token, repo } = requiredEnv();
+  const api = gh(token);
+  const metaRes = await api(`/repos/${repo}/contents/${filePath}?ref=${BRANCH}`);
+  if (metaRes.status === 404) return null;
+  if (!metaRes.ok) throw new PublishError(502, `GitHub said ${metaRes.status} for ${filePath}.`);
+  const meta = (await metaRes.json()) as { sha: string; content?: string; encoding?: string };
+  if (meta.content && meta.encoding === "base64") {
+    return { bytes: Buffer.from(meta.content, "base64"), sha: meta.sha };
+  }
+  const blobRes = await api(`/repos/${repo}/git/blobs/${meta.sha}`);
+  if (!blobRes.ok) throw new PublishError(502, `GitHub said ${blobRes.status} reading the blob for ${filePath}.`);
+  const blob = (await blobRes.json()) as { content: string };
+  return { bytes: Buffer.from(blob.content, "base64"), sha: meta.sha };
+}
+
+/** Names of files directly under a repo directory (empty when absent). */
+export async function listRepoDir(dirPath: string): Promise<string[]> {
+  const { token, repo } = requiredEnv();
+  const api = gh(token);
+  const res = await api(`/repos/${repo}/contents/${dirPath}?ref=${BRANCH}`);
+  if (res.status === 404) return [];
+  if (!res.ok) throw new PublishError(502, `GitHub said ${res.status} listing ${dirPath}.`);
+  return ((await res.json()) as { name: string; type: string }[]).filter((e) => e.type === "file").map((e) => e.name);
+}

@@ -20,8 +20,10 @@ public/backroom-assets/
 *.log
 
 # LoRA training artefacts. The manifest and the scripts are the source; the
-# crops, the detector's previews, and the archive are all regenerated from
-# them. setting-variants/ is NOT ignored — those images cost money to make.
+# crops and the detector's previews are regenerated from them. NOT ignored:
+# setting-variants/ and variant-refs/ (those images cost money to make or
+# feed the paid generations) and training-set.zip (the exact bytes of a paid
+# training run belong in history, and the training route reads the zip from
+# the repo).
 scripts/training/training-set/
-scripts/training/training-set.zip
 scripts/training/.detect/

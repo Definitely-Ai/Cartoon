@@ -17,7 +17,11 @@ export const PLACES = [
   // "polishing a glass behind a bar counter" on a blank sheet is not the bar.
   { id: "blank paper", study: true, match: /blank (?:pale|white) paper/i },
 
-  { id: "barroom", match: /barroom|back bar|swinging doors|bar counter/i },
+  {
+    id: "barroom",
+    match: /barroom|back bar|swinging doors|bar counter/i,
+    describe: "standing at the counter of a dim wood-panelled barroom, shelves of bottles on the back bar behind",
+  },
   { id: "golf course", match: /golf course|fairway/i },
   { id: "dock", match: /\bdock\b|jetty|pier/i },
   { id: "airport", match: /airport|departure board|terminal/i },
@@ -50,7 +54,7 @@ export const PLACES = [
   {
     id: "empty",
     match: /empty background|empty void|nothing behind|plain backdrop/i,
-    describe: "standing alone against a completely empty background, nothing behind at all",
+    describe: "against a completely empty background, nothing else in the panel at all",
   },
   {
     id: "courtroom",

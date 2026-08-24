@@ -29,67 +29,67 @@ Four things hold that line, and all four ship:
 
 | Source | Images | What it teaches |
 | --- | --- | --- |
-| 17 locked model sheets, cropped into single-pose studies | ~104 | Who they are, from every angle and expression |
-| 13 finished cartoons, dialogue strip removed | 13 | The house look, and how two characters share a panel |
-| 4 scene-continuity panels (bar, golf course, dock, airport) | 4 | That Drew is still Drew somewhere else |
-| Generated setting variants | 24 | That the background is a caption's business |
+| The locked model sheets, cropped into single-figure studies | ~84 | Who they are, from every angle and expression |
+| Surviving finished cartoons, dialogue strip removed | 6 | The house look, and how two characters share a panel |
+| Generated setting variants (Kontext, from committed reference boards) | 29 | That the background is a caption's business — weighted hard toward Mango, who lost most of his rendered images to the tail purge |
 
-Whole sheets are never used — a model trained on grids draws grids. Neither are the silhouettes, the proportion grids with numerals across them, the swatch rows, the flag diagrams, the disembodied eye studies, or the crossed-out NEVER row on Mango's pin sheet. Five older cartoons are left out because Abby is drawn off-model in them, and one because a photorealistic human face is on the television. Every one of those decisions is recorded, with its reason, in the manifest's `skip` fields.
+Whole sheets are never used — a model trained on grids draws grids. Neither are: the proportion-grid sheet, the scene-continuity sheet (a different drawing hand — a rounder-skulled, cross-hatched Drew), the crossed-out NEVER row on Mango's pin sheet, five off-model-Abby cartoons, one cartoon with a photorealistic face on the TV — and **every cartoon showing Mango's plumed tail** (canon: "absolutely no tail"; five of the nine surviving cartoons fell to this one check). Every exclusion carries its reason in the manifest's `skip` fields, and residual sheet lettering that a crop box could not dodge is painted out by per-crop `erase` rectangles.
 
 ---
 
 ## Building the set
 
 ```bash
-# 1. Crop the figures out of the sheets. Fails on purpose until step 2 has run —
-#    without the setting variants the corpus is 81% blank paper and 88% barroom.
+# 1. Crop the figures out of the sheets and check the result yourself.
 npm run training:build -- --draft
 
-# 2. Generate the non-barroom images. Needs REPLICATE_API_TOKEN; about $1.
+# 2. Build the conditioning boards the variants are generated from, commit.
+npm run training:refs
+
+# 3. Preview exactly what will be generated and what it will cost.
 npm run training:variants
 ```
 
-Then **look at all 24 variants.** They are generated, not drawn, and an image where a character has drifted off-model is worse than no image at all — it teaches the drift. Delete any bad one along with its `.txt`, and run more with `--only <id>` if you want replacements.
+The variants themselves are generated **in production**, where the Replicate token lives, by the login-gated route `/api/backroom/variants`:
+
+1. Open `/api/backroom/variants?dry=1` signed in — $0; it probes the Replicate account (proving the Vercel integration works) and lists every pending image with its exact prompt and caption.
+2. Open `/api/backroom/variants` — generates up to 6 (`?limit=`), committing each PNG + caption straight into `scripts/training/setting-variants/`. Repeat in waves.
+3. After each wave: `git pull` and **look at every image**. One where a character drifted off-model — or Mango grew the tail canon forbids — is worse than no image: `git rm` both files, push (that frees its slot), and regenerate it with `?only=<id>`.
+4. The route refuses past **30 committed images, ever** — that ceiling is the variants budget line (~$1.70).
 
 ```bash
-# 3. Build for real. Prints the histogram, enforces the balance, writes the zip.
+# 4. Build for real: histogram gates enforce the balance; writes the zip.
 npm run training:build
+git add scripts/training/training-set.zip && git commit -m "training: zip vN" && git push
 ```
 
-The archive lands at `scripts/training/training-set.zip` (~30 MB): each image beside a same-named `.txt` caption, which is the layout every FLUX LoRA trainer expects.
-
-> `npm run training:detect` re-proposes crop boxes if the sheets ever change. It writes numbered previews to `scripts/training/.detect/` — look at them, then correct the boxes by hand in the manifest. The proposals are a starting point, never the answer.
+The zip is committed on purpose: the training route reads it from the repo, and the exact bytes behind a paid run belong in history.
 
 ---
 
-## Training
+## Training — one route, one run
 
-On [replicate.com](https://replicate.com), with billing enabled on the same account as `REPLICATE_API_TOKEN`:
+`/api/backroom/train` is the only thing that spends training money, and its default answer is no:
 
-1. **Create a model** to train into: name it `swinging-door`, visibility **private**, hardware CPU (the trainer picks its own GPU). This is a container for versions — every retrain pushes a new version here, and old ones stay reachable.
-2. Open **`ostris/flux-dev-lora-trainer`** and run a training with:
+| Call | What happens |
+| --- | --- |
+| `?start=1` | Uploads the committed zip, creates the private destination model (`<account>/swinging-door`) if missing, and starts ONE training with the locked parameters below. **Refuses** if any recorded run is still going, or has ever succeeded. |
+| `?status=1` | The newest run's live state; prints the trained `owner/swinging-door:<hash>` version string when it succeeds. |
+| `?start=1&force=1` | The only way to pay for a second run — a deliberate, spelled-out choice. |
 
-   | Field | Value | Why |
-   | --- | --- | --- |
-   | `input_images` | `training-set.zip` | |
-   | `trigger_word` | *leave empty* | The captions already carry `SWDDREW`, `SWDMANGO`, `SWDABBY`, `SWDINK`. A single trigger word would flatten four concepts into one. |
-   | `autocaption` | **off** | The captions are the work. An autocaptioner describes cartoons poorly and would undo the whole doctrine above. |
-   | `steps` | 1750 | |
-   | `lora_rank` | 32 | Enough capacity for three characters plus a style. |
-   | `learning_rate` | 0.0004 | The trainer's default; leave it. |
-   | `resolution` | 512,768,1024 | Matches the mixed sizes the build emits. |
-   | `destination` | the model from step 1 | |
+Locked parameters (`trigger_word` empty — the captions carry the four tokens; `autocaption` off — the captions are the work; `caption_dropout_rate` **0** — default dropout would leak everything the captions guard, the barroom included, into the unconditional space): steps 1750, rank 32, lr 4e-4, resolution "512,768,1024" (load-bearing — the crops keep their natural aspect and the trainer buckets them). Roughly $3 and 20–40 minutes on an H100.
 
-   Roughly 20–40 minutes and $2–3. Not `replicate/fast-flux-trainer` — that one captions for you, which is exactly what must not happen here.
-3. When it finishes, copy the full version string: `<your-account>/swinging-door:<hash>`.
+A `failed` in the first minutes costs pennies — read the error, fix, `?start=1` again (the guard only blocks *succeeded* and *running*).
 
 ---
 
-## Promoting it
+## The smoke test, then promotion
 
-Set **`IMAGE_MODEL`** in Vercel to that version string and redeploy. That single change flips `lib/generate.ts` onto the fine-tuned path: no reference board is built, no model sheets are fetched from GitHub, and the prompt becomes trigger words plus the scene.
+`/api/backroom/smoke` (~$0.15) generates four fixed panels through the **exact** production prompt path — trio at the bar, Mango alone on a boat, Abby on a bare panel, Drew in a courtroom — and commits them to `scripts/training/smoke/` for pull-and-inspect. `?scale=` tries a different `LORA_SCALE` per wave without touching Vercel.
 
-Rolling back is the same move with the previous version string, or delete `IMAGE_MODEL` to fall back to Kontext. Nothing else in the studio changes — the connector, the batches, the scoring all work the same.
+Pass bar: three *distinct* on-model characters at the bar, the boat is a boat, the bare panel bare, the courtroom a courtroom, **and Mango has no tail anywhere**. Identity without obedience is a failure — turn the scale down and rerun before blaming the dataset.
+
+Only after both halves pass: set **`IMAGE_MODEL`** in Vercel to the version string and redeploy. Rolling back is the same move with the old value, or delete it to fall back to Kontext.
 
 ### The control batch
 

@@ -28,10 +28,10 @@ const here = path.dirname(fileURLToPath(import.meta.url));
 const repoRoot = path.resolve(here, "..", "..");
 
 // 1024 is the resolution FLUX was trained at and the ceiling every runbook
-// assumes. It is a ceiling and not a target: a head study cut from a sheet is
-// only a few hundred pixels across, and blowing it up to 1024 would teach the
-// model what a soft upscale looks like. Anything smaller is padded up to the
-// floor the trainers bucket at and left alone.
+// assumes. It is a ceiling, never a target: crops keep their native size and
+// aspect (the trainer buckets by aspect ratio), are only ever scaled DOWN to
+// fit the ceiling, and anything smaller than MIN_EDGE just gets a note in the
+// build log so a suspiciously tiny crop is visible.
 const EDGE = 1024;
 const MIN_EDGE = 512;
 // Detected boxes hug the ink. A little air keeps a crop from shaving an ear or
@@ -148,27 +148,43 @@ async function eraseLettering(buffer, background) {
   return sharp(rgb, { raw: { width: w, height: h, channels: 3 } }).png().toBuffer();
 }
 
-async function squareUp(buffer, background) {
+// Natural aspect out — no squaring, no padding. The trainer buckets images by
+// aspect ratio, and a vision audit found the old paper-coloured squaring bands
+// were visible as flat rectangles against the textured sheets: training data
+// of their own. Downscale-only (an upscaled study just teaches the model what
+// a soft upscale looks like), greyscale because the strip is strictly B&W and
+// the colour channels carried nothing but each sheet's scanner cast.
+async function finish(buffer, name) {
   const meta = await sharp(buffer).metadata();
-  const edge = Math.max(meta.width, meta.height);
-  // Two passes on purpose: sharp resizes before it composites, so asking one
-  // pipeline to do both would shrink the canvas out from under the artwork.
-  const squared = await sharp({ create: { width: edge, height: edge, channels: 3, background } })
-    .composite([
-      {
-        input: buffer,
-        left: Math.round((edge - meta.width) / 2),
-        top: Math.round((edge - meta.height) / 2),
-      },
-    ])
-    .png()
+  if (Math.max(meta.width, meta.height) < MIN_EDGE) {
+    console.log(`  note ${name} is small (${meta.width}x${meta.height}) — kept at native size`);
+  }
+  return sharp(buffer)
+    .resize(EDGE, EDGE, { fit: "inside", withoutEnlargement: true })
+    .grayscale()
+    .png({ compressionLevel: 9 })
     .toBuffer();
-  const target = Math.min(EDGE, Math.max(MIN_EDGE, edge));
-  // Greyscale on the way out. The strip is strictly black-and-white, so the
-  // colour channels carry nothing but the warm cast of the paper each sheet
-  // was scanned on — dropping them shrinks the archive and removes a
-  // difference between sheets that the model would otherwise learn around.
-  return sharp(squared).resize(target, target).grayscale().png({ compressionLevel: 9 }).toBuffer();
+}
+
+// Paint manifest-listed rectangles with the paper colour before the automatic
+// lettering pass runs — the surgical tool for marks the blob heuristics
+// legitimately refuse: dashed leader-lines ending a hair from a hand, gaze
+// arrows inside the subject's own bounding box, a title rule overlapping the
+// head. Rectangles are given in SOURCE-SHEET coordinates (the same frame as
+// the crop's box), so they can be measured once in one viewer session.
+async function eraseRects(buffer, rects, cropBox, background) {
+  const meta = await sharp(buffer).metadata();
+  const overlays = [];
+  for (const [x, y, w, h] of rects) {
+    const left = Math.max(0, x - cropBox.left);
+    const top = Math.max(0, y - cropBox.top);
+    const width = Math.min(meta.width - left, w - Math.max(0, cropBox.left - x));
+    const height = Math.min(meta.height - top, h - Math.max(0, cropBox.top - y));
+    if (width <= 0 || height <= 0) continue; // the rect belongs to a different crop of this sheet
+    overlays.push({ input: { create: { width, height, channels: 3, background } }, left, top });
+  }
+  if (!overlays.length) return buffer;
+  return sharp(buffer).composite(overlays).png().toBuffer();
 }
 
 function clampBox(box, width, height, expand, inset) {
@@ -237,8 +253,11 @@ async function buildSheet(entry, outDir) {
         crop.inset ?? 0
       );
       const background = await paperColor(image, box);
-      const cut = await eraseLettering(await image.clone().extract(box).toBuffer(), background);
-      await emit(outDir, `${stem}-${String(++n).padStart(2, "0")}`, await squareUp(cut, background), captions[c], entry.file);
+      let cut = await image.clone().extract(box).toBuffer();
+      if (crop.erase) cut = await eraseRects(cut, crop.erase, box, background);
+      cut = await eraseLettering(cut, background);
+      const name = `${stem}-${String(++n).padStart(2, "0")}`;
+      await emit(outDir, name, await finish(cut, name), captions[c], entry.file);
     }
   }
   console.log(`  ${n} study/studies`);
@@ -262,9 +281,11 @@ async function buildCartoon(entry, outDir) {
   if (!square && !portrait) {
     console.log(`  note ${entry.file} is not in the house finished format — using the whole image`);
   }
-  const cut = await sharp(file).extract({ left: 0, top: 0, width: meta.width, height }).toBuffer();
+  const artBox = { left: 0, top: 0, width: meta.width, height };
+  let cut = await sharp(file).extract(artBox).toBuffer();
+  if (entry.erase) cut = await eraseRects(cut, entry.erase, artBox, { r: 255, g: 255, b: 255 });
   const name = `cartoon-${entry.file.replace(/[/.]/g, "-").replace(/-png$/, "")}`;
-  await emit(outDir, name, await squareUp(cut, { r: 255, g: 255, b: 255 }), entry.caption, entry.file);
+  await emit(outDir, name, await finish(cut, name), entry.caption, entry.file);
 }
 
 // Images generated by make-setting-variants.mjs, if that has been run. They
@@ -289,7 +310,8 @@ async function buildVariants(outDir) {
       continue;
     }
     const cut = await sharp(path.join(dir, file)).toBuffer();
-    await emit(outDir, `variant-${path.basename(file, ".png")}`, await squareUp(cut, { r: 255, g: 255, b: 255 }), fs.readFileSync(captionFile, "utf8").trim(), `setting-variants/${file}`);
+    const name = `variant-${path.basename(file, ".png")}`;
+    await emit(outDir, name, await finish(cut, name), fs.readFileSync(captionFile, "utf8").trim(), `setting-variants/${file}`);
     n++;
   }
   console.log(`  ${n} setting variant(s)`);
@@ -333,11 +355,11 @@ function report() {
     console.error("\n  --draft: images written for inspection, no archive. Do not train on this.");
     return false;
   }
-  return true;
   console.log(
     `\n  ${scenes} of ${total} images have a real place behind the characters ` +
       `(${((scenes / total) * 100).toFixed(0)}%).`
   );
+  return true;
 }
 
 const { out, zip, draft } = parseArgs();
