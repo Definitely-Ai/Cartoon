@@ -34,15 +34,21 @@ fs.mkdirSync(outDir, { recursive: true });
 
 for (const cast of CASTS) {
   const tiles = await Promise.all(
-    cast.tiles.map(async (name) => {
-      const file = path.join(cropsDir, `${name}.png`);
-      if (!fs.existsSync(file)) {
-        throw new Error(`missing crop ${name}.png — run \`npm run training:build -- --draft\` first`);
+    cast.tiles.map(async (tile) => {
+      // A tile is either a training-set crop by name, or a direct cut from a
+      // repo image ({ src, box }) where the set has no clean example.
+      let source;
+      if (typeof tile === "string") {
+        const file = path.join(cropsDir, `${tile}.png`);
+        if (!fs.existsSync(file)) {
+          throw new Error(`missing crop ${tile}.png — run \`npm run training:build -- --draft\` first`);
+        }
+        source = sharp(file);
+      } else {
+        const [left, top, width, height] = tile.box;
+        source = sharp(path.join(repoRoot, tile.src)).extract({ left, top, width, height });
       }
-      return sharp(file)
-        .resize(TILE, TILE, { fit: "contain", background: "#ffffff" })
-        .jpeg({ quality: 92 })
-        .toBuffer();
+      return source.resize(TILE, TILE, { fit: "contain", background: "#ffffff" }).jpeg({ quality: 92 }).toBuffer();
     })
   );
   const board = await sharp({
@@ -52,6 +58,6 @@ for (const cast of CASTS) {
     .jpeg({ quality: 92 })
     .toBuffer();
   fs.writeFileSync(path.join(outDir, `${cast.id}.jpg`), board);
-  console.log(`${cast.id}.jpg — ${cast.tiles.join(" + ")}`);
+  console.log(`${cast.id}.jpg — ${cast.tiles.map((t) => (typeof t === "string" ? t : t.src)).join(" + ")}`);
 }
 console.log(`\nwrote ${CASTS.length} board(s) to ${path.relative(repoRoot, outDir)} — inspect them before generating`);

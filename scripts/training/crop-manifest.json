@@ -59,9 +59,9 @@
         },
         {
           "box": [
-            666,
+            652,
             100,
-            108,
+            122,
             497
           ],
           "caption": "SWDDREW standing in side profile, full body, model sheet study on blank pale paper"
@@ -97,7 +97,7 @@
             745,
             552,
             545,
-            400
+            455
           ],
           "caption": "SWDDREW leaning one elbow on a wooden bar counter with a martini glass on it, other wing raised, waist-up, model sheet study on blank pale paper",
           "erase": [
@@ -108,9 +108,9 @@
               58
             ],
             [
-              895,
-              948,
-              160,
+              900,
+              968,
+              150,
               44
             ],
             [
@@ -120,10 +120,10 @@
               104
             ],
             [
-              1246,
+              1230,
               536,
-              68,
-              78
+              84,
+              84
             ],
             [
               956,
@@ -168,15 +168,6 @@
         },
         {
           "box": [
-            1212,
-            96,
-            132,
-            243
-          ],
-          "caption": "SWDDREW head and neck, an open smile, beak parted, close study on blank pale paper"
-        },
-        {
-          "box": [
             189,
             396,
             144,
@@ -209,7 +200,7 @@
             129,
             249
           ],
-          "caption": "SWDDREW head and neck, surprised, eyes wide and beak open, close study on blank pale paper"
+          "caption": "SWDDREW head and neck, startled, eyes wide, close study on blank pale paper"
         },
         {
           "box": [
@@ -249,7 +240,8 @@
         }
       ],
       "skip": [
-        "The subtle-closed-smile head: visually indistinguishable from the neutral head beside it."
+        "The subtle-closed-smile head: visually indistinguishable from the neutral head beside it.",
+        "The 'open smile' head — the beak is actually drawn shut, making it a third copy of the neutral head."
       ]
     },
     {
@@ -264,13 +256,13 @@
           ],
           "erase": [
             [
-              468,
+              464,
               338,
-              45,
+              49,
               405
             ]
           ],
-          "caption": "SWDDREW leaning forward from the waist, curious, full body, pose study in clean light line on blank pale paper",
+          "caption": "SWDDREW leaning forward from the waist, curious, full body, pose study on blank pale paper",
           "inset": 7
         },
         {
@@ -288,14 +280,14 @@
               328
             ]
           ],
-          "caption": "SWDDREW explaining, one wing lifted and open, full body, pose study in clean light line on blank pale paper",
+          "caption": "SWDDREW explaining, one wing lifted and open, full body, pose study on blank pale paper",
           "inset": 7
         },
         {
           "box": [
             865,
             170,
-            190,
+            243,
             570
           ],
           "erase": [
@@ -310,9 +302,39 @@
               640,
               32,
               100
+            ],
+            [
+              1104,
+              590,
+              16,
+              155
+            ],
+            [
+              1056,
+              278,
+              60,
+              310
+            ],
+            [
+              1048,
+              580,
+              32,
+              134
+            ],
+            [
+              1048,
+              710,
+              30,
+              44
+            ],
+            [
+              1076,
+              584,
+              32,
+              114
             ]
           ],
-          "caption": "SWDDREW walking mid-stride, full body, pose study in clean light line on blank pale paper",
+          "caption": "SWDDREW walking mid-stride, full body, pose study on blank pale paper",
           "inset": 7
         },
         {
@@ -322,7 +344,7 @@
             185,
             548
           ],
-          "caption": "SWDDREW sitting on a wooden bar stool, legs crossed, full body, pose study in clean light line on blank pale paper",
+          "caption": "SWDDREW sitting on a wooden bar stool, legs crossed, full body, pose study on blank pale paper",
           "inset": 7,
           "erase": [
             [
@@ -340,7 +362,7 @@
             243,
             588
           ],
-          "caption": "SWDDREW leaning on a wooden bar counter with a martini glass on it, full body, pose study in clean light line on blank pale paper",
+          "caption": "SWDDREW leaning on a wooden bar counter with a martini glass on it, full body, pose study on blank pale paper",
           "inset": 7,
           "erase": [
             [
@@ -366,7 +388,7 @@
             222,
             644
           ],
-          "caption": "SWDDREW standing in nothing but his bow tie, full body, wardrobe study in clean light line on blank pale paper"
+          "caption": "SWDDREW standing in nothing but his bow tie, full body, wardrobe study on blank pale paper"
         },
         {
           "box": [
@@ -375,7 +397,7 @@
             222,
             641
           ],
-          "caption": "SWDDREW wearing a dark bar jacket, full body, wardrobe study in clean light line on blank pale paper"
+          "caption": "SWDDREW wearing a dark bar jacket, full body, wardrobe study on blank pale paper"
         },
         {
           "box": [
@@ -384,7 +406,7 @@
             222,
             641
           ],
-          "caption": "SWDDREW wearing a three-piece business suit with a pocket square, full body, wardrobe study in clean light line on blank pale paper"
+          "caption": "SWDDREW wearing a three-piece business suit with a pocket square, full body, wardrobe study on blank pale paper"
         },
         {
           "box": [
@@ -393,7 +415,7 @@
             201,
             641
           ],
-          "caption": "SWDDREW wearing a flat cap, a golf polo, belt and slacks, full body, wardrobe study in clean light line on blank pale paper"
+          "caption": "SWDDREW wearing a flat cap, a golf polo, belt and slacks, full body, wardrobe study on blank pale paper"
         },
         {
           "box": [
@@ -402,7 +424,7 @@
             218,
             644
           ],
-          "caption": "SWDDREW wearing a fishing vest, shorts and a bucket hat, full body, wardrobe study in clean light line on blank pale paper"
+          "caption": "SWDDREW wearing a fishing vest, shorts and a bucket hat, full body, wardrobe study on blank pale paper"
         },
         {
           "box": [
@@ -411,7 +433,7 @@
             225,
             641
           ],
-          "caption": "SWDDREW wearing a long travel overcoat, full body, wardrobe study in clean light line on blank pale paper"
+          "caption": "SWDDREW wearing a long travel overcoat, full body, wardrobe study on blank pale paper"
         },
         {
           "box": [
@@ -420,7 +442,7 @@
             211,
             644
           ],
-          "caption": "SWDDREW wearing a black tuxedo, full body, wardrobe study in clean light line on blank pale paper"
+          "caption": "SWDDREW wearing a black tuxedo, full body, wardrobe study on blank pale paper"
         }
       ]
     },
@@ -438,8 +460,8 @@
           "box": [
             66,
             147,
-            144,
-            312
+            146,
+            336
           ],
           "caption": "SWDDREW's wing-hand relaxed at rest, close study on blank pale paper"
         },
@@ -465,7 +487,7 @@
           "box": [
             1035,
             148,
-            390,
+            470,
             240
           ],
           "caption": "SWDDREW's wing-hand pointing, close study on blank pale paper"
@@ -500,12 +522,20 @@
         },
         {
           "box": [
-            927,
-            549,
-            258,
-            366
+            905,
+            545,
+            300,
+            374
           ],
-          "caption": "SWDDREW's wing-hand shrugging, palm turned up, close study on blank pale paper"
+          "caption": "SWDDREW's wing-hand shrugging, palm turned up, close study on blank pale paper",
+          "erase": [
+            [
+              893,
+              595,
+              26,
+              310
+            ]
+          ]
         }
       ],
       "skip": [
@@ -549,6 +579,18 @@
               220,
               22,
               12
+            ],
+            [
+              143,
+              290,
+              38,
+              175
+            ],
+            [
+              143,
+              522,
+              42,
+              24
             ]
           ]
         },
@@ -591,9 +633,9 @@
         {
           "box": [
             1040,
-            668,
+            638,
             270,
-            322
+            352
           ],
           "caption": "SWDMANGO sitting on a plain wooden stool, unclothed base-body construction study, clean line art on blank white paper",
           "erase": [
@@ -630,47 +672,16 @@
           ],
           "columns": 2,
           "captions": [
-            "SWDMANGO head and shoulders, neutral expression, close study on blank white paper",
-            "SWDMANGO head and shoulders, happy, mouth open and tongue showing, close study on blank white paper"
+            "SWDMANGO head and neck, neutral expression, close study on blank white paper",
+            "SWDMANGO head and neck, happy, mouth open and tongue showing, close study on blank white paper"
           ]
         }
       ]
     },
     {
       "file": "canon/characters/dog/lapel-pin-bible.png",
-      "note": "The only sheet showing Mango dressed, which is how he appears in every cartoon.",
-      "crops": [
-        {
-          "box": [
-            34,
-            920,
-            310,
-            304
-          ],
-          "caption": "SWDMANGO wearing a grey sport coat over an open-collar shirt with a small American flag pin on the left lapel, facing the viewer, waist-up study on blank white paper"
-        },
-        {
-          "box": [
-            382,
-            920,
-            282,
-            306
-          ],
-          "caption": "SWDMANGO wearing a grey sport coat with the flag pin on the left lapel, at a three-quarter angle, waist-up study on blank white paper"
-        },
-        {
-          "box": [
-            678,
-            924,
-            244,
-            302
-          ],
-          "caption": "SWDMANGO wearing a grey sport coat over an open-collar shirt, in side profile, waist-up study on blank white paper"
-        }
-      ],
       "skip": [
-        "The flag diagrams, the size-test row and the lapel close-up are specification drawings, not drawings of the character.",
-        "The NEVER row at the foot of the sheet is a set of wrong versions crossed out — the one thing on any sheet that must never reach a training set."
+        "Dropped whole after the eye check: every bust on this sheet gives Mango solid black bead eyes — the one eye treatment canon bans (his eyes are paper-white sclera, separate grey iris, separate pupil, held correctly by the identity sheet and every kept cartoon). The pin design itself lives on in all six cartoons and in every generated variant's reference."
       ]
     },
     {
@@ -692,7 +703,15 @@
             144,
             492
           ],
-          "caption": "SWDABBY standing at a three-quarter front angle, full body, model sheet study on blank pale paper"
+          "caption": "SWDABBY standing at a three-quarter front angle, full body, model sheet study on blank pale paper",
+          "erase": [
+            [
+              395,
+              86,
+              178,
+              28
+            ]
+          ]
         },
         {
           "box": [
@@ -987,12 +1006,20 @@
         },
         {
           "box": [
-            610,
+            585,
             60,
-            272,
+            297,
             375
           ],
-          "caption": "SWDABBY with one arm swept open in welcome, waist-up, gesture study on blank pale paper"
+          "caption": "SWDABBY with one arm swept open in welcome, waist-up, gesture study on blank pale paper",
+          "erase": [
+            [
+              566,
+              200,
+              18,
+              190
+            ]
+          ]
         },
         {
           "box": [
@@ -1005,9 +1032,9 @@
         },
         {
           "box": [
-            1210,
+            1188,
             81,
-            260,
+            282,
             354
           ],
           "caption": "SWDABBY explaining with an upturned palm, waist-up, gesture study on blank pale paper"
@@ -1101,7 +1128,7 @@
           "box": [
             1180,
             82,
-            208,
+            230,
             438
           ],
           "caption": "SWDABBY carrying a small round tray with a drink on it, full body, action study on blank pale paper"
@@ -1119,10 +1146,18 @@
           "box": [
             812,
             548,
-            248,
+            264,
             400
           ],
-          "caption": "SWDABBY calling last round, one arm out with the palm forward, three-quarter-length action study on blank pale paper"
+          "caption": "SWDABBY calling last round, one arm out with the palm forward, three-quarter-length action study on blank pale paper",
+          "erase": [
+            [
+              1072,
+              760,
+              16,
+              190
+            ]
+          ]
         }
       ],
       "skip": [
@@ -1228,15 +1263,15 @@
     },
     {
       "file": "options/2026-08-17/option-3.png",
-      "caption": "SWDINK cartoon, SWDMANGO sitting on a stool holding a fishing rod that dangles a rolled blueprint over a model pier on the counter of a barroom while SWDDREW steadies the line, a chalkboard reading CATCH REVIEW, a television showing a pier, framed lighthouse pictures on the wall, the bar's name mirrored on the window"
+      "caption": "SWDINK cartoon, SWDMANGO sitting on a stool holding a fishing rod that dangles a rolled blueprint over a model pier on the counter of a barroom while SWDDREW steadies the line, a chalkboard reading CATCH REVIEW, a television showing a pier, a framed lighthouse picture and a framed fishing-boat picture on the wall, the bar's name mirrored on the window"
     },
     {
       "file": "options/2026-08-17/option-4.png",
-      "caption": "SWDINK cartoon, SWDDREW with a martini and SWDMANGO reading his phone at the counter of a barroom, a school bus in traffic under palm trees seen through the window with the bar's name mirrored on the glass, a television reading SCHOOL OPEN, a chalkboard reading FIRST BELL LAST CALL, a wall clock and a framed flag"
+      "caption": "SWDINK cartoon, SWDDREW with a martini and SWDMANGO reading his phone at the counter of a barroom, a bus lettered SCHOOL BUS in traffic under palm trees seen through the window with the bar's name mirrored on the glass, a television reading SCHOOL OPEN, a chalkboard reading FIRST BELL LAST CALL, a wall clock and a framed flag"
     },
     {
       "file": "cartoons/2026-07-24-diversification/cartoon.png",
-      "caption": "SWDINK cartoon, SWDMANGO holding up a page of charts and pointing at it while SWDDREW recoils with a wing raised, a ringing telephone and a framed flamingo family photo on the counter of a barroom, a television with a falling market line, shelves of bottles behind"
+      "caption": "SWDINK cartoon, SWDMANGO holding up a page of charts and pointing at it while SWDDREW recoils with a wing raised, a ringing telephone, an envelope and a framed flamingo family photo on the counter of a barroom, a television with a falling market line, shelves of bottles behind, one bottle label bearing a small number"
     },
     {
       "file": "cartoons/2026-07-28-the-fee-structure/cartoon.png",

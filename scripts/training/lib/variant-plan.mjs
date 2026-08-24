@@ -33,12 +33,22 @@ export const MAX_VARIANTS = 30;
 // wardrobe, and the line-art base body that fixes his proportions — and his
 // LACK of a tail, which the instruction repeats because the one thing a
 // Mango variant must never inherit from Kontext's imagination is the tail).
+// A tile can be a training-set crop name, or a direct cut from a repo image
+// — used where the training set has no clean example (Mango's rendered bust).
+export const MANGO_BUST = {
+  src: "cartoons/2026-08-04-an-emerging-asset/cartoon.png",
+  box: [780, 150, 474, 600],
+};
+
 export const CASTS = [
   {
     id: "mango",
     tokens: "SWDMANGO",
     who: "the golden retriever in the grey sport coat",
-    tiles: ["dog-lapel-pin-bible-01", "dog-full-body-sheet-01"],
+    // The bust tile is cut from a finished cartoon, not the pin bible: the
+    // bible's busts give him the black bead eyes canon bans, and a reference
+    // eye becomes every generated eye.
+    tiles: [MANGO_BUST, "dog-full-body-sheet-01"],
     tileNote:
       "Both panels of the reference show the SAME golden retriever: left is his face and jacket fully rendered, " +
       "right is his full body construction in plain line. He has NO tail.",
@@ -68,7 +78,7 @@ export const CASTS = [
     id: "mango-abby",
     tokens: "SWDMANGO and SWDABBY",
     who: "the golden retriever in the grey sport coat and the white terrier woman",
-    tiles: ["dog-lapel-pin-bible-01", "abby-full-body-sheet-01"],
+    tiles: [MANGO_BUST, "abby-full-body-sheet-01"],
     tileNote:
       "The reference shows two DIFFERENT characters side by side: left the golden retriever, right the terrier woman. " +
       "Draw both, distinct, neither with a tail.",
@@ -78,7 +88,7 @@ export const CASTS = [
     id: "drew-mango",
     tokens: "SWDDREW and SWDMANGO",
     who: "the flamingo and the golden retriever in the grey sport coat",
-    tiles: ["flamingo-wardrobe-sheet-01", "dog-lapel-pin-bible-01"],
+    tiles: [MANGO_BUST, "flamingo-wardrobe-sheet-01"],
     tileNote:
       "The reference shows two DIFFERENT characters side by side: left the flamingo, right the golden retriever. " +
       "Draw both, distinct; the retriever has no tail.",
@@ -98,7 +108,7 @@ export const CASTS = [
     id: "trio",
     tokens: "SWDDREW, SWDMANGO and SWDABBY",
     who: "the flamingo, the golden retriever in the grey sport coat, and the white terrier woman",
-    tiles: ["flamingo-wardrobe-sheet-01", "dog-lapel-pin-bible-01", "abby-full-body-sheet-01"],
+    tiles: ["flamingo-wardrobe-sheet-01", MANGO_BUST, "abby-full-body-sheet-01"],
     tileNote:
       "The reference shows three DIFFERENT characters side by side: the flamingo, the golden retriever, the terrier " +
       "woman. Draw all three, each distinct; no character has a tail.",
