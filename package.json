@@ -19,7 +19,7 @@
     "training:refs": "node scripts/training/make-variant-refs.mjs"
   },
   "dependencies": {
-    "next": "^15.3.0",
+    "next": "15.4.11",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "sharp": "^0.34.1"
