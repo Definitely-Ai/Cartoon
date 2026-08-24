@@ -48,6 +48,11 @@ execFileSync(
   { cwd: repoRoot, stdio: "inherit" }
 );
 
+// The repo's package.json says "type": "module" (Vercel's middleware pipeline
+// requires it), which would make Node parse the CommonJS output above as ESM.
+// A local package.json in the build dir restores the correct parse mode.
+fs.writeFileSync(path.join(build, "package.json"), JSON.stringify({ type: "commonjs" }));
+
 const master = fs.readFileSync(path.join(repoRoot, "canon", "MASTER-PROMPT.md"), "utf8");
 const require = createRequire(import.meta.url);
 const { assemblePrompt, generateCartoonArt, isFineTuned } = require(path.join(build, "lib", "generate.js"));

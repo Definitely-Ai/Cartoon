@@ -1,6 +1,7 @@
 {
   "name": "cartoon-site",
   "private": true,
+  "type": "module",
   "description": "Static site for the cartoon company. The repo's filesystem is the CMS: /cartoons and /canon are read at build time.",
   "scripts": {
     "predev": "node scripts/validate-character-canon.mjs && node scripts/prebuild.mjs",
