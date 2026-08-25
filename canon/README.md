@@ -1,5 +1,9 @@
 # The Canon — read this first
 
+> **Authority: `HARRINGTON-VISION.md` and the plates in `canon/vision/` sit at
+> the top of the ladder — wherever any document below disagrees with them, the
+> vision wins.**
+
 <!-- BRAND: replace when final — "The Swinging Door" is the working series/bar name throughout this document -->
 
 This folder is the drawing bible for The Swinging Door: everything an AI needs to generate cartoons the founder recognizes as *his strip*. If you are an AI connecting for the first time — through the studio's chat connector or by reading the repo directly — this page is your map.

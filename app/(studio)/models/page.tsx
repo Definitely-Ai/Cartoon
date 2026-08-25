@@ -13,17 +13,17 @@ type Proof = { file: string; caption: string };
 const CAST = [
   {
     name: "Drew",
-    line: "the flamingo — bow tie always, dressed for the scene, martinis at the bar",
+    line: "the flamingo — question-mark neck, heavy-lidded eyes, sweater vest and bow tie, martini in a pinky-elegant grip",
     sheets: ["/canon/flamingo/full-body-sheet.png", "/canon/flamingo/identity-sheet.png"],
   },
   {
     name: "Mango",
-    line: "the golden retriever — grey coat, open collar, flag pin on the left lapel, no tail",
+    line: "the golden retriever — black dog lips, flag pin at the chest (lapel when jacketed), wristwatch, old fashioned, no tail",
     sheets: ["/canon/dog/full-body-sheet.png", "/canon/dog/identity-sheet.png"],
   },
   {
     name: "Abby",
-    line: "the westie — owns The Swinging Door and tends its bar; towel, pearls, heels, no tail",
+    line: "the westie — owns The Swinging Door; fluffy button-eyed face, studded gem-pendant collar, towel and heels, no tail",
     sheets: ["/canon/abby/full-body-sheet.png", "/canon/abby/identity-sheet.png"],
   },
 ];

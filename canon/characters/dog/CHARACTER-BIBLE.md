@@ -1,3 +1,9 @@
+> **SUPERSEDED WHERE IT DISAGREES — `canon/HARRINGTON-VISION.md` and the
+> plates in `canon/vision/` now govern this character's design, rendering,
+> and wardrobe. Use this document only for structure that the vision does not
+> address; every visual detail below yields to the plates and the founder's
+> review notes.**
+
 # Mango Character Bible
 
 This document turns Mango's locked model into repeatable production decisions. `DESCRIPTION.md` is the compact authority; `full-body-sheet.png` is the highest visual authority; the MANGO paragraph in `canon/MASTER-PROMPT.md` is the only paste-ready identity text. This bible explains how to preserve all three across expressions, poses, wardrobe, props, and scenes.

@@ -1,3 +1,9 @@
+> **SUPERSEDED WHERE IT DISAGREES — `canon/HARRINGTON-VISION.md` and the
+> plates in `canon/vision/` now govern this character's design, rendering,
+> and wardrobe. Use this document only for structure that the vision does not
+> address; every visual detail below yields to the plates and the founder's
+> review notes.**
+
 # Drew Production Quality Control
 
 An output is approved only when every critical gate passes **against the actual generated pixels**, with the fetched sheets open beside it — reading the prompt back is not inspection. A good joke or attractive rendering never excuses character drift. Any failure means **reject and redraw with the fault named in the prompt** — never a filing. This checklist merges Drew's identity gates with the stage rules of `canon/creation/SCENE-QC.md`; run both.

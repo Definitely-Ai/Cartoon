@@ -158,27 +158,27 @@ async function checkText(relativePath, required, forbidden) {
 await checkText(
   "canon/characters/flamingo/DESCRIPTION.md",
   [
-    "46-year-old male anthropomorphic flamingo",
-    "long, slim neck with a pronounced, smooth flamingo S-curve",
-    "small, lively, and avian",
-    "feathered wing-arms",
-    "tiny, pale, understated avian nail tips",
-    "base model wears no other clothing",
-    "exactly three olives on one pick",
+    "question-mark sweep",
+    "heavy-lidded",
+    "four-fingered hands with an opposed thumb",
+    "sweater vest",
+    "trousers",
+    "drew-reference.jpg",
   ],
-  ["small round head; thin, straight beak", "Dot eyes with a single brow stroke each"],
+  ["small round head; thin, straight beak", "Dot eyes with a single brow stroke each", "wears only the bow tie"],
 );
 
 await checkText(
   "canon/MASTER-PROMPT.md",
   [
-    "46-year-old male anthropomorphic flamingo",
-    "long slim neck held in a pronounced smooth S-curve",
-    "small lively avian eyes",
-    "layered feathered wing-arms",
-    "full-body-sheet.png",
+    "question-mark sweep of a true flamingo",
+    "heavy-lidded and deadpan",
+    "four fingers and an opposed thumb",
+    "canon/vision/drew-reference.jpg",
+    "black dog lips",
+    "studded leather collar",
   ],
-  ["small round head, thin straight beak, dot eyes with single brow strokes"],
+  ["small round head, thin straight beak, dot eyes with single brow strokes", "wears only the bow tie"],
 );
 
 // Light no-tail guards for the newer characters.

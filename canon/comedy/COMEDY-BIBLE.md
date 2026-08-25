@@ -76,3 +76,21 @@ Standing subject matter: politics, financial markets, sports, media, civic habit
 ## Target Reader
 
 A thoughtful adult of any political background — the reader who follows the news, owns an index fund or at least an opinion about one, stands for the anthem, and can laugh at the institutions they still basically believe in. They read gag panels in magazines and comics in the physical paper; they distrust propaganda from every direction; they know the difference between a joke about power and a joke about people. The strip is for the person on the next stool.
+
+
+## The Harrington register (the founder's plates — canonical examples)
+
+The seven reference gags, each the model of a lane:
+
+1. *Drew: "The security line is our most successful national team-building exercise."* — institutional absurdity, affectionate.
+2. *Mango: "I've reached the age where I don't want luxury. I just want knee room."* — aging and airline economics, wallet height.
+3. *Drew: "It's comforting to see our emergencies becoming traditions."* — the debt ceiling as an annual holiday.
+4. *Drew: "Retirement planning is just estimating how expensive your hobbies are going to become."* — personal finance, dry.
+5. *Drew: "The republic remains blue in concept, green in operations."* — civic decay observed like weather.
+6. *Mango: "I don't mind paying more. I just like to know which country I'm punishing."* — tariffs, from the barstool.
+7. *Drew: "Golf is the only sport where everyone complains about the speed and then takes a practice swing."* — the clubhouse worldview.
+
+Rules of the register: the target is systems, never named people; the caption
+under-plays while the signage escalates; Drew diagnoses, Mango pays; twenty
+words or fewer, dry, unhurried. The caption is typeset as attributed italic
+dialogue beneath the panel — `Drew: "…"` — one speaker, one line.

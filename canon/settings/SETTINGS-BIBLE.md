@@ -6,25 +6,47 @@ Purpose: where the strip happens, drawn the same way every time. Source: the fou
 
 ## The Swinging Door (primary setting)
 
-Most cartoons occur inside **The Swinging Door**, a classic American bar. It should feel established, comfortable, and slightly old-fashioned:
+**Governed by `canon/HARRINGTON-VISION.md` and the plates in `canon/vision/`.**
+Most cartoons occur inside **The Swinging Door**, a classic dark-wood American
+barroom with a nineteenth-hole soul — the golf-club bar of a company town that
+happens to be Washington:
 
-- Wooden paneling and bar stools; darts on the wall if the gag wants them.
-- Drink coasters on the bar.
-- Framed Americana on the walls — but the walls should **not** be overly crowded.
-- A chalkboard with daily specials and clever jokes.
-- A small flatscreen TV always appears in the bar (position fixed by the room map); news or sporting events should generally be on it. The TV is how the day's events enter the room.
-- **The TV and the chalkboard are always both present, and both are play**: a cartoon may hinge its joke or its punchline on what the TV shows or what the chalkboard says — different cartoons should use each in turn.
-- When inside the bar, the bar name appears in the window **as a reverse image** — lettered as it would normally read from outside.
+- Leather club chairs and stools with brass studs; dark panelling; wood grain
+  drawn in fine engraved strokes.
+- Framed script signs reading *"The Swinging Door"* on the walls; the window
+  sign reversed as read from inside; framed prints of airplanes, landmarks,
+  and golfers.
+- The **back bar**: rows of bottles with golf-pun labels (BIRDIE BOURBON,
+  19TH HOLE RYE, PAR-TEE SCOTCH, DIVOT DRIVE GIN, EAGLE EYE RYE — that
+  register), a mirror, glassware.
+- A **large flatscreen TV over the back bar** playing the news in full
+  broadcast grammar: DCN network bug + LIVE tag, bold-caps headline chyron,
+  a smaller ticker sentence, a time stamp — the on-screen picture drawn in
+  the same engraved style. The TV is how the day enters the room, and its
+  chyron is a standing gag surface.
+- A **chalkboard** of menu-shaped jokes in hand-lettered chalk serifs
+  (FIRST CLASS MARTINI $18 · PREMIUM ECONOMY MARTINI $17 · BASIC ECONOMY
+  MARTINI $17). A second board or small framed notices when the gag wants
+  them (NO CHASING YOUR BALLS IN HERE).
+- Event dressing as needed: banners and balloons (16th ANNUAL DEBT CEILING
+  WEEK), commemorative-shirt signs, a globe with price tags.
+- The shared nut bowl centered between the regulars' drinks; napkins and
+  coasters under every glass.
+- **The room is furnished with jokes**: signage is a gag layer, and the panel
+  is drawn full, corner to corner — density is the style.
 
 ## The room, mapped (fixed — it never moves)
 
-Continuity comes from the room being the same room every day. Camera: eye level, from across the room, the **straight** dark-wood bar running along the lower third. Regulars would notice if a stool moved; so should the model.
+Continuity comes from the room being the same room every day. Camera: eye
+level from the room, the dark-wood bar running along the lower third.
 
-- **Front window** — upper right, the bar's name lettered in reverse.
-- **TV** — a small flatscreen, high on the left wall, slightly angled down.
-- **Chalkboard** — behind the bar, right of center.
-- **Framed Americana** — a few pieces on the wood paneling, never crowded.
-- **Bar** — dark wood, straight, stools on the room side, shelves and a mirror behind.
+- **TV** — the large flatscreen, mounted over the back bar.
+- **Chalkboard** — on the wall beside the back bar shelves.
+- **Framed "The Swinging Door" script sign** — on the wall; the reversed
+  window sign upper right when the front window is in frame.
+- **Bar** — dark wood, stools and club chairs on the room side, pun-labeled
+  bottles and mirror behind.
+- **Drew frame-left, Mango frame-right**, the nut bowl between their glasses.
 
 ## Stage rules (the physics of every panel)
 
@@ -47,7 +69,7 @@ The setting may leave the bar, staying Americana-adjacent: sporting events, fish
 - **Fishing** — a pier rail or a small boat (two bench thwarts); rods actually held or wedged against a rail; the cooler is the prop surface; water and horizon level.
 - **Golf** — tee box or green; clubs gripped or leaning on the bag; the cart parked level.
 - **Parade / street** — curb or folding chairs; flags held, not floating.
-- **The news enters by prop** — a folded newspaper, a portable radio, a phone at reading distance with two or three short words at most. No TV, no chalkboard outdoors.
+- **The signage comes along** — away games keep the two-layer text system: posted notices, banners, dials, and markers carry the institutional joke (ALL PASSENGERS ALL THE TIME, NO EXCEPTIONS (ESPECIALLY YOU); PREPARE TO BE HUMBLED; the ELEVATED threat dial; HOLE 3 markers). Short, hand-lettered, legible.
 
 ## Rules of the room
 

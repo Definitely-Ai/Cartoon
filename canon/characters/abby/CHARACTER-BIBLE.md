@@ -1,3 +1,9 @@
+> **SUPERSEDED WHERE IT DISAGREES — `canon/HARRINGTON-VISION.md` and the
+> plates in `canon/vision/` now govern this character's design, rendering,
+> and wardrobe. Use this document only for structure that the vision does not
+> address; every visual detail below yields to the plates and the founder's
+> review notes.**
+
 # Abby Character Bible
 
 <!-- BRAND: replace when final — "The Swinging Door" is the working series/bar name throughout this document -->

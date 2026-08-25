@@ -1,94 +1,90 @@
 # The Master Prompt
 
-<!-- BRAND: replace when final — "The Swinging Door" is the working series/bar name throughout this document -->
+<!-- BRAND: "The Swinging Door" is the series/bar name throughout this document -->
 
-Purpose: the one page an AI reads before drawing. The BASE block below is assembled from the whole canon and is pasted **verbatim** into every image request; only the slots change per cartoon (away games additionally swap the setting passage — see below). Do not paraphrase the base — paraphrase is how the strip drifts. When two documents disagree, the authority ladder in `canon/README.md` decides; never average.
+Purpose: the one page an AI reads before drawing. The BASE block below is assembled
+from the whole canon — now governed by `canon/HARRINGTON-VISION.md` and the plates
+in `canon/vision/` — and is pasted **verbatim** into every image request; only the
+slots change per cartoon (away games additionally swap the setting passage — see
+below). Do not paraphrase the base — paraphrase is how the strip drifts. When two
+documents disagree, the Harrington vision wins; below it, the authority ladder in
+`canon/README.md` decides; never average.
 
 ## How to use
 
 1. Paste the BASE block exactly as written (the fenced block only — nothing outside the fence).
-2. Fill the three slots: `[SCENE]`, `[TV]`, `[BOARD]`. Slot language obeys each character's vocabulary: Mango and Abby have **hands**, never "paws"; Drew has **wing-hands / feather-digits**, never "hands" or "arms".
-3. Give the image model the reference sheets for every character in the scene. Over the studio connector, fetch them with `get_model_sheet` and include the returned images as generation references; working directly in the repo, attach the files. Per character:
-
-   | Character | Always | When also |
-   | --- | --- | --- |
-   | Drew | `full-body-sheet.png` (locked master) | `identity-sheet.png` when the face is readable — in practice every bar scene; `wing-hand-sheet.png` when a gesture or held prop is readable |
-   | Mango | `full-body-sheet.png` + `identity-sheet.png` | `lapel-pin-bible.png` whenever he is jacketed |
-   | Abby | `full-body-sheet.png` + `identity-sheet.png` | exactly one relevant specialist sheet (blocking, actions, hands-props, wardrobe, or expression) |
-
-   The locked master always outranks support sheets and older cartoons; match it, never average.
-4. The caption is **never sent to the image model**. The house typesets the exact caption beneath the approved text-free illustration — `file_cartoon` does it over the connector; `npm run dialogue` does it when working directly in the repo. Never render words in the image either way.
-5. **Look at every generated image before filing it.** Run the checklist below and `canon/creation/SCENE-QC.md` against the actual pixels. Any failure is a redraw with the fault named in the prompt — never a filing.
+2. Fill the slots: `[SCENE]`, `[TV]`, `[BOARD]`. Slot language obeys each character's vocabulary: Mango and Abby have **hands**; Drew has **feathered hands** (hand-shaped, feather-covered — never bare human skin).
+3. Give the image model the reference plates for the style and every character in the scene: the four Harrington plates in `canon/vision/` are the standing style-and-character reference. Over the studio connector, fetch them with `get_model_sheet`; working directly in the repo, attach the files.
+4. The caption is **never rendered by the image model**. The house typesets it beneath the finished art as attributed italic dialogue — `Drew: "…"` / `Mango: "…"` / `Abby: "…"` — via `file_cartoon` over the connector or `npm run dialogue` in the repo. In-image signage, by contrast, IS the image model's job (see the text rules inside the BASE block).
+5. **Look at every generated image before filing it.** Run the checklist below against the actual pixels. Any failure is a redraw with the fault named in the prompt — never a filing.
 
 ## BASE block
 
 ```text
-A single-panel gag cartoon in black-and-white ink wash, in the manner of a dry mid-century American magazine cartoon: confident, variable-weight brush linework over soft gray washes; exactly three values (paper white, one mid-gray wash, solid black ink); no color, no photorealism, no 3D-render or anime look.
+A single-panel gag cartoon drawn like an antique steel engraving: fine pen crosshatching and stippling on every surface — wood grain, knit stitches, fur and feathers laid in individual strokes, glass catching light — with a full tonal range from deep rich blacks through silvery greys to bright paper highlights. Confident contour lines over the hatching. The panel is composed full, corner to corner, and rewards a second look. Black-and-white only; no flat fills, no cel shading, no photographic rendering, no color.
 
-THE ROOM. The scene is the interior of The Swinging Door, a classic old American bar, drawn at eye level from across the room. The dark-wood bar runs straight along the lower third, stools on the room side, shelves and a mirror behind it. The front window, upper right, carries the bar's name lettered in reverse, as read from inside. A small flatscreen TV sits high on the left wall, showing [TV]. A chalkboard behind the bar, right of center, reads [BOARD]. The TV and the chalkboard are always both in the room. A few pieces of framed Americana hang on wood paneling — the walls are never crowded.
+THE ROOM. The scene is the interior of The Swinging Door, a classic dark-wood barroom with a nineteenth-hole soul: leather club chairs and stools with brass studs, framed script signs reading "The Swinging Door", framed prints of airplanes and landmarks, and a back bar of bottles whose labels are golf puns (BIRDIE BOURBON, 19TH HOLE RYE, PAR-TEE SCOTCH, DIVOT DRIVE GIN — that register). A large flatscreen TV mounted over the back bar plays the news with full broadcast grammar — the DCN network bug with a LIVE tag in the corner, a bold-caps headline chyron across a lower-third band with a smaller ticker sentence beneath it and a time stamp at its right edge — the on-screen picture drawn in the same engraved style; screen and chyron read [TV]. A chalkboard carries menu-shaped jokes in hand-lettered chalk serifs, reading [BOARD]. Peanut bowls and coasters on the bar. The room is furnished with jokes: every sign, label, and screen may carry one.
 
-THE STAGE. The staging is physically real. Behind the bar is the service side — only the bartender works there; patrons stay on the room side. Anyone seated sits squarely on a stool, hips on the seat, legs resolved. Every glass and bottle rests flat on the bar, a coaster, or a shelf, or sits in a real closed grip; hands touch props at plausible contact points. No figure or object merges, clips, or passes through another; the furniture stays exactly where this room map fixes it.
+THE STAGE. The staging is physically real. Behind the bar is the service side — only the bartender works there; patrons stay on the room side. Anyone seated sits squarely, hips on the seat, legs resolved. Every glass and bottle rests flat on the bar, a coaster, or a shelf, or sits in a real closed grip; hands touch props at plausible contact points. No figure or object merges, clips, or passes through another.
 
-DREW. Preserve Drew exactly from the attached locked master: a 46-year-old male anthropomorphic flamingo of average healthy build, with a compact mature head, a pale-and-dark angular downturned flamingo beak, a long slim neck held in a pronounced smooth S-curve, and small lively avian eyes with controlled visible white, distinct iris and darker pupil, one restrained catchlight, fine lid contours, and clearly directed gaze. His arms are layered feathered wing-arms ending in three articulated feather-digits with only tiny pale avian nail tips; he stands on long slim bird legs with webbed flamingo feet. His permanent accessory is one small solid-black bow tie, and he is never bare: over his feathers he wears simple clothing suited to the scene — light and understated, one or two apt pieces (a waistcoat, a sport coat, a golf sweater and flat cap), never covering the bow tie, never shoes on his bird feet. At the bar his default is a trim dark waistcoat. In the standard bar scene he stands or leans at the room side of the bar, and his martini is always with him there — a classic clear martini in a stemmed triangular glass with exactly three olives on one pick, resting on a coaster within reach or held in his feather-digit grip. Away from the bar the martini is optional.
+DREW. Preserve Drew exactly as the reference plates draw him (canon/vision/drew-reference.jpg is the definitive study): a white-plumed anthropomorphic flamingo, plump and soft-bodied, his feathers laid in rows of fine dash-strokes. His long neck is thick at the shoulders and curves upward in the deep question-mark sweep of a true flamingo — never straight, never goose-stiff. Compact head; the heavy downturned flamingo beak, pale with a bold black tip, a fine nostril slit, and a small smile-line at its base. His eyes are heavy-lidded and deadpan — visible white, distinct dark iris and pupil, a drooping upper lid and drawn brow reading as dry unimpressed intelligence — never a bird dot. A crisp starched white collar band circles the base of his neck under his small solid-black silk bow tie; he wears a V-neck knitted sweater vest in fine honeycomb stitch with ribbed edges over a pale collared shirt, and trousers. His feathered hands have four fingers and an opposed thumb with a soft fluffy cuff at the wrist — they grip a martini stem, a pen, or a list with fully believable human grips, and long scalloped tiers of wing feathers hang beneath each forearm. At the bar his martini — conical stemmed glass, olives on a pick, on a napkin or coaster — is always within reach, held by the stem in a dainty, pinky-elegant grip when lifted. He is the brightest object in the panel: reserve the paper's white for him. His default seat is frame-left, neck arched so his face hangs where the gag needs it, eye sliding sideways at his companion. At golf he adds a visor; a monocle is an approved occasional accessory.
 
-MANGO. Mango matches the attached Mango master and identity sheets exactly: a 46-year-old male anthropomorphic golden retriever with an upright human-readable body, solid soft middle-aged build, rounded shoulders, modest belly, sturdy legs, a thin neck with almost no throat ruff, textured face and feathered drop ears, human-shaped five-finger hands with subtle paw pads, broad canine feet, and absolutely no tail. His emotionally readable eyes show distinct paper-white sclera, a separate mid-gray iris, a separate round black pupil, controlled catchlights, subtle lids, short lashes, and soft fur-brow arcs. In the standard bar scene he sits on a stool with human posture at the room side of the bar, wearing a collared shirt under a rumpled jacket; the exact simplified waving USA flag pin from the attached pin reference is fixed to the left lapel, and an old fashioned — short rocks glass, one large cube — rests flat on the bar in front of him. Mango's wardrobe may change only when [SCENE] requires it; his body and identity never change.
+MANGO. Mango is unmistakably a golden retriever, drawn like one (canon/vision/mango-reference.jpg is the definitive study): layered fur in fine individual strokes, drop ears with long fringe, the broad soft-eyed retriever face with a freckled muzzle — and true black dog lips, the dark lip-line running along the muzzle from under his black nose; his chest ruff kept modest, never a heavy neck-beard. Middle-aged and solid, rounded shoulders, modest belly, absolutely no tail. His fixed read is the worried, earnest everyman — raised inner brows, a faint forehead wrinkle — against Drew's deadpan. For evening and news-watching panels he wears a rumpled dark herringbone sport coat over a pale open-collared shirt, no tie, the small USA flag pin on the left lapel; for daytime, travel, and golf he wears a pale collared polo with the pin on the left chest, a belt, and (outdoors) a ball cap. A wristwatch on the left wrist always. His old fashioned — short rocks glass, one large cube, a dark cherry — rests flat on the bar at frame-right, and the shared bowl of bar nuts sits centered between the two drinks.
 
-Expressions are restrained, specific, and dry, and every gaze remains alive. Wardrobe takes the setting's influence lightly: at most one apt piece per character (a flat cap at the tee, rolled sleeves at sea) — never a costume change, and never touching the anchors: Drew's bow tie, Mango's left-lapel pin, Abby's work outfit. No speech balloons, no thought bubbles, no caption text, and no lettering anywhere in the image except the short text this prompt's setting names (in the bar: the reversed window sign, the short chalkboard lines, and the TV screen; outdoors: the news prop's two or three short words). One clear focal action; generous white space. [SCENE]
+Text inside the panel lives ON things and is a gag layer: menu boards, TV chyrons, banners, bottle labels, and small framed notices may each carry a short, legible, hand-lettered joke. No speech balloons, no thought bubbles, and no floating caption text inside the art — the dialogue is typeset beneath the panel by the house. Expressions are restrained, dry, and alive; one clear focal action; the funniest sentence in the panel is often on the wall. [SCENE]
 ```
 
-Add **only when the gag needs her** (about one cartoon in ten), with the attached Abby master plus one specialist sheet:
+Add **only when the gag needs her**, with the same plates as style reference:
 
 ```text
-ABBY. Abby is the adult female anthropomorphic West Highland White Terrier who owns and works The Swinging Door. Match her attached sheets exactly: compact textured Westie head, upright triangular ears, short canine muzzle, black canine nose, and medium-sized living human-style eyes integrated into the canine face with visible white sclera, separate gray irises, separate black pupils, controlled catchlights, clear lids, refined lashes, and expressive brow-fur. She has an upright feminine hourglass build with a fuller bust, narrow waist, slim hips, smooth shapely legs of short white fur, a natural thigh gap, five-digit hands, and absolutely no tail. Her locked work outfit is a fitted light collared blouse with rolled sleeves and only the top button open over modest scalloped lace, a very short dark fitted bartender skirt/apron with a centered back bow, a folded towel on her left shoulder, a delicate bracelet, black closed-toe mid-height heels, and one close strand of small round pearls with a centered oval faceted gemstone. Her default expression is a welcoming, intelligent smile unless [SCENE] names another approved expression. She is quick-witted, warm, poised, competent, and in charge. In the standard bar scene she is behind the bar, visibly mid-task, and the counter correctly hides her from the upper hip down.
+ABBY. Abby is the adult female anthropomorphic West Highland White Terrier who owns and works The Swinging Door, drawn in the same engraved technique (canon/vision/abby-reference.jpg is the definitive face study): a true fluffy westie face in fine individual fur strokes — round dark button eyes, black nose, small pricked ears — soft and bright, never coarse or wolfish. Her signature neckwear is a studded leather collar with a small teardrop gem pendant hanging at its center. Trim, natural figure with slim hips and legs and a modest bust — never exaggerated. She wears her fitted light blouse with rolled sleeves, a very short dark fitted skirt, a folded towel on her left shoulder, the studded collar with its gem pendant, a pearl bracelet, and black heels; absolutely no tail. In the standard bar scene she is behind the bar, visibly mid-task, the counter hiding her from the upper hip down.
 ```
 
 ## The slots
 
-- `[SCENE]` — one sentence: who is doing what. Example: *"Mango is mid-story with a raised hand while Drew signals toward the taps without looking away from the TV."* (Hands for Mango and Abby; wing-hands for Drew — never "paw" in a slot.)
-- `[TV]` — two or three words on the screen: `MARKETS OPEN`, `BREAKING`, `DOW −312`. The TV is how the day's news enters the room.
-- `[BOARD]` — two to four chalk words, allowed to carry a background gag: `PATIENCE, SERVED DAILY`, `HAPPY HOUR 4–?`.
-- Both fixtures are play, not furniture: a cartoon may hinge its joke or its punchline on what the TV shows or what the chalkboard says — vary which across a batch.
-- `[SETTING]` (away games only) — one phrase naming the approved destination: *"a small two-thwart fishing boat on calm water"*. Away games swap [TV] and [BOARD] for [SETTING].
+- `[SCENE]` — one or two sentences: who is doing what, and any event dressing (a banner, a globe, a prop). Example: *"Mango studies a globe covered in small price tags while Drew lifts his martini toward it."*
+- `[TV]` — the news on screen, in broadcast grammar (headline chyron; optionally a ticker sentence and what the picture shows): `NATIONAL MALL RENOVATION TROUBLES — ticker: REFLECTING POOL CLEANUP CONTINUES AFTER ALGAE BLOOM, PEELING PAINT REPORTED — picture: workers skimming the reflecting pool before the Lincoln Memorial`, or `RETIREMENT PLANNING — PLAN TODAY. YOUR FUTURE SELF IS WATCHING`. The network is DCN, always LIVE.
+- `[BOARD]` — the chalkboard's menu-shaped joke, two to six short lines: `FIRST CLASS MARTINI $18 / PREMIUM ECONOMY MARTINI $17 / BASIC ECONOMY MARTINI $17`, `TODAY'S SPECIAL: IMPORTED BEER $8 / PATRIOTIC IMPORTED BEER $12`.
+- `[SETTING]` (away games only) — one phrase naming the destination: *"an airport security line"*, *"the tee of a busy golf course"*. Away games swap [TV] and [BOARD] for [SETTING]; the signage layer comes along (posted notices, banners, threat-level dials, hole markers — short and hand-lettered).
+- Both fixtures are play, not furniture: a cartoon may hinge its joke on what the TV shows or what the board says — vary which across a batch.
 
 ## Away games (leaving the bar)
 
-THE ROOM and THE STAGE paragraphs are the **setting passage** — the only part of the BASE block that may be replaced, and only when the scene leaves the bar (see `canon/settings/SETTINGS-BIBLE.md` → Away games). The character paragraphs and the style/text rules are identity and are never altered. For an outdoor scene, substitute this setting passage and keep everything else verbatim:
+THE ROOM and THE STAGE paragraphs are the **setting passage** — the only part of the BASE block that may be replaced, and only when the scene leaves the bar. The character paragraphs and the style/text rules are identity and are never altered. For an outdoor or away scene, substitute this setting passage and keep everything else verbatim:
 
 ```text
-THE SETTING. An outdoor Americana scene: [SETTING]. Drawn at eye level with a clear foreground stage. There is no TV and no chalkboard; the day's news enters through a prop — a folded newspaper, a portable radio, a phone screen held at reading distance with at most two or three short words visible.
+THE SETTING. An American scene drawn with the same engraved density: [SETTING]. Posted signage does the institutional talking — notices, banners, dials, markers — each short, hand-lettered, and in on the joke.
 
-THE STAGE. The staging is physically real. Anyone seated sits squarely on what supports them — a bench, a boat thwart, a folding chair — hips on the seat, legs resolved. Rods, clubs, tools, and drinks sit in real closed grips or rest on real surfaces; hands touch props at plausible contact points. No figure or object merges, clips, or passes through another. Water, ground, and horizon stay level and consistent.
+THE STAGE. The staging is physically real. Anyone seated sits squarely on what supports them; tools, clubs, luggage, and drinks sit in real closed grips or rest on real surfaces; hands touch props at plausible contact points. No figure or object merges, clips, or passes through another. Ground and horizon stay level and consistent.
 ```
+
+## The captions
+
+Typeset beneath the panel, italic serif, centered, as attributed dialogue — one speaker, one dry line:
+
+> *Drew: "It's comforting to see our emergencies becoming traditions."*
+> *Mango: "I don't mind paying more. I just like to know which country I'm punishing."*
+
+The line under-plays the panel; the signage escalates it. Twenty words or fewer.
 
 ## Never draw
 
-- Color. Ever. Including the flag pin — it reads by shape.
-- Speech balloons, thought bubbles, or any caption lettering inside the panel.
-- Drew without his bow tie; Drew bare-feathered with no clothing at all; Drew with a short or straight neck, thin straight beak, black bead eyes, human arms or hands, human legs or feet, shoes, extra wings, or one scene's clothing treated as permanent; Mango without his flag pin when wearing a lapeled jacket.
-- A tail on Mango or Abby. Never give Abby a tail slit, tuft, bulge, furry legs, paw feet, bead eyes, plain choker, long skirt, trousers, missing lace, or missing pearl-and-gem collar. Never give Mango a thick or beard-hidden neck, quadruped forepaws, black bead eyes, or a different body under new clothes.
-- Mango's pin on the right lapel, mounted to a pole, oversized, or rendered with dense tiny stars/stripes; use the locked nine-star, seven-band waving pin.
-- The bartender's side of the bar occupied by a patron, or the bartender casually patron-side (owner tasks only — see the settings bible).
-- A seated character with no stool or seat under them; a floating, fused, or clipped glass, prop, or limb.
-- Long legible text anywhere: only the setting's named short-text carriers (bar: window, chalkboard, TV; away game: the news prop), all short — image models garble prose.
-- A modern sports bar: no neon, no wall of screens, no crowds — the one small flatscreen high on the left wall is the room's only screen. Background patrons only if the gag needs them, minimal and faceless.
-- Crowded walls, busy compositions, more than one focal action.
-
-## Training-week protocol (while the bible is being tuned)
-
-Every batch is an experiment, not five rolls of the same dice:
-
-- Vary **one deliberate thing per candidate** — a looser or tighter wash, a longer or shorter caption, gag carried by the TV vs. a prop vs. pure posture (prop-only news is an away-game variation), Abby present or absent, wider or closer framing.
-- Tag each candidate's variation in `file_cartoon`'s `style_notes` ("8-word caption", "no TV, prop gag") — his reactions then attach to *known* differences.
-- When the founder's feedback names a pattern (see `get_feedback`), let the next batches test the fix, and say what you changed.
-
-**The graduation test (end of the week).** The bible is done when the AI can call his shots. On the last day, before filing a fresh batch, study `get_feedback` and *predict land or miss for each candidate* (a cartoon lands when his art score and caption score are both 6+), writing the predictions down before he sees anything. Then let him score as usual and compare. **Four right out of five means the bible reads his taste well enough to present.** Fewer than that: the misses say exactly which chapter is still thin — revise it and test again the next day.
+- Color. Photographic rendering. Flat cel fills. Sparse, empty compositions — density is the style.
+- Speech balloons, thought bubbles, or floating caption text inside the panel (signage ON objects is required, balloons are banned).
+- Drew with a straight or stiff neck, a bird-dot eye, bare human hands or human skin, missing bow tie, missing sweater vest or trousers in a standard scene, or a long tail of display feathers.
+- Mango as a generic dog: he is a golden retriever in fine detail. No heavy neck-beard, no tail, no missing flag pin (chest on the polo, left lapel on the jacket), no shoes unless the scene names them.
+- Abby coarse-furred or wolfish; wide hips; an exaggerated bust; a tail; her anchors missing (studded gem-pendant collar, towel, heels).
+- A patron on the bartender's side of the bar, or Abby casually patron-side.
+- A seated character with no seat; a floating, fused, or clipped glass, prop, or limb.
+- Long paragraphs of in-image prose: signage is short lines, hand-lettered, legible — a joke, not an essay.
 
 ## Checklist before filing (all must pass — against the actual generated image)
 
-1. Drew matches the locked master: bow tie ✓ S-neck ✓ avian eyes ✓ feathered wing-hands ✓. Mango's left-lapel flag pin ✓ collared shirt under the jacket ✓. Abby when present: pearl-and-gem collar ✓ no-tail silhouette ✓. Window lettering reversed ✓.
-2. Three values, strictly B&W, single panel, generous margins.
-3. **Stage physics** (`canon/creation/SCENE-QC.md`): everyone on the correct side of the bar, seated characters actually on their stools, every drink supported, all grips real, nothing merged or clipping, the room map unchanged.
-4. No balloons and no model-rendered caption in the illustrated panel; the house typesets the exact caption afterward (`file_cartoon` over the connector, `npm run dialogue` in the repo).
-5. The visual gag reads in two seconds without the caption; the caption deepens it rather than explaining it (≤ 20 words, about 140 characters, dry, underplayed).
-6. The boundaries in `/canon/comedy/COMEDY-BIBLE.md` all pass.
-7. 3–5 genuinely distinct takes filed per `/canon/creation/WORKFLOW.md` — different scenes or speakers, not crops of one image.
+1. Style: engraved crosshatch density corner to corner, full tonal range, rich blacks — never sparse, never flat, never photographic.
+2. Drew: flamingo neck curve ✓ human-readable eyes ✓ bow tie ✓ sweater vest + trousers ✓ hand-like feathered hands ✓ martini in reach at the bar ✓.
+3. Mango: reads as a detailed golden retriever ✓ black dog lips along the muzzle ✓ modest ruff ✓ chest pin on polo (lapel on jacket) ✓ wristwatch ✓ no tail ✓ old fashioned ✓.
+4. Abby when present: true fluffy westie face, never wolfish ✓ trim figure, modest bust ✓ studded collar with gem pendant ✓ towel + heels ✓ no tail ✓ behind her counter ✓.
+5. Signage: every board, chyron, banner, and label short, legible, hand-lettered, and carrying its share of the joke; no balloons; no floating text.
+6. Stage physics: correct sides of the bar, seats under sitters, drinks supported, grips real, nothing merged or clipped.
+7. The visual gag reads in two seconds; the attributed caption (typeset by the house, ≤20 words) deepens rather than explains it.
+8. The boundaries in `/canon/comedy/COMEDY-BIBLE.md` all pass — systems are the target, never named people; rueful, fond, unhurried.

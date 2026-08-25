@@ -1,3 +1,9 @@
+> **SUPERSEDED WHERE IT DISAGREES — `canon/HARRINGTON-VISION.md` and the
+> plates in `canon/vision/` now govern this character's design, rendering,
+> and wardrobe. Use this document only for structure that the vision does not
+> address; every visual detail below yields to the plates and the founder's
+> review notes.**
+
 # Abby Production Quality Control
 
 An output is approved only when every critical gate passes **against the actual generated pixels** — reading the prompt back is not inspection. A good joke or attractive rendering never excuses character drift. Any failed gate is a redraw with the fault named explicitly in the prompt, never a filing. This checklist merges the former rejection checklist and final continuity gate; run it together with `canon/creation/SCENE-QC.md`.

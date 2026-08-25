@@ -1,3 +1,9 @@
+> **SUPERSEDED WHERE IT DISAGREES — `canon/HARRINGTON-VISION.md` and the
+> plates in `canon/vision/` now govern this character's design, rendering,
+> and wardrobe. Use this document only for structure that the vision does not
+> address; every visual detail below yields to the plates and the founder's
+> review notes.**
+
 # Drew Character Bible
 
 This document turns Drew's locked model into repeatable production decisions. `DESCRIPTION.md` is the compact prompt authority; `full-body-sheet.png` is the highest visual authority. This bible explains how to preserve both across expressions, poses, wardrobe, props, and scenes.
