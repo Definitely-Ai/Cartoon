@@ -160,10 +160,11 @@ export const CASTS = [
       "terrier woman — her part of the sheet shows her behind the counter of her barroom. Draw all three, each " +
       "clearly distinct.",
     extra:
-      "The flamingo keeps his bow tie, small lively eyes, S-neck, feathered wing-arms and long thin bird legs. " +
-      "The retriever wears his grey sport coat with the left-lapel flag pin and long dark trousers. The terrier " +
-      "woman wears her fitted white blouse, very short dark skirt, black heels, shoulder towel and pearl " +
-      "necklace — never trousers. Every rear is smooth and tailless.",
+      "The flamingo keeps his bow tie, small lively eyes, S-neck, feathered wing-arms and long thin bird legs — " +
+      "behind him hang only his folded wings, no long tail feathers. The retriever wears his grey sport coat " +
+      "with the left-lapel flag pin and long dark trousers. The terrier woman wears her fitted white blouse, " +
+      "very short dark skirt, black heels, shoulder towel and pearl necklace — never trousers. Every rear is " +
+      "smooth and tailless.",
   },
   {
     id: "trio-plain",
@@ -243,18 +244,18 @@ const STAGING = {
     "sheet shows her, the counter hiding her below the waist. The flamingo and the retriever stand on the " +
     "viewer's side of the counter facing it in profile, seen side-on so both faces stay clearly visible. " +
     "The flamingo's martini — a conical stemmed glass — and the retriever's short rocks glass rest flat on " +
-    "the counter. Two separate wall fixtures, both present: a small flatscreen TV mounted high on the LEFT " +
-    "wall, its screen blank pale grey, AND a chalkboard on the wall behind the bar right of center, " +
-    "carrying only faint unreadable scribble. Nobody sits. ",
+    "the counter. The back wall above the bottle shelves carries BOTH of the room's two fixtures, side by " +
+    "side and clearly visible: a small flatscreen TV with a blank pale grey screen, and next to it a framed " +
+    "chalkboard with only faint unreadable scribble. Nobody sits. ",
   "drew-mango-barroom":
     "The flamingo's martini — a conical stemmed glass — and the retriever's short rocks glass rest flat on " +
-    "the counter. Two separate wall fixtures, both present: a small flatscreen TV mounted high on the LEFT " +
-    "wall, its screen blank pale grey, AND a chalkboard on the wall behind the bar right of center, " +
-    "carrying only faint unreadable scribble. ",
+    "the counter. The back wall above the bottle shelves carries BOTH of the room's two fixtures, side by " +
+    "side and clearly visible: a small flatscreen TV with a blank pale grey screen, and next to it a framed " +
+    "chalkboard with only faint unreadable scribble. ",
   "mango-barroom-2":
-    "The retriever's short rocks glass rests flat on the counter. Two separate wall fixtures, both present: " +
-    "a small flatscreen TV mounted high on the LEFT wall, its screen blank pale grey, AND a chalkboard on " +
-    "the wall behind the bar right of center, carrying only faint unreadable scribble. ",
+    "The retriever's short rocks glass rests flat on the counter. The back wall above the bottle shelves " +
+    "carries BOTH of the room's two fixtures, side by side and clearly visible: a small flatscreen TV with " +
+    "a blank pale grey screen, and next to it a framed chalkboard with only faint unreadable scribble. ",
 };
 
 /** The Kontext instruction for one run. */
