@@ -47,7 +47,7 @@ function loadTile(tile) {
 }
 
 // Height of the enlarged head study beside each body.
-const HEAD = 280;
+const HEAD = 230;
 
 // A crop, grayscaled and normalised so its paper reads as true white. Round
 // two taught the normalise: tiles cut from different sheets carried different
@@ -76,7 +76,7 @@ async function characterTile(spec) {
   const body = await piece(spec.body, TILE, spec.whitenBody);
   if (!spec.head) return body;
   const head = await piece(spec.head, HEAD, spec.whitenHead);
-  const overlap = 24;
+  const overlap = 60;
   const width = body.width + head.width - overlap;
   const headFirst = (spec.headCorner ?? "right") === "left";
   const bodyLeft = headFirst ? head.width - overlap : 0;
