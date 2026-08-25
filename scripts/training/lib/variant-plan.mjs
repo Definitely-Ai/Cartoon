@@ -79,10 +79,11 @@ export const CASTS = [
     id: "mango",
     tokens: "SWDMANGO",
     who: "the golden retriever",
-    tiles: [MANGO_TILE],
+    tiles: [{ body: "dog-full-body-sheet-01" }],
     tileNote:
-      TILE_NOTE_ONE +
-      "The sheet shows the golden retriever: his body in plain construction line, his rendered face and jacket in the head study.",
+      "The reference sheet shows one character, alone: the golden retriever's full body in plain construction " +
+      "line. The sheet is reference only — draw him once, full body, inside the scene, and draw nothing else " +
+      "from the sheet. ",
     extra:
       "He wears his grey herringbone sport coat over an open-collar shirt with the small flag pin on the left lapel, " +
       "long dark trousers, bare canine feet. His rear is completely smooth and tailless.",
@@ -91,8 +92,10 @@ export const CASTS = [
     id: "abby",
     tokens: "SWDABBY",
     who: "the white West Highland terrier woman",
-    tiles: [ABBY_TILE],
-    tileNote: TILE_NOTE_ONE + "The sheet shows the terrier woman, her face enlarged in the head study.",
+    tiles: [{ body: "abby-full-body-sheet-01", whitenBody: true }],
+    tileNote:
+      "The reference sheet shows one character, alone: the white terrier woman, full body. The sheet is " +
+      "reference only — draw her once, full body, inside the scene, and draw nothing else from the sheet. ",
     extra:
       "She has a short-muzzled West Highland terrier face with a round black nose, dark friendly eyes and small " +
       "upright ears — not a fox. She wears her fitted white blouse with rolled sleeves, very short dark skirt, a " +
@@ -103,8 +106,10 @@ export const CASTS = [
     id: "drew",
     tokens: "SWDDREW",
     who: "the flamingo",
-    tiles: [DREW_TILE],
-    tileNote: TILE_NOTE_ONE + "The sheet shows the flamingo, his head enlarged in the head study.",
+    tiles: [{ body: "flamingo-wardrobe-sheet-01" }],
+    tileNote:
+      "The reference sheet shows one character, alone: the flamingo, full body. The sheet is reference only — " +
+      "draw him once, full body, inside the scene, and draw nothing else from the sheet. ",
     extra:
       "He keeps his black bow tie, compact head with small lively eyes, long S-curved neck, feathered wing-arms, " +
       "feathered body, and long thin bird legs with webbed feet — exactly as the close-up draws his face.",

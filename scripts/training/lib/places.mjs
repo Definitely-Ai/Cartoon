@@ -61,7 +61,9 @@ export const PLACES = [
   {
     id: "street",
     match: /street|sidewalk|storefront/i,
-    describe: "standing on a busy city sidewalk, storefronts and passers-by behind",
+    // "busy city sidewalk" once pulled a photographic render — small-town
+    // storefront language keeps the drawing drawn.
+    describe: "standing on a small-town sidewalk, a storefront awning and a parked bicycle behind",
   },
   {
     id: "empty",
