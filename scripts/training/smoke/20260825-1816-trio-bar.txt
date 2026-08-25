@@ -1,0 +1,10 @@
+definitely-ai/swinging-door:e93e7bb51fb4a246f5d86263aa2b1d61cca930f6f7455f3bb39897c8279b0cc9
+LORA_SCALE=0.9 (default)
+
+SWDINK single-panel cartoon. In the scene: SWDDREW, SWDMANGO, SWDABBY.
+
+THE ROOM. The scene is the interior of The Swinging Door, a classic old American bar, drawn at eye level from across the room. The dark-wood bar runs straight along the lower third, stools on the room side, shelves and a mirror behind it. The front window, upper right, carries the bar's name lettered in reverse, as read from inside. A small flatscreen TV sits high on the left wall, showing MARKETS OPEN. A chalkboard behind the bar, right of center, reads HAPPY HOUR 4–?. The TV and the chalkboard are always both in the room. A few pieces of framed Americana hang on wood paneling — the walls are never crowded.
+
+THE STAGE. The staging is physically real. Behind the bar is the service side — only the bartender works there; patrons stay on the room side. Anyone seated sits squarely on a stool, hips on the seat, legs resolved. Every glass and bottle rests flat on the bar, a coaster, or a shelf, or sits in a real closed grip; hands touch props at plausible contact points. No figure or object merges, clips, or passes through another; the furniture stays exactly where this room map fixes it.
+
+Expressions are restrained, specific, and dry, and every gaze remains alive. Wardrobe takes the setting's influence lightly: at most one apt piece per character (a flat cap at the tee, rolled sleeves at sea) — never a costume change, and never touching the anchors: Drew's bow tie, Mango's left-lapel pin, Abby's work outfit. No speech balloons, no thought bubbles, no caption text, and no lettering anywhere in the image except the short text this prompt's setting names (in the bar: the reversed window sign, the short chalkboard lines, and the TV screen; outdoors: the news prop's two or three short words). One clear focal action; generous white space. Drew leans on the bar mid-remark while Mango listens from his stool and Abby polishes a glass behind the counter.
