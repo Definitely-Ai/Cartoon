@@ -94,3 +94,12 @@ Rules of the register: the target is systems, never named people; the caption
 under-plays while the signage escalates; Drew diagnoses, Mango pays; twenty
 words or fewer, dry, unhurried. The caption is typeset as attributed italic
 dialogue beneath the panel — `Drew: "…"` — one speaker, one line.
+
+## The daily test
+
+The reader is a finance guy who looks at the cartoon for **3–10 seconds a
+day**. In that window it must land, and it must feel like his world — from
+the 25-year-old aspiring to the life to the 82-year-old who lived it and
+still does, in the Warren Buffett key: understated, moneyed, unhurried.
+Drew and Mango are gentlemen; the room is high-class; the joke is dry and
+relatable to people who build relationships at a good bar.

@@ -53,8 +53,8 @@ martini by fare class. Nobody shouts. The room does half the talking.
   the gag needs it, eye sliding sideways at Mango. He is the brightest object
   in the panel — the paper's white is reserved for him. A monocle is an
   approved occasional accessory.
-- **Read**: the arch observer. He names the mechanism of the absurdity in one
-  clean sentence.
+- **Read**: the arch observer, and a gentleman — classy, composed, well
+  turned out. He names the mechanism of the absurdity in one clean sentence.
 
 ### Mango — the golden retriever
 
@@ -89,8 +89,8 @@ martini by fare class. Nobody shouts. The room does half the talking.
   golf. **The flag pin is permanent** — on whatever he wears: left lapel
   jacketed, left chest otherwise.
 - **Read**: the worried, earnest everyman against Drew's deadpan — raised
-  inner brows, hangdog patience. He pays the bill; his lines are wallet-height
-  truths.
+  inner brows, hangdog patience — and a gentleman like his friend: classy,
+  never crude. He pays the bill; his lines are wallet-height truths.
 
 ### Abby — the westie who owns the bar
 
@@ -128,7 +128,11 @@ plates' technique:
 
 **The audience is the financial world**: people who live or have lived in it,
 accustomed to high income and to spending real money building relationships —
-and the bar is where they build them. Drew and Mango come to relax, have fun,
+and the bar is where they build them. The span runs from the 25-year-old
+aspiring to that life to the 82-year-old who lived it and still does — the
+Warren Buffett key: understated, moneyed, unhurried. **The daily test**: a
+finance guy looks at the cartoon for 3–10 seconds every day — it must land
+and feel like his world in that window. Drew and Mango come to relax, have fun,
 and build something; they never look at the price of a drink, and they expect
 not to sit next to riffraff. **The founder's worry, addressed by design**:
 Americans are drinking less, so the bar must never feel old and tired — it is
@@ -141,15 +145,19 @@ never a dive — with a nineteenth-hole flavor in its bottle labels and its
 clientele's weekends:
 
 - A **polished marble bar top**; **fine walnut-paneled walls** — nice
-  paneling, warm and current, not grim old wood; brass, good glassware,
-  leather club chairs and stools.
+  paneling, warm and current, not grim old wood; brass and good glassware.
+- **Handsome furniture**: the studded leather club chairs of the plates are
+  the standard — and when stools, nice stools. Nothing shabby seats a guest.
 - **When the front window is in frame, it carries The Swinging Door mirrored**
   as read from inside — mandatory on the window, though the window itself
   need not appear; the framed wall sign is handsome but optional per panel.
 
 - Framed script signs reading *"The Swinging Door"* on the walls; framed
   prints of airplanes, landmarks, golfers.
-- **Bottles out and proudly displayed** on the back bar, their labels golf
+- **Bottles out and proudly displayed** on the back bar — **each bottle a
+  distinct shape with its own label, and the SAME collection in every
+  cartoon**: the lineup is a cast member; it never changes panel to panel,
+  and a regular would notice if one moved. The labels are golf
   puns:
   OLD FORESTER, 10TH HOLE RYE, BIRDIE BOURBON, EAGLE EYE RYE, PAR-TEE SCOTCH,
   19TH HOLE RYE, DIVOT DRIVE GIN, HAZARD SPICED WHISKY — that register.

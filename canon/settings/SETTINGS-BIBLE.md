@@ -21,7 +21,11 @@ world who build relationships at a good bar:
   prints of airplanes, landmarks, and golfers.
 - **Coherence rule**: the TV's story and the chalkboard's special both relate
   to the day's caption — the room tells the same joke from other angles.
-- **Bottles out and proudly displayed** on the back bar.
+- **Bottles out and proudly displayed** on the back bar — each a distinct
+  shape with its own pun label, and the SAME collection in every cartoon;
+  the lineup never changes.
+- **Handsome furniture**: studded leather club chairs; when stools, nice
+  stools.
 - Background patrons, when drawn: well-dressed financial-district regulars —
   never drunks, never riffraff (Abby sees to it).
 - The **back bar**: rows of bottles with golf-pun labels (BIRDIE BOURBON,

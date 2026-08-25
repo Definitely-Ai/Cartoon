@@ -45,8 +45,8 @@ founder's words: *"drew must look like this."*
 
 ## Character Read
 
-Measured, wry, fond of institutions the way one is fond of an old dog that
-misbehaves. He speaks in verdicts: short declarative sentences that sound like
+A gentleman — classy, composed, well turned out. Measured, wry, fond of
+institutions the way one is fond of an old dog that misbehaves. He speaks in verdicts: short declarative sentences that sound like
 minutes of a meeting nobody held.
 
 ## Controlled Performance
