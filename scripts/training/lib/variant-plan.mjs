@@ -147,23 +147,38 @@ export const CASTS = [
     id: "trio",
     tokens: "SWDDREW, SWDMANGO and SWDABBY",
     who: "the flamingo, the golden retriever, and the white terrier woman",
-    // The scene leads the board and the note skips TILE_NOTE_ONE: this run is
-    // framed as an EDIT of the bar scene (Kontext's native strength), not a
-    // fresh composition from a character sheet — six rounds of the latter
-    // lined every figure up on the room side.
-    tiles: [ABBY_BAR_TILE, DREW_TILE, MANGO_TILE],
+    // The round-6 recipe — the best bar of seven attempts. What seven rounds
+    // established: style, identity and wardrobe are fully steerable, but
+    // single-pass Kontext will NOT place a conditioned character behind the
+    // counter (every composition lines the figures up on the room side, and
+    // the edit framing duplicated Abby and dropped Drew). Behind-the-counter
+    // staging is the fine-tune's job — her training set carries it.
+    tiles: [DREW_TILE, MANGO_TILE, ABBY_BAR_TILE],
     tileNote:
-      "The left part of the reference sheet is the barroom scene itself: the white terrier woman already " +
-      "behind her bar counter, shelves of bottles behind her, her face repeated once as an enlarged close-up " +
-      "study. To the right are two character model sheets: the flamingo (full body plus enlarged head study " +
-      "— a close-up, not a second character), then the golden retriever (construction-line body, his rendered " +
-      "face and jacket beside it). The sheet is reference only — never draw its layout or the head studies " +
-      "into the cartoon.",
+      TILE_NOTE_ONE +
+      "From left to right on the sheet, three DIFFERENT characters: the flamingo, the golden retriever, and the " +
+      "terrier woman — her part of the sheet shows her behind the counter of her barroom. Draw all three, each " +
+      "clearly distinct.",
     extra:
       "The flamingo keeps his bow tie, small lively eyes, S-neck, feathered wing-arms and long thin bird legs. " +
       "The retriever wears his grey sport coat with the left-lapel flag pin and long dark trousers. The terrier " +
       "woman wears her fitted white blouse, very short dark skirt, black heels, shoulder towel and pearl " +
       "necklace — never trousers. Every rear is smooth and tailless.",
+  },
+  {
+    id: "trio-plain",
+    tokens: "SWDDREW, SWDMANGO and SWDABBY",
+    who: "the flamingo, the golden retriever, and the white terrier woman",
+    tiles: [DREW_TILE, MANGO_TILE, ABBY_TILE],
+    tileNote:
+      TILE_NOTE_ONE +
+      "From left to right on the sheet, three DIFFERENT characters: the flamingo, the golden retriever, the " +
+      "terrier woman. Draw all three, each clearly distinct.",
+    extra:
+      "The flamingo keeps his bow tie, small lively eyes, S-neck, feathered wing-arms and long thin bird legs. " +
+      "The retriever wears his grey sport coat with the left-lapel flag pin and long dark trousers. The terrier " +
+      "woman wears her fitted white blouse, very short dark skirt, black heels, shoulder towel and pearl " +
+      "necklace. Every rear is smooth and tailless.",
   },
 ];
 
@@ -182,7 +197,7 @@ export const PLAN = [
   ["mango-abby", ["boat", "park", "office", "empty"]],
   ["drew-mango", ["beach", "street", "diner", "barroom"]],  // barroom here = a second bar composition
   ["drew-abby", ["park", "diner"]],
-  ["trio", ["empty"]],
+  ["trio-plain", ["empty"]],
 ];
 
 // A place id may carry a "-2"-style suffix to ask for a second image of the
@@ -219,10 +234,11 @@ export function runs() {
 // where. Keyed by run id.
 const STAGING = {
   "trio-barroom":
-    "Recreate the barroom scene EXACTLY as the sheet's left part shows it — the same counter in the " +
-    "foreground, the same shelves, the same terrier woman behind the counter in the same pose — and ADD " +
-    "the flamingo and the retriever to it, standing at the counter on the viewer's side, facing it, seen " +
-    "side-on so their faces stay clearly visible, each with a drink on the counter. Nobody sits. ",
+    "Compose the whole drawing exactly like the terrier woman's part of the sheet: the bar counter in the " +
+    "near foreground running the full width of the drawing, and the terrier woman BEHIND it just as her " +
+    "sheet shows her, the counter hiding her below the waist. The flamingo and the retriever stand on the " +
+    "viewer's side of the counter facing it in profile, seen side-on so both faces stay clearly visible, " +
+    "each with a drink on the counter in front of him. Nobody sits. ",
 };
 
 /** The Kontext instruction for one run. */
