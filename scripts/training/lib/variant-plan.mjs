@@ -49,7 +49,11 @@ export const MANGO_BUST = {
 // Drew's body comes ONLY from the locked full-body master. The wardrobe and
 // pose sheets draw a DIFFERENT Drew (longer neck, harder line, flatter eye)
 // and are purged from the training set on the founder's call.
-const DREW_TILE = { body: "flamingo-full-body-sheet-01", head: "flamingo-identity-sheet-01", headCorner: "right" };
+const DREW_TILE = {
+  body: { src: "scripts/training/variant-refs/drew-clothed-src.png", box: [0, 0, 370, 1024] },
+  head: "flamingo-identity-sheet-01",
+  headCorner: "right",
+};
 const MANGO_TILE = { body: "dog-full-body-sheet-01", head: MANGO_BUST, headCorner: "left", whitenHead: true };
 const ABBY_TILE = {
   body: "abby-full-body-sheet-01",
@@ -113,7 +117,7 @@ export const CASTS = [
     id: "drew",
     tokens: "SWDDREW",
     who: "the flamingo",
-    tiles: [{ body: "flamingo-full-body-sheet-01" }],
+    tiles: [{ body: { src: "scripts/training/variant-refs/drew-clothed-src.png", box: [0, 0, 370, 1024] } }],
     tileNote:
       "The reference sheet shows one character, alone: the flamingo, full body. The sheet is reference only — " +
       "draw him once, full body, inside the scene, and draw nothing else from the sheet. ",
@@ -304,9 +308,9 @@ export function instruction(run) {
     `for the whole cartoon: bright white paper, confident pen-and-ink outlines, sparing light grey wash, ` +
     `plenty of untouched white paper — never dark full-tone rendering, never a painting. ` +
     (run.cast.tokens.includes("SWDDREW")
-      ? `Then make ONE deliberate change to the flamingo: dress him — add ${drewClothes(run)} onto his ` +
-        `feathered body, worn naturally, his black bow tie visible on top. He is never bare. ` +
-        `Nothing else about him changes, and nobody else gains a hat or garment not named here. `
+      ? `The flamingo is dressed in ${drewClothes(run)} — if his sheet shows a different garment, swap it ` +
+        `for this one, worn naturally over his feathers, his black bow tie visible on top. He is never ` +
+        `bare. Nothing else about him changes, and nobody else gains a hat or garment not named here. `
       : "") +
     `Place the scene somewhere new: ${run.place}. ` +
     (STAGING[run.id] ?? "") +
