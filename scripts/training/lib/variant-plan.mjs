@@ -243,14 +243,18 @@ const STAGING = {
     "sheet shows her, the counter hiding her below the waist. The flamingo and the retriever stand on the " +
     "viewer's side of the counter facing it in profile, seen side-on so both faces stay clearly visible. " +
     "The flamingo's martini — a conical stemmed glass — and the retriever's short rocks glass rest flat on " +
-    "the counter. The TV screen is blank pale grey; the chalkboard carries only faint unreadable scribble. " +
-    "Nobody sits. ",
+    "the counter. Two separate wall fixtures, both present: a small flatscreen TV mounted high on the LEFT " +
+    "wall, its screen blank pale grey, AND a chalkboard on the wall behind the bar right of center, " +
+    "carrying only faint unreadable scribble. Nobody sits. ",
   "drew-mango-barroom":
     "The flamingo's martini — a conical stemmed glass — and the retriever's short rocks glass rest flat on " +
-    "the counter. The TV screen is blank pale grey; the chalkboard carries only faint unreadable scribble. ",
+    "the counter. Two separate wall fixtures, both present: a small flatscreen TV mounted high on the LEFT " +
+    "wall, its screen blank pale grey, AND a chalkboard on the wall behind the bar right of center, " +
+    "carrying only faint unreadable scribble. ",
   "mango-barroom-2":
-    "The retriever's short rocks glass rests flat on the counter. The TV screen is blank pale grey; the " +
-    "chalkboard carries only faint unreadable scribble. ",
+    "The retriever's short rocks glass rests flat on the counter. Two separate wall fixtures, both present: " +
+    "a small flatscreen TV mounted high on the LEFT wall, its screen blank pale grey, AND a chalkboard on " +
+    "the wall behind the bar right of center, carrying only faint unreadable scribble. ",
 };
 
 /** The Kontext instruction for one run. */
