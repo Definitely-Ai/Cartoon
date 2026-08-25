@@ -27,27 +27,47 @@ export const REF_DIR = "scripts/training/variant-refs";
 // count past this. 30 x ~$0.055 also bounds the money this plan can spend.
 export const MAX_VARIANTS = 34;
 
-// Reference boards. Each cast's board holds ONE composite tile per character
-// — full body with the head close-up inset in a corner — built by
-// make-variant-refs.mjs. Round one proved the inset necessary: a lone 720px
-// full-body tile leaves the face a few dozen pixels, and Drew's head drifted
-// in every panel drawn from it. Mango's tiles come from a finished cartoon
-// (the pin bible's busts carry the black bead eyes canon bans) plus his
-// line-art base body, which also fixes his LACK of a tail.
+// Reference boards. Each cast's board holds ONE model-sheet tile per
+// character — the full body with the same character's head study enlarged
+// beside it, frameless on shared white paper — built by make-variant-refs.mjs.
+// Round one proved the head study necessary: a lone 720px full-body tile
+// leaves the face a few dozen pixels, and Drew's head drifted in every panel
+// drawn from it. Round two proved the framelessness necessary: a bordered
+// inset box was copied into the golf scene as a drawn picture. Mango's head
+// comes from a finished cartoon (the pin bible's busts carry the black bead
+// eyes canon bans) beside his line-art base body, which also fixes his LACK
+// of a tail.
 export const MANGO_BUST = {
   src: "cartoons/2026-08-04-an-emerging-asset/cartoon.png",
   box: [780, 150, 474, 600],
 };
 
-// One composite tile recipe per character, reused by every board so the cast
-// looks identical no matter who they share a panel with.
+// One model-sheet tile recipe per character, reused by every board so the
+// cast looks identical no matter who they share a scene with. Abby has a
+// second tile for the barroom: her glass-polishing pose, so the reference
+// itself argues she belongs behind the counter working.
 const DREW_TILE = { body: "flamingo-wardrobe-sheet-01", head: "flamingo-identity-sheet-01", headCorner: "right" };
-const MANGO_TILE = { body: "dog-full-body-sheet-01", head: MANGO_BUST, headCorner: "left" };
-const ABBY_TILE = { body: "abby-full-body-sheet-01", head: "abby-identity-sheet-01", headCorner: "right" };
+const MANGO_TILE = { body: "dog-full-body-sheet-01", head: MANGO_BUST, headCorner: "left", whitenHead: true };
+const ABBY_TILE = {
+  body: "abby-full-body-sheet-01",
+  head: "abby-identity-sheet-01",
+  headCorner: "right",
+  whitenBody: true,
+  whitenHead: true,
+};
+const ABBY_BAR_TILE = {
+  body: "abby-bartender-actions-sheet-02",
+  head: "abby-identity-sheet-01",
+  headCorner: "right",
+  whitenBody: true,
+  whitenHead: true,
+};
 
 const TILE_NOTE_ONE =
-  "Each reference panel shows one character: the full body, plus the same character's face enlarged in the " +
-  "inset box — the inset is only a close-up, not a second character. ";
+  "The reference is a character model sheet: each character appears as a full standing body with the same " +
+  "character's face drawn again, enlarged, beside the head — a close-up study, not a second character. " +
+  "The sheet is reference only: never draw the sheet itself, its layout, or any enlarged head study into " +
+  "the cartoon — each character appears exactly once, full body, inside the scene. ";
 
 export const CASTS = [
   {
@@ -57,7 +77,7 @@ export const CASTS = [
     tiles: [MANGO_TILE],
     tileNote:
       TILE_NOTE_ONE +
-      "The panel shows the golden retriever: his body in plain construction line, his rendered face and jacket in the inset.",
+      "The sheet shows the golden retriever: his body in plain construction line, his rendered face and jacket in the head study.",
     extra:
       "He wears his grey herringbone sport coat over an open-collar shirt with the small flag pin on the left lapel, " +
       "long dark trousers, bare canine feet. His rear is completely smooth and tailless.",
@@ -67,17 +87,19 @@ export const CASTS = [
     tokens: "SWDABBY",
     who: "the white West Highland terrier woman",
     tiles: [ABBY_TILE],
-    tileNote: TILE_NOTE_ONE + "The panel shows the terrier woman, her face enlarged in the inset.",
+    tileNote: TILE_NOTE_ONE + "The sheet shows the terrier woman, her face enlarged in the head study.",
     extra:
-      "She wears her fitted white blouse with rolled sleeves, very short dark skirt, a folded towel on her left " +
-      "shoulder, her pearl necklace with the oval gem, and black heels. Her rear is smooth and tailless.",
+      "She has a short-muzzled West Highland terrier face with a round black nose, dark friendly eyes and small " +
+      "upright ears — not a fox. She wears her fitted white blouse with rolled sleeves, very short dark skirt, a " +
+      "folded towel on her left shoulder, her pearl necklace with the oval gem, and black heels. Her rear is " +
+      "smooth and tailless.",
   },
   {
     id: "drew",
     tokens: "SWDDREW",
     who: "the flamingo",
     tiles: [DREW_TILE],
-    tileNote: TILE_NOTE_ONE + "The panel shows the flamingo, his head enlarged in the inset.",
+    tileNote: TILE_NOTE_ONE + "The sheet shows the flamingo, his head enlarged in the head study.",
     extra:
       "He keeps his black bow tie, compact head with small lively eyes, long S-curved neck, feathered wing-arms, " +
       "feathered body, and long thin bird legs with webbed feet — exactly as the close-up draws his face.",
@@ -89,7 +111,7 @@ export const CASTS = [
     tiles: [MANGO_TILE, ABBY_TILE],
     tileNote:
       TILE_NOTE_ONE +
-      "Left panel: the golden retriever. Right panel: the terrier woman. Draw both, clearly distinct.",
+      "From left to right on the sheet: the golden retriever, then the terrier woman. Draw both, clearly distinct.",
     extra:
       "The retriever wears his grey sport coat with the left-lapel flag pin and long dark trousers; the terrier " +
       "woman wears her blouse, short skirt, shoulder towel and pearl necklace. Both rears smooth and tailless.",
@@ -100,7 +122,7 @@ export const CASTS = [
     who: "the flamingo and the golden retriever",
     tiles: [DREW_TILE, MANGO_TILE],
     tileNote:
-      TILE_NOTE_ONE + "Left panel: the flamingo. Right panel: the golden retriever. Draw both, clearly distinct.",
+      TILE_NOTE_ONE + "From left to right on the sheet: the flamingo, then the golden retriever. Draw both, clearly distinct.",
     extra:
       "The flamingo keeps his bow tie, small lively eyes, S-neck and feathered wing-arms; the retriever wears his " +
       "grey sport coat with the left-lapel flag pin and long dark trousers. The retriever's rear is smooth and tailless.",
@@ -111,7 +133,7 @@ export const CASTS = [
     who: "the flamingo and the white terrier woman",
     tiles: [DREW_TILE, ABBY_TILE],
     tileNote:
-      TILE_NOTE_ONE + "Left panel: the flamingo. Right panel: the terrier woman. Draw both, clearly distinct.",
+      TILE_NOTE_ONE + "From left to right on the sheet: the flamingo, then the terrier woman. Draw both, clearly distinct.",
     extra:
       "The flamingo keeps his bow tie, small lively eyes, S-neck and feathered wing-arms; the terrier woman wears " +
       "her blouse, short skirt, shoulder towel and pearl necklace. Her rear is smooth and tailless.",
@@ -120,10 +142,10 @@ export const CASTS = [
     id: "trio",
     tokens: "SWDDREW, SWDMANGO and SWDABBY",
     who: "the flamingo, the golden retriever, and the white terrier woman",
-    tiles: [DREW_TILE, MANGO_TILE, ABBY_TILE],
+    tiles: [DREW_TILE, MANGO_TILE, ABBY_BAR_TILE],
     tileNote:
       TILE_NOTE_ONE +
-      "Three panels, three DIFFERENT characters: the flamingo, the golden retriever, the terrier woman. Draw all " +
+      "From left to right on the sheet, three DIFFERENT characters: the flamingo, the golden retriever, the terrier woman. Draw all " +
       "three, each clearly distinct.",
     extra:
       "The flamingo keeps his bow tie, small lively eyes, S-neck and feathered wing-arms. The retriever wears his " +
@@ -184,9 +206,9 @@ export function runs() {
 // where. Keyed by run id.
 const STAGING = {
   "trio-barroom":
-    "Staging, exactly: the terrier woman is BEHIND the bar counter working, visible from the waist up, the " +
-    "counter between her and the others. The flamingo stands and the retriever sits squarely on a visible " +
-    "wooden bar stool, both on the room side, drinks resting flat on the counter. ",
+    "Staging, exactly: the terrier woman stands BEHIND the bar counter working, polishing a glass with her " +
+    "towel, the counter cutting her off at the waist. The flamingo and the retriever both STAND on the room " +
+    "side of the counter facing her, their drinks resting flat on the counter. Nobody sits. ",
 };
 
 /** The Kontext instruction for one run. */
@@ -195,8 +217,10 @@ export function instruction(run) {
     `${run.cast.tileNote} Redraw ${run.cast.who} exactly as drawn — same construction, same face, same ` +
     `proportions, unchanged in every detail. ${run.cast.extra} Place the scene somewhere new: ${run.place}. ` +
     (STAGING[run.id] ?? "") +
-    `Single-panel black-and-white cartoon, confident ink line with soft grey wash, no colour, no lettering, ` +
-    `no speech balloons, no panel border, no signature, no date, no watermark.`
+    `Single-panel black-and-white gag cartoon on bright white paper: confident pen-and-ink outlines with ` +
+    `sparing light grey wash, plenty of untouched white paper, light and airy — not a painting, no dark ` +
+    `full-tone rendering, no colour, no lettering, no speech balloons, no panel border, no signature, ` +
+    `no date, no watermark.`
   );
 }
 

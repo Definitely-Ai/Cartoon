@@ -46,40 +46,70 @@ function loadTile(tile) {
   return sharp(path.join(repoRoot, tile.src)).extract({ left, top, width, height });
 }
 
-// One tile per CHARACTER: the full body, with the head close-up inset in the
-// top corner at readable size. Round one taught this — a lone 720px full-body
-// tile leaves the face a few dozen pixels tall, and Drew's head drifted
-// dodo-ward in every panel where his tile carried no close-up.
-async function characterTile(spec) {
-  const body = await loadTile(spec.body)
-    .resize(TILE, TILE, { fit: "contain", background: "#ffffff" })
-    .toBuffer();
-  if (!spec.head) return sharp(body).jpeg({ quality: 92 }).toBuffer();
-  const inset = Math.round(TILE * 0.34);
-  const head = await loadTile(spec.head)
-    .resize(inset - 8, inset - 8, { fit: "contain", background: "#ffffff" })
-    .toBuffer();
-  const border = Buffer.from(
-    `<svg width="${inset}" height="${inset}" xmlns="http://www.w3.org/2000/svg">` +
-      `<rect x="1" y="1" width="${inset - 2}" height="${inset - 2}" fill="white" stroke="#555" stroke-width="2"/></svg>`
-  );
-  const corner = spec.headCorner ?? "right";
-  const left = corner === "left" ? 6 : TILE - inset - 6;
-  return sharp(body)
-    .composite([
-      { input: border, left, top: 6 },
-      { input: head, left: left + 4, top: 10 },
-    ])
-    .jpeg({ quality: 92 })
-    .toBuffer();
+// Height of the enlarged head study beside each body.
+const HEAD = 280;
+
+// A crop, grayscaled and normalised so its paper reads as true white. Round
+// two taught the normalise: tiles cut from different sheets carried different
+// paper tones (grey backdrop, cream cartoon stock), and those tonal
+// rectangles both invited dark full-tone rendering and read as separate
+// panels. Normalising stretches each crop so its brightest paper is white and
+// its ink is black — every piece lands on the same sheet.
+async function piece(spec, height, whiten) {
+  let img = loadTile(spec).grayscale().normalise();
+  // Normalise pins the brightest pixel, which on Abby's sheets is her white
+  // fur — the grey sheet paper survives it. The linear lift maps that paper
+  // (~200) to near-white while barely moving the ink.
+  if (whiten) img = img.linear(1.5, -60);
+  const buf = await img.resize({ height }).png().toBuffer();
+  const { width } = await sharp(buf).metadata();
+  return { buf, width };
 }
 
-for (const cast of CASTS) {
-  const tiles = await Promise.all(cast.tiles.map((spec) => characterTile(spec)));
-  const board = await sharp({
-    create: { width: TILE * tiles.length, height: TILE, channels: 3, background: "#ffffff" },
+// One tile per CHARACTER, laid out like a hand model sheet: the full body at
+// natural width, with the same character's head study enlarged BESIDE the
+// head, frameless, overlapping onto shared white paper. Round one taught the
+// head study (a lone 720px body tile leaves the face a few dozen pixels and
+// Drew's head drifted dodo-ward); round two taught the framelessness (a
+// bordered inset box got copied into the golf scene as a drawn picture).
+async function characterTile(spec) {
+  const body = await piece(spec.body, TILE, spec.whitenBody);
+  if (!spec.head) return body;
+  const head = await piece(spec.head, HEAD, spec.whitenHead);
+  const overlap = 24;
+  const width = body.width + head.width - overlap;
+  const headFirst = (spec.headCorner ?? "right") === "left";
+  const bodyLeft = headFirst ? head.width - overlap : 0;
+  const headLeft = headFirst ? 0 : body.width - overlap;
+  const buf = await sharp({
+    create: { width, height: TILE, channels: 3, background: "#ffffff" },
   })
-    .composite(tiles.map((input, i) => ({ input, left: i * TILE, top: 0 })))
+    .composite([
+      { input: head.buf, left: headLeft, top: 0 },
+      { input: body.buf, left: bodyLeft, top: 0 },
+    ])
+    .png()
+    .toBuffer();
+  return { buf, width };
+}
+
+const GAP = 40;
+
+for (const cast of CASTS) {
+  const tiles = [];
+  for (const spec of cast.tiles) tiles.push(await characterTile(spec));
+  const width = tiles.reduce((w, t) => w + t.width, 0) + GAP * (tiles.length - 1);
+  let left = 0;
+  const layers = tiles.map((t) => {
+    const layer = { input: t.buf, left, top: 0 };
+    left += t.width + GAP;
+    return layer;
+  });
+  const board = await sharp({
+    create: { width, height: TILE, channels: 3, background: "#ffffff" },
+  })
+    .composite(layers)
+    .grayscale()
     .jpeg({ quality: 92 })
     .toBuffer();
   fs.writeFileSync(path.join(outDir, `${cast.id}.jpg`), board);
