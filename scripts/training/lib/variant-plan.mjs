@@ -55,8 +55,13 @@ const ABBY_TILE = {
   whitenBody: true,
   whitenHead: true,
 };
+// The bar tile is a full SCENE, not a figure: Abby already behind the
+// counter, shelves behind her, drawn in the proper light pencil-and-wash.
+// Restaging by text failed four rounds running — Kontext copies what it
+// sees, so the trio board now shows the staging and the room's style, and
+// the instruction asks it to EXTEND that scene rather than invent one.
 const ABBY_BAR_TILE = {
-  body: "abby-bartender-actions-sheet-02",
+  body: "abby-bar-blocking-sheet-03",
   head: "abby-identity-sheet-01",
   headCorner: "right",
   whitenBody: true,
@@ -145,7 +150,8 @@ export const CASTS = [
     tiles: [DREW_TILE, MANGO_TILE, ABBY_BAR_TILE],
     tileNote:
       TILE_NOTE_ONE +
-      "From left to right on the sheet, three DIFFERENT characters: the flamingo, the golden retriever, the terrier woman. Draw all " +
+      "From left to right on the sheet, three DIFFERENT characters: the flamingo, the golden retriever, and the " +
+      "terrier woman — her part of the sheet shows her already behind the counter of her barroom. Draw all " +
       "three, each clearly distinct.",
     extra:
       "The flamingo keeps his bow tie, small lively eyes, S-neck, feathered wing-arms and long thin bird legs. " +
@@ -206,10 +212,11 @@ export function runs() {
 // where. Keyed by run id.
 const STAGING = {
   "trio-barroom":
-    "Staging, exactly: the long wooden counter runs across the drawing. The terrier woman is on the FAR side " +
-    "of the counter, facing the viewer, polishing a glass with her towel, hidden below the waist by the " +
-    "counter. The flamingo and the retriever stand on the NEAR side, their drinks on the counter between " +
-    "them and her. Nobody sits. ",
+    "Staging, exactly: draw the SAME barroom as the terrier woman's part of the sheet — the same counter " +
+    "and back-bar shelves, the same light pencil-and-wash rendering — widened to fit all three. Keep the " +
+    "terrier woman exactly where her sheet already has her: behind the counter, facing the viewer. Add the " +
+    "flamingo and the retriever standing on the near side of the counter facing her, their drinks on the " +
+    "counter. Nobody sits. ",
 };
 
 /** The Kontext instruction for one run. */

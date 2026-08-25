@@ -20,7 +20,10 @@ export const PLACES = [
   {
     id: "barroom",
     match: /barroom|back bar|swinging doors|bar counter/i,
-    describe: "standing at the counter of a dim wood-panelled barroom, shelves of bottles on the back bar behind",
+    // No "dim" in the generation description: four probe rounds proved the
+    // word drags Kontext into dark full-tone painting no matter what the
+    // style clause says afterwards. The room reads dim on its own.
+    describe: "standing at the counter of a wood-panelled barroom, shelves of bottles on the back bar behind",
   },
   {
     id: "golf course",
