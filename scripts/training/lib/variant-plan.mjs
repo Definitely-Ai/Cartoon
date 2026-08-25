@@ -147,12 +147,18 @@ export const CASTS = [
     id: "trio",
     tokens: "SWDDREW, SWDMANGO and SWDABBY",
     who: "the flamingo, the golden retriever, and the white terrier woman",
-    tiles: [DREW_TILE, MANGO_TILE, ABBY_BAR_TILE],
+    // The scene leads the board and the note skips TILE_NOTE_ONE: this run is
+    // framed as an EDIT of the bar scene (Kontext's native strength), not a
+    // fresh composition from a character sheet — six rounds of the latter
+    // lined every figure up on the room side.
+    tiles: [ABBY_BAR_TILE, DREW_TILE, MANGO_TILE],
     tileNote:
-      TILE_NOTE_ONE +
-      "From left to right on the sheet, three DIFFERENT characters: the flamingo, the golden retriever, and the " +
-      "terrier woman — her part of the sheet shows her already behind the counter of her barroom. Draw all " +
-      "three, each clearly distinct.",
+      "The left part of the reference sheet is the barroom scene itself: the white terrier woman already " +
+      "behind her bar counter, shelves of bottles behind her, her face repeated once as an enlarged close-up " +
+      "study. To the right are two character model sheets: the flamingo (full body plus enlarged head study " +
+      "— a close-up, not a second character), then the golden retriever (construction-line body, his rendered " +
+      "face and jacket beside it). The sheet is reference only — never draw its layout or the head studies " +
+      "into the cartoon.",
     extra:
       "The flamingo keeps his bow tie, small lively eyes, S-neck, feathered wing-arms and long thin bird legs. " +
       "The retriever wears his grey sport coat with the left-lapel flag pin and long dark trousers. The terrier " +
@@ -213,11 +219,10 @@ export function runs() {
 // where. Keyed by run id.
 const STAGING = {
   "trio-barroom":
-    "Compose the whole drawing exactly like the terrier woman's part of the sheet: the bar counter in the " +
-    "near foreground running the full width of the drawing, and the terrier woman BEHIND it just as her " +
-    "sheet shows her, the counter hiding her below the waist. The flamingo and the retriever stand on the " +
-    "viewer's side of the counter facing it in profile, seen side-on so both faces stay clearly visible, " +
-    "each with a drink on the counter in front of him. Nobody sits. ",
+    "Recreate the barroom scene EXACTLY as the sheet's left part shows it — the same counter in the " +
+    "foreground, the same shelves, the same terrier woman behind the counter in the same pose — and ADD " +
+    "the flamingo and the retriever to it, standing at the counter on the viewer's side, facing it, seen " +
+    "side-on so their faces stay clearly visible, each with a drink on the counter. Nobody sits. ",
 };
 
 /** The Kontext instruction for one run. */
