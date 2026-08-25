@@ -46,7 +46,10 @@ export const MANGO_BUST = {
 // cast looks identical no matter who they share a scene with. Abby has a
 // second tile for the barroom: her glass-polishing pose, so the reference
 // itself argues she belongs behind the counter working.
-const DREW_TILE = { body: "flamingo-wardrobe-sheet-01", head: "flamingo-identity-sheet-01", headCorner: "right" };
+// Drew's body comes ONLY from the locked full-body master. The wardrobe and
+// pose sheets draw a DIFFERENT Drew (longer neck, harder line, flatter eye)
+// and are purged from the training set on the founder's call.
+const DREW_TILE = { body: "flamingo-full-body-sheet-01", head: "flamingo-identity-sheet-01", headCorner: "right" };
 const MANGO_TILE = { body: "dog-full-body-sheet-01", head: MANGO_BUST, headCorner: "left", whitenHead: true };
 const ABBY_TILE = {
   body: "abby-full-body-sheet-01",
@@ -82,7 +85,7 @@ export const CASTS = [
     // A rendered, correctly-dressed Mango cropped from the golf keeper: the
     // construction-line body alone flattened the render style and let the
     // wardrobe wobble (a necktie, a waistcoat) once its bust was gone.
-    tiles: [{ body: { src: "scripts/training/setting-variants/drew-mango-golf-course.png", box: [545, 80, 400, 920] } }],
+    tiles: [{ body: { src: "scripts/training/variant-refs/mango-rendered-src.png", box: [0, 0, 400, 920] } }],
     tileNote:
       "The reference sheet shows one character, alone: the golden retriever, full body, exactly as he is " +
       "drawn. The sheet is reference only — draw him once, full body, inside the scene, and draw nothing " +
@@ -110,7 +113,7 @@ export const CASTS = [
     id: "drew",
     tokens: "SWDDREW",
     who: "the flamingo",
-    tiles: [{ body: "flamingo-wardrobe-sheet-01" }],
+    tiles: [{ body: "flamingo-full-body-sheet-01" }],
     tileNote:
       "The reference sheet shows one character, alone: the flamingo, full body. The sheet is reference only — " +
       "draw him once, full body, inside the scene, and draw nothing else from the sheet. ",
@@ -210,6 +213,28 @@ export const PLAN = [
   ["trio-plain", ["empty"]],
 ];
 
+// The founder's rule: Drew is never bare. Over his feathered body he wears
+// simple clothing suited to the scene — light, never a costume change, the
+// bow tie always visible. The clothes are scene-variable, so the caption
+// names them (a variable the captions guard stays promptable; only what
+// never changes is left for the model to own).
+const DREW_CLOTHES = {
+  "barroom": "a trim dark waistcoat",
+  "golf course": "a knitted sleeveless golf sweater and a flat cap",
+  "boat": "a casual open deck jacket",
+  "office": "a light sport coat",
+  "beach": "an open short-sleeved linen shirt",
+  "courtroom": "a dark blazer",
+  "empty": "his trim dark waistcoat",
+  "park": "his light sport coat",
+  "street": "his light sport coat",
+  "diner": "his light sport coat",
+};
+
+function drewClothes(run) {
+  return DREW_CLOTHES[run.placeId.replace(/-\d+$/, "")] ?? "his trim dark waistcoat";
+}
+
 // A place id may carry a "-2"-style suffix to ask for a second image of the
 // same place (a different roll of the dice); it resolves to the base place.
 function placeOf(placeId) {
@@ -278,6 +303,9 @@ export function instruction(run) {
     `proportions, unchanged in every detail. ${run.cast.extra} Keep the reference sheet's drawing style ` +
     `for the whole cartoon: bright white paper, confident pen-and-ink outlines, sparing light grey wash, ` +
     `plenty of untouched white paper — never dark full-tone rendering, never a painting. ` +
+    (run.cast.tokens.includes("SWDDREW")
+      ? `The flamingo wears ${drewClothes(run)} over his feathered body, his black bow tie always visible. `
+      : "") +
     `Place the scene somewhere new: ${run.place}. ` +
     (STAGING[run.id] ?? "") +
     `Single-panel black-and-white gag cartoon, no colour, no lettering, no speech balloons, no panel ` +
@@ -287,5 +315,7 @@ export function instruction(run) {
 
 /** The training caption for one run's image. */
 export function caption(run) {
-  return `SWDINK cartoon, ${run.cast.tokens} ${run.place}`;
+  // Drew's scene-themed clothing is variable, so the caption names it.
+  const tokens = run.cast.tokens.replace("SWDDREW", `SWDDREW in ${drewClothes(run)}`);
+  return `SWDINK cartoon, ${tokens} ${run.place}`;
 }
