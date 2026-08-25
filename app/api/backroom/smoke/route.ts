@@ -1,5 +1,5 @@
 import { NextResponse, type NextRequest } from "next/server";
-import { BACKROOM_COOKIE, isDoorOpen } from "@/lib/backroom-auth";
+import { BACKROOM_COOKIE, isDoorOpen, isTriggerOpen } from "@/lib/backroom-auth";
 
 import { assemblePrompt, generateCartoonArt } from "@/lib/generate";
 import { PublishError, commitFiles, getCanon, readRepoFile } from "@/lib/githubPublish";
@@ -66,7 +66,13 @@ const PANELS = [
 ];
 
 export async function GET(request: NextRequest) {
-  if (!(await isDoorOpen(request.cookies.get(BACKROOM_COOKIE)?.value))) {
+  // Two doors: the owner's login cookie, or the single-purpose trigger token
+  // (?t=) for automated callers — same secret, different derivation, so the
+  // URL-carried form can never leak the session cookie.
+  const authed =
+    (await isDoorOpen(request.cookies.get(BACKROOM_COOKIE)?.value)) ||
+    (await isTriggerOpen(request.nextUrl.searchParams.get("t")));
+  if (!authed) {
     return NextResponse.json({ error: "The door is closed. Knock first." }, { status: 401 });
   }
   const params = request.nextUrl.searchParams;

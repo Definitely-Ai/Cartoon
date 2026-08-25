@@ -54,3 +54,34 @@ export async function isDoorOpen(cookieValue: string | undefined): Promise<boole
   if (!secret || !cookieValue) return false;
   return tokensEqual(cookieValue, await doorToken(secret));
 }
+
+// ---------------------------------------------------------------- trigger
+
+// A second, single-purpose token derived from the same secret with a
+// DIFFERENT phrase. It authorizes only the backroom action routes that accept
+// it as a ?t= query parameter — a URL-carried key, same pattern as the MCP
+// endpoint's ?key=. Deriving it separately means a URL that leaks into a
+// request log never exposes the session cookie, and rotating the password (or
+// AUTH_SECRET) rotates both.
+const TRIGGER_PHRASE = "backroom-trigger-v1";
+
+export async function triggerToken(secret: string): Promise<string> {
+  const key = await crypto.subtle.importKey(
+    "raw",
+    new TextEncoder().encode(secret),
+    { name: "HMAC", hash: "SHA-256" },
+    false,
+    ["sign"]
+  );
+  const sig = await crypto.subtle.sign("HMAC", key, new TextEncoder().encode(TRIGGER_PHRASE));
+  return Array.from(new Uint8Array(sig))
+    .map((b) => b.toString(16).padStart(2, "0"))
+    .join("");
+}
+
+/** True when the ?t= value is the current trigger token. */
+export async function isTriggerOpen(value: string | null | undefined): Promise<boolean> {
+  const secret = await activeSecret();
+  if (!secret || !value) return false;
+  return tokensEqual(value, await triggerToken(secret));
+}
