@@ -79,14 +79,18 @@ export const CASTS = [
     id: "mango",
     tokens: "SWDMANGO",
     who: "the golden retriever",
-    tiles: [{ body: "dog-full-body-sheet-01" }],
+    // A rendered, correctly-dressed Mango cropped from the golf keeper: the
+    // construction-line body alone flattened the render style and let the
+    // wardrobe wobble (a necktie, a waistcoat) once its bust was gone.
+    tiles: [{ body: { src: "scripts/training/setting-variants/drew-mango-golf-course.png", box: [545, 80, 400, 920] } }],
     tileNote:
-      "The reference sheet shows one character, alone: the golden retriever's full body in plain construction " +
-      "line. The sheet is reference only — draw him once, full body, inside the scene, and draw nothing else " +
-      "from the sheet. ",
+      "The reference sheet shows one character, alone: the golden retriever, full body, exactly as he is " +
+      "drawn. The sheet is reference only — draw him once, full body, inside the scene, and draw nothing " +
+      "else from the sheet. ",
     extra:
-      "He wears his grey herringbone sport coat over an open-collar shirt with the small flag pin on the left lapel, " +
-      "long dark trousers, bare canine feet. His rear is completely smooth and tailless.",
+      "He wears his grey herringbone sport coat over an open-collar shirt — no necktie, no waistcoat — with " +
+      "the small flag pin on the left lapel, long dark trousers, bare canine feet. His rear is completely " +
+      "smooth and tailless.",
   },
   {
     id: "abby",
