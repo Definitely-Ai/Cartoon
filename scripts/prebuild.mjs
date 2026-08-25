@@ -112,6 +112,27 @@ if (fs.existsSync(canonSrc)) {
   }
 }
 
+// The character-model proof gallery: every QC'd training scene image (and
+// its caption) is copied to public/models/ with a manifest, so /models can
+// show the founder the exact pixels the fine-tune will learn from.
+const modelsSrc = path.join(repoRoot, "scripts", "training", "setting-variants");
+const modelsDest = path.resolve(here, "..", "public", "models");
+fs.rmSync(modelsDest, { recursive: true, force: true });
+fs.mkdirSync(modelsDest, { recursive: true });
+const modelProofs = [];
+if (fs.existsSync(modelsSrc)) {
+  for (const file of fs.readdirSync(modelsSrc).sort()) {
+    if (!file.endsWith(".png")) continue;
+    const captionFile = path.join(modelsSrc, `${path.basename(file, ".png")}.txt`);
+    fs.copyFileSync(path.join(modelsSrc, file), path.join(modelsDest, file));
+    modelProofs.push({
+      file,
+      caption: fs.existsSync(captionFile) ? fs.readFileSync(captionFile, "utf8").trim() : "",
+    });
+  }
+}
+fs.writeFileSync(path.join(modelsDest, "index.json"), JSON.stringify(modelProofs, null, 2));
+
 // The /options git era is over — daily cartoons live in the studio
 // database (Supabase) now; the legacy folders stay in the repo as history
 // and are no longer copied into the build.
