@@ -25,8 +25,14 @@ shoulder and pearls at her throat.
 
 ## Character Read
 
-Warm, poised, faster than her regulars. She owns the room and it shows in the
-way she polishes a glass while delivering the verdict.
+**The authority.** The boss — a force to be reckoned with: warm, poised,
+faster than her regulars, and in command of her room. Her input is extremely
+valued; when Abby speaks, the argument is over. She curates the clientele —
+no drunks at her bar, no riffraff beside her regulars — and the room feels
+hers even when she is off-panel.
+
+**Appearance frequency**: she is the owner and bartender, not a third lead —
+she appears when the gag needs her, never in every frame.
 
 ## Scene Variables
 

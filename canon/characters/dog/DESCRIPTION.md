@@ -27,7 +27,10 @@ news with the patience of a man who has seen this episode before.
   (founder's note: "his neck beard is too large" was a fault).
 - **Build**: middle-aged and solid — rounded shoulders, modest belly, sturdy
   through the middle. **Absolutely no tail.**
-- **Hands**: human-shaped five-finger hands with subtle pads; real grips.
+- **Hands — the founder's balance** ("more dog hands but still humanoid"):
+  visibly a dog's — broad, fur-backed, soft-padded fingers with short dark
+  nails — yet fully humanoid in articulation: five fingers and a thumb in
+  believable human grips.
 - **Feet**: bare canine feet unless the scene names footwear.
 
 ## Character Read
@@ -55,13 +58,15 @@ about.
 
 ## Scene Variables and Wardrobe
 
-Two canonical registers — pick by the scene's formality:
+Two canonical registers — the suit leads:
 
-- **Bar default — the polo**: pale collared polo shirt, the **small USA flag
-  pin on the left chest**, a **wristwatch**, a **belt**, trousers. The plates'
-  most common Mango.
-- **Dressed up — the jacket**: rumpled suit jacket over a collared shirt, flag
-  pin on the **left lapel**.
+- **Bar default — the suit** (the founder's favorite look for him): the dark
+  jacket over a pale open-collared shirt, no tie, flag pin on the **left
+  lapel**, trousers.
+- **Daytime / travel / golf — the polo**: pale collared polo shirt, the flag
+  pin on the **left chest**, a **belt**, trousers.
+- **The pin is permanent**: an American flag pin on whatever he wears —
+  lapel when jacketed, chest otherwise. It never disappears.
 - **Golf / outdoors**: the polo plus a **ball cap** — caps sit naturally on
   him. One themed addition at most; wardrobe never changes his body.
 

@@ -80,11 +80,25 @@ martini by fare class. Nobody shouts. The room does half the talking.
 - **Drink**: the old fashioned — short rocks glass, one large cube, a dark
   cherry — at frame-right, with the shared nut bowl centered between his glass
   and Drew's.
+- **Hands — the founder's balance**: visibly a dog's — broad, fur-backed,
+  soft-padded fingers with short dark nails — yet fully humanoid in
+  articulation: five fingers and a thumb in believable human grips ("more
+  dog hands but still humanoid").
+- **The suit is the founder's favorite look for him**: the dark jacket over a
+  pale open-collared shirt is his bar default; the polo takes daytime and
+  golf. **The flag pin is permanent** — on whatever he wears: left lapel
+  jacketed, left chest otherwise.
 - **Read**: the worried, earnest everyman against Drew's deadpan — raised
   inner brows, hangdog patience. He pays the bill; his lines are wallet-height
   truths.
 
 ### Abby — the westie who owns the bar
+
+**She is the authority**: the boss, a force to be reckoned with — warm, quick,
+and in command. Her input is extremely valued; her word settles the argument.
+She curates the room — no drunks at her bar, no riffraff beside her regulars.
+**She is not in every frame**: she is the owner and bartender, appearing when
+the gag needs her, and the room feels hers even when she is off-panel.
 
 **Definitive face study: `canon/vision/abby-reference.jpg`** — the founder
 likes this Abby, with two corrections: the bust drawn **modest** ("too big"
@@ -107,17 +121,36 @@ plates' technique:
 - **Modest bust, always** — never exaggerated.
 - Work wardrobe: fitted blouse with rolled sleeves, short dark skirt, folded
   towel on the left shoulder, black heels. **No tail.**
-- Behind her counter is her territory; patrons stay on the room side.
+- Behind her counter is her territory; patrons stay on the room side. She
+  appears when the gag needs her — never as furniture.
+
+## The room and the reader
+
+**The audience is the financial world**: people who live or have lived in it,
+accustomed to high income and to spending real money building relationships —
+and the bar is where they build them. Drew and Mango come to relax, have fun,
+and build something; they never look at the price of a drink, and they expect
+not to sit next to riffraff. **The founder's worry, addressed by design**:
+Americans are drinking less, so the bar must never feel old and tired — it is
+the bar you would BUILD TODAY. **80% of cartoons happen inside it.**
 
 ## The Swinging Door — the room
 
-A classic dark-wood barroom with a **nineteenth-hole soul** — the bar of a
-golf-club neighborhood in a company town that happens to be Washington:
+An **upscale ground-floor bar a block off Wall Street** — polished, current,
+never a dive — with a nineteenth-hole flavor in its bottle labels and its
+clientele's weekends:
 
-- Framed script signs reading *"The Swinging Door"* on the walls (and the
-  window sign reversed from inside); leather club chairs and stools with
-  brass studs; framed prints of airplanes, landmarks, golfers.
-- The **back bar** carries rows of bottles whose labels are golf puns:
+- A **polished marble bar top**; **fine walnut-paneled walls** — nice
+  paneling, warm and current, not grim old wood; brass, good glassware,
+  leather club chairs and stools.
+- **When the front window is in frame, it carries The Swinging Door mirrored**
+  as read from inside — mandatory on the window, though the window itself
+  need not appear; the framed wall sign is handsome but optional per panel.
+
+- Framed script signs reading *"The Swinging Door"* on the walls; framed
+  prints of airplanes, landmarks, golfers.
+- **Bottles out and proudly displayed** on the back bar, their labels golf
+  puns:
   OLD FORESTER, 10TH HOLE RYE, BIRDIE BOURBON, EAGLE EYE RYE, PAR-TEE SCOTCH,
   19TH HOLE RYE, DIVOT DRIVE GIN, HAZARD SPICED WHISKY — that register.
 - A **large flatscreen TV over the back bar** playing the news with full
@@ -188,7 +221,10 @@ caption format everywhere the house typesets dialogue.
 
 ## The humor register — the seven canonical gags
 
-The plates ARE the comedy bible's examples:
+The plates ARE the comedy bible's examples — and note the **coherence rule**:
+in each, the TV story and the chalkboard special are the caption's own joke
+told again by the room (algae-green pool on the TV + NANOBUBBLES $17.76 on
+the board under "blue in concept, green in operations"):
 
 1. *Drew: "The security line is our most successful national team-building exercise."* — institutional absurdity, affectionate.
 2. *Mango: "I've reached the age where I don't want luxury. I just want knee room."* — aging and airline economics at wallet height.

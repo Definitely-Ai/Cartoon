@@ -7,15 +7,23 @@ Purpose: where the strip happens, drawn the same way every time. Source: the fou
 ## The Swinging Door (primary setting)
 
 **Governed by `canon/HARRINGTON-VISION.md` and the plates in `canon/vision/`.**
-Most cartoons occur inside **The Swinging Door**, a classic dark-wood American
-barroom with a nineteenth-hole soul — the golf-club bar of a company town that
-happens to be Washington:
+**80% of cartoons occur inside The Swinging Door** — an upscale ground-floor
+bar of the kind you would build today a block off Wall Street. Never a dive,
+never old and tired; polished and current, for a clientele from the financial
+world who build relationships at a good bar:
 
-- Leather club chairs and stools with brass studs; dark panelling; wood grain
-  drawn in fine engraved strokes.
-- Framed script signs reading *"The Swinging Door"* on the walls; the window
-  sign reversed as read from inside; framed prints of airplanes, landmarks,
-  and golfers.
+- A **polished marble bar top**; **fine walnut-paneled walls** — nice, warm,
+  current paneling drawn in fine engraved strokes; brass and good glassware;
+  leather club chairs and stools.
+- **If the front window is shown, The Swinging Door is on it, mirrored** as
+  read from inside (the window is optional; the mirrored sign on it is not);
+  a framed script sign on the wall is handsome but optional per panel; framed
+  prints of airplanes, landmarks, and golfers.
+- **Coherence rule**: the TV's story and the chalkboard's special both relate
+  to the day's caption — the room tells the same joke from other angles.
+- **Bottles out and proudly displayed** on the back bar.
+- Background patrons, when drawn: well-dressed financial-district regulars —
+  never drunks, never riffraff (Abby sees to it).
 - The **back bar**: rows of bottles with golf-pun labels (BIRDIE BOURBON,
   19TH HOLE RYE, PAR-TEE SCOTCH, DIVOT DRIVE GIN, EAGLE EYE RYE — that
   register), a mirror, glassware.
@@ -73,6 +81,7 @@ The setting may leave the bar, staying Americana-adjacent: sporting events, fish
 
 ## Rules of the room
 
-- The bar is warm and familiar — never seedy, never sleek.
+- The bar is polished and current — never a dive, never old and tired, never
+  seedy. Marble and walnut, built today.
 - Props earn their place: everything visible should be able to carry a gag someday.
 - The room stays consistent between cartoons — same bar, same walls, same map.
