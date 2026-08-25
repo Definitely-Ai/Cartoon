@@ -23,7 +23,12 @@ export const PLACES = [
     // No "dim" in the generation description: four probe rounds proved the
     // word drags Kontext into dark full-tone painting no matter what the
     // style clause says afterwards. The room reads dim on its own.
-    describe: "standing at the counter of a wood-panelled barroom, shelves of bottles on the back bar behind",
+    // The founder's law for his bar: the flatscreen TV and the chalkboard
+    // are ALWAYS in the room — they are the strip's gag surfaces — so every
+    // bar training image carries them and names them out loud.
+    describe:
+      "standing at the counter of a wood-panelled barroom, shelves of bottles on the back bar, a small " +
+      "flatscreen TV high on the wall and a chalkboard behind the bar",
   },
   {
     id: "golf course",

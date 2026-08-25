@@ -233,12 +233,24 @@ export function runs() {
 // Per-run staging notes, for the few scenes where canon fixes who stands
 // where. Keyed by run id.
 const STAGING = {
+  // The founder's bar canon rides every bar run: Drew's martini is always
+  // with him at the bar; the TV and chalkboard come in through the place
+  // description. The chalkboard carries only unreadable scribble — training
+  // images stay letter-free.
   "trio-barroom":
     "Compose the whole drawing exactly like the terrier woman's part of the sheet: the bar counter in the " +
     "near foreground running the full width of the drawing, and the terrier woman BEHIND it just as her " +
     "sheet shows her, the counter hiding her below the waist. The flamingo and the retriever stand on the " +
-    "viewer's side of the counter facing it in profile, seen side-on so both faces stay clearly visible, " +
-    "each with a drink on the counter in front of him. Nobody sits. ",
+    "viewer's side of the counter facing it in profile, seen side-on so both faces stay clearly visible. " +
+    "The flamingo's martini — a conical stemmed glass — and the retriever's short rocks glass rest flat on " +
+    "the counter. The TV screen is blank pale grey; the chalkboard carries only faint unreadable scribble. " +
+    "Nobody sits. ",
+  "drew-mango-barroom":
+    "The flamingo's martini — a conical stemmed glass — and the retriever's short rocks glass rest flat on " +
+    "the counter. The TV screen is blank pale grey; the chalkboard carries only faint unreadable scribble. ",
+  "mango-barroom-2":
+    "The retriever's short rocks glass rests flat on the counter. The TV screen is blank pale grey; the " +
+    "chalkboard carries only faint unreadable scribble. ",
 };
 
 /** The Kontext instruction for one run. */

@@ -53,7 +53,7 @@ Scene-variable details never become permanent canon. A suit in one cartoon does 
 
 ## Signature Prop
 
-Drew's recurring drink is a classic clear martini in a stemmed triangular glass. When it appears, it contains **exactly three olives on one pick**. It is optional unless the gag or scene calls for it.
+Drew's drink is a classic clear martini in a stemmed triangular glass containing **exactly three olives on one pick**. **At the bar it is always with him** — on a coaster within reach or in his feather-digit grip; away from the bar it is optional unless the gag or scene calls for it.
 
 ## Reference Hierarchy
 

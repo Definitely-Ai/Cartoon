@@ -195,7 +195,7 @@ Use `wardrobe-sheet.png` for fit behavior, not as permission to make any picture
 - Keep prop and feathers separate; no fused geometry.
 - Do not carry a prop forward from a previous scene unless continuity requires it.
 
-The signature martini is optional. When present, it is a classic clear martini in a stemmed triangular glass with exactly three olives on one pick. Drew may gesture while the glass rests on a coaster or hold it with the approved feather grip.
+The signature martini is always with Drew at the bar, and optional elsewhere. It is a classic clear martini in a stemmed triangular glass with exactly three olives on one pick. Drew may gesture while the glass rests on a coaster or hold it with the approved feather grip.
 
 ## 8. Acting with Mango and Abby
 
