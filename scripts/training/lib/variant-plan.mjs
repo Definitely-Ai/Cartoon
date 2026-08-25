@@ -1,246 +1,78 @@
-// The plan for the generated half of the training set.
-//
-// One file owns what gets generated, from which references, with which
-// instruction, under which caption — because three different consumers have
-// to agree on it exactly: make-variant-refs.mjs builds the conditioning
-// boards, the production /api/backroom/variants route spends real money
-// following the plan, and build-training-set.mjs counts the results into its
-// balance report. A drifted copy in any one of them is a silent hole in the
-// dataset, or a dollar spent on the wrong image.
-//
-// Why these numbers: after the audit purge the repo's own images leave
-// SWDMANGO with 17 caption mentions against ~43 each for the other two — and
-// five of the six cartoons that showed his body were dropped for the plumed
-// tail canon forbids. So the plan leans hard on Mango (solo and in both
-// pairings), gives every pairing at least two images (the repo has NONE of
-// Abby beside anyone), and stages one guarded trio attempt on an empty
-// background where nothing competes with three identities.
+// The Harrington probe plan — the generated images now chase the founder's
+// vision plates (canon/vision/), not the retired sheet canon. One file still
+// owns what gets generated, from which references, with which instruction:
+// make-variant-refs.mjs builds the boards, and the production
+// /api/backroom/variants route spends real money following the plan.
 
 import { VARIANT_PLACES } from "./places.mjs";
 
-// Where the generated images and the conditioning boards live in the repo.
 export const VARIANT_DIR = "scripts/training/setting-variants";
 export const REF_DIR = "scripts/training/variant-refs";
 
-// The absolute ceiling on committed variant images, enforced server-side by
-// the route. Deleting a rejected image frees its slot; nothing can push the
-// count past this. 30 x ~$0.055 also bounds the money this plan can spend.
-export const MAX_VARIANTS = 34;
+// Ceiling counts ALL committed variants (23 legacy images remain on disk as
+// history until the v2 set replaces them).
+export const MAX_VARIANTS = 40;
 
-// Reference boards. Each cast's board holds ONE model-sheet tile per
-// character — the full body with the same character's head study enlarged
-// beside it, frameless on shared white paper — built by make-variant-refs.mjs.
-// Round one proved the head study necessary: a lone 720px full-body tile
-// leaves the face a few dozen pixels, and Drew's head drifted in every panel
-// drawn from it. Round two proved the framelessness necessary: a bordered
-// inset box was copied into the golf scene as a drawn picture. Mango's head
-// comes from a finished cartoon (the pin bible's busts carry the black bead
-// eyes canon bans) beside his line-art base body, which also fixes his LACK
-// of a tail.
-export const MANGO_BUST = {
-  src: "cartoons/2026-08-04-an-emerging-asset/cartoon.png",
-  box: [780, 150, 474, 600],
-};
+// Reference tiles cut straight from the founder's plates.
+const DREW_REF = { body: { src: "canon/vision/drew-reference.jpg", box: [0, 0, 1450, 2450] } };
+const MANGO_REF = { body: { src: "canon/vision/mango-reference.jpg", box: [300, 600, 2300, 2800] } };
+const ABBY_REF = { body: { src: "canon/vision/abby-reference.jpg", box: [0, 0, 1000, 1760] } };
 
-// One model-sheet tile recipe per character, reused by every board so the
-// cast looks identical no matter who they share a scene with. Abby has a
-// second tile for the barroom: her glass-polishing pose, so the reference
-// itself argues she belongs behind the counter working.
-// Drew's body comes ONLY from the locked full-body master. The wardrobe and
-// pose sheets draw a DIFFERENT Drew (longer neck, harder line, flatter eye)
-// and are purged from the training set on the founder's call.
-const DREW_TILE = {
-  body: { src: "scripts/training/variant-refs/drew-clothed-src.png", box: [0, 0, 370, 1024] },
-  head: "flamingo-identity-sheet-01",
-  headCorner: "right",
-};
-const MANGO_TILE = { body: "dog-full-body-sheet-01", head: MANGO_BUST, headCorner: "left", whitenHead: true };
-const ABBY_TILE = {
-  body: "abby-full-body-sheet-01",
-  head: "abby-identity-sheet-01",
-  headCorner: "right",
-  whitenBody: true,
-  whitenHead: true,
-};
-// The bar tile is a full SCENE, not a figure: Abby already behind the
-// counter, shelves behind her, drawn in the proper light pencil-and-wash.
-// Restaging by text failed four rounds running — Kontext copies what it
-// sees, so the trio board now shows the staging and the room's style, and
-// the instruction asks it to EXTEND that scene rather than invent one.
-const ABBY_BAR_TILE = {
-  body: "abby-bar-blocking-sheet-03",
-  head: "abby-identity-sheet-01",
-  headCorner: "right",
-  whitenBody: true,
-  whitenHead: true,
-};
+const STYLE =
+  "Draw in EXACTLY the reference's antique-steel-engraving style: fine pen crosshatching and stippling on " +
+  "every surface, fur and feathers in individual strokes, full tonal range from rich blacks to bright paper " +
+  "highlights, the panel composed full corner to corner. Black-and-white only, no photographic rendering. ";
 
-const TILE_NOTE_ONE =
-  "The reference is a character model sheet: each character appears as a full standing body with the same " +
-  "character's face drawn again, enlarged, beside the head — a close-up study, not a second character. " +
-  "The sheet is reference only: never draw the sheet itself, its layout, or any enlarged head study into " +
-  "the cartoon — each character appears exactly once, full body, inside the scene. ";
+const ROOM =
+  "The scene is The Swinging Door, an upscale ground-floor bar a block off Wall Street — polished marble " +
+  "bar top, fine walnut-paneled walls, brass and good glassware, studded leather club chairs and handsome " +
+  "stools, bottles of distinct shapes proudly displayed on the back bar with golf-pun labels, a shared bowl " +
+  "of bar nuts, napkins under every glass. Never a dive — polished and current. ";
 
 export const CASTS = [
   {
-    id: "mango",
-    tokens: "SWDMANGO",
-    who: "the golden retriever",
-    // A rendered, correctly-dressed Mango cropped from the golf keeper: the
-    // construction-line body alone flattened the render style and let the
-    // wardrobe wobble (a necktie, a waistcoat) once its bust was gone.
-    tiles: [{ body: { src: "scripts/training/variant-refs/mango-rendered-src.png", box: [0, 0, 400, 920] } }],
+    id: "harrington-duo",
+    tokens: "Drew and Mango",
+    who: "the white flamingo gentleman and the golden retriever gentleman",
+    tiles: [DREW_REF, MANGO_REF],
     tileNote:
-      "The reference sheet shows one character, alone: the golden retriever, full body, exactly as he is " +
-      "drawn. The sheet is reference only — draw him once, full body, inside the scene, and draw nothing " +
-      "else from the sheet. ",
+      "The reference sheet shows the two characters exactly as they must be drawn: LEFT, Drew — a white-plumed " +
+      "flamingo gentleman, deep question-mark neck curve, heavy-lidded deadpan human-readable eyes, heavy " +
+      "downturned black-tipped beak, starched collar band under a black silk bow tie, fine knitted sweater vest " +
+      "over a pale collared shirt, feathered four-fingered hands with thumbs. RIGHT, Mango — a detailed golden " +
+      "retriever gentleman with true black dog lips along the muzzle, freckles, long-fringed drop ears, modest " +
+      "ruff, in a dark suit jacket over a pale open-collared shirt with a small US flag pin on the left lapel, " +
+      "a wristwatch, dog-yet-humanoid furred hands. ",
     extra:
-      "He wears his grey herringbone sport coat over an open-collar shirt — no necktie, no waistcoat — with " +
-      "the small flag pin on the left lapel, long dark trousers, bare canine feet. His rear is completely " +
-      "smooth and tailless.",
+      "Drew sits frame-left with a conical martini glass (olives on a pick) on a napkin; he also wears trousers. " +
+      "Mango sits frame-right with an old fashioned — short rocks glass, one large cube, a dark cherry. The " +
+      "nut bowl sits between the two drinks. Both are successful gentlemen in their mid-forties — classy, " +
+      "composed; Drew deadpan, Mango faintly worried. ",
   },
   {
-    id: "abby",
-    tokens: "SWDABBY",
-    who: "the white West Highland terrier woman",
-    tiles: [{ body: "abby-full-body-sheet-01", whitenBody: true }],
+    id: "harrington-abby",
+    tokens: "Abby",
+    who: "the West Highland terrier proprietor",
+    tiles: [ABBY_REF],
     tileNote:
-      "The reference sheet shows one character, alone: the white terrier woman, full body. The sheet is " +
-      "reference only — draw her once, full body, inside the scene, and draw nothing else from the sheet. ",
+      "The reference shows Abby's face and neckwear exactly as they must be drawn: a true fluffy West Highland " +
+      "White Terrier — round dark button eyes, black nose, small pricked ears, fine soft fur strokes, never " +
+      "wolfish — wearing her studded leather collar with a small teardrop gem pendant. ",
     extra:
-      "She has a short-muzzled West Highland terrier face with a round black nose, dark friendly eyes and small " +
-      "upright ears — not a fox. She wears her fitted white blouse with rolled sleeves, very short dark skirt, a " +
-      "folded towel on her left shoulder, her pearl necklace with the oval gem, and black heels. Her rear is " +
-      "smooth and tailless.",
-  },
-  {
-    id: "drew",
-    tokens: "SWDDREW",
-    who: "the flamingo",
-    tiles: [{ body: { src: "scripts/training/variant-refs/drew-clothed-src.png", box: [0, 0, 370, 1024] } }],
-    tileNote:
-      "The reference sheet shows one character, alone: the flamingo, full body. The sheet is reference only — " +
-      "draw him once, full body, inside the scene, and draw nothing else from the sheet. ",
-    extra:
-      "He keeps his black bow tie, compact head with small lively eyes, long S-curved neck, feathered wing-arms, " +
-      "feathered body, and long thin bird legs with webbed feet — exactly as the close-up draws his face.",
-  },
-  {
-    id: "mango-abby",
-    tokens: "SWDMANGO and SWDABBY",
-    who: "the golden retriever and the white terrier woman",
-    tiles: [MANGO_TILE, ABBY_TILE],
-    tileNote:
-      TILE_NOTE_ONE +
-      "From left to right on the sheet: the golden retriever, then the terrier woman. Draw both, clearly distinct.",
-    extra:
-      "The retriever wears his grey sport coat with the left-lapel flag pin and long dark trousers; the terrier " +
-      "woman wears her blouse, short skirt, shoulder towel and pearl necklace. Both rears smooth and tailless.",
-  },
-  {
-    id: "drew-mango",
-    tokens: "SWDDREW and SWDMANGO",
-    who: "the flamingo and the golden retriever",
-    tiles: [DREW_TILE, MANGO_TILE],
-    tileNote:
-      TILE_NOTE_ONE + "From left to right on the sheet: the flamingo, then the golden retriever. Draw both, clearly distinct.",
-    extra:
-      "The flamingo keeps his bow tie, small lively eyes, S-neck and feathered wing-arms; the retriever wears his " +
-      "grey sport coat with the left-lapel flag pin and long dark trousers. The retriever's rear is smooth and tailless.",
-  },
-  {
-    id: "drew-abby",
-    tokens: "SWDDREW and SWDABBY",
-    who: "the flamingo and the white terrier woman",
-    tiles: [DREW_TILE, ABBY_TILE],
-    tileNote:
-      TILE_NOTE_ONE + "From left to right on the sheet: the flamingo, then the terrier woman. Draw both, clearly distinct.",
-    extra:
-      "The flamingo keeps his bow tie, small lively eyes, S-neck and feathered wing-arms; the terrier woman wears " +
-      "her blouse, short skirt, shoulder towel and pearl necklace. Her rear is smooth and tailless.",
-  },
-  {
-    id: "trio",
-    tokens: "SWDDREW, SWDMANGO and SWDABBY",
-    who: "the flamingo, the golden retriever, and the white terrier woman",
-    // The round-6 recipe — the best bar of seven attempts. What seven rounds
-    // established: style, identity and wardrobe are fully steerable, but
-    // single-pass Kontext will NOT place a conditioned character behind the
-    // counter (every composition lines the figures up on the room side, and
-    // the edit framing duplicated Abby and dropped Drew). Behind-the-counter
-    // staging is the fine-tune's job — her training set carries it.
-    tiles: [DREW_TILE, MANGO_TILE, ABBY_BAR_TILE],
-    tileNote:
-      TILE_NOTE_ONE +
-      "From left to right on the sheet, three DIFFERENT characters: the flamingo, the golden retriever, and the " +
-      "terrier woman — her part of the sheet shows her behind the counter of her barroom. Draw all three, each " +
-      "clearly distinct.",
-    extra:
-      "The flamingo keeps his bow tie, small lively eyes, S-neck, feathered wing-arms and long thin bird legs — " +
-      "behind him hang only his folded wings, no long tail feathers. The retriever wears his grey sport coat " +
-      "with the left-lapel flag pin and long dark trousers. The terrier woman wears her fitted white blouse, " +
-      "very short dark skirt, black heels, shoulder towel and pearl necklace — never trousers. Every rear is " +
-      "smooth and tailless.",
-  },
-  {
-    id: "trio-plain",
-    tokens: "SWDDREW, SWDMANGO and SWDABBY",
-    who: "the flamingo, the golden retriever, and the white terrier woman",
-    tiles: [DREW_TILE, MANGO_TILE, ABBY_TILE],
-    tileNote:
-      TILE_NOTE_ONE +
-      "From left to right on the sheet, three DIFFERENT characters: the flamingo, the golden retriever, the " +
-      "terrier woman. Draw all three, each clearly distinct.",
-    extra:
-      "The flamingo keeps his bow tie, small lively eyes, S-neck, feathered wing-arms and long thin bird legs. " +
-      "The retriever wears his grey sport coat with the left-lapel flag pin and long dark trousers. The terrier " +
-      "woman wears her fitted white blouse, very short dark skirt, black heels, shoulder towel and pearl " +
-      "necklace. Every rear is smooth and tailless.",
+      "Draw her as the successful proprietor behind her own marble bar counter: trim natural figure with a " +
+      "modest bust, fitted light blouse with rolled sleeves, folded towel on her left shoulder, the studded " +
+      "gem-pendant collar at her neck, polishing a rocks glass, poised and in command, the counter hiding her " +
+      "below the waist, bottles and good glassware behind her. ",
   },
 ];
 
-// cast id -> place ids. Every id in here must exist in VARIANT_PLACES.
-//
-// The first three rows are the CHARACTER-PERFECTION PROBES — the founder's own
-// three test scenes (golf, boat, his bar), kept first so one click of
-// /api/backroom/variants?limit=3 generates exactly these. They double as
-// training images once they pass his eye.
+// cast id -> place ids (places kept for module compatibility; the Harrington
+// probes all play in the bar).
 export const PLAN = [
-  ["drew-mango", ["golf course", "boat"]],
-  ["trio", ["barroom"]],
-  ["mango", ["park", "office", "beach", "street", "empty", "courtroom", "diner", "barroom-2", "boat"]],
-  ["abby", ["boat", "park", "street", "diner"]],
-  ["drew", ["office", "beach", "courtroom", "empty"]],
-  ["mango-abby", ["boat", "park", "office", "empty"]],
-  ["drew-mango", ["beach", "street", "diner", "barroom"]],  // barroom here = a second bar composition
-  ["drew-abby", ["park", "diner"]],
-  ["trio-plain", ["empty"]],
+  ["harrington-duo", ["barroom"]],
+  ["harrington-abby", ["barroom"]],
 ];
 
-// The founder's rule: Drew is never bare. Over his feathered body he wears
-// simple clothing suited to the scene — light, never a costume change, the
-// bow tie always visible. The clothes are scene-variable, so the caption
-// names them (a variable the captions guard stays promptable; only what
-// never changes is left for the model to own).
-const DREW_CLOTHES = {
-  "barroom": "a trim dark waistcoat",
-  "golf course": "a knitted sleeveless golf sweater and a flat cap",
-  "boat": "a casual open deck jacket",
-  "office": "a light sport coat",
-  "beach": "an open short-sleeved linen shirt",
-  "courtroom": "a dark blazer",
-  "empty": "his trim dark waistcoat",
-  "park": "his light sport coat",
-  "street": "his light sport coat",
-  "diner": "his light sport coat",
-};
-
-function drewClothes(run) {
-  return DREW_CLOTHES[run.placeId.replace(/-\d+$/, "")] ?? "his trim dark waistcoat";
-}
-
-// A place id may carry a "-2"-style suffix to ask for a second image of the
-// same place (a different roll of the dice); it resolves to the base place.
 function placeOf(placeId) {
   const base = placeId.replace(/-\d+$/, "");
   const place = VARIANT_PLACES.get(base);
@@ -256,7 +88,6 @@ export function runs() {
     const cast = byId.get(castId);
     if (!cast) throw new Error(`variant plan names unknown cast "${castId}"`);
     for (const placeId of placeIds) {
-      // Ids become filenames and ?only= values — no spaces.
       const slug = placeId.replace(/\s+/g, "-");
       all.push({ id: `${castId}-${slug}`, cast, placeId, place: placeOf(placeId) });
     }
@@ -269,59 +100,32 @@ export function runs() {
   return all;
 }
 
-// Per-run staging notes, for the few scenes where canon fixes who stands
-// where. Keyed by run id.
-const STAGING = {
-  // The founder's bar canon rides every bar run: Drew's martini is always
-  // with him at the bar; the TV and chalkboard come in through the place
-  // description. The chalkboard carries only unreadable scribble — training
-  // images stay letter-free.
-  "trio-barroom":
-    "Compose the whole drawing exactly like the terrier woman's part of the sheet: the bar counter in the " +
-    "near foreground running the full width of the drawing, and the terrier woman BEHIND it just as her " +
-    "sheet shows her, the counter hiding her below the waist. The flamingo and the retriever stand on the " +
-    "viewer's side of the counter facing it in profile, seen side-on so both faces stay clearly visible. " +
-    "The flamingo's martini — a conical stemmed glass — and the retriever's short rocks glass rest flat on " +
-    "the counter. The back wall above the bottle shelves carries BOTH of the room's two fixtures, side by " +
-    "side and clearly visible: a small flatscreen TV with a blank pale grey screen, and next to it a framed " +
-    "chalkboard with only faint unreadable scribble. Nobody sits. ",
-  "drew-mango-barroom":
-    "The flamingo's martini — a conical stemmed glass — and the retriever's short rocks glass rest flat on " +
-    "the counter. The back wall above the bottle shelves carries BOTH of the room's two fixtures, side by " +
-    "side and clearly visible: a small flatscreen TV with a blank pale grey screen, and next to it a framed " +
-    "chalkboard with only faint unreadable scribble. ",
-  "mango-barroom-2":
-    "The retriever's short rocks glass rests flat on the counter. The back wall above the bottle shelves " +
-    "carries BOTH of the room's two fixtures, side by side and clearly visible: a small flatscreen TV with " +
-    "a blank pale grey screen, and next to it a framed chalkboard with only faint unreadable scribble. ",
+// Scene dressing per run: the TV and chalkboard tell the same joke.
+const SCENES = {
+  "harrington-duo-barroom":
+    "A large flatscreen TV over the back bar plays the news in the same engraved style, with a DCN network " +
+    "bug, a LIVE tag, and a bold-caps chyron reading RATE CUT EXPECTED, EVENTUALLY. A dark chalkboard beside " +
+    "it reads, in hand-lettered chalk: PATIENCE — $14. ",
+  "harrington-abby-barroom":
+    "Behind her, among the bottles, a small hand-lettered chalkboard reads: THE HOUSE PROTECTS ITS OWN. ",
 };
 
 /** The Kontext instruction for one run. */
 export function instruction(run) {
-  // The style command comes BEFORE the scene: round three proved that a dark
-  // scene ("dim barroom") stated after a trailing style note wins, and the
-  // whole panel came back as a full-tone painting. Anchoring the style to the
-  // reference sheet itself is the strongest claim Kontext honours.
   return (
-    `${run.cast.tileNote} Redraw ${run.cast.who} exactly as drawn — same construction, same face, same ` +
-    `proportions, unchanged in every detail. ${run.cast.extra} Keep the reference sheet's drawing style ` +
-    `for the whole cartoon: bright white paper, confident pen-and-ink outlines, sparing light grey wash, ` +
-    `plenty of untouched white paper — never dark full-tone rendering, never a painting. ` +
-    (run.cast.tokens.includes("SWDDREW")
-      ? `The flamingo is dressed in ${drewClothes(run)} — if his sheet shows a different garment, swap it ` +
-        `for this one, worn naturally over his feathers, his black bow tie visible on top. He is never ` +
-        `bare. Nothing else about him changes, and nobody else gains a hat or garment not named here. `
-      : "") +
-    `Place the scene somewhere new: ${run.place}. ` +
-    (STAGING[run.id] ?? "") +
-    `Single-panel black-and-white gag cartoon, no colour, no lettering, no speech balloons, no panel ` +
-    `border, no signature, no date, no watermark.`
+    run.cast.tileNote +
+    `Redraw ${run.cast.who} EXACTLY as the reference draws them — same faces, same wardrobe, same construction, ` +
+    `nothing invented. ` +
+    STYLE +
+    ROOM +
+    (SCENES[run.id] ?? "") +
+    run.cast.extra +
+    `No speech balloons, no floating caption text, no signature, no watermark; the only lettering is the ` +
+    `named signage, short and hand-lettered.`
   );
 }
 
-/** The training caption for one run's image. */
+/** The display caption for one run's image (probe showcase, not training). */
 export function caption(run) {
-  // Drew's scene-themed clothing is variable, so the caption names it.
-  const tokens = run.cast.tokens.replace("SWDDREW", `SWDDREW in ${drewClothes(run)}`);
-  return `SWDINK cartoon, ${tokens} ${run.place}`;
+  return `${run.cast.tokens} at The Swinging Door — first studio study after the Harrington plates`;
 }

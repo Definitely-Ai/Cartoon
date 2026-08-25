@@ -1,30 +1,48 @@
 "use client";
 
-// The character-model review room. The founder (or whoever presents to him)
-// sees the three locked sheets beside every QC'd training scene image — the
-// exact pixels the fine-tune learns from — and files instant feedback on any
-// of them. Feedback commits to the repo (feedback/model-review/), where the
-// operator reads it before the next training round.
+// The Cast — the vision room. Built around the founder's Harrington plates:
+// the prints ARE the standard, shown large, with the three definitive
+// character studies and the first studio images drawn after them. Feedback on
+// any study commits to feedback/model-review/ in the repo, where the operator
+// reads it before the next round.
 
 import { useEffect, useState } from "react";
 
 type Proof = { file: string; caption: string };
 
+const serif = "Georgia, 'Times New Roman', serif";
+
+const PLATES = [
+  { file: "plate-1-security-and-martini-menu.jpg", line: "The security line · The martini menu, by fare class" },
+  { file: "plate-2-debt-ceiling-and-retirement.jpg", line: "Debt Ceiling Week, 16th annual · Retirement planning, live" },
+  { file: "plate-3-national-mall.jpg", line: "“The republic remains blue in concept, green in operations.”" },
+  { file: "plate-4-nineteenth-hole-and-tariffs.jpg", line: "The 19th hole · Patriotic imported beer · The globe, priced" },
+];
+
 const CAST = [
   {
     name: "Drew",
-    line: "the flamingo — question-mark neck, heavy-lidded eyes, sweater vest and bow tie, martini in a pinky-elegant grip",
-    sheets: ["/canon/flamingo/full-body-sheet.png", "/canon/flamingo/identity-sheet.png"],
+    study: "drew-reference.jpg",
+    line:
+      "A successful gentleman in his mid-forties. White-plumed flamingo, question-mark neck, heavy-lidded deadpan " +
+      "eyes, starched collar band under the black silk bow tie — his default skin — sweater vest, trousers, and a " +
+      "martini held by the stem, pinky-elegant.",
   },
   {
     name: "Mango",
-    line: "the golden retriever — black dog lips, flag pin at the chest (lapel when jacketed), wristwatch, old fashioned, no tail",
-    sheets: ["/canon/dog/full-body-sheet.png", "/canon/dog/identity-sheet.png"],
+    study: "mango-reference.jpg",
+    line:
+      "A successful gentleman in his mid-forties, and unmistakably a golden retriever — true black dog lips, " +
+      "freckled muzzle, long-fringed ears. The dark suit over an open collar, the American flag pin on whatever he " +
+      "wears, a wristwatch, and an old fashioned with one large cube and a cherry.",
   },
   {
     name: "Abby",
-    line: "the westie — owns The Swinging Door; fluffy button-eyed face, studded gem-pendant collar, towel and heels, no tail",
-    sheets: ["/canon/abby/full-body-sheet.png", "/canon/abby/identity-sheet.png"],
+    study: "abby-reference.jpg",
+    line:
+      "The successful proprietor. A true fluffy westie — button eyes, black nose — in her studded leather collar " +
+      "with the teardrop gem. The boss: a force to be reckoned with, warm and in command. Her word settles the " +
+      "argument, and no riffraff sits at her marble.",
   },
 ];
 
@@ -49,10 +67,12 @@ function FeedbackCard({ proof }: { proof: Proof }) {
   }
 
   return (
-    <figure style={{ margin: 0, border: "1px solid #ddd", borderRadius: 8, padding: 12, background: "#fff" }}>
+    <figure style={{ margin: 0, border: "1px solid #d8d2c6", borderRadius: 6, padding: 14, background: "#fffdf8" }}>
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src={`/models/${proof.file}`} alt={proof.caption} style={{ width: "100%", borderRadius: 4 }} />
-      <figcaption style={{ fontSize: 13, color: "#555", margin: "8px 0" }}>{proof.caption}</figcaption>
+      <img src={`/models/${proof.file}`} alt={proof.caption} style={{ width: "100%", borderRadius: 3 }} />
+      <figcaption style={{ fontFamily: serif, fontStyle: "italic", fontSize: 14, color: "#444", margin: "10px 0" }}>
+        {proof.caption}
+      </figcaption>
       <div style={{ display: "flex", flexWrap: "wrap", gap: 4, marginBottom: 8 }}>
         {Array.from({ length: 10 }, (_, i) => i + 1).map((n) => (
           <button
@@ -64,7 +84,7 @@ function FeedbackCard({ proof }: { proof: Proof }) {
               height: 30,
               borderRadius: 15,
               border: "1px solid #999",
-              background: rating === n ? "#1a1a1a" : "#f5f5f5",
+              background: rating === n ? "#1a1a1a" : "#f5f2ea",
               color: rating === n ? "#fff" : "#1a1a1a",
               cursor: "pointer",
             }}
@@ -96,37 +116,96 @@ export default function ModelsPage() {
   useEffect(() => {
     fetch("/models/index.json")
       .then((r) => (r.ok ? r.json() : []))
-      .then(setProofs)
+      .then((all: Proof[]) => setProofs(all.filter((p) => p.file.startsWith("harrington-"))))
       .catch(() => setProofs([]));
   }, []);
 
   return (
-    <main style={{ maxWidth: 1100, margin: "0 auto", padding: 16 }}>
-      <h1>The Character Models</h1>
-      <p style={{ color: "#555" }}>
-        The locked sheets are the law; the scene proofs below them are the exact images the fine-tune trains on.
-        Score any image 1–10 and say what you see — every note lands with the operator before the next round.
-      </p>
+    <main style={{ maxWidth: 1150, margin: "0 auto", padding: "16px 16px 64px" }}>
+      <header style={{ textAlign: "center", margin: "28px 0 10px" }}>
+        <h1 style={{ fontFamily: serif, fontSize: 40, margin: 0, letterSpacing: 0.5 }}>The Swinging Door</h1>
+        <p style={{ fontFamily: serif, fontStyle: "italic", fontSize: 17, color: "#555", marginTop: 8 }}>
+          An upscale room a block off Wall Street. Marble and walnut. Two gentlemen, one proprietor,
+          and the day&rsquo;s news — priced, poured, and taken with a raised eyebrow.
+        </p>
+      </header>
 
-      {CAST.map((c) => (
-        <section key={c.name} style={{ margin: "24px 0" }}>
-          <h2 style={{ marginBottom: 2 }}>{c.name}</h2>
-          <p style={{ marginTop: 0, color: "#555" }}>{c.line}</p>
-          <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
-            {c.sheets.map((s) => (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img key={s} src={s} alt={`${c.name} sheet`} style={{ height: 320, borderRadius: 4, border: "1px solid #eee" }} />
+      <section style={{ margin: "36px 0" }}>
+        <h2 style={{ fontFamily: serif, borderBottom: "2px solid #1a1a1a", paddingBottom: 6 }}>The plates</h2>
+        <p style={{ color: "#555", marginTop: 6 }}>
+          The founder&rsquo;s reference prints — the strip&rsquo;s standard for style, room, and voice.
+        </p>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(420px, 1fr))", gap: 20 }}>
+          {PLATES.map((p) => (
+            <figure key={p.file} style={{ margin: 0 }}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={`/vision/${p.file}`}
+                alt={p.line}
+                style={{ width: "100%", borderRadius: 4, border: "1px solid #d8d2c6", background: "#fff" }}
+              />
+              <figcaption
+                style={{ fontFamily: serif, fontStyle: "italic", fontSize: 14, color: "#555", textAlign: "center", marginTop: 6 }}
+              >
+                {p.line}
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </section>
+
+      <section style={{ margin: "44px 0" }}>
+        <h2 style={{ fontFamily: serif, borderBottom: "2px solid #1a1a1a", paddingBottom: 6 }}>The cast</h2>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: 24, marginTop: 16 }}>
+          {CAST.map((c) => (
+            <figure key={c.name} style={{ margin: 0, textAlign: "center" }}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={`/vision/${c.study}`}
+                alt={c.name}
+                style={{ width: "100%", maxHeight: 460, objectFit: "contain", borderRadius: 4, background: "#fff", border: "1px solid #d8d2c6" }}
+              />
+              <figcaption style={{ marginTop: 10 }}>
+                <div style={{ fontFamily: serif, fontSize: 24 }}>{c.name}</div>
+                <p style={{ fontSize: 14, color: "#555", textAlign: "left", marginTop: 6 }}>{c.line}</p>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </section>
+
+      <section style={{ margin: "44px 0" }}>
+        <h2 style={{ fontFamily: serif, borderBottom: "2px solid #1a1a1a", paddingBottom: 6 }}>The house rules</h2>
+        <ul style={{ fontFamily: serif, fontSize: 16, color: "#333", lineHeight: 1.7, maxWidth: 760 }}>
+          <li>Eighty percent of cartoons happen inside the bar; the same bottles stand the back bar every day.</li>
+          <li>The TV names the story, the chalkboard prices it, the caption lands the verdict — one joke, three angles.</li>
+          <li>If the window is in frame, <em>The Swinging Door</em> is on it, mirrored.</li>
+          <li>The subject is what&rsquo;s actually going on — policy, rates, tariffs, taxes — anything that hits the wallet.</li>
+          <li>No cussing. No slandering. Gentlemen, always; the wit never needs a cheap word.</li>
+          <li>The daily test: a finance man&rsquo;s 3–10 seconds — it lands, and it feels like his world.</li>
+        </ul>
+      </section>
+
+      <section style={{ margin: "44px 0" }}>
+        <h2 style={{ fontFamily: serif, borderBottom: "2px solid #1a1a1a", paddingBottom: 6 }}>
+          First studio studies {proofs.length > 0 ? `(${proofs.length})` : ""}
+        </h2>
+        <p style={{ color: "#555", marginTop: 6 }}>
+          The studio&rsquo;s first images drawn after the plates. Score any study 1–10 and say what you see —
+          every note lands with the operator before the next round.
+        </p>
+        {proofs.length === 0 ? (
+          <p style={{ fontFamily: serif, fontStyle: "italic", color: "#777" }}>
+            The first studies are being drawn now — refresh in a few minutes.
+          </p>
+        ) : (
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))", gap: 18 }}>
+            {proofs.map((p) => (
+              <FeedbackCard key={p.file} proof={p} />
             ))}
           </div>
-        </section>
-      ))}
-
-      <h2>Scene proofs — the training set ({proofs.length})</h2>
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))", gap: 16 }}>
-        {proofs.map((p) => (
-          <FeedbackCard key={p.file} proof={p} />
-        ))}
-      </div>
+        )}
+      </section>
     </main>
   );
 }

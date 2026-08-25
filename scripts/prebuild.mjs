@@ -133,6 +133,18 @@ if (fs.existsSync(modelsSrc)) {
 }
 fs.writeFileSync(path.join(modelsDest, "index.json"), JSON.stringify(modelProofs, null, 2));
 
+// The founder's vision plates — the Harrington prints and definitive
+// character studies — copied for The Cast page.
+const visionSrc = path.join(repoRoot, "canon", "vision");
+const visionDest = path.resolve(here, "..", "public", "vision");
+fs.rmSync(visionDest, { recursive: true, force: true });
+fs.mkdirSync(visionDest, { recursive: true });
+if (fs.existsSync(visionSrc)) {
+  for (const file of fs.readdirSync(visionSrc)) {
+    if (/\.(jpe?g|png|webp)$/i.test(file)) fs.copyFileSync(path.join(visionSrc, file), path.join(visionDest, file));
+  }
+}
+
 // The /options git era is over — daily cartoons live in the studio
 // database (Supabase) now; the legacy folders stay in the repo as history
 // and are no longer copied into the build.
