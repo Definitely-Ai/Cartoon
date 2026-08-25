@@ -27,92 +27,108 @@ export const REF_DIR = "scripts/training/variant-refs";
 // count past this. 30 x ~$0.055 also bounds the money this plan can spend.
 export const MAX_VARIANTS = 34;
 
-// Reference boards. Each cast's board is tiled from repo crops by
-// make-variant-refs.mjs; `tiles` name the training-set crops (or for Mango,
-// the two halves of his identity: the rendered bust that fixes his face and
-// wardrobe, and the line-art base body that fixes his proportions — and his
-// LACK of a tail, which the instruction repeats because the one thing a
-// Mango variant must never inherit from Kontext's imagination is the tail).
-// A tile can be a training-set crop name, or a direct cut from a repo image
-// — used where the training set has no clean example (Mango's rendered bust).
+// Reference boards. Each cast's board holds ONE composite tile per character
+// — full body with the head close-up inset in a corner — built by
+// make-variant-refs.mjs. Round one proved the inset necessary: a lone 720px
+// full-body tile leaves the face a few dozen pixels, and Drew's head drifted
+// in every panel drawn from it. Mango's tiles come from a finished cartoon
+// (the pin bible's busts carry the black bead eyes canon bans) plus his
+// line-art base body, which also fixes his LACK of a tail.
 export const MANGO_BUST = {
   src: "cartoons/2026-08-04-an-emerging-asset/cartoon.png",
   box: [780, 150, 474, 600],
 };
 
+// One composite tile recipe per character, reused by every board so the cast
+// looks identical no matter who they share a panel with.
+const DREW_TILE = { body: "flamingo-wardrobe-sheet-01", head: "flamingo-identity-sheet-01", headCorner: "right" };
+const MANGO_TILE = { body: "dog-full-body-sheet-01", head: MANGO_BUST, headCorner: "left" };
+const ABBY_TILE = { body: "abby-full-body-sheet-01", head: "abby-identity-sheet-01", headCorner: "right" };
+
+const TILE_NOTE_ONE =
+  "Each reference panel shows one character: the full body, plus the same character's face enlarged in the " +
+  "inset box — the inset is only a close-up, not a second character. ";
+
 export const CASTS = [
   {
     id: "mango",
     tokens: "SWDMANGO",
-    who: "the golden retriever in the grey sport coat",
-    // The bust tile is cut from a finished cartoon, not the pin bible: the
-    // bible's busts give him the black bead eyes canon bans, and a reference
-    // eye becomes every generated eye.
-    tiles: [MANGO_BUST, "dog-full-body-sheet-01"],
+    who: "the golden retriever",
+    tiles: [MANGO_TILE],
     tileNote:
-      "Both panels of the reference show the SAME golden retriever: left is his face and jacket fully rendered, " +
-      "right is his full body construction in plain line. He has NO tail.",
-    extra: "He wears his grey sport coat with the small flag pin on the lapel, and he has absolutely no tail.",
+      TILE_NOTE_ONE +
+      "The panel shows the golden retriever: his body in plain construction line, his rendered face and jacket in the inset.",
+    extra:
+      "He wears his grey herringbone sport coat over an open-collar shirt with the small flag pin on the left lapel, " +
+      "long dark trousers, bare canine feet. His rear is completely smooth and tailless.",
   },
   {
     id: "abby",
     tokens: "SWDABBY",
     who: "the white West Highland terrier woman",
-    tiles: ["abby-full-body-sheet-01", "abby-identity-sheet-01"],
-    tileNote:
-      "Both panels of the reference show the SAME terrier woman: left is her full body, right is her face close up. " +
-      "She has no tail.",
-    extra: "She wears her fitted blouse, short dark skirt, shoulder towel, and pearl necklace exactly as drawn.",
+    tiles: [ABBY_TILE],
+    tileNote: TILE_NOTE_ONE + "The panel shows the terrier woman, her face enlarged in the inset.",
+    extra:
+      "She wears her fitted white blouse with rolled sleeves, very short dark skirt, a folded towel on her left " +
+      "shoulder, her pearl necklace with the oval gem, and black heels. Her rear is smooth and tailless.",
   },
   {
     id: "drew",
     tokens: "SWDDREW",
     who: "the flamingo",
-    tiles: ["flamingo-wardrobe-sheet-01", "flamingo-identity-sheet-01"],
-    tileNote:
-      "Both panels of the reference show the SAME flamingo: left is his full body wearing only his black bow tie, " +
-      "right is his head close up.",
-    extra: "He keeps his black bow tie, S-curved neck, and feathered wing-arms exactly as drawn.",
+    tiles: [DREW_TILE],
+    tileNote: TILE_NOTE_ONE + "The panel shows the flamingo, his head enlarged in the inset.",
+    extra:
+      "He keeps his black bow tie, compact head with small lively eyes, long S-curved neck, feathered wing-arms, " +
+      "feathered body, and long thin bird legs with webbed feet — exactly as the close-up draws his face.",
   },
   {
     id: "mango-abby",
     tokens: "SWDMANGO and SWDABBY",
-    who: "the golden retriever in the grey sport coat and the white terrier woman",
-    tiles: [MANGO_BUST, "abby-full-body-sheet-01"],
+    who: "the golden retriever and the white terrier woman",
+    tiles: [MANGO_TILE, ABBY_TILE],
     tileNote:
-      "The reference shows two DIFFERENT characters side by side: left the golden retriever, right the terrier woman. " +
-      "Draw both, distinct, neither with a tail.",
-    extra: "Two distinct characters: the retriever in his grey coat, the terrier woman in her blouse and skirt. No tails.",
+      TILE_NOTE_ONE +
+      "Left panel: the golden retriever. Right panel: the terrier woman. Draw both, clearly distinct.",
+    extra:
+      "The retriever wears his grey sport coat with the left-lapel flag pin and long dark trousers; the terrier " +
+      "woman wears her blouse, short skirt, shoulder towel and pearl necklace. Both rears smooth and tailless.",
   },
   {
     id: "drew-mango",
     tokens: "SWDDREW and SWDMANGO",
-    who: "the flamingo and the golden retriever in the grey sport coat",
-    tiles: [MANGO_BUST, "flamingo-wardrobe-sheet-01"],
+    who: "the flamingo and the golden retriever",
+    tiles: [DREW_TILE, MANGO_TILE],
     tileNote:
-      "The reference shows two DIFFERENT characters side by side: left the flamingo, right the golden retriever. " +
-      "Draw both, distinct; the retriever has no tail.",
-    extra: "Two distinct characters: the flamingo with his bow tie, the retriever in his grey coat with no tail.",
+      TILE_NOTE_ONE + "Left panel: the flamingo. Right panel: the golden retriever. Draw both, clearly distinct.",
+    extra:
+      "The flamingo keeps his bow tie, small lively eyes, S-neck and feathered wing-arms; the retriever wears his " +
+      "grey sport coat with the left-lapel flag pin and long dark trousers. The retriever's rear is smooth and tailless.",
   },
   {
     id: "drew-abby",
     tokens: "SWDDREW and SWDABBY",
     who: "the flamingo and the white terrier woman",
-    tiles: ["flamingo-wardrobe-sheet-01", "abby-full-body-sheet-01"],
+    tiles: [DREW_TILE, ABBY_TILE],
     tileNote:
-      "The reference shows two DIFFERENT characters side by side: left the flamingo, right the terrier woman. " +
-      "Draw both, distinct.",
-    extra: "Two distinct characters: the flamingo with his bow tie, the terrier woman in her blouse and skirt.",
+      TILE_NOTE_ONE + "Left panel: the flamingo. Right panel: the terrier woman. Draw both, clearly distinct.",
+    extra:
+      "The flamingo keeps his bow tie, small lively eyes, S-neck and feathered wing-arms; the terrier woman wears " +
+      "her blouse, short skirt, shoulder towel and pearl necklace. Her rear is smooth and tailless.",
   },
   {
     id: "trio",
     tokens: "SWDDREW, SWDMANGO and SWDABBY",
-    who: "the flamingo, the golden retriever in the grey sport coat, and the white terrier woman",
-    tiles: ["flamingo-wardrobe-sheet-01", MANGO_BUST, "abby-full-body-sheet-01"],
+    who: "the flamingo, the golden retriever, and the white terrier woman",
+    tiles: [DREW_TILE, MANGO_TILE, ABBY_TILE],
     tileNote:
-      "The reference shows three DIFFERENT characters side by side: the flamingo, the golden retriever, the terrier " +
-      "woman. Draw all three, each distinct; no character has a tail.",
-    extra: "Three distinct characters together; the retriever and the terrier have no tails.",
+      TILE_NOTE_ONE +
+      "Three panels, three DIFFERENT characters: the flamingo, the golden retriever, the terrier woman. Draw all " +
+      "three, each clearly distinct.",
+    extra:
+      "The flamingo keeps his bow tie, small lively eyes, S-neck and feathered wing-arms. The retriever wears his " +
+      "grey sport coat with the left-lapel flag pin and long dark trousers. The terrier woman wears her blouse, " +
+      "short skirt, shoulder towel and pearl necklace. Every rear is smooth and tailless.",
   },
 ];
 
@@ -168,8 +184,9 @@ export function runs() {
 // where. Keyed by run id.
 const STAGING = {
   "trio-barroom":
-    "The terrier woman works BEHIND the counter, mid-task; the flamingo and the retriever are on the room " +
-    "side of the counter, the retriever seated on a stool. ",
+    "Staging, exactly: the terrier woman is BEHIND the bar counter working, visible from the waist up, the " +
+    "counter between her and the others. The flamingo stands and the retriever sits squarely on a visible " +
+    "wooden bar stool, both on the room side, drinks resting flat on the counter. ",
 };
 
 /** The Kontext instruction for one run. */
@@ -179,7 +196,7 @@ export function instruction(run) {
     `proportions, unchanged in every detail. ${run.cast.extra} Place the scene somewhere new: ${run.place}. ` +
     (STAGING[run.id] ?? "") +
     `Single-panel black-and-white cartoon, confident ink line with soft grey wash, no colour, no lettering, ` +
-    `no speech balloons, no panel border.`
+    `no speech balloons, no panel border, no signature, no date, no watermark.`
   );
 }
 
