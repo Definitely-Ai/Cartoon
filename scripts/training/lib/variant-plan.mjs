@@ -304,7 +304,9 @@ export function instruction(run) {
     `for the whole cartoon: bright white paper, confident pen-and-ink outlines, sparing light grey wash, ` +
     `plenty of untouched white paper — never dark full-tone rendering, never a painting. ` +
     (run.cast.tokens.includes("SWDDREW")
-      ? `The flamingo wears ${drewClothes(run)} over his feathered body, his black bow tie always visible. `
+      ? `Then make ONE deliberate change to the flamingo: dress him — add ${drewClothes(run)} onto his ` +
+        `feathered body, worn naturally, his black bow tie visible on top. He is never bare. ` +
+        `Nothing else about him changes, and nobody else gains a hat or garment not named here. `
       : "") +
     `Place the scene somewhere new: ${run.place}. ` +
     (STAGING[run.id] ?? "") +
