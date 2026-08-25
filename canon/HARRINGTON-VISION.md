@@ -13,9 +13,12 @@ Two regulars — a flamingo and a golden retriever — read the news the way Ame
 actually reads it: from a barstool. The Swinging Door is their bar, a
 nineteenth-hole room where the TV chyron, the chalkboard specials, and the
 banners on the wall are all in on the joke, and the caption underneath is one
-dry, attributed line. The comedy is Washington-adjacent household economics:
-debt ceilings, tariffs, retirement planning, airport security, the price of a
-martini by fare class. Nobody shouts. The room does half the talking.
+dry, attributed line. The comedy runs on a topical engine:
+each cartoon reacts to what is actually going on — government policy, Fed
+moves, tariffs, tax changes, anything that financially affects people like
+the readers — with the gentlemen's wry surprise: debt ceilings, retirement
+planning, airport security, the price of a martini by fare class. Nobody
+shouts. The room does half the talking.
 
 ## The cast
 
@@ -74,13 +77,12 @@ sentences do the talking. Nobody needs to raise a voice.
   solid, rounded shoulders, modest belly. **No tail.**
 - **Neck-beard trimmed**: some chest ruff, but kept modest (founder's note:
   "his neck beard is too large").
-- **Wardrobe, two registers** (both canon, chosen by the scene):
-  - **Bar default — the polo**: a pale collared polo shirt with the **small
-    USA flag pin on the left chest** of the shirt, a **wristwatch**, and a
-    **belt** over trousers. This is the plates' most common Mango.
-  - **Dressed up — the jacket**: a rumpled suit jacket over a collared shirt,
-    flag pin on the **left lapel**, for panels with a formal flavor.
-  - At golf: white polo and a **ball cap**; caps are natural on Mango.
+- **Wardrobe, two registers — the suit leads** (founder: he likes the suit):
+  - **Bar default — the suit**: the dark jacket over a pale open-collared
+    shirt, no tie, flag pin on the **left lapel**, trousers.
+  - **Daytime / travel / golf — the polo**: pale collared polo, flag pin on
+    the **left chest**, a **belt**; outdoors a **ball cap** — caps are
+    natural on Mango.
 - **Accessories**: wristwatch on the left wrist, always; at golf a white
   glove on the left paw and his bag with the towel lettered FORE! NOT SO FAST.
 - **Drink**: the old fashioned — short rocks glass, one large cube, a dark

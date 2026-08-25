@@ -114,3 +114,15 @@ relatable to people who build relationships at a good bar.
   mid-forties and accomplished, Abby a successful proprietor — and they carry
   wisdom. Respect is demanded by carriage, not volume. Every caption should
   sound like it was said by someone worth listening to.
+
+## The topical engine
+
+Every cartoon starts from **something actually going on**: a government
+policy, a Fed decision, a tariff, a tax change, a debt-ceiling rerun, a
+regulation, a market event — anything that **financially affects** people
+like the readers. The caption's emotional register is the gentlemen's
+reaction to the news: wry surprise, disbelief made polite, recognition —
+"so THIS is how it works now" — delivered from the barstool. The TV chyron
+names the story, the chalkboard prices it, and the caption lands the
+verdict. Evergreen subjects (retirement, golf, airline seats) qualify when
+they are told through their economics.

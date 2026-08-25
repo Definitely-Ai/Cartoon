@@ -65,7 +65,7 @@ Typeset beneath the panel, italic serif, centered, as attributed dialogue — on
 > *Drew: "It's comforting to see our emergencies becoming traditions."*
 > *Mango: "I don't mind paying more. I just like to know which country I'm punishing."*
 
-The line under-plays the panel; the signage escalates it. Twenty words or fewer. **Conduct: no cussing, ever; no slander of anyone — the wit is classy, the target is systems, and the speakers sound like men worth listening to.**
+The line under-plays the panel; the signage escalates it. Twenty words or fewer. The subject is topical: what is going on right now — government policy, Fed moves, tariffs, taxes, anything that financially affects the readers — met with the gentlemen's wry surprise; the TV names the story, the board prices it, the caption lands the verdict. **Conduct: no cussing, ever; no slander of anyone — the wit is classy, the target is systems, and the speakers sound like men worth listening to.**
 
 ## Never draw
 
