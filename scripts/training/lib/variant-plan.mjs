@@ -156,7 +156,8 @@ export const CASTS = [
     extra:
       "The flamingo keeps his bow tie, small lively eyes, S-neck, feathered wing-arms and long thin bird legs. " +
       "The retriever wears his grey sport coat with the left-lapel flag pin and long dark trousers. The terrier " +
-      "woman wears her blouse, shoulder towel and pearl necklace. Every rear is smooth and tailless.",
+      "woman wears her fitted white blouse, very short dark skirt, black heels, shoulder towel and pearl " +
+      "necklace — never trousers. Every rear is smooth and tailless.",
   },
 ];
 
@@ -212,11 +213,11 @@ export function runs() {
 // where. Keyed by run id.
 const STAGING = {
   "trio-barroom":
-    "Staging, exactly: draw the SAME barroom as the terrier woman's part of the sheet — the same counter " +
-    "and back-bar shelves, the same light pencil-and-wash rendering — widened to fit all three. Keep the " +
-    "terrier woman exactly where her sheet already has her: behind the counter, facing the viewer. Add the " +
-    "flamingo and the retriever standing on the near side of the counter facing her, their drinks on the " +
-    "counter. Nobody sits. ",
+    "Compose the whole drawing exactly like the terrier woman's part of the sheet: the bar counter in the " +
+    "near foreground running the full width of the drawing, and the terrier woman BEHIND it just as her " +
+    "sheet shows her, the counter hiding her below the waist. The flamingo and the retriever stand on the " +
+    "viewer's side of the counter facing it in profile, seen side-on so both faces stay clearly visible, " +
+    "each with a drink on the counter in front of him. Nobody sits. ",
 };
 
 /** The Kontext instruction for one run. */
