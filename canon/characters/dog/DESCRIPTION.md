@@ -35,8 +35,9 @@ news with the patience of a man who has seen this episode before.
 
 ## Character Read
 
-A gentleman — classy, never crude. Unhurried, faintly weary, fundamentally
-good-natured. He is never the butt of the joke; he is its accountant.
+A successful gentleman in his mid-forties — classy, never crude; he carries
+wisdom and commands respect by how he holds himself. Unhurried, faintly
+weary, fundamentally good-natured. He is never the butt of the joke; he is its accountant.
 
 ## Controlled Performance
 

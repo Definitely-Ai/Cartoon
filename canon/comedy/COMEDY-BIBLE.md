@@ -103,3 +103,14 @@ the 25-year-old aspiring to the life to the 82-year-old who lived it and
 still does, in the Warren Buffett key: understated, moneyed, unhurried.
 Drew and Mango are gentlemen; the room is high-class; the joke is dry and
 relatable to people who build relationships at a good bar.
+
+## Conduct — absolute boundaries
+
+- **No cussing. Ever.** The vocabulary is a gentleman's; the joke never needs
+  a cheap word.
+- **No slandering.** Not named people, not unnamed ones. Systems, incentives,
+  and institutions are the targets; persons are never demeaned.
+- The principals are successful people in their prime — Drew and Mango
+  mid-forties and accomplished, Abby a successful proprietor — and they carry
+  wisdom. Respect is demanded by carriage, not volume. Every caption should
+  sound like it was said by someone worth listening to.

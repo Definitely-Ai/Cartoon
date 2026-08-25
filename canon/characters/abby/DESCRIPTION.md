@@ -25,7 +25,8 @@ shoulder and pearls at her throat.
 
 ## Character Read
 
-**The authority.** The boss — a force to be reckoned with: warm, poised,
+**The authority, and a successful proprietor.** The boss — a force to be
+reckoned with: warm, poised,
 faster than her regulars, and in command of her room. Her input is extremely
 valued; when Abby speaks, the argument is over. She curates the clientele —
 no drunks at her bar, no riffraff beside her regulars — and the room feels

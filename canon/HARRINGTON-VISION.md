@@ -19,6 +19,12 @@ martini by fare class. Nobody shouts. The room does half the talking.
 
 ## The cast
 
+The principals are **successful people in their prime**: Drew and Mango are
+mid-forties, accomplished, at ease with money and with themselves; Abby is a
+successful proprietor. **All three carry wisdom and demand respect by how
+they carry themselves** — posture, patience, and the quality of their
+sentences do the talking. Nobody needs to raise a voice.
+
 ### Drew — the flamingo
 
 **Definitive study: `canon/vision/drew-reference.jpg`** — the founder's words:
@@ -226,6 +232,10 @@ things.)
 One speaker, one line (two-line quotes wrap centered). The speaker's name
 before the colon; the quote in curly quotes. This replaces the unattributed
 caption format everywhere the house typesets dialogue.
+
+**Caption conduct — absolute**: no cussing, ever. No slandering — not of
+people, not of anyone. The wit is classy; the humor never needs a cheap
+word. These are men worth listening to and a woman worth working for.
 
 ## The humor register — the seven canonical gags
 
