@@ -148,9 +148,9 @@ export const CASTS = [
       "From left to right on the sheet, three DIFFERENT characters: the flamingo, the golden retriever, the terrier woman. Draw all " +
       "three, each clearly distinct.",
     extra:
-      "The flamingo keeps his bow tie, small lively eyes, S-neck and feathered wing-arms. The retriever wears his " +
-      "grey sport coat with the left-lapel flag pin and long dark trousers. The terrier woman wears her blouse, " +
-      "short skirt, shoulder towel and pearl necklace. Every rear is smooth and tailless.",
+      "The flamingo keeps his bow tie, small lively eyes, S-neck, feathered wing-arms and long thin bird legs. " +
+      "The retriever wears his grey sport coat with the left-lapel flag pin and long dark trousers. The terrier " +
+      "woman wears her blouse, shoulder towel and pearl necklace. Every rear is smooth and tailless.",
   },
 ];
 
@@ -206,21 +206,27 @@ export function runs() {
 // where. Keyed by run id.
 const STAGING = {
   "trio-barroom":
-    "Staging, exactly: the terrier woman stands BEHIND the bar counter working, polishing a glass with her " +
-    "towel, the counter cutting her off at the waist. The flamingo and the retriever both STAND on the room " +
-    "side of the counter facing her, their drinks resting flat on the counter. Nobody sits. ",
+    "Staging, exactly: the long wooden counter runs across the drawing. The terrier woman is on the FAR side " +
+    "of the counter, facing the viewer, polishing a glass with her towel, hidden below the waist by the " +
+    "counter. The flamingo and the retriever stand on the NEAR side, their drinks on the counter between " +
+    "them and her. Nobody sits. ",
 };
 
 /** The Kontext instruction for one run. */
 export function instruction(run) {
+  // The style command comes BEFORE the scene: round three proved that a dark
+  // scene ("dim barroom") stated after a trailing style note wins, and the
+  // whole panel came back as a full-tone painting. Anchoring the style to the
+  // reference sheet itself is the strongest claim Kontext honours.
   return (
     `${run.cast.tileNote} Redraw ${run.cast.who} exactly as drawn — same construction, same face, same ` +
-    `proportions, unchanged in every detail. ${run.cast.extra} Place the scene somewhere new: ${run.place}. ` +
+    `proportions, unchanged in every detail. ${run.cast.extra} Keep the reference sheet's drawing style ` +
+    `for the whole cartoon: bright white paper, confident pen-and-ink outlines, sparing light grey wash, ` +
+    `plenty of untouched white paper — never dark full-tone rendering, never a painting. ` +
+    `Place the scene somewhere new: ${run.place}. ` +
     (STAGING[run.id] ?? "") +
-    `Single-panel black-and-white gag cartoon on bright white paper: confident pen-and-ink outlines with ` +
-    `sparing light grey wash, plenty of untouched white paper, light and airy — not a painting, no dark ` +
-    `full-tone rendering, no colour, no lettering, no speech balloons, no panel border, no signature, ` +
-    `no date, no watermark.`
+    `Single-panel black-and-white gag cartoon, no colour, no lettering, no speech balloons, no panel ` +
+    `border, no signature, no date, no watermark.`
   );
 }
 
