@@ -28,6 +28,11 @@ export const config = {
 
 const BACKROOM_COOKIE = "sd_backroom";
 const DOOR_PHRASE = "backroom-door-v1";
+// The single-purpose URL token for automated calls to the backroom action
+// routes — same derivation family as lib/backroom-auth.ts's triggerToken.
+// Different phrase than the cookie, so a URL in a request log can never mint
+// a session; honored ONLY under /api/backroom/, never for pages.
+const TRIGGER_PHRASE = "backroom-trigger-v1";
 
 // AUTH_SECRET when set; otherwise derived from ADMIN_PASSWORD — same
 // derivation as lib/backroom-auth.ts, byte for byte.
@@ -44,7 +49,7 @@ async function activeSecret(): Promise<string | null> {
     .join("");
 }
 
-async function doorToken(secret: string): Promise<string> {
+async function hmacHex(secret: string, message: string): Promise<string> {
   const key = await crypto.subtle.importKey(
     "raw",
     new TextEncoder().encode(secret),
@@ -52,11 +57,14 @@ async function doorToken(secret: string): Promise<string> {
     false,
     ["sign"]
   );
-  const sig = await crypto.subtle.sign("HMAC", key, new TextEncoder().encode(DOOR_PHRASE));
+  const sig = await crypto.subtle.sign("HMAC", key, new TextEncoder().encode(message));
   return Array.from(new Uint8Array(sig))
     .map((b) => b.toString(16).padStart(2, "0"))
     .join("");
 }
+
+const doorToken = (secret: string) => hmacHex(secret, DOOR_PHRASE);
+const triggerToken = (secret: string) => hmacHex(secret, TRIGGER_PHRASE);
 
 // Constant-time-ish comparison (both strings are hex of fixed length).
 function tokensEqual(a: string, b: string): boolean {
@@ -87,6 +95,15 @@ export default async function middleware(request: Request): Promise<Response | u
   }
 
   const url = new URL(request.url);
+
+  // The automation door: backroom action routes only, token in ?t=. The
+  // routes themselves verify it again — this wall just lets the knock reach
+  // them.
+  if (secret && url.pathname.startsWith("/api/backroom/")) {
+    const t = url.searchParams.get("t");
+    if (t && tokensEqual(t, await triggerToken(secret))) return undefined;
+  }
+
   url.pathname = "/login";
   url.search = process.env.ADMIN_PASSWORD ? "" : "?setup=1";
   return new Response(null, { status: 307, headers: { Location: url.toString() } });
