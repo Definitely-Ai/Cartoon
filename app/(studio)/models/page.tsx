@@ -19,6 +19,15 @@ const PLATES = [
   { file: "plate-4-nineteenth-hole-and-tariffs.jpg", line: "The 19th hole · Patriotic imported beer · The globe, priced" },
 ];
 
+// Finished example cartoons: plate-conditioned art, wall gag, attributed
+// italic caption typeset beneath — the shape a filed cartoon takes.
+const EXAMPLES: Proof[] = [
+  { file: "example-drew.jpg", caption: "Drew — “Rates will come down. I've simply stopped asking when.”" },
+  { file: "example-mango.jpg", caption: "Mango — “My future self is watching? He could send money.”" },
+  { file: "example-abby.jpg", caption: "Abby — “The house protects its own. Read it again, gentlemen.”" },
+  { file: "example-duo.jpg", caption: "Together — “The chart goes up and I still feel it going down.”" },
+];
+
 const CAST = [
   {
     name: "Drew",
@@ -46,7 +55,7 @@ const CAST = [
   },
 ];
 
-function FeedbackCard({ proof }: { proof: Proof }) {
+function FeedbackCard({ proof, base = "/models" }: { proof: Proof; base?: string }) {
   const [rating, setRating] = useState<number | null>(null);
   const [note, setNote] = useState("");
   const [state, setState] = useState<"idle" | "saving" | "saved" | "error">("idle");
@@ -69,7 +78,7 @@ function FeedbackCard({ proof }: { proof: Proof }) {
   return (
     <figure style={{ margin: 0, border: "1px solid #d8d2c6", borderRadius: 6, padding: 14, background: "#fffdf8" }}>
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src={`/models/${proof.file}`} alt={proof.caption} style={{ width: "100%", borderRadius: 3 }} />
+      <img src={`${base}/${proof.file}`} alt={proof.caption} style={{ width: "100%", borderRadius: 3 }} />
       <figcaption style={{ fontFamily: serif, fontStyle: "italic", fontSize: 14, color: "#444", margin: "10px 0" }}>
         {proof.caption}
       </figcaption>
@@ -184,6 +193,19 @@ export default function ModelsPage() {
           <li>No cussing. No slandering. Gentlemen, always; the wit never needs a cheap word.</li>
           <li>The daily test: a finance man&rsquo;s 3–10 seconds — it lands, and it feels like his world.</li>
         </ul>
+      </section>
+
+      <section style={{ margin: "44px 0" }}>
+        <h2 style={{ fontFamily: serif, borderBottom: "2px solid #1a1a1a", paddingBottom: 6 }}>Example cartoons</h2>
+        <p style={{ color: "#555", marginTop: 6 }}>
+          The finished shape: plate-drawn characters, the gag on the wall, and the attributed caption
+          typeset beneath. Score each 1–10 and say what you see.
+        </p>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(320px, 1fr))", gap: 18 }}>
+          {EXAMPLES.map((p) => (
+            <FeedbackCard key={p.file} proof={p} base="/vision" />
+          ))}
+        </div>
       </section>
 
       <section style={{ margin: "44px 0" }}>
