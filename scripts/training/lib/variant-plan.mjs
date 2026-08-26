@@ -61,19 +61,21 @@ export const CASTS = [
     who: "the West Highland terrier proprietor",
     tiles: [ABBY_REF, STYLE_SWATCH],
     tileNote:
-      "LEFT on the reference: Abby's face EXACTLY as it must be drawn — a genuinely pretty, feminine West " +
-      "Highland White Terrier: a COMPACT face with a SHORT muzzle, LARGE round dark button eyes set forward, " +
-      "a small black nose, and SMALL soft rounded-tipped ears — never large pointed ears, never a long " +
-      "muzzle, never a German shepherd or wolf read; she is attractive and cute, wearing her studded leather " +
-      "collar with its small teardrop gem pendant. RIGHT on the reference: a texture swatch only — no figure " +
-      "in it to draw — showing the antique-engraving technique every inch of the drawing must use: fine " +
-      "crosshatching and stippling, fur in individual pen strokes, never the left portrait's smooth " +
-      "clean-line look. Draw Abby ALONE. ",
+      "LEFT on the reference: Abby's face — copy its BEAUTY and CHARM exactly: a glamorous, feminine West " +
+      "Highland White Terrier with a compact pretty face, short muzzle, LARGE glossy dark eyes with bright " +
+      "catchlights and long lashes, softly arched brows, a small black nose, a WARM INVITING SMILE, silky " +
+      "groomed white fur, and two small pricked ears — both ears up. She is beautiful — alluring, elegant, " +
+      "warm — never stiff, never staring, never eerie, never a shepherd or wolf. She wears her studded " +
+      "leather collar with its small teardrop gem pendant. RIGHT on the reference: a texture swatch only — " +
+      "no figure in it to draw — the engraving technique for the ROOM, the CLOTHES, and the BAR; her face " +
+      "itself stays soft, luminous, and lovely, modeled with delicate shading rather than heavy stipple. " +
+      "Draw Abby ALONE. ",
     extra:
-      "Draw her as the successful proprietor behind her own marble bar counter: trim natural figure with a " +
-      "modest bust, fitted light blouse with rolled sleeves, folded towel on her left shoulder, the studded " +
-      "gem-pendant collar at her neck, polishing a rocks glass, poised and in command, the counter hiding her " +
-      "below the waist, bottles and good glassware behind her. ",
+      "Draw her as the successful proprietor behind her own marble bar counter: an attractive, shapely, " +
+      "trim feminine figure with a modest bust, a fitted light blouse with rolled sleeves open at the " +
+      "collar, folded towel on her left shoulder, the studded gem-pendant collar at her neck, one hand " +
+      "resting on the marble, head tilted with a warm knowing smile — poised, charming, and in command — " +
+      "the counter hiding her below the waist, bottles and good glassware behind her. ",
   },
 ];
 

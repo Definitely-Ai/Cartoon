@@ -121,8 +121,12 @@ plates' technique:
   looks like a werewolf").
 - **Figure**: trim and natural — hips, knees, and legs drawn slim (founder's
   note: "legs, knees, hips are slightly wide" was a fault).
-- **True fluffy westie face**: round dark button eyes, black nose, small
-  pricked ears — cute and bright, drawn soft.
+- **True fluffy westie face, and BEAUTIFUL**: the founder's direction — she
+  must be sexy and attractive. Large glossy dark eyes with catchlights and
+  long lashes, softly arched brows, a warm inviting smile, silky groomed
+  fur, both small ears pricked. Glamorous and warm — never stiff, staring,
+  eerie, or plain; her face is drawn soft and luminous even inside the
+  engraved technique.
 - **The collar**: a studded leather collar with a small teardrop gem pendant
   at its center — her signature, replacing the pearl strand; a pearl
   bracelet stays at her wrist.

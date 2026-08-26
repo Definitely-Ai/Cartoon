@@ -43,11 +43,13 @@ casual patron.
 
 ## Locked Visual Anchors
 
-- **Face**: a true fluffy westie — short muzzle, **round dark button eyes**,
-  round black nose, small pricked ears with soft inner fur; **the coat drawn
-  in fine, dense individual strokes** — soft, detailed, bright — **never
-  coarse, shaggy, or wolfish** (founder's note: "not so she looks like a
-  werewolf").
+- **Face — beautiful first** (founder: she must be sexy and attractive): a
+  glamorous fluffy westie — short muzzle, **large glossy dark eyes with
+  catchlights and long lashes**, softly arched brows, round black nose, a
+  **warm inviting smile**, both small ears pricked, silky groomed fur.
+  Her face is modeled soft and luminous even inside the engraving — the
+  heavy stipple belongs to the room and clothes, never to her charm.
+  **Never coarse, shaggy, wolfish, stiff, staring, or eerie.**
 - **Eyes**: expressive and human-readable — visible white, distinct iris and
   pupil, refined lashes, clear lids and brow-fur.
 - **Figure**: trim and natural — **slim hips, knees, and legs** (founder's
