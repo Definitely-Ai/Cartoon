@@ -70,23 +70,49 @@ const ROOM_TILE: { path: string; box: [number, number, number, number] } = {
   box: [1500, 69, 1494, 600],
 };
 
+// Harrington's own bar panel (plate 1, lower): the two gentlemen seated at
+// the counter, drinks on the marble, boards on the wall. Portrait tiles give
+// identity but impose portrait framing — the cast kept lining up at a round
+// table. A staged tile carries the staging instead, which is the one thing
+// that has never drifted.
+const SCENE_TILE: { path: string; box: [number, number, number, number] } = {
+  path: "canon/vision/plate-1-security-and-martini-menu.jpg",
+  box: [16, 1460, 1600, 1140],
+};
+
 /**
  * One reference board: each requested character's plate study, side by side
  * on white, grayscaled and normalised so the photographed prints read as ink
  * on one shared sheet. Kontext sees a single conditioning image, so the cast
  * shares a canvas.
  */
-export async function buildReferenceBoard(characters: string[], barScene = false): Promise<Buffer> {
+export async function buildReferenceBoard(
+  characters: string[],
+  barScene = false,
+  staged = false
+): Promise<Buffer> {
   const refs: { path: string; box?: [number, number, number, number] }[] = [];
-  for (const character of characters) {
-    const ref = VISION_REFS[character.toLowerCase()];
+  const cast = characters.map((c) => c.toLowerCase());
+  if (staged) {
+    // The staged panel already IS Drew and Mango in the room; only a
+    // character it does not contain needs a portrait beside it.
+    refs.push(SCENE_TILE);
+    if (cast.includes("abby")) refs.push(VISION_REFS.abby);
+    return composeBoard(refs);
+  }
+  for (const character of cast) {
+    const ref = VISION_REFS[character];
     if (ref) refs.push(ref);
   }
   // The room band rides along for bar scenes unless Mango is in the cast —
   // his crop still carries enough of the back bar to double up. Kept in
   // lockstep with the roster sentence in assemblePrompt.
-  const roomCovered = characters.some((c) => c.toLowerCase() === "mango");
+  const roomCovered = cast.includes("mango");
   if (barScene && !roomCovered) refs.push(ROOM_TILE);
+  return composeBoard(refs);
+}
+
+async function composeBoard(refs: { path: string; box?: [number, number, number, number] }[]): Promise<Buffer> {
   const masters: Buffer[] = [];
   for (const ref of refs) {
     const file = await readRepoFile(ref.path);
@@ -133,6 +159,8 @@ export async function generateCartoonArt(input: {
   characters: string[];
   /** Bar scenes append the plates' room band to the reference board. */
   barScene?: boolean;
+  /** Condition on Harrington's staged bar panel instead of portrait tiles. */
+  staged?: boolean;
   /** Override the model for this one call — the smoke-test route injects a
    *  freshly trained version here before IMAGE_MODEL is promoted to it. */
   model?: string;
@@ -151,7 +179,7 @@ export async function generateCartoonArt(input: {
       }
     : {
         prompt: input.prompt,
-        input_image: await uploadFile(await buildReferenceBoard(input.characters, input.barScene ?? false), "reference-board.jpg", "image/jpeg"),
+        input_image: await uploadFile(await buildReferenceBoard(input.characters, input.barScene ?? false, input.staged ?? false), "reference-board.jpg", "image/jpeg"),
         aspect_ratio: "4:5",
         output_format: "png",
         // The strip is a dry gag cartoon — nothing here should trip
@@ -246,7 +274,8 @@ function fineTunedPrompt(masterPrompt: string, candidate: Candidate): string {
 export function assemblePrompt(
   masterPrompt: string,
   candidate: Candidate,
-  fineTuned: boolean = isFineTuned()
+  fineTuned: boolean = isFineTuned(),
+  staged = false
 ): string {
   if (fineTuned) return fineTunedPrompt(masterPrompt, candidate);
 
@@ -276,24 +305,32 @@ export function assemblePrompt(
   // Naming each portrait by its position, and demanding the exact headcount,
   // is what stops the model absorbing one character into another — the
   // failure that cost eight of ten panels in the first showcase wave.
-  const named = candidate.characters
-    .map((c) => c.toLowerCase())
-    .map((c) => CAST_BLURB[c])
-    .filter(Boolean);
+  const cast = candidate.characters.map((c) => c.toLowerCase());
+  const named = cast.map((c) => CAST_BLURB[c]).filter(Boolean);
   const roster = named.map((who, i) => `${ordinal(i)}, ${who}`).join("; ");
   const count = named.length;
   const roomTile = !candidate.setting && !candidate.characters.some((c) => c.toLowerCase() === "mango");
   return (
     "Draw ONE SINGLE CONTINUOUS PANEL — one unbroken scene, edge to edge. There is no dividing line, " +
     "no seam, no split, no diptych, and no second frame: every character shares one room in one drawing. " +
-    `The attached image is the reference board: ${count} character portrait${count > 1 ? "s" : ""} ` +
-    `side by side${roomTile ? ", then a final room tile" : ""} — ${roster}` +
-    `${roomTile ? "; last, a room tile showing the bar's wall, TV, and chalkboard style" : ""}. ` +
-    `Each portrait fixes ONLY that character's face, build, and wardrobe. The drawn panel must show ` +
-    `EXACTLY ${count} character${count > 1 ? "s" : ""}: ${count > 1 ? "each one a separate individual matching his or her own portrait — never merge two characters into one, never draw the same character twice, never leave one out" : "that character alone"}. ` +
-    "Never copy the portraits' own backgrounds, signage, or layout; the scene below replaces them " +
-    "entirely, and its TV and chalkboard carry its own text. Draw a new " +
-    "single-panel cartoon:\n\n" +
+    (staged
+      ? `The attached image is a finished panel of this exact strip: Drew the flamingo gentleman and Mango ` +
+        `the retriever gentleman seated at the marble bar counter of The Swinging Door, drinks on the marble, ` +
+        `boards on the wall behind. KEEP that staging and both characters exactly — same faces, same builds, ` +
+        `same wardrobe, same seats at the counter${cast.includes("abby") ? `. The SECOND, smaller tile is Abby, the white West Highland terrier proprietor: ADD her to the same panel, standing BEHIND the counter on the far side facing the two gentlemen, in a fitted light blouse with a towel over her shoulder and her studded gem-pendant collar, so the finished panel holds exactly three characters` : ", and draw exactly those two characters"}. ` +
+        `Redraw the panel for the new scene below: the drinks, props, TV screen and chalkboard all take their ` +
+        `text and contents from that scene, replacing whatever the reference shows. `
+      : "") +
+    (staged ? "" : `The attached image is the reference board: ${count} character portrait${count > 1 ? "s" : ""} `) +
+    (staged
+      ? ""
+      : `side by side${roomTile ? ", then a final room tile" : ""} — ${roster}` +
+        `${roomTile ? "; last, a room tile showing the bar's wall, TV, and chalkboard style" : ""}. ` +
+        `Each portrait fixes ONLY that character's face, build, and wardrobe. ` +
+        "Never copy the portraits' own backgrounds, signage, or layout; the scene below replaces them " +
+        "entirely, and its TV and chalkboard carry its own text. ") +
+    `The drawn panel must show EXACTLY ${count} character${count > 1 ? "s" : ""}: ${count > 1 ? "each one a separate individual — never merge two characters into one, never draw the same character twice, never leave one out" : "that character alone"}. ` +
+    "Draw a new single-panel cartoon:\n\n" +
     prompt
   );
 }

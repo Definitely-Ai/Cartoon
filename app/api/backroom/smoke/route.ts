@@ -299,8 +299,15 @@ export async function GET(request: NextRequest) {
         // Baseline (Kontext) runs must assemble the Kontext branch of the
         // prompt — the fine-tune branch writes trigger tokens into the text,
         // which a board-conditioned model happily paints onto the walls.
-        const prompt = assemblePrompt(canon, panel.candidate, !version.includes("kontext"));
-        const image = await generateCartoonArt({ prompt, characters: panel.candidate.characters, model: version });
+        const staged = params.get("set") === "showcase" && !panel.candidate.setting;
+        const prompt = assemblePrompt(canon, panel.candidate, !version.includes("kontext"), staged);
+        const image = await generateCartoonArt({
+          prompt,
+          characters: panel.candidate.characters,
+          barScene: !panel.candidate.setting,
+          staged,
+          model: version,
+        });
         const name = `${stamp}-${panel.slug}`;
         await commitFiles(
           [
