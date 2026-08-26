@@ -296,7 +296,6 @@ export const PLAN = [
   ["harrington-duo", ["barroom"]],
   ["harrington-abby", ["barroom"]],
   ["harrington-abby2", ["barroom"]],
-  ["harrington-abby-working", ["barroom"]],
   ["harrington-abby-chalk", ["barroom"]],
   ["harrington-drew-solo", ["barroom"]],
   ["harrington-drew-golf", ["golf course"]],

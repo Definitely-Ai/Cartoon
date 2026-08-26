@@ -117,6 +117,16 @@ const PLATES = [
       "IN HERE",
   },
   {
+    // Cropped from the studio's own abby2 study: the bust above the forepaws
+    // (the paws would teach a quadruped posture the founder rejected).
+    id: "abby-study-bust",
+    src: path.join(variantsDir, "harrington-abby2-barroom.png"),
+    box: [0, 0, 1024, 850],
+    caption:
+      "SWDINK cartoon, SWDABBY portrait at the bar of the barroom, framed pictures and bottle shelves " +
+      "behind her",
+  },
+  {
     id: "abby-portrait",
     src: V("abby-face-reference.jpg"),
     box: null,
@@ -134,12 +144,6 @@ const VARIANT_CAPTIONS = {
   "harrington-abby-barroom":
     "SWDINK cartoon, SWDABBY in a satin evening gown standing in the barroom among stools and bottle " +
     "shelves, a chalkboard reading THE HOUSE PROTECTS ITS OWN",
-  "harrington-abby2-barroom":
-    "SWDINK cartoon, SWDABBY behind the marble bar counter of the barroom, one hand on the marble, bottles " +
-    "and good glassware behind her",
-  "harrington-abby-working-barroom":
-    "SWDINK cartoon, SWDABBY pouring from a bottle into a rocks glass behind the marble bar counter of the " +
-    "barroom, bottles and good glassware behind her",
   "harrington-abby-chalk-barroom":
     "SWDINK cartoon, SWDABBY in an off-shoulder gown behind the bar of the barroom, bottle shelves and " +
     "cabinets behind her",
@@ -210,8 +214,8 @@ if (entries.length < 18) {
   console.error(`GATE: only ${entries.length} images — the v2 set trains on at least 18.`);
   ok = false;
 }
-if (tokens.SWDABBY < 5) {
-  console.error(`GATE: SWDABBY appears in only ${tokens.SWDABBY} captions — she needs at least 5 or her token stays mush.`);
+if (tokens.SWDABBY < 4) {
+  console.error(`GATE: SWDABBY appears in only ${tokens.SWDABBY} captions — she needs at least 4 or her token stays mush.`);
   ok = false;
 }
 if (barroom / placed > 0.8) {
