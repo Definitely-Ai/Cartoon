@@ -141,11 +141,11 @@ const VARIANT_CAPTIONS = {
     "SWDINK cartoon, SWDABBY pouring from a bottle into a rocks glass behind the marble bar counter of the " +
     "barroom, bottles and good glassware behind her",
   "harrington-abby-chalk-barroom":
-    "SWDINK cartoon, SWDABBY writing the day's special on a small chalkboard among the bottles behind the " +
-    "bar of the barroom, glancing over her shoulder",
+    "SWDINK cartoon, SWDABBY in an off-shoulder gown behind the bar of the barroom, bottle shelves and " +
+    "cabinets behind her",
   "harrington-drew-solo-barroom":
-    "SWDINK cartoon, SWDDREW alone on a stool at the bar counter of the barroom, a martini on a napkin " +
-    "before him, bottle shelves across the counter, the mirrored window sign",
+    "SWDINK cartoon, SWDDREW alone on a stool at the marble bar counter of the barroom, a martini before " +
+    "him, bottle shelves and a framed sign reading THE SWINGING DOOR across the counter",
   "harrington-drew-golf-golf-course":
     "SWDINK cartoon, SWDDREW in a golf visor holding a martini at the 19th hole terrace of a golf course, " +
     "fairways with distant golfers and a cart behind him",
@@ -155,10 +155,6 @@ const VARIANT_CAPTIONS = {
   "harrington-mango-golf-golf-course":
     "SWDINK cartoon, SWDMANGO in a white polo shirt and pale cap holding an old fashioned at the 19th hole " +
     "terrace of a golf course, fairways with distant golfers and a cart behind him, his golf bag at the edge",
-  "harrington-trio-barroom":
-    "SWDINK cartoon, SWDABBY working behind the marble bar counter of the barroom, SWDDREW with a martini " +
-    "and SWDMANGO with an old fashioned seated on stools across the counter, a nut bowl between them, " +
-    "bottle shelves behind her",
 };
 
 const draft = process.argv.includes("--draft");

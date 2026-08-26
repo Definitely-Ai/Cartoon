@@ -146,6 +146,12 @@ plates' technique:
 - Behind her counter is her territory; patrons stay on the room side. She
   appears when the gag needs her — never as furniture.
 
+**Mirroring is the window's alone** (founder's note: "only the sign on the
+window is mirrored — which is the name of the bar, TheSwingingDoor"): the
+name painted on the window glass reads reversed because the room looks at it
+from inside. Every other sign — framed name signs, chalkboards, menus, the
+TV — reads normally.
+
 **Stage physics — the side of the bar** (founder's note: "they need to be
 sitting on the correct side of the bar — I know the original images showed
 that but they were messed up"): some plates seat the gentlemen with the

@@ -65,13 +65,27 @@ const DREW_FACE_NOTE =
   "pale collared shirt, and WHITE-FEATHERED humanoid hands — four feathered fingers and an opposed " +
   "thumb. ";
 
+// The face brief again, for single-tile boards (no swatch sentence — a
+// second tile kept bleeding into the output as a pale side panel).
+const ABBY_FACE_NOTE_SOLO =
+  "The reference shows Abby's face — copy its BEAUTY and CHARM exactly: a glamorous, feminine West " +
+  "Highland White Terrier in her mid-forties, with a compact pretty face, short muzzle, LARGE glossy " +
+  "dark eyes with bright catchlights and long lashes, softly arched brows, a small black nose, a WARM " +
+  "closed-lip smile, silky groomed white fur, and two small pricked ears — both ears up. She is " +
+  "beautiful — alluring, elegant, seasoned and self-assured — never stiff, never staring, never eerie, " +
+  "never tongue-out, never a shepherd or wolf. She wears her studded leather collar with its small " +
+  "teardrop gem pendant. Her face stays soft, luminous, and lovely, modeled with delicate shading " +
+  "rather than heavy stipple. Draw Abby ALONE, and draw the panel full corner to corner as ONE " +
+  "continuous scene — no side panel, no split. ";
+
 // The upright-at-work body brief for Abby, minus the action (each cast adds
 // its own), in the vocabulary that passes both the filter and the founder.
 const ABBY_BODY =
   "Draw her as the successful proprietor in her mid-forties, standing upright at work like the strip's " +
-  "other characters: an attractive, shapely, trim feminine figure with a modest bust, a fitted light " +
-  "blouse with rolled sleeves open at the collar, folded towel on her left shoulder, the studded " +
-  "gem-pendant collar at her neck, ";
+  "other characters, with humanoid shoulders and arms and FUR-BACKED dog-yet-humanoid hands — four " +
+  "fingers and a thumb, every finger distinctly drawn: an attractive, shapely, trim feminine figure " +
+  "with a modest bust, a fitted light blouse with rolled sleeves open at the collar, folded towel on " +
+  "her left shoulder, the studded gem-pendant collar at her neck, ";
 
 export const CASTS = [
   {
@@ -128,8 +142,8 @@ export const CASTS = [
     tokens: "Abby",
     label: "the proprietor at her marble",
     who: "the West Highland terrier proprietor",
-    tiles: [ABBY_REF, STYLE_SWATCH],
-    tileNote: ABBY_FACE_NOTE,
+    tiles: [ABBY_REF],
+    tileNote: ABBY_FACE_NOTE_SOLO,
     extra:
       "Composition: WAIST-UP, camera pulled back — she stands BEHIND her own marble bar counter with the " +
       "marble visible in the foreground, the counter hiding her below the waist. " +
@@ -142,8 +156,8 @@ export const CASTS = [
     tokens: "Abby",
     label: "pouring behind the bar",
     who: "the West Highland terrier proprietor",
-    tiles: [ABBY_REF, STYLE_SWATCH],
-    tileNote: ABBY_FACE_NOTE,
+    tiles: [ABBY_REF],
+    tileNote: ABBY_FACE_NOTE_SOLO,
     extra:
       "Composition: WAIST-UP behind her own marble bar counter, the marble visible in the foreground. " +
       ABBY_BODY +
@@ -155,8 +169,8 @@ export const CASTS = [
     tokens: "Abby",
     label: "writing the special",
     who: "the West Highland terrier proprietor",
-    tiles: [ABBY_REF, STYLE_SWATCH],
-    tileNote: ABBY_FACE_NOTE,
+    tiles: [ABBY_REF],
+    tileNote: ABBY_FACE_NOTE_SOLO,
     extra:
       "Composition: behind the bar beside the back-bar shelves, seen WAIST-UP past the marble counter. " +
       ABBY_BODY +
@@ -272,7 +286,6 @@ export const PLAN = [
   ["harrington-drew-golf", ["golf course"]],
   ["harrington-mango-solo", ["barroom"]],
   ["harrington-mango-golf", ["golf course"]],
-  ["harrington-trio", ["barroom"]],
 ];
 
 function placeOf(placeId) {
