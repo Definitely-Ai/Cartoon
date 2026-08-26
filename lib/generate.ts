@@ -318,8 +318,18 @@ export function assemblePrompt(
         `the retriever gentleman seated at the marble bar counter of The Swinging Door, drinks on the marble, ` +
         `boards on the wall behind. KEEP that staging and both characters exactly — same faces, same builds, ` +
         `same wardrobe, same seats at the counter${cast.includes("abby") ? `. The SECOND, smaller tile is Abby, the white West Highland terrier proprietor: ADD her to the same panel, standing BEHIND the counter on the far side facing the two gentlemen, in a fitted light blouse with a towel over her shoulder and her studded gem-pendant collar, so the finished panel holds exactly three characters` : ", and draw exactly those two characters"}. ` +
-        `Redraw the panel for the new scene below: the drinks, props, TV screen and chalkboard all take their ` +
-        `text and contents from that scene, replacing whatever the reference shows. `
+        `NOW CHANGE IT for the scene below. The reference's own lettering is WRONG for this cartoon: its ` +
+        `chalkboard lists martini prices by airline fare class — ERASE that lettering completely and letter ` +
+        `the board with this cartoon's own line instead, and put this cartoon's own headline on the TV screen. ` +
+        `The reference also dresses Mango in a pale polo with a martini: in this cartoon he wears his DARK ` +
+        `SUIT JACKET over a pale open-collared shirt with the small US flag pin on the left lapel, and his ` +
+        `drink is an OLD FASHIONED — a short rocks glass, one large cube, a dark cherry — never a martini. ` +
+        `Only Drew drinks the martini. ` +
+        (cast.includes("abby")
+          ? `Abby wears a fitted light blouse with rolled sleeves and a folded towel on her shoulder — never a ` +
+            `sleeveless top — and she is a WEST HIGHLAND TERRIER with erect pointed ears, clearly a different ` +
+            `breed from the golden retriever beside her. `
+          : "")
       : "") +
     (staged ? "" : `The attached image is the reference board: ${count} character portrait${count > 1 ? "s" : ""} `) +
     (staged
