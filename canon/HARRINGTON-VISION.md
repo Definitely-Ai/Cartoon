@@ -52,7 +52,10 @@ sentences do the talking. Nobody needs to raise a voice.
   soft fluffy cuff at the wrist — they hold a martini stem, a pen, a checklist
   with believable human grips, and drape at rest like a gloved human hand;
   long scalloped tiers of wing feathers hang beneath each forearm (founder's
-  note: "his hands need to be changed … more human").
+  note: "his hands need to be changed … more human"; standing order for the
+  whole cast: "focus on the hands — they need to have feathers and fur but
+  be humanoid" — texture stays animal, construction stays human, every
+  finger distinctly drawn).
 - **Collar**: a crisp starched white collar band circles the neck base under
   the bow tie.
 - **Drink**: the martini, conical stemmed glass, olives on a pick, on a napkin
@@ -131,6 +134,13 @@ plates' technique:
   at its center — her signature, replacing the pearl strand; a pearl
   bracelet stays at her wrist.
 - **Modest bust, always** — never exaggerated.
+- **Slightly humanoid body, exactly like the gentlemen** (founder's note:
+  "literally like the other characters — a flamingo and 2 dogs, slightly
+  humanoid"): she stands upright on two legs with humanoid shoulders and
+  arms and fur-backed dog-yet-humanoid hands — never drawn as a four-legged
+  dog leaning her paws on the counter. Only the head is pure terrier; the
+  body is a shapely feminine humanoid figure, sexy and attractive, dressed
+  for work.
 - Work wardrobe: fitted blouse with rolled sleeves, short dark skirt, folded
   towel on the left shoulder, black heels. **No tail.**
 - Behind her counter is her territory; patrons stay on the room side. She

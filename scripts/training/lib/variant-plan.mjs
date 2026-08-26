@@ -52,8 +52,13 @@ export const CASTS = [
     extra:
       "Drew sits frame-left with his conical stemmed MARTINI glass, olives on a pick, on a napkin; he also " +
       "wears trousers. Mango sits frame-right with an old fashioned — short rocks glass, one large cube, a " +
-      "dark cherry. The nut bowl sits between the two drinks. Both are successful gentlemen in their " +
-      "mid-forties — classy, composed; Drew deadpan, Mango faintly worried. ",
+      "dark cherry. The nut bowl sits between the two drinks. THE HANDS GET SPECIAL CARE, humanoid but " +
+      "never human-skinned: Drew's hands are WHITE-FEATHERED and humanoid — four slender feathered fingers " +
+      "and an opposed thumb, small layered feathers on their backs — never wingtips, never bare skin. " +
+      "Mango's hands are FUR-BACKED and humanoid — golden fur on the backs, soft pads on the palms, four " +
+      "fingers and a thumb — never plain paws, never bare skin. Every finger distinctly drawn, gripping " +
+      "each glass at plausible contact points. Both are successful gentlemen in their mid-forties — " +
+      "classy, composed; Drew deadpan, Mango faintly worried. ",
   },
   {
     id: "harrington-abby",
