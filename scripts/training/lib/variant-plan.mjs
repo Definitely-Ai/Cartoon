@@ -61,21 +61,23 @@ export const CASTS = [
     who: "the West Highland terrier proprietor",
     tiles: [ABBY_REF, STYLE_SWATCH],
     tileNote:
-      "LEFT on the reference: Abby's face — copy its BEAUTY and CHARM exactly: a glamorous, feminine West " +
+      "LEFT on the reference: Abby — copy her BEAUTY and GLAMOUR exactly: a grown, elegant LADY of a West " +
       "Highland White Terrier with a compact pretty face, short muzzle, LARGE glossy dark eyes with bright " +
-      "catchlights and long lashes, softly arched brows, a small black nose, a WARM INVITING SMILE, silky " +
-      "groomed white fur, and two small pricked ears — both ears up. She is beautiful — alluring, elegant, " +
-      "warm — never stiff, never staring, never eerie, never a shepherd or wolf. She wears her studded " +
-      "leather collar with its small teardrop gem pendant. RIGHT on the reference: a texture swatch only — " +
-      "no figure in it to draw — the engraving technique for the ROOM, the CLOTHES, and the BAR; her face " +
-      "itself stays soft, luminous, and lovely, modeled with delicate shading rather than heavy stipple. " +
-      "Draw Abby ALONE. ",
+      "catchlights and LONG FEMININE LASHES, softly arched brows, a small black nose, a poised closed-lip " +
+      "smile with a hint of warmth, elegantly styled silky white fur, and two small pricked ears — both up. " +
+      "She is a beautiful grown woman of her species — alluring, elegant, glamorous like the reference " +
+      "portrait — NEVER a puppy, never childlike, never tongue-out goofy, never stiff or eerie, never a " +
+      "shepherd or wolf. She wears her studded leather collar with its small teardrop gem pendant. RIGHT " +
+      "on the reference: a texture swatch only — no figure in it to draw — the engraving technique for the " +
+      "ROOM, the CLOTHES, and the BAR; her face itself stays soft, luminous, and lovely, modeled with " +
+      "delicate shading rather than heavy stipple. Draw Abby ALONE. ",
     extra:
-      "Draw her as the successful proprietor behind her own marble bar counter: an attractive, shapely, " +
-      "trim feminine figure with a modest bust, a fitted light blouse with rolled sleeves open at the " +
-      "collar, folded towel on her left shoulder, the studded gem-pendant collar at her neck, one hand " +
-      "resting on the marble, head tilted with a warm knowing smile — poised, charming, and in command — " +
-      "the counter hiding her below the waist, bottles and good glassware behind her. ",
+      "Composition: WAIST-UP, camera pulled back — she stands BEHIND her polished marble bar counter, the " +
+      "marble surface visible in the foreground, bottles and good glassware behind her. She is the " +
+      "successful proprietor: an attractive, shapely, trim feminine figure with a modest bust, a fitted " +
+      "light blouse with rolled sleeves open at the collar, folded towel on her left shoulder, the studded " +
+      "gem-pendant collar at her neck, one manicured hand resting on the marble, head tilted with a poised " +
+      "knowing smile — elegant, charming, in command. ",
   },
 ];
 
