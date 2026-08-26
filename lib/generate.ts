@@ -56,7 +56,7 @@ function imageModel(): string {
 // Cropped to head-and-shoulders, each tile can only say "this is what this
 // character looks like".
 const VISION_REFS: Record<string, { path: string; box?: [number, number, number, number] }> = {
-  drew: { path: "canon/vision/drew-reference.jpg", box: [60, 80, 1330, 1500] },
+  drew: { path: "canon/vision/drew-reference.jpg", box: [60, 60, 1010, 1180] },
   mango: { path: "canon/vision/mango-reference.jpg", box: [950, 1400, 1900, 1950] },
   abby: { path: "canon/vision/abby-face-reference.jpg" },
 };
@@ -284,6 +284,8 @@ export function assemblePrompt(
   const count = named.length;
   const roomTile = !candidate.setting && !candidate.characters.some((c) => c.toLowerCase() === "mango");
   return (
+    "Draw ONE SINGLE CONTINUOUS PANEL — one unbroken scene, edge to edge. There is no dividing line, " +
+    "no seam, no split, no diptych, and no second frame: every character shares one room in one drawing. " +
     `The attached image is the reference board: ${count} character portrait${count > 1 ? "s" : ""} ` +
     `side by side${roomTile ? ", then a final room tile" : ""} — ${roster}` +
     `${roomTile ? "; last, a room tile showing the bar's wall, TV, and chalkboard style" : ""}. ` +
