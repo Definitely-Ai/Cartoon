@@ -3,7 +3,7 @@ import { BACKROOM_COOKIE, isDoorOpen, isTriggerOpen } from "@/lib/backroom-auth"
 
 import { assemblePrompt, generateCartoonArt } from "@/lib/generate";
 import { PublishError, commitFiles, getCanon, readRepoFile } from "@/lib/githubPublish";
-import { getTraining } from "@/lib/replicate";
+import { getTraining, replicateGet } from "@/lib/replicate";
 
 // The freshly trained model's driving test, before it is trusted with
 // IMAGE_MODEL. Four fixed panels — one for identity, three for obedience —
@@ -226,6 +226,30 @@ export async function GET(request: NextRequest) {
   const params = request.nextUrl.searchParams;
 
   try {
+    // ?schema=<owner/name> — read a model's real input contract from
+    // Replicate. The sandbox cannot reach replicate.com, so guessing at
+    // parameter names is how a paid call gets wasted on a 422.
+    const schemaOf = params.get("schema");
+    if (schemaOf) {
+      const model = await replicateGet<{
+        latest_version?: { id: string; openapi_schema?: Record<string, unknown> };
+      }>(`/models/${schemaOf}`);
+      const schema = model.latest_version?.openapi_schema as
+        | { components?: { schemas?: { Input?: { properties?: Record<string, Record<string, unknown>> } } } }
+        | undefined;
+      const props = schema?.components?.schemas?.Input?.properties ?? {};
+      return NextResponse.json({
+        model: schemaOf,
+        version: model.latest_version?.id ?? null,
+        inputs: Object.fromEntries(
+          Object.entries(props).map(([name, spec]) => [
+            name,
+            { type: spec.type ?? spec.allOf ?? spec.$ref ?? "?", description: String(spec.description ?? "").slice(0, 160) },
+          ])
+        ),
+      });
+    }
+
     let version = params.get("version");
     if (!version) {
       const ledgerFile = await readRepoFile(LEDGER);
