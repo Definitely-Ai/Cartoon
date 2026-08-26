@@ -50,7 +50,7 @@ export const CASTS = [
       "FIRST — the staging correction, the important one: in the reference the bottle shelves stand " +
       "directly behind the gentlemen, which wrongly seats them inside the bartender's service area. Put " +
       "the long bar counter BETWEEN them and the bottles: the two sit on handsome leather-topped stools " +
-      "at the counter's NEAR side, bodies angled three-quarter toward each other so both faces stay fully " +
+      "at the counter's NEAR side, each turned three-quarter so both faces stay fully " +
       "visible, their drinks and the nut bowl on the counter before them; beyond the counter stand the " +
       "back-bar shelves with the labeled bottles, the chalkboard menu on the wall above. No one sits " +
       "inside the service area. SECOND, dress Mango in his dark suit jacket over the pale open-collared " +
