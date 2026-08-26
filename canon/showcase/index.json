@@ -1,1 +1,44 @@
-[]
+[
+  {
+    "file": "sc01-hike-odds.png",
+    "caption": "Drew: \"Best seller all year. Nobody has ever had to make one.\"",
+    "note": "The rate hike, priced nightly and never poured.",
+    "source": "20260826-2109-sc01-hike-odds.png"
+  },
+  {
+    "file": "sc02-tariffs.png",
+    "caption": "Mango: \"I had one of each. It felt patriotic both times.\"",
+    "note": "Canadian Club, and the retaliatory one.",
+    "source": "20260826-2109-sc02-tariffs.png"
+  },
+  {
+    "file": "sc03-ai-capex.png",
+    "caption": "Drew: \"Committed is money that has not had its second thoughts yet.\"",
+    "note": "$600B spent, $3 trillion committed — and the martini is empty.",
+    "source": "20260826-2110-sc03-ai-capex.png"
+  },
+  {
+    "file": "sc04-refinance.png",
+    "caption": "Mango: \"Nobody pays a tab like that. They renew it.\"",
+    "note": "$9.7 trillion refinanced this year; all tabs rolled over nightly.",
+    "source": "20260826-2111-sc04-refinance.png"
+  },
+  {
+    "file": "sc05-golf-thirty.png",
+    "caption": "Drew: \"Five and a quarter for thirty years. My swing guarantees nothing of the kind.\"",
+    "note": "The 19th hole — the strip's away game.",
+    "source": "20260826-2112-sc05-golf-thirty.png"
+  },
+  {
+    "file": "sc06-jackson-hole.png",
+    "caption": "Mango: \"A symposium in the mountains, to tell us they are still thinking about it.\"",
+    "note": "The speech is Friday. The water is $12.",
+    "source": "20260826-2112-sc06-jackson-hole.png"
+  },
+  {
+    "file": "sc07-sentiment.png",
+    "caption": "Mango: \"I have never felt worse about the economy, Abby. Same again.\"",
+    "note": "Sentiment at a record low, spending up again. Misery hour, 4–7.",
+    "source": "20260826-2113-sc07-sentiment.png"
+  }
+]
