@@ -36,28 +36,34 @@ export const CASTS = [
     who: "the white flamingo gentleman and the golden retriever gentleman",
     tiles: [DREW_REF, MANGO_REF],
     tileNote:
-      "The reference sheet shows the two characters exactly as they must be drawn: LEFT, Drew — a white-plumed " +
+      "Draw ONE SINGLE continuous panel: the reference sheet's side-by-side layout must NOT appear — no " +
+      "dividing line, no seam, no split; both characters share one unbroken room at one marble bar. The " +
+      "reference shows the two characters exactly as they must be drawn: LEFT, Drew — a white-plumed " +
       "flamingo gentleman, deep question-mark neck curve, heavy-lidded deadpan human-readable eyes, heavy " +
-      "downturned black-tipped beak, starched collar band under a black silk bow tie, fine knitted sweater vest " +
-      "over a pale collared shirt, feathered four-fingered hands with thumbs. RIGHT, Mango — a detailed golden " +
-      "retriever gentleman with true black dog lips along the muzzle, freckles, long-fringed drop ears, modest " +
-      "ruff, in a dark suit jacket over a pale open-collared shirt with a small US flag pin on the left lapel, " +
-      "a wristwatch, dog-yet-humanoid furred hands. ",
+      "downturned black-tipped beak, starched collar band under a black silk BOW TIE (a bow tie, NEVER a long " +
+      "necktie), fine knitted sweater vest over a pale collared shirt, and WHITE-FEATHERED hands — four " +
+      "feathered fingers and a thumb, never bare human skin. RIGHT, Mango — a detailed golden retriever " +
+      "gentleman with true black dog lips along the muzzle, freckles, long-fringed drop ears, modest ruff, " +
+      "in a dark suit jacket over a pale open-collared shirt with a small US flag pin on the left lapel, a " +
+      "wristwatch, and FUR-BACKED dog-yet-humanoid hands with soft pads — never bare human skin. ",
     extra:
-      "Drew sits frame-left with a conical martini glass (olives on a pick) on a napkin; he also wears trousers. " +
-      "Mango sits frame-right with an old fashioned — short rocks glass, one large cube, a dark cherry. The " +
-      "nut bowl sits between the two drinks. Both are successful gentlemen in their mid-forties — classy, " +
-      "composed; Drew deadpan, Mango faintly worried. ",
+      "Drew sits frame-left with his conical stemmed MARTINI glass, olives on a pick, on a napkin; he also " +
+      "wears trousers. Mango sits frame-right with an old fashioned — short rocks glass, one large cube, a " +
+      "dark cherry. The nut bowl sits between the two drinks. Both are successful gentlemen in their " +
+      "mid-forties — classy, composed; Drew deadpan, Mango faintly worried. ",
   },
   {
     id: "harrington-abby",
     tokens: "Abby",
     who: "the West Highland terrier proprietor",
-    tiles: [ABBY_REF],
+    tiles: [ABBY_REF, MANGO_REF],
     tileNote:
-      "The reference shows Abby's face and neckwear exactly as they must be drawn: a true fluffy West Highland " +
-      "White Terrier — round dark button eyes, black nose, small pricked ears, fine soft fur strokes, never " +
-      "wolfish — wearing her studded leather collar with a small teardrop gem pendant. ",
+      "LEFT on the reference: Abby's face and neckwear exactly as they must be drawn — a true fluffy West " +
+      "Highland White Terrier, round dark button eyes, black nose, small pricked ears, wearing her studded " +
+      "leather collar with a small teardrop gem pendant. RIGHT on the reference: a retriever shown ONLY as " +
+      "the STYLE exemplar — do NOT draw him; draw Abby ALONE, but render her and the whole room in exactly " +
+      "that panel's antique-engraving technique: fine crosshatching and stippling, fur in individual pen " +
+      "strokes, never the left image's smooth clean-line look. ",
     extra:
       "Draw her as the successful proprietor behind her own marble bar counter: trim natural figure with a " +
       "modest bust, fitted light blouse with rolled sleeves, folded towel on her left shoulder, the studded " +

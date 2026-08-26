@@ -95,7 +95,7 @@ async function characterTile(spec) {
   return { buf, width };
 }
 
-const GAP = 40;
+const GAP = 0;
 
 for (const cast of CASTS) {
   const tiles = [];
