@@ -145,6 +145,19 @@ if (fs.existsSync(visionSrc)) {
   }
 }
 
+// The showcase batch — the finished cartoons the Studio Bible page leads
+// with. canon/showcase/index.json names each file and its caption; the art
+// department writes both when a batch passes QC.
+const showcaseSrc = path.join(repoRoot, "canon", "showcase");
+const showcaseDest = path.resolve(here, "..", "public", "showcase");
+fs.rmSync(showcaseDest, { recursive: true, force: true });
+fs.mkdirSync(showcaseDest, { recursive: true });
+if (fs.existsSync(showcaseSrc)) {
+  for (const file of fs.readdirSync(showcaseSrc)) {
+    if (/\.(jpe?g|png|webp)$/i.test(file)) fs.copyFileSync(path.join(showcaseSrc, file), path.join(showcaseDest, file));
+  }
+}
+
 // The /options git era is over — daily cartoons live in the studio
 // database (Supabase) now; the legacy folders stay in the repo as history
 // and are no longer copied into the build.

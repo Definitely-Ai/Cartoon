@@ -28,3 +28,5 @@ public/backroom-assets/
 scripts/training/training-set/
 scripts/training/training-set-v2/
 scripts/training/.detect/
+public/showcase/
+public/vision/
