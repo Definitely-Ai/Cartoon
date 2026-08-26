@@ -197,6 +197,7 @@ function multiRefInput(model: string, prompt: string, images: string[]): Record<
       prompt,
       input_images: images,
       quality: process.env.IMAGE_QUALITY || "low",
+      moderation: "low",
       aspect_ratio: process.env.IMAGE_ASPECT || "2:3",
       output_format: "png",
       number_of_images: 1,
