@@ -298,6 +298,14 @@ export async function GET(request: NextRequest) {
       );
     }
 
+    // ?quality=low|medium|high — gpt-image-2's variant dial, per request.
+    // low is ~$0.012 an image and high ~$0.128, so the house draws at low and
+    // this is how a single panel gets asked for more effort without a deploy.
+    const quality = params.get("quality");
+    if (quality && ["low", "medium", "high", "auto"].includes(quality)) {
+      process.env.IMAGE_QUALITY = quality;
+    }
+
     const scale = params.get("scale");
     if (scale && Number(scale) > 0) {
       // Per-request override of the strength dial; generateCartoonArt reads
