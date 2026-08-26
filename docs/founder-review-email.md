@@ -24,6 +24,8 @@ The camera stands behind the bar, so the gentlemen sit across the marble with th
 
 Score the ten and say what's off. Specifically: does Drew read right now, is Mango's balance of dog and gentleman where you want it, and is Abby the proprietor you had in mind? And on the writing — is that the register you want the strip to speak in?
 
-One thing I already know I'd tune: Drew's beak still runs a shade large against the plate. Say the word on the cast and I'll tighten it and start filing dailies.
+On Drew's beak: it had drifted long and gaping, and the cause turned out to be the reference the studio was drawing from — the bar Drew of the National Mall plate, whose beak is the longest of the four prints, and whose crop cut the tip off besides. The studio now draws Drew from the 19th-hole plate instead: same character, same hand, the short closed beak tucked against the face. You'll see it in every panel above.
+
+Say the word on the cast and I'll start filing dailies.
 
 Thanks,
