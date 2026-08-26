@@ -155,17 +155,18 @@ async function composeBoard(refs: { path: string; box?: [number, number, number,
     .toBuffer();
 }
 
-/** The founder's veto on legs, enforced in code rather than asked for.
- *  Every model tested draws stools and trousered knees below the marble no
- *  matter how the prompt is worded; the house simply crops there instead —
- *  the same reasoning that makes the house typeset captions rather than
- *  hoping the model letters them. The plates compose the bar this way, so
- *  the crop is canon, not damage control. */
+/** Trim the paper margin some models draw around the panel, and cut the
+ *  bottom back only if the frame runs tall enough to have caught stools and
+ *  knees — the founder's veto on legs. A blind percentage used to slice
+ *  through the drinks, so the trim is measured from the finished aspect
+ *  rather than guessed. */
 async function cropAtTheCounter(bytes: Buffer): Promise<Buffer> {
-  const meta = await sharp(bytes).metadata();
-  if (!meta.width || !meta.height) return bytes;
-  const height = Math.round(meta.height * 0.74);
-  return sharp(bytes).extract({ left: 0, top: 0, width: meta.width, height }).png().toBuffer();
+  const trimmed = await sharp(bytes).trim({ threshold: 12 }).png().toBuffer().catch(() => bytes);
+  const meta = await sharp(trimmed).metadata();
+  if (!meta.width || !meta.height) return trimmed;
+  const tallest = Math.round(meta.width * 1.25); // 4:5, the house shape
+  if (meta.height <= tallest) return trimmed;
+  return sharp(trimmed).extract({ left: 0, top: 0, width: meta.width, height: tallest }).png().toBuffer();
 }
 
 /** FLUX.2 takes references as a real array and lets the prompt address each
