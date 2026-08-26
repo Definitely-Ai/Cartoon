@@ -228,7 +228,9 @@ export async function generateCartoonArt(input: {
       input_images: await uploadReferences(input.characters, input.barScene ?? false),
       aspect_ratio: "4:5",
       output_format: "png",
-      safety_tolerance: 5,
+      // BFL caps tolerance at 2 once input images are attached; 5 is a
+      // text-to-image-only value and the call is refused outright.
+      safety_tolerance: 2,
     });
   }
 
