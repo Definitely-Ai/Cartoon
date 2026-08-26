@@ -133,7 +133,10 @@ export async function GET(request: NextRequest) {
       if (!first) await new Promise((resolve) => setTimeout(resolve, 12_000));
       first = false;
       try {
-        const prompt = assemblePrompt(canon, panel.candidate, true);
+        // Baseline (Kontext) runs must assemble the Kontext branch of the
+        // prompt — the fine-tune branch writes trigger tokens into the text,
+        // which a board-conditioned model happily paints onto the walls.
+        const prompt = assemblePrompt(canon, panel.candidate, !version.includes("kontext"));
         const image = await generateCartoonArt({ prompt, characters: panel.candidate.characters, model: version });
         const name = `${stamp}-${panel.slug}`;
         await commitFiles(
