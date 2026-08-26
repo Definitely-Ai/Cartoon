@@ -14,10 +14,10 @@ export const REF_DIR = "scripts/training/variant-refs";
 export const MAX_VARIANTS = 40;
 
 // Reference tiles cut straight from the founder's plates.
-// The duo now conditions on the studio's own plate-faithful study (generated
-// from plate 1's lower panel) — when the reference already matches, Kontext
-// executes the remaining corrections instead of re-copying a foreign scene.
-const DUO_PANEL = { body: { src: "canon/vision/duo-study-src.png", box: [0, 0, 1024, 1024] } };
+// The duo conditions on plate 1's lower panel — Harrington's own drawing.
+// (A round of chaining on the studio's own output degraded faces and
+// lettering; first-generation conditioning keeps the plate's crispness.)
+const DUO_PANEL = { body: { src: "canon/vision/plate-1-security-and-martini-menu.jpg", box: [16, 1460, 1600, 1140] } };
 const ABBY_REF = { body: { src: "canon/vision/abby-face-reference.jpg", box: [0, 0, 1640, 2140] } };
 // A face-free engraving swatch (suit tweed, furred hand, glass, studded
 // leather, bar wood) — technique without a second face to blend with.
@@ -40,29 +40,30 @@ export const CASTS = [
     tokens: "Drew and Mango",
     who: "the white flamingo gentleman and the golden retriever gentleman",
     tiles: [DUO_PANEL],
+    redraw:
+      "Keep those faces, hands, drinksware grips, and the engraved style EXACTLY as the reference draws " +
+      "them; the composition and Mango's wardrobe follow the description below, not the reference. ",
     tileNote:
-      "The reference is ONE finished panel of the exact scene to draw — recreate it as ONE SINGLE " +
-      "continuous panel of The Swinging Door: Drew the white-plumed flamingo gentleman seated frame-left, " +
-      "Mango the golden retriever gentleman seated frame-right, the chalkboard martini menu, the drink-" +
-      "special board, the labeled golf-pun bottles, the nut bowl between them, the mirrored window sign. " +
-      "Copy each character exactly as the panel draws him: Drew — deep question-mark neck, heavy-lidded " +
-      "deadpan eyes, heavy downturned black-tipped beak at exactly the panel's scale, starched collar band " +
-      "under his black silk BOW TIE (never a long necktie), knitted sweater vest over a pale collared " +
-      "shirt, and WHITE-FEATHERED humanoid hands — four feathered fingers and an opposed thumb — holding " +
-      "his MARTINI by the stem. Mango — true black dog lips along the muzzle, freckles, long-fringed drop " +
-      "ears, a wristwatch, and FUR-BACKED dog-yet-humanoid hands with soft pads, every finger distinctly " +
-      "drawn, never bare human skin on either gentleman. ",
+      "The reference panel supplies the two characters — take every character detail from it. Drew, the " +
+      "white-plumed flamingo gentleman: deep question-mark neck, heavy-lidded deadpan eyes, heavy " +
+      "downturned black-tipped beak at exactly the reference's scale, starched collar band under his " +
+      "black silk BOW TIE (never a long necktie), knitted sweater vest over a pale collared shirt, and " +
+      "WHITE-FEATHERED humanoid hands — four feathered fingers and an opposed thumb — holding his " +
+      "MARTINI by the stem. Mango, the golden retriever gentleman: true black dog lips along the muzzle, " +
+      "freckles, long-fringed drop ears, a wristwatch, and FUR-BACKED dog-yet-humanoid hands with soft " +
+      "pads, every finger distinctly drawn, never bare human skin on either gentleman. ",
     extra:
-      "Make exactly three corrections to the panel and nothing else. FIRST, seat both gentlemen on the " +
-      "PATRON side of the bar: the long counter runs between them and the back bar — their handsome " +
-      "chairs on the room side, drinks on the counter, and the bottle shelves standing ACROSS the counter " +
-      "where the bartender works, never directly behind the patrons. SECOND, dress Mango in his dark " +
-      "suit jacket over the pale open-collared shirt, the small US flag pin on the jacket's left lapel — " +
-      "his evening wear. THIRD, replace Mango's martini with his old fashioned — short rocks glass, one " +
-      "large cube, a dark cherry, on its coaster; Drew keeps his martini with olives exactly as drawn. " +
-      "Everything else stays the panel's: composition, expressions, boards, bottles, nut bowl, window. " +
-      "Both are successful gentlemen in their mid-forties — classy, composed; Drew deadpan, Mango " +
-      "faintly worried. ",
+      "THE COMPOSITION, drawn as ONE SINGLE continuous panel: the long bar counter crosses the frame, " +
+      "and the gentlemen sit at its NEAR side on handsome stools, seen from the side so both faces stay " +
+      "fully visible — the counter stands between the gentlemen and the back bar, because patrons never " +
+      "sit where the bartender works. On the FAR side of the counter: the bottle shelves with the " +
+      "labeled golf-pun bottles, and the chalkboard martini menu on the wall above; the mirrored " +
+      "Swinging Door window sign at the frame's edge. On the counter: Drew's martini with olives on its " +
+      "coaster at frame-left, Mango's OLD FASHIONED — a short rocks glass, one large cube, a dark " +
+      "cherry — on its coaster at frame-right, and the shared nut bowl between them. Mango wears his " +
+      "dark evening suit jacket over the pale open-collared shirt, the small US flag pin on the " +
+      "jacket's left lapel. Drew deadpan, Mango faintly worried — successful gentlemen in their " +
+      "mid-forties, classy and composed. ",
   },
   {
     id: "harrington-abby",
@@ -137,10 +138,14 @@ const SCENES = {
 
 /** The Kontext instruction for one run. */
 export function instruction(run) {
+  // A cast that redirects composition or wardrobe overrides the blanket
+  // redraw-exactly line — "same wardrobe, nothing invented" was silently
+  // countermanding every requested correction.
   return (
     run.cast.tileNote +
-    `Redraw ${run.cast.who} EXACTLY as the reference draws them — same faces, same wardrobe, same construction, ` +
-    `nothing invented. ` +
+    (run.cast.redraw ??
+      `Redraw ${run.cast.who} EXACTLY as the reference draws them — same faces, same wardrobe, same construction, ` +
+        `nothing invented. `) +
     STYLE +
     ROOM +
     (SCENES[run.id] ?? "") +
