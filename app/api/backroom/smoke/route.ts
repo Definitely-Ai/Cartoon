@@ -40,6 +40,18 @@ const PANELS = [
     },
   },
   {
+    // The filing shape most cartoons take: the two gentlemen, the room, the
+    // boards. Also the discriminator between the ROOM paragraph and the
+    // trio's three-tile conditioning board when a moderation flag appears.
+    slug: "duo-bar",
+    candidate: {
+      scene: "Drew lifts his martini toward the TV while Mango frowns at the chalkboard.",
+      tv: "RATE CUT EXPECTED, EVENTUALLY",
+      board: "PATIENCE — $14",
+      characters: ["drew", "mango"],
+    },
+  },
+  {
     slug: "mango-boat",
     candidate: {
       scene: "Mango sits alone amidships holding the tiller, looking back over his shoulder.",
