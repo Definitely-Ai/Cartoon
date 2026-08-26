@@ -123,6 +123,19 @@ export async function GET(request: NextRequest) {
       process.env.LORA_SCALE = scale;
     }
 
+    // ?probe=<text> — moderation bisection for baseline debugging: generate
+    // once from the given text with Drew's board, report pass or flag,
+    // commit nothing. Only meaningful with baseline=1.
+    const probe = params.get("probe");
+    if (probe && params.get("baseline") === "1") {
+      try {
+        await generateCartoonArt({ prompt: probe, characters: ["drew"], model: version });
+        return NextResponse.json({ ok: true, probe: "passed" });
+      } catch (error) {
+        return NextResponse.json({ ok: false, probe: error instanceof Error ? error.message : String(error) });
+      }
+    }
+
     const n = Math.min(PANELS.length, Math.max(1, Number(params.get("n")) || PANELS.length));
     // ?only=<slug> runs a single panel — for isolating a moderation flag or
     // re-rolling one cell without paying for the other three.
