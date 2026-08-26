@@ -146,6 +146,25 @@ plates' technique:
 - Behind her counter is her territory; patrons stay on the room side. She
   appears when the gag needs her — never as furniture.
 
+**Waist-up is the house framing** (founder's note: "I hate the legs"): the
+plates compose the bar from about the waist up, the marble crossing the lower
+frame. Drawing the gentlemen full length puts human-looking legs and trousered
+knees under animal heads, and it reads wrong every time. The counter hides
+everything below it; feet and stool footrests stay out of frame.
+
+**Drew is amiable, never a ghoul** (founder's note: "Drew looks scary"): the
+heavy-lidded deadpan is a fond, unimpressed look on a plump, softly modelled
+face — the man who has heard the story before and likes you anyway. Gaunt
+cheeks, hollow or sunken eyes, a skull-like head, or a fixed stare are the
+failure, and they fail the plate bar on sight.
+
+**Lettering is real writing** (founder's note: "the text sucks"): every word
+drawn in the panel — chalkboard, chyron, signage, bottle labels — is correctly
+spelled English, cleanly hand-lettered, readable at a glance. Scribble,
+garbled shapes, doubled words, and invented filler text are rejects, not
+charm. If a model cannot letter it, the panel is redrawn or the lettering is
+set by the house.
+
 **Mirroring is the window's alone** (founder's note: "only the sign on the
 window is mirrored — which is the name of the bar, TheSwingingDoor"): the
 name painted on the window glass reads reversed because the room looks at it
