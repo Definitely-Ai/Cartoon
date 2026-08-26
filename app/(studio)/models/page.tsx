@@ -77,6 +77,8 @@ const HOUSE_RULES = [
   "The camera stands on the bartender's side. Drew and Mango sit across the marble with the ROOM behind them — never the bottles.",
   "Abby is the only other character in the bar. No human being appears anywhere except on the television.",
   "The TV names the story and the chalkboard prices it, and both illustrate that cartoon's own joke — never a stock scene.",
+  "The only lettering in a panel is the lettering the brief asked for. Bezels, napkins, cuffs and chart axes stay blank — invented micro-text always comes back as nonsense.",
+  "Nobody looks out of the panel. Every gaze belongs inside the scene: at each other, at the screen, at the board, or at the work in their hands.",
   "Bar panels are cropped at the counter: no legs, no knees, no stools, no floor.",
   "No cussing. No slandering. Gentlemen, always — the wit never needs a cheap word.",
   "The daily test: a finance man's 3–10 seconds. It lands, and it feels like his world.",

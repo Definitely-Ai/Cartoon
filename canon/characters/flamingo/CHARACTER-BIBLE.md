@@ -77,11 +77,28 @@ hanging open.
 
 Pale, with a fine nostril slit and a small smile-line at its base.
 
-**The measurement, taken off the founder's own prints.** Bill length divided by
-head width — head width read from the back of the skull to the gape corner —
-runs **0.79 to 1.03 across all eight Drews in the four plates**. The renders
-that drew the founder's complaint ran **1.15 to 1.52**. One is the ratio; the
-other is the fault.
+**The measurement — use these two landmarks and no others.** "Shorter than the
+head is wide" turned out to be unusable: four inspectors picked four different
+points for *head width* and produced ratios from 0.4 to 1.6 **on the same
+reference tile**, which let real drift be argued away as measurement error. The
+reproducible version:
+
+> **A** = back of the skull → the feather line where the bill begins.
+> **B** = back of the skull → the tip of the bill.
+> **B is at most 1.5 × A.**
+
+The founder's plate-4 Drew measures **1.46**. A batch drawn before this rule
+existed measured 1.52 to 1.90 — nine of ten too long. The black tip is a
+**short wedge**, not a hook: it stops level with the chin and hangs no deeper
+below the bill than two thirds of A.
+
+**The nostril is one plain thin slit.** No lid, no lash, no catchlight. Given
+any of those it renders as a *second eye on the bill*, which has happened.
+
+**No drawn brow ridge.** The severe, hawkish, condor read that keeps getting
+filed against Drew traces to a hard line above the eye. The lid is heavy, the
+cheek is full and softly modelled, and the eye sits straight into plumage with
+no shelf over it.
 
 **A standing warning about the source.** Of the eight Drews in the plates,
 **plate 3's is the only one drawn with the bill gaped open**, and it is the one
@@ -115,9 +132,16 @@ soft shoulders.
 
 ## 4. Hands — the one human thing
 
-At the end of each feathered arm is a **genuine hand**: four slender fingers
-and one opposed thumb, **feather-covered**, with a soft fluffy cuff at the
-wrist. Long scalloped tiers of wing feathers hang beneath each forearm.
+At the end of each feathered arm is a **genuine hand**: **feather-covered**,
+with a soft fluffy cuff at the wrist, and long scalloped tiers of wing feathers
+hanging beneath each forearm.
+
+**It is a feathered mitten, and that is correct.** The plates draw it as soft
+lobes wrapping the stem, with no separated fingers and no visible thumb. This
+gets filed as broken anatomy by anyone checking Drew against a human hand — it
+is not. **A missing thumb on Drew is on model and is never a fault.** What is
+required is that the grip be real: the lobes close around the stem, they do not
+pass through it, and the glass is genuinely supported.
 
 The standing order for the whole cast:
 > *"Focus on the hands — they need to have feathers and fur but be humanoid."*
@@ -184,6 +208,7 @@ defers with amusement — she settles the argument, and he enjoys that.
 - A short, thick, or straight neck; a goose posture
 - A long, jutting, or gaped beak; any beak longer than the head is wide
 - An oversized head
+- A drawn brow ridge over the eye; a nostril with a lid, lash or catchlight
 - A gaunt, hollow-eyed, skull-like or sinister look
 - Missing bow tie
 - Wingtips instead of hands, or hands that can't hold a stem
