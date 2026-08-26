@@ -117,6 +117,57 @@ const PLATES = [
       "IN HERE",
   },
   {
+    // Solo halves cropped from the duo panels — true Harrington pixels that
+    // give each token evidence WITHOUT the other character in frame, against
+    // the co-occurrence bleed the first smoke wave showed.
+    id: "p2r-drew",
+    src: V("plate-2-debt-ceiling-and-retirement.jpg"),
+    box: [98, 1960, 760, 1141],
+    caption:
+      "SWDINK cartoon, SWDDREW with a martini at the bar counter of the barroom, the TV above showing a " +
+      "RETIREMENT PLANNING news segment, a chalkboard reading TODAY'S SPECIAL LOW SCORES AND COLD DRINKS",
+  },
+  {
+    id: "p2r-mango",
+    src: V("plate-2-debt-ceiling-and-retirement.jpg"),
+    box: [900, 1960, 817, 1141],
+    caption:
+      "SWDINK cartoon, SWDMANGO with an old fashioned at the bar counter of the barroom, framed pictures " +
+      "and the mirrored window sign behind him, a small sign reading NO CHASING YOUR BALLS IN HERE",
+  },
+  {
+    id: "p3-drew",
+    src: V("plate-3-national-mall.jpg"),
+    box: [788, 220, 1000, 1449],
+    caption:
+      "SWDINK cartoon, SWDDREW with a martini at the bar counter of the barroom, DCN news on the TV and a " +
+      "framed sign reading THE SWINGING DOOR behind him",
+  },
+  {
+    id: "p3-mango",
+    src: V("plate-3-national-mall.jpg"),
+    box: [1750, 220, 1244, 1449],
+    caption:
+      "SWDINK cartoon, SWDMANGO with an old fashioned at the bar counter of the barroom, a chalkboard " +
+      "special reading NANOBUBBLES $17.76 and the TV news behind him",
+  },
+  {
+    id: "p4g-drew",
+    src: V("plate-4-nineteenth-hole-and-tariffs.jpg"),
+    box: [13, 986, 580, 1047],
+    caption:
+      "SWDINK cartoon, SWDDREW in a golf visor with a martini at the 19th hole terrace of a golf course, a " +
+      "framed sign reading THE SWINGING DOOR 19TH HOLE, golfers on the fairway behind",
+  },
+  {
+    id: "p2d-drew",
+    src: V("plate-2-debt-ceiling-and-retirement.jpg"),
+    box: [152, 900, 700, 903],
+    caption:
+      "SWDINK cartoon, SWDDREW with a martini at the bar counter of the barroom during DEBT CEILING WEEK, " +
+      "balloons and a drink-specials chalkboard around him",
+  },
+  {
     // Cropped from the studio's own abby2 study: the bust above the forepaws
     // (the paws would teach a quadruped posture the founder rejected).
     id: "abby-study-bust",
