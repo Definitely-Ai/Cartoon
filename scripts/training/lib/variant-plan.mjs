@@ -78,6 +78,22 @@ const ABBY_FACE_NOTE_SOLO =
   "rather than heavy stipple. Draw Abby ALONE, and draw the panel full corner to corner as ONE " +
   "continuous scene — no side panel, no split. ";
 
+// Face brief plus a HAND exemplar tile: the paws kept beating the hand
+// text, so the second tile shows the construction — a fur-backed, four-
+// fingered, thumbed hand gripping a glass — and the text points at it.
+const ABBY_FACE_NOTE_HANDS =
+  "LEFT on the reference: Abby's face — copy its BEAUTY and CHARM exactly: a glamorous, feminine West " +
+  "Highland White Terrier in her mid-forties, with a compact pretty face, short muzzle, LARGE glossy " +
+  "dark eyes with bright catchlights and long lashes, softly arched brows, a small black nose, a WARM " +
+  "closed-lip smile, silky groomed white fur, and two small pricked ears — both ears up. She is " +
+  "beautiful — alluring, elegant, seasoned and self-assured — never stiff, never staring, never eerie, " +
+  "never tongue-out, never a shepherd or wolf. She wears her studded leather collar with its small " +
+  "teardrop gem pendant. RIGHT on the reference: a HAND STUDY — the fur-backed hand with four fingers " +
+  "and an opposed thumb gripping a glass. Abby's OWN hands are built exactly like that hand, in HER " +
+  "white fur — fingers, knuckles, and a thumb. Her face stays soft, luminous, and lovely, modeled " +
+  "with delicate shading rather than heavy stipple. Draw Abby ALONE, one continuous panel, full " +
+  "corner to corner — no side panel, no split. ";
+
 // The upright-at-work body brief for Abby, minus the action (each cast adds
 // its own), in the vocabulary that passes both the filter and the founder.
 const ABBY_BODY =
@@ -142,8 +158,8 @@ export const CASTS = [
     tokens: "Abby",
     label: "the proprietor at her marble",
     who: "the West Highland terrier proprietor",
-    tiles: [ABBY_REF],
-    tileNote: ABBY_FACE_NOTE_SOLO,
+    tiles: [ABBY_REF, MANGO_DETAIL],
+    tileNote: ABBY_FACE_NOTE_HANDS,
     extra:
       "Composition: WAIST-UP, camera pulled back — she stands BEHIND her own marble bar counter with the " +
       "marble visible in the foreground, the counter hiding her below the waist. " +
@@ -156,8 +172,8 @@ export const CASTS = [
     tokens: "Abby",
     label: "pouring behind the bar",
     who: "the West Highland terrier proprietor",
-    tiles: [ABBY_REF],
-    tileNote: ABBY_FACE_NOTE_SOLO,
+    tiles: [ABBY_REF, MANGO_DETAIL],
+    tileNote: ABBY_FACE_NOTE_HANDS,
     extra:
       "Composition: WAIST-UP behind her own marble bar counter, the marble visible in the foreground. " +
       ABBY_BODY +
