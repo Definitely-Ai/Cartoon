@@ -79,16 +79,16 @@ export const CASTS = [
       "than heavy stipple. Draw Abby ALONE. ",
     extra:
       "Her BODY IS SLIGHTLY HUMANOID, built exactly like the flamingo and retriever gentlemen of this " +
-      "strip: she STANDS UPRIGHT on two legs, with humanoid shoulders and arms, FUR-BACKED dog-yet-" +
-      "humanoid hands with soft pads, and a shapely feminine figure — trim waist, modest bust — white-" +
-      "furred throughout, only her head and paws-turned-hands the terrier's. Composition: WAIST-UP, " +
-      "camera pulled back — she STANDS TALL working behind her own marble bar counter, the marble in the " +
-      "foreground hiding her below the waist. Her work clothes are MANDATORY and must be drawn over her " +
-      "fur: a fitted light blouse with rolled sleeves open at the collar, and a folded white towel draped " +
-      "over her left shoulder, with the studded gem-pendant collar at her neck. She is the successful " +
-      "proprietor in her mid-forties — attractive, alluring, poised — one hand resting on the marble, " +
-      "head tilted with the same warm smile the reference has, in command, the back bar's bottles and " +
-      "good glassware behind her. ",
+      "strip: she STANDS UPRIGHT on two legs, with humanoid shoulders and arms and FUR-BACKED dog-yet-" +
+      "humanoid hands with soft pads, every finger distinctly drawn — white-furred throughout, only her " +
+      "head and hands the terrier's, never on all fours, never leaning paws on the counter. Composition: " +
+      "WAIST-UP, camera pulled back — she STANDS TALL working behind her own marble bar counter, the " +
+      "marble in the foreground hiding her below the waist. Her work clothes are MANDATORY and must be " +
+      "drawn over her fur: a fitted light blouse with rolled sleeves open at the collar, and a folded " +
+      "white towel draped over her left shoulder, with the studded gem-pendant collar at her neck. She is " +
+      "the successful proprietor in her mid-forties — graceful, trim, and poised, with an elegant " +
+      "feminine silhouette in her blouse — one hand resting on the marble, head tilted with the same " +
+      "warm smile the reference has, in command, the back bar's bottles and good glassware behind her. ",
   },
 ];
 
