@@ -50,9 +50,14 @@ function imageModel(): string {
 // (canon/vision/) — the founder's ground truth after the pivot. The retired
 // model sheets must never condition a paid image again: their look is the
 // look he rejected.
+// Tight BUSTS, not whole panels. A tile that carries a whole scene competes
+// with the scene being asked for: Mango's bar panel dominated every board it
+// sat on, absorbing Drew into a second retriever and dropping Abby entirely.
+// Cropped to head-and-shoulders, each tile can only say "this is what this
+// character looks like".
 const VISION_REFS: Record<string, { path: string; box?: [number, number, number, number] }> = {
-  drew: { path: "canon/vision/drew-reference.jpg" },
-  mango: { path: "canon/vision/mango-reference.jpg", box: [300, 600, 2300, 2800] },
+  drew: { path: "canon/vision/drew-reference.jpg", box: [60, 80, 1330, 1500] },
+  mango: { path: "canon/vision/mango-reference.jpg", box: [950, 1400, 1900, 1950] },
   abby: { path: "canon/vision/abby-face-reference.jpg" },
 };
 
@@ -77,9 +82,9 @@ export async function buildReferenceBoard(characters: string[], barScene = false
     const ref = VISION_REFS[character.toLowerCase()];
     if (ref) refs.push(ref);
   }
-  // Mango's tile is itself a full bar panel; adding the room band beside it
-  // over-weights busy scene tiles and a duo roll fused Drew into a second
-  // retriever. The band joins only when no character tile carries the room.
+  // The room band rides along for bar scenes unless Mango is in the cast —
+  // his crop still carries enough of the back bar to double up. Kept in
+  // lockstep with the roster sentence in assemblePrompt.
   const roomCovered = characters.some((c) => c.toLowerCase() === "mango");
   if (barScene && !roomCovered) refs.push(ROOM_TILE);
   const masters: Buffer[] = [];
@@ -268,12 +273,37 @@ export function assemblePrompt(
   prompt = fillSlots(prompt, candidate);
 
   // Kontext is instruction-driven: tell it what the conditioning image is.
+  // Naming each portrait by its position, and demanding the exact headcount,
+  // is what stops the model absorbing one character into another — the
+  // failure that cost eight of ten panels in the first showcase wave.
+  const named = candidate.characters
+    .map((c) => c.toLowerCase())
+    .map((c) => CAST_BLURB[c])
+    .filter(Boolean);
+  const roster = named.map((who, i) => `${ordinal(i)}, ${who}`).join("; ");
+  const count = named.length;
+  const roomTile = !candidate.setting && !candidate.characters.some((c) => c.toLowerCase() === "mango");
   return (
-    "The attached image is the reference board: each character's tile fixes that character's " +
-    "construction, face, and proportions exactly, and a final room tile (when present) fixes the " +
-    "bar's wall, TV grammar, and chalkboard style — but the scene's own TV and board text replaces " +
-    "the reference's, and the board's layout and backgrounds are never copied. Draw a new " +
+    `The attached image is the reference board: ${count} character portrait${count > 1 ? "s" : ""} ` +
+    `side by side${roomTile ? ", then a final room tile" : ""} — ${roster}` +
+    `${roomTile ? "; last, a room tile showing the bar's wall, TV, and chalkboard style" : ""}. ` +
+    `Each portrait fixes ONLY that character's face, build, and wardrobe. The drawn panel must show ` +
+    `EXACTLY ${count} character${count > 1 ? "s" : ""}: ${count > 1 ? "each one a separate individual matching his or her own portrait — never merge two characters into one, never draw the same character twice, never leave one out" : "that character alone"}. ` +
+    "Never copy the portraits' own backgrounds, signage, or layout; the scene below replaces them " +
+    "entirely, and its TV and chalkboard carry its own text. Draw a new " +
     "single-panel cartoon:\n\n" +
     prompt
   );
+}
+
+// Short identifying blurbs for the board roster — enough to tell the model
+// which portrait is which, in the strip's own vocabulary.
+const CAST_BLURB: Record<string, string> = {
+  drew: "Drew, the white-plumed flamingo gentleman in the black bow tie and knitted sweater vest",
+  mango: "Mango, the golden retriever gentleman in the dark jacket with the small US flag pin",
+  abby: "Abby, the white West Highland terrier proprietor in the studded gem-pendant collar",
+};
+
+function ordinal(i: number): string {
+  return ["first from the left", "second from the left", "third from the left"][i] ?? `number ${i + 1}`;
 }

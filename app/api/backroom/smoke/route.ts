@@ -103,96 +103,111 @@ const PANELS = [
 // QC, not here.
 const SHOWCASE = [
   {
-    slug: "sc01-jackson-hole",
+    slug: "sc01-hike-odds",
+    caption: 'Drew: "Best seller all year. Nobody has ever had to make one."',
     candidate: {
       scene:
-        "Drew sits in the left club chair by the front window with his martini; Mango sits in the right chair, turned toward the TV.",
-      tv: "JACKSON HOLE: MARKETS AWAIT THE SPEECH",
-      board: "WYOMING SPRING WATER — $12",
+        "Drew sits frame-left with his martini, studying the chalkboard; Mango sits frame-right over his old fashioned, watching the screen.",
+      tv: "WARSH SPEAKS FRIDAY — HIKE ODDS 45%, AGAIN",
+      board: "THE RATE HIKE $19 — PRICED NIGHTLY, NEVER POURED",
       characters: ["drew", "mango"],
     },
   },
   {
-    slug: "sc02-hike-odds",
+    slug: "sc02-tariffs",
+    caption: 'Mango: "I had one of each. It felt patriotic both times."',
     candidate: {
-      scene: "Drew frame-left at the marble counter raises his martini; Mango frame-right stares down into his old fashioned.",
-      tv: "RATE HIKE ODDS: 40%, AGAIN",
-      board: "PRICED IN — NEVER POURED",
+      scene:
+        "Mango sits frame-right with two short whiskies side by side on matching napkins; Drew sits frame-left with his martini, one brow raised at them.",
+      tv: "CANADA MATCHES 50% TARIFF, DOLLAR FOR DOLLAR",
+      board: "CANADIAN CLUB $9 · RETALIATORY CLUB $9",
       characters: ["drew", "mango"],
     },
   },
   {
-    slug: "sc03-tariffs",
+    slug: "sc03-ai-capex",
+    caption: 'Drew: "Committed is money that has not had its second thoughts yet."',
     candidate: {
-      scene: "Drew frame-left studies the chalkboard over his martini; Mango frame-right holds his old fashioned protectively with both hands.",
-      tv: "CANADA MATCHES 50% TARIFFS, DOLLAR FOR DOLLAR",
-      board: "CANADIAN WHISKY — ASK",
+      scene:
+        "Drew sits frame-left raising one feathered finger for another round; Mango sits frame-right with his old fashioned, looking up at the screen.",
+      tv: "AI CAPEX: $600B SPENT, $3 TRILLION COMMITTED",
+      board: "MARTINI $18 — COMMITTING TO A MARTINI: FREE",
       characters: ["drew", "mango"],
     },
   },
   {
-    slug: "sc04-ai-capex",
+    slug: "sc04-refinance",
+    caption: 'Mango: "Nobody pays a tab like that. They renew it."',
     candidate: {
-      scene: "Drew frame-left gestures at the chalkboard with his olive pick; Mango frame-right looks up at the TV over his old fashioned.",
-      tv: "AI SPENDING: $3 TRILLION COMMITTED",
-      board: "OUR ONLY DATA CENTER: THIS CHALKBOARD",
+      scene:
+        "Mango sits frame-right holding a very long paper bar tab that spills off the marble; Drew sits frame-left with his martini, unmoved.",
+      tv: "TREASURY REFINANCES $9.7 TRILLION THIS YEAR",
+      board: "ALL TABS ROLLED OVER NIGHTLY",
       characters: ["drew", "mango"],
     },
   },
   {
     slug: "sc05-golf-thirty",
+    caption: 'Drew: "Five and a quarter for thirty years. My swing guarantees nothing of the kind."',
     candidate: {
       scene:
-        "Drew frame-left leans on a driver with his martini in his other hand; Mango frame-right tees a ball on the terrace rail; a framed sign reads THE SWINGING DOOR 19TH HOLE.",
-      setting: "the 19th hole terrace of a golf course, rolling fairway and a distant cart behind",
+        "Drew stands frame-left in a pale golf visor with his martini held by the stem; Mango stands frame-right in a white polo and cap with his old fashioned; a framed sign reads THE SWINGING DOOR 19TH HOLE.",
+      setting: "the 19th hole terrace of a golf course, rolling fairways and a distant cart behind them",
       characters: ["drew", "mango"],
     },
   },
   {
-    slug: "sc06-security-refi",
+    slug: "sc06-jackson-hole",
+    caption: 'Mango: "A symposium in the mountains, to tell us they are still thinking about it."',
     candidate: {
       scene:
-        "Drew frame-left holds a security tray with his martini glass standing in it; Mango frame-right unbuckles his wristwatch; a wall sign reads PREPARE TO BE HUMBLED.",
-      setting: "a crowded airport security line with bins, belts, and a metal detector",
+        "Mango sits frame-right leaning toward the screen with his old fashioned; Drew sits frame-left with his martini, entirely unhurried.",
+      tv: "JACKSON HOLE: THE SPEECH IS FRIDAY",
+      board: "WYOMING SPRING WATER $12",
       characters: ["drew", "mango"],
     },
   },
   {
-    slug: "sc07-resilient",
+    slug: "sc07-sentiment",
+    caption: 'Mango: "I have never felt worse about the economy, Abby. Same again."',
     candidate: {
       scene:
-        "Abby stands center behind the marble counter with her towel on her shoulder; Drew sits frame-left with his martini, Mango frame-right with his old fashioned.",
-      tv: "CONSUMER RESILIENT DESPITE SENTIMENT",
-      board: "SENTIMENT: LOW. TAB: OPEN.",
+        "Abby stands center behind the marble counter with her towel on her shoulder; Mango sits frame-right sliding his empty rocks glass toward her; Drew sits frame-left reading the screen over his martini.",
+      tv: "SENTIMENT AT RECORD LOW — SPENDING UP AGAIN",
+      board: "MISERY HOUR 4–7 · DOUBLES $22",
       characters: ["drew", "mango", "abby"],
     },
   },
   {
     slug: "sc08-sp-8000",
+    caption: 'Drew: "Her target follows the price at a respectful distance. It is called research."',
     candidate: {
-      scene: "Abby chalks the board behind the bar; Drew frame-left and Mango frame-right watch her from their stools.",
-      tv: "S&P NEARS 8,000",
-      board: "EVERYTHING AT THE HIGH — $2 MORE",
+      scene:
+        "Abby stands center behind the bar on a low step stool, chalking a higher number over the old one; Drew sits frame-left watching without moving; Mango sits frame-right with his old fashioned.",
+      tv: "S&P 2% OFF RECORD — STREET TARGETS 8,000",
+      board: "HOUSE MARTINI $18 · YEAR-END TARGET $19",
       characters: ["drew", "mango", "abby"],
     },
   },
   {
     slug: "sc09-housing",
+    caption: 'Abby: "The house keeps winning, gentlemen. Just not the kind anyone lives in."',
     candidate: {
       scene:
-        "Abby pours from a bottle behind the counter; Drew frame-left studies the TV; Mango frame-right rests his chin on his hand.",
+        "Abby stands center behind the bar drawing a neat chalk line through a drink name; Drew sits frame-left with his martini; Mango sits frame-right with his old fashioned, chin on his hand.",
       tv: "DATA CENTERS OUTBUILD HOUSING",
-      board: "ROOMS BY THE GLASS",
+      board: "THE STARTER HOME $12 — OUTBID",
       characters: ["drew", "mango", "abby"],
     },
   },
   {
-    slug: "sc10-last-call",
+    slug: "sc10-fed-abby",
+    caption: 'Abby: "I price in a raise every morning, gentlemen. Delivering it is a separate decision."',
     candidate: {
       scene:
-        "Abby rings a small bell behind the bar; Drew frame-left consults a pocket watch; Mango frame-right drains his old fashioned.",
-      tv: "FED HOLDS, HINTS, HOLDS AGAIN",
-      board: "LAST CALL: EVENTUALLY",
+        "Abby stands center behind the bar with chalk in hand at the martini line; Drew sits frame-left and Mango sits frame-right, both watching her the way traders watch a Fed meeting.",
+      tv: "HIKE ODDS 45%, AGAIN",
+      board: "MARTINI $18 — CHANCE OF $19 TODAY: 45%",
       characters: ["drew", "mango", "abby"],
     },
   },
@@ -290,7 +305,13 @@ export async function GET(request: NextRequest) {
         await commitFiles(
           [
             { path: `${OUT_DIR}/${name}.png`, content: image },
-            { path: `${OUT_DIR}/${name}.txt`, content: `${version}\nLORA_SCALE=${process.env.LORA_SCALE ?? "0.9 (default)"}\n\n${prompt}\n` },
+            {
+              path: `${OUT_DIR}/${name}.txt`,
+              content:
+                `${version}\nLORA_SCALE=${process.env.LORA_SCALE ?? "0.9 (default)"}\n` +
+                ("caption" in panel && panel.caption ? `CAPTION ${panel.caption}\n` : "") +
+                `\n${prompt}\n`,
+            },
           ],
           `training: smoke panel ${name}`
         );
