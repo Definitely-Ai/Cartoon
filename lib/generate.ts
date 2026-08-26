@@ -60,7 +60,12 @@ function imageModel(): string {
 // sat on, absorbing Drew into a second retriever and dropping Abby entirely.
 // Cropped to head-and-shoulders, each tile can only say "this is what this
 // character looks like".
-const VISION_REFS: Record<string, { path: string; box?: [number, number, number, number] }> = {
+type Tile = { path: string; box?: [number, number, number, number]; label?: string };
+// One or more tiles per character. Drew carries two, because the fault the
+// strip could not shake lives in a detail — the shape of the black on his
+// bill — that occupies about a thirtieth of a full-figure tile. A reference
+// can only teach what the model can resolve in it.
+const VISION_REFS: Record<string, Tile[]> = {
   // Plate 1's bar Drew, cut at NATIVE resolution. Two tiles preceded it and
   // both taught the fault: plate 3's Drew is the only one of the eight in the
   // plates drawn with the bill GAPED OPEN, and plate 4's ends in a curved
@@ -69,9 +74,18 @@ const VISION_REFS: Record<string, { path: string; box?: [number, number, number,
   // one wearing the sweater vest. Its predecessor was also a 2.94x upscale of
   // a 300px region: mean pixel gradient 3.41 against the plates' 7-8, i.e. the
   // model was being shown a smear. This is 380px of real linework, unenlarged.
-  drew: { path: "canon/vision/drew-plate1-bar-reference.jpg" },
-  mango: { path: "canon/vision/mango-reference.jpg", box: [950, 1400, 1900, 1950] },
-  abby: { path: "canon/vision/abby-face-reference.jpg" },
+  drew: [
+    { path: "canon/vision/drew-plate1-bar-reference.jpg" },
+    {
+      path: "canon/vision/drew-plate1-head-study.jpg",
+      label:
+        "a close study of THE SAME BIRD's head — copy this bill exactly: short, tucked to the face, " +
+        "dropping steeply, with the black confined to a blunt rounded cap on the front third and the rear " +
+        "two thirds pale. This tile is not a second character",
+    },
+  ],
+  mango: [{ path: "canon/vision/mango-reference.jpg", box: [950, 1400, 1900, 1950] }],
+  abby: [{ path: "canon/vision/abby-face-reference.jpg" }],
 };
 
 // A character-free stretch of the bar from plate 3 — walnut wall, the TV
@@ -110,11 +124,13 @@ export async function buildReferenceBoard(
     // The staged panel already IS Drew and Mango in the room; only a
     // character it does not contain needs a portrait beside it.
     refs.push(SCENE_TILE);
-    if (cast.includes("abby")) refs.push(VISION_REFS.abby);
+    if (cast.includes("abby")) refs.push(VISION_REFS.abby[0]);
     return composeBoard(refs);
   }
   for (const character of cast) {
-    const ref = VISION_REFS[character];
+    // The single-board path takes only the primary tile: a collage that
+    // repeated one character would read as two of him.
+    const ref = VISION_REFS[character]?.[0];
     if (ref) refs.push(ref);
   }
   // The room band rides along for bar scenes unless Mango is in the cast —
@@ -225,8 +241,9 @@ export function referenceList(
   const list: { label: string; path: string; box?: [number, number, number, number] }[] = [];
   for (const character of characters) {
     const key = character.toLowerCase();
-    const ref = VISION_REFS[key];
-    if (ref) list.push({ label: CAST_BLURB[key] ?? key, ...ref });
+    for (const [i, ref] of (VISION_REFS[key] ?? []).entries()) {
+      list.push({ label: ref.label ?? (i === 0 ? (CAST_BLURB[key] ?? key) : key), ...ref });
+    }
   }
   // No room tile on this path. It was cut from plate 3, so it carried that
   // plate's TV picture — the reflecting pool — into every cartoon's screen,
