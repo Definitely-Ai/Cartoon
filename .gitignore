@@ -26,4 +26,5 @@ public/backroom-assets/
 # training run belong in history, and the training route reads the zip from
 # the repo).
 scripts/training/training-set/
+scripts/training/training-set-v2/
 scripts/training/.detect/
