@@ -72,12 +72,14 @@ export const CASTS = [
       "stays soft, luminous, and lovely, modeled with delicate shading rather than heavy stipple. Draw " +
       "Abby ALONE. ",
     extra:
-      "Composition: WAIST-UP, camera pulled back — she stands BEHIND her own marble bar counter with the " +
-      "marble visible in the foreground, the counter hiding her below the waist. Draw her as the successful " +
-      "proprietor in her mid-forties: an attractive, shapely, trim feminine figure with a modest bust, a " +
-      "fitted light blouse with rolled sleeves open at the collar, folded towel on her left shoulder, the " +
-      "studded gem-pendant collar at her neck, one hand resting on the marble, head tilted with a warm " +
-      "knowing smile — poised, charming, and in command — bottles and good glassware behind her. ",
+      "Composition: WAIST-UP, camera pulled back — she STANDS TALL behind her own marble bar counter, " +
+      "working her bar, the marble visible in the foreground and the counter hiding her below the waist. " +
+      "Her work clothes are MANDATORY and must be drawn: a fitted light blouse with rolled sleeves open at " +
+      "the collar, and a folded white towel draped over her left shoulder — the blouse and towel must both " +
+      "be visible, over her fur, with the studded gem-pendant collar at her neck. Draw her as the " +
+      "successful proprietor in her mid-forties: an attractive, shapely, trim feminine figure with a modest " +
+      "bust, one hand resting on the marble, head tilted with the same warm smile the reference has — " +
+      "poised, charming, and in command — the back bar's bottles and good glassware behind her. ",
   },
 ];
 
@@ -122,7 +124,8 @@ const SCENES = {
     "bug, a LIVE tag, and a bold-caps chyron reading RATE CUT EXPECTED, EVENTUALLY. A dark chalkboard beside " +
     "it reads, in hand-lettered chalk: PATIENCE — $14. ",
   "harrington-abby-barroom":
-    "Behind her, among the bottles, a small hand-lettered chalkboard reads: THE HOUSE PROTECTS ITS OWN. ",
+    "Behind her, among the bottles, a small dark chalkboard with hand-lettered chalk capitals reading, " +
+    "spelled letter-perfect with no words repeated: THE HOUSE PROTECTS ITS OWN. ",
 };
 
 /** The Kontext instruction for one run. */
