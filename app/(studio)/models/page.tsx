@@ -22,6 +22,7 @@ const PLATES = [
 // Finished example cartoons: plate-conditioned art, wall gag, attributed
 // italic caption typeset beneath — the shape a filed cartoon takes.
 const EXAMPLES: Proof[] = [
+  { file: "example-sentiment.jpg", caption: "Mango — “I have never felt worse about the economy. Same again, Abby.”" },
   { file: "example-abby-bar.jpg", caption: "Abby — “Markets closed mixed. Gentlemen, so will you.”" },
   { file: "example-drew-golf.jpg", caption: "Drew — “The 19th hole is my only guaranteed return.”" },
   { file: "example-mango-golf.jpg", caption: "Mango — “I came out to lose golf balls, not basis points.”" },
