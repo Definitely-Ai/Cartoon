@@ -56,17 +56,30 @@ const VISION_REFS: Record<string, { path: string; box?: [number, number, number,
   abby: { path: "canon/vision/abby-face-reference.jpg" },
 };
 
+// A character-free stretch of the bar from plate 3 — walnut wall, the TV
+// with full broadcast grammar, the chalkboard special. Appended to the board
+// for bar scenes so the ROOM conditions on Harrington's pixels too; without
+// it, Drew's tile shows an airport and Abby's shows only her face.
+const ROOM_TILE: { path: string; box: [number, number, number, number] } = {
+  path: "canon/vision/plate-3-national-mall.jpg",
+  box: [1500, 69, 1494, 600],
+};
+
 /**
  * One reference board: each requested character's plate study, side by side
  * on white, grayscaled and normalised so the photographed prints read as ink
  * on one shared sheet. Kontext sees a single conditioning image, so the cast
  * shares a canvas.
  */
-export async function buildReferenceBoard(characters: string[]): Promise<Buffer> {
-  const masters: Buffer[] = [];
+export async function buildReferenceBoard(characters: string[], barScene = false): Promise<Buffer> {
+  const refs: { path: string; box?: [number, number, number, number] }[] = [];
   for (const character of characters) {
     const ref = VISION_REFS[character.toLowerCase()];
-    if (!ref) continue;
+    if (ref) refs.push(ref);
+  }
+  if (barScene) refs.push(ROOM_TILE);
+  const masters: Buffer[] = [];
+  for (const ref of refs) {
     const file = await readRepoFile(ref.path);
     if (!file) continue;
     let img = sharp(file.bytes);
@@ -109,6 +122,8 @@ export async function buildReferenceBoard(characters: string[]): Promise<Buffer>
 export async function generateCartoonArt(input: {
   prompt: string;
   characters: string[];
+  /** Bar scenes append the plates' room band to the reference board. */
+  barScene?: boolean;
   /** Override the model for this one call — the smoke-test route injects a
    *  freshly trained version here before IMAGE_MODEL is promoted to it. */
   model?: string;
@@ -127,7 +142,7 @@ export async function generateCartoonArt(input: {
       }
     : {
         prompt: input.prompt,
-        input_image: await uploadFile(await buildReferenceBoard(input.characters), "reference-board.jpg", "image/jpeg"),
+        input_image: await uploadFile(await buildReferenceBoard(input.characters, input.barScene ?? false), "reference-board.jpg", "image/jpeg"),
         aspect_ratio: "4:5",
         output_format: "png",
         // The strip is a dry gag cartoon — nothing here should trip
@@ -250,8 +265,10 @@ export function assemblePrompt(
 
   // Kontext is instruction-driven: tell it what the conditioning image is.
   return (
-    "The attached image is the character reference board — match each character's construction, " +
-    "face, and proportions exactly; do not copy the board's layout or backgrounds. Draw a new " +
+    "The attached image is the reference board: each character's tile fixes that character's " +
+    "construction, face, and proportions exactly, and a final room tile (when present) fixes the " +
+    "bar's wall, TV grammar, and chalkboard style — but the scene's own TV and board text replaces " +
+    "the reference's, and the board's layout and backgrounds are never copied. Draw a new " +
     "single-panel cartoon:\n\n" +
     prompt
   );

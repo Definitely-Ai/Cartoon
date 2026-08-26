@@ -14,8 +14,47 @@ const TARGET_WIDTH = 1200;
 const xml = (value: string) =>
   value.replace(/[&<>]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" })[c] as string);
 
+const SPEAKERS = ["Drew", "Mango", "Abby"];
+
+// Words the strip never prints. Gentlemen, always — the wit never needs a
+// cheap word (founder: "no slandering, no cussing, they are classy").
+const BANNED_WORDS = /\b(fuck\w*|shit\w*|bitch\w*|bastard|goddamn|damn\w*|asshole|dick|cunt|piss\w*)\b/i;
+
+/**
+ * The house caption format: attributed italic dialogue — Drew: "…".
+ * Returns the typeset-ready line; a caption the voice rules reject throws a
+ * PublishError whose message tells the writing AI exactly what to fix.
+ */
+export function lintCaption(caption: string): { speaker: string; speech: string; line: string } {
+  const trimmed = caption.trim();
+  const match = trimmed.match(/^(\w+)\s*:\s*([\s\S]+)$/);
+  if (!match || !SPEAKERS.includes(match[1])) {
+    throw new PublishError(
+      400,
+      `The caption must be attributed dialogue in the house format — Drew: "…", Mango: "…", or Abby: "…" — got: ${trimmed.slice(0, 60)}`
+    );
+  }
+  const speaker = match[1];
+  const speech = match[2].trim().replace(/^["“]/, "").replace(/["”]$/, "").trim();
+  if (!speech) throw new PublishError(400, "The caption has a speaker but no line.");
+  const wordCount = speech.split(/\s+/).length;
+  if (wordCount > 20) {
+    throw new PublishError(
+      400,
+      `The line runs ${wordCount} words — the house caps spoken dialogue at 20. Cut it; understatement is the register.`
+    );
+  }
+  if (BANNED_WORDS.test(speech)) {
+    throw new PublishError(
+      400,
+      "The line breaks the house conduct rule — no cussing, ever. Rewrite it classy; the wit never needs a cheap word."
+    );
+  }
+  return { speaker, speech, line: `${speaker}: “${speech}”` };
+}
+
 function wrapDialogue(caption: string, limit = 48): string[] {
-  const words = `“${caption.trim()}”`.split(/\s+/);
+  const words = lintCaption(caption).line.split(/\s+/);
   const lines: string[] = [];
   let current = "";
   for (const word of words) {

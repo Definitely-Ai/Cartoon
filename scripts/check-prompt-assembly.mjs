@@ -89,7 +89,7 @@ check("the fine-tune is given trigger words, not descriptions", () => {
   assert.match(prompt, /SWDMANGO/);
   assert.doesNotMatch(prompt, /Preserve Drew exactly/, "the identity paragraph is the token's job now");
   assert.doesNotMatch(prompt, /Mango matches the attached/);
-  assert.doesNotMatch(prompt, /attached image is the character reference board/);
+  assert.doesNotMatch(prompt, /attached image is the reference board/);
 });
 
 check("Abby brings her trigger word and leaves her paragraph behind", () => {
@@ -127,7 +127,7 @@ check("every slot is filled on both paths", () => {
 
 check("Kontext still gets the full description and the board instruction", () => {
   const prompt = assemblePrompt(master, withAbby, false);
-  assert.match(prompt, /attached image is the character reference board/);
+  assert.match(prompt, /attached image is the reference board/);
   assert.match(prompt, /Preserve Drew exactly/);
   assert.match(prompt, /West Highland White Terrier/, "the Abby fence is appended when she is in the cast");
   assert.doesNotMatch(prompt, /SWDDREW/, "trigger words mean nothing to a model that never trained on them");

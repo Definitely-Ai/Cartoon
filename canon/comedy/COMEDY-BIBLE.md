@@ -30,10 +30,40 @@ Standing subject matter: politics, financial markets, sports, media, civic habit
 
 ## Caption Rules
 
-- Every cartoon has a caption.
-- Any of the characters may speak.
+- Every cartoon has a caption, and it is **attributed dialogue in the house
+  format**: `Drew: "…"`, `Mango: "…"`, or `Abby: "…"` — one speaker, typeset
+  in italics beneath the panel by the house. The filing pipeline rejects any
+  other shape (`lintCaption` in `lib/dialogue.ts`).
+- The spoken line is **at most 20 words**; most land in 8–14.
 - Captions should usually be short, dry, and underplayed.
-- The caption should **deepen the visual gag rather than explain it**.
+- The caption should **deepen the visual gag rather than explain it** — the
+  TV names the story, the chalkboard prices it, the caption lands the
+  verdict: one joke, three angles.
+
+### How to write one (the vibe, operationalized)
+
+The founder's register: *"what is going on / surprise at government policies —
+things that are financially affected"*, delivered by successful men in their
+mid-forties who have seen cycles before. The formula that keeps working:
+
+1. Take today's actual financial story (rates, tariffs, taxes, the debt
+   ceiling, a rally, a selloff).
+2. Put it on the TV and price it on the chalkboard.
+3. Let the character react with money-worn composure — surprise absorbed
+   into understatement, never panic, never a lecture.
+
+Each speaker's voice:
+- **Drew** — deadpan verdicts. Certainty worn lightly.
+  *"Rates will come down. I've simply stopped asking when."*
+- **Mango** — the worried everyman who pays the bill.
+  *"My future self is watching? He could send money."*
+  *"The chart goes up and I still feel it going down."*
+- **Abby** — the authority. Her word settles it.
+  *"The house protects its own. Read it again, gentlemen."*
+
+What a Swinging Door caption never does: shout (no exclamation-mark jokes),
+explain the joke, cuss, name-call, panic, or sound younger than its
+mid-forties. If Warren Buffett wouldn't say it at a nice bar, cut it.
 
 ## Tone
 

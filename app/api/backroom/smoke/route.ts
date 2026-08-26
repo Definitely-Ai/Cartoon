@@ -52,6 +52,26 @@ const PANELS = [
     },
   },
   {
+    // Showcase cells: gag-complete bar scenes — TV, board, and caption
+    // drawn from one joke — for direction checks with the founder.
+    slug: "abby-bar",
+    candidate: {
+      scene: "Abby polishes a rocks glass behind the marble counter, eyes on the room.",
+      tv: "MARKETS CLOSE MIXED",
+      board: "LAST CALL IS A POLICY DECISION",
+      characters: ["abby"],
+    },
+  },
+  {
+    slug: "duo-tariffs",
+    candidate: {
+      scene: "Drew studies the chalkboard over his martini while Mango peers into his old fashioned.",
+      tv: "NEW TARIFFS ANNOUNCED",
+      board: "IMPORTED BEER $14 (WAS $8)",
+      characters: ["drew", "mango"],
+    },
+  },
+  {
     slug: "mango-boat",
     candidate: {
       scene: "Mango sits alone amidships holding the tiller, looking back over his shoulder.",

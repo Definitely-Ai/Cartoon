@@ -9,7 +9,7 @@ import {
   setKeeperFlag,
   setScores,
 } from "@/lib/db";
-import { finishCartoon } from "@/lib/dialogue";
+import { finishCartoon, lintCaption } from "@/lib/dialogue";
 import { assemblePrompt, generateCartoonArt } from "@/lib/generate";
 
 // Image generation happens in this route now (make_cartoons) — give the
@@ -112,7 +112,12 @@ const TOOLS = [
             properties: {
               scene: { type: "string", description: "One [SCENE] sentence — who is doing what." },
               title: { type: "string", description: "Short title." },
-              caption: { type: "string", description: "The exact dialogue to typeset (≤ 20 words)." },
+              caption: {
+                type: "string",
+                description:
+                  'Attributed house dialogue, exactly one speaker: Drew: "…", Mango: "…", or Abby: "…" — the spoken line ≤ 20 words, ' +
+                  "topical-financial, understated, classy (no cussing). The TV and chalkboard should carry the same joke.",
+              },
               characters: {
                 type: "array",
                 items: { type: "string", enum: ["drew", "mango", "abby"] },
@@ -183,7 +188,11 @@ const TOOLS = [
         image_base64: { type: "string", description: "The artwork file, base64-encoded. No data: prefix." },
         request: { type: "string", description: "The founder's ask in his own words — heads the batch on his site. Optional." },
         title: { type: "string", description: "Short title for the cartoon." },
-        caption: { type: "string", description: "The exact dialogue to typeset (≤ ~140 characters)." },
+        caption: {
+          type: "string",
+          description:
+            'Attributed house dialogue, one speaker: Drew: "…", Mango: "…", or Abby: "…" — spoken line ≤ 20 words, classy, no cussing.',
+        },
         topic: { type: "string", description: "The founder's request in a word or two, e.g. \"fishing\"." },
         style_notes: {
           type: "string",
@@ -306,7 +315,9 @@ async function runTool(name: string, args: Record<string, unknown>) {
         if (characters.length === 0) throw new PublishError(400, "characters is required.");
         if (typeof c.scene !== "string" || !c.scene.trim()) throw new PublishError(400, "scene is required.");
         if (typeof c.caption !== "string" || !c.caption.trim()) throw new PublishError(400, "caption is required.");
+        lintCaption(c.caption); // the voice rules fail here, before any art money is spent
 
+        const barScene = !(typeof c.setting === "string" && c.setting.trim());
         const prompt = assemblePrompt(masterPrompt, {
           scene: c.scene,
           tv: typeof c.tv === "string" ? c.tv : undefined,
@@ -319,11 +330,11 @@ async function runTool(name: string, args: Record<string, unknown>) {
         // named — the same redraw discipline the canon demands of a chat AI.
         let finished: Buffer;
         try {
-          finished = await finishCartoon(await generateCartoonArt({ prompt, characters }), c.caption);
+          finished = await finishCartoon(await generateCartoonArt({ prompt, characters, barScene }), c.caption);
         } catch (err) {
           if (err instanceof PublishError && err.status === 400) {
             const retryPrompt = `${prompt}\n\nPrevious attempt failed inspection: ${err.message} Fix exactly that.`;
-            finished = await finishCartoon(await generateCartoonArt({ prompt: retryPrompt, characters }), c.caption);
+            finished = await finishCartoon(await generateCartoonArt({ prompt: retryPrompt, characters, barScene }), c.caption);
           } else {
             throw err;
           }

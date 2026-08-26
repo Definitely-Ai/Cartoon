@@ -26,8 +26,18 @@ const legacyStripHeight = 236;
 const xml = (value) =>
   String(value).replace(/[&<>]/g, (character) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" })[character]);
 
+// The house format is attributed italic dialogue — Drew: “…”. A caption
+// carrying a cast attribution typesets that way; anything else keeps the
+// legacy whole-line quotes so old cartoons re-render unchanged.
+function formatCaption(caption) {
+  const match = caption.trim().match(/^(Drew|Mango|Abby)\s*:\s*([\s\S]+)$/);
+  if (!match) return `“${caption.trim()}”`;
+  const speech = match[2].trim().replace(/^["“]/, "").replace(/["”]$/, "").trim();
+  return `${match[1]}: “${speech}”`;
+}
+
 function wrapDialogue(caption, limit = 48) {
-  const words = `“${caption.trim()}”`.split(/\s+/);
+  const words = formatCaption(caption).split(/\s+/);
   const lines = [];
   let current = "";
 
