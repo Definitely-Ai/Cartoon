@@ -79,7 +79,7 @@ check("IMAGE_MODEL decides which path runs", () => {
   process.env.IMAGE_MODEL = "rick/swinging-door:abc123";
   assert.equal(isFineTuned(), true);
   delete process.env.IMAGE_MODEL;
-  assert.equal(isFineTuned(), false, "the default is Kontext");
+  assert.equal(isFineTuned(), false, "the default house model is reference-conditioned, not a fine-tune");
 });
 
 check("the fine-tune is given trigger words, not descriptions", () => {
@@ -126,7 +126,9 @@ check("every slot is filled on both paths", () => {
 });
 
 check("Kontext still gets the full description and the board instruction", () => {
-  const prompt = assemblePrompt(master, withAbby, false);
+  // Explicitly the single-board branch: the house model is multi-reference
+  // now, so the Kontext path has to be asked for by name.
+  const prompt = assemblePrompt(master, withAbby, false, false, false);
   assert.match(prompt, /attached image is the reference board/);
   assert.match(prompt, /Preserve Drew exactly/);
   assert.match(prompt, /West Highland White Terrier/, "the Abby fence is appended when she is in the cast");
@@ -136,7 +138,7 @@ check("Kontext still gets the full description and the board instruction", () =>
 check("Abby's fence does not leak an unfilled slot", () => {
   // Her paragraph mentions [SCENE] itself, so it has to be in place before
   // the slots are filled rather than appended afterwards.
-  assert.doesNotMatch(assemblePrompt(master, withAbby, false), /\[SCENE\]/);
+  assert.doesNotMatch(assemblePrompt(master, withAbby, false, false, false), /\[SCENE\]/);
 });
 
 check("an unknown cast is refused rather than drawn as nobody", () => {

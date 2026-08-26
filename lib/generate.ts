@@ -13,7 +13,11 @@ import { generateImage, uploadFile } from "./replicate";
 // FLUX.1 Kontext takes one conditioning image + an instruction prompt —
 // the strongest hosted option for "match these exact characters" before any
 // fine-tune exists. Once one does, IMAGE_MODEL points at it instead.
-const DEFAULT_MODEL = "black-forest-labs/flux-kontext-pro";
+// The house model. gpt-image-2 is the first one that letters a chalkboard
+// correctly, keeps the cast on the right side of the bar, and draws a
+// television picture that illustrates its own headline. IMAGE_QUALITY
+// dials the cost: "low" (~$0.012 an image) is what the batch is drawn at.
+const DEFAULT_MODEL = "openai/gpt-image-2";
 
 // The trigger words baked into the fine-tune by scripts/training. They are the
 // whole point of it: the model knows who these three are, so the prompt can
@@ -31,7 +35,8 @@ const STYLE_TRIGGER = "SWDINK";
  * already knows, and telling it again only fights the tokens.
  */
 export function isFineTuned(): boolean {
-  return !imageModel().includes("kontext");
+  const model = imageModel();
+  return !model.includes("kontext") && !isMultiRef(model);
 }
 
 // How hard the fine-tune is applied. This is the dial to reach for first when
@@ -385,7 +390,7 @@ export function assemblePrompt(
   candidate: Candidate,
   fineTuned: boolean = isFineTuned(),
   staged = false,
-  multiRef = false
+  multiRef = isMultiRef(imageModel())
 ): string {
   if (fineTuned) return fineTunedPrompt(masterPrompt, candidate);
 
