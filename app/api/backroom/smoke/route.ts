@@ -96,8 +96,11 @@ export async function GET(request: NextRequest) {
         );
       }
     }
-    if (version.includes("kontext")) {
-      return NextResponse.json({ error: "The smoke test is for a fine-tune — Kontext is the baseline, not the candidate." }, { status: 400 });
+    if (version.includes("kontext") && params.get("baseline") !== "1") {
+      return NextResponse.json(
+        { error: "The smoke test is for a fine-tune — Kontext is the baseline, not the candidate. Pass baseline=1 to deliberately smoke the production Kontext path (e.g. after changing its reference boards)." },
+        { status: 400 }
+      );
     }
 
     const scale = params.get("scale");
