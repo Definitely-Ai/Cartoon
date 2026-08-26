@@ -14,5 +14,13 @@
     "destination": "definitely-ai/swinging-door-v2",
     "steps": 1200,
     "trainerVersion": "26dce37af90b9d997eeb970d92e47de3064d46c300504ae376c75bef6a9022d2"
+  },
+  {
+    "id": "vay8j15xkxrmt0d07qe95p5mcr",
+    "createdAt": "2026-08-26T11:37:51.797Z",
+    "zipSha": "174ac0785eb4825a0debf34f3af050dbfb1b8bd2",
+    "destination": "definitely-ai/swinging-door-v2",
+    "steps": 1400,
+    "trainerVersion": "26dce37af90b9d997eeb970d92e47de3064d46c300504ae376c75bef6a9022d2"
   }
 ]
