@@ -112,14 +112,26 @@ export async function GET(request: NextRequest) {
     }
 
     const n = Math.min(PANELS.length, Math.max(1, Number(params.get("n")) || PANELS.length));
+    // ?only=<slug> runs a single panel — for isolating a moderation flag or
+    // re-rolling one cell without paying for the other three.
+    const only = params.get("only");
+    const chosen = only ? PANELS.filter((p) => p.slug === only) : PANELS.slice(0, n);
+    if (chosen.length === 0) {
+      return NextResponse.json({ error: `No panel named "${only}" — slugs: ${PANELS.map((p) => p.slug).join(", ")}.` }, { status: 400 });
+    }
     const canon = await getCanon();
     const stamp = new Date().toISOString().replace(/[-:]/g, "").slice(0, 13).replace("T", "-");
 
     const started = Date.now();
     const made: string[] = [];
     const failed: { slug: string; error: string }[] = [];
-    for (const panel of PANELS.slice(0, n)) {
+    let first = true;
+    for (const panel of chosen) {
       if (Date.now() - started > TIME_BUDGET_MS) break;
+      // Under $5 of credit Replicate allows one prediction per ~10s; spacing
+      // the panels turns a wave of 429s into a slower complete wave.
+      if (!first) await new Promise((resolve) => setTimeout(resolve, 12_000));
+      first = false;
       try {
         const prompt = assemblePrompt(canon, panel.candidate, true);
         const image = await generateCartoonArt({ prompt, characters: panel.candidate.characters, model: version });
