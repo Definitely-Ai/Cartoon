@@ -97,6 +97,107 @@ const PANELS = [
   },
 ];
 
+// The showcase batch (?set=showcase): ten gag-complete candidates written to
+// this week's actual financial news — six duo panels across the room and two
+// away games, four with the proprietor working. Captions are typeset after
+// QC, not here.
+const SHOWCASE = [
+  {
+    slug: "sc01-jackson-hole",
+    candidate: {
+      scene:
+        "Drew sits in the left club chair by the front window with his martini; Mango sits in the right chair, turned toward the TV.",
+      tv: "JACKSON HOLE: MARKETS AWAIT THE SPEECH",
+      board: "WYOMING SPRING WATER — $12",
+      characters: ["drew", "mango"],
+    },
+  },
+  {
+    slug: "sc02-hike-odds",
+    candidate: {
+      scene: "Drew frame-left at the marble counter raises his martini; Mango frame-right stares down into his old fashioned.",
+      tv: "RATE HIKE ODDS: 40%, AGAIN",
+      board: "PRICED IN — NEVER POURED",
+      characters: ["drew", "mango"],
+    },
+  },
+  {
+    slug: "sc03-tariffs",
+    candidate: {
+      scene: "Drew frame-left studies the chalkboard over his martini; Mango frame-right holds his old fashioned protectively with both hands.",
+      tv: "CANADA MATCHES 50% TARIFFS, DOLLAR FOR DOLLAR",
+      board: "CANADIAN WHISKY — ASK",
+      characters: ["drew", "mango"],
+    },
+  },
+  {
+    slug: "sc04-ai-capex",
+    candidate: {
+      scene: "Drew frame-left gestures at the chalkboard with his olive pick; Mango frame-right looks up at the TV over his old fashioned.",
+      tv: "AI SPENDING: $3 TRILLION COMMITTED",
+      board: "OUR ONLY DATA CENTER: THIS CHALKBOARD",
+      characters: ["drew", "mango"],
+    },
+  },
+  {
+    slug: "sc05-golf-thirty",
+    candidate: {
+      scene:
+        "Drew frame-left leans on a driver with his martini in his other hand; Mango frame-right tees a ball on the terrace rail; a framed sign reads THE SWINGING DOOR 19TH HOLE.",
+      setting: "the 19th hole terrace of a golf course, rolling fairway and a distant cart behind",
+      characters: ["drew", "mango"],
+    },
+  },
+  {
+    slug: "sc06-security-refi",
+    candidate: {
+      scene:
+        "Drew frame-left holds a security tray with his martini glass standing in it; Mango frame-right unbuckles his wristwatch; a wall sign reads PREPARE TO BE HUMBLED.",
+      setting: "a crowded airport security line with bins, belts, and a metal detector",
+      characters: ["drew", "mango"],
+    },
+  },
+  {
+    slug: "sc07-resilient",
+    candidate: {
+      scene:
+        "Abby stands center behind the marble counter with her towel on her shoulder; Drew sits frame-left with his martini, Mango frame-right with his old fashioned.",
+      tv: "CONSUMER RESILIENT DESPITE SENTIMENT",
+      board: "SENTIMENT: LOW. TAB: OPEN.",
+      characters: ["drew", "mango", "abby"],
+    },
+  },
+  {
+    slug: "sc08-sp-8000",
+    candidate: {
+      scene: "Abby chalks the board behind the bar; Drew frame-left and Mango frame-right watch her from their stools.",
+      tv: "S&P NEARS 8,000",
+      board: "EVERYTHING AT THE HIGH — $2 MORE",
+      characters: ["drew", "mango", "abby"],
+    },
+  },
+  {
+    slug: "sc09-housing",
+    candidate: {
+      scene:
+        "Abby pours from a bottle behind the counter; Drew frame-left studies the TV; Mango frame-right rests his chin on his hand.",
+      tv: "DATA CENTERS OUTBUILD HOUSING",
+      board: "ROOMS BY THE GLASS",
+      characters: ["drew", "mango", "abby"],
+    },
+  },
+  {
+    slug: "sc10-last-call",
+    candidate: {
+      scene:
+        "Abby rings a small bell behind the bar; Drew frame-left consults a pocket watch; Mango frame-right drains his old fashioned.",
+      tv: "FED HOLDS, HINTS, HOLDS AGAIN",
+      board: "LAST CALL: EVENTUALLY",
+      characters: ["drew", "mango", "abby"],
+    },
+  },
+];
+
 export async function GET(request: NextRequest) {
   // Two doors: the owner's login cookie, or the single-purpose trigger token
   // (?t=) for automated callers — same secret, different derivation, so the
@@ -156,13 +257,15 @@ export async function GET(request: NextRequest) {
       }
     }
 
-    const n = Math.min(PANELS.length, Math.max(1, Number(params.get("n")) || PANELS.length));
+    // ?set=showcase switches from the control cells to the showcase batch.
+    const panelSet = params.get("set") === "showcase" ? SHOWCASE : PANELS;
+    const n = Math.min(panelSet.length, Math.max(1, Number(params.get("n")) || panelSet.length));
     // ?only=<slug> runs a single panel — for isolating a moderation flag or
-    // re-rolling one cell without paying for the other three.
+    // re-rolling one cell without paying for the others.
     const only = params.get("only");
-    const chosen = only ? PANELS.filter((p) => p.slug === only) : PANELS.slice(0, n);
+    const chosen = only ? panelSet.filter((p) => p.slug === only) : panelSet.slice(0, n);
     if (chosen.length === 0) {
-      return NextResponse.json({ error: `No panel named "${only}" — slugs: ${PANELS.map((p) => p.slug).join(", ")}.` }, { status: 400 });
+      return NextResponse.json({ error: `No panel named "${only}" — slugs: ${panelSet.map((p) => p.slug).join(", ")}.` }, { status: 400 });
     }
     const canon = await getCanon();
     const stamp = new Date().toISOString().replace(/[-:]/g, "").slice(0, 13).replace("T", "-");
