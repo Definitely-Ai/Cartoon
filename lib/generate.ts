@@ -441,10 +441,19 @@ export function assemblePrompt(
   if (multiRef) {
     const refs = referenceList(candidate.characters, !candidate.setting);
     const roster = refs.map((r, i) => `@image${i + 1} is ${r.label}.`).join(" ");
+    // Drew ships two tiles — the figure and a close study of his bill. The
+    // headcount below is built from the CAST, not the reference count, but
+    // say it out loud too: more references than characters must never become
+    // more characters.
+    const doubled =
+      refs.length > candidate.characters.length
+        ? " Some characters have MORE THAN ONE reference tile: those tiles are the SAME individual seen twice, at " +
+          "different distances. Never draw two of him."
+        : "";
     return (
       "Draw ONE single-panel black-and-white gag cartoon, one unbroken scene edge to edge — no seam, no " +
       "split, no second frame, and no photographic rendering.\n\n" +
-      `REFERENCES. ${roster} Draw each character exactly as his or her own reference draws that character ` +
+      `REFERENCES. ${roster}${doubled} Draw each character exactly as his or her own reference draws that character ` +
       "— same face, same build, same wardrobe — and give the panel the same antique-engraving hand. Do NOT " +
       "reproduce any reference's own background, signage, lettering, or composition: every word of lettering " +
       "in this cartoon comes from the scene described below, and nothing else.\n\n" +
