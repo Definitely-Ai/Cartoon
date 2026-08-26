@@ -56,7 +56,12 @@ function imageModel(): string {
 // Cropped to head-and-shoulders, each tile can only say "this is what this
 // character looks like".
 const VISION_REFS: Record<string, { path: string; box?: [number, number, number, number] }> = {
-  drew: { path: "canon/vision/drew-reference.jpg", box: [60, 60, 1010, 1180] },
+  // The founder's own pick, and the last correction he made: the BAR Drew
+  // from plate 3 — the long graceful S-curve neck, the small refined head,
+  // the amiable heavy lid, the bow tie at the neck base, the martini in a
+  // feathered hand. The airport bust that used to sit here gave a heavier,
+  // hunched, hard-beaked bird, and it is what he kept rejecting.
+  drew: { path: "canon/vision/drew-bar-reference.jpg" },
   mango: { path: "canon/vision/mango-reference.jpg", box: [950, 1400, 1900, 1950] },
   abby: { path: "canon/vision/abby-face-reference.jpg" },
 };

@@ -34,7 +34,7 @@ const EXAMPLES: Proof[] = [
 const CAST = [
   {
     name: "Drew",
-    study: "drew-reference.jpg",
+    study: "drew-bar-reference.jpg",
     line:
       "A successful gentleman in his mid-forties. White-plumed flamingo, question-mark neck, heavy-lidded deadpan " +
       "eyes, starched collar band under the black silk bow tie — his default skin — sweater vest, trousers, and a " +

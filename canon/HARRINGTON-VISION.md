@@ -30,8 +30,16 @@ sentences do the talking. Nobody needs to raise a voice.
 
 ### Drew — the flamingo
 
-**Definitive study: `canon/vision/drew-reference.jpg`** — the founder's words:
-*"drew must look like this."*
+**Definitive study: `canon/vision/drew-bar-reference.jpg`** — the bar Drew
+from plate 3, the founder's last and clearest correction: *"Drew looks
+terrible, please make him look like these."* This is the Drew every panel
+must match — **a long, graceful, high S-curve neck**, a **small refined
+head**, a calm heavy-lidded eye, the black-tipped beak in gentle proportion
+to that small head, the bow tie sitting at the base of the neck, and the
+martini lifted in a feathered hand. The earlier close-up
+(`canon/vision/drew-reference.jpg`, the airport plate) shows a heavier,
+hunched bird with a much bigger beak — keep it as history, never as the
+model: it is the look he rejected.
 
 - A **white-plumed flamingo**, plump and soft-bodied, drawn feather by feather.
 - **Neck**: a true flamingo neck — long, and curved in the deep, elegant
