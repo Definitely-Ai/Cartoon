@@ -47,22 +47,14 @@ export default function FeedbackCard({ proof, base }: { proof: Proof; base: stri
         alt={proof.caption}
         style={{ width: "100%", borderRadius: 3, display: "block", background: "#fff" }}
       />
-      <figcaption
-        style={{
-          fontFamily: serif,
-          fontStyle: "italic",
-          fontSize: 15,
-          lineHeight: 1.5,
-          color: "#3a332a",
-          margin: "12px 0 4px",
-        }}
-      >
-        {proof.caption}
-      </figcaption>
+      {/* The caption is typeset into the artwork itself, the way the plates
+          carry theirs — so the card adds only the news it was written off. */}
       {proof.note ? (
-        <p style={{ fontSize: 12.5, color: "#7a7062", margin: "0 0 10px", letterSpacing: 0.2 }}>{proof.note}</p>
+        <figcaption style={{ fontSize: 13, color: "#7a7062", margin: "12px 0 10px", letterSpacing: 0.2 }}>
+          {proof.note}
+        </figcaption>
       ) : (
-        <div style={{ height: 10 }} />
+        <div style={{ height: 12 }} />
       )}
       <div style={{ display: "flex", flexWrap: "wrap", gap: 4, marginBottom: 8 }}>
         {Array.from({ length: 10 }, (_, i) => i + 1).map((n) => (
