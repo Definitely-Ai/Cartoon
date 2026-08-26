@@ -90,9 +90,12 @@ glove on the left hand and his bag with the towel lettered
 - **The old fashioned** — short rocks glass, one large cube, a dark cherry —
   rests flat on the marble at frame-right. The **shared nut bowl** sits
   centered between his glass and Drew's martini.
-- **He is a patron, never staff.** He sits on the room side of the counter,
-  with the marble between him and the bottles. Bottles drawn directly behind
-  him means the staging is wrong.
+- **He is a patron, never staff.** The camera stands on the bartender's side
+  and looks across the marble at him; behind Mango is the **room** —
+  panelling, framed prints, sconces, the television, the chalkboard. **No
+  bottles, no back-bar shelves, no glass racks are ever drawn behind him.**
+  Bottles at his shoulder make him read as the bartender, and the panel is
+  wrong however well it is drawn.
 - Bar panels are **cropped at the counter** — chest-up, no legs, no stools.
 
 ---

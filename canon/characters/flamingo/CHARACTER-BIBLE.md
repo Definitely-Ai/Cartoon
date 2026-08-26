@@ -131,9 +131,12 @@ Themed dressing stays in this key: knitwear and club-house. Never a costume.
   olives on a pick, on a napkin or coaster. Lifted by the stem.
 - **Frame-left** by default, neck arched so his face hangs where the gag needs
   it, eye sliding sideways at Mango.
-- **He is a patron, never staff.** He sits on the room side of the counter
-  with the marble between him and the bottles. A shelf of bottles drawn
-  directly behind him means the staging is wrong.
+- **He is a patron, never staff.** The camera stands on the bartender's side
+  and looks across the marble at him; behind Drew is the **room** — panelling,
+  framed prints, sconces, the television, the chalkboard. **No bottles, no
+  back-bar shelves, no glass racks are ever drawn behind him.** A bottle shelf
+  at his shoulder makes him read as the bartender, and the panel is wrong
+  however well it is drawn.
 - Bar panels are **cropped at the counter** — chest-up, no legs, no stools.
 
 ---

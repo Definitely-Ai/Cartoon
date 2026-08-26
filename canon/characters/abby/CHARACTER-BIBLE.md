@@ -89,16 +89,19 @@ Absolutely no tail.
 
 ## 5. Staging — she owns the service side
 
-The bar has three depths, and Abby defines the far one:
+**The camera stands where she works.** In the house bar shot the reader is on
+the service side of the marble, looking across it at the two patrons. That
+puts Drew and Mango on the far side with the **room** behind them — panelling,
+framed prints, sconces, the television, the chalkboard — and it puts the
+liquor shelves behind the reader, out of frame entirely.
 
-1. **Nearest the viewer:** the patrons — Drew and Mango.
-2. **Middle:** the marble counter, drinks standing on it.
-3. **Farthest:** the **service side** — back-bar shelves, bottles, TV,
-   chalkboard — and Abby, facing the room across the counter.
+Abby is **the only figure ever on the camera's side**. She stands at the near
+end of the counter, turned three-quarter so her whole face is visible, the
+marble between her and the gentlemen, visibly mid-task. Bar panels are cropped
+at the counter — no legs, no stools.
 
-She is **the only figure ever in that space**. In the standard bar scene she
-is behind the counter, visibly mid-task, the marble hiding her below the
-waist. Bar panels are cropped at the counter — no legs, no stools.
+If bottles appear behind Drew or Mango, the sides have been swapped and the
+panel fails.
 
 **Approved work actions:** polishing a rocks glass with her towel, pouring
 from a labelled bottle, sliding a drink across the marble, chalking the day's

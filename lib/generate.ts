@@ -172,7 +172,12 @@ async function cropAtTheCounter(bytes: Buffer): Promise<Buffer> {
 /** FLUX.2 takes references as a real array and lets the prompt address each
  *  one by index, so the cast no longer has to share one collaged board. */
 export function isMultiRef(model: string): boolean {
-  return model.includes("flux-2") || model.includes("nano-banana") || model.includes("seedream");
+  return (
+    model.includes("flux-2") ||
+    model.includes("nano-banana") ||
+    model.includes("seedream") ||
+    model.includes("gpt-image")
+  );
 }
 
 /** Each vendor names the reference array differently, and Black Forest Labs
@@ -183,6 +188,19 @@ function multiRefInput(model: string, prompt: string, images: string[]): Record<
   }
   if (model.includes("seedream")) {
     return { prompt, image_input: images, aspect_ratio: "4:5", size: "2K" };
+  }
+  if (model.includes("gpt-image")) {
+    // OpenAI prices this one by variant — low is ~$0.012 an image against
+    // high's ~$0.128, so the house draws at low and only works up if the
+    // pixels ask for it. IMAGE_QUALITY is the dial, no redeploy required.
+    return {
+      prompt,
+      input_images: images,
+      quality: process.env.IMAGE_QUALITY || "low",
+      aspect_ratio: process.env.IMAGE_ASPECT || "2:3",
+      output_format: "png",
+      number_of_images: 1,
+    };
   }
   // google/nano-banana
   return { prompt, image_input: images, aspect_ratio: "4:5", output_format: "png" };
