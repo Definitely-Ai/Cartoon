@@ -107,7 +107,7 @@ const SHOWCASE = [
     caption: 'Drew: "Best seller all year. Nobody has ever had to make one."',
     candidate: {
       scene:
-        "Drew sits frame-left on a stool at the marble bar counter with his martini, studying the chalkboard; Mango sits frame-right beside him over his old fashioned, turned toward Drew in three-quarter view; the back bar and its bottles rise across the counter behind them. They are seated at the bar, never at a table, and never lined up facing the viewer.",
+        "Drew sits frame-left on a stool at the marble bar counter with his martini, studying the chalkboard; Mango sits frame-right beside him over his old fashioned, turned toward Drew in three-quarter view; the back bar and its bottles rise across the counter behind them. They are seated at the bar, never at a table, and never lined up shoulder to shoulder. Each character is seen from the FRONT or in three-quarter view with his or her face fully visible to the reader — never from behind, never a back or a shoulder turned to us.",
       tv: "WARSH SPEAKS FRIDAY — HIKE ODDS 45%, AGAIN",
       board: "THE RATE HIKE $19 — PRICED NIGHTLY, NEVER POURED",
       characters: ["drew", "mango"],
@@ -118,7 +118,7 @@ const SHOWCASE = [
     caption: 'Mango: "I had one of each. It felt patriotic both times."',
     candidate: {
       scene:
-        "Mango sits frame-right at the marble bar counter with two short whiskies side by side on matching napkins in front of him; Drew sits frame-left with his martini, turned toward Mango with one brow raised; the back bar rises across the counter behind them. They are seated at the bar, never at a table, and never lined up facing the viewer.",
+        "Mango sits frame-right at the marble bar counter with two short whiskies side by side on matching napkins in front of him; Drew sits frame-left with his martini, turned toward Mango with one brow raised; the back bar rises across the counter behind them. They are seated at the bar, never at a table, and never lined up shoulder to shoulder. Each character is seen from the FRONT or in three-quarter view with his or her face fully visible to the reader — never from behind, never a back or a shoulder turned to us.",
       tv: "CANADA MATCHES 50% TARIFF, DOLLAR FOR DOLLAR",
       board: "CANADIAN CLUB $9 · RETALIATORY CLUB $9",
       characters: ["drew", "mango"],
@@ -129,7 +129,7 @@ const SHOWCASE = [
     caption: 'Drew: "Committed is money that has not had its second thoughts yet."',
     candidate: {
       scene:
-        "Drew sits frame-left at the marble bar counter raising one feathered finger for another round, his empty martini glass before him; Mango sits frame-right with his old fashioned, looking up at the screen; the back bar rises across the counter behind them. They are seated at the bar, never at a table, and never lined up facing the viewer.",
+        "Drew sits frame-left at the marble bar counter raising one feathered finger for another round, his empty martini glass before him; Mango sits frame-right with his old fashioned, looking up at the screen; the back bar rises across the counter behind them. They are seated at the bar, never at a table, and never lined up shoulder to shoulder. Each character is seen from the FRONT or in three-quarter view with his or her face fully visible to the reader — never from behind, never a back or a shoulder turned to us.",
       tv: "AI CAPEX: $600B SPENT, $3 TRILLION COMMITTED",
       board: "MARTINI $18 — COMMITTING TO A MARTINI: FREE",
       characters: ["drew", "mango"],
@@ -140,7 +140,7 @@ const SHOWCASE = [
     caption: 'Mango: "Nobody pays a tab like that. They renew it."',
     candidate: {
       scene:
-        "Mango sits frame-right at the marble bar counter holding a very long paper bar tab that unrolls off the edge of the marble; Drew sits frame-left with his martini, unmoved, turned toward him; the back bar rises across the counter behind them. They are seated at the bar, never at a table, and never lined up facing the viewer.",
+        "Mango sits frame-right at the marble bar counter holding a very long paper bar tab that unrolls off the edge of the marble; Drew sits frame-left with his martini, unmoved, turned toward him; the back bar rises across the counter behind them. They are seated at the bar, never at a table, and never lined up shoulder to shoulder. Each character is seen from the FRONT or in three-quarter view with his or her face fully visible to the reader — never from behind, never a back or a shoulder turned to us.",
       tv: "TREASURY REFINANCES $9.7 TRILLION THIS YEAR",
       board: "ALL TABS ROLLED OVER NIGHTLY",
       characters: ["drew", "mango"],
@@ -151,7 +151,7 @@ const SHOWCASE = [
     caption: 'Drew: "Five and a quarter for thirty years. My swing guarantees nothing of the kind."',
     candidate: {
       scene:
-        "Drew stands frame-left in a pale golf visor with his martini held by the stem, turned toward Mango; Mango stands frame-right in a white polo and pale cap with his old fashioned, a golf bag leaning at the rail beside him; a framed sign at the edge reads THE SWINGING DOOR 19TH HOLE. They face each other in three-quarter view, never lined up facing the viewer.",
+        "Drew stands frame-left in a pale golf visor with his martini held by the stem, turned toward Mango; Mango stands frame-right in a white polo and pale cap with his old fashioned, a golf bag leaning at the rail beside him; a framed sign at the edge reads THE SWINGING DOOR 19TH HOLE. They face each other in three-quarter view, never lined up shoulder to shoulder. Each character is seen from the FRONT or in three-quarter view with his or her face fully visible to the reader — never from behind, never a back or a shoulder turned to us.",
       setting: "the outdoor 19th hole terrace of a golf course, rolling fairways with distant golfers and a cart behind them",
       characters: ["drew", "mango"],
     },
@@ -161,7 +161,7 @@ const SHOWCASE = [
     caption: 'Mango: "A symposium in the mountains, to tell us they are still thinking about it."',
     candidate: {
       scene:
-        "Mango sits frame-right at the marble bar counter leaning toward the screen with his old fashioned; Drew sits frame-left with his martini, entirely unhurried, turned toward Mango; the back bar rises across the counter behind them. They are seated at the bar, never at a table, and never lined up facing the viewer.",
+        "Mango sits frame-right at the marble bar counter leaning toward the screen with his old fashioned; Drew sits frame-left with his martini, entirely unhurried, turned toward Mango; the back bar rises across the counter behind them. They are seated at the bar, never at a table, and never lined up shoulder to shoulder. Each character is seen from the FRONT or in three-quarter view with his or her face fully visible to the reader — never from behind, never a back or a shoulder turned to us.",
       tv: "JACKSON HOLE: THE SPEECH IS FRIDAY",
       board: "WYOMING SPRING WATER $12",
       characters: ["drew", "mango"],
@@ -172,7 +172,7 @@ const SHOWCASE = [
     caption: 'Mango: "I have never felt worse about the economy, Abby. Same again."',
     candidate: {
       scene:
-        "The marble bar counter runs across the frame. Abby stands BEHIND it on the far side, facing the room, towel on her shoulder, a bottle in her hand. Drew sits frame-left and Mango sits frame-right on stools at the NEAR side, both in three-quarter view turned toward her: Mango slides his empty rocks glass across the marble toward Abby, and Drew watches the screen over his martini. Three characters, never lined up shoulder to shoulder facing the viewer.",
+        "The marble bar counter runs across the frame. Abby stands BEHIND it on the far side, facing the room, towel on her shoulder, a bottle in her hand. Drew sits frame-left and Mango sits frame-right on stools at the NEAR side, both in three-quarter view turned toward her: Mango slides his empty rocks glass across the marble toward Abby, and Drew watches the screen over his martini. Three characters, never lined up shoulder to shoulder. Each character is seen from the FRONT or in three-quarter view with his or her face fully visible to the reader — never from behind, never a back or a shoulder turned to us.",
       tv: "SENTIMENT AT RECORD LOW — SPENDING UP AGAIN",
       board: "MISERY HOUR 4–7 · DOUBLES $22",
       characters: ["drew", "mango", "abby"],
@@ -183,7 +183,7 @@ const SHOWCASE = [
     caption: 'Drew: "Her target follows the price at a respectful distance. It is called research."',
     candidate: {
       scene:
-        "The marble bar counter runs across the frame. Abby stands BEHIND it on the far side, reaching up with a piece of chalk to write a higher number over the old one on the chalkboard, glancing back over her shoulder. Drew sits frame-left and Mango sits frame-right on stools at the NEAR side in three-quarter view, both watching her; Drew has not moved his martini. Three characters, never lined up shoulder to shoulder facing the viewer.",
+        "The marble bar counter runs across the frame. Abby stands BEHIND it on the far side, reaching up with a piece of chalk to write a higher number over the old one on the chalkboard, glancing back over her shoulder. Drew sits frame-left and Mango sits frame-right on stools at the NEAR side in three-quarter view, both watching her; Drew has not moved his martini. Three characters, never lined up shoulder to shoulder. Each character is seen from the FRONT or in three-quarter view with his or her face fully visible to the reader — never from behind, never a back or a shoulder turned to us.",
       tv: "S&P 2% OFF RECORD — STREET TARGETS 8,000",
       board: "HOUSE MARTINI $18 · YEAR-END TARGET $19",
       characters: ["drew", "mango", "abby"],
@@ -194,7 +194,7 @@ const SHOWCASE = [
     caption: 'Abby: "The house keeps winning, gentlemen. Just not the kind anyone lives in."',
     candidate: {
       scene:
-        "The marble bar counter runs across the frame. Abby stands BEHIND it on the far side, drawing a neat chalk line through one drink name on the chalkboard, addressing the room. Drew sits frame-left with his martini and Mango sits frame-right with his old fashioned, chin on his hand, both on stools at the NEAR side in three-quarter view. Three characters, never lined up shoulder to shoulder facing the viewer.",
+        "The marble bar counter runs across the frame. Abby stands BEHIND it on the far side, drawing a neat chalk line through one drink name on the chalkboard, addressing the room. Drew sits frame-left with his martini and Mango sits frame-right with his old fashioned, chin on his hand, both on stools at the NEAR side in three-quarter view. Three characters, never lined up shoulder to shoulder. Each character is seen from the FRONT or in three-quarter view with his or her face fully visible to the reader — never from behind, never a back or a shoulder turned to us.",
       tv: "DATA CENTERS OUTBUILD HOUSING",
       board: "THE STARTER HOME $12 — OUTBID",
       characters: ["drew", "mango", "abby"],
@@ -205,7 +205,7 @@ const SHOWCASE = [
     caption: 'Abby: "I price in a raise every morning, gentlemen. Delivering it is a separate decision."',
     candidate: {
       scene:
-        "The marble bar counter runs across the frame. Abby stands BEHIND it on the far side with chalk in hand at the martini line of the board, one brow raised at the two of them. Drew sits frame-left and Mango sits frame-right on stools at the NEAR side in three-quarter view, watching her the way traders watch a Fed meeting. Three characters, never lined up shoulder to shoulder facing the viewer.",
+        "The marble bar counter runs across the frame. Abby stands BEHIND it on the far side with chalk in hand at the martini line of the board, one brow raised at the two of them. Drew sits frame-left and Mango sits frame-right on stools at the NEAR side in three-quarter view, watching her the way traders watch a Fed meeting. Three characters, never lined up shoulder to shoulder. Each character is seen from the FRONT or in three-quarter view with his or her face fully visible to the reader — never from behind, never a back or a shoulder turned to us.",
       tv: "HIKE ODDS 45%, AGAIN",
       board: "MARTINI $18 — CHANCE OF $19 TODAY: 45%",
       characters: ["drew", "mango", "abby"],

@@ -150,6 +150,19 @@ async function composeBoard(refs: { path: string; box?: [number, number, number,
     .toBuffer();
 }
 
+/** The founder's veto on legs, enforced in code rather than asked for.
+ *  Every model tested draws stools and trousered knees below the marble no
+ *  matter how the prompt is worded; the house simply crops there instead —
+ *  the same reasoning that makes the house typeset captions rather than
+ *  hoping the model letters them. The plates compose the bar this way, so
+ *  the crop is canon, not damage control. */
+async function cropAtTheCounter(bytes: Buffer): Promise<Buffer> {
+  const meta = await sharp(bytes).metadata();
+  if (!meta.width || !meta.height) return bytes;
+  const height = Math.round(meta.height * 0.74);
+  return sharp(bytes).extract({ left: 0, top: 0, width: meta.width, height }).png().toBuffer();
+}
+
 /** FLUX.2 takes references as a real array and lets the prompt address each
  *  one by index, so the cast no longer has to share one collaged board. */
 export function isMultiRef(model: string): boolean {
@@ -236,10 +249,11 @@ export async function generateCartoonArt(input: {
   // prompt. No collage, so no tile out-argues another — and safety_tolerance
   // is a real dial rather than an opaque refusal.
   if (multiRef) {
-    return generateImage(
+    const art = await generateImage(
       model,
       multiRefInput(model, input.prompt, await uploadReferences(input.characters, input.barScene ?? false))
     );
+    return input.barScene ? cropAtTheCounter(art) : art;
   }
 
   // A fine-tune carries the cast in its weights, so there is no board to
