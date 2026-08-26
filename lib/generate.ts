@@ -77,7 +77,11 @@ export async function buildReferenceBoard(characters: string[], barScene = false
     const ref = VISION_REFS[character.toLowerCase()];
     if (ref) refs.push(ref);
   }
-  if (barScene) refs.push(ROOM_TILE);
+  // Mango's tile is itself a full bar panel; adding the room band beside it
+  // over-weights busy scene tiles and a duo roll fused Drew into a second
+  // retriever. The band joins only when no character tile carries the room.
+  const roomCovered = characters.some((c) => c.toLowerCase() === "mango");
+  if (barScene && !roomCovered) refs.push(ROOM_TILE);
   const masters: Buffer[] = [];
   for (const ref of refs) {
     const file = await readRepoFile(ref.path);
