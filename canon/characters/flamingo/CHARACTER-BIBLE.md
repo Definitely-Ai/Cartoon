@@ -77,6 +77,19 @@ hanging open.
 
 Pale, with a fine nostril slit and a small smile-line at its base.
 
+**The measurement, taken off the founder's own prints.** Bill length divided by
+head width — head width read from the back of the skull to the gape corner —
+runs **0.79 to 1.03 across all eight Drews in the four plates**. The renders
+that drew the founder's complaint ran **1.15 to 1.52**. One is the ratio; the
+other is the fault.
+
+**A standing warning about the source.** Of the eight Drews in the plates,
+**plate 3's is the only one drawn with the bill gaped open**, and it is the one
+his identity tile used to be cut from — which is exactly why the fault
+persisted through three rounds of rewording. Cut Drew's reference from plate 4
+or plate 1. Never from plate 3, and never from plate 4's golf panel, whose bill
+is the longest of the closed ones.
+
 He is drawn head first, beak second. A long jutting bill, a gaped mandible, or
 a beak that reaches out past the front of his chest is the fault this bible
 exists to prevent — *(founder: "fix Drew's beak")* — and it is a redraw.
