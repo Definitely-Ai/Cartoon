@@ -75,24 +75,20 @@ export const CASTS = [
       "Highland White Terrier in her mid-forties, with a compact pretty face, short muzzle, LARGE glossy " +
       "dark eyes with bright catchlights and long lashes, softly arched brows, a small black nose, a WARM " +
       "closed-lip smile, silky groomed white fur, and two small pricked ears — both ears up. She is " +
-      "beautiful — radiant, elegant, seasoned and self-assured — never stiff, never staring, never eerie, " +
+      "beautiful — alluring, elegant, seasoned and self-assured — never stiff, never staring, never eerie, " +
       "never tongue-out, never a shepherd or wolf. She wears her studded leather collar with its small " +
-      "teardrop gem pendant. The reference shows ONLY her head; the rest of her is described below. " +
-      "RIGHT on the reference: a texture swatch only " +
-      "— no figure in it to draw — showing the antique-engraving technique for the room, the clothes, and " +
-      "the bar; her face itself stays soft, luminous, and lovely, modeled with delicate shading rather " +
-      "than heavy stipple. Draw Abby ALONE. ",
+      "teardrop gem pendant. RIGHT on the reference: a texture swatch only — no figure in it to draw — " +
+      "showing the antique-engraving technique for the room, the clothes, and the bar; her face itself " +
+      "stays soft, luminous, and lovely, modeled with delicate shading rather than heavy stipple. Draw " +
+      "Abby ALONE. ",
     extra:
-      "She STANDS UPRIGHT on two legs behind her own marble bar counter, built just like the two " +
-      "gentlemen patrons of this strip are built — a bartender at work, with shoulders, arms, and FUR-" +
-      "BACKED dog hands with four fingers, a thumb, and soft pads, every finger distinctly drawn — " +
-      "always standing tall at her work. Composition: WAIST-UP, camera pulled back, " +
-      "the marble in the foreground hiding her below the waist. Her work clothes are MANDATORY and must " +
-      "be drawn: a fitted light blouse with rolled sleeves open at the collar, and a folded white towel " +
-      "draped over her left shoulder, with the studded gem-pendant collar at her neck. She is the " +
-      "successful proprietor in her mid-forties — graceful, trim, and poised — one hand resting on the " +
-      "marble, head tilted with the same warm smile the reference has, in command, the back bar's " +
-      "bottles and good glassware behind her. ",
+      "Composition: WAIST-UP, camera pulled back — she stands BEHIND her own marble bar counter with the " +
+      "marble visible in the foreground, the counter hiding her below the waist. Draw her as the successful " +
+      "proprietor in her mid-forties, standing upright at work like the strip's other characters: an " +
+      "attractive, shapely, trim feminine figure with a modest bust, a " +
+      "fitted light blouse with rolled sleeves open at the collar, folded towel on her left shoulder, the " +
+      "studded gem-pendant collar at her neck, one hand resting on the marble, head tilted with a warm " +
+      "knowing smile — poised, charming, and in command — bottles and good glassware behind her. ",
   },
 ];
 
