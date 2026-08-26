@@ -17,6 +17,9 @@ export const MAX_VARIANTS = 40;
 const DREW_REF = { body: { src: "canon/vision/drew-reference.jpg", box: [0, 0, 1450, 2450] } };
 const MANGO_REF = { body: { src: "canon/vision/mango-reference.jpg", box: [300, 600, 2300, 2800] } };
 const ABBY_REF = { body: { src: "canon/vision/abby-reference.jpg", box: [0, 0, 1000, 1760] } };
+// A face-free engraving swatch (suit tweed, furred hand, glass, studded
+// leather, bar wood) — technique without a second face to blend with.
+const STYLE_SWATCH = { body: { src: "canon/vision/mango-reference.jpg", box: [400, 2700, 2100, 1250] } };
 
 const STYLE =
   "Draw in EXACTLY the reference's antique-steel-engraving style: fine pen crosshatching and stippling on " +
@@ -56,14 +59,16 @@ export const CASTS = [
     id: "harrington-abby",
     tokens: "Abby",
     who: "the West Highland terrier proprietor",
-    tiles: [ABBY_REF, MANGO_REF],
+    tiles: [ABBY_REF, STYLE_SWATCH],
     tileNote:
-      "LEFT on the reference: Abby's face and neckwear exactly as they must be drawn — a true fluffy West " +
-      "Highland White Terrier, round dark button eyes, black nose, small pricked ears, wearing her studded " +
-      "leather collar with a small teardrop gem pendant. RIGHT on the reference: a retriever shown ONLY as " +
-      "the STYLE exemplar — do NOT draw him; draw Abby ALONE, but render her and the whole room in exactly " +
-      "that panel's antique-engraving technique: fine crosshatching and stippling, fur in individual pen " +
-      "strokes, never the left image's smooth clean-line look. ",
+      "LEFT on the reference: Abby's face EXACTLY as it must be drawn — a genuinely pretty, feminine West " +
+      "Highland White Terrier: a COMPACT face with a SHORT muzzle, LARGE round dark button eyes set forward, " +
+      "a small black nose, and SMALL soft rounded-tipped ears — never large pointed ears, never a long " +
+      "muzzle, never a German shepherd or wolf read; she is attractive and cute, wearing her studded leather " +
+      "collar with its small teardrop gem pendant. RIGHT on the reference: a texture swatch only — no figure " +
+      "in it to draw — showing the antique-engraving technique every inch of the drawing must use: fine " +
+      "crosshatching and stippling, fur in individual pen strokes, never the left portrait's smooth " +
+      "clean-line look. Draw Abby ALONE. ",
     extra:
       "Draw her as the successful proprietor behind her own marble bar counter: trim natural figure with a " +
       "modest bust, fitted light blouse with rolled sleeves, folded towel on her left shoulder, the studded " +
