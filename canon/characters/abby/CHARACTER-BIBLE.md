@@ -96,9 +96,16 @@ framed prints, sconces, the television, the chalkboard — and it puts the
 liquor shelves behind the reader, out of frame entirely.
 
 Abby is **the only figure ever on the camera's side**. She stands at the near
-end of the counter, turned three-quarter so her whole face is visible, the
-marble between her and the gentlemen, visibly mid-task. Bar panels are cropped
-at the counter — no legs, no stools.
+end of the counter, the marble between her and the gentlemen, visibly mid-task.
+Bar panels are cropped at the counter — no legs, no stools.
+
+**Where she looks.** *(Founder: "I don't like how Abby is always looking at us
+— it's weird.")* Her body is angled **into** the frame and her face goes where
+her body goes: she is looking **at Drew and Mango**, or down at the work in her
+hands. That is what puts her face in three-quarter for the reader — not a head
+cranked round on its neck. **She never looks out of the panel.** Nobody in this
+room knows the reader is there, and nobody meets his eye. A dead-on stare down
+the lens is a redraw, however pretty the face.
 
 If bottles appear behind Drew or Mango, the sides have been swapped and the
 panel fails.
