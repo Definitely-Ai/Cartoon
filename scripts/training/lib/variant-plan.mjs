@@ -50,9 +50,14 @@ export const CASTS = [
       "in a dark suit jacket over a pale open-collared shirt with a small US flag pin on the left lapel, a " +
       "wristwatch, and FUR-BACKED dog-yet-humanoid hands with soft pads — never bare human skin. ",
     extra:
-      "Drew sits frame-left with his conical stemmed MARTINI glass, olives on a pick, on a napkin; he also " +
-      "wears trousers. Mango sits frame-right with an old fashioned — short rocks glass, one large cube, a " +
-      "dark cherry. The nut bowl sits between the two drinks. THE HANDS GET SPECIAL CARE, humanoid but " +
+      "Both gentlemen sit ON HANDSOME STOOLS AT THE LONG MARBLE BAR COUNTER itself — the counter's " +
+      "polished marble top runs across the lower frame, the back bar of bottles rises behind it — never at " +
+      "a table. THE DRINKS: the short rocks glass with the big cube and dark cherry shown in the reference " +
+      "belongs ONLY to Mango and stays at Mango's place, frame-right. Drew's drink is NOT in the " +
+      "reference — draw it new at his place, frame-left: a wide conical V-shaped MARTINI glass on a tall " +
+      "thin stem, two olives on a pick, on a napkin. The nut bowl sits between the two drinks. Drew's " +
+      "beak stays EXACTLY at the reference's scale — heavy, downturned, black-tipped, CLOSED, never " +
+      "enlarged, never dominating his face. Drew also wears trousers. THE HANDS GET SPECIAL CARE, humanoid but " +
       "never human-skinned: Drew's hands are WHITE-FEATHERED and humanoid — four slender feathered fingers " +
       "and an opposed thumb, small layered feathers on their backs — never wingtips, never bare skin. " +
       "Mango's hands are FUR-BACKED and humanoid — golden fur on the backs, soft pads on the palms, four " +
