@@ -61,23 +61,21 @@ export const CASTS = [
     who: "the West Highland terrier proprietor",
     tiles: [ABBY_REF, STYLE_SWATCH],
     tileNote:
-      "LEFT on the reference: Abby — copy her elegance exactly: an adult, refined West " +
-      "Highland White Terrier lady with a compact pretty face, short muzzle, LARGE glossy dark eyes with bright " +
-      "catchlights and long lashes, softly arched brows, a small black nose, a poised closed-lip " +
-      "smile with a hint of warmth, neatly styled silky white fur, and two small pricked ears — both up. " +
-      "She is graceful and polished, like the reference " +
-      "portrait — NEVER a puppy, never childlike, never tongue-out goofy, never stiff or eerie, never a " +
-      "shepherd or wolf. She wears her studded leather collar with its small teardrop gem pendant. RIGHT " +
-      "on the reference: a texture swatch only — no figure in it to draw — the engraving technique for the " +
-      "ROOM, the CLOTHES, and the BAR; her face itself stays soft, luminous, and lovely, modeled with " +
-      "delicate shading rather than heavy stipple. Draw Abby ALONE. ",
+      "LEFT on the reference: Abby's face — copy its BEAUTY and CHARM exactly: an adult, feminine West " +
+      "Highland White Terrier with a compact pretty face, short muzzle, LARGE glossy dark eyes with bright " +
+      "catchlights and long lashes, softly arched brows, a small black nose, a WARM closed-lip smile, silky " +
+      "groomed white fur, and two small pricked ears — both ears up. She is beautiful and elegant, an adult " +
+      "— never a puppy, never childlike, never tongue-out, never stiff, never staring, never eerie, never a " +
+      "shepherd or wolf. She wears her studded leather collar with its small teardrop gem pendant. RIGHT on " +
+      "the reference: a texture swatch only — no figure in it to draw — showing the antique-engraving " +
+      "technique for the room, the clothes, and the bar; her face itself stays soft, luminous, and lovely, " +
+      "modeled with delicate shading rather than heavy stipple. Draw Abby ALONE. ",
     extra:
-      "Composition: WAIST-UP, camera pulled back — she stands BEHIND her polished marble bar counter, the " +
-      "marble surface visible in the foreground, bottles and good glassware behind her. She is the " +
-      "successful proprietor: trim and graceful, a fitted " +
-      "light blouse with rolled sleeves, folded towel on her left shoulder, the studded " +
-      "gem-pendant collar at her neck, one hand resting lightly on the marble, head tilted with a poised " +
-      "knowing smile — elegant, charming, in command. ",
+      "Composition: WAIST-UP, camera pulled back — she stands BEHIND her marble bar counter with the marble " +
+      "visible in the foreground. Draw her as the successful proprietor: trim figure with a modest bust, " +
+      "fitted light blouse with rolled sleeves, folded towel on her left shoulder, the studded gem-pendant " +
+      "collar at her neck, one hand resting on the marble, head tilted with a warm knowing smile — poised, " +
+      "charming, and in command — bottles and good glassware behind her. ",
   },
 ];
 
