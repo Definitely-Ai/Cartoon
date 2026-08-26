@@ -41,23 +41,27 @@ export const CASTS = [
     who: "the white flamingo gentleman and the golden retriever gentleman",
     tiles: [DUO_PANEL],
     tileNote:
-      "The reference is the studio's own finished panel of Drew the flamingo gentleman (frame-left, bow " +
-      "tie, sweater vest, martini) and Mango the golden retriever gentleman (frame-right) at The Swinging " +
-      "Door — the faces, feathered and fur-backed humanoid hands, drinks, boards, bottles, and engraved " +
-      "style are already exactly right. Redraw the SAME panel, same characters, same style, making " +
-      "exactly three corrections and nothing else. ",
+      "The reference is ONE finished panel of the exact scene to draw — recreate it as ONE SINGLE " +
+      "continuous panel of The Swinging Door: Drew the white-plumed flamingo gentleman seated frame-left, " +
+      "Mango the golden retriever gentleman seated frame-right, the chalkboard martini menu, the drink-" +
+      "special board, the labeled golf-pun bottles, the nut bowl between them, the mirrored window sign. " +
+      "Copy each character exactly as the panel draws him: Drew — deep question-mark neck, heavy-lidded " +
+      "deadpan eyes, heavy downturned black-tipped beak at exactly the panel's scale, starched collar band " +
+      "under his black silk BOW TIE (never a long necktie), knitted sweater vest over a pale collared " +
+      "shirt, and WHITE-FEATHERED humanoid hands — four feathered fingers and an opposed thumb — holding " +
+      "his MARTINI by the stem. Mango — true black dog lips along the muzzle, freckles, long-fringed drop " +
+      "ears, a wristwatch, and FUR-BACKED dog-yet-humanoid hands with soft pads, every finger distinctly " +
+      "drawn, never bare human skin on either gentleman. ",
     extra:
-      "FIRST — the staging correction, the important one: in the reference the bottle shelves stand " +
-      "directly behind the gentlemen, which wrongly puts the patrons where only the bartender works. Put " +
-      "the long bar counter BETWEEN them and the bottles: the two sit on handsome stools " +
-      "at the counter's near side, drawn from a three-quarter view so both faces stay fully " +
-      "visible, their drinks and the nut bowl on the counter before them; beyond the counter stand the " +
-      "back-bar shelves with the labeled bottles, the chalkboard menu on the wall above. " +
-      "SECOND, dress Mango in his dark suit jacket over the pale open-collared " +
-      "shirt, the small US flag pin on the jacket's left lapel — his evening wear. THIRD, replace " +
-      "Mango's martini with his old fashioned — short rocks glass, one large cube, a dark cherry, on its " +
-      "coaster; Drew keeps his martini with olives exactly as drawn. Everything else stays the " +
-      "reference's: faces, hands, boards, bottles, window, nut bowl, expressions — Drew deadpan, Mango " +
+      "Make exactly three corrections to the panel and nothing else. FIRST, seat both gentlemen on the " +
+      "PATRON side of the bar: the long counter runs between them and the back bar — their handsome " +
+      "chairs on the room side, drinks on the counter, and the bottle shelves standing ACROSS the counter " +
+      "where the bartender works, never directly behind the patrons. SECOND, dress Mango in his dark " +
+      "suit jacket over the pale open-collared shirt, the small US flag pin on the jacket's left lapel — " +
+      "his evening wear. THIRD, replace Mango's martini with his old fashioned — short rocks glass, one " +
+      "large cube, a dark cherry, on its coaster; Drew keeps his martini with olives exactly as drawn. " +
+      "Everything else stays the panel's: composition, expressions, boards, bottles, nut bowl, window. " +
+      "Both are successful gentlemen in their mid-forties — classy, composed; Drew deadpan, Mango " +
       "faintly worried. ",
   },
   {
