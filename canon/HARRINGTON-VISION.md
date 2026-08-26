@@ -154,6 +154,30 @@ plates' technique:
 - Behind her counter is her territory; patrons stay on the room side. She
   appears when the gag needs her — never as furniture.
 
+**No humans in the bar — ever** (founder's note: "Abby is the only bartender
+or other person in each cartoon; there are no full humans besides the TV"):
+the room holds this cartoon's cast and nobody else. No human customers, no
+human bartender or staff, no figures at the tables or in the mirror, nothing
+human blurred in the background. Abby is the only other character who ever
+appears. The one exception in the whole strip is the television screen, where
+people may appear because it is broadcast footage.
+
+**The screen shows the story it is reporting** (founder's note: "the TV has
+the same image as in the demo photos… the optional TV and optional chalkboard
+should have topics and images related to the theme of each cartoon"): the TV
+and the chalkboard are both OPTIONAL, and when either is shown it belongs to
+that day's subject alone. The chyron carries the headline and **the picture on
+the screen illustrates that headline** — invented footage for this story,
+never a picture carried over from a reference plate.
+
+**Drew is far more flamingo than human** (founder's note: "he's humanoid but
+a flamingo, so he needs feathers — he is more flamingo than human; the only
+thing that's slightly human are his hands"): feathered breast, shoulders,
+back and arms, no human skin, no human torso, no human face. The single
+humanlike thing about him is the pair of hands at the ends of those feathered
+arms — four fingers and a thumb, feather-covered, drawn well enough to look
+graceful holding a martini by the stem.
+
 **Waist-up is the house framing** (founder's note: "I hate the legs"): the
 plates compose the bar from about the waist up, the marble crossing the lower
 frame. Drawing the gentlemen full length puts human-looking legs and trousered

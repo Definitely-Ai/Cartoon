@@ -201,14 +201,10 @@ export function referenceList(
     const ref = VISION_REFS[key];
     if (ref) list.push({ label: CAST_BLURB[key] ?? key, ...ref });
   }
-  if (barScene) {
-    list.push({
-      label:
-        "the room itself — the walnut wall of The Swinging Door with its flatscreen TV and its hand-lettered " +
-        "chalkboard: match this room's panelling, fittings, and engraved drawing style",
-      ...ROOM_TILE,
-    });
-  }
+  // No room tile on this path. It was cut from plate 3, so it carried that
+  // plate's TV picture — the reflecting pool — into every cartoon's screen,
+  // and the screen has to illustrate the story being told. The room comes
+  // from the prompt instead, which this model letters and furnishes well.
   return list;
 }
 
