@@ -66,9 +66,12 @@ export const CASTS = [
       "labeled golf-pun bottles, and the chalkboard martini menu on the wall above; the mirrored " +
       "Swinging Door window sign at the frame's edge. On the counter: Drew's martini with olives on its " +
       "coaster at frame-left, Mango's OLD FASHIONED — a short rocks glass, one large cube, a dark " +
-      "cherry — on its coaster at frame-right, and the shared nut bowl between them. Mango wears his " +
-      "dark evening suit jacket over the pale open-collared shirt, the small US flag pin on the " +
-      "jacket's left lapel. Drew deadpan, Mango faintly worried — successful gentlemen in their " +
+      "cherry — on its coaster at frame-right, and the shared nut bowl between them. THE WARDROBES ARE " +
+      "NOT ALIKE: Drew wears EXACTLY what the reference panel dresses him in — the knitted sweater vest " +
+      "over a pale collared shirt with his starched collar band and black BOW TIE; Drew NEVER wears a " +
+      "suit jacket and NEVER a long necktie. ONLY Mango wears the dark evening suit jacket, over his " +
+      "pale open-collared shirt, with the small US FLAG pin — tiny stars and stripes — on the jacket's " +
+      "left lapel. Drew deadpan, Mango faintly worried — successful gentlemen in their " +
       "mid-forties, classy and composed. ",
   },
   {
