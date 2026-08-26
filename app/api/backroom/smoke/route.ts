@@ -1,7 +1,7 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { BACKROOM_COOKIE, isDoorOpen, isTriggerOpen } from "@/lib/backroom-auth";
 
-import { assemblePrompt, generateCartoonArt } from "@/lib/generate";
+import { assemblePrompt, generateCartoonArt, isMultiRef } from "@/lib/generate";
 import { PublishError, commitFiles, getCanon, readRepoFile } from "@/lib/githubPublish";
 import { getTraining, replicateGet } from "@/lib/replicate";
 
@@ -268,7 +268,7 @@ export async function GET(request: NextRequest) {
         );
       }
     }
-    if (version.includes("kontext") && params.get("baseline") !== "1") {
+    if ((version.includes("kontext") || isMultiRef(version)) && params.get("baseline") !== "1") {
       return NextResponse.json(
         { error: "The smoke test is for a fine-tune — Kontext is the baseline, not the candidate. Pass baseline=1 to deliberately smoke the production Kontext path (e.g. after changing its reference boards)." },
         { status: 400 }
@@ -323,8 +323,15 @@ export async function GET(request: NextRequest) {
         // Baseline (Kontext) runs must assemble the Kontext branch of the
         // prompt — the fine-tune branch writes trigger tokens into the text,
         // which a board-conditioned model happily paints onto the walls.
-        const staged = params.get("set") === "showcase" && !panel.candidate.setting;
-        const prompt = assemblePrompt(canon, panel.candidate, !version.includes("kontext"), staged);
+        const multiRef = isMultiRef(version);
+        const staged = !multiRef && params.get("set") === "showcase" && !panel.candidate.setting;
+        const prompt = assemblePrompt(
+          canon,
+          panel.candidate,
+          !version.includes("kontext") && !multiRef,
+          staged,
+          multiRef
+        );
         const image = await generateCartoonArt({
           prompt,
           characters: panel.candidate.characters,

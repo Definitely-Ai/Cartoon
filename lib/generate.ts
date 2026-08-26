@@ -150,6 +150,56 @@ async function composeBoard(refs: { path: string; box?: [number, number, number,
     .toBuffer();
 }
 
+/** FLUX.2 takes references as a real array and lets the prompt address each
+ *  one by index, so the cast no longer has to share one collaged board. */
+export function isMultiRef(model: string): boolean {
+  return model.includes("flux-2");
+}
+
+/** The ordered reference list for the multi-reference path: one entry per
+ *  character, then the room. Index order IS the @image1..N order the prompt
+ *  refers to, so the two must be built from the same list. */
+export function referenceList(
+  characters: string[],
+  barScene: boolean
+): { label: string; path: string; box?: [number, number, number, number] }[] {
+  const list: { label: string; path: string; box?: [number, number, number, number] }[] = [];
+  for (const character of characters) {
+    const key = character.toLowerCase();
+    const ref = VISION_REFS[key];
+    if (ref) list.push({ label: CAST_BLURB[key] ?? key, ...ref });
+  }
+  if (barScene) {
+    list.push({
+      label:
+        "the room itself — the walnut wall of The Swinging Door with its flatscreen TV and its hand-lettered " +
+        "chalkboard: match this room's panelling, fittings, and engraved drawing style",
+      ...ROOM_TILE,
+    });
+  }
+  return list;
+}
+
+async function uploadReferences(
+  characters: string[],
+  barScene: boolean
+): Promise<string[]> {
+  const urls: string[] = [];
+  for (const [i, ref] of referenceList(characters, barScene).entries()) {
+    const file = await readRepoFile(ref.path);
+    if (!file) continue;
+    let img = sharp(file.bytes);
+    if (ref.box) {
+      const [left, top, width, height] = ref.box;
+      img = img.extract({ left, top, width, height });
+    }
+    const bytes = await img.grayscale().normalise().resize({ width: 1024, withoutEnlargement: true }).jpeg({ quality: 90 }).toBuffer();
+    urls.push(await uploadFile(bytes, `reference-${i + 1}.jpg`, "image/jpeg"));
+  }
+  if (urls.length === 0) throw new PublishError(400, "No plate references found for the requested characters.");
+  return urls;
+}
+
 /**
  * Generate one panel: prompt (+ reference board on the Kontext path) in,
  * PNG bytes out. Synchronous from the caller's point of view.
@@ -166,7 +216,21 @@ export async function generateCartoonArt(input: {
   model?: string;
 }): Promise<Buffer> {
   const model = input.model ?? imageModel();
-  const fineTuned = !model.includes("kontext");
+  const multiRef = isMultiRef(model);
+  const fineTuned = !model.includes("kontext") && !multiRef;
+
+  // FLUX.2: each reference is its own input image, addressed by index in the
+  // prompt. No collage, so no tile out-argues another — and safety_tolerance
+  // is a real dial rather than an opaque refusal.
+  if (multiRef) {
+    return generateImage(model, {
+      prompt: input.prompt,
+      input_images: await uploadReferences(input.characters, input.barScene ?? false),
+      aspect_ratio: "4:5",
+      output_format: "png",
+      safety_tolerance: 5,
+    });
+  }
 
   // A fine-tune carries the cast in its weights, so there is no board to
   // build and nothing to upload — just a prompt and the strength dial.
@@ -275,7 +339,8 @@ export function assemblePrompt(
   masterPrompt: string,
   candidate: Candidate,
   fineTuned: boolean = isFineTuned(),
-  staged = false
+  staged = false,
+  multiRef = false
 ): string {
   if (fineTuned) return fineTunedPrompt(masterPrompt, candidate);
 
@@ -300,6 +365,25 @@ export function assemblePrompt(
     prompt = `${prompt}\n\n${abbyBlock}`;
   }
   prompt = fillSlots(prompt, candidate);
+
+  // FLUX.2 addresses each reference by index, so the roster names them one
+  // by one instead of describing positions on a collage.
+  if (multiRef) {
+    const refs = referenceList(candidate.characters, !candidate.setting);
+    const roster = refs.map((r, i) => `@image${i + 1} is ${r.label}.`).join(" ");
+    return (
+      "Draw ONE single-panel black-and-white gag cartoon, one unbroken scene edge to edge — no seam, no " +
+      "split, no second frame, and no photographic rendering.\n\n" +
+      `REFERENCES. ${roster} Draw each character exactly as his or her own reference draws that character ` +
+      "— same face, same build, same wardrobe — and give the panel the same antique-engraving hand. Do NOT " +
+      "reproduce any reference's own background, signage, lettering, or composition: every word of lettering " +
+      "in this cartoon comes from the scene described below, and nothing else.\n\n" +
+      `The finished panel contains EXACTLY ${candidate.characters.length} character${candidate.characters.length > 1 ? "s" : ""}` +
+      `${candidate.characters.length > 1 ? ", each a separate individual — never merged, never duplicated, never omitted" : ""}.` +
+      "\n\nTHE CARTOON:\n\n" +
+      prompt
+    );
+  }
 
   // Kontext is instruction-driven: tell it what the conditioning image is.
   // Naming each portrait by its position, and demanding the exact headcount,
