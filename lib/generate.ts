@@ -153,7 +153,20 @@ async function composeBoard(refs: { path: string; box?: [number, number, number,
 /** FLUX.2 takes references as a real array and lets the prompt address each
  *  one by index, so the cast no longer has to share one collaged board. */
 export function isMultiRef(model: string): boolean {
-  return model.includes("flux-2");
+  return model.includes("flux-2") || model.includes("nano-banana") || model.includes("seedream");
+}
+
+/** Each vendor names the reference array differently, and Black Forest Labs
+ *  alone insists on a safety dial. One place to keep the differences. */
+function multiRefInput(model: string, prompt: string, images: string[]): Record<string, unknown> {
+  if (model.includes("flux-2")) {
+    return { prompt, input_images: images, aspect_ratio: "4:5", output_format: "png", safety_tolerance: 2 };
+  }
+  if (model.includes("seedream")) {
+    return { prompt, image_input: images, aspect_ratio: "4:5", size: "2K" };
+  }
+  // google/nano-banana
+  return { prompt, image_input: images, aspect_ratio: "4:5", output_format: "png" };
 }
 
 /** The ordered reference list for the multi-reference path: one entry per
@@ -223,15 +236,10 @@ export async function generateCartoonArt(input: {
   // prompt. No collage, so no tile out-argues another — and safety_tolerance
   // is a real dial rather than an opaque refusal.
   if (multiRef) {
-    return generateImage(model, {
-      prompt: input.prompt,
-      input_images: await uploadReferences(input.characters, input.barScene ?? false),
-      aspect_ratio: "4:5",
-      output_format: "png",
-      // BFL caps tolerance at 2 once input images are attached; 5 is a
-      // text-to-image-only value and the call is refused outright.
-      safety_tolerance: 2,
-    });
+    return generateImage(
+      model,
+      multiRefInput(model, input.prompt, await uploadReferences(input.characters, input.barScene ?? false))
+    );
   }
 
   // A fine-tune carries the cast in its weights, so there is no board to
