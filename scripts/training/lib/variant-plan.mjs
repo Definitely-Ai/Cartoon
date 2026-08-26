@@ -72,23 +72,22 @@ export const CASTS = [
       "closed-lip smile, silky groomed white fur, and two small pricked ears — both ears up. She is " +
       "beautiful — radiant, elegant, seasoned and self-assured — never stiff, never staring, never eerie, " +
       "never tongue-out, never a shepherd or wolf. She wears her studded leather collar with its small " +
-      "teardrop gem pendant. The reference shows ONLY her head — below the neck her body is NOT the " +
-      "reference's and must be drawn humanoid as described. RIGHT on the reference: a texture swatch only " +
+      "teardrop gem pendant. The reference shows ONLY her head — below the neck her body is not in the " +
+      "reference; draw her standing dressed at her bar as described. RIGHT on the reference: a texture swatch only " +
       "— no figure in it to draw — showing the antique-engraving technique for the room, the clothes, and " +
       "the bar; her face itself stays soft, luminous, and lovely, modeled with delicate shading rather " +
       "than heavy stipple. Draw Abby ALONE. ",
     extra:
-      "Her BODY IS SLIGHTLY HUMANOID, built exactly like the flamingo and retriever gentlemen of this " +
-      "strip: she STANDS UPRIGHT on two legs, with humanoid shoulders and arms and FUR-BACKED dog-yet-" +
-      "humanoid hands with soft pads, every finger distinctly drawn — white-furred throughout, only her " +
-      "head and hands the terrier's, never on all fours, never leaning paws on the counter. Composition: " +
-      "WAIST-UP, camera pulled back — she STANDS TALL working behind her own marble bar counter, the " +
-      "marble in the foreground hiding her below the waist. Her work clothes are MANDATORY and must be " +
-      "drawn over her fur: a fitted light blouse with rolled sleeves open at the collar, and a folded " +
-      "white towel draped over her left shoulder, with the studded gem-pendant collar at her neck. She is " +
-      "the successful proprietor in her mid-forties — graceful, trim, and poised, with an elegant " +
-      "feminine silhouette in her blouse — one hand resting on the marble, head tilted with the same " +
-      "warm smile the reference has, in command, the back bar's bottles and good glassware behind her. ",
+      "She STANDS UPRIGHT on two legs behind her own marble bar counter, built just like the two " +
+      "gentlemen patrons of this strip are built — a bartender at work, with shoulders, arms, and FUR-" +
+      "BACKED dog hands with four fingers, a thumb, and soft pads, every finger distinctly drawn; never " +
+      "on all fours, never leaning forepaws on the counter. Composition: WAIST-UP, camera pulled back, " +
+      "the marble in the foreground hiding her below the waist. Her work clothes are MANDATORY and must " +
+      "be drawn: a fitted light blouse with rolled sleeves open at the collar, and a folded white towel " +
+      "draped over her left shoulder, with the studded gem-pendant collar at her neck. She is the " +
+      "successful proprietor in her mid-forties — graceful, trim, and poised — one hand resting on the " +
+      "marble, head tilted with the same warm smile the reference has, in command, the back bar's " +
+      "bottles and good glassware behind her. ",
   },
 ];
 
