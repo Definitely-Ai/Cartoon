@@ -16,7 +16,7 @@ export const MAX_VARIANTS = 40;
 // Reference tiles cut straight from the founder's plates.
 const DREW_REF = { body: { src: "canon/vision/drew-reference.jpg", box: [0, 0, 1450, 2450] } };
 const MANGO_REF = { body: { src: "canon/vision/mango-reference.jpg", box: [300, 600, 2300, 2800] } };
-const ABBY_REF = { body: { src: "canon/vision/abby-reference.jpg", box: [0, 0, 1000, 1760] } };
+const ABBY_REF = { body: { src: "canon/vision/abby-face-reference.jpg", box: [0, 0, 1000, 1150] } };
 // A face-free engraving swatch (suit tweed, furred hand, glass, studded
 // leather, bar wood) — technique without a second face to blend with.
 const STYLE_SWATCH = { body: { src: "canon/vision/mango-reference.jpg", box: [400, 2700, 2100, 1250] } };
