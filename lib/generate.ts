@@ -1,12 +1,12 @@
 import sharp from "sharp";
-import { PublishError, getModelSheets } from "./githubPublish";
+import { PublishError, readRepoFile } from "./githubPublish";
 import { generateImage, uploadFile } from "./replicate";
 
 // The art department. ChatGPT (or any connected chat AI) never touches
 // image bytes — it sends text through make_cartoons, and this module
 // turns that text into a drawn panel: compose the canon prompt, build a
-// reference board from the locked model sheets, and call a hosted FLUX
-// model (Replicate). Only the server ever holds pixels, which is the
+// reference board from the founder's Harrington plates, and call a hosted
+// FLUX model (Replicate). Only the server ever holds pixels, which is the
 // whole reason the phone flow works.
 
 
@@ -46,21 +46,38 @@ function imageModel(): string {
   return process.env.IMAGE_MODEL || DEFAULT_MODEL;
 }
 
+// The definitive character references are Harrington's own plates
+// (canon/vision/) — the founder's ground truth after the pivot. The retired
+// model sheets must never condition a paid image again: their look is the
+// look he rejected.
+const VISION_REFS: Record<string, { path: string; box?: [number, number, number, number] }> = {
+  drew: { path: "canon/vision/drew-reference.jpg" },
+  mango: { path: "canon/vision/mango-reference.jpg", box: [300, 600, 2300, 2800] },
+  abby: { path: "canon/vision/abby-face-reference.jpg" },
+};
+
 /**
- * One reference board: the locked master sheet of every character in the
- * scene, side by side on white. Kontext sees a single conditioning image,
- * so the cast shares a canvas.
+ * One reference board: each requested character's plate study, side by side
+ * on white, grayscaled and normalised so the photographed prints read as ink
+ * on one shared sheet. Kontext sees a single conditioning image, so the cast
+ * shares a canvas.
  */
 export async function buildReferenceBoard(characters: string[]): Promise<Buffer> {
   const masters: Buffer[] = [];
   for (const character of characters) {
-    const sheets = await getModelSheets(character);
-    const master = sheets.find((s) => s.name === "full-body-sheet.png") ?? sheets[0];
-    if (!master) continue;
-    masters.push(Buffer.from(master.base64, "base64"));
+    const ref = VISION_REFS[character.toLowerCase()];
+    if (!ref) continue;
+    const file = await readRepoFile(ref.path);
+    if (!file) continue;
+    let img = sharp(file.bytes);
+    if (ref.box) {
+      const [left, top, width, height] = ref.box;
+      img = img.extract({ left, top, width, height });
+    }
+    masters.push(await img.grayscale().normalise().toBuffer());
   }
   if (masters.length === 0) {
-    throw new PublishError(400, "No reference sheets found for the requested characters.");
+    throw new PublishError(400, "No plate references found for the requested characters.");
   }
 
   const tile = 760; // per-character column, board stays comfortably under provider caps

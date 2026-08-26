@@ -8,6 +8,8 @@ The studio can draw the cast two ways, and one environment variable decides whic
 
 That second thing is the point. Rick types a sentence; the cast should be exactly themselves and the panel should be exactly what he asked for.
 
+**Status (v2, Harrington era):** `definitely-ai/swinging-door-v2` has two trained versions (25-image plate corpus, run ledger in `scripts/training/runs.json`). Smoke verdict: the engraved style and setting obedience are learned; solo identity is close; multi-character panels still fuse faces. It has NOT passed the plate bar in `canon/HARRINGTON-VISION.md` ("The appeal"), so `IMAGE_MODEL` stays unset and production renders through Kontext conditioned on the plate references. Raw fine-tune output is diagnostics, never the product. Next retrain wants a bigger curated corpus (Abby solos most of all) and Replicate credit above $5.
+
 ---
 
 ## The line the fine-tune must not cross

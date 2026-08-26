@@ -243,6 +243,32 @@ The plates are drawn like **antique steel engravings**:
 - A small artist signature tucked in an edge is in the plates' character;
   the strip's own panels may carry the house signature or none.
 
+### The appeal — why the plates work, and the hard bar every image must clear
+
+The founder's standing order: understand the appeal, and make every image
+look like the plates. What the plates actually do:
+
+- **Deadpan dignity.** True animals carrying themselves like successful men —
+  a flamingo who is entirely a flamingo, in a bow tie, unimpressed. The
+  comedy is the composure, never the weirdness.
+- **The eyes are alive.** Drew's heavy lids over a lit eye; Mango's worried
+  inner brows; Abby's bright button catchlights. Expressive, readable,
+  warm — never flat, never dead, never staring.
+- **Species purity.** Each head is fully its animal: no human hair, no human
+  face, no half-blends. The humanoid part is carriage, hands, and clothes —
+  the head is never negotiable.
+- **Soft, round modeling.** Faces are drawn with delicate tonal modeling
+  inside the engraved technique — plush, dimensional, warm. Harsh stipple
+  flattens a face into something eerie; the plates never do it.
+- **Craft density.** The reward of a second look — labeled bottles, boards
+  that scan, a working room. Detail is affection.
+
+**The veto:** any image that would look wrong hanging beside the plates is
+rejected, whatever produced it — Kontext, a fine-tune, or a human hand.
+Hybrid anatomy, dead eyes, a coarse or wolfish face, or a character who
+would frighten rather than amuse fails on sight. Raw model output is never
+shown as the product before it clears this bar.
+
 ## Text — the two-layer system
 
 **Layer one — inside the panel.** In-image lettering is a *feature*: menu
