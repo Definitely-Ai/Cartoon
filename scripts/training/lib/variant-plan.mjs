@@ -14,8 +14,10 @@ export const REF_DIR = "scripts/training/variant-refs";
 export const MAX_VARIANTS = 40;
 
 // Reference tiles cut straight from the founder's plates.
-const DREW_REF = { body: { src: "canon/vision/drew-reference.jpg", box: [0, 0, 1450, 2450] } };
-const MANGO_REF = { body: { src: "canon/vision/mango-reference.jpg", box: [300, 600, 2300, 2800] } };
+// The duo conditions on plate 1's lower panel — Harrington's own drawing of
+// the two at the bar, martini in Drew's hand — so the scene's gravity works
+// for the plan instead of against it.
+const DUO_PANEL = { body: { src: "canon/vision/plate-1-security-and-martini-menu.jpg", box: [16, 1460, 1600, 1140] } };
 const ABBY_REF = { body: { src: "canon/vision/abby-face-reference.jpg", box: [0, 0, 1640, 2140] } };
 // A face-free engraving swatch (suit tweed, furred hand, glass, studded
 // leather, bar wood) — technique without a second face to blend with.
@@ -37,33 +39,30 @@ export const CASTS = [
     id: "harrington-duo",
     tokens: "Drew and Mango",
     who: "the white flamingo gentleman and the golden retriever gentleman",
-    tiles: [DREW_REF, MANGO_REF],
+    tiles: [DUO_PANEL],
     tileNote:
-      "Draw ONE SINGLE continuous panel: the reference sheet's side-by-side layout must NOT appear — no " +
-      "dividing line, no seam, no split; both characters share one unbroken room at one marble bar. The " +
-      "reference shows the two characters exactly as they must be drawn: LEFT, Drew — a white-plumed " +
-      "flamingo gentleman, deep question-mark neck curve, heavy-lidded deadpan human-readable eyes, heavy " +
-      "downturned black-tipped beak, starched collar band under a black silk BOW TIE (a bow tie, NEVER a long " +
-      "necktie), fine knitted sweater vest over a pale collared shirt, and WHITE-FEATHERED hands — four " +
-      "feathered fingers and a thumb, never bare human skin. RIGHT, Mango — a detailed golden retriever " +
-      "gentleman with true black dog lips along the muzzle, freckles, long-fringed drop ears, modest ruff, " +
-      "in a dark suit jacket over a pale open-collared shirt with a small US flag pin on the left lapel, a " +
-      "wristwatch, and FUR-BACKED dog-yet-humanoid hands with soft pads — never bare human skin. ",
+      "The reference is ONE finished panel of the exact scene to draw — recreate it as ONE SINGLE " +
+      "continuous panel of The Swinging Door: Drew the white-plumed flamingo gentleman seated frame-left, " +
+      "Mango the golden retriever gentleman seated frame-right, the chalkboard martini menu, the drink-" +
+      "special board, the labeled golf-pun bottles, the nut bowl between them, the mirrored window sign. " +
+      "Copy each character exactly as the panel draws him: Drew — deep question-mark neck, heavy-lidded " +
+      "deadpan eyes, heavy downturned black-tipped beak at exactly the panel's scale, starched collar band " +
+      "under his black silk BOW TIE (never a long necktie), knitted sweater vest over a pale collared " +
+      "shirt, and WHITE-FEATHERED humanoid hands — four feathered fingers and an opposed thumb — holding " +
+      "his MARTINI by the stem. Mango — true black dog lips along the muzzle, freckles, long-fringed drop " +
+      "ears, a wristwatch, and FUR-BACKED dog-yet-humanoid hands with soft pads, every finger distinctly " +
+      "drawn, never bare human skin on either gentleman. ",
     extra:
-      "Both gentlemen sit ON HANDSOME STOOLS AT THE LONG MARBLE BAR COUNTER itself — the counter's " +
-      "polished marble top runs across the lower frame, the back bar of bottles rises behind it — never at " +
-      "a table. THE DRINKS: the short rocks glass with the big cube and dark cherry shown in the reference " +
-      "belongs ONLY to Mango and stays at Mango's place, frame-right. Drew's drink is NOT in the " +
-      "reference — draw it new at his place, frame-left: a wide conical V-shaped MARTINI glass on a tall " +
-      "thin stem, two olives on a pick, on a napkin. The nut bowl sits between the two drinks. Drew's " +
-      "beak stays EXACTLY at the reference's scale — heavy, downturned, black-tipped, CLOSED, never " +
-      "enlarged, never dominating his face. Drew also wears trousers. THE HANDS GET SPECIAL CARE, humanoid but " +
-      "never human-skinned: Drew's hands are WHITE-FEATHERED and humanoid — four slender feathered fingers " +
-      "and an opposed thumb, small layered feathers on their backs — never wingtips, never bare skin. " +
-      "Mango's hands are FUR-BACKED and humanoid — golden fur on the backs, soft pads on the palms, four " +
-      "fingers and a thumb — never plain paws, never bare skin. Every finger distinctly drawn, gripping " +
-      "each glass at plausible contact points. Both are successful gentlemen in their mid-forties — " +
-      "classy, composed; Drew deadpan, Mango faintly worried. ",
+      "Make exactly three corrections to the panel and nothing else. FIRST, seat both gentlemen on the " +
+      "PATRON side of the bar: the long counter runs between them and the back bar — their handsome " +
+      "chairs on the room side, drinks on the counter, and the bottle shelves standing ACROSS the counter " +
+      "where the bartender works, never directly behind the patrons. SECOND, dress Mango in his dark " +
+      "suit jacket over the pale open-collared shirt, the small US flag pin on the jacket's left lapel — " +
+      "his evening wear. THIRD, replace Mango's martini with his old fashioned — short rocks glass, one " +
+      "large cube, a dark cherry, on its coaster; Drew keeps his martini with olives exactly as drawn. " +
+      "Everything else stays the panel's: composition, expressions, boards, bottles, nut bowl, window. " +
+      "Both are successful gentlemen in their mid-forties — classy, composed; Drew deadpan, Mango " +
+      "faintly worried. ",
   },
   {
     id: "harrington-abby",
@@ -129,9 +128,8 @@ export function runs() {
 // Scene dressing per run: the TV and chalkboard tell the same joke.
 const SCENES = {
   "harrington-duo-barroom":
-    "A large flatscreen TV over the back bar plays the news in the same engraved style, with a DCN network " +
-    "bug, a LIVE tag, and a bold-caps chyron reading RATE CUT EXPECTED, EVENTUALLY. A dark chalkboard beside " +
-    "it reads, in hand-lettered chalk: PATIENCE — $14. ",
+    "Every board and bottle label keeps its hand-lettering short, straight, and legible, spelled exactly " +
+    "as the panel spells it. ",
   "harrington-abby-barroom":
     "Behind her, among the bottles, a small dark chalkboard with hand-lettered chalk capitals reading, " +
     "spelled letter-perfect with no words repeated: THE HOUSE PROTECTS ITS OWN. ",

@@ -146,6 +146,16 @@ plates' technique:
 - Behind her counter is her territory; patrons stay on the room side. She
   appears when the gag needs her — never as furniture.
 
+**Stage physics — the side of the bar** (founder's note: "they need to be
+sitting on the correct side of the bar — I know the original images showed
+that but they were messed up"): some plates seat the gentlemen with the
+bottle shelves directly behind them, which puts patrons inside the service
+area. Every drawn panel corrects this: the counter runs BETWEEN the patrons
+and the back bar — Drew and Mango on the room side, the bottles across the
+counter where only the bartender works. Inspections check this class of
+error every round: spatial logic, which side of the counter, what a body
+could physically reach.
+
 ## The room and the reader
 
 **The audience is the financial world**: people who live or have lived in it,
