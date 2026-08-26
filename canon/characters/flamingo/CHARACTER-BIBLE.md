@@ -68,10 +68,18 @@ thick.
 rejected version went wrong: an oversized head with a heavy beak on a short
 neck reads as a different, uglier bird.
 
-### The beak
-Heavy, downturned, pale with a **bold black tip**, a fine nostril slit, a
-small smile-line at its base — and **in gentle proportion to the small head**.
-An enlarged beak dominating the face is a redraw.
+### The beak — the measure is his own head
+**Short, neat, and firmly closed.** The rule is a ratio, and the bar plates
+set it: **the beak is shorter than the head is wide.** It sits tucked against
+the face, curves gently down to a **bold black tip**, and the upper and lower
+halves are pressed together in one smooth closed line — never gaped, never
+hanging open.
+
+Pale, with a fine nostril slit and a small smile-line at its base.
+
+He is drawn head first, beak second. A long jutting bill, a gaped mandible, or
+a beak that reaches out past the front of his chest is the fault this bible
+exists to prevent — *(founder: "fix Drew's beak")* — and it is a redraw.
 
 ### The eyes
 **Heavy-lidded and deadpan**: visible white, a distinct dark iris and pupil, a
@@ -161,7 +169,8 @@ defers with amusement — she settles the argument, and he enjoys that.
 
 - A human body, human skin, bare forearms, or a human face
 - A short, thick, or straight neck; a goose posture
-- An oversized head or a beak that dominates the face
+- A long, jutting, or gaped beak; any beak longer than the head is wide
+- An oversized head
 - A gaunt, hollow-eyed, skull-like or sinister look
 - Missing bow tie
 - Wingtips instead of hands, or hands that can't hold a stem
