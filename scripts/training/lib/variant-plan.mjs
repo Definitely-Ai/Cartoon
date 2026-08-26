@@ -18,6 +18,9 @@ export const MAX_VARIANTS = 40;
 // (A round of chaining on the studio's own output degraded faces and
 // lettering; first-generation conditioning keeps the plate's crispness.)
 const DUO_PANEL = { body: { src: "canon/vision/plate-1-security-and-martini-menu.jpg", box: [16, 1460, 1600, 1140] } };
+// Object anchors the plate panel lacks: Mango's flag lapel pin and his old
+// fashioned, gripped in his fur-backed hand — pixels beat words for these.
+const MANGO_DETAIL = { body: { src: "canon/vision/mango-reference.jpg", box: [600, 2600, 1500, 1000] } };
 const ABBY_REF = { body: { src: "canon/vision/abby-face-reference.jpg", box: [0, 0, 1640, 2140] } };
 // A face-free engraving swatch (suit tweed, furred hand, glass, studded
 // leather, bar wood) — technique without a second face to blend with.
@@ -39,7 +42,7 @@ export const CASTS = [
     id: "harrington-duo",
     tokens: "Drew and Mango",
     who: "the white flamingo gentleman and the golden retriever gentleman",
-    tiles: [DUO_PANEL],
+    tiles: [DUO_PANEL, MANGO_DETAIL],
     redraw:
       "Keep those faces, hands, drinksware grips, and the engraved style EXACTLY as the reference draws " +
       "them; the composition and Mango's wardrobe follow the description below, not the reference. ",
@@ -51,7 +54,10 @@ export const CASTS = [
       "WHITE-FEATHERED humanoid hands — four feathered fingers and an opposed thumb — holding his " +
       "MARTINI by the stem. Mango, the golden retriever gentleman: true black dog lips along the muzzle, " +
       "freckles, long-fringed drop ears, a wristwatch, and FUR-BACKED dog-yet-humanoid hands with soft " +
-      "pads, every finger distinctly drawn, never bare human skin on either gentleman. ",
+      "pads, every finger distinctly drawn, never bare human skin on either gentleman. The SECOND, " +
+      "smaller reference tile shows Mango's two anchors: his small US FLAG PIN, copied onto his suit's " +
+      "left lapel, and his OLD FASHIONED — the short rocks glass with one large cube and a dark cherry " +
+      "gripped in his fur-backed hand — copied into his hand in place of any martini. ",
     extra:
       "THE COMPOSITION, drawn as ONE SINGLE continuous panel: the long bar counter crosses the frame, " +
       "and the gentlemen sit at its NEAR side on handsome stools, seen from the side so both faces stay " +
