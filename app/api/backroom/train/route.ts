@@ -23,7 +23,10 @@ export const maxDuration = 300;
 
 const LEDGER = "scripts/training/runs.json";
 const ZIP = "scripts/training/training-set.zip";
-const DESTINATION_NAME = "swinging-door";
+// v2: the Harrington-vision model. v1 (swinging-door) stays in the ledger as
+// history; the guard below is scoped per destination, so the first v2 run
+// needs no force flag while double-spending on v2 still does.
+const DESTINATION_NAME = "swinging-door-v2";
 
 type Run = { id: string; createdAt: string; zipSha: string; destination: string; steps: number; trainerVersion: string };
 
@@ -79,7 +82,8 @@ export async function GET(request: NextRequest) {
     const force = params.get("force") === "1";
     const steps = Math.min(3000, Math.max(500, Number(params.get("steps")) || 1750));
 
-    // --- The refusal guard.
+    // --- The refusal guard, scoped to this destination: a succeeded run for
+    // an older model (v1) is history, not a reason to refuse v2's first run.
     const ledger = await readLedger();
     for (const run of ledger) {
       const live = await getTraining(run.id).catch(() => null);
@@ -90,6 +94,7 @@ export async function GET(request: NextRequest) {
           { status: 409 }
         );
       }
+      if (!run.destination.endsWith(`/${DESTINATION_NAME}`)) continue;
       if (live.status === "succeeded" && !force) {
         return NextResponse.json(
           {
