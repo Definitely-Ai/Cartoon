@@ -28,7 +28,7 @@ const CAST_SOURCES = [
     key: "flamingo",
     name: "Drew",
     tagline: "The arch observer — a flamingo first, a gentleman second.",
-    study: "drew-bar-reference.jpg",
+    study: "drew-plate1-bar-reference.jpg",
   },
   {
     key: "dog",

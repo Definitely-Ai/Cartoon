@@ -61,12 +61,15 @@ function imageModel(): string {
 // Cropped to head-and-shoulders, each tile can only say "this is what this
 // character looks like".
 const VISION_REFS: Record<string, { path: string; box?: [number, number, number, number] }> = {
-  // The founder's own pick, and the last correction he made: the BAR Drew
-  // from plate 3 — the long graceful S-curve neck, the small refined head,
-  // the amiable heavy lid, the bow tie at the neck base, the martini in a
-  // feathered hand. The airport bust that used to sit here gave a heavier,
-  // hunched, hard-beaked bird, and it is what he kept rejecting.
-  drew: { path: "canon/vision/drew-bar-reference.jpg" },
+  // Plate 1's bar Drew, cut at NATIVE resolution. Two tiles preceded it and
+  // both taught the fault: plate 3's Drew is the only one of the eight in the
+  // plates drawn with the bill GAPED OPEN, and plate 4's ends in a curved
+  // black HOOK — which is what the renders kept amplifying into a talon. This
+  // one is the only Drew whose black tip is a blunt rounded cap, and the only
+  // one wearing the sweater vest. Its predecessor was also a 2.94x upscale of
+  // a 300px region: mean pixel gradient 3.41 against the plates' 7-8, i.e. the
+  // model was being shown a smear. This is 380px of real linework, unenlarged.
+  drew: { path: "canon/vision/drew-plate1-bar-reference.jpg" },
   mango: { path: "canon/vision/mango-reference.jpg", box: [950, 1400, 1900, 1950] },
   abby: { path: "canon/vision/abby-face-reference.jpg" },
 };

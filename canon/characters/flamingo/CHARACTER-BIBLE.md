@@ -1,7 +1,7 @@
 # Drew — Character Bible
 
-**Definitive study:** `canon/vision/drew-bar-reference.jpg` — the bar Drew of
-plate 3. **Authority:** this bible and `canon/HARRINGTON-VISION.md` govern
+**Definitive study:** `canon/vision/drew-plate1-bar-reference.jpg` — the bar
+Drew of plate 1. **Authority:** this bible and `canon/HARRINGTON-VISION.md` govern
 together; where any older sheet, prompt, or note disagrees, the plates win.
 Everything below is written from the founder's own corrections, each one
 quoted where it applies.
@@ -77,20 +77,31 @@ hanging open.
 
 Pale, with a fine nostril slit and a small smile-line at its base.
 
-**The measurement — use these two landmarks and no others.** "Shorter than the
-head is wide" turned out to be unusable: four inspectors picked four different
-points for *head width* and produced ratios from 0.4 to 1.6 **on the same
-reference tile**, which let real drift be argued away as measurement error. The
-reproducible version:
+**The test is a silhouette, not a measurement.** Two attempts to make this a
+ratio both failed, and it is worth knowing why. "Shorter than the head is wide"
+gave four inspectors four different answers — 0.4 to 1.6 **on the same tile** —
+because *head width* has no agreed endpoint. Replacing it with "back of the
+skull to the bill tip" failed for a better reason: **on a bird with an S-curve
+neck there is no back of the skull.** The head merges into the neck; the
+landmark does not exist to be found. Three rounds of ratio wording moved
+nothing.
 
-> **A** = back of the skull → the feather line where the bill begins.
-> **B** = back of the skull → the tip of the bill.
-> **B is at most 1.5 × A.**
+What actually separates his plates from every rejected render is one shape
+call, and it takes two seconds:
 
-The founder's plate-4 Drew measures **1.46**. A batch drawn before this rule
-existed measured 1.52 to 1.90 — nine of ten too long. The black tip is a
-**short wedge**, not a hook: it stops level with the chin and hangs no deeper
-below the bill than two thirds of A.
+> **Find the bottom edge of his feathered cheek — his chin line.
+> The black tip stops there.**
+>
+> **PASS:** the black is a short blunt cap on the end of the bill, like a
+> thimble, level with the chin.
+> **FAIL:** the black is a long curved talon hanging *below* the chin and
+> hooking back underneath toward his throat — usually with a bright highlight
+> streak through it.
+
+Length, it turns out, was never the real variable. Measured on a landmark that
+does exist — bill in front of the eye, over skull behind the eye — the renders
+read 0.86 against plate 1's 0.85 and plate 4's 0.83. They were the right
+length and the wrong **shape**, and the hook is what reads as shoebill.
 
 **The nostril is one plain thin slit.** No lid, no lash, no catchlight. Given
 any of those it renders as a *second eye on the bill*, which has happened.
@@ -100,12 +111,26 @@ filed against Drew traces to a hard line above the eye. The lid is heavy, the
 cheek is full and softly modelled, and the eye sits straight into plumage with
 no shelf over it.
 
-**A standing warning about the source.** Of the eight Drews in the plates,
-**plate 3's is the only one drawn with the bill gaped open**, and it is the one
-his identity tile used to be cut from — which is exactly why the fault
-persisted through three rounds of rewording. Cut Drew's reference from plate 4
-or plate 1. Never from plate 3, and never from plate 4's golf panel, whose bill
-is the longest of the closed ones.
+**A standing warning about the source — this is where the fault lived.** Of the
+eight Drews in the plates:
+
+- **Plate 3's is the only one with the bill gaped open.** It was the identity
+  tile for three rounds. Never cut from it.
+- **Plate 4's ends in a curved black hook.** It replaced plate 3 and closed the
+  gape — but the renders copied the hook and amplified it into a talon. Its
+  golf panel has the longest bill of all. And it does not show the sweater vest.
+- **Plate 1's bar Drew is the tile.** It is the only Drew whose black tip is a
+  blunt rounded cap rather than a hook, and the only one wearing the full
+  wardrobe — collar band, bow tie, V-neck honeycomb vest.
+
+**And cut it at native resolution.** The plate-4 tile was a 2.94× upscale of a
+300-pixel region: mean pixel gradient **3.41**, against **7–8** for the plates
+themselves. The model was being handed a smear whose single most salient dark
+shape was the hooked tip. The current tile is 380 pixels of real linework,
+unenlarged, at gradient 7.91.
+
+The lesson generalises past Drew: **when three rounds of rewording do not move
+a fault, stop rewording. The reference is out-voting the text.**
 
 He is drawn head first, beak second. A long jutting bill, a gaped mandible, or
 a beak that reaches out past the front of his chest is the fault this bible
@@ -209,6 +234,7 @@ defers with amusement — she settles the argument, and he enjoys that.
 - A long, jutting, or gaped beak; any beak longer than the head is wide
 - An oversized head
 - A drawn brow ridge over the eye; a nostril with a lid, lash or catchlight
+- A black tip hanging below the chin line, hooking toward the throat, or carrying a highlight streak
 - A gaunt, hollow-eyed, skull-like or sinister look
 - Missing bow tie
 - Wingtips instead of hands, or hands that can't hold a stem

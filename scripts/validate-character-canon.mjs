@@ -174,7 +174,7 @@ await checkText(
     "question-mark sweep of a true flamingo",
     "heavy-lidded and deadpan",
     "four fingers and an opposed thumb",
-    "canon/vision/drew-bar-reference.jpg",
+    "canon/vision/drew-plate1-bar-reference.jpg",
     "black dog lips",
     "studded leather collar",
   ],
