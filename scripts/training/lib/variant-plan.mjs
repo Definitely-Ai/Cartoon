@@ -50,14 +50,15 @@ export const CASTS = [
       "The reference panel supplies the two characters — take every character detail from it. Drew, the " +
       "white-plumed flamingo gentleman: deep question-mark neck, heavy-lidded deadpan eyes, heavy " +
       "downturned black-tipped beak at exactly the reference's scale, starched collar band under his " +
-      "black silk BOW TIE (never a long necktie), knitted sweater vest over a pale collared shirt, and " +
+      "black silk BOW TIE, knitted sweater vest over a pale collared shirt, and " +
       "WHITE-FEATHERED humanoid hands — four feathered fingers and an opposed thumb — holding his " +
       "MARTINI by the stem. Mango, the golden retriever gentleman: true black dog lips along the muzzle, " +
       "freckles, long-fringed drop ears, a wristwatch, and FUR-BACKED dog-yet-humanoid hands with soft " +
       "pads, every finger distinctly drawn, never bare human skin on either gentleman. The SECOND, " +
-      "smaller reference tile shows Mango's two anchors: his small US FLAG PIN, copied onto his suit's " +
-      "left lapel, and his OLD FASHIONED — the short rocks glass with one large cube and a dark cherry " +
-      "gripped in his fur-backed hand — copied into his hand in place of any martini. ",
+      "smaller reference tile shows how Mango dresses and drinks tonight: copy his clothes from that " +
+      "tile exactly, with the small US FLAG PIN on his left lapel, and put his OLD FASHIONED — the " +
+      "short rocks glass with one large cube and a dark cherry, straight from that tile — in his " +
+      "fur-backed hand in place of any martini. ",
     extra:
       "THE COMPOSITION, drawn as ONE SINGLE continuous panel: the long bar counter crosses the frame, " +
       "and the gentlemen sit at its NEAR side on handsome stools, seen from the side so both faces stay " +
@@ -66,11 +67,10 @@ export const CASTS = [
       "labeled golf-pun bottles, and the chalkboard martini menu on the wall above; the mirrored " +
       "Swinging Door window sign at the frame's edge. On the counter: Drew's martini with olives on its " +
       "coaster at frame-left, Mango's OLD FASHIONED — a short rocks glass, one large cube, a dark " +
-      "cherry — on its coaster at frame-right, and the shared nut bowl between them. THE WARDROBES ARE " +
-      "NOT ALIKE: Drew wears EXACTLY what the reference panel dresses him in — the knitted sweater vest " +
-      "over a pale collared shirt with his starched collar band and black BOW TIE; Drew NEVER wears a " +
-      "suit jacket and NEVER a long necktie. ONLY Mango wears the dark evening suit jacket, over his " +
-      "pale open-collared shirt, with the small US FLAG pin — tiny stars and stripes — on the jacket's " +
+      "cherry — on its coaster at frame-right, and the shared nut bowl between them. Each gentleman " +
+      "keeps his own clothes: Drew wears EXACTLY what the reference panel dresses him in — the knitted " +
+      "sweater vest over a pale collared shirt, starched collar band, black BOW TIE; Mango wears " +
+      "EXACTLY what the second tile dresses him in, its US FLAG PIN — tiny stars and stripes — on his " +
       "left lapel. Drew deadpan, Mango faintly worried — successful gentlemen in their " +
       "mid-forties, classy and composed. ",
   },
