@@ -70,7 +70,7 @@ export const CASTS = [
       "Highland White Terrier in her mid-forties, with a compact pretty face, short muzzle, LARGE glossy " +
       "dark eyes with bright catchlights and long lashes, softly arched brows, a small black nose, a WARM " +
       "closed-lip smile, silky groomed white fur, and two small pricked ears — both ears up. She is " +
-      "beautiful — alluring, elegant, seasoned and self-assured — never stiff, never staring, never eerie, " +
+      "beautiful — radiant, elegant, seasoned and self-assured — never stiff, never staring, never eerie, " +
       "never tongue-out, never a shepherd or wolf. She wears her studded leather collar with its small " +
       "teardrop gem pendant. The reference shows ONLY her head — below the neck her body is NOT the " +
       "reference's and must be drawn humanoid as described. RIGHT on the reference: a texture swatch only " +
