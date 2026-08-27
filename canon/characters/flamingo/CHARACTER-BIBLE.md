@@ -45,6 +45,22 @@ gentleman:
   rows of fine dash-strokes, unbroken **from shoulder to fingertip**.
 - **No human skin anywhere.** No bare forearms, no smooth pink limbs, no
   human torso or musculature under the clothes, no human face.
+### He is not wearing his feathers
+
+*(Founder: "the right arm looks like a jacket — none of the models should look
+like they are wearing their fur or feathers.")*
+
+The plumage **grows out of him**. It is never drawn as a garment, and the tell
+is always an EDGE where no edge belongs: a cuff, a hem, a seam, a shoulder line,
+a lapel, a closing line down the arm.
+
+> **The armhole of his sweater vest is the only edge anywhere on his arm.**
+> Below it the plumage runs unbroken and edgeless to his fingertips.
+> A second line crossing that arm is a sleeve, and the panel is wrong.
+
+The same law governs the whole cast: Mango's coat and Abby's are fur under
+cloth, meeting the garment at the garment's own edge and nowhere else.
+
 - **He wears no sleeve.** In all eight plate Drews the garment above the waist
   is sleeveless — a V-neck vest, or bare plumage — and the arm is one unbroken
   feathered surface from shoulder to fingertip. No cloth cuff, no hem, no seam
@@ -309,7 +325,7 @@ the single most-looked-at detail in the strip.
 
 | Item | Rule |
 | --- | --- |
-| **Bow tie** | Small, solid black, silk. **His default skin** — he is never without it |
+| **Bow tie** | Small, solid black, silk, sitting at the throat. **His default skin** — never without it. **The bow is the only black at his neck:** no band, ribbon, strap, cord or choker runs around the neck or behind it |
 | Collar band | Crisp, starched, white, circling the base of the neck under the tie |
 | Sweater vest | V-neck, fine honeycomb or rib knit, ribbed edges, over a pale collared shirt |
 | Trousers | Yes *(founder: "he needs to have pants")* — **and never in frame.** No plate and no filed panel puts anything below his chest in shot; the counter crops him. This row says what he owns. Nothing to inspect, so nothing to tick |
@@ -397,7 +413,8 @@ defers with amusement — she settles the argument, and he enjoys that.
 - A nostril with a closed outline round it, or with a lid, lash or catchlight
 - Black hung off the end of the bill as a second mass: the pale bill's own outline stops and a deeper shape carries the silhouette on past it, or a white blade is drawn inside the black
 - A gaunt, hollow-eyed, skull-like or sinister look
-- Missing bow tie
+- Missing bow tie; any black band, strap or ribbon around the neck behind the bow
+- Any cuff, hem or seam crossing the arm — plumage drawn as a sleeve
 - Wingtips instead of hands, or hands that can't hold a stem
 - Fewer than three digits closed on the stem, or no digit crossing in front of it
 - A martini drawn as a bowl alone — no stem, no foot, nothing underneath it

@@ -92,6 +92,22 @@ ever in it — which is also why she is easy to add to any panel.
 
 **Drew frame-left, Mango frame-right**, the shared nut bowl between their glasses.
 
+### The bar height, and not merging into it
+
+*(Founder: "we need consistency on the height of the bar and how they are
+sitting — they can't be morphed into the bar.")*
+
+**The marble's top edge crosses each seated gentleman at the same height in
+every cartoon: just below mid-chest** — low enough that the whole chest, both
+shoulders and both arms are above it. That one measurement is what makes the
+room feel like the same room from panel to panel, more than any fixture does.
+
+**Each of them is a whole body sitting behind a separate solid object.** There
+is a clean drawn edge where the counter passes them; their forearms rest **on
+top of** the marble with the hands visible on it; and no shoulder, chest or
+sleeve ever dissolves into the counter or continues as part of it. A figure
+that grows out of the bar is a redraw.
+
 ### The sides — the first thing to check on any panel
 
 > Find the counter. **Drew and Mango are in front of it. Abby is behind it.**

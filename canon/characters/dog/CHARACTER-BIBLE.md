@@ -66,9 +66,25 @@ he is dignified while saying them.
   plates alone with the turn of the torso — that is pose, not proportion, and
   it is not a thing to correct.
 
-**The read:** raised inner brows and a faint forehead wrinkle, set against
-Drew's deadpan. He is worried, and he is a gentleman about it — and the
-gentleman half lives in the eye. The **dark of the eye takes up the front half
+**The read — and the correction that matters most.**
+*(Founder: "at first he looks sad; the more you look the happier he gets. I'd
+like something changed slightly so he looks happier.")*
+
+He is the worried everyman, but **he is not sad, and the FIRST GLANCE must never
+say sad.** The split that fixes it:
+
+> **The worry lives in the brows. Everything below them is warm.**
+>
+> - **Brows** — raised inner brows, a faint forehead wrinkle. This is the
+>   worry, and it is the whole of it.
+> - **Mouth** — corners turned gently **UP**, a soft closed-lip smile.
+> - **Eyes** — bright and open, one clear catchlight in each.
+> - **Cheeks** — full and lifted.
+
+A viewer should read *a good-humoured man who is a little concerned*, never a
+downcast one. Mouth up, brows up, eyes bright.
+
+He is a gentleman about it — and the gentleman half lives in the eye. The **dark of the eye takes up the front half
 of the opening and no more**, pressed against the corner nearest the muzzle;
 the **rear half is left as paper-white sclera**, a plain light wedge widening
 toward the outer corner. On the study the opening runs 101 px from the front
@@ -82,10 +98,11 @@ first and the eye second, in that order of importance.
 
 > *(Founder: "more dog hands but still humanoid — we are finding a balance.")*
 
-Visibly a dog's hands: **broad, fur-backed, soft-padded fingers with short
-dark nails**. Fully humanoid in articulation: **four fingers and an opposed
-thumb — five digits**, in believable human grips. Every finger distinctly
-drawn, its own contour and its own nail, even in a closed grip.
+Visibly a dog's hands: **broad, fur-backed, soft-padded fingers, and NO NAILS
+AND NO CLAWS drawn at all** — each fingertip ends in soft fur and pad *(founder:
+"remove the fingernails")*. Fully humanoid in articulation: **four fingers and
+an opposed thumb — five digits**, in believable human grips. Every finger
+distinctly drawn with its own contour, even in a closed grip.
 
 Texture animal, construction human — the same law as Drew's feathered hands.
 Never plain paws; never bare human skin.

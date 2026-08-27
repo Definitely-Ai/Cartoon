@@ -55,8 +55,20 @@ This face took eleven rounds to land. The rule that fixed it: **beauty
 first, engraving second.**
 
 - A **true fluffy westie** — short-muzzled, compact, pretty.
-- **Large glossy dark eyes**, round and near-black, each carrying **exactly
-  one** small white catchlight high in the iris.
+- **Her eyes are built like a human eye, not an animal's button.**
+  *(Founder: "make her eyes more human — pupil, iris, white area, with
+  detail.")* Draw the whole structure and let it read:
+
+  | Part | How it is drawn |
+  | --- | --- |
+  | **The white** | A clear white of the eye showing at each side of the iris — this is what makes the eye human, and it is the part that keeps getting lost |
+  | **The iris** | A drawn circle, mid-tone, with fine radiating lines inside it |
+  | **The pupil** | A distinct round dark disc at the iris centre — smaller than the iris, never filling it |
+  | **The catchlight** | **Exactly one**, small and white, high on the iris |
+  | **The lids** | A defined upper lid with lashes above it, a soft lower lid below |
+
+  A solid near-black disc with a dot of white is the failure: that is a dog's
+  eye, and hers is a woman's.
 - **Her brow is where she acts.** Lay **two or three** fine strokes in a
   shallow arch above each eye, no heavier than the lash line, and let their
   tilt carry the beat: level when she rules, inner ends lifted when she is
@@ -104,8 +116,15 @@ separately drawn, closed on a glass, a towel, or a bottle neck.
 **Figure:** take the shape from a **well-cut women's dress shirt on a trim
 woman of forty-five** — a clean shoulder line, a waist the reader can find, and
 one soft curve at the chest that the blouse's placket follows. Slim hips and
-legs; **modest bust, never exaggerated** *(the founder's correction: "the boobs
-are too big")*. **No tail.**
+legs. **No tail.**
+
+**The neckline is open; the bust is not large.** These are two different notes
+and the founder has now given both. Her blouse is **unbuttoned two buttons
+down**, the collar falling open in a soft V with a clear sweep of **décolletage**
+between the lapels — *(founder: "she needs more cleavage")*. The **bust itself
+stays trim and natural** — *(founder, earlier: "the boobs are too big")*. Open
+the neckline, not the figure: the first note is about the blouse, the second is
+about her body, and they do not conflict.
 
 ---
 
@@ -117,7 +136,7 @@ are too big")*. **No tail.**
 | **The pendant** | **One** small teardrop gem: a broad rounded top, one unbroken curve down each side, meeting in a single point. Its bezel is silver and ringed with **fine beads**, as the face study draws it. Never so small it stops reading as a gem |
 | Blouse | Fitted and light, the **top two buttons** undone, both sleeves **rolled twice and stopped above the elbow** |
 | Skirt | Dark, fitted |
-| Towel | A folded white towel, **in every panel she appears in**. It has two states and no third: at rest it lies over one shoulder and hangs; in use it comes off the shoulder into her hands, one end **inside** the glass she is polishing and the other hand closed round the outside. Which shoulder is not a rule — she is drawn turned into the frame, so the side cannot be read from the picture. A towel that is nowhere in the panel is the fault |
+| Towel | A folded white towel, **in every panel she appears in**, and **in EXACTLY ONE PLACE — never both** *(founder: "if she has it in her hands it shouldn't be on her shoulder")*. Two states and no third: **at rest** it lies over her shoulder and hangs, and **her hands are empty of it**; **in use** it has come OFF the shoulder into her hands — one end inside the glass she is polishing, the other hand closed round the outside — and **the shoulder is bare**. There is only ever ONE towel in the panel. Which shoulder is not a rule — she is drawn turned into the frame, so the side cannot be read from the picture. A towel that is nowhere in the panel is the fault |
 | Bracelet | **One** strand of pearls at one wrist, drawn whole — never cut off by the bottom edge of the art |
 | Shoes | Black heels — **away games and full-figure studies only**. A bar panel is cropped at the counter, so her shoes are never in one: never fail a bar panel for heels it cannot show, and never add legs to satisfy this row |
 
@@ -215,6 +234,10 @@ Note the address: *gentlemen*. She is fond of them and entirely unintimidated.
 - Puppyish, childlike, or tongue-out
 - A four-legged dog, or forepaws leaning on the counter
 - An exaggerated bust; wide hips or knees
+- A buttoned-to-the-throat blouse with no open neckline
+- A towel on her shoulder AND in her hands in the same panel; two towels
+- A solid black button eye with no white, no iris ring and no separate pupil
+- Fur drawn as a worn coat — any cuff, hem or seam where fur meets nothing
 - A tail
 - Missing collar or missing gem pendant; more than one thing hanging from its ring
 - A head turned so far that only one eye is on the paper
