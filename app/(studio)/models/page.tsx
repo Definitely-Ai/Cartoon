@@ -20,27 +20,36 @@ type CastMember = {
   name: string;
   tagline: string;
   study: string;
+  concept: string;
   bible: string;
 };
 
+// `study` is the drawn plate the reader meets the character through, made by
+// ?study= on the smoke route. `concept` is the founder's own image, kept as
+// the fallback until a study exists and as the thing the pipeline actually
+// conditions on — but it is a photograph of a print, so it is second choice
+// on a page rather than first.
 const CAST_SOURCES = [
   {
     key: "flamingo",
     name: "Drew",
     tagline: "The arch observer — a flamingo first, a gentleman second.",
-    study: "drew-plate1-bar-reference.jpg",
+    study: "studies/drew.png",
+    concept: "drew-plate1-bar-reference.jpg",
   },
   {
     key: "dog",
     name: "Mango",
     tagline: "The worried everyman — the golden retriever who pays the bill.",
-    study: "mango-reference.jpg",
+    study: "studies/mango.png",
+    concept: "mango-reference.jpg",
   },
   {
     key: "abby",
     name: "Abby",
     tagline: "The proprietor — her word settles the argument.",
-    study: "abby-reference.jpg",
+    study: "studies/abby.png",
+    concept: "abby-reference.jpg",
   },
 ];
 
@@ -50,7 +59,8 @@ function readCast(): CastMember[] {
     const markdown = fs.existsSync(file) ? fs.readFileSync(file, "utf8") : "";
     // The document's own H1 is the card's heading, so drop it from the body.
     const body = markdown.replace(/^#\s+.*\n/, "");
-    return { ...source, bible: renderMarkdown(body) };
+    const drawn = fs.existsSync(path.join(repoRoot, "canon", "vision", source.study));
+    return { ...source, study: drawn ? source.study : source.concept, bible: renderMarkdown(body) };
   });
 }
 
