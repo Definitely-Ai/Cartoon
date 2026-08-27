@@ -237,7 +237,7 @@ the joke, or panic — and he never cusses or slanders.
 His lines are verdicts:
 - *"Rates will come down. I've simply stopped asking when."*
 - *"Committed is money that hasn't had its second thoughts yet."*
-- *"Her target follows the price at a respectful distance. It's called research."*
+- *"The target follows the price at a respectful distance. It's called research."*
 
 Against Mango's worry he is the still point. Against Abby's authority he
 defers with amusement — she settles the argument, and he enjoys that.
