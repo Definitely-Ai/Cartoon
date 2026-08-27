@@ -116,10 +116,15 @@ const PANELS: Panel[] = [
 // stops being a different bar every day. Everything here is fixed; only the
 // screen, the chalkboard and what stands on the marble ever change.
 const SET_PLATE_PROMPT =
-  "Draw ONE single-panel black-and-white interior in a dense antique-engraving hand — fine dash-hatching, " +
-  "paper white, one mid-grey wash, solid black, no colour anywhere and no photographic rendering. This is a " +
-  "SET PLATE: the empty interior of an upscale bar, and THERE ARE NO PEOPLE, NO ANIMALS AND NO CHARACTERS OF " +
-  "ANY KIND anywhere in it.\n\n" +
+  "Draw ONE single-panel interior as a PEN-AND-INK ENGRAVING: every surface built from fine drawn lines — " +
+  "dash-hatching, cross-hatching and stipple — on PAPER WHITE. It is a drawing on paper, not a photograph " +
+  "and not a rendered three-dimensional room; there is no colour and no smooth gradient anywhere.\n\n" +
+  "THE ROOM IS BRIGHT AND WARM. Paper white is the dominant value and it is everywhere: the walls are drawn " +
+  "in OPEN LINE with the paper showing through between the strokes, not filled in with black. Solid black is " +
+  "used sparingly, for accents only. This is a polished, well-lit, expensive room at four in the afternoon — " +
+  "never a dim one, never a gloomy one, never a cellar.\n\n" +
+  "This is a SET PLATE: the empty interior of an upscale bar, and THERE ARE NO PEOPLE, NO ANIMALS AND NO " +
+  "CHARACTERS OF ANY KIND anywhere in it.\n\n" +
   "CAMERA. We stand on the bartender's side of the bar looking out across it into the room, at eye level. The " +
   "near lip of a POLISHED MARBLE COUNTER runs left to right across the LOWEST part of the picture and the panel " +
   "ends there — nothing below the counter is in frame: no stools, no footrest, no floor.\n\n" +
@@ -127,7 +132,8 @@ const SET_PLATE_PROMPT =
   "FAR LEFT, the front window onto the street, its lower half of frosted glass, carrying the bar's name in " +
   "gilt script lettering seen from behind — THE SWINGING DOOR, MIRRORED, reading backwards.\n" +
   "LEFT OF CENTRE, a brass wall sconce with a small pleated shade.\n" +
-  "CENTRE, high on the wall, a large flat television in a slim black frame. ITS SCREEN IS COMPLETELY BLANK — " +
+  "CENTRE, high on the wall, a modern wall-mounted FLAT-SCREEN TELEVISION with a NARROW black bezel — a " +
+  "television, not a picture frame, and not a framed painting. ITS SCREEN IS COMPLETELY BLANK — " +
   "an empty pale rectangle with no picture, no headline band, no letters and no marks of any kind on it, and " +
   "its frame carries no badge, no nameplate and no lettering.\n" +
   "BELOW THE TELEVISION, two small framed prints on the panelling, NON-FIGURATIVE — a sailing ship and a bull " +
