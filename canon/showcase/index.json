@@ -1,62 +1,74 @@
 [
   {
-    "file": "sc01-hike-odds.png",
-    "caption": "Drew: \"Best seller all year. Nobody has ever had to make one.\"",
-    "note": "The rate hike, priced nightly and never poured.",
-    "source": "20260826-2337-sc01-hike-odds.png"
+    "file": "sc01-best-performing-square-foot.png",
+    "caption": "Drew: \"The middle seat is now our best-performing square foot.\"",
+    "note": "AIRFARES UP A QUARTER FROM LAST SUMMER",
+    "source": "20260827-1300-sc01-best-performing-square-foot.png"
   },
   {
-    "file": "sc02-tariffs.png",
-    "caption": "Mango: \"I had one of each. It felt patriotic both times.\"",
-    "note": "Canadian Club, and the retaliatory one.",
-    "source": "20260826-2340-sc02-tariffs.png"
+    "file": "sc02-reconsidered-the-olive.png",
+    "caption": "Abby: \"I haven't raised a number in three years, gentlemen, but I have reconsidered the olive.\"",
+    "note": "GROCERIES NOW THE COUNTRY'S BIGGEST MONEY WORRY",
+    "source": "20260827-1301-sc02-reconsidered-the-olive.png"
   },
   {
-    "file": "sc03-ai-capex.png",
-    "caption": "Drew: \"Committed is money that has not had its second thoughts yet.\"",
-    "note": "$600B spent, $3 trillion committed — and the martini is empty.",
-    "source": "20260826-2341-sc03-ai-capex.png"
+    "file": "sc03-silent-for-a-semiconductor.png",
+    "caption": "Drew: \"Four times a year we all fall silent for a semiconductor.\"",
+    "note": "THE STREET STOPS FOR ONE COMPANY",
+    "source": "20260827-1442-sc03-silent-for-a-semiconductor.png"
   },
   {
-    "file": "sc04-refinance.png",
-    "caption": "Mango: \"Nobody pays a tab like that. They renew it.\"",
-    "note": "$9.7 trillion refinanced this year; all tabs rolled over nightly.",
-    "source": "20260826-2342-sc04-refinance.png"
+    "file": "sc04-fourteen-dollars-of-roof.png",
+    "caption": "Abby: \"There's about four dollars of whiskey in that glass and fourteen dollars of roof.\"",
+    "note": "TWO IN THREE HOUSEHOLDS SAW PREMIUMS RISE",
+    "source": "20260827-1443-sc04-fourteen-dollars-of-roof.png"
   },
   {
-    "file": "sc05-golf-thirty.png",
-    "caption": "Drew: \"Five and a quarter for thirty years. My swing guarantees nothing of the kind.\"",
-    "note": "The 19th hole — the strip's away game.",
-    "source": "20260826-2343-sc05-golf-thirty.png"
+    "file": "sc05-down-a-percent-at-lunch.png",
+    "caption": "Drew: \"I don't look at it during the day, Mango. It was down a percent at lunch.\"",
+    "note": "STOCKS AND BONDS BOTH LOWER",
+    "source": "20260827-1444-sc05-down-a-percent-at-lunch.png"
   },
   {
-    "file": "sc06-jackson-hole.png",
-    "caption": "Mango: \"A symposium in the mountains, to tell us they are still thinking about it.\"",
-    "note": "The speech is Friday. The water is $12.",
-    "source": "20260826-2339-sc06-jackson-hole.png"
+    "file": "sc06-ninety-thousand-miles.png",
+    "caption": "Mango: \"I'm waiting on rates to come down, Drew. My truck has waited ninety thousand miles.\"",
+    "note": "BORROWING GETS DEARER, NOT CHEAPER",
+    "source": "20260827-1445-sc06-ninety-thousand-miles.png"
   },
   {
-    "file": "sc07-sentiment.png",
-    "caption": "Mango: \"I have never felt worse about the economy, Abby. Same again.\"",
-    "note": "Sentiment at a record low, spending up again. Misery hour, 4–7.",
-    "source": "20260826-2344-sc07-sentiment.png"
+    "file": "sc07-the-deductible-rehearsal.png",
+    "caption": "Mango: \"The first two thousand of any storm is mine. I like to stay current.\"",
+    "note": "PREMIUMS UP FOR 65% — DEDUCTIBLES UP TOO",
+    "source": "20260827-1447-sc07-the-deductible-rehearsal.png"
   },
   {
-    "file": "sc08-sp-8000.png",
-    "caption": "Drew: \"Her target follows the price at a respectful distance. It is called research.\"",
-    "note": "The house martini has a year-end target too.",
-    "source": "20260826-2345-sc08-sp-8000.png"
+    "file": "sc08-ribbon-cutting.png",
+    "caption": "Drew: \"We have already moved in, Mango. December is only the ribbon-cutting.\"",
+    "note": "TRADERS SEE A HIKE BY YEAR END — ODDS AT 100%",
+    "source": "20260827-1448-sc08-ribbon-cutting.png"
   },
   {
-    "file": "sc09-housing.png",
-    "caption": "Abby: \"The house keeps winning, gentlemen. Just not the kind anyone lives in.\"",
-    "note": "Data centers outbuild housing; the starter home is off the board.",
-    "source": "20260826-2346-sc09-housing.png"
+    "file": "sc09-the-total-aloud.png",
+    "caption": "Mango: \"I announce the total at checkout now, and the man behind me shakes his head at the score.\"",
+    "note": "FOOD PRICES A THIRD HIGHER THAN IN 2020",
+    "source": "20260827-1449-sc09-the-total-aloud.png"
   },
   {
-    "file": "sc10-fed-abby.png",
-    "caption": "Abby: \"I price in a raise every morning, gentlemen. Delivering it is a separate decision.\"",
-    "note": "A 45% chance of $19 today.",
-    "source": "20260826-2347-sc10-fed-abby.png"
+    "file": "sc10-refund-went-home.png",
+    "caption": "Mango: \"I paid it at the register. The refund went home to a warehouse.\"",
+    "note": "RETAILER RAISES OUTLOOK ON $150M OF TARIFF REFUNDS",
+    "source": "20260827-1451-sc10-refund-went-home.png"
+  },
+  {
+    "file": "sc11-from-windsor.png",
+    "caption": "Mango: \"I buy American now, Drew. Abby tells me this one is from Windsor, Ontario.\"",
+    "note": "CANADA MATCHES THE LEVIES, DOLLAR FOR DOLLAR",
+    "source": "20260827-1452-sc11-from-windsor.png"
+  },
+  {
+    "file": "sc12-permanent-receipt.png",
+    "caption": "Drew: \"The rate has behaved beautifully this year. Nobody has mentioned the total.\"",
+    "note": "PRICE GAUGE COMES IN AS EXPECTED",
+    "source": "20260827-1453-sc12-permanent-receipt.png"
   }
 ]
