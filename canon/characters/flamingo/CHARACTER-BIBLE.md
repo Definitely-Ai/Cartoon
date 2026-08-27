@@ -64,77 +64,94 @@ plate is the measure. Never straight, never goose-stiff, never short and
 thick.
 
 ### The head
-**Small and refined** in proportion to that long neck. This is where the
-rejected version went wrong: an oversized head with a heavy beak on a short
-neck reads as a different, uglier bird.
+**Small and refined** in proportion to that long neck. The rejected version put
+an oversized head on a short neck, and the whole bird changed species.
 
-### The beak — the measure is his own head
-**Short, neat, and firmly closed.** The rule is a ratio, and the bar plates
-set it: **the beak is shorter than the head is wide.** It sits tucked against
-the face, curves gently down to a **bold black tip**, and the upper and lower
-halves are pressed together in one smooth closed line — never gaped, never
-hanging open.
+### The bill
 
-Pale, with a fine nostril slit and a small smile-line at its base.
+**Take the shape from a swan.** Slender, of even taper, bending in one gentle
+unbroken curve, with a small dark patch at the very tip. That single sentence
+is what finally fixed this after six attempts; everything below is detail on it.
 
-**The test is a silhouette, not a measurement.** Two attempts to make this a
-ratio both failed, and it is worth knowing why. "Shorter than the head is wide"
-gave four inspectors four different answers — 0.4 to 1.6 **on the same tile** —
-because *head width* has no agreed endpoint. Replacing it with "back of the
-skull to the bill tip" failed for a better reason: **on a bird with an S-curve
-neck there is no back of the skull.** The head merges into the neck; the
-landmark does not exist to be found. Three rounds of ratio wording moved
-nothing.
+**Depth is the rule that matters.** Where the bill meets the feathers, its
+depth top-to-bottom is about **one third of its length**, tapering from there
+to the tip. Measured on the plates that ratio is **0.38**; the renders that
+drew the founder's complaint ran **0.64** — nearly twice as deep. *Length was
+never the fault.* Bill in front of the eye over skull behind it reads **1.12**
+on plate 1 against **0.63** in a rejected render: his bill was already
+**shorter** than canon while four rounds were spent shortening it.
 
-What actually separates his plates from every rejected render is one shape
-call, and it takes two seconds:
+**The black is a marking, not a part.** It is painted onto the last third of
+that slender shape, top and front, and it adds **nothing to the outline** —
+remove the black and the silhouette would be identical. It gives the bill no
+extra length, no downward point, no hook. It does not wrap under toward his
+throat and it carries no bright highlight streak. **The rear two thirds are
+pale, top edge and bottom edge alike.**
 
-> **Find the bottom edge of his feathered cheek — his chin line.
-> The black tip stops there.**
->
-> **PASS:** the black is a short blunt cap on the end of the bill, like a
-> thimble, level with the chin.
-> **FAIL:** the black is a long curved talon hanging *below* the chin and
-> hooking back underneath toward his throat — usually with a bright highlight
-> streak through it.
-
-Length, it turns out, was never the real variable. Measured on a landmark that
-does exist — bill in front of the eye, over skull behind the eye — the renders
-read 0.86 against plate 1's 0.85 and plate 4's 0.83. They were the right
-length and the wrong **shape**, and the hook is what reads as shoebill.
+Upper and lower halves stay pressed together in one smooth closed line. Pale,
+with a fine nostril slit and a small smile-line at its base.
 
 **The nostril is one plain thin slit.** No lid, no lash, no catchlight. Given
 any of those it renders as a *second eye on the bill*, which has happened.
 
-**No drawn brow ridge.** The severe, hawkish, condor read that keeps getting
+**No drawn brow ridge.** The severe, hawkish, condor read that kept getting
 filed against Drew traces to a hard line above the eye. The lid is heavy, the
-cheek is full and softly modelled, and the eye sits straight into plumage with
-no shelf over it.
+cheek full and softly modelled, the eye set straight into plumage with no shelf
+over it.
 
-**A standing warning about the source — this is where the fault lived.** Of the
-eight Drews in the plates:
+#### The two-second test
+
+> Look only at the black. **Is it a small dark patch sitting on a slender
+> bill, or is it a talon?**
+>
+> **PASS** — the bill is slender and evenly tapered, and the black is a compact
+> patch at the tip that adds nothing to its outline.
+> **FAIL** — the bill is a deep heavy wedge, and the black extends it into a
+> downward point that hangs below the pale bill's own edge.
+
+#### What failed, and why it is worth knowing
+
+*(Founder: "fix Drew's beak.")* Six levers were pulled at this one detail. The
+log is here because the lessons are not about beaks.
+
+| Lever | Result |
+| --- | --- |
+| Ratio: "shorter than the head is wide" | **Failed.** Four inspectors, four endpoints for *head width*, ratios from 0.4 to 1.6 **on the same tile** |
+| Ratio: "back of skull to bill tip ≤ 1.5×" | **Failed.** On an S-curve neck **there is no back of the skull** — the head merges into the neck and the landmark cannot be found |
+| New reference tile (plate 4) | **Necessary, not sufficient.** Closed the gape; the renders copied its hook |
+| Model effort raised to medium | **No change to the shape.** Finer linework, same bill |
+| A second reference tile, close on the head | **No change** |
+| "The black covers the front third" | **Partial win** — fixed the black's distribution where the relational rule had not |
+| **Positive referent: "take the shape from a swan"** | **Fixed it** |
+
+Three laws came out of it, and they apply to every rule in every bible here:
+
+1. **Countable beats relational.** *"The front third"* changed the drawing;
+   *"level with the chin"* did not. A relation the drawing has to compute is a
+   rule it can ignore.
+2. **Negation summons.** The rule forbidding a wild flamingo's bill *named a
+   wild flamingo's bill* — and produced one for three rounds. These models read
+   co-occurrence, not negation. Name the right thing instead.
+3. **The reference out-votes the text.** When three rounds of rewording move
+   nothing, stop rewording and go look at the conditioning image.
+
+#### A standing warning about the source
+
+Of the eight Drews in the four plates:
 
 - **Plate 3's is the only one with the bill gaped open.** It was the identity
   tile for three rounds. Never cut from it.
-- **Plate 4's ends in a curved black hook.** It replaced plate 3 and closed the
-  gape — but the renders copied the hook and amplified it into a talon. Its
-  golf panel has the longest bill of all. And it does not show the sweater vest.
-- **Plate 1's bar Drew is the tile.** It is the only Drew whose black tip is a
-  blunt rounded cap rather than a hook, and the only one wearing the full
-  wardrobe — collar band, bow tie, V-neck honeycomb vest.
+- **Plate 4's ends in a curved black hook**, which the renders amplified into a
+  talon. Its golf panel has the longest bill of all, and it does not show the
+  sweater vest.
+- **Plate 1's bar Drew is the tile.** The only Drew whose black tip is a blunt
+  rounded cap, and the only one in the full wardrobe — collar band, bow tie,
+  V-neck honeycomb vest.
 
 **And cut it at native resolution.** The plate-4 tile was a 2.94× upscale of a
-300-pixel region: mean pixel gradient **3.41**, against **7–8** for the plates
-themselves. The model was being handed a smear whose single most salient dark
-shape was the hooked tip. The current tile is 380 pixels of real linework,
-unenlarged, at gradient 7.91.
-
-The lesson generalises past Drew: **when three rounds of rewording do not move
-a fault, stop rewording. The reference is out-voting the text.**
-
-He is drawn head first, beak second. A long jutting bill, a gaped mandible, or
-a beak that reaches out past the front of his chest is the fault this bible
-exists to prevent — *(founder: "fix Drew's beak")* — and it is a redraw.
+300-pixel region: mean pixel gradient **3.41** against the plates' **7–8**. The
+model was handed a smear whose most salient dark shape was the hooked tip. The
+current tile is 380 pixels of real linework, unenlarged, at gradient **7.91**.
 
 ### The eyes
 **Heavy-lidded and deadpan**: visible white, a distinct dark iris and pupil, a
@@ -231,10 +248,10 @@ defers with amusement — she settles the argument, and he enjoys that.
 
 - A human body, human skin, bare forearms, or a human face
 - A short, thick, or straight neck; a goose posture
-- A long, jutting, or gaped beak; any beak longer than the head is wide
+- A gaped bill; a deep heavy bill more than a third as deep as it is long
 - An oversized head
 - A drawn brow ridge over the eye; a nostril with a lid, lash or catchlight
-- A black tip hanging below the chin line, hooking toward the throat, or carrying a highlight streak
+- Black that extends the bill's outline — a downward point, a hook, or a highlight streak
 - A gaunt, hollow-eyed, skull-like or sinister look
 - Missing bow tie
 - Wingtips instead of hands, or hands that can't hold a stem
