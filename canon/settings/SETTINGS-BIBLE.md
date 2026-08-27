@@ -92,6 +92,17 @@ ever in it — which is also why she is easy to add to any panel.
 
 **Drew frame-left, Mango frame-right**, the shared nut bowl between their glasses.
 
+### The sides — the first thing to check on any panel
+
+> Find the counter. **Drew and Mango are in front of it. Abby is behind it.**
+> They are never on the same side, and they never swap.
+>
+> The tell, when it is ambiguous: **whoever is holding the bottle or the bar
+> towel is the bartender.** Those are Abby's props and nobody else's.
+
+*Verified across the twelve-panel batch of 27 August 2026: twelve of twelve
+correct, including all four panels Abby appears in.*
+
 ### What changes, and it is only this
 
 The picture and headline on the **screen**, the writing on the **chalkboard**,
