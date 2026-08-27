@@ -97,6 +97,39 @@ const PANELS = [
   },
 ];
 
+// The character studies (?study=<name>). One figure, alone, on paper — the
+// plate a reader meets the character through. No room, no props beyond the
+// character's own, and no lettering anywhere: this is a drawing of a person,
+// not a scene.
+const STUDY_GROUND =
+  "a plain sheet of cream drawing paper, entirely empty behind the figure — no room, no wall, no " +
+  "furniture, no bar, no horizon, no shading behind them, and no lettering, caption, label, " +
+  "signature or border anywhere on the sheet";
+
+const STUDIES: Record<string, string> = {
+  drew:
+    "A single formal character study of Drew alone, standing three-quarter to us and turned " +
+    "slightly to his left, seen from the knees up, his face in three-quarter view and his gaze " +
+    "level and unhurried but NOT directed at the reader. His long neck is in its full high " +
+    "S-curve so the whole line of it reads. He holds his martini by the stem in one feathered " +
+    "hand, at chest height, the way a man holds a drink he is not hurrying. Every feather, the " +
+    "bow tie, the collar band and the knit of the sweater vest are drawn in full detail.",
+  mango:
+    "A single formal character study of Mango alone, standing three-quarter to us and turned " +
+    "slightly to his right, seen from the knees up, his face in three-quarter view with his " +
+    "earnest hangdog patience, gaze level and NOT directed at the reader. One fur-backed hand " +
+    "rests in his jacket pocket and the other holds his old fashioned at chest height. The black " +
+    "lip-line along his muzzle, the freckles, the fringed drop ears, the flag pin on his left " +
+    "lapel and the wristwatch are all drawn in full detail. He has no tail.",
+  abby:
+    "A single formal character study of Abby alone, standing three-quarter to us and turned " +
+    "slightly to her right, seen from the knees up, her face in three-quarter view with a warm " +
+    "closed-lip smile, gaze level and NOT directed at the reader. Her towel is folded over her " +
+    "left shoulder and she holds a rocks glass and a polishing cloth in her fur-backed hands. " +
+    "The studded leather collar with its teardrop gem, the pearl bracelet, the rolled sleeves of " +
+    "her fitted blouse and her dark fitted skirt are all drawn in full detail.",
+};
+
 // The showcase batch (?set=showcase): ten gag-complete candidates written to
 // this week's actual financial news — six duo panels across the room and two
 // away games, four with the proprietor working. Captions are typeset after
@@ -325,6 +358,45 @@ export async function GET(request: NextRequest) {
       } catch (error) {
         return NextResponse.json({ ok: false, probe: error instanceof Error ? error.message : String(error) });
       }
+    }
+
+    // ?study=<drew|mango|abby> — the character study the Studio Bible page
+    // shows beside each bible. The founder's own concept images are photographs
+    // of prints: paper curl, glare, a page edge, and in Abby's case colour, in
+    // a strip that is strictly black and white. They are the right SOURCE and
+    // the wrong thing to publish. This draws a clean plate from them instead,
+    // in the house hand, and commits it to canon/vision/studies/.
+    const study = params.get("study");
+    if (study) {
+      const who = study.toLowerCase();
+      if (!STUDIES[who]) {
+        return NextResponse.json(
+          { error: `No study for "${study}" — try ${Object.keys(STUDIES).join(", ")}.` },
+          { status: 400 }
+        );
+      }
+      const canonText = await getCanon();
+      const prompt = assemblePrompt(
+        canonText,
+        { scene: STUDIES[who], setting: STUDY_GROUND, characters: [who] },
+        false,
+        false,
+        isMultiRef(version)
+      );
+      const image = await generateCartoonArt({
+        prompt,
+        characters: [who],
+        barScene: false,
+        model: version,
+      });
+      await commitFiles(
+        [
+          { path: `canon/vision/studies/${who}.png`, content: image },
+          { path: `canon/vision/studies/${who}.txt`, content: `${version}\nIMAGE_QUALITY=${process.env.IMAGE_QUALITY ?? "low"}\n\n${prompt}\n` },
+        ],
+        `canon: character study for ${who}`
+      );
+      return NextResponse.json({ ok: true, study: who, path: `canon/vision/studies/${who}.png` });
     }
 
     // ?set=showcase switches from the control cells to the showcase batch.

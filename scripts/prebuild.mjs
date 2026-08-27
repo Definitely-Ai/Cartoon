@@ -145,6 +145,20 @@ if (fs.existsSync(visionSrc)) {
   }
 }
 
+// The drawn character studies the cast page leads with. The founder's own
+// concept images live beside them in canon/vision/ and remain the source the
+// pipeline conditions on — but they are photographs of prints, and one of them
+// is in colour, so they are not what a reader should meet the characters
+// through.
+const studiesSrc = path.join(visionSrc, "studies");
+const studiesDest = path.join(visionDest, "studies");
+if (fs.existsSync(studiesSrc)) {
+  fs.mkdirSync(studiesDest, { recursive: true });
+  for (const file of fs.readdirSync(studiesSrc)) {
+    if (/\.(jpe?g|png|webp)$/i.test(file)) fs.copyFileSync(path.join(studiesSrc, file), path.join(studiesDest, file));
+  }
+}
+
 // The showcase batch — the finished cartoons the Studio Bible page leads
 // with. canon/showcase/index.json names each file and its caption; the art
 // department writes both when a batch passes QC.
