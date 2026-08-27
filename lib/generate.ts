@@ -47,7 +47,7 @@ function loraScale(): number {
   return Number.isFinite(raw) && raw > 0 ? raw : 0.9;
 }
 
-function imageModel(): string {
+export function imageModel(): string {
   return process.env.IMAGE_MODEL || DEFAULT_MODEL;
 }
 

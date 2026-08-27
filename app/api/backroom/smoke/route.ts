@@ -1,7 +1,7 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { BACKROOM_COOKIE, isDoorOpen, isTriggerOpen } from "@/lib/backroom-auth";
 
-import { assemblePrompt, generateCartoonArt, isMultiRef } from "@/lib/generate";
+import { assemblePrompt, generateCartoonArt, imageModel, isMultiRef } from "@/lib/generate";
 import { PublishError, commitFiles, getCanon, readRepoFile } from "@/lib/githubPublish";
 import { getTraining, replicateGet } from "@/lib/replicate";
 
@@ -10,9 +10,13 @@ import { getTraining, replicateGet } from "@/lib/replicate";
 // generated through the exact prompt assembly production uses, committed to
 // the repo for pull-and-inspect.
 //
-//   ?version=<owner/swinging-door:hash>   defaults to the newest succeeded run
+//   ?version=<model>                      defaults to the HOUSE MODEL, the one
+//                                         production draws with. Pass
+//                                         version=lora to reach for the newest
+//                                         succeeded training run instead.
 //   ?n=4                                  how many of the panels (1–4)
 //   ?scale=0.9                            LORA_SCALE for this wave only
+//   ?quality=low|medium|high|auto         the house model's quality dial
 //
 // The pass bar (docs/TRAINING.md): the trio panel shows three DISTINCT
 // on-model characters, the boat is a boat, the bare panel is bare, the
@@ -388,8 +392,15 @@ export async function GET(request: NextRequest) {
       });
     }
 
+    // The default is the model production actually draws with. It used to be
+    // "the newest succeeded training run", from when a fine-tune was the
+    // candidate under test — and that default outlived the fine-tune: three
+    // panels were drawn on the retired LoRA tonight while the caller believed
+    // they were comparing two settings of the house model. Reaching for a
+    // training run is now something you ask for by name.
     let version = params.get("version");
-    if (!version) {
+    if (version === "lora") {
+      version = null;
       const ledgerFile = await readRepoFile(LEDGER);
       const runs = ledgerFile ? (JSON.parse(ledgerFile.bytes.toString("utf8")) as { id: string }[]) : [];
       for (const run of runs.slice().reverse()) {
@@ -406,9 +417,10 @@ export async function GET(request: NextRequest) {
         );
       }
     }
-    if ((version.includes("kontext") || isMultiRef(version)) && params.get("baseline") !== "1") {
+    if (!version) version = imageModel();
+    if (version.includes("kontext") && params.get("baseline") !== "1") {
       return NextResponse.json(
-        { error: "The smoke test is for a fine-tune — Kontext is the baseline, not the candidate. Pass baseline=1 to deliberately smoke the production Kontext path (e.g. after changing its reference boards)." },
+        { error: "Kontext is the retired baseline, not the candidate. Pass baseline=1 to deliberately smoke it (e.g. after changing its reference boards)." },
         { status: 400 }
       );
     }
