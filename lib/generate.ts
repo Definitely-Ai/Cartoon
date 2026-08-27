@@ -247,19 +247,35 @@ export function referenceList(
       list.push({ label: ref.label ?? (i === 0 ? (CAST_BLURB[key] ?? key) : key), ...ref });
     }
   }
-  // No room tile on this path. It was cut from plate 3, so it carried that
-  // plate's TV picture — the reflecting pool — into every cartoon's screen,
-  // and the screen has to illustrate the story being told. The room comes
-  // from the prompt instead, which this model letters and furnishes well.
+  // THE SET. Eighty percent of the strip happens in one bar, and a room
+  // described in words is a different bar every generation — the same lesson
+  // the bill taught: the picture out-votes the text, so give it the picture.
+  //
+  // A room tile was tried once before and withdrawn because it was cut from
+  // plate 3 and carried that plate's television picture into every cartoon's
+  // screen. This one is drawn for the purpose with the screen and the
+  // chalkboard BLANK, so it can only teach layout, fixtures and furniture.
+  if (barScene) {
+    list.push({
+      path: "canon/vision/studies/room.png",
+      label:
+        "THE SET — the bar itself, the same room in every cartoon. Reproduce its layout exactly: the window " +
+        "with the mirrored sign at far left, the sconces, the television high at centre, the two framed prints " +
+        "below it, the chalkboard right of centre, the walnut panelling, the marble counter across the bottom. " +
+        "This tile is NOT a character and contains no one. Its screen and its chalkboard are deliberately " +
+        "blank — fill them from the scene below, and change nothing else about the room",
+    });
+  }
   return list;
 }
 
 async function uploadReferences(
   characters: string[],
-  barScene: boolean
+  barScene: boolean,
+  explicit?: { path: string; box?: [number, number, number, number] }[]
 ): Promise<string[]> {
   const urls: string[] = [];
-  for (const [i, ref] of referenceList(characters, barScene).entries()) {
+  for (const [i, ref] of (explicit ?? referenceList(characters, barScene)).entries()) {
     const file = await readRepoFile(ref.path);
     if (!file) continue;
     let img = sharp(file.bytes);
@@ -288,6 +304,9 @@ export async function generateCartoonArt(input: {
   /** Override the model for this one call — the smoke-test route injects a
    *  freshly trained version here before IMAGE_MODEL is promoted to it. */
   model?: string;
+  /** Explicit reference tiles (repo paths), used instead of the cast's. The
+   *  set plate is drawn from the founder's own bar plates and has no cast. */
+  references?: { path: string; box?: [number, number, number, number]; label?: string }[];
 }): Promise<Buffer> {
   const model = input.model ?? imageModel();
   const multiRef = isMultiRef(model);
@@ -299,7 +318,7 @@ export async function generateCartoonArt(input: {
   if (multiRef) {
     const art = await generateImage(
       model,
-      multiRefInput(model, input.prompt, await uploadReferences(input.characters, input.barScene ?? false))
+      multiRefInput(model, input.prompt, await uploadReferences(input.characters, input.barScene ?? false, input.references))
     );
     return input.barScene ? cropAtTheCounter(art) : art;
   }

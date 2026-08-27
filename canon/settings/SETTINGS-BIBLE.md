@@ -49,16 +49,45 @@ world who build relationships at a good bar:
 
 ## The room, mapped (fixed — it never moves)
 
-Continuity comes from the room being the same room every day. Camera: eye
-level from the room, the dark-wood bar running along the lower third.
+Continuity is not a description, it is a **picture**. The set is drawn once as
+`canon/vision/studies/room.png` — the empty room, from the house camera, with
+the television and the chalkboard **deliberately blank** — and that plate rides
+along as a reference on every bar cartoon. A room given in words is a different
+bar every generation; a room given as a picture is the same bar.
 
-- **TV** — the large flatscreen, mounted over the back bar.
-- **Chalkboard** — on the wall beside the back bar shelves.
-- **Framed "The Swinging Door" script sign** — on the wall; the reversed
-  window sign upper right when the front window is in frame.
-- **Bar** — dark wood, stools and club chairs on the room side, pun-labeled
-  bottles and mirror behind.
-- **Drew frame-left, Mango frame-right**, the nut bowl between their glasses.
+*(An earlier room tile was withdrawn because it was cut from plate 3 and carried
+that plate's television picture into every cartoon's screen. Blank signage
+surfaces are what make a set plate safe: it can then teach layout and nothing
+else.)*
+
+**Camera.** We stand on the bartender's side and look out across the counter
+into the room, at eye level. The near lip of the **marble** counter runs left to
+right across the lowest part of the picture and the panel ends there.
+
+**The wall beyond the counter, left to right — this arrangement never changes:**
+
+| Position | Fixture |
+| --- | --- |
+| Far left | The front window onto the street, lower half frosted, carrying **THE SWINGING DOOR** in gilt script **mirrored**, read from inside |
+| Left of centre | A brass wall sconce with a small pleated shade |
+| Centre, high | The television in a slim black frame — the day's story, and **nothing written on its frame** |
+| Below the television | Two small framed prints, **non-figurative**: a sailing ship and a bull |
+| Right of centre | The chalkboard in a dark wooden frame, at head height — the day's price |
+| Far right | A second sconce, matching |
+| Between them all | Dark walnut panelling, tall fielded panels, a moulded chair rail |
+
+**The back bar is behind the reader and is never drawn.** The bottles, the
+mirror and the glass racks are real and they are at our own back: Drew and Mango
+are patrons, and a shelf of bottles behind either of them means the sides have
+been swapped.
+
+**What changes, and it is only this:** the picture and headline on the screen,
+the writing on the chalkboard, what stands on the marble, and what the
+characters are doing. Everything else in the table above is the same in every
+cartoon, in the same place, at the same size.
+
+**Drew frame-left, Mango frame-right**, the shared nut bowl between their
+glasses, Abby on the camera's side of the marble when she appears.
 
 ## Stage rules (the physics of every panel)
 

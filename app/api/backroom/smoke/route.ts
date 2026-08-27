@@ -112,6 +112,41 @@ const PANELS: Panel[] = [
   },
 ];
 
+// THE SET PLATE. One room, drawn once, so that eighty percent of the strip
+// stops being a different bar every day. Everything here is fixed; only the
+// screen, the chalkboard and what stands on the marble ever change.
+const SET_PLATE_PROMPT =
+  "Draw ONE single-panel black-and-white interior in a dense antique-engraving hand — fine dash-hatching, " +
+  "paper white, one mid-grey wash, solid black, no colour anywhere and no photographic rendering. This is a " +
+  "SET PLATE: the empty interior of an upscale bar, and THERE ARE NO PEOPLE, NO ANIMALS AND NO CHARACTERS OF " +
+  "ANY KIND anywhere in it.\n\n" +
+  "CAMERA. We stand on the bartender's side of the bar looking out across it into the room, at eye level. The " +
+  "near lip of a POLISHED MARBLE COUNTER runs left to right across the LOWEST part of the picture and the panel " +
+  "ends there — nothing below the counter is in frame: no stools, no footrest, no floor.\n\n" +
+  "THE WALL BEYOND THE COUNTER, left to right, and this arrangement never changes:\n" +
+  "FAR LEFT, the front window onto the street, its lower half of frosted glass, carrying the bar's name in " +
+  "gilt script lettering seen from behind — THE SWINGING DOOR, MIRRORED, reading backwards.\n" +
+  "LEFT OF CENTRE, a brass wall sconce with a small pleated shade.\n" +
+  "CENTRE, high on the wall, a large flat television in a slim black frame. ITS SCREEN IS COMPLETELY BLANK — " +
+  "an empty pale rectangle with no picture, no headline band, no letters and no marks of any kind on it, and " +
+  "its frame carries no badge, no nameplate and no lettering.\n" +
+  "BELOW THE TELEVISION, two small framed prints on the panelling, NON-FIGURATIVE — a sailing ship and a bull " +
+  "— with no people in them and no lettering.\n" +
+  "RIGHT OF CENTRE, a chalkboard in a dark wooden frame, hung at head height. IT IS COMPLETELY BLANK — an " +
+  "empty dark slate with no chalk writing, no words, no numbers and no marks of any kind.\n" +
+  "FAR RIGHT, a second brass sconce matching the first.\n" +
+  "Everywhere between them, DARK WALNUT PANELLING in tall fielded panels with a moulded chair rail.\n\n" +
+  "ON THE MARBLE, nothing but a folded bar towel at the far left end and a small empty nut bowl at centre. NO " +
+  "glasses, NO bottles, NO drinks.\n\n" +
+  "THE BACK BAR IS BEHIND THE READER AND IS NOT DRAWN. There are NO liquor bottles, NO shelves and NO glass " +
+  "racks anywhere in this picture.\n\n" +
+  "THERE IS NO LETTERING ANYWHERE IN THIS PICTURE except the mirrored gilt script of THE SWINGING DOOR on the " +
+  "window. The screen is blank, the chalkboard is blank, the prints are blank, the television frame is blank. " +
+  "Do not draw text-like marks as texture.\n\n" +
+  "The attached images are the founder's own bar panels: take the drawing hand, the panelling, the marble and " +
+  "the warmth of the room from them — and nothing else. Do not copy their characters, their signage or their " +
+  "lettering.";
+
 // The character studies (?study=<name>). One figure, alone, on paper — the
 // plate a reader meets the character through. No room, no props beyond the
 // character's own, and no lettering anywhere: this is a drawing of a person,
@@ -398,6 +433,37 @@ export async function GET(request: NextRequest) {
       } catch (error) {
         return NextResponse.json({ ok: false, probe: error instanceof Error ? error.message : String(error) });
       }
+    }
+
+    // ?plate=room — THE SET. The strip lives in one bar, and a room described
+    // in words is a different bar every generation. This draws it ONCE, empty,
+    // from the house camera, and canon/vision/studies/room.png then rides along
+    // as a reference on every bar cartoon.
+    //
+    // The screen and the chalkboard are drawn BLANK on purpose. A room tile was
+    // tried before, cut from plate 3, and it carried that plate's television
+    // picture — the reflecting pool — into every cartoon's screen. A plate with
+    // empty signage teaches layout and furniture and nothing else; the story
+    // goes on the screen from the scene brief.
+    if (params.get("plate") === "room") {
+      const image = await generateCartoonArt({
+        prompt: SET_PLATE_PROMPT,
+        characters: [],
+        barScene: false,
+        model: version,
+        references: [
+          { path: "canon/vision/plate-1-security-and-martini-menu.jpg", box: [16, 1460, 1600, 1140] },
+          { path: "canon/vision/plate-4-nineteenth-hole-and-tariffs.jpg", box: [16, 150, 1590, 700] },
+        ],
+      });
+      await commitFiles(
+        [
+          { path: "canon/vision/studies/room.png", content: image },
+          { path: "canon/vision/studies/room.txt", content: `${version}\nIMAGE_QUALITY=${process.env.IMAGE_QUALITY ?? "low"}\n\n${SET_PLATE_PROMPT}\n` },
+        ],
+        "canon: the set plate for The Swinging Door"
+      );
+      return NextResponse.json({ ok: true, plate: "room", path: "canon/vision/studies/room.png" });
     }
 
     // ?study=<drew|mango|abby> — the character study the Studio Bible page
