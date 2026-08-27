@@ -1,5 +1,5 @@
 definitely-ai/swinging-door-v2:207429846e3c1448076cec7392e8d679afb952d2e8b3c63324fb2adba10e66fb
-IMAGE_QUALITY=medium
+IMAGE_QUALITY=high
 LORA_SCALE=0.9 (default)
 CAPTION Drew: "The middle seat is now our best-performing square foot."
 
