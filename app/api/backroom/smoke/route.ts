@@ -523,7 +523,10 @@ export async function GET(request: NextRequest) {
       return NextResponse.json({ error: `No panel named "${only}" — slugs: ${panelSet.map((p) => p.slug).join(", ")}.` }, { status: 400 });
     }
     const canon = await getCanon();
-    const stamp = new Date().toISOString().replace(/[-:]/g, "").slice(0, 13).replace("T", "-");
+    // Seconds, not minutes: two rolls fired inside the same minute -- which is
+    // exactly what a quality comparison does -- used to land on the same name,
+    // and the second silently overwrote the first.
+    const stamp = new Date().toISOString().replace(/[-:]/g, "").slice(0, 15).replace("T", "-");
 
     const started = Date.now();
     const made: string[] = [];
