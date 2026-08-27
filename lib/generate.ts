@@ -208,7 +208,12 @@ export function isMultiRef(model: string): boolean {
 
 /** Each vendor names the reference array differently, and Black Forest Labs
  *  alone insists on a safety dial. One place to keep the differences. */
-function multiRefInput(model: string, prompt: string, images: string[]): Record<string, unknown> {
+function multiRefInput(
+  model: string,
+  prompt: string,
+  images: string[],
+  quality?: string
+): Record<string, unknown> {
   if (model.includes("flux-2")) {
     return { prompt, input_images: images, aspect_ratio: "4:5", output_format: "png", safety_tolerance: 2 };
   }
@@ -217,13 +222,16 @@ function multiRefInput(model: string, prompt: string, images: string[]): Record<
   }
   if (model.includes("gpt-image")) {
     // OpenAI prices this one by variant — low is ~$0.012 an image against
-    // high's ~$0.128, so the house draws at low and only works up if the
-    // pixels ask for it. Medium is the house default: low lost the bill
-    // silhouette and the fine hatching. IMAGE_QUALITY is the dial.
+    // high's ~$0.128. Medium is the house default: low lost the bill
+    // silhouette and the fine hatching. The dial arrives as an argument
+    // rather than an environment variable, because two overlapping requests
+    // share one warm process: a comparison that set process.env per request
+    // had the second call overwrite the first mid-render, and both panels
+    // came back at the same setting while each log claimed its own.
     return {
       prompt,
       input_images: images,
-      quality: process.env.IMAGE_QUALITY || "medium",
+      quality: quality || process.env.IMAGE_QUALITY || "medium",
       moderation: "low",
       aspect_ratio: process.env.IMAGE_ASPECT || "2:3",
       output_format: "png",
@@ -310,6 +318,9 @@ export async function generateCartoonArt(input: {
   /** Explicit reference tiles (repo paths), used instead of the cast's. The
    *  set plate is drawn from the founder's own bar plates and has no cast. */
   references?: { path: string; box?: [number, number, number, number]; label?: string }[];
+  /** The house model's quality dial for this one call. Passed rather than
+   *  read from the environment so concurrent requests cannot trade dials. */
+  quality?: string;
 }): Promise<Buffer> {
   const model = input.model ?? imageModel();
   const multiRef = isMultiRef(model);
@@ -321,7 +332,12 @@ export async function generateCartoonArt(input: {
   if (multiRef) {
     const art = await generateImage(
       model,
-      multiRefInput(model, input.prompt, await uploadReferences(input.characters, input.barScene ?? false, input.references))
+      multiRefInput(
+        model,
+        input.prompt,
+        await uploadReferences(input.characters, input.barScene ?? false, input.references),
+        input.quality
+      )
     );
     return input.barScene ? cropAtTheCounter(art) : art;
   }

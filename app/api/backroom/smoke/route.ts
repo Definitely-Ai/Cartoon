@@ -425,19 +425,27 @@ export async function GET(request: NextRequest) {
       );
     }
 
-    // ?quality=low|medium|high — gpt-image-2's variant dial, per request.
-    // low is ~$0.012 an image and high ~$0.128, so the house draws at low and
-    // this is how a single panel gets asked for more effort without a deploy.
-    const quality = params.get("quality");
-    if (quality && ["low", "medium", "high", "auto"].includes(quality)) {
-      process.env.IMAGE_QUALITY = quality;
-    }
+    // ?quality=low|medium|high — the house model's variant dial, per request.
+    // Medium is ~$0.047 an image against high's ~$0.128, so this is how a
+    // single panel gets asked for more effort without a deploy. It is carried
+    // to the call as an argument and never written to process.env: two
+    // overlapping requests share one warm function instance, and a comparison
+    // that set the environment had the second request's dial land on the
+    // first's render -- two panels at the same setting, each log claiming
+    // otherwise.
+    const asked = params.get("quality");
+    const quality = asked && ["low", "medium", "high", "auto"].includes(asked) ? asked : undefined;
+    const qualityLabel = quality ?? process.env.IMAGE_QUALITY ?? "medium (default)";
 
     const scale = params.get("scale");
     if (scale && Number(scale) > 0) {
-      // Per-request override of the strength dial; generateCartoonArt reads
-      // the env at call time, and a Vercel function instance handles one
-      // request at a time, so this cannot leak across users.
+      // Per-request override of the strength dial for the retired fine-tune
+      // path. This writes a process global, and the claim that once stood
+      // here -- that a function instance handles one request at a time -- is
+      // not true: two overlapping smoke requests demonstrably shared one
+      // instance and traded dials. Harmless while nothing but a deliberate
+      // version=lora run reads it; move it to an argument, as quality now is,
+      // before trusting it again.
       process.env.LORA_SCALE = scale;
     }
 
@@ -447,7 +455,7 @@ export async function GET(request: NextRequest) {
     const probe = params.get("probe");
     if (probe && params.get("baseline") === "1") {
       try {
-        await generateCartoonArt({ prompt: probe, characters: ["drew"], model: version });
+        await generateCartoonArt({ prompt: probe, characters: ["drew"], model: version, quality });
         return NextResponse.json({ ok: true, probe: "passed" });
       } catch (error) {
         return NextResponse.json({ ok: false, probe: error instanceof Error ? error.message : String(error) });
@@ -470,6 +478,7 @@ export async function GET(request: NextRequest) {
         characters: [],
         barScene: false,
         model: version,
+        quality,
         references: [
           { path: "canon/vision/plate-1-security-and-martini-menu.jpg", box: [16, 1460, 1600, 1140] },
           { path: "canon/vision/plate-4-nineteenth-hole-and-tariffs.jpg", box: [16, 150, 1590, 700] },
@@ -478,7 +487,7 @@ export async function GET(request: NextRequest) {
       await commitFiles(
         [
           { path: "canon/vision/studies/room.png", content: image },
-          { path: "canon/vision/studies/room.txt", content: `${version}\nIMAGE_QUALITY=${process.env.IMAGE_QUALITY ?? "low"}\n\n${SET_PLATE_PROMPT}\n` },
+          { path: "canon/vision/studies/room.txt", content: `${version}\nIMAGE_QUALITY=${qualityLabel}\n\n${SET_PLATE_PROMPT}\n` },
         ],
         "canon: the set plate for The Swinging Door"
       );
@@ -513,11 +522,12 @@ export async function GET(request: NextRequest) {
         characters: [who],
         barScene: false,
         model: version,
+        quality,
       });
       await commitFiles(
         [
           { path: `canon/vision/studies/${who}.png`, content: image },
-          { path: `canon/vision/studies/${who}.txt`, content: `${version}\nIMAGE_QUALITY=${process.env.IMAGE_QUALITY ?? "low"}\n\n${prompt}\n` },
+          { path: `canon/vision/studies/${who}.txt`, content: `${version}\nIMAGE_QUALITY=${qualityLabel}\n\n${prompt}\n` },
         ],
         `canon: character study for ${who}`
       );
@@ -569,6 +579,7 @@ export async function GET(request: NextRequest) {
           barScene: !panel.candidate.setting,
           staged,
           model: version,
+          quality,
         });
         const name = `${stamp}-${panel.slug}`;
         await commitFiles(
@@ -577,7 +588,7 @@ export async function GET(request: NextRequest) {
             {
               path: `${OUT_DIR}/${name}.txt`,
               content:
-                `${version}\nIMAGE_QUALITY=${process.env.IMAGE_QUALITY ?? "medium (default)"}\n` +
+                `${version}\nIMAGE_QUALITY=${qualityLabel}\n` +
                 `LORA_SCALE=${process.env.LORA_SCALE ?? "0.9 (default)"}\n` +
                 ("caption" in panel && panel.caption ? `CAPTION ${panel.caption}\n` : "") +
                 `\n${prompt}\n`,
