@@ -27,9 +27,24 @@ const LEDGER = "scripts/training/runs.json";
 const OUT_DIR = "scripts/training/smoke";
 const TIME_BUDGET_MS = 240_000;
 
+// One shape for both panel sets. Declared rather than inferred: whether any
+// single entry happens to carry a `setting` should not decide whether the
+// route can ask for one.
+type Panel = {
+  slug: string;
+  caption?: string;
+  candidate: {
+    scene: string;
+    tv?: string;
+    board?: string;
+    setting?: string;
+    characters: string[];
+  };
+};
+
 // One identity cell and three obedience cells — the halves of the control
 // batch a machine can pre-screen before Rick's dials do the real judging.
-const PANELS = [
+const PANELS: Panel[] = [
   {
     slug: "trio-bar",
     candidate: {
@@ -130,118 +145,143 @@ const STUDIES: Record<string, string> = {
     "her fitted blouse and her dark fitted skirt are all drawn in full detail.",
 };
 
-// The showcase batch (?set=showcase): ten gag-complete candidates written to
-// this week's actual financial news — six duo panels across the room and two
-// away games, four with the proprietor working. Captions are typeset after
-// QC, not here.
-const SHOWCASE = [
+// The showcase batch (?set=showcase): twelve cartoons out of the writers'
+// room — six mechanisms, none of them used more than three times, against a
+// previous ten that was six-tenths reclassification. Every caption ends on its
+// payload word, puts the speaker or the reader inside the sentence, and shares
+// no fact with the chalkboard beside it. Captions are typeset after QC, not
+// here.
+const SHOWCASE: Panel[] = [
   {
-    slug: "sc01-hike-odds",
-    caption: 'Drew: "Best seller all year. Nobody has ever had to make one."',
+    slug: "sc01-best-performing-square-foot",
+    caption: 'Drew: "The middle seat is now our best-performing square foot."',
     candidate: {
       scene:
-        "Drew sits frame-left on a stool at the marble bar counter with his martini, studying the chalkboard; Mango sits frame-right beside him over his old fashioned, turned toward Drew in three-quarter view. CAMERA: we stand on the bartender's side of the bar and look ACROSS the marble counter at the two patrons; the near lip of the marble crosses the bottom of the frame with their drinks standing on it. BEHIND Drew and Mango is the ROOM — dark walnut panelling, small framed prints, brass wall sconces, the wall-mounted television and the chalkboard. There are NO liquor bottles, NO back-bar shelves and NO glass racks anywhere behind them; that shelving is at our own back, out of frame. They are seated at the bar, never at a table, and never lined up shoulder to shoulder. Each character is seen from the FRONT or in three-quarter view with his or her face fully visible to the reader — never from behind, never a back or a shoulder turned to us.",
-      tv: "WARSH SPEAKS FRIDAY — HIKE ODDS 45%, AGAIN",
-      board: "THE RATE HIKE $19 — PRICED NIGHTLY, NEVER POURED",
+        "The bar is otherwise completely empty and the two of them are crammed into one corner of it, sharing a single stretch of marble with the nut bowl wedged between them, Mango's elbow already surrendered — stage on the counter, not the foot rail. CAMERA: we stand on the bartender's side of the bar and look ACROSS the marble counter at the two patrons; the near lip of the marble crosses the bottom of the frame with their drinks standing on it. Drew sits frame-left and Mango frame-right on the far side, facing us. BEHIND THEM is the ROOM — dark walnut panelling, small framed prints, brass wall sconces, the wall-mounted television and the chalkboard. There are NO liquor bottles, NO back-bar shelves and NO glass racks anywhere behind them; that shelving is at our own back, out of frame. The television picture shows A cabin cross-section, three seats abreast, drawn with no aisle anywhere in it. They are seated at the bar, never at a table, and never lined up shoulder to shoulder. Each character is seen in three-quarter view with the face and both eyes readable, and NOBODY looks out of the panel at the reader.",
+      tv: "AIRFARES UP A QUARTER FROM LAST SUMMER",
+      board: "ELBOW ROOM $19 · ARMREST: ONE PER PARTY",
       characters: ["drew", "mango"],
     },
   },
   {
-    slug: "sc02-tariffs",
-    caption: 'Mango: "I had one of each. It felt patriotic both times."',
+    slug: "sc02-reconsidered-the-olive",
+    caption: 'Abby: "I haven\'t raised a number in three years, gentlemen, but I have reconsidered the olive."',
     candidate: {
       scene:
-        "Mango sits frame-right at the marble bar counter with two short whiskies side by side on matching napkins in front of him; Drew sits frame-left with his martini, turned toward Mango with one brow raised. CAMERA: we stand on the bartender's side of the bar and look ACROSS the marble counter at the two patrons; the near lip of the marble crosses the bottom of the frame with their drinks standing on it. BEHIND Drew and Mango is the ROOM — dark walnut panelling, small framed prints, brass wall sconces, the wall-mounted television and the chalkboard. There are NO liquor bottles, NO back-bar shelves and NO glass racks anywhere behind them; that shelving is at our own back, out of frame. They are seated at the bar, never at a table, and never lined up shoulder to shoulder. Each character is seen from the FRONT or in three-quarter view with his or her face fully visible to the reader — never from behind, never a back or a shoulder turned to us.",
-      tv: "CANADA MATCHES 50% TARIFF, DOLLAR FOR DOLLAR",
-      board: "CANADIAN CLUB $9 · RETALIATORY CLUB $9",
+        "Abby sets Drew's martini in front of him — a long three-olive pick carrying exactly one olive, which is this panel's one licensed exception to the three-olive rule — and screws the lid back onto the olive jar before it goes below the counter. CAMERA: we stand on the bartender's side of the bar and look ACROSS the marble counter at the patrons; the near lip of the marble crosses the bottom of the frame. Drew sits frame-left and Mango frame-right on the far side, facing us. BEHIND THEM is the ROOM — dark walnut panelling, small framed prints, brass wall sconces, the wall-mounted television and the chalkboard. There are NO liquor bottles, NO back-bar shelves and NO glass racks anywhere behind them. Abby works on OUR side of the marble, at the frame-right end of the counter in the near foreground, her body angled INTO the frame and her face turned toward the two gentlemen — she is looking at THEM, part of the conversation, seen in three-quarter from the side. The television picture shows A checkout belt carrying four items and a receipt long enough to hang off the end of it. They are seated at the bar, never at a table, and never lined up shoulder to shoulder. Each character is seen in three-quarter view with the face and both eyes readable, and NOBODY looks out of the panel at the reader.",
+      tv: "GROCERIES NOW THE COUNTRY'S BIGGEST MONEY WORRY",
+      board: "MARTINI $18 · UNCHANGED SINCE 2023",
+      characters: ["abby", "drew", "mango"],
+    },
+  },
+  {
+    slug: "sc03-silent-for-a-semiconductor",
+    caption: 'Drew: "Four times a year we all fall silent for a semiconductor."',
+    candidate: {
+      scene:
+        "Mango has taken his hand off his glass and laid it flat over his flag pin, eyes on the screen, and the posture must read as entirely sincere — never comic — while Drew, mid-sip, watches Mango rather than the television. CAMERA: we stand on the bartender's side of the bar and look ACROSS the marble counter at the two patrons; the near lip of the marble crosses the bottom of the frame with their drinks standing on it. Drew sits frame-left and Mango frame-right on the far side, facing us. BEHIND THEM is the ROOM — dark walnut panelling, small framed prints, brass wall sconces, the wall-mounted television and the chalkboard. There are NO liquor bottles, NO back-bar shelves and NO glass racks anywhere behind them; that shelving is at our own back, out of frame. The television picture shows A trading floor with every head turned the same direction and nobody moving. They are seated at the bar, never at a table, and never lined up shoulder to shoulder. Each character is seen in three-quarter view with the face and both eyes readable, and NOBODY looks out of the panel at the reader.",
+      tv: "THE STREET STOPS FOR ONE COMPANY",
+      board: "TONIGHT'S SPECIAL $16 · REPRICED AFTER THE CLOSE · LAST QUARTER IT WAS $14",
       characters: ["drew", "mango"],
     },
   },
   {
-    slug: "sc03-ai-capex",
-    caption: 'Drew: "Committed is money that has not had its second thoughts yet."',
+    slug: "sc04-fourteen-dollars-of-roof",
+    caption: 'Abby: "There\'s about four dollars of whiskey in that glass and fourteen dollars of roof."',
     candidate: {
       scene:
-        "Drew sits frame-left at the marble bar counter lifting his EMPTY martini glass a few inches off the marble to signal another round, both feathered hands in plain view; Mango sits frame-right with his old fashioned, looking up at the screen. CAMERA: we stand on the bartender's side of the bar and look ACROSS the marble counter at the two patrons; the near lip of the marble crosses the bottom of the frame with their drinks standing on it. BEHIND Drew and Mango is the ROOM — dark walnut panelling, small framed prints, brass wall sconces, the wall-mounted television and the chalkboard. There are NO liquor bottles, NO back-bar shelves and NO glass racks anywhere behind them; that shelving is at our own back, out of frame. They are seated at the bar, never at a table, and never lined up shoulder to shoulder. Each character is seen from the FRONT or in three-quarter view with his or her face fully visible to the reader — never from behind, never a back or a shoulder turned to us.",
-      tv: "AI CAPEX: $600B SPENT, $3 TRILLION COMMITTED",
-      board: "MARTINI $18 — COMMITTING TO A MARTINI: FREE",
+        "Abby slides Mango's old fashioned across the marble — one large cube, one dark cherry — past the check spindle, where a renewal envelope thick as a paperback is spiked and still sealed, tall enough to bury the spindle. CAMERA: we stand on the bartender's side of the bar and look ACROSS the marble counter at the patrons; the near lip of the marble crosses the bottom of the frame. Drew sits frame-left and Mango frame-right on the far side, facing us. BEHIND THEM is the ROOM — dark walnut panelling, small framed prints, brass wall sconces, the wall-mounted television and the chalkboard. There are NO liquor bottles, NO back-bar shelves and NO glass racks anywhere behind them. Abby works on OUR side of the marble, at the frame-right end of the counter in the near foreground, her body angled INTO the frame and her face turned toward the two gentlemen — she is looking at THEM, part of the conversation, seen in three-quarter from the side. The television picture shows A small tidy house standing behind a mailbox too full to close — no people in the shot. They are seated at the bar, never at a table, and never lined up shoulder to shoulder. Each character is seen in three-quarter view with the face and both eyes readable, and NOBODY looks out of the panel at the reader.",
+      tv: "TWO IN THREE HOUSEHOLDS SAW PREMIUMS RISE",
+      board: "DEDUCTIBLE HOUR 4–7 · THE FIRST $2,500 IS YOURS",
+      characters: ["abby", "drew", "mango"],
+    },
+  },
+  {
+    slug: "sc05-down-a-percent-at-lunch",
+    caption: 'Drew: "I don\'t look at it during the day, Mango. It was down a percent at lunch."',
+    candidate: {
+      scene:
+        "Away game — the club grill room after nine: Drew's phone lies face-down on the bar under one economical feather-digit with a signed chit beside it, while Mango is still in his cap with his glove tucked in his belt. CAMERA: we stand on the bartender's side of the bar and look ACROSS the marble counter at the two patrons; the near lip of the marble crosses the bottom of the frame with their drinks standing on it. Drew sits frame-left and Mango frame-right on the far side, facing us. BEHIND THEM is the ROOM — dark walnut panelling, small framed prints, brass wall sconces, the wall-mounted television and the chalkboard. There are NO liquor bottles, NO back-bar shelves and NO glass racks anywhere behind them; that shelving is at our own back, out of frame. The television picture shows One chart carrying two lines, both going the same way down. They are seated at the bar, never at a table, and never lined up shoulder to shoulder. Each character is seen in three-quarter view with the face and both eyes readable, and NOBODY looks out of the panel at the reader.",
+      tv: "STOCKS AND BONDS BOTH LOWER",
+      board: "GRILL ROOM MARTINI $18 · QUOTED CONTINUOUSLY · CHARGED ONCE AT SIGNING",
       characters: ["drew", "mango"],
     },
   },
   {
-    slug: "sc04-refinance",
-    caption: 'Mango: "Nobody pays a tab like that. They renew it."',
+    slug: "sc06-ninety-thousand-miles",
+    caption: 'Mango: "I\'m waiting on rates to come down, Drew. My truck has waited ninety thousand miles."',
     candidate: {
       scene:
-        "Mango sits frame-right at the marble bar counter holding the top of a very long paper bar tab in BOTH of his own fur-backed hands, the tab unrolling down off the edge of the marble; Drew sits frame-left, unmoved, turned toward him, and DOES NOT touch the tab — both of Drew's feathered hands stay on his own side, one of them on the stem of his martini. Only two characters and only four hands appear in the panel. CAMERA: we stand on the bartender's side of the bar and look ACROSS the marble counter at the two patrons; the near lip of the marble crosses the bottom of the frame with their drinks standing on it. BEHIND Drew and Mango is the ROOM — dark walnut panelling, small framed prints, brass wall sconces, the wall-mounted television and the chalkboard. There are NO liquor bottles, NO back-bar shelves and NO glass racks anywhere behind them; that shelving is at our own back, out of frame. They are seated at the bar, never at a table, and never lined up shoulder to shoulder. Each character is seen from the FRONT or in three-quarter view with his or her face fully visible to the reader — never from behind, never a back or a shoulder turned to us.",
-      tv: "TREASURY REFINANCES $9.7 TRILLION THIS YEAR",
-      board: "ALL TABS ROLLED OVER NIGHTLY",
+        "Away game — the customer lounge of a truck dealership: Mango turns his key fob over and over on the finance desk with a folded rate sheet pinned under his elbow, his own truck parked outside the showroom glass behind him, while Drew holds a styrofoam cup of the dealership's coffee at arm's length, untasted. CAMERA: we stand on the bartender's side of the bar and look ACROSS the marble counter at the two patrons; the near lip of the marble crosses the bottom of the frame with their drinks standing on it. Drew sits frame-left and Mango frame-right on the far side, facing us. BEHIND THEM is the ROOM — dark walnut panelling, small framed prints, brass wall sconces, the wall-mounted television and the chalkboard. There are NO liquor bottles, NO back-bar shelves and NO glass racks anywhere behind them; that shelving is at our own back, out of frame. The television picture shows A bank's loan-rate sign being changed by a man on a stepladder. They are seated at the bar, never at a table, and never lined up shoulder to shoulder. Each character is seen in three-quarter view with the face and both eyes readable, and NOBODY looks out of the panel at the reader.",
+      tv: "BORROWING GETS DEARER, NOT CHEAPER",
+      board: "THIS MONTH 8.4% APR · IN 2021 IT WAS 2.9% · ON APPROVED CREDIT",
       characters: ["drew", "mango"],
     },
   },
   {
-    slug: "sc05-golf-thirty",
-    caption: 'Drew: "Five and a quarter for thirty years. My swing guarantees nothing of the kind."',
+    slug: "sc07-the-deductible-rehearsal",
+    caption: 'Mango: "The first two thousand of any storm is mine. I like to stay current."',
     candidate: {
       scene:
-        "Drew stands frame-left in a pale golf visor with his martini held by the stem, turned toward Mango; Mango stands frame-right in a white polo and pale cap with his old fashioned, a golf bag leaning at the rail beside him; a framed sign at the edge reads THE SWINGING DOOR 19TH HOLE; a clubhouse television on the post above them carries the story of the day, its banner reading 30-YEAR FIXED HOLDS AT 5.25% and its picture showing a suburban street of for-sale signs. They face each other in three-quarter view, never lined up shoulder to shoulder. Each character is seen from the FRONT or in three-quarter view with his or her face fully visible to the reader — never from behind, never a back or a shoulder turned to us.",
-      setting: "the outdoor 19th hole terrace of a golf course, rolling fairways with distant golfers and a cart behind them",
+        "Mango tips the top inch of his old fashioned into an empty glass, sets that glass firmly aside, and only then lifts his own; Drew watches with mild interest. CAMERA: we stand on the bartender's side of the bar and look ACROSS the marble counter at the two patrons; the near lip of the marble crosses the bottom of the frame with their drinks standing on it. Drew sits frame-left and Mango frame-right on the far side, facing us. BEHIND THEM is the ROOM — dark walnut panelling, small framed prints, brass wall sconces, the wall-mounted television and the chalkboard. There are NO liquor bottles, NO back-bar shelves and NO glass racks anywhere behind them; that shelving is at our own back, out of frame. The television picture shows A house standing in a puddle beneath a very small umbrella. They are seated at the bar, never at a table, and never lined up shoulder to shoulder. Each character is seen in three-quarter view with the face and both eyes readable, and NOBODY looks out of the panel at the reader.",
+      tv: "PREMIUMS UP FOR 65% — DEDUCTIBLES UP TOO",
+      board: "OLD FASHIONED $22 · COVERAGE BEGINS AT THE SECOND INCH",
       characters: ["drew", "mango"],
     },
   },
   {
-    slug: "sc06-jackson-hole",
-    caption: 'Mango: "A symposium in the mountains, to tell us they are still thinking about it."',
+    slug: "sc08-ribbon-cutting",
+    caption: 'Drew: "We have already moved in, Mango. December is only the ribbon-cutting."',
     candidate: {
       scene:
-        "Mango sits frame-right at the marble bar counter leaning toward the screen with his old fashioned; Drew sits frame-left with his martini, entirely unhurried, turned toward Mango. CAMERA: we stand on the bartender's side of the bar and look ACROSS the marble counter at the two patrons; the near lip of the marble crosses the bottom of the frame with their drinks standing on it. BEHIND Drew and Mango is the ROOM — dark walnut panelling, small framed prints, brass wall sconces, the wall-mounted television and the chalkboard. There are NO liquor bottles, NO back-bar shelves and NO glass racks anywhere behind them; that shelving is at our own back, out of frame. They are seated at the bar, never at a table, and never lined up shoulder to shoulder. Each character is seen from the FRONT or in three-quarter view with his or her face fully visible to the reader — never from behind, never a back or a shoulder turned to us.",
-      tv: "JACKSON HOLE: THE SPEECH IS FRIDAY",
-      board: "WYOMING SPRING WATER $12",
+        "Drew's glass is already up toward the screen while Mango turns the bar's wall calendar forward a page with one broad finger. CAMERA: we stand on the bartender's side of the bar and look ACROSS the marble counter at the two patrons; the near lip of the marble crosses the bottom of the frame with their drinks standing on it. Drew sits frame-left and Mango frame-right on the far side, facing us. BEHIND THEM is the ROOM — dark walnut panelling, small framed prints, brass wall sconces, the wall-mounted television and the chalkboard. There are NO liquor bottles, NO back-bar shelves and NO glass racks anywhere behind them; that shelving is at our own back, out of frame. The television picture shows A policy-rate staircase with the final step already drawn in and inked solid. They are seated at the bar, never at a table, and never lined up shoulder to shoulder. Each character is seen in three-quarter view with the face and both eyes readable, and NOBODY looks out of the panel at the reader.",
+      tv: "TRADERS SEE A HIKE BY YEAR END — ODDS AT 100%",
+      board: "THE WINTER MARTINI $19 · POURED FROM FOUR O'CLOCK TODAY",
       characters: ["drew", "mango"],
     },
   },
   {
-    slug: "sc07-sentiment",
-    caption: 'Mango: "I have never felt worse about the economy, Abby. Same again."',
+    slug: "sc09-the-total-aloud",
+    caption: 'Mango: "I announce the total at checkout now, and the man behind me shakes his head at the score."',
     candidate: {
       scene:
-        "CAMERA: we stand on the bartender's side of the bar and look ACROSS the marble counter at the patrons; the near lip of the marble crosses the bottom of the frame. BEHIND Drew and Mango is the ROOM — dark walnut panelling, small framed prints, brass wall sconces, the wall-mounted television and the chalkboard. There are NO liquor bottles, NO back-bar shelves and NO glass racks anywhere behind them; that shelving is at our own back, out of frame. Abby works on OUR side of the marble, at the frame-right end of the counter in the near foreground, her body angled INTO the frame and her face turned toward the two gentlemen — she is looking at THEM, part of the conversation, and we see her head in three-quarter from the side: muzzle, near eye, far eye and both pricked ears all readable. She does NOT look out at the reader and her head is not cranked around on her neck; her face goes where her body goes. She is facing the room, towel on her shoulder, a bottle in her hand. Drew sits frame-left and Mango sits frame-right on the far side of the marble facing us, both in three-quarter view turned toward her: Mango slides his empty rocks glass across the marble toward Abby, and Drew watches the screen over his martini. Three characters, never lined up shoulder to shoulder. Each character is seen from the FRONT or in three-quarter view with his or her face fully visible to the reader — never from behind, never a back or a shoulder turned to us.",
-      tv: "SENTIMENT AT RECORD LOW — SPENDING UP AGAIN",
-      board: "MISERY HOUR 4–7 · DOUBLES $22",
-      characters: ["drew", "mango", "abby"],
+        "Mango reads from a receipt long enough that the end of it hangs over the edge of the marble, and Drew has stopped his martini halfway up, head tilted toward the reading with the courteous attention of a man hearing an away score come in. CAMERA: we stand on the bartender's side of the bar and look ACROSS the marble counter at the two patrons; the near lip of the marble crosses the bottom of the frame with their drinks standing on it. Drew sits frame-left and Mango frame-right on the far side, facing us. BEHIND THEM is the ROOM — dark walnut panelling, small framed prints, brass wall sconces, the wall-mounted television and the chalkboard. There are NO liquor bottles, NO back-bar shelves and NO glass racks anywhere behind them; that shelving is at our own back, out of frame. The television picture shows One paper grocery sack sitting on a butcher's scale. They are seated at the bar, never at a table, and never lined up shoulder to shoulder. Each character is seen in three-quarter view with the face and both eyes readable, and NOBODY looks out of the panel at the reader.",
+      tv: "FOOD PRICES A THIRD HIGHER THAN IN 2020",
+      board: "THE 2020 OLD FASHIONED $12 · TODAY'S $16",
+      characters: ["drew", "mango"],
     },
   },
   {
-    slug: "sc08-sp-8000",
-    caption: 'Drew: "Her target follows the price at a respectful distance. It is called research."',
+    slug: "sc10-refund-went-home",
+    caption: 'Mango: "I paid it at the register. The refund went home to a warehouse."',
     candidate: {
       scene:
-        "CAMERA: we stand on the bartender's side of the bar and look ACROSS the marble counter at the patrons; the near lip of the marble crosses the bottom of the frame. BEHIND Drew and Mango is the ROOM — dark walnut panelling, small framed prints, brass wall sconces, the wall-mounted television and the chalkboard. There are NO liquor bottles, NO back-bar shelves and NO glass racks anywhere behind them; that shelving is at our own back, out of frame. Abby works on OUR side of the marble, at the frame-right end of the counter in the near foreground, her body angled INTO the frame and her face turned toward the two gentlemen — she is looking at THEM, part of the conversation, and we see her head in three-quarter from the side: muzzle, near eye, far eye and both pricked ears all readable. She does NOT look out at the reader and her head is not cranked around on her neck; her face goes where her body goes. She is resting both hands on the marble, unhurried, having just crossed out the old year-end number on the board and written a higher one over it — the board shows the change and she is nowhere near it now. She has exactly two arms and both of them are at the counter. Drew sits frame-left and Mango sits frame-right on the far side of the marble facing us in three-quarter view, both watching her; Drew has not moved his martini. Three characters, never lined up shoulder to shoulder. Each character is seen from the FRONT or in three-quarter view with his or her face fully visible to the reader — never from behind, never a back or a shoulder turned to us.",
-      tv: "S&P 2% OFF RECORD — STREET TARGETS 8,000",
-      board: "HOUSE MARTINI $18 · YEAR-END TARGET $19",
-      characters: ["drew", "mango", "abby"],
+        "Mango holds a long register receipt flat across the marble with both hands, the way a man holds a treaty, while Drew reads it upside down from his side without lowering his martini. CAMERA: we stand on the bartender's side of the bar and look ACROSS the marble counter at the two patrons; the near lip of the marble crosses the bottom of the frame with their drinks standing on it. Drew sits frame-left and Mango frame-right on the far side, facing us. BEHIND THEM is the ROOM — dark walnut panelling, small framed prints, brass wall sconces, the wall-mounted television and the chalkboard. There are NO liquor bottles, NO back-bar shelves and NO glass racks anywhere behind them; that shelving is at our own back, out of frame. The television picture shows A department-store floor under a SALE banner, the manager shaking hands with a customs officer. They are seated at the bar, never at a table, and never lined up shoulder to shoulder. Each character is seen in three-quarter view with the face and both eyes readable, and NOBODY looks out of the panel at the reader.",
+      tv: "RETAILER RAISES OUTLOOK ON $150M OF TARIFF REFUNDS",
+      board: "IMPORT SURCHARGE $3 A POUR · THE HOUSE KEEPS THE PAPERWORK",
+      characters: ["drew", "mango"],
     },
   },
   {
-    slug: "sc09-housing",
-    caption: 'Abby: "The house keeps winning, gentlemen. Just not the kind anyone lives in."',
+    slug: "sc11-from-windsor",
+    caption: 'Mango: "I buy American now, Drew. Abby tells me this one is from Windsor, Ontario."',
     candidate: {
       scene:
-        "CAMERA: we stand on the bartender's side of the bar and look ACROSS the marble counter at the patrons; the near lip of the marble crosses the bottom of the frame. BEHIND Drew and Mango is the ROOM — dark walnut panelling, small framed prints, brass wall sconces, the wall-mounted television and the chalkboard. There are NO liquor bottles, NO back-bar shelves and NO glass racks anywhere behind them; that shelving is at our own back, out of frame. Abby works on OUR side of the marble, at the frame-right end of the counter in the near foreground, her body angled INTO the frame and her face turned toward the two gentlemen — she is looking at THEM, part of the conversation, and we see her head in three-quarter from the side: muzzle, near eye, far eye and both pricked ears all readable. She does NOT look out at the reader and her head is not cranked around on her neck; her face goes where her body goes. She is polishing a rocks glass with her towel in both hands, addressing the room — the board behind already carries its neat chalk line through one drink name, and she is nowhere near it now. She has exactly two arms and both of them are at the counter. Drew sits frame-left with his martini and Mango sits frame-right with his old fashioned, chin on his hand, both on the far side of the marble facing us in three-quarter view. Three characters, never lined up shoulder to shoulder. Each character is seen from the FRONT or in three-quarter view with his or her face fully visible to the reader — never from behind, never a back or a shoulder turned to us.",
-      tv: "DATA CENTERS OUTBUILD HOUSING",
-      board: "THE STARTER HOME $12 — OUTBID",
-      characters: ["drew", "mango", "abby"],
+        "Abby is mid-pour from a labelled bottle into Mango's rocks glass, towel on her left shoulder and eyes down on the work, while Mango turns to Drew to say it and Drew's eye stays on the label. CAMERA: we stand on the bartender's side of the bar and look ACROSS the marble counter at the patrons; the near lip of the marble crosses the bottom of the frame. Drew sits frame-left and Mango frame-right on the far side, facing us. BEHIND THEM is the ROOM — dark walnut panelling, small framed prints, brass wall sconces, the wall-mounted television and the chalkboard. There are NO liquor bottles, NO back-bar shelves and NO glass racks anywhere behind them. Abby works on OUR side of the marble, at the frame-right end of the counter in the near foreground, her body angled INTO the frame and her face turned toward the two gentlemen — she is looking at THEM, part of the conversation, seen in three-quarter from the side. The television picture shows Two lecterns in two different rooms, filmed at the same height, the same empty chairs behind each. They are seated at the bar, never at a table, and never lined up shoulder to shoulder. Each character is seen in three-quarter view with the face and both eyes readable, and NOBODY looks out of the panel at the reader.",
+      tv: "CANADA MATCHES THE LEVIES, DOLLAR FOR DOLLAR",
+      board: "ALL WHISKY $19 · EITHER SIDE OF THE RIVER",
+      characters: ["abby", "drew", "mango"],
     },
   },
   {
-    slug: "sc10-fed-abby",
-    caption: 'Abby: "I price in a raise every morning, gentlemen. Delivering it is a separate decision."',
+    slug: "sc12-permanent-receipt",
+    caption: 'Drew: "The rate has behaved beautifully this year. Nobody has mentioned the total."',
     candidate: {
       scene:
-        "CAMERA: we stand on the bartender's side of the bar and look ACROSS the marble counter at the patrons; the near lip of the marble crosses the bottom of the frame. BEHIND Drew and Mango is the ROOM — dark walnut panelling, small framed prints, brass wall sconces, the wall-mounted television and the chalkboard. There are NO liquor bottles, NO back-bar shelves and NO glass racks anywhere behind them; that shelving is at our own back, out of frame. Abby works on OUR side of the marble, at the frame-right end of the counter in the near foreground, her body angled INTO the frame and her face turned toward the two gentlemen — she is looking at THEM, part of the conversation, and we see her head in three-quarter from the side: muzzle, near eye, far eye and both pricked ears all readable. She does NOT look out at the reader and her head is not cranked around on her neck; her face goes where her body goes. She is setting a fresh martini down on the marble with both hands busy at her work, one brow raised at the two of them. She has ALREADY chalked the board and is nowhere near it now — she has exactly two arms and both of them are at the counter. Drew sits frame-left and Mango sits frame-right on the far side of the marble facing us in three-quarter view, watching her the way traders watch a Fed meeting. Three characters, never lined up shoulder to shoulder. Each character is seen from the FRONT or in three-quarter view with his or her face fully visible to the reader — never from behind, never a back or a shoulder turned to us.",
-      tv: "HIKE ODDS 45%, AGAIN",
-      board: "MARTINI $18 — CHANCE OF $19 TODAY: 45%",
-      characters: ["drew", "mango", "abby"],
+        "Abby sets the bar check down between them and goes back to her towel; Mango takes it in both hands at reading distance while Drew, martini at rest, does not touch it and plainly is not going to. CAMERA: we stand on the bartender's side of the bar and look ACROSS the marble counter at the patrons; the near lip of the marble crosses the bottom of the frame. Drew sits frame-left and Mango frame-right on the far side, facing us. BEHIND THEM is the ROOM — dark walnut panelling, small framed prints, brass wall sconces, the wall-mounted television and the chalkboard. There are NO liquor bottles, NO back-bar shelves and NO glass racks anywhere behind them. Abby works on OUR side of the marble, at the frame-right end of the counter in the near foreground, her body angled INTO the frame and her face turned toward the two gentlemen — she is looking at THEM, part of the conversation, seen in three-quarter from the side. The television picture shows A flat, obedient line and an anchor caught mid-nod. They are seated at the bar, never at a table, and never lined up shoulder to shoulder. Each character is seen in three-quarter view with the face and both eyes readable, and NOBODY looks out of the panel at the reader.",
+      tv: "PRICE GAUGE COMES IN AS EXPECTED",
+      board: "THE $12 MARTINI · RETIRED WITH HONOURS",
+      characters: ["abby", "drew", "mango"],
     },
   },
 ];
