@@ -233,6 +233,8 @@ export default function ModelsPage() {
         .bible h2 { font-family: ${serif}; font-size: 21px; margin: 26px 0 8px; padding-bottom: 4px; border-bottom: 1px solid #e0d9cb; }
         .bible h2:first-child { margin-top: 0; }
         .bible h3 { font-family: ${serif}; font-size: 16.5px; margin: 18px 0 4px; color: #4a4136; }
+        .bible h4 { font-family: ${serif}; font-size: 15px; font-weight: 400; font-style: italic; margin: 16px 0 4px; color: #6b6153; }
+        .bible h5, .bible h6 { font-family: ${serif}; font-size: 14px; margin: 14px 0 4px; color: #6b6153; }
         .bible p { margin: 0 0 12px; }
         .bible ul { margin: 0 0 14px; padding-left: 20px; }
         .bible li { margin-bottom: 5px; }
