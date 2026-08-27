@@ -1,8 +1,24 @@
 # Abby — Character Bible
 
-**Definitive face study:** `canon/vision/abby-reference.jpg`. **Authority:**
-this bible and `canon/HARRINGTON-VISION.md` govern together; where any older
-sheet, prompt, or note disagrees, the plates and the founder's notes win.
+**Definitive face study:** `canon/vision/abby-face-reference.jpg` — the head
+crop, and the only Abby tile the pipeline sends (`lib/generate.ts:88`,
+`VISION_REFS.abby`). It carries the whole of her signature: the face, the ruff,
+the studded collar, the teardrop gem. Read it as authority for those and for
+nothing further down.
+
+`canon/vision/abby-reference.jpg` is **retired — from conditioning and from
+citation.** It is the same card uncropped, and below the neck it breaks the
+rules set in §3, §4 and §7 of this document. Nothing here needs it; do not open
+it for reference and do not name it in a prompt.
+
+**She is in none of the four plates.** Plate 1 carries two panels, plate 2 two,
+plate 3 one, plate 4 three — eight panels, eight Drews and eight Mangos, no
+Abby. She is the one principal with no Harrington behind her, which is why the
+rules below have to carry their own counts.
+
+**Authority:** this bible and `canon/HARRINGTON-VISION.md` govern together;
+where any older sheet, prompt, or note disagrees, the plates and the founder's
+notes win.
 
 ---
 
@@ -39,18 +55,33 @@ This face took eleven rounds to land. The rule that fixed it: **beauty
 first, engraving second.**
 
 - A **true fluffy westie** — short-muzzled, compact, pretty.
-- **Large glossy dark eyes** with bright catchlights and long lashes; softly
-  arched brows.
-- A small **black nose**; a **warm closed-lip smile**.
+- **Large glossy dark eyes**, round and near-black, each carrying **exactly
+  one** small white catchlight high in the iris.
+- **Her brow is where she acts.** Lay **two or three** fine strokes in a
+  shallow arch above each eye, no heavier than the lash line, and let their
+  tilt carry the beat: level when she rules, inner ends lifted when she is
+  fond, both ends lowered when she is not having it. Fine and few, so the white
+  face stays luminous.
+- A small **black nose**; a **warm closed-lip smile** — one soft upward
+  lip-line, drawn closed, the way a well-bred terrier is drawn at rest in a
+  portrait. *(Expect to fight for this one. `abby-face-reference.jpg` does not
+  draw this mouth, and it is the only tile in `VISION_REFS` sent with no crop
+  box. The fix is the tile, not this line.)*
 - **Silky groomed white fur** in fine individual strokes; two small pricked
   ears, both up.
 - Her face is modelled with **delicate shading, not heavy stipple** — she
   stays soft and luminous even inside the engraved technique. Coarse stipple
   is what made her frightening.
 
-**Never:** coarse or wolfish *(founder: "not so she looks like a werewolf")*,
-stiff, staring, eerie, tongue-out, puppyish, or childlike. She is a grown,
-glamorous, self-assured woman of her species.
+**Take the head from a groomed show westie:** short square muzzle, soft rounded
+skull, fur laid in fine short strokes no longer than the width of her nose, the
+mouth closed, the gaze level and unhurried. Take her eyes from a leading lady
+in her forties — large, round, dark, catchlit. She is a grown, glamorous,
+self-assured woman of her species: an adult, at ease, in her own room.
+
+*(An early round came back wrong and the founder's note was "not so she looks
+like a werewolf." Naming that animal is how it kept arriving. The fix was to
+name the one she is — the redraw list in §7 carries the rest.)*
 
 ---
 
@@ -64,11 +95,17 @@ She stands **upright on two legs**, with humanoid shoulders and arms and
 every finger distinctly drawn. Only her head and hands are pure terrier; the
 body is a shapely feminine humanoid figure.
 
-She is **never** a four-legged dog, and never leans forepaws on the counter.
+She meets the marble the way a proprietor does — **standing to it on her own
+two feet, arms free, upright from the hips**, one hand at her work and the
+other resting on the stone or at her side. What rests on the counter is a
+**hand**: four fingers and a thumb, fur-backed and soft-padded, every finger
+separately drawn, closed on a glass, a towel, or a bottle neck.
 
-**Figure:** trim, natural and graceful — slim hips and legs, **modest bust,
-never exaggerated** *(the founder's correction: "the boobs are too big")*.
-**No tail.**
+**Figure:** take the shape from a **well-cut women's dress shirt on a trim
+woman of forty-five** — a clean shoulder line, a waist the reader can find, and
+one soft curve at the chest that the blouse's placket follows. Slim hips and
+legs; **modest bust, never exaggerated** *(the founder's correction: "the boobs
+are too big")*. **No tail.**
 
 ---
 
@@ -76,12 +113,13 @@ never exaggerated** *(the founder's correction: "the boobs are too big")*.
 
 | Item | Rule |
 | --- | --- |
-| **The collar** | Studded leather with a small teardrop gem pendant at its centre. **He loves the collar** — it is her signature and replaces the old pearl strand |
-| Blouse | Fitted, light, rolled sleeves, open at the collar |
+| **The collar** | A leather band carrying **one row of round domed studs, every stud the same size** — no small or flat studs mixed into the row — with a buckle at the front and one ring below it. The pendant hangs from that ring and nothing else does. **He loves the collar** — it is her signature and replaces the old pearl strand |
+| **The pendant** | **One** small teardrop gem: a broad rounded top, one unbroken curve down each side, meeting in a single point. Its bezel is silver and ringed with **fine beads**, as the face study draws it. Never so small it stops reading as a gem |
+| Blouse | Fitted and light, the **top two buttons** undone, both sleeves **rolled twice and stopped above the elbow** |
 | Skirt | Dark, fitted |
-| Towel | Folded, over her **left shoulder** |
-| Bracelet | A pearl bracelet at the wrist |
-| Shoes | Black heels |
+| Towel | A folded white towel, **in every panel she appears in**. It has two states and no third: at rest it lies over one shoulder and hangs; in use it comes off the shoulder into her hands, one end **inside** the glass she is polishing and the other hand closed round the outside. Which shoulder is not a rule — she is drawn turned into the frame, so the side cannot be read from the picture. A towel that is nowhere in the panel is the fault |
+| Bracelet | **One** strand of pearls at one wrist, drawn whole — never cut off by the bottom edge of the art |
+| Shoes | Black heels — **away games and full-figure studies only**. A bar panel is cropped at the counter, so her shoes are never in one: never fail a bar panel for heels it cannot show, and never add legs to satisfy this row |
 
 Absolutely no tail.
 
@@ -95,9 +133,15 @@ puts Drew and Mango on the far side with the **room** behind them — panelling,
 framed prints, sconces, the television, the chalkboard — and it puts the
 liquor shelves behind the reader, out of frame entirely.
 
-Abby is **the only figure ever on the camera's side**. She stands at the near
-end of the counter, the marble between her and the gentlemen, visibly mid-task.
-Bar panels are cropped at the counter — no legs, no stools.
+Abby is **the only figure ever on the camera's side**. Count along the marble
+left to right: **Drew, then Mango, then Abby** — she is the third, at the near
+end of the counter, standing past the point where the marble stops. Two counts
+settle the geometry without asking the drawing to reason about it: **the
+gentlemen's arms rest on the far lip of the marble and Abby's on the near lip
+or on nothing at all**, and **one of her two hands is closed on a working
+object** — glass, bottle, towel, or chalk. Bar panels are cropped at the
+counter: her blouse hem and the top of her dark skirt may show past the
+counter's end, but no legs, no knees, no feet, no stools.
 
 **Where she looks.** *(Founder: "I don't like how Abby is always looking at us
 — it's weird.")* Her body is angled **into** the frame and her face goes where
@@ -107,17 +151,38 @@ cranked round on its neck. **She never looks out of the panel.** Nobody in this
 room knows the reader is there, and nobody meets his eye. A dead-on stare down
 the lens is a redraw, however pretty the face.
 
-If bottles appear behind Drew or Mango, the sides have been swapped and the
-panel fails.
+**Turning her away is the other failure, and it is the one being made.** Across
+the four panels she has appeared in, one eye or none reaches the paper, and in
+one of them the reader is looking at the back of her skull. Count it: **both
+eyes are drawn, and the far one is at least half the width of the near one**,
+with the bridge of her muzzle showing between them. Her muzzle points at the
+gentlemen and her head turns only as far as keeps that second eye. Mango holds
+both eyes in every one of those same panels; so does she.
 
-**Approved work actions:** polishing a rocks glass with her towel, pouring
-from a labelled bottle, sliding a drink across the marble, chalking the day's
-special, calling last round.
+The back-bar shelf is a **house correction, not a plate rule** — know that
+before filing anything against it. Harrington draws the bottle row directly
+behind both gentlemen in every bar panel of the four plates; plate 3 puts an
+OLD FORESTER behind Drew's neck and a bottle lettered *Rye* behind Mango's
+shoulder. The strip moved that shelving to the reader's back afterwards. So the
+test is narrow: **a shelf or rack of three or more bottles standing behind Drew
+or Mango is a redraw.** One bottle on the marble, or one in Abby's grip, is
+correct. Never file a plate against this rule.
+
+**Approved work actions — pick one, and the scene line names which:** polishing
+a rocks glass with her towel, pouring from a labelled bottle, sliding a drink
+across the marble, chalking the day's special, calling last round. Where the
+scene does not name one she gets drawn standing with a hand flat on the marble,
+which is the proprietor drawn as a guest at her own bar. **One of her two hands
+is closed on that object in every panel.**
 
 **Serving accuracy:** drinks match their owner — Drew's martini with olives on
-a pick, Mango's old fashioned with one large cube and a cherry. Glass rims
-stay round, towels pass around vessels rather than through them, bottle necks
-are gripped securely.
+a pick, Mango's old fashioned with one large cube and a cherry — and every
+martini in a panel carries **the same count of olives** as every other martini
+in that panel. A stemmed glass stands on **its own foot, inside the frame**;
+a stem that runs off the bottom edge is a drink with nothing under it. Glass
+rims stay round, towels pass around vessels rather than through them, bottle
+necks are gripped securely, and every bottle that reaches the frame wears its
+own readable label.
 
 ---
 
@@ -132,19 +197,27 @@ Her lines:
 - *"I price in a raise every morning. Delivering it is a separate decision."*
 - *"The house keeps winning, gentlemen. Just not the kind anyone lives in."*
 
+**When the caption is hers, her mouth is drawn parted** — one drawn word,
+landing a beat before the typeset one. When the line belongs to Drew or Mango,
+her mouth is closed.
+
 Note the address: *gentlemen*. She is fond of them and entirely unintimidated.
 
 ---
 
 ## 7. Forbidden — any one of these is a redraw
 
-- A coarse, wolfish, shepherd-like or werewolf face
+- Anything but the groomed-show-westie head of §2 — short square muzzle, soft
+  rounded skull, fur in fine short strokes
 - A frightening, staring, or eerie expression; heavy stipple deadening the face
 - Puppyish, childlike, or tongue-out
 - A four-legged dog, or forepaws leaning on the counter
 - An exaggerated bust; wide hips or knees
 - A tail
-- Missing collar or missing gem pendant
+- Missing collar or missing gem pendant; more than one thing hanging from its ring
+- A head turned so far that only one eye is on the paper
+- No towel anywhere in the panel — neither on her shoulder nor in her hands
+- A bottle in frame whose label is blank or unreadable
 - Another bartender, staff member, or any human in the room
 - Legs, knees, feet, or stools in a bar panel
 - Colour, flat fills, cel shading, photographic rendering
@@ -154,7 +227,11 @@ Note the address: *gentlemen*. She is fond of them and entirely unintimidated.
 ## 8. Approval standard
 
 A panel passes when Abby is beautiful, plainly a westie, plainly a grown
-woman in command, and plainly the owner of the room — collar at her throat,
-towel on her shoulder, the marble in front of her and the bottles at her back.
-If she reads as frightening, as a puppy, or as a different breed, it fails on
-sight regardless of everything else in the panel.
+woman in command, and plainly the owner of the room. Five of that can be
+counted on the finished pixels before filing: **collar at her throat with its
+pendant, both eyes on the paper, a towel on her shoulder or in her hands, one
+hand closed on a working object, and the marble at her elbow.** Say nothing
+about what stands behind her — §5 puts the back bar at the reader's own back,
+so there are no bottles of hers to check. If she reads as frightening, as a
+puppy, or as a different breed, it fails on sight regardless of everything else
+in the panel.

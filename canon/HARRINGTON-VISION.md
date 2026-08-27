@@ -70,8 +70,7 @@ model: it is the look he rejected.
   or coaster — always within reach at the bar; lifted by the stem in a dainty,
   pinky-elegant grip.
 - **Staging**: frame-left by default, the neck arched to hang his face where
-  the gag needs it, eye sliding sideways at Mango. He is the brightest object
-  in the panel — the paper's white is reserved for him. A monocle is an
+  the gag needs it, eye sliding sideways at Mango. He is pale but hatched, not the white of the paper: measured on plate 1 his vest and neck read grey 150-151 against Mango's 199-204, so Mango is the brighter figure and the untouched paper goes to glass, signage and Mango's shirt. A monocle is an
   approved occasional accessory.
 - **Read**: the arch observer, and a gentleman — classy, composed, well
   turned out. He names the mechanism of the absurdity in one clean sentence.
