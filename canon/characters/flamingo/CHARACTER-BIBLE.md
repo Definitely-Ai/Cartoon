@@ -325,7 +325,7 @@ the single most-looked-at detail in the strip.
 
 | Item | Rule |
 | --- | --- |
-| **Bow tie** | Small, solid black, silk, sitting at the throat. **His default skin** — never without it. **The bow is the only black at his neck:** no band, ribbon, strap, cord or choker runs around the neck or behind it |
+| **Bow tie** | Small, solid black, silk, sitting at the throat. **His default skin** — never without it. **The bow is the only black at his neck:** no band, ribbon, strap, cord or choker runs around the neck or behind it. **Drawn as a tied bow, anatomically:** two wings of equal size spreading left and right, each wider at its outer edge, pinched to a small centre knot — horizontal, level, centred under the chin, resting ON the collar. Never one lump, never a knotless butterfly, never tilted or vertical, never more than two wings |
 | Collar band | Crisp, starched, white, circling the base of the neck under the tie |
 | Sweater vest | V-neck, fine honeycomb or rib knit, ribbed edges, over a pale collared shirt |
 | Trousers | Yes *(founder: "he needs to have pants")* — **and never in frame.** No plate and no filed panel puts anything below his chest in shot; the counter crops him. This row says what he owns. Nothing to inspect, so nothing to tick |
@@ -414,6 +414,7 @@ defers with amusement — she settles the argument, and he enjoys that.
 - Black hung off the end of the bill as a second mass: the pale bill's own outline stops and a deeper shape carries the silhouette on past it, or a white blade is drawn inside the black
 - A gaunt, hollow-eyed, skull-like or sinister look
 - Missing bow tie; any black band, strap or ribbon around the neck behind the bow
+- A bow tie without a centre knot, with one wing or more than two, or tilted off horizontal
 - Any cuff, hem or seam crossing the arm — plumage drawn as a sleeve
 - Wingtips instead of hands, or hands that can't hold a stem
 - Fewer than three digits closed on the stem, or no digit crossing in front of it

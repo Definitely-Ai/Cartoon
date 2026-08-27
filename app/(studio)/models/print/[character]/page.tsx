@@ -54,7 +54,16 @@ export default async function PrintBiblePage({ params }: { params: Promise<{ cha
   }
 
   return (
-    <main style={{ maxWidth: 780, margin: "0 auto", padding: "28px 28px 64px", color: "#1a1a1a" }}>
+    <main
+      style={{
+        maxWidth: 780,
+        margin: "24px auto 48px",
+        padding: "28px 34px 64px",
+        color: "#1a1a1a",
+        background: "#ffffff",
+        borderRadius: 6,
+      }}
+    >
       <div
         className="print-hide"
         style={{
@@ -122,7 +131,7 @@ export default async function PrintBiblePage({ params }: { params: Promise<{ cha
 
         @media print {
           .print-hide { display: none !important; }
-          main { max-width: none !important; padding: 0 !important; }
+          main { max-width: none !important; padding: 0 !important; margin: 0 !important; background: #fff !important; border-radius: 0 !important; }
           .sheet { page-break-inside: auto; }
           .bible blockquote { background: transparent; border-left: 2px solid #999; }
           .bible th { background: transparent; }

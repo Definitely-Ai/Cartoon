@@ -99,7 +99,20 @@ export default function ModelsPage() {
   const showcase = readShowcase();
 
   return (
-    <main style={{ maxWidth: 1180, margin: "0 auto", padding: "16px 16px 72px", color: "#221d16" }}>
+    <main
+      style={{
+        // The studio layout is a dark room. This page is a paper document
+        // laid on it — without its own ground, every dark word outside the
+        // white cards was ink on ink and invisible.
+        maxWidth: 1180,
+        margin: "24px auto 48px",
+        padding: "24px 30px 72px",
+        color: "#221d16",
+        background: "#fdfbf6",
+        borderRadius: 8,
+        boxShadow: "0 2px 18px rgba(0,0,0,0.35)",
+      }}
+    >
       <header style={{ textAlign: "center", margin: "34px 0 8px" }}>
         <p style={{ fontFamily: serif, letterSpacing: 3, fontSize: 12, textTransform: "uppercase", color: "#8a7f6d", margin: 0 }}>
           The Studio Bible
@@ -123,13 +136,13 @@ export default function ModelsPage() {
           color: "#6b6153",
         }}
       >
-        <a href="#cartoons" style={{ color: "inherit" }}>The cartoons</a>
+        <a href="#cartoons" style={{ color: "#6b6153" }}>The cartoons</a>
         <span aria-hidden>·</span>
-        <a href="#cast" style={{ color: "inherit" }}>The cast</a>
+        <a href="#cast" style={{ color: "#6b6153" }}>The cast</a>
         <span aria-hidden>·</span>
-        <a href="#rules" style={{ color: "inherit" }}>House rules</a>
+        <a href="#rules" style={{ color: "#6b6153" }}>House rules</a>
         <span aria-hidden>·</span>
-        <a href="#plates" style={{ color: "inherit" }}>The plates</a>
+        <a href="#plates" style={{ color: "#6b6153" }}>The plates</a>
       </nav>
 
       <section id="cartoons" style={{ margin: "44px 0", scrollMarginTop: 20 }}>
