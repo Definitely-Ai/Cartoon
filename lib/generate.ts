@@ -218,11 +218,12 @@ function multiRefInput(model: string, prompt: string, images: string[]): Record<
   if (model.includes("gpt-image")) {
     // OpenAI prices this one by variant — low is ~$0.012 an image against
     // high's ~$0.128, so the house draws at low and only works up if the
-    // pixels ask for it. IMAGE_QUALITY is the dial, no redeploy required.
+    // pixels ask for it. Medium is the house default: low lost the bill
+    // silhouette and the fine hatching. IMAGE_QUALITY is the dial.
     return {
       prompt,
       input_images: images,
-      quality: process.env.IMAGE_QUALITY || "low",
+      quality: process.env.IMAGE_QUALITY || "medium",
       moderation: "low",
       aspect_ratio: process.env.IMAGE_ASPECT || "2:3",
       output_format: "png",

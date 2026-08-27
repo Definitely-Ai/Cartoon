@@ -92,6 +92,19 @@ ever in it — which is also why she is easy to add to any panel.
 
 **Drew frame-left, Mango frame-right**, the shared nut bowl between their glasses.
 
+### The bar itself — one level, one height, one marble
+
+*(Founder: "constant scene is very important — the marble for the bar, the
+height of the bar, the stools, and only having a one-level bar.")*
+
+| Constant | Canon |
+| --- | --- |
+| **The slab** | ONE continuous flat top of pale grey veined marble, the same marble every day, with a moulded walnut edge |
+| **Levels** | **ONE.** No raised rail, no upper drink shelf, no second tier, no step, no ledge — one surface end to end, and everything on the bar stands on it |
+| **Height** | The top edge crosses each seated gentleman just below mid-chest, the same in every cartoon |
+| **The front** | Walnut panelling below the marble edge |
+| **The seating** | Studded oxblood leather club chairs with brass nailheads. Only the tops of their backs show, along the very bottom of the frame |
+
 ### The bar height, and not merging into it
 
 *(Founder: "we need consistency on the height of the bar and how they are

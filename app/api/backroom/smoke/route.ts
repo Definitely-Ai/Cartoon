@@ -141,8 +141,10 @@ const SET_PLATE_PROMPT =
   "FAR LEFT, where the wall gives onto the street, the front window, its lower half frosted, carrying the " +
   "bar's name in gilt script SEEN FROM BEHIND — THE SWINGING DOOR, MIRRORED, reading backwards.\n" +
   "Dark walnut panelling in tall fielded panels wherever wall shows.\n\n" +
-  "IN FRONT OF THE BACK BAR, running left to right across the picture, the POLISHED MARBLE COUNTER, its front " +
-  "panelled in walnut. On it, nothing but a folded bar towel at one end and a small empty nut bowl at centre " +
+  "IN FRONT OF THE BACK BAR, running left to right across the picture, the POLISHED MARBLE COUNTER — a SINGLE " +
+  "CONTINUOUS FLAT SLAB of pale grey veined marble at ONE height end to end, with a moulded walnut edge and a " +
+  "walnut-panelled front below it. There is NO raised rail, NO upper drink shelf, NO second tier, NO step and " +
+  "NO ledge anywhere on it or behind it — one surface, one height. On it, nothing but a folded bar towel at one end and a small empty nut bowl at centre " +
   "— NO glasses and NO drinks. The panel ENDS at the counter: no stools, no footrest, no floor, nothing below " +
   "it in frame.\n\n" +
   "THERE IS NO LETTERING ANYWHERE IN THIS PICTURE except the mirrored gilt script of THE SWINGING DOOR on the " +
