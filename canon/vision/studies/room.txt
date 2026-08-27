@@ -1,5 +1,5 @@
 openai/gpt-image-2
-IMAGE_QUALITY=medium
+IMAGE_QUALITY=high
 
 Draw ONE single-panel interior as a PEN-AND-INK ENGRAVING: every surface built from fine drawn lines — dash-hatching, cross-hatching and stipple — on PAPER WHITE. It is a drawing on paper, not a photograph and not a rendered three-dimensional room; there is no colour and no smooth gradient anywhere.
 
@@ -17,7 +17,7 @@ A brass wall sconce with a small pleated shade at each end of the back bar.
 FAR LEFT, where the wall gives onto the street, the front window, its lower half frosted, carrying the bar's name in gilt script SEEN FROM BEHIND — THE SWINGING DOOR, MIRRORED, reading backwards.
 Dark walnut panelling in tall fielded panels wherever wall shows.
 
-IN FRONT OF THE BACK BAR, running left to right across the picture, the POLISHED MARBLE COUNTER, its front panelled in walnut. On it, nothing but a folded bar towel at one end and a small empty nut bowl at centre — NO glasses and NO drinks. The panel ENDS at the counter: no stools, no footrest, no floor, nothing below it in frame.
+IN FRONT OF THE BACK BAR, running left to right across the picture, the POLISHED MARBLE COUNTER — a SINGLE CONTINUOUS FLAT SLAB of pale grey veined marble at ONE height end to end, with a moulded walnut edge and a walnut-panelled front below it. There is NO raised rail, NO upper drink shelf, NO second tier, NO step and NO ledge anywhere on it or behind it — one surface, one height. On it, nothing but a folded bar towel at one end and a small empty nut bowl at centre — NO glasses and NO drinks. The panel ENDS at the counter: no stools, no footrest, no floor, nothing below it in frame.
 
 THERE IS NO LETTERING ANYWHERE IN THIS PICTURE except the mirrored gilt script of THE SWINGING DOOR on the window. The screen is blank, the chalkboard is blank, every bottle label is blank, the television frame is blank. Do not draw text-like marks as texture.
 
