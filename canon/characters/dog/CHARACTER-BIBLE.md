@@ -160,14 +160,12 @@ one object to a wrist is something the drawing can count.
   bowl, on the bar itself, in every bar panel. It went missing from sc01, sc02
   and sc03. It is not optional: it is the prop that makes them one party
   rather than two men at the same counter.
-- **He is a patron, never staff.** The camera stands on the bartender's side
-  and looks across the marble at him. **Fill the whole wall behind him from
-  these five things: walnut panelling and wainscot, small framed prints, a
-  brass sconce, the wall television, the chalkboard** — plus, where the wall
-  gives onto the street, the front window with its mirrored gilt lettering.
-  Draw that wall the way you would draw a dining room: it is finished before he
-  is, and it is finished corner to corner. **A shelf of bottles at his shoulder
-  makes him the bartender, and the panel is wrong however well it is drawn.**
+- **He is a patron, never staff.** We look toward the bar from the dining room,
+  so the **back bar with its bottles and mirror is behind him — and that is
+  correct.** What settles it is the **marble counter between him and them**: he
+  sits on the room side, our side. He is never in the service well, never
+  pouring, and **never holding a liquor bottle or a bar towel** — a gentleman
+  holding either reads as the bartender, and that was the original fault.
 - Bar panels are **cropped at the counter** — chest-up, no legs, no stools.
 
 - **Open conflict, his head angle — flagged, not settled.** All eight plate
@@ -230,7 +228,7 @@ hands is a batch that has stopped acting.
   kind
 - At golf, a bare hand, or the bag without its *FORE! NOT SO FAST* towel
 - A hand closed into one fur mitt, or the back of a hand drawn as bare skin
-- Mango on the camera's side of the marble, where only Abby stands
+- Mango behind the counter, in the service well, or holding a bottle or bar towel
 - A necktie at the bar (open collar under the jacket)
 - Colour, flat fills, cel shading, photographic rendering
 

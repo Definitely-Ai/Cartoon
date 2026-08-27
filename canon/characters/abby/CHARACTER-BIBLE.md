@@ -127,21 +127,23 @@ Absolutely no tail.
 
 ## 5. Staging — she owns the service side
 
-**The camera stands where she works.** In the house bar shot the reader is on
-the service side of the marble, looking across it at the two patrons. That
-puts Drew and Mango on the far side with the **room** behind them — panelling,
-framed prints, sconces, the television, the chalkboard — and it puts the
-liquor shelves behind the reader, out of frame entirely.
+**The camera looks toward the bar, and the bar is hers.** We stand in the
+dining room; the back bar fills the background — bottles, mirror, the television
+above it, the chalkboard beside it — and the marble counter runs across in front
+of it all. Drew and Mango sit at that counter on the room side, our side.
 
-Abby is **the only figure ever on the camera's side**. Count along the marble
-left to right: **Drew, then Mango, then Abby** — she is the third, at the near
-end of the counter, standing past the point where the marble stops. Two counts
-settle the geometry without asking the drawing to reason about it: **the
-gentlemen's arms rest on the far lip of the marble and Abby's on the near lip
-or on nothing at all**, and **one of her two hands is closed on a working
-object** — glass, bottle, towel, or chalk. Bar panels are cropped at the
-counter: her blouse hem and the top of her dark skirt may show past the
-counter's end, but no legs, no knees, no feet, no stools.
+**Abby stands behind the counter, on the service side, framed against her own
+back bar.** She is the only figure ever in that space, and it is why she can be
+added to any panel without re-staging it: her place is always there, waiting.
+
+Two counts settle the geometry without asking the drawing to reason about it:
+**the gentlemen's arms rest on the near lip of the marble and Abby is beyond
+it**, and **one of her two hands is closed on a working object** — glass,
+bottle, towel, or chalk. Those working objects are hers alone: a gentleman
+holding a bottle or a bar towel reads as the bartender.
+
+Bar panels are cropped at the counter: her blouse and the top of her dark skirt
+may show above the marble, but no legs, no knees, no feet, no stools.
 
 **Where she looks.** *(Founder: "I don't like how Abby is always looking at us
 — it's weird.")* Her body is angled **into** the frame and her face goes where

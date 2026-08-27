@@ -50,44 +50,54 @@ world who build relationships at a good bar:
 ## The room, mapped (fixed — it never moves)
 
 Continuity is not a description, it is a **picture**. The set is drawn once as
-`canon/vision/studies/room.png` — the empty room, from the house camera, with
-the television and the chalkboard **deliberately blank** — and that plate rides
-along as a reference on every bar cartoon. A room given in words is a different
-bar every generation; a room given as a picture is the same bar.
+`canon/vision/studies/room.png` — the empty bar, from the house camera, with the
+television, the chalkboard and every bottle label **deliberately blank** — and
+that plate rides along as a reference on every bar cartoon. A room given in
+words is a different bar every generation; a room given as a picture is the same
+bar.
 
-*(An earlier room tile was withdrawn because it was cut from plate 3 and carried
-that plate's television picture into every cartoon's screen. Blank signage
-surfaces are what make a set plate safe: it can then teach layout and nothing
-else.)*
+*(Blank signage surfaces are what make a set plate safe. An earlier one was
+withdrawn because it was cut from plate 3 and carried that plate's television
+picture into every cartoon's screen.)*
 
-**Camera.** We stand on the bartender's side and look out across the counter
-into the room, at eye level. The near lip of the **marble** counter runs left to
-right across the lowest part of the picture and the panel ends there.
+### The camera
 
-**The wall beyond the counter, left to right — this arrangement never changes:**
+**We stand in the dining room, a few feet back, looking toward the bar.** The
+bar fills the background. This is the correction that made the room make sense:
+the television, the chalkboard and the back bar all belong to the bar, so the
+bar has to be what we are looking at.
 
 | Position | Fixture |
 | --- | --- |
-| Far left | The front window onto the street, lower half frosted, carrying **THE SWINGING DOOR** in gilt script **mirrored**, read from inside |
-| Left of centre | A brass wall sconce with a small pleated shade |
-| Centre, high | The television in a slim black frame — the day's story, and **nothing written on its frame** |
-| Below the television | Two small framed prints, **non-figurative**: a sailing ship and a bull |
-| Right of centre | The chalkboard in a dark wooden frame, at head height — the day's price |
-| Far right | A second sconce, matching |
-| Between them all | Dark walnut panelling, tall fielded panels, a moulded chair rail |
+| Across the background | The **back bar** — walnut shelving, a mirror behind, rows of house bottles, hanging stemware above |
+| Centre, high above the back bar | The **television**, a flat screen with a narrow bezel — the day's story |
+| Right of the television | The **chalkboard** in a dark wooden frame — the day's price |
+| Each end of the back bar | A brass sconce with a small pleated shade |
+| Far left, onto the street | The front window, lower half frosted, **THE SWINGING DOOR** in mirrored gilt script |
+| Wherever wall shows | Dark walnut panelling, tall fielded panels |
+| Across the front | The polished **marble counter**, walnut-panelled below |
 
-**The back bar is behind the reader and is never drawn.** The bottles, the
-mirror and the glass racks are real and they are at our own back: Drew and Mango
-are patrons, and a shelf of bottles behind either of them means the sides have
-been swapped.
+### Who stands where
 
-**What changes, and it is only this:** the picture and headline on the screen,
-the writing on the chalkboard, what stands on the marble, and what the
-characters are doing. Everything else in the table above is the same in every
-cartoon, in the same place, at the same size.
+**Drew and Mango sit at the counter on the room side — our side**, turned toward
+each other so both faces read in three-quarter. **The counter is between them
+and the bottles, and that is the whole test:** they are patrons. Never in the
+service well, never among the bottles, never pouring, and never holding a liquor
+bottle or a bar towel — a gentleman holding either reads as the bartender, which
+was the original fault.
 
-**Drew frame-left, Mango frame-right**, the shared nut bowl between their
-glasses, Abby on the camera's side of the marble when she appears.
+**Abby stands behind the counter on the service side**, framed against the back
+bar, facing them across the marble. That is her place and she is the only one
+ever in it — which is also why she is easy to add to any panel.
+
+**Drew frame-left, Mango frame-right**, the shared nut bowl between their glasses.
+
+### What changes, and it is only this
+
+The picture and headline on the **screen**, the writing on the **chalkboard**,
+what stands on the **marble**, and what the characters are **doing**. Everything
+in the table above is the same in every cartoon, in the same place, at the same
+size.
 
 ## Stage rules (the physics of every panel)
 

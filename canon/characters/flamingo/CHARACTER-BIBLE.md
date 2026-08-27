@@ -343,12 +343,12 @@ Themed dressing stays in this key: knitwear and club-house. Never a costume.
   hand. Do not rewrite the sentence.**
 - **Frame-left** by default, neck arched so his face hangs where the gag needs
   it, eye sliding sideways at Mango.
-- **He is a patron, never staff.** The camera stands on the bartender's side
-  and looks across the marble at him; behind Drew is the **room** — panelling,
-  framed prints, sconces, the television, the chalkboard. **No bottles, no
-  back-bar shelves, no glass racks are ever drawn behind him.** A bottle shelf
-  at his shoulder makes him read as the bartender, and the panel is wrong
-  however well it is drawn.
+- **He is a patron, never staff.** We look toward the bar from the dining room,
+  so the **back bar with its bottles and mirror is behind him — and that is
+  correct.** What settles it is the **marble counter between him and them**: he
+  sits on the room side, our side. He is never in the service well, never
+  pouring, and **never holding a liquor bottle or a bar towel** — a gentleman
+  holding either reads as the bartender, and that was the original fault.
 - Bar panels are **cropped at the counter** — chest-up, no legs, no stools.
 
 ---

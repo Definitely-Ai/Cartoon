@@ -259,11 +259,13 @@ export function referenceList(
     list.push({
       path: "canon/vision/studies/room.png",
       label:
-        "THE SET — the bar itself, the same room in every cartoon. Reproduce its layout exactly: the window " +
-        "with the mirrored sign at far left, the sconces, the television high at centre, the two framed prints " +
-        "below it, the chalkboard right of centre, the walnut panelling, the marble counter across the bottom. " +
-        "This tile is NOT a character and contains no one. Its screen and its chalkboard are deliberately " +
-        "blank — fill them from the scene below, and change nothing else about the room",
+        "THE SET — the bar itself, the same room in every cartoon, seen from the dining room looking toward it. " +
+        "Reproduce its layout exactly: the back bar with its bottles and mirror across the background, the " +
+        "television mounted above it, the chalkboard beside the television, a sconce at each end, the front " +
+        "window with its mirrored sign at far left, the walnut panelling, and the marble counter running across " +
+        "in front of it all. This tile is NOT a character and contains no one. Its screen, its chalkboard and " +
+        "its bottle labels are deliberately blank — fill the screen and the board from the scene below, leave " +
+        "the labels blank, and change nothing else about the room",
     });
   }
   return list;
