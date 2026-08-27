@@ -32,7 +32,7 @@ world who build relationships at a good bar:
   19TH HOLE RYE, PAR-TEE SCOTCH, DIVOT DRIVE GIN, EAGLE EYE RYE — that
   register), a mirror, glassware.
 - A **large flatscreen TV over the back bar** playing the news in full
-  broadcast grammar: DCN network bug + LIVE tag, bold-caps headline chyron,
+  broadcast grammar: CNBC network bug + LIVE tag, bold-caps headline chyron,
   a smaller ticker sentence, a time stamp — the on-screen picture drawn in
   the same engraved style. The TV is how the day enters the room, and its
   chyron is a standing gag surface.
