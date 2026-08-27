@@ -3,25 +3,22 @@ IMAGE_QUALITY=medium
 
 Draw ONE single-panel interior as a PEN-AND-INK ENGRAVING: every surface built from fine drawn lines — dash-hatching, cross-hatching and stipple — on PAPER WHITE. It is a drawing on paper, not a photograph and not a rendered three-dimensional room; there is no colour and no smooth gradient anywhere.
 
-THE ROOM IS BRIGHT AND WARM. Paper white is the dominant value and it is everywhere: the walls are drawn in OPEN LINE with the paper showing through between the strokes, not filled in with black. Solid black is used sparingly, for accents only. This is a polished, well-lit, expensive room at four in the afternoon — never a dim one, never a gloomy one, never a cellar.
+THE ROOM IS BRIGHT AND WARM. Paper white is the dominant value and it is everywhere: surfaces are drawn in OPEN LINE with the paper showing through between the strokes, not filled in with black. Solid black is used sparingly, for accents only. This is a polished, well-lit, expensive room at four in the afternoon — never a dim one, never a gloomy one, never a cellar.
 
 This is a SET PLATE: the empty interior of an upscale bar, and THERE ARE NO PEOPLE, NO ANIMALS AND NO CHARACTERS OF ANY KIND anywhere in it.
 
-CAMERA. We stand on the bartender's side of the bar looking out across it into the room, at eye level. The near lip of a POLISHED MARBLE COUNTER runs left to right across the LOWEST part of the picture and the panel ends there — nothing below the counter is in frame: no stools, no footrest, no floor.
+CAMERA. We stand in the DINING ROOM, a few feet back, LOOKING TOWARD THE BAR. The bar fills the background of the picture, seen square on at eye level.
 
-THE WALL BEYOND THE COUNTER, left to right, and this arrangement never changes:
-FAR LEFT, the front window onto the street, its lower half of frosted glass, carrying the bar's name in gilt script lettering seen from behind — THE SWINGING DOOR, MIRRORED, reading backwards.
-LEFT OF CENTRE, a brass wall sconce with a small pleated shade.
-CENTRE, high on the wall, a modern wall-mounted FLAT-SCREEN TELEVISION with a NARROW black bezel — a television, not a picture frame, and not a framed painting. ITS SCREEN IS COMPLETELY BLANK — an empty pale rectangle with no picture, no headline band, no letters and no marks of any kind on it, and its frame carries no badge, no nameplate and no lettering.
-BELOW THE TELEVISION, two small framed prints on the panelling, NON-FIGURATIVE — a sailing ship and a bull — with no people in them and no lettering.
-RIGHT OF CENTRE, a chalkboard in a dark wooden frame, hung at head height. IT IS COMPLETELY BLANK — an empty dark slate with no chalk writing, no words, no numbers and no marks of any kind.
-FAR RIGHT, a second brass sconce matching the first.
-Everywhere between them, DARK WALNUT PANELLING in tall fielded panels with a moulded chair rail.
+THE BACK BAR fills the upper two thirds of the frame and this arrangement never changes:
+ACROSS THE BACK, a run of handsome walnut back-bar shelving with a MIRROR behind it, carrying rows of liquor bottles — each bottle a distinct shape, their labels drawn as plain blank rectangles with NO lettering on them — and rows of hanging stemware above.
+CENTRE, HIGH ON THE WALL ABOVE THE BACK BAR, a modern wall-mounted FLAT-SCREEN TELEVISION with a NARROW black bezel — a television, not a picture frame. ITS SCREEN IS COMPLETELY BLANK: an empty pale rectangle with no picture, no headline band, no letters and no marks of any kind, and no badge or nameplate on its frame.
+RIGHT OF THE TELEVISION, a CHALKBOARD in a dark wooden frame on the panelling. IT IS COMPLETELY BLANK — an empty dark slate, no chalk writing, no words, no numbers, no marks.
+A brass wall sconce with a small pleated shade at each end of the back bar.
+FAR LEFT, where the wall gives onto the street, the front window, its lower half frosted, carrying the bar's name in gilt script SEEN FROM BEHIND — THE SWINGING DOOR, MIRRORED, reading backwards.
+Dark walnut panelling in tall fielded panels wherever wall shows.
 
-ON THE MARBLE, nothing but a folded bar towel at the far left end and a small empty nut bowl at centre. NO glasses, NO bottles, NO drinks.
+IN FRONT OF THE BACK BAR, running left to right across the picture, the POLISHED MARBLE COUNTER, its front panelled in walnut. On it, nothing but a folded bar towel at one end and a small empty nut bowl at centre — NO glasses and NO drinks. The panel ENDS at the counter: no stools, no footrest, no floor, nothing below it in frame.
 
-THE BACK BAR IS BEHIND THE READER AND IS NOT DRAWN. There are NO liquor bottles, NO shelves and NO glass racks anywhere in this picture.
-
-THERE IS NO LETTERING ANYWHERE IN THIS PICTURE except the mirrored gilt script of THE SWINGING DOOR on the window. The screen is blank, the chalkboard is blank, the prints are blank, the television frame is blank. Do not draw text-like marks as texture.
+THERE IS NO LETTERING ANYWHERE IN THIS PICTURE except the mirrored gilt script of THE SWINGING DOOR on the window. The screen is blank, the chalkboard is blank, every bottle label is blank, the television frame is blank. Do not draw text-like marks as texture.
 
 The attached images are the founder's own bar panels: take the drawing hand, the panelling, the marble and the warmth of the room from them — and nothing else. Do not copy their characters, their signage or their lettering.
