@@ -562,7 +562,8 @@ export async function GET(request: NextRequest) {
             {
               path: `${OUT_DIR}/${name}.txt`,
               content:
-                `${version}\nLORA_SCALE=${process.env.LORA_SCALE ?? "0.9 (default)"}\n` +
+                `${version}\nIMAGE_QUALITY=${process.env.IMAGE_QUALITY ?? "medium (default)"}\n` +
+                `LORA_SCALE=${process.env.LORA_SCALE ?? "0.9 (default)"}\n` +
                 ("caption" in panel && panel.caption ? `CAPTION ${panel.caption}\n` : "") +
                 `\n${prompt}\n`,
             },
