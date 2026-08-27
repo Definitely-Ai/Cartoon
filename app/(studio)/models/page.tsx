@@ -162,6 +162,24 @@ export default function ModelsPage() {
           to a founder correction; anything on the <em>Forbidden</em> list is a redraw, however good the rest of the
           panel looks.
         </p>
+        <p style={{ marginTop: 4 }}>
+          <a
+            href="/models/print/all"
+            style={{
+              display: "inline-block",
+              fontFamily: serif,
+              fontSize: 14,
+              padding: "7px 16px",
+              borderRadius: 4,
+              border: "1px solid #b9b0a0",
+              background: "#f5f2ea",
+              color: "#1a1a1a",
+              textDecoration: "none",
+            }}
+          >
+            Print all three
+          </a>
+        </p>
 
         {cast.map((member) => (
           <article
@@ -189,6 +207,26 @@ export default function ModelsPage() {
               <p style={{ fontFamily: serif, fontStyle: "italic", color: "#5a5145", fontSize: 15, marginTop: 4 }}>
                 {member.tagline}
               </p>
+              {/* Rick asked to be able to print these. The Studio Bible page
+                  would give him the cartoons and the scoring dials too, so
+                  each bible gets its own page laid out for paper. */}
+              <a
+                href={`/models/print/${member.key}`}
+                style={{
+                  display: "inline-block",
+                  marginTop: 12,
+                  fontFamily: serif,
+                  fontSize: 14,
+                  padding: "7px 16px",
+                  borderRadius: 4,
+                  border: "1px solid #b9b0a0",
+                  background: "#f5f2ea",
+                  color: "#1a1a1a",
+                  textDecoration: "none",
+                }}
+              >
+                Print {member.name}&rsquo;s bible
+              </a>
             </div>
             <div
               className="bible"
