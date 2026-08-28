@@ -136,7 +136,7 @@ about her body, and they do not conflict.
 | **The pendant** | **One** small teardrop gem: a broad rounded top, one unbroken curve down each side, meeting in a single point. Its bezel is silver and ringed with **fine beads**, as the face study draws it. Never so small it stops reading as a gem |
 | Blouse | Fitted and light, the **top two buttons** undone, both sleeves **rolled twice and stopped above the elbow** |
 | Skirt | Dark, fitted |
-| Towel | A folded white towel, **in every panel she appears in**, and **in EXACTLY ONE PLACE — never both** *(founder: "if she has it in her hands it shouldn't be on her shoulder")*. Two states and no third: **at rest** it lies over her shoulder and hangs, and **her hands are empty of it**; **in use** it has come OFF the shoulder into her hands — one end inside the glass she is polishing, the other hand closed round the outside — and **the shoulder is bare**. There is only ever ONE towel in the panel. Which shoulder is not a rule — she is drawn turned into the frame, so the side cannot be read from the picture. A towel that is nowhere in the panel is the fault. **The towel is hand-lettered THE SWINGING DOOR** along one edge, small and neat in the house script — as do her napkins, her coasters and the bar's matchbooks *(founder: "for any scenes that use objects like a golf bag we should have the name of the cartoon The Swinging Door on the item")* |
+| Towel | A folded white towel, **in every panel she appears in**, and **in EXACTLY ONE PLACE — never both** *(founder: "if she has it in her hands it shouldn't be on her shoulder")*. Two states and no third: **at rest** it lies over her shoulder and hangs, and **her hands are empty of it**; **in use** it has come OFF the shoulder into her hands — one end inside the glass she is polishing, the other hand closed round the outside — and **the shoulder is bare**. There is only ever ONE towel in the panel. Which shoulder is not a rule — she is drawn turned into the frame, so the side cannot be read from the picture. A towel that is nowhere in the panel is the fault. **THE SWINGING DOOR is WOVEN INTO the towel** along one edge — a woven-in house mark in the cloth's own weave, small and neat, following the folds and broken where the towel turns, never a printed label lying on top. Her napkins carry it woven the same way, her coasters pressed into the pulp. **Nothing is lettered on Abby herself** — not the blouse, the collar or the skirt |
 | Bracelet | **One** strand of pearls at one wrist, drawn whole — never cut off by the bottom edge of the art |
 | Shoes | Black heels — **away games and full-figure studies only**. A bar panel is cropped at the counter, so her shoes are never in one: never fail a bar panel for heels it cannot show, and never add legs to satisfy this row |
 
@@ -242,7 +242,8 @@ Note the address: *gentlemen*. She is fond of them and entirely unintimidated.
 - Missing collar or missing gem pendant; more than one thing hanging from its ring
 - A head turned so far that only one eye is on the paper
 - No towel anywhere in the panel — neither on her shoulder nor in her hands
-- A towel, napkin or coaster of the house with no house name lettered on it
+- Lettering anywhere on Abby herself — blouse, collar or skirt
+- A house mark that sits ON a surface rather than IN it: a decal, sticker, patch or flat label that ignores the material, the curve and the light
 - A bottle in frame whose label is blank or unreadable
 - Another bartender, staff member, or any human in the room
 - Legs, knees, feet, or stools in a bar panel

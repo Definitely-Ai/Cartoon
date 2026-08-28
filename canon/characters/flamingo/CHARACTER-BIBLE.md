@@ -366,15 +366,20 @@ Themed dressing stays in this key: knitwear and club-house. Never a costume.
   pouring, and **never holding a liquor bottle or a bar towel** — a gentleman
   holding either reads as the bartender, and that was the original fault.
 - Bar panels are **cropped at the counter** — chest-up, no legs, no stools.
-- **His gear carries the house name.** Any portable object that is his or the
-  bar's is hand-lettered THE SWINGING DOOR, small and neat, in the house
-  script: the golf bag first of all, and equally the napkin under the martini,
-  a coaster, a matchbook, a bill folder, a hat band, an umbrella. It reads as a
-  maker's mark, not a billboard — one short line, sized to the object. This is
-  in addition to whatever lettering the gag itself commissions; every other
-  surface in the room still stays blank *(founder: "for any scenes that use
-  objects like a golf bag we should have the name of the cartoon The Swinging
-  Door on the item")*.
+- **The house name is built into his gear — and never onto him.** Nothing on
+  Drew is ever lettered: not the sweater vest, the shirt, the collar, the
+  visor, and least of all the bow tie. The mark lives on **objects**: the golf
+  bag, the napkin under the martini, a coaster, a matchbook, a bill folder, an
+  umbrella *(founder: "not on Mango or Drew, but brand certain things — and it
+  must look really great, like it was part of the object")*.
+- **It is made the way the material is made.** Embossed or debossed into the
+  leather of the bag and the bill folder; woven into the weave of a napkin;
+  pressed into the pulp of a coaster; foil-stamped on a matchbook; etched into
+  glass. It follows the surface's curve, takes the same light and shadow as the
+  material around it, and anything passing in front of it breaks it. One short
+  line in the house script, small and neat, sized to the object. **If removing
+  the lettering would leave the object looking untouched, it was printed on top
+  and it is wrong.** Never a sticker, decal, patch, badge or floating label.
 - **He never looks at us.** His gaze belongs inside the room — at Mango, at the
   television, at the chalkboard, or down at the glass. The reader is watching
   through a fourth wall nobody in the bar knows is there. A Drew who has turned
@@ -435,7 +440,8 @@ defers with amusement — she settles the argument, and he enjoys that.
 - A third olive, or an olive floating free of the pick
 - Standing behind the bar among the bottles
 - Eyes turned out of the panel at the reader
-- A golf bag, napkin, coaster or matchbook of his with no house name on it
+- Lettering anywhere on Drew himself — vest, shirt, collar, visor or bow tie
+- A house mark that sits ON a surface rather than IN it: a decal, sticker, patch or flat label that ignores the material, the curve and the light
 
 ---
 

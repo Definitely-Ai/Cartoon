@@ -132,28 +132,55 @@ that grows out of the bar is a redraw.
 *Verified across the twelve-panel batch of 27 August 2026: twelve of twelve
 correct, including all four panels Abby appears in.*
 
-### The house name rides on the cast's own gear
+### The house name is built into the object, never onto the cast
 
 *(Founder: "for any scenes that use objects like a golf bag we should have the
-name of the cartoon The Swinging Door on the item.")*
+name of the cartoon The Swinging Door on the item" — and, on the boundary: "not
+on Mango or Drew, but brand certain things, and it must look really great, like
+it was part of the object.")*
 
-Any **portable** object belonging to the cast or to the house carries **THE
-SWINGING DOOR**, hand-lettered small and neat in the house script — the golf
-bag, the bar towel, napkins and coasters, a matchbook, an umbrella, a hat band,
-a bill folder, a shopping tote. It is a **maker's mark, not a billboard**: one
-short line, sized to the object, never shouting, and never competing with the
-gag for the eye.
+**Objects carry the name. Characters never do.** No lettering appears anywhere
+on Drew, Mango or Abby — not on a sweater vest, a suit, a jacket, a shirt, a
+collar, a cap, a visor, a bow tie or a blouse. Mango's flag pin remains the only
+mark on anyone's clothes.
 
-Three boundaries keep it from becoming clutter:
+On an object, the mark is **made the way that material is made** — that is the
+whole rule, and it is what separates a maker's mark from a sticker:
+
+| Object | How the name is made |
+| --- | --- |
+| Golf bag, bill folder, luggage | **Embossed or debossed into the leather** — the letters sit in the hide, catching light on one edge and shadow on the other |
+| Bar towel, napkins, cloth | **Woven into the weave**, following every fold and disappearing where the cloth turns |
+| Coasters | **Pressed into the pulp**, a blind deboss with no ink at all |
+| Matchbook, menu card | **Foil-stamped**, a thin bright line of the house script |
+| Trays, wooden fittings | **Burned or engraved into the grain** |
+| Mirror panel, barware | **Etched or acid-frosted into the glass** |
+
+Four tests decide whether a mark is right:
+
+1. **It sits on a real face of the object** and follows that surface's curve
+   and perspective — never floating flat across a form that is turning away.
+2. **It takes the same light** as the material around it: the same highlight,
+   the same shadow, the same hatching direction.
+3. **Anything passing in front of it breaks it.** A hand, a fold, a strap,
+   another object — the lettering goes behind them, never over them.
+4. **Removing it would leave a mark behind.** If the object would look
+   untouched without the name, the name was printed on top and it is wrong.
+
+It stays a **maker's mark, not a billboard**: one short line in the house
+script, small and neat, sized to the object, never centred like a logo, never
+brighter or flatter or sharper than the thing it belongs to. Never a sticker,
+decal, patch, tag, badge or floating label.
+
+Two more boundaries keep it from becoming clutter:
 
 | | |
 | --- | --- |
-| **Portable things only** | It rides on objects that travel with the cast. The room's own fixtures — the panelling, the mirror, the back bar, the chalkboard — are not branded. The mirrored front window is the one exception, and it was already the house sign |
-| **Never on tailoring** | No lettering on a suit, shirt, jacket or vest. Mango's flag pin stays the only mark on his clothes; Drew's neck carries the bow and nothing else |
+| **Portable things only** | It rides on objects that travel with the cast. The room's own fixtures — panelling, back bar, chalkboard — are not branded. The mirrored front window is the one exception, and it was always the house sign |
 | **Additional, not instead** | This is on top of whatever lettering the brief commissions for the gag. Every other surface still stays blank — a blank surface is what lets the model letter the ones that matter without garbling them |
 
-On a prop that already carries a joke, both marks ride together: the golf bag
-is lettered THE SWINGING DOOR **and** hangs Mango's *FORE! NOT SO FAST* towel.
+On a prop that already carries a joke, both marks ride together: the golf bag is
+embossed THE SWINGING DOOR **and** hangs Mango's *FORE! NOT SO FAST* towel.
 
 ### What changes, and it is only this
 
