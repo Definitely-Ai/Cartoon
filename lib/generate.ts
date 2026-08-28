@@ -76,7 +76,15 @@ const VISION_REFS: Record<string, Tile[]> = {
   // a 300px region: mean pixel gradient 3.41 against the plates' 7-8, i.e. the
   // model was being shown a smear. This is 380px of real linework, unenlarged.
   drew: [
-    { path: "canon/vision/drew-plate1-bar-reference.jpg" },
+    {
+      path: "canon/vision/drew-plate1-bar-reference.jpg",
+      label:
+        "Drew, the white-plumed flamingo gentleman in the black bow tie and knitted sweater vest. LOOK AT HIS " +
+        "TWO ARMS: each one ends in a HAND — soft downy plumage over four fingers and an opposed thumb, blunt " +
+        "at the tips, no nail and no claw on any of them — and NEITHER arm is a folded wing. He has no long " +
+        "hanging flight feathers down his sides and nothing drapes past his belt. Copy these arms and these " +
+        "hands. The pale rectangle he holds is a blank card",
+    },
     {
       path: "canon/vision/drew-plate1-head-study.jpg",
       label:
