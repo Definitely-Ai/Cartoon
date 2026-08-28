@@ -1,9 +1,33 @@
 # Mango — Character Bible
 
-**Definitive study:** `canon/vision/mango-reference.jpg`. **Authority:** this
-bible and `canon/HARRINGTON-VISION.md` govern together; where any older sheet,
-prompt, or note disagrees, the plates win. Every rule below traces to a
-founder correction, quoted where it applies.
+**Definitive study:** `canon/vision/mango-reference.jpg` — a close photograph of
+**plate 2's lower panel**, not a separate drawing. Everything in it can be found
+again in the plate; the two are one Mango and must never be counted as two
+pieces of evidence.
+
+**Authority:** this bible and `canon/HARRINGTON-VISION.md` govern together; where
+any older sheet, prompt, or note disagrees, the plates win. Every rule below
+traces to a founder correction or to a measurement taken off the plates, and the
+measurement is printed beside the rule so the next person can check it instead of
+trusting it.
+
+**Where Mango appears in the plates — eight drawings, and that is the whole
+evidence base:**
+
+| # | Plate | Scene | Wardrobe |
+| --- | --- | --- | --- |
+| 1 | plate 1, upper | Airport security | Polo, ball cap |
+| 2 | plate 1, lower | Bar | Polo, belt, **martini**, wristwatch |
+| 3 | plate 2, upper | Bar | Suit jacket |
+| 4 | plate 2, lower *(= the study)* | Bar | Suit jacket |
+| 5 | plate 3 | Bar | Suit jacket |
+| 6 | plate 4, upper left | Bar | Suit jacket |
+| 7 | plate 4, upper right | Bar | Suit jacket |
+| 8 | plate 4, lower | Golf | Polo, cap, belt, glove |
+
+Six bar panels; the suit takes five of the six. Twelve further panels
+(`canon/showcase/`) are **pipeline output, not founder art** — they are cited
+below only as evidence of what the drawing currently does, never as canon.
 
 ---
 
@@ -22,11 +46,11 @@ he is dignified while saying them.
 | Species | Golden retriever — *"not just a dog but a golden retriever"* |
 | Age | Mid-forties |
 | Role | The worried everyman; the wallet-height truth |
-| Default expression | Earnest concern — both inner brow ends lifted, one faint crease across the forehead, the black lip-line parted a finger's width, upper lid fully open (Drew is the low-lidded one) |
+| Default expression | Good-humoured concern: inner brow ends lifted, one faint forehead crease — and below the brows a **closed** mouth with the corners gently up, the upper lid clear of the dark of the eye, cheeks full. See §2, *The read* |
 | Permanent | US flag pin, left side, on whatever he wears |
 | Drink | Old fashioned — short rocks glass, one large cube, one dark cherry |
-| Frame position | Frame-right by default |
-| Absolute | **No tail. Ever.** |
+| Frame position | Frame-right, in all eight plates and all twelve showcase panels — including every panel Abby is in |
+| Absolute | **No tail. Ever.** **No nails or claws, anywhere.** **He never looks at the reader.** |
 
 ---
 
@@ -37,60 +61,115 @@ he is dignified while saying them.
 
 - **True black dog lips** — the dark lip-line running along the muzzle from
   under his black nose. This is his single most-loved feature, and it is never
-  omitted. Take the mouth from a **black labrador**: the band is **two
-  nose-widths long**, starting under the back of the nose and ending in a small
-  hook at the mouth corner, about **two thirds** of the way from the nose to
-  the eye, with the nose left as the blackest mark on his head. Measured on the
-  study: nose x 1010–1165 = 155 px, band x 1120–1415 = 295 px, nose front
-  x 1005 to eye corner x 1445 = 440 px; plate 1's bar Mango 57 px / 100 px;
-  plate 4's golf Mango 45 px / 90 px. When his head turns toward the camera the
-  band foreshortens with the muzzle — shortened, never dropped.
-- **Freckled muzzle** — the retriever face, broad, with about **twenty** small
-  dark dots on the near side of the muzzle in three or four arcing rows,
-  irregular in size and spacing and fading out toward the eye.
-- **Eyes with white in them.** Four marks, drawn separately: paper-white
-  sclera, a mid-grey iris, a solid black pupil, one catchlight.
-- **Long-fringed drop ears.** The leather is rooted high on the skull and runs
-  about **three quarters of the head's height** — 590 px against 820 px on the
-  study — so its tip finishes level with the bottom of his jaw. Its **lower
-  third** is laid in loose separate fringe strokes.
-- **Layered, feathered fur** drawn in fine individual strokes.
-- **Chest ruff kept modest** *(founder: "his neck beard is too large")* — from
-  the underside of the jaw down to the open collar the throat fur runs **a
-  third of the head's height and no more** (300 px against 820 px on the
-  study), and it stays inside the width of his jaw, so the shirt collar shows
-  on both sides of it. Take the throat from a groomed show retriever.
-- Middle-aged and solid: rounded shoulders, a broad soft chest. Comfortable,
-  not athletic. Judge his weight from the shoulders; his belly is never in
-  frame. Head height against shoulder width spans 0.49 to 0.77 across the
-  plates alone with the turn of the torso — that is pose, not proportion, and
-  it is not a thing to correct.
+  omitted. Take the mouth from a **black labrador**. Two measurements fix it,
+  and both hold across every plate large enough to measure:
 
-**The read — and the correction that matters most.**
-*(Founder: "at first he looks sad; the more you look the happier he gets. I'd
-like something changed slightly so he looks happier.")*
+  - **Length: two nose-widths.** Study — nose 155 px, lip 320 px = 2.1. Plate 1's
+    bar Mango — nose 45 px, lip 95 px = 2.1. Plate 4's golf Mango — nose 46 px,
+    lip 89 px = 1.9.
+  - **Where it ends: directly under the front corner of the eye.** Not before
+    it. Study — nose front x=985, eye's front corner x=1437, lip ends x=1440
+    (101% of the way). Plate 4's golf Mango — nose front x=896, eye's front
+    corner x=1017, lip ends x=1030 (111%). *An earlier version of this page said
+    "about two thirds of the way from the nose to the eye"; the plates say the
+    corner lands under the eye, a third further back, and that is the difference
+    between a labrador mouth and a puppy's.*
+
+  It starts under the **back** of the nose, runs level along the muzzle, and
+  finishes in a small rounded hook at the mouth corner. The nose stays the
+  blackest mark on his head (measured mean tone: nose 45, lip band 67, dark of
+  the eye 74, cheek 198 — 0 is black, 255 is paper). When his head turns toward
+  the camera the band foreshortens with the muzzle — shortened, never dropped.
+
+- **Open or closed, the black behaves differently, and this is the thing that
+  gets drawn wrong.** Closed, it is a **fine line** with a rounded hook at the
+  corner — plate 3 is the only plate that closes it and it is the one to copy.
+  Parted, the line thickens into a **heavy band** because what you are seeing is
+  the gap. Seven of the eight plate Mangos are parted. Under the current read
+  (below) the default is **closed**, so the default is the fine line, not the
+  slab.
+
+- **Freckled muzzle** — the retriever face, broad, with **fifteen to twenty**
+  small dark dots on the near side of the muzzle in **three arcing rows**,
+  irregular in size and spacing and fading out toward the eye. (Counted:
+  thirteen clearly resolved in three rows on plate 3, the cleanest of the
+  plates, plus a scattered few nearer the nose; about the same on the study.
+  "Twenty" is a ceiling, not a target — a fourth row starts to read as stubble.)
+
+- **Eyes with white in them — three marks, and the order matters.**
+  1. **The dark** — one solid mass pressed against the **front** corner of the
+     opening, the corner nearest the muzzle. It takes the **front 40%** of the
+     opening and no more: study 43 px of a 103 px opening (42%); plate 4's golf
+     Mango 17 px of 39 px (44%).
+  2. **Paper-white sclera** behind it, filling the rear 60% — measured 203–215
+     against the cheek's 198, i.e. genuinely the paper.
+  3. **One catchlight**, punched bright inside the dark.
+
+  At the size Mango is ever drawn, a separately drawn grey iris and black pupil
+  do not resolve — not even on the study, where the eye is 103 px wide. Do not
+  spend a line on them. What must never merge is the dark and the white.
+  The upper lid rests on the **top** of the dark and no lower; Drew is the
+  low-lidded one.
+
+- **Ears — one leather, drawn, and two landmarks that place it.** The leather
+  **roots level with the top of the eye** and its **tip finishes level with the
+  bottom of the jaw** (study: root y≈1890 against an eye at y=1900–1960; tip
+  y≈2400 against a jaw bottom of y≈2470 — a head is about 790 px). Confirmed on
+  plate 3 and on plate 4's golf Mango. Behind the leather hangs the long fringe
+  that runs on down the nape in loose separate strokes; the leather itself is
+  short-furred with a slightly ragged edge.
+  **The far ear is never a second full ear.** At most it is a small tuft over
+  the top of the skull or a line of fringe past the back of it. That is what
+  every plate draws.
+
+- **Layered, feathered fur** drawn in fine individual strokes.
+
+- **Chest ruff kept modest** *(founder: "his neck beard is too large")* — from
+  the underside of the jaw down to the open collar the throat fur measures
+  **300 px against a head of about 790 px on the study — 0.38 of a head, and
+  that is the ceiling, not the target.** Aim at a third. It stays inside the
+  width of his jaw, so the shirt collar shows on **both** sides of it. Take the
+  throat from a groomed show retriever.
+
+- Middle-aged and solid: rounded shoulders, a broad soft chest. Comfortable,
+  not athletic. Judge his weight from the shoulders; in a bar panel his belly is
+  below the crop and never in frame. His head reads large or small against his
+  shoulders depending on how far the torso is turned, and it varies a lot across
+  the plates. That is pose, not proportion, and it is not a thing to correct.
+
+### The read — and the correction that matters most
+
+> *(Founder: "When we initially look at Mango he looks sad; the more you look
+> the happier he gets. I'd like something to change slightly so he looks
+> happier.")*
 
 He is the worried everyman, but **he is not sad, and the FIRST GLANCE must never
 say sad.** The split that fixes it:
 
 > **The worry lives in the brows. Everything below them is warm.**
->
-> - **Brows** — raised inner brows, a faint forehead wrinkle. This is the
->   worry, and it is the whole of it.
-> - **Mouth** — corners turned gently **UP**, a soft closed-lip smile.
-> - **Eyes** — bright and open, one clear catchlight in each.
-> - **Cheeks** — full and lifted.
+
+Four marks carry it. Draw them in this order.
+
+| Mark | Do | Do not |
+| --- | --- | --- |
+| **Brows** | Both inner ends lifted; one faint crease across the forehead. This is the worry, and it is the whole of it | Draw the worry anywhere else |
+| **Mouth** | Closed. The fine black line, with the corner hook lifting **above** the level of the line's middle | Let the corner hang below the line's middle; open the mouth into a slab of black |
+| **Eyes** | Bright and open, the lid clear of the dark, one clear catchlight | Drop the lid over the top of the dark |
+| **Cheeks** | Full and lifted — the fur under the eye rises toward the ear | Flatten the cheek, or hollow it |
+
+**The plates do not draw this yet, and that is the point of the note.** Seven of
+the eight plate Mangos have the mouth parted with the corner hooking down; that
+combination is exactly the sad first glance the founder is describing. **Plate 3
+is the single exception and the single model:** the line runs unbroken, dips
+gently in the middle, and comes back up into the corner hook. Copy plate 3's
+mouth onto the study's head and the correction is made.
 
 A viewer should read *a good-humoured man who is a little concerned*, never a
 downcast one. Mouth up, brows up, eyes bright.
 
-He is a gentleman about it — and the gentleman half lives in the eye. The **dark of the eye takes up the front half
-of the opening and no more**, pressed against the corner nearest the muzzle;
-the **rear half is left as paper-white sclera**, a plain light wedge widening
-toward the outer corner. On the study the opening runs 101 px from the front
-corner (1443, 1946) to the outer corner (1544, 1961) and the dark takes 43 px
-of it; plate 4's golf Mango gives 26 px of a 47 px opening. Draw the brows
-first and the eye second, in that order of importance.
+He is a gentleman about it — and the gentleman half lives in the eye, in the
+white behind the dark. Draw the brows first and the eye second, in that order of
+importance.
 
 ---
 
@@ -104,6 +183,12 @@ AND NO CLAWS drawn at all** — each fingertip ends in soft fur and pad *(founde
 an opposed thumb — five digits**, in believable human grips. Every finger
 distinctly drawn with its own contour, even in a closed grip.
 
+**This is a correction against the plates, not a description of them.** Plate 4's
+golf Mango draws a clean oval nail on each of the four fingers gripping the old
+fashioned, and plate 1's bar Mango does the same on the hand at the martini.
+The pipeline has copied them. They come off. Nothing replaces them — the
+fingertip simply ends.
+
 Texture animal, construction human — the same law as Drew's feathered hands.
 Never plain paws; never bare human skin.
 
@@ -116,39 +201,56 @@ Never plain paws; never bare human skin.
 **Bar default — the suit.** A dark jacket over a pale open-collared shirt, no
 tie, trousers. This is his home look and the founder's favourite: he wears it
 in five of his six bar appearances across the plates. The sixth is plate 1's
-lower panel, which puts him in the polo with a stemmed martini — and that panel
-is the staging tile the pipeline sends with every bar scene (`lib/generate.ts`,
-SCENE_TILE, box [16, 1460, 1600, 1140]). **Read that tile for the staging** —
-the crop at the counter, the two gentlemen across the marble, the drinks on the
-near lip. His wardrobe and his drink come from this page.
+lower panel, which puts him in the polo with a stemmed martini. That panel is
+also the pipeline's **optional staging tile** (`lib/generate.ts`, SCENE_TILE, box
+`[16, 1460, 1600, 1140]`), sent in place of the portrait tiles when a request
+asks for `staged`. **Read that tile for the staging and nothing else** — the crop
+at the counter, the two gentlemen across the marble, the drinks on the near lip.
+Its wardrobe and its drink are the exception in the canon, not the rule.
 
 **Daytime, travel, golf — the polo.** A pale collared polo with a two- or
 three-button placket, a dark leather belt, and outdoors a ball cap. Caps look
-natural on him. **The flag pin is the only mark on his clothes** — the chest of
-the polo carries it and nothing else. Both plate polos, plate 1 upper and plate
-4 lower, are otherwise bare.
+natural on him — but the cap belongs outdoors and on the road. **A cap at the
+bar is a fault** (the pipeline put one on him indoors in sc05).
+
+**The flag pin is the only mark on his clothes.** The chest of the polo carries
+it and nothing else; so does the jacket. **Both plate caps carry a small oval
+badge with a device inside it, above the brim — plate 1's upper panel and plate
+4's golf panel. Under the current rule that badge comes off.** The cap front is
+blank. Nothing on Mango is ever lettered or crested: not the suit, the jacket,
+the shirt, the collar, the cap.
 
 **The flag pin is permanent.** A small US flag pin on **whatever he wears** —
 left lapel when jacketed, left chest of the shirt or polo otherwise. Plate 3
-draws it at full size and is the version to copy: a dark canton in the upper
-hoist corner with the stars stippled pale inside it, thirteen stripes, and a
-fine staff along the hoist edge dropping a little below the flag. It is the
-most reliable object in the strip, right in ten panels out of ten.
+draws it largest and is the version to copy: a **dark canton** in the upper hoist
+corner with the stars stippled pale inside it, alternating stripes filling the
+rest, and a **fine staff along the hoist edge dropping a little below the flag**.
+At panel size the pin is about 50 px and only about six dark bars actually land —
+that is what thirteen stripes looks like at this scale, and it is enough. Draw
+canton, bars, staff, and stop.
+
+*Present is not the same as right.* Across the showcase panels the pin is on him
+wherever the lapel is in frame, but the canton is what degrades: sc07 draws it
+cleanly and sc09 nearly so, while sc04 and sc08 come back as a scribble of bars
+with no canton at all. Judge the pin on the canton, not on whether something is
+there.
 
 **Accessories — the watch.** A plain round-dialled wristwatch on a dark band,
 worn on the **left wrist**, the same side of him as the flag pin: two marks
-down one side of one man. It crosses to the wrong wrist in sc07 and sc09, both
-of them panels where he is drawn square to the reader and his arm crosses his
-body.
+down one side of one man.
 
 *(Provenance, measured: the plates put a watch on him once in eight
-appearances — plate 1's lower panel, dial at (1242, 2444), pin at (1337, 2247),
-the same side. Plate 1 upper has it in the security tray as the gag; plates 2,
-3 and 4 draw plain white cuffs, or at golf the glove. The identity crop the
-pipeline sends — `mango-reference.jpg`, box [950, 1400, 1900, 1950] — stops at
-his lapel and carries no wrist at all, so nothing but these words holds this
-detail. If the wrist keeps drifting, widen that crop below y=3350; the source
-has both wrists at native resolution.)*
+appearances — plate 1's lower panel, dial at (1242, 2444), pin at (1337, 2247).
+The pin sits to frame-right of his placket, i.e. his left chest. The watch is on
+the forearm that comes from that same left shoulder and crosses in front of him
+to the marble, so the dial lands near his centre line — his left wrist, drawn
+across the body. Plate 1's upper panel has the watch off him and lying in the
+security tray as the gag (the sign reads REMOVE: … WATCH); plates 2, 3 and 4 draw
+plain white cuffs, or at golf the glove. The identity crop the pipeline sends —
+`mango-reference.jpg`, box `[950, 1400, 1900, 1950]` — stops at his lapel and
+carries no wrist and no watch at all, so nothing but these words holds this
+detail. If the wrist keeps drifting, widen that crop below y=3350; the source has
+both wrists at native resolution.)*
 
 **Accessories — golf. Four things, and all four are drawn:** the ball cap; a
 dark leather belt; a **white golf glove** on the left hand, smooth and unfurred
@@ -158,7 +260,8 @@ glove; and his **bag standing at frame-right with the towel hanging on the
 front of it**, hand-lettered in three lines: *FORE! / NOT SO / FAST*. The towel
 is the joke; a bag of clubs without it is scenery. **At golf the glove takes
 the left hand and the watch comes off** — that is how plate 4 draws him, and
-one object to a wrist is something the drawing can count.
+one object to a wrist is something the drawing can count. All four are verified
+on plate 4's lower panel, closure tab and furred forearm included.
 
 ---
 
@@ -166,53 +269,71 @@ one object to a wrist is something the drawing can count.
 
 - **The old fashioned** — short rocks glass, one large cube, one dark cherry —
   stands on its own napkin or coaster on the marble, within reach of his near
-  hand. It does **not** have to be in his grip: sc04, sc09 and sc10 rest the
-  glass while his hands are busy, and all three are correct. When he lifts it,
-  his fingers close round the **outside** of the glass, below the rim. He keeps
-  it wherever he is sitting — when Abby is in the panel he moves to the middle
-  of the frame and the glass moves with him. *(Plate 1's lower panel hands him
-  a martini instead. It is the only drawing in the canon that does, and it is
-  not a precedent.)*
+  hand. It does **not** have to be in his grip: the plates rest it as often as
+  they hand it to him, and a rested glass is correct. When he lifts it, his
+  fingers close round the **outside** of the glass, below the rim. He stays
+  frame-right and the glass stays with him — including in every panel Abby is
+  in. *(Plate 1's lower panel hands him a martini instead. It is the only
+  drawing in the canon that does, and it is not a precedent.)*
 - The **shared nut bowl** stands on the marble between the two gentlemen — one
-  bowl, on the bar itself, in every bar panel. It went missing from sc01, sc02
-  and sc03. It is not optional: it is the prop that makes them one party
-  rather than two men at the same counter.
+  bowl, on the bar itself. All six bar plates draw it; most showcase panels do
+  too, and sc04 is the one that drops it. It is not optional: it is the prop
+  that makes them one party rather than two men at the same counter.
 - **He is a patron, never staff.** We look toward the bar from the dining room,
   so the **back bar with its bottles and mirror is behind him — and that is
-  correct.** What settles it is the **marble counter between him and them**: he
+  correct.** Every one of the six bar plates draws bottles directly behind his
+  head. What settles the side is the **marble counter between him and them**: he
   sits on the room side, our side. He is never in the service well, never
   pouring, and **never holding a liquor bottle or a bar towel** — a gentleman
   holding either reads as the bartender, and that was the original fault.
 - Bar panels are **cropped at the counter** — chest-up, no legs, no stools.
 - **The house name is built into his gear — and never onto him.** Nothing on
-  Mango is ever lettered: not the suit, the jacket, the shirt, the collar, the
-  golf cap. **His flag pin stays the only mark on his clothes** *(founder: "not
-  on Mango or Drew, but brand certain things — and it must look really great,
-  like it was part of the object")*. The mark lives on **objects**: the golf
-  bag, the coaster under the old fashioned, a matchbook, an umbrella, a tote.
+  Mango is ever lettered or badged: not the suit, the jacket, the shirt, the
+  collar, the golf cap. **His flag pin stays the only mark on his clothes**
+  *(founder: "not on Mango or Drew, but brand certain things — and it must look
+  really great, like it was part of the object")*. The mark lives on **objects**:
+  the golf bag, the coaster under the old fashioned, a matchbook, a bill folder,
+  an umbrella, a tote.
 - **It is made the way the material is made.** Embossed or debossed into the
   leather of the bag; pressed into the pulp of a coaster; foil-stamped on a
   matchbook; burned into a wooden tray. It follows the surface's curve, takes
   the light of the material around it, and is broken by anything crossing in
   front of it. **If removing the lettering would leave the object looking
-  untouched, it was printed on top and it is wrong.** On the golf bag both
-  marks ride together — the house name pressed into the leather, the *FORE! NOT
-  SO FAST* towel hanging off it.
+  untouched, it was printed on top and it is wrong.** One short line in the
+  house script, sized to the object — a maker's mark, never a billboard, never a
+  sticker, decal, patch, tag or badge. This matches `canon/settings/SETTINGS-BIBLE.md`
+  word for word in intent; that page carries the full table of materials.
+  On the golf bag both marks are meant to ride together — the house name pressed
+  into the leather, the *FORE! NOT SO FAST* towel hanging off it. **No plate does
+  this yet.** Plate 4 draws the towel on a plain dark leather bag and puts the
+  house name on the course sign instead. The embossed bag is a rule to build,
+  not a detail to copy.
 - **He never looks at us.** His gaze belongs inside the room — at Drew, at
   Abby, at the television, or down at his glass. A Mango squared to the reader
-  is a redraw, and it is also the pose in which his neck disappears.
+  is a redraw.
 
-- **Open conflict, his head angle — flagged, not settled.** All eight plate
-  Mangos and the identity crop the pipeline sends draw him one way: turned
-  toward his companion, one eye and one ear, the nose at the leading point of
-  the head's outline. `canon/MASTER-PROMPT.md` (THE STAGE) asks instead for
-  three-quarter view with both eyes fully visible, and that is the page the
-  drawing actually reads. The four panels that square him to the reader —
-  sc07, sc08, sc09, sc10 — are also the four where the neck disappears (0.05
-  head heights of neck between jaw and collar, against 0.37–0.39 in the bar
-  plates) and, in sc07, where the ear tip finishes above the nose. Settle this
-  in the master prompt before writing an angle rule here; do not average the
-  two.
+### Open conflicts with `canon/MASTER-PROMPT.md`
+
+The master prompt is the only page the image model reads. Two things on it
+currently disagree with this one. Neither is settled here; both are flagged so
+the founder settles them in one place.
+
+- **His head angle.** All eight plate Mangos, all twelve showcase panels, and the
+  identity crop the pipeline sends draw him one way: turned toward his companion,
+  **one eye and one ear**, the nose at the leading point of the head's outline,
+  the far ear no more than a tuft. `MASTER-PROMPT.md` asks in two places (THE
+  STAGE, "FACES"; THE SIDES) for three-quarter view with **both eyes fully
+  visible**. In twelve generated panels that instruction has produced a
+  both-eyes Mango exactly zero times — the reference tile wins over the sentence
+  every time. The recommendation, with its evidence, is in the report that came
+  with this revision. **Until the master prompt changes, draw the plates' angle:**
+  one eye, one ear, the whole muzzle on the paper, and the near eye never lost
+  behind the cheek.
+- **The back bar behind him.** THE SIDES puts the back bar farthest, past the
+  counter and in view — which is what all six bar plates draw. THE ROOM now says
+  the shelving "stands on the SERVICE side, behind the reader, and it is NOT
+  drawn behind the gentlemen." Those two paragraphs cannot both be followed. The
+  plates are with THE SIDES.
 
 ---
 
@@ -234,18 +355,26 @@ fond — she runs the room and he likes it that way.
 **Worry is his default, not his only setting.** Everything above governs his
 lines; this governs his face, and the drawing has been repeating one face for
 whole batches. Three handles, all countable: the **brows** — both inner ends
-lifted, or one lifted higher than the other; the **lids** — the upper lid fully
-open, or dropped over the top of the iris; the **mouth** — parted a finger's
-width, or closed so the black band runs unbroken, the way plate 3 closes it.
-Hearing a number he does not like, he is braced: brows up, lids open, mouth
-parted. Amused, the lid drops and the back corner of the closed lip lifts —
-that lifted corner is his whole smile, and he does not open his mouth to be
-amused. Paying, the chin drops and the eyes go down to the glass or to the
-paper in his hands. **The hands act too:** one posture beat per panel and a
-different one each time — chin on a closed fist, a flat palm on the marble, the
-tab held out at arm's length, two fingers on the rim of the glass, the glass
-slid an inch toward Abby. Two panels running with the same face and the same
-hands is a batch that has stopped acting.
+lifted, or one lifted higher than the other; the **lids** — the upper lid clear
+of the dark, or dropped over the top of it; the **mouth** — closed with the
+corner up (the default), or parted a finger's width for one beat.
+
+- **Hearing a number he does not like:** braced. Brows up, lids open, mouth
+  closed and firm.
+- **Amused:** the lid drops a little and the back corner of the closed lip lifts
+  further. That lifted corner is his whole smile; he does not open his mouth to
+  be amused.
+- **Paying:** the chin drops, the eyes go down to the glass or the paper in his
+  hands, the brows stay up.
+- **The one parted mouth:** save it for the beat where he is actually saying the
+  line. It is a speaking mouth, not a resting one — that is the whole lesson of
+  the sad first glance.
+
+**The hands act too:** one posture beat per panel and a different one each time —
+chin on a closed fist, a flat palm on the marble, the tab held out at arm's
+length, two fingers on the rim of the glass, the glass slid an inch toward Abby.
+Two panels running with the same face and the same hands is a batch that has
+stopped acting.
 
 ---
 
@@ -254,19 +383,28 @@ hands is a batch that has stopped acting.
 - **A tail.** His back meets the chair and that is the end of him: where his
   seat line is, there is chair. Draw the rear the way you would draw a man in
   a jacket
+- **A nail or a claw on any fingertip** — the tip ends in fur and pad
 - A muzzle without the black lip band, or a face without the freckle rows
-- Throat fur deeper than a third of his head's height, or wider than his jaw
+- A lip band that stops short of the eye's front corner, or one drawn as a heavy
+  slab of black on a closed mouth
+- A mouth corner hanging below the level of the lip line — that is the sad face
+- The dark of the eye filling more than the front half of the opening, or the
+  white lost altogether
+- An ear tip finishing above the jawline, or a second full ear drawn on the far
+  side
+- Throat fur deeper than 0.38 of his head's height, or wider than his jaw
 - The flag pin missing, or anywhere but his left lapel or his left chest
 - The watch and the flag pin on opposite sides of him
-- Any other mark on his clothes: a crest, a monogram, a date, lettering of any
-  kind
+- Any other mark on his clothes: a crest, a monogram, a cap badge, a date,
+  lettering of any kind
+- A ball cap at the bar
 - At golf, a bare hand, or the bag without its *FORE! NOT SO FAST* towel
 - A hand closed into one fur mitt, or the back of a hand drawn as bare skin
 - Mango behind the counter, in the service well, or holding a bottle or bar towel
 - A necktie at the bar (open collar under the jacket)
 - Eyes turned out of the panel at the reader
-- Lettering anywhere on Mango himself — suit, jacket, shirt, collar or cap
-- A house mark that sits ON a surface rather than IN it: a decal, sticker, patch or flat label that ignores the material, the curve and the light
+- A house mark that sits ON a surface rather than IN it: a decal, sticker, patch
+  or flat label that ignores the material, the curve and the light
 - Colour, flat fills, cel shading, photographic rendering
 
 ---
@@ -274,10 +412,25 @@ hands is a batch that has stopped acting.
 ## 8. Approval standard
 
 A panel passes when Mango is unmistakably a golden retriever *and*
-unmistakably a gentleman: the black lip band two nose-widths long, the freckle
-rows, ears down to the jawline with the fringe drawn, the ruff no deeper than a
-third of his head, the suit with its flag pin on his left lapel, the wristwatch
-on the pin's own side, five separately drawn digits on each fur-backed hand,
-and his old fashioned within reach on the marble — **standing on its coaster
-counts; his hand does not have to be on it.** Three of the ten showcase panels
-rest the glass and are correct (sc04, sc09, sc10). And not a tail in sight.
+unmistakably a gentleman. Nine things to check, in this order:
+
+1. **First glance is not sad** — mouth closed with the corner up, brows up, lids
+   clear of the dark, cheeks lifted.
+2. **The black lip band** runs two nose-widths and ends under the front corner
+   of the eye.
+3. **The eye** has white in it: dark in the front 40%, paper behind, one
+   catchlight.
+4. **Freckles** — three arcing rows, fifteen to twenty dots.
+5. **The ear** roots level with the top of the eye and its tip finishes level
+   with the bottom of the jaw; the far ear is a tuft at most.
+6. **The ruff** is no deeper than 0.38 of his head and the collar shows on both
+   sides of it.
+7. **Five separately drawn digits on each fur-backed hand, and not one nail.**
+8. **The flag pin** on his left lapel or left chest, with a legible dark canton;
+   the wristwatch on the pin's own side, or the glove instead of it at golf; and
+   nothing else marked on him anywhere.
+9. **His old fashioned within reach on the marble** — standing on its coaster
+   counts; his hand does not have to be on it — with the shared nut bowl between
+   the two drinks.
+
+And not a tail in sight.
