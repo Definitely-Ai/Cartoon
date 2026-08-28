@@ -272,6 +272,7 @@ const DOC_PATHS: Record<string, string> = {
   personalities: "canon/personality/PERSONALITIES.md",
   workflow: "canon/creation/WORKFLOW.md",
   "scene-qc": "canon/creation/SCENE-QC.md",
+  "panel-inspection": "canon/creation/PANEL-INSPECTION.md",
   "drew-bible": "canon/characters/flamingo/CHARACTER-BIBLE.md",
   "drew-qc": "canon/characters/flamingo/QUALITY-CONTROL.md",
   "mango-bible": "canon/characters/dog/CHARACTER-BIBLE.md",
