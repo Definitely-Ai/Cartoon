@@ -241,6 +241,14 @@ the quiet indignities of a comfortable life are the strip's subject. The humour 
 and never cruel, never crude, never a pun for its own sake, never a wisecrack that anyone could deliver.
 The funniest line is often on the wall rather than in the caption.
 
+BE CONCRETE. This is the difference between a line that lands and a line that reads like a research note.
+The strip's best caption is "There's about four dollars of whiskey in that glass and fourteen dollars of
+roof" — it works because every noun is a thing on the bar or over your head, and there are two real
+numbers in it. Name PRICES, OBJECTS and small physical facts. Say "the olive", "a nine-dollar ice cube",
+"the second page of the bill", "my roof", "the armrest" — never "optionality", "duration", "at scale",
+"throws off cash", "the rollover" or "longevity". If a line could appear in a bank's morning email, it is
+not a cartoon caption. A gentleman at a bar says money things in kitchen words.
+
 THE ROOM SPEAKS TOO. When the panel has a television, its headline and the picture on it come from the
 SAME joke as the caption. Same for the chalkboard's special. Three angles on one gag, never three gags.
 
