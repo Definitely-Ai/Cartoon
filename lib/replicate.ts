@@ -193,3 +193,49 @@ export async function startTraining(
   const training = (await res.json()) as Training;
   return { id: training.id, version };
 }
+
+/** The writers' room's model. Text in, text out, on the same account that
+ *  draws the panels — so Rick's one-line brief becomes ten gags without this
+ *  project holding a second vendor's key. */
+export async function generateText(
+  model: string,
+  input: Record<string, unknown>,
+  timeoutMs = 150_000
+): Promise<string> {
+  const [name, version] = model.includes(":") ? model.split(":") : [model, null];
+  const res = await api(version ? "/predictions" : `/models/${name}/predictions`, {
+    method: "POST",
+    headers: { Prefer: "wait" },
+    body: JSON.stringify(version ? { version, input } : { input }),
+  });
+  if (!res.ok) {
+    throw new PublishError(
+      502,
+      `Replicate said ${res.status} starting the writer: ${(await res.text().catch(() => "")).slice(0, 200)}`
+    );
+  }
+  let prediction = (await res.json()) as Prediction;
+
+  const startedAt = Date.now();
+  while (prediction.status === "starting" || prediction.status === "processing") {
+    if (Date.now() - startedAt > timeoutMs) {
+      throw new PublishError(504, "The writer is taking too long — try again.");
+    }
+    await new Promise((r) => setTimeout(r, 2000));
+    const poll = await api(prediction.urls?.get ?? `/predictions/${prediction.id}`);
+    if (!poll.ok) throw new PublishError(502, `Replicate said ${poll.status} while waiting on the writer.`);
+    prediction = (await poll.json()) as Prediction;
+  }
+  if (prediction.status !== "succeeded") {
+    throw new PublishError(
+      502,
+      `The writer ${prediction.status}${prediction.error ? `: ${String(prediction.error).slice(0, 200)}` : "."}`
+    );
+  }
+  // Language models on Replicate stream as an array of string chunks; some
+  // return one string. Both arrive here, and joining is correct for both.
+  const out = prediction.output as unknown;
+  const text = Array.isArray(out) ? out.join("") : typeof out === "string" ? out : "";
+  if (!text.trim()) throw new PublishError(502, "The writer returned nothing.");
+  return text;
+}
