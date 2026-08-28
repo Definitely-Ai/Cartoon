@@ -86,6 +86,16 @@ const VISION_REFS: Record<string, Tile[]> = {
         "hands. The pale rectangle he holds is a blank card",
     },
     {
+      path: "canon/vision/drew-hands-reference.jpg",
+      label:
+        "THE SAME BIRD from the neck down — copy his ARMS AND HANDS from this tile exactly. EACH ARM ENDS IN A " +
+        "HAND: four fingers and one opposed thumb, five digits drawn separately, short white plumage to every " +
+        "tip, each tip blunt and soft with NO nail and NO claw. NEITHER arm is a folded wing and neither ends " +
+        "in a wingtip or a fan of primaries. Copy the bow tie, the collar and the knit of the vest from here " +
+        "too. This tile is deliberately cropped below the head: it says NOTHING about his bill, and it is not " +
+        "a second character",
+    },
+    {
       path: "canon/vision/drew-plate1-head-study.jpg",
       label:
         "a close study of THE SAME BIRD's head — copy this bill and this nostril EXACTLY. The bill is slender, " +
@@ -96,7 +106,18 @@ const VISION_REFS: Record<string, Tile[]> = {
         "pale patch below the bill is empty background, not an object. This tile is not a second character",
     },
   ],
-  mango: [{ path: "canon/vision/mango-reference.jpg", box: [950, 1400, 1900, 1950] }],
+  mango: [
+    { path: "canon/vision/mango-reference.jpg", box: [950, 1400, 1900, 1950] },
+    {
+      path: "canon/vision/mango-face-reference.jpg",
+      label:
+        "THE SAME DOG, closer — copy this face and these hands. BOTH EYES are fully on the paper with the " +
+        "bridge of the muzzle showing between them, bright and open with one catchlight each; the worry lives " +
+        "ONLY in the raised inner brows and the mouth turns gently UP in a closed-lip smile. BOTH HANDS are " +
+        "fur-backed with four fingers and an opposed thumb, every finger separate, NO nails and NO claws. The " +
+        "flag pin is on his LEFT lapel and is the only mark on his clothes. This tile is not a second character",
+    },
+  ],
   abby: [
     {
       path: "canon/vision/abby-face-reference.jpg",
