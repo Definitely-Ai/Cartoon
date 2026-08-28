@@ -152,6 +152,25 @@ check("no barroom furniture travels to an away game on the house path", () => {
   assert.match(away, /two-thwart fishing boat/, "and the setting Rick asked for is in there");
 });
 
+check("an away game names a hard crop edge, not a soft one", () => {
+  // The bar's rule is countable and absolute: nothing below the counter is
+  // ever in frame, and it lists the parts. The away game's first version said
+  // only "composed close in, filling the frame from roughly the waist up",
+  // which is a suggestion. The model drew past the waist, reached the legs,
+  // had no instruction about feet, and ended both trouser legs in rounded
+  // stumps planted in the turf. Countable beats relational -- this repo's
+  // own first law, failed by the person quoting it.
+  const away = assemblePrompt(master, boat, false, false, true);
+  assert.match(away, /CROPPED AT THE BELT/, "the away crop must be named, not implied");
+  for (const part of ["thighs", "knees", "legs", "feet", "shoes"]) {
+    assert.match(
+      away,
+      new RegExp(`no ${part}`, "i"),
+      `the away crop must forbid ${part} by name, the way the counter crop does`
+    );
+  }
+});
+
 check("every slot is filled on both paths", () => {
   for (const fineTuned of [true, false]) {
     for (const candidate of [bar, boat, withAbby]) {

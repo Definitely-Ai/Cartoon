@@ -105,9 +105,10 @@ function awayStage(count: number): string {
       : "He or she is seen in THREE-QUARTER view, angled into the frame so the face and both eyes are " +
         "readable, attention on the business in hand rather than on us.";
   return (
-    `CAMERA: eye level, close in, ${who} from roughly the waist up with the place reading clearly behind ` +
-    `them — never a wide landscape with small figures in it. ${facing} NOBODY looks out of the panel at the ` +
-    "reader. They are the only figures in the picture: no other people anywhere, near or far."
+    `CAMERA: eye level, close in, ${who} from the chest to the BELT, where the bottom edge of the panel ` +
+    `cuts them — nothing below the belt is in frame, no legs and no feet — with the place reading clearly ` +
+    `behind them, never a wide landscape with small whole figures in it. ${facing} NOBODY looks out of the ` +
+    "panel at the reader. They are the only figures in the picture: no other people anywhere, near or far."
   );
 }
 
