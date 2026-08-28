@@ -292,13 +292,29 @@ export function referenceList(
   characters: string[],
   barScene: boolean
 ): { label: string; path: string; box?: [number, number, number, number] }[] {
+  // THE MODEL TAKES SIX IMAGES. Adding a third tile to Drew and a second to
+  // Mango quietly pushed every three-hander to seven, and the whole cast of
+  // twelve Abby panels failed while all six two-handers went through — a
+  // failure that looked exactly like flaky rate limiting for an hour.
+  //
+  // So the budget is spent in priority order: EVERY character's first tile
+  // first, because a character with no reference at all drifts immediately;
+  // then the set plate, which keeps the room the same room; then the extra
+  // per-character tiles while room remains.
+  const LIMIT = 6;
   const list: { label: string; path: string; box?: [number, number, number, number] }[] = [];
+  const extras: typeof list = [];
   for (const character of characters) {
     const key = character.toLowerCase();
     for (const [i, ref] of (VISION_REFS[key] ?? []).entries()) {
-      list.push({ label: ref.label ?? (i === 0 ? (CAST_BLURB[key] ?? key) : key), ...ref });
+      const entry = { label: ref.label ?? (i === 0 ? (CAST_BLURB[key] ?? key) : key), ...ref };
+      (i === 0 ? list : extras).push(entry);
     }
   }
+  // Hold the extras back until the set plate has had its chance at a slot.
+  const spendExtras = () => {
+    while (extras.length > 0 && list.length < LIMIT) list.push(extras.shift()!);
+  };
   // THE SET. Eighty percent of the strip happens in one bar, and a room
   // described in words is a different bar every generation — the same lesson
   // the bill taught: the picture out-votes the text, so give it the picture.
@@ -307,7 +323,7 @@ export function referenceList(
   // plate 3 and carried that plate's television picture into every cartoon's
   // screen. This one is drawn for the purpose with the screen and the
   // chalkboard BLANK, so it can only teach layout, fixtures and furniture.
-  if (barScene) {
+  if (barScene && list.length < LIMIT) {
     list.push({
       path: "canon/vision/studies/room.png",
       label:
@@ -320,7 +336,8 @@ export function referenceList(
         "the labels blank, and change nothing else about the room",
     });
   }
-  return list;
+  spendExtras();
+  return list.slice(0, LIMIT);
 }
 
 async function uploadReferences(
