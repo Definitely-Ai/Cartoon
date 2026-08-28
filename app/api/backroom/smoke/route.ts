@@ -211,7 +211,9 @@ const STUDIES: Record<string, string> = {
     "amused and knowing — a woman who has heard everything and is still glad you came in. Her " +
     "studded leather collar with its teardrop gem sits at her throat, the fur of her cheeks and " +
     "the fringe over her brow drawn stroke by stroke, and the open collar of her blouse just " +
-    "reaching the bottom edge of the frame.",
+    "reaching the bottom edge of the frame. THE LONG FUR STOPS AT HER JAWLINE: her throat and " +
+    "the top of her chest are short, fine and close-lying, sleek rather than shaggy, with no " +
+    "ruff, no tufts, no mane and no neck-beard anywhere below the jaw.",
 };
 
 // The showcase batch (?set=showcase): twelve cartoons out of the writers'
