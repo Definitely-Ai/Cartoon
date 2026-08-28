@@ -548,12 +548,20 @@ export async function GET(request: NextRequest) {
         false,
         isMultiRef(version)
       );
+      // ?noref=1 draws from the text alone, with NO reference tile attached.
+      // This exists because a reference cannot be bootstrapped out of itself:
+      // six candidates drawn while Abby's black-button tile was attached came
+      // back with black-button eyes, and the inspection called one "a re-render
+      // of the problem, not a fix." When the picture is the thing that is
+      // wrong, the only way to get a better picture is to stop showing it.
+      const noRef = params.get("noref") === "1";
       const image = await generateCartoonArt({
         prompt,
         characters: [subject],
         barScene: false,
         model: version,
         quality,
+        noReferences: noRef,
       });
       // ?candidate=1 files a stamped roll in a candidates folder and leaves the
       // canonical study alone. Searching for a better reference means drawing

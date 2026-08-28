@@ -331,6 +331,16 @@ export async function generateCartoonArt(input: {
   /** The house model's quality dial for this one call. Passed rather than
    *  read from the environment so concurrent requests cannot trade dials. */
   quality?: string;
+  /** Draw from the text alone, attaching no reference image at all.
+   *
+   *  This exists for one job: replacing a reference that is itself the fault.
+   *  A reference cannot be bootstrapped out of itself — six Abby head studies
+   *  drawn with her black-button tile attached came back with black-button
+   *  eyes, and the inspection called one of them "a re-render of the problem,
+   *  not a fix." When the picture is what is wrong, the only way to get a
+   *  better picture is to stop showing it. Never use this for a filed
+   *  cartoon: without the plates the cast drifts immediately. */
+  noReferences?: boolean;
 }): Promise<Buffer> {
   const model = input.model ?? imageModel();
   const multiRef = isMultiRef(model);
@@ -345,7 +355,9 @@ export async function generateCartoonArt(input: {
       multiRefInput(
         model,
         input.prompt,
-        await uploadReferences(input.characters, input.barScene ?? false, input.references),
+        input.noReferences
+          ? []
+          : await uploadReferences(input.characters, input.barScene ?? false, input.references),
         input.quality
       )
     );
