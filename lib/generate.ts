@@ -97,7 +97,19 @@ const VISION_REFS: Record<string, Tile[]> = {
     },
   ],
   mango: [{ path: "canon/vision/mango-reference.jpg", box: [950, 1400, 1900, 1950] }],
-  abby: [{ path: "canon/vision/abby-face-reference.jpg" }],
+  abby: [
+    {
+      path: "canon/vision/abby-face-reference.jpg",
+      label:
+        "Abby, the West Highland white terrier who owns and tends the bar. COPY THESE EYES EXACTLY — they are " +
+        "the most important thing in this tile: an almond opening wider than it is tall, a CLEAR WHITE OF THE " +
+        "EYE visible on BOTH sides of the iris, a drawn circular iris with fine radiating lines and a darker " +
+        "rim, a distinct round pupil clearly smaller than the iris, exactly one catchlight, and a lashed upper " +
+        "lid thickening toward the outer corner. Copy also her closed-lip half-smile and her level, unhurried " +
+        "gaze going PAST the reader rather than at him. Her long fur STOPS at the jawline: below it the throat " +
+        "and chest are short, sleek and close-lying, never a ruff",
+    },
+  ],
 };
 
 // A character-free stretch of the bar from plate 3 — walnut wall, the TV
