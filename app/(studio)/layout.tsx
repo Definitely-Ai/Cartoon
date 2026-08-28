@@ -19,6 +19,7 @@ export default function StudioLayout({ children }: { children: ReactNode }) {
         <p className="br-sub">The private studio</p>
         <nav className="br-nav" aria-label="Studio">
           <Link href="/">Today</Link>
+          <Link href="/review">Review</Link>
           <Link href="/collection">The Collection</Link>
           <Link href="/keepers">Keepers</Link>
           <Link href="/models">The Cast</Link>

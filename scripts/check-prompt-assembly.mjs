@@ -115,6 +115,43 @@ check("the room comes along only when the scene is in the bar", () => {
   assert.match(away, /two-thwart fishing boat/);
 });
 
+check("no barroom furniture travels to an away game on the house path", () => {
+  // The check above tests the FINE-TUNED path, which never had this bug. The
+  // path production actually draws with is the multi-reference one, and it
+  // shipped a golf-course batch carrying the marble counter, the club chairs,
+  // the fixed bar height, the television, the chalkboard and the whole SIDES
+  // block that stands Abby behind a counter. Ten paid drawings were told to
+  // render a fairway and a barroom at once.
+  const away = assemblePrompt(master, boat, false, false, true);
+
+  const mustNotTravel = [
+    [/THE ROOM\./, "the room"],
+    // Not /THE STAGE\./ — the away fence has a stage paragraph of its own,
+    // and should. What must not travel is the BAR's stage.
+    [/CROPPED AT THE COUNTER/, "the counter crop"],
+    [/THE BAR IS ONE LEVEL/, "the one-level bar rule"],
+    [/THE BAR HEIGHT IS FIXED/, "the bar-height rule"],
+    [/THE SEATING IS THE SAME EVERY DAY/, "the club chairs"],
+    [/THE SIDES —/, "the sides block"],
+    [/NEAREST THE READER/, "the sides block's near depth"],
+    [/NEXT, BEYOND THEIR SHOULDERS/, "the sides block's middle depth"],
+    [/FARTHEST, PAST THE COUNTER/, "the sides block's far depth"],
+    [/The TV and the chalkboard are OPTIONAL/, "the screen-and-board paragraph"],
+    [/\bmarble\b/i, "marble"],
+    [/\bchalkboard\b/i, "a chalkboard"],
+    [/\bback bar\b/i, "the back bar"],
+  ];
+  for (const [pattern, what] of mustNotTravel) {
+    assert.doesNotMatch(away, pattern, `a boat prompt must not carry ${what}`);
+  }
+
+  // What SHOULD travel: the cast and the drawing hand belong everywhere.
+  assert.match(away, /DREW\./, "Drew's construction travels to every setting");
+  assert.match(away, /MANGO\./, "so does Mango's");
+  assert.match(away, /steel engraving/, "and so does the style");
+  assert.match(away, /two-thwart fishing boat/, "and the setting Rick asked for is in there");
+});
+
 check("every slot is filled on both paths", () => {
   for (const fineTuned of [true, false]) {
     for (const candidate of [bar, boat, withAbby]) {

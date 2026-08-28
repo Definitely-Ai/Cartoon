@@ -373,6 +373,41 @@ type Candidate = {
   characters: string[];
 };
 
+/**
+ * The paragraphs of the base fence that describe THE BAR and only the bar.
+ *
+ * An away game swaps the room out. It used to do that by dropping the two
+ * paragraphs whose names say "room" and "stage" — which left nine others
+ * standing, so a cartoon set on a golf course still carried the marble
+ * counter, the studded leather club chairs, the fixed bar height, the
+ * television and chalkboard, and the whole five-paragraph SIDES block that
+ * puts Abby behind a counter against a back bar. The model was being told to
+ * draw a fairway and a barroom at once, and it is not obvious which one loses.
+ *
+ * Every rule here is about the bar's furniture or the bar's geometry. Rules
+ * that belong to the CHARACTERS — how Drew's bill is built, how the house name
+ * is made into an object, the drawing style — are not in this list and travel
+ * everywhere, which is the whole point of having a cast.
+ */
+const BAR_ONLY_PARAGRAPHS = [
+  "THE ROOM.",
+  "THE STAGE.",
+  "The TV and the chalkboard are OPTIONAL",
+  "THE BAR IS ONE LEVEL.",
+  "THE SEATING IS THE SAME EVERY DAY",
+  "THE BAR HEIGHT IS FIXED",
+  "THE SIDES —",
+  "NEAREST THE READER",
+  "NEXT, BEYOND THEIR SHOULDERS",
+  "FARTHEST, PAST THE COUNTER",
+  "The two of them are on one side and she is on the other",
+];
+
+/** True when a paragraph belongs to the bar and must not travel. */
+export function isBarOnly(paragraph: string): boolean {
+  return BAR_ONLY_PARAGRAPHS.some((prefix) => paragraph.startsWith(prefix));
+}
+
 function fencesOf(masterPrompt: string) {
   const fences = [...masterPrompt.matchAll(/```text\n([\s\S]*?)```/g)].map((m) => m[1].trim());
   if (fences.length < 1) {
@@ -460,9 +495,10 @@ export function assemblePrompt(
     if (!awayBlock) {
       throw new PublishError(500, "The master prompt has no away-game fence — cannot stage an outdoor scene.");
     }
-    // Swap the bar's ROOM+STAGE paragraphs for the outdoor setting passage.
+    // Swap every paragraph that belongs to the bar for the outdoor passage —
+    // not just the two named ROOM and STAGE. See BAR_ONLY_PARAGRAPHS.
     const paragraphs = prompt.split("\n\n");
-    const kept = paragraphs.filter((p) => !p.startsWith("THE ROOM.") && !p.startsWith("THE STAGE."));
+    const kept = paragraphs.filter((p) => !isBarOnly(p));
     const away = awayBlock.replace("[SETTING]", candidate.setting.trim());
     kept.splice(1, 0, away);
     prompt = kept.join("\n\n");
