@@ -80,10 +80,12 @@ const VISION_REFS: Record<string, Tile[]> = {
     {
       path: "canon/vision/drew-plate1-head-study.jpg",
       label:
-        "a close study of THE SAME BIRD's head — copy this bill exactly, including the black: it is slender, " +
-        "tucked to the face and dropping steeply, the rear two thirds pale, and along the outer third the black " +
-        "IS the outline, continuing the bill's own curve smoothly to the tip with one bright highlight inside " +
-        "it. This tile is not a second character",
+        "a close study of THE SAME BIRD's head — copy this bill and this nostril EXACTLY. The bill is slender, " +
+        "tucked to the face and dropping steeply, the rear two thirds pale; along the outer third the black IS " +
+        "the outline, continuing the bill's own curve smoothly to a ROUNDED TIP, never hooking or hanging " +
+        "below the line the pale bill was travelling on, with one bright highlight inside it. The NOSTRIL is a " +
+        "plain thin slit with NO outline or ring around it. There is no shelf or ridge over the eye. The soft " +
+        "pale patch below the bill is empty background, not an object. This tile is not a second character",
     },
   ],
   mango: [{ path: "canon/vision/mango-reference.jpg", box: [950, 1400, 1900, 1950] }],
