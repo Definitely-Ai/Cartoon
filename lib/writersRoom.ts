@@ -85,14 +85,29 @@ function barStage(hasAbby: boolean, tvPicture: string): string {
 }
 
 /** An away game. No counter to hide behind, so the framing convention and the
- *  fourth wall have to be restated in the setting's own terms. */
-function awayStage(): string {
+ *  fourth wall have to be restated in the setting's own terms.
+ *
+ *  The headcount is spoken aloud because the bar's version could assume two
+ *  gentlemen and a bartender: out here the cast changes panel to panel, and a
+ *  stage direction that says "the two of them" over a three-hander is an
+ *  instruction to drop somebody. */
+function awayStage(count: number): string {
+  const who =
+    count >= 3
+      ? "all THREE of them filling the frame"
+      : count === 2
+        ? "BOTH of them filling the frame"
+        : "the single figure filling the frame";
+  const facing =
+    count > 1
+      ? "Each character is seen in THREE-QUARTER view, angled into the frame so the face and both eyes are " +
+        "readable, turned toward each other rather than toward us."
+      : "He or she is seen in THREE-QUARTER view, angled into the frame so the face and both eyes are " +
+        "readable, attention on the business in hand rather than on us.";
   return (
-    "CAMERA: eye level, close in, the two of them filling the frame from roughly the waist up with the place " +
-    "reading clearly behind them — never a wide landscape with small figures in it. Each character is seen in " +
-    "THREE-QUARTER view, angled into the frame so the face and both eyes are readable, turned toward each " +
-    "other rather than toward us. NOBODY looks out of the panel at the reader. They are the only figures in " +
-    "the picture: no other people anywhere, near or far."
+    `CAMERA: eye level, close in, ${who} from roughly the waist up with the place reading clearly behind ` +
+    `them — never a wide landscape with small figures in it. ${facing} NOBODY looks out of the panel at the ` +
+    "reader. They are the only figures in the picture: no other people anywhere, near or far."
   );
 }
 
@@ -150,7 +165,7 @@ export function stage(gag: Gag): Brief {
   const away = gag.away.trim();
   const setting = away ? describePlace(away) : "";
   const action = gag.action.trim().replace(/\s*$/, "").replace(/([^.])$/, "$1.");
-  const scene = `${action} ${away ? awayStage() : barStage(hasAbby, gag.tvPicture)}`;
+  const scene = `${action} ${away ? awayStage(gag.characters.length) : barStage(hasAbby, gag.tvPicture)}`;
   return { ...gag, setting, scene, slug: slugOf(gag.caption) };
 }
 

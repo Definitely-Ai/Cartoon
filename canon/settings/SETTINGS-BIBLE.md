@@ -18,7 +18,11 @@ world who build relationships at a good bar:
 - **If the front window is shown, The Swinging Door is on it, mirrored** as
   read from inside (the window is optional; the mirrored sign on it is not);
   a framed script sign on the wall is handsome but optional per panel; framed
-  prints of airplanes, landmarks, and golfers.
+  prints of airplanes and landmarks — plate 1 hangs an airliner and a control
+  tower. *(Open conflict, flagged not settled: plate 2 also hangs a small
+  framed print of a golfer, while `MASTER-PROMPT.md` forbids a human figure
+  anywhere in the room, "inside a picture frame or on a hat included." Until
+  the founder rules, draw the hole and leave the golfer out.)*
 - **Coherence rule**: the TV's story and the chalkboard's special both relate
   to the day's caption — the room tells the same joke from other angles.
 - **Bottles out and proudly displayed** on the back bar — each a distinct
@@ -194,9 +198,9 @@ size.
 These are laws, not suggestions — `creation/SCENE-QC.md` inspects every generated image against them:
 
 - **Two sides, one rule.** Behind the bar is the service side: Abby's territory, no one else's. Patrons — Drew, Mango, anyone — stay on the room side. Abby leaves her position only for an explicit owner action named in the scene (opening or closing, greeting at the double swinging doors, checking the room, carrying stock, solving a practical problem); she is never a casual patron.
-- **The counter, from both sides.** The counter top hits standing Abby at the upper hip and seated patrons at forearm height; patrons' forearms and glasses rest ON the counter between them. The floor behind the bar is level with the room.
-- **Occlusion is correct.** Behind the bar, the counter hides Abby from the upper hip down. That is the right drawing — never render her lower body through or in front of the counter, and never move her patron-side just to show it.
-- **Blocking defaults.** Drew stands or leans at the room side of the bar, and his martini is always with him there — stemmed triangular glass, exactly three olives on one pick, on a coaster or in his feather-digit grip. Mango sits on a stool with human posture, his old fashioned flat on the bar. A seated character's hips are ON the seat, weight believable, legs resolved — nobody hovers beside their stool.
+- **The counter, from both sides.** The counter's far edge crosses standing Abby at the waist, and its top hits the seated gentlemen just below mid-chest with their forearms resting ON it; their glasses stand on the marble between them. The floor behind the bar is level with the room.
+- **Occlusion is correct.** Behind the bar, the counter hides Abby from the waist down. That is the right drawing — never render her lower body through or in front of the counter, and never move her patron-side just to show it.
+- **Blocking defaults.** Drew sits at the room side of the counter, frame-left, and his martini is always with him there — conical stemmed glass, **one olive on one pick** (the count is the flamingo bible's, and it outranks this page), on a coaster or held by the stem in his feathered hand. Mango sits frame-right in a studded leather club chair, his old fashioned flat on the marble. Each of them sits with his weight on the seat and his hips on it — but the panel is cropped at the counter, so **none of that is ever in frame**: never draw legs, a stool or a seat to prove a character is sitting.
 - **Support and grip.** Every glass and bottle rests flat on the bar, a coaster, or a shelf, or sits in a closed plausible grip; hands meet props at real contact points.
 - **No interpenetration.** No limb, prop, or garment passes through furniture, glassware, or another character; nothing fuses into a surface.
 - **Scale holds.** Character heights stay consistent with the counter, the stools, and each other, panel to panel.
