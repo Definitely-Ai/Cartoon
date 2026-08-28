@@ -161,9 +161,17 @@ export async function GET(request: NextRequest) {
     const made: string[] = [];
     const failed: { n: number; why: string }[] = [];
 
+    // Replicate allows roughly one prediction every ten seconds on a small
+    // credit balance. The smoke route has spaced its panels for weeks; this one
+    // never did, and it showed: firing twenty-five back to back, five of the
+    // first seven came back rate-limited and only panels four and seven
+    // survived. Spacing turns a wave of refusals into a slower complete wave.
+    let first = true;
     for (const panel of plan.panels) {
       if (already.has(panel.n)) continue;
       if (Date.now() - started > BUDGET_MS) break;
+      if (!first) await new Promise((resolve) => setTimeout(resolve, 12_000));
+      first = false;
 
       try {
         const prompt = assemblePrompt(
