@@ -153,6 +153,28 @@ export default function ModelsPage() {
           Written to this week&rsquo;s actual tape and drawn to the plates. Score any panel 1–10 and say what you
           see — every note reaches the operator before the next round.
         </p>
+        {/* This page shows the PROMOTED set, which changes only when a batch has
+            been inspected and passed. A batch being drawn right now is not here,
+            and looking for it on this page and not finding it is exactly the
+            confusion this line exists to prevent. */}
+        <p
+          style={{
+            marginTop: 14,
+            padding: "11px 15px",
+            background: "#f6f2e8",
+            borderLeft: "3px solid #c9a227",
+            borderRadius: 3,
+            color: "#4a4136",
+            fontSize: 15,
+            maxWidth: 760,
+          }}
+        >
+          These are the <strong>promoted</strong> panels — the set that has been through inspection. Freshly
+          drawn batches are not shown here until they pass.{" "}
+          <a href="/review" style={{ color: "#1a1a1a", fontWeight: 600 }}>
+            See the newest batch under Review →
+          </a>
+        </p>
         {showcase.length === 0 ? (
           <p style={{ fontFamily: serif, fontStyle: "italic", color: "#8a7f6d" }}>
             The batch is being drawn now — refresh in a few minutes.
