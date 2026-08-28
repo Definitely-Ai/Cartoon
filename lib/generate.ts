@@ -88,12 +88,9 @@ const VISION_REFS: Record<string, Tile[]> = {
     {
       path: "canon/vision/drew-hands-reference.jpg",
       label:
-        "THE SAME BIRD from the neck down — copy his ARMS AND HANDS from this tile exactly. EACH ARM ENDS IN A " +
-        "HAND: four fingers and one opposed thumb, five digits drawn separately, short white plumage to every " +
-        "tip, each tip blunt and soft with NO nail and NO claw. NEITHER arm is a folded wing and neither ends " +
-        "in a wingtip or a fan of primaries. Copy the bow tie, the collar and the knit of the vest from here " +
-        "too. This tile is deliberately cropped below the head: it says NOTHING about his bill, and it is not " +
-        "a second character",
+        "THE SAME BIRD from the neck down — copy his ARMS AND HANDS from here: each ends in a hand of four " +
+        "fingers and a thumb, plumage to every blunt tip, no claws, no wingtips. Also his bow tie, collar and " +
+        "vest. Cropped below the head on purpose — it says nothing about his bill. Not a second character",
     },
     {
       path: "canon/vision/drew-plate1-head-study.jpg",
@@ -111,24 +108,18 @@ const VISION_REFS: Record<string, Tile[]> = {
     {
       path: "canon/vision/mango-face-reference.jpg",
       label:
-        "THE SAME DOG, closer — copy this face and these hands. BOTH EYES are fully on the paper with the " +
-        "bridge of the muzzle showing between them, bright and open with one catchlight each; the worry lives " +
-        "ONLY in the raised inner brows and the mouth turns gently UP in a closed-lip smile. BOTH HANDS are " +
-        "fur-backed with four fingers and an opposed thumb, every finger separate, NO nails and NO claws. The " +
-        "flag pin is on his LEFT lapel and is the only mark on his clothes. This tile is not a second character",
+        "THE SAME DOG, closer — copy this face and these hands: both eyes on the paper with the muzzle bridge " +
+        "between them, worry in the brows only, mouth up in a closed-lip smile, and two clawless fur-backed " +
+        "hands. Not a second character",
     },
   ],
   abby: [
     {
       path: "canon/vision/abby-face-reference.jpg",
       label:
-        "Abby, the West Highland white terrier who owns and tends the bar. COPY THESE EYES EXACTLY — they are " +
-        "the most important thing in this tile: an almond opening wider than it is tall, a CLEAR WHITE OF THE " +
-        "EYE visible on BOTH sides of the iris, a drawn circular iris with fine radiating lines and a darker " +
-        "rim, a distinct round pupil clearly smaller than the iris, exactly one catchlight, and a lashed upper " +
-        "lid thickening toward the outer corner. Copy also her closed-lip half-smile and her level, unhurried " +
-        "gaze going PAST the reader rather than at him. Her long fur STOPS at the jawline: below it the throat " +
-        "and chest are short, sleek and close-lying, never a ruff",
+        "Abby, the terrier who owns and tends the bar. COPY THESE EYES EXACTLY — white showing both sides of a " +
+        "drawn iris, a smaller round pupil, one catchlight, lashed upper lid. Copy her closed-lip half-smile, " +
+        "her gaze going past the reader, and her sleek throat with no ruff",
     },
   ],
 };
@@ -552,6 +543,29 @@ function fineTunedPrompt(masterPrompt: string, candidate: Candidate): string {
  * paragraphs swapped for the outdoor passage on away games, and the ABBY fence
  * appended when she is in the scene.
  */
+/** The house model refuses a prompt over 32,000 characters. Every Abby panel in
+ *  a batch of twenty-five failed against that ceiling while every two-hander
+ *  went through, and the refusal surfaced as a generic generation failure — it
+ *  read as flaky rate limiting for an hour. Fail here instead, before the call
+ *  is paid for, and say which cast and how far over. */
+const PROMPT_CEILING = 32_000;
+
+/** The house model refuses a prompt over its ceiling. Every Abby panel in a
+ *  batch of twenty-five failed against it while every two-hander went through,
+ *  and the refusal arrived as a generic generation failure — it read as flaky
+ *  rate limiting for an hour. Fail here instead, before the call is paid for,
+ *  naming the cast and the overshoot. */
+function guardLength(prompt: string, characters: string[]): string {
+  if (prompt.length > PROMPT_CEILING) {
+    throw new PublishError(
+      500,
+      `The assembled prompt is ${prompt.length} characters for [${characters.join(", ")}], over the model's ` +
+        `${PROMPT_CEILING} limit by ${prompt.length - PROMPT_CEILING}. Shorten a canon fence or a reference label.`
+    );
+  }
+  return prompt;
+}
+
 export function assemblePrompt(
   masterPrompt: string,
   candidate: Candidate,
@@ -598,7 +612,7 @@ export function assemblePrompt(
         ? " Some characters have MORE THAN ONE reference tile: those tiles are the SAME individual seen twice, at " +
           "different distances. Never draw two of him."
         : "";
-    return (
+    return guardLength(
       "Draw ONE single-panel black-and-white gag cartoon, one unbroken scene edge to edge — no seam, no " +
       "split, no second frame, and no photographic rendering.\n\n" +
       `REFERENCES. ${roster}${doubled} Draw each character exactly as his or her own reference draws that character ` +
@@ -608,7 +622,8 @@ export function assemblePrompt(
       `The finished panel contains EXACTLY ${candidate.characters.length} character${candidate.characters.length > 1 ? "s" : ""}` +
       `${candidate.characters.length > 1 ? ", each a separate individual — never merged, never duplicated, never omitted" : ""}.` +
       "\n\nTHE CARTOON:\n\n" +
-      prompt
+      prompt,
+      candidate.characters
     );
   }
 
