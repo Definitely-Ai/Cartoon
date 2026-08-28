@@ -38,6 +38,11 @@ export type Gag = {
   characters: CastName[];
   /** A short setting phrase for an away game, or "" when it is the bar. */
   away: string;
+  /** The lettered lines this setting carries, from the SAME joke as the
+   *  caption. The bar has a television and a chalkboard; an away game has
+   *  posted notices, markers and banners, and nothing was asking the writer
+   *  to write them — so the drawing invented its own, off-joke, every time. */
+  signs: string[];
   /** The writer's own one-line note on how the joke turns. Kept for review. */
   turn?: string;
 };
@@ -91,7 +96,7 @@ function barStage(hasAbby: boolean, tvPicture: string): string {
  *  gentlemen and a bartender: out here the cast changes panel to panel, and a
  *  stage direction that says "the two of them" over a three-hander is an
  *  instruction to drop somebody. */
-function awayStage(count: number): string {
+function awayStage(count: number, signs: string[]): string {
   const who =
     count >= 3
       ? "all THREE of them filling the frame"
@@ -104,11 +109,21 @@ function awayStage(count: number): string {
         "readable, turned toward each other rather than toward us."
       : "He or she is seen in THREE-QUARTER view, angled into the frame so the face and both eyes are " +
         "readable, attention on the business in hand rather than on us.";
+  // Two at most. A setting that letters five surfaces garbles three of them.
+  const posted =
+    signs.length > 0
+      ? ` THE PLACE CARRIES THIS CARTOON'S OWN JOKE ON ITS OWN SIGNAGE: ${signs
+          .slice(0, 2)
+          .map((line, i) => `sign ${i + 1} reads exactly and only "${line.replace(/"/g, "")}"`)
+          .join("; ")}. Those are the ONLY lettered surfaces in the panel; every other surface is blank.`
+      : "";
+
   return (
     `CAMERA: eye level, close in, ${who} from the chest to the BELT, where the bottom edge of the panel ` +
     `cuts them — nothing below the belt is in frame, no legs and no feet — with the place reading clearly ` +
     `behind them, never a wide landscape with small whole figures in it. ${facing} NOBODY looks out of the ` +
-    "panel at the reader. They are the only figures in the picture: no other people anywhere, near or far."
+    "panel at the reader. They are the only figures in the picture: no other people anywhere, near or far." +
+    posted
   );
 }
 
@@ -118,10 +133,22 @@ function awayStage(count: number): string {
 const PLACES: { match: RegExp; describe: string }[] = [
   {
     match: /golf|fairway|links|tee|course|caddie|caddy/i,
+    // THE SAME COURSE EVERY TIME. The first version of this described a mood --
+    // "mature trees, a low clubhouse roof beyond" -- and the drawing invented a
+    // different building in nine panels out of ten: a cupola here, a colonnade
+    // there, a two-storey clapboard house with a clock tower. Countable beats
+    // relational, so every landmark below is a countable fact with a fixed
+    // place in the frame, and the clubhouse in particular is pinned down hard.
     describe:
-      "a golf course fairway on a fine day: mown turf underfoot with the mower's stripes running away behind " +
-      "them, a flagstick on a green in the middle distance, mature trees along both sides and a low clubhouse " +
-      "roof beyond the trees",
+      "THE SAME GOLF COURSE EVERY TIME, and it is always this one. Underfoot, mown fairway turf with the " +
+      "mower's pale and dark STRIPES running straight away from the reader into the distance. In the MIDDLE " +
+      "DISTANCE, ONE putting green with ONE flagstick standing in it, the flag plain and unlettered. Along BOTH " +
+      "sides, stands of heavy round-crowned deciduous trees in full leaf, closing the fairway in. Beyond the " +
+      "green, ONE clubhouse and always the same one: a LOW SINGLE-STOREY building of pale horizontal clapboard " +
+      "with a plain shingled HIPPED roof, ONE central brick chimney, and a covered porch of SIX slim white posts " +
+      "running along its front. It has NO cupola, NO belfry, NO clock, NO tower, NO gabled pediment, NO second " +
+      "storey and NO colonnade of arches. It sits small and low and central on the horizon, well behind the " +
+      "green, never close and never large. The sky is open and lightly clouded",
   },
   {
     match: /\bboat\b|sail|yacht|open water|at sea/i,
@@ -166,7 +193,9 @@ export function stage(gag: Gag): Brief {
   const away = gag.away.trim();
   const setting = away ? describePlace(away) : "";
   const action = gag.action.trim().replace(/\s*$/, "").replace(/([^.])$/, "$1.");
-  const scene = `${action} ${away ? awayStage(gag.characters.length) : barStage(hasAbby, gag.tvPicture)}`;
+  const scene = `${action} ${
+    away ? awayStage(gag.characters.length, gag.signs) : barStage(hasAbby, gag.tvPicture)
+  }`;
   return { ...gag, setting, scene, slug: slugOf(gag.caption) };
 }
 
@@ -233,6 +262,13 @@ const SHAPE = `Each element of the array is an object with exactly these keys:
   "board"      the chalkboard's line, menu-shaped, or "" if this cartoon has no board
   "away"       "" for a cartoon in the bar. For a cartoon somewhere else, a SHORT place phrase such as
                "golf course" or "courtroom". Whatever the brief asks for.
+  "signs"      AWAY GAMES ONLY (empty array [] for a bar cartoon). ONE OR TWO short lines of lettering
+               that the place itself would really have posted — a course notice, a yardage marker, a
+               banner, a warning board — CARRYING THIS CARTOON'S OWN JOKE. They are the away game's
+               equivalent of the television and the chalkboard, and they must come from the same joke
+               as the caption, not a different golf joke. If the caption is about municipal bonds
+               paying for a municipal course, the sign is about that. Two at most: a setting that
+               letters five surfaces garbles three of them.
   "turn"       three or four words naming the turn: "collision", "contradiction" or "theft", plus what
                collides, contradicts or is stolen.
 
@@ -242,7 +278,8 @@ Rules the batch as a whole must obey:
 - Vary the cast: some panels are the two gentlemen, some bring Abby in.
 - At least half the batch carries a television or a chalkboard doing its share of the work.
 - If the brief names a place that is not the bar, EVERY cartoon in the batch is at that place, and there
-  is no television and no chalkboard out there — set "tv", "tvPicture" and "board" to "" for all of them.`;
+  is no television and no chalkboard out there — set "tv", "tvPicture" and "board" to "" for all of them,
+  and put the room's share of the joke in "signs" instead.`;
 
 /** Ask the room for n gags against Rick's brief. */
 export async function commission(brief: string, n: number): Promise<Gag[]> {
@@ -333,6 +370,15 @@ function validate(item: unknown, index: number): Gag {
     board: away ? "" : str("board"),
     characters: unique.length > 0 ? unique : [speaker],
     away,
+    // Only an away game needs them: in the bar the television and the
+    // chalkboard already are the signage, and a third lettered surface is how
+    // a panel ends up with five garbled ones.
+    signs: away
+      ? (Array.isArray(o.signs) ? o.signs : [])
+          .filter((x): x is string => typeof x === "string" && x.trim().length > 0)
+          .map((x) => x.trim().slice(0, 90))
+          .slice(0, 2)
+      : [],
     turn: str("turn") || undefined,
   };
 }
