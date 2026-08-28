@@ -2,7 +2,7 @@ import { NextResponse, type NextRequest } from "next/server";
 import { BACKROOM_COOKIE, isDoorOpen, isTriggerOpen } from "@/lib/backroom-auth";
 
 import { assemblePrompt, generateCartoonArt, imageModel, isMultiRef } from "@/lib/generate";
-import { PublishError, commitFiles, getCanon, readRepoFile } from "@/lib/githubPublish";
+import { PublishError, commitFiles, getCanon, listRepoDir, readRepoFile } from "@/lib/githubPublish";
 import { getTraining, replicateGet } from "@/lib/replicate";
 
 // The freshly trained model's driving test, before it is trusted with
@@ -552,9 +552,38 @@ export async function GET(request: NextRequest) {
 
     const started = Date.now();
     const made: string[] = [];
+    const skipped: string[] = [];
     const failed: { slug: string; error: string }[] = [];
+
+    // ?after=<YYYYMMDD-HHMM> — skip any panel that already has a roll stamped
+    // at or after that moment. A full set is a dozen renders spaced twelve
+    // seconds apart to stay under Replicate's rate limit, which is several
+    // times a function's lifetime, so a set is always drawn over several
+    // calls. Without this each call restarted at panel one and paid again for
+    // work already committed.
+    const after = params.get("after");
+    let alreadyDrawn = new Set<string>();
+    if (after) {
+      const existing = await listRepoDir(OUT_DIR).catch(() => [] as string[]);
+      alreadyDrawn = new Set(
+        existing
+          .filter((name) => name.endsWith(".png"))
+          .map((name) => {
+            // <stamp>-<slug>.png, where the stamp is date-time to the minute
+            // or to the second; the slug is everything after it.
+            const match = name.match(/^(\d{8}-\d{4,6})-(.+)\.png$/);
+            return match && match[1] >= after ? match[2] : "";
+          })
+          .filter(Boolean)
+      );
+    }
+
     let first = true;
     for (const panel of chosen) {
+      if (alreadyDrawn.has(panel.slug)) {
+        skipped.push(panel.slug);
+        continue;
+      }
       if (Date.now() - started > TIME_BUDGET_MS) break;
       // Under $5 of credit Replicate allows one prediction per ~10s; spacing
       // the panels turns a wave of 429s into a slower complete wave.
@@ -606,6 +635,8 @@ export async function GET(request: NextRequest) {
       ok: failed.length === 0,
       version,
       made,
+      skipped,
+      remaining: chosen.length - made.length - skipped.length - failed.length,
       failed,
       next:
         "git pull and inspect scripts/training/smoke/ — three distinct characters at the bar, a real boat, a bare panel, " +
