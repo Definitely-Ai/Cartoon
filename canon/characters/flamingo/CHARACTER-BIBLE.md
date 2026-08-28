@@ -366,6 +366,19 @@ Themed dressing stays in this key: knitwear and club-house. Never a costume.
   pouring, and **never holding a liquor bottle or a bar towel** — a gentleman
   holding either reads as the bartender, and that was the original fault.
 - Bar panels are **cropped at the counter** — chest-up, no legs, no stools.
+- **His gear carries the house name.** Any portable object that is his or the
+  bar's is hand-lettered THE SWINGING DOOR, small and neat, in the house
+  script: the golf bag first of all, and equally the napkin under the martini,
+  a coaster, a matchbook, a bill folder, a hat band, an umbrella. It reads as a
+  maker's mark, not a billboard — one short line, sized to the object. This is
+  in addition to whatever lettering the gag itself commissions; every other
+  surface in the room still stays blank *(founder: "for any scenes that use
+  objects like a golf bag we should have the name of the cartoon The Swinging
+  Door on the item")*.
+- **He never looks at us.** His gaze belongs inside the room — at Mango, at the
+  television, at the chalkboard, or down at the glass. The reader is watching
+  through a fourth wall nobody in the bar knows is there. A Drew who has turned
+  his eye down the lens is a redraw, however good the head is.
 
 ---
 
@@ -421,6 +434,8 @@ defers with amusement — she settles the argument, and he enjoys that.
 - A martini drawn as a bowl alone — no stem, no foot, nothing underneath it
 - A third olive, or an olive floating free of the pick
 - Standing behind the bar among the bottles
+- Eyes turned out of the panel at the reader
+- A golf bag, napkin, coaster or matchbook of his with no house name on it
 
 ---
 

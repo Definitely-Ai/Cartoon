@@ -132,6 +132,29 @@ that grows out of the bar is a redraw.
 *Verified across the twelve-panel batch of 27 August 2026: twelve of twelve
 correct, including all four panels Abby appears in.*
 
+### The house name rides on the cast's own gear
+
+*(Founder: "for any scenes that use objects like a golf bag we should have the
+name of the cartoon The Swinging Door on the item.")*
+
+Any **portable** object belonging to the cast or to the house carries **THE
+SWINGING DOOR**, hand-lettered small and neat in the house script — the golf
+bag, the bar towel, napkins and coasters, a matchbook, an umbrella, a hat band,
+a bill folder, a shopping tote. It is a **maker's mark, not a billboard**: one
+short line, sized to the object, never shouting, and never competing with the
+gag for the eye.
+
+Three boundaries keep it from becoming clutter:
+
+| | |
+| --- | --- |
+| **Portable things only** | It rides on objects that travel with the cast. The room's own fixtures — the panelling, the mirror, the back bar, the chalkboard — are not branded. The mirrored front window is the one exception, and it was already the house sign |
+| **Never on tailoring** | No lettering on a suit, shirt, jacket or vest. Mango's flag pin stays the only mark on his clothes; Drew's neck carries the bow and nothing else |
+| **Additional, not instead** | This is on top of whatever lettering the brief commissions for the gag. Every other surface still stays blank — a blank surface is what lets the model letter the ones that matter without garbling them |
+
+On a prop that already carries a joke, both marks ride together: the golf bag
+is lettered THE SWINGING DOOR **and** hangs Mango's *FORE! NOT SO FAST* towel.
+
 ### What changes, and it is only this
 
 The picture and headline on the **screen**, the writing on the **chalkboard**,

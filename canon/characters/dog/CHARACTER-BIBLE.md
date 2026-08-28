@@ -184,6 +184,19 @@ one object to a wrist is something the drawing can count.
   pouring, and **never holding a liquor bottle or a bar towel** — a gentleman
   holding either reads as the bartender, and that was the original fault.
 - Bar panels are **cropped at the counter** — chest-up, no legs, no stools.
+- **His gear carries the house name, his suit never does.** Portable objects
+  that are his or the bar's are hand-lettered THE SWINGING DOOR, small and
+  neat, in the house script: the golf bag, the coaster under the old
+  fashioned, a matchbook, an umbrella, a tote *(founder: "for any scenes that
+  use objects like a golf bag we should have the name of the cartoon The
+  Swinging Door on the item")*. On the **golf bag both marks ride together** —
+  the house name on the bag itself, the *FORE! NOT SO FAST* towel hanging off
+  it. The line stops at his tailoring: **no lettering on the suit, the shirt or
+  the jacket**, where the flag pin stays the only mark. A maker's mark on a
+  carried thing is dressing; the same words on his lapel are a costume.
+- **He never looks at us.** His gaze belongs inside the room — at Drew, at
+  Abby, at the television, or down at his glass. A Mango squared to the reader
+  is a redraw, and it is also the pose in which his neck disappears.
 
 - **Open conflict, his head angle — flagged, not settled.** All eight plate
   Mangos and the identity crop the pipeline sends draw him one way: turned
@@ -247,6 +260,8 @@ hands is a batch that has stopped acting.
 - A hand closed into one fur mitt, or the back of a hand drawn as bare skin
 - Mango behind the counter, in the service well, or holding a bottle or bar towel
 - A necktie at the bar (open collar under the jacket)
+- Eyes turned out of the panel at the reader
+- A golf bag, coaster or matchbook of his with no house name on it
 - Colour, flat fills, cel shading, photographic rendering
 
 ---
