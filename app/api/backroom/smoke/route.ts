@@ -189,6 +189,34 @@ const STUDIES: Record<string, string> = {
     "left shoulder and she holds a rocks glass and a polishing cloth in her fur-backed hands. " +
     "The studded leather collar with its teardrop gem, the pearl bracelet, the rolled sleeves of " +
     "her fitted blouse and her dark fitted skirt are all drawn in full detail.",
+  // Reference-free head studies for the gentlemen, to test the same trick that
+  // fixed Abby: when a tile teaches a fault, drawing from the text alone shows
+  // whether the words were ever wrong or only ever outvoted.
+  "drew-head":
+    "A CLOSE PORTRAIT STUDY of Drew alone, HEAD AND SHOULDERS AND BOTH ARMS TO THE FINGERTIPS, filling " +
+    "the sheet. His head is in THREE-QUARTER view, the long neck in its high S-curve, his gaze level and " +
+    "going PAST the reader at something in his own room. THE BILL: slender, tucked to the face, dropping " +
+    "steeply, the rear two thirds pale; along the OUTER THIRD ONLY the black IS the outline, continuing the " +
+    "bill's own curve smoothly to a ROUNDED TIP, never hooking and never hanging below the line the pale " +
+    "bill was travelling on, with one bright highlight ribbon inside it. The NOSTRIL is a plain thin slit " +
+    "about HALF the length of his eye, with NO ring or outline around it. No shelf or ridge above the eye. " +
+    "BOTH ARMS END IN HANDS: four fingers and one opposed thumb each, five digits drawn separately, short " +
+    "white plumage to every tip, each tip blunt and soft with NO nail and NO claw — never a wingtip, never a " +
+    "fan of primaries, never a mitt, never bare skin. One hand holds his martini by the stem. His long wing " +
+    "feathers lie along his back and end at his hip; NOTHING hangs past his belt. His black bow tie has two " +
+    "equal wings and a small centre knot, level on the white collar, with no band or strap at the neck.",
+  "mango-head":
+    "A CLOSE PORTRAIT STUDY of Mango alone, HEAD AND SHOULDERS AND BOTH HANDS, filling the sheet. His head " +
+    "is in THREE-QUARTER view with BOTH EYES fully drawn on the paper and the bridge of his muzzle showing " +
+    "between them, his gaze level and going PAST the reader. The BLACK LIP BAND runs from under his black " +
+    "nose back about TWO NOSE-WIDTHS, ending directly under the front corner of his eye, and it is genuinely " +
+    "BLACK. His eyes are bright and open with one clear catchlight each and the worry lives ONLY in his " +
+    "raised inner brows — the corners of his mouth turn gently UP into a warm CLOSED-LIP smile and his " +
+    "cheeks sit full and lifted. Three arcing rows of freckles on the muzzle. BOTH HANDS ARE DRAWN: " +
+    "fur-backed, four fingers and one opposed thumb each, every finger separate, soft pads, and NO NAILS AND " +
+    "NO CLAWS on any fingertip. His throat ruff is modest, never a heavy neck-beard. He wears his dark suit " +
+    "jacket over a pale open-collared shirt with the flag pin on his LEFT lapel, and nothing else is written " +
+    "or badged anywhere on his clothes. He has NO TAIL.",
   // A HEAD study, not a figure study. The fault this exists to fix lives in the
   // eyes, and at knees-up they render about forty pixels across -- too small to
   // carry a white, an iris and a pupil, and too small to judge. Close in, they
