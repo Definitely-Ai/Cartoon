@@ -1,0 +1,133 @@
+{
+  "batch": "20260828-221115-twenty-five-cartoons-at-the-bar",
+  "why": "Written before the founder scored anything, so his ratings can be checked against them. If these track his, the writers' room can be tuned on my read; if they do not, his scores are the only signal worth using and mine should be ignored.",
+  "predictedBy": "the operator, on the caption alone, sight unseen of the art",
+  "scale": "1-10, the same dial the review page uses for the caption",
+  "predictions": [
+    {
+      "n": 1,
+      "caption": "Page one is whiskey; page two is choreography.",
+      "predictedCaptionScore": 7
+    },
+    {
+      "n": 2,
+      "caption": "I own the plywood; the sky took an equity stake.",
+      "predictedCaptionScore": 7
+    },
+    {
+      "n": 3,
+      "caption": "I don't mind the hike; I just want to know whose fender I'm sponsoring.",
+      "predictedCaptionScore": 6
+    },
+    {
+      "n": 4,
+      "caption": "Air travel is now a coat check with a runway.",
+      "predictedCaptionScore": 7
+    },
+    {
+      "n": 5,
+      "caption": "I hold the stocks; someone else collects the maintenance.",
+      "predictedCaptionScore": 5
+    },
+    {
+      "n": 6,
+      "caption": "If your math takes longer than the drink, I can fold it into the total.",
+      "predictedCaptionScore": 7
+    },
+    {
+      "n": 7,
+      "caption": "My cart stayed the same size; everything inside learned origami.",
+      "predictedCaptionScore": 8
+    },
+    {
+      "n": 8,
+      "caption": "We cut the cord; the cord opened five tabs.",
+      "predictedCaptionScore": 7
+    },
+    {
+      "n": 9,
+      "caption": "He calls it a deposit; I call it his savings account.",
+      "predictedCaptionScore": 6
+    },
+    {
+      "n": 10,
+      "caption": "Cash is free; convenience rents the keypad.",
+      "predictedCaptionScore": 6
+    },
+    {
+      "n": 11,
+      "caption": "A refund is a loan where I'm the bank and they forget the interest.",
+      "predictedCaptionScore": 6
+    },
+    {
+      "n": 12,
+      "caption": "Waiting for a cut is our most affordable winter sport.",
+      "predictedCaptionScore": 4
+    },
+    {
+      "n": 13,
+      "caption": "My monthly is the same size; the house ate the garnish.",
+      "predictedCaptionScore": 6
+    },
+    {
+      "n": 14,
+      "caption": "I own the walls; the hallway bills me like a boutique.",
+      "predictedCaptionScore": 6
+    },
+    {
+      "n": 15,
+      "caption": "I don't need valet; I just want a space that forgives mistakes.",
+      "predictedCaptionScore": 6
+    },
+    {
+      "n": 16,
+      "caption": "The armrest is now a timeshare.",
+      "predictedCaptionScore": 8
+    },
+    {
+      "n": 17,
+      "caption": "In here, rooms don't bill; glasses do.",
+      "predictedCaptionScore": 6
+    },
+    {
+      "n": 18,
+      "caption": "The bursar sells elbow room by the credit.",
+      "predictedCaptionScore": 4
+    },
+    {
+      "n": 19,
+      "caption": "I travel light; I keep paying for the empty bin.",
+      "predictedCaptionScore": 6
+    },
+    {
+      "n": 20,
+      "caption": "I booked a room; they rented me the hallway.",
+      "predictedCaptionScore": 8
+    },
+    {
+      "n": 21,
+      "caption": "I don't need a higher number; I just want cheaper measuring tape.",
+      "predictedCaptionScore": 5
+    },
+    {
+      "n": 22,
+      "caption": "My patience finally pays a soda.",
+      "predictedCaptionScore": 4
+    },
+    {
+      "n": 23,
+      "caption": "The curb runs a futures market in rain.",
+      "predictedCaptionScore": 4
+    },
+    {
+      "n": 24,
+      "caption": "I'm happy to bring my own; I'm less happy to rent your stemware.",
+      "predictedCaptionScore": 7
+    },
+    {
+      "n": 25,
+      "caption": "No pressure; let me tip the machine.",
+      "predictedCaptionScore": 5
+    }
+  ]
+}
