@@ -178,10 +178,12 @@ export default async function ReviewIndexPage() {
                 <span className={shelf.drawn === shelf.planned ? "rv-tally rv-tally-done" : "rv-tally"}>
                   {shelf.drawn} of {shelf.planned} drawn
                 </span>
-                <span className="rv-tally">
-                  {shelf.scored === 0
-                    ? "none scored"
-                    : `${shelf.scored} scored`}
+                <span
+                  className={
+                    shelf.scored >= shelf.drawn && shelf.drawn > 0 ? "rv-tally rv-tally-done" : "rv-tally"
+                  }
+                >
+                  {shelf.scored === 0 ? "none scored" : `${shelf.scored} of ${shelf.drawn} scored`}
                 </span>
               </span>
             </Link>

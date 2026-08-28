@@ -129,6 +129,7 @@ export default async function ReviewBatchPage({ params }: { params: Promise<{ ba
 
   const panels = plan?.panels ?? [];
   const made = panels.filter((panel) => drawn.has(panel.file)).length;
+  const scored = panels.filter((panel) => verdicts.has(panel.file.replace(/\.png$/, ""))).length;
   const created = plan?.createdAt ?? "";
 
   return (
@@ -171,6 +172,7 @@ export default async function ReviewBatchPage({ params }: { params: Promise<{ ba
               <strong style={{ fontWeight: 400, color: "#221d16" }}>
                 {made} of {panels.length} drawn
               </strong>
+              {` · ${scored} of ${made} scored`}
               {madeAt(created) ? ` · ${madeAt(created)}` : ""}
             </p>
             <p style={{ fontSize: 13, color: "#8a7f6d", margin: "6px 0 0", wordBreak: "break-word" }}>
@@ -223,11 +225,18 @@ export default async function ReviewBatchPage({ params }: { params: Promise<{ ba
             .filter(isCast)
             .map((who) => ({ key: who, name: CAST_NAMES[who] }));
           return (
-            <article key={panel.n} id={`panel-${panel.n}`} className="rv-panel">
-              <p className="rv-no">
+            <article
+              key={panel.n}
+              id={`panel-${panel.n}`}
+              className="rv-panel"
+              // Named by its number AND its line, so the ten regions are
+              // told apart when they are read out of context.
+              aria-labelledby={`panel-${panel.n}-no panel-${panel.n}-line`}
+            >
+              <h2 className="rv-no" id={`panel-${panel.n}-no`}>
                 № {panel.n}
                 <span className="rv-no-of"> of {panels.length}</span>
-              </p>
+              </h2>
 
               <div className="rv-plate">
                 {isDrawn ? (
@@ -246,7 +255,7 @@ export default async function ReviewBatchPage({ params }: { params: Promise<{ ba
 
               {/* The house caption format, set the way the strip sets it:
                   attributed italic dialogue, Drew: “…”. */}
-              <p className="rv-caption">
+              <p className="rv-caption" id={`panel-${panel.n}-line`}>
                 <span className="rv-speaker">
                   {isCast(panel.speaker) ? CAST_NAMES[panel.speaker] : panel.speaker}:
                 </span>{" "}
@@ -300,6 +309,7 @@ export default async function ReviewBatchPage({ params }: { params: Promise<{ ba
 
         .rv-no {
           font-family: ${serif};
+          font-weight: 400;
           font-size: 13px;
           letter-spacing: 0.16em;
           text-transform: uppercase;
@@ -376,7 +386,7 @@ export default async function ReviewBatchPage({ params }: { params: Promise<{ ba
           font-size: 12px;
           color: #8a7f6d;
           text-align: right;
-          min-width: 3.4em;
+          width: 3.6em;
           font-variant-numeric: tabular-nums;
         }
         .rv-dial-row {
