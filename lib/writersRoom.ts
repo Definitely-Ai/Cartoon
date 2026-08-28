@@ -312,12 +312,21 @@ export async function commission(brief: string, n: number): Promise<Gag[]> {
     `====\n\nTHE BRIEF FROM THE FOUNDER:\n\n"${brief}"\n\n` +
     `Write ${n} cartoons against that brief.\n\n${SHAPE}`;
 
-  const raw = await generateText(WRITER_MODEL, {
-    prompt,
-    system_prompt: SYSTEM,
-    reasoning_effort: "medium",
-    max_completion_tokens: 12_000,
-  });
+  // The ceiling has to scale with the batch. It was fixed at 12,000, which is
+  // ample for ten gags and truncates twenty-five into invalid JSON — the
+  // reasoning tokens come out of the same budget, so the failure lands as a
+  // parse error with nothing committed rather than as a short batch.
+  const raw = await generateText(
+    WRITER_MODEL,
+    {
+      prompt,
+      system_prompt: SYSTEM,
+      reasoning_effort: "medium",
+      max_completion_tokens: Math.max(12_000, n * 1_400),
+    },
+    // Twenty-five gags take appreciably longer to write than ten.
+    Math.max(150_000, n * 9_000)
+  );
 
   return parseGags(raw, n);
 }
@@ -338,7 +347,13 @@ export function parseGags(raw: string, expected: number): Gag[] {
   try {
     parsed = JSON.parse(text);
   } catch {
-    throw new PublishError(502, `The writers' room did not return JSON: ${raw.slice(0, 200)}`);
+    const looksTruncated = text.trimEnd().endsWith(",") || text.trimEnd().endsWith("{") || !text.trimEnd().endsWith("]");
+    throw new PublishError(
+      502,
+      looksTruncated
+        ? `The writers' room ran out of room mid-batch — raise max_completion_tokens or ask for fewer. Ends: ...${raw.slice(-120)}`
+        : `The writers' room did not return JSON: ${raw.slice(0, 200)}`
+    );
   }
   const list = Array.isArray(parsed)
     ? parsed
