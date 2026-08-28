@@ -537,16 +537,20 @@ export async function GET(request: NextRequest) {
         );
       }
       const canonText = await getCanon();
+      // A study key may name a framing as well as a character ("abby-head").
+      // The cast name is what the reference lookup and the character fences
+      // both key off, so strip the framing before either sees it.
+      const subject = who.replace(/-(head|bust|figure)$/, "");
       const prompt = assemblePrompt(
         canonText,
-        { scene: STUDIES[who], setting: STUDY_GROUND, characters: [who] },
+        { scene: STUDIES[who], setting: STUDY_GROUND, characters: [subject] },
         false,
         false,
         isMultiRef(version)
       );
       const image = await generateCartoonArt({
         prompt,
-        characters: [who],
+        characters: [subject],
         barScene: false,
         model: version,
         quality,
