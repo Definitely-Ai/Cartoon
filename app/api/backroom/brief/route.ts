@@ -104,7 +104,9 @@ export async function GET(request: NextRequest) {
           { status: 400 }
         );
       }
-      const n = Math.min(10, Math.max(1, Number(params.get("n") ?? 10) || 10));
+      // Up to 25 in one batch: a review page per ten would make the founder
+      // score the same sitting across three screens.
+      const n = Math.min(25, Math.max(1, Number(params.get("n") ?? 10) || 10));
 
       // The writing is one call and costs about a cent, so it happens up front
       // and lands in the repo before a single drawing is paid for. A batch

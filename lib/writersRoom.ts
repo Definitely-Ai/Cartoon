@@ -281,7 +281,11 @@ const SHAPE = `Each element of the array is an object with exactly these keys:
                collides, contradicts or is stolen.
 
 Rules the batch as a whole must obey:
-- Every caption is a DIFFERENT joke with a DIFFERENT turn. Ten variations on one idea is a failure.
+- Every caption is a DIFFERENT joke with a DIFFERENT turn. Variations on one idea are a failure, and in a
+  large batch that is the commonest way to fail: by cartoon fifteen you will be tempted to rewrite
+  cartoon three. Before you write each new one, read the ones above it and make sure the SUBJECT is new —
+  a bar bill, a roof, a premium, a fee, a fare, a rate, a tip, a receipt, a renewal, a deposit, a
+  surcharge and a refund are twelve different subjects, not one.
 - Vary the speaker across the batch. Do not give every line to the same character.
 - Vary the cast: some panels are the two gentlemen, some bring Abby in.
 - At least half the batch carries a television or a chalkboard doing its share of the work.
