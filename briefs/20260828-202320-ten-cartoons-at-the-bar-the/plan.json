@@ -1,0 +1,215 @@
+{
+  "batch": "20260828-202320-ten-cartoons-at-the-bar-the",
+  "brief": "Ten cartoons at the bar. The subject is money - markets, prices, fees, insurance, bills, and the quiet indignities of a comfortable life. Bring Abby into at least four of them. Vary the turn: no more than four thefts in the batch.",
+  "writer": "openai/gpt-5",
+  "model": "openai/gpt-image-2",
+  "quality": "medium",
+  "createdAt": "2026-08-28T20:23:20.670Z",
+  "panels": [
+    {
+      "speaker": "drew",
+      "caption": "We built a time machine that only goes to invoices.",
+      "action": "Drew steadies his martini. Mango flicks through a phone checkout screen showing split payments.",
+      "tv": "LATE PAYMENTS RISE IN PAY-IN-FOUR PLANS",
+      "tvPicture": "The television picture shows a smartphone checkout screen with four dated boxes, one stamped OVERDUE.",
+      "board": "THE FORTNIGHT PLAN $14 · THE FORTNIGHT PLAN, FINAL TALLY $19",
+      "characters": [
+        "drew",
+        "mango"
+      ],
+      "away": "",
+      "signs": [],
+      "turn": "theft — installments as time machine",
+      "setting": "",
+      "scene": "Drew steadies his martini. Mango flicks through a phone checkout screen showing split payments. CAMERA: we are in the DINING ROOM, BEHIND AND SLIGHTLY ABOVE the two gentlemen, looking OVER THEIR SHOULDERS toward the bar. Drew sits frame-left and Mango frame-right with their BACKS TO US, each turned toward the other so his face reads in three-quarter over his own shoulder; their near shoulders OVERLAP AND HIDE part of the counter. The marble counter runs across the MIDDLE of the picture BEHIND their shoulders, their drinks standing on it past their arms. Beyond it is the bar: back bar, bottles, mirror, the television above and the chalkboard beside. They are patrons — never behind the bar, never holding a bottle or a bar towel. The television picture shows The television picture shows a smartphone checkout screen with four dated boxes, one stamped OVERDUE. They are seated at the bar, never at a table, and never lined up shoulder to shoulder. Each character is seen in three-quarter view with the face and both eyes readable, and NOBODY looks out of the panel at the reader.",
+      "slug": "we-built-a-time-machine-that",
+      "n": 1,
+      "file": "01-we-built-a-time-machine-that.png"
+    },
+    {
+      "speaker": "abby",
+      "caption": "Our storm plan remains unchanged: you carry the exposure, I keep the register.",
+      "action": "Abby slides a coaster under Mango’s glass with a folded bar towel in her other hand.",
+      "tv": "INSURERS EXIT HIGH-RISK ZIP CODES",
+      "tvPicture": "The television picture shows a map of a coastline shaded with large hazard symbols.",
+      "board": "HURRICANE MARTINI $18 · GARNISH SOLD SEPARATELY",
+      "characters": [
+        "drew",
+        "mango",
+        "abby"
+      ],
+      "away": "",
+      "signs": [],
+      "turn": "collision — insurance logic vs bar till",
+      "setting": "",
+      "scene": "Abby slides a coaster under Mango’s glass with a folded bar towel in her other hand. CAMERA: we are in the DINING ROOM, BEHIND AND SLIGHTLY ABOVE the two gentlemen, looking OVER THEIR SHOULDERS toward the bar. Drew sits frame-left and Mango frame-right with their BACKS TO US, each turned toward the other so his face reads in three-quarter over his own shoulder; their near shoulders OVERLAP AND HIDE part of the counter. The marble runs across the MIDDLE of the picture BEHIND their shoulders. BEYOND it stands ABBY, facing them across the bar, the counter's far edge crossing in front of her at the waist and hiding her below it — she is standing and they are seated, so her head sits HIGHER in the frame than theirs. Behind her, the back bar, the television above it and the chalkboard beside. The television picture shows The television picture shows a map of a coastline shaded with large hazard symbols. They are seated at the bar, never at a table, and never lined up shoulder to shoulder. Each character is seen in three-quarter view with the face and both eyes readable, and NOBODY looks out of the panel at the reader.",
+      "slug": "our-storm-plan-remains-unchanged-you",
+      "n": 2,
+      "file": "02-our-storm-plan-remains-unchanged-you.png"
+    },
+    {
+      "speaker": "mango",
+      "caption": "I don't mind the surcharges; I just want jurisdiction.",
+      "action": "Mango thumbs a boarding pass on his phone beside his old fashioned. Drew adjusts a cufflink.",
+      "tv": "CARRIERS ADD NEW FEES FOR SEATS AND BAGS",
+      "tvPicture": "The television picture shows an airport self-check kiosk with a fee list beside a seat map.",
+      "board": "",
+      "characters": [
+        "drew",
+        "mango"
+      ],
+      "away": "",
+      "signs": [],
+      "turn": "theft — travel fees as legal authority",
+      "setting": "",
+      "scene": "Mango thumbs a boarding pass on his phone beside his old fashioned. Drew adjusts a cufflink. CAMERA: we are in the DINING ROOM, BEHIND AND SLIGHTLY ABOVE the two gentlemen, looking OVER THEIR SHOULDERS toward the bar. Drew sits frame-left and Mango frame-right with their BACKS TO US, each turned toward the other so his face reads in three-quarter over his own shoulder; their near shoulders OVERLAP AND HIDE part of the counter. The marble counter runs across the MIDDLE of the picture BEHIND their shoulders, their drinks standing on it past their arms. Beyond it is the bar: back bar, bottles, mirror, the television above and the chalkboard beside. They are patrons — never behind the bar, never holding a bottle or a bar towel. The television picture shows The television picture shows an airport self-check kiosk with a fee list beside a seat map. They are seated at the bar, never at a table, and never lined up shoulder to shoulder. Each character is seen in three-quarter view with the face and both eyes readable, and NOBODY looks out of the panel at the reader.",
+      "slug": "i-don-t-mind-the-surcharges",
+      "n": 3,
+      "file": "03-i-don-t-mind-the-surcharges.png"
+    },
+    {
+      "speaker": "drew",
+      "caption": "At home we measure chips in basis points.",
+      "action": "Abby refills a very small nut bowl with a scoop. Drew pinches a single chip between two feathers.",
+      "tv": "CONSUMER PACKAGES KEEP GETTING SMALLER",
+      "tvPicture": "The television picture shows a cereal box beside a ruler, the box thinner than the measuring marks.",
+      "board": "THE FAMILY BAG $11 — NOW PERSONAL",
+      "characters": [
+        "drew",
+        "mango",
+        "abby"
+      ],
+      "away": "",
+      "signs": [],
+      "turn": "theft — snacks as finance units",
+      "setting": "",
+      "scene": "Abby refills a very small nut bowl with a scoop. Drew pinches a single chip between two feathers. CAMERA: we are in the DINING ROOM, BEHIND AND SLIGHTLY ABOVE the two gentlemen, looking OVER THEIR SHOULDERS toward the bar. Drew sits frame-left and Mango frame-right with their BACKS TO US, each turned toward the other so his face reads in three-quarter over his own shoulder; their near shoulders OVERLAP AND HIDE part of the counter. The marble runs across the MIDDLE of the picture BEHIND their shoulders. BEYOND it stands ABBY, facing them across the bar, the counter's far edge crossing in front of her at the waist and hiding her below it — she is standing and they are seated, so her head sits HIGHER in the frame than theirs. Behind her, the back bar, the television above it and the chalkboard beside. The television picture shows The television picture shows a cereal box beside a ruler, the box thinner than the measuring marks. They are seated at the bar, never at a table, and never lined up shoulder to shoulder. Each character is seen in three-quarter view with the face and both eyes readable, and NOBODY looks out of the panel at the reader.",
+      "slug": "at-home-we-measure-chips-in",
+      "n": 4,
+      "file": "04-at-home-we-measure-chips-in.png"
+    },
+    {
+      "speaker": "mango",
+      "caption": "I've retired from guessing the tape.",
+      "action": "Mango taps refresh on a rates app. Drew idly stirs his martini with the olive pick.",
+      "tv": "CENTRAL BANK HOLDS STEADY; MARKETS WEIGH PATH AHEAD",
+      "tvPicture": "The television picture shows a candlestick chart flattening at the right edge.",
+      "board": "",
+      "characters": [
+        "drew",
+        "mango"
+      ],
+      "away": "",
+      "signs": [],
+      "turn": "contradiction — declares done while checking",
+      "setting": "",
+      "scene": "Mango taps refresh on a rates app. Drew idly stirs his martini with the olive pick. CAMERA: we are in the DINING ROOM, BEHIND AND SLIGHTLY ABOVE the two gentlemen, looking OVER THEIR SHOULDERS toward the bar. Drew sits frame-left and Mango frame-right with their BACKS TO US, each turned toward the other so his face reads in three-quarter over his own shoulder; their near shoulders OVERLAP AND HIDE part of the counter. The marble counter runs across the MIDDLE of the picture BEHIND their shoulders, their drinks standing on it past their arms. Beyond it is the bar: back bar, bottles, mirror, the television above and the chalkboard beside. They are patrons — never behind the bar, never holding a bottle or a bar towel. The television picture shows The television picture shows a candlestick chart flattening at the right edge. They are seated at the bar, never at a table, and never lined up shoulder to shoulder. Each character is seen in three-quarter view with the face and both eyes readable, and NOBODY looks out of the panel at the reader.",
+      "slug": "i-ve-retired-from-guessing-the",
+      "n": 5,
+      "file": "05-i-ve-retired-from-guessing-the.png"
+    },
+    {
+      "speaker": "abby",
+      "caption": "We process commitments in rounds; call it amortizing.",
+      "action": "Abby sets a leather check presenter between their drinks with a pen resting on top.",
+      "tv": "STUDENT DEBT PAYMENTS RESTART NEXT MONTH",
+      "tvPicture": "The television picture shows a stack of diplomas bound with ribbon atop a calculator.",
+      "board": "DRINKS ORDERED TONIGHT: 3 · DRINKS BUDGETED: 1",
+      "characters": [
+        "drew",
+        "mango",
+        "abby"
+      ],
+      "away": "",
+      "signs": [],
+      "turn": "theft — bar rounds as amortization",
+      "setting": "",
+      "scene": "Abby sets a leather check presenter between their drinks with a pen resting on top. CAMERA: we are in the DINING ROOM, BEHIND AND SLIGHTLY ABOVE the two gentlemen, looking OVER THEIR SHOULDERS toward the bar. Drew sits frame-left and Mango frame-right with their BACKS TO US, each turned toward the other so his face reads in three-quarter over his own shoulder; their near shoulders OVERLAP AND HIDE part of the counter. The marble runs across the MIDDLE of the picture BEHIND their shoulders. BEYOND it stands ABBY, facing them across the bar, the counter's far edge crossing in front of her at the waist and hiding her below it — she is standing and they are seated, so her head sits HIGHER in the frame than theirs. Behind her, the back bar, the television above it and the chalkboard beside. The television picture shows The television picture shows a stack of diplomas bound with ribbon atop a calculator. They are seated at the bar, never at a table, and never lined up shoulder to shoulder. Each character is seen in three-quarter view with the face and both eyes readable, and NOBODY looks out of the panel at the reader.",
+      "slug": "we-process-commitments-in-rounds-call",
+      "n": 6,
+      "file": "06-we-process-commitments-in-rounds-call.png"
+    },
+    {
+      "speaker": "abby",
+      "caption": "In my plan, the whole evening is out-of-pocket.",
+      "action": "Abby sets a small first-aid kit on the counter as a joke while handing over a water. Drew counts folded cash.",
+      "tv": "EMPLOYER HEALTH PLANS LIFT DEDUCTIBLES AGAIN",
+      "tvPicture": "The television picture shows a stethoscope coiled on a pile of claim forms.",
+      "board": "THE EASY CLAIM $17 — NOT COVERED",
+      "characters": [
+        "drew",
+        "mango",
+        "abby"
+      ],
+      "away": "",
+      "signs": [],
+      "turn": "collision — insurance jargon vs paying cash",
+      "setting": "",
+      "scene": "Abby sets a small first-aid kit on the counter as a joke while handing over a water. Drew counts folded cash. CAMERA: we are in the DINING ROOM, BEHIND AND SLIGHTLY ABOVE the two gentlemen, looking OVER THEIR SHOULDERS toward the bar. Drew sits frame-left and Mango frame-right with their BACKS TO US, each turned toward the other so his face reads in three-quarter over his own shoulder; their near shoulders OVERLAP AND HIDE part of the counter. The marble runs across the MIDDLE of the picture BEHIND their shoulders. BEYOND it stands ABBY, facing them across the bar, the counter's far edge crossing in front of her at the waist and hiding her below it — she is standing and they are seated, so her head sits HIGHER in the frame than theirs. Behind her, the back bar, the television above it and the chalkboard beside. The television picture shows The television picture shows a stethoscope coiled on a pile of claim forms. They are seated at the bar, never at a table, and never lined up shoulder to shoulder. Each character is seen in three-quarter view with the face and both eyes readable, and NOBODY looks out of the panel at the reader.",
+      "slug": "in-my-plan-the-whole-evening",
+      "n": 7,
+      "file": "07-in-my-plan-the-whole-evening.png"
+    },
+    {
+      "speaker": "mango",
+      "caption": "I simplified my life and added six passwords.",
+      "action": "Mango fans out note cards with scribbled logins from his wallet. Drew salts a nut.",
+      "tv": "STREAMING PLATFORMS ROLL OUT NEW CORE TIERS",
+      "tvPicture": "The television picture shows a TV home screen with multiple app icons nested under a BUNDLE label.",
+      "board": "PREMIUM MARTINI $18 · PREMIUM MARTINI, WITH COMMERCIALS $18",
+      "characters": [
+        "drew",
+        "mango"
+      ],
+      "away": "",
+      "signs": [],
+      "turn": "contradiction — simplification adds complexity",
+      "setting": "",
+      "scene": "Mango fans out note cards with scribbled logins from his wallet. Drew salts a nut. CAMERA: we are in the DINING ROOM, BEHIND AND SLIGHTLY ABOVE the two gentlemen, looking OVER THEIR SHOULDERS toward the bar. Drew sits frame-left and Mango frame-right with their BACKS TO US, each turned toward the other so his face reads in three-quarter over his own shoulder; their near shoulders OVERLAP AND HIDE part of the counter. The marble counter runs across the MIDDLE of the picture BEHIND their shoulders, their drinks standing on it past their arms. Beyond it is the bar: back bar, bottles, mirror, the television above and the chalkboard beside. They are patrons — never behind the bar, never holding a bottle or a bar towel. The television picture shows The television picture shows a TV home screen with multiple app icons nested under a BUNDLE label. They are seated at the bar, never at a table, and never lined up shoulder to shoulder. Each character is seen in three-quarter view with the face and both eyes readable, and NOBODY looks out of the panel at the reader.",
+      "slug": "i-simplified-my-life-and-added",
+      "n": 8,
+      "file": "08-i-simplified-my-life-and-added.png"
+    },
+    {
+      "speaker": "abby",
+      "caption": "We used to split the check; now we split consent.",
+      "action": "Abby places a bill folder with a pre-checked tip line. Mango reaches for his pen.",
+      "tv": "MANDATORY SERVICE CHARGES SPREAD TO MORE MENUS",
+      "tvPicture": "The television picture shows a restaurant receipt with a highlighted service line and options beneath.",
+      "board": "SERVICE FEE HOUR 4–7 · 20% IS ALREADY YOURS",
+      "characters": [
+        "drew",
+        "mango",
+        "abby"
+      ],
+      "away": "",
+      "signs": [],
+      "turn": "collision — tipping norms vs permission",
+      "setting": "",
+      "scene": "Abby places a bill folder with a pre-checked tip line. Mango reaches for his pen. CAMERA: we are in the DINING ROOM, BEHIND AND SLIGHTLY ABOVE the two gentlemen, looking OVER THEIR SHOULDERS toward the bar. Drew sits frame-left and Mango frame-right with their BACKS TO US, each turned toward the other so his face reads in three-quarter over his own shoulder; their near shoulders OVERLAP AND HIDE part of the counter. The marble runs across the MIDDLE of the picture BEHIND their shoulders. BEYOND it stands ABBY, facing them across the bar, the counter's far edge crossing in front of her at the waist and hiding her below it — she is standing and they are seated, so her head sits HIGHER in the frame than theirs. Behind her, the back bar, the television above it and the chalkboard beside. The television picture shows The television picture shows a restaurant receipt with a highlighted service line and options beneath. They are seated at the bar, never at a table, and never lined up shoulder to shoulder. Each character is seen in three-quarter view with the face and both eyes readable, and NOBODY looks out of the panel at the reader.",
+      "slug": "we-used-to-split-the-check",
+      "n": 9,
+      "file": "09-we-used-to-split-the-check.png"
+    },
+    {
+      "speaker": "drew",
+      "caption": "Most of our budget is yesterday.",
+      "action": "Drew straightens his tie and lifts his martini. Mango scrolls a bar chart on his phone beside his glass.",
+      "tv": "INTEREST COSTS TAKE BIGGER SHARE OF FEDERAL BUDGET",
+      "tvPicture": "The television picture shows a bar chart where the INTEREST bar grows past other categories.",
+      "board": "",
+      "characters": [
+        "drew",
+        "mango"
+      ],
+      "away": "",
+      "signs": [],
+      "turn": "collision — time vs line item",
+      "setting": "",
+      "scene": "Drew straightens his tie and lifts his martini. Mango scrolls a bar chart on his phone beside his glass. CAMERA: we are in the DINING ROOM, BEHIND AND SLIGHTLY ABOVE the two gentlemen, looking OVER THEIR SHOULDERS toward the bar. Drew sits frame-left and Mango frame-right with their BACKS TO US, each turned toward the other so his face reads in three-quarter over his own shoulder; their near shoulders OVERLAP AND HIDE part of the counter. The marble counter runs across the MIDDLE of the picture BEHIND their shoulders, their drinks standing on it past their arms. Beyond it is the bar: back bar, bottles, mirror, the television above and the chalkboard beside. They are patrons — never behind the bar, never holding a bottle or a bar towel. The television picture shows The television picture shows a bar chart where the INTEREST bar grows past other categories. They are seated at the bar, never at a table, and never lined up shoulder to shoulder. Each character is seen in three-quarter view with the face and both eyes readable, and NOBODY looks out of the panel at the reader.",
+      "slug": "most-of-our-budget-is-yesterday",
+      "n": 10,
+      "file": "10-most-of-our-budget-is-yesterday.png"
+    }
+  ]
+}
