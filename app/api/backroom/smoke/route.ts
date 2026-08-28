@@ -189,6 +189,29 @@ const STUDIES: Record<string, string> = {
     "left shoulder and she holds a rocks glass and a polishing cloth in her fur-backed hands. " +
     "The studded leather collar with its teardrop gem, the pearl bracelet, the rolled sleeves of " +
     "her fitted blouse and her dark fitted skirt are all drawn in full detail.",
+  // A HEAD study, not a figure study. The fault this exists to fix lives in the
+  // eyes, and at knees-up they render about forty pixels across -- too small to
+  // carry a white, an iris and a pupil, and too small to judge. Close in, they
+  // are the size of the drawing.
+  "abby-head":
+    "A CLOSE PORTRAIT STUDY of Abby alone, HEAD AND SHOULDERS ONLY, filling the sheet — the top " +
+    "of her head near the top edge and the frame cutting her at the collarbone. Her head is in " +
+    "THREE-QUARTER view, turned slightly to her right and tipped a little down, her chin lifted " +
+    "just enough to read as composed and self-possessed. Her gaze goes off to the side of the " +
+    "frame, level and unhurried, at something in her own room — SHE IS NOT LOOKING AT THE READER " +
+    "and her eyes are not centred on the lens. THE EYES ARE THE SUBJECT OF THIS DRAWING and are " +
+    "rendered larger and in more detail than anything else on the sheet. Each eye is a wide " +
+    "ALMOND, longer than it is tall, tilted very slightly up at the outer corner, with a defined " +
+    "inner corner and a defined outer corner. Inside each: a CLEAR WHITE OF THE EYE showing as a " +
+    "visible wedge on BOTH sides of the iris; a large drawn IRIS as a complete circle with fine " +
+    "radiating lines inside it and a darker ring around its edge; a distinct round PUPIL at the " +
+    "centre of the iris, clearly smaller than it; and EXACTLY ONE small white catchlight high on " +
+    "the iris. A fine dark upper lid line thickens toward the outer corner, with LASHES, and a " +
+    "softer lower lid line beneath. The two eyes match each other. Her expression is warm, " +
+    "amused and knowing — a woman who has heard everything and is still glad you came in. Her " +
+    "studded leather collar with its teardrop gem sits at her throat, the fur of her cheeks and " +
+    "the fringe over her brow drawn stroke by stroke, and the open collar of her blouse just " +
+    "reaching the bottom edge of the frame.",
 };
 
 // The showcase batch (?set=showcase): twelve cartoons out of the writers'
@@ -526,12 +549,20 @@ export async function GET(request: NextRequest) {
         model: version,
         quality,
       });
+      // ?candidate=1 files a stamped roll in a candidates folder and leaves the
+      // canonical study alone. Searching for a better reference means drawing
+      // a field of them and choosing; overwriting the one good copy on every
+      // attempt would make the search destroy its own baseline.
+      const asCandidate = params.get("candidate") === "1";
+      const base = asCandidate
+        ? `canon/vision/studies/candidates/${who}-${new Date().toISOString().replace(/[-:]/g, "").slice(0, 15).replace("T", "-")}`
+        : `canon/vision/studies/${who}`;
       await commitFiles(
         [
-          { path: `canon/vision/studies/${who}.png`, content: image },
-          { path: `canon/vision/studies/${who}.txt`, content: `${version}\nIMAGE_QUALITY=${qualityLabel}\n\n${prompt}\n` },
+          { path: `${base}.png`, content: image },
+          { path: `${base}.txt`, content: `${version}\nIMAGE_QUALITY=${qualityLabel}\n\n${prompt}\n` },
         ],
-        `canon: character study for ${who}`
+        `canon: ${asCandidate ? "candidate " : ""}character study for ${who}`
       );
       return NextResponse.json({ ok: true, study: who, path: `canon/vision/studies/${who}.png` });
     }
