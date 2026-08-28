@@ -269,8 +269,8 @@ on plate 4's lower panel, closure tab and furred forearm included.
 
 - **The old fashioned** — short rocks glass, one large cube, one dark cherry —
   stands on its own napkin or coaster on the marble, within reach of his near
-  hand. It does **not** have to be in his grip: the plates rest it as often as
-  they hand it to him, and a rested glass is correct. When he lifts it, his
+  hand. It does **not** have to be in his grip: the plates do it both ways, and
+  a glass standing on its coaster is correct. When he lifts it, his
   fingers close round the **outside** of the glass, below the rim. He stays
   frame-right and the glass stays with him — including in every panel Abby is
   in. *(Plate 1's lower panel hands him a martini instead. It is the only
@@ -301,8 +301,9 @@ on plate 4's lower panel, closure tab and furred forearm included.
   front of it. **If removing the lettering would leave the object looking
   untouched, it was printed on top and it is wrong.** One short line in the
   house script, sized to the object — a maker's mark, never a billboard, never a
-  sticker, decal, patch, tag or badge. This matches `canon/settings/SETTINGS-BIBLE.md`
-  word for word in intent; that page carries the full table of materials.
+  sticker, decal, patch, tag or badge. This is the same rule as
+  `canon/settings/SETTINGS-BIBLE.md`, which carries the full table of materials
+  and the four tests; nothing here departs from it.
   On the golf bag both marks are meant to ride together — the house name pressed
   into the leather, the *FORE! NOT SO FAST* towel hanging off it. **No plate does
   this yet.** Plate 4 draws the towel on a plain dark leather bag and puts the
@@ -323,17 +324,33 @@ the founder settles them in one place.
   **one eye and one ear**, the nose at the leading point of the head's outline,
   the far ear no more than a tuft. `MASTER-PROMPT.md` asks in two places (THE
   STAGE, "FACES"; THE SIDES) for three-quarter view with **both eyes fully
-  visible**. In twelve generated panels that instruction has produced a
-  both-eyes Mango exactly zero times — the reference tile wins over the sentence
-  every time. The recommendation, with its evidence, is in the report that came
-  with this revision. **Until the master prompt changes, draw the plates' angle:**
-  one eye, one ear, the whole muzzle on the paper, and the near eye never lost
-  behind the cheek.
-- **The back bar behind him.** THE SIDES puts the back bar farthest, past the
-  counter and in view — which is what all six bar plates draw. THE ROOM now says
-  the shelving "stands on the SERVICE side, behind the reader, and it is NOT
-  drawn behind the gentlemen." Those two paragraphs cannot both be followed. The
-  plates are with THE SIDES.
+  visible**. In the twelve showcase panels that instruction produced a
+  both-eyes Mango exactly zero times, which looked like the reference tile
+  beating the sentence — the tile being pixels and the sentence only words.
+
+  **That finding did not survive the thirteenth panel.** The golf batch of 28
+  August 2026 (`briefs/20260828-023907-make-the-cartoon-on-the-golf`, panel 01)
+  draws him in clean three-quarter with BOTH eyes whole on the paper, near and
+  far, the bridge of the muzzle showing between them, the far ear drawn — and
+  the lip band still reads at full length, ending under the front corner of the
+  near eye. So the rule is obeyable and the band survives it. What changed
+  between the twelve and the thirteenth was the prompt, not the tile: the away
+  fence stopped carrying nine paragraphs of barroom, and the staging began
+  naming the headcount. A rule that had never once been obeyed turned out to
+  have been competing with contradictory instructions rather than losing to the
+  reference.
+
+  The lesson is worth more than the rule: a count of failures measures the
+  system that produced them, and when that system changes underneath, the count
+  expires. Recount before acting on one.
+
+  **Recommendation, withdrawn.** The case rested on the zero-in-twelve count,
+  and the count expired. The master prompt's both-eyes rule stands, and the
+  plates' near-profile is read as what an unfixed pipeline produced rather
+  than as the house angle. Reopen this only if a corrected batch drifts back:
+  the thing to watch is whether the lip band shortens below about two nose-
+  widths when his head comes round, because that is the founder's most-loved
+  feature and the only real argument for the profile.
 
 ---
 
@@ -392,7 +409,7 @@ stopped acting.
   white lost altogether
 - An ear tip finishing above the jawline, or a second full ear drawn on the far
   side
-- Throat fur deeper than 0.38 of his head's height, or wider than his jaw
+- Throat fur deeper than the study's own (0.38 of his head's height), or wider than his jaw
 - The flag pin missing, or anywhere but his left lapel or his left chest
 - The watch and the flag pin on opposite sides of him
 - Any other mark on his clothes: a crest, a monogram, a cap badge, a date,
@@ -423,7 +440,7 @@ unmistakably a gentleman. Nine things to check, in this order:
 4. **Freckles** — three arcing rows, fifteen to twenty dots.
 5. **The ear** roots level with the top of the eye and its tip finishes level
    with the bottom of the jaw; the far ear is a tuft at most.
-6. **The ruff** is no deeper than 0.38 of his head and the collar shows on both
+6. **The ruff** is no deeper than the study's 0.38 of a head, and the collar shows on both
    sides of it.
 7. **Five separately drawn digits on each fur-backed hand, and not one nail.**
 8. **The flag pin** on his left lapel or left chest, with a legible dark canton;
