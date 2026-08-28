@@ -1,0 +1,202 @@
+{
+  "batch": "20260828-023907-make-the-cartoon-on-the-golf",
+  "brief": "make the cartoon on the golf course",
+  "writer": "openai/gpt-5",
+  "model": "openai/gpt-image-2",
+  "quality": "medium",
+  "createdAt": "2026-08-28T02:39:07.144Z",
+  "panels": [
+    {
+      "speaker": "drew",
+      "caption": "We booked early and still got assigned a layover.",
+      "action": "Drew holds a folded tee sheet while Mango idles a golf cart beside a teed ball.",
+      "tv": "",
+      "tvPicture": "",
+      "board": "",
+      "characters": [
+        "drew",
+        "mango"
+      ],
+      "away": "golf course",
+      "turn": "theft tee-time as flight",
+      "setting": "a golf course fairway on a fine day: mown turf underfoot with the mower's stripes running away behind them, a flagstick on a green in the middle distance, mature trees along both sides and a low clubhouse roof beyond the trees",
+      "scene": "Drew holds a folded tee sheet while Mango idles a golf cart beside a teed ball. CAMERA: eye level, close in, the two of them filling the frame from roughly the waist up with the place reading clearly behind them — never a wide landscape with small figures in it. Each character is seen in THREE-QUARTER view, angled into the frame so the face and both eyes are readable, turned toward each other rather than toward us. NOBODY looks out of the panel at the reader. They are the only figures in the picture: no other people anywhere, near or far.",
+      "slug": "we-booked-early-and-still-got",
+      "n": 1,
+      "file": "01-we-booked-early-and-still-got.png"
+    },
+    {
+      "speaker": "mango",
+      "caption": "I thought I paid dues; they think I committed capital.",
+      "action": "Mango scrolls an invoice on his phone; Drew tightens his glove.",
+      "tv": "",
+      "tvPicture": "",
+      "board": "",
+      "characters": [
+        "drew",
+        "mango"
+      ],
+      "away": "golf course",
+      "turn": "collision dues and capital",
+      "setting": "a golf course fairway on a fine day: mown turf underfoot with the mower's stripes running away behind them, a flagstick on a green in the middle distance, mature trees along both sides and a low clubhouse roof beyond the trees",
+      "scene": "Mango scrolls an invoice on his phone; Drew tightens his glove. CAMERA: eye level, close in, the two of them filling the frame from roughly the waist up with the place reading clearly behind them — never a wide landscape with small figures in it. Each character is seen in THREE-QUARTER view, angled into the frame so the face and both eyes are readable, turned toward each other rather than toward us. NOBODY looks out of the panel at the reader. They are the only figures in the picture: no other people anywhere, near or far.",
+      "slug": "i-thought-i-paid-dues-they",
+      "n": 2,
+      "file": "02-i-thought-i-paid-dues-they.png"
+    },
+    {
+      "speaker": "abby",
+      "caption": "If we find your ball, we add a late fee.",
+      "action": "Abby holds a clipboard and extends a small ticket; Drew and Mango push aside rough with their clubs.",
+      "tv": "",
+      "tvPicture": "",
+      "board": "",
+      "characters": [
+        "drew",
+        "mango",
+        "abby"
+      ],
+      "away": "golf course",
+      "turn": "theft search as fee",
+      "setting": "a golf course fairway on a fine day: mown turf underfoot with the mower's stripes running away behind them, a flagstick on a green in the middle distance, mature trees along both sides and a low clubhouse roof beyond the trees",
+      "scene": "Abby holds a clipboard and extends a small ticket; Drew and Mango push aside rough with their clubs. CAMERA: eye level, close in, the two of them filling the frame from roughly the waist up with the place reading clearly behind them — never a wide landscape with small figures in it. Each character is seen in THREE-QUARTER view, angled into the frame so the face and both eyes are readable, turned toward each other rather than toward us. NOBODY looks out of the panel at the reader. They are the only figures in the picture: no other people anywhere, near or far.",
+      "slug": "if-we-find-your-ball-we",
+      "n": 3,
+      "file": "03-if-we-find-your-ball-we.png"
+    },
+    {
+      "speaker": "drew",
+      "caption": "I'm the only one here delivering a soft landing.",
+      "action": "Drew chips a high wedge that checks near the cup; Mango steadies the flagstick.",
+      "tv": "",
+      "tvPicture": "",
+      "board": "",
+      "characters": [
+        "drew",
+        "mango"
+      ],
+      "away": "golf course",
+      "turn": "collision soft-landing double",
+      "setting": "a golf course fairway on a fine day: mown turf underfoot with the mower's stripes running away behind them, a flagstick on a green in the middle distance, mature trees along both sides and a low clubhouse roof beyond the trees",
+      "scene": "Drew chips a high wedge that checks near the cup; Mango steadies the flagstick. CAMERA: eye level, close in, the two of them filling the frame from roughly the waist up with the place reading clearly behind them — never a wide landscape with small figures in it. Each character is seen in THREE-QUARTER view, angled into the frame so the face and both eyes are readable, turned toward each other rather than toward us. NOBODY looks out of the panel at the reader. They are the only figures in the picture: no other people anywhere, near or far.",
+      "slug": "i-m-the-only-one-here",
+      "n": 4,
+      "file": "04-i-m-the-only-one-here.png"
+    },
+    {
+      "speaker": "mango",
+      "caption": "My rangefinder now quotes APR.",
+      "action": "Mango peers through a rangefinder; Drew traces lines in a yardage book with a tee.",
+      "tv": "",
+      "tvPicture": "",
+      "board": "",
+      "characters": [
+        "drew",
+        "mango"
+      ],
+      "away": "golf course",
+      "turn": "theft rangefinder quotes APR",
+      "setting": "a golf course fairway on a fine day: mown turf underfoot with the mower's stripes running away behind them, a flagstick on a green in the middle distance, mature trees along both sides and a low clubhouse roof beyond the trees",
+      "scene": "Mango peers through a rangefinder; Drew traces lines in a yardage book with a tee. CAMERA: eye level, close in, the two of them filling the frame from roughly the waist up with the place reading clearly behind them — never a wide landscape with small figures in it. Each character is seen in THREE-QUARTER view, angled into the frame so the face and both eyes are readable, turned toward each other rather than toward us. NOBODY looks out of the panel at the reader. They are the only figures in the picture: no other people anywhere, near or far.",
+      "slug": "my-rangefinder-now-quotes-apr",
+      "n": 5,
+      "file": "05-my-rangefinder-now-quotes-apr.png"
+    },
+    {
+      "speaker": "mango",
+      "caption": "I support buybacks, especially off the first tee.",
+      "action": "Mango tees a second ball; Drew clicks his watch's shot counter.",
+      "tv": "",
+      "tvPicture": "",
+      "board": "",
+      "characters": [
+        "drew",
+        "mango"
+      ],
+      "away": "golf course",
+      "turn": "theft mulligan as buyback",
+      "setting": "a golf course fairway on a fine day: mown turf underfoot with the mower's stripes running away behind them, a flagstick on a green in the middle distance, mature trees along both sides and a low clubhouse roof beyond the trees",
+      "scene": "Mango tees a second ball; Drew clicks his watch's shot counter. CAMERA: eye level, close in, the two of them filling the frame from roughly the waist up with the place reading clearly behind them — never a wide landscape with small figures in it. Each character is seen in THREE-QUARTER view, angled into the frame so the face and both eyes are readable, turned toward each other rather than toward us. NOBODY looks out of the panel at the reader. They are the only figures in the picture: no other people anywhere, near or far.",
+      "slug": "i-support-buybacks-especially-off-the",
+      "n": 6,
+      "file": "06-i-support-buybacks-especially-off-the.png"
+    },
+    {
+      "speaker": "drew",
+      "caption": "Abby wants two and twenty for reading greens.",
+      "action": "Abby kneels with a towel and a yardage book; Drew addresses a putt.",
+      "tv": "",
+      "tvPicture": "",
+      "board": "",
+      "characters": [
+        "drew",
+        "abby"
+      ],
+      "away": "golf course",
+      "turn": "theft green-read hedge-fees",
+      "setting": "a golf course fairway on a fine day: mown turf underfoot with the mower's stripes running away behind them, a flagstick on a green in the middle distance, mature trees along both sides and a low clubhouse roof beyond the trees",
+      "scene": "Abby kneels with a towel and a yardage book; Drew addresses a putt. CAMERA: eye level, close in, the two of them filling the frame from roughly the waist up with the place reading clearly behind them — never a wide landscape with small figures in it. Each character is seen in THREE-QUARTER view, angled into the frame so the face and both eyes are readable, turned toward each other rather than toward us. NOBODY looks out of the panel at the reader. They are the only figures in the picture: no other people anywhere, near or far.",
+      "slug": "abby-wants-two-and-twenty-for",
+      "n": 7,
+      "file": "07-abby-wants-two-and-twenty-for.png"
+    },
+    {
+      "speaker": "mango",
+      "caption": "Out here, my handicap is my credit rating.",
+      "action": "Mango taps a card against a small reader Abby holds; Drew balances a pencil on his ear.",
+      "tv": "",
+      "tvPicture": "",
+      "board": "",
+      "characters": [
+        "drew",
+        "mango",
+        "abby"
+      ],
+      "away": "golf course",
+      "turn": "theft handicap credit-rating",
+      "setting": "a golf course fairway on a fine day: mown turf underfoot with the mower's stripes running away behind them, a flagstick on a green in the middle distance, mature trees along both sides and a low clubhouse roof beyond the trees",
+      "scene": "Mango taps a card against a small reader Abby holds; Drew balances a pencil on his ear. CAMERA: eye level, close in, the two of them filling the frame from roughly the waist up with the place reading clearly behind them — never a wide landscape with small figures in it. Each character is seen in THREE-QUARTER view, angled into the frame so the face and both eyes are readable, turned toward each other rather than toward us. NOBODY looks out of the panel at the reader. They are the only figures in the picture: no other people anywhere, near or far.",
+      "slug": "out-here-my-handicap-is-my",
+      "n": 8,
+      "file": "08-out-here-my-handicap-is-my.png"
+    },
+    {
+      "speaker": "mango",
+      "caption": "We're walking this to save the fee.",
+      "action": "Mango settles into the driver's seat of a cart and turns the key; Drew straps his bag to the back.",
+      "tv": "",
+      "tvPicture": "",
+      "board": "",
+      "characters": [
+        "drew",
+        "mango"
+      ],
+      "away": "golf course",
+      "turn": "contradiction vows walking rides",
+      "setting": "a golf course fairway on a fine day: mown turf underfoot with the mower's stripes running away behind them, a flagstick on a green in the middle distance, mature trees along both sides and a low clubhouse roof beyond the trees",
+      "scene": "Mango settles into the driver's seat of a cart and turns the key; Drew straps his bag to the back. CAMERA: eye level, close in, the two of them filling the frame from roughly the waist up with the place reading clearly behind them — never a wide landscape with small figures in it. Each character is seen in THREE-QUARTER view, angled into the frame so the face and both eyes are readable, turned toward each other rather than toward us. NOBODY looks out of the panel at the reader. They are the only figures in the picture: no other people anywhere, near or far.",
+      "slug": "we-re-walking-this-to-save",
+      "n": 9,
+      "file": "09-we-re-walking-this-to-save.png"
+    },
+    {
+      "speaker": "drew",
+      "caption": "I finally see how my muni pays for this muni.",
+      "action": "Drew taps the cart path with his club; Mango drinks from a paper cup.",
+      "tv": "",
+      "tvPicture": "",
+      "board": "",
+      "characters": [
+        "drew",
+        "mango"
+      ],
+      "away": "golf course",
+      "turn": "collision muni bond/course",
+      "setting": "a golf course fairway on a fine day: mown turf underfoot with the mower's stripes running away behind them, a flagstick on a green in the middle distance, mature trees along both sides and a low clubhouse roof beyond the trees",
+      "scene": "Drew taps the cart path with his club; Mango drinks from a paper cup. CAMERA: eye level, close in, the two of them filling the frame from roughly the waist up with the place reading clearly behind them — never a wide landscape with small figures in it. Each character is seen in THREE-QUARTER view, angled into the frame so the face and both eyes are readable, turned toward each other rather than toward us. NOBODY looks out of the panel at the reader. They are the only figures in the picture: no other people anywhere, near or far.",
+      "slug": "i-finally-see-how-my-muni",
+      "n": 10,
+      "file": "10-i-finally-see-how-my-muni.png"
+    }
+  ]
+}
