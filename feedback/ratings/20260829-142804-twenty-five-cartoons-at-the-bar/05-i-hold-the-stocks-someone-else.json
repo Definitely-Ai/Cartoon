@@ -8,20 +8,10 @@
   },
   "scene": 1,
   "caption": 5,
-  "comment": "seating placement is odd,",
-  "at": "2026-08-29T19:41:20.453Z",
-  "revisions": 11,
+  "comment": "seating placement is odd, they are not",
+  "at": "2026-08-29T19:41:43.032Z",
+  "revisions": 12,
   "history": [
-    {
-      "at": "2026-08-29T19:38:58.068Z",
-      "characters": {
-        "abby": 2,
-        "mango": 2
-      },
-      "scene": null,
-      "caption": null,
-      "comment": ""
-    },
     {
       "at": "2026-08-29T19:38:59.498Z",
       "characters": {
@@ -120,6 +110,17 @@
       "scene": 1,
       "caption": 5,
       "comment": "seating placement is odd"
+    },
+    {
+      "at": "2026-08-29T19:41:20.453Z",
+      "characters": {
+        "abby": 2,
+        "mango": 3,
+        "drew": 3
+      },
+      "scene": 1,
+      "caption": 5,
+      "comment": "seating placement is odd,"
     }
   ]
 }
