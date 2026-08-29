@@ -8,20 +8,10 @@
   },
   "scene": 4,
   "caption": null,
-  "comment": "line needs more explanation, should read",
-  "at": "2026-08-29T21:03:23.011Z",
-  "revisions": 11,
+  "comment": "line needs more explanation, should read needs",
+  "at": "2026-08-29T21:03:26.804Z",
+  "revisions": 12,
   "history": [
-    {
-      "at": "2026-08-29T21:02:01.222Z",
-      "characters": {
-        "drew": 6,
-        "mango": 6
-      },
-      "scene": null,
-      "caption": null,
-      "comment": ""
-    },
     {
       "at": "2026-08-29T21:02:10.159Z",
       "characters": {
@@ -120,6 +110,17 @@
       "scene": 4,
       "caption": null,
       "comment": "line needs more explanation,"
+    },
+    {
+      "at": "2026-08-29T21:03:23.011Z",
+      "characters": {
+        "drew": 6,
+        "mango": 6,
+        "abby": 4
+      },
+      "scene": 4,
+      "caption": null,
+      "comment": "line needs more explanation, should read"
     }
   ]
 }
