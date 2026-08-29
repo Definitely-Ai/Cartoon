@@ -54,6 +54,13 @@ run first via `node scripts/qc-batch.mjs <batch-folder>`.
 14. **Pure black and white.** Any colour anywhere is fatal (the mechanical
     check catches this first).
 
+## Minor — record, never redraw for these alone
+- **TV-bezel micro-glyphs.** A tiny brand-plate-like mark on the television's
+  bottom bezel. Confirmed in 23 of 25 panels of the first gated batch: it is a
+  model habit, smaller than any character's eye, invisible at reading size,
+  and redrawing re-rolls the whole panel at the same odds. Recorded as minor
+  so the count is kept; a panel is never sent back for this alone.
+
 ## Accepted — never report
 - Drew's bill shape, and Drew in one-eyed side profile.
 - Mango in one-eyed three-quarter (minor note only, not fatal — this round).
