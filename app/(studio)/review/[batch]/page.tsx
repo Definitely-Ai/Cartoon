@@ -99,10 +99,11 @@ async function readVerdicts(batch: string): Promise<Map<string, StandingVerdict>
   return new Map(found.filter((entry): entry is [string, StandingVerdict] => entry !== null));
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ batch: string }> }) {
-  const { batch } = await params;
-  return { title: `Review — ${batch}` };
-}
+// A fixed title, not the batch id: the tab said "Review —
+// 20260828-221115-twenty-five-cartoons-at-the-bar" and that is not a thing to
+// show anyone. Naming the edition here would cost a second read of the shelf
+// for a browser tab.
+export const metadata = { title: "Scoring an edition" };
 
 export default async function ReviewBatchPage({ params }: { params: Promise<{ batch: string }> }) {
   const { batch } = await params;

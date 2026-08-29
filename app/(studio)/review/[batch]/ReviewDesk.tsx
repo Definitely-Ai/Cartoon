@@ -769,19 +769,17 @@ export default function ReviewDesk(props: { batch: string; panels: DeskPanel[] }
                     if (index < panels.length - 1) goTo(index + 1);
                     else void flush(panel.key);
                   }}
-                  disabled={save?.state === "saving"}
+                  disabled={save?.state === "saving" || (!scoredHere && index === panels.length - 1)}
                 >
-                  {!scoredHere
-                    ? index < panels.length - 1
+                  {index < panels.length - 1
+                    ? !scoredHere
                       ? "Skip this one ›"
-                      : "Done"
-                    : index < panels.length - 1
-                      ? onFile
+                      : onFile
                         ? "Update and go on ›"
                         : "Save and go on ›"
-                      : onFile
-                        ? "Update this one"
-                        : "Save this one"}
+                    : onFile
+                      ? "Update this one"
+                      : "Save this one"}
                 </button>
                 <p
                   className={`rv-status${save?.state === "error" ? " rv-status-bad" : unsaved ? " rv-status-warn" : ""}`}
