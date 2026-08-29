@@ -7,9 +7,9 @@
   },
   "scene": 2,
   "caption": 2,
-  "comment": "Not funny",
-  "at": "2026-08-29T19:30:51.301Z",
-  "revisions": 5,
+  "comment": "Not funny.",
+  "at": "2026-08-29T19:30:59.451Z",
+  "revisions": 6,
   "history": [
     {
       "at": "2026-08-29T19:29:14.397Z",
@@ -59,6 +59,16 @@
       "scene": 2,
       "caption": 2,
       "comment": "nt"
+    },
+    {
+      "at": "2026-08-29T19:30:51.301Z",
+      "characters": {
+        "drew": 5,
+        "mango": 3
+      },
+      "scene": 2,
+      "caption": 2,
+      "comment": "Not funny"
     }
   ]
 }
