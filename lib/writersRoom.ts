@@ -60,33 +60,31 @@ const CAST: CastName[] = ["drew", "mango", "abby"];
 // The stage. Not the writer's to touch.
 // ---------------------------------------------------------------------------
 
-/** The bar, shot from the dining room. The occlusion sentence is the load
- *  bearing one: it is what stops the gentlemen being drawn behind the counter
- *  alongside Abby, which read correctly to twelve panels' worth of checking
- *  before the founder saw it in two seconds. */
+/** The bar, shot from the dining room.
+ *
+ *  THIS USED TO RESTATE THE WHOLE STAGE AND IT COST US THE EDITION. Every bar
+ *  scene carried its own copy of the camera, the occlusion sentence, where Abby
+ *  stands and where the counter crosses — about eleven hundred characters of it,
+ *  written back when canon described the staging only in prose and the panel
+ *  slot was the one place it could be said sharply.
+ *
+ *  Canon says it better now, with fractions, in THE SIDES, and it says it in
+ *  every prompt whether this function speaks up or not. So the duplication
+ *  bought nothing and it pushed a three-hander to 32,824 characters against a
+ *  32,000 ceiling: every one of the twelve Abby panels failed the length guard,
+ *  silently, retried on the next call and failed again — which is exactly why
+ *  the first six panels of the redraw were all cartoons Abby is not in.
+ *
+ *  What belongs in the scene slot is what is TRUE OF THIS PANEL ONLY: who is in
+ *  it, what they are doing, and what the television is showing. The staging is
+ *  canon's job. */
 function barStage(hasAbby: boolean, tvPicture: string): string {
-  const camera =
-    "CAMERA: we are in the DINING ROOM, BEHIND AND SLIGHTLY ABOVE the two gentlemen, looking OVER THEIR " +
-    "SHOULDERS toward the bar. Drew sits frame-left and Mango frame-right with their BACKS TO US, each turned " +
-    "toward the other so his face reads in three-quarter over his own shoulder; their near shoulders OVERLAP " +
-    "AND HIDE part of the counter.";
-
-  const beyond = hasAbby
-    ? "The marble runs across the MIDDLE of the picture BEHIND their shoulders. BEYOND it stands ABBY, facing " +
-      "them across the bar, the counter's far edge crossing in front of her at the waist and hiding her below " +
-      "it — she is standing and they are seated, so her head sits HIGHER in the frame than theirs. Behind her, " +
-      "the back bar, the television above it and the chalkboard beside."
-    : "The marble counter runs across the MIDDLE of the picture BEHIND their shoulders, their drinks standing " +
-      "on it past their arms. Beyond it is the bar: back bar, bottles, mirror, the television above and the " +
-      "chalkboard beside. They are patrons — never behind the bar, never holding a bottle or a bar towel.";
-
+  const who = hasAbby
+    ? "IN THIS PANEL: Drew and Mango seated as patrons, and ABBY working the service side beyond the counter."
+    : "IN THIS PANEL: Drew and Mango seated as patrons, and NOBODY on the service side — the space behind the " +
+      "counter is empty.";
   const screen = tvPicture ? ` The television picture shows ${tvPicture.replace(/\.$/, "")}.` : "";
-
-  return (
-    `${camera} ${beyond}${screen} They are seated at the bar, never at a table, and never lined up shoulder ` +
-    "to shoulder. Each character is seen in three-quarter view with the face and both eyes readable, and " +
-    "NOBODY looks out of the panel at the reader."
-  );
+  return `${who}${screen} Stage it exactly as THE SIDES describes.`;
 }
 
 /** An away game. No counter to hide behind, so the framing convention and the

@@ -29,24 +29,43 @@ const build = path.join(repoRoot, "node_modules", ".cache", "swd-prompt-check");
 fs.rmSync(build, { recursive: true, force: true });
 fs.mkdirSync(build, { recursive: true });
 
-execFileSync(
-  "npx",
-  [
-    "tsc",
-    "lib/generate.ts",
-    "--outDir", build,
-    // Keep the lib/ prefix on the emitted files, so the require path below is
-    // the same shape as the source tree.
-    "--rootDir", ".",
-    // CommonJS so the emitted extensionless imports resolve without a loader.
-    "--module", "commonjs",
-    "--moduleResolution", "node",
-    "--target", "es2022",
-    "--esModuleInterop",
-    "--skipLibCheck",
-  ],
-  { cwd: repoRoot, stdio: "inherit" }
+// writersRoom imports through the "@/" alias, which the tsc CLI cannot be told
+// about with a flag — only a tsconfig carries paths. So the compile runs off a
+// generated one rather than a long argv.
+const tsconfig = path.join(build, "tsconfig.json");
+fs.writeFileSync(
+  tsconfig,
+  JSON.stringify({
+    compilerOptions: {
+      outDir: build,
+      // Keep the lib/ prefix on the emitted files, so the require path below is
+      // the same shape as the source tree.
+      rootDir: repoRoot,
+      // CommonJS so the emitted extensionless imports resolve without a loader.
+      module: "commonjs",
+      moduleResolution: "node",
+      target: "es2022",
+      esModuleInterop: true,
+      skipLibCheck: true,
+      baseUrl: repoRoot,
+      paths: { "@/*": ["*"] },
+    },
+    // writersRoom too: the length check below has to measure the scene text
+    // production actually sends, not a short one written for the test.
+    files: [path.join(repoRoot, "lib/generate.ts"), path.join(repoRoot, "lib/writersRoom.ts")],
+  })
 );
+execFileSync("npx", ["tsc", "-p", tsconfig], { cwd: repoRoot, stdio: "inherit" });
+
+// tsconfig "paths" tells the COMPILER where "@/lib/x" lives; it does not rewrite
+// the require() the compiler emits, so the output still asks Node for a module
+// named "@/lib/githubPublish" and Node has never heard of it. Every emitted file
+// lands under build/lib/, so the alias is a sibling reference there.
+for (const name of fs.readdirSync(path.join(build, "lib"))) {
+  if (!name.endsWith(".js")) continue;
+  const file = path.join(build, "lib", name);
+  fs.writeFileSync(file, fs.readFileSync(file, "utf8").replace(/require\("@\/lib\//g, 'require("./'));
+}
 
 // The repo's package.json says "type": "module" (Vercel's middleware pipeline
 // requires it), which would make Node parse the CommonJS output above as ESM.
@@ -56,6 +75,7 @@ fs.writeFileSync(path.join(build, "package.json"), JSON.stringify({ type: "commo
 const master = fs.readFileSync(path.join(repoRoot, "canon", "MASTER-PROMPT.md"), "utf8");
 const require = createRequire(import.meta.url);
 const { assemblePrompt, generateCartoonArt, isFineTuned } = require(path.join(build, "lib", "generate.js"));
+const { stage } = require(path.join(build, "lib", "writersRoom.js"));
 
 const checks = [];
 const check = (name, fn) => checks.push([name, fn]);
@@ -72,6 +92,31 @@ const boat = {
   characters: ["drew", "mango"],
 };
 const withAbby = { ...bar, characters: ["drew", "mango", "abby"] };
+
+// THE REAL THING, NOT A STAND-IN. The three fixtures above are short scenes
+// written by hand, and for a long time the length check measured those and
+// passed while production failed: a genuine three-hander assembled to 32,824
+// characters against a 32,000 ceiling, so all twelve Abby panels of an edition
+// died on the length guard, silently, retried and died again. The batch drew
+// only the cartoons Abby was not in and nothing said why.
+//
+// So the widest case is built the way the brief route builds it — a gag through
+// stage(), with the full cast — and it is the one the ceiling is checked
+// against. A check that cannot fail the way production fails is not a check.
+const widestGag = stage({
+  speaker: "abby",
+  caption: 'Abby: "There is about four dollars of whiskey in that glass and fourteen dollars of roof."',
+  action:
+    "Abby slides Mango's old fashioned across the marble past the check spindle, where a renewal envelope " +
+    "thick as a paperback is spiked and still sealed, tall enough to bury the spindle",
+  characters: ["drew", "mango", "abby"],
+  away: "",
+  signs: [],
+  turn: "reclassification",
+  tv: "TWO IN THREE HOUSEHOLDS SAW PREMIUMS RISE",
+  tvPicture: "A small tidy house standing behind a mailbox too full to close, with no people in the shot",
+  board: "DEDUCTIBLE HOUR 4-7 - THE FIRST $2,500 IS YOURS",
+});
 
 check("IMAGE_MODEL decides which path runs", () => {
   process.env.IMAGE_MODEL = "black-forest-labs/flux-kontext-pro";
@@ -179,6 +224,27 @@ check("every slot is filled on both paths", () => {
       assert.ok(prompt.includes(candidate.scene), "the scene Rick asked for is always in there");
     }
   }
+});
+
+check("the widest real prompt fits the model's ceiling with room to spare", () => {
+  // Measured on the multi-reference house path, which is what production runs.
+  const prompt = assemblePrompt(
+    master,
+    { scene: widestGag.scene, tv: widestGag.tv, board: widestGag.board, setting: widestGag.setting, characters: widestGag.characters },
+    false,
+    false,
+    true
+  );
+  const CEILING = 32_000;
+  // The margin is not decoration. A scene is written per panel and varies by a
+  // few hundred characters, so a prompt that only just fits on this gag will
+  // fail on the next one, one panel at a time, invisibly.
+  const MARGIN = 1_500;
+  assert.ok(
+    prompt.length <= CEILING - MARGIN,
+    `the widest real prompt is ${prompt.length} characters; the ceiling is ${CEILING} and this check ` +
+      `insists on ${MARGIN} to spare, so trim a canon fence by ${prompt.length - (CEILING - MARGIN)}`
+  );
 });
 
 check("Kontext still gets the full description and the board instruction", () => {
