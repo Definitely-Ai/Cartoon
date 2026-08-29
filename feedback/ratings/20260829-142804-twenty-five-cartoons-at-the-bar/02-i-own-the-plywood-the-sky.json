@@ -2,11 +2,23 @@
   "batch": "20260829-142804-twenty-five-cartoons-at-the-bar",
   "panel": "02-i-own-the-plywood-the-sky.png",
   "characters": {
-    "drew": 5
+    "drew": 5,
+    "mango": 5
   },
   "scene": null,
   "caption": null,
   "comment": "",
-  "at": "2026-08-29T19:24:16.819Z",
-  "revisions": 0
+  "at": "2026-08-29T19:24:18.253Z",
+  "revisions": 1,
+  "history": [
+    {
+      "at": "2026-08-29T19:24:16.819Z",
+      "characters": {
+        "drew": 5
+      },
+      "scene": null,
+      "caption": null,
+      "comment": ""
+    }
+  ]
 }
