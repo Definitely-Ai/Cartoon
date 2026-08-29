@@ -8,9 +8,9 @@
   },
   "scene": 4,
   "caption": null,
-  "comment": "line needs more exp",
-  "at": "2026-08-29T21:03:09.244Z",
-  "revisions": 8,
+  "comment": "line needs more explanation",
+  "at": "2026-08-29T21:03:13.618Z",
+  "revisions": 9,
   "history": [
     {
       "at": "2026-08-29T21:01:57.060Z",
@@ -96,6 +96,17 @@
       "scene": 4,
       "caption": null,
       "comment": "line needs more e"
+    },
+    {
+      "at": "2026-08-29T21:03:09.244Z",
+      "characters": {
+        "drew": 6,
+        "mango": 6,
+        "abby": 4
+      },
+      "scene": 4,
+      "caption": null,
+      "comment": "line needs more exp"
     }
   ]
 }
