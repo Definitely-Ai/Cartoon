@@ -3,18 +3,29 @@
   "panel": "06-if-your-math-takes-longer-than.png",
   "characters": {
     "drew": 6,
-    "mango": 6
+    "mango": 6,
+    "abby": 5
   },
   "scene": null,
   "caption": null,
   "comment": "",
-  "at": "2026-08-29T19:43:38.100Z",
-  "revisions": 1,
+  "at": "2026-08-29T19:43:50.801Z",
+  "revisions": 2,
   "history": [
     {
       "at": "2026-08-29T19:43:35.880Z",
       "characters": {
         "drew": 6
+      },
+      "scene": null,
+      "caption": null,
+      "comment": ""
+    },
+    {
+      "at": "2026-08-29T19:43:38.100Z",
+      "characters": {
+        "drew": 6,
+        "mango": 6
       },
       "scene": null,
       "caption": null,
