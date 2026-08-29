@@ -8,21 +8,10 @@
   },
   "scene": 2,
   "caption": null,
-  "comment": "I cannot read the note pad on the bar.  TV picture is weird, chalk",
-  "at": "2026-08-29T19:47:06.238Z",
-  "revisions": 12,
+  "comment": "I cannot read the note pad on the bar.  TV picture is weird, chalk board",
+  "at": "2026-08-29T19:47:12.153Z",
+  "revisions": 13,
   "history": [
-    {
-      "at": "2026-08-29T19:43:50.801Z",
-      "characters": {
-        "drew": 6,
-        "mango": 6,
-        "abby": 5
-      },
-      "scene": null,
-      "caption": null,
-      "comment": ""
-    },
     {
       "at": "2026-08-29T19:44:16.947Z",
       "characters": {
@@ -121,6 +110,17 @@
       "scene": 2,
       "caption": null,
       "comment": "I cannot read the note pad on the bar.  TV picture is weird,"
+    },
+    {
+      "at": "2026-08-29T19:47:06.238Z",
+      "characters": {
+        "drew": 6,
+        "mango": 6,
+        "abby": 5
+      },
+      "scene": 2,
+      "caption": null,
+      "comment": "I cannot read the note pad on the bar.  TV picture is weird, chalk"
     }
   ]
 }
