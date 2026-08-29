@@ -170,9 +170,10 @@ const SET_PLATE_PROMPT =
   "THERE IS NO LETTERING ANYWHERE IN THIS PICTURE except the mirrored gilt script of THE SWINGING DOOR on the " +
   "window. The screen is blank, the chalkboard is blank, every bottle label is blank, the television frame is " +
   "blank. Do not draw text-like marks as texture.\n\n" +
-  "The attached images are the founder\'s own bar panels: take the drawing hand, the panelling, the marble and " +
-  "the warmth of the room from them — and nothing else. Do not copy their characters, their signage or their " +
-  "lettering.";
+  "Any attached image is the founder\'s own bar panel: take the drawing hand, the panelling, the marble and " +
+  "the warmth of the room from it — and nothing else. Do not copy its characters, its signage, its lettering " +
+  "or ITS CAMERA. Those panels are shot flat, with the counter low and the bar furniture pressed in behind the " +
+  "figures; this plate is the corrected room and its depth comes from the description above, not from them.";
 
 // The character studies (?study=<name>). One figure, alone, on paper — the
 // plate a reader meets the character through. No room, no props beyond the
@@ -552,12 +553,21 @@ export async function GET(request: NextRequest) {
     // empty signage teaches layout and furniture and nothing else; the story
     // goes on the screen from the scene brief.
     if (params.get("plate") === "room") {
+      // ?noref=1 draws the plate from the words alone. The two crops below are
+      // the founder's own bar panels, and they are where the staging fault came
+      // from: both are shot flat, the counter low across the picture with the
+      // bar furniture pressed in behind the figures and no walkway anywhere. A
+      // plate drawn while they are attached inherits that flatness however the
+      // text is worded, because the reference out-votes the text. When the
+      // picture is the thing being corrected, the fix is to stop showing it.
+      const plateNoRef = params.get("noref") === "1";
       const image = await generateCartoonArt({
         prompt: SET_PLATE_PROMPT,
         characters: [],
         barScene: false,
         model: version,
         quality,
+        noReferences: plateNoRef,
         references: [
           { path: "canon/vision/plate-1-security-and-martini-menu.jpg", box: [16, 1460, 1600, 1140] },
           { path: "canon/vision/plate-4-nineteenth-hole-and-tariffs.jpg", box: [16, 150, 1590, 700] },
