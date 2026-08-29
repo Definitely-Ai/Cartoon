@@ -7,20 +7,10 @@
   },
   "scene": 1,
   "caption": 1,
-  "comment": "I do not understand the joke with the keys.  the placement aractersof the c",
-  "at": "2026-08-29T20:48:07.956Z",
-  "revisions": 16,
+  "comment": "I do not understand the joke with the keys.  the placement of the aractersof the c",
+  "at": "2026-08-29T20:48:22.797Z",
+  "revisions": 17,
   "history": [
-    {
-      "at": "2026-08-29T20:46:31.550Z",
-      "characters": {
-        "drew": 5,
-        "mango": 5
-      },
-      "scene": 1,
-      "caption": 1,
-      "comment": "I do not"
-    },
     {
       "at": "2026-08-29T20:46:42.356Z",
       "characters": {
@@ -110,6 +100,16 @@
       "scene": 1,
       "caption": 1,
       "comment": "I do not understand the joke with the keys."
+    },
+    {
+      "at": "2026-08-29T20:48:07.956Z",
+      "characters": {
+        "drew": 5,
+        "mango": 5
+      },
+      "scene": 1,
+      "caption": 1,
+      "comment": "I do not understand the joke with the keys.  the placement aractersof the c"
     }
   ]
 }
