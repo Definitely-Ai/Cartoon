@@ -3,18 +3,29 @@
   "panel": "01-page-one-is-whiskey-page-two.png",
   "characters": {
     "drew": 2,
-    "mango": 2
+    "mango": 2,
+    "abby": 2
   },
   "scene": null,
   "caption": null,
   "comment": "",
-  "at": "2026-08-29T19:13:17.610Z",
-  "revisions": 1,
+  "at": "2026-08-29T19:14:13.458Z",
+  "revisions": 2,
   "history": [
     {
       "at": "2026-08-29T19:12:56.114Z",
       "characters": {
         "drew": 2
+      },
+      "scene": null,
+      "caption": null,
+      "comment": ""
+    },
+    {
+      "at": "2026-08-29T19:13:17.610Z",
+      "characters": {
+        "drew": 2,
+        "mango": 2
       },
       "scene": null,
       "caption": null,
