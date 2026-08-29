@@ -8,21 +8,10 @@
   },
   "scene": 1,
   "caption": 5,
-  "comment": "seating placement is odd, they are not sitting next to the bar.  Let's drop the lettering on Abby's ra",
-  "at": "2026-08-29T19:42:36.499Z",
-  "revisions": 18,
+  "comment": "seating placement is odd, they are not sitting next to the bar.  Let's drop the lettering on Abby's bar rag",
+  "at": "2026-08-29T19:42:44.346Z",
+  "revisions": 19,
   "history": [
-    {
-      "at": "2026-08-29T19:41:13.097Z",
-      "characters": {
-        "abby": 2,
-        "mango": 3,
-        "drew": 3
-      },
-      "scene": 1,
-      "caption": 5,
-      "comment": "seating placement is"
-    },
     {
       "at": "2026-08-29T19:41:15.751Z",
       "characters": {
@@ -121,6 +110,17 @@
       "scene": 1,
       "caption": 5,
       "comment": "seating placement is odd, they are not sitting next to the bar.  Let's drop the lettering on"
+    },
+    {
+      "at": "2026-08-29T19:42:36.499Z",
+      "characters": {
+        "abby": 2,
+        "mango": 3,
+        "drew": 3
+      },
+      "scene": 1,
+      "caption": 5,
+      "comment": "seating placement is odd, they are not sitting next to the bar.  Let's drop the lettering on Abby's ra"
     }
   ]
 }
