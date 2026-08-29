@@ -2,18 +2,28 @@
   "batch": "20260829-142804-twenty-five-cartoons-at-the-bar",
   "panel": "09-he-calls-it-a-deposit-i.png",
   "characters": {
-    "drew": 5
+    "drew": 5,
+    "mango": 5
   },
   "scene": null,
   "caption": null,
   "comment": "",
-  "at": "2026-08-29T20:46:07.552Z",
-  "revisions": 1,
+  "at": "2026-08-29T20:46:09.411Z",
+  "revisions": 2,
   "history": [
     {
       "at": "2026-08-29T20:45:57.366Z",
       "characters": {
         "drew": 4
+      },
+      "scene": null,
+      "caption": null,
+      "comment": ""
+    },
+    {
+      "at": "2026-08-29T20:46:07.552Z",
+      "characters": {
+        "drew": 5
       },
       "scene": null,
       "caption": null,
