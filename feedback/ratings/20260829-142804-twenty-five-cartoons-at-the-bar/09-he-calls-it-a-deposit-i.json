@@ -7,19 +7,10 @@
   },
   "scene": 1,
   "caption": 1,
-  "comment": "I do not understand the joke",
-  "at": "2026-08-29T20:46:58.657Z",
-  "revisions": 10,
+  "comment": "I do not understand the joke with the",
+  "at": "2026-08-29T20:47:06.354Z",
+  "revisions": 11,
   "history": [
-    {
-      "at": "2026-08-29T20:45:57.366Z",
-      "characters": {
-        "drew": 4
-      },
-      "scene": null,
-      "caption": null,
-      "comment": ""
-    },
     {
       "at": "2026-08-29T20:46:07.552Z",
       "characters": {
@@ -108,6 +99,16 @@
       "scene": 1,
       "caption": 1,
       "comment": "I do not understand the joke."
+    },
+    {
+      "at": "2026-08-29T20:46:58.657Z",
+      "characters": {
+        "drew": 5,
+        "mango": 5
+      },
+      "scene": 1,
+      "caption": 1,
+      "comment": "I do not understand the joke"
     }
   ]
 }
