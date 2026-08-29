@@ -186,6 +186,31 @@ export default async function ReviewBatchPage({ params }: { params: Promise<{ ba
                 {panels.length - made} still at the drawing board — reload when they land.
               </p>
             )}
+            {/* Rick opens this page cold. Tell him what he is looking at and
+                what to do, in the fewest plain words that will do it. */}
+            <div
+              style={{
+                marginTop: 20,
+                padding: "18px 22px",
+                background: "#f6f2e8",
+                borderLeft: "4px solid #c9a227",
+                borderRadius: 4,
+              }}
+            >
+              <p style={{ fontFamily: serif, fontSize: 18, margin: "0 0 10px", color: "#221d16" }}>
+                How to use this page
+              </p>
+              <p style={{ margin: "0 0 10px", color: "#4a4136", lineHeight: 1.65 }}>
+                Below are {panels.length} cartoons. Under each one there are dials from 1 to 10. Give a score
+                to each character who appears, one to the scene, and one to the caption. Anything you type in
+                the comment box is saved as well. Nothing needs saving by hand — a score is kept the moment you
+                click it, and you can change your mind later.
+              </p>
+              <p style={{ margin: 0, color: "#4a4136", lineHeight: 1.65 }}>
+                Be blunt. A low score with a sentence saying why is the most useful thing on this page — it is
+                what the next edition gets built from.
+              </p>
+            </div>
           </>
         )}
 

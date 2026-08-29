@@ -107,6 +107,12 @@ export default async function ReviewIndexPage() {
     trouble = err instanceof PublishError ? err.message : "The repository isn't answering.";
   }
 
+  // EDITIONS. Rick needs a name for the round he is looking at, and "the batch
+  // dated 22:11" is not one. Batches are numbered oldest-first, so Edition 1
+  // stays Edition 1 forever and a new round always takes the next number.
+  const oldestFirst = [...shelves].reverse();
+  const editionOf = new Map(oldestFirst.map((shelf, i) => [shelf.batch, i + 1 + more]));
+
   return (
     <main
       id="content"
@@ -149,7 +155,9 @@ export default async function ReviewIndexPage() {
             maxWidth: 620,
           }}
         >
-          One line in, ten cartoons out. Newest first — open one and score it.
+          Each edition is a fresh set of cartoons. Open the newest one, look at every panel, and give it a
+          score out of ten — for the drawing, for the joke, and for each character in it. There is a comment
+          box under every cartoon if you want to say why.
         </p>
       </header>
 
@@ -169,6 +177,10 @@ export default async function ReviewIndexPage() {
         {shelves.map((shelf) => (
           <li key={shelf.batch}>
             <Link href={`/review/${shelf.batch}`} className="rv-row">
+              <span className="rv-row-edition">
+                Edition {editionOf.get(shelf.batch)}
+                {shelf.drawn < shelf.planned ? <em className="rv-row-wip"> · still drawing</em> : null}
+              </span>
               <span className="rv-row-brief">&ldquo;{shelf.brief}&rdquo;</span>
               <span className="rv-row-meta">
                 {madeAt(shelf.createdAt) ? `${madeAt(shelf.createdAt)} · ` : ""}
@@ -198,6 +210,8 @@ export default async function ReviewIndexPage() {
       )}
 
       <style>{`
+        .rv-row-edition { font-family: ${serif}; font-size: 19px; color: #221d16; display: block; margin-bottom: 3px; }
+        .rv-row-wip { font-size: 14px; color: #8a7f6d; font-style: italic; }
         .rv-shelf { list-style: none; margin: 24px 0 0; padding: 0; }
         .rv-shelf li { margin: 0 0 12px; }
 
