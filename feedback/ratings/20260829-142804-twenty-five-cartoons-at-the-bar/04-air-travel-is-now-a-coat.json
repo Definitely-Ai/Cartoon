@@ -2,13 +2,14 @@
   "batch": "20260829-142804-twenty-five-cartoons-at-the-bar",
   "panel": "04-air-travel-is-now-a-coat.png",
   "characters": {
-    "drew": 5
+    "drew": 5,
+    "mango": 2
   },
   "scene": 1,
   "caption": null,
   "comment": "",
-  "at": "2026-08-29T19:35:38.304Z",
-  "revisions": 1,
+  "at": "2026-08-29T19:35:45.217Z",
+  "revisions": 2,
   "history": [
     {
       "at": "2026-08-29T19:35:14.807Z",
@@ -16,6 +17,15 @@
         "drew": 5
       },
       "scene": null,
+      "caption": null,
+      "comment": ""
+    },
+    {
+      "at": "2026-08-29T19:35:38.304Z",
+      "characters": {
+        "drew": 5
+      },
+      "scene": 1,
       "caption": null,
       "comment": ""
     }
