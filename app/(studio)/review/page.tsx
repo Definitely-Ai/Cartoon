@@ -1,20 +1,20 @@
 import Link from "next/link";
 
 import { formatDateAP, formatTimeET } from "@/lib/format";
-import { PublishError, gh, listRepoDir, readRepoFile, requiredEnv } from "@/lib/githubPublish";
+import { PublishError, listRepoDir, readRepoFile } from "@/lib/githubPublish";
+
+import { BRIEFS, editionOf, listBatches } from "./editions";
 
 // EVERY BATCH — the index of Rick's briefs, newest first. One line typed,
-// ten cartoons back; this is the shelf they sit on until he has scored them.
-//
-// The batch id the brief route mints starts with a UTC stamp
-// (20260828-143012-a-slug), so sorting the folder names in reverse IS newest
-// first — no dates need parsing to order the shelf.
+// a set of cartoons back; this is the shelf they sit on until he has scored
+// them. The ordering and the edition numbers come from ./editions, so this
+// screen and the scoring screen call the same round of cartoons by the same
+// name.
 
 export const metadata = { title: "Review" };
 
 export const dynamic = "force-dynamic";
 
-const BRIEFS = "briefs";
 const RATINGS = "feedback/ratings";
 const serif = "Georgia, 'Times New Roman', serif";
 
@@ -43,26 +43,6 @@ type Shelf = {
   drawn: number;
   scored: number;
 };
-
-/**
- * The names of the batch folders under /briefs.
- *
- * lib/githubPublish's listRepoDir answers with FILES only, and a batch is a
- * directory, so this asks the same contents endpoint through that module's
- * own client rather than growing it a new export. BRANCH is not exported
- * either — "main" here is that constant, and the two must stay in step.
- */
-async function listBatches(): Promise<string[]> {
-  const { token, repo } = requiredEnv();
-  const res = await gh(token)(`/repos/${repo}/contents/${BRIEFS}?ref=main`);
-  if (res.status === 404) return [];
-  if (!res.ok) throw new PublishError(502, `GitHub said ${res.status} listing /${BRIEFS}.`);
-  return ((await res.json()) as { name: string; type: string }[])
-    .filter((entry) => entry.type === "dir")
-    .map((entry) => entry.name)
-    .sort()
-    .reverse();
-}
 
 /** One shelf row: what the brief said, and how far along the batch is. */
 async function readShelf(batch: string): Promise<Shelf | null> {
@@ -95,23 +75,18 @@ async function readShelf(batch: string): Promise<Shelf | null> {
 
 export default async function ReviewIndexPage() {
   let shelves: Shelf[] = [];
+  let batches: string[] = [];
   let more = 0;
   let trouble: string | null = null;
 
   try {
-    const batches = await listBatches();
+    batches = await listBatches();
     more = Math.max(0, batches.length - SHELF);
     const rows = await Promise.all(batches.slice(0, SHELF).map(readShelf));
     shelves = rows.filter((row): row is Shelf => row !== null);
   } catch (err) {
     trouble = err instanceof PublishError ? err.message : "The repository isn't answering.";
   }
-
-  // EDITIONS. Rick needs a name for the round he is looking at, and "the batch
-  // dated 22:11" is not one. Batches are numbered oldest-first, so Edition 1
-  // stays Edition 1 forever and a new round always takes the next number.
-  const oldestFirst = [...shelves].reverse();
-  const editionOf = new Map(oldestFirst.map((shelf, i) => [shelf.batch, i + 1 + more]));
 
   return (
     <main
@@ -179,7 +154,7 @@ export default async function ReviewIndexPage() {
           <li key={shelf.batch}>
             <Link href={`/review/${shelf.batch}`} className="rv-row">
               <span className="rv-row-edition">
-                Edition {editionOf.get(shelf.batch)}
+                Edition {editionOf(batches, shelf.batch) ?? "—"}
                 {shelf.drawn < shelf.planned ? <em className="rv-row-wip"> · still drawing</em> : null}
               </span>
               <span className="rv-row-brief">&ldquo;{shelf.brief}&rdquo;</span>
@@ -188,6 +163,8 @@ export default async function ReviewIndexPage() {
               <span className="rv-row-meta">
                 {madeAt(shelf.createdAt) || <span className="rv-row-id">{shelf.batch}</span>}
               </span>
+              {/* What is left, not just what is done: "none scored" is a
+                  standing invitation, and "9 still to score" is an errand. */}
               <span className="rv-row-tallies">
                 <span className={shelf.drawn === shelf.planned ? "rv-tally rv-tally-done" : "rv-tally"}>
                   {shelf.drawn} of {shelf.planned} drawn
@@ -197,7 +174,13 @@ export default async function ReviewIndexPage() {
                     shelf.scored >= shelf.drawn && shelf.drawn > 0 ? "rv-tally rv-tally-done" : "rv-tally"
                   }
                 >
-                  {shelf.scored === 0 ? "none scored" : `${shelf.scored} of ${shelf.drawn} scored`}
+                  {shelf.drawn === 0
+                    ? "nothing to score yet"
+                    : shelf.scored === 0
+                      ? `none scored — ${shelf.drawn} waiting`
+                      : shelf.scored >= shelf.drawn
+                        ? "all scored"
+                        : `${shelf.scored} scored — ${shelf.drawn - shelf.scored} still to score`}
                 </span>
               </span>
             </Link>

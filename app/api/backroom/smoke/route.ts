@@ -127,58 +127,59 @@ const SET_PLATE_PROMPT =
   "in OPEN LINE with the paper showing through between the strokes, not filled in with black. Solid black is " +
   "used sparingly, for accents only. This is a polished, well-lit, expensive room at four in the afternoon — " +
   "never a dim one, never a gloomy one, never a cellar.\n\n" +
-  "This is a SET PLATE: the empty interior of an upscale bar, and THERE ARE NO PEOPLE, NO ANIMALS AND NO " +
-  "CHARACTERS OF ANY KIND anywhere in it.\n\n" +
-  "COMPOSITION, GIVEN AS FRACTIONS OF THE FRAME. This is the part of the plate that must be obeyed exactly, "
-  "because it is the whole reason the plate is being redrawn. Work from the bottom of the picture upward and "
-  "put each band where it is told:\n" +
-  "0% to 20% (the BOTTOM FIFTH) — EMPTY. This is the open air of the patron side of the bar, the stretch two "
-  "seated gentlemen would fill, and in this plate it is left blank. Draw NOTHING here: no floor, no stool, no "
-  "chair, no table, no rail, no furniture of any kind.\n" +
-  "20% to 40% — THE MARBLE COUNTER, running left to right straight ACROSS THE PICTURE. Its NEAR edge crosses "
-  "at about 20% and its FAR edge at about 40%, and because we are looking slightly DOWN at it the whole TOP "
-  "SURFACE of the slab is visible between those two edges as a wide foreshortened band, its veining running "
-  "away from us. The counter is a broad horizontal band across the middle of the picture, NEVER a thin strip "
-  "along the bottom edge.\n" +
-  "40% to 50% — THE BARTENDER\'S WALKWAY: a clear strip of open floor BEHIND the counter and IN FRONT of the "
-  "back bar, about a metre deep, with the floorboards visible in it. This gap is what makes the room a room "
-  "and not a flat wall, and it is where Abby stands to work. It is never closed up.\n" +
-  "50% to 100% (the TOP HALF) — THE BACK BAR, standing beyond that walkway and therefore READING AS "
+  "This is a SET PLATE: the empty interior of an upscale bar a block off Wall Street, and THERE ARE NO " +
+  "PEOPLE, NO ANIMALS AND NO CHARACTERS OF ANY KIND anywhere in it.\n\n" +
+
+  "IT IS A CARTOON PANEL'S VIEW, NOT AN ARCHITECT'S. We are CLOSE IN. The bar fills the picture: the counter " +
+  "runs the FULL WIDTH of the frame and the back bar fills the top half of it. This is NOT a wide view of a " +
+  "whole room — do not draw a dining room, dining tables, dining chairs, an archway, a far doorway, a " +
+  "ceiling, a chandelier or a receding floor of parquet. Nothing in this picture is small and far away.\n\n" +
+
+  "COMPOSITION, GIVEN AS FRACTIONS OF THE FRAME. This is the part that must be obeyed exactly, because it is " +
+  "the whole reason this plate is being drawn. Work upward from the bottom edge and put each band where it " +
+  "is told:\n" +
+  "0% to 20% (the BOTTOM FIFTH) — EMPTY. This is the open air of the PATRON side of the bar, the stretch two " +
+  "seated gentlemen will fill in the finished cartoons, and in this plate it is left blank. Draw NOTHING " +
+  "here: no floor, no stool, no chair, no table, no foot rail, no furniture of any kind.\n" +
+  "20% to 40% — THE MARBLE COUNTER, running left to right straight ACROSS THE PICTURE and out past both " +
+  "edges. Its NEAR edge crosses at about 20% and its FAR edge at about 40%, and because we look slightly " +
+  "DOWN at it the whole TOP SURFACE of the slab is visible between those two edges as a wide foreshortened " +
+  "band with its veining running away from us. It is a broad horizontal band across the middle of the " +
+  "picture, NEVER a thin strip along the bottom edge, and it NEVER runs away from us into the distance at " +
+  "an angle.\n" +
+  "40% to 50% — THE BARTENDER'S WALKWAY: a clear strip of open floor BEHIND the counter and IN FRONT of the " +
+  "back bar, about a metre deep, its floorboards visible. This gap is what makes the room a room instead of " +
+  "a flat wall, and it is where the bartender stands to work. It is never closed up.\n" +
+  "50% to 100% (the TOP HALF) — THE BACK BAR, standing beyond that walkway and therefore reading as " +
   "DISTINCTLY FARTHER AWAY than the counter.\n\n" +
-  "CAMERA. We are in the DINING ROOM on the PATRON side, standing behind where the seats would be and a "
-  "little ABOVE them, looking slightly DOWN and across the counter toward the service side. There are THREE "
-  "DEPTHS in the picture — the empty patron side nearest, the counter next, the back bar farthest — and each "
-  "must plainly be farther away than the last.\n\n" +
-  "THE BACK BAR fills the upper half of the frame, standing beyond that walkway, and this arrangement " +
-  "never changes:\n" +
-  "ACROSS THE BACK, a run of handsome walnut back-bar shelving with a MIRROR behind it, carrying rows of " +
-  "liquor bottles — each bottle a distinct shape, their labels drawn as plain blank rectangles with NO " +
-  "lettering on them — and rows of hanging stemware above.\n" +
-  "CENTRE, HIGH ON THE WALL ABOVE THE BACK BAR, a modern wall-mounted FLAT-SCREEN TELEVISION with a NARROW " +
-  "black bezel — a television, not a picture frame. ITS SCREEN IS COMPLETELY BLANK: an empty pale rectangle " +
-  "with no picture, no headline band, no letters and no marks of any kind, and no badge or nameplate on its " +
-  "frame.\n" +
-  "RIGHT OF THE TELEVISION, a CHALKBOARD in a dark wooden frame on the panelling. IT IS COMPLETELY BLANK — an " +
-  "empty dark slate, no chalk writing, no words, no numbers, no marks.\n" +
-  "A brass wall sconce with a small pleated shade at each end of the back bar.\n" +
-  "FAR LEFT, where the wall gives onto the street, the front window, its lower half frosted, carrying the " +
-  "bar's name in gilt script SEEN FROM BEHIND — THE SWINGING DOOR, MIRRORED, reading backwards.\n" +
-  "Dark walnut panelling in tall fielded panels wherever wall shows.\n\n" +
-  "IN THE 20%–40% BAND, running left to right ACROSS THE MIDDLE of the picture, the POLISHED MARBLE COUNTER — a SINGLE " +
-  "CONTINUOUS FLAT SLAB of pale grey veined marble at ONE height end to end, with a moulded walnut edge and a " +
-  "walnut-panelled front below it. There is NO raised rail, NO upper drink shelf, NO second tier, NO step and " +
-  "NO ledge anywhere on it or behind it — one surface, one height. On it, nothing but a folded bar towel at one end and a small empty nut bowl at centre " +
-  "— NO glasses and NO drinks. Below the counter's NEAR edge the picture ends: no stools, no footrest, no "
-  "floor on the patron side, nothing in frame down there at all — but leave that BOTTOM FIFTH of the " +
-  "sheet as open dining-room air so the counter reads as sitting ACROSS THE MIDDLE of the picture rather " +
-  "than along its bottom edge.\n\n" +
-  "THERE IS NO LETTERING ANYWHERE IN THIS PICTURE except the mirrored gilt script of THE SWINGING DOOR on the " +
-  "window. The screen is blank, the chalkboard is blank, every bottle label is blank, the television frame is " +
-  "blank. Do not draw text-like marks as texture.\n\n" +
-  "Any attached image is the founder\'s own bar panel: take the drawing hand, the panelling, the marble and " +
-  "the warmth of the room from it — and nothing else. Do not copy its characters, its signage, its lettering " +
-  "or ITS CAMERA. Those panels are shot flat, with the counter low and the bar furniture pressed in behind the " +
-  "figures; this plate is the corrected room and its depth comes from the description above, not from them.";
+
+  "CAMERA. We stand in the room on the PATRON side, behind where the seats would be and a little ABOVE them, " +
+  "looking slightly DOWN and across the counter toward the service side, SQUARE ON. There are THREE DEPTHS " +
+  "— the empty patron side nearest, the counter next, the back bar farthest — and each must plainly be " +
+  "farther away than the last.\n\n" +
+
+  "COUNT THESE SIX FIXTURES BEFORE YOU FINISH. Every one of them is required and the plate is wrong without " +
+  "any single one of them:\n" +
+  "1. THE MARBLE COUNTER — a SINGLE CONTINUOUS FLAT SLAB of pale grey veined marble at ONE height end to " +
+  "end, with a moulded walnut edge and a walnut-panelled front below it. NO raised rail, NO upper drink " +
+  "shelf, NO second tier, NO step, NO ledge anywhere on it or behind it: one surface, one height. On it, " +
+  "nothing but a folded bar towel at one end and a small empty nut bowl at centre — no glasses, no drinks.\n" +
+  "2. THE BACK BAR — a run of handsome walnut back-bar shelving with a MIRROR behind it, carrying rows of " +
+  "liquor bottles, each bottle a distinct shape, their labels drawn as plain blank rectangles with NO " +
+  "lettering on them, and rows of hanging stemware above.\n" +
+  "3. THE TELEVISION — centre, HIGH ON THE WALL ABOVE THE BACK BAR, a modern wall-mounted FLAT-SCREEN with a " +
+  "NARROW black bezel; a television, not a picture frame. ITS SCREEN IS COMPLETELY BLANK: an empty pale " +
+  "rectangle, no picture, no headline band, no letters, no marks, and no badge or nameplate on its frame.\n" +
+  "4. THE CHALKBOARD — immediately RIGHT OF THE TELEVISION, in a dark wooden frame on the panelling, " +
+  "COMPLETELY BLANK: an empty dark slate with no chalk writing, no words, no numbers, no marks.\n" +
+  "5. THE TWO SCONCES — one brass wall sconce with a small pleated shade at EACH END of the back bar.\n" +
+  "6. THE FRONT WINDOW — FAR LEFT, where the wall gives onto the street, its lower half frosted, carrying " +
+  "the bar's name in gilt script SEEN FROM BEHIND: THE SWINGING DOOR, MIRRORED, reading backwards.\n" +
+  "Dark walnut panelling in tall fielded panels wherever wall shows between them.\n\n" +
+
+  "THERE IS NO LETTERING ANYWHERE IN THIS PICTURE except the mirrored gilt script of THE SWINGING DOOR on " +
+  "the window. The screen is blank, the chalkboard is blank, every bottle label is blank, the television " +
+  "frame is blank. Do not draw text-like marks as texture.";
 
 // The character studies (?study=<name>). One figure, alone, on paper — the
 // plate a reader meets the character through. No room, no props beyond the
@@ -564,14 +565,17 @@ export async function GET(request: NextRequest) {
     // empty signage teaches layout and furniture and nothing else; the story
     // goes on the screen from the scene brief.
     if (params.get("plate") === "room") {
-      // ?noref=1 draws the plate from the words alone. The two crops below are
-      // the founder's own bar panels, and they are where the staging fault came
-      // from: both are shot flat, the counter low across the picture with the
-      // bar furniture pressed in behind the figures and no walkway anywhere. A
-      // plate drawn while they are attached inherits that flatness however the
-      // text is worded, because the reference out-votes the text. When the
-      // picture is the thing being corrected, the fix is to stop showing it.
-      const plateNoRef = params.get("noref") === "1";
+      // THE PLATE IS DRAWN FROM THE WORDS, NOT FROM THE CONCEPTS. The two crops
+      // below are the founder's own early bar panels, and he has since said
+      // plainly that they are concepts and not the target. They are also where
+      // the staging fault came from: both are shot flat, the counter low across
+      // the picture with the bar furniture pressed in behind the figures and no
+      // walkway anywhere. A plate drawn while they are attached inherits that
+      // flatness however the text is worded, because the reference out-votes the
+      // text. So references are OFF here by default and ?refs=1 is the way back
+      // in, kept only because the fixtures were carried by those crops once and
+      // a fixture-less plate is worth diagnosing against.
+      const plateNoRef = params.get("refs") !== "1";
       const image = await generateCartoonArt({
         prompt: SET_PLATE_PROMPT,
         characters: [],

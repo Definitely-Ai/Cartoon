@@ -25,7 +25,7 @@
 // The .rv-* classes live in one <style> block on the page that renders this,
 // the way the rest of this screen has always done it.
 
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState, type KeyboardEvent } from "react";
 
 export type CastName = "drew" | "mango" | "abby";
 
@@ -196,7 +196,7 @@ function Dial(props: {
   const tabStop = focused ?? props.value ?? 1;
   const labelId = `rv-dial-${props.label.replace(/\W+/g, "-").toLowerCase()}`;
 
-  function walk(event: React.KeyboardEvent<HTMLDivElement>) {
+  function walk(event: KeyboardEvent<HTMLDivElement>) {
     const step: Record<string, number> = { ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1 };
     let next: number | null = null;
     if (event.key in step) next = Math.min(10, Math.max(1, tabStop + step[event.key]));
@@ -323,26 +323,30 @@ export default function ReviewDesk(props: { batch: string; panels: DeskPanel[] }
   // ------------------------------------------------------------ saving
 
   const send = useCallback(
-    async (key: string) => {
+    (key: string) => {
       const target = byKey.get(key);
-      if (!target || !target.drawn) return;
-
-      const draft = latest.current[key] ?? empty();
-      if (!hasAnything(target, draft)) return;
-      if (matchesServer(target, draft, server.current[key])) return;
-
-      const characters: Partial<Record<CastName, number>> = {};
-      for (const who of target.cast) {
-        const value = draft.characters[who.key];
-        if (typeof value === "number") characters[who.key] = value;
-      }
-
-      setSaves((current) => ({ ...current, [key]: { state: "saving" } }));
+      if (!target || !target.drawn) return Promise.resolve();
 
       // One verdict file, one writer. The rate route reads the standing file
       // and commits the merge, so two overlapping writes could drop one of
       // them; running this screen's writes end to end removes the race.
       const run = queue.current.then(async () => {
+        // Read the card HERE, when the job runs — not when it was asked for.
+        // Pressing Save blurs the comment box first, so one press asks twice;
+        // by the time the second job runs the first has already filed the
+        // answer, and this is where it finds that out and stands down. A stale
+        // read is a second commit saying exactly what the first one said.
+        const draft = latest.current[key] ?? empty();
+        if (!hasAnything(target, draft)) return;
+        if (matchesServer(target, draft, server.current[key])) return;
+
+        const characters: Partial<Record<CastName, number>> = {};
+        for (const who of target.cast) {
+          const value = draft.characters[who.key];
+          if (typeof value === "number") characters[who.key] = value;
+        }
+
+        setSaves((current) => ({ ...current, [key]: { state: "saving" } }));
         try {
           const res = await fetch("/api/backroom/rate", {
             method: "POST",
@@ -374,10 +378,18 @@ export default function ReviewDesk(props: { batch: string; panels: DeskPanel[] }
           const landed = cleanVerdict(data.saved) ?? draft;
           setCommitted((current) => {
             const next = { ...current, [key]: landed };
+            // Written here rather than left to the mirroring effect: the next
+            // job in the queue can run before React re-renders, and it decides
+            // whether to send anything by reading this.
             server.current = next;
             return next;
           });
-          delete book.current[key];
+          // Drop the draft only if what is on screen is now what is on file.
+          // He may have typed another line while this was in flight, and that
+          // line is still the only copy of itself.
+          const showing = latest.current[key];
+          if (!showing || matchesServer(target, showing, landed)) delete book.current[key];
+          else book.current[key] = showing;
           writeDrafts(batch, book.current);
           setRestored((current) => {
             if (!current[key]) return current;
@@ -434,6 +446,18 @@ export default function ReviewDesk(props: { batch: string; panels: DeskPanel[] }
       }, settle);
     },
     [batch, byKey, send]
+  );
+
+  /** A tap on a character dial merges onto the freshest draft this screen
+   *  holds, not the one the last render closed over: two taps inside one
+   *  render would otherwise write the second onto a stale copy of the first
+   *  and drop it. */
+  const pickCharacter = useCallback(
+    (key: string, who: CastName, value: number) => {
+      const current = latest.current[key] ?? empty();
+      edit(key, { characters: { ...current.characters, [who]: value } }, SETTLE_SCORE);
+    },
+    [edit]
   );
 
   // A tab closing mid-edit cancels any fetch in flight. A beacon is the one
@@ -504,12 +528,13 @@ export default function ReviewDesk(props: { batch: string; panels: DeskPanel[] }
     [flush, panels]
   );
 
+  // Counted from where he is, wrapping round the end: after the last one he
+  // should land back on whatever he skipped near the start, not on nothing.
   const nextToScore = useMemo(() => {
     for (let step = 1; step <= panels.length; step += 1) {
-      const candidate = panels[(index + step) % panels.length];
-      if (candidate.drawn && !isComplete(candidate, working[candidate.key] ?? empty())) {
-        return panels.indexOf(candidate);
-      }
+      const candidate = (index + step) % panels.length;
+      const target = panels[candidate];
+      if (target.drawn && !isComplete(target, working[target.key] ?? empty())) return candidate;
     }
     return -1;
   }, [index, panels, working]);
@@ -573,7 +598,8 @@ export default function ReviewDesk(props: { batch: string; panels: DeskPanel[] }
 
   const save = saves[panel.key];
   const onFile = committed[panel.key];
-  const unsaved = hasAnything(panel, mine) && !matchesServer(panel, mine, onFile);
+  const scoredHere = hasAnything(panel, mine);
+  const unsaved = scoredHere && !matchesServer(panel, mine, onFile);
   const wasRestored = Boolean(restored[panel.key]) && unsaved;
 
   const status =
@@ -688,13 +714,7 @@ export default function ReviewDesk(props: { batch: string; panels: DeskPanel[] }
                   label={who.name}
                   hint="how well he’s drawn here"
                   value={mine.characters[who.key] ?? null}
-                  onPick={(n) =>
-                    edit(
-                      panel.key,
-                      { characters: { ...mine.characters, [who.key]: n } },
-                      SETTLE_SCORE
-                    )
-                  }
+                  onPick={(n) => pickCharacter(panel.key, who.key, n)}
                 />
               ))}
               <Dial
@@ -743,19 +763,25 @@ export default function ReviewDesk(props: { batch: string; panels: DeskPanel[] }
                 <button
                   type="button"
                   className="rv-save"
+                  // goTo files what it is leaving behind, so this asks once,
+                  // not twice.
                   onClick={() => {
-                    void flush(panel.key);
                     if (index < panels.length - 1) goTo(index + 1);
+                    else void flush(panel.key);
                   }}
                   disabled={save?.state === "saving"}
                 >
-                  {index < panels.length - 1
-                    ? onFile
-                      ? "Update and go on ›"
-                      : "Save and go on ›"
-                    : onFile
-                      ? "Update this one"
-                      : "Save this one"}
+                  {!scoredHere
+                    ? index < panels.length - 1
+                      ? "Skip this one ›"
+                      : "Done"
+                    : index < panels.length - 1
+                      ? onFile
+                        ? "Update and go on ›"
+                        : "Save and go on ›"
+                      : onFile
+                        ? "Update this one"
+                        : "Save this one"}
                 </button>
                 <p
                   className={`rv-status${save?.state === "error" ? " rv-status-bad" : unsaved ? " rv-status-warn" : ""}`}
