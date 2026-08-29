@@ -161,34 +161,52 @@ export async function GET(request: NextRequest) {
     const made: string[] = [];
     const failed: { n: number; why: string }[] = [];
 
-    // Replicate allows roughly one prediction every ten seconds on a small
-    // credit balance. The smoke route has spaced its panels for weeks; this one
-    // never did, and it showed: firing twenty-five back to back, five of the
-    // first seven came back rate-limited and only panels four and seven
-    // survived. Spacing turns a wave of refusals into a slower complete wave.
-    let first = true;
-    for (const panel of plan.panels) {
-      if (already.has(panel.n)) continue;
-      if (Date.now() - started > BUDGET_MS) break;
-      if (!first) await new Promise((resolve) => setTimeout(resolve, 12_000));
-      first = false;
+    // WHY THIS DRAWS IN LANES. A panel takes about a minute to render and the
+    // function gets five, so drawing them one after another spends four of
+    // those five minutes with nothing happening but waiting on someone else's
+    // GPU. Twenty-five panels that way is nine or ten separate calls.
+    //
+    // The serial version was not chosen for its own sake — it was the fix for a
+    // real failure. Replicate allows roughly one prediction every ten seconds
+    // on a small credit balance, and firing twenty-five back to back once left
+    // five of the first seven rate-limited. So the constraint is on how fast
+    // predictions are STARTED, not on how many may be in flight, and the answer
+    // is a small pool of lanes with the starts still spaced: LANE_STAGGER apart
+    // going in, three of them running at once, which keeps the start rate
+    // inside the same envelope that has been working while cutting the
+    // wall-clock by about two thirds.
+    //
+    // COMMITS STAY SINGLE FILE. Every panel commits to the same branch, and
+    // concurrent commits race on the ref — the publish core retries a 409 once,
+    // which is enough for an occasional collision and not for three lanes
+    // finishing together. So renders overlap and commits queue behind one
+    // promise chain; the wait is milliseconds against a minute of drawing.
+    const lanesAsked = Number(params.get("lanes") ?? 3);
+    const LANES = Math.min(5, Math.max(1, Number.isFinite(lanesAsked) ? lanesAsked : 3));
+    const LANE_STAGGER = 4_000;
 
-      try {
-        const prompt = assemblePrompt(
-          canon,
-          { scene: panel.scene, tv: panel.tv, board: panel.board, setting: panel.setting, characters: panel.characters },
-          !model.includes("kontext") && !isMultiRef(model),
-          false,
-          isMultiRef(model)
-        );
-        const image = await generateCartoonArt({
-          prompt,
-          characters: panel.characters,
-          barScene: !panel.setting,
-          model,
-          quality: quality ?? undefined,
-        });
-        await commitFiles(
+    const queue = plan.panels.filter((panel) => !already.has(panel.n));
+    let next = 0;
+    let commitChain: Promise<unknown> = Promise.resolve();
+
+    const drawOne = async (panel: (typeof queue)[number]) => {
+      const prompt = assemblePrompt(
+        canon,
+        { scene: panel.scene, tv: panel.tv, board: panel.board, setting: panel.setting, characters: panel.characters },
+        !model.includes("kontext") && !isMultiRef(model),
+        false,
+        isMultiRef(model)
+      );
+      const image = await generateCartoonArt({
+        prompt,
+        characters: panel.characters,
+        barScene: !panel.setting,
+        model,
+        quality: quality ?? undefined,
+      });
+      // Take a place in the commit queue and wait for the ones already in it.
+      const mine = commitChain.then(() =>
+        commitFiles(
           [
             { path: `${BRIEFS}/${plan.batch}/${panel.file}`, content: image },
             {
@@ -200,14 +218,38 @@ export async function GET(request: NextRequest) {
             },
           ],
           `brief ${plan.batch}: panel ${panel.n} — ${panel.slug}`
-        );
-        made.push(panel.file);
-      } catch (err) {
-        // One bad panel must not cost the other nine. Record it and carry on;
-        // the next call will retry it, because nothing was committed for it.
-        failed.push({ n: panel.n, why: err instanceof Error ? err.message : String(err) });
+        )
+      );
+      // The chain must survive a failed commit or one bad panel stops the lane
+      // behind it from ever committing.
+      commitChain = mine.catch(() => undefined);
+      await mine;
+      made.push(panel.file);
+    };
+
+    const lane = async (index: number) => {
+      // Stagger the lanes' first starts so three predictions are not created in
+      // the same instant.
+      await new Promise((resolve) => setTimeout(resolve, index * LANE_STAGGER));
+      for (;;) {
+        const mine = next++;
+        if (mine >= queue.length) return;
+        if (Date.now() - started > BUDGET_MS) return;
+        const panel = queue[mine];
+        try {
+          await drawOne(panel);
+        } catch (err) {
+          // One bad panel must not cost the others. Record it and carry on; the
+          // next call retries it, because nothing was committed for it.
+          failed.push({ n: panel.n, why: err instanceof Error ? err.message : String(err) });
+        }
+        // Space this lane's next start as well, so the pool's overall start
+        // rate stays near one prediction every LANE_STAGGER milliseconds.
+        await new Promise((resolve) => setTimeout(resolve, LANE_STAGGER));
       }
-    }
+    };
+
+    await Promise.all(Array.from({ length: Math.min(LANES, queue.length) }, (_, i) => lane(i)));
 
     const done = already.size + made.length;
     const remaining = plan.panels.length - done;
