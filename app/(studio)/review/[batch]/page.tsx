@@ -163,7 +163,7 @@ export default async function ReviewBatchPage({ params }: { params: Promise<{ ba
           The review
         </p>
         <h1 style={{ fontFamily: serif, fontSize: 38, margin: "8px 0 0", letterSpacing: 0.3, lineHeight: 1.2 }}>
-          {plan ? `“${plan.brief}”` : "That batch isn’t answering"}
+          {plan ? `“${plan.brief}”` : "That edition isn’t answering"}
         </h1>
 
         {plan && (
@@ -175,12 +175,19 @@ export default async function ReviewBatchPage({ params }: { params: Promise<{ ba
               {` · ${scored} of ${made} scored`}
               {madeAt(created) ? ` · ${madeAt(created)}` : ""}
             </p>
-            <p style={{ fontSize: 13, color: "#8a7f6d", margin: "6px 0 0", wordBreak: "break-word" }}>
-              <code style={{ fontSize: 12.5 }}>{plan.batch}</code>
-              {plan.writer ? ` · written by ${plan.writer}` : ""}
-              {plan.model ? ` · drawn by ${plan.model}` : ""}
-              {plan.quality ? ` · ${plan.quality} quality` : ""}
-            </p>
+            {/* Who made it — the machine id stays out of Rick's way; the
+                permalink already carries it. */}
+            {(plan.writer || plan.model || plan.quality) && (
+              <p style={{ fontSize: 13, color: "#6b6153", margin: "6px 0 0", wordBreak: "break-word" }}>
+                {[
+                  plan.writer && `written by ${plan.writer}`,
+                  plan.model && `drawn by ${plan.model}`,
+                  plan.quality && `${plan.quality} quality`,
+                ]
+                  .filter(Boolean)
+                  .join(" · ")}
+              </p>
+            )}
             {made < panels.length && (
               <p style={{ fontFamily: serif, fontStyle: "italic", fontSize: 15, color: "#5a5145", margin: "10px 0 0" }}>
                 {panels.length - made} still at the drawing board — reload when they land.
@@ -222,26 +229,12 @@ export default async function ReviewBatchPage({ params }: { params: Promise<{ ba
 
         <p style={{ fontFamily: serif, fontSize: 14, margin: "16px 0 0" }}>
           <Link href="/review" style={{ color: "#6b6153" }}>
-            ‹ All batches
+            ‹ All editions
           </Link>
         </p>
       </header>
 
-      <p
-        style={{
-          fontFamily: serif,
-          fontSize: 15.5,
-          color: "#5a5145",
-          maxWidth: 760,
-          margin: "22px 0 6px",
-          borderTop: "2px solid #1a1a1a",
-          paddingTop: 14,
-        }}
-      >
-        Score each one out of ten — every character who is in it, the scene, the caption. A tap is
-        the whole submission; nothing here needs a Save except a note.
-      </p>
-
+      {panels.length > 0 && (
       <div className="rv-grid">
         {panels.map((panel) => {
           const isDrawn = drawn.has(panel.file);
@@ -306,6 +299,7 @@ export default async function ReviewBatchPage({ params }: { params: Promise<{ ba
           );
         })}
       </div>
+      )}
 
       {/* One stylesheet for ten cards — the hover, focus and breakpoint work
           inline styles can't do. */}
@@ -314,7 +308,9 @@ export default async function ReviewBatchPage({ params }: { params: Promise<{ ba
           display: grid;
           grid-template-columns: repeat(2, minmax(0, 1fr));
           gap: 26px;
-          margin-top: 20px;
+          margin-top: 22px;
+          border-top: 2px solid #1a1a1a;
+          padding-top: 22px;
           align-items: start;
         }
         /* Two up on a desk, one up below that: a 2:3 engraving in a column
@@ -338,7 +334,7 @@ export default async function ReviewBatchPage({ params }: { params: Promise<{ ba
           font-size: 13px;
           letter-spacing: 0.16em;
           text-transform: uppercase;
-          color: #8a7f6d;
+          color: #6b6153;
           margin: 0 0 10px;
         }
         .rv-no-of { letter-spacing: 0.06em; text-transform: none; }
@@ -361,7 +357,7 @@ export default async function ReviewBatchPage({ params }: { params: Promise<{ ba
           font-family: ${serif};
           font-style: italic;
           font-size: 15px;
-          color: #a89c86;
+          color: #6b6153;
           margin: 0;
         }
 
@@ -378,7 +374,7 @@ export default async function ReviewBatchPage({ params }: { params: Promise<{ ba
         .rv-turn {
           font-size: 12.5px;
           line-height: 1.5;
-          color: #8a7f6d;
+          color: #6b6153;
           margin: 7px 0 0;
         }
 
@@ -386,7 +382,7 @@ export default async function ReviewBatchPage({ params }: { params: Promise<{ ba
           font-family: ${serif};
           font-style: italic;
           font-size: 14px;
-          color: #a89c86;
+          color: #6b6153;
           margin: 14px 0 0;
           border-top: 1px solid #ece5d8;
           padding-top: 12px;
@@ -409,7 +405,7 @@ export default async function ReviewBatchPage({ params }: { params: Promise<{ ba
         .rv-dial-value {
           font-family: ${serif};
           font-size: 12px;
-          color: #8a7f6d;
+          color: #6b6153;
           text-align: right;
           width: 3.6em;
           font-variant-numeric: tabular-nums;

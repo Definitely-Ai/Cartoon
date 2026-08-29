@@ -18,8 +18,11 @@
 /* ------------------------------------------------------ 1. Room base */
 
 .backroom {
-  --br-room: var(--ink-soft); /* #1a1a1a — the dark of the room */
-  --br-paper: var(--paper-white);
+  /* The house palette: warm near-black room, cream paper — the same pair
+     the paper pages (review, the Studio Bible) are printed in, so the
+     dark-room pages and the paper pages read as one building. */
+  --br-room: #221d16;
+  --br-paper: #fdfbf6;
   --br-chalk: var(--font-comic-hand), "Segoe Print", cursive;
   --br-caps: var(--font-news-condensed), "Arial Narrow", sans-serif;
   --br-serif: var(--font-news-serif), Georgia, serif;
@@ -33,7 +36,7 @@
   line-height: 1.55;
   /* Focus rings live on dark here — the global ring reads its ink from
      this variable. */
-  --focus-ink: var(--paper-white);
+  --focus-ink: var(--br-paper);
 }
 
 .backroom a {
@@ -291,9 +294,11 @@
   line-height: 1.6;
 }
 
-/* The compare strip: three small proofs that jump down the table. */
+/* The compare strip: small proofs that jump down the table. Wraps — a
+   ten-cartoon day must never scroll the phone sideways. */
 .br-jump {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 0.9rem;
   margin-bottom: 1.75rem;
@@ -362,13 +367,15 @@
   margin-bottom: 0.4rem;
 }
 
-/* A proof is a paper card on the dark table. */
+/* A proof is a paper card on the dark table. The room's focus ring is
+   white; on paper it gets its ink back or it vanishes. */
 .br-proof-card {
   background: var(--br-paper);
   color: var(--ink);
   padding: 0.75rem 0.75rem 0.9rem;
   border: 1px solid var(--br-paper);
   position: relative;
+  --focus-ink: var(--ink);
 }
 
 .br-proof-img {

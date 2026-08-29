@@ -47,7 +47,7 @@ export default function DayBoard({ day }: { day: StudioDay }) {
         <div key={batch.id} className="br-batch">
           <header className="br-batch-head">
             <p className="br-batch-ask">
-              <span className="br-batch-label">He asked</span>
+              <span className="br-batch-label">You asked</span>
               &ldquo;{batch.request}&rdquo;
             </p>
             <p className="br-batch-meta">

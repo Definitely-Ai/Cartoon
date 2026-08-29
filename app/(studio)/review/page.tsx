@@ -143,7 +143,7 @@ export default async function ReviewIndexPage() {
           The review
         </p>
         <h1 style={{ fontFamily: serif, fontSize: 40, margin: "8px 0 0", letterSpacing: 0.4 }}>
-          Every batch
+          Every edition
         </h1>
         <p
           style={{
@@ -155,9 +155,9 @@ export default async function ReviewIndexPage() {
             maxWidth: 620,
           }}
         >
-          Each edition is a fresh set of cartoons. Open the newest one, look at every panel, and give it a
-          score out of ten — for the drawing, for the joke, and for each character in it. There is a comment
-          box under every cartoon if you want to say why.
+          Each edition is a fresh set of cartoons drawn from one thing you asked for. Open the newest one,
+          look at every cartoon, and give scores out of ten — one for each character in it, one for the
+          scene, one for the caption. There is a comment box under every cartoon if you want to say why.
         </p>
       </header>
 
@@ -168,8 +168,9 @@ export default async function ReviewIndexPage() {
       )}
 
       {!trouble && shelves.length === 0 && (
-        <p style={{ fontFamily: serif, fontStyle: "italic", color: "#8a7f6d", marginTop: 28 }}>
-          No batches yet. Ask for one and it will be waiting here.
+        <p style={{ fontFamily: serif, fontStyle: "italic", color: "#6b6153", marginTop: 28 }}>
+          No editions yet. Ask your AI for cartoons and the first one will be waiting here — the
+          hookup lives under <Link href="/connect" style={{ color: "#221d16" }}>Connect your AI</Link>.
         </p>
       )}
 
@@ -182,9 +183,10 @@ export default async function ReviewIndexPage() {
                 {shelf.drawn < shelf.planned ? <em className="rv-row-wip"> · still drawing</em> : null}
               </span>
               <span className="rv-row-brief">&ldquo;{shelf.brief}&rdquo;</span>
+              {/* When it was made is all Rick needs; the machine id only
+                  steps in when the plan never recorded a time. */}
               <span className="rv-row-meta">
-                {madeAt(shelf.createdAt) ? `${madeAt(shelf.createdAt)} · ` : ""}
-                <span className="rv-row-id">{shelf.batch}</span>
+                {madeAt(shelf.createdAt) || <span className="rv-row-id">{shelf.batch}</span>}
               </span>
               <span className="rv-row-tallies">
                 <span className={shelf.drawn === shelf.planned ? "rv-tally rv-tally-done" : "rv-tally"}>
@@ -204,14 +206,14 @@ export default async function ReviewIndexPage() {
       </ul>
 
       {more > 0 && (
-        <p style={{ fontFamily: serif, fontSize: 14, color: "#8a7f6d", marginTop: 18 }}>
-          {more} older batch{more === 1 ? "" : "es"} not shown.
+        <p style={{ fontFamily: serif, fontSize: 14, color: "#6b6153", marginTop: 18 }}>
+          {more} older edition{more === 1 ? "" : "s"} not shown.
         </p>
       )}
 
       <style>{`
         .rv-row-edition { font-family: ${serif}; font-size: 19px; color: #221d16; display: block; margin-bottom: 3px; }
-        .rv-row-wip { font-size: 14px; color: #8a7f6d; font-style: italic; }
+        .rv-row-wip { font-size: 14px; color: #6b6153; font-style: italic; }
         .rv-shelf { list-style: none; margin: 24px 0 0; padding: 0; }
         .rv-shelf li { margin: 0 0 12px; }
 
@@ -237,7 +239,7 @@ export default async function ReviewIndexPage() {
         .rv-row-meta {
           display: block;
           font-size: 12.5px;
-          color: #8a7f6d;
+          color: #6b6153;
           margin-top: 6px;
           word-break: break-word;
         }

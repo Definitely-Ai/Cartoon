@@ -7,7 +7,7 @@ import CopyButton from "./CopyButton";
 // the room, because the address itself is a key.
 
 export const metadata = {
-  title: "The Wire",
+  title: "Connect your AI",
 };
 
 // Rendered per-request: the address depends on MCP_SECRET, and baking it
@@ -46,8 +46,11 @@ export default function ConnectPage() {
 
   return (
     <main id="content" className="br-main br-wire">
+      {/* Named the way the nav names it — Rick clicks "Connect your AI" and
+          should land on a page that says so. "The wire" stays as the room's
+          nickname for the hookup, not as the headline. */}
       <header className="br-table-head">
-        <h1 className="br-date">The Wire</h1>
+        <h1 className="br-date">Connect your AI</h1>
         <p className="br-status">Your AI files the day&rsquo;s cartoons through here.</p>
       </header>
 
@@ -84,7 +87,7 @@ export default function ConnectPage() {
               <li>Open ChatGPT → Settings → Connectors.</li>
               <li>Under Advanced, turn on Developer mode.</li>
               <li>Choose Create connector, give it a name like &ldquo;The Swinging Door&rdquo;, and paste the address above. No authentication — the key is inside the address.</li>
-              <li>Save. In a new chat, enable the connector and you&rsquo;re on the wire.</li>
+              <li>Save. In a new chat, enable the connector and you&rsquo;re connected.</li>
             </ol>
           </section>
 
@@ -111,9 +114,10 @@ export default function ConnectPage() {
           <section className="br-wire-section">
             <h2 className="br-wire-head">Housekeeping</h2>
             <p>
-              One-time move-in: <a href="/api/backroom/backfill">copy the old git-era days into
-              the studio database</a> so the Collection is complete. Safe to run twice — it
-              skips days that already moved.
+              One-time move-in: <a href="/api/backroom/backfill">copy the studio&rsquo;s older
+              days into the database</a> so the Collection is complete. Safe to run twice — it
+              skips days that already moved. (The page it opens is a plain receipt; come back
+              here when it&rsquo;s done.)
             </p>
           </section>
 
@@ -132,7 +136,7 @@ export default function ConnectPage() {
         </>
       ) : (
         <section className="br-wire-section">
-          <h2 className="br-wire-head">The wire isn&rsquo;t connected yet</h2>
+          <h2 className="br-wire-head">Nothing to connect to yet</h2>
           <p>
             Add an environment variable named <code>MCP_SECRET</code> in the Vercel project (any
             long random string), redeploy, and revisit this page — the connection address will be

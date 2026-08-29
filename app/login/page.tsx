@@ -20,7 +20,7 @@ export default function BackroomLogin() {
           (nav, logout) belongs to the other side of the door. */}
       <div className="br-door-head">
         {/* BRAND: replace when final */}
-        <p className="br-title">The Swinging Door</p>
+        <h1 className="br-title">The Swinging Door</h1>
         <p className="br-sub">The studio · members only</p>
       </div>
       <div className="br-door" aria-hidden="true">

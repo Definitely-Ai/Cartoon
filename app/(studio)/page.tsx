@@ -44,7 +44,7 @@ export default async function StudioToday() {
             <h1 className="br-date">Nothing on the table</h1>
             <p className="br-status">
               {setupNote ??
-                "Ask your AI for cartoons — “make one where they’re on a boat” — and the batch lands here the moment it’s drawn."}{" "}
+                "Ask your AI for cartoons — “make one where they’re on a boat” — and they land here the moment they’re drawn."}{" "}
               (Hookup lives under <Link href="/connect">Connect your AI</Link>.)
             </p>
           </div>

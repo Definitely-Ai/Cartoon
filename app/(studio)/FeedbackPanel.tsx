@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useId, useRef, useState, type KeyboardEvent } from "react";
 
 // The training week's instrument, one cartoon at a time: two 1–10 dials —
 // the art and the caption — plus an optional why-note. Every tap and every
@@ -10,21 +10,57 @@ import { useRef, useState } from "react";
 
 const SCORES = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] as const;
 
+/**
+ * One 1-10 dial. Same keyboard contract as the review screen's dials: the
+ * whole row is a single tab stop — Tab lands on the standing score and the
+ * arrow keys walk the row without committing anything; only a real click or
+ * Enter/Space picks a number. A ten-cartoon day would otherwise be two
+ * hundred tab stops.
+ */
 function Dial(props: {
   label: string;
   value: number | null;
   onPick: (n: number) => void;
 }) {
+  const labelId = useId();
+  const [focused, setFocused] = useState<number | null>(null);
+  const row = useRef<HTMLDivElement | null>(null);
+  const tabStop = focused ?? props.value ?? 1;
+
+  function walk(event: KeyboardEvent<HTMLDivElement>) {
+    const step: Record<string, number> = { ArrowRight: 1, ArrowDown: 1, ArrowLeft: -1, ArrowUp: -1 };
+    let next: number | null = null;
+    if (event.key in step) next = Math.min(10, Math.max(1, tabStop + step[event.key]));
+    if (event.key === "Home") next = 1;
+    if (event.key === "End") next = 10;
+    if (next === null) return;
+    event.preventDefault();
+    row.current?.querySelector<HTMLButtonElement>(`button[data-score="${next}"]`)?.focus();
+  }
+
   return (
-    <div className="br-dial" role="group" aria-label={`${props.label} score, 1 to 10`}>
-      <span className="br-dial-label">{props.label}</span>
-      <div className="br-dial-row">
+    <div className="br-dial">
+      <span className="br-dial-label" id={labelId}>
+        {props.label}
+      </span>
+      <div
+        className="br-dial-row"
+        ref={row}
+        role="group"
+        aria-labelledby={labelId}
+        onKeyDown={walk}
+      >
         {SCORES.map((n) => (
           <button
             key={n}
             type="button"
+            data-score={n}
             className={`br-dial-btn${props.value === n ? " br-dial-on" : ""}${n >= 6 ? " br-dial-pass" : ""}`}
             aria-pressed={props.value === n}
+            aria-label={`${props.label}: ${n} out of 10`}
+            tabIndex={n === tabStop ? 0 : -1}
+            onFocus={() => setFocused(n)}
+            onBlur={() => setFocused(null)}
             onClick={() => props.onPick(n)}
           >
             {n}

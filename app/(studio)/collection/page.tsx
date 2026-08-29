@@ -42,13 +42,24 @@ export default async function CollectionPage() {
       <header className="br-table-head">
         <h1 className="br-date">The Collection</h1>
         <p className="br-status">
-          {total} cartoon{total === 1 ? "" : "s"} across {summaries.length} day
-          {summaries.length === 1 ? "" : "s"}. Tap a day to lay it out on the table.
+          {summaries.length === 0
+            ? "Every cartoon ever made, filed by day."
+            : `${total} cartoon${total === 1 ? "" : "s"} across ${summaries.length} day${
+                summaries.length === 1 ? "" : "s"
+              }. Tap a day to lay it out on the table.`}
         </p>
       </header>
 
       {summaries.length === 0 ? (
-        <p className="br-status">{setupNote ?? "Nothing filed yet."}</p>
+        <p className="br-status" style={{ textAlign: "center" }}>
+          {setupNote ?? (
+            <>
+              Nothing filed yet — the first day of cartoons lands here the moment it&rsquo;s
+              drawn. Ask your AI for one (the hookup lives under{" "}
+              <Link href="/connect">Connect your AI</Link>).
+            </>
+          )}
+        </p>
       ) : (
         Array.from(months.entries()).map(([label, monthDays]) => (
           <section key={label} className="br-month" aria-label={label}>
@@ -75,7 +86,7 @@ export default async function CollectionPage() {
                         >
                           <Image
                             src={c.src}
-                            alt={`Cartoon ${c.n} of ${day.day}`}
+                            alt={`Cartoon ${c.n} of ${formatDateAP(day.day)}`}
                             width={c.width}
                             height={c.height}
                             sizes="18vw"
