@@ -6,9 +6,9 @@
   },
   "scene": 1,
   "caption": 1,
-  "comment": "bad, bad, bad.  Nothing",
-  "at": "2026-08-29T22:59:10.520Z",
-  "revisions": 7,
+  "comment": "bad, bad, bad.  Nothing funny",
+  "at": "2026-08-29T22:59:14.701Z",
+  "revisions": 8,
   "history": [
     {
       "at": "2026-08-29T22:57:26.306Z",
@@ -72,6 +72,15 @@
       "scene": 1,
       "caption": 1,
       "comment": "bad, bad, bad."
+    },
+    {
+      "at": "2026-08-29T22:59:10.520Z",
+      "characters": {
+        "abby": 1
+      },
+      "scene": 1,
+      "caption": 1,
+      "comment": "bad, bad, bad.  Nothing"
     }
   ]
 }
