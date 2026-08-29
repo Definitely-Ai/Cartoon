@@ -499,39 +499,13 @@ export default function RegistryPage() {
   ];
 
   return (
-    <main
-      className="registry"
-      style={
-        {
-          maxWidth: 1080,
-          margin: "24px auto 48px",
-          padding: "26px 34px 72px",
-          color: "#221d16",
-          background: "#fdfbf6",
-          borderRadius: 8,
-          boxShadow: "0 2px 18px rgba(0,0,0,0.35)",
-          // The dark-room chrome sets the focus ring to paper-white; on
-          // this paper page that ring would vanish, so it is ink here.
-          "--focus-ink": "#221d16",
-        } as React.CSSProperties
-      }
-    >
+    // The sheet, the heading scale and the print rules are shared with the
+    // other paper pages — see .paper-sheet in studio.css.
+    <main id="content" className="registry paper-sheet">
       <header style={{ textAlign: "center", margin: "30px 0 8px" }}>
-        <p style={{ fontFamily: serif, letterSpacing: 3, fontSize: 12, textTransform: "uppercase", color: "#8a7f6d", margin: 0 }}>
-          Registry of Original Work
-        </p>
-        <h1 style={{ fontFamily: serif, fontSize: 44, margin: "8px 0 0", letterSpacing: 0.5 }}>The Swinging Door</h1>
-        <p
-          style={{
-            fontFamily: serif,
-            fontStyle: "italic",
-            fontSize: 17,
-            color: "#5a5145",
-            margin: "12px auto 0",
-            maxWidth: 640,
-            lineHeight: 1.6,
-          }}
-        >
+        <p className="paper-eyebrow">Registry of Original Work</p>
+        <h1 className="paper-title">The Swinging Door</h1>
+        <p className="paper-lede" style={{ marginLeft: "auto", marginRight: "auto" }}>
           The Swinging Door and its characters are the original work of the studio.
           This page records what has been made and when.
         </p>
@@ -565,7 +539,7 @@ export default function RegistryPage() {
 
       {/* -------------------------------------------------- at a glance */}
       <section id="glance" style={{ margin: "0 0 48px", scrollMarginTop: 20 }}>
-        <h2 style={{ fontFamily: serif, fontSize: 28, borderBottom: "2px solid #1a1a1a", paddingBottom: 8, margin: 0 }}>
+        <h2 className="paper-h2">
           The record at a glance
         </h2>
         <div className="reg-tablewrap">
@@ -594,7 +568,7 @@ export default function RegistryPage() {
             </tbody>
           </table>
         </div>
-        <p style={{ fontSize: 13.5, color: "#8a7f6d", marginTop: 12, maxWidth: 720, lineHeight: 1.6 }}>
+        <p style={{ fontSize: 13.5, color: "#8a7f6d", marginTop: 12, maxWidth: "68ch", lineHeight: 1.6 }}>
           Dates are the days work entered the studio&rsquo;s repository, on the founder&rsquo;s clock (Eastern time).
           Where the repository holds no date, this page says so rather than guessing.
         </p>
@@ -602,10 +576,10 @@ export default function RegistryPage() {
 
       {/* --------------------------------------------------- characters */}
       <section id="characters" style={{ margin: "48px 0", scrollMarginTop: 20 }}>
-        <h2 style={{ fontFamily: serif, fontSize: 28, borderBottom: "2px solid #1a1a1a", paddingBottom: 8, margin: 0 }}>
-          The characters <span style={{ fontSize: 17, color: "#8a7f6d" }}>({characters.length})</span>
+        <h2 className="paper-h2">
+          The characters <span className="paper-count">({characters.length})</span>
         </h2>
-        <p style={{ color: "#5a5145", marginTop: 10, maxWidth: 740, lineHeight: 1.6 }}>
+        <p style={{ color: "#5a5145", marginTop: 10, maxWidth: "68ch", lineHeight: 1.6 }}>
           Three original characters, each defined by a written character bible kept in the repository at{" "}
           <code style={{ fontSize: 13 }}>canon/characters/</code>. The portrait shown is the current definitive study.
         </p>
@@ -623,14 +597,17 @@ export default function RegistryPage() {
               }}
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
+              {/* The studies are 2:3. Held in a 3:4 box and covered, the
+                  record's own portrait of a character was cropped through the
+                  head — contain shows the drawing that is on file. */}
               <img
                 src={member.portrait}
                 alt={member.alt}
                 style={{
                   display: "block",
                   width: "100%",
-                  aspectRatio: "3 / 4",
-                  objectFit: "cover",
+                  aspectRatio: "2 / 3",
+                  objectFit: "contain",
                   background: "#fff",
                   borderBottom: "1px solid #e5dfd3",
                 }}
@@ -658,10 +635,10 @@ export default function RegistryPage() {
 
       {/* ----------------------------------------------------- cartoons */}
       <section id="cartoons" style={{ margin: "48px 0", scrollMarginTop: 20 }}>
-        <h2 style={{ fontFamily: serif, fontSize: 28, borderBottom: "2px solid #1a1a1a", paddingBottom: 8, margin: 0 }}>
-          The cartoons <span style={{ fontSize: 17, color: "#8a7f6d" }}>({panelCount})</span>
+        <h2 className="paper-h2">
+          The cartoons <span className="paper-count">({panelCount})</span>
         </h2>
-        <p style={{ color: "#5a5145", marginTop: 10, maxWidth: 740, lineHeight: 1.6 }}>
+        <p style={{ color: "#5a5145", marginTop: 10, maxWidth: "68ch", lineHeight: 1.6 }}>
           {panelCount} finished panels
           {firstPanelDay && latestPanelDay ? (
             <>
@@ -675,6 +652,13 @@ export default function RegistryPage() {
           <code style={{ fontSize: 13 }}>briefs/</code>. The seven dated panels under <code style={{ fontSize: 13 }}>cartoons/</code>{" "}
           are development samples, recorded as such in that folder, and are not counted here.
         </p>
+
+        {panelCount === 0 ? (
+          <p style={{ fontFamily: serif, fontStyle: "italic", color: "#6b6153", marginTop: 18 }}>
+            No finished panels are on file yet. Every cartoon the studio draws is recorded here from
+            the moment it exists.
+          </p>
+        ) : null}
 
         {retired.length > 0 ? (
           <article style={{ marginTop: 30 }}>
@@ -741,14 +725,19 @@ export default function RegistryPage() {
 
       {/* ------------------------------------------------- written work */}
       <section id="writing" style={{ margin: "48px 0 24px", scrollMarginTop: 20 }}>
-        <h2 style={{ fontFamily: serif, fontSize: 28, borderBottom: "2px solid #1a1a1a", paddingBottom: 8, margin: 0 }}>
-          The written work <span style={{ fontSize: 17, color: "#8a7f6d" }}>({documents.length} documents)</span>
+        <h2 className="paper-h2">
+          The written work <span className="paper-count">({documents.length} documents)</span>
         </h2>
-        <p style={{ color: "#5a5145", marginTop: 10, maxWidth: 740, lineHeight: 1.6 }}>
+        <p style={{ color: "#5a5145", marginTop: 10, maxWidth: "68ch", lineHeight: 1.6 }}>
           The series bible: every canon document in the repository, {bibleWords.toLocaleString("en-US")} words in
           all. Word counts are the documents as they stand today; the date is the day each document first entered
           the repository.
         </p>
+        {documents.length === 0 ? (
+          <p style={{ fontFamily: serif, fontStyle: "italic", color: "#6b6153", marginTop: 18 }}>
+            No written canon is on file yet.
+          </p>
+        ) : (
         <div className="reg-tablewrap">
           <table style={{ width: "100%", borderCollapse: "collapse", marginTop: 14 }}>
             <caption className="reg-visually-hidden">The canon documents</caption>
@@ -790,10 +779,11 @@ export default function RegistryPage() {
             </tfoot>
           </table>
         </div>
+        )}
       </section>
 
       <footer style={{ marginTop: 40, paddingTop: 16, borderTop: "1px solid #ded7c9" }}>
-        <p style={{ fontFamily: serif, fontSize: 13.5, color: "#8a7f6d", maxWidth: 720, lineHeight: 1.6, margin: 0 }}>
+        <p style={{ fontFamily: serif, fontSize: 13.5, color: "#8a7f6d", maxWidth: "68ch", lineHeight: 1.6, margin: 0 }}>
           This page is an inventory, generated from the studio&rsquo;s repository each time it is opened. It is a
           record of the work, not a legal filing. Every caption, count and word total above is read from the files;
           every date comes from the repository&rsquo;s history or from a date the files themselves record.
@@ -820,21 +810,11 @@ export default function RegistryPage() {
           margin-top: 20px;
         }
         .registry a:focus-visible { outline: 2px solid #221d16; outline-offset: 2px; }
-        @media (max-width: 560px) {
-          .registry { padding-left: 16px !important; padding-right: 16px !important; }
-          .registry h1 { font-size: 34px !important; }
-        }
+        /* The room's chrome and the sheet are stripped for print in
+           studio.css, for every page that has a sheet; only what is peculiar
+           to this record is here. */
         @media print {
-          .br-head, .br-staff-links, .br-foot, .reg-pagenav { display: none !important; }
-          .backroom { background: #fff !important; color: #000 !important; }
-          .registry {
-            box-shadow: none !important;
-            border-radius: 0 !important;
-            margin: 0 !important;
-            max-width: none !important;
-            padding: 0 !important;
-            background: #fff !important;
-          }
+          .reg-pagenav { display: none !important; }
           .registry a { color: inherit !important; text-decoration: none !important; }
           .registry tr, .registry article { break-inside: avoid; }
           .registry h2 { break-after: avoid; }

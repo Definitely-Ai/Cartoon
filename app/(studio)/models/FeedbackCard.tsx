@@ -41,11 +41,15 @@ export default function FeedbackCard({ proof, base }: { proof: Proof; base: stri
         boxShadow: "0 1px 2px rgba(26,22,16,0.06)",
       }}
     >
+      {/* The cartoon is never cropped — the gag is often in the corner of the
+          panel. */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={`${base}/${proof.file}`}
-        alt={proof.caption}
-        style={{ width: "100%", borderRadius: 3, display: "block", background: "#fff" }}
+        alt={`Cartoon — ${proof.caption}`}
+        loading="lazy"
+        decoding="async"
+        style={{ width: "100%", height: "auto", borderRadius: 3, display: "block", background: "#fff" }}
       />
       {/* The caption is typeset into the artwork itself, the way the plates
           carry theirs — so the card adds only the news it was written off. */}
@@ -56,7 +60,7 @@ export default function FeedbackCard({ proof, base }: { proof: Proof; base: stri
       ) : (
         <div style={{ height: 12 }} />
       )}
-      <div style={{ display: "flex", flexWrap: "wrap", gap: 4, marginBottom: 8 }}>
+      <div style={{ display: "flex", flexWrap: "wrap", gap: 5, marginBottom: 10 }} role="group" aria-label="Score this cartoon out of ten">
         {Array.from({ length: 10 }, (_, i) => i + 1).map((n) => (
           <button
             key={n}
@@ -64,14 +68,17 @@ export default function FeedbackCard({ proof, base }: { proof: Proof; base: stri
             aria-pressed={rating === n}
             aria-label={`Score ${n} out of 10`}
             style={{
-              width: 30,
-              height: 30,
-              borderRadius: 15,
-              border: "1px solid #b9b0a0",
+              // 30px circles were a miss on a touchscreen; these are the same
+              // dials the review desk uses, at the size a thumb needs.
+              minWidth: 40,
+              height: 42,
+              borderRadius: 21,
+              border: rating === n ? "1px solid #1a1a1a" : "1px solid #b9b0a0",
               background: rating === n ? "#1a1a1a" : "#f5f2ea",
               color: rating === n ? "#fff" : "#1a1a1a",
+              fontWeight: rating === n ? 700 : 400,
               cursor: "pointer",
-              fontSize: 13,
+              fontSize: 15,
             }}
           >
             {n}
@@ -83,12 +90,33 @@ export default function FeedbackCard({ proof, base }: { proof: Proof; base: stri
         onChange={(e) => setNote(e.target.value)}
         placeholder="What's right or wrong with this one?"
         rows={2}
-        style={{ width: "100%", fontSize: 13, padding: 6, boxSizing: "border-box", borderRadius: 4, border: "1px solid #ccc4b4" }}
+        // 16px, not smaller: iOS zooms the whole page in on any input set
+        // below it, and he reviews on an iPad.
+        style={{
+          width: "100%",
+          fontFamily: serif,
+          fontSize: 16,
+          lineHeight: 1.5,
+          padding: 8,
+          boxSizing: "border-box",
+          borderRadius: 4,
+          border: "1px solid #ccc4b4",
+        }}
       />
       <button
         onClick={save}
         disabled={state === "saving" || (rating === null && !note.trim())}
-        style={{ marginTop: 6, padding: "6px 14px", cursor: "pointer", borderRadius: 4, border: "1px solid #b9b0a0", background: "#f5f2ea" }}
+        style={{
+          marginTop: 8,
+          minHeight: 44,
+          padding: "8px 18px",
+          fontFamily: serif,
+          fontSize: 15,
+          cursor: "pointer",
+          borderRadius: 4,
+          border: "1px solid #b9b0a0",
+          background: "#f5f2ea",
+        }}
       >
         {state === "saving"
           ? "Saving…"

@@ -5,7 +5,6 @@
 // cast: the current cartoons (from canon/showcase/index.json), the founder's
 // reference plates, and the house rules.
 
-import type { CSSProperties } from "react";
 import Link from "next/link";
 
 import fs from "node:fs";
@@ -30,11 +29,14 @@ function readShowcase(): Proof[] {
   }
 }
 
+// The plates carry their own measurements so the browser can hold the space
+// before the picture arrives. These are big scans; without the numbers the
+// house rules jumped half a screen down as each one landed.
 const PLATES = [
-  { file: "plate-1-security-and-martini-menu.jpg", line: "The security line · The martini menu, by fare class" },
-  { file: "plate-2-debt-ceiling-and-retirement.jpg", line: "Debt Ceiling Week, 16th annual · Retirement planning, live" },
-  { file: "plate-3-national-mall.jpg", line: "“The republic remains blue in concept, green in operations.”" },
-  { file: "plate-4-nineteenth-hole-and-tariffs.jpg", line: "The 19th hole · Patriotic imported beer · The globe, priced" },
+  { file: "plate-1-security-and-martini-menu.jpg", width: 1633, height: 2752, line: "The security line · The martini menu, by fare class" },
+  { file: "plate-2-debt-ceiling-and-retirement.jpg", width: 1751, height: 3894, line: "Debt Ceiling Week, 16th annual · Retirement planning, live" },
+  { file: "plate-3-national-mall.jpg", width: 3946, height: 1785, line: "“The republic remains blue in concept, green in operations.”" },
+  { file: "plate-4-nineteenth-hole-and-tariffs.jpg", width: 1622, height: 2232, line: "The 19th hole · Patriotic imported beer · The globe, priced" },
 ];
 
 const HOUSE_RULES = [
@@ -53,40 +55,15 @@ export default function ModelsPage() {
   const showcase = readShowcase();
 
   return (
-    <main
-      style={
-        {
-          // The studio layout is a dark room. This page is a paper document
-          // laid on it — without its own ground, every dark word outside the
-          // white cards was ink on ink and invisible.
-          maxWidth: 1180,
-          margin: "24px auto 48px",
-          padding: "24px 30px 72px",
-          color: "#221d16",
-          background: "#fdfbf6",
-          borderRadius: 8,
-          boxShadow: "0 2px 18px rgba(0,0,0,0.35)",
-          // The dark-room chrome sets the focus ring to paper-white; on this
-          // paper page that ring would vanish, so it goes back to ink here.
-          "--focus-ink": "#221d16",
-        } as CSSProperties
-      }
-    >
+    // The studio layout is a dark room. This page is a paper document laid on
+    // it — without its own ground, every dark word outside the white cards was
+    // ink on ink and invisible. The sheet itself lives in studio.css now, so
+    // the Cast, the Registry and the Review are cut from one piece of paper.
+    <main id="content" className="paper-sheet" style={{ maxWidth: 1180 }}>
       <header style={{ textAlign: "center", margin: "34px 0 10px" }}>
-        <p style={{ fontFamily: serif, letterSpacing: 3, fontSize: 12, textTransform: "uppercase", color: "#8a7f6d", margin: 0 }}>
-          The cast of
-        </p>
-        <h1 style={{ fontFamily: serif, fontSize: 46, margin: "8px 0 0", letterSpacing: 0.5 }}>The Swinging Door</h1>
-        <p
-          style={{
-            fontFamily: serif,
-            fontStyle: "italic",
-            fontSize: 17,
-            color: "#5a5145",
-            margin: "10px auto 0",
-            maxWidth: 720,
-          }}
-        >
+        <p className="paper-eyebrow">The cast of</p>
+        <h1 className="paper-title">The Swinging Door</h1>
+        <p className="paper-lede" style={{ marginLeft: "auto", marginRight: "auto" }}>
           An upscale room a block off Wall Street. Marble and walnut. Two gentlemen, one proprietor,
           and the day&rsquo;s news — priced, poured, and taken with a raised eyebrow.
         </p>
@@ -108,6 +85,10 @@ export default function ModelsPage() {
                 boxShadow: "0 1px 2px rgba(26,22,16,0.06)",
               }}
             >
+              {/* Contained, not cropped: when a study is missing the portrait
+                  falls back to a photograph of the founder's print, and
+                  "cover" cut the head off it. The ratio holds the space either
+                  way, so the card never jumps as the picture arrives. */}
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={portraitPath(member)}
@@ -116,7 +97,7 @@ export default function ModelsPage() {
                   display: "block",
                   width: "100%",
                   aspectRatio: "2 / 3",
-                  objectFit: "cover",
+                  objectFit: "contain",
                   background: "#fff",
                   borderBottom: "1px solid #e5dfd3",
                 }}
@@ -148,27 +129,12 @@ export default function ModelsPage() {
                     </li>
                   ))}
                 </ul>
-                <p style={{ margin: "auto 0 0", paddingTop: 16, display: "flex", flexWrap: "wrap", gap: 10, alignItems: "center" }}>
-                  <Link
-                    href={`/models/${member.key}`}
-                    style={{
-                      fontFamily: serif,
-                      fontSize: 14.5,
-                      padding: "8px 18px",
-                      borderRadius: 4,
-                      border: "1px solid #221d16",
-                      background: "#221d16",
-                      color: "#fdfbf6",
-                      textDecoration: "none",
-                    }}
-                  >
+                <p style={{ margin: "auto 0 0", paddingTop: 16, display: "flex", flexWrap: "wrap", gap: 6, alignItems: "center" }}>
+                  <Link href={`/models/${member.key}`} className="paper-btn">
                     Read {member.name}&rsquo;s full bible
                   </Link>
-                  <a
-                    href={`/models/print/${member.key}`}
-                    style={{ fontFamily: serif, fontSize: 14, color: "#6b6153", textDecorationColor: "#b9b0a0" }}
-                  >
-                    Print
+                  <a href={`/models/print/${member.key}`} className="paper-btn-quiet">
+                    Print it
                   </a>
                 </p>
               </div>
@@ -183,11 +149,11 @@ export default function ModelsPage() {
 
       {/* ------------------------------------------------ The cartoons */}
       <section style={{ margin: "64px 0 0" }}>
-        <h2 style={{ fontFamily: serif, fontSize: 30, borderBottom: "2px solid #1a1a1a", paddingBottom: 8, margin: 0 }}>
-          The cartoons {showcase.length > 0 ? <span style={{ fontSize: 18, color: "#8a7f6d" }}>({showcase.length})</span> : null}
+        <h2 className="paper-h2">
+          The cartoons {showcase.length > 0 ? <span className="paper-count">({showcase.length})</span> : null}
         </h2>
         {showcase.length > 0 ? (
-          <p style={{ color: "#5a5145", marginTop: 10, maxWidth: 760 }}>
+          <p style={{ color: "#5a5145", marginTop: 10, maxWidth: "62ch" }}>
             Written to this week&rsquo;s actual tape and drawn to the plates. Score any panel 1–10 and say what you
             see — every note reaches the operator before the next round.
           </p>
@@ -203,7 +169,7 @@ export default function ModelsPage() {
               background: "#f6f2e8",
               borderLeft: "4px solid #c9a227",
               borderRadius: 4,
-              maxWidth: 780,
+              maxWidth: "68ch",
             }}
           >
             <p style={{ fontFamily: serif, fontSize: 21, margin: "0 0 12px", color: "#221d16" }}>
@@ -244,10 +210,10 @@ export default function ModelsPage() {
 
       {/* -------------------------------------------------- The plates */}
       <section style={{ margin: "64px 0 0" }}>
-        <h2 style={{ fontFamily: serif, fontSize: 30, borderBottom: "2px solid #1a1a1a", paddingBottom: 8, margin: 0 }}>
+        <h2 className="paper-h2">
           The plates
         </h2>
-        <p style={{ color: "#5a5145", marginTop: 10, maxWidth: 760 }}>
+        <p style={{ color: "#5a5145", marginTop: 10, maxWidth: "62ch" }}>
           The founder&rsquo;s reference prints — the strip&rsquo;s standard for style, room, and voice. Everything
           above is drawn to match them.
         </p>
@@ -264,8 +230,12 @@ export default function ModelsPage() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={`/vision/${plate.file}`}
-                alt={plate.line}
-                style={{ width: "100%", borderRadius: 4, border: "1px solid #ded7c9", background: "#fff" }}
+                alt={`Reference plate — ${plate.line}`}
+                width={plate.width}
+                height={plate.height}
+                loading="lazy"
+                decoding="async"
+                style={{ width: "100%", height: "auto", borderRadius: 4, border: "1px solid #ded7c9", background: "#fff" }}
               />
               <figcaption
                 style={{ fontFamily: serif, fontStyle: "italic", fontSize: 14, color: "#5a5145", textAlign: "center", marginTop: 6 }}
@@ -279,10 +249,10 @@ export default function ModelsPage() {
 
       {/* --------------------------------------------- The house rules */}
       <section style={{ margin: "64px 0 0" }}>
-        <h2 style={{ fontFamily: serif, fontSize: 30, borderBottom: "2px solid #1a1a1a", paddingBottom: 8, margin: 0 }}>
+        <h2 className="paper-h2">
           The house rules
         </h2>
-        <ul style={{ fontFamily: serif, fontSize: 16, color: "#2c261e", lineHeight: 1.7, maxWidth: 820, marginTop: 16, paddingLeft: 22 }}>
+        <ul style={{ fontFamily: serif, fontSize: 16, color: "#2c261e", lineHeight: 1.7, maxWidth: "68ch", marginTop: 16, paddingLeft: 22 }}>
           {HOUSE_RULES.map((rule) => (
             <li key={rule} style={{ marginBottom: 6 }}>
               {rule}

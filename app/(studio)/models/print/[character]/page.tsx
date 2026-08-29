@@ -45,24 +45,30 @@ export default async function PrintBiblePage({ params }: { params: Promise<{ cha
     .map(read)
     .filter((sheet): sheet is Sheet => sheet !== null);
 
+  // Typed address, or a bible that isn't in the repository yet. Naming the
+  // folder keys here told him nothing he could act on; the way back does.
   if (sheets.length === 0) {
     return (
-      <main style={{ fontFamily: serif, padding: 60 }}>
-        <p>No bible under that name. Try flamingo, dog, abby, or all.</p>
+      <main id="content" className="paper-sheet">
+        <h1 className="paper-title">Nothing to print here</h1>
+        <p className="paper-lede">
+          There&rsquo;s no bible at that address. Pick a character from the cast and print from
+          there.
+        </p>
+        <p style={{ marginTop: 18 }}>
+          <a href="/models" className="paper-btn">
+            Back to the cast
+          </a>
+        </p>
       </main>
     );
   }
 
   return (
     <main
-      style={{
-        maxWidth: 780,
-        margin: "24px auto 48px",
-        padding: "28px 34px 64px",
-        color: "#1a1a1a",
-        background: "#ffffff",
-        borderRadius: 6,
-      }}
+      id="content"
+      className="paper-sheet"
+      style={{ maxWidth: 780, color: "#1a1a1a", background: "#ffffff" }}
     >
       <div
         className="print-hide"
@@ -76,8 +82,10 @@ export default async function PrintBiblePage({ params }: { params: Promise<{ cha
           marginBottom: 28,
         }}
       >
-        <a href="/models" style={{ fontFamily: serif, fontSize: 14, color: "#6b6153" }}>
-          ← Back to the Studio Bible
+        {/* The page it goes back to is called The Cast everywhere else; two
+            names for one place is one name too many. */}
+        <a href="/models" className="paper-btn-quiet" style={{ paddingLeft: 0 }}>
+          ← Back to the cast
         </a>
         <PrintButton />
       </div>
@@ -85,19 +93,19 @@ export default async function PrintBiblePage({ params }: { params: Promise<{ cha
       {sheets.map((sheet, index) => (
         <article key={sheet.name} className="sheet" style={{ pageBreakBefore: index > 0 ? "always" : "auto" }}>
           <header style={{ textAlign: "center", marginBottom: 24 }}>
-            <p style={{ fontFamily: serif, letterSpacing: 3, fontSize: 11, textTransform: "uppercase", color: "#8a7f6d", margin: 0 }}>
-              The Swinging Door · Character Bible
-            </p>
-            <h1 style={{ fontFamily: serif, fontSize: 40, margin: "6px 0 0" }}>{sheet.name}</h1>
+            <p className="paper-eyebrow">The Swinging Door · Character Bible</p>
+            <h1 className="paper-title">{sheet.name}</h1>
           </header>
 
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={`/vision/${sheet.study}`}
-            alt={`${sheet.name} — definitive study`}
+            alt={`${sheet.name}, drawn in ink — the definitive study every panel is checked against`}
             style={{
               display: "block",
               width: "58%",
+              aspectRatio: "2 / 3",
+              objectFit: "contain",
               margin: "0 auto 30px",
               border: "1px solid #e5dfd3",
               borderRadius: 4,
@@ -130,7 +138,6 @@ export default async function PrintBiblePage({ params }: { params: Promise<{ cha
         .bible img { max-width: 100%; }
 
         @media print {
-          .print-hide { display: none !important; }
           main { max-width: none !important; padding: 0 !important; margin: 0 !important; background: #fff !important; border-radius: 0 !important; }
           .sheet { page-break-inside: auto; }
           .bible blockquote { background: transparent; border-left: 2px solid #999; }

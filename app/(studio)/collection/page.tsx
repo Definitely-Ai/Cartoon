@@ -51,15 +51,25 @@ export default async function CollectionPage() {
       </header>
 
       {summaries.length === 0 ? (
-        <p className="br-status" style={{ textAlign: "center" }}>
-          {setupNote ?? (
+        // The founder's sentence first, the machine's complaint second: he
+        // can act on one of them and the operator can act on the other.
+        <div style={{ textAlign: "center" }}>
+          {setupNote ? (
             <>
+              <p className="br-status">
+                The collection isn&rsquo;t answering just now. Nothing is lost — try again in a
+                minute.
+              </p>
+              <p className="br-hint">{setupNote}</p>
+            </>
+          ) : (
+            <p className="br-status">
               Nothing filed yet — the first day of cartoons lands here the moment it&rsquo;s
               drawn. Ask your AI for one (the hookup lives under{" "}
               <Link href="/connect">Connect your AI</Link>).
-            </>
+            </p>
           )}
-        </p>
+        </div>
       ) : (
         Array.from(months.entries()).map(([label, monthDays]) => (
           <section key={label} className="br-month" aria-label={label}>

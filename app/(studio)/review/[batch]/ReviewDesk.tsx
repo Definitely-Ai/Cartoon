@@ -670,7 +670,9 @@ export default function ReviewDesk(props: { batch: string; panels: DeskPanel[] }
                   type="button"
                   className={`rv-chip rv-chip-${word}${i === index ? " rv-chip-now" : ""}${dirty ? " rv-chip-unsaved" : ""}`}
                   aria-current={i === index ? "true" : undefined}
-                  aria-label={`Cartoon ${target.n} — ${CHIP_WORDS[word]}`}
+                  // The red dot is the only visible mark of an unsent score;
+                  // said out loud it has to be words, not a colour.
+                  aria-label={`Cartoon ${target.n} — ${CHIP_WORDS[word]}${dirty ? ", not saved yet" : ""}`}
                   onClick={() => goTo(i)}
                 >
                   {target.n}

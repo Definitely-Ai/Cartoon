@@ -13,6 +13,12 @@
      4. The light table (proof cards)
      5. The publish panel
      6. The ledger
+     7. The wire (connect)
+     8. Staff footer links
+     9. Studio additions
+    10. The feedback loop
+    11. The paper pages
+    12. Print
 */
 
 /* ------------------------------------------------------ 1. Room base */
@@ -983,7 +989,13 @@
   font-size: 1.05rem;
 }
 
+/* "Why? Add a note" is the one thing on the day board he is asked to do with
+   his hands as well as his thumb — at 24px tall it was the hardest target on
+   the page. */
 .br-note-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
   font-family: var(--br-serif);
   font-size: 1rem;
   color: var(--br-paper);
@@ -1060,9 +1072,20 @@
   --focus-ink: #221d16;
 }
 
+/* Georgia, not the room's Old Standard: every paper page in the studio was
+   already set in it, and half a page in one serif and half in another is the
+   drift this section exists to stop. */
+.paper-eyebrow,
+.paper-title,
+.paper-lede,
+.paper-h2,
+.paper-btn,
+.paper-btn-quiet {
+  font-family: Georgia, "Times New Roman", serif;
+}
+
 /* The line above the title — the paper's version of a section slug. */
 .paper-eyebrow {
-  font-family: var(--br-serif);
   letter-spacing: 3px;
   font-size: 12px;
   text-transform: uppercase;
@@ -1073,7 +1096,6 @@
 /* One heading scale for every paper page. Fixed at 44px it filled three
    lines of a phone before the reader reached anything worth reading. */
 .paper-title {
-  font-family: var(--br-serif);
   font-size: clamp(1.95rem, 6vw, 2.75rem);
   line-height: 1.15;
   letter-spacing: 0.5px;
@@ -1081,7 +1103,6 @@
 }
 
 .paper-lede {
-  font-family: var(--br-serif);
   font-style: italic;
   font-size: 1.0625rem;
   line-height: 1.6;
@@ -1093,7 +1114,6 @@
 }
 
 .paper-h2 {
-  font-family: var(--br-serif);
   font-size: clamp(1.5rem, 4vw, 1.8rem);
   line-height: 1.25;
   border-bottom: 2px solid #1a1a1a;
@@ -1112,7 +1132,6 @@
   display: inline-flex;
   align-items: center;
   min-height: 44px;
-  font-family: var(--br-serif);
   font-size: 15px;
   padding: 8px 18px;
   border-radius: 4px;
@@ -1127,7 +1146,6 @@
   align-items: center;
   min-height: 44px;
   padding: 8px 12px;
-  font-family: var(--br-serif);
   font-size: 15px;
   color: #6b6153;
   text-decoration-color: #b9b0a0;

@@ -41,11 +41,32 @@ export default async function StudioToday() {
       ) : (
         <section className="br-table">
           <div className="br-table-head">
-            <h1 className="br-date">Nothing on the table</h1>
-            <p className="br-status">
-              {setupNote ??
-                "Ask your AI for cartoons — “make one where they’re on a boat” — and they land here the moment they’re drawn."}{" "}
-              (Hookup lives under <Link href="/connect">Connect your AI</Link>.)
+            <h1 className="br-date">{setupNote ? "The table isn’t answering" : "Nothing on the table"}</h1>
+            {/* Two readers, two sentences: he needs to know whether anything
+                is wrong and what to do, and the operator needs the actual
+                complaint — which is no use to him at all in the same breath. */}
+            {setupNote ? (
+              <>
+                <p className="br-status">
+                  The studio&rsquo;s records aren&rsquo;t answering just now. Nothing is lost — try
+                  again in a minute.
+                </p>
+                <p className="br-hint">{setupNote}</p>
+              </>
+            ) : (
+              <p className="br-status">
+                Ask your AI for cartoons — &ldquo;make one where they&rsquo;re on a boat&rdquo; — and
+                they land here the moment they&rsquo;re drawn. (Hookup lives under{" "}
+                <Link href="/connect">Connect your AI</Link>.)
+              </p>
+            )}
+            {/* An empty table is not proof there is no work: a set drawn from
+                a written brief sits on the Review shelf, not here, and he has
+                been sent to score one before now. */}
+            <p className="br-howto">
+              If you were told a new edition is ready, it&rsquo;s waiting on{" "}
+              <Link href="/review">Review</Link>. Everything ever drawn is in{" "}
+              <Link href="/collection">The Collection</Link>.
             </p>
           </div>
         </section>

@@ -26,19 +26,28 @@ export default async function KeepersPage() {
     <main id="content" className="br-main">
       <header className="br-table-head">
         <h1 className="br-date">Keepers</h1>
-        <p className="br-status">
-          {keepers.length === 0 ? (
-            setupNote ?? (
+        {/* Same two voices as the rest of the room: what he can do about it,
+            then what the operator needs to read. */}
+        {setupNote ? (
+          <>
+            <p className="br-status">
+              The gallery isn&rsquo;t answering just now. Nothing is lost — try again in a minute.
+            </p>
+            <p className="br-hint">{setupNote}</p>
+          </>
+        ) : (
+          <p className="br-status">
+            {keepers.length === 0 ? (
               <>
                 Nothing starred yet — the good ones end up here. Tap{" "}
-                <strong>Keep this one</strong> under any cartoon on{" "}
-                <Link href="/">Today</Link> and it joins the gallery.
+                <strong>Keep this one</strong> under any cartoon on <Link href="/">Today</Link> and
+                it joins the gallery.
               </>
-            )
-          ) : (
-            `${keepers.length} starred cartoon${keepers.length === 1 ? "" : "s"}, newest first.`
-          )}
-        </p>
+            ) : (
+              `${keepers.length} starred cartoon${keepers.length === 1 ? "" : "s"}, newest first.`
+            )}
+          </p>
+        )}
       </header>
 
       {keepers.length > 0 && (

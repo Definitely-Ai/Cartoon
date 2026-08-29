@@ -165,10 +165,10 @@ export default async function ReviewBatchPage({ params }: { params: Promise<{ ba
   });
 
   return (
-    <main id="content" className="rv-paper">
+    <main id="content" className="paper-sheet rv-paper">
       <header className="rv-head">
-        <p className="rv-eyebrow">The review</p>
-        <h1 className="rv-title">
+        <p className="paper-eyebrow">The review</p>
+        <h1 className="paper-title">
           {plan ? (edition ? `Edition ${edition}` : "This edition") : "That edition isn’t answering"}
         </h1>
 
@@ -214,10 +214,13 @@ export default async function ReviewBatchPage({ params }: { params: Promise<{ ba
           </>
         )}
 
+        {/* The heading above has already said it in his words; this is the
+            operator's copy of the complaint. */}
         {trouble && (
-          <p className="rv-trouble" role="alert">
-            {trouble}
-          </p>
+          <div className="rv-trouble" role="alert">
+            <p>Nothing is lost — the edition is where it was. Try again in a minute.</p>
+            <p className="rv-trouble-detail">{trouble}</p>
+          </div>
         )}
       </header>
 
@@ -244,30 +247,13 @@ export default async function ReviewBatchPage({ params }: { params: Promise<{ ba
       {/* One stylesheet for the whole screen — the sticky bar, the hover and
           focus states and the breakpoints that inline styles can't do. */}
       <style>{`
-        /* The studio layout is a dark room; this page is paper laid on it, the
-           way the Studio Bible is. The room's focus ring is white, so the ring
-           gets its ink back here or it vanishes against the paper. */
-        .rv-paper {
-          max-width: 1180px;
-          margin: 24px auto 48px;
-          padding: 24px 30px 72px;
-          color: #221d16;
-          background: #fdfbf6;
-          border-radius: 8px;
-          box-shadow: 0 2px 18px rgba(0,0,0,0.35);
-          --focus-ink: #1a1a1a;
-        }
+        /* The sheet itself, the eyebrow and the title are shared with the
+           other paper pages now — see .paper-sheet in studio.css. This screen
+           only sets its own measure, which is wider than the rest because the
+           picture and the dials sit side by side. */
+        .rv-paper { max-width: 1180px; }
 
         .rv-head { margin: 18px 0 0; }
-        .rv-eyebrow {
-          font-family: ${serif};
-          letter-spacing: 3px;
-          font-size: 12px;
-          text-transform: uppercase;
-          color: #8a7f6d;
-          margin: 0;
-        }
-        .rv-title { font-family: ${serif}; font-size: 38px; margin: 8px 0 0; letter-spacing: 0.3px; line-height: 1.2; }
         .rv-brief {
           font-family: ${serif};
           font-style: italic;
@@ -334,7 +320,8 @@ export default async function ReviewBatchPage({ params }: { params: Promise<{ ba
         .rv-jump {
           font-family: ${serif};
           font-size: 14px;
-          padding: 8px 14px;
+          min-height: 44px;
+          padding: 8px 16px;
           border-radius: 4px;
           border: 1px solid #c9a227;
           background: #fbf5e3;
@@ -362,9 +349,9 @@ export default async function ReviewBatchPage({ params }: { params: Promise<{ ba
         }
         .rv-strip li { flex: 0 0 auto; margin: 0; }
         .rv-chip {
-          min-width: 34px;
-          height: 34px;
-          padding: 0 7px;
+          min-width: 40px;
+          height: 40px;
+          padding: 0 9px;
           position: relative;
           font-family: ${serif};
           font-size: 13.5px;
@@ -593,7 +580,8 @@ export default async function ReviewBatchPage({ params }: { params: Promise<{ ba
         .rv-move-btn {
           font-family: ${serif};
           font-size: 14px;
-          padding: 10px 14px;
+          min-height: 44px;
+          padding: 10px 16px;
           border-radius: 4px;
           border: 1px solid #b9b0a0;
           background: #f5f2ea;
@@ -614,6 +602,8 @@ export default async function ReviewBatchPage({ params }: { params: Promise<{ ba
           padding: 10px 12px;
           margin: 16px 0 0;
         }
+        .rv-trouble p { margin: 0; }
+        .rv-trouble-detail { font-style: normal; font-size: 13px; margin-top: 6px; color: #6b4038; }
 
         /* One column below a desk: a 2:3 engraving beside a scoring column in
            anything narrower is too small to judge. */
@@ -623,10 +613,11 @@ export default async function ReviewBatchPage({ params }: { params: Promise<{ ba
           .rv-caption { font-size: 20px; margin-top: 2px; }
         }
 
+        /* The sheet's own padding drops to 16px at this width (studio.css), so
+           the sticky bar's bleed has to follow it or the rule stops short of
+           the edge. */
         @media (max-width: 700px) {
-          .rv-paper { margin: 12px auto 32px; padding: 18px 16px 56px; border-radius: 6px; }
           .rv-progress { margin: 0 -16px 16px; padding: 10px 16px 8px; }
-          .rv-title { font-size: 30px; }
           .rv-brief { font-size: 16.5px; }
           .rv-howto { padding: 14px 16px; }
           .rv-dial-row { gap: 3px; }

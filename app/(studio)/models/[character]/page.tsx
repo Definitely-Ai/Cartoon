@@ -4,7 +4,6 @@
 // lists — gets it, rendered word for word from canon/characters/<key>/
 // CHARACTER-BIBLE.md. The paper-ready version stays at /models/print/<key>.
 
-import type { CSSProperties } from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -32,58 +31,43 @@ export default async function CharacterBiblePage({ params }: { params: Promise<{
   const others = CAST.filter((c) => c.key !== member.key);
 
   return (
-    <main
-      style={
-        {
-          maxWidth: 1080,
-          margin: "24px auto 48px",
-          padding: "24px 30px 72px",
-          color: "#221d16",
-          background: "#fdfbf6",
-          borderRadius: 8,
-          boxShadow: "0 2px 18px rgba(0,0,0,0.35)",
-          // The dark-room chrome sets the focus ring to paper-white; on this
-          // paper page that ring would vanish, so it goes back to ink here.
-          "--focus-ink": "#221d16",
-        } as CSSProperties
-      }
-    >
+    // The same sheet of paper the Cast and the Registry are printed on — see
+    // .paper-sheet in studio.css.
+    <main id="content" className="paper-sheet">
       <nav
         aria-label="Bible pages"
         style={{
           display: "flex",
-          alignItems: "baseline",
+          alignItems: "center",
           justifyContent: "space-between",
-          gap: 16,
+          gap: 8,
           flexWrap: "wrap",
           borderBottom: "1px solid #ded7c9",
-          paddingBottom: 14,
+          paddingBottom: 8,
         }}
       >
-        <Link href="/models" style={{ fontFamily: serif, fontSize: 14, color: "#6b6153" }}>
+        <Link href="/models" className="paper-btn-quiet" style={{ paddingLeft: 0 }}>
           ← Back to the cast
         </Link>
-        <a href={`/models/print/${member.key}`} style={{ fontFamily: serif, fontSize: 14, color: "#6b6153" }}>
+        <a href={`/models/print/${member.key}`} className="paper-btn-quiet" style={{ paddingRight: 0 }}>
           Print this bible
         </a>
       </nav>
 
       <header style={{ textAlign: "center", margin: "30px 0 6px" }}>
-        <p style={{ fontFamily: serif, letterSpacing: 3, fontSize: 12, textTransform: "uppercase", color: "#8a7f6d", margin: 0 }}>
-          The Swinging Door · Character Bible
-        </p>
-        <h1 style={{ fontFamily: serif, fontSize: 44, margin: "6px 0 0", letterSpacing: 0.5 }}>{member.name}</h1>
-        <p style={{ fontFamily: serif, fontStyle: "italic", fontSize: 16, color: "#5a5145", margin: "8px auto 0", maxWidth: 640 }}>
+        <p className="paper-eyebrow">The Swinging Door · Character Bible</p>
+        <h1 className="paper-title">{member.name}</h1>
+        <p className="paper-lede" style={{ marginLeft: "auto", marginRight: "auto" }}>
           {member.tagline}
         </p>
       </header>
 
-      <p style={{ margin: "16px auto 0", maxWidth: 680, color: "#2c261e", fontSize: 15.5, lineHeight: 1.65 }}>{member.bio}</p>
+      <p style={{ margin: "16px auto 0", maxWidth: "68ch", color: "#2c261e", fontSize: 15.5, lineHeight: 1.65 }}>{member.bio}</p>
 
       <p
         style={{
           margin: "20px auto 0",
-          maxWidth: 680,
+          maxWidth: "68ch",
           padding: "12px 18px",
           background: "#f6f2e8",
           borderLeft: "4px solid #c9a227",
@@ -100,11 +84,22 @@ export default async function CharacterBiblePage({ params }: { params: Promise<{
 
       <div className="bible-layout" style={{ marginTop: 34 }}>
         <div className="bible-side" style={{ position: "sticky", top: 16 }}>
+          {/* The ratio holds the space before the picture lands, and "contain"
+              keeps the fallback photograph of the founder's print whole
+              instead of cropping the character's head off. */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={portraitPath(member)}
             alt={member.alt}
-            style={{ width: "100%", borderRadius: 6, background: "#fff", border: "1px solid #e5dfd3", display: "block" }}
+            style={{
+              width: "100%",
+              aspectRatio: "2 / 3",
+              objectFit: "contain",
+              borderRadius: 6,
+              background: "#fff",
+              border: "1px solid #e5dfd3",
+              display: "block",
+            }}
           />
           <p style={{ fontFamily: serif, fontStyle: "italic", fontSize: 13.5, color: "#6b6153", margin: "8px 0 0" }}>
             The definitive study — the drawing every panel is checked against.
@@ -147,6 +142,8 @@ export default async function CharacterBiblePage({ params }: { params: Promise<{
         .bible h3 { font-family: ${serif}; font-size: 16.5px; margin: 18px 0 4px; color: #4a4136; }
         .bible h4 { font-family: ${serif}; font-size: 15px; font-weight: 400; font-style: italic; margin: 16px 0 4px; color: #6b6153; }
         .bible h5, .bible h6 { font-family: ${serif}; font-size: 14px; margin: 14px 0 4px; color: #6b6153; }
+        /* A line of ninety characters is a line he loses his place in. */
+        .bible p, .bible li { max-width: 70ch; }
         .bible p { margin: 0 0 12px; }
         .bible ul { margin: 0 0 14px; padding-left: 20px; }
         .bible li { margin-bottom: 5px; }

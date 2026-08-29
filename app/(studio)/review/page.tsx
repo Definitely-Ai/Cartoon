@@ -89,57 +89,30 @@ export default async function ReviewIndexPage() {
   }
 
   return (
-    <main
-      id="content"
-      style={{
-        // Paper laid on the dark room, and the room's white focus ring
-        // handed its ink back so it stays visible here.
-        maxWidth: 900,
-        margin: "24px auto 48px",
-        padding: "24px 30px 64px",
-        color: "#221d16",
-        background: "#fdfbf6",
-        borderRadius: 8,
-        boxShadow: "0 2px 18px rgba(0,0,0,0.35)",
-        ["--focus-ink" as string]: "#1a1a1a",
-      }}
-    >
+    // Paper laid on the dark room — the same sheet as the Cast, the Registry
+    // and the scoring screen; see .paper-sheet in studio.css.
+    <main id="content" className="paper-sheet" style={{ maxWidth: 900 }}>
       <header style={{ margin: "22px 0 0" }}>
-        <p
-          style={{
-            fontFamily: serif,
-            letterSpacing: 3,
-            fontSize: 12,
-            textTransform: "uppercase",
-            color: "#8a7f6d",
-            margin: 0,
-          }}
-        >
-          The review
-        </p>
-        <h1 style={{ fontFamily: serif, fontSize: 40, margin: "8px 0 0", letterSpacing: 0.4 }}>
-          Every edition
-        </h1>
-        <p
-          style={{
-            fontFamily: serif,
-            fontStyle: "italic",
-            fontSize: 16.5,
-            color: "#5a5145",
-            margin: "10px 0 0",
-            maxWidth: 620,
-          }}
-        >
+        <p className="paper-eyebrow">The review</p>
+        <h1 className="paper-title">Every edition</h1>
+        <p className="paper-lede">
           Each edition is a fresh set of cartoons drawn from one thing you asked for. Open the newest one,
           look at every cartoon, and give scores out of ten — one for each character in it, one for the
           scene, one for the caption. There is a comment box under every cartoon if you want to say why.
         </p>
       </header>
 
+      {/* He gets a sentence he can act on; the operator gets the actual
+          complaint underneath it. One line of GitHub's own words was the
+          whole of what this page said when the token expired. */}
       {trouble && (
-        <p className="rv-trouble" role="alert">
-          {trouble}
-        </p>
+        <div className="rv-trouble" role="alert">
+          <p>
+            The shelf isn&rsquo;t answering just now. Nothing is lost — the editions are where they
+            were. Try again in a minute.
+          </p>
+          <p className="rv-trouble-detail">{trouble}</p>
+        </div>
       )}
 
       {!trouble && shelves.length === 0 && (
@@ -158,11 +131,10 @@ export default async function ReviewIndexPage() {
                 {shelf.drawn < shelf.planned ? <em className="rv-row-wip"> · still drawing</em> : null}
               </span>
               <span className="rv-row-brief">&ldquo;{shelf.brief}&rdquo;</span>
-              {/* When it was made is all Rick needs; the machine id only
-                  steps in when the plan never recorded a time. */}
-              <span className="rv-row-meta">
-                {madeAt(shelf.createdAt) || <span className="rv-row-id">{shelf.batch}</span>}
-              </span>
+              {/* When it was made is all he needs. A batch never records its
+                  own name here: the folder id is thirty characters of machine
+                  stamp, and it told him nothing the row above doesn't. */}
+              <span className="rv-row-meta">{madeAt(shelf.createdAt) || "Date not recorded"}</span>
               {/* What is left, not just what is done: "none scored" is a
                   standing invitation, and "9 still to score" is an errand. */}
               <span className="rv-row-tallies">
@@ -200,6 +172,8 @@ export default async function ReviewIndexPage() {
         .rv-shelf { list-style: none; margin: 24px 0 0; padding: 0; }
         .rv-shelf li { margin: 0 0 12px; }
 
+        /* A whole card is the tap target — on an iPad the words alone are a
+           miss. */
         .rv-row {
           display: block;
           text-decoration: none;
@@ -226,7 +200,6 @@ export default async function ReviewIndexPage() {
           margin-top: 6px;
           word-break: break-word;
         }
-        .rv-row-id { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 12px; }
 
         .rv-row-tallies { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
         .rv-tally {
@@ -253,6 +226,8 @@ export default async function ReviewIndexPage() {
           padding: 10px 12px;
           margin: 22px 0 0;
         }
+        .rv-trouble p { margin: 0; }
+        .rv-trouble-detail { font-style: normal; font-size: 13px; margin-top: 6px !important; color: #6b4038; }
       `}</style>
     </main>
   );
