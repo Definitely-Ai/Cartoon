@@ -19,9 +19,9 @@ run first via `node scripts/qc-batch.mjs <batch-folder>`.
    lower marble step or apron in front carrying a drink; the counter left
    standing BEHIND the figures as scenery with a second slab invented for the
    drinks; a waist-high back-bar ledge carrying bottles.
-2. **Bottles live on high shelves.** The back bar's lowest bottle shelf sits
-   above a standing bartender's shoulders; below it is plain panelling. No
-   bottle at waist height.
+2. **Bottles live on the back bar's shelves, up high.** No bottle stands at
+   or below the bartender's waist, and no ledge or work top carries bottles at
+   counter height — the approved room's own shelf arrangement is the standard.
 3. **The sides.** Drew and Mango are patrons — counter in front of them, never
    reading as bartenders. Abby, when cast, works beyond the same counter.
 4. **No door in the window.** The front window carries only the mirrored house
