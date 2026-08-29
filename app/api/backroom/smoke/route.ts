@@ -179,7 +179,11 @@ const SET_PLATE_PROMPT =
 
   "THERE IS NO LETTERING ANYWHERE IN THIS PICTURE except the mirrored gilt script of THE SWINGING DOOR on " +
   "the window. The screen is blank, the chalkboard is blank, every bottle label is blank, the television " +
-  "frame is blank. Do not draw text-like marks as texture.";
+  "frame is blank. Do not draw text-like marks as texture.\n\n" +
+  "The attached image is a finished cartoon of THIS VERY BAR with the cast in it. Copy its ROOM EXACTLY — " +
+  "the camera, the counter and its height, the depth to the back bar, the television, the chalkboard, the " +
+  "window, the panelling, the light — and draw that same room EMPTY. Leave out its characters, its drinks, " +
+  "its props and every word of its lettering; where a character stood there is only the room behind them.";
 
 // The character studies (?study=<name>). One figure, alone, on paper — the
 // plate a reader meets the character through. No room, no props beyond the
@@ -609,8 +613,13 @@ export async function GET(request: NextRequest) {
         quality,
         noReferences: plateNoRef,
         references: [
-          { path: "canon/vision/plate-1-security-and-martini-menu.jpg", box: [16, 1460, 1600, 1140] },
-          { path: "canon/vision/plate-4-nineteenth-hole-and-tariffs.jpg", box: [16, 150, 1590, 700] },
+          // The finished panel whose room the founder accepted — no longer the
+          // concept crops, whose flat camera taught the worst staging fault.
+          // The plate's one job is to be that room with NOBODY in it: a
+          // staging reference containing any character summons that character
+          // — an Abby-bearing plate put an uncast Abby into panel after
+          // panel, and a Mango-bearing one held him in one-eyed profile.
+          { path: "canon/vision/staging-plate.jpg" },
         ],
       });
       await commitFiles(
