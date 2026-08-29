@@ -8,21 +8,10 @@
   },
   "scene": 2,
   "caption": 3,
-  "comment": "chalk board not cleaver.  Get rid of the name on Abby's bar rag",
-  "at": "2026-08-29T20:54:13.450Z",
-  "revisions": 12,
+  "comment": "chalk board not cleaver.  Get rid of the name on Abby's bar rag.",
+  "at": "2026-08-29T20:54:15.976Z",
+  "revisions": 13,
   "history": [
-    {
-      "at": "2026-08-29T20:52:27.949Z",
-      "characters": {
-        "drew": 6,
-        "mango": 6,
-        "abby": 4
-      },
-      "scene": null,
-      "caption": null,
-      "comment": ""
-    },
     {
       "at": "2026-08-29T20:52:38.109Z",
       "characters": {
@@ -121,6 +110,17 @@
       "scene": 2,
       "caption": 3,
       "comment": "chalk board not cleaver.  Get rid of the name on Abby's"
+    },
+    {
+      "at": "2026-08-29T20:54:13.450Z",
+      "characters": {
+        "drew": 6,
+        "mango": 6,
+        "abby": 4
+      },
+      "scene": 2,
+      "caption": 3,
+      "comment": "chalk board not cleaver.  Get rid of the name on Abby's bar rag"
     }
   ]
 }
