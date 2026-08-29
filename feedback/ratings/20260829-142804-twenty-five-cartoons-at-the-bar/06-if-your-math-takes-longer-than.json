@@ -6,11 +6,11 @@
     "mango": 6,
     "abby": 5
   },
-  "scene": 3,
+  "scene": 2,
   "caption": null,
   "comment": "",
-  "at": "2026-08-29T19:44:16.947Z",
-  "revisions": 3,
+  "at": "2026-08-29T19:45:11.407Z",
+  "revisions": 4,
   "history": [
     {
       "at": "2026-08-29T19:43:35.880Z",
@@ -39,6 +39,17 @@
         "abby": 5
       },
       "scene": null,
+      "caption": null,
+      "comment": ""
+    },
+    {
+      "at": "2026-08-29T19:44:16.947Z",
+      "characters": {
+        "drew": 6,
+        "mango": 6,
+        "abby": 5
+      },
+      "scene": 3,
       "caption": null,
       "comment": ""
     }
