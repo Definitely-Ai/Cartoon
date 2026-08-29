@@ -318,20 +318,19 @@ export function referenceList(
   // chalkboard BLANK, so it can only teach layout, fixtures and furniture.
   if (barScene && list.length < LIMIT) {
     list.push({
-      path: "canon/vision/studies/room.png",
+      path: "canon/vision/staging-plate.jpg",
       label:
-        "THE SET — the bar itself, the same room in every cartoon, seen from the dining room looking toward it. " +
-        "TAKE ITS DEPTH FROM THIS TILE AS WELL AS ITS FIXTURES: the marble counter crosses the MIDDLE of the " +
-        "picture with its top surface visible and foreshortened, a clear walkway of open floor separates that " +
-        "counter from the back bar behind it, and the patron side in front of the marble is open air where " +
-        "this cartoon's seated gentlemen go. The counter is never a thin strip along the bottom edge with " +
-        "everybody standing behind it. " +
-        "Reproduce its layout exactly: the back bar with its bottles and mirror across the background, the " +
-        "television mounted above it, the chalkboard beside the television, a sconce at each end, the front " +
-        "window with its mirrored sign at far left, the walnut panelling, and the marble counter running across " +
-        "in front of it all. This tile is NOT a character and contains no one. Its screen, its chalkboard and " +
-        "its bottle labels are deliberately blank — fill the screen and the board from the scene below, leave " +
-        "the labels blank, and change nothing else about the room",
+        "THE HOUSE SHOT — a finished cartoon of this same bar, attached for its GEOMETRY AND ITS BLOCKING " +
+        "ONLY. Copy from it: the ONE marble counter and the fact that there is only one, crossing the middle " +
+        "of the picture with its top surface visible and no second ledge, shelf or tier anywhere at any other " +
+        "height; the walnut back bar standing beyond it as a distinctly farther wall; the flatscreen " +
+        "TELEVISION mounted above the back bar, switched on and carrying a picture and a chyron band, never a " +
+        "framed print; the chalkboard beside it; a sconce at each end; the front window at far left; and " +
+        "above all WHO IS WHERE — the two gentlemen near and large on the patron side with the marble in " +
+        "front of them, the bartender beyond it with the counter crossing her at the waist and her head " +
+        "higher in the frame than theirs. DO NOT COPY its faces, its poses, its drinks, its bottle labels, " +
+        "its chalkboard line, its headline or any of its lettering — this cartoon has its own. Take the room " +
+        "and the blocking; leave everything else",
     });
   }
   spendExtras();
