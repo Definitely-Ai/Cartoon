@@ -8,21 +8,10 @@
   },
   "scene": 4,
   "caption": null,
-  "comment": "line needs more explanation, should read needs \"waiting for a rate cut....",
-  "at": "2026-08-29T21:04:03.731Z",
-  "revisions": 16,
+  "comment": "line needs more explanation, should read needs \"waiting for a rate cut....  Abby should smile.",
+  "at": "2026-08-29T21:04:17.271Z",
+  "revisions": 17,
   "history": [
-    {
-      "at": "2026-08-29T21:03:00.392Z",
-      "characters": {
-        "drew": 6,
-        "mango": 6,
-        "abby": 4
-      },
-      "scene": 4,
-      "caption": null,
-      "comment": "line needs more ep"
-    },
     {
       "at": "2026-08-29T21:03:05.606Z",
       "characters": {
@@ -121,6 +110,17 @@
       "scene": 4,
       "caption": null,
       "comment": "line needs more explanation, should read needs \"waiting for a rate cut..."
+    },
+    {
+      "at": "2026-08-29T21:04:03.731Z",
+      "characters": {
+        "drew": 6,
+        "mango": 6,
+        "abby": 4
+      },
+      "scene": 4,
+      "caption": null,
+      "comment": "line needs more explanation, should read needs \"waiting for a rate cut...."
     }
   ]
 }
