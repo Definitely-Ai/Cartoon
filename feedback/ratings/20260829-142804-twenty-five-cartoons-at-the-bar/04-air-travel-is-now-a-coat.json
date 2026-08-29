@@ -7,9 +7,9 @@
   },
   "scene": 1,
   "caption": 4,
-  "comment": "",
-  "at": "2026-08-29T19:36:21.721Z",
-  "revisions": 3,
+  "comment": "place",
+  "at": "2026-08-29T19:36:39.542Z",
+  "revisions": 4,
   "history": [
     {
       "at": "2026-08-29T19:35:14.807Z",
@@ -37,6 +37,16 @@
       },
       "scene": 1,
       "caption": null,
+      "comment": ""
+    },
+    {
+      "at": "2026-08-29T19:36:21.721Z",
+      "characters": {
+        "drew": 5,
+        "mango": 2
+      },
+      "scene": 1,
+      "caption": 4,
       "comment": ""
     }
   ]
