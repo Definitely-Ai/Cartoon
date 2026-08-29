@@ -4,9 +4,20 @@
   "characters": {
     "drew": 5
   },
-  "scene": null,
+  "scene": 1,
   "caption": null,
   "comment": "",
-  "at": "2026-08-29T19:35:14.807Z",
-  "revisions": 0
+  "at": "2026-08-29T19:35:38.304Z",
+  "revisions": 1,
+  "history": [
+    {
+      "at": "2026-08-29T19:35:14.807Z",
+      "characters": {
+        "drew": 5
+      },
+      "scene": null,
+      "caption": null,
+      "comment": ""
+    }
+  ]
 }
