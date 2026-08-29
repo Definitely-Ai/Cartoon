@@ -8,19 +8,10 @@
   },
   "scene": 1,
   "caption": 5,
-  "comment": "Drew and Mango are not seated up to the bar",
-  "at": "2026-08-29T20:42:45.670Z",
-  "revisions": 10,
+  "comment": "Drew and Mango are not seated up to the bar.",
+  "at": "2026-08-29T20:42:48.119Z",
+  "revisions": 11,
   "history": [
-    {
-      "at": "2026-08-29T20:40:34.626Z",
-      "characters": {
-        "drew": 5
-      },
-      "scene": null,
-      "caption": null,
-      "comment": ""
-    },
     {
       "at": "2026-08-29T20:40:43.593Z",
       "characters": {
@@ -118,6 +109,17 @@
       "scene": 1,
       "caption": 5,
       "comment": "Drew and Mango are not seaded"
+    },
+    {
+      "at": "2026-08-29T20:42:45.670Z",
+      "characters": {
+        "drew": 5,
+        "mango": 4,
+        "abby": 2
+      },
+      "scene": 1,
+      "caption": 5,
+      "comment": "Drew and Mango are not seated up to the bar"
     }
   ]
 }
