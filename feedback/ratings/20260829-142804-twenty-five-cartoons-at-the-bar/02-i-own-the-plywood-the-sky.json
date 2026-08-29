@@ -7,9 +7,9 @@
   },
   "scene": 1,
   "caption": 2,
-  "comment": "Mthe ango's placement at the bar looks odd.  All the bottles on the back bar look",
-  "at": "2026-08-29T19:26:32.957Z",
-  "revisions": 8,
+  "comment": "Mango's placement at the bar looks odd.  All the bottles on the back bar look",
+  "at": "2026-08-29T19:26:37.439Z",
+  "revisions": 9,
   "history": [
     {
       "at": "2026-08-29T19:24:16.819Z",
@@ -89,6 +89,16 @@
       "scene": 1,
       "caption": 2,
       "comment": "Mango's placement at the bar looks odd.  All the bottles on the"
+    },
+    {
+      "at": "2026-08-29T19:26:32.957Z",
+      "characters": {
+        "drew": 5,
+        "mango": 5
+      },
+      "scene": 1,
+      "caption": 2,
+      "comment": "Mthe ango's placement at the bar looks odd.  All the bottles on the back bar look"
     }
   ]
 }
