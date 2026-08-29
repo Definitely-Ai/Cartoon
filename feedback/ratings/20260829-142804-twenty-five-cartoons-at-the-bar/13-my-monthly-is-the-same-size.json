@@ -6,9 +6,9 @@
   },
   "scene": 1,
   "caption": 1,
-  "comment": "bad",
-  "at": "2026-08-29T22:57:43.076Z",
-  "revisions": 3,
+  "comment": "bad, bad,",
+  "at": "2026-08-29T22:57:48.811Z",
+  "revisions": 4,
   "history": [
     {
       "at": "2026-08-29T22:57:26.306Z",
@@ -36,6 +36,15 @@
       "scene": 1,
       "caption": 1,
       "comment": ""
+    },
+    {
+      "at": "2026-08-29T22:57:43.076Z",
+      "characters": {
+        "abby": 1
+      },
+      "scene": 1,
+      "caption": 1,
+      "comment": "bad"
     }
   ]
 }
