@@ -23,6 +23,7 @@ export default function StudioLayout({ children }: { children: ReactNode }) {
           <Link href="/collection">The Collection</Link>
           <Link href="/keepers">Keepers</Link>
           <Link href="/models">The Cast</Link>
+          <Link href="/registry">The Registry</Link>
         </nav>
       </header>
 

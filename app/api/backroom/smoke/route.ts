@@ -129,9 +129,23 @@ const SET_PLATE_PROMPT =
   "never a dim one, never a gloomy one, never a cellar.\n\n" +
   "This is a SET PLATE: the empty interior of an upscale bar, and THERE ARE NO PEOPLE, NO ANIMALS AND NO " +
   "CHARACTERS OF ANY KIND anywhere in it.\n\n" +
-  "CAMERA. We stand in the DINING ROOM, a few feet back, LOOKING TOWARD THE BAR. The bar fills the background " +
-  "of the picture, seen square on at eye level.\n\n" +
-  "THE BACK BAR fills the upper two thirds of the frame and this arrangement never changes:\n" +
+  "CAMERA, AND THE THING THIS PLATE EXISTS TO TEACH: THE ROOM HAS DEPTH. We stand in the DINING ROOM on the "
+  "PATRON side of the bar, BEHIND the seats and A LITTLE ABOVE them, looking slightly DOWN and across "
+  "toward the service side. Draw THREE CLEARLY DIFFERENT DISTANCES, near to far, and make each one plainly "
+  "farther away than the last:\n" +
+  "NEAREST — the LOWEST QUARTER of the picture is the PATRON SIDE: empty dining-room air and the NEAR EDGE "
+  "of the marble, the stretch two seated patrons would fill, left empty in this plate. Nothing is drawn "
+  "there and no floor, stool or chair shows below it; the picture simply ends.\n" +
+  "MIDDLE — the MARBLE COUNTER runs left to right ACROSS THE MIDDLE OF THE PICTURE, at about a third of the "
+  "way up, NEVER as a thin strip along the bottom edge. Because we look down on it, its TOP SURFACE IS "
+  "VISIBLE as a wide foreshortened band: the reader can see the whole depth of the slab from its near edge "
+  "to its far edge, and the veining runs away from us across it.\n" +
+  "FARTHEST — BEYOND the counter, and SET WELL BACK FROM IT, the SERVICE SIDE. A clear WALKWAY about a "
+  "metre deep separates the counter from the back bar — the bartender's alley, with its floor visible in "
+  "the gap and room for someone to stand and work in it. The back bar is a DISTINCTLY MORE DISTANT WALL, "
+  "not a backdrop pressed against the marble.\n\n" +
+  "THE BACK BAR fills the upper half of the frame, standing beyond that walkway, and this arrangement "
+  "never changes:\n" +
   "ACROSS THE BACK, a run of handsome walnut back-bar shelving with a MIRROR behind it, carrying rows of " +
   "liquor bottles — each bottle a distinct shape, their labels drawn as plain blank rectangles with NO " +
   "lettering on them — and rows of hanging stemware above.\n" +
@@ -145,12 +159,14 @@ const SET_PLATE_PROMPT =
   "FAR LEFT, where the wall gives onto the street, the front window, its lower half frosted, carrying the " +
   "bar's name in gilt script SEEN FROM BEHIND — THE SWINGING DOOR, MIRRORED, reading backwards.\n" +
   "Dark walnut panelling in tall fielded panels wherever wall shows.\n\n" +
-  "IN FRONT OF THE BACK BAR, running left to right across the picture, the POLISHED MARBLE COUNTER — a SINGLE " +
+  "BEYOND THE WALKWAY-WIDTH GAP, running left to right ACROSS THE MIDDLE of the picture, the POLISHED MARBLE COUNTER — a SINGLE " +
   "CONTINUOUS FLAT SLAB of pale grey veined marble at ONE height end to end, with a moulded walnut edge and a " +
   "walnut-panelled front below it. There is NO raised rail, NO upper drink shelf, NO second tier, NO step and " +
   "NO ledge anywhere on it or behind it — one surface, one height. On it, nothing but a folded bar towel at one end and a small empty nut bowl at centre " +
-  "— NO glasses and NO drinks. The panel ENDS at the counter: no stools, no footrest, no floor, nothing below " +
-  "it in frame.\n\n" +
+  "— NO glasses and NO drinks. Below the counter's NEAR edge the picture ends: no stools, no footrest, no "
+  "floor on the patron side, nothing in frame down there at all — but leave that lowest quarter of the "
+  "sheet as open dining-room air so the counter reads as sitting ACROSS THE MIDDLE of the picture rather "
+  "than along its bottom edge.\n\n" +
   "THERE IS NO LETTERING ANYWHERE IN THIS PICTURE except the mirrored gilt script of THE SWINGING DOOR on the " +
   "window. The screen is blank, the chalkboard is blank, every bottle label is blank, the television frame is " +
   "blank. Do not draw text-like marks as texture.\n\n" +
@@ -225,7 +241,15 @@ const STUDIES: Record<string, string> = {
     "A CLOSE PORTRAIT STUDY of Abby alone, HEAD AND SHOULDERS ONLY, filling the sheet — the top " +
     "of her head near the top edge and the frame cutting her at the collarbone. Her head is in " +
     "THREE-QUARTER view, turned slightly to her right and tipped a little down, her chin lifted " +
-    "just enough to read as composed and self-possessed. Her gaze goes off to the side of the " +
+    "just enough to read as composed and self-possessed. SHE IS A WEST HIGHLAND WHITE TERRIER AND HER " +
+    "SNOUT IS LONG: her muzzle is a straight tapering box that runs OUT from between her eyes and ends " +
+    "BLUNT AND SQUARE at a small black nose standing well clear of her cheeks, the top of it a level " +
+    "straight ridge from brow to nose. COUNT IT BEFORE YOU DRAW THE NOSE: the gap from the inner corner " +
+    "of her eye to the tip of her nose is AT LEAST ONE AND A HALF TIMES THE WIDTH OF ONE EYE, and at this " +
+    "three-quarter angle the nose sits FORWARD of the line of her cheek fur so a real snout shows in " +
+    "silhouette against the background. The fur ON the muzzle is SHORT and lies flat while the cheeks and " +
+    "brow stay long and fluffy, so the snout's shape reads clean and unmistakable against that fluff. " +
+    "Her gaze goes off to the side of the " +
     "frame, level and unhurried, at something in her own room — SHE IS NOT LOOKING AT THE READER " +
     "and her eyes are not centred on the lens. THE EYES ARE THE SUBJECT OF THIS DRAWING and are " +
     "rendered larger and in more detail than anything else on the sheet. Each eye is a wide " +

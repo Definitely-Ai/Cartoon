@@ -319,6 +319,11 @@ export function referenceList(
       path: "canon/vision/studies/room.png",
       label:
         "THE SET — the bar itself, the same room in every cartoon, seen from the dining room looking toward it. " +
+        "TAKE ITS DEPTH FROM THIS TILE AS WELL AS ITS FIXTURES: the marble counter crosses the MIDDLE of the " +
+        "picture with its top surface visible and foreshortened, a clear walkway of open floor separates that " +
+        "counter from the back bar behind it, and the patron side in front of the marble is open air where " +
+        "this cartoon's seated gentlemen go. The counter is never a thin strip along the bottom edge with " +
+        "everybody standing behind it. " +
         "Reproduce its layout exactly: the back bar with its bottles and mirror across the background, the " +
         "television mounted above it, the chalkboard beside the television, a sconce at each end, the front " +
         "window with its mirrored sign at far left, the walnut panelling, and the marble counter running across " +
