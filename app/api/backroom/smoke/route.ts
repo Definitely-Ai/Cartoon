@@ -246,12 +246,16 @@ const STUDIES: Record<string, string> = {
     "SNOUT IS LONG: her muzzle is a straight tapering box that runs OUT from between her eyes and ends " +
     "BLUNT AND SQUARE at a small black nose standing well clear of her cheeks, the top of it a level " +
     "straight ridge from brow to nose. COUNT IT BEFORE YOU DRAW THE NOSE: the gap from the inner corner " +
-    "of her eye to the tip of her nose is AT LEAST ONE AND A HALF TIMES THE WIDTH OF ONE EYE, and at this " +
-    "three-quarter angle the nose sits FORWARD of the line of her cheek fur so a real snout shows in " +
-    "silhouette against the background. The fur ON the muzzle is SHORT and lies flat while the cheeks and " +
-    "brow stay long and fluffy, so the snout's shape reads clean and unmistakable against that fluff. " +
+    "of her eye to the tip of her nose is AT LEAST ONE AND A HALF AND AT MOST TWO TIMES THE WIDTH OF ONE " +
+    "EYE, and at this three-quarter angle the nose sits FORWARD of the line of her cheek fur so a real " +
+    "snout shows in silhouette against the background. It is a TERRIER'S snout: HER SKULL STAYS BROAD, " +
+    "SOFT AND ROUNDED and the muzzle stays SHORTER THAN THE SKULL — a broad rounded head with a blunt " +
+    "snout set on the front of it, never a narrow head with a long wedge tapering off it. The fur ON the " +
+    "muzzle is SHORT and lies flat while the cheeks and brow stay long and fluffy, so the snout's shape " +
+    "reads clean and unmistakable against that fluff. " +
     "Her gaze goes off to the side of the " +
     "frame, level and unhurried, at something in her own room — SHE IS NOT LOOKING AT THE READER " +
+    "and the snout, however long, must not cost the eyes one line of their detail — " +
     "and her eyes are not centred on the lens. THE EYES ARE THE SUBJECT OF THIS DRAWING and are " +
     "rendered larger and in more detail than anything else on the sheet. Each eye is a wide " +
     "ALMOND, longer than it is tall, tilted very slightly up at the outer corner, with a defined " +
@@ -266,7 +270,9 @@ const STUDIES: Record<string, string> = {
     "the fringe over her brow drawn stroke by stroke, and the open collar of her blouse just " +
     "reaching the bottom edge of the frame. THE LONG FUR STOPS AT HER JAWLINE: her throat and " +
     "the top of her chest are short, fine and close-lying, sleek rather than shaggy, with no " +
-    "ruff, no tufts, no mane and no neck-beard anywhere below the jaw.",
+    "ruff, no tufts, no mane and no neck-beard anywhere below the jaw. HER FIGURE IS SLIM AND HER BUST IS " +
+    "SMALL AND NATURAL: the placket of the blouse runs very nearly straight down her front and the front " +
+    "of it reads as one gentle plane. What the open collar shows is her THROAT and her COLLARBONE.",
 };
 
 // The showcase batch (?set=showcase): twelve cartoons out of the writers'
