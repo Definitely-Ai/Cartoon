@@ -8,21 +8,10 @@
   },
   "scene": 2,
   "caption": 3,
-  "comment": "chalk board not cleaver.  Get rid of the name on Abby's bar rag.  Abby should smile when delivering a tab",
-  "at": "2026-08-29T20:55:17.173Z",
-  "revisions": 21,
+  "comment": "chalk board not cleaver.  Get rid of the name on Abby's bar rag.  Abby should smile when delivering a tab.",
+  "at": "2026-08-29T20:55:19.139Z",
+  "revisions": 22,
   "history": [
-    {
-      "at": "2026-08-29T20:54:04.323Z",
-      "characters": {
-        "drew": 6,
-        "mango": 6,
-        "abby": 4
-      },
-      "scene": 2,
-      "caption": 3,
-      "comment": "chalk board not cleaver.  Get rid of the name on Abby's"
-    },
     {
       "at": "2026-08-29T20:54:13.450Z",
       "characters": {
@@ -121,6 +110,17 @@
       "scene": 2,
       "caption": 3,
       "comment": "chalk board not cleaver.  Get rid of the name on Abby's bar rag.  Abby should smile when del"
+    },
+    {
+      "at": "2026-08-29T20:55:17.173Z",
+      "characters": {
+        "drew": 6,
+        "mango": 6,
+        "abby": 4
+      },
+      "scene": 2,
+      "caption": 3,
+      "comment": "chalk board not cleaver.  Get rid of the name on Abby's bar rag.  Abby should smile when delivering a tab"
     }
   ]
 }
