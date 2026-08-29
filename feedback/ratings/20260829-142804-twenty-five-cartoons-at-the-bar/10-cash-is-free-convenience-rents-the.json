@@ -2,11 +2,23 @@
   "batch": "20260829-142804-twenty-five-cartoons-at-the-bar",
   "panel": "10-cash-is-free-convenience-rents-the.png",
   "characters": {
-    "drew": 6
+    "drew": 6,
+    "mango": 6
   },
   "scene": null,
   "caption": null,
   "comment": "",
-  "at": "2026-08-29T20:52:10.434Z",
-  "revisions": 0
+  "at": "2026-08-29T20:52:12.580Z",
+  "revisions": 1,
+  "history": [
+    {
+      "at": "2026-08-29T20:52:10.434Z",
+      "characters": {
+        "drew": 6
+      },
+      "scene": null,
+      "caption": null,
+      "comment": ""
+    }
+  ]
 }
