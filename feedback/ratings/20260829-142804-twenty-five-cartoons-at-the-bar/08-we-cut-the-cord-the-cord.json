@@ -8,21 +8,10 @@
   },
   "scene": 1,
   "caption": 5,
-  "comment": "Drew and Mango are not seated up to the bar.  Abby looks sad and not amused.  Take the name",
-  "at": "2026-08-29T20:44:12.845Z",
-  "revisions": 18,
+  "comment": "Drew and Mango are not seated up to the bar.  Abby looks sad and not amused.  Take the name off",
+  "at": "2026-08-29T20:44:15.323Z",
+  "revisions": 19,
   "history": [
-    {
-      "at": "2026-08-29T20:42:25.681Z",
-      "characters": {
-        "drew": 5,
-        "mango": 4,
-        "abby": 2
-      },
-      "scene": 1,
-      "caption": 5,
-      "comment": "Drew and Mango are not"
-    },
     {
       "at": "2026-08-29T20:42:31.496Z",
       "characters": {
@@ -121,6 +110,17 @@
       "scene": 1,
       "caption": 5,
       "comment": "Drew and Mango are not seated up to the bar.  Abby looks sad and not amused."
+    },
+    {
+      "at": "2026-08-29T20:44:12.845Z",
+      "characters": {
+        "drew": 5,
+        "mango": 4,
+        "abby": 2
+      },
+      "scene": 1,
+      "caption": 5,
+      "comment": "Drew and Mango are not seated up to the bar.  Abby looks sad and not amused.  Take the name"
     }
   ]
 }
