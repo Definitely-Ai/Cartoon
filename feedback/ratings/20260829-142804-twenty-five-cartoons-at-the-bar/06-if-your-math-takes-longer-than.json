@@ -8,9 +8,9 @@
   },
   "scene": 2,
   "caption": null,
-  "comment": "I cannot read the note pad on the bar.  TV",
-  "at": "2026-08-29T19:45:57.852Z",
-  "revisions": 9,
+  "comment": "I cannot read the note pad on the bar.  TV picture is weird",
+  "at": "2026-08-29T19:46:43.555Z",
+  "revisions": 10,
   "history": [
     {
       "at": "2026-08-29T19:43:35.880Z",
@@ -107,6 +107,17 @@
       "scene": 2,
       "caption": null,
       "comment": "I cannot read the note pad on the bar."
+    },
+    {
+      "at": "2026-08-29T19:45:57.852Z",
+      "characters": {
+        "drew": 6,
+        "mango": 6,
+        "abby": 5
+      },
+      "scene": 2,
+      "caption": null,
+      "comment": "I cannot read the note pad on the bar.  TV"
     }
   ]
 }
