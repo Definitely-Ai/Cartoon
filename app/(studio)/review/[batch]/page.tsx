@@ -207,6 +207,9 @@ export default async function ReviewBatchPage({ params }: { params: Promise<{ ba
                 Be blunt. A low score with a sentence saying why is the most useful thing on this
                 page — it is what the next edition gets built from.
               </p>
+              <p className="rv-howto-keys">
+                On a computer, the left and right arrow keys move between cartoons.
+              </p>
             </div>
           </>
         )}
@@ -289,6 +292,7 @@ export default async function ReviewBatchPage({ params }: { params: Promise<{ ba
         .rv-howto p:last-child { margin-bottom: 0; }
         .rv-howto-head { font-family: ${serif}; font-size: 18px; color: #221d16 !important; }
         .rv-howto-blunt { color: #221d16 !important; }
+        .rv-howto-keys { font-size: 13px; color: #6b6153 !important; }
 
         .rv-colophon {
           font-size: 12.5px;

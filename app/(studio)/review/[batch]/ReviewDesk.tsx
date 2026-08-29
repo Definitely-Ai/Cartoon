@@ -298,7 +298,6 @@ export default function ReviewDesk(props: { batch: string; panels: DeskPanel[] }
   // mismatched first paint is a hydration error — so it lands one tick later.
   useEffect(() => {
     const saved = readDrafts(batch);
-    book.current = saved;
     const found: Record<string, true> = {};
     const merged: Record<string, StandingVerdict> = {};
     for (const [key, draft] of Object.entries(saved)) {
@@ -308,6 +307,11 @@ export default function ReviewDesk(props: { batch: string; panels: DeskPanel[] }
       merged[key] = draft;
       found[key] = true;
     }
+    // A draft the repo has since caught up with — saved from another tab, or
+    // by the beacon on the way out — is dead weight, and keeping it would put
+    // a red "not saved" dot on a cartoon that is filed.
+    book.current = merged;
+    if (Object.keys(merged).length !== Object.keys(saved).length) writeDrafts(batch, merged);
     if (Object.keys(merged).length === 0) return;
     setWorking((current) => {
       const next = { ...current, ...merged };
@@ -699,7 +703,10 @@ export default function ReviewDesk(props: { batch: string; panels: DeskPanel[] }
           <p className="rv-caption">
             <span className="rv-speaker">{panel.speaker}:</span> &ldquo;{panel.caption}&rdquo;
           </p>
-          {panel.turn && <p className="rv-turn">The joke turns on {panel.turn}.</p>}
+          {/* What the writers were aiming at, in their words. It is the one
+              piece of studio shorthand on the screen, and it earns its place:
+              a joke that misses is worth knowing the aim of. */}
+          {panel.turn && <p className="rv-turn">The writers were going for: {panel.turn}.</p>}
 
           {panel.drawn ? (
             <>
@@ -712,7 +719,7 @@ export default function ReviewDesk(props: { batch: string; panels: DeskPanel[] }
                 <Dial
                   key={who.key}
                   label={who.name}
-                  hint="how well he’s drawn here"
+                  hint="how they’re drawn in this one"
                   value={mine.characters[who.key] ?? null}
                   onPick={(n) => pickCharacter(panel.key, who.key, n)}
                 />
