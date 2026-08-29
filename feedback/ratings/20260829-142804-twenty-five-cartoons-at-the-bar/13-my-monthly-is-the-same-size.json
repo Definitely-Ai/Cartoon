@@ -5,10 +5,10 @@
     "abby": 1
   },
   "scene": 1,
-  "caption": null,
+  "caption": 1,
   "comment": "",
-  "at": "2026-08-29T22:57:33.608Z",
-  "revisions": 1,
+  "at": "2026-08-29T22:57:36.627Z",
+  "revisions": 2,
   "history": [
     {
       "at": "2026-08-29T22:57:26.306Z",
@@ -16,6 +16,15 @@
         "abby": 1
       },
       "scene": null,
+      "caption": null,
+      "comment": ""
+    },
+    {
+      "at": "2026-08-29T22:57:33.608Z",
+      "characters": {
+        "abby": 1
+      },
+      "scene": 1,
       "caption": null,
       "comment": ""
     }
