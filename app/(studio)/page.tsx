@@ -75,10 +75,10 @@ async function TodayTable() {
               </p>
             )}
             {/* An empty table is not proof there is no work: a set drawn from
-                a written brief sits on the Review shelf, not here, and he has
-                been sent to score one before now. */}
+                a written brief sits under Review, not here, and he has been
+                sent to score one before now. */}
             <p className="br-howto">
-              If you were told a new edition is ready, it&rsquo;s waiting on{" "}
+              If you were told new cartoons are ready, they&rsquo;re waiting on{" "}
               <Link href="/review">Review</Link>. Everything ever drawn is in{" "}
               <Link href="/collection">The Collection</Link>.
             </p>

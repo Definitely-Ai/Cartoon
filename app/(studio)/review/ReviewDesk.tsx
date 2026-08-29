@@ -22,8 +22,9 @@
 //      batch, panel, characters{}, scene, caption, comment, and it UPSERTS —
 //      so re-scoring is just sending it again.
 //
-// The .rv-* classes live in one <style> block on the page that renders this,
-// the way the rest of this screen has always done it.
+// The .rv-* classes live in one <style> block in ../ScoringScreen, the server
+// component that reads a set and renders this, the way the rest of this screen
+// has always done it.
 
 import { useCallback, useEffect, useMemo, useRef, useState, type KeyboardEvent } from "react";
 
@@ -627,7 +628,7 @@ export default function ReviewDesk(props: { batch: string; panels: DeskPanel[] }
   }
 
   const CHIP_WORDS: Record<"waiting" | "done" | "part" | "todo", string> = {
-    waiting: "not drawn yet",
+    waiting: "still being drawn",
     done: "scored",
     part: "half scored",
     todo: "not scored",
@@ -637,11 +638,21 @@ export default function ReviewDesk(props: { batch: string; panels: DeskPanel[] }
     <section className="rv-desk">
       <div className="rv-progress">
         <div className="rv-progress-line">
+          {/* "0 of 0 scored" is what this said on a set whose first drawing
+              hadn't landed yet — a tally reading like a failed count on the
+              one screen he opens to see new work. Nothing drawn is a normal
+              minute of a normal set, and it says so. */}
           <p className="rv-progress-count">
-            <strong>
-              {scoredCount} of {drawnCount} scored
-            </strong>
-            {left > 0 ? ` · ${left} to go` : drawnCount > 0 ? " · that’s all of them" : ""}
+            {drawnCount === 0 ? (
+              <strong>Nothing to score yet — still drawing</strong>
+            ) : (
+              <>
+                <strong>
+                  {scoredCount} of {drawnCount} scored
+                </strong>
+                {left > 0 ? ` · ${left} to go` : " · that’s all of them"}
+              </>
+            )}
           </p>
           <button
             type="button"
@@ -649,15 +660,23 @@ export default function ReviewDesk(props: { batch: string; panels: DeskPanel[] }
             onClick={() => nextToScore !== -1 && goTo(nextToScore)}
             disabled={nextToScore === -1}
           >
-            {nextToScore === -1 ? "Nothing left to score" : "Next one to score ›"}
+            {nextToScore === -1
+              ? drawnCount === 0
+                ? "Nothing to score yet"
+                : "Nothing left to score"
+              : "Next one to score ›"}
           </button>
         </div>
 
-        <div className="rv-bar" role="img" aria-label={`${scoredCount} of ${drawnCount} scored`}>
+        <div
+          className="rv-bar"
+          role="img"
+          aria-label={drawnCount === 0 ? "Nothing drawn to score yet" : `${scoredCount} of ${drawnCount} scored`}
+        >
           <span style={{ width: `${percent}%` }} />
         </div>
 
-        <ol className="rv-strip" ref={strip} aria-label="Every cartoon in this edition">
+        <ol className="rv-strip" ref={strip} aria-label="Every cartoon in this set">
           {panels.map((target, i) => {
             const word = scoreWord(target);
             const dirty =
@@ -694,7 +713,7 @@ export default function ReviewDesk(props: { batch: string; panels: DeskPanel[] }
               /* eslint-disable-next-line @next/next/no-img-element */
               <img key={panel.file} className="rv-art" src={panel.src} alt={panel.alt} decoding="async" />
             ) : (
-              <p className="rv-waiting">This one hasn’t been drawn yet.</p>
+              <p className="rv-waiting">This one is still being drawn.</p>
             )}
           </div>
         </div>
@@ -801,7 +820,8 @@ export default function ReviewDesk(props: { batch: string; panels: DeskPanel[] }
             </>
           ) : (
             <p className="rv-pending">
-              Scoring opens when the drawing lands. Reload the page in a minute.
+              Scoring opens when the drawing lands — check back shortly. You can read the line above
+              in the meantime.
             </p>
           )}
 

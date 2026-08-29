@@ -11,7 +11,7 @@ import "../studio.css";
 
 // Every address on the site belongs to one of these six. The `under` lists
 // exist so a page that is not itself in the nav — a single day, one
-// character's bible, one edition being scored — still lights up the place it
+// character's bible, one older set being scored — still lights up the place it
 // came from instead of leaving the whole row dark.
 const PLACES: Place[] = [
   { href: "/", label: "Today" },

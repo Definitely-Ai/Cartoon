@@ -4,7 +4,7 @@ import { formatDateline, formatTimeET } from "@/lib/format";
 import { listRepoDir, readRepoFile } from "@/lib/githubPublish";
 
 import { BRIEFS, type Plan } from "./batches";
-import ReviewDesk, { type CastName, type DeskPanel, type StandingVerdict } from "./[batch]/ReviewDesk";
+import ReviewDesk, { type CastName, type DeskPanel, type StandingVerdict } from "./ReviewDesk";
 
 // THE REVIEW — where a set of cartoons gets judged. Rick typed one line, the
 // writers' room wrote the gags and the hand drew them; this is the screen where

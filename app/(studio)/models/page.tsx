@@ -173,7 +173,7 @@ export default function ModelsPage() {
             }}
           >
             <p style={{ fontFamily: serif, fontSize: 21, margin: "0 0 12px", color: "#221d16" }}>
-              A new edition is being drawn right now.
+              A new set of cartoons is being drawn right now.
             </p>
             <p style={{ margin: "0 0 12px", color: "#4a4136", lineHeight: 1.65 }}>
               The cartoons that used to sit here have been taken down. We checked every one of them closely and
@@ -189,7 +189,7 @@ export default function ModelsPage() {
               <Link href="/review" style={{ color: "#1a1a1a", fontWeight: 600 }}>
                 Go to Review
               </Link>{" "}
-              to see the new edition as it is drawn, and to score each cartoon out of ten.
+              to see the new set as it is drawn, and to score each cartoon out of ten.
             </p>
           </div>
         ) : (

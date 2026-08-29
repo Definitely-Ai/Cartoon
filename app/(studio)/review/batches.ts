@@ -66,13 +66,19 @@ export async function listBatches(): Promise<string[]> {
     .reverse();
 }
 
-/** One batch's plan, or null when the folder has no readable one. */
+/** One batch's plan, or null when the folder has no readable one.
+ *
+ *  The folder name wins over the `batch` field, which every plan the brief
+ *  route writes agrees with anyway. The screen keys three things off it — the
+ *  image URLs, the ratings path and the localStorage draft book — so a plan
+ *  that ever arrived without the field would silently key his half-typed
+ *  comments under the empty string and lose them. */
 export async function readPlan(batch: string): Promise<Plan | null> {
   const file = await readRepoFile(`${BRIEFS}/${batch}/plan.json`);
   if (!file) return null;
   try {
     const plan = JSON.parse(file.bytes.toString("utf8")) as Plan;
-    return Array.isArray(plan?.panels) ? plan : null;
+    return Array.isArray(plan?.panels) ? { ...plan, batch } : null;
   } catch {
     return null;
   }
