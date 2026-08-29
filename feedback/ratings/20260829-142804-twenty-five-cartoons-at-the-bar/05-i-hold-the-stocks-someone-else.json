@@ -8,9 +8,9 @@
   },
   "scene": 1,
   "caption": 5,
-  "comment": "seating placement is o",
-  "at": "2026-08-29T19:41:15.751Z",
-  "revisions": 9,
+  "comment": "seating placement is odd",
+  "at": "2026-08-29T19:41:18.251Z",
+  "revisions": 10,
   "history": [
     {
       "at": "2026-08-29T19:38:47.117Z",
@@ -107,6 +107,17 @@
       "scene": 1,
       "caption": 5,
       "comment": "seating placement is"
+    },
+    {
+      "at": "2026-08-29T19:41:15.751Z",
+      "characters": {
+        "abby": 2,
+        "mango": 3,
+        "drew": 3
+      },
+      "scene": 1,
+      "caption": 5,
+      "comment": "seating placement is o"
     }
   ]
 }
