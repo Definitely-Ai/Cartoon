@@ -8,21 +8,10 @@
   },
   "scene": 2,
   "caption": 2,
-  "comment": "Dre w's left shoulder is jamed into the bar.  Mango appears to be sitting on the bar",
-  "at": "2026-08-29T19:17:53.383Z",
-  "revisions": 21,
+  "comment": "Dre w's left shoulder is jamed into the bar.  Mango appears to be sitting on the bar.",
+  "at": "2026-08-29T19:17:57.000Z",
+  "revisions": 22,
   "history": [
-    {
-      "at": "2026-08-29T19:16:25.137Z",
-      "characters": {
-        "drew": 2,
-        "mango": 2,
-        "abby": 2
-      },
-      "scene": 2,
-      "caption": 2,
-      "comment": "Drew's left should"
-    },
     {
       "at": "2026-08-29T19:16:50.665Z",
       "characters": {
@@ -121,6 +110,17 @@
       "scene": 2,
       "caption": 2,
       "comment": "Dre w's left shoulder is jamed into the bar.  Mango appears to be"
+    },
+    {
+      "at": "2026-08-29T19:17:53.383Z",
+      "characters": {
+        "drew": 2,
+        "mango": 2,
+        "abby": 2
+      },
+      "scene": 2,
+      "caption": 2,
+      "comment": "Dre w's left shoulder is jamed into the bar.  Mango appears to be sitting on the bar"
     }
   ]
 }
