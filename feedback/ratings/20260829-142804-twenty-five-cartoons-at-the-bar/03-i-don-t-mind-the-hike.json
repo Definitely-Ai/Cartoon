@@ -7,20 +7,10 @@
   },
   "scene": 2,
   "caption": 2,
-  "comment": "Not funny.  The chalk board line is not appropriate for this bar",
-  "at": "2026-08-29T19:32:57.933Z",
-  "revisions": 15,
+  "comment": "Not funny.  The chalk board line is not appropriate for this  bar, it",
+  "at": "2026-08-29T19:33:06.051Z",
+  "revisions": 16,
   "history": [
-    {
-      "at": "2026-08-29T19:30:51.301Z",
-      "characters": {
-        "drew": 5,
-        "mango": 3
-      },
-      "scene": 2,
-      "caption": 2,
-      "comment": "Not funny"
-    },
     {
       "at": "2026-08-29T19:30:59.451Z",
       "characters": {
@@ -110,6 +100,16 @@
       "scene": 2,
       "caption": 2,
       "comment": "Not funny.  The chalk board line is not appropriate"
+    },
+    {
+      "at": "2026-08-29T19:32:57.933Z",
+      "characters": {
+        "drew": 5,
+        "mango": 3
+      },
+      "scene": 2,
+      "caption": 2,
+      "comment": "Not funny.  The chalk board line is not appropriate for this bar"
     }
   ]
 }
