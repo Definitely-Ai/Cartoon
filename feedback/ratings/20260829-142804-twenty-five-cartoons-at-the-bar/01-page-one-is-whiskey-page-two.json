@@ -8,21 +8,10 @@
   },
   "scene": 2,
   "caption": 2,
-  "comment": "Dre w's left shoulder is jamed into the bar.  Mango appears to be sitting on the bar.  Abby looks sad, she does not need to smile always, however anuetra",
-  "at": "2026-08-29T19:18:56.962Z",
-  "revisions": 30,
+  "comment": "Dre w's left shoulder is jamed into the bar.  Mango appears to be sitting on the bar.  Abby looks sad, she does not need to smile always, however a",
+  "at": "2026-08-29T19:19:01.914Z",
+  "revisions": 31,
   "history": [
-    {
-      "at": "2026-08-29T19:17:43.505Z",
-      "characters": {
-        "drew": 2,
-        "mango": 2,
-        "abby": 2
-      },
-      "scene": 2,
-      "caption": 2,
-      "comment": "Dre w's left shoulder is jamed into the bar.  Mango appears to be"
-    },
     {
       "at": "2026-08-29T19:17:53.383Z",
       "characters": {
@@ -121,6 +110,17 @@
       "scene": 2,
       "caption": 2,
       "comment": "Dre w's left shoulder is jamed into the bar.  Mango appears to be sitting on the bar.  Abby looks sad, she does not need to smile always, however"
+    },
+    {
+      "at": "2026-08-29T19:18:56.962Z",
+      "characters": {
+        "drew": 2,
+        "mango": 2,
+        "abby": 2
+      },
+      "scene": 2,
+      "caption": 2,
+      "comment": "Dre w's left shoulder is jamed into the bar.  Mango appears to be sitting on the bar.  Abby looks sad, she does not need to smile always, however anuetra"
     }
   ]
 }
