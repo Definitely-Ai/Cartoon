@@ -3,14 +3,14 @@
   "panel": "05-i-hold-the-stocks-someone-else.png",
   "characters": {
     "abby": 2,
-    "mango": 2,
+    "mango": 3,
     "drew": 3
   },
   "scene": null,
   "caption": null,
   "comment": "",
-  "at": "2026-08-29T19:39:05.129Z",
-  "revisions": 3,
+  "at": "2026-08-29T19:39:06.641Z",
+  "revisions": 4,
   "history": [
     {
       "at": "2026-08-29T19:38:47.117Z",
@@ -37,6 +37,17 @@
         "abby": 2,
         "mango": 2,
         "drew": 2
+      },
+      "scene": null,
+      "caption": null,
+      "comment": ""
+    },
+    {
+      "at": "2026-08-29T19:39:05.129Z",
+      "characters": {
+        "abby": 2,
+        "mango": 2,
+        "drew": 3
       },
       "scene": null,
       "caption": null,
