@@ -166,7 +166,10 @@ const SET_PLATE_PROMPT =
   "nothing but a folded bar towel at one end and a small empty nut bowl at centre — no glasses, no drinks.\n" +
   "2. THE BACK BAR — a run of handsome walnut back-bar shelving with a MIRROR behind it, carrying rows of " +
   "liquor bottles, each bottle a distinct shape, their labels drawn as plain blank rectangles with NO " +
-  "lettering on them, and rows of hanging stemware above.\n" +
+  "lettering on them, and rows of hanging stemware above. THE SHELVES START HIGH: the lowest bottle shelf " +
+  "sits above a standing bartender's shoulder height, and below it is plain fielded walnut panelling all " +
+  "the way down — NO ledge, NO work top, NO counter-height surface of any kind behind the bar, and no " +
+  "bottle standing at waist height. The patron counter is the ONLY counter in the picture.\n" +
   "3. THE TELEVISION — centre, HIGH ON THE WALL ABOVE THE BACK BAR, a modern wall-mounted FLAT-SCREEN with a " +
   "NARROW black bezel; a television, not a picture frame. ITS SCREEN IS COMPLETELY BLANK: an empty pale " +
   "rectangle, no picture, no headline band, no letters, no marks, and no badge or nameplate on its frame.\n" +

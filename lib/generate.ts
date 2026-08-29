@@ -126,11 +126,11 @@ const VISION_REFS: Record<string, Tile[]> = {
     {
       path: "canon/vision/abby-face-reference.jpg",
       label:
-        "Abby, the lady who owns and tends the bar. COPY THIS FACE EXACTLY AS DRAWN — the round soft head, " +
-        "the big black nose sitting close under the eyes with no long muzzle, the tiny closed smile, and " +
-        "THESE EYES just as they are here. ONE CORRECTION ONLY: below her jaw this tile shows shaggy fur in " +
-        "the open collar, and the panel does NOT copy that — her throat and the V of her blouse are SMOOTH " +
-        "short fur reading as skin",
+        "Abby, the lady who owns and tends the bar. COPY THIS FACE'S SHAPE EXACTLY — the round soft head, " +
+        "the big black nose sitting close under the eyes with no long muzzle, the tiny closed smile. TWO " +
+        "UPGRADES ON THE TILE: her EYES are drawn more glamorous than these — lidded, heavy swept lashes, a " +
+        "bright catchlight, a warm knowing look — and below her jaw the shaggy fur is NOT copied: the V of " +
+        "her blouse opens on smooth skin with the soft curve of her cleavage showing",
     },
   ],
 };
