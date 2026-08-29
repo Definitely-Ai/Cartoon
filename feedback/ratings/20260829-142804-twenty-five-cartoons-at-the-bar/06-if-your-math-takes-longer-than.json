@@ -8,9 +8,9 @@
   },
   "scene": 2,
   "caption": null,
-  "comment": "I cannot",
-  "at": "2026-08-29T19:45:27.185Z",
-  "revisions": 5,
+  "comment": "I cannot read the note",
+  "at": "2026-08-29T19:45:35.845Z",
+  "revisions": 6,
   "history": [
     {
       "at": "2026-08-29T19:43:35.880Z",
@@ -63,6 +63,17 @@
       "scene": 2,
       "caption": null,
       "comment": ""
+    },
+    {
+      "at": "2026-08-29T19:45:27.185Z",
+      "characters": {
+        "drew": 6,
+        "mango": 6,
+        "abby": 5
+      },
+      "scene": 2,
+      "caption": null,
+      "comment": "I cannot"
     }
   ]
 }
