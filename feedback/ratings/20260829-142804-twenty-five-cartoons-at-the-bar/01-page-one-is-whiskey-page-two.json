@@ -8,21 +8,10 @@
   },
   "scene": 2,
   "caption": 2,
-  "comment": "Drew's left shoulder is jamed",
-  "at": "2026-08-29T19:17:00.123Z",
-  "revisions": 14,
+  "comment": "Drew's left shoulder is jamed into the bar",
+  "at": "2026-08-29T19:17:08.510Z",
+  "revisions": 15,
   "history": [
-    {
-      "at": "2026-08-29T19:15:17.937Z",
-      "characters": {
-        "drew": 2,
-        "mango": 2,
-        "abby": 2
-      },
-      "scene": 2,
-      "caption": 2,
-      "comment": ""
-    },
     {
       "at": "2026-08-29T19:15:39.603Z",
       "characters": {
@@ -121,6 +110,17 @@
       "scene": 2,
       "caption": 2,
       "comment": "Drew's left shoulder is"
+    },
+    {
+      "at": "2026-08-29T19:17:00.123Z",
+      "characters": {
+        "drew": 2,
+        "mango": 2,
+        "abby": 2
+      },
+      "scene": 2,
+      "caption": 2,
+      "comment": "Drew's left shoulder is jamed"
     }
   ]
 }
