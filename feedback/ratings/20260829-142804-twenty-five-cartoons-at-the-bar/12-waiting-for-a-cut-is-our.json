@@ -3,18 +3,29 @@
   "panel": "12-waiting-for-a-cut-is-our.png",
   "characters": {
     "drew": 6,
-    "mango": 6
+    "mango": 6,
+    "abby": 4
   },
   "scene": null,
   "caption": null,
   "comment": "",
-  "at": "2026-08-29T21:02:01.222Z",
-  "revisions": 1,
+  "at": "2026-08-29T21:02:10.159Z",
+  "revisions": 2,
   "history": [
     {
       "at": "2026-08-29T21:01:57.060Z",
       "characters": {
         "drew": 6
+      },
+      "scene": null,
+      "caption": null,
+      "comment": ""
+    },
+    {
+      "at": "2026-08-29T21:02:01.222Z",
+      "characters": {
+        "drew": 6,
+        "mango": 6
       },
       "scene": null,
       "caption": null,
