@@ -7,20 +7,10 @@
   },
   "scene": 1,
   "caption": 2,
-  "comment": "Mango's placement at the bar looks odd.  All the bottles on the back bar look the samdifferent e, and they are empty, different bottles should have",
-  "at": "2026-08-29T19:27:41.149Z",
-  "revisions": 17,
+  "comment": "Mango's placement at the bar looks odd.  All the bottles on the back bar look the same, and they are empty, different bottles should have",
+  "at": "2026-08-29T19:27:46.885Z",
+  "revisions": 18,
   "history": [
-    {
-      "at": "2026-08-29T19:26:21.592Z",
-      "characters": {
-        "drew": 5,
-        "mango": 5
-      },
-      "scene": 1,
-      "caption": 2,
-      "comment": "Mango's placement at the bar looks odd.  All the bottles on the"
-    },
     {
       "at": "2026-08-29T19:26:32.957Z",
       "characters": {
@@ -110,6 +100,16 @@
       "scene": 1,
       "caption": 2,
       "comment": "Mango's placement at the bar looks odd.  All the bottles on the back bar look the same, and they are empty, different bottles should have"
+    },
+    {
+      "at": "2026-08-29T19:27:41.149Z",
+      "characters": {
+        "drew": 5,
+        "mango": 5
+      },
+      "scene": 1,
+      "caption": 2,
+      "comment": "Mango's placement at the bar looks odd.  All the bottles on the back bar look the samdifferent e, and they are empty, different bottles should have"
     }
   ]
 }
