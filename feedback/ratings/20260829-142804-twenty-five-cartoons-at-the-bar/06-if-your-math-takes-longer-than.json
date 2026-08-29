@@ -8,21 +8,10 @@
   },
   "scene": 2,
   "caption": null,
-  "comment": "I cannot read the note pad on the bar.  TV picture is weird, chalk board line needs improvement",
-  "at": "2026-08-29T19:48:14.504Z",
-  "revisions": 16,
+  "comment": "I cannot read the note pad on the bar.  TV picture is weird, chalk board line needs improvement.",
+  "at": "2026-08-29T19:48:16.841Z",
+  "revisions": 17,
   "history": [
-    {
-      "at": "2026-08-29T19:45:35.845Z",
-      "characters": {
-        "drew": 6,
-        "mango": 6,
-        "abby": 5
-      },
-      "scene": 2,
-      "caption": null,
-      "comment": "I cannot read the note"
-    },
     {
       "at": "2026-08-29T19:45:43.175Z",
       "characters": {
@@ -121,6 +110,17 @@
       "scene": 2,
       "caption": null,
       "comment": "I cannot read the note pad on the bar.  TV picture is weird, chalk board line needs"
+    },
+    {
+      "at": "2026-08-29T19:48:14.504Z",
+      "characters": {
+        "drew": 6,
+        "mango": 6,
+        "abby": 5
+      },
+      "scene": 2,
+      "caption": null,
+      "comment": "I cannot read the note pad on the bar.  TV picture is weird, chalk board line needs improvement"
     }
   ]
 }
