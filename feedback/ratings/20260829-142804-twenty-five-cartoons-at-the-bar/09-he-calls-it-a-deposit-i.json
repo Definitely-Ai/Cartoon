@@ -7,20 +7,10 @@
   },
   "scene": 1,
   "caption": 1,
-  "comment": "I do not understand the joke with the keys.  the placement of the characters is wrong",
-  "at": "2026-08-29T20:49:34.708Z",
-  "revisions": 25,
+  "comment": "I do not understand the joke with the keys.  the placement of the characters is wrong, they are not seated at the bar",
+  "at": "2026-08-29T20:49:54.131Z",
+  "revisions": 26,
   "history": [
-    {
-      "at": "2026-08-29T20:47:47.810Z",
-      "characters": {
-        "drew": 5,
-        "mango": 5
-      },
-      "scene": 1,
-      "caption": 1,
-      "comment": "I do not understand the joke with the keys."
-    },
     {
       "at": "2026-08-29T20:48:07.956Z",
       "characters": {
@@ -110,6 +100,16 @@
       "scene": 1,
       "caption": 1,
       "comment": "I do not understand the joke with the keys.  the placement of the characters"
+    },
+    {
+      "at": "2026-08-29T20:49:34.708Z",
+      "characters": {
+        "drew": 5,
+        "mango": 5
+      },
+      "scene": 1,
+      "caption": 1,
+      "comment": "I do not understand the joke with the keys.  the placement of the characters is wrong"
     }
   ]
 }
