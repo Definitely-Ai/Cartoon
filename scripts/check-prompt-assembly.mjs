@@ -160,6 +160,41 @@ check("the room comes along only when the scene is in the bar", () => {
   assert.match(away, /two-thwart fishing boat/);
 });
 
+check("every bar-only marker still matches a paragraph in canon", () => {
+  // THE FAILURE THIS EXISTS TO CATCH. lib/generate.ts decides what stays home
+  // for an away game by matching the OPENING WORDS of a paragraph — "THE ROOM.",
+  // "THE STAGE.", "The TV and the chalkboard are OPTIONAL". Those words are load-
+  // bearing structure, and nothing in the canon file says so.
+  //
+  // A compression pass rewrote two of them in a way that read as pure tidying:
+  // "THE STAGE. The staging is physically real." became "THE STAGE is physically
+  // real.", and "The TV and the chalkboard are OPTIONAL" lost its "The". Both
+  // markers stopped matching, so the bar's stage and the whole television
+  // paragraph silently started travelling to boats and golf courses — the exact
+  // bug that once shipped ten paid drawings told to render a fairway and a
+  // barroom at once.
+  //
+  // A marker that no longer matches must fail here, by name, rather than being
+  // inferred three checks later from a stray mention of marble.
+  const source = fs.readFileSync(path.join(repoRoot, "lib", "generate.ts"), "utf8");
+  const list = source.slice(
+    source.indexOf("const BAR_ONLY_PARAGRAPHS = ["),
+    source.indexOf("];", source.indexOf("const BAR_ONLY_PARAGRAPHS = ["))
+  );
+  const markers = [...list.matchAll(/"((?:[^"\\]|\\.)*)"/g)].map((m) => m[1]);
+  assert.ok(markers.length > 0, "could not read BAR_ONLY_PARAGRAPHS out of lib/generate.ts");
+
+  const fenced = master.split("```");
+  const block = fenced[1] ?? "";
+  const unmatched = markers.filter((marker) => !block.includes(marker));
+  assert.deepEqual(
+    unmatched,
+    [],
+    `these markers no longer match any paragraph in canon, so those paragraphs now ` +
+      `travel to away games: ${unmatched.join(" | ")}`
+  );
+});
+
 check("no barroom furniture travels to an away game on the house path", () => {
   // The check above tests the FINE-TUNED path, which never had this bug. The
   // path production actually draws with is the multi-reference one, and it
