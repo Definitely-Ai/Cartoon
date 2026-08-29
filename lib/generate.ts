@@ -341,6 +341,13 @@ export function referenceList(
   if (barScene && list.length < LIMIT) {
     list.push({
       path: "canon/vision/staging-plate.jpg",
+      // Cropped to the left of the frame ON PURPOSE: the full shot has Mango in
+      // one-eyed profile at the right, and no label survives contact with a
+      // picture that disagrees with it — every batch drawn with the full plate
+      // came back with a one-eyed Mango. The crop keeps what the tile is FOR
+      // (the counter, the depth, the back bar, the patron side) and cuts the
+      // head angle it must not teach.
+      box: [0, 0, 640, 1280],
       label:
         "THE HOUSE SHOT — a finished cartoon of this same bar, attached for its GEOMETRY AND ITS BLOCKING " +
         "ONLY. Copy from it: the ONE marble counter and the fact that there is only one, crossing the middle " +
