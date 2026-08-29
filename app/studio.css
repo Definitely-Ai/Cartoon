@@ -102,6 +102,15 @@
   border-bottom-color: var(--br-paper);
 }
 
+/* Where he is now. A thicker rule as well as brighter ink: on a washed-out
+   screen, or to eyes that don't sort colours, weight is the only difference
+   that still reads. */
+.br-nav a[aria-current="page"],
+.br-staff-links a[aria-current="page"] {
+  border-bottom: 3px solid var(--br-paper);
+  padding-bottom: 0.1rem;
+}
+
 .br-nav-count {
   font-family: var(--br-chalk);
   text-transform: none;
@@ -579,11 +588,15 @@
   border-color: var(--br-paper);
 }
 
+/* Wraps: the tally line is long ("2 requests · 7 cartoons · rated 3/7 ·
+   landed 2 · ★ 1") and, held on one line beside the date, it pushed the day
+   card off the side of a phone. */
 .br-ledger-head {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: baseline;
-  gap: 1rem;
+  gap: 0.35rem 1rem;
   margin-bottom: 0.7rem;
 }
 
@@ -597,7 +610,7 @@
 .br-chip {
   font-family: var(--br-chalk);
   font-size: 0.95rem;
-  white-space: nowrap;
+  line-height: 1.4;
 }
 
 .br-chip-ran {
@@ -1024,3 +1037,135 @@
 }
 
 
+
+/* ------------------------------------------------ 11. The paper pages */
+
+/* Half this site is the dark room; the other half — the Cast, a character's
+   bible, the Registry, the Review — is a sheet of paper laid on the table.
+   Each of those pages used to carry its own copy of the sheet, and they had
+   drifted: four different page paddings, four heading sizes, and none of them
+   shrank on a phone. The sheet is defined once here; a page sets only its own
+   measure. */
+
+.paper-sheet {
+  max-width: 68rem;
+  margin: 24px auto 48px;
+  padding: 24px 30px 72px;
+  color: #221d16;
+  background: #fdfbf6;
+  border-radius: 8px;
+  box-shadow: 0 2px 18px rgba(0, 0, 0, 0.35);
+  /* The room sets the focus ring to paper-white; on paper that ring is
+     invisible, so it gets its ink back here. */
+  --focus-ink: #221d16;
+}
+
+/* The line above the title — the paper's version of a section slug. */
+.paper-eyebrow {
+  font-family: var(--br-serif);
+  letter-spacing: 3px;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #8a7f6d;
+  margin: 0;
+}
+
+/* One heading scale for every paper page. Fixed at 44px it filled three
+   lines of a phone before the reader reached anything worth reading. */
+.paper-title {
+  font-family: var(--br-serif);
+  font-size: clamp(1.95rem, 6vw, 2.75rem);
+  line-height: 1.15;
+  letter-spacing: 0.5px;
+  margin: 8px 0 0;
+}
+
+.paper-lede {
+  font-family: var(--br-serif);
+  font-style: italic;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  color: #5a5145;
+  /* Prose stops being readable much past this; the sheet is wider than the
+     column of words it holds. */
+  max-width: 62ch;
+  margin: 10px 0 0;
+}
+
+.paper-h2 {
+  font-family: var(--br-serif);
+  font-size: clamp(1.5rem, 4vw, 1.8rem);
+  line-height: 1.25;
+  border-bottom: 2px solid #1a1a1a;
+  padding-bottom: 8px;
+  margin: 0;
+}
+
+.paper-h2 .paper-count {
+  font-size: 0.6em;
+  color: #8a7f6d;
+}
+
+/* A link that acts as a button: a thumb needs the whole target, not the
+   words. */
+.paper-btn {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-family: var(--br-serif);
+  font-size: 15px;
+  padding: 8px 18px;
+  border-radius: 4px;
+  border: 1px solid #221d16;
+  background: #221d16;
+  color: #fdfbf6;
+  text-decoration: none;
+}
+
+.paper-btn-quiet {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 8px 12px;
+  font-family: var(--br-serif);
+  font-size: 15px;
+  color: #6b6153;
+  text-decoration-color: #b9b0a0;
+}
+
+@media (max-width: 700px) {
+  .paper-sheet {
+    margin: 12px auto 32px;
+    padding: 18px 16px 56px;
+    border-radius: 6px;
+  }
+}
+
+/* --------------------------------------------------------- 12. Print */
+
+/* Anything printed from the studio prints as paper. The room's chrome is
+   white type on near-black: on a sheet it comes out as an empty band with
+   invisible navigation in it, and the bible pages exist to be printed. */
+@media print {
+  .backroom {
+    background: #fff !important;
+    color: #000 !important;
+    min-height: 0;
+  }
+
+  .br-head,
+  .br-staff-links,
+  .br-foot,
+  .print-hide {
+    display: none !important;
+  }
+
+  .paper-sheet {
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #fff !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+}

@@ -10,9 +10,10 @@ import DayBoard from "../../DayBoard";
 
 export const dynamic = "force-dynamic";
 
+// The tab said "2026-08-29 · The Swinging Door". He reads dates, not stamps.
 export async function generateMetadata({ params }: { params: Promise<{ day: string }> }) {
   const { day } = await params;
-  return { title: day };
+  return { title: /^\d{4}-\d{2}-\d{2}$/.test(day) ? formatDateAP(day) : "A day" };
 }
 
 export default async function StudioDayPage({ params }: { params: Promise<{ day: string }> }) {
@@ -21,7 +22,9 @@ export default async function StudioDayPage({ params }: { params: Promise<{ day:
   const table = await getStudioDay(day).catch(() => null);
   if (!table) notFound();
 
-  const days = await getStudioDays();
+  // The prev/next links are a courtesy; the day itself is the page. A second
+  // call that fails must not take the cartoons down with it.
+  const days = await getStudioDays().catch(() => [] as string[]);
   const index = days.indexOf(day);
   const newer = index > 0 ? days[index - 1] : undefined;
   const older = index >= 0 && index < days.length - 1 ? days[index + 1] : undefined;
