@@ -288,10 +288,11 @@ const STUDIES: Record<string, string> = {
     "A CLOSE PORTRAIT STUDY of Abby alone, HEAD AND SHOULDERS ONLY, filling the sheet — the top " +
     "of her head near the top edge and the frame cutting her at the collarbone. Her head is in " +
     "THREE-QUARTER view, turned slightly to her right and tipped a little down, her chin lifted " +
-    "just enough to read as composed and self-possessed. HER FACE IS EXACTLY THE FACE OF HER EXISTING STUDY: a small fluffy " +
-    "show-groomed head, ROUND AND SOFT, with a SHORT square muzzle buried in the fluff of her cheeks and " +
-    "the small black nose sitting CLOSE under her eyes — NO long snout, nothing sharp or foxish anywhere. " +
-    "Her face reads soft, pretty, warm and unmistakably FEMININE. " +
+    "just enough to read as composed and self-possessed. HER FACE SHAPE IS EXACTLY THE ATTACHED PORTRAIT'S: " +
+    "a small fluffy show-groomed head, ROUND AND SOFT, the big black nose sitting CLOSE under her eyes — NO " +
+    "muzzle, nothing sharp or foxish anywhere. Keep that shape identically. WHAT THIS STUDY EXISTS TO PERFECT " +
+    "IS THE EYES, AND THEY ARE NOT THE ATTACHED PORTRAIT'S BUTTON EYES: draw them as HUMAN-ATTRACTIVE eyes — " +
+    "the kind a reader finds beautiful in a woman's face — set into her dog face. " +
     "Her gaze goes off to the side of the " +
     "frame, level and unhurried, at something in her own room — SHE IS NOT LOOKING AT THE READER " +
     "and her eyes are not centred on the lens. THE EYES ARE THE SUBJECT OF THIS DRAWING and are " +

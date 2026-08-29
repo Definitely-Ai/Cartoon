@@ -66,71 +66,38 @@ type Tile = { path: string; box?: [number, number, number, number]; label?: stri
 // bill — that occupies about a thirtieth of a full-figure tile. A reference
 // can only teach what the model can resolve in it.
 const VISION_REFS: Record<string, Tile[]> = {
-  // Plate 1's bar Drew, cut at NATIVE resolution. Two tiles preceded it and
-  // both taught the fault: plate 3's Drew is the only one of the eight in the
-  // plates drawn with the bill GAPED OPEN, and plate 4's ends in a curved
-  // black HOOK — which is what the renders kept amplifying into a talon. This
-  // one is the only Drew whose black stays short and smooth rather than
-  // hooking, and the only
-  // one wearing the sweater vest. Its predecessor was also a 2.94x upscale of
-  // a 300px region: mean pixel gradient 3.41 against the plates' 7-8, i.e. the
-  // model was being shown a smear. This is 380px of real linework, unenlarged.
+  // ONE SOURCE OF TRUTH. Every character's generation reference IS the portrait
+  // the cast page shows — the same file, byte for byte. The founder's rule,
+  // after a day of chasing drift: the cartoons must never generate something
+  // different from the cast. When a portrait is approved and lands in
+  // canon/vision/studies/, the pipeline follows it automatically; there is no
+  // second set of reference images to fall out of step.
   drew: [
     {
-      path: "canon/vision/drew-plate1-bar-reference.jpg",
+      path: "canon/vision/studies/drew.png",
       label:
-        "Drew, the white-plumed flamingo gentleman in the black bow tie and knitted sweater vest. LOOK AT HIS " +
-        "TWO ARMS: each one ends in a HAND — soft downy plumage over four fingers and an opposed thumb, blunt " +
-        "at the tips, no nail and no claw on any of them — and NEITHER arm is a folded wing. He has no long " +
-        "hanging flight feathers down his sides and nothing drapes past his belt. Copy these arms and these " +
-        "hands. The pale rectangle he holds is a blank card",
-    },
-    {
-      path: "canon/vision/drew-hands-reference.jpg",
-      label:
-        "THE SAME BIRD from the neck down — copy his ARMS AND HANDS from here: each ends in a hand of four " +
-        "fingers and a thumb, plumage to every blunt tip, no claws, no wingtips. Also his bow tie, collar and " +
-        "vest. Cropped below the head on purpose — it says nothing about his bill. Not a second character",
-    },
-    {
-      path: "canon/vision/drew-plate1-head-study.jpg",
-      label:
-        "a close study of THE SAME BIRD's head — copy this bill and this nostril EXACTLY. The bill is slender, " +
-        "tucked to the face and dropping steeply, the rear two thirds pale; along the outer third the black IS " +
-        "the outline, continuing the bill's own curve smoothly to a ROUNDED TIP, never hooking or hanging " +
-        "below the line the pale bill was travelling on, with one bright highlight inside it. The NOSTRIL is a " +
-        "plain thin slit with NO outline or ring around it. There is no shelf or ridge over the eye. The soft " +
-        "pale patch below the bill is empty background, not an object. This tile is not a second character",
+        "Drew, exactly as the studio's official portrait — copy THIS bird identically: the bill, the black " +
+        "bow tie, the knitted sweater vest, and the feathered hands with four fingers and a thumb and no " +
+        "claws. The cartoon's Drew must be indistinguishable from this one",
     },
   ],
-  // FACE FIRST. The face tile used to ride second, and in a three-hander the
-  // board filled before it boarded — which is exactly the batch where Mango
-  // kept losing an eye to profile. His face IS his identity; it goes first.
   mango: [
     {
-      path: "canon/vision/mango-face-reference.jpg",
+      path: "canon/vision/studies/mango.png",
       label:
-        "Mango, the golden retriever gentleman — COPY THIS FACE: both eyes on the paper with the muzzle " +
-        "bridge between them, worry in the brows only, mouth up in a closed-lip smile, and two clawless " +
-        "fur-backed hands",
-    },
-    {
-      path: "canon/vision/mango-reference.jpg",
-      box: [950, 1400, 1900, 1950],
-      label:
-        "THE SAME DOG from further back — his layered coat in fine strokes, his build, the dark jacket and " +
-        "flag pin. Not a second character",
+        "Mango, exactly as the studio's official portrait — copy THIS dog identically: both eyes on the " +
+        "paper, the closed mouth, the flag pin on his left lapel, the wristwatch, the fur-backed clawless " +
+        "hands. The cartoon's Mango must be indistinguishable from this one",
     },
   ],
   abby: [
     {
-      path: "canon/vision/abby-face-reference.jpg",
+      path: "canon/vision/studies/abby.png",
       label:
-        "Abby, the lady who owns and tends the bar. COPY THIS FACE'S SHAPE EXACTLY — the round soft head, " +
-        "the big black nose sitting close under the eyes with no long muzzle, the tiny closed smile. TWO " +
-        "UPGRADES ON THE TILE: her EYES are drawn more glamorous than these — lidded, heavy swept lashes, a " +
-        "bright catchlight, a warm knowing look — and below her jaw the shaggy fur is NOT copied: the V of " +
-        "her blouse opens on smooth skin with the soft curve of her cleavage showing",
+        "Abby, exactly as the studio's official portrait — copy THIS lady identically: the round soft head " +
+        "with the big black nose close under the eyes and no muzzle, the glamorous lidded eyes, the smooth " +
+        "open neckline, the studded collar with its gem, the towel. The cartoon's Abby must be " +
+        "indistinguishable from this one",
     },
   ],
 };
