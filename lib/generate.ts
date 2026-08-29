@@ -103,25 +103,33 @@ const VISION_REFS: Record<string, Tile[]> = {
         "pale patch below the bill is empty background, not an object. This tile is not a second character",
     },
   ],
+  // FACE FIRST. The face tile used to ride second, and in a three-hander the
+  // board filled before it boarded — which is exactly the batch where Mango
+  // kept losing an eye to profile. His face IS his identity; it goes first.
   mango: [
-    { path: "canon/vision/mango-reference.jpg", box: [950, 1400, 1900, 1950] },
     {
       path: "canon/vision/mango-face-reference.jpg",
       label:
-        "THE SAME DOG, closer — copy this face and these hands: both eyes on the paper with the muzzle bridge " +
-        "between them, worry in the brows only, mouth up in a closed-lip smile, and two clawless fur-backed " +
-        "hands. Not a second character",
+        "Mango, the golden retriever gentleman — COPY THIS FACE: both eyes on the paper with the muzzle " +
+        "bridge between them, worry in the brows only, mouth up in a closed-lip smile, and two clawless " +
+        "fur-backed hands",
+    },
+    {
+      path: "canon/vision/mango-reference.jpg",
+      box: [950, 1400, 1900, 1950],
+      label:
+        "THE SAME DOG from further back — his layered coat in fine strokes, his build, the dark jacket and " +
+        "flag pin. Not a second character",
     },
   ],
   abby: [
     {
       path: "canon/vision/abby-face-reference.jpg",
       label:
-        "Abby, the terrier who owns and tends the bar. COPY THESE EYES EXACTLY — white showing both sides of a " +
-        "drawn iris, a smaller round pupil, one catchlight, lashed upper lid. Copy her closed-lip half-smile, " +
-        "her gaze going past the reader, and her sleek throat with no ruff. DO NOT COPY THE LENGTH OF HER " +
-        "MUZZLE FROM THIS TILE — it is drawn too short here. Take the snout from the description instead: a " +
-        "long blunt terrier snout, eye corner to nose tip one and a half to two eye-widths",
+        "Abby, the lady who owns and tends the bar. COPY THIS FACE EXACTLY AS DRAWN — the short muzzle " +
+        "buried in the fluff of her cheeks, the round soft feminine head, and THESE EYES: white showing both " +
+        "sides of a drawn iris, a smaller round pupil, one catchlight, lashed upper lid. Copy her closed-lip " +
+        "half-smile, her gaze going past the reader, and her sleek smooth throat with no ruff",
     },
   ],
 };
@@ -305,8 +313,22 @@ export function referenceList(
     }
   }
   // Hold the extras back until the set plate has had its chance at a slot.
+  // Extras board ROUND-ROBIN by character, not in cast order: with three
+  // characters and a six-image budget, cast-order spending gave Drew his second
+  // and third tiles while Mango's face tile — the one that teaches both eyes —
+  // never boarded at all, and every trio came back with a one-eyed Mango.
   const spendExtras = () => {
-    while (extras.length > 0 && list.length < LIMIT) list.push(extras.shift()!);
+    while (extras.length > 0 && list.length < LIMIT) {
+      const seen = new Set<string>();
+      for (let i = 0; i < extras.length && list.length < LIMIT; ) {
+        const owner = extras[i].path;
+        const key = characters.find((c) => (VISION_REFS[c.toLowerCase()] ?? []).some((r) => r.path === owner)) ?? owner;
+        if (seen.has(key)) { i++; continue; }
+        seen.add(key);
+        list.push(extras.splice(i, 1)[0] as (typeof list)[number]);
+      }
+      if (seen.size === 0) break;
+    }
   };
   // THE SET. Eighty percent of the strip happens in one bar, and a room
   // described in words is a different bar every generation — the same lesson
@@ -330,7 +352,9 @@ export function referenceList(
         "front of them, the bartender beyond it with the counter crossing her at the waist and her head " +
         "higher in the frame than theirs. DO NOT COPY its faces, its poses, its drinks, its bottle labels, " +
         "its chalkboard line, its headline or any of its lettering — this cartoon has its own. Take the room " +
-        "and the blocking; leave everything else",
+        "and the blocking; leave everything else. TWO MORE THINGS FROM THIS TILE: the marble the drinks stand " +
+        "on is the SAME marble the gentlemen sit at — one slab, no second ledge at any other height — and DO " +
+        "NOT COPY ITS HEAD ANGLES: in this cartoon Mango shows BOTH EYES",
     });
   }
   spendExtras();
