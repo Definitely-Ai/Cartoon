@@ -15,7 +15,7 @@ export default function DayBoard({ day }: { day: StudioDay }) {
   const remaining = day.cartoonCount - day.ratedCount;
 
   return (
-    <section className="br-table" aria-label={`Cartoons of ${day.day}`}>
+    <section className="br-table" aria-label={`Cartoons of ${formatDateline(day.day)}`}>
       <div className="br-table-head">
         <h1 className="br-date">{formatDateline(day.day)}</h1>
         <p className="br-howto">
@@ -46,10 +46,13 @@ export default function DayBoard({ day }: { day: StudioDay }) {
       {day.batches.map((batch) => (
         <div key={batch.id} className="br-batch">
           <header className="br-batch-head">
-            <p className="br-batch-ask">
+            {/* A real heading, not a styled paragraph: on a day with three
+                requests this is the only structure the page has, and a screen
+                reader had nothing to jump between. */}
+            <h2 className="br-batch-ask">
               <span className="br-batch-label">You asked</span>
               &ldquo;{batch.request}&rdquo;
-            </p>
+            </h2>
             <p className="br-batch-meta">
               {formatTimeET(batch.createdAt)}
               {batch.topic ? ` · ${batch.topic}` : ""} · {batch.cartoons.length} cartoon

@@ -287,7 +287,7 @@ const STUDIES: Record<string, string> = {
     "straight ridge from brow to nose. COUNT IT BEFORE YOU DRAW THE NOSE: the gap from the inner corner " +
     "of her eye to the tip of her nose is AT LEAST ONE AND A HALF AND AT MOST TWO TIMES THE WIDTH OF ONE " +
     "EYE, and at this three-quarter angle the nose sits FORWARD of the line of her cheek fur so a real " +
-    "snout shows in silhouette against the background. It is a TERRIER'S snout: HER SKULL STAYS BROAD, " +
+    "snout shows in silhouette against the background. It is a SOFT FLUFFY WESTIE MUZZLE: HER SKULL STAYS BROAD, " +
     "SOFT AND ROUNDED and the muzzle stays SHORTER THAN THE SKULL — a broad rounded head with a blunt " +
     "snout set on the front of it, never a narrow head with a long wedge tapering off it. The fur ON the " +
     "muzzle is SHORT and lies flat while the cheeks and brow stay long and fluffy, so the snout's shape " +

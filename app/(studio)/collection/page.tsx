@@ -94,9 +94,15 @@ export default async function CollectionPage() {
                           key={c.id}
                           className={`br-ledger-thumb${c.keeper ? " br-ledger-thumb-ran" : ""}`}
                         >
+                          {/* The cartoon's own title says what the picture is;
+                              "Cartoon 3" says only where it sat in the row. */}
                           <Image
                             src={c.src}
-                            alt={`Cartoon ${c.n} of ${formatDateAP(day.day)}`}
+                            alt={
+                              c.title
+                                ? `${c.title} — ${formatDateAP(day.day)}`
+                                : `Cartoon ${c.n} of ${formatDateAP(day.day)}`
+                            }
                             width={c.width}
                             height={c.height}
                             sizes="18vw"

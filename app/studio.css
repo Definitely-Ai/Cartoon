@@ -828,6 +828,9 @@
 
 .br-batch-ask {
   font-family: var(--br-chalk);
+  /* It is an h2 for structure, not for weight — the chalk face has one
+     weight, and the browser's synthetic bold on it is a smear. */
+  font-weight: 400;
   font-size: 1.3rem;
   line-height: 1.4;
   max-width: 30rem;

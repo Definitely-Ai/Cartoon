@@ -485,7 +485,7 @@ export default function RegistryPage() {
     [
       "Finished panels",
       <span key="p">
-        {panelCount} — {retired.length} in the retired set, {drawnCount} in the current batches
+        {panelCount} — {retired.length} in the retired set, {drawnCount} in the current editions
       </span>,
     ],
     [
@@ -528,13 +528,13 @@ export default function RegistryPage() {
           color: "#6b6153",
         }}
       >
-        <a href="#glance" style={{ color: "#6b6153" }}>At a glance</a>
+        <a href="#glance" className="reg-pagelink">At a glance</a>
         <span aria-hidden>·</span>
-        <a href="#characters" style={{ color: "#6b6153" }}>The characters</a>
+        <a href="#characters" className="reg-pagelink">The characters</a>
         <span aria-hidden>·</span>
-        <a href="#cartoons" style={{ color: "#6b6153" }}>The cartoons</a>
+        <a href="#cartoons" className="reg-pagelink">The cartoons</a>
         <span aria-hidden>·</span>
-        <a href="#writing" style={{ color: "#6b6153" }}>The written work</a>
+        <a href="#writing" className="reg-pagelink">The written work</a>
       </nav>
 
       {/* -------------------------------------------------- at a glance */}
@@ -648,7 +648,7 @@ export default function RegistryPage() {
           ) : null}
           . Each panel is a drawing with its caption; the caption is the written half of the work and is recorded
           here in full, together with any headline or chalkboard text lettered into the drawing itself. The retired
-          set lives at <code style={{ fontSize: 13 }}>canon/showcase-retired/</code>; the current batches live under{" "}
+          set lives at <code style={{ fontSize: 13 }}>canon/showcase-retired/</code>; the current editions live under{" "}
           <code style={{ fontSize: 13 }}>briefs/</code>. The seven dated panels under <code style={{ fontSize: 13 }}>cartoons/</code>{" "}
           are development samples, recorded as such in that folder, and are not counted here.
         </p>
@@ -703,7 +703,7 @@ export default function RegistryPage() {
         {batches.map((batch) => (
           <article key={batch.batch} style={{ marginTop: 34 }}>
             <h3 style={{ fontFamily: serif, fontSize: 21, margin: 0 }}>
-              Batch of {batch.day ? formatDateLong(batch.day) : "an unrecorded date"}{" "}
+              The edition of {batch.day ? formatDateLong(batch.day) : "an unrecorded date"}{" "}
               <span style={{ fontSize: 15, color: "#8a7f6d" }}>
                 ({batch.panels.length} {batch.panels.length === 1 ? "panel" : "panels"}
                 {batch.planned > batch.panels.length ? ` drawn of ${batch.planned} planned` : ""})
@@ -716,7 +716,7 @@ export default function RegistryPage() {
               <code style={{ fontSize: 12 }}>briefs/{batch.batch}/</code>
             </p>
             <PanelTable
-              label={`Panels in the batch of ${batch.day ? formatDateLong(batch.day) : batch.batch}`}
+              label={`Panels in the edition of ${batch.day ? formatDateLong(batch.day) : batch.batch}`}
               panels={batch.panels}
             />
           </article>
@@ -803,6 +803,12 @@ export default function RegistryPage() {
           border: 0;
         }
         .reg-tablewrap { overflow-x: auto; }
+        .reg-pagelink {
+          display: inline-flex;
+          align-items: center;
+          min-height: 44px;
+          color: #6b6153;
+        }
         .reg-castgrid {
           display: grid;
           grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
