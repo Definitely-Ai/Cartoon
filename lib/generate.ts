@@ -126,10 +126,11 @@ const VISION_REFS: Record<string, Tile[]> = {
     {
       path: "canon/vision/abby-face-reference.jpg",
       label:
-        "Abby, the lady who owns and tends the bar. COPY THIS FACE EXACTLY AS DRAWN — the short muzzle " +
-        "buried in the fluff of her cheeks, the round soft feminine head, and THESE EYES: white showing both " +
-        "sides of a drawn iris, a smaller round pupil, one catchlight, lashed upper lid. Copy her closed-lip " +
-        "half-smile, her gaze going past the reader, and her sleek smooth throat with no ruff",
+        "Abby, the lady who owns and tends the bar. COPY THIS FACE EXACTLY AS DRAWN — the round soft head, " +
+        "the big black nose sitting close under the eyes with no long muzzle, the tiny closed smile, and " +
+        "THESE EYES just as they are here. ONE CORRECTION ONLY: below her jaw this tile shows shaggy fur in " +
+        "the open collar, and the panel does NOT copy that — her throat and the V of her blouse are SMOOTH " +
+        "short fur reading as skin",
     },
   ],
 };
@@ -341,13 +342,6 @@ export function referenceList(
   if (barScene && list.length < LIMIT) {
     list.push({
       path: "canon/vision/staging-plate.jpg",
-      // Cropped to the left of the frame ON PURPOSE: the full shot has Mango in
-      // one-eyed profile at the right, and no label survives contact with a
-      // picture that disagrees with it — every batch drawn with the full plate
-      // came back with a one-eyed Mango. The crop keeps what the tile is FOR
-      // (the counter, the depth, the back bar, the patron side) and cuts the
-      // head angle it must not teach.
-      box: [0, 0, 640, 1280],
       label:
         "THE HOUSE SHOT — a finished cartoon of this same bar, attached for its GEOMETRY AND ITS BLOCKING " +
         "ONLY. Copy from it: the ONE marble counter and the fact that there is only one, crossing the middle " +
