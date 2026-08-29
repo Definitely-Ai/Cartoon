@@ -6,19 +6,10 @@
   },
   "scene": 1,
   "caption": 1,
-  "comment": "bad, bad, bad.  Nothing funny!  Abby is sad.",
-  "at": "2026-08-29T22:59:48.644Z",
-  "revisions": 11,
+  "comment": "bad, bad, bad.  Nothing funny!  Abby is sad.  Card is",
+  "at": "2026-08-29T22:59:56.546Z",
+  "revisions": 12,
   "history": [
-    {
-      "at": "2026-08-29T22:57:33.608Z",
-      "characters": {
-        "abby": 1
-      },
-      "scene": 1,
-      "caption": null,
-      "comment": ""
-    },
     {
       "at": "2026-08-29T22:57:36.627Z",
       "characters": {
@@ -99,6 +90,15 @@
       "scene": 1,
       "caption": 1,
       "comment": "bad, bad, bad.  Nothing funny!  Abby is sad"
+    },
+    {
+      "at": "2026-08-29T22:59:48.644Z",
+      "characters": {
+        "abby": 1
+      },
+      "scene": 1,
+      "caption": 1,
+      "comment": "bad, bad, bad.  Nothing funny!  Abby is sad."
     }
   ]
 }
