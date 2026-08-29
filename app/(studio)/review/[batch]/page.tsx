@@ -386,8 +386,10 @@ export default async function ReviewBatchPage({ params }: { params: Promise<{ ba
           grid-template-columns: minmax(0, 1fr) minmax(360px, 0.92fr);
           gap: 28px;
           align-items: start;
-          /* Clears the sticky bar when he is scrolled to a cartoon. */
-          scroll-margin-top: 150px;
+          /* Clears the sticky bar when he is scrolled to a cartoon — the
+             strip's chips are 40px now, so the old 150 left the heading
+             tucked under the rule. */
+          scroll-margin-top: 160px;
         }
 
         .rv-stage-no {

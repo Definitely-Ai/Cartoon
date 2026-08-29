@@ -137,6 +137,13 @@ export default async function PrintBiblePage({ params }: { params: Promise<{ cha
         .bible code { background: #f2eee3; padding: 1px 4px; border-radius: 3px; font-size: 12.5px; }
         .bible img { max-width: 100%; }
 
+        /* On paper a table lays out as a table. On the iPad he reads these
+           on, a wide one has to scroll inside itself or it pushes the whole
+           sheet sideways. */
+        @media screen and (max-width: 700px) {
+          .bible table { display: block; overflow-x: auto; }
+        }
+
         @media print {
           main { max-width: none !important; padding: 0 !important; margin: 0 !important; background: #fff !important; border-radius: 0 !important; }
           .sheet { page-break-inside: auto; }

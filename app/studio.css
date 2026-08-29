@@ -78,12 +78,15 @@
   margin-top: 0.2rem;
 }
 
+/* The row gap is wide because each link's tap area is grown past its own
+   text below; any tighter and the invisible targets of two wrapped rows
+   overlap, which is how a thumb lands on Keepers and gets the Collection. */
 .br-nav {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: baseline;
-  gap: 0.4rem 1.4rem;
+  gap: 1.3rem 1.4rem;
   margin-top: 0.9rem;
 }
 
@@ -101,6 +104,23 @@
   border-left: none;
   border-right: none;
   cursor: pointer;
+}
+
+/* Six words in a row, each 19px tall, was the smallest target on the site
+   and it is the one he uses on every page. The area grows; the underline
+   stays where the eye expects it, under the word. */
+.br-nav a,
+.br-staff-links a,
+.br-logout button {
+  position: relative;
+}
+
+.br-nav a::after,
+.br-staff-links a::after,
+.br-logout button::after {
+  content: "";
+  position: absolute;
+  inset: -0.65rem -0.5rem;
 }
 
 .br-nav a:hover,
@@ -783,8 +803,8 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 0.5rem 2rem;
-  padding: 0.5rem 1rem 1.5rem;
+  gap: 1.3rem 2rem;
+  padding: 0.9rem 1rem 1.5rem;
 }
 
 .br-staff-links a {

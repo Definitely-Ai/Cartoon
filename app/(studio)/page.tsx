@@ -1,8 +1,10 @@
+import { Suspense } from "react";
 import Link from "next/link";
 import { getStudioDays, getStudioToday, type StudioDay } from "@/lib/db";
 import { PublishError } from "@/lib/githubPublish";
 import { formatDateAP } from "@/lib/format";
 import DayBoard from "./DayBoard";
+import Waiting from "./Waiting";
 
 // Today: the newest day's batches, straight onto the table, live from the
 // studio database — a new batch appears the moment it's drawn.
@@ -13,7 +15,19 @@ export const metadata = {
 
 export const dynamic = "force-dynamic";
 
-export default async function StudioToday() {
+// The front door is the one page in this segment that waits on the database,
+// so the wait screen is wrapped around it here rather than dropped in a
+// loading.tsx — a loading file at this level would also come between him and
+// the cast pages, which are already on disk and need no waiting for.
+export default function StudioToday() {
+  return (
+    <Suspense fallback={<Waiting />}>
+      <TodayTable />
+    </Suspense>
+  );
+}
+
+async function TodayTable() {
   let today: StudioDay | null = null;
   let days: string[] = [];
   let setupNote: string | null = null;
