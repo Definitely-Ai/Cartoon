@@ -7,9 +7,9 @@
   },
   "scene": 1,
   "caption": 1,
-  "comment": "lin",
-  "at": "2026-08-29T19:51:42.981Z",
-  "revisions": 4,
+  "comment": "line is not clear",
+  "at": "2026-08-29T19:51:52.354Z",
+  "revisions": 5,
   "history": [
     {
       "at": "2026-08-29T19:49:07.630Z",
@@ -49,6 +49,16 @@
       "scene": 1,
       "caption": 1,
       "comment": ""
+    },
+    {
+      "at": "2026-08-29T19:51:42.981Z",
+      "characters": {
+        "drew": 5,
+        "mango": 4
+      },
+      "scene": 1,
+      "caption": 1,
+      "comment": "lin"
     }
   ]
 }
