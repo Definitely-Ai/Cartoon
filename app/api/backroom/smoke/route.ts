@@ -240,6 +240,39 @@ const STUDIES: Record<string, string> = {
     "NO CLAWS on any fingertip. His throat ruff is modest, never a heavy neck-beard. He wears his dark suit " +
     "jacket over a pale open-collared shirt with the flag pin on his LEFT lapel, and nothing else is written " +
     "or badged anywhere on his clothes. He has NO TAIL.",
+  // THE TWO GENTLEMEN, SEATED CORNERWISE. Drawn reference-free, because it
+  // exists to replace a picture that teaches the opposite.
+  //
+  // The founder chose to keep the over-the-shoulder depth AND get both eyes,
+  // which means the gentlemen have to sit turned out from the bar rather than
+  // flat-backed to it. Canon says so now, in measurements, and the drawing
+  // ignored it in thirty-five confirmed cases across one edition — because the
+  // house shot on the reference board has both of them in profile, and the
+  // reference out-votes the text every time it disagrees with it.
+  //
+  // A reference cannot be bootstrapped out of itself. This is the same move
+  // that fixed Abby's eyes after six candidates drawn beside her own bad tile
+  // came back with the same bad eyes: stop showing the picture, draw from the
+  // words alone, and promote the result.
+  duo:
+    "TWO GENTLEMEN SEATED SIDE BY SIDE AT A BAR, seen from BEHIND AND A LITTLE ABOVE, filling the sheet from " +
+    "the chest up. DREW is frame-LEFT and MANGO is frame-RIGHT. EACH IS TURNED A QUARTER OUTWARD FROM THE " +
+    "BAR: the turn is in the SHOULDERS AND CHEST, not the neck, so each man's body sits at about FORTY-FIVE " +
+    "DEGREES to the counter rather than square to it, his outer shoulder nearest us and his chest already " +
+    "coming round before his head does. He is neither flat-backed to us nor square to us — he sits " +
+    "cornerwise, and we see his back and his outer shoulder nearest. Drew is turned to his RIGHT toward " +
+    "Mango; Mango is turned to his LEFT toward Drew, and they are looking at each other. " +
+    "BECAUSE THE BODY HAS DONE THE TURNING, BOTH EYES OF BOTH MEN ARE DRAWN ON THE PAPER. COUNT THEM: FOUR " +
+    "EYES IN THIS DRAWING. On each face the FAR eye is at least HALF THE WIDTH of the near one, with the " +
+    "bridge of the muzzle or bill showing between the two. Neither head is screwed round on a body still " +
+    "facing the bar, and neither man is drawn side-on: a face showing one eye is the whole fault this study " +
+    "exists to correct. DREW'S BILL therefore crosses the picture at an ANGLE, coming toward us as well as " +
+    "across, never lying flat and side-on like a weathervane. " +
+    "A plain marble counter crosses the picture in front of them at chest height with a martini before Drew " +
+    "and an old fashioned before Mango; nothing else is on it, and NOTHING is lettered anywhere in the " +
+    "drawing. Behind them the sheet is bare — no back bar, no bottles, no television, no chalkboard, " +
+    "no window, and NOBODY else in the picture.",
+
   // A HEAD study, not a figure study. The fault this exists to fix lives in the
   // eyes, and at knees-up they render about forty pixels across -- too small to
   // carry a white, an iris and a pupil, and too small to judge. Close in, they
@@ -618,9 +651,21 @@ export async function GET(request: NextRequest) {
       // The cast name is what the reference lookup and the character fences
       // both key off, so strip the framing before either sees it.
       const subject = who.replace(/-(head|bust|figure)$/, "");
+      // A study key usually names one character. "duo" names the pair, and the
+      // cast list is what the character fences and the reference lookup both
+      // key off, so it has to be expanded before either sees it.
+      const cast = who === "duo" ? ["drew", "mango"] : [subject];
+      // The standing ground forbids furniture, which is right for a portrait and
+      // wrong for a study of two men sitting at a counter.
+      const ground =
+        who === "duo"
+          ? "a plain sheet of cream drawing paper behind them — no room, no wall, no back bar, no window, " +
+            "no horizon and no shading behind the figures, and no lettering, caption, label, signature or " +
+            "border anywhere on the sheet"
+          : STUDY_GROUND;
       const prompt = assemblePrompt(
         canonText,
-        { scene: STUDIES[who], setting: STUDY_GROUND, characters: [subject] },
+        { scene: STUDIES[who], setting: ground, characters: cast },
         false,
         false,
         isMultiRef(version)
@@ -634,7 +679,7 @@ export async function GET(request: NextRequest) {
       const noRef = params.get("noref") === "1";
       const image = await generateCartoonArt({
         prompt,
-        characters: [subject],
+        characters: cast,
         barScene: false,
         model: version,
         quality,
