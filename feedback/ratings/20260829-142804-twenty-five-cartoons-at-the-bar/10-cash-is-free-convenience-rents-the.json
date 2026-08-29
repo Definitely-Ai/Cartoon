@@ -8,19 +8,10 @@
   },
   "scene": 2,
   "caption": 3,
-  "comment": "chalk board not cleaver.  Get rid of the name on Abby",
-  "at": "2026-08-29T20:54:00.940Z",
-  "revisions": 10,
+  "comment": "chalk board not cleaver.  Get rid of the name on Abby's",
+  "at": "2026-08-29T20:54:04.323Z",
+  "revisions": 11,
   "history": [
-    {
-      "at": "2026-08-29T20:52:10.434Z",
-      "characters": {
-        "drew": 6
-      },
-      "scene": null,
-      "caption": null,
-      "comment": ""
-    },
     {
       "at": "2026-08-29T20:52:12.580Z",
       "characters": {
@@ -118,6 +109,17 @@
       "scene": 2,
       "caption": 3,
       "comment": "chalk board not cleaver.  Get rid of the name on"
+    },
+    {
+      "at": "2026-08-29T20:54:00.940Z",
+      "characters": {
+        "drew": 6,
+        "mango": 6,
+        "abby": 4
+      },
+      "scene": 2,
+      "caption": 3,
+      "comment": "chalk board not cleaver.  Get rid of the name on Abby"
     }
   ]
 }
