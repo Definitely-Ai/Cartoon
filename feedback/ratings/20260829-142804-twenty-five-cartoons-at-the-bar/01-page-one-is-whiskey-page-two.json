@@ -8,9 +8,9 @@
   },
   "scene": 2,
   "caption": 2,
-  "comment": "Drew's left sholder 7",
-  "at": "2026-08-29T19:16:08.468Z",
-  "revisions": 9,
+  "comment": "Drew's left sholder",
+  "at": "2026-08-29T19:16:10.461Z",
+  "revisions": 10,
   "history": [
     {
       "at": "2026-08-29T19:12:56.114Z",
@@ -107,6 +107,17 @@
       "scene": 2,
       "caption": 2,
       "comment": "Drew's left sholder"
+    },
+    {
+      "at": "2026-08-29T19:16:08.468Z",
+      "characters": {
+        "drew": 2,
+        "mango": 2,
+        "abby": 2
+      },
+      "scene": 2,
+      "caption": 2,
+      "comment": "Drew's left sholder 7"
     }
   ]
 }
