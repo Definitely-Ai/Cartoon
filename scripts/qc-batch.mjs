@@ -33,10 +33,15 @@ if (!batchDir) {
 const dir = path.resolve(repoRoot, batchDir);
 const plan = JSON.parse(fs.readFileSync(path.join(dir, "plan.json"), "utf8"));
 
-// How much colour is "colour". A truly grayscale PNG scores 0. Engraving
-// scans with warm paper tone score under 2. The red-circled receipt scored
-// over 8 on this metric in the panel that shipped it.
-const TINT_LIMIT = 2.0;
+// How much colour is "colour". Two measures, because a first threshold of
+// mean-tint 2.0 flagged five panels whose maximum channel spread was 8-15 out
+// of 255 with not one strongly-coloured pixel — a faint warm wash the eye
+// reads as gray. A real leak is an OBJECT: the red-circled receipt had
+// saturated pixels far past the wash. So the gate fails on either a visible
+// fraction of strongly-coloured pixels, or a mean tint no wash reaches.
+const STRONG_SPREAD = 25;      // per-pixel channel spread that reads as colour
+const STRONG_FRACTION = 0.0005; // fraction of such pixels that fails the panel
+const TINT_LIMIT = 6.0;        // mean tint no warm wash reaches
 
 let failures = 0;
 const fail = (file, what) => {
@@ -64,16 +69,22 @@ for (const panel of plan.panels) {
     .raw()
     .toBuffer({ resolveWithObject: true });
   let spread = 0;
+  let strong = 0;
   const px = info.width * info.height;
   for (let i = 0; i < px; i++) {
     const r = data[i * info.channels];
     const g = data[i * info.channels + 1];
     const b = data[i * info.channels + 2];
-    spread += Math.abs(r - g) + Math.abs(r - b);
+    const s = Math.abs(r - g) + Math.abs(r - b);
+    spread += s;
+    if (s > STRONG_SPREAD) strong++;
   }
   const tint = spread / px;
-  if (tint > TINT_LIMIT) {
-    fail(panel.file, `colour detected (tint ${tint.toFixed(1)}, limit ${TINT_LIMIT}) — the strip is black and white`);
+  const strongFrac = strong / px;
+  if (strongFrac > STRONG_FRACTION) {
+    fail(panel.file, `coloured object detected (${(strongFrac * 100).toFixed(2)}% strong pixels) — the strip is black and white`);
+  } else if (tint > TINT_LIMIT) {
+    fail(panel.file, `global colour cast (mean tint ${tint.toFixed(1)}, limit ${TINT_LIMIT})`);
   }
 }
 
