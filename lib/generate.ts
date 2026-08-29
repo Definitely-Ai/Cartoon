@@ -119,7 +119,9 @@ const VISION_REFS: Record<string, Tile[]> = {
       label:
         "Abby, the terrier who owns and tends the bar. COPY THESE EYES EXACTLY — white showing both sides of a " +
         "drawn iris, a smaller round pupil, one catchlight, lashed upper lid. Copy her closed-lip half-smile, " +
-        "her gaze going past the reader, and her sleek throat with no ruff",
+        "her gaze going past the reader, and her sleek throat with no ruff. DO NOT COPY THE LENGTH OF HER " +
+        "MUZZLE FROM THIS TILE — it is drawn too short here. Take the snout from the description instead: a " +
+        "long blunt terrier snout, eye corner to nose tip one and a half to two eye-widths",
     },
   ],
 };
