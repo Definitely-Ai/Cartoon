@@ -7,20 +7,10 @@
   },
   "scene": 1,
   "caption": 3,
-  "comment": "no need for the card on the bar.  Again, seating is not correct, Drew and Mango are not seated at the bar.  Booze bottles not lab or",
-  "at": "2026-08-29T21:00:11.475Z",
-  "revisions": 17,
+  "comment": "no need for the card on the bar.  Again, seating is not correct, Drew and Mango are not seated at the bar.  Booze bottles not labeled or",
+  "at": "2026-08-29T21:00:14.357Z",
+  "revisions": 18,
   "history": [
-    {
-      "at": "2026-08-29T20:58:07.894Z",
-      "characters": {
-        "drew": 6,
-        "mango": 4
-      },
-      "scene": 1,
-      "caption": 3,
-      "comment": "no need for the card on the bar.  Again seating is not correct"
-    },
     {
       "at": "2026-08-29T20:58:20.696Z",
       "characters": {
@@ -110,6 +100,16 @@
       "scene": 1,
       "caption": 3,
       "comment": "no need for the card on the bar.  Again, seating is not correct, Drew and Mango are not seated at the bar.  Booze bottles not labled or"
+    },
+    {
+      "at": "2026-08-29T21:00:11.475Z",
+      "characters": {
+        "drew": 6,
+        "mango": 4
+      },
+      "scene": 1,
+      "caption": 3,
+      "comment": "no need for the card on the bar.  Again, seating is not correct, Drew and Mango are not seated at the bar.  Booze bottles not lab or"
     }
   ]
 }
