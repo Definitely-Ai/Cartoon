@@ -6,9 +6,9 @@
   },
   "scene": 1,
   "caption": 1,
-  "comment": "bad, bad, bad.  Nothing funny!",
-  "at": "2026-08-29T22:59:19.653Z",
-  "revisions": 9,
+  "comment": "bad, bad, bad.  Nothing funny!  Abby is sad",
+  "at": "2026-08-29T22:59:43.866Z",
+  "revisions": 10,
   "history": [
     {
       "at": "2026-08-29T22:57:26.306Z",
@@ -90,6 +90,15 @@
       "scene": 1,
       "caption": 1,
       "comment": "bad, bad, bad.  Nothing funny"
+    },
+    {
+      "at": "2026-08-29T22:59:19.653Z",
+      "characters": {
+        "abby": 1
+      },
+      "scene": 1,
+      "caption": 1,
+      "comment": "bad, bad, bad.  Nothing funny!"
     }
   ]
 }
