@@ -8,20 +8,10 @@
   },
   "scene": 2,
   "caption": 2,
-  "comment": "Drew's left should",
-  "at": "2026-08-29T19:16:25.137Z",
-  "revisions": 11,
+  "comment": "Drew's left shoulder",
+  "at": "2026-08-29T19:16:50.665Z",
+  "revisions": 12,
   "history": [
-    {
-      "at": "2026-08-29T19:13:17.610Z",
-      "characters": {
-        "drew": 2,
-        "mango": 2
-      },
-      "scene": null,
-      "caption": null,
-      "comment": ""
-    },
     {
       "at": "2026-08-29T19:14:13.458Z",
       "characters": {
@@ -120,6 +110,17 @@
       "scene": 2,
       "caption": 2,
       "comment": "Drew's left sholder"
+    },
+    {
+      "at": "2026-08-29T19:16:25.137Z",
+      "characters": {
+        "drew": 2,
+        "mango": 2,
+        "abby": 2
+      },
+      "scene": 2,
+      "caption": 2,
+      "comment": "Drew's left should"
     }
   ]
 }
