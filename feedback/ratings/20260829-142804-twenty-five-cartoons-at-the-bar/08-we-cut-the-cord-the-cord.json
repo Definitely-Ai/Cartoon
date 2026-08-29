@@ -3,18 +3,29 @@
   "panel": "08-we-cut-the-cord-the-cord.png",
   "characters": {
     "drew": 5,
-    "mango": 4
+    "mango": 4,
+    "abby": 2
   },
   "scene": null,
   "caption": null,
   "comment": "",
-  "at": "2026-08-29T20:40:43.593Z",
-  "revisions": 1,
+  "at": "2026-08-29T20:40:51.585Z",
+  "revisions": 2,
   "history": [
     {
       "at": "2026-08-29T20:40:34.626Z",
       "characters": {
         "drew": 5
+      },
+      "scene": null,
+      "caption": null,
+      "comment": ""
+    },
+    {
+      "at": "2026-08-29T20:40:43.593Z",
+      "characters": {
+        "drew": 5,
+        "mango": 4
       },
       "scene": null,
       "caption": null,
