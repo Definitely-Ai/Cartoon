@@ -7,9 +7,9 @@
   },
   "scene": 1,
   "caption": 1,
-  "comment": "line is not clear.",
-  "at": "2026-08-29T19:52:00.436Z",
-  "revisions": 7,
+  "comment": "line is not clear.  I do not understand the TV picture",
+  "at": "2026-08-29T19:52:32.757Z",
+  "revisions": 8,
   "history": [
     {
       "at": "2026-08-29T19:49:07.630Z",
@@ -79,6 +79,16 @@
       "scene": 1,
       "caption": 1,
       "comment": "line is not clear,"
+    },
+    {
+      "at": "2026-08-29T19:52:00.436Z",
+      "characters": {
+        "drew": 5,
+        "mango": 4
+      },
+      "scene": 1,
+      "caption": 1,
+      "comment": "line is not clear."
     }
   ]
 }
