@@ -177,7 +177,9 @@ const SET_PLATE_PROMPT =
   "COMPLETELY BLANK: an empty dark slate with no chalk writing, no words, no numbers, no marks.\n" +
   "5. THE TWO SCONCES — one brass wall sconce with a small pleated shade at EACH END of the back bar.\n" +
   "6. THE FRONT WINDOW — FAR LEFT, where the wall gives onto the street, its lower half frosted, carrying " +
-  "the bar's name in gilt script SEEN FROM BEHIND: THE SWINGING DOOR, MIRRORED, reading backwards.\n" +
+  "the bar's name in gilt script SEEN FROM BEHIND: THE SWINGING DOOR, MIRRORED, reading backwards. THE " +
+  "WINDOW IS A WINDOW ONLY: no door stands in it, beside it, or anywhere in this picture — the room's " +
+  "entrance is out of frame.\n" +
   "Dark walnut panelling in tall fielded panels wherever wall shows between them.\n\n" +
 
   "THERE IS NO LETTERING ANYWHERE IN THIS PICTURE except the mirrored gilt script of THE SWINGING DOOR on " +

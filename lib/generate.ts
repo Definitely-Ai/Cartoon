@@ -310,19 +310,14 @@ export function referenceList(
     list.push({
       path: "canon/vision/staging-plate.jpg",
       label:
-        "THE HOUSE SHOT — a finished cartoon of this same bar, attached for its GEOMETRY AND ITS BLOCKING " +
-        "ONLY. Copy from it: the ONE marble counter and the fact that there is only one, crossing the middle " +
-        "of the picture with its top surface visible and no second ledge, shelf or tier anywhere at any other " +
-        "height; the walnut back bar standing beyond it as a distinctly farther wall; the flatscreen " +
-        "TELEVISION mounted above the back bar, switched on and carrying a picture and a chyron band, never a " +
-        "framed print; the chalkboard beside it; a sconce at each end; the front window at far left; and " +
-        "above all WHO IS WHERE — the two gentlemen near and large on the patron side with the marble in " +
-        "front of them, the bartender beyond it with the counter crossing her at the waist and her head " +
-        "higher in the frame than theirs. DO NOT COPY its faces, its poses, its drinks, its bottle labels, " +
-        "its chalkboard line, its headline or any of its lettering — this cartoon has its own. Take the room " +
-        "and the blocking; leave everything else. TWO MORE THINGS FROM THIS TILE: the marble the drinks stand " +
-        "on is the SAME marble the gentlemen sit at — one slab, no second ledge at any other height — and DO " +
-        "NOT COPY ITS HEAD ANGLES: in this cartoon Mango shows BOTH EYES",
+        "THE EMPTY SET — this same bar BEFORE the cast walks in, attached for its geometry only. THE MARBLE " +
+        "COUNTER IN THIS TILE IS THE COUNTER: seat the gentlemen on the NEAR side of THIS counter with their " +
+        "drinks standing ON THIS SAME SLAB — never invent a second, nearer surface for the drinks, and never " +
+        "leave this counter standing behind their backs as scenery. Abby, when cast, works on the FAR side of " +
+        "this same counter. Copy the back bar with its high shelves, the television switched on above it, the " +
+        "chalkboard, the sconces and the panelling exactly as here. The window at far left carries ONLY the " +
+        "mirrored house name — NO door is drawn in or beside the window in the cartoon, whatever this tile " +
+        "shows at its edge. Its screen and board are deliberately blank: fill them from the scene below"
     });
   }
   spendExtras();
