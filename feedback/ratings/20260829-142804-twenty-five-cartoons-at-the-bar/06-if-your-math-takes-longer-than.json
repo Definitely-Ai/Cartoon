@@ -8,9 +8,9 @@
   },
   "scene": 2,
   "caption": null,
-  "comment": "I cannot read the note pad on the bar",
-  "at": "2026-08-29T19:45:43.175Z",
-  "revisions": 7,
+  "comment": "I cannot read the note pad on the bar.",
+  "at": "2026-08-29T19:45:49.911Z",
+  "revisions": 8,
   "history": [
     {
       "at": "2026-08-29T19:43:35.880Z",
@@ -85,6 +85,17 @@
       "scene": 2,
       "caption": null,
       "comment": "I cannot read the note"
+    },
+    {
+      "at": "2026-08-29T19:45:43.175Z",
+      "characters": {
+        "drew": 6,
+        "mango": 6,
+        "abby": 5
+      },
+      "scene": 2,
+      "caption": null,
+      "comment": "I cannot read the note pad on the bar"
     }
   ]
 }
