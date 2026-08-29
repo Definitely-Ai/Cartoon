@@ -7,20 +7,10 @@
   },
   "scene": 1,
   "caption": 1,
-  "comment": "I do not understand the joke with the keys.  the placement of the caract",
-  "at": "2026-08-29T20:48:58.603Z",
-  "revisions": 20,
+  "comment": "I do not understand the joke with the keys.  the placement of the caracters",
+  "at": "2026-08-29T20:49:06.348Z",
+  "revisions": 21,
   "history": [
-    {
-      "at": "2026-08-29T20:46:58.657Z",
-      "characters": {
-        "drew": 5,
-        "mango": 5
-      },
-      "scene": 1,
-      "caption": 1,
-      "comment": "I do not understand the joke"
-    },
     {
       "at": "2026-08-29T20:47:06.354Z",
       "characters": {
@@ -110,6 +100,16 @@
       "scene": 1,
       "caption": 1,
       "comment": "I do not understand the joke with the keys.  the placement of the caracters"
+    },
+    {
+      "at": "2026-08-29T20:48:58.603Z",
+      "characters": {
+        "drew": 5,
+        "mango": 5
+      },
+      "scene": 1,
+      "caption": 1,
+      "comment": "I do not understand the joke with the keys.  the placement of the caract"
     }
   ]
 }
