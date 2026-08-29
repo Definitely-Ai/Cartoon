@@ -7,9 +7,9 @@
   },
   "scene": 2,
   "caption": 2,
-  "comment": "Not funny.  The chalk board line is",
-  "at": "2026-08-29T19:31:14.642Z",
-  "revisions": 7,
+  "comment": "Not funny.  The chalk board line is no",
+  "at": "2026-08-29T19:31:59.036Z",
+  "revisions": 8,
   "history": [
     {
       "at": "2026-08-29T19:29:14.397Z",
@@ -79,6 +79,16 @@
       "scene": 2,
       "caption": 2,
       "comment": "Not funny."
+    },
+    {
+      "at": "2026-08-29T19:31:14.642Z",
+      "characters": {
+        "drew": 5,
+        "mango": 3
+      },
+      "scene": 2,
+      "caption": 2,
+      "comment": "Not funny.  The chalk board line is"
     }
   ]
 }
