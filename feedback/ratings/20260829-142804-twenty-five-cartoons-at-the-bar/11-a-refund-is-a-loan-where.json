@@ -6,10 +6,10 @@
     "mango": 4
   },
   "scene": 1,
-  "caption": null,
+  "caption": 3,
   "comment": "",
-  "at": "2026-08-29T20:56:56.002Z",
-  "revisions": 2,
+  "at": "2026-08-29T20:57:10.139Z",
+  "revisions": 3,
   "history": [
     {
       "at": "2026-08-29T20:56:43.573Z",
@@ -27,6 +27,16 @@
         "mango": 4
       },
       "scene": null,
+      "caption": null,
+      "comment": ""
+    },
+    {
+      "at": "2026-08-29T20:56:56.002Z",
+      "characters": {
+        "drew": 6,
+        "mango": 4
+      },
+      "scene": 1,
       "caption": null,
       "comment": ""
     }
