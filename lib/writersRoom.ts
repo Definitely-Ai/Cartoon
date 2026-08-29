@@ -265,6 +265,15 @@ const SHAPE = `Each element of the array is an object with exactly these keys:
   "tv"         the television's headline in bold caps style, or "" if this cartoon has no screen
   "tvPicture"  what the footage on the screen depicts, phrased to follow "The television picture
                shows …". Empty string if "tv" is empty. Never any people in it unless the joke needs them.
+               IT MUST CONTAIN NO WRITING. The drawing is forbidden to letter anything inside the
+               television picture, so a shot whose point is words cannot be drawn: no receipt with
+               its line items, no invoice, no statement, no headline on a newspaper, no price board,
+               no shopfront name, no chart with labelled axes. An inspection of one edition found
+               lettering leaking into sixteen of twenty-five screens, and every one of them traced
+               back to a picture commissioned here that could not exist without text. Describe
+               something the eye reads WITHOUT reading: a receipt long enough to hang off the end of
+               the belt, a mailbox too full to close, a trading floor where every head is turned the
+               same way. The chyron carries the words; the picture carries the image.
   "board"      the chalkboard's line, menu-shaped, or "" if this cartoon has no board
   "away"       "" for a cartoon in the bar. For a cartoon somewhere else, a SHORT place phrase such as
                "golf course" or "courtroom". Whatever the brief asks for.
