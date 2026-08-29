@@ -8,21 +8,10 @@
   },
   "scene": 1,
   "caption": 5,
-  "comment": "Drew and Mango are not seated up to the bar.  Abby looks sad and not amm",
-  "at": "2026-08-29T20:43:26.240Z",
-  "revisions": 14,
+  "comment": "Drew and Mango are not seated up to the bar.  Abby looks sad and not ammused",
+  "at": "2026-08-29T20:43:29.160Z",
+  "revisions": 15,
   "history": [
-    {
-      "at": "2026-08-29T20:41:06.199Z",
-      "characters": {
-        "drew": 5,
-        "mango": 4,
-        "abby": 2
-      },
-      "scene": 1,
-      "caption": null,
-      "comment": ""
-    },
     {
       "at": "2026-08-29T20:41:33.722Z",
       "characters": {
@@ -121,6 +110,17 @@
       "scene": 1,
       "caption": 5,
       "comment": "Drew and Mango are not seated up to the bar.  Abby looks sad and not"
+    },
+    {
+      "at": "2026-08-29T20:43:26.240Z",
+      "characters": {
+        "drew": 5,
+        "mango": 4,
+        "abby": 2
+      },
+      "scene": 1,
+      "caption": 5,
+      "comment": "Drew and Mango are not seated up to the bar.  Abby looks sad and not amm"
     }
   ]
 }
