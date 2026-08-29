@@ -7,9 +7,9 @@
   },
   "scene": 1,
   "caption": 4,
-  "comment": "seating placement",
-  "at": "2026-08-29T19:36:55.342Z",
-  "revisions": 6,
+  "comment": "seating placement is",
+  "at": "2026-08-29T19:36:58.908Z",
+  "revisions": 7,
   "history": [
     {
       "at": "2026-08-29T19:35:14.807Z",
@@ -68,6 +68,16 @@
       "scene": 1,
       "caption": 4,
       "comment": "placemen"
+    },
+    {
+      "at": "2026-08-29T19:36:55.342Z",
+      "characters": {
+        "drew": 5,
+        "mango": 2
+      },
+      "scene": 1,
+      "caption": 4,
+      "comment": "seating placement"
     }
   ]
 }
