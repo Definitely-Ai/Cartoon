@@ -3,8 +3,17 @@
   "panel": "14-i-own-the-walls-the-hallway.png",
   "characters": {},
   "scene": 1,
-  "caption": null,
+  "caption": 2,
   "comment": "",
-  "at": "2026-08-30T17:19:58.720Z",
-  "revisions": 0
+  "at": "2026-08-30T17:20:05.492Z",
+  "revisions": 1,
+  "history": [
+    {
+      "at": "2026-08-30T17:19:58.720Z",
+      "characters": {},
+      "scene": 1,
+      "caption": null,
+      "comment": ""
+    }
+  ]
 }
