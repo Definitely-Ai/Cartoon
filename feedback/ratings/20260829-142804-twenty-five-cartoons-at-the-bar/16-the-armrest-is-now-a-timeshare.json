@@ -3,18 +3,29 @@
   "panel": "16-the-armrest-is-now-a-timeshare.png",
   "characters": {
     "drew": 4,
-    "mango": 4
+    "mango": 4,
+    "abby": 3
   },
   "scene": null,
   "caption": null,
   "comment": "",
-  "at": "2026-08-30T17:24:34.694Z",
-  "revisions": 1,
+  "at": "2026-08-30T17:24:39.749Z",
+  "revisions": 2,
   "history": [
     {
       "at": "2026-08-30T17:24:33.215Z",
       "characters": {
         "drew": 4
+      },
+      "scene": null,
+      "caption": null,
+      "comment": ""
+    },
+    {
+      "at": "2026-08-30T17:24:34.694Z",
+      "characters": {
+        "drew": 4,
+        "mango": 4
       },
       "scene": null,
       "caption": null,
