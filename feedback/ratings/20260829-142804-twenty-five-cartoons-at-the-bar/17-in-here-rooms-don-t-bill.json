@@ -8,9 +8,9 @@
   },
   "scene": null,
   "caption": 2,
-  "comment": "Take the monogram off of Abby's bar rag",
-  "at": "2026-08-30T17:28:49.175Z",
-  "revisions": 5,
+  "comment": "Take the monogram off of Abby's bar rag.",
+  "at": "2026-08-30T17:28:53.030Z",
+  "revisions": 6,
   "history": [
     {
       "at": "2026-08-30T17:26:49.285Z",
@@ -59,6 +59,17 @@
       "scene": null,
       "caption": 2,
       "comment": ""
+    },
+    {
+      "at": "2026-08-30T17:28:49.175Z",
+      "characters": {
+        "abby": 2,
+        "mango": 3,
+        "drew": 4
+      },
+      "scene": null,
+      "caption": 2,
+      "comment": "Take the monogram off of Abby's bar rag"
     }
   ]
 }
