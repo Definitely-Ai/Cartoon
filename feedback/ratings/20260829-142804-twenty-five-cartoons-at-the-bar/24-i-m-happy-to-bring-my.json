@@ -7,9 +7,9 @@
   },
   "scene": 4,
   "caption": 1,
-  "comment": "line not great.",
-  "at": "2026-08-30T17:47:46.503Z",
-  "revisions": 6,
+  "comment": "line not great.  Drew and Mango are not seated at the bar",
+  "at": "2026-08-30T17:48:14.618Z",
+  "revisions": 7,
   "history": [
     {
       "at": "2026-08-30T17:46:40.882Z",
@@ -69,6 +69,16 @@
       "scene": 4,
       "caption": 1,
       "comment": "line not great"
+    },
+    {
+      "at": "2026-08-30T17:47:46.503Z",
+      "characters": {
+        "drew": 4,
+        "mango": 3
+      },
+      "scene": 4,
+      "caption": 1,
+      "comment": "line not great."
     }
   ]
 }
