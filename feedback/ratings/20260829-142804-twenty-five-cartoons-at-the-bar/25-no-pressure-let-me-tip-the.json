@@ -8,9 +8,9 @@
   },
   "scene": null,
   "caption": null,
-  "comment": "Abby's hand with bar rag is not natural",
-  "at": "2026-08-30T17:50:38.857Z",
-  "revisions": 4,
+  "comment": "Abby's hand with bar rag is not natural.",
+  "at": "2026-08-30T17:50:41.603Z",
+  "revisions": 5,
   "history": [
     {
       "at": "2026-08-30T17:49:51.114Z",
@@ -52,6 +52,17 @@
       "scene": null,
       "caption": null,
       "comment": "Abby's hand with bar"
+    },
+    {
+      "at": "2026-08-30T17:50:38.857Z",
+      "characters": {
+        "drew": 5,
+        "mango": 4,
+        "abby": 2
+      },
+      "scene": null,
+      "caption": null,
+      "comment": "Abby's hand with bar rag is not natural"
     }
   ]
 }
