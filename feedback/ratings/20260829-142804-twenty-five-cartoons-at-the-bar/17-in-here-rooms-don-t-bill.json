@@ -3,13 +3,14 @@
   "panel": "17-in-here-rooms-don-t-bill.png",
   "characters": {
     "abby": 2,
-    "mango": 3
+    "mango": 3,
+    "drew": 4
   },
   "scene": null,
   "caption": 1,
   "comment": "",
-  "at": "2026-08-30T17:27:18.069Z",
-  "revisions": 2,
+  "at": "2026-08-30T17:27:20.377Z",
+  "revisions": 3,
   "history": [
     {
       "at": "2026-08-30T17:26:49.285Z",
@@ -22,6 +23,16 @@
       "at": "2026-08-30T17:27:10.359Z",
       "characters": {
         "abby": 2
+      },
+      "scene": null,
+      "caption": 1,
+      "comment": ""
+    },
+    {
+      "at": "2026-08-30T17:27:18.069Z",
+      "characters": {
+        "abby": 2,
+        "mango": 3
       },
       "scene": null,
       "caption": 1,
