@@ -1,12 +1,14 @@
 {
   "batch": "20260829-142804-twenty-five-cartoons-at-the-bar",
   "panel": "20-i-booked-a-room-they-rented.png",
-  "characters": {},
+  "characters": {
+    "drew": 4
+  },
   "scene": null,
   "caption": null,
   "comment": "The joke does not need to be tied to the TV.  Abby should smile.",
-  "at": "2026-08-30T17:37:23.021Z",
-  "revisions": 2,
+  "at": "2026-08-30T17:38:03.886Z",
+  "revisions": 3,
   "history": [
     {
       "at": "2026-08-30T17:37:06.388Z",
@@ -21,6 +23,13 @@
       "scene": null,
       "caption": null,
       "comment": "The joke does not need to be tied to the TV.  Abby should smile"
+    },
+    {
+      "at": "2026-08-30T17:37:23.021Z",
+      "characters": {},
+      "scene": null,
+      "caption": null,
+      "comment": "The joke does not need to be tied to the TV.  Abby should smile."
     }
   ]
 }
