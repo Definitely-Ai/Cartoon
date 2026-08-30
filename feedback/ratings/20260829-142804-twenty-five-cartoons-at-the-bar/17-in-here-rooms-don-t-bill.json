@@ -6,19 +6,12 @@
     "mango": 3,
     "drew": 4
   },
-  "scene": null,
+  "scene": 4,
   "caption": 2,
   "comment": "Take the monogram off of Abby's bar rag.  Price tag on the glass looks odd, not funny.",
-  "at": "2026-08-30T17:29:34.737Z",
-  "revisions": 10,
+  "at": "2026-08-30T17:29:55.399Z",
+  "revisions": 11,
   "history": [
-    {
-      "at": "2026-08-30T17:26:49.285Z",
-      "characters": {},
-      "scene": null,
-      "caption": 1,
-      "comment": ""
-    },
     {
       "at": "2026-08-30T17:27:10.359Z",
       "characters": {
@@ -114,6 +107,17 @@
       "scene": null,
       "caption": 2,
       "comment": "Take the monogram off of Abby's bar rag.  Price tag on the glass looks odd, not funny"
+    },
+    {
+      "at": "2026-08-30T17:29:34.737Z",
+      "characters": {
+        "abby": 2,
+        "mango": 3,
+        "drew": 4
+      },
+      "scene": null,
+      "caption": 2,
+      "comment": "Take the monogram off of Abby's bar rag.  Price tag on the glass looks odd, not funny."
     }
   ]
 }
