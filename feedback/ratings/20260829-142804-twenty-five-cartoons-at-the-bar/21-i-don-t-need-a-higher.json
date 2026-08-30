@@ -7,9 +7,9 @@
   },
   "scene": 3,
   "caption": 1,
-  "comment": "The line is not funny",
-  "at": "2026-08-30T17:39:53.810Z",
-  "revisions": 4,
+  "comment": "The line is not funny, and too",
+  "at": "2026-08-30T17:39:59.371Z",
+  "revisions": 5,
   "history": [
     {
       "at": "2026-08-30T17:39:13.777Z",
@@ -46,6 +46,16 @@
       "scene": 3,
       "caption": 1,
       "comment": ""
+    },
+    {
+      "at": "2026-08-30T17:39:53.810Z",
+      "characters": {
+        "drew": 4,
+        "mango": 4
+      },
+      "scene": 3,
+      "caption": 1,
+      "comment": "The line is not funny"
     }
   ]
 }
