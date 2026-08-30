@@ -6,9 +6,9 @@
   },
   "scene": null,
   "caption": null,
-  "comment": "the pocket on the back of Drew's",
-  "at": "2026-08-30T17:31:31.001Z",
-  "revisions": 2,
+  "comment": "the pocket on the back of Drew's sweater",
+  "at": "2026-08-30T17:31:35.759Z",
+  "revisions": 3,
   "history": [
     {
       "at": "2026-08-30T17:31:06.261Z",
@@ -27,6 +27,15 @@
       "scene": null,
       "caption": null,
       "comment": "the"
+    },
+    {
+      "at": "2026-08-30T17:31:31.001Z",
+      "characters": {
+        "drew": 1
+      },
+      "scene": null,
+      "caption": null,
+      "comment": "the pocket on the back of Drew's"
     }
   ]
 }
