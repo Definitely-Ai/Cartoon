@@ -2,13 +2,14 @@
   "batch": "20260829-142804-twenty-five-cartoons-at-the-bar",
   "panel": "19-i-travel-light-i-keep-paying.png",
   "characters": {
-    "drew": 1
+    "drew": 1,
+    "mango": 1
   },
   "scene": 1,
   "caption": null,
   "comment": "seating at the bar is all wrong.",
-  "at": "2026-08-30T17:36:05.966Z",
-  "revisions": 5,
+  "at": "2026-08-30T17:36:07.471Z",
+  "revisions": 6,
   "history": [
     {
       "at": "2026-08-30T17:34:11.674Z",
@@ -41,6 +42,15 @@
     {
       "at": "2026-08-30T17:35:05.132Z",
       "characters": {},
+      "scene": 1,
+      "caption": null,
+      "comment": "seating at the bar is all wrong."
+    },
+    {
+      "at": "2026-08-30T17:36:05.966Z",
+      "characters": {
+        "drew": 1
+      },
       "scene": 1,
       "caption": null,
       "comment": "seating at the bar is all wrong."
