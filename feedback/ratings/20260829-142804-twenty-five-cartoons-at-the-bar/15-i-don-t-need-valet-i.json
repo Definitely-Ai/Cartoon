@@ -7,9 +7,9 @@
   },
   "scene": 4,
   "caption": 5,
-  "comment": "the bottles look empty",
-  "at": "2026-08-30T17:23:40.504Z",
-  "revisions": 5,
+  "comment": "the bottles look empty.",
+  "at": "2026-08-30T17:23:42.401Z",
+  "revisions": 6,
   "history": [
     {
       "at": "2026-08-30T17:22:51.637Z",
@@ -53,6 +53,16 @@
       "scene": 4,
       "caption": 5,
       "comment": "the bottles look"
+    },
+    {
+      "at": "2026-08-30T17:23:40.504Z",
+      "characters": {
+        "drew": 3,
+        "mango": 3
+      },
+      "scene": 4,
+      "caption": 5,
+      "comment": "the bottles look empty"
     }
   ]
 }
