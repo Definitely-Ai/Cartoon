@@ -8,9 +8,9 @@
   },
   "scene": null,
   "caption": null,
-  "comment": "",
-  "at": "2026-08-30T17:50:04.731Z",
-  "revisions": 2,
+  "comment": "Abby's hand with bar",
+  "at": "2026-08-30T17:50:27.214Z",
+  "revisions": 3,
   "history": [
     {
       "at": "2026-08-30T17:49:51.114Z",
@@ -26,6 +26,17 @@
       "characters": {
         "drew": 5,
         "mango": 4
+      },
+      "scene": null,
+      "caption": null,
+      "comment": ""
+    },
+    {
+      "at": "2026-08-30T17:50:04.731Z",
+      "characters": {
+        "drew": 5,
+        "mango": 4,
+        "abby": 2
       },
       "scene": null,
       "caption": null,
