@@ -1,10 +1,21 @@
 {
   "batch": "20260829-142804-twenty-five-cartoons-at-the-bar",
   "panel": "21-i-don-t-need-a-higher.png",
-  "characters": {},
+  "characters": {
+    "drew": 4
+  },
   "scene": null,
   "caption": 1,
   "comment": "",
-  "at": "2026-08-30T17:39:13.777Z",
-  "revisions": 0
+  "at": "2026-08-30T17:39:25.857Z",
+  "revisions": 1,
+  "history": [
+    {
+      "at": "2026-08-30T17:39:13.777Z",
+      "characters": {},
+      "scene": null,
+      "caption": 1,
+      "comment": ""
+    }
+  ]
 }
