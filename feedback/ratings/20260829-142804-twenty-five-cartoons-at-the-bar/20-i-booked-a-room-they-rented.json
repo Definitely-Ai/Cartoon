@@ -4,7 +4,16 @@
   "characters": {},
   "scene": null,
   "caption": null,
-  "comment": "The joke does not need to be tied to the",
-  "at": "2026-08-30T17:37:06.388Z",
-  "revisions": 0
+  "comment": "The joke does not need to be tied to the TV.  Abby should smile",
+  "at": "2026-08-30T17:37:20.724Z",
+  "revisions": 1,
+  "history": [
+    {
+      "at": "2026-08-30T17:37:06.388Z",
+      "characters": {},
+      "scene": null,
+      "caption": null,
+      "comment": "The joke does not need to be tied to the"
+    }
+  ]
 }
