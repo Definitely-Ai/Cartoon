@@ -2,11 +2,23 @@
   "batch": "20260829-142804-twenty-five-cartoons-at-the-bar",
   "panel": "16-the-armrest-is-now-a-timeshare.png",
   "characters": {
-    "drew": 4
+    "drew": 4,
+    "mango": 4
   },
   "scene": null,
   "caption": null,
   "comment": "",
-  "at": "2026-08-30T17:24:33.215Z",
-  "revisions": 0
+  "at": "2026-08-30T17:24:34.694Z",
+  "revisions": 1,
+  "history": [
+    {
+      "at": "2026-08-30T17:24:33.215Z",
+      "characters": {
+        "drew": 4
+      },
+      "scene": null,
+      "caption": null,
+      "comment": ""
+    }
+  ]
 }
