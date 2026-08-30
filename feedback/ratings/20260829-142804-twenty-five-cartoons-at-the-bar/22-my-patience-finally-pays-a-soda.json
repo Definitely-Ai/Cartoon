@@ -8,9 +8,9 @@
   },
   "scene": 2,
   "caption": 1,
-  "comment": "Get the card off the bar.  Line not cleaver",
-  "at": "2026-08-30T17:42:38.393Z",
-  "revisions": 7,
+  "comment": "Get the card off the bar.  Line not cleaver.",
+  "at": "2026-08-30T17:42:39.801Z",
+  "revisions": 8,
   "history": [
     {
       "at": "2026-08-30T17:41:25.021Z",
@@ -85,6 +85,17 @@
       "scene": 2,
       "caption": 1,
       "comment": "Get the card off the bar.  Line not"
+    },
+    {
+      "at": "2026-08-30T17:42:38.393Z",
+      "characters": {
+        "drew": 3,
+        "mango": 3,
+        "abby": 2
+      },
+      "scene": 2,
+      "caption": 1,
+      "comment": "Get the card off the bar.  Line not cleaver"
     }
   ]
 }
