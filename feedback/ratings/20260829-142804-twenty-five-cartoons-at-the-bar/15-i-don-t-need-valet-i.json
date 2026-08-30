@@ -2,9 +2,18 @@
   "batch": "20260829-142804-twenty-five-cartoons-at-the-bar",
   "panel": "15-i-don-t-need-valet-i.png",
   "characters": {},
-  "scene": null,
+  "scene": 4,
   "caption": 5,
   "comment": "",
-  "at": "2026-08-30T17:22:51.637Z",
-  "revisions": 0
+  "at": "2026-08-30T17:23:10.958Z",
+  "revisions": 1,
+  "history": [
+    {
+      "at": "2026-08-30T17:22:51.637Z",
+      "characters": {},
+      "scene": null,
+      "caption": 5,
+      "comment": ""
+    }
+  ]
 }
