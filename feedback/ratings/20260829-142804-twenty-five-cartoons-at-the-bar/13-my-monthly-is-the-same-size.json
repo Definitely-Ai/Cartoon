@@ -2,23 +2,15 @@
   "batch": "20260829-142804-twenty-five-cartoons-at-the-bar",
   "panel": "13-my-monthly-is-the-same-size.png",
   "characters": {
-    "abby": 1
+    "abby": 1,
+    "drew": 2
   },
   "scene": 1,
   "caption": 1,
   "comment": "bad, bad, bad.  Nothing funny!  Abby is sad.  Card is noy helpful.",
-  "at": "2026-08-29T23:00:09.396Z",
-  "revisions": 14,
+  "at": "2026-08-30T17:08:05.852Z",
+  "revisions": 15,
   "history": [
-    {
-      "at": "2026-08-29T22:57:48.811Z",
-      "characters": {
-        "abby": 1
-      },
-      "scene": 1,
-      "caption": 1,
-      "comment": "bad, bad,"
-    },
     {
       "at": "2026-08-29T22:57:52.430Z",
       "characters": {
@@ -99,6 +91,15 @@
       "scene": 1,
       "caption": 1,
       "comment": "bad, bad, bad.  Nothing funny!  Abby is sad.  Card is noy helpful"
+    },
+    {
+      "at": "2026-08-29T23:00:09.396Z",
+      "characters": {
+        "abby": 1
+      },
+      "scene": 1,
+      "caption": 1,
+      "comment": "bad, bad, bad.  Nothing funny!  Abby is sad.  Card is noy helpful."
     }
   ]
 }
