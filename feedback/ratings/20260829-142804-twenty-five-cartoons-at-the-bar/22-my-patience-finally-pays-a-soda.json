@@ -3,18 +3,29 @@
   "panel": "22-my-patience-finally-pays-a-soda.png",
   "characters": {
     "drew": 3,
-    "mango": 3
+    "mango": 3,
+    "abby": 2
   },
   "scene": null,
   "caption": null,
   "comment": "",
-  "at": "2026-08-30T17:41:26.637Z",
-  "revisions": 1,
+  "at": "2026-08-30T17:41:31.165Z",
+  "revisions": 2,
   "history": [
     {
       "at": "2026-08-30T17:41:25.021Z",
       "characters": {
         "drew": 3
+      },
+      "scene": null,
+      "caption": null,
+      "comment": ""
+    },
+    {
+      "at": "2026-08-30T17:41:26.637Z",
+      "characters": {
+        "drew": 3,
+        "mango": 3
       },
       "scene": null,
       "caption": null,
