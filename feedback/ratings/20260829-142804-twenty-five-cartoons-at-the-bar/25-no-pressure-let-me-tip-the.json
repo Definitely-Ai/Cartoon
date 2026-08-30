@@ -8,9 +8,9 @@
   },
   "scene": null,
   "caption": null,
-  "comment": "Abby's hand with bar rag is not natural.  Bottles are empty.",
-  "at": "2026-08-30T17:51:38.914Z",
-  "revisions": 7,
+  "comment": "Abby's hand with bar rag is not natural.  Bottles are empty. Abb y",
+  "at": "2026-08-30T17:52:04.897Z",
+  "revisions": 8,
   "history": [
     {
       "at": "2026-08-30T17:49:51.114Z",
@@ -85,6 +85,17 @@
       "scene": null,
       "caption": null,
       "comment": "Abby's hand with bar rag is not natural.  Bottles are empty"
+    },
+    {
+      "at": "2026-08-30T17:51:38.914Z",
+      "characters": {
+        "drew": 5,
+        "mango": 4,
+        "abby": 2
+      },
+      "scene": null,
+      "caption": null,
+      "comment": "Abby's hand with bar rag is not natural.  Bottles are empty."
     }
   ]
 }
