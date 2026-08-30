@@ -6,9 +6,9 @@
   },
   "scene": null,
   "caption": null,
-  "comment": "the pocket on the back of Drew's sweater is odd, remove these pockets on the back of sweaters.",
-  "at": "2026-08-30T17:32:09.532Z",
-  "revisions": 6,
+  "comment": "the pocket on the back of Drew's sweater is odd, remove these pockets on the back of sweaters.  The joke is college oriented",
+  "at": "2026-08-30T17:32:56.585Z",
+  "revisions": 7,
   "history": [
     {
       "at": "2026-08-30T17:31:06.261Z",
@@ -63,6 +63,15 @@
       "scene": null,
       "caption": null,
       "comment": "the pocket on the back of Drew's sweater is odd, remove these pockets on the back of"
+    },
+    {
+      "at": "2026-08-30T17:32:09.532Z",
+      "characters": {
+        "drew": 1
+      },
+      "scene": null,
+      "caption": null,
+      "comment": "the pocket on the back of Drew's sweater is odd, remove these pockets on the back of sweaters."
     }
   ]
 }
