@@ -4,9 +4,9 @@
   "characters": {},
   "scene": 1,
   "caption": null,
-  "comment": "seating at the bar is all wrong",
-  "at": "2026-08-30T17:34:59.649Z",
-  "revisions": 3,
+  "comment": "seating at the bar is all wrong.",
+  "at": "2026-08-30T17:35:05.132Z",
+  "revisions": 4,
   "history": [
     {
       "at": "2026-08-30T17:34:11.674Z",
@@ -28,6 +28,13 @@
       "scene": 1,
       "caption": null,
       "comment": "sea the ting at"
+    },
+    {
+      "at": "2026-08-30T17:34:59.649Z",
+      "characters": {},
+      "scene": 1,
+      "caption": null,
+      "comment": "seating at the bar is all wrong"
     }
   ]
 }
