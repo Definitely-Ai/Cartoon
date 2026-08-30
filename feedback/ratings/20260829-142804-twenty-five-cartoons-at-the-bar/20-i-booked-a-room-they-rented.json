@@ -3,13 +3,14 @@
   "panel": "20-i-booked-a-room-they-rented.png",
   "characters": {
     "drew": 4,
-    "mango": 4
+    "mango": 4,
+    "abby": 2
   },
   "scene": null,
   "caption": null,
   "comment": "The joke does not need to be tied to the TV.  Abby should smile.",
-  "at": "2026-08-30T17:38:05.786Z",
-  "revisions": 4,
+  "at": "2026-08-30T17:38:10.130Z",
+  "revisions": 5,
   "history": [
     {
       "at": "2026-08-30T17:37:06.388Z",
@@ -36,6 +37,16 @@
       "at": "2026-08-30T17:38:03.886Z",
       "characters": {
         "drew": 4
+      },
+      "scene": null,
+      "caption": null,
+      "comment": "The joke does not need to be tied to the TV.  Abby should smile."
+    },
+    {
+      "at": "2026-08-30T17:38:05.786Z",
+      "characters": {
+        "drew": 4,
+        "mango": 4
       },
       "scene": null,
       "caption": null,
