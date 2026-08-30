@@ -7,9 +7,9 @@
   },
   "scene": 4,
   "caption": 6,
-  "comment": "Drew's mouth should open when he speaks.  No cards on the bar",
-  "at": "2026-08-30T17:45:23.187Z",
-  "revisions": 8,
+  "comment": "Drew's mouth should open when he speaks.  No cards on the bar.",
+  "at": "2026-08-30T17:45:26.063Z",
+  "revisions": 9,
   "history": [
     {
       "at": "2026-08-30T17:43:48.927Z",
@@ -89,6 +89,16 @@
       "scene": 4,
       "caption": 6,
       "comment": "Drew's mouth should open when he speaks."
+    },
+    {
+      "at": "2026-08-30T17:45:23.187Z",
+      "characters": {
+        "drew": 2,
+        "mango": 4
+      },
+      "scene": 4,
+      "caption": 6,
+      "comment": "Drew's mouth should open when he speaks.  No cards on the bar"
     }
   ]
 }
