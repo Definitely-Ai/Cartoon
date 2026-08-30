@@ -7,10 +7,10 @@
     "abby": 2
   },
   "scene": 4,
-  "caption": null,
+  "caption": 5,
   "comment": "The joke does not need to be tied to the TV.  Abby should smile.",
-  "at": "2026-08-30T17:38:28.338Z",
-  "revisions": 6,
+  "at": "2026-08-30T17:38:35.198Z",
+  "revisions": 7,
   "history": [
     {
       "at": "2026-08-30T17:37:06.388Z",
@@ -60,6 +60,17 @@
         "abby": 2
       },
       "scene": null,
+      "caption": null,
+      "comment": "The joke does not need to be tied to the TV.  Abby should smile."
+    },
+    {
+      "at": "2026-08-30T17:38:28.338Z",
+      "characters": {
+        "drew": 4,
+        "mango": 4,
+        "abby": 2
+      },
+      "scene": 4,
       "caption": null,
       "comment": "The joke does not need to be tied to the TV.  Abby should smile."
     }
