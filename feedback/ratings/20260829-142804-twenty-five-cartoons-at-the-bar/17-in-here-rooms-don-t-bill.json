@@ -8,9 +8,9 @@
   },
   "scene": null,
   "caption": 2,
-  "comment": "Take the monogram off of Abby's bar rag.",
-  "at": "2026-08-30T17:28:53.030Z",
-  "revisions": 6,
+  "comment": "Take the monogram off of Abby's bar rag.  Price tag on the glass looks",
+  "at": "2026-08-30T17:29:14.761Z",
+  "revisions": 7,
   "history": [
     {
       "at": "2026-08-30T17:26:49.285Z",
@@ -70,6 +70,17 @@
       "scene": null,
       "caption": 2,
       "comment": "Take the monogram off of Abby's bar rag"
+    },
+    {
+      "at": "2026-08-30T17:28:53.030Z",
+      "characters": {
+        "abby": 2,
+        "mango": 3,
+        "drew": 4
+      },
+      "scene": null,
+      "caption": 2,
+      "comment": "Take the monogram off of Abby's bar rag."
     }
   ]
 }
