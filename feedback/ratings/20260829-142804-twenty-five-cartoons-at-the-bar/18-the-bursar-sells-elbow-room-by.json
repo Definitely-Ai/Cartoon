@@ -5,21 +5,12 @@
     "drew": 1,
     "mango": 4
   },
-  "scene": 1,
+  "scene": 3,
   "caption": null,
   "comment": "the pocket on the back of Drew's sweater is odd, remove these pockets on the back of sweaters.  The joke is college oriented, should have more of a business focus.",
-  "at": "2026-08-30T17:35:34.600Z",
-  "revisions": 11,
+  "at": "2026-08-30T17:35:40.772Z",
+  "revisions": 12,
   "history": [
-    {
-      "at": "2026-08-30T17:31:14.368Z",
-      "characters": {
-        "drew": 1
-      },
-      "scene": null,
-      "caption": null,
-      "comment": "the"
-    },
     {
       "at": "2026-08-30T17:31:31.001Z",
       "characters": {
@@ -99,6 +90,16 @@
         "mango": 4
       },
       "scene": null,
+      "caption": null,
+      "comment": "the pocket on the back of Drew's sweater is odd, remove these pockets on the back of sweaters.  The joke is college oriented, should have more of a business focus."
+    },
+    {
+      "at": "2026-08-30T17:35:34.600Z",
+      "characters": {
+        "drew": 1,
+        "mango": 4
+      },
+      "scene": 1,
       "caption": null,
       "comment": "the pocket on the back of Drew's sweater is odd, remove these pockets on the back of sweaters.  The joke is college oriented, should have more of a business focus."
     }
