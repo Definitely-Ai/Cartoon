@@ -8,9 +8,9 @@
   },
   "scene": 4,
   "caption": 5,
-  "comment": "Abby should look happy or pleased with the jokw",
-  "at": "2026-08-30T17:25:47.552Z",
-  "revisions": 6,
+  "comment": "Abby should look happy or pleased with the joke",
+  "at": "2026-08-30T17:25:50.686Z",
+  "revisions": 7,
   "history": [
     {
       "at": "2026-08-30T17:24:33.215Z",
@@ -74,6 +74,17 @@
       "scene": 4,
       "caption": 5,
       "comment": "Abby"
+    },
+    {
+      "at": "2026-08-30T17:25:47.552Z",
+      "characters": {
+        "drew": 4,
+        "mango": 4,
+        "abby": 3
+      },
+      "scene": 4,
+      "caption": 5,
+      "comment": "Abby should look happy or pleased with the jokw"
     }
   ]
 }
