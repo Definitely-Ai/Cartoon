@@ -7,9 +7,9 @@
   },
   "scene": 4,
   "caption": 5,
-  "comment": "",
-  "at": "2026-08-30T17:23:20.755Z",
-  "revisions": 3,
+  "comment": "the bottles look",
+  "at": "2026-08-30T17:23:36.626Z",
+  "revisions": 4,
   "history": [
     {
       "at": "2026-08-30T17:22:51.637Z",
@@ -29,6 +29,16 @@
       "at": "2026-08-30T17:23:17.775Z",
       "characters": {
         "drew": 3
+      },
+      "scene": 4,
+      "caption": 5,
+      "comment": ""
+    },
+    {
+      "at": "2026-08-30T17:23:20.755Z",
+      "characters": {
+        "drew": 3,
+        "mango": 3
       },
       "scene": 4,
       "caption": 5,
