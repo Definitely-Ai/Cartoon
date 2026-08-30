@@ -7,9 +7,9 @@
   },
   "scene": 1,
   "caption": 2,
-  "comment": "The bottles look better.  The note on the bar is small and difficult to read eliminate note cards on the bar",
-  "at": "2026-08-30T17:21:52.998Z",
-  "revisions": 8,
+  "comment": "The bottles look better.  The note on the bar is small and difficult to read eliminate note cards on the bar.",
+  "at": "2026-08-30T17:21:56.254Z",
+  "revisions": 9,
   "history": [
     {
       "at": "2026-08-30T17:19:58.720Z",
@@ -83,6 +83,16 @@
       "scene": 1,
       "caption": 2,
       "comment": "The bottles look better.  The note on the bar is sma"
+    },
+    {
+      "at": "2026-08-30T17:21:52.998Z",
+      "characters": {
+        "mango": 4,
+        "drew": 5
+      },
+      "scene": 1,
+      "caption": 2,
+      "comment": "The bottles look better.  The note on the bar is small and difficult to read eliminate note cards on the bar"
     }
   ]
 }
