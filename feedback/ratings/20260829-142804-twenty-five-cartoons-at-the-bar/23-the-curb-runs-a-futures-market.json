@@ -7,9 +7,9 @@
   },
   "scene": 4,
   "caption": 6,
-  "comment": "Drew's mouth should open when he speaks",
-  "at": "2026-08-30T17:44:59.175Z",
-  "revisions": 6,
+  "comment": "Drew's mouth should open when he speaks.",
+  "at": "2026-08-30T17:45:12.747Z",
+  "revisions": 7,
   "history": [
     {
       "at": "2026-08-30T17:43:48.927Z",
@@ -69,6 +69,16 @@
       "scene": 4,
       "caption": 6,
       "comment": "Drew's mouth"
+    },
+    {
+      "at": "2026-08-30T17:44:59.175Z",
+      "characters": {
+        "drew": 2,
+        "mango": 4
+      },
+      "scene": 4,
+      "caption": 6,
+      "comment": "Drew's mouth should open when he speaks"
     }
   ]
 }
