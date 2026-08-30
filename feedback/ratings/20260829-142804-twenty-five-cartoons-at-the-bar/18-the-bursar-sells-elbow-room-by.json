@@ -6,9 +6,9 @@
   },
   "scene": null,
   "caption": null,
-  "comment": "the pocket on the back of Drew's sweater",
-  "at": "2026-08-30T17:31:35.759Z",
-  "revisions": 3,
+  "comment": "the pocket on the back of Drew's sweater is odd",
+  "at": "2026-08-30T17:31:41.282Z",
+  "revisions": 4,
   "history": [
     {
       "at": "2026-08-30T17:31:06.261Z",
@@ -36,6 +36,15 @@
       "scene": null,
       "caption": null,
       "comment": "the pocket on the back of Drew's"
+    },
+    {
+      "at": "2026-08-30T17:31:35.759Z",
+      "characters": {
+        "drew": 1
+      },
+      "scene": null,
+      "caption": null,
+      "comment": "the pocket on the back of Drew's sweater"
     }
   ]
 }
