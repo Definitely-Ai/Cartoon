@@ -4,7 +4,16 @@
   "characters": {},
   "scene": 1,
   "caption": null,
-  "comment": "",
-  "at": "2026-08-30T17:34:11.674Z",
-  "revisions": 0
+  "comment": "seating at",
+  "at": "2026-08-30T17:34:29.671Z",
+  "revisions": 1,
+  "history": [
+    {
+      "at": "2026-08-30T17:34:11.674Z",
+      "characters": {},
+      "scene": 1,
+      "caption": null,
+      "comment": ""
+    }
+  ]
 }
