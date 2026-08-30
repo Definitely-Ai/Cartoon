@@ -1,18 +1,27 @@
 {
   "batch": "20260829-142804-twenty-five-cartoons-at-the-bar",
   "panel": "14-i-own-the-walls-the-hallway.png",
-  "characters": {},
+  "characters": {
+    "mango": 4
+  },
   "scene": 1,
   "caption": 2,
   "comment": "",
-  "at": "2026-08-30T17:20:05.492Z",
-  "revisions": 1,
+  "at": "2026-08-30T17:20:20.805Z",
+  "revisions": 2,
   "history": [
     {
       "at": "2026-08-30T17:19:58.720Z",
       "characters": {},
       "scene": 1,
       "caption": null,
+      "comment": ""
+    },
+    {
+      "at": "2026-08-30T17:20:05.492Z",
+      "characters": {},
+      "scene": 1,
+      "caption": 2,
       "comment": ""
     }
   ]
