@@ -7,9 +7,9 @@
   },
   "scene": 1,
   "caption": 2,
-  "comment": "The bottles look better.  The note on",
-  "at": "2026-08-30T17:21:12.499Z",
-  "revisions": 5,
+  "comment": "The bottles look better.  The note on the bar",
+  "at": "2026-08-30T17:21:17.893Z",
+  "revisions": 6,
   "history": [
     {
       "at": "2026-08-30T17:19:58.720Z",
@@ -53,6 +53,16 @@
       "scene": 1,
       "caption": 2,
       "comment": "The bottles look better"
+    },
+    {
+      "at": "2026-08-30T17:21:12.499Z",
+      "characters": {
+        "mango": 4,
+        "drew": 5
+      },
+      "scene": 1,
+      "caption": 2,
+      "comment": "The bottles look better.  The note on"
     }
   ]
 }
