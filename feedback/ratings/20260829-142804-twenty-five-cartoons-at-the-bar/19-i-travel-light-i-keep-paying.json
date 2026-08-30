@@ -4,9 +4,9 @@
   "characters": {},
   "scene": 1,
   "caption": null,
-  "comment": "seating at",
-  "at": "2026-08-30T17:34:29.671Z",
-  "revisions": 1,
+  "comment": "sea the ting at",
+  "at": "2026-08-30T17:34:32.790Z",
+  "revisions": 2,
   "history": [
     {
       "at": "2026-08-30T17:34:11.674Z",
@@ -14,6 +14,13 @@
       "scene": 1,
       "caption": null,
       "comment": ""
+    },
+    {
+      "at": "2026-08-30T17:34:29.671Z",
+      "characters": {},
+      "scene": 1,
+      "caption": null,
+      "comment": "seating at"
     }
   ]
 }
