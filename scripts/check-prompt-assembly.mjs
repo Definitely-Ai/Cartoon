@@ -270,25 +270,43 @@ check("every slot is filled on both paths", () => {
   }
 });
 
-check("the bar prompt carries ONE staging, and it is the plates'", () => {
-  // The founder failed nine of twenty-five panels on seating. The cause was a
-  // prompt that said both "marble across the LOWEST part of the picture" and
-  // "marble between 40% and 60%", both "never the back of a head" and "their
+check("the bar prompt carries ONE staging: customer-side, over-the-shoulder", () => {
+  // The founder failed nine of twenty-five panels on seating. The FIRST cause
+  // was a prompt that said both "marble across the LOWEST part of the picture"
+  // and "marble between 40% and 60%", both "never the back of a head" and "their
   // BACKS TO US" — the model split every difference and drew a floating table.
-  // One geometry now: the plates' — seated at the counter, side-on, facing
-  // each other. If any over-the-shoulder or bottom-strip language returns to
-  // canon or the scene slot, this fails by name.
+  // The operator has since ruled a DELIBERATE new camera, deviating from plate 1:
+  // on the CUSTOMER side, behind and a little above the two gentlemen, looking
+  // ACROSS the ONE counter to the back bar on the FAR/service side. So the bar
+  // prompt must now ASSERT that camera and pin the bottles across the counter
+  // (the fix for the batch that stood the shelves behind the seated gentlemen
+  // and read them as bartenders). What it must still NOT contain are the
+  // phrasings that named the ACTUAL old failures — the bottom-strip marble, a
+  // faceless full back-of-head, the shoulder-hides-the-counter jam — plus the
+  // self-contradicting 'never a figure turned away', now removed from canon.
   const prompt = assemblePrompt(master, withAbby, false, false, true);
   assert.match(prompt, /SEATED AT THE COUNTER/, "the gentlemen sit AT the counter");
+  assert.match(prompt, /block(s|ing)? (the slab|the counter|its near edge)/i, "the occlusion law — patrons cover the counter, never covered by it");
   assert.match(prompt, /forearms resting ON it/, "forearms on the marble is the seated-at-the-bar read");
+  assert.match(prompt, /CUSTOMER SIDE/, "the camera sits on the customer side, behind the gentlemen");
+  assert.match(prompt, /SEEN FROM BEHIND/, "the gentlemen are seen from behind, not side-on");
+  assert.match(prompt, /over his own shoulder/, "each face reads over the shoulder, never a faceless back");
+  assert.match(
+    prompt,
+    /ACROSS THE COUNTER on the FAR SERVICE SIDE/,
+    "the back bar is across the one counter on the far/service side"
+  );
+  assert.match(
+    prompt,
+    /EMPTY WALKWAY between the slab/,
+    "the service walkway keeps the shelves off the gentlemen's backs"
+  );
   for (const [pattern, what] of [
-    [/BACKS TO US/i, "an over-the-shoulder camera"],
-    [/looking over their shoulders/i, "an over-the-shoulder camera"],
+    [/BACKS TO US/i, "a faceless full back-of-head (the face must read back over the shoulder)"],
     [/LOWEST part of the picture/i, "the bottom-strip marble"],
-    [/BEYOND THEIR SHOULDERS/i, "the behind-the-shoulders counter"],
-    [/behind and a little above/i, "the raised rear camera"],
     [/OVERLAP AND HIDE/i, "the shoulder-hides-the-counter instruction (read as 'jammed into the bar')"],
     [/gentlemen cover it/i, "the compressed occlusion aphorism"],
+    [/never a figure turned away/i, "the old rule that now contradicts the deliberate rear camera"],
   ]) {
     assert.doesNotMatch(prompt, pattern, `the bar prompt must not reintroduce ${what}`);
   }

@@ -311,11 +311,11 @@ export function referenceList(
       path: "canon/vision/staging-plate.jpg",
       label:
         "THE EMPTY SET — this same bar BEFORE the cast walks in, attached for its geometry only. THE MARBLE " +
-        "COUNTER IN THIS TILE IS THE COUNTER: seat the gentlemen on the NEAR side of THIS counter with their " +
+        "COUNTER IN THIS TILE IS THE COUNTER: seat the gentlemen on the NEAR side of THIS counter SEEN FROM BEHIND, with their " +
         "drinks standing ON THIS SAME SLAB — never invent a second, nearer surface for the drinks, and never " +
         "leave this counter standing behind their backs as scenery. Abby, when cast, works on the FAR side of " +
         "this same counter. Copy the back bar with its high shelves, the television above it, the " +
-        "chalkboard, the sconces and the panelling exactly as here. The window at far left carries ONLY the " +
+        "chalkboard, the sconces and the panelling exactly as here, ACROSS the counter on the FAR service side and never behind the gentlemen. The window at far left carries ONLY the " +
         "mirrored house name — NO door is drawn in or beside the window in the cartoon, whatever this tile " +
         "shows at its edge. Its screen and board are deliberately blank, and the scene below is the ONLY " +
         "authority on them: letter them, switch the television off, or leave the slate wiped exactly as it says"

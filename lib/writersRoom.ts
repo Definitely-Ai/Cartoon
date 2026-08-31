@@ -81,9 +81,8 @@ const CAST: CastName[] = ["drew", "mango", "abby"];
  *  canon's job. */
 function barStage(hasAbby: boolean, tvPicture: string): string {
   const who = hasAbby
-    ? "IN THIS PANEL: Drew and Mango seated as patrons, and ABBY working the service side beyond the counter."
-    : "IN THIS PANEL: Drew and Mango seated as patrons, and NOBODY on the service side — the space behind the " +
-      "counter is empty.";
+    ? "IN THIS PANEL, CAMERA behind the two gentlemen on the CUSTOMER SIDE — their bodies block the counter's near edge — with ABBY working the FAR service side across the counter, the back bar behind HER alone."
+    : "IN THIS PANEL, CAMERA behind the two gentlemen on the CUSTOMER SIDE — their bodies block the counter's near edge — and NOBODY on the FAR service side: the back bar stands across the counter, behind no one.";
   const screen = tvPicture ? ` The television picture shows ${tvPicture.replace(/\.$/, "")}.` : "";
   return `${who}${screen} Stage it exactly as THE SIDES describes.`;
 }
