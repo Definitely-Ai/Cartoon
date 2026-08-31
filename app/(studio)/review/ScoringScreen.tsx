@@ -178,6 +178,12 @@ export default async function ScoringScreen({
                   : `Still drawing — ${made} of ${total} are in so far. Score those and check back shortly for the rest.`}
             </p>
 
+            {/* The long view: every set, when it was drawn, how much is scored.
+                A quiet link, not a shelf — the desk stays one set at a time. */}
+            <p className="rv-board">
+              <Link href="/review/all">See every set on the board &rsaquo;</Link>
+            </p>
+
             {/* Rick opens this page cold. Tell him what he is looking at and
                 what to do, in the fewest plain words that will do it. */}
             <div className="rv-howto">
@@ -273,6 +279,8 @@ export default async function ScoringScreen({
         }
         .rv-made { font-family: ${serif}; font-size: 15px; color: #5a5145; margin: 10px 0 0; }
         .rv-drawing { font-family: ${serif}; font-style: italic; font-size: 15px; color: #5a5145; margin: 8px 0 0; }
+        .rv-board { font-family: ${serif}; font-size: 14px; margin: 10px 0 0; }
+        .rv-board a { color: #6b5a12; }
         .rv-empty {
           font-family: ${serif};
           font-style: italic;
