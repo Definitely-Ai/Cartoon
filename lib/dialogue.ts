@@ -14,7 +14,7 @@ const TARGET_WIDTH = 1200;
 const xml = (value: string) =>
   value.replace(/[&<>]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" })[c] as string);
 
-const SPEAKERS = ["Drew", "Mango", "Abby"];
+const SPEAKERS = ["Drew", "Barclay", "Abby", "Mango"] // Mango: legacy name, still accepted from cached connectors;
 
 // Words the strip never prints. Gentlemen, always — the wit never needs a
 // cheap word (founder: "no slandering, no cussing, they are classy").
@@ -31,7 +31,7 @@ export function lintCaption(caption: string): { speaker: string; speech: string;
   if (!match || !SPEAKERS.includes(match[1])) {
     throw new PublishError(
       400,
-      `The caption must be attributed dialogue in the house format — Drew: "…", Mango: "…", or Abby: "…" — got: ${trimmed.slice(0, 60)}`
+      `The caption must be attributed dialogue in the house format — Drew: "…", Barclay: "…", or Abby: "…" — got: ${trimmed.slice(0, 60)}`
     );
   }
   const speaker = match[1];

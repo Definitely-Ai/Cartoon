@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import { canonCastKey, foldCastScores } from "@/lib/cast";
 import { formatDateline, formatTimeET } from "@/lib/format";
 import { listRepoDir, readRepoFile } from "@/lib/githubPublish";
 
@@ -33,9 +34,9 @@ const serif = "Georgia, 'Times New Roman', serif";
 /** The cast under their proper names — the plan files key them lowercase.
  *  Named here rather than in ReviewDesk because a server component cannot
  *  read a constant out of a "use client" module. */
-const CAST_NAMES: Record<CastName, string> = { drew: "Drew", mango: "Mango", abby: "Abby" };
+const CAST_NAMES: Record<CastName, string> = { drew: "Drew", barclay: "Barclay", abby: "Abby" };
 const isCast = (who: string): who is CastName =>
-  who === "drew" || who === "mango" || who === "abby";
+  who === "drew" || who === "barclay" || who === "abby";
 
 /** When the batch was made, on the founder's clock — the Eastern calendar
  *  day, so a batch written after eight at night is not dated tomorrow. */
@@ -61,7 +62,7 @@ async function readVerdicts(batch: string): Promise<Map<string, StandingVerdict>
       try {
         const raw = JSON.parse(file.bytes.toString("utf8")) as Partial<StandingVerdict>;
         const verdict: StandingVerdict = {
-          characters: (raw.characters ?? {}) as Partial<Record<CastName, number>>,
+          characters: foldCastScores(raw.characters ?? {}),
           scene: typeof raw.scene === "number" ? raw.scene : null,
           caption: typeof raw.caption === "number" ? raw.caption : null,
           comment: typeof raw.comment === "string" ? raw.comment : "",
@@ -126,11 +127,10 @@ export default async function ScoringScreen({
       n: panel.n,
       file: panel.file,
       key,
-      speaker: isCast(panel.speaker) ? CAST_NAMES[panel.speaker] : panel.speaker,
+      speaker: (() => { const k = canonCastKey(panel.speaker); return k ? CAST_NAMES[k] : panel.speaker; })(),
       caption: panel.caption,
       turn: panel.turn ?? "",
-      cast: (panel.characters ?? [])
-        .filter(isCast)
+      cast: [...new Set((panel.characters ?? []).map(canonCastKey).filter((k): k is CastName => k !== null))]
         .map((who) => ({ key: who, name: CAST_NAMES[who] })),
       drawn: drawn.has(panel.file),
       src: `/api/img/brief/${batch}/${panel.file}`,

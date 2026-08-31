@@ -10,7 +10,7 @@ numbers, proof labels, and catalog lines remain site-native.
 
 - Single-frame black ink with restrained gray wash on clean warm-white paper.
 - Confident varied line, economical interior detail, and readable silhouettes.
-- Drew keeps his bowtie and three-olive martini; Mango keeps his jacket, lapel
+- Drew keeps his bowtie and three-olive martini; Barclay keeps his jacket, lapel
   pin, and old fashioned; Abby remains behind the bar and appears sparingly.
 - Each panel ends with a warm-white dialogue field using the exact caption from
   its JSON metadata. No title, date, catalog line, proof label, watermark, or UI

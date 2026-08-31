@@ -30,7 +30,7 @@ const xml = (value) =>
 // carrying a cast attribution typesets that way; anything else keeps the
 // legacy whole-line quotes so old cartoons re-render unchanged.
 function formatCaption(caption) {
-  const match = caption.trim().match(/^(Drew|Mango|Abby)\s*:\s*([\s\S]+)$/);
+  const match = caption.trim().match(/^(Drew|Barclay|Abby)\s*:\s*([\s\S]+)$/);
   if (!match) return `“${caption.trim()}”`;
   const speech = match[2].trim().replace(/^["“]/, "").replace(/["”]$/, "").trim();
   return `${match[1]}: “${speech}”`;

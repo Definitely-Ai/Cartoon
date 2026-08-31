@@ -1,12 +1,12 @@
 {
-  "characterId": "mango",
+  "characterId": "barclay",
   "canonVersion": "1.0.0",
   "lockedMaster": "full-body-sheet.png",
   "referencePolicy": "The locked master and the written canon (DESCRIPTION.md, CHARACTER-BIBLE.md) outrank all support sheets and older cartoons. Never average; match the master and flag the conflict.",
   "assets": [
     {
       "file": "full-body-sheet.png",
-      "sourceId": "mango-master-model-v1",
+      "sourceId": "barclay-master-model-v1",
       "status": "locked",
       "role": "Primary body, silhouette, neck, hands, feet, facial texture, eye construction, and no-tail authority",
       "width": 1536,
@@ -15,7 +15,7 @@
     },
     {
       "file": "identity-sheet.png",
-      "sourceId": "mango-identity-sheet-v1",
+      "sourceId": "barclay-identity-sheet-v1",
       "status": "support",
       "role": "Close identity check for face, eyes, expression, muzzle, ears, and fur texture",
       "width": 1440,
@@ -24,7 +24,7 @@
     },
     {
       "file": "lapel-pin-bible.png",
-      "sourceId": "mango-lapel-pin-bible-v1",
+      "sourceId": "barclay-lapel-pin-bible-v1",
       "status": "support",
       "role": "Exact USA pin design and left-lapel placement authority",
       "width": 1024,

@@ -9,7 +9,7 @@ const errors = [];
 
 const characters = [
   { folder: "flamingo", characterId: "drew" },
-  { folder: "dog", characterId: "mango" },
+  { folder: "dog", characterId: "barclay" },
   { folder: "abby", characterId: "abby" },
 ];
 
@@ -201,5 +201,5 @@ if (errors.length > 0) {
 }
 
 console.log(
-  `Character canon valid: ${characters.length} characters (drew, mango, abby), ${sheetCount} fingerprinted model sheets, documents and master prompt are consistent.`,
+  `Character canon valid: ${characters.length} characters (drew, barclay, abby), ${sheetCount} fingerprinted model sheets, documents and master prompt are consistent.`,
 );

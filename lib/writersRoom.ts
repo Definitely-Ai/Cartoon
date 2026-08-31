@@ -21,7 +21,7 @@ import { generateText } from "@/lib/replicate";
 
 export const WRITER_MODEL = process.env.WRITER_MODEL || "openai/gpt-5";
 
-export type CastName = "drew" | "mango" | "abby";
+export type CastName = "drew" | "barclay" | "abby";
 
 /** What the writer is allowed to decide. */
 export type Gag = {
@@ -54,7 +54,7 @@ export type Brief = Gag & {
   setting: string;
 };
 
-const CAST: CastName[] = ["drew", "mango", "abby"];
+const CAST: CastName[] = ["drew", "barclay", "abby"];
 
 // ---------------------------------------------------------------------------
 // The stage. Not the writer's to touch.
@@ -246,7 +246,7 @@ cartoon in the New Yorker tradition, set in an upscale bar a block off Wall Stre
 THE CAST — exactly three, and no one else exists in this world:
 - drew: a white-plumed flamingo gentleman in a black bow tie and knitted sweater vest. Dry, composed,
   the one who says the line. Drinks a martini.
-- mango: a golden retriever gentleman in a good suit with a flag pin on his left lapel. Earnest, warm,
+- barclay: a golden retriever gentleman in a good suit with a flag pin on his left lapel. Earnest, warm,
   worried in the brows and nowhere else. Drinks an old fashioned.
 - abby: a West Highland white terrier who owns the bar and tends it. Behind her counter, towel and
   bottle are hers alone. She lands the driest lines because she has heard everything.
@@ -281,10 +281,10 @@ Return ONLY a JSON array. No prose, no markdown fence, no commentary before or a
 
 const SHAPE = `Each element of the array is an object with exactly these keys:
 
-  "speaker"    one of "drew", "mango", "abby" — who says the caption
+  "speaker"    one of "drew", "barclay", "abby" — who says the caption
   "caption"    the spoken line, without the speaker's name, without surrounding quotes.
                One sentence. Never more than about twenty words.
-  "characters" an array of one to three of "drew", "mango", "abby". The speaker must be in it.
+  "characters" an array of one to three of "drew", "barclay", "abby". The speaker must be in it.
   "action"     ONE OR TWO SENTENCES describing only what the characters are physically DOING and what
                they are HOLDING. The counter is already set — martini, old fashioned, nut bowl — and
                you may not add to it. Do NOT describe camera angles, who is in front of
@@ -428,7 +428,13 @@ export function parseGags(raw: string, expected: number): Gag[] {
   return gags.slice(0, expected);
 }
 
-const isCast = (v: unknown): v is CastName => typeof v === "string" && CAST.includes(v as CastName);
+const LEGACY_CAST: Record<string, CastName> = { mango: "barclay" }; // pre-rename clients
+const castOf = (v: unknown): CastName | null => {
+  const k = String(v ?? "").toLowerCase().trim();
+  const m = (LEGACY_CAST[k] ?? k) as CastName;
+  return CAST.includes(m) ? m : null;
+};
+const isCast = (v: unknown): v is CastName => castOf(v) !== null;
 
 function validate(item: unknown, index: number): Gag {
   const o = (item ?? {}) as Record<string, unknown>;
@@ -440,8 +446,10 @@ function validate(item: unknown, index: number): Gag {
   const action = str("action");
   if (!action) throw new PublishError(502, `Cartoon ${index + 1} has no action.`);
 
-  const speaker = isCast(o.speaker) ? o.speaker : "drew";
-  const listed = Array.isArray(o.characters) ? o.characters.filter(isCast) : [];
+  const speaker = castOf(o.speaker) ?? "drew";
+  const listed = Array.isArray(o.characters)
+    ? o.characters.map(castOf).filter((c): c is CastName => c !== null)
+    : [];
   const characters = listed.includes(speaker) ? listed : [speaker, ...listed];
   const unique = CAST.filter((c) => characters.includes(c));
 

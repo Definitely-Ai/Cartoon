@@ -87,17 +87,17 @@ const checks = [];
 const check = (name, fn) => checks.push([name, fn]);
 
 const bar = {
-  scene: "Mango is mid-story with a raised hand while Drew signals toward the taps.",
+  scene: "Barclay is mid-story with a raised hand while Drew signals toward the taps.",
   tv: "MARKETS OPEN",
   board: "PATIENCE, SERVED DAILY",
-  characters: ["drew", "mango"],
+  characters: ["drew", "barclay"],
 };
 const boat = {
-  scene: "Drew works the oars while Mango reads the tide table.",
+  scene: "Drew works the oars while Barclay reads the tide table.",
   setting: "a small two-thwart fishing boat on calm water",
-  characters: ["drew", "mango"],
+  characters: ["drew", "barclay"],
 };
-const withAbby = { ...bar, characters: ["drew", "mango", "abby"] };
+const withAbby = { ...bar, characters: ["drew", "barclay", "abby"] };
 
 // THE REAL THING, NOT A STAND-IN. The three fixtures above are short scenes
 // written by hand, and for a long time the length check measured those and
@@ -116,9 +116,9 @@ const widestGag = stage({
   speaker: "drew",
   caption: 'Abby: "There is about four dollars of whiskey in that glass and fourteen dollars of roof."',
   action:
-    "Abby slides Mango's old fashioned across the marble past the check spindle, where a renewal envelope " +
+    "Abby slides Barclay's old fashioned across the marble past the check spindle, where a renewal envelope " +
     "thick as a paperback is spiked and still sealed, tall enough to bury the spindle",
-  characters: ["drew", "mango", "abby"],
+  characters: ["drew", "barclay", "abby"],
   away: "",
   signs: [],
   turn: "reclassification",
@@ -140,9 +140,9 @@ check("the fine-tune is given trigger words, not descriptions", () => {
   const prompt = assemblePrompt(master, bar, true);
   assert.match(prompt, /SWDINK/);
   assert.match(prompt, /SWDDREW/);
-  assert.match(prompt, /SWDMANGO/);
+  assert.match(prompt, /SWDBARCLAY/);
   assert.doesNotMatch(prompt, /Preserve Drew exactly/, "the identity paragraph is the token's job now");
-  assert.doesNotMatch(prompt, /Mango matches the attached/);
+  assert.doesNotMatch(prompt, /Barclay matches the attached/);
   assert.doesNotMatch(prompt, /attached image is the reference board/);
 });
 
@@ -236,7 +236,7 @@ check("no barroom furniture travels to an away game on the house path", () => {
 
   // What SHOULD travel: the cast and the drawing hand belong everywhere.
   assert.match(away, /DREW\./, "Drew's construction travels to every setting");
-  assert.match(away, /MANGO\./, "so does Mango's");
+  assert.match(away, /BARCLAY\./, "so does Barclay's");
   assert.match(away, /steel engraving/, "and so does the style");
   assert.match(away, /two-thwart fishing boat/, "and the setting Rick asked for is in there");
 });
@@ -354,11 +354,11 @@ check("the speaker reaches the drawing when it is Drew, and only then", () => {
   const drewSpeaks = stage({ ...widestGag, speaker: "drew", away: "", signs: [] });
   assert.match(drewSpeaks.scene, /DREW IS THE ONE SPEAKING/);
   assert.match(drewSpeaks.scene, /SLIGHTLY PARTED/);
-  const mangoSpeaks = stage({ ...widestGag, speaker: "mango", away: "", signs: [] });
+  const barclaySpeaks = stage({ ...widestGag, speaker: "barclay", away: "", signs: [] });
   assert.doesNotMatch(
-    mangoSpeaks.scene,
+    barclaySpeaks.scene,
     /SPEAKING/,
-    "Mango and Abby keep their closed-mouth rules — no speaker note for them"
+    "Barclay and Abby keep their closed-mouth rules — no speaker note for them"
   );
 });
 
@@ -369,7 +369,7 @@ check("Abby's warmth rides the scene slot, where instructions land last", () => 
   // that casts her.
   assert.match(widestGag.scene, /NEVER sad/);
   assert.match(widestGag.scene, /SMILING/, "the serving half of the founder's ruling must ride along");
-  const noAbby = stage({ ...widestGag, speaker: "mango", characters: ["drew", "mango"], away: "", signs: [] });
+  const noAbby = stage({ ...widestGag, speaker: "barclay", characters: ["drew", "barclay"], away: "", signs: [] });
   assert.doesNotMatch(noAbby.scene, /reads WARM/, "no Abby note when she is not cast");
 });
 
@@ -411,7 +411,7 @@ check("Abby's fence does not leak an unfilled slot", () => {
 });
 
 check("an unknown cast is refused rather than drawn as nobody", () => {
-  assert.throws(() => assemblePrompt(master, { ...bar, characters: ["gerald"] }, true), /mango, drew, or abby/);
+  assert.throws(() => assemblePrompt(master, { ...bar, characters: ["gerald"] }, true), /barclay, drew, or abby/);
 });
 
 // Everything above reads a string. This one watches what actually goes out on
@@ -440,7 +440,7 @@ asyncChecks.push([
         }
         return new Response(new Uint8Array([1, 2, 3]));
       };
-      await generateCartoonArt({ prompt: "SWDINK single-panel cartoon.", characters: ["drew", "mango"] });
+      await generateCartoonArt({ prompt: "SWDINK single-panel cartoon.", characters: ["drew", "barclay"] });
 
       assert.ok(!calls.some((u) => u.endsWith("/v1/files")), "no file upload on the fine-tuned path");
       assert.ok(!calls.some((u) => u.includes("api.github.com")), "no model sheets fetched either");

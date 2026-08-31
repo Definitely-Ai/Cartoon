@@ -275,8 +275,10 @@ const DOC_PATHS: Record<string, string> = {
   "panel-inspection": "canon/creation/PANEL-INSPECTION.md",
   "drew-bible": "canon/characters/flamingo/CHARACTER-BIBLE.md",
   "drew-qc": "canon/characters/flamingo/QUALITY-CONTROL.md",
-  "mango-bible": "canon/characters/dog/CHARACTER-BIBLE.md",
-  "mango-qc": "canon/characters/dog/QUALITY-CONTROL.md",
+  "barclay-bible": "canon/characters/dog/CHARACTER-BIBLE.md",
+  "mango-bible": "canon/characters/dog/CHARACTER-BIBLE.md", // legacy name
+  "barclay-qc": "canon/characters/dog/QUALITY-CONTROL.md",
+  "mango-qc": "canon/characters/dog/QUALITY-CONTROL.md", // legacy name
   "abby-bible": "canon/characters/abby/CHARACTER-BIBLE.md",
   "abby-qc": "canon/characters/abby/QUALITY-CONTROL.md",
 };
@@ -298,11 +300,11 @@ export async function getDoc(name: string): Promise<string> {
   return Buffer.from(file.content, "base64").toString("utf8");
 }
 
-// The canon references reference-sheet PNGs by filename (see the Mango
+// The canon references reference-sheet PNGs by filename (see the Barclay
 // bible) — but text can't show a drawing. These fetch the sheets live so
 // the wire can hand them into the conversation as images.
 const CHARACTER_DIRS: Record<string, string> = {
-  mango: "dog",
+  barclay: "dog",
   drew: "flamingo",
   abby: "abby",
 };
@@ -321,7 +323,7 @@ export async function getModelSheets(
 ): Promise<{ name: string; authority: string; base64: string; mime: string }[]> {
   const folder = CHARACTER_DIRS[character.toLowerCase().trim()];
   if (!folder) {
-    throw new PublishError(400, `Unknown character "${character}" — use mango, drew, or abby.`);
+    throw new PublishError(400, `Unknown character "${character}" — use barclay, drew, or abby.`);
   }
   const { token, repo } = requiredEnv();
   const api = gh(token);

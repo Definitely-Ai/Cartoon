@@ -14,7 +14,7 @@ both. Paste blocks whole; paraphrase is drift.
 
 ## Serving Block
 
-> Abby is [WORK ACTION] with five-digit hands: four slim fingers and one readable thumb touching the prop at plausible contact points. Glass rims stay round, towels pass around — not through — vessels, bottle necks are securely gripped. Served drinks match their owner: Drew's martini with olives on a pick; Mango's old fashioned, short rocks glass, one large cube.
+> Abby is [WORK ACTION] with five-digit hands: four slim fingers and one readable thumb touching the prop at plausible contact points. Glass rims stay round, towels pass around — not through — vessels, bottle necks are securely gripped. Served drinks match their owner: Drew's martini with olives on a pick; Barclay's old fashioned, short rocks glass, one large cube.
 
 ## Approved work actions
 

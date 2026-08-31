@@ -53,7 +53,7 @@ bird at a good bar, and the comedy is entirely in his composure.
 | Default expression | Heavy-lidded, amiable, unimpressed |
 | Permanent | Black silk bow tie |
 | Drink | Martini — conical stemmed glass, **one olive on one pick** |
-| Frame position | **Frame-left. Not "by default" — measured: all eight plate Drews and all twelve filed panels put him frame-left, with Mango frame-right** |
+| Frame position | **Frame-left. Not "by default" — measured: all eight plate Drews and all twelve filed panels put him frame-left, with Barclay frame-right** |
 | Value note | Pale, but hatched — **not** the white of the paper, and **not** the brightest thing in the panel |
 
 ### The value note, measured
@@ -66,18 +66,18 @@ Plate 1's bar panel, mean grey of the named rectangle:
 | Drew — vest below the V | x 360–430, y 2270–2350 | **162** |
 | Drew — neck plumage | x 312–368, y 1980–2140 | **171** |
 | Drew — shoulder and arm plumage | x 175–270, y 2230–2390 | **168** |
-| Mango — polo, chest | x 1170–1380, y 2250–2400 | **199** |
-| Mango — fur, face | x 1080–1160, y 1980–2070 | **209** |
+| Barclay — polo, chest | x 1170–1380, y 2250–2400 | **199** |
+| Barclay — fur, face | x 1080–1160, y 1980–2070 | **209** |
 | Marble bar top | x 600–900, y 2440–2520 | **69** |
 
-Mango outreads Drew by roughly **30–40 levels** on comparable patches, and holds
-the brighter of the two brightest 20 × 20 blocks: Mango **217** at (1290,1920)
+Barclay outreads Drew by roughly **30–40 levels** on comparable patches, and holds
+the brighter of the two brightest 20 × 20 blocks: Barclay **217** at (1290,1920)
 against Drew's **205** at (340,2020). The same ordering holds in the security
-panel (Mango 222, Drew 219; region means 146 against 130).
+panel (Barclay 222, Drew 219; region means 146 against 130).
 
 And **nothing in the panel is paper white.** The bar panel's 99th percentile is
 **219** and its maximum **242**. Drew lives in the high midtones under fine
-dash-hatching; the lightest tones in the room go to glass, signage and Mango's
+dash-hatching; the lightest tones in the room go to glass, signage and Barclay's
 shirt — but even those are hatched, not blank.
 
 ---
@@ -117,7 +117,7 @@ ends in a feather cuff at the wrist, and the arm reads as a knitted sleeve.
 **One arm right, one arm wrong, in the same drawing** — which is why the rule is
 written as an edge count and not as a feeling.
 
-The same law governs the whole cast: Mango's coat and Abby's are fur under
+The same law governs the whole cast: Barclay's coat and Abby's are fur under
 cloth, meeting the garment at the garment's own edge and nowhere else.
 
 - **He wears no sleeve.** In all eight plate Drews the garment above the waist
@@ -355,7 +355,7 @@ Of the eight Drews in the four plates:
   — the older note here said otherwise and was wrong. He also wears a soft
   closed-crown cap with a short brim rather than his visor. **The visor is the
   house choice**, kept so his small refined skull stays visible and so his golf
-  headgear never reads as Mango's ball cap.
+  headgear never reads as Barclay's ball cap.
 - **Plate 1 holds two Drews, and the tile is the lower one.** Cut from the bar
   panel only. The security Drew above him is not a cutting hazard for the black
   — his construction is the cleanest in the set and §3's measurements come from
@@ -550,7 +550,7 @@ fishing vest and a tuxedo, all with sleeves. It is superseded; see §11.
   on words alone. If it drifts again, **recut a tile to include the whole glass
   and the hand. Do not rewrite the sentence.**
 - **Frame-left** — in all eight plate Drews and all twelve filed panels — neck
-  arched so his face hangs where the gag needs it, eye sliding sideways at Mango.
+  arched so his face hangs where the gag needs it, eye sliding sideways at Barclay.
 - **He is a patron, never staff.** We look toward the bar from the dining room,
   so the **back bar with its bottles and mirror is behind him — and that is
   correct.** What settles it is the **marble counter between him and them**: he
@@ -558,7 +558,7 @@ fishing vest and a tuxedo, all with sleeves. It is superseded; see §11.
   pouring, and **never holding a liquor bottle or a bar towel** — a gentleman
   holding either reads as the bartender, and that was the original fault.
 - Bar panels are **cropped at the counter** — chest-up, no legs, no stools.
-- **He never looks at us.** His gaze belongs inside the room — at Mango, at the
+- **He never looks at us.** His gaze belongs inside the room — at Barclay, at the
   television, at the chalkboard, or down at the glass. The reader is watching
   through a fourth wall nobody in the bar knows is there. **Nobody in the panel
   ever looks out at the reader**, and a Drew who has turned his eye down the lens
@@ -570,7 +570,7 @@ fishing vest and a tuxedo, all with sleeves. It is superseded; see §11.
   lettered: not the sweater vest, the shirt, the collar, the visor, and least of
   all the bow tie. The mark lives on **objects** — the golf bag, the napkin under
   the martini, a coaster, a matchbook, a bill folder, an umbrella *(founder: "not
-  on Mango or Drew, but brand certain things — and it must look really great,
+  on Barclay or Drew, but brand certain things — and it must look really great,
   like it was part of the object")*.
 - **It is made the way the material is made.** Embossed or debossed into the
   leather of the bag and the bill folder; woven into the weave of a napkin;
@@ -587,7 +587,7 @@ fishing vest and a tuxedo, all with sleeves. It is superseded; see §11.
   object*; this section is Drew's slice of it and does not diverge from it.
 - **No plate demonstrates it yet.** The plates carry the house name on wall
   signs, on the mirrored front window and on the 19th-hole course sign — all
-  fixtures. Plate 4's golf bag carries only Mango's *FORE! NOT SO FAST* towel;
+  fixtures. Plate 4's golf bag carries only Barclay's *FORE! NOT SO FAST* towel;
   the leather itself is unmarked. Plate 1's, plate 2's and plate 4's coasters are
   blank. **The made-into-the-material mark is a house rule from the founder's
   note, not something the plates show.** Say so when you brief it, and do not
@@ -607,7 +607,7 @@ His lines are verdicts:
 - *"Committed is money that hasn't had its second thoughts yet."*
 - *"The target follows the price at a respectful distance. It's called research."*
 
-Against Mango's worry he is the still point. Against Abby's authority he defers
+Against Barclay's worry he is the still point. Against Abby's authority he defers
 with amusement — she settles the argument, and he enjoys that.
 
 ### What his face does

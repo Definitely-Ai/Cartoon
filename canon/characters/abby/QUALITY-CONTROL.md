@@ -22,7 +22,7 @@ An output is approved only when every critical gate passes **against the actual 
 - [ ] Blouse is fitted and light with only the top button open over the modest lace inset — not fully buttoned, overly open, missing lace, or replaced.
 - [ ] Skirt/apron is very short, dark, and fitted with its centered rear bow — not long, loose, trousers, or implying a tail opening.
 - [ ] One folded towel (left shoulder by default, or in use for the work action — never two), bracelet, and black closed-toe mid-height heels are present when visible.
-- [ ] No anatomy, clothing, prop, or expression trait has migrated from Drew, Mango, or another character.
+- [ ] No anatomy, clothing, prop, or expression trait has migrated from Drew, Barclay, or another character.
 
 Any failure above means **reject and redraw**.
 
@@ -34,10 +34,10 @@ Consistent with `canon/creation/SCENE-QC.md`; check the pixels, not the prompt.
 - [ ] **Occlusion is correct.** Behind the bar, the counter hides Abby from the upper hip down — that is right, not a fault. Her lower body is never rendered through or in front of the counter, and she is never moved patron-side just to show the outfit.
 - [ ] **Counter geometry, both sides.** The counter top hits standing Abby at the upper hip AND seated patrons at forearm height; the floor behind the bar is level with the room.
 - [ ] **Seating is real.** Every seated character sits squarely on a stool or seat — hips on the seat, weight believable, legs resolved. Empty foreground stools do not count as someone's seat.
-- [ ] **Drinks obey gravity.** Every glass and bottle rests flat on the counter, a coaster, or a shelf, or sits in a real closed grip; patrons' glasses rest ON the counter. Served drinks match their owner: Drew's martini with exactly three olives on one pick; Mango's old fashioned, short rocks glass, one large cube.
+- [ ] **Drinks obey gravity.** Every glass and bottle rests flat on the counter, a coaster, or a shelf, or sits in a real closed grip; patrons' glasses rest ON the counter. Served drinks match their owner: Drew's martini with exactly three olives on one pick; Barclay's old fashioned, short rocks glass, one large cube.
 - [ ] **Contact points are plausible.** Fingers actually wrap what they hold with the right digit count; towels pass around — not through — vessels; no mitten blobs or pass-through grips.
 - [ ] **No interpenetration.** No limb, prop, or garment merges, clips, or passes through the bar, a stool, a glass, or another character.
-- [ ] **Scale holds.** Abby keeps the same proportions relative to the counter, stools, doors, bottles, glassware, Drew, and Mango — never resized to match a guest.
+- [ ] **Scale holds.** Abby keeps the same proportions relative to the counter, stools, doors, bottles, glassware, Drew, and Barclay — never resized to match a guest.
 
 ## Performance Checks
 

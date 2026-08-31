@@ -78,7 +78,7 @@ const TOOLS = [
       properties: {
         character: {
           type: "string",
-          enum: ["mango", "drew", "abby"],
+          enum: ["barclay", "drew", "abby"],
           description: "Whose sheets to fetch.",
         },
       },
@@ -115,12 +115,12 @@ const TOOLS = [
               caption: {
                 type: "string",
                 description:
-                  'Attributed house dialogue, exactly one speaker: Drew: "…", Mango: "…", or Abby: "…" — the spoken line ≤ 20 words, ' +
+                  'Attributed house dialogue, exactly one speaker: Drew: "…", Barclay: "…", or Abby: "…" — the spoken line ≤ 20 words, ' +
                   "topical-financial, understated, classy (no cussing). The TV and chalkboard should carry the same joke.",
               },
               characters: {
                 type: "array",
-                items: { type: "string", enum: ["drew", "mango", "abby"] },
+                items: { type: "string", enum: ["drew", "barclay", "abby"] },
                 description: "Everyone in the scene — their locked sheets condition the image.",
               },
               style_notes: { type: "string", description: "The one deliberate variation this candidate tests." },
@@ -161,8 +161,8 @@ const TOOLS = [
             "scene-qc",
             "drew-bible",
             "drew-qc",
-            "mango-bible",
-            "mango-qc",
+            "barclay-bible",
+            "barclay-qc",
             "abby-bible",
             "abby-qc",
           ],
@@ -191,7 +191,7 @@ const TOOLS = [
         caption: {
           type: "string",
           description:
-            'Attributed house dialogue, one speaker: Drew: "…", Mango: "…", or Abby: "…" — spoken line ≤ 20 words, classy, no cussing.',
+            'Attributed house dialogue, one speaker: Drew: "…", Barclay: "…", or Abby: "…" — spoken line ≤ 20 words, classy, no cussing.',
         },
         topic: { type: "string", description: "The founder's request in a word or two, e.g. \"fishing\"." },
         style_notes: {

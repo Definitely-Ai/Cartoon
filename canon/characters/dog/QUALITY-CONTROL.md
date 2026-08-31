@@ -4,9 +4,9 @@
 > address; every visual detail below yields to the plates and the founder's
 > review notes.**
 
-# Mango Production Quality Control
+# Barclay Production Quality Control
 
-An output is approved only when every critical gate passes **against the actual generated pixels**, with the fetched sheets open beside it — reading the prompt back is not inspection. A good joke or attractive rendering never excuses character drift. Any failure means **reject and redraw with the fault named in the prompt** — never a filing. This checklist merges Mango's identity gates with the stage rules of `canon/creation/SCENE-QC.md`; run both.
+An output is approved only when every critical gate passes **against the actual generated pixels**, with the fetched sheets open beside it — reading the prompt back is not inspection. A good joke or attractive rendering never excuses character drift. Any failure means **reject and redraw with the fault named in the prompt** — never a filing. This checklist merges Barclay's identity gates with the stage rules of `canon/creation/SCENE-QC.md`; run both.
 
 ## Critical Identity Gates — All Must Pass
 
@@ -29,13 +29,13 @@ An output is approved only when every critical gate passes **against the actual 
 
 Consistent with `canon/creation/SCENE-QC.md`; that file's stage rules apply to the whole panel.
 
-- [ ] **Side of the bar.** Mango is on the patron/room side. Only the bartender occupies the service side; Mango never reaches from behind the counter.
+- [ ] **Side of the bar.** Barclay is on the patron/room side. Only the bartender occupies the service side; Barclay never reaches from behind the counter.
 - [ ] **Actually seated on the stool.** The stool is visibly or plausibly under him — hips on the seat, weight believable, knees forward, legs resolved, human posture. Empty foreground stools do not count as his seat.
 - [ ] **Glass resting or gripped.** The old fashioned (and every other glass or bottle) rests flat on the bar, a coaster, or a shelf — or sits in a real closed five-finger grip. Nothing floats or tips without a story reason.
 - [ ] **Plausible contact points.** Fingers actually wrap what they hold, with the right digit count; hands touch props where hands would. No mitten blobs, no pass-through grips.
 - [ ] **No interpenetration.** No limb, prop, garment, or glass merges, clips, or passes through the bar, a stool, or another character; nothing fused into a surface or a body.
 - [ ] **Correct occlusion.** Near objects hide far ones: the bar edge hides what sits behind it, his hand hides the glass where it wraps it, the stool and counter overlap him correctly.
-- [ ] **Scale holds.** Mango stays consistent with the counter, the stools, Drew, Abby, and props, panel to panel.
+- [ ] **Scale holds.** Barclay stays consistent with the counter, the stools, Drew, Abby, and props, panel to panel.
 
 ## Signature-Prop Check
 
@@ -90,10 +90,10 @@ For every approved or instructive rejected image, record: output filename; date 
 
 ## Maintainer-side Repository Check
 
-For humans working in the repo (not part of AI self-inspection). Before generating, publishing, or changing Mango canon, run:
+For humans working in the repo (not part of AI self-inspection). Before generating, publishing, or changing Barclay canon, run:
 
 ```bash
 npm run canon:check
 ```
 
-It verifies that the required Mango documents and sheets exist, that image dimensions and SHA-256 fingerprints match `ASSET-MANIFEST.json`, and that the master prompt does not contain superseded design language. When working directly in the repo, the deterministic caption is applied with `npm run dialogue`.
+It verifies that the required Barclay documents and sheets exist, that image dimensions and SHA-256 fingerprints match `ASSET-MANIFEST.json`, and that the master prompt does not contain superseded design language. When working directly in the repo, the deterministic caption is applied with `npm run dialogue`.

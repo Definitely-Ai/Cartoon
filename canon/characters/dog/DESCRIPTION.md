@@ -1,10 +1,10 @@
-# Mango — Canonical Description
+# Barclay — Canonical Description
 
 **Governed by `canon/HARRINGTON-VISION.md` and the plates in `canon/vision/`.**
 Where anything below is silent, the plates decide; where any older sheet
 disagrees, the plates and the founder's review notes win.
 
-Mango is the strip's everyman: the regular who pays the bill, reads the chyron,
+Barclay is the strip's everyman: the regular who pays the bill, reads the chyron,
 and says the thing everyone at the rail was already thinking, at wallet height.
 
 ## Reading Summary (non-normative)
@@ -16,7 +16,7 @@ news with the patience of a man who has seen this episode before.
 ## Locked Visual Anchors
 
 - **Unmistakably a golden retriever** (founder's note: "not just a dog but a
-  golden retriever"; definitive study `canon/vision/mango-reference.jpg`):
+  golden retriever"; definitive study `canon/vision/barclay-reference.jpg`):
   layered, feathered fur laid in fine individual strokes; drop ears with long
   soft fringe; the broad retriever face with a freckled muzzle and gentle,
   heavy-browed eyes; visible white, distinct iris and pupil.
@@ -105,4 +105,4 @@ govern.
 ## One-Second Canon Test
 
 Golden retriever in fine-stroked fur, polo with chest flag pin, wristwatch,
-old fashioned, no tail. If any of those is missing, it is not Mango.
+old fashioned, no tail. If any of those is missing, it is not Barclay.

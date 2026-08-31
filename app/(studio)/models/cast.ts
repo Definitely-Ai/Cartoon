@@ -45,7 +45,7 @@ export const CAST: CastMember[] = [
       "Black silk bow tie, always",
       "Martini — one olive, one pick",
       "Heavy-lidded, amiable, unimpressed",
-      "Sits frame-left, with Mango on his right",
+      "Sits frame-left, with Barclay on his right",
     ],
     alt: "Drew — a flamingo in a black bow tie, drawn in ink",
     study: "studies/drew.png",
@@ -53,10 +53,10 @@ export const CAST: CastMember[] = [
   },
   {
     key: "dog",
-    name: "Mango",
+    name: "Barclay",
     tagline: "The worried everyman — the golden retriever who pays the bill.",
     bio:
-      "Mango is a golden retriever in a good suit, and every worry he has shows up " +
+      "Barclay is a golden retriever in a good suit, and every worry he has shows up " +
       "in his eyebrows first. He reads the same headline as Drew and feels it in " +
       "his wallet — he is the one who pays the bill, and the one who says out loud " +
       "what things actually cost. Earnest, dignified, and a little more " +
@@ -67,9 +67,9 @@ export const CAST: CastMember[] = [
       "True black dog lips, the founder's favourite feature",
       "Sits frame-right; never looks at the reader",
     ],
-    alt: "Mango — a golden retriever in a suit jacket, drawn in ink",
-    study: "studies/mango.png",
-    concept: "mango-reference.jpg",
+    alt: "Barclay — a golden retriever in a suit jacket, drawn in ink",
+    study: "studies/barclay.png",
+    concept: "barclay-reference.jpg",
   },
   {
     key: "abby",

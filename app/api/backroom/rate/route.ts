@@ -1,6 +1,7 @@
 import { NextResponse, type NextRequest } from "next/server";
 
 import { BACKROOM_COOKIE, isDoorOpen, isTriggerOpen } from "@/lib/backroom-auth";
+import { foldCastScores } from "@/lib/cast";
 import { PublishError, commitFiles, readRepoFile } from "@/lib/githubPublish";
 
 // Rick's verdict on one cartoon.
@@ -20,7 +21,7 @@ import { PublishError, commitFiles, readRepoFile } from "@/lib/githubPublish";
 
 export const runtime = "nodejs";
 
-const CAST = ["drew", "mango", "abby"] as const;
+const CAST = ["drew", "barclay", "abby"] as const;
 type CastName = (typeof CAST)[number];
 
 export type Verdict = {
@@ -65,12 +66,10 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "Which cartoon? Send a batch and a panel." }, { status: 400 });
   }
 
-  const incoming = (body.characters ?? {}) as Record<string, unknown>;
-  const characters: Partial<Record<CastName, number>> = {};
-  for (const name of CAST) {
-    const value = score(incoming[name]);
-    if (value !== null) characters[name] = value;
-  }
+  // foldCastScores, not a CAST loop: pre-rename clients and queued sendBeacon
+  // payloads still say "mango", and a dropped key here is a score the founder
+  // typed that silently vanished.
+  const characters = foldCastScores(body.characters ?? {});
   const scene = score(body.scene);
   const caption = score(body.caption);
   const comment = typeof body.comment === "string" ? body.comment.slice(0, 4000).trim() : "";
@@ -107,8 +106,9 @@ export async function POST(request: NextRequest) {
       batch,
       panel,
       // A partial submission edits the standing verdict; it does not blank the
-      // parts it left alone.
-      characters: { ...(existing?.characters ?? {}), ...characters },
+      // parts it left alone. The merge FOLDS: an existing {mango: 2} plus an
+      // incoming {barclay: 7} must converge to one key, not carry both.
+      characters: foldCastScores({ ...(existing?.characters ?? {}), ...characters }),
       scene: scene ?? existing?.scene ?? null,
       caption: caption ?? existing?.caption ?? null,
       comment: comment || existing?.comment || "",

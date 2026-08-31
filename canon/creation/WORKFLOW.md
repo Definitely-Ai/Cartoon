@@ -8,7 +8,7 @@ Purpose: the repeatable path from "new topic" to "published cartoon," per the fo
 
 1. **Verify current factual context when needed.** Captions are topically current with events of the day; check the facts before joking about them.
 2. **Place the joke in a single clear visual scene.** Usually inside The Swinging Door (see `/canon/settings/SETTINGS-BIBLE.md`); the TV is how the news enters the room.
-3. **Use the characters' personalities to decide who speaks** (see `/canon/personality/PERSONALITIES.md`). Drew names the absurdity; Mango believes his way into it; Abby closes an argument, rarely.
+3. **Use the characters' personalities to decide who speaks** (see `/canon/personality/PERSONALITIES.md`). Drew names the absurdity; Barclay believes his way into it; Abby closes an argument, rarely.
 4. **Write 3–5 caption options.** Short, dry, underplayed; the caption deepens the visual gag rather than explaining it (see `/canon/comedy/COMEDY-BIBLE.md`).
 5. **Choose the strongest caption.** Read the boundaries list before committing.
 6. **Create the illustrated panel, then typeset the exact dialogue into it.** Generate the character scene without model-rendered words, then append the print-ready caption deterministically (`file_cartoon` over the connector; `npm run dialogue` in-repo). This preserves character continuity and prevents misspellings.

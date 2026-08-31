@@ -28,7 +28,9 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState, type KeyboardEvent } from "react";
 
-export type CastName = "drew" | "mango" | "abby";
+import { foldCastScores } from "@/lib/cast";
+
+export type CastName = "drew" | "barclay" | "abby";
 
 /** The parts of a committed feedback/ratings/<batch>/<panel>.json this screen
  *  puts back on the dials — and the same shape a work-in-progress draft takes. */
@@ -62,7 +64,7 @@ export type DeskPanel = {
 };
 
 const SCORES = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] as const;
-const CAST_KEYS: CastName[] = ["drew", "mango", "abby"];
+const CAST_KEYS: CastName[] = ["drew", "barclay", "abby"];
 
 /** Long enough that a run of taps goes out as one commit, short enough that
  *  he never gets ahead of it. */
@@ -89,12 +91,9 @@ function cleanScore(value: unknown): number | null {
 function cleanVerdict(raw: unknown): StandingVerdict | null {
   if (!raw || typeof raw !== "object") return null;
   const value = raw as Record<string, unknown>;
-  const incoming = (value.characters ?? {}) as Record<string, unknown>;
-  const characters: Partial<Record<CastName, number>> = {};
-  for (const who of CAST_KEYS) {
-    const n = cleanScore(incoming[who]);
-    if (n !== null) characters[who] = n;
-  }
+  // foldCastScores: a verdict off disk or off the wire may still key him
+  // "mango" — pre-rename drafts and server files fold to the one character.
+  const characters = foldCastScores(value.characters ?? {});
   return {
     characters,
     scene: cleanScore(value.scene),

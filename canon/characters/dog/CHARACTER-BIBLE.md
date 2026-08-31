@@ -1,8 +1,8 @@
-# Mango — Character Bible
+# Barclay — Character Bible
 
-**Definitive study:** `canon/vision/mango-reference.jpg` — a close photograph of
+**Definitive study:** `canon/vision/barclay-reference.jpg` — a close photograph of
 **plate 2's lower panel**, not a separate drawing. Everything in it can be found
-again in the plate; the two are one Mango and must never be counted as two
+again in the plate; the two are one Barclay and must never be counted as two
 pieces of evidence.
 
 **Authority:** this bible and `canon/HARRINGTON-VISION.md` govern together; where
@@ -11,7 +11,7 @@ traces to a founder correction or to a measurement taken off the plates, and the
 measurement is printed beside the rule so the next person can check it instead of
 trusting it.
 
-**Where Mango appears in the plates — eight drawings, and that is the whole
+**Where Barclay appears in the plates — eight drawings, and that is the whole
 evidence base:**
 
 | # | Plate | Scene | Wardrobe |
@@ -33,7 +33,7 @@ below only as evidence of what the drawing currently does, never as canon.
 
 ## 1. Who he is
 
-Mango is a successful gentleman in his mid-forties, and unmistakably a golden
+Barclay is a successful gentleman in his mid-forties, and unmistakably a golden
 retriever. He is the strip's **worried everyman** — the one who reads the same
 headline as Drew and feels it in his wallet. He is not the fool. He is the
 one telling the truth about what things cost.
@@ -56,7 +56,7 @@ he is dignified while saying them.
 
 ## 2. The face — what the founder loves
 
-> *(Founder, on what he likes about Mango: "his black lips, because it's like
+> *(Founder, on what he likes about Barclay: "his black lips, because it's like
 > a dog.")*
 
 - **True black dog lips** — the dark lip-line running along the muzzle from
@@ -65,11 +65,11 @@ he is dignified while saying them.
   and both hold across every plate large enough to measure:
 
   - **Length: two nose-widths.** Study — nose 155 px, lip 320 px = 2.1. Plate 1's
-    bar Mango — nose 45 px, lip 95 px = 2.1. Plate 4's golf Mango — nose 46 px,
+    bar Barclay — nose 45 px, lip 95 px = 2.1. Plate 4's golf Barclay — nose 46 px,
     lip 89 px = 1.9.
   - **Where it ends: directly under the front corner of the eye.** Not before
     it. Study — nose front x=985, eye's front corner x=1437, lip ends x=1440
-    (101% of the way). Plate 4's golf Mango — nose front x=896, eye's front
+    (101% of the way). Plate 4's golf Barclay — nose front x=896, eye's front
     corner x=1017, lip ends x=1030 (111%). *An earlier version of this page said
     "about two thirds of the way from the nose to the eye"; the plates say the
     corner lands under the eye, a third further back, and that is the difference
@@ -85,7 +85,7 @@ he is dignified while saying them.
   gets drawn wrong.** Closed, it is a **fine line** with a rounded hook at the
   corner — plate 3 is the only plate that closes it and it is the one to copy.
   Parted, the line thickens into a **heavy band** because what you are seeing is
-  the gap. Seven of the eight plate Mangos are parted. Under the current read
+  the gap. Seven of the eight plate Barclays are parted. Under the current read
   (below) the default is **closed**, so the default is the fine line, not the
   slab.
 
@@ -100,12 +100,12 @@ he is dignified while saying them.
   1. **The dark** — one solid mass pressed against the **front** corner of the
      opening, the corner nearest the muzzle. It takes the **front 40%** of the
      opening and no more: study 43 px of a 103 px opening (42%); plate 4's golf
-     Mango 17 px of 39 px (44%).
+     Barclay 17 px of 39 px (44%).
   2. **Paper-white sclera** behind it, filling the rear 60% — measured 203–215
      against the cheek's 198, i.e. genuinely the paper.
   3. **One catchlight**, punched bright inside the dark.
 
-  At the size Mango is ever drawn, a separately drawn grey iris and black pupil
+  At the size Barclay is ever drawn, a separately drawn grey iris and black pupil
   do not resolve — not even on the study, where the eye is 103 px wide. Do not
   spend a line on them. What must never merge is the dark and the white.
   The upper lid rests on the **top** of the dark and no lower; Drew is the
@@ -115,7 +115,7 @@ he is dignified while saying them.
   **roots level with the top of the eye** and its **tip finishes level with the
   bottom of the jaw** (study: root y≈1890 against an eye at y=1900–1960; tip
   y≈2400 against a jaw bottom of y≈2470 — a head is about 790 px). Confirmed on
-  plate 3 and on plate 4's golf Mango. Behind the leather hangs the long fringe
+  plate 3 and on plate 4's golf Barclay. Behind the leather hangs the long fringe
   that runs on down the nape in loose separate strokes; the leather itself is
   short-furred with a slightly ragged edge.
   **The far ear is never a second full ear.** At most it is a small tuft over
@@ -158,7 +158,7 @@ Four marks carry it. Draw them in this order.
 | **Cheeks** | Full and lifted — the fur under the eye rises toward the ear | Flatten the cheek, or hollow it |
 
 **The plates do not draw this yet, and that is the point of the note.** Seven of
-the eight plate Mangos have the mouth parted with the corner hooking down; that
+the eight plate Barclays have the mouth parted with the corner hooking down; that
 combination is exactly the sad first glance the founder is describing. **Plate 3
 is the single exception and the single model:** the line runs unbroken, dips
 gently in the middle, and comes back up into the corner hook. Copy plate 3's
@@ -184,8 +184,8 @@ an opposed thumb — five digits**, in believable human grips. Every finger
 distinctly drawn with its own contour, even in a closed grip.
 
 **This is a correction against the plates, not a description of them.** Plate 4's
-golf Mango draws a clean oval nail on each of the four fingers gripping the old
-fashioned, and plate 1's bar Mango does the same on the hand at the martini.
+golf Barclay draws a clean oval nail on each of the four fingers gripping the old
+fashioned, and plate 1's bar Barclay does the same on the hand at the martini.
 The pipeline has copied them. They come off. Nothing replaces them — the
 fingertip simply ends.
 
@@ -217,7 +217,7 @@ bar is a fault** (the pipeline put one on him indoors in sc05).
 it and nothing else; so does the jacket. **Both plate caps carry a small oval
 badge with a device inside it, above the brim — plate 1's upper panel and plate
 4's golf panel. Under the current rule that badge comes off.** The cap front is
-blank. Nothing on Mango is ever lettered or crested: not the suit, the jacket,
+blank. Nothing on Barclay is ever lettered or crested: not the suit, the jacket,
 the shirt, the collar, the cap.
 
 **The flag pin is permanent.** A small US flag pin on **whatever he wears** —
@@ -247,7 +247,7 @@ to the marble, so the dial lands near his centre line — his left wrist, drawn
 across the body. Plate 1's upper panel has the watch off him and lying in the
 security tray as the gag (the sign reads REMOVE: … WATCH); plates 2, 3 and 4 draw
 plain white cuffs, or at golf the glove. The identity crop the pipeline sends —
-`mango-reference.jpg`, box `[950, 1400, 1900, 1950]` — stops at his lapel and
+`barclay-reference.jpg`, box `[950, 1400, 1900, 1950]` — stops at his lapel and
 carries no wrist and no watch at all, so nothing but these words holds this
 detail. If the wrist keeps drifting, widen that crop below y=3350; the source has
 both wrists at native resolution.)*
@@ -288,7 +288,7 @@ on plate 4's lower panel, closure tab and furred forearm included.
   holding either reads as the bartender, and that was the original fault.
 - Bar panels are **cropped at the counter** — chest-up, no legs, no stools.
 - **The house name is built into his gear — and never onto him.** Nothing on
-  Mango is ever lettered or badged: not the suit, the jacket, the shirt, the
+  Barclay is ever lettered or badged: not the suit, the jacket, the shirt, the
   collar, the golf cap. **His flag pin stays the only mark on his clothes**
   *(founder: "not on Mango or Drew, but brand certain things — and it must look
   really great, like it was part of the object")*. The mark lives on **objects**:
@@ -310,7 +310,7 @@ on plate 4's lower panel, closure tab and furred forearm included.
   house name on the course sign instead. The embossed bag is a rule to build,
   not a detail to copy.
 - **He never looks at us.** His gaze belongs inside the room — at Drew, at
-  Abby, at the television, or down at his glass. A Mango squared to the reader
+  Abby, at the television, or down at his glass. A Barclay squared to the reader
   is a redraw.
 
 ### Open conflicts with `canon/MASTER-PROMPT.md`
@@ -319,13 +319,13 @@ The master prompt is the only page the image model reads. Two things on it
 currently disagree with this one. Neither is settled here; both are flagged so
 the founder settles them in one place.
 
-- **His head angle.** All eight plate Mangos, all twelve showcase panels, and the
+- **His head angle.** All eight plate Barclays, all twelve showcase panels, and the
   identity crop the pipeline sends draw him one way: turned toward his companion,
   **one eye and one ear**, the nose at the leading point of the head's outline,
   the far ear no more than a tuft. `MASTER-PROMPT.md` asks in two places (THE
   STAGE, "FACES"; THE SIDES) for three-quarter view with **both eyes fully
   visible**. In the twelve showcase panels that instruction produced a
-  both-eyes Mango exactly zero times, which looked like the reference tile
+  both-eyes Barclay exactly zero times, which looked like the reference tile
   beating the sentence — the tile being pixels and the sentence only words.
 
   **That finding did not survive the thirteenth panel.** The golf batch of 28
@@ -356,7 +356,7 @@ the founder settles them in one place.
 
 ## 6. Acting
 
-Mango's comedy is **the cost landing on him personally**. He takes the macro
+Barclay's comedy is **the cost landing on him personally**. He takes the macro
 story and converts it into what it will do to his own tab. He is never crude,
 never loud, never the butt of a cheap joke — he is the reader's proxy, and the
 reader is a person with money and worries.
@@ -417,7 +417,7 @@ stopped acting.
 - A ball cap at the bar
 - At golf, a bare hand, or the bag without its *FORE! NOT SO FAST* towel
 - A hand closed into one fur mitt, or the back of a hand drawn as bare skin
-- Mango behind the counter, in the service well, or holding a bottle or bar towel
+- Barclay behind the counter, in the service well, or holding a bottle or bar towel
 - A necktie at the bar (open collar under the jacket)
 - Eyes turned out of the panel at the reader
 - A house mark that sits ON a surface rather than IN it: a decal, sticker, patch
@@ -428,7 +428,7 @@ stopped acting.
 
 ## 8. Approval standard
 
-A panel passes when Mango is unmistakably a golden retriever *and*
+A panel passes when Barclay is unmistakably a golden retriever *and*
 unmistakably a gentleman. Nine things to check, in this order:
 
 1. **First glance is not sad** — mouth closed with the corner up, brows up, lids

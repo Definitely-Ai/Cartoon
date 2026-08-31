@@ -6,7 +6,7 @@
 (1640×2140). It is the only Abby entry in `VISION_REFS` (`lib/generate.ts`,
 `VISION_REFS.abby`) and it is sent **whole, with no crop box** — the only tile
 on the board that is a photograph of a printed card rather than a tight cut
-from a plate. Drew's two tiles are pre-cut files of 380×520 and 335×275; Mango's
+from a plate. Drew's two tiles are pre-cut files of 380×520 and 335×275; Barclay's
 is boxed down at generation. Abby's arrives as the whole snapshot, glare and
 background and all.
 
@@ -48,7 +48,7 @@ same face. Read it for the head; take the body from §3 and §4.)*
 ## Where she has and has not been drawn
 
 **She is in none of the four plates.** Plate 1 carries two panels, plate 2 two,
-plate 3 one, plate 4 three — eight panels, eight Drews, eight Mangos, no Abby.
+plate 3 one, plate 4 three — eight panels, eight Drews, eight Barclays, no Abby.
 Six of the eight are bar panels. She is the one principal with no Harrington
 behind her, which is why the rules below have to carry their own counts.
 
@@ -284,7 +284,7 @@ television above, the chalkboard beside it, a brass sconce at each end. That is
 draw, and it is what all twelve panels of the filed batch draw.
 
 **This is the room's business, not hers.** Abby's bible previously carried a
-redraw test against bottle shelving behind Drew or Mango. That test is
+redraw test against bottle shelving behind Drew or Barclay. That test is
 withdrawn: it is contradicted by 6 of 6 plate bar panels, by 12 of 12 filed
 panels, and by the room map itself. See §9 — one sentence of `MASTER-PROMPT.md`
 still says the shelving stands behind the reader, and that is a defect in that
@@ -298,7 +298,7 @@ counter, never in a gentleman's grip.**
 *(Founder: "I don't like how Abby is always looking at us — it's weird.")*
 
 Her body is angled **into** the frame and her face goes where her body goes:
-she is looking **at Drew and Mango**, or down at the work in her hands. That is
+she is looking **at Drew and Barclay**, or down at the work in her hands. That is
 what puts her face in three-quarter for the reader — not a head cranked round
 on its neck.
 
@@ -317,7 +317,7 @@ them. Her muzzle points at the gentlemen and her head turns only as far as
 keeps that second eye. Back of the skull is a redraw; so is one eye.
 
 *(The count is currently passing — both eyes reach the paper in 4 of 4. Do not
-lose it while fixing the gaze. Note that Drew and Mango are drawn in
+lose it while fixing the gaze. Note that Drew and Barclay are drawn in
 near-profile from behind in those same panels and show one eye each; that is
 their staging, not a precedent for hers.)*
 
@@ -334,7 +334,7 @@ two hands is closed on that object in every panel.**
 ### Serving accuracy
 
 Drinks match their owner: **Drew's martini — one olive on one pick**, as
-`MASTER-PROMPT.md` sets it; **Mango's old fashioned — one large cube and a
+`MASTER-PROMPT.md` sets it; **Barclay's old fashioned — one large cube and a
 cherry.** Where a panel carries more than one martini, every martini in it
 carries the **same** count.
 
@@ -348,7 +348,7 @@ securely, and every bottle that reaches the frame wears its own readable label.
 ## 6. Acting
 
 Abby's comedy is **authority, delivered warmly**. She does not banter upward
-at the gentlemen; she rules on things. Where Drew reclassifies and Mango
+at the gentlemen; she rules on things. Where Drew reclassifies and Barclay
 worries, Abby **closes** — and the room accepts it.
 
 Filed and published:
@@ -365,7 +365,7 @@ In the register, not yet filed:
 - *"The house keeps winning, gentlemen. Just not the kind anyone lives in."*
 
 **When the caption is hers, her mouth is drawn parted** — one drawn word,
-landing a beat before the typeset one. When the line belongs to Drew or Mango,
+landing a beat before the typeset one. When the line belongs to Drew or Barclay,
 her mouth is closed.
 
 Note the address: *gentlemen*. She is fond of them and entirely unintimidated.

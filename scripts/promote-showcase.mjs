@@ -32,7 +32,7 @@ const xml = (value) =>
   String(value).replace(/[&<>]/g, (character) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" })[character]);
 
 function formatCaption(caption) {
-  const match = caption.trim().match(/^(Drew|Mango|Abby)\s*:\s*([\s\S]+)$/);
+  const match = caption.trim().match(/^(Drew|Barclay|Abby)\s*:\s*([\s\S]+)$/);
   if (!match) return `\u201c${caption.trim()}\u201d`;
   const speech = match[2].trim().replace(/^["\u201c]/, "").replace(/["\u201d]$/, "").trim();
   return `${match[1]}: \u201c${speech}\u201d`;
@@ -116,37 +116,37 @@ const BATCH = [
   },
   {
     slug: "sc05-down-a-percent-at-lunch",
-    caption: 'Drew: "I don\'t look at it during the day, Mango. It was down a percent at lunch."',
+    caption: 'Drew: "I don\'t look at it during the day, Barclay. It was down a percent at lunch."',
     note: "STOCKS AND BONDS BOTH LOWER",
   },
   {
     slug: "sc06-ninety-thousand-miles",
-    caption: 'Mango: "I\'m waiting on rates to come down, Drew. My truck has waited ninety thousand miles."',
+    caption: 'Barclay: "I\'m waiting on rates to come down, Drew. My truck has waited ninety thousand miles."',
     note: "BORROWING GETS DEARER, NOT CHEAPER",
   },
   {
     slug: "sc07-the-deductible-rehearsal",
-    caption: 'Mango: "The first two thousand of any storm is mine. I like to stay current."',
+    caption: 'Barclay: "The first two thousand of any storm is mine. I like to stay current."',
     note: "PREMIUMS UP FOR 65% — DEDUCTIBLES UP TOO",
   },
   {
     slug: "sc08-ribbon-cutting",
-    caption: 'Drew: "We have already moved in, Mango. December is only the ribbon-cutting."',
+    caption: 'Drew: "We have already moved in, Barclay. December is only the ribbon-cutting."',
     note: "TRADERS SEE A HIKE BY YEAR END — ODDS AT 100%",
   },
   {
     slug: "sc09-the-total-aloud",
-    caption: 'Mango: "I announce the total at checkout now, and the man behind me shakes his head at the score."',
+    caption: 'Barclay: "I announce the total at checkout now, and the man behind me shakes his head at the score."',
     note: "FOOD PRICES A THIRD HIGHER THAN IN 2020",
   },
   {
     slug: "sc10-refund-went-home",
-    caption: 'Mango: "I paid it at the register. The refund went home to a warehouse."',
+    caption: 'Barclay: "I paid it at the register. The refund went home to a warehouse."',
     note: "RETAILER RAISES OUTLOOK ON $150M OF TARIFF REFUNDS",
   },
   {
     slug: "sc11-from-windsor",
-    caption: 'Mango: "I buy American now, Drew. Abby tells me this one is from Windsor, Ontario."',
+    caption: 'Barclay: "I buy American now, Drew. Abby tells me this one is from Windsor, Ontario."',
     note: "CANADA MATCHES THE LEVIES, DOLLAR FOR DOLLAR",
   },
   {

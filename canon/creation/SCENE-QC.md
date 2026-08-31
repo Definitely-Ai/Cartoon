@@ -10,8 +10,8 @@ Every failure below has actually happened. This list grows — when the founder'
 
 ## 1. The stage (worst failures first)
 
-- [ ] **Sides of the bar.** Only the bartender is on the service side. Abby behind the bar; Drew and Mango on the room side. No patron reaching from behind the counter, no bartender casually among the patrons. *(Real failure: Abby drawn leaning over the bar from the patron side.)*
-- [ ] **Seating is real.** Every seated character has a stool or seat visibly or plausibly under them — hips on the seat, weight believable, legs resolved. Empty foreground stools do not count as the seat of a character sitting elsewhere. *(Real failure: Mango seated on nothing while both visible stools stood empty.)*
+- [ ] **Sides of the bar.** Only the bartender is on the service side. Abby behind the bar; Drew and Barclay on the room side. No patron reaching from behind the counter, no bartender casually among the patrons. *(Real failure: Abby drawn leaning over the bar from the patron side.)*
+- [ ] **Seating is real.** Every seated character has a stool or seat visibly or plausibly under them — hips on the seat, weight believable, legs resolved. Empty foreground stools do not count as the seat of a character sitting elsewhere. *(Real failure: Barclay seated on nothing while both visible stools stood empty.)*
 - [ ] **The room is THE room.** Straight dark-wood bar along the lower third; window upper right, name reversed; TV high on the left wall; chalkboard behind the bar, right of center. Not a curved bar, not a reshuffled wall. Regulars would notice if a stool moved. *(Real failure: the bar redrawn as a big curved counter with the chalkboard moved to the left wall.)*
 - [ ] **Nothing merges or clips.** No limb, prop, or garment passing through the bar, a stool, a glass, or another character. No object fused into a surface or a body.
 - [ ] **Drinks obey gravity.** Every glass and bottle rests flat on the bar, a coaster, or a shelf — or sits in a closed, plausible grip. Nothing floats, nothing tips without a story reason.
@@ -22,7 +22,7 @@ Every failure below has actually happened. This list grows — when the founder'
 ## 2. Identity (against the fetched sheets, not memory)
 
 - [ ] **Drew** matches his locked master: compact mature head, angular downturned beak, S-curve neck, *small* lively avian eyes (not big cartoon eyes), feathered wing-arms with three feather-digits, bird legs and webbed feet, black bow tie. *(Real failure: oversized heavy-lidded eye drifting toward a generic cartoon bird.)*
-- [ ] **Mango** matches his sheets: no tail in any view, thin beard-free neck, five-finger hands, sclera-iris-pupil eyes with catchlights, collared shirt under the rumpled jacket, flag pin on the left lapel when jacketed. *(Real failure: the shirt vanished — jacket over bare fur.)*
+- [ ] **Barclay** matches his sheets: no tail in any view, thin beard-free neck, five-finger hands, sclera-iris-pupil eyes with catchlights, collared shirt under the rumpled jacket, flag pin on the left lapel when jacketed. *(Real failure: the shirt vanished — jacket over bare fur.)*
 - [ ] **Abby** (when present) matches hers: no tail, pearl-and-gem collar, blouse with lace detail, shoulder towel, human-style eyes in the Westie face.
 - [ ] Each character's own QUALITY-CONTROL / rejection checklist passes for everyone in the panel.
 

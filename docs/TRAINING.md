@@ -4,7 +4,7 @@ The studio can draw the cast two ways, and one environment variable decides whic
 
 **Today (no training):** the house model (openai/gpt-image-2, multi-reference) is handed the plate portrait tiles and the empty-set plate and told, in a page of prose, exactly what everyone looks like; the Kontext reference-board path is still live behind IMAGE_MODEL. It works, but a reference image is a suggestion. Kontext's own paper documents identity drifting across novel poses, and prose has to compete with itself — the longer the description of Drew, the less room left for what Rick actually asked for.
 
-**After training:** a fine-tuned model that *knows* the three of them. Drew, Mango and Abby each get a trigger word, the house look gets a fourth, and the prompt stops describing anyone. What it spends its words on instead is the scene.
+**After training:** a fine-tuned model that *knows* the three of them. Drew, Barclay and Abby each get a trigger word, the house look gets a fourth, and the prompt stops describing anyone. What it spends its words on instead is the scene.
 
 That second thing is the point. Rick types a sentence; the cast should be exactly themselves and the panel should be exactly what he asked for.
 
@@ -33,9 +33,9 @@ Four things hold that line, and all four ship:
 | --- | --- | --- |
 | The locked model sheets, cropped into single-figure studies | ~84 | Who they are, from every angle and expression |
 | Surviving finished cartoons, dialogue strip removed | 6 | The house look, and how two characters share a panel |
-| Generated setting variants (Kontext, from committed reference boards) | 29 | That the background is a caption's business — weighted hard toward Mango, who lost most of his rendered images to the tail purge |
+| Generated setting variants (Kontext, from committed reference boards) | 29 | That the background is a caption's business — weighted hard toward Barclay, who lost most of his rendered images to the tail purge |
 
-Whole sheets are never used — a model trained on grids draws grids. Neither are: the proportion-grid sheet, the scene-continuity sheet (a different drawing hand — a rounder-skulled, cross-hatched Drew), the crossed-out NEVER row on Mango's pin sheet, five off-model-Abby cartoons, one cartoon with a photorealistic face on the TV — and **every cartoon showing Mango's plumed tail** (canon: "absolutely no tail"; five of the nine surviving cartoons fell to this one check). Every exclusion carries its reason in the manifest's `skip` fields, and residual sheet lettering that a crop box could not dodge is painted out by per-crop `erase` rectangles.
+Whole sheets are never used — a model trained on grids draws grids. Neither are: the proportion-grid sheet, the scene-continuity sheet (a different drawing hand — a rounder-skulled, cross-hatched Drew), the crossed-out NEVER row on Barclay's pin sheet, five off-model-Abby cartoons, one cartoon with a photorealistic face on the TV — and **every cartoon showing Barclay's plumed tail** (canon: "absolutely no tail"; five of the nine surviving cartoons fell to this one check). Every exclusion carries its reason in the manifest's `skip` fields, and residual sheet lettering that a crop box could not dodge is painted out by per-crop `erase` rectangles.
 
 ---
 
@@ -56,7 +56,7 @@ The variants themselves are generated **in production**, where the Replicate tok
 
 1. Open `/api/backroom/variants?dry=1` signed in — $0; it probes the Replicate account (proving the Vercel integration works) and lists every pending image with its exact prompt and caption.
 2. Open `/api/backroom/variants` — generates up to 6 (`?limit=`), committing each PNG + caption straight into `scripts/training/setting-variants/`. Repeat in waves.
-3. After each wave: `git pull` and **look at every image**. One where a character drifted off-model — or Mango grew the tail canon forbids — is worse than no image: `git rm` both files, push (that frees its slot), and regenerate it with `?only=<id>`.
+3. After each wave: `git pull` and **look at every image**. One where a character drifted off-model — or Barclay grew the tail canon forbids — is worse than no image: `git rm` both files, push (that frees its slot), and regenerate it with `?only=<id>`.
 4. The route refuses past **30 committed images, ever** — that ceiling is the variants budget line (~$1.70).
 
 ```bash
@@ -87,9 +87,9 @@ A `failed` in the first minutes costs pennies — read the error, fix, `?start=1
 
 ## The smoke test, then promotion
 
-`/api/backroom/smoke` (~$0.15) generates four fixed panels through the **exact** production prompt path — trio at the bar, Mango alone on a boat, Abby on a bare panel, Drew in a courtroom — and commits them to `scripts/training/smoke/` for pull-and-inspect. `?scale=` tries a different `LORA_SCALE` per wave without touching Vercel.
+`/api/backroom/smoke` (~$0.15) generates four fixed panels through the **exact** production prompt path — trio at the bar, Barclay alone on a boat, Abby on a bare panel, Drew in a courtroom — and commits them to `scripts/training/smoke/` for pull-and-inspect. `?scale=` tries a different `LORA_SCALE` per wave without touching Vercel.
 
-Pass bar: three *distinct* on-model characters at the bar, the boat is a boat, the bare panel bare, the courtroom a courtroom, **and Mango has no tail anywhere**. Identity without obedience is a failure — turn the scale down and rerun before blaming the dataset.
+Pass bar: three *distinct* on-model characters at the bar, the boat is a boat, the bare panel bare, the courtroom a courtroom, **and Barclay has no tail anywhere**. Identity without obedience is a failure — turn the scale down and rerun before blaming the dataset.
 
 Only after both halves pass: set **`IMAGE_MODEL`** in Vercel to the version string and redeploy. Rolling back is the same move with the old value, or delete it to fall back to Kontext.
 
@@ -99,7 +99,7 @@ Before trusting it, have ChatGPT file one batch of eight, and let Rick score it 
 
 | # | Ask for | Passes when |
 | --- | --- | --- |
-| 1–3 | Drew alone, Mango alone, Abby alone, at the bar | Each is unmistakably themselves; Mango and Abby are not blurring together |
+| 1–3 | Drew alone, Barclay alone, Abby alone, at the bar | Each is unmistakably themselves; Barclay and Abby are not blurring together |
 | 4 | All three at the bar | Three distinct characters, nobody merged |
 | 5 | The two of them on a boat | It is a boat. Not a bar with a porthole |
 | 6 | In a courtroom | It is a courtroom |

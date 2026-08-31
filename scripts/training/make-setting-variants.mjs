@@ -8,7 +8,7 @@
 // on: every run id, the exact Kontext instruction, and the exact caption.
 //
 //   node scripts/training/make-setting-variants.mjs           # the full plan
-//   node scripts/training/make-setting-variants.mjs --only mango-boat
+//   node scripts/training/make-setting-variants.mjs --only barclay-boat
 //
 // The plan itself lives in lib/variant-plan.mjs, beside the reference-board
 // recipe (make-variant-refs.mjs) and the place patterns the balance check

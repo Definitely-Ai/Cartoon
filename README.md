@@ -1,6 +1,6 @@
 # The Swinging Door <!-- BRAND: replace when final -->
 
-A single-panel, strictly black-and-white barroom cartoon about politics, markets, and American life — Drew the flamingo, Mango the golden retriever, and Abby behind the bar of the Swinging Door. <!-- BRAND: replace when final --> This repo is the company's entire digital home: the canon that keeps the strip consistent, the cartoons themselves, and the website that publishes them. There is no CMS — **the filesystem is the CMS**. Add a folder under `/cartoons`, push, and the site rebuilds and deploys itself.
+A single-panel, strictly black-and-white barroom cartoon about politics, markets, and American life — Drew the flamingo, Barclay the golden retriever, and Abby behind the bar of the Swinging Door. <!-- BRAND: replace when final --> This repo is the company's entire digital home: the canon that keeps the strip consistent, the cartoons themselves, and the website that publishes them. There is no CMS — **the filesystem is the CMS**. Add a folder under `/cartoons`, push, and the site rebuilds and deploys itself.
 
 ## Folder map
 
@@ -37,7 +37,7 @@ Setup (env vars, connector) in [docs/SETUP.md](docs/SETUP.md).
 
 **Built and verified:**
 - Repository structure, canon documents (filled from the founder's series bible: cast, settings, comedy rules, boundaries, creation workflow), and the publishing template with a 90-second how-to.
-- Seven fully illustrated, canon-informed sample cartoons and nine distinct illustrated Back Room proofs, all with their exact dialogue typeset into the finished cartoon, plus identity/full-body model sheets for Drew, Mango, and Abby. Drew now also has a locked master model, an in-depth production bible, prompt/QC contracts, and five focused continuity sheets. See the [sample artwork record](cartoons/SAMPLE-ART.md) and [Drew's canon](canon/characters/flamingo/DESCRIPTION.md).
+- Seven fully illustrated, canon-informed sample cartoons and nine distinct illustrated Back Room proofs, all with their exact dialogue typeset into the finished cartoon, plus identity/full-body model sheets for Drew, Barclay, and Abby. Drew now also has a locked master model, an in-depth production bible, prompt/QC contracts, and five focused continuity sheets. See the [sample artwork record](cartoons/SAMPLE-ART.md) and [Drew's canon](canon/characters/flamingo/DESCRIPTION.md).
 - The full static site: validated data layer (bad `meta.json` fails the build naming the folder), the broadsheet front page and archive, print-ready permalinks, view-transition page turns, `prefers-reduced-motion` support throughout — plus the login-gated Back Room publishing flow.
 - Zero-config Vercel deploys — the app lives at the repo root; every push to the default branch deploys automatically.
 
@@ -49,6 +49,6 @@ Setup (env vars, connector) in [docs/SETUP.md](docs/SETUP.md).
 
 **Pending (waiting on the founder):**
 - Review/sign-off on Drew's supporting expression, anatomy, pose, wardrobe, scene-continuity, and proportion sheets; the locked master remains authoritative meanwhile.
-- Mango and Abby are **founder-approved working models, locked 2026-08-17 for daily production** (see their character bibles); final commissioned art may still supersede the sheets later. The single source for lock status is the cast table in [canon/README.md](canon/README.md).
+- Barclay and Abby are **founder-approved working models, locked 2026-08-17 for daily production** (see their character bibles); final commissioned art may still supersede the sheets later. The single source for lock status is the cast table in [canon/README.md](canon/README.md).
 - Line-weight/style decisions flagged "pending founder sign-off" in the style bible, and the Example Approved Gags slots in the comedy bible.
 - Final brand confirmation — every branded string is greppable via `BRAND:` for a clean find-and-replace if "The Swinging Door" changes. <!-- BRAND: replace when final -->

@@ -75,7 +75,7 @@ casual patron.
 ## Proportion and Scale Anchors (working)
 
 Counter top at her upper hip when standing behind the bar; her height reads
-between Drew's shoulder and Mango's eye line; heels add a little lift.
+between Drew's shoulder and Barclay's eye line; heels add a little lift.
 
 ## Wardrobe Policy
 

@@ -18,19 +18,19 @@ export const MAX_VARIANTS = 40;
 // (A round of chaining on the studio's own output degraded faces and
 // lettering; first-generation conditioning keeps the plate's crispness.)
 const DUO_PANEL = { body: { src: "canon/vision/plate-1-security-and-martini-menu.jpg", box: [16, 1460, 1600, 1140] } };
-// Object anchors the plate panel lacks: Mango's flag lapel pin and his old
+// Object anchors the plate panel lacks: Barclay's flag lapel pin and his old
 // fashioned, gripped in his fur-backed hand — pixels beat words for these.
-const MANGO_DETAIL = { body: { src: "canon/vision/mango-reference.jpg", box: [600, 2600, 1500, 1000] } };
+const BARCLAY_DETAIL = { body: { src: "canon/vision/barclay-reference.jpg", box: [600, 2600, 1500, 1000] } };
 const ABBY_REF = { body: { src: "canon/vision/abby-face-reference.jpg", box: [0, 0, 1640, 2140] } };
-// v2 dataset tiles: Drew's security-line bust, Mango's own solo panel, and
+// v2 dataset tiles: Drew's security-line bust, Barclay's own solo panel, and
 // the 19th-hole regions of plate 4 for the away games.
 const DREW_BUST = { body: { src: "canon/vision/drew-reference.jpg", box: [0, 0, 1450, 2450] } };
-const MANGO_PANEL = { body: { src: "canon/vision/mango-reference.jpg", box: [110, 580, 2770, 3390] } };
-const MANGO_GOLF = { body: { src: "canon/vision/plate-4-nineteenth-hole-and-tariffs.jpg", box: [750, 1100, 860, 930] } };
+const BARCLAY_PANEL = { body: { src: "canon/vision/barclay-reference.jpg", box: [110, 580, 2770, 3390] } };
+const BARCLAY_GOLF = { body: { src: "canon/vision/plate-4-nineteenth-hole-and-tariffs.jpg", box: [750, 1100, 860, 930] } };
 const GOLF_VISTA = { body: { src: "canon/vision/plate-4-nineteenth-hole-and-tariffs.jpg", box: [520, 990, 650, 315] } };
 // A face-free engraving swatch (suit tweed, furred hand, glass, studded
 // leather, bar wood) — technique without a second face to blend with.
-const STYLE_SWATCH = { body: { src: "canon/vision/mango-reference.jpg", box: [400, 2700, 2100, 1250] } };
+const STYLE_SWATCH = { body: { src: "canon/vision/barclay-reference.jpg", box: [400, 2700, 2100, 1250] } };
 
 const STYLE =
   "Draw in EXACTLY the reference's antique-steel-engraving style: fine pen crosshatching and stippling on " +
@@ -106,22 +106,22 @@ const ABBY_BODY =
 export const CASTS = [
   {
     id: "harrington-duo",
-    tokens: "Drew and Mango",
+    tokens: "Drew and Barclay",
     who: "the white flamingo gentleman and the golden retriever gentleman",
-    tiles: [DUO_PANEL, MANGO_DETAIL],
+    tiles: [DUO_PANEL, BARCLAY_DETAIL],
     redraw:
       "Keep those faces, hands, drinksware grips, and the engraved style EXACTLY as the reference draws " +
-      "them; the composition and Mango's wardrobe follow the description below, not the reference. ",
+      "them; the composition and Barclay's wardrobe follow the description below, not the reference. ",
     tileNote:
       "The reference panel supplies the two characters — take every character detail from it. Drew, the " +
       "white-plumed flamingo gentleman: deep question-mark neck, heavy-lidded deadpan eyes, heavy " +
       "downturned black-tipped beak at exactly the reference's scale, starched collar band under his " +
       "black silk BOW TIE, knitted sweater vest over a pale collared shirt, and " +
       "WHITE-FEATHERED humanoid hands — four feathered fingers and an opposed thumb — holding his " +
-      "MARTINI by the stem. Mango, the golden retriever gentleman: true black dog lips along the muzzle, " +
+      "MARTINI by the stem. Barclay, the golden retriever gentleman: true black dog lips along the muzzle, " +
       "freckles, long-fringed drop ears, a wristwatch, and FUR-BACKED dog-yet-humanoid hands with soft " +
       "pads, every finger distinctly drawn, never bare human skin on either gentleman. The SECOND, " +
-      "smaller reference tile shows how Mango dresses and drinks tonight: copy his clothes from that " +
+      "smaller reference tile shows how Barclay dresses and drinks tonight: copy his clothes from that " +
       "tile exactly, with the small US FLAG PIN on his left lapel, and put his OLD FASHIONED — the " +
       "short rocks glass with one large cube and a dark cherry, straight from that tile — in his " +
       "fur-backed hand in place of any martini. ",
@@ -132,12 +132,12 @@ export const CASTS = [
       "sit where the bartender works. On the FAR side of the counter: the bottle shelves with the " +
       "labeled golf-pun bottles, and the chalkboard martini menu on the wall above; the mirrored " +
       "Swinging Door window sign at the frame's edge. On the counter: Drew's martini with olives on its " +
-      "coaster at frame-left, Mango's OLD FASHIONED — a short rocks glass, one large cube, a dark " +
+      "coaster at frame-left, Barclay's OLD FASHIONED — a short rocks glass, one large cube, a dark " +
       "cherry — on its coaster at frame-right, and the shared nut bowl between them. Each gentleman " +
       "keeps his own clothes: Drew wears EXACTLY what the reference panel dresses him in — the knitted " +
-      "sweater vest over a pale collared shirt, starched collar band, black BOW TIE; Mango wears " +
+      "sweater vest over a pale collared shirt, starched collar band, black BOW TIE; Barclay wears " +
       "EXACTLY what the second tile dresses him in, its US FLAG PIN — tiny stars and stripes — on his " +
-      "left lapel. Drew deadpan, Mango faintly worried — successful gentlemen in their " +
+      "left lapel. Drew deadpan, Barclay faintly worried — successful gentlemen in their " +
       "mid-forties, classy and composed. ",
   },
   {
@@ -158,7 +158,7 @@ export const CASTS = [
     tokens: "Abby",
     label: "the proprietor at her marble",
     who: "the West Highland terrier proprietor",
-    tiles: [ABBY_REF, MANGO_DETAIL],
+    tiles: [ABBY_REF, BARCLAY_DETAIL],
     tileNote: ABBY_FACE_NOTE_HANDS,
     extra:
       "Composition: WAIST-UP, camera pulled back — she stands BEHIND her own marble bar counter with the " +
@@ -172,7 +172,7 @@ export const CASTS = [
     tokens: "Abby",
     label: "pouring behind the bar",
     who: "the West Highland terrier proprietor",
-    tiles: [ABBY_REF, MANGO_DETAIL],
+    tiles: [ABBY_REF, BARCLAY_DETAIL],
     tileNote: ABBY_FACE_NOTE_HANDS,
     extra:
       "Composition: WAIST-UP behind her own marble bar counter, the marble visible in the foreground. " +
@@ -228,42 +228,42 @@ export const CASTS = [
       "framed sign at the edge reading THE SWINGING DOOR 19TH HOLE. Deadpan, classy, mid-forties. ",
   },
   {
-    id: "harrington-mango-solo",
-    tokens: "Mango",
+    id: "harrington-barclay-solo",
+    tokens: "Barclay",
     label: "the news, taken neat",
     who: "the golden retriever gentleman",
-    tiles: [MANGO_PANEL],
+    tiles: [BARCLAY_PANEL],
     tileNote:
       "The reference is ONE finished panel of the exact scene to draw — recreate it as ONE SINGLE " +
-      "continuous panel: Mango the golden retriever gentleman alone at the bar counter of The Swinging " +
+      "continuous panel: Barclay the golden retriever gentleman alone at the bar counter of The Swinging " +
       "Door — true black dog lips along the muzzle, freckles, long-fringed drop ears, his dark evening " +
       "jacket over a pale open-collared shirt with the small US flag pin on the left lapel, a wristwatch, " +
       "FUR-BACKED dog-yet-humanoid hands with soft pads, his old fashioned with one large cube and a " +
       "dark cherry, the TV above the back bar playing the news, the mirrored window sign, the bottles. ",
     extra:
       "Where the reference photo cuts off at its left edge, complete the panel naturally: the FULL " +
-      "flatscreen TV and the back bar continue inside the drawing. Mango faintly worried — classy, " +
+      "flatscreen TV and the back bar continue inside the drawing. Barclay faintly worried — classy, " +
       "composed, mid-forties. ",
   },
   {
-    id: "harrington-mango-golf",
-    tokens: "Mango",
+    id: "harrington-barclay-golf",
+    tokens: "Barclay",
     label: "the 19th hole",
     who: "the golden retriever gentleman",
-    tiles: [MANGO_GOLF],
+    tiles: [BARCLAY_GOLF],
     tileNote:
-      "The reference shows Mango the golden retriever gentleman at the 19th-hole terrace of the golf " +
+      "The reference shows Barclay the golden retriever gentleman at the 19th-hole terrace of the golf " +
       "course — recreate him exactly as ONE SINGLE continuous panel: true black dog lips along the " +
       "muzzle, freckles, long-fringed drop ears, white polo shirt with the small US flag pin, pale golf " +
       "cap, wristwatch, and FUR-BACKED dog-yet-humanoid hands with soft pads holding his short rocks " +
-      "glass with one large cube and a dark cherry. Draw Mango ALONE. ",
+      "glass with one large cube and a dark cherry. Draw Barclay ALONE. ",
     extra:
       "Behind him the golf-course vista: rolling fairways, distant golfers, a cart, his golf bag " +
       "standing at the edge. Faintly worried, classy, mid-forties. ",
   },
   {
     id: "harrington-trio",
-    tokens: "Drew, Mango and Abby",
+    tokens: "Drew, Barclay and Abby",
     label: "the whole house",
     who: "the flamingo gentleman, the retriever gentleman, and the terrier proprietor",
     tiles: [DUO_PANEL, ABBY_REF],
@@ -274,7 +274,7 @@ export const CASTS = [
       "The FIRST reference panel supplies the two gentlemen exactly as they must be drawn: Drew the " +
       "white-plumed flamingo gentleman — question-mark neck, heavy-lidded deadpan eyes, black-tipped " +
       "beak at the panel's scale, collar band and black BOW TIE, knitted sweater vest, WHITE-FEATHERED " +
-      "humanoid hands, his MARTINI — and Mango the golden retriever gentleman — true black dog lips, " +
+      "humanoid hands, his MARTINI — and Barclay the golden retriever gentleman — true black dog lips, " +
       "freckles, drop ears, wristwatch, FUR-BACKED dog-yet-humanoid hands. The SECOND reference shows " +
       "the face of Abby, the West Highland White Terrier proprietor — copy her pretty compact face, " +
       "LARGE glossy dark eyes with catchlights, small black nose, warm smile, silky white fur, small " +
@@ -282,8 +282,8 @@ export const CASTS = [
     extra:
       "THE COMPOSITION, one single continuous panel: Abby stands BEHIND the marble bar counter working, " +
       "in a fitted light blouse with rolled sleeves and a folded towel on her left shoulder, standing " +
-      "upright like the gentlemen, with fur-backed dog-yet-humanoid hands; Drew and Mango sit ACROSS " +
-      "the counter from her on handsome stools — Drew frame-left with his martini, Mango frame-right " +
+      "upright like the gentlemen, with fur-backed dog-yet-humanoid hands; Drew and Barclay sit ACROSS " +
+      "the counter from her on handsome stools — Drew frame-left with his martini, Barclay frame-right " +
       "with his old fashioned (short rocks glass, one large cube, a dark cherry), the shared nut bowl " +
       "between them on the marble — and the bottle shelves rise on Abby's side behind her. Exactly " +
       "three characters. ",
@@ -299,8 +299,8 @@ export const PLAN = [
   ["harrington-abby-chalk", ["barroom"]],
   ["harrington-drew-solo", ["barroom"]],
   ["harrington-drew-golf", ["golf course"]],
-  ["harrington-mango-solo", ["barroom"]],
-  ["harrington-mango-golf", ["golf course"]],
+  ["harrington-barclay-solo", ["barroom"]],
+  ["harrington-barclay-golf", ["golf course"]],
 ];
 
 function placeOf(placeId) {

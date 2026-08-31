@@ -22,7 +22,7 @@ shouts. The room does half the talking.
 
 ## The cast
 
-The principals are **successful people in their prime**: Drew and Mango are
+The principals are **successful people in their prime**: Drew and Barclay are
 mid-forties, accomplished, at ease with money and with themselves; Abby is a
 successful proprietor. **All three carry wisdom and demand respect by how
 they carry themselves** — posture, patience, and the quality of their
@@ -70,14 +70,14 @@ model: it is the look he rejected.
   or coaster — always within reach at the bar; lifted by the stem in a dainty,
   pinky-elegant grip.
 - **Staging**: frame-left by default, the neck arched to hang his face where
-  the gag needs it, eye sliding sideways at Mango. He is pale but hatched, not the white of the paper: measured on plate 1 his vest and neck read grey 150-151 against Mango's 199-204, so Mango is the brighter figure and the untouched paper goes to glass, signage and Mango's shirt. A monocle is an
+  the gag needs it, eye sliding sideways at Barclay. He is pale but hatched, not the white of the paper: measured on plate 1 his vest and neck read grey 150-151 against Barclay's 199-204, so Barclay is the brighter figure and the untouched paper goes to glass, signage and Barclay's shirt. A monocle is an
   approved occasional accessory.
 - **Read**: the arch observer, and a gentleman — classy, composed, well
   turned out. He names the mechanism of the absurdity in one clean sentence.
 
-### Mango — the golden retriever
+### Barclay — the golden retriever
 
-**Definitive study: `canon/vision/mango-reference.jpg`.**
+**Definitive study: `canon/vision/barclay-reference.jpg`.**
 
 - **Unmistakably a golden retriever, drawn like one** (founder's note: "not
   just a dog but a golden retriever"): layered, feathered fur in fine strokes,
@@ -92,7 +92,7 @@ model: it is the look he rejected.
     shirt, no tie, flag pin on the **left lapel**, trousers.
   - **Daytime / travel / golf — the polo**: pale collared polo, flag pin on
     the **left chest**, a **belt**; outdoors a **ball cap** — caps are
-    natural on Mango.
+    natural on Barclay.
 - **Accessories**: wristwatch on the left wrist, always; at golf a white
   glove on the left paw and his bag with the towel lettered FORE! NOT SO FAST.
 - **Drink**: the old fashioned — short rocks glass, one large cube, a dark
@@ -207,7 +207,7 @@ sitting on the correct side of the bar — I know the original images showed
 that but they were messed up"): some plates seat the gentlemen with the
 bottle shelves directly behind them, which puts patrons inside the service
 area. Every drawn panel corrects this: the counter runs BETWEEN the patrons
-and the back bar — Drew and Mango on the room side, the bottles across the
+and the back bar — Drew and Barclay on the room side, the bottles across the
 counter where only the bartender works. Inspections check this class of
 error every round: spatial logic, which side of the counter, what a body
 could physically reach.
@@ -220,7 +220,7 @@ and the bar is where they build them. The span runs from the 25-year-old
 aspiring to that life to the 82-year-old who lived it and still does — the
 Warren Buffett key: understated, moneyed, unhurried. **The daily test**: a
 finance guy looks at the cartoon for 3–10 seconds every day — it must land
-and feel like his world in that window. Drew and Mango come to relax, have fun,
+and feel like his world in that window. Drew and Barclay come to relax, have fun,
 and build something; they never look at the price of a drink, and they expect
 not to sit next to riffraff. **The founder's worry, addressed by design**:
 Americans are drinking less, so the bar must never feel old and tired — it is
@@ -301,7 +301,7 @@ look like the plates. What the plates actually do:
 - **Deadpan dignity.** True animals carrying themselves like successful men —
   a flamingo who is entirely a flamingo, in a bow tie, unimpressed. The
   comedy is the composure, never the weirdness.
-- **The eyes are alive.** Drew's heavy lids over a lit eye; Mango's worried
+- **The eyes are alive.** Drew's heavy lids over a lit eye; Barclay's worried
   inner brows; Abby's bright button catchlights. Expressive, readable,
   warm — never flat, never dead, never staring.
 - **Species purity.** Each head is fully its animal: no human hair, no human
@@ -334,7 +334,7 @@ things.)
 > *Drew: "The security line is our most successful national team-building
 > exercise."*
 >
-> *Mango: "I've reached the age where I don't want luxury. I just want knee
+> *Barclay: "I've reached the age where I don't want luxury. I just want knee
 > room."*
 
 One speaker, one line (two-line quotes wrap centered). The speaker's name
@@ -353,11 +353,11 @@ told again by the room (algae-green pool on the TV + NANOBUBBLES $17.76 on
 the board under "blue in concept, green in operations"):
 
 1. *Drew: "The security line is our most successful national team-building exercise."* — institutional absurdity, affectionate.
-2. *Mango: "I've reached the age where I don't want luxury. I just want knee room."* — aging and airline economics at wallet height.
+2. *Barclay: "I've reached the age where I don't want luxury. I just want knee room."* — aging and airline economics at wallet height.
 3. *Drew: "It's comforting to see our emergencies becoming traditions."* — the debt ceiling as an annual holiday.
 4. *Drew: "Retirement planning is just estimating how expensive your hobbies are going to become."* — personal finance, dry.
 5. *Drew: "The republic remains blue in concept, green in operations."* — civic decay observed like weather.
-6. *Mango: "I don't mind paying more. I just like to know which country I'm punishing."* — tariffs, from the barstool.
+6. *Barclay: "I don't mind paying more. I just like to know which country I'm punishing."* — tariffs, from the barstool.
 7. *Drew: "Golf is the only sport where everyone complains about the speed and then takes a practice swing."* / *"Globalization was easier when nobody knew where anything came from."* — the clubhouse worldview.
 
 The target is systems, never people by name; the tone is rueful, fond, and
@@ -370,5 +370,5 @@ unhurried. The room's signage escalates the same joke the caption lands.
 - Unattributed captions → attributed italic dialogue beneath the panel.
 - Drew bare-feathered / bare-legged with only a bow tie → sweater vest, shirt,
   trousers; hand-like feathered hands; bible eyes on a true flamingo neck.
-- Mango's lapel-only pin → chest placement on the polo (lapel when jacketed).
+- Barclay's lapel-only pin → chest placement on the polo (lapel when jacketed).
 - The old model sheets and the v1 trained model remain history, not authority.

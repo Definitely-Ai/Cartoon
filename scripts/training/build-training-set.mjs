@@ -1,6 +1,6 @@
 // Builds the LoRA training set from crop-manifest.json.
 //
-// The fine-tune has one job the prompt cannot do — know who Drew, Mango and
+// The fine-tune has one job the prompt cannot do — know who Drew, Barclay and
 // Abby are — and one thing it must never do: decide where they are. This
 // script is where that second half is enforced. Every image leaves here with a
 // caption that names its background out loud, and the run fails if the corpus

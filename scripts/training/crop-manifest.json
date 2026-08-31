@@ -2,7 +2,7 @@
   "$doctrine": [
     "This file decides what the fine-tuned image model learns \u2014 and, just as much, what it must NOT learn.",
     "",
-    "WHAT IT LEARNS: who Drew, Mango and Abby are, and how the house draws them. Each character has a",
+    "WHAT IT LEARNS: who Drew, Barclay and Abby are, and how the house draws them. Each character has a",
     "trigger token that appears in every caption showing them. Whatever a caption leaves unsaid is what the",
     "token absorbs, so captions never mention anatomy, faces, permanent wardrobe, or the black-and-white look.",
     "",
@@ -23,7 +23,7 @@
   ],
   "triggers": {
     "drew": "SWDDREW",
-    "mango": "SWDMANGO",
+    "barclay": "SWDBARCLAY",
     "abby": "SWDABBY",
     "style": "SWDINK"
   },
@@ -361,7 +361,7 @@
     },
     {
       "file": "canon/characters/dog/full-body-sheet.png",
-      "note": "Mango's base-body sheet is clean line art of an unclothed figure \u2014 captioned as such, so neither the line weight nor the nudity attaches to his token.",
+      "note": "Barclay's base-body sheet is clean line art of an unclothed figure \u2014 captioned as such, so neither the line weight nor the nudity attaches to his token.",
       "crops": [
         {
           "box": [
@@ -370,7 +370,7 @@
             202,
             525
           ],
-          "caption": "SWDMANGO standing straight, facing the viewer, unclothed base-body construction study, clean line art on blank white paper",
+          "caption": "SWDBARCLAY standing straight, facing the viewer, unclothed base-body construction study, clean line art on blank white paper",
           "erase": [
             [
               140,
@@ -411,7 +411,7 @@
             186,
             525
           ],
-          "caption": "SWDMANGO standing at a three-quarter front angle, unclothed base-body construction study, clean line art on blank white paper"
+          "caption": "SWDBARCLAY standing at a three-quarter front angle, unclothed base-body construction study, clean line art on blank white paper"
         },
         {
           "box": [
@@ -420,7 +420,7 @@
             135,
             519
           ],
-          "caption": "SWDMANGO standing in side profile, unclothed base-body construction study, clean line art on blank white paper"
+          "caption": "SWDBARCLAY standing in side profile, unclothed base-body construction study, clean line art on blank white paper"
         },
         {
           "box": [
@@ -429,7 +429,7 @@
             177,
             519
           ],
-          "caption": "SWDMANGO standing at a three-quarter back angle, unclothed base-body construction study, clean line art on blank white paper"
+          "caption": "SWDBARCLAY standing at a three-quarter back angle, unclothed base-body construction study, clean line art on blank white paper"
         },
         {
           "box": [
@@ -438,7 +438,7 @@
             201,
             522
           ],
-          "caption": "SWDMANGO standing with his back to the viewer, unclothed base-body construction study, clean line art on blank white paper"
+          "caption": "SWDBARCLAY standing with his back to the viewer, unclothed base-body construction study, clean line art on blank white paper"
         },
         {
           "box": [
@@ -447,7 +447,7 @@
             270,
             352
           ],
-          "caption": "SWDMANGO sitting on a plain wooden stool, unclothed base-body construction study, clean line art on blank white paper",
+          "caption": "SWDBARCLAY sitting on a plain wooden stool, unclothed base-body construction study, clean line art on blank white paper",
           "erase": [
             [
               1015,
@@ -482,8 +482,8 @@
           ],
           "columns": 2,
           "captions": [
-            "SWDMANGO head and neck, neutral expression, close study on blank white paper",
-            "SWDMANGO head and neck, happy, mouth open and tongue showing, close study on blank white paper"
+            "SWDBARCLAY head and neck, neutral expression, close study on blank white paper",
+            "SWDBARCLAY head and neck, happy, mouth open and tongue showing, close study on blank white paper"
           ]
         }
       ]
@@ -491,7 +491,7 @@
     {
       "file": "canon/characters/dog/lapel-pin-bible.png",
       "skip": [
-        "Dropped whole after the eye check: every bust on this sheet gives Mango solid black bead eyes \u2014 the one eye treatment canon bans (his eyes are paper-white sclera, separate grey iris, separate pupil, held correctly by the identity sheet and every kept cartoon). The pin design itself lives on in all six cartoons and in every generated variant's reference."
+        "Dropped whole after the eye check: every bust on this sheet gives Barclay solid black bead eyes \u2014 the one eye treatment canon bans (his eyes are paper-white sclera, separate grey iris, separate pupil, held correctly by the identity sheet and every kept cartoon). The pin design itself lives on in all six cartoons and in every generated variant's reference."
       ]
     },
     {
@@ -1045,23 +1045,23 @@
   "cartoons": [
     {
       "file": "options/2026-08-11/option-2.png",
-      "caption": "SWDINK cartoon, SWDMANGO buried to the chest in a mountain of curling paper tape full of crossed-out pages, chin resting on one hand, at an office desk with a calculator, SWDDREW standing beside the desk holding up two blank sheets, plain empty background"
+      "caption": "SWDINK cartoon, SWDBARCLAY buried to the chest in a mountain of curling paper tape full of crossed-out pages, chin resting on one hand, at an office desk with a calculator, SWDDREW standing beside the desk holding up two blank sheets, plain empty background"
     },
     {
       "file": "options/2026-08-11/option-3.png",
-      "skip": "Mango is drawn with a large plumed tail \u2014 canon locks him tail-free (\"absolutely no tail\"), and a body part cannot be captioned away."
+      "skip": "Barclay is drawn with a large plumed tail \u2014 canon locks him tail-free (\"absolutely no tail\"), and a body part cannot be captioned away."
     },
     {
       "file": "options/2026-08-12/option-1.png",
-      "skip": "Mango is drawn with a large plumed tail \u2014 canon locks him tail-free (\"absolutely no tail\"), and a body part cannot be captioned away."
+      "skip": "Barclay is drawn with a large plumed tail \u2014 canon locks him tail-free (\"absolutely no tail\"), and a body part cannot be captioned away."
     },
     {
       "file": "options/2026-08-12/option-2.png",
-      "skip": "Mango is drawn with a large plumed tail \u2014 canon locks him tail-free (\"absolutely no tail\"), and a body part cannot be captioned away."
+      "skip": "Barclay is drawn with a large plumed tail \u2014 canon locks him tail-free (\"absolutely no tail\"), and a body part cannot be captioned away."
     },
     {
       "file": "options/2026-08-13/option-1.png",
-      "skip": "Mango's flag is drawn as a right-sleeve patch \u2014 the pin bible marks left-lapel-only as LOCKED, and a canon violation must not train."
+      "skip": "Barclay's flag is drawn as a right-sleeve patch \u2014 the pin bible marks left-lapel-only as LOCKED, and a canon violation must not train."
     },
     {
       "file": "options/2026-08-17/option-1.png",
@@ -1069,31 +1069,31 @@
     },
     {
       "file": "options/2026-08-17/option-2.png",
-      "caption": "SWDINK cartoon, SWDDREW leaning in over the bar counter of a barroom and pointing down at a small test vial while SWDMANGO sits opposite in grey trousers with a rocks glass, a television reading RED TIDE TEST, a chalkboard reading RESULTS TUESDAY, a framed flag and a sailboat picture on the wall, the bar's name mirrored on the window behind him"
+      "caption": "SWDINK cartoon, SWDDREW leaning in over the bar counter of a barroom and pointing down at a small test vial while SWDBARCLAY sits opposite in grey trousers with a rocks glass, a television reading RED TIDE TEST, a chalkboard reading RESULTS TUESDAY, a framed flag and a sailboat picture on the wall, the bar's name mirrored on the window behind him"
     },
     {
       "file": "options/2026-08-17/option-3.png",
-      "caption": "SWDINK cartoon, SWDMANGO sitting on a stool holding a fishing rod that dangles a rolled blueprint over a model pier on the counter of a barroom while SWDDREW steadies the line, a chalkboard reading CATCH REVIEW, a television showing a pier, a framed lighthouse picture and a framed fishing-boat picture on the wall, the bar's name mirrored on the window"
+      "caption": "SWDINK cartoon, SWDBARCLAY sitting on a stool holding a fishing rod that dangles a rolled blueprint over a model pier on the counter of a barroom while SWDDREW steadies the line, a chalkboard reading CATCH REVIEW, a television showing a pier, a framed lighthouse picture and a framed fishing-boat picture on the wall, the bar's name mirrored on the window"
     },
     {
       "file": "options/2026-08-17/option-4.png",
-      "caption": "SWDINK cartoon, SWDDREW with a martini and SWDMANGO reading his phone at the counter of a barroom, a bus lettered SCHOOL BUS in traffic under palm trees seen through the window with the bar's name mirrored on the glass, a television reading SCHOOL OPEN, a chalkboard reading FIRST BELL LAST CALL, a wall clock and a framed flag"
+      "caption": "SWDINK cartoon, SWDDREW with a martini and SWDBARCLAY reading his phone at the counter of a barroom, a bus lettered SCHOOL BUS in traffic under palm trees seen through the window with the bar's name mirrored on the glass, a television reading SCHOOL OPEN, a chalkboard reading FIRST BELL LAST CALL, a wall clock and a framed flag"
     },
     {
       "file": "cartoons/2026-07-24-diversification/cartoon.png",
-      "caption": "SWDINK cartoon, SWDMANGO holding up a page of charts and pointing at it while SWDDREW recoils with a wing raised, a ringing telephone, an envelope and a framed flamingo family photo on the counter of a barroom, a television with a falling market line, shelves of bottles behind, one bottle label bearing a small number"
+      "caption": "SWDINK cartoon, SWDBARCLAY holding up a page of charts and pointing at it while SWDDREW recoils with a wing raised, a ringing telephone, an envelope and a framed flamingo family photo on the counter of a barroom, a television with a falling market line, shelves of bottles behind, one bottle label bearing a small number"
     },
     {
       "file": "cartoons/2026-07-28-the-fee-structure/cartoon.png",
-      "skip": "Mango is drawn with a large plumed tail \u2014 canon locks him tail-free (\"absolutely no tail\"), and a body part cannot be captioned away."
+      "skip": "Barclay is drawn with a large plumed tail \u2014 canon locks him tail-free (\"absolutely no tail\"), and a body part cannot be captioned away."
     },
     {
       "file": "cartoons/2026-08-01-the-long-term/cartoon.png",
-      "skip": "Mango is drawn with a large plumed tail \u2014 canon locks him tail-free (\"absolutely no tail\"), and a body part cannot be captioned away."
+      "skip": "Barclay is drawn with a large plumed tail \u2014 canon locks him tail-free (\"absolutely no tail\"), and a body part cannot be captioned away."
     },
     {
       "file": "cartoons/2026-08-04-an-emerging-asset/cartoon.png",
-      "caption": "SWDINK cartoon, SWDDREW holding his martini while watching a coin dissolve into pixels over the phone in SWDMANGO's hands at the counter of a barroom, a curl of receipt paper rising, plain pale wall behind them"
+      "caption": "SWDINK cartoon, SWDDREW holding his martini while watching a coin dissolve into pixels over the phone in SWDBARCLAY's hands at the counter of a barroom, a curl of receipt paper rising, plain pale wall behind them"
     },
     {
       "file": "options/2026-08-11/option-1.png",

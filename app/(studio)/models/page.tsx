@@ -41,7 +41,7 @@ const PLATES = [
 
 const HOUSE_RULES = [
   "Eighty percent of cartoons happen inside The Swinging Door; the same room, the same day's news.",
-  "The camera looks toward the bar from the dining room: the back bar, the television above it and the chalkboard fill the background, and the marble runs across in front. Drew and Mango sit at it on the room side — patrons, with the counter between them and the bottles.",
+  "The camera looks toward the bar from the dining room: the back bar, the television above it and the chalkboard fill the background, and the marble runs across in front. Drew and Barclay sit at it on the room side — patrons, with the counter between them and the bottles.",
   "Abby is the only other character in the bar. No human being appears anywhere except on the television.",
   "The TV names the story and the chalkboard prices it, and both illustrate that cartoon's own joke — never a stock scene.",
   "The only lettering in a panel is the lettering the brief asked for. Bezels, napkins, cuffs and chart axes stay blank — invented micro-text always comes back as nonsense.",

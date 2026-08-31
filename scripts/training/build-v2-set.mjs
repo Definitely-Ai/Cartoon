@@ -9,7 +9,7 @@
 // Captions never mention anatomy, faces, permanent wardrobe, or the
 // black-and-white look — that is what bakes into the tokens and becomes each
 // character's DEFAULT. Everything a prompt should be able to change — the
-// setting, the props, variable clothes (Mango's golf polo, Abby's gown), the
+// setting, the props, variable clothes (Barclay's golf polo, Abby's gown), the
 // signage text — is named out loud so it stays the prompt's business.
 
 import fs from "node:fs";
@@ -32,8 +32,8 @@ const PLATES = [
     src: V("plate-1-security-and-martini-menu.jpg"),
     box: [48, 117, 1546, 766],
     caption:
-      "SWDINK cartoon, SWDDREW and SWDMANGO waiting in a crowded airport security line among human travelers, " +
-      "SWDMANGO in a white polo shirt and pale cap, SWDDREW holding a checklist over a tray of belts and shoes, " +
+      "SWDINK cartoon, SWDDREW and SWDBARCLAY waiting in a crowded airport security line among human travelers, " +
+      "SWDBARCLAY in a white polo shirt and pale cap, SWDDREW holding a checklist over a tray of belts and shoes, " +
       "wall signs reading SECURITY and PREPARE TO BE HUMBLED",
   },
   {
@@ -41,7 +41,7 @@ const PLATES = [
     src: V("plate-1-security-and-martini-menu.jpg"),
     box: [16, 1460, 1600, 1140],
     caption:
-      "SWDINK cartoon, SWDDREW and SWDMANGO seated in leather club chairs at the bar counter of the barroom, " +
+      "SWDINK cartoon, SWDDREW and SWDBARCLAY seated in leather club chairs at the bar counter of the barroom, " +
       "each with a martini, a chalkboard menu pricing martinis by airline fare class behind the bar, a nut bowl " +
       "between them, the mirrored window sign beyond",
   },
@@ -50,7 +50,7 @@ const PLATES = [
     src: V("plate-2-debt-ceiling-and-retirement.jpg"),
     box: [152, 727, 1544, 1076],
     caption:
-      "SWDINK cartoon, SWDDREW with a martini and SWDMANGO with an old fashioned at the bar counter of the " +
+      "SWDINK cartoon, SWDDREW with a martini and SWDBARCLAY with an old fashioned at the bar counter of the " +
       "barroom under a banner reading 16th ANNUAL DEBT CEILING WEEK, balloons and a schedule-of-events board " +
       "among the bottles, a paper party hat on the counter",
   },
@@ -59,7 +59,7 @@ const PLATES = [
     src: V("plate-2-debt-ceiling-and-retirement.jpg"),
     box: [98, 1960, 1619, 1141],
     caption:
-      "SWDINK cartoon, SWDDREW with a martini and SWDMANGO with an old fashioned at the bar counter of the " +
+      "SWDINK cartoon, SWDDREW with a martini and SWDBARCLAY with an old fashioned at the bar counter of the " +
       "barroom, the TV above the back bar showing a RETIREMENT PLANNING news segment, a chalkboard reading " +
       "TODAY'S SPECIAL LOW SCORES AND COLD DRINKS, a nut bowl between them",
   },
@@ -68,7 +68,7 @@ const PLATES = [
     src: V("plate-3-national-mall.jpg"),
     box: [788, 69, 2206, 1600],
     caption:
-      "SWDINK cartoon, SWDDREW with a martini and SWDMANGO with an old fashioned at the bar counter of the " +
+      "SWDINK cartoon, SWDDREW with a martini and SWDBARCLAY with an old fashioned at the bar counter of the " +
       "barroom, the TV showing DCN live news of National Mall renovation troubles, a chalkboard special " +
       "reading NANOBUBBLES $17.76, the mirrored window sign",
   },
@@ -77,7 +77,7 @@ const PLATES = [
     src: V("plate-4-nineteenth-hole-and-tariffs.jpg"),
     box: [6, 6, 706, 784],
     caption:
-      "SWDINK cartoon, SWDDREW with a martini and SWDMANGO with an old fashioned at the bar counter of the " +
+      "SWDINK cartoon, SWDDREW with a martini and SWDBARCLAY with an old fashioned at the bar counter of the " +
       "barroom, a chalkboard reading TODAY'S SPECIAL IMPORTED BEER $8 PATRIOTIC IMPORTED BEER $12, the " +
       "mirrored window sign",
   },
@@ -86,7 +86,7 @@ const PLATES = [
     src: V("plate-4-nineteenth-hole-and-tariffs.jpg"),
     box: [728, 6, 762, 784],
     caption:
-      "SWDINK cartoon, SWDDREW with a martini and SWDMANGO with an old fashioned at the bar counter of the " +
+      "SWDINK cartoon, SWDDREW with a martini and SWDBARCLAY with an old fashioned at the bar counter of the " +
       "barroom, a large globe covered in hanging price tags standing on the back bar, a nut bowl between them",
   },
   {
@@ -94,8 +94,8 @@ const PLATES = [
     src: V("plate-4-nineteenth-hole-and-tariffs.jpg"),
     box: [13, 986, 1543, 1047],
     caption:
-      "SWDINK cartoon, SWDDREW in a golf visor and SWDMANGO in a white polo shirt and cap at the outdoor 19th " +
-      "hole terrace of a golf course, rolling fairways with distant golfers and carts behind them, SWDMANGO " +
+      "SWDINK cartoon, SWDDREW in a golf visor and SWDBARCLAY in a white polo shirt and cap at the outdoor 19th " +
+      "hole terrace of a golf course, rolling fairways with distant golfers and carts behind them, SWDBARCLAY " +
       "holding an old fashioned, a golf bag with a towel reading FORE NOT SO FAST, a framed sign reading THE " +
       "SWINGING DOOR 19TH HOLE",
   },
@@ -108,11 +108,11 @@ const PLATES = [
       "WATCH, human travelers and a metal detector behind him",
   },
   {
-    id: "mango-news-panel",
-    src: V("mango-reference.jpg"),
+    id: "barclay-news-panel",
+    src: V("barclay-reference.jpg"),
     box: [110, 580, 2770, 3390],
     caption:
-      "SWDINK cartoon, SWDMANGO alone with an old fashioned at the bar counter of the barroom, the TV above " +
+      "SWDINK cartoon, SWDBARCLAY alone with an old fashioned at the bar counter of the barroom, the TV above " +
       "showing a financial news anchor, the mirrored window sign, a small sign reading NO CHASING YOUR BALLS " +
       "IN HERE",
   },
@@ -128,11 +128,11 @@ const PLATES = [
       "RETIREMENT PLANNING news segment, a chalkboard reading TODAY'S SPECIAL LOW SCORES AND COLD DRINKS",
   },
   {
-    id: "p2r-mango",
+    id: "p2r-barclay",
     src: V("plate-2-debt-ceiling-and-retirement.jpg"),
     box: [900, 1960, 817, 1141],
     caption:
-      "SWDINK cartoon, SWDMANGO with an old fashioned at the bar counter of the barroom, framed pictures " +
+      "SWDINK cartoon, SWDBARCLAY with an old fashioned at the bar counter of the barroom, framed pictures " +
       "and the mirrored window sign behind him, a small sign reading NO CHASING YOUR BALLS IN HERE",
   },
   {
@@ -144,11 +144,11 @@ const PLATES = [
       "framed sign reading THE SWINGING DOOR behind him",
   },
   {
-    id: "p3-mango",
+    id: "p3-barclay",
     src: V("plate-3-national-mall.jpg"),
     box: [1750, 220, 1244, 1449],
     caption:
-      "SWDINK cartoon, SWDMANGO with an old fashioned at the bar counter of the barroom, a chalkboard " +
+      "SWDINK cartoon, SWDBARCLAY with an old fashioned at the bar counter of the barroom, a chalkboard " +
       "special reading NANOBUBBLES $17.76 and the TV news behind him",
   },
   {
@@ -189,7 +189,7 @@ const PLATES = [
 // what stays committed). Keys are the run ids from the variant plan.
 const VARIANT_CAPTIONS = {
   "harrington-duo-barroom":
-    "SWDINK cartoon, SWDDREW with a martini and SWDMANGO with an old fashioned seated at a round marble " +
+    "SWDINK cartoon, SWDDREW with a martini and SWDBARCLAY with an old fashioned seated at a round marble " +
     "table in the barroom, the chalkboard martini menu and bottle shelves behind them, the window sign " +
     "reading THE SWINGING DOOR",
   "harrington-abby-barroom":
@@ -204,11 +204,11 @@ const VARIANT_CAPTIONS = {
   "harrington-drew-golf-golf-course":
     "SWDINK cartoon, SWDDREW in a golf visor holding a martini at the 19th hole terrace of a golf course, " +
     "fairways with distant golfers and a cart behind him",
-  "harrington-mango-solo-barroom":
-    "SWDINK cartoon, SWDMANGO alone with an old fashioned at the bar counter of the barroom, the TV above " +
+  "harrington-barclay-solo-barroom":
+    "SWDINK cartoon, SWDBARCLAY alone with an old fashioned at the bar counter of the barroom, the TV above " +
     "the back bar playing the news, the mirrored window sign",
-  "harrington-mango-golf-golf-course":
-    "SWDINK cartoon, SWDMANGO in a white polo shirt and pale cap holding an old fashioned at the 19th hole " +
+  "harrington-barclay-golf-golf-course":
+    "SWDINK cartoon, SWDBARCLAY in a white polo shirt and pale cap holding an old fashioned at the 19th hole " +
     "terrace of a golf course, fairways with distant golfers and a cart behind him, his golf bag at the edge",
 };
 
@@ -255,8 +255,8 @@ for (const [id, cap] of Object.entries(VARIANT_CAPTIONS)) {
 const count = (token) => entries.filter((e) => e.caption.includes(token)).length;
 const barroom = entries.filter((e) => e.caption.includes("barroom")).length;
 const placed = entries.length; // every v2 caption names a setting
-const tokens = { SWDDREW: count("SWDDREW"), SWDMANGO: count("SWDMANGO"), SWDABBY: count("SWDABBY") };
-console.log(`\n${entries.length} images — SWDDREW ${tokens.SWDDREW}, SWDMANGO ${tokens.SWDMANGO}, SWDABBY ${tokens.SWDABBY}`);
+const tokens = { SWDDREW: count("SWDDREW"), SWDBARCLAY: count("SWDBARCLAY"), SWDABBY: count("SWDABBY") };
+console.log(`\n${entries.length} images — SWDDREW ${tokens.SWDDREW}, SWDBARCLAY ${tokens.SWDBARCLAY}, SWDABBY ${tokens.SWDABBY}`);
 console.log(`barroom ${barroom}/${placed} (${Math.round((100 * barroom) / placed)}%)`);
 if (missingVariants.length) console.log(`variants not yet on disk: ${missingVariants.join(", ")}`);
 

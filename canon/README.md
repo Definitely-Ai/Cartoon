@@ -37,7 +37,7 @@ The authority ladder, top rung wins — follow the higher, flag the lower, **nev
 | Character | Wire name (`get_model_sheet`) | Folder | Status |
 | --- | --- | --- | --- |
 | Drew — the flamingo | `drew` | `characters/flamingo/` | Locked: five-file bible + 7 hash-fingerprinted sheets |
-| Mango — the golden retriever | `mango` | `characters/dog/` | Locked 2026-08-17: five-file bible + 3 hash-fingerprinted sheets |
+| Barclay — the golden retriever | `barclay` (legacy `mango` still accepted) | `characters/dog/` | Locked 2026-08-17: five-file bible + 3 hash-fingerprinted sheets. Renamed from Mango 2026-08-31 — same dog, new name; pre-rename data keeps the old key and every reader folds it |
 | Abby — the westie who owns the bar | `abby` | `characters/abby/` | Locked 2026-08-17: five-file bible + 7 hash-fingerprinted sheets |
 
 Every character folder follows the five-file standard: `DESCRIPTION.md` (compact authority), `CHARACTER-BIBLE.md` (deep spec), `PROMPT-BLOCKS.md` (paste-ready blocks), `QUALITY-CONTROL.md` (inspection gates), `ASSET-MANIFEST.json` (hash-locked sheets). `npm run canon:check` verifies all three.

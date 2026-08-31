@@ -24,7 +24,7 @@ const DEFAULT_MODEL = "openai/gpt-image-2";
 // stop describing them and spend its weight on what Rick actually asked for.
 const TRIGGERS: Record<string, string> = {
   drew: "SWDDREW",
-  mango: "SWDMANGO",
+  barclay: "SWDBARCLAY",
   abby: "SWDABBY",
 };
 const STYLE_TRIGGER = "SWDINK";
@@ -56,7 +56,7 @@ export function imageModel(): string {
 // model sheets must never condition a paid image again: their look is the
 // look he rejected.
 // Tight BUSTS, not whole panels. A tile that carries a whole scene competes
-// with the scene being asked for: Mango's bar panel dominated every board it
+// with the scene being asked for: Barclay's bar panel dominated every board it
 // sat on, absorbing Drew into a second retriever and dropping Abby entirely.
 // Cropped to head-and-shoulders, each tile can only say "this is what this
 // character looks like".
@@ -81,13 +81,13 @@ const VISION_REFS: Record<string, Tile[]> = {
         "claws. The cartoon's Drew must be indistinguishable from this one",
     },
   ],
-  mango: [
+  barclay: [
     {
-      path: "canon/vision/studies/mango.png",
+      path: "canon/vision/studies/barclay.png",
       label:
-        "Mango, exactly as the studio's official portrait — copy THIS dog identically: both eyes on the " +
+        "Barclay, exactly as the studio's official portrait — copy THIS dog identically: both eyes on the " +
         "paper, the closed mouth, the flag pin on his left lapel, the wristwatch, the fur-backed clawless " +
-        "hands. The cartoon's Mango must be indistinguishable from this one",
+        "hands. The cartoon's Barclay must be indistinguishable from this one",
     },
   ],
   abby: [
@@ -135,7 +135,7 @@ export async function buildReferenceBoard(
   const refs: { path: string; box?: [number, number, number, number] }[] = [];
   const cast = characters.map((c) => c.toLowerCase());
   if (staged) {
-    // The staged panel already IS Drew and Mango in the room; only a
+    // The staged panel already IS Drew and Barclay in the room; only a
     // character it does not contain needs a portrait beside it.
     refs.push(SCENE_TILE);
     if (cast.includes("abby")) refs.push(VISION_REFS.abby[0]);
@@ -147,10 +147,10 @@ export async function buildReferenceBoard(
     const ref = VISION_REFS[character]?.[0];
     if (ref) refs.push(ref);
   }
-  // The room band rides along for bar scenes unless Mango is in the cast —
+  // The room band rides along for bar scenes unless Barclay is in the cast —
   // his crop still carries enough of the back bar to double up. Kept in
   // lockstep with the roster sentence in assemblePrompt.
-  const roomCovered = cast.includes("mango");
+  const roomCovered = cast.includes("barclay") || cast.includes("mango");
   if (barScene && !roomCovered) refs.push(ROOM_TILE);
   return composeBoard(refs);
 }
@@ -262,7 +262,7 @@ export function referenceList(
   barScene: boolean
 ): { label: string; path: string; box?: [number, number, number, number] }[] {
   // THE MODEL TAKES SIX IMAGES. Adding a third tile to Drew and a second to
-  // Mango quietly pushed every three-hander to seven, and the whole cast of
+  // Barclay quietly pushed every three-hander to seven, and the whole cast of
   // twelve Abby panels failed while all six two-handers went through — a
   // failure that looked exactly like flaky rate limiting for an hour.
   //
@@ -283,8 +283,8 @@ export function referenceList(
   // Hold the extras back until the set plate has had its chance at a slot.
   // Extras board ROUND-ROBIN by character, not in cast order: with three
   // characters and a six-image budget, cast-order spending gave Drew his second
-  // and third tiles while Mango's face tile — the one that teaches both eyes —
-  // never boarded at all, and every trio came back with a one-eyed Mango.
+  // and third tiles while Barclay's face tile — the one that teaches both eyes —
+  // never boarded at all, and every trio came back with a one-eyed Barclay.
   const spendExtras = () => {
     while (extras.length > 0 && list.length < LIMIT) {
       const seen = new Set<string>();
@@ -527,7 +527,7 @@ function fillSlots(text: string, candidate: Candidate): string {
  * prompt for Kontext rather than a variation on it.
  *
  * What the fine-tune knows, the prompt stops saying: the style paragraph
- * becomes one style token, and the DREW/MANGO/ABBY paragraphs become three
+ * becomes one style token, and the DREW/BARCLAY/ABBY paragraphs become three
  * trigger words. What the fine-tune does not know stays in full — the stage
  * physics, the no-lettering rules, and above all the scene Rick asked for,
  * which lands last and with nothing competing for the model's attention.
@@ -545,7 +545,7 @@ function fineTunedPrompt(masterPrompt: string, candidate: Candidate): string {
     .map((c) => TRIGGERS[c.toLowerCase().trim()])
     .filter(Boolean);
   if (cast.length === 0) {
-    throw new PublishError(400, "No known characters in the scene — use mango, drew, or abby.");
+    throw new PublishError(400, "No known characters in the scene — use barclay, drew, or abby.");
   }
 
   const parts = [`${STYLE_TRIGGER} single-panel cartoon. In the scene: ${cast.join(", ")}.`];
@@ -673,12 +673,14 @@ export function assemblePrompt(
   const named = cast.map((c) => CAST_BLURB[c]).filter(Boolean);
   const roster = named.map((who, i) => `${ordinal(i)}, ${who}`).join("; ");
   const count = named.length;
-  const roomTile = !candidate.setting && !candidate.characters.some((c) => c.toLowerCase() === "mango");
+  const roomTile =
+    !candidate.setting &&
+    !candidate.characters.some((c) => ["barclay", "mango"].includes(c.toLowerCase()));
   return (
     "Draw ONE SINGLE CONTINUOUS PANEL — one unbroken scene, edge to edge. There is no dividing line, " +
     "no seam, no split, no diptych, and no second frame: every character shares one room in one drawing. " +
     (staged
-      ? `The attached image is a finished panel of this exact strip: Drew the flamingo gentleman and Mango ` +
+      ? `The attached image is a finished panel of this exact strip: Drew the flamingo gentleman and Barclay ` +
         `the retriever gentleman seated at the marble bar counter of The Swinging Door, drinks on the marble, ` +
         `boards on the wall behind. KEEP that staging and both characters exactly — same faces, same builds, ` +
         `same wardrobe, same seats at the counter${cast.includes("abby") ? `. The SECOND, smaller tile is Abby, the white West Highland terrier proprietor: ADD her to the same panel, standing BEHIND the counter on the far side facing the two gentlemen, in a fitted light blouse with a towel over her shoulder and her studded gem-pendant collar, so the finished panel holds exactly three characters` : ", and draw exactly those two characters"}. ` +
@@ -706,9 +708,16 @@ export function assemblePrompt(
 // which portrait is which, in the strip's own vocabulary.
 const CAST_BLURB: Record<string, string> = {
   drew: "Drew, the white-plumed flamingo gentleman in the black bow tie and knitted sweater vest",
-  mango: "Mango, the golden retriever gentleman in the dark jacket with the small US flag pin",
+  barclay: "Barclay, the golden retriever gentleman in the dark jacket with the small US flag pin",
   abby: "Abby, the white West Highland terrier proprietor in the studded gem-pendant collar",
 };
+
+// LEGACY KEY. Pre-rename plan.json files and cached connector schemas still
+// say "mango"; he is Barclay now, but the old key must keep resolving to the
+// same character — same trigger, same portrait tile, same blurb.
+TRIGGERS.mango = TRIGGERS.barclay;
+VISION_REFS.mango = VISION_REFS.barclay;
+CAST_BLURB.mango = CAST_BLURB.barclay;
 
 function ordinal(i: number): string {
   return ["first from the left", "second from the left", "third from the left"][i] ?? `number ${i + 1}`;

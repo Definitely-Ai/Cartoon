@@ -21,7 +21,7 @@ An output is approved only when every critical gate passes **against the actual 
 - [ ] Nail tips, if visible, are tiny, pale, and avian—not human nails, claws, or talons.
 - [ ] Long bird legs and webbed flamingo feet remain coherent.
 - [ ] Small solid-black bow tie is present and correctly placed.
-- [ ] No anatomy, clothing, prop, or expression trait has migrated from Mango, Abby, or another character.
+- [ ] No anatomy, clothing, prop, or expression trait has migrated from Barclay, Abby, or another character.
 
 Any failure above means **reject and revise**.
 
@@ -35,7 +35,7 @@ Consistent with `canon/creation/SCENE-QC.md`; that file's stage rules apply to t
 - [ ] **Plausible contact points.** Feather-digits actually wrap what they hold — thumb-feather opposing the finger-feathers, right digit count; wings touch props where hands would. No mitten blobs, no pass-through grips.
 - [ ] **No interpenetration.** No limb, prop, garment, or glass merges, clips, or passes through the bar, a stool, or another character; nothing fused into a surface or a body.
 - [ ] **Correct occlusion.** Near objects hide far ones: the bar edge hides what stands behind it, his feather-hand hides the martini stem where it wraps it, the counter and stools overlap him correctly.
-- [ ] **Scale holds.** Drew stays consistent with the counter, the stools, Mango, Abby, and props, panel to panel.
+- [ ] **Scale holds.** Drew stays consistent with the counter, the stools, Barclay, Abby, and props, panel to panel.
 
 ## Performance Checks
 

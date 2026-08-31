@@ -2,7 +2,14 @@
 
 <!-- BRAND: replace when final — "The Swinging Door" is the working series/bar name throughout this document -->
 
-Purpose: where the strip happens, drawn the same way every time. Source: the founder's series bible for "The Swinging Door."
+Purpose: where the strip happens, drawn the same way every time. Source: the founder's series bible for "The Swinging Door." **The strip is set in the PRESENT DAY.**
+
+**The room is governed element by element** — one bible per fixture, each
+declared CONSTANT (no caption ever touches it) or CAPTION-DRIVEN (carries part
+of the day's joke through one named slot): see
+[`elements/README.md`](elements/README.md) for the full table. A caption
+influences the television, the chalkboard, and what the cast is doing or
+holding — and nothing else in the room, ever.
 
 ## The Swinging Door (primary setting)
 
@@ -15,14 +22,15 @@ world who build relationships at a good bar:
 - A **polished marble bar top**; **fine walnut-paneled walls** — nice, warm,
   current paneling drawn in fine engraved strokes; brass and good glassware;
   leather club chairs and stools.
-- **If the front window is shown, The Swinging Door is on it, mirrored** as
-  read from inside (the window is optional; the mirrored sign on it is not);
-  a framed script sign on the wall is handsome but optional per panel; framed
-  prints of airplanes and landmarks — plate 1 hangs an airliner and a control
-  tower. *(Open conflict, flagged not settled: plate 2 also hangs a small
-  framed print of a golfer, while `MASTER-PROMPT.md` forbids a human figure
-  anywhere in the room, "inside a picture frame or on a hat included." Until
-  the founder rules, draw the hole and leave the golfer out.)*
+- **The window is a CONSTANT** ([elements/WINDOW.md](elements/WINDOW.md)):
+  ONE LARGE MODERN WINDOW at frame-left — a single tall sheet of clear plate
+  glass, no small panes, no muntins, no frosting — and through it
+  **present-day New York City**: glass-and-steel towers over older stone
+  facades, a modern street, nobody outside. The Swinging Door is mirrored on
+  the glass as read from inside; nothing else is lettered on or beyond it.
+  *(Operator ruling 2026-08-31; supersedes the plates' small-paned window.)*
+  Framed prints on the walls stay non-figurative — no golfer prints, no
+  people in frames.
 - **Coherence rule**: the TV's story and the chalkboard's special both relate
   to the day's caption — the room tells the same joke from other angles.
 - **Bottles out and proudly displayed** on the back bar — distinct shapes,
@@ -79,13 +87,13 @@ bar has to be what we are looking at.
 | Centre, high above the back bar | The **television**, a flat screen with a narrow bezel — the day's story |
 | Right of the television | The **chalkboard** in a dark wooden frame — the day's price |
 | Each end of the back bar | A brass sconce with a small pleated shade |
-| Far left, onto the street | The front window, lower half frosted, **THE SWINGING DOOR** in mirrored gilt script |
+| Far left, onto the street | **ONE large modern plate-glass window** — no panes, no frosting — present-day New York City beyond, **THE SWINGING DOOR** in mirrored gilt script on the glass |
 | Wherever wall shows | Dark walnut panelling, tall fielded panels |
 | Across the front | The polished **marble counter**, walnut-panelled below |
 
 ### Who stands where
 
-**Drew and Mango sit at the counter on the room side — our side**, turned toward
+**Drew and Barclay sit at the counter on the room side — our side**, turned toward
 each other so both faces read in three-quarter. **The counter is between them
 and the bottles, and that is the whole test:** they are patrons. Never in the
 service well, never among the bottles, never pouring, and never holding a liquor
@@ -96,7 +104,7 @@ was the original fault.
 bar, facing them across the marble. That is her place and she is the only one
 ever in it — which is also why she is easy to add to any panel.
 
-**Drew frame-left, Mango frame-right**, the shared nut bowl between their glasses.
+**Drew frame-left, Barclay frame-right**, the shared nut bowl between their glasses.
 
 ### The bar itself — one level, one height, one marble
 
@@ -129,7 +137,7 @@ that grows out of the bar is a redraw.
 
 ### The sides — the first thing to check on any panel
 
-> Find the counter. **Drew and Mango are in front of it. Abby is behind it.**
+> Find the counter. **Drew and Barclay are in front of it. Abby is behind it.**
 > They are never on the same side, and they never swap.
 >
 > The tell, when it is ambiguous: **whoever is holding the bottle or the bar
@@ -142,12 +150,12 @@ correct, including all four panels Abby appears in.*
 
 *(Founder: "for any scenes that use objects like a golf bag we should have the
 name of the cartoon The Swinging Door on the item" — and, on the boundary: "not
-on Mango or Drew, but brand certain things, and it must look really great, like
+on Barclay or Drew, but brand certain things, and it must look really great, like
 it was part of the object.")*
 
 **Objects carry the name. Characters never do.** No lettering appears anywhere
-on Drew, Mango or Abby — not on a sweater vest, a suit, a jacket, a shirt, a
-collar, a cap, a visor, a bow tie or a blouse. Mango's flag pin remains the only
+on Drew, Barclay or Abby — not on a sweater vest, a suit, a jacket, a shirt, a
+collar, a cap, a visor, a bow tie or a blouse. Barclay's flag pin remains the only
 mark on anyone's clothes.
 
 On an object, the mark is **made the way that material is made** — that is the
@@ -186,7 +194,7 @@ Two more boundaries keep it from becoming clutter:
 | **Additional, not instead** | This is on top of whatever lettering the brief commissions for the gag. Every other surface still stays blank — a blank surface is what lets the model letter the ones that matter without garbling them |
 
 On a prop that already carries a joke, both marks ride together: the golf bag is
-embossed THE SWINGING DOOR **and** hangs Mango's *FORE! NOT SO FAST* towel.
+embossed THE SWINGING DOOR **and** hangs Barclay's *FORE! NOT SO FAST* towel.
 
 ### What changes, and it is only this
 
@@ -199,10 +207,10 @@ size.
 
 These are laws, not suggestions — `creation/SCENE-QC.md` inspects every generated image against them:
 
-- **Two sides, one rule.** Behind the bar is the service side: Abby's territory, no one else's. Patrons — Drew, Mango, anyone — stay on the room side. Abby leaves her position only for an explicit owner action named in the scene (opening or closing, greeting at the double swinging doors, checking the room, carrying stock, solving a practical problem); she is never a casual patron.
+- **Two sides, one rule.** Behind the bar is the service side: Abby's territory, no one else's. Patrons — Drew, Barclay, anyone — stay on the room side. Abby leaves her position only for an explicit owner action named in the scene (opening or closing, greeting at the double swinging doors, checking the room, carrying stock, solving a practical problem); she is never a casual patron.
 - **The counter, from both sides.** The counter's far edge crosses standing Abby at the waist, and its top hits the seated gentlemen just below mid-chest with their forearms resting ON it; their glasses stand on the marble between them. The floor behind the bar is level with the room.
 - **Occlusion is correct.** Behind the bar, the counter hides Abby from the waist down. That is the right drawing — never render her lower body through or in front of the counter, and never move her patron-side just to show it.
-- **Blocking defaults.** Drew sits at the room side of the counter, frame-left, and his martini is always with him there — conical stemmed glass, **one olive on one pick** (the count is the flamingo bible's, and it outranks this page), on a coaster or held by the stem in his feathered hand. Mango sits frame-right in a studded leather club chair, his old fashioned flat on the marble. Each of them sits with his weight on the seat and his hips on it — but the panel is cropped at the counter, so **none of that is ever in frame**: never draw legs, a stool or a seat to prove a character is sitting.
+- **Blocking defaults.** Drew sits at the room side of the counter, frame-left, and his martini is always with him there — conical stemmed glass, **one olive on one pick** (the count is the flamingo bible's, and it outranks this page), on a coaster or held by the stem in his feathered hand. Barclay sits frame-right in a studded leather club chair, his old fashioned flat on the marble. Each of them sits with his weight on the seat and his hips on it — but the panel is cropped at the counter, so **none of that is ever in frame**: never draw legs, a stool or a seat to prove a character is sitting.
 - **Support and grip.** Every glass and bottle rests flat on the bar, a coaster, or a shelf, or sits in a closed plausible grip; hands meet props at real contact points.
 - **No interpenetration.** No limb, prop, or garment passes through furniture, glassware, or another character; nothing fuses into a surface.
 - **Scale holds.** Character heights stay consistent with the counter, the stools, and each other, panel to panel.
@@ -215,7 +223,7 @@ Americana-adjacent — golf, the airport, a boat, a courtroom, a desk, the club
 grill room — and **character identity never changes with the scenery**. Wardrobe
 may take the setting's influence lightly: at most one apt piece per character
 (a cap at the tee, rolled sleeves at sea), never a costume change, and never the
-anchors — Drew's bow tie, Mango's left-lapel pin.
+anchors — Drew's bow tie, Barclay's left-lapel pin.
 
 Mechanically, an away game swaps the master prompt's THE ROOM and THE STAGE
 paragraphs for the pre-written outdoor passage in `MASTER-PROMPT.md` → "Away
@@ -245,7 +253,7 @@ worth knowing before anyone argues with one:
 | The airport security line | **Drawn** — plate 1, upper panel |
 | Boat, courtroom, office, grill room, dock, park, beach, sidewalk, parade, diner | **Written** — specified on this page from writing, with no reference image behind them. House convention, not observed ground truth; the day a plate is drawn, the plate outranks this page |
 
-*(`canon/vision/example-drew-golf.jpg` and `example-mango-golf.jpg` are studio
+*(`canon/vision/example-drew-golf.jpg` and `example-barclay-golf.jpg` are studio
 output, not plates — useful for tone and nothing else. One of them letters the
 sign 19H HOLE. And plate 3 is a bar panel: the National Mall in it is on the
 television, not out of doors.)*
@@ -263,7 +271,7 @@ rules that belong to the room itself need translating, and these are they:
 | The room holds nobody but the cast | **Outdoors it may.** Plate 1 puts human travellers in the security line; plate 4 puts human golfers on the fairway. They stay distant, plain, and busy with their own business — never close enough to have a face, never in conversation with the cast. The no-other-figures rule belongs to the bar's interior and does not travel |
 | The TV tells the story, the chalkboard prices it | The setting's **own posted surfaces** do both jobs — a hole marker, a threat dial, a docket board, a tee sheet. **No television and no chalkboard exists outside the house** |
 | The shared nut bowl between the drinks | Stays home. It is a bar prop |
-| Drew frame-left, Mango frame-right | **Unchanged, everywhere.** It is the one piece of blocking that never translates and never flips |
+| Drew frame-left, Barclay frame-right | **Unchanged, everywhere.** It is the one piece of blocking that never translates and never flips |
 | Everything not named stays blank | Unchanged. Away signage is short, hand-lettered, correctly spelled, and only ever what the brief asked for |
 
 ### Who travels
@@ -271,7 +279,7 @@ rules that belong to the room itself need translating, and these are they:
 | | Travels? |
 | --- | --- |
 | **Drew** | Always. The bow tie, the white collar band and the sweater vest come with him out of doors — plate 4 golfs in all three. His martini goes wherever there is a surface to stand it on |
-| **Mango** | Always. The flag pin is on whatever he wears; polo and cap for daytime, travel and golf; the watch on his left wrist except at golf, where **the glove takes the left hand and the watch comes off** |
+| **Barclay** | Always. The flag pin is on whatever he wears; polo and cap for daytime, travel and golf; the watch on his left wrist except at golf, where **the glove takes the left hand and the watch comes off** |
 | **Abby** | **Rarely, and never as a tourist** |
 
 **Abby, and the pretext.** She is the proprietor; her place is behind her own
@@ -312,7 +320,7 @@ the land does not.
 | Position | Fixture |
 | --- | --- |
 | Frame-left, at the picture's edge | The **house board** — a dark-framed signboard on a squared wooden post, THE SWINGING DOOR in house script over 19TH HOLE, its top at about Drew's cap height |
-| Frame-right, at the picture's edge | **Mango's bag**, standing upright on the turf, irons fanned out of it, the *FORE! / NOT SO / FAST* towel hanging down its front in three lines |
+| Frame-right, at the picture's edge | **Barclay's bag**, standing upright on the turf, irons fanned out of it, the *FORE! / NOT SO / FAST* towel hanging down its front in three lines |
 | Middle distance, across the frame | One pale **cart path** curving left to right through mown fairway |
 | Left and right, middle distance | Stands of **round-crowned trees**, heavier on the left |
 | Beyond them | Low **hills** on a level horizon; cloud above; sky the top fifth of the picture |
@@ -341,9 +349,9 @@ two**.
 
 ### Who is there, and what they are doing
 
-Drew frame-left, Mango frame-right, standing, turned toward each other, both faces
+Drew frame-left, Barclay frame-right, standing, turned toward each other, both faces
 in three-quarter. Drew holds his martini by the stem in one feathered hand; a club
-leans against him or is planted under the other. Mango holds his old fashioned,
+leans against him or is planted under the other. Barclay holds his old fashioned,
 his **gloved left hand** resting on the grip of a planted club. Abby is not on the
 course. The distant golfers are human and stay distant.
 
@@ -372,8 +380,8 @@ in the same place, at the same size.
 
 ### First thing to check on any golf panel
 
-> Find the two edges. **The house board is frame-left, Mango's bag is frame-right**,
-> and the fairway runs between them. Drew is on the left with the martini; Mango
+> Find the two edges. **The house board is frame-left, Barclay's bag is frame-right**,
+> and the fairway runs between them. Drew is on the left with the martini; Barclay
 > is on the right with the old fashioned, the glove on his left hand and no watch.
 >
 > The tell, when it is ambiguous: **the FORE! NOT SO FAST towel hangs on the bag.**
@@ -406,7 +414,7 @@ furnished as the bar.
 **Camera**: standing at the table opposite them, eye level. **Crop**: cropped at
 the screening table, which does the marble's job exactly.
 
-**Who is there**: Drew frame-left, Mango frame-right. Drew's held-up checklist card
+**Who is there**: Drew frame-left, Barclay frame-right. Drew's held-up checklist card
 is the prop of this setting the way the martini is the prop of the bar. Abby does
 not travel here.
 
@@ -419,19 +427,19 @@ SECURITY board, the dial, and the checklist.
 
 > **First thing to check:** find the table. The bins are ON it, the arch is BEHIND
 > it, and the panel ends at its near edge. Drew frame-left with the checklist,
-> Mango frame-right. **Nobody in the cast is holding a wand and nobody is holding
+> Barclay frame-right. **Nobody in the cast is holding a wand and nobody is holding
 > a drink.**
 
 ## A boat on calm water
 
 Specified from writing — there is no plate. It is the setting the smoke test uses
-(`mango-boat`), so it gets drawn more often than the strip files it.
+(`barclay-boat`), so it gets drawn more often than the strip files it.
 
 | Position | Fixture |
 | --- | --- |
 | Across the lowest part of the frame | The near **gunwale** of a small open launch — varnished wood, a moulded rail, one brass cleat. The panel ends on it |
 | Under them | Two **bench thwarts** across the boat, one amidships and one at the stern |
-| Frame-right, aft | The **tiller**, in Mango's hand when he is steering |
+| Frame-right, aft | The **tiller**, in Barclay's hand when he is steering |
 | On the after thwart | The **cooler**, lid closed — the prop surface, and where the drinks stand |
 | On the transom | The boat's **name board**, THE SWINGING DOOR carved and gilded into the wood |
 | Background | Flat water to a **level horizon** about a third of the way up, open sky above, one channel buoy well off. No land |
@@ -475,7 +483,7 @@ from behind.
 **Crop**: at the rail. *(The courtroom has a bar too, and it crops the picture the
 same way the marble does.)*
 
-**Who is there**: Drew and Mango. One may stand at the lectern or in the witness
+**Who is there**: Drew and Barclay. One may stand at the lectern or in the witness
 box; the other is at the rail. Abby does not travel here. **Neither drink appears
 in a courtroom** — the courtroom and the security line are the two settings that
 serve nothing.
@@ -484,7 +492,7 @@ serve nothing.
 exhibit tag pressed into its own card.
 
 > **First thing to check:** find the rail — it is the crop. The bench is behind it
-> and it is **empty**. Drew frame-left, Mango frame-right, no glasses anywhere,
+> and it is **empty**. Drew frame-left, Barclay frame-right, no glasses anywhere,
 > and **nobody in the cast is holding a gavel**.
 
 ## The office
@@ -508,7 +516,7 @@ the desk.
 **One level, like the bar.** Nothing on the desk stands on a raised shelf, a riser
 or a second tier; everything on it stands on the one surface.
 
-**Who is there**: Drew frame-left, Mango frame-right, both beyond the desk with the
+**Who is there**: Drew frame-left, Barclay frame-right, both beyond the desk with the
 blinds behind them. The far side has no service side and no third chair — an
 office is a table, not a bar. Abby comes only on the errand rule above.
 
@@ -545,7 +553,7 @@ never in doubt about which room he is in.
 
 **Camera and crop**: as at home. Eye level, cropped at the counter, chest-up.
 
-**Who is there**: Drew frame-left, Mango frame-right, the round just over — Mango
+**Who is there**: Drew frame-left, Barclay frame-right, the round just over — Barclay
 still in his cap, the glove off and tucked in his belt, the bag parked out of frame
 at the door. **The house name rides only on what they brought.** If Abby is ever in
 a grill room she is in **front** of that counter, on the guests' side, on a named
@@ -553,7 +561,7 @@ errand.
 
 > **First thing to check:** find the counter, then look past it. **The service side
 > is empty and the wood is oak, not marble** — that is how the reader knows this is
-> not the house. Mango still has his cap on. If anyone is standing behind that
+> not the house. Barclay still has his cap on. If anyone is standing behind that
 > counter, the panel has drawn the wrong room.
 
 ## The short settings
@@ -574,7 +582,7 @@ of them inherit everything in "What the bar's rules become outdoors."
 
 > **First thing to check, all six:** the crop edge is drawn and the panel ends at
 > it; the horizon (where there is one) is level and crosses behind both of them at
-> the same height; Drew is frame-left and Mango frame-right; and nothing in the
+> the same height; Drew is frame-left and Barclay frame-right; and nothing in the
 > background has a face.
 
 ## The bare panel is not a setting
@@ -606,22 +614,17 @@ prompt.**
 - **The plumage-and-cloth rule, restated outdoors.** "NOBODY IS WEARING THEIR OWN
   SKIN" — no cuff, hem, seam or closing line in the feathers or the coat — is
   also in THE STAGE, and is also lost.
-- **The blocking, restated.** Drew frame-left, Mango frame-right does not survive
+- **The blocking, restated.** Drew frame-left, Barclay frame-right does not survive
   the swap either.
 - **A stated position on background people.** The bar's "no other figures" rule
   is in THE ROOM and disappears with it, which happens to match the plates — but
   by accident, not by instruction. The fence should say what it means: distant,
   plain, faceless, never in conversation with the cast.
-- **And the bar itself must actually leave.** The swap removes only the two
-  paragraphs that begin THE ROOM and THE STAGE. Every other paragraph of the base
-  block is still pasted, so an away game is currently also told, verbatim: "The
-  TV and the chalkboard are OPTIONAL" (with a chyron, a chalkboard and the nut
-  bowl on the marble), THE BAR IS ONE LEVEL, THE SEATING IS THE SAME EVERY DAY,
-  THE BAR HEIGHT IS FIXED, and the whole five-paragraph SIDES block — which
-  instructs the model to run the marble counter across the middle of the picture
-  and stand Abby behind it against the back bar and the television. **Nine
-  paragraphs of bar go out with every boat.** They are what the fence has to
-  drop, and it is the single change that would do the most good.
+- **And the bar itself must actually leave.** *(RESOLVED: `lib/generate.ts`
+  now swaps the full `BAR_ONLY_PARAGRAPHS` set — every bar paragraph, the
+  SIDES block included — for the outdoor passage, and
+  `scripts/check-prompt-assembly.mjs` fails by name if any bar furniture
+  travels to an away game. Kept as history.)*
 
 ## Rules of the room
 

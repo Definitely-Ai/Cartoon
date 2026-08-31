@@ -14,7 +14,7 @@
 // language model and ask what he likes. That produces a confident paragraph
 // with no way to check it. Every number below is arithmetic over files anyone
 // can open, and every claim carries the count it rests on — so when it says he
-// scores Abby two points below Mango, you can go and count. Judgement comes
+// scores Abby two points below Barclay, you can go and count. Judgement comes
 // after the arithmetic, from a person or from me reading this output, not from
 // a summariser in the middle.
 //
@@ -25,6 +25,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { foldCastList, foldCastScores } from "./lib/cast.mjs";
 
 const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const ratingsDir = path.join(repoRoot, "feedback", "ratings");
@@ -35,8 +36,8 @@ const asJson = args.includes("--json");
 const onlyBatch = args.find((a) => !a.startsWith("--"));
 
 const MIN_FOR_A_FINDING = 3;
-const CAST = ["drew", "mango", "abby"];
-const NAMES = { drew: "Drew", mango: "Mango", abby: "Abby" };
+const CAST = ["drew", "barclay", "abby"];
+const NAMES = { drew: "Drew", barclay: "Barclay", abby: "Abby" };
 
 function readJson(file) {
   try {
@@ -100,7 +101,8 @@ const byTurn = {};
 const byCast = {};
 
 for (const v of verdicts) {
-  for (const c of CAST) if (typeof v.characters?.[c] === "number") perCharacter[c].push(v.characters[c]);
+  const folded = foldCastScores(v.characters ?? {});
+  for (const c of CAST) if (typeof folded[c] === "number") perCharacter[c].push(folded[c]);
   if (typeof v.scene === "number") scenes.push(v.scene);
   if (typeof v.caption === "number") captions.push(v.caption);
   if (v.comment?.trim()) comments.push({ panel: v.panel?.caption ?? v.panel, comment: v.comment.trim() });
@@ -108,7 +110,7 @@ for (const v of verdicts) {
   const turn = (v.panel?.turn ?? "").split(/[\s,]/)[0].toLowerCase();
   if (turn && typeof v.caption === "number") (byTurn[turn] ??= []).push(v.caption);
 
-  const cast = (v.panel?.characters ?? []).slice().sort().join("+");
+  const cast = foldCastList(v.panel?.characters ?? []).sort().join("+");
   if (cast && typeof v.scene === "number") (byCast[cast] ??= []).push(v.scene);
 }
 

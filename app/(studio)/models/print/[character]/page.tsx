@@ -19,7 +19,7 @@ const repoRoot = process.cwd();
 
 const CAST = [
   { key: "flamingo", name: "Drew", study: "studies/drew.png", concept: "drew-plate1-bar-reference.jpg" },
-  { key: "dog", name: "Mango", study: "studies/mango.png", concept: "mango-reference.jpg" },
+  { key: "dog", name: "Barclay", study: "studies/barclay.png", concept: "barclay-reference.jpg" },
   { key: "abby", name: "Abby", study: "studies/abby.png", concept: "abby-reference.jpg" },
 ];
 

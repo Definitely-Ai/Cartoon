@@ -20,7 +20,7 @@ import { getTraining, replicateGet } from "@/lib/replicate";
 //
 // The pass bar (docs/TRAINING.md): the trio panel shows three DISTINCT
 // on-model characters, the boat is a boat, the bare panel is bare, the
-// courtroom is a courtroom — and Mango has no tail anywhere. Identity without
+// courtroom is a courtroom — and Barclay has no tail anywhere. Identity without
 // obedience is a failure; turn the scale down and rerun before blaming the
 // dataset. Each wave is roughly $0.15.
 
@@ -52,10 +52,10 @@ const PANELS: Panel[] = [
   {
     slug: "trio-bar",
     candidate: {
-      scene: "Drew leans on the bar mid-remark while Mango listens from his stool and Abby polishes a glass behind the counter.",
+      scene: "Drew leans on the bar mid-remark while Barclay listens from his stool and Abby polishes a glass behind the counter.",
       tv: "MARKETS OPEN",
       board: "HAPPY HOUR 4–?",
-      characters: ["drew", "mango", "abby"],
+      characters: ["drew", "barclay", "abby"],
     },
   },
   {
@@ -64,10 +64,10 @@ const PANELS: Panel[] = [
     // trio's three-tile conditioning board when a moderation flag appears.
     slug: "duo-bar",
     candidate: {
-      scene: "Drew lifts his martini toward the TV while Mango frowns at the chalkboard.",
+      scene: "Drew lifts his martini toward the TV while Barclay frowns at the chalkboard.",
       tv: "RATE CUT EXPECTED, EVENTUALLY",
       board: "PATIENCE — $14",
-      characters: ["drew", "mango"],
+      characters: ["drew", "barclay"],
     },
   },
   {
@@ -84,18 +84,18 @@ const PANELS: Panel[] = [
   {
     slug: "duo-tariffs",
     candidate: {
-      scene: "Drew studies the chalkboard over his martini while Mango peers into his old fashioned.",
+      scene: "Drew studies the chalkboard over his martini while Barclay peers into his old fashioned.",
       tv: "NEW TARIFFS ANNOUNCED",
       board: "IMPORTED BEER $14 (WAS $8)",
-      characters: ["drew", "mango"],
+      characters: ["drew", "barclay"],
     },
   },
   {
-    slug: "mango-boat",
+    slug: "barclay-boat",
     candidate: {
-      scene: "Mango sits alone amidships holding the tiller, looking back over his shoulder.",
+      scene: "Barclay sits alone amidships holding the tiller, looking back over his shoulder.",
       setting: "a small open boat on calm water, nothing but sea and sky behind",
-      characters: ["mango"],
+      characters: ["barclay"],
     },
   },
   {
@@ -207,8 +207,8 @@ const STUDIES: Record<string, string> = {
     "S-curve so the whole line of it reads. He holds his martini by the stem in one feathered " +
     "hand, at chest height, the way a man holds a drink he is not hurrying. Every feather, the " +
     "bow tie, the collar band and the knit of the sweater vest are drawn in full detail.",
-  mango:
-    "A single formal character study of Mango alone, standing three-quarter to us and turned " +
+  barclay:
+    "A single formal character study of Barclay alone, standing three-quarter to us and turned " +
     "slightly to his right, seen from the knees up, his face in three-quarter view with his " +
     "earnest hangdog patience, gaze level and NOT directed at the reader. One fur-backed hand " +
     "rests in his jacket pocket and the other holds his old fashioned at chest height. The black " +
@@ -237,8 +237,8 @@ const STUDIES: Record<string, string> = {
     "fan of primaries, never a mitt, never bare skin. One hand holds his martini by the stem. His long wing " +
     "feathers lie along his back and end at his hip; NOTHING hangs past his belt. His black bow tie has two " +
     "equal wings and a small centre knot, level on the white collar, with no band or strap at the neck.",
-  "mango-head":
-    "A CLOSE PORTRAIT STUDY of Mango alone, HEAD AND SHOULDERS AND BOTH HANDS, filling the sheet. His head " +
+  "barclay-head":
+    "A CLOSE PORTRAIT STUDY of Barclay alone, HEAD AND SHOULDERS AND BOTH HANDS, filling the sheet. His head " +
     "is in THREE-QUARTER view with BOTH EYES fully drawn on the paper and the bridge of his muzzle showing " +
     "between them, his gaze level and going PAST the reader. The BLACK LIP BAND runs from under his black " +
     "nose back about TWO NOSE-WIDTHS, ending directly under the front corner of his eye, and it is genuinely " +
@@ -265,12 +265,12 @@ const STUDIES: Record<string, string> = {
   // words alone, and promote the result.
   duo:
     "TWO GENTLEMEN SEATED SIDE BY SIDE AT A BAR, seen from BEHIND AND A LITTLE ABOVE, filling the sheet from " +
-    "the chest up. DREW is frame-LEFT and MANGO is frame-RIGHT. EACH IS TURNED A QUARTER OUTWARD FROM THE " +
+    "the chest up. DREW is frame-LEFT and BARCLAY is frame-RIGHT. EACH IS TURNED A QUARTER OUTWARD FROM THE " +
     "BAR: the turn is in the SHOULDERS AND CHEST, not the neck, so each man's body sits at about FORTY-FIVE " +
     "DEGREES to the counter rather than square to it, his outer shoulder nearest us and his chest already " +
     "coming round before his head does. He is neither flat-backed to us nor square to us — he sits " +
     "cornerwise, and we see his back and his outer shoulder nearest. Drew is turned to his RIGHT toward " +
-    "Mango; Mango is turned to his LEFT toward Drew, and they are looking at each other. " +
+    "Barclay; Barclay is turned to his LEFT toward Drew, and they are looking at each other. " +
     "BECAUSE THE BODY HAS DONE THE TURNING, BOTH EYES OF BOTH MEN ARE DRAWN ON THE PAPER. COUNT THEM: FOUR " +
     "EYES IN THIS DRAWING. On each face the FAR eye is at least HALF THE WIDTH of the near one, with the " +
     "bridge of the muzzle or bill showing between the two. Neither head is screwed round on a body still " +
@@ -278,7 +278,7 @@ const STUDIES: Record<string, string> = {
     "exists to correct. DREW'S BILL therefore crosses the picture at an ANGLE, coming toward us as well as " +
     "across, never lying flat and side-on like a weathervane. " +
     "A plain marble counter crosses the picture in front of them at chest height with a martini before Drew " +
-    "and an old fashioned before Mango; nothing else is on it, and NOTHING is lettered anywhere in the " +
+    "and an old fashioned before Barclay; nothing else is on it, and NOTHING is lettered anywhere in the " +
     "drawing. Behind them the sheet is bare — no back bar, no bottles, no television, no chalkboard, " +
     "no window, and NOBODY else in the picture.",
 
@@ -328,10 +328,10 @@ const SHOWCASE: Panel[] = [
     caption: 'Drew: "The middle seat is now our best-performing square foot."',
     candidate: {
       scene:
-        "The bar is otherwise completely empty and the two of them are crammed into one corner of it, sharing a single stretch of marble with the nut bowl wedged between them, Mango's elbow already surrendered — stage on the counter, not the foot rail. The television picture shows A cabin cross-section, three seats abreast, drawn with no aisle anywhere in it.",
+        "The bar is otherwise completely empty and the two of them are crammed into one corner of it, sharing a single stretch of marble with the nut bowl wedged between them, Barclay's elbow already surrendered — stage on the counter, not the foot rail. The television picture shows A cabin cross-section, three seats abreast, drawn with no aisle anywhere in it.",
       tv: "AIRFARES UP A QUARTER FROM LAST SUMMER",
       board: "ELBOW ROOM $19 · ARMREST: ONE PER PARTY",
-      characters: ["drew", "mango"],
+      characters: ["drew", "barclay"],
     },
   },
   {
@@ -342,7 +342,7 @@ const SHOWCASE: Panel[] = [
         "Abby sets Drew's martini in front of him — a long three-olive pick carrying exactly one olive, which is this panel's one licensed exception to the three-olive rule — and screws the lid back onto the olive jar before it goes below the counter. The television picture shows A checkout belt carrying four items and a receipt long enough to hang off the end of it.",
       tv: "GROCERIES NOW THE COUNTRY'S BIGGEST MONEY WORRY",
       board: "MARTINI $18 · UNCHANGED SINCE 2023",
-      characters: ["abby", "drew", "mango"],
+      characters: ["abby", "drew", "barclay"],
     },
   },
   {
@@ -350,10 +350,10 @@ const SHOWCASE: Panel[] = [
     caption: 'Drew: "Four times a year we all fall silent for a semiconductor."',
     candidate: {
       scene:
-        "Mango has taken his hand off his glass and laid it flat over his flag pin, eyes on the screen, and the posture must read as entirely sincere — never comic — while Drew, mid-sip, watches Mango rather than the television. The television picture shows A trading floor with every head turned the same direction and nobody moving.",
+        "Barclay has taken his hand off his glass and laid it flat over his flag pin, eyes on the screen, and the posture must read as entirely sincere — never comic — while Drew, mid-sip, watches Barclay rather than the television. The television picture shows A trading floor with every head turned the same direction and nobody moving.",
       tv: "THE STREET STOPS FOR ONE COMPANY",
       board: "TONIGHT'S SPECIAL $16 · REPRICED AFTER THE CLOSE · LAST QUARTER IT WAS $14",
-      characters: ["drew", "mango"],
+      characters: ["drew", "barclay"],
     },
   },
   {
@@ -361,89 +361,89 @@ const SHOWCASE: Panel[] = [
     caption: 'Abby: "There\'s about four dollars of whiskey in that glass and fourteen dollars of roof."',
     candidate: {
       scene:
-        "Abby slides Mango's old fashioned across the marble — one large cube, one dark cherry — past the check spindle, where a renewal envelope thick as a paperback is spiked and still sealed, tall enough to bury the spindle. The television picture shows A small tidy house standing behind a mailbox too full to close — no people in the shot.",
+        "Abby slides Barclay's old fashioned across the marble — one large cube, one dark cherry — past the check spindle, where a renewal envelope thick as a paperback is spiked and still sealed, tall enough to bury the spindle. The television picture shows A small tidy house standing behind a mailbox too full to close — no people in the shot.",
       tv: "TWO IN THREE HOUSEHOLDS SAW PREMIUMS RISE",
       board: "DEDUCTIBLE HOUR 4–7 · THE FIRST $2,500 IS YOURS",
-      characters: ["abby", "drew", "mango"],
+      characters: ["abby", "drew", "barclay"],
     },
   },
   {
     slug: "sc05-down-a-percent-at-lunch",
-    caption: 'Drew: "I don\'t look at it during the day, Mango. It was down a percent at lunch."',
+    caption: 'Drew: "I don\'t look at it during the day, Barclay. It was down a percent at lunch."',
     candidate: {
       scene:
-        "Drew's phone lies face-down on the marble under one economical feather-digit with a signed chit beside it, while Mango, straight from the course, still has his glove tucked in his belt. The television picture shows One chart carrying two lines, both going the same way down.",
+        "Drew's phone lies face-down on the marble under one economical feather-digit with a signed chit beside it, while Barclay, straight from the course, still has his glove tucked in his belt. The television picture shows One chart carrying two lines, both going the same way down.",
       tv: "STOCKS AND BONDS BOTH LOWER",
       board: "GRILL ROOM MARTINI $18 · QUOTED CONTINUOUSLY · CHARGED ONCE AT SIGNING",
-      characters: ["drew", "mango"],
+      characters: ["drew", "barclay"],
     },
   },
   {
     slug: "sc06-ninety-thousand-miles",
-    caption: 'Mango: "I\'m waiting on rates to come down, Drew. My truck has waited ninety thousand miles."',
+    caption: 'Barclay: "I\'m waiting on rates to come down, Drew. My truck has waited ninety thousand miles."',
     candidate: {
       scene:
-        "Mango turns his key fob over and over on the finance desk with a folded rate sheet pinned under his elbow, while Drew holds a styrofoam cup of the dealership's coffee at arm's length, untasted. CAMERA: eye level, close in, BOTH of them filling the frame from the chest to the BELT, where the bottom edge of the panel cuts them — nothing below the belt is in frame, no legs and no feet — with the place reading clearly behind them, never a wide landscape with small whole figures in it. Each character is seen in THREE-QUARTER view, angled into the frame so the face and both eyes are readable, turned toward each other rather than toward us. NOBODY looks out of the panel at the reader. They are the only figures in the picture: no other people anywhere, near or far. THE PLACE CARRIES THIS CARTOON'S OWN JOKE ON ITS OWN SIGNAGE: sign 1 reads exactly and only \"FINANCING FROM 8.4% APR\"; sign 2 reads exactly and only \"YOUR TRADE-IN HAS BEEN VERY PATIENT\". Those are the ONLY lettered surfaces in the panel; every other surface is blank.",
+        "Barclay turns his key fob over and over on the finance desk with a folded rate sheet pinned under his elbow, while Drew holds a styrofoam cup of the dealership's coffee at arm's length, untasted. CAMERA: eye level, close in, BOTH of them filling the frame from the chest to the BELT, where the bottom edge of the panel cuts them — nothing below the belt is in frame, no legs and no feet — with the place reading clearly behind them, never a wide landscape with small whole figures in it. Each character is seen in THREE-QUARTER view, angled into the frame so the face and both eyes are readable, turned toward each other rather than toward us. NOBODY looks out of the panel at the reader. They are the only figures in the picture: no other people anywhere, near or far. THE PLACE CARRIES THIS CARTOON'S OWN JOKE ON ITS OWN SIGNAGE: sign 1 reads exactly and only \"FINANCING FROM 8.4% APR\"; sign 2 reads exactly and only \"YOUR TRADE-IN HAS BEEN VERY PATIENT\". Those are the ONLY lettered surfaces in the panel; every other surface is blank.",
       setting:
         "the customer lounge of a truck dealership: a glass showroom wall behind them with one new pickup parked beyond it, a finance desk in front of them, and plain low seating",
       tv: "BORROWING GETS DEARER, NOT CHEAPER",
       board: "THIS MONTH 8.4% APR · IN 2021 IT WAS 2.9% · ON APPROVED CREDIT",
-      characters: ["drew", "mango"],
+      characters: ["drew", "barclay"],
     },
   },
   {
     slug: "sc07-the-deductible-rehearsal",
-    caption: 'Mango: "The first two thousand of any storm is mine. I like to stay current."',
+    caption: 'Barclay: "The first two thousand of any storm is mine. I like to stay current."',
     candidate: {
       scene:
-        "Mango tips the top inch of his old fashioned into an empty glass, sets that glass firmly aside, and only then lifts his own; Drew watches with mild interest. The television picture shows A house standing in a puddle beneath a very small umbrella.",
+        "Barclay tips the top inch of his old fashioned into an empty glass, sets that glass firmly aside, and only then lifts his own; Drew watches with mild interest. The television picture shows A house standing in a puddle beneath a very small umbrella.",
       tv: "PREMIUMS UP FOR 65% — DEDUCTIBLES UP TOO",
       board: "OLD FASHIONED $22 · COVERAGE BEGINS AT THE SECOND INCH",
-      characters: ["drew", "mango"],
+      characters: ["drew", "barclay"],
     },
   },
   {
     slug: "sc08-ribbon-cutting",
-    caption: 'Drew: "We have already moved in, Mango. December is only the ribbon-cutting."',
+    caption: 'Drew: "We have already moved in, Barclay. December is only the ribbon-cutting."',
     candidate: {
       scene:
-        "Drew's glass is already up toward the screen while Mango turns the bar's wall calendar forward a page with one broad finger. The television picture shows A policy-rate staircase with the final step already drawn in and inked solid.",
+        "Drew's glass is already up toward the screen while Barclay turns the bar's wall calendar forward a page with one broad finger. The television picture shows A policy-rate staircase with the final step already drawn in and inked solid.",
       tv: "TRADERS SEE A HIKE BY YEAR END — ODDS AT 100%",
       board: "THE WINTER MARTINI $19 · POURED FROM FOUR O'CLOCK TODAY",
-      characters: ["drew", "mango"],
+      characters: ["drew", "barclay"],
     },
   },
   {
     slug: "sc09-the-total-aloud",
-    caption: 'Mango: "I announce the total at checkout now, and the man behind me shakes his head at the score."',
+    caption: 'Barclay: "I announce the total at checkout now, and the man behind me shakes his head at the score."',
     candidate: {
       scene:
-        "Mango reads from a receipt long enough that the end of it hangs over the edge of the marble, and Drew has stopped his martini halfway up, head tilted toward the reading with the courteous attention of a man hearing an away score come in. The television picture shows One paper grocery sack sitting on a butcher's scale.",
+        "Barclay reads from a receipt long enough that the end of it hangs over the edge of the marble, and Drew has stopped his martini halfway up, head tilted toward the reading with the courteous attention of a man hearing an away score come in. The television picture shows One paper grocery sack sitting on a butcher's scale.",
       tv: "FOOD PRICES A THIRD HIGHER THAN IN 2020",
       board: "THE 2020 OLD FASHIONED $12 · TODAY'S $16",
-      characters: ["drew", "mango"],
+      characters: ["drew", "barclay"],
     },
   },
   {
     slug: "sc10-refund-went-home",
-    caption: 'Mango: "I paid it at the register. The refund went home to a warehouse."',
+    caption: 'Barclay: "I paid it at the register. The refund went home to a warehouse."',
     candidate: {
       scene:
-        "Mango holds a long register receipt flat across the marble with both hands, the way a man holds a treaty, while Drew reads it upside down from his side without lowering his martini. The television picture shows A department-store floor under a SALE banner, the manager shaking hands with a customs officer.",
+        "Barclay holds a long register receipt flat across the marble with both hands, the way a man holds a treaty, while Drew reads it upside down from his side without lowering his martini. The television picture shows A department-store floor under a SALE banner, the manager shaking hands with a customs officer.",
       tv: "RETAILER RAISES OUTLOOK ON $150M OF TARIFF REFUNDS",
       board: "IMPORT SURCHARGE $3 A POUR · THE HOUSE KEEPS THE PAPERWORK",
-      characters: ["drew", "mango"],
+      characters: ["drew", "barclay"],
     },
   },
   {
     slug: "sc11-from-windsor",
-    caption: 'Mango: "I buy American now, Drew. Abby tells me this one is from Windsor, Ontario."',
+    caption: 'Barclay: "I buy American now, Drew. Abby tells me this one is from Windsor, Ontario."',
     candidate: {
       scene:
-        "Abby is mid-pour from a labelled bottle into Mango's rocks glass, towel on her left shoulder and eyes down on the work, while Mango turns to Drew to say it and Drew's eye stays on the label. The television picture shows Two lecterns in two different rooms, filmed at the same height, the same empty chairs behind each.",
+        "Abby is mid-pour from a labelled bottle into Barclay's rocks glass, towel on her left shoulder and eyes down on the work, while Barclay turns to Drew to say it and Drew's eye stays on the label. The television picture shows Two lecterns in two different rooms, filmed at the same height, the same empty chairs behind each.",
       tv: "CANADA MATCHES THE LEVIES, DOLLAR FOR DOLLAR",
       board: "ALL WHISKY $19 · EITHER SIDE OF THE RIVER",
-      characters: ["abby", "drew", "mango"],
+      characters: ["abby", "drew", "barclay"],
     },
   },
   {
@@ -451,10 +451,10 @@ const SHOWCASE: Panel[] = [
     caption: 'Drew: "The rate has behaved beautifully this year. Nobody has mentioned the total."',
     candidate: {
       scene:
-        "Abby sets the bar check down between them and goes back to her towel; Mango takes it in both hands at reading distance while Drew, martini at rest, does not touch it and plainly is not going to. The television picture shows A flat, obedient line and an anchor caught mid-nod.",
+        "Abby sets the bar check down between them and goes back to her towel; Barclay takes it in both hands at reading distance while Drew, martini at rest, does not touch it and plainly is not going to. The television picture shows A flat, obedient line and an anchor caught mid-nod.",
       tv: "PRICE GAUGE COMES IN AS EXPECTED",
       board: "THE $12 MARTINI · RETIRED WITH HONOURS",
-      characters: ["abby", "drew", "mango"],
+      characters: ["abby", "drew", "barclay"],
     },
   },
 ];
@@ -624,7 +624,7 @@ export async function GET(request: NextRequest) {
           // The plate's one job is to be that room with NOBODY in it: a
           // staging reference containing any character summons that character
           // — an Abby-bearing plate put an uncast Abby into panel after
-          // panel, and a Mango-bearing one held him in one-eyed profile.
+          // panel, and a Barclay-bearing one held him in one-eyed profile.
           { path: "canon/vision/staging-plate.jpg" },
         ],
       });
@@ -638,7 +638,7 @@ export async function GET(request: NextRequest) {
       return NextResponse.json({ ok: true, plate: "room", path: "canon/vision/studies/room.png" });
     }
 
-    // ?study=<drew|mango|abby> — the character study the Studio Bible page
+    // ?study=<drew|barclay|abby> — the character study the Studio Bible page
     // shows beside each bible. The founder's own concept images are photographs
     // of prints: paper curl, glare, a page edge, and in Abby's case colour, in
     // a strip that is strictly black and white. They are the right SOURCE and
@@ -646,7 +646,8 @@ export async function GET(request: NextRequest) {
     // in the house hand, and commits it to canon/vision/studies/.
     const study = params.get("study");
     if (study) {
-      const who = study.toLowerCase();
+      // "mango" is Barclay's pre-rename name; old bookmarks still say it.
+      const who = study.toLowerCase().replace(/^mango/, "barclay");
       if (!STUDIES[who]) {
         return NextResponse.json(
           { error: `No study for "${study}" — try ${Object.keys(STUDIES).join(", ")}.` },
@@ -661,7 +662,7 @@ export async function GET(request: NextRequest) {
       // A study key usually names one character. "duo" names the pair, and the
       // cast list is what the character fences and the reference lookup both
       // key off, so it has to be expanded before either sees it.
-      const cast = who === "duo" ? ["drew", "mango"] : [subject];
+      const cast = who === "duo" ? ["drew", "barclay"] : [subject];
       // The standing ground forbids furniture, which is right for a portrait and
       // wrong for a study of two men sitting at a counter.
       const ground =
@@ -816,7 +817,7 @@ export async function GET(request: NextRequest) {
       failed,
       next:
         "git pull and inspect scripts/training/smoke/ — three distinct characters at the bar, a real boat, a bare panel, " +
-        "a real courtroom, and no tail on Mango. Pass both halves before setting IMAGE_MODEL.",
+        "a real courtroom, and no tail on Barclay. Pass both halves before setting IMAGE_MODEL.",
     });
   } catch (error) {
     if (error instanceof PublishError) {

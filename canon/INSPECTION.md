@@ -25,7 +25,7 @@ run first via `node scripts/qc-batch.mjs <batch-folder>`.
    The bottles are visibly filled to varied levels; a shelf of identical
    empties fails. (A bottle Abby is holding or has just set on the marble is
    the one exception to the shelf rule.)
-3. **The sides.** Drew and Mango are patrons — counter in front of them, never
+3. **The sides.** Drew and Barclay are patrons — counter in front of them, never
    reading as bartenders. Abby, when cast, works beyond the same counter.
 4. **Seated AT the counter.** The marble is ONE long slab running out of frame
    on both sides — a wedge, an island or a small table floating among the
@@ -62,7 +62,7 @@ run first via `node scripts/qc-batch.mjs <batch-folder>`.
    what they hold naturally — the towel in ONE place, either over her left
    shoulder with both hands free of it or closed round the glass she is
    polishing, never gripped alongside a second object.
-10. **Mango on model** (when cast): mouth closed — no hanging jaw, tongue or
+10. **Barclay on model** (when cast): mouth closed — no hanging jaw, tongue or
     bared teeth; flag pin on the LEFT lapel; wristwatch (except golf); no tail.
 11. **Drew's vest is plain knit** (when cast): no pocket, flap or panel
     anywhere on it — front or back.
@@ -107,7 +107,7 @@ run first via `node scripts/qc-batch.mjs <batch-folder>`.
   "not labeled" note (panel 11, 2026-08-29) is an OPEN QUESTION for him — do
   not report it as a fault, and do not add labels until he rules.
 - Drew's bill shape, and Drew in one-eyed side profile.
-- Mango in one-eyed three-quarter (minor note only, not fatal — this round).
+- Barclay in one-eyed three-quarter (minor note only, not fatal — this round).
 - Printed props carrying five or six legible lines instead of four.
 - THE SWINGING DOOR made INTO a napkin, coaster or folder — that is the
   required house mark, not stray lettering. On Abby's bar towel it is the

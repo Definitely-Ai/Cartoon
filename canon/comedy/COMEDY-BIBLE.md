@@ -37,7 +37,7 @@ The reader is a finance guy who looks at the cartoon for **3–10 seconds a
 day**. In that window it must land, and it must feel like his world — from the
 25-year-old aspiring to the life to the 82-year-old who lived it and still
 does, in the Warren Buffett key: understated, moneyed, unhurried. Drew and
-Mango are gentlemen; the room is high-class; the joke is dry and relatable to
+Barclay are gentlemen; the room is high-class; the joke is dry and relatable to
 people who build relationships at a good bar.
 
 Three seconds has two consequences the rest of this document is built on:
@@ -166,7 +166,7 @@ have spent your twenty words on a label.
 ## Caption rules
 
 - Every cartoon has a caption, and it is **attributed dialogue in the house
-  format**: `Drew: "…"`, `Mango: "…"`, or `Abby: "…"` — one speaker, typeset
+  format**: `Drew: "…"`, `Barclay: "…"`, or `Abby: "…"` — one speaker, typeset
   in italics beneath the panel by the house. The filing pipeline rejects any
   other shape (`lintCaption` in `lib/dialogue.ts`).
 - The spoken line is **at most 20 words**; most land in 8–14. The linter
@@ -263,7 +263,7 @@ named for the plate that proves it.
 
 1. *Drew: "The security line is our most successful national team-building
    exercise."* — **The Promotion.**
-2. *Mango: "I've reached the age where I don't want luxury. I just want knee
+2. *Barclay: "I've reached the age where I don't want luxury. I just want knee
    room."* — **The Downgraded Want.**
 3. *Drew: "It's comforting to see our emergencies becoming traditions."* —
    **The Emotional Misfile.**
@@ -271,13 +271,13 @@ named for the plate that proves it.
    are going to become."* — **The Deflationary Definition.**
 5. *Drew: "The republic remains blue in concept, green in operations."* —
    **The Status Report.**
-6. *Mango: "I don't mind paying more. I just like to know which country I'm
+6. *Barclay: "I don't mind paying more. I just like to know which country I'm
    punishing."* — **The Cheerful Concession.**
 7. *Drew: "Golf is the only sport where everyone complains about the speed and
    then takes a practice swing."* — **The Practice Swing.**
 
 Rules of the register, off the plates: the target is systems, never people;
-the caption under-plays while the signage escalates; Drew diagnoses, Mango
+the caption under-plays while the signage escalates; Drew diagnoses, Barclay
 pays, Abby rules; twenty words or fewer, dry, unhurried.
 
 Note what the seven do **not** contain: no puns, no exclamation marks, no
@@ -299,11 +299,11 @@ is not written.**
 | 3 | **The Deflationary Definition** | [Dignified activity] is just [the clerical operation it consists of] | Drew |
 | 4 | **The Emotional Misfile** | Report an alarming recurring fact and attach the wrong warm feeling to it | Drew (Abby to close) |
 | 5 | **The Status Report** | [Ideal] in concept, [reality] in operations — two short parallel clauses, the second one the damage | Drew |
-| 6 | **The Downgraded Want** | Name what the money was for, then swap it for the smallest physical thing you would now pay more to get | Mango |
-| 7 | **The Cheerful Concession** | Grant the cost graciously, then ask the one procedural question the system cannot answer politely | Mango |
+| 6 | **The Downgraded Want** | Name what the money was for, then swap it for the smallest physical thing you would now pay more to get | Barclay |
+| 7 | **The Cheerful Concession** | Grant the cost graciously, then ask the one procedural question the system cannot answer politely | Barclay |
 | 8 | **The Practice Swing** | [Group] complains about [problem] and then does the thing that causes it — speaker inside the group | either |
-| 9 | **The Unnoticed Contradiction** | State the position in full, then perform the short action that falsifies it, and go on drinking | Mango |
-| 10 | **The Itemised Bill** | Break the object in his hand into what the news actually made it, in dollars | Mango, or Abby who knows the pour cost |
+| 9 | **The Unnoticed Contradiction** | State the position in full, then perform the short action that falsifies it, and go on drinking | Barclay |
+| 10 | **The Itemised Bill** | Break the object in his hand into what the news actually made it, in dollars | Barclay, or Abby who knows the pour cost |
 | 11 | **The House Ruling** | Abby answers the macro question with the bar's own arithmetic, mid-task, on a concrete bar object | Abby |
 | 12 | **The Literalist** | Take the metaphor at face value and *act* on it, visibly, in the drawing | either |
 
@@ -378,7 +378,7 @@ the fact. The crisis must have happened at least twice in living memory.
 
 **Model.** *"It's comforting to see our emergencies becoming traditions."*
 
-**Speaker note.** Drew, or Abby if the room needs closing. Never Mango — he is
+**Speaker note.** Drew, or Abby if the room needs closing. Never Barclay — he is
 not calm enough for the misfile to be funny.
 
 **Fails when** the warm word is doing a wink. He is not being ironic at the
@@ -398,7 +398,7 @@ the reader supplies the decay.
 often failed to produce on request. If the batch has no Status Report in it,
 somebody should say why.
 
-### 6. The Downgraded Want — Mango
+### 6. The Downgraded Want — Barclay
 
 **Recipe.** Name the abstract thing the money was supposed to buy. Then, in
 the second sentence, swap it for the smallest **physical, touchable, priced**
@@ -409,7 +409,7 @@ parking space, an ice cube, a printed receipt.
 **Model.** *"I've reached the age where I don't want luxury. I just want knee
 room."*
 
-**Speaker.** Mango, always. It is a confession, and only the one who pays gets
+**Speaker.** Barclay, always. It is a confession, and only the one who pays gets
 to make it.
 
 **Fails when** it is the plate with the nouns swapped. Founder plate 2 owns
@@ -417,7 +417,7 @@ airline seating and the view-to-armrest downgrade twelve inches away from knee
 room is a cover version, not a lane. Take the shape somewhere the plate has
 not been.
 
-### 7. The Cheerful Concession — Mango
+### 7. The Cheerful Concession — Barclay
 
 **Recipe.** Concede the cost graciously in sentence one — *I don't mind
 paying* — then in sentence two ask for one small operational detail that only
@@ -444,10 +444,10 @@ doing it.
 **Model.** *"Golf is the only sport where everyone complains about the speed
 and then takes a practice swing."*
 
-**Ours.** *Mango: "I shop every carrier in August and re-sign with the same
+**Ours.** *Barclay: "I shop every carrier in August and re-sign with the same
 company by Labor Day."*
 
-**Speaker.** Drew when the group is professional, Mango when the group is
+**Speaker.** Drew when the group is professional, Barclay when the group is
 domestic.
 
 **This is the one lane licensed to implicate the reader**, and the licence is
@@ -455,7 +455,7 @@ conditional: **the speaker is implicated first, in the same sentence.** He
 takes the swing too. That is not punching down — it is the house buying a
 round.
 
-### 9. The Unnoticed Contradiction — Mango
+### 9. The Unnoticed Contradiction — Barclay
 
 *The lane no earlier draft of this bible named, and the one our own best
 caption was written in by accident.*
@@ -473,15 +473,15 @@ arithmetic and that is the laugh.
 **Model.** *"I have never felt worse about the economy, Abby. Same again."*
 
 **Ours.**
-- *Mango: "I'm waiting on rates to come down, Drew. The truck has waited
+- *Barclay: "I'm waiting on rates to come down, Drew. The truck has waited
   ninety thousand miles."* — the odometer does the arguing, not him.
-- *Drew: "I don't look at it during the day, Mango. It was down a percent at
+- *Drew: "I don't look at it during the day, Barclay. It was down a percent at
   lunch."* — the rare Drew version, where composure is what hides the
   contradiction: a man that calm does not file knowing the number as watching.
-- *Mango: "I've quit flying, Drew. October, November, and Christmas."* — the
+- *Barclay: "I've quit flying, Drew. October, November, and Christmas."* — the
   itinerary is longer than the renunciation.
 
-**Speaker.** Mango, effectively. His sincerity is what makes the seam
+**Speaker.** Barclay, effectively. His sincerity is what makes the seam
 invisible to him and visible to the reader, and his behaviour is the reader's
 behaviour, so the refutation implicates rather than mocks. Abby can *receive*
 it; she does not speak it.
@@ -510,7 +510,7 @@ fourteen dollars of roof."* — an $18 old fashioned itemised into product and
 insurance, said by the only person who knows the pour cost, while a renewal
 envelope sits spiked on the check spindle.
 
-**Also this lane.** *Mango: "Their basket hasn't changed since 2020. Mine's
+**Also this lane.** *Barclay: "Their basket hasn't changed since 2020. Mine's
 down a chicken."*
 
 **Why it is a lane and not a mood.** Our smallest number across ten shipped
@@ -541,7 +541,7 @@ three-olive pick carrying one olive.
 prices against it. *Abby: "The stools are free, gentlemen, and the ice is
 local."*
 
-**Fails when** she reports a bill that landed on her, which is Mango's chair,
+**Fails when** she reports a bill that landed on her, which is Barclay's chair,
 or names a mechanism, which is Drew's. The gags that hold are the ones where
 she **prices** something. And she is scarce by canon — *"not a primary
 character; she should not appear in most cartoons"* — so a repeat of her most
@@ -553,7 +553,7 @@ recent move inside a fortnight is the most expensive mistake available.
 drawing**. The action must be visible and the caption must not repeat the
 metaphor's own words.
 
-**Ours.** *Mango: "The first two thousand of any storm is mine. I've been
+**Ours.** *Barclay: "The first two thousand of any storm is mine. I've been
 building tolerance."* — a deductible is money you must lose before anything is
 covered, so he rehearses losing it, an inch of old fashioned at a time, poured
 off into a set-aside glass.
@@ -586,7 +586,7 @@ mechanical habits. Write the habits; the adjectives arrive.
    *apparently*, no *naturally* deployed as a wink, and no closing tag that
    explains what the line meant.
 5. **The line lets someone off.** That is what *warm* means mechanically:
-   somebody in the room — Mango, Abby, the country, the reader — is treated
+   somebody in the room — Barclay, Abby, the country, the reader — is treated
    fondly in the same sentence that convicts the system.
 
 **Contract where he tosses it off; do not contract the verdict.** The
@@ -602,7 +602,7 @@ toss-off the whole line depended on.
 - **Drew** — deadpan verdicts. Certainty worn lightly. He reclassifies,
   defines, and files, then goes back to his martini.
   *"Rates will come down. I've simply stopped asking when."*
-- **Mango** — the worried everyman who pays the bill. He converts the macro
+- **Barclay** — the worried everyman who pays the bill. He converts the macro
   number into his own tab, and his dignity while saying it is why it lands.
   *"The chart goes up and I still feel it going down."*
 - **Abby** — the authority. She rules; she does not banter upward. Her word
@@ -615,13 +615,13 @@ toss-off the whole line depended on.
 
 Two attribution faults to watch, both of which we have shipped:
 
-- **Mango as macro commentator.** *"Nobody pays a tab like that. They renew
+- **Barclay as macro commentator.** *"Nobody pays a tab like that. They renew
   it."* is a verdict about the Treasury delivered from outside his own wallet,
   by the character whose entire job is the cost landing on him personally.
-  When Mango narrates sovereign behaviour he becomes a second Drew and the
+  When Barclay narrates sovereign behaviour he becomes a second Drew and the
   panel goes flat.
 - **The crossed speaker.** The caption says *I* while the drawing gives the
-  action to the other character. If the business hands Mango the car keys and
+  action to the other character. If the business hands Barclay the car keys and
   the twenty years of careful driving, the twenty-year claim record does not
   belong in Drew's mouth. One possessive usually fixes it: make the record
   *his*, and Drew is back to diagnosing.
@@ -666,12 +666,12 @@ files.
 - **Somebody inside the sentence, at least eight of ten.**
 
 **Cast**
-- Speakers land near **Drew 4 / Mango 4 / Abby 2**. Drift is fine; a shutout
+- Speakers land near **Drew 4 / Barclay 4 / Abby 2**. Drift is fine; a shutout
   is not, and a Drew monopoly is the drift we actually have — three of the
-  founder's seven are Mango's, and two of those are the household-height ones.
+  founder's seven are Barclay's, and two of those are the household-height ones.
 - **At most two Abby captions, never two running**, and never two consecutive
   weeks in the same Abby lane.
-- **An address tag** (*Mango, / Abby, / gentlemen*) at most **twice per ten**.
+- **An address tag** (*Barclay, / Abby, / gentlemen*) at most **twice per ten**.
   It costs a word out of twenty, and it appeared in both Abby lines out of two.
 
 **Standing repeat check.** Before filing, read the caption against the last
@@ -770,7 +770,7 @@ Reinstatement is the founder's call.
 - **Any pun on *house*** (the house wins / the house always / house money).
 - **"Same again."** as a closing beat. Spent, and worth what it cost.
 - **"Priced in"** in a caption. It belongs on the chalkboard now.
-- **Patriotism as the punch noun** (*it felt patriotic*). Mango's love of
+- **Patriotism as the punch noun** (*it felt patriotic*). Barclay's love of
   country sets jokes up; it is not the payoff.
 - **The soft landing, the long term, the debt clock** as caption subjects.
   They may still appear as chyrons.
@@ -807,10 +807,10 @@ This is the whole conduct list; there is no other.
 | 3 | **Body, faith, family, misfortune?** | Appearance, illness, addiction, bereavement, war casualties, human suffering, religion. There is no version dry enough to run. |
 | 4 | **Wallet height — the price, or the coping?** | A premium, a fare, a renewal, a grocery total, a rent number, a deductible: **fair game, and the strip needs more of it.** Selling possessions, missing a payment, rationing a prescription, a second shift taken to cover a bill: **never, in any register, however sympathetic.** *Joke about what it costs. Never about what it costs somebody.* The man on the next stool is feeling these numbers himself; he will laugh at the invoice and he will not laugh at himself drowning. |
 | 5 | **Would it work with the parties reversed?** | If it only works against one side it is an argument, not a gag. Not a demand for balance — the target is a mechanism, and mechanisms are bipartisan. |
-| 6 | **Punching down?** | At staff, at the young, at anyone with less money than the speaker. Drew and Mango are wealthy; **the only person they may make ridiculous is themselves.** |
-| 7 | **Does the affection survive it?** | Abby still likes the regulars, Mango still stands for the anthem, the reader still owns the index fund. If the caption makes any of the three look foolish for it, cut it. |
+| 6 | **Punching down?** | At staff, at the young, at anyone with less money than the speaker. Drew and Barclay are wealthy; **the only person they may make ridiculous is themselves.** |
+| 7 | **Does the affection survive it?** | Abby still likes the regulars, Barclay still stands for the anthem, the reader still owns the index fund. If the caption makes any of the three look foolish for it, cut it. |
 
-The principals are successful people in their prime — Drew and Mango
+The principals are successful people in their prime — Drew and Barclay
 mid-forties and accomplished, Abby a successful proprietor — and they carry
 wisdom. Respect is demanded by carriage, not volume. Every caption should
 sound like it was said by someone worth listening to.
@@ -833,13 +833,13 @@ disagree about the oracle.
 > for the sound of the room. Take structure from **The three angles** and
 > shape from **the lane index**.
 
-1. TV reads MARKETS OPEN; both watching. → *"We're long-term investors, Mango.
+1. TV reads MARKETS OPEN; both watching. → *"We're long-term investors, Barclay.
    The market has been open for an hour."*
 2. Drew holds a one-page fee statement at wing's length. → *"The fee is one
    percent, which mostly covers the cost of explaining the fee."*
 3. TV reads SOFT LANDING; neither has moved. → *"They've achieved a soft
-   landing, Mango. Nobody can say on what."*
-4. Mango squints at his phone; TV shows a jagged coin chart. → *"It's called
+   landing, Barclay. Nobody can say on what."*
+4. Barclay squints at his phone; TV shows a jagged coin chart. → *"It's called
    crypto. Now we can lose money without leaving the bar."* *(Note: the tag is
    now retired — see the kill list.)*
 5. Abby polishing a glass between the two of them, mid-argument. → *"The house
@@ -848,7 +848,7 @@ disagree about the oracle.
    *"Happy hour coincides with the closing bell. This is called liquidity."*
 7. TV reads BREAKING; the room is peaceful. → *"Turn it up, Abby. I want to
    hear nothing, louder."*
-8. Mango mid-story, hand raised; Drew signaling Abby without looking away. →
+8. Barclay mid-story, hand raised; Drew signaling Abby without looking away. →
    *"Three olives, Abby. It's a hearing day."*
 
 ## The caption log — what failed, and why it is worth knowing

@@ -11,7 +11,7 @@ Create a finished square single-panel editorial cartoon in sophisticated
 hand-drawn black ink with restrained transparent gray wash on warm-white paper.
 Use an economical mid-century American magazine gag-panel line, confident varied
 nib strokes, large readable silhouettes, an 8% safe margin, and a composition
-that remains clear at a 220-pixel thumbnail. Preserve the working Drew, Mango,
+that remains clear at a 220-pixel thumbnail. Preserve the working Drew, Barclay,
 and Abby identities from the referenced model sheets. Suggest The Swinging Door
 with only the bar details needed for the gag.
 <!-- BRAND: replace when final — keep this comment OUTSIDE any text pasted to an image model -->
@@ -49,12 +49,12 @@ clarify Drew's anatomy or a structural overlap.
   for scene-specific clothing fit, `scene-continuity-sheet.png` for environment
   changes, and `proportion-style-sheet.png` for construction and drift checks.
   These review references never overrule the locked master.
-- **Mango identity:** follow `canon/characters/dog/DESCRIPTION.md` and
+- **Barclay identity:** follow `canon/characters/dog/DESCRIPTION.md` and
   `identity-sheet.png`: consistent adult head studies with a moderate muzzle,
   feathered drop ears, textured facial fur, thin beard-free neck, and
   human-readable monochrome eyes whose white sclera, gray iris, black pupil,
   and catchlights remain visibly separate.
-- **Mango full body:** follow `full-body-sheet.png`: 46-year-old upright
+- **Barclay full body:** follow `full-body-sheet.png`: 46-year-old upright
   anthropomorphic golden retriever, solid and softly built rather than fat or
   muscular, thin neck, human-shaped five-finger hands with canine cues, broad
   canine feet, and **no tail**. The sheet is the clothing-neutral body authority.
@@ -80,18 +80,18 @@ clarify Drew's anatomy or a structural overlap.
 
 ## Published sample panels
 
-1. **Diversification:** Mango has a neat allocation chart while Drew is pulled
+1. **Diversification:** Barclay has a neat allocation chart while Drew is pulled
    among three separate worry sources: a volatile TV graph, ringing phone, and
    small family photo or letter.
 2. **The Fee Structure:** an absurd accordion-fold disclosure or receipt snakes
-   from Mango's hands around his stool and across the bar; Drew watches dryly.
+   from Barclay's hands around his stool and across the bar; Drew watches dryly.
 3. **The Long Term:** tight two-shot fixed on the TV just after opening, with a
    prominent analog wall clock and impatient body language.
-4. **An Emerging Asset Class:** cash or a receipt disappears into Mango's phone
+4. **An Emerging Asset Class:** cash or a receipt disappears into Barclay's phone
    as a generic pixel-like coin breaks apart; no crypto or currency logo.
 5. **The Forecast:** the TV dominates with a wild chart while a generic pundit
    awards himself a trophy before the movement has settled.
-6. **The Retirement Number:** Mango is buried in looping calculator tape and
+6. **The Retirement Number:** Barclay is buried in looping calculator tape and
    crossed-out retirement worksheets while Drew indicates conflicting age
    targets; imply the numbers without generated typography.
 7. **Index Funds:** Drew passively drops one unlabeled broad-market statement
@@ -101,7 +101,7 @@ clarify Drew's anatomy or a structural overlap.
 ## Back Room proof panels
 
 - **2026-08-11 option 1 — The Number:** Abby slides a small adjustable retirement
-  target farther from Mango while his calculator tape curls beside him.
+  target farther from Barclay while his calculator tape curls beside him.
 - **2026-08-11 option 2 — The Retirement Number:** byte-identical to published
   edition 6; do not generate a second version.
 - **2026-08-11 option 3 — Early Retirement:** a third stool is already occupied
@@ -112,10 +112,10 @@ clarify Drew's anatomy or a structural overlap.
 - **2026-08-12 option 2 — Index Funds:** Drew passively drops one unlabeled broad-
   market statement into a small complaint box while actively gesturing a gripe.
 - **2026-08-12 option 3 — The Tab:** Abby calmly fans exactly three blank bar-tab
-  slips in front of an earnestly surprised Mango.
+  slips in front of an earnestly surprised Barclay.
 - **2026-08-13 option 1 — The Soft Landing:** the television dominates as one
   briefcase descends by parachute into fog that completely hides the ground.
-- **2026-08-13 option 2 — House View:** Abby replaces Drew and Mango's signature
+- **2026-08-13 option 2 — House View:** Abby replaces Drew and Barclay's signature
   drinks with two water glasses; all three cast members establish continuity.
 - **2026-08-13 option 3 — Breaking News:** an abstract-static television emits
   large open sound-wave arcs while Abby dryly raises the remote volume and Drew

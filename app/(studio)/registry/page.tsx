@@ -96,11 +96,11 @@ const CHARACTER_SOURCES = [
   },
   {
     key: "dog",
-    fallbackName: "Mango",
+    fallbackName: "Barclay",
     line: "The worried everyman — a golden retriever in a good suit, the one who pays the bill.",
-    study: "studies/mango.png",
-    concept: "mango-reference.jpg",
-    alt: "Mango — a golden retriever in a suit jacket, drawn in ink",
+    study: "studies/barclay.png",
+    concept: "barclay-reference.jpg",
+    alt: "Barclay — a golden retriever in a suit jacket, drawn in ink",
   },
   {
     key: "abby",
@@ -168,11 +168,12 @@ type RetiredPanel = {
   day: string | null;
 };
 
-const SPEAKERS: Record<string, string> = { drew: "Drew", mango: "Mango", abby: "Abby" };
+const SPEAKERS: Record<string, string> = { drew: "Drew", barclay: "Barclay", abby: "Abby" };
 
 function speakerName(key: string): string {
   if (!key) return "";
-  return SPEAKERS[key] ?? key.charAt(0).toUpperCase() + key.slice(1);
+  const folded = key.toLowerCase() === "mango" ? "barclay" : key; // legacy plans
+  return SPEAKERS[folded] ?? folded.charAt(0).toUpperCase() + folded.slice(1);
 }
 
 /** The current batches: briefs/<batch>/NN-slug.png, captioned by the
@@ -289,16 +290,16 @@ const DOC_LINES: Record<string, string> = {
   "canon/style/STYLE-BIBLE.md": "The ink — line, wash, lettering, and the finish of a panel.",
   "canon/personality/PERSONALITIES.md": "The voices — how each character speaks, and what each would never say.",
   "canon/characters/flamingo/CHARACTER-BIBLE.md": "Drew in full — every rule of his design, each traced to a founder correction.",
-  "canon/characters/dog/CHARACTER-BIBLE.md": "Mango in full — every rule of his design, each traced to a founder correction.",
+  "canon/characters/dog/CHARACTER-BIBLE.md": "Barclay in full — every rule of his design, each traced to a founder correction.",
   "canon/characters/abby/CHARACTER-BIBLE.md": "Abby in full — every rule of her design, each traced to a founder correction.",
   "canon/characters/flamingo/DESCRIPTION.md": "Drew in one page — the canonical short description.",
-  "canon/characters/dog/DESCRIPTION.md": "Mango in one page — the canonical short description.",
+  "canon/characters/dog/DESCRIPTION.md": "Barclay in one page — the canonical short description.",
   "canon/characters/abby/DESCRIPTION.md": "Abby in one page — the canonical short description.",
   "canon/characters/flamingo/PROMPT-BLOCKS.md": "The exact wording the pipeline uses to ask for Drew.",
-  "canon/characters/dog/PROMPT-BLOCKS.md": "The exact wording the pipeline uses to ask for Mango.",
+  "canon/characters/dog/PROMPT-BLOCKS.md": "The exact wording the pipeline uses to ask for Barclay.",
   "canon/characters/abby/PROMPT-BLOCKS.md": "The exact wording the pipeline uses to ask for Abby.",
   "canon/characters/flamingo/QUALITY-CONTROL.md": "The checks a drawing of Drew must pass before it is kept.",
-  "canon/characters/dog/QUALITY-CONTROL.md": "The checks a drawing of Mango must pass before it is kept.",
+  "canon/characters/dog/QUALITY-CONTROL.md": "The checks a drawing of Barclay must pass before it is kept.",
   "canon/characters/abby/QUALITY-CONTROL.md": "The checks a drawing of Abby must pass before it is kept.",
   "canon/creation/WORKFLOW.md": "How a cartoon travels from a one-line brief to a finished panel.",
   "canon/creation/PANEL-INSPECTION.md": "The inspection a finished panel gets before anyone sees it.",

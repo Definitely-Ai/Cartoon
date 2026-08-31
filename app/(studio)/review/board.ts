@@ -1,3 +1,4 @@
+import { foldCastScores } from "@/lib/cast";
 import { listRepoDir, readRepoFile } from "@/lib/githubPublish";
 
 import { BRIEFS, type Plan, listBatches, readPlan } from "./batches";
@@ -15,7 +16,7 @@ import type { CastName, StandingVerdict } from "./ReviewDesk";
 // so the board can never disagree with the desk it links into.
 
 const RATINGS = "feedback/ratings";
-const CAST_KEYS: CastName[] = ["drew", "mango", "abby"];
+const CAST_KEYS: CastName[] = ["drew", "barclay", "abby"];
 
 /** Six is the bar the studio scores against: a cartoon LANDS when both the art
  *  and the line clear it. In the git-filed ratings the two headline numbers are
@@ -62,7 +63,7 @@ async function readVerdicts(batch: string): Promise<Map<string, StandingVerdict>
       try {
         const raw = JSON.parse(file.bytes.toString("utf8")) as Partial<StandingVerdict>;
         const verdict: StandingVerdict = {
-          characters: (raw.characters ?? {}) as Partial<Record<CastName, number>>,
+          characters: foldCastScores(raw.characters ?? {}),
           scene: typeof raw.scene === "number" ? raw.scene : null,
           caption: typeof raw.caption === "number" ? raw.caption : null,
           comment: typeof raw.comment === "string" ? raw.comment : "",
