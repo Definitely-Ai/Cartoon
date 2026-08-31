@@ -4,6 +4,13 @@ A scheduled session was asked to draw a fresh 10-cartoon batch for The Swinging
 Door through the studio's brief route. **No batch was drawn.** Nothing was
 inspected, rated, redrawn, or edited. This file is the only change.
 
+**The schedule has now fired twice — 15:35 and 15:40 UTC — and hit the
+identical pair of blockers both times.** The second run re-tested each blocker
+from scratch rather than trusting this file; both were confirmed still present.
+See "Second attempt" at the bottom. This is not a transient failure: it will
+recur on every firing until the environment is changed, so the schedule is
+burning a run each cycle and producing nothing.
+
 ## The brief that did not run
 
 - text: "Ten cartoons at the bar. Money in kitchen words - a bar bill, a
@@ -76,3 +83,49 @@ Both of these, in the environment the batch runs from:
   after `git pull origin main`, so the canon and code fixes closing Rick's
   25-panel review are in place. The blockers are environmental, not code.
 - `briefs/` holds the same 6 batch folders it held before this run.
+
+---
+
+## Second attempt — 2026-08-31 15:40 UTC
+
+The schedule fired again five minutes after the first attempt, in a fresh
+container. Both blockers were re-tested independently; both still hold.
+
+**Blocker 1 — still no secret.** `printenv AUTH_SECRET` and
+`printenv ADMIN_PASSWORD` both return non-zero (unset, not empty). A full
+`env` listing was taken with every value stripped: neither name appears. No
+`.env*` file exists in the checkout, the home directory, or anywhere within
+four levels of `/`. *(Names only — no value was read, logged, or written.)*
+
+**Blocker 2 — egress still denied.**
+
+```
+$ curl https://cartoon-brown-seven.vercel.app/api/backroom/brief?t=...
+curl: (56) CONNECT tunnel failed, response 403
+```
+
+`/__agentproxy/status` logged it as `connect_rejected` —
+"gateway answered 403 to CONNECT (policy denial or upstream failure)" for
+`cartoon-brown-seven.vercel.app:443`. Per the proxy's guidance a policy denial
+is reported, not retried or routed around, so no workaround was attempted.
+
+Blocker 1 is the unconditional one: even with egress opened, the route answers
+401 without the token. Both fixes are needed, and they must be applied to the
+environment the *schedule* runs in — not to a local shell.
+
+### One unrelated observation, for whoever picks this up
+
+This container's clone had a stale `main`. `git fetch` reported
+`+ 47dda5c...a7528cb main -> origin/main (forced update)`, and the two lines
+diverge by 50 commits each. Current `origin/main` is clearly the canonical one
+(885 files vs 531, and it carries all the recent rating and review work). The
+only content on the old line that is *not* on current `main` is 13 files:
+`canon/showcase/index.json` and the twelve `canon/showcase/sc01..sc12` panels
+from 2026-08-27.
+
+This was not investigated further — it predates this run and is outside the
+brief. Flagging it only so someone can confirm the showcase set was dropped
+deliberately rather than by accident. The old tip `47dda5c` is referenced
+locally as `backup/pre-force-47dda5c` in this container, but containers are
+reclaimed, so if that set matters it should be recovered from the remote's
+history rather than from here.
