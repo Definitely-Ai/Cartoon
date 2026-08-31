@@ -23,46 +23,68 @@ run first via `node scripts/qc-batch.mjs <batch-folder>`.
    or below the bartender's waist, and no ledge or work top carries bottles at
    counter height — the approved room's own shelf arrangement is the standard.
    The bottles are visibly filled to varied levels; a shelf of identical
-   empties fails.
+   empties fails. (A bottle Abby is holding or has just set on the marble is
+   the one exception to the shelf rule.)
 3. **The sides.** Drew and Mango are patrons — counter in front of them, never
    reading as bartenders. Abby, when cast, works beyond the same counter.
-4. **No door in the window.** The front window carries only the mirrored house
+4. **Seated AT the counter.** The marble is ONE long slab running out of frame
+   on both sides — a wedge, an island or a small table floating among the
+   figures is fatal. Both gentlemen sit square up to it, forearms resting ON
+   it, drinks on the slab in front of them, chest and shoulders clear above
+   its edge. A shoulder merging into the slab, a torso reading as sitting ON
+   the counter, or a gentleman hanging back from the bar he is drinking at is
+   fatal — the founder failed nine of twenty-five panels on this alone. The
+   picture is CROPPED AT THE COUNTER: no legs, knees, feet, stool seats,
+   footrests or floor anywhere; and when Abby is cast she stands while they
+   sit, her head higher in the frame than theirs.
+5. **No door in the window.** The front window carries only the mirrored house
    name. No door drawn in it, beside it, or anywhere in frame.
-5. **Nothing floats.** Props rest on the marble or in a closed grip; nothing
+6. **Nothing floats.** Props rest on the marble or in a closed grip; nothing
    hangs off the counter edge with air beneath it.
-6. **The marble carries drinks, not paperwork.** No note card, slip, loose
+7. **The marble carries drinks, not paperwork.** No note card, slip, loose
    receipt or card reader lies on the bar top — the founder removes them every
    time. A printed prop appears only when the brief names one, held up in a
-   hand large enough to read.
+   hand large enough to read. And nothing is TAGGED: a price tag, swing tag,
+   sticker or ticket hanging from a glass, stem, bottle or held object is
+   fatal.
 
 ### The cast
-7. **Headcount.** Only the characters this panel's brief casts. An uninvited
+8. **Headcount.** Only the characters this panel's brief casts. An uninvited
    bartender — of any species — is fatal.
-8. **Abby on model** (when cast): the approved portrait exactly — round soft
+9. **Abby on model** (when cast): the approved portrait exactly — round soft
    head, big black nose close under the eyes, NO muzzle or snout of any kind,
    HUMAN-style attractive eyes (whites, iris, lids, lashes, catchlight — never
    black dog buttons), smooth cleavage with no fur in the open V, studded
    collar with gem, no tail. Her face reads WARM — amused at rest, genuinely
    smiling when she serves; sad, drooping or downcast on her is fatal. Her
    bar towel is somewhere in panel and it is PLAIN WHITE: any name, monogram
-   or mark on it is fatal (the founder has asked seven times).
-9. **Mango on model** (when cast): mouth closed — no hanging jaw, tongue or
-   bared teeth; flag pin on the LEFT lapel; wristwatch (except golf); no tail.
-10. **Drew's vest is plain knit** (when cast): no pocket, flap or panel
+   or mark on it is fatal (the founder has asked seven times). Her hands hold
+   what they hold naturally — the towel in ONE place, either over her left
+   shoulder with both hands free of it or closed round the glass she is
+   polishing, never gripped alongside a second object.
+10. **Mango on model** (when cast): mouth closed — no hanging jaw, tongue or
+    bared teeth; flag pin on the LEFT lapel; wristwatch (except golf); no tail.
+11. **Drew's vest is plain knit** (when cast): no pocket, flap or panel
     anywhere on it — front or back.
-11. **No nails or claws** on any fingertip, any character.
-12. **Nobody looks at the reader.**
+12. **No nails or claws** on any fingertip, any character.
+13. **Nobody looks at the reader.**
 
 ### The lettering
-13. **Every word real and correctly spelled at a glance.** The window reads
+14. **Every word real and correctly spelled at a glance.** The window reads
     THE SWINGING DOOR, mirrored, both G's present. At most two lettered
     bottles — BIRDIE BOURBON and DIVOT DRIVE GIN — all others blank.
-14. **Zero words inside the television picture.** The chyron carries all the
+15. **Zero words inside the television picture.** The chyron carries all the
     screen's text; footage surfaces that would carry writing are drawn blank.
     The receipt-with-scribbled-rows is the classic form of this fault.
-15. **No pseudo-text anywhere** — no micro-writing, invented glyphs, or marks
+16. **The screen and the board say ONLY what the plan ordered.** A panel whose
+    plan names no TV headline shows a switched-off dark screen; no board line
+    means bare wiped slate. A lettered chalkboard or a live screen the plan
+    left empty is model invention and fatal — one invented board sold hard
+    drinking and the founder caught it. A board must never urge drinking hard,
+    fast or often.
+17. **No pseudo-text anywhere** — no micro-writing, invented glyphs, or marks
     that merely look like letters, on any surface at any size.
-16. **Pure black and white.** Any colour anywhere is fatal (the mechanical
+18. **Pure black and white.** Any colour anywhere is fatal (the mechanical
     check catches this first).
 
 ## Minor — record, never redraw for these alone
@@ -72,12 +94,21 @@ run first via `node scripts/qc-batch.mjs <batch-folder>`.
   and redrawing re-rolls the whole panel at the same odds. Recorded as minor
   so the count is kept; a panel is never sent back for this alone.
 - **Drew's bill clamped shut while the scene has him speaking.** The founder
-  wants the speaker's bill slightly parted, mid-word. Record it.
+  wants the speaker's bill slightly parted, mid-word. Record it. (The fence
+  and the scene slot now both order it, so a clamped bill is a model miss,
+  not a brief miss.)
+- **A television picture that cannot be named in two seconds** — a rebus or
+  visual riddle instead of the headline shown straight. Record it; the
+  founder wrote "I do not understand the TV picture" twice in one review.
 
 ## Accepted — never report
+- Unlettered bottles on the back bar. Exactly two carry names (check 14); the
+  rest are deliberately blank so the panel has no pseudo-text. The founder's
+  "not labeled" note (panel 11, 2026-08-29) is an OPEN QUESTION for him — do
+  not report it as a fault, and do not add labels until he rules.
 - Drew's bill shape, and Drew in one-eyed side profile.
 - Mango in one-eyed three-quarter (minor note only, not fatal — this round).
 - Printed props carrying five or six legible lines instead of four.
 - THE SWINGING DOOR made INTO a napkin, coaster or folder — that is the
   required house mark, not stray lettering. On Abby's bar towel it is the
-  opposite: fatal (check 8).
+  opposite: fatal (check 9).

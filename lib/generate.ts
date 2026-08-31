@@ -314,10 +314,11 @@ export function referenceList(
         "COUNTER IN THIS TILE IS THE COUNTER: seat the gentlemen on the NEAR side of THIS counter with their " +
         "drinks standing ON THIS SAME SLAB — never invent a second, nearer surface for the drinks, and never " +
         "leave this counter standing behind their backs as scenery. Abby, when cast, works on the FAR side of " +
-        "this same counter. Copy the back bar with its high shelves, the television switched on above it, the " +
+        "this same counter. Copy the back bar with its high shelves, the television above it, the " +
         "chalkboard, the sconces and the panelling exactly as here. The window at far left carries ONLY the " +
         "mirrored house name — NO door is drawn in or beside the window in the cartoon, whatever this tile " +
-        "shows at its edge. Its screen and board are deliberately blank: fill them from the scene below"
+        "shows at its edge. Its screen and board are deliberately blank, and the scene below is the ONLY " +
+        "authority on them: letter them, switch the television off, or leave the slate wiped exactly as it says"
     });
   }
   spendExtras();
@@ -454,7 +455,7 @@ const BAR_ONLY_PARAGRAPHS = [
   "THE BAR HEIGHT IS FIXED",
   "THE SIDES —",
   "NEAREST THE READER",
-  "NEXT, BEYOND THEIR SHOULDERS",
+  "NEXT, THE MARBLE COUNTER",
   "FARTHEST, PAST THE COUNTER",
   "The two of them are on one side and she is on the other",
 ];
@@ -465,18 +466,59 @@ export function isBarOnly(paragraph: string): boolean {
 }
 
 function fencesOf(masterPrompt: string) {
-  const fences = [...masterPrompt.matchAll(/```text\n([\s\S]*?)```/g)].map((m) => m[1].trim());
+  // The GitHub contents API serves LF, but a Windows checkout reads CRLF —
+  // and CRLF makes every fence and paragraph split silently miss.
+  const normalised = masterPrompt.replace(/\r\n/g, "\n");
+  const fences = [...normalised.matchAll(/```text\n([\s\S]*?)```/g)].map((m) => m[1].trim());
   if (fences.length < 1) {
     throw new PublishError(500, "The master prompt has no BASE fence — canon/MASTER-PROMPT.md is malformed.");
   }
   return { base: fences[0], abbyBlock: fences[1] ?? "", awayBlock: fences[2] ?? "" };
 }
 
+/** Cut everything from the sentence starting at `from` through the end of the
+ *  sentence ending at `to`, and put `replacement` there instead. Returns the
+ *  text untouched when either marker is missing, so a canon rewrite that
+ *  renames a sentence degrades to the old behaviour instead of corrupting the
+ *  paragraph — check-prompt-assembly asserts the markers still exist. */
+function spliceBetween(text: string, from: string, to: string, replacement: string): string {
+  const start = text.indexOf(from);
+  if (start < 0) return text;
+  const endAt = text.indexOf(to, start);
+  if (endAt < 0) return text;
+  return text.slice(0, start) + replacement + text.slice(endAt + to.length);
+}
+
 // replaceAll, not replace: [SCENE] appears twice once Abby's fence is in play.
 function fillSlots(text: string, candidate: Candidate): string {
+  const tv = (candidate.tv ?? "").trim();
+  const board = (candidate.board ?? "").trim();
+  // An EMPTY slot is an ABSENT surface, not a blank one. The old `??` defaults
+  // never fired on "" — the fence still ordered a switched-on television and a
+  // lettered chalkboard, named nothing for either to say, and the model wrote
+  // its own: one invented board promoted hard drinking and the founder caught
+  // it. When the writer sends no [TV] or no [BOARD], the surface itself is
+  // stood down in words the room can live with.
+  if (!tv) {
+    text = spliceBetween(
+      text,
+      "THE TELEVISION'S FRAME AND SURROUND",
+      "DRAW THAT SURFACE BLANK.",
+      "The television above the back bar is SWITCHED OFF: plain dark glass with nothing on it — no network " +
+        "bug, no chyron, no picture, and no lettering of any kind on or around the screen."
+    );
+  }
+  if (!board) {
+    text = spliceBetween(
+      text,
+      "A chalkboard carries menu-shaped jokes",
+      "drinking hard, fast or often.",
+      "The chalkboard is WIPED CLEAN: bare slate, no chalk marks, no lettering."
+    );
+  }
   return text
-    .replaceAll("[TV]", (candidate.tv ?? "BREAKING").trim())
-    .replaceAll("[BOARD]", (candidate.board ?? "HAPPY HOUR 4–?").trim())
+    .replaceAll("[TV]", tv || "BREAKING")
+    .replaceAll("[BOARD]", board || "HAPPY HOUR 4–?")
     .replaceAll("[SCENE]", candidate.scene.trim());
 }
 
@@ -514,10 +556,11 @@ function fineTunedPrompt(masterPrompt: string, candidate: Candidate): string {
     }
     parts.push(awayBlock.replace("[SETTING]", candidate.setting.trim()));
   } else {
-    const room = find("THE ROOM.");
-    const stage = find("THE STAGE.");
-    if (room) parts.push(room);
-    if (stage) parts.push(stage);
+    // The WHOLE bar-only set, not just ROOM and STAGE: the seating, height,
+    // one-level and SIDES paragraphs are the founder's seating fix, and a
+    // path that drops them draws the pre-review bar. Keeps the fine-tuned
+    // prompt in lockstep with the multi-reference one.
+    parts.push(...paragraphs.filter((p) => isBarOnly(p)));
   }
 
   // The closing paragraph carries the text rules and the [SCENE] slot.
@@ -596,15 +639,17 @@ export function assemblePrompt(
   if (multiRef) {
     const refs = referenceList(candidate.characters, !candidate.setting);
     const roster = refs.map((r, i) => `@image${i + 1} is ${r.label}.`).join(" ");
-    // Drew ships two tiles — the figure and a close study of his bill. The
-    // headcount below is built from the CAST, not the reference count, but
-    // say it out loud too: more references than characters must never become
-    // more characters.
-    const doubled =
-      refs.length > candidate.characters.length
-        ? " Some characters have MORE THAN ONE reference tile: those tiles are the SAME individual seen twice, at " +
-          "different distances. Never draw two of him."
-        : "";
+    // Say it out loud when a character genuinely ships two tiles: more
+    // references than characters must never become more characters. The old
+    // test compared refs to cast size, so the SET PLATE — a room with nobody
+    // in it — made this warning fire on every bar panel, spending ~250 chars
+    // to describe a tile-doubling that did not exist.
+    const doubled = candidate.characters.some(
+      (c) => (VISION_REFS[c.toLowerCase()] ?? []).length > 1
+    )
+      ? " Some characters have MORE THAN ONE reference tile: those tiles are the SAME individual seen twice, at " +
+        "different distances. Never draw two of him."
+      : "";
     return guardLength(
       "Draw ONE single-panel black-and-white gag cartoon, one unbroken scene edge to edge — no seam, no " +
       "split, no second frame, and no photographic rendering.\n\n" +
@@ -638,8 +683,8 @@ export function assemblePrompt(
         `boards on the wall behind. KEEP that staging and both characters exactly — same faces, same builds, ` +
         `same wardrobe, same seats at the counter${cast.includes("abby") ? `. The SECOND, smaller tile is Abby, the white West Highland terrier proprietor: ADD her to the same panel, standing BEHIND the counter on the far side facing the two gentlemen, in a fitted light blouse with a towel over her shoulder and her studded gem-pendant collar, so the finished panel holds exactly three characters` : ", and draw exactly those two characters"}. ` +
         `NOW CHANGE IT for the scene below. The reference's chalkboard lists martini prices by airline fare ` +
-        `class: ERASE that lettering completely and letter the board with this cartoon's own line instead, ` +
-        `and put this cartoon's own headline on the TV screen. Every other change the scene asks for — the ` +
+        `class: ERASE that lettering completely and ${(candidate.board ?? "").trim() ? `letter the board with this cartoon's own line instead` : `leave the slate bare and wiped`}, ` +
+        `and ${(candidate.tv ?? "").trim() ? `put this cartoon's own headline on the TV screen` : `switch the TV off — plain dark glass with nothing on it`}. Every other change the scene asks for — the ` +
         `drinks, the props, what each gentleman is doing — is made to the SAME two characters, who keep ` +
         `their own faces and builds exactly as drawn. `
       : "") +

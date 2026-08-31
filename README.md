@@ -19,14 +19,14 @@ The whole site sits behind one login; only the founder gets in. `/login` is the 
 
 ## The training week
 
-Right now the product is being perfected before it's shown to anyone: the founder asks his chat AI for cartoons in plain words, **the studio generates the art itself** (hosted FLUX.1 conditioned on the locked character sheets — the chat AI only sends text, so phones work), and **every cartoon gets two scores** — 1–10 for the art, 1–10 for the caption — plus a keeper star for the exceptional and an optional note on why. A cartoon **lands** when both scores hit 6; the studio goal is **60% landing**. All of it lives in the studio database and appears on the site the moment it happens — organized by batch, each headed by what he asked for in his own words; the AI reads the corpus (`get_feedback`) and proposes bible revisions that actually represent his style and humor.
+Right now the product is being perfected before it's shown to anyone: the founder asks his chat AI for cartoons in plain words, **the studio generates the art itself** (the hosted house model, gpt-image-2, conditioned on the plate reference portraits — the chat AI only sends text, so phones work), and **every cartoon gets two scores** — 1–10 for the art, 1–10 for the caption — plus a keeper star for the exceptional and an optional note on why. A cartoon **lands** when both scores hit 6; the studio goal is **60% landing**. All of it lives in the studio database and appears on the site the moment it happens — organized by batch, each headed by what he asked for in his own words; the AI reads the corpus (`get_feedback`) and proposes bible revisions that actually represent his style and humor.
 
 The week ends with a **graduation test**: on the last day, the AI predicts land-or-miss for a fresh batch *before* he scores it. Four out of five right means the bible reads his taste well enough to present; each miss names the chapter that still needs work.
 
 ## The daily flow
 
 1. The founder tells his AI (ChatGPT with the studio connector): *"Make one where they're on a boat."*
-2. The AI talks the idea through with him, writes 3–5 candidates from `/canon`, and calls the studio's `make_cartoons` with his exact words — **the server generates the art** (FLUX.1 on the locked sheets), typesets each caption, and files the batch in the studio database.
+2. The AI talks the idea through with him, writes 3–5 candidates from `/canon`, and calls the studio's `make_cartoons` with his exact words — **the server generates the art** (gpt-image-2 on the plate references), typesets each caption, and files the batch in the studio database.
 3. He opens **Today** — the batch is already there, headed by what he asked — and scores each cartoon twice: 1–10 for the art, 1–10 for the caption. Stars for the exceptional.
 4. His scores, notes, and stars save instantly; the AI reads them with `get_feedback` and the bible gets sharper.
 5. Everything stays cataloged forever in **The Collection**, by month and day.
@@ -45,7 +45,7 @@ Setup (env vars, connector) in [docs/SETUP.md](docs/SETUP.md).
 - Drew's base character model and written canon: 46-year-old male flamingo, mature average build, expressive avian eyes, long slim rounded S-neck, feathered wing-arms and feather-hands, natural-plumage base body, and permanent black bow tie. `npm run canon:check` guards the required assets and fingerprints.
 
 **Ready to train:**
-- A custom character model. The studio draws with hosted FLUX either way; `IMAGE_MODEL` decides whether that is Kontext conditioned on the locked sheets (today) or a fine-tune that knows the cast by name (one $2 training run away). The dataset is built from the sheets and the finished cartoons, and the whole design turns on one line: **the model owns who they are and how they're drawn; his sentence owns the setting, the joke, and the details.** Captions name every background out loud, the build fails if the corpus tips too far toward the bar, and the prompt drops the barroom paragraph the moment a scene leaves the bar. [docs/TRAINING.md](docs/TRAINING.md).
+- A custom character model. The studio draws with a hosted model either way; `IMAGE_MODEL` decides whether that is the house default (openai/gpt-image-2 on the plate references, today), Kontext on a reference board, or a fine-tune that knows the cast by name (one ~$3 training run away). The dataset is built from the sheets and the finished cartoons, and the whole design turns on one line: **the model owns who they are and how they're drawn; his sentence owns the setting, the joke, and the details.** Captions name every background out loud, the build fails if the corpus tips too far toward the bar, and the prompt drops the barroom paragraph the moment a scene leaves the bar. [docs/TRAINING.md](docs/TRAINING.md).
 
 **Pending (waiting on the founder):**
 - Review/sign-off on Drew's supporting expression, anatomy, pose, wardrobe, scene-continuity, and proportion sheets; the locked master remains authoritative meanwhile.

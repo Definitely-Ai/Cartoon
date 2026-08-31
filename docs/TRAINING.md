@@ -2,7 +2,7 @@
 
 The studio can draw the cast two ways, and one environment variable decides which.
 
-**Today (no training):** FLUX.1 Kontext is handed a reference board built from the locked model sheets and told, in a page of prose, exactly what everyone looks like. It works, but a reference image is a suggestion. Kontext's own paper documents identity drifting across novel poses, and prose has to compete with itself — the longer the description of Drew, the less room left for what Rick actually asked for.
+**Today (no training):** the house model (openai/gpt-image-2, multi-reference) is handed the plate portrait tiles and the empty-set plate and told, in a page of prose, exactly what everyone looks like; the Kontext reference-board path is still live behind IMAGE_MODEL. It works, but a reference image is a suggestion. Kontext's own paper documents identity drifting across novel poses, and prose has to compete with itself — the longer the description of Drew, the less room left for what Rick actually asked for.
 
 **After training:** a fine-tuned model that *knows* the three of them. Drew, Mango and Abby each get a trigger word, the house look gets a fourth, and the prompt stops describing anyone. What it spends its words on instead is the scene.
 

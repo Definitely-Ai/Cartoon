@@ -86,15 +86,18 @@ business organizations; **and the pricing of ordinary life.**
 ## The three angles
 
 **The TV names the story. The chalkboard prices it. The caption lands the
-verdict.** One joke, three angles — and each angle must be load-bearing.
+verdict.** One joke, three angles — the caption carries it alone, and the
+other two are paid work, not props.
 
 ### The blank-signage test — run it in both directions
 
 Cover the TV and the chalkboard with your thumb.
 
-> **If the caption still lands whole, the drawing is decoration.** You have
-> written a one-liner and drawn a bar behind it. Rewrite until the caption is
-> *incomplete* without the signage.
+> **The caption must still land.** The founder's ruling, given twice across one
+> review: a line that needs the screen to make sense is a miss — "the joke does
+> not need to be tied to the TV." The signage DEEPENS the joke, echoes it,
+> prices it; it never completes it. A reader who sees only the caption gets the
+> whole joke; the room then pays it again.
 
 Now cover the caption instead.
 
@@ -108,11 +111,14 @@ Now cover the caption instead.
 
 ### The three vocabularies rule
 
-The caption may not contain a word printed on that panel's own chyron or
-chalkboard, and it may not restate a fact either of them has already stated.
-If the board says THE RATE HIKE, the caption may not say *rate hike*. If the
-chyron says FLIGHT TO QUALITY, the caption does not book a flight to quality.
-Three angles, three vocabularies.
+The caption may not restate a FACT the chyron or the chalkboard has already
+stated, and it may not reuse their phrasing. If the chyron says FLIGHT TO
+QUALITY, the caption does not book a flight to quality. BUT THE RULE BANS
+ECHOES, NOT THE SUBJECT: when the joke turns on naming the thing — a rate cut,
+a bag fee, a corkage — the caption NAMES IT PLAINLY, even if the screen touched
+the same story. The founder corrected exactly this: "waiting for a cut" had to
+read "waiting for a rate cut." Clarity outranks variety; put the variation on
+the board instead. Three angles, three vocabularies.
 
 ### The chalkboard has a craft
 
@@ -141,15 +147,17 @@ The devices, with models:
 
 **No two boards in a batch use the same device.** At most three price a noun
 in dollars. A board that carries no figure at all needs a reason you can say
-aloud, and there may be at most one in ten.
+aloud, and there may be at most one in ten. And none of these seven ever makes
+cheap, fast or plentiful drinking the offer — the board prices the news, not
+the pour.
 
 ### The business is the fourth angle, and it is free
 
 The strongest panels in our own files are the ones where a drawn action
-argues: two gentlemen jammed into one corner of an empty bar; a three-olive
-pick carrying exactly one olive; a phone face-down under one feather-digit
-while its owner quotes the lunchtime print; Abby sliding a glass the last inch
-without eye contact. Write the business before the caption, and then **do not
+argues: a three-olive pick carrying exactly one olive; a martini pushed an
+inch further from its owner than he left it; the nut bowl turned so the good
+half faces the other man; Abby setting the glass down and not letting go of
+it. Write the business before the caption, and then **do not
 let the caption describe it**. If the caption says what the reader can see, you
 have spent your twenty words on a label.
 
@@ -180,7 +188,9 @@ have spent your twenty words on a label.
   Want, the Cheerful Concession, the Unnoticed Contradiction and the House
   Ruling, and nowhere else without a reason you can say aloud. Three sentences,
   never.
-- **Three angles, three vocabularies** — no word off this panel's own signage.
+- **Three angles, three vocabularies** — no phrasing off this panel's own
+  signage; the subject noun the joke turns on is always allowed, and named
+  plainly.
 - The caption **deepens the visual gag rather than explaining it.**
 
 ---
@@ -220,7 +230,7 @@ Worked, from our own files:
 | Line | Verdict |
 | --- | --- |
 | *"Committed is money that hasn't had its second thoughts yet."* | COLLISION on **committed**. A joke. |
-| *"I have never felt worse about the economy, Abby. Same again."* | CONTRADICTION he does not notice. A joke. |
+| *"I have never felt worse about the economy, Abby. Same again."* | CONTRADICTION he does not notice. A joke. (The *"Same again."* closing beat itself is now retired — the mechanism is not.) |
 | *"The middle seat is now our best-performing square foot."* | THEFT — a seat filed as real estate. A joke. |
 | *"A symposium in the mountains, to tell us they are still thinking about it."* | Nothing collides, contradicts or is stolen. **An observation.** It shipped because there was no test. There is now. |
 | *"I check every price in the aisle now and still come home with the same cart."* | True. No turn. **An observation.** |
@@ -770,9 +780,16 @@ Reinstatement is the founder's call.
 - Any caption containing an exclamation mark, or ending in a question mark.
 - Any caption ending on a function word.
 - Three or more sentences. Ever.
-- Any caption using a word printed on that panel's own chalkboard or chyron.
+- Any caption reusing its own panel's chyron or chalkboard phrasing (the
+  subject noun the joke turns on is exempt — see the three vocabularies rule).
 - Any caption in which a principal reports his own intoxication. Abby's house
   has no drunks.
+- Any chalkboard line that urges drinking hard, fast, cheap or often. The
+  board prices the joke; it never sells the drink. The founder pulled one for
+  exactly this.
+- Any caption that cannot be understood without the television or the board in
+  view, and any caption on a campus subject — tuition, bursars, student life.
+  The strip's subjects are the bills a working adult pays himself.
 
 ---
 

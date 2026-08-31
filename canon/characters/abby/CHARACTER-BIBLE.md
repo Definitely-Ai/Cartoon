@@ -397,7 +397,7 @@ Note the address: *gentlemen*. She is fond of them and entirely unintimidated.
 - Lettering anywhere on Abby herself — blouse, collar or skirt
 - A house mark that sits ON a surface rather than IN it: a decal, sticker,
   patch or flat label that ignores the material, the curve and the light
-- A bottle in frame whose label is blank or unreadable
+- A third LETTERED bottle: only BIRDIE BOURBON and DIVOT DRIVE GIN carry names, and every other bottle on the shelves is deliberately blank glass (see the master prompt) — never invent a label, and never letter one that would read smaller than an eye
 - Another bartender, staff member, or any figure in the room besides this
   cartoon's cast — **the television screen excepted**, where broadcast footage
   may show people

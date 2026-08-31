@@ -68,8 +68,9 @@ const CAST: CastName[] = ["drew", "mango", "abby"];
  *  written back when canon described the staging only in prose and the panel
  *  slot was the one place it could be said sharply.
  *
- *  Canon says it better now, with fractions, in THE SIDES, and it says it in
- *  every prompt whether this function speaks up or not. So the duplication
+ *  Canon says it better now in THE SIDES — one slab out of frame both sides,
+ *  the gentlemen seated at its near side — and it says it in every prompt
+ *  whether this function speaks up or not. So the duplication
  *  bought nothing and it pushed a three-hander to 32,824 characters against a
  *  32,000 ceiling: every one of the twelve Abby panels failed the length guard,
  *  silently, retried on the next call and failed again — which is exactly why
@@ -85,6 +86,25 @@ function barStage(hasAbby: boolean, tvPicture: string): string {
       "counter is empty.";
   const screen = tvPicture ? ` The television picture shows ${tvPicture.replace(/\.$/, "")}.` : "";
   return `${who}${screen} Stage it exactly as THE SIDES describes.`;
+}
+
+/** What being the speaker changes on the page. Only Drew's face shows it —
+ *  the founder asked for his bill parted mid-word — and saying it for the
+ *  others would fight their own closed-mouth rules, so they get nothing. */
+function speakerNote(speaker: CastName): string {
+  return speaker === "drew"
+    ? " DREW IS THE ONE SPEAKING IN THIS PANEL: his bill is SLIGHTLY PARTED, caught mid-word."
+    : "";
+}
+
+/** Abby's read, restated at the scene slot where it lands last and loudest —
+ *  the fence alone failed four panels in a row. The founder's own ruling:
+ *  neutral is fine, sad never is; smiling when she serves or lands the line. */
+function abbyNote(hasAbby: boolean): string {
+  return hasAbby
+    ? " Abby's face reads WARM — amused or at ease, NEVER sad or downcast; when she serves, delivers or " +
+      "lands the line she is genuinely SMILING."
+    : "";
 }
 
 /** An away game. No counter to hide behind, so the framing convention and the
@@ -193,7 +213,7 @@ export function stage(gag: Gag): Brief {
   const action = gag.action.trim().replace(/\s*$/, "").replace(/([^.])$/, "$1.");
   const scene = `${action} ${
     away ? awayStage(gag.characters.length, gag.signs) : barStage(hasAbby, gag.tvPicture)
-  }`;
+  }${speakerNote(gag.speaker)}${abbyNote(hasAbby)}`;
   return { ...gag, setting, scene, slug: slugOf(gag.caption) };
 }
 
@@ -237,7 +257,15 @@ wrong logic wins), a CONTRADICTION (someone says the opposite of what they are d
 ordinary phrase is stolen by a world it does not belong to). Money, markets, prices, fees, insurance and
 the quiet indignities of a comfortable life are the strip's subject. The humour is dry, adult, understated
 and never cruel, never crude, never a pun for its own sake, never a wisecrack that anyone could deliver.
-The funniest line is often on the wall rather than in the caption.
+The wall pays the joke a second time; it never pays it the first time.
+
+THE CAPTION LANDS ON ITS OWN. The founder's ruling, twice given: a joke must never DEPEND on the
+television or the chalkboard to make sense — cover the screen and the board and the line still lands.
+They deepen and echo the joke; they never complete it. And the line is CLEAR: name the thing it turns
+on plainly — "a rate cut", "a bag fee", "the renewal" — never a riddle the reader must decode. If the
+founder would ask "what does this mean?", it is a rewrite. Subjects are BUSINESS subjects: things a
+working adult pays for out of his own pocket — never campus, tuition or student life. The chalkboard
+prices the joke and NEVER urges drinking hard, fast or often.
 
 BE CONCRETE. This is the difference between a line that lands and a line that reads like a research note.
 The strip's best caption is "There's about four dollars of whiskey in that glass and fourteen dollars of
@@ -259,9 +287,23 @@ const SHAPE = `Each element of the array is an object with exactly these keys:
                One sentence. Never more than about twenty words.
   "characters" an array of one to three of "drew", "mango", "abby". The speaker must be in it.
   "action"     ONE OR TWO SENTENCES describing only what the characters are physically DOING and what
-               is on the counter or in their hands. Do NOT describe camera angles, who is in front of
+               they are HOLDING. The counter is already set — martini, old fashioned, nut bowl — and
+               you may not add to it. Do NOT describe camera angles, who is in front of
                or behind the bar, what anyone is looking at, or the room's furniture — the house adds
-               all of that. Just the business of the scene.
+               all of that. Just the business of the scene. HARD PROHIBITIONS, each one a founder
+               veto: NOTHING PRINTED EVER LIES ON THE MARBLE — no note card, slip, receipt,
+               statement, ticket, boarding pass, folio, printout or card reader on the bar top; if
+               the joke truly needs a printed thing, a character HOLDS IT UP and your action NAMES
+               the at-most-four short lines it shows, or you cut the prop. The drinks, the nut bowl
+               and Abby's service are the only things on the counter. No tag, sticker, label or
+               price tag hangs from a glass, a bottle or anything anyone holds. Drew wears a
+               pocketless knitted sweater vest and NO jacket — never source a prop from a pocket of
+               his. Nobody in this strip has fingernails or claws — never write "taps it with a
+               fingernail". Your action NEVER specifies lettering on anything — no monogram, initial,
+               logo, brand or embroidery on a towel, apron, glass, bottle or napkin; the television
+               and the chalkboard are the only lettered surfaces, and their fields below carry their
+               words. Most gags need NO prop at all beyond the drinks: the line, the TV and the board
+               echo the joke.
   "tv"         the television's headline in bold caps style, or "" if this cartoon has no screen
   "tvPicture"  what the footage on the screen depicts, phrased to follow "The television picture
                shows …". Empty string if "tv" is empty. Never any people in it unless the joke needs them.
@@ -271,10 +313,16 @@ const SHAPE = `Each element of the array is an object with exactly these keys:
                no shopfront name, no chart with labelled axes. An inspection of one edition found
                lettering leaking into sixteen of twenty-five screens, and every one of them traced
                back to a picture commissioned here that could not exist without text. Describe
-               something the eye reads WITHOUT reading: a receipt long enough to hang off the end of
-               the belt, a mailbox too full to close, a trading floor where every head is turned the
-               same way. The chyron carries the words; the picture carries the image.
-  "board"      the chalkboard's line, menu-shaped, or "" if this cartoon has no board
+               something the eye reads WITHOUT reading: a mailbox too full to close, a trading floor
+               where every head is turned the same way, a suitcase that will not shut. The chyron
+               carries the words; the picture carries the image. And it is ONE PLAIN LITERAL SCENE a
+               viewer could name out loud in two seconds — the thing the headline is about, shown
+               straight. Never a rebus, never a visual riddle, never a picture whose point is a
+               comparison the viewer has to work out.
+  "board"      the chalkboard's line, menu-shaped and CARRYING A PRICE OR A COUNT — a thing, a price,
+               and one turn; a board with no figure on it is a second caption in chalk, at most one
+               per ten. It NEVER urges drinking hard, fast, cheap or often. Or "" if this cartoon has
+               no board
   "away"       "" for a cartoon in the bar. For a cartoon somewhere else, a SHORT place phrase such as
                "golf course" or "courtroom". Whatever the brief asks for.
   "signs"      AWAY GAMES ONLY (empty array [] for a bar cartoon). ONE OR TWO short lines of lettering
@@ -295,7 +343,8 @@ Rules the batch as a whole must obey:
   surcharge and a refund are twelve different subjects, not one.
 - Vary the speaker across the batch. Do not give every line to the same character.
 - Vary the cast: some panels are the two gentlemen, some bring Abby in.
-- At least half the batch carries a television or a chalkboard doing its share of the work.
+- In a BAR batch, at least half the cartoons carry a television or a chalkboard ECHOING the caption's
+  joke from another angle — never carrying it alone. (Does not apply to an away batch — see below.)
 - If the brief names a place that is not the bar, EVERY cartoon in the batch is at that place, and there
   is no television and no chalkboard out there — set "tv", "tvPicture" and "board" to "" for all of them,
   and put the room's share of the joke in "signs" instead.`;
@@ -308,7 +357,13 @@ export async function commission(brief: string, n: number): Promise<Gag[]> {
   ]);
 
   const house = [
-    excerpt(comedy?.bytes.toString("utf8") ?? null, 18_000),
+    // 43,000 carries the comedy bible through the kill list, the retired
+    // shapes and the whole conduct scan. At 18,000 the cut landed mid-lane-
+    // recipes: every conduct rule, the campus ban and the chalkboard-drinking
+    // veto were dead text the writer never received — the founder caught an
+    // invented hard-drinking board partly because of it. The writer prompt has
+    // no ceiling (32,000 governs the IMAGE prompt only); cost is ~6k tokens.
+    excerpt(comedy?.bytes.toString("utf8") ?? null, 43_000),
     excerpt(settings?.bytes.toString("utf8") ?? null, 9_000),
   ]
     .filter(Boolean)

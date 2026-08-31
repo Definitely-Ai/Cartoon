@@ -55,7 +55,13 @@ fs.writeFileSync(
     files: [path.join(repoRoot, "lib/generate.ts"), path.join(repoRoot, "lib/writersRoom.ts")],
   })
 );
-execFileSync("npx", ["tsc", "-p", tsconfig], { cwd: repoRoot, stdio: "inherit" });
+// shell:true on Windows: execFileSync("npx") throws ENOENT there — npx is
+// npx.cmd, and only a shell resolves it.
+execFileSync("npx", ["tsc", "-p", tsconfig], {
+  cwd: repoRoot,
+  stdio: "inherit",
+  shell: process.platform === "win32",
+});
 
 // tsconfig "paths" tells the COMPILER where "@/lib/x" lives; it does not rewrite
 // the require() the compiler emits, so the output still asks Node for a module
@@ -104,7 +110,10 @@ const withAbby = { ...bar, characters: ["drew", "mango", "abby"] };
 // stage(), with the full cast — and it is the one the ceiling is checked
 // against. A check that cannot fail the way production fails is not a check.
 const widestGag = stage({
-  speaker: "abby",
+  // Drew, not Abby: speakerNote() adds ~86 chars for Drew and nothing for the
+  // others, so a Drew-speaking three-hander is the true widest case the
+  // ceiling check must measure.
+  speaker: "drew",
   caption: 'Abby: "There is about four dollars of whiskey in that glass and fourteen dollars of roof."',
   action:
     "Abby slides Mango's old fashioned across the marble past the check spindle, where a renewal envelope " +
@@ -214,7 +223,7 @@ check("no barroom furniture travels to an away game on the house path", () => {
     [/THE SEATING IS THE SAME EVERY DAY/, "the club chairs"],
     [/THE SIDES —/, "the sides block"],
     [/NEAREST THE READER/, "the sides block's near depth"],
-    [/NEXT, BEYOND THEIR SHOULDERS/, "the sides block's middle depth"],
+    [/NEXT, THE MARBLE COUNTER/, "the sides block's middle depth"],
     [/FARTHEST, PAST THE COUNTER/, "the sides block's far depth"],
     [/The TV and the chalkboard are OPTIONAL/, "the screen-and-board paragraph"],
     [/\bmarble\b/i, "marble"],
@@ -259,6 +268,91 @@ check("every slot is filled on both paths", () => {
       assert.ok(prompt.includes(candidate.scene), "the scene Rick asked for is always in there");
     }
   }
+});
+
+check("the bar prompt carries ONE staging, and it is the plates'", () => {
+  // The founder failed nine of twenty-five panels on seating. The cause was a
+  // prompt that said both "marble across the LOWEST part of the picture" and
+  // "marble between 40% and 60%", both "never the back of a head" and "their
+  // BACKS TO US" — the model split every difference and drew a floating table.
+  // One geometry now: the plates' — seated at the counter, side-on, facing
+  // each other. If any over-the-shoulder or bottom-strip language returns to
+  // canon or the scene slot, this fails by name.
+  const prompt = assemblePrompt(master, withAbby, false, false, true);
+  assert.match(prompt, /SEATED AT THE COUNTER/, "the gentlemen sit AT the counter");
+  assert.match(prompt, /forearms resting ON it/, "forearms on the marble is the seated-at-the-bar read");
+  for (const [pattern, what] of [
+    [/BACKS TO US/i, "an over-the-shoulder camera"],
+    [/looking over their shoulders/i, "an over-the-shoulder camera"],
+    [/LOWEST part of the picture/i, "the bottom-strip marble"],
+    [/BEYOND THEIR SHOULDERS/i, "the behind-the-shoulders counter"],
+    [/behind and a little above/i, "the raised rear camera"],
+    [/OVERLAP AND HIDE/i, "the shoulder-hides-the-counter instruction (read as 'jammed into the bar')"],
+    [/gentlemen cover it/i, "the compressed occlusion aphorism"],
+  ]) {
+    assert.doesNotMatch(prompt, pattern, `the bar prompt must not reintroduce ${what}`);
+  }
+});
+
+check("an empty TV or BOARD slot stands the surface down, never leaves it blank", () => {
+  // `??` never fired on "" — the fence kept ordering a switched-on television
+  // and a lettered chalkboard with nothing named for either to say, and the
+  // model invented its own: one invented board promoted hard drinking and the
+  // founder caught it. Empty slot = absent surface, said in words.
+  const quiet = assemblePrompt(master, { ...withAbby, tv: "", board: "" }, false, false, true);
+  assert.match(quiet, /SWITCHED OFF/, "an empty [TV] slot switches the television off");
+  assert.match(quiet, /WIPED CLEAN/, "an empty [BOARD] slot wipes the chalkboard");
+  assert.doesNotMatch(quiet, /reads \./, "no dangling 'reads .' from an unfilled TV sentence");
+  assert.doesNotMatch(quiet, /exactly and only: \./, "no dangling board sentence either");
+  assert.doesNotMatch(quiet, /\[TV\]|\[BOARD\]/);
+  // The reference roster rides the same prompt: a set-plate label still
+  // ordering a switched-on screen would argue with the standdown.
+  assert.doesNotMatch(quiet, /television switched on/i, "no reference label may order a live screen");
+  // The staged Kontext branch (smoke ?set=showcase) used to order invented
+  // lettering — "letter the board with this cartoon's own line" — even when
+  // the plan named none. That is the mechanism behind the hard-drinking board.
+  const quietStaged = assemblePrompt(master, { ...withAbby, tv: "", board: "" }, false, true, false);
+  assert.doesNotMatch(quietStaged, /letter the board with this cartoon's own line/);
+  assert.match(quietStaged, /leave the slate bare and wiped/);
+  assert.match(quietStaged, /switch the TV off/);
+  // The splice keys on these sentences in canon; if a canon rewrite renames
+  // them the splice silently degrades to the old blank-slot behaviour, so
+  // their absence must fail HERE, by name.
+  const fence = master.split("```")[1] ?? "";
+  for (const marker of [
+    "THE TELEVISION'S FRAME AND SURROUND",
+    "DRAW THAT SURFACE BLANK.",
+    "A chalkboard carries menu-shaped jokes",
+    "drinking hard, fast or often.",
+  ]) {
+    assert.ok(fence.includes(marker), `fillSlots splices on "${marker}" and canon no longer contains it`);
+  }
+});
+
+check("the speaker reaches the drawing when it is Drew, and only then", () => {
+  // The founder wants the speaker's bill slightly parted. The prompt never
+  // said who speaks — the CAPTION line in the .txt files is a log header, not
+  // prompt text — so the fence's WHEN-DREW-SPEAKS rule could never fire.
+  const drewSpeaks = stage({ ...widestGag, speaker: "drew", away: "", signs: [] });
+  assert.match(drewSpeaks.scene, /DREW IS THE ONE SPEAKING/);
+  assert.match(drewSpeaks.scene, /SLIGHTLY PARTED/);
+  const mangoSpeaks = stage({ ...widestGag, speaker: "mango", away: "", signs: [] });
+  assert.doesNotMatch(
+    mangoSpeaks.scene,
+    /SPEAKING/,
+    "Mango and Abby keep their closed-mouth rules — no speaker note for them"
+  );
+});
+
+check("Abby's warmth rides the scene slot, where instructions land last", () => {
+  // The fence's SHE IS NEVER SAD sentence was present on four panels the
+  // founder still scored 2 for a sad Abby. The scene slot is the model's
+  // best-obeyed real estate, so her read is restated there on every panel
+  // that casts her.
+  assert.match(widestGag.scene, /NEVER sad/);
+  assert.match(widestGag.scene, /SMILING/, "the serving half of the founder's ruling must ride along");
+  const noAbby = stage({ ...widestGag, speaker: "mango", characters: ["drew", "mango"], away: "", signs: [] });
+  assert.doesNotMatch(noAbby.scene, /reads WARM/, "no Abby note when she is not cast");
 });
 
 check("the widest real prompt fits the model's ceiling with room to spare", () => {

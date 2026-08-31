@@ -25,31 +25,33 @@ world who build relationships at a good bar:
   the founder rules, draw the hole and leave the golfer out.)*
 - **Coherence rule**: the TV's story and the chalkboard's special both relate
   to the day's caption — the room tells the same joke from other angles.
-- **Bottles out and proudly displayed** on the back bar — each a distinct
-  shape with its own pun label, and the SAME collection in every cartoon;
-  the lineup never changes.
-- **Handsome furniture**: studded leather club chairs; when stools, nice
-  stools.
-- Background patrons, when drawn: well-dressed financial-district regulars —
-  never drunks, never riffraff (Abby sees to it).
-- The **back bar**: rows of bottles with golf-pun labels (BIRDIE BOURBON,
-  19TH HOLE RYE, PAR-TEE SCOTCH, DIVOT DRIVE GIN, EAGLE EYE RYE — that
-  register), a mirror, glassware.
+- **Bottles out and proudly displayed** on the back bar — distinct shapes,
+  visibly filled to different levels, and the SAME collection in every
+  cartoon; the lineup never changes.
+- **Handsome furniture**: studded leather club chairs.
+- No background patrons, ever. The room contains only this cartoon's named
+  cast; an otherwise-empty bar is the house look (Abby sees to it).
+- The **back bar**: rows of bottles, the SAME collection every day, of which
+  EXACTLY TWO are lettered — BIRDIE BOURBON and DIVOT DRIVE GIN. Every other
+  bottle is completely blank; never write a gag that needs a third bottle
+  name.
 - A **large flatscreen TV over the back bar** playing the news in full
   broadcast grammar: CNBC network bug + LIVE tag, bold-caps headline chyron,
-  a smaller ticker sentence, a time stamp — the on-screen picture drawn in
-  the same engraved style. The TV is how the day enters the room, and its
-  chyron is a standing gag surface.
+  a time stamp — one line of text, never a ticker — the on-screen picture
+  drawn in the same engraved style. The TV is how the day enters the room,
+  and its chyron is a standing gag surface.
 - A **chalkboard** of menu-shaped jokes in hand-lettered chalk serifs
   (FIRST CLASS MARTINI $18 · PREMIUM ECONOMY MARTINI $17 · BASIC ECONOMY
-  MARTINI $17). A second board or small framed notices when the gag wants
-  them (NO CHASING YOUR BALLS IN HERE).
-- Event dressing as needed: banners and balloons (16th ANNUAL DEBT CEILING
-  WEEK), commemorative-shirt signs, a globe with price tags.
-- The shared nut bowl centered between the regulars' drinks; napkins and
-  coasters under every glass.
-- **The room is furnished with jokes**: signage is a gag layer, and the panel
-  is drawn full, corner to corner — density is the style.
+  MARTINI $17). In the bar, the television and the chalkboard are the ONLY
+  lettered surfaces besides the mirrored window name and the two lettered
+  bottles — no second board, no framed notices, no banners, no price tags
+  on anything.
+- The shared nut bowl centered between the regulars' drinks. Nothing else
+  stands on the marble.
+- **The room is drawn full** — corner to corner, density is the style — but
+  the lettering is not the joke layer: the caption carries the joke, the
+  television and the chalkboard echo it, and nothing else in the room is
+  lettered.
 
 ## The room, mapped (fixed — it never moves)
 
