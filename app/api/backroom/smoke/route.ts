@@ -289,15 +289,17 @@ const STUDIES: Record<string, string> = {
   "abby-head":
     "A CLOSE PORTRAIT STUDY of Abby alone, HEAD AND SHOULDERS ONLY, filling the sheet — the top " +
     "of her head near the top edge and the frame cutting her at the collarbone. Her head is in " +
-    "THREE-QUARTER view, turned slightly to her right and tipped a little down, her chin lifted " +
-    "just enough to read as composed and self-possessed. HER FACE SHAPE IS EXACTLY THE ATTACHED PORTRAIT'S: " +
+    "THREE-QUARTER view, turned slightly to her right and held LEVEL, her chin up, reading as " +
+    "composed, confident and pleased. HER FACE SHAPE IS EXACTLY THE ATTACHED PORTRAIT'S: " +
     "a small fluffy show-groomed head, ROUND AND SOFT, the big black nose sitting CLOSE under her eyes — NO " +
     "muzzle, nothing sharp or foxish anywhere. Keep that shape identically. WHAT THIS STUDY EXISTS TO PERFECT " +
     "IS THE EYES, AND THEY ARE NOT THE ATTACHED PORTRAIT'S BUTTON EYES: draw them as HUMAN-ATTRACTIVE eyes — " +
     "the kind a reader finds beautiful in a woman's face — set into her dog face. " +
     "Her gaze goes off to the side of the " +
-    "frame, level and unhurried, at something in her own room — SHE IS NOT LOOKING AT THE READER " +
-    "and her eyes are not centred on the lens. THE EYES ARE THE SUBJECT OF THIS DRAWING and are " +
+    "frame, LEVEL with her own head and unhurried, at something in her own room — SHE IS NOT LOOKING " +
+    "AT THE READER, her eyes are not centred on the lens, and THEY DO NOT LOOK DOWN: the attached " +
+    "portrait's downcast, heavy-lidded gaze is the second fault this study exists to correct. " +
+    "THE EYES ARE THE SUBJECT OF THIS DRAWING and are " +
     "rendered larger and in more detail than anything else on the sheet. Each eye is a wide " +
     "ALMOND, longer than it is tall, tilted very slightly up at the outer corner, with a defined " +
     "inner corner and a defined outer corner. Inside each: a CLEAR WHITE OF THE EYE showing as a " +
@@ -305,8 +307,17 @@ const STUDIES: Record<string, string> = {
     "radiating lines inside it and a darker ring around its edge; a distinct round PUPIL at the " +
     "centre of the iris, clearly smaller than it; and EXACTLY ONE small white catchlight high on " +
     "the iris. A fine dark upper lid line thickens toward the outer corner, with LASHES, and a " +
-    "softer lower lid line beneath. The two eyes match each other. Her expression is warm, " +
-    "amused and knowing — a woman who has heard everything and is still glad you came in. Her " +
+    "softer lower lid line beneath. The two eyes match each other. " +
+    "SHE IS SMILING, AND THE SMILE IS THE WHOLE POINT OF THIS STUDY. The attached portrait's mouth " +
+    "is small, flat and closed with its corners level — that face reads SAD at a glance, the founder " +
+    "wrote so on eight cartoons, and correcting it is why this drawing exists. Draw instead a WARM, " +
+    "GENUINE, CLOSED-LIP SMILE: the line of her closed mouth curves clearly UP at BOTH corners, the " +
+    "corners lifting into the fur of her cheeks, and the cheeks themselves full and pushed UP by the " +
+    "smile. THE SMILE REACHES THE EYES: the lower lid of each eye rides up in a soft curve against the " +
+    "iris with a fine crease beneath it, the way a real warm smile creases a face. Her two or three " +
+    "fine brow strokes lift at their INNER ends, open and friendly, never sloping down at the outer " +
+    "ends. Read at a glance, and read small: a handsome, confident woman who owns this room and is " +
+    "glad you came in. Her " +
     "studded leather collar with its teardrop gem sits at her throat, the fur of her cheeks and " +
     "the fringe over her brow drawn stroke by stroke, and the open collar of her blouse just " +
     "reaching the bottom edge of the frame. THE LONG FUR STOPS AT HER JAWLINE: her throat and " +
