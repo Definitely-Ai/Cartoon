@@ -14,10 +14,9 @@
   **visibly filled to different levels** — some near full, some half, a few
   low, the liquid line showing through the glass. A shelf of identical
   empties is a redraw.
-- **Exactly TWO bottles are lettered** — BIRDIE BOURBON (left) and DIVOT
-  DRIVE GIN (right) — every other bottle completely blank. *(The founder's
-  "not labeled" note from the 25-panel review is an open question for him;
-  until he rules, blank-by-design stands.)*
+- **Every bottle wears a small plain paper label — BLANK.** Label-shaped panels with no words: the shelf reads as labeled stock without one garbled glyph. (Operator solution 2026-09-01 to the founder's "not labeled" note.)
+- **Exactly TWO labels are lettered** — BIRDIE BOURBON (left) and DIVOT
+  DRIVE GIN (right) — every other bottle completely blank. *(This answers the founder's "not labeled" note from the 25-panel review.)*
 - A bottle reaches the customer side only in Abby's hand or set down by her.
 
 ## What a caption may do to it
