@@ -383,7 +383,10 @@ export async function commission(brief: string, n: number): Promise<Gag[]> {
       prompt,
       system_prompt: SYSTEM,
       reasoning_effort: "medium",
-      max_completion_tokens: Math.max(12_000, n * 1_400),
+      // 2,200/gag, floor 20k: the writer reasons out of the same budget, and the
+      // richer 43k comedy-bible excerpt made a 10-gag batch truncate at the old
+      // max(12k, n*1400) — the failure lands as a parse error with nothing spent.
+      max_completion_tokens: Math.max(20_000, n * 2_200),
     },
     // Twenty-five gags take appreciably longer to write than ten.
     Math.max(150_000, n * 9_000)
