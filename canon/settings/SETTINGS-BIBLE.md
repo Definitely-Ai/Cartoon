@@ -40,10 +40,10 @@ world who build relationships at a good bar:
 - No background patrons, ever. The room contains only this cartoon's named
   cast; an otherwise-empty bar is the house look (Abby sees to it).
 - The **back bar**: rows of bottles, the SAME collection every day, of which
-  EXACTLY SIX are lettered — the house roster: BIRDIE BOURBON, DIVOT DRIVE
-  GIN, LINKS RYE, FAIRWAY VODKA, SAND TRAP SCOTCH, EAGLE RUM. Every other
-  bottle wears a blank paper label; never write a gag that needs a seventh
-  bottle name.
+  NONE is lettered — every bottle wears a plain wordless label of varied
+  shape; beside them clean glassware, and a compact tap tower with classy
+  unlettered handles on the service side. Never write a gag that needs a
+  bottle name or a tap-handle joke.
 - A **large flatscreen TV over the back bar** playing the news in full
   broadcast grammar: CNBC network bug + LIVE tag, bold-caps headline chyron,
   a time stamp — one line of text, never a ticker — the on-screen picture
@@ -52,9 +52,9 @@ world who build relationships at a good bar:
 - A **chalkboard** of menu-shaped jokes in hand-lettered chalk serifs
   (FIRST CLASS MARTINI $18 · PREMIUM ECONOMY MARTINI $17 · BASIC ECONOMY
   MARTINI $17). In the bar, the television and the chalkboard are the ONLY
-  lettered surfaces besides the mirrored window name and the six lettered
-  bottles — no second board, no framed notices, no banners, no price tags
-  on anything.
+  lettered surfaces besides the mirrored window name — no second board, no
+  framed notices, no banners, no price tags on anything, no lettered bottle
+  or tap handle.
 - The shared nut bowl centered between the regulars' drinks. Nothing else
   stands on the marble.
 - **The room is drawn full** — corner to corner, density is the style — but
@@ -66,8 +66,8 @@ world who build relationships at a good bar:
 
 Continuity is not a description, it is a **picture**. The set is drawn once as
 `canon/vision/staging-plate.jpg` — the empty bar, from the house camera, the
-television dark and the chalkboard wiped, the six roster bottles lettered and
-every other label a **blank paper panel** — and that plate rides along as a
+television dark and the chalkboard wiped, every bottle label a **wordless panel**, glassware and taps in
+place — and that plate rides along as a
 reference on every bar cartoon. A room given in
 words is a different bar every generation; a room given as a picture is the same
 bar.

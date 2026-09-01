@@ -60,7 +60,10 @@ run first via `node scripts/qc-batch.mjs <batch-folder>`.
    HUMAN-style attractive eyes (whites, iris, lids, lashes, catchlight — never
    black dog buttons), smooth cleavage with no fur in the open V, studded
    collar with gem, no tail. Her face reads WARM — amused at rest, genuinely
-   smiling when she serves; sad, drooping or downcast on her is fatal. Her
+   smiling when she serves — A VISIBLE SMILE IN EVERY PANEL, mouth corners
+   up; a neutral, straight or pursed mouth on her is fatal, as is sad,
+   drooping or downcast (operator ruling 2026-09-01: "abby must have a
+   smile"). Her
    bar towel is somewhere in panel and it is PLAIN WHITE: any name, monogram
    or mark on it is fatal (the founder has asked seven times). Her hands hold
    what they hold naturally — the towel in ONE place, either over her left
@@ -75,10 +78,11 @@ run first via `node scripts/qc-batch.mjs <batch-folder>`.
 
 ### The lettering
 14. **Every word real and correctly spelled at a glance.** The window reads
-    THE SWINGING DOOR, mirrored, both G's present. EXACTLY SIX lettered
-    bottles — BIRDIE BOURBON, DIVOT DRIVE GIN, LINKS RYE, FAIRWAY VODKA,
-    SAND TRAP SCOTCH, EAGLE RUM — all others wear blank paper labels. A
-    seventh name, a repeated name or an invented name is fatal.
+    THE SWINGING DOOR, mirrored, both G's present. NO BOTTLE IS LETTERED:
+    every label is a plain wordless panel (varied shapes, a stripe at most);
+    a bottle carrying a name, a number or pseudo-text is fatal — the panels
+    print small, and nothing on the shelf may read (operator ruling
+    2026-09-01). Tap handles carry no lettering, badge or logo either.
 15. **Zero words inside the television picture.** The chyron carries all the
     screen's text; footage surfaces that would carry writing are drawn blank.
     The receipt-with-scribbled-rows is the classic form of this fault.
@@ -110,10 +114,12 @@ run first via `node scripts/qc-batch.mjs <batch-folder>`.
   founder wrote "I do not understand the TV picture" twice in one review.
 
 ## Accepted — never report
-- Blank paper labels on unnamed bottles. Six bottles carry names (check 14);
-  the rest wear deliberately blank labels so the shelf reads as stocked
-  without pseudo-text (operator ruling 2026-09-01 — "we need more labels" —
-  superseding the 2026-08-29 open question).
+- Wordless labels on every bottle (check 14): plain panels of varied shape
+  so the shelf reads as stocked at thumbnail size without pseudo-text
+  (operator ruling 2026-09-01, superseding the six-name roster of earlier
+  that day and the 2026-08-29 open question).
+- The tap tower on the service side and the row of clean glassware: fixtures
+  of the set, not props the plan has to name.
 - Drew's bill shape, and Drew in one-eyed side profile.
 - Barclay in one-eyed three-quarter (minor note only, not fatal — this round).
 - Printed props carrying five or six legible lines instead of four.

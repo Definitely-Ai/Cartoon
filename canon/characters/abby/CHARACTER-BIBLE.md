@@ -397,7 +397,7 @@ Note the address: *gentlemen*. She is fond of them and entirely unintimidated.
 - Lettering anywhere on Abby herself — blouse, collar or skirt
 - A house mark that sits ON a surface rather than IN it: a decal, sticker,
   patch or flat label that ignores the material, the curve and the light
-- A seventh LETTERED bottle: only the six roster names in the master prompt — BIRDIE BOURBON, DIVOT DRIVE GIN, LINKS RYE, FAIRWAY VODKA, SAND TRAP SCOTCH, EAGLE RUM — carry lettering, and every other bottle on the shelves wears a deliberately blank paper label — never invent a label, and never letter one that would read smaller than an eye
+- A LETTERED bottle: every bottle on the shelves wears a deliberately wordless label (see the master prompt) — never invent a name, a number or a mark that reads as writing
 - Another bartender, staff member, or any figure in the room besides this
   cartoon's cast — **the television screen excepted**, where broadcast footage
   may show people

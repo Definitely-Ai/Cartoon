@@ -101,8 +101,8 @@ function speakerNote(speaker: CastName): string {
  *  neutral is fine, sad never is; smiling when she serves or lands the line. */
 function abbyNote(hasAbby: boolean): string {
   return hasAbby
-    ? " Abby's face reads WARM — amused or at ease, NEVER sad or downcast; when she serves, delivers or " +
-      "lands the line she is genuinely SMILING."
+    ? " Abby is SMILING in this panel — an unmistakable smile, mouth corners up, eyes bright — NEVER sad, " +
+      "neutral or downcast; her beat is ACTIVE and cheerful: pouring, presenting a glass, laughing at her own line."
     : "";
 }
 

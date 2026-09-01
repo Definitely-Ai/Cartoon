@@ -14,24 +14,27 @@
   **visibly filled to different levels** — some near full, some half, a few
   low, the liquid line showing through the glass. A shelf of identical
   empties is a redraw.
-- **Every bottle wears a small plain paper label.** Label-shaped panels: the
-  shelf reads as labeled stock without one garbled glyph.
-- **Exactly SIX labels are lettered — the house roster**, spread along the
-  shelves, one name to a bottle: BIRDIE BOURBON, DIVOT DRIVE GIN, LINKS RYE,
-  FAIRWAY VODKA, SAND TRAP SCOTCH, EAGLE RUM. Every other label is
-  BLANK. A seventh name, a repeat or an invented name is a redraw. *(Operator
-  ruling 2026-09-01 — "we need more labels" — expanding the two-name answer
-  to the founder's "not labeled" note.)*
+- **Every bottle wears a plain label with NO words on it** — panels of varied
+  shape (tall, oval, banded, some with a plain dark stripe), never a letter,
+  number or pseudo-text. The panels print small; nothing on the shelf may
+  read. (Operator ruling 2026-09-01, superseding the six-name roster of
+  earlier that day.)
+- **Clean glassware beside the bottles:** a neat row of polished rocks glasses
+  and coupes, stemware hanging above — quiet, orderly, never cluttered.
+- **A compact tap tower** on the FAR service side toward frame-right: three or
+  four classy beer taps, polished brass and turned-wood handles, no lettering,
+  badge or logo. It never hides a face and never stands on the gentlemen's
+  side.
 - A bottle reaches the customer side only in Abby's hand or set down by her.
 
 ## What a caption may do to it
 
-Nothing. No gag bottle, no seventh label, no rearranged shelf. A drink the
+Nothing. No gag bottle, no lettered label, no rearranged shelf, no gag tap handle. A drink the
 gag needs arrives in a glass or in Abby's hand.
 
 ## Where this is enforced
 
 - Image model: THE ROOM and THE BAR IS ONE LEVEL paragraphs of the BASE fence.
 - Writer: the settings bible tells the writer never to write a gag needing a
-  seventh bottle name.
+  bottle name at all.
 - Inspection: checks 2 and 14 in `canon/INSPECTION.md`.
