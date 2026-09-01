@@ -12,7 +12,12 @@ the same window, showing the same city, in every bar cartoon.
 - **Through it: present-day New York City.** The strip is set TODAY. Glass-
   and-steel towers over older stone facades, a modern street — contemporary,
   unmistakably NYC, drawn in the same engraved hand.
-- **Nobody outside.** The street carries architecture and daylight, never
+- **The view begins ABOVE the street floor.** The bar sits high enough that
+  the glass shows building faces and daylight only — **no pavement, no
+  roadway, no sidewalk, no bollards, no street furniture**. If the street
+  floor is visible through the window, the room was drawn too low. (Operator
+  ruling 2026-09-01.)
+- **Nobody outside.** The view carries architecture and daylight, never
   people (the television screen remains the strip's only place for humans).
 - **The one mark it carries:** the bar's name mirrored on the glass as read
   from inside, spelled letter by letter — T-H-E S-W-I-N-G-I-N-G D-O-O-R, both

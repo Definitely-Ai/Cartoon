@@ -10,8 +10,12 @@
   ends run out of frame.
 - **One level.** No raised rail, no upper drink shelf, no second tier, no
   step. Everything on the bar stands on the one surface.
-- **Height:** the marble stands at each seated gentleman's mid-chest —
-  shoulders and arms clear above it, forearms resting on top.
+- **Height:** a real 42-inch bar — TALL. The marble's top edge crosses each
+  seated gentleman at MID-CHEST, a hand's width below the bow tie — shoulders
+  and arms clear above it, forearms resting on top. **A counter crossing at
+  the waist or belt means the whole room was drawn too low, and that is a
+  redraw.** (Operator ruling 2026-09-01: "they look like they are sitting
+  low — the bar needs to be raised up.")
 - **Sides:** Drew and Barclay sit at its NEAR (customer) side, their bodies
   blocking its near edge from the camera; Abby alone works the FAR (service)
   side, its far edge crossing her at the waist. An **empty walkway** always

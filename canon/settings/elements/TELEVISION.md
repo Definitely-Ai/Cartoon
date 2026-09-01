@@ -5,8 +5,11 @@ and SHOWS belongs to the day's joke, through two slots and nothing else.
 
 ## The constant part (never changes)
 
-- A wall-mounted flatscreen in a narrow bare black bezel, centred high above
-  the back bar. Nothing written on the frame or surround, ever.
+- A **LARGE** wall-mounted flatscreen in a narrow bare black bezel, centred
+  high above the back bar — **the WIDEST single thing on the back wall,
+  spanning the back bar's central bay**. A modest, furniture-sized set is
+  wrong. (Operator ruling 2026-09-01: "the tv needs to be bigger.") Nothing
+  written on the frame or surround, ever.
 - When it is on: full broadcast grammar — CNBC bug with LIVE tag, ONE
   bold-caps headline chyron on a lower-third band, time stamp. Never a
   ticker, never a second line.
