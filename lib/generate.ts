@@ -253,7 +253,13 @@ function multiRefInput(
       // the marble, and the chair backs sit, which is why the founder failed
       // nine of twenty-five panels with "they are not seated up to the bar".
       // Composing at 4:5 leaves cropAtTheCounter a no-op safety net.
-      aspect_ratio: process.env.IMAGE_ASPECT || "4:5",
+      // …EXCEPT that Replicate's openai/gpt-image-2 refuses it: the endpoint
+      // validates aspect_ratio against "1:1", "3:2", "2:3" only and answers 422
+      // to "4:5" (caught 2026-09-01 — every plate and panel request failed).
+      // So the model composes at 2:3 and cropAtTheCounter takes the bottom
+      // sixth: chair seats, not counter. The two finals of 2026-09-01 came
+      // through exactly this path with the gentlemen seated correctly.
+      aspect_ratio: process.env.IMAGE_ASPECT || "2:3",
       output_format: "png",
       number_of_images: 1,
     };
