@@ -37,6 +37,10 @@ run first via `node scripts/qc-batch.mjs <batch-folder>`.
    picture is CROPPED AT THE COUNTER: no legs, knees, feet, stool seats,
    footrests or floor anywhere; and when Abby is cast she stands while they
    sit, her head higher in the frame than theirs.
+   THE SLAB NEVER CROSSES A BODY: marble drawn across a gentleman's chest,
+   waist, vest or jacket — a man half sunk into the bar — is fatal; his whole
+   torso stands in front of the near edge and hides it (operator-caught
+   "they are half way sitting into it", 2026-09-01).
 5. **No door in the window.** The front window carries only the mirrored house
    name. No door drawn in it, beside it, or anywhere in frame.
 6. **Nothing floats.** Props rest on the marble or in a closed grip; nothing
