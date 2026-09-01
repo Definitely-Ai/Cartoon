@@ -10,6 +10,11 @@
   ends run out of frame.
 - **One level.** No raised rail, no upper drink shelf, no second tier, no
   step. Everything on the bar stands on the one surface.
+- **One straight plane.** Where the marble shows beside or between the
+  gentlemen it lines up exactly with the marble in front of them — same top
+  edge, same height, one unbroken line frame-left to frame-right. A slab
+  that steps up or sits higher beside Drew at the window end than in front
+  of him is a redraw. (Operator ruling 2026-09-01: "it's not aligned.")
 - **One marble surface in the whole room.** No back ledge, lower second
   counter, or work-top along the base of the back bar — the panelling meets
   the floor plain, and the walkway between is bare. (The plate roll of

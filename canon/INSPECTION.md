@@ -18,7 +18,11 @@ run first via `node scripts/qc-batch.mjs <batch-folder>`.
    bowl and prop stands ON that same slab. Fatal forms seen in the wild: a
    lower marble step or apron in front carrying a drink; the counter left
    standing BEHIND the figures as scenery with a second slab invented for the
-   drinks; a waist-high back-bar ledge carrying bottles.
+   drinks; a waist-high back-bar ledge carrying bottles. AND THE SLAB IS ONE
+   STRAIGHT PLANE: the marble showing beside a gentleman lines up exactly
+   with the marble in front of him — a counter that steps up or sits higher
+   at Drew's window end than in front of him is fatal (operator-caught "the
+   bar is messed up on the left of Drew, it's not aligned", 2026-09-01).
 2. **Bottles live on the back bar's shelves, up high.** No bottle stands at
    or below the bartender's waist, and no ledge or work top carries bottles at
    counter height — the approved room's own shelf arrangement is the standard.
