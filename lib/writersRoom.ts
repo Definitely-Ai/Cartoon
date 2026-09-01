@@ -251,9 +251,16 @@ THE CAST — exactly three, and no one else exists in this world:
 - abby: a West Highland white terrier who owns the bar and tends it. Behind her counter, towel and
   bottle are hers alone. She lands the driest lines because she has heard everything.
 
-THE JOKE. One turn per cartoon, and you must be able to name it: a COLLISION (two worlds meet and the
-wrong logic wins), a CONTRADICTION (someone says the opposite of what they are doing), or a THEFT (an
-ordinary phrase is stolen by a world it does not belong to). Money, markets, prices, fees, insurance and
+THE JOKE. One turn per cartoon, and you must be able to name it. SIX TURNS ARE AVAILABLE, and the
+founder has scored them: a THEFT (an ordinary phrase is stolen by a world it does not belong to), a
+COLLISION (two worlds meet and the wrong logic wins), a CONTRADICTION (someone says the opposite of what
+they are doing), a PROMOTION (a small indignity is described in the language of something grand — a fee
+becomes an equity stake, a queue becomes a membership), a HOUSE RULING (Abby answers the news with the
+bar's own arithmetic, mid-task, on a concrete bar object), and a DOWNGRADED WANT (the speaker asks for
+less than he came in for, cheerfully). THE PROMOTION AND THE HOUSE RULING ARE THE FOUNDER'S HIGHEST-SCORING
+TURNS — they beat everything else this room has shipped — so write more of them. NO SINGLE TURN TAKES MORE
+THAN A FIFTH OF THE BATCH: theft is this room's habit and it flattened the last batch by taking half.
+Money, markets, prices, fees, insurance and
 the quiet indignities of a comfortable life are the strip's subject. The humour is dry, adult, understated
 and never cruel, never crude, never a pun for its own sake, never a wisecrack that anyone could deliver.
 The wall pays the joke a second time; it never pays it the first time.
@@ -331,8 +338,10 @@ const SHAPE = `Each element of the array is an object with exactly these keys:
                as the caption, not a different golf joke. If the caption is about municipal bonds
                paying for a municipal course, the sign is about that. Two at most: a setting that
                letters five surfaces garbles three of them.
-  "turn"       three or four words naming the turn: "collision", "contradiction" or "theft", plus what
-               collides, contradicts or is stolen.
+  "turn"       three or four words naming the turn — one of "theft", "collision", "contradiction",
+               "promotion", "house ruling" or "downgraded want" — plus what is stolen, collides,
+               contradicts, is promoted, is ruled on or is settled for. The founder's ratings are
+               grouped by this word, so it must be one of the six.
 
 Rules the batch as a whole must obey:
 - Every caption is a DIFFERENT joke with a DIFFERENT turn. Variations on one idea are a failure, and in a
@@ -341,9 +350,14 @@ Rules the batch as a whole must obey:
   a bar bill, a roof, a premium, a fee, a fare, a rate, a tip, a receipt, a renewal, a deposit, a
   surcharge and a refund are twelve different subjects, not one.
 - Vary the speaker across the batch. Do not give every line to the same character.
-- Vary the cast: some panels are the two gentlemen, some bring Abby in.
-- In a BAR batch, at least half the cartoons carry a television or a chalkboard ECHOING the caption's
-  joke from another angle — never carrying it alone. (Does not apply to an away batch — see below.)
+- Vary the cast, and weight it to what scores: ABBY IS IN TWO PANELS OF EVERY FIVE, never fewer. A
+  three-hander with her working beyond the counter outscores a two-hander in the founder's own ratings.
+- In a BAR batch, AT MOST TWO IN THREE cartoons carry a television, and AT LEAST A THIRD CARRY NONE AT
+  ALL — set "tv" and "tvPicture" to "" for those. A batch where nearly every panel leans on a screen is
+  a batch of captions that could not stand up by themselves, and that is the batch the founder scored
+  three out of ten. At least a third of the cartoons carry a chalkboard. A screen or a board ECHOES the
+  caption's joke from another angle and NEVER carries it alone. (Does not apply to an away batch — see
+  below.)
 - If the brief names a place that is not the bar, EVERY cartoon in the batch is at that place, and there
   is no television and no chalkboard out there — set "tv", "tvPicture" and "board" to "" for all of them,
   and put the room's share of the joke in "signs" instead.`;

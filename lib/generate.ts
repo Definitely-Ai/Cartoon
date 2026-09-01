@@ -245,7 +245,15 @@ function multiRefInput(
       input_images: images,
       quality: quality || process.env.IMAGE_QUALITY || "medium",
       moderation: "low",
-      aspect_ratio: process.env.IMAGE_ASPECT || "2:3",
+      // 4:5 IS THE HOUSE SHAPE, AND IT MUST BE WHAT THE MODEL COMPOSES IN.
+      // This read "2:3" while cropAtTheCounter trims to width x 1.25, so every
+      // bar panel was composed tall and then had its bottom SIXTH cut off
+      // after the fact — 1024x1536 delivered as 1024x1280. That amputated band
+      // is exactly where the counter's near edge, the forearms and elbows on
+      // the marble, and the chair backs sit, which is why the founder failed
+      // nine of twenty-five panels with "they are not seated up to the bar".
+      // Composing at 4:5 leaves cropAtTheCounter a no-op safety net.
+      aspect_ratio: process.env.IMAGE_ASPECT || "4:5",
       output_format: "png",
       number_of_images: 1,
     };
