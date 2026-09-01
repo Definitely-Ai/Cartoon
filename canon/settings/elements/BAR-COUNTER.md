@@ -10,6 +10,10 @@
   ends run out of frame.
 - **One level.** No raised rail, no upper drink shelf, no second tier, no
   step. Everything on the bar stands on the one surface.
+- **One marble surface in the whole room.** No back ledge, lower second
+  counter, or work-top along the base of the back bar — the panelling meets
+  the floor plain, and the walkway between is bare. (The plate roll of
+  2026-09-01 produced exactly this fault; the fence now bans it by name.)
 - **Height:** a real 42-inch bar — TALL. The marble's top edge crosses each
   seated gentleman at MID-CHEST, a hand's width below the bow tie — shoulders
   and arms clear above it, forearms resting on top. **A counter crossing at

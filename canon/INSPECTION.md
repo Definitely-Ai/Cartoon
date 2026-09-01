@@ -71,8 +71,10 @@ run first via `node scripts/qc-batch.mjs <batch-folder>`.
 
 ### The lettering
 14. **Every word real and correctly spelled at a glance.** The window reads
-    THE SWINGING DOOR, mirrored, both G's present. At most two lettered
-    bottles — BIRDIE BOURBON and DIVOT DRIVE GIN — all others blank.
+    THE SWINGING DOOR, mirrored, both G's present. EXACTLY SIX lettered
+    bottles — BIRDIE BOURBON, DIVOT DRIVE GIN, LINKS RYE, FAIRWAY VODKA,
+    SAND TRAP SCOTCH, EAGLE RUM — all others wear blank paper labels. A
+    seventh name, a repeated name or an invented name is fatal.
 15. **Zero words inside the television picture.** The chyron carries all the
     screen's text; footage surfaces that would carry writing are drawn blank.
     The receipt-with-scribbled-rows is the classic form of this fault.
@@ -81,7 +83,9 @@ run first via `node scripts/qc-batch.mjs <batch-folder>`.
     means bare wiped slate. A lettered chalkboard or a live screen the plan
     left empty is model invention and fatal — one invented board sold hard
     drinking and the founder caught it. A board must never urge drinking hard,
-    fast or often.
+    fast or often. And the WHOLE board sits inside the picture — its wooden
+    frame visible on all four sides; a board cropped by the panel's edge is
+    fatal (operator-caught "half the chalk board is gone", 2026-09-01).
 17. **No pseudo-text anywhere** — no micro-writing, invented glyphs, or marks
     that merely look like letters, on any surface at any size.
 18. **Pure black and white.** Any colour anywhere is fatal (the mechanical
@@ -102,10 +106,10 @@ run first via `node scripts/qc-batch.mjs <batch-folder>`.
   founder wrote "I do not understand the TV picture" twice in one review.
 
 ## Accepted — never report
-- Unlettered bottles on the back bar. Exactly two carry names (check 14); the
-  rest are deliberately blank so the panel has no pseudo-text. The founder's
-  "not labeled" note (panel 11, 2026-08-29) is an OPEN QUESTION for him — do
-  not report it as a fault, and do not add labels until he rules.
+- Blank paper labels on unnamed bottles. Six bottles carry names (check 14);
+  the rest wear deliberately blank labels so the shelf reads as stocked
+  without pseudo-text (operator ruling 2026-09-01 — "we need more labels" —
+  superseding the 2026-08-29 open question).
 - Drew's bill shape, and Drew in one-eyed side profile.
 - Barclay in one-eyed three-quarter (minor note only, not fatal — this round).
 - Printed props carrying five or six legible lines instead of four.

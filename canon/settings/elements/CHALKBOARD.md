@@ -7,6 +7,9 @@ belongs to the day's joke, through one slot.
 
 - One chalkboard in a dark wooden frame, right of the television, above the
   back bar. Same board, same place, same size, every cartoon.
+- **The WHOLE board is in the picture**: its wooden frame visible on all four
+  sides, never cropped by the panel's edge. (Operator ruling 2026-09-01:
+  "half the chalk board is gone.")
 - Hand-lettered chalk serifs, real correctly spelled English, menu-shaped.
 
 ## The caption-driven part

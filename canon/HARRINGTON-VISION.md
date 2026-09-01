@@ -249,6 +249,12 @@ clientele's weekends:
   puns:
   OLD FORESTER, 10TH HOLE RYE, BIRDIE BOURBON, EAGLE EYE RYE, PAR-TEE SCOTCH,
   19TH HOLE RYE, DIVOT DRIVE GIN, HAZARD SPICED WHISKY — that register.
+  *(Operative roster fixed 2026-09-01, in this register: exactly SIX bottles
+  are lettered — BIRDIE BOURBON, DIVOT DRIVE GIN, LINKS RYE, FAIRWAY VODKA,
+  SAND TRAP SCOTCH, EAGLE RUM — and every other bottle wears a blank paper
+  label, so the shelf reads as stocked without garbled glyphs.
+  `canon/MASTER-PROMPT.md` carries the law; a name outside the six is a
+  redraw.)*
 - A **large flatscreen TV over the back bar** playing the news with full
   broadcast grammar — **DCN** network bug + **LIVE** tag, bold-caps headline
   chyron on a lower-third band, a smaller ticker sentence beneath, a time
