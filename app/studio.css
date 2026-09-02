@@ -1149,29 +1149,50 @@
   color: #8a7f6d;
 }
 
-/* A link that acts as a button: a thumb needs the whole target, not the
-   words. */
+/* A link that acts as a button: high-contrast readable white on dark */
+.backroom a.paper-btn,
 .paper-btn {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   min-height: 44px;
   font-size: 15px;
-  padding: 8px 18px;
-  border-radius: 4px;
+  font-weight: 600;
+  padding: 10px 22px;
+  border-radius: 5px;
   border: 1px solid #221d16;
-  background: #221d16;
-  color: #fdfbf6;
-  text-decoration: none;
+  background-color: #221d16 !important;
+  color: #fdfbf6 !important;
+  text-decoration: none !important;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.18);
+  transition: all 0.2s ease;
 }
 
+.backroom a.paper-btn:hover,
+.paper-btn:hover {
+  background-color: #3d3429 !important;
+  border-color: #3d3429;
+  color: #ffffff !important;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.28);
+}
+
+.backroom a.paper-btn-quiet,
 .paper-btn-quiet {
   display: inline-flex;
   align-items: center;
   min-height: 44px;
-  padding: 8px 12px;
+  padding: 8px 14px;
   font-size: 15px;
-  color: #6b6153;
-  text-decoration-color: #b9b0a0;
+  color: #5c5244 !important;
+  text-decoration: underline !important;
+  text-decoration-color: #b9b0a0 !important;
+  transition: color 0.15s ease;
+}
+
+.backroom a.paper-btn-quiet:hover,
+.paper-btn-quiet:hover {
+  color: #1a1612 !important;
 }
 
 @media (max-width: 700px) {

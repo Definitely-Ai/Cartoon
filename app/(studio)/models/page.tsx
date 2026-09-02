@@ -129,11 +129,24 @@ export default function ModelsPage() {
                     </li>
                   ))}
                 </ul>
-                <p style={{ margin: "auto 0 0", paddingTop: 16, display: "flex", flexWrap: "wrap", gap: 6, alignItems: "center" }}>
-                  <Link href={`/models/${member.key}`} className="paper-btn">
-                    Read {member.name}&rsquo;s full bible
+                <p style={{ margin: "auto 0 0", paddingTop: 16, display: "flex", flexWrap: "wrap", gap: 10, alignItems: "center" }}>
+                  <Link
+                    href={`/models/${member.key}`}
+                    className="paper-btn"
+                    style={{
+                      color: "#fdfbf6",
+                      backgroundColor: "#221d16",
+                      textDecoration: "none",
+                      fontWeight: 600,
+                    }}
+                  >
+                    Read {member.name}&rsquo;s full bible &rarr;
                   </Link>
-                  <a href={`/models/print/${member.key}`} className="paper-btn-quiet">
+                  <a
+                    href={`/models/print/${member.key}`}
+                    className="paper-btn-quiet"
+                    style={{ color: "#5c5244", textDecoration: "underline" }}
+                  >
                     Print it
                   </a>
                 </p>
