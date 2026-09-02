@@ -1,0 +1,10 @@
+Redraw @image1 as the SAME picture: the same two characters in the same poses and the same framing, the same room, the same window, the same bottles, sconces, panelling and marble counter. Antique steel-engraving cartoon style exactly as @image1: fine pen crosshatching and stippling, full tonal range, black-and-white only, no colour, no photographic rendering.
+Make ONLY these changes and nothing else:
+1. THE TELEVISION IS SWITCHED OFF. Its screen is one flat sheet of uniform dark grey glass with NOTHING on it: no logo, no lettering, no picture, no reflection, no chart.
+2. THE CHALKBOARD IS WIPED CLEAN: bare dark slate inside its wooden frame with no writing at all, no headline, no price, not a mark.
+3. EVERY BOTTLE LABEL IS WORDLESS: a plain paper panel, an oval, a band or a small crest — and not one letter, number or word on any of them.
+4. Both mouths are closed. Drew's bill is shut; Barclay's lips are closed in a soft smile. Drew and Barclay look at each other.
+5. Raise the crop slightly: the near edge of the marble counter, both forearms on the marble, the drinks and the nut bowl, and the top of BOTH studded club-chair backs are all fully inside the frame with a little clear space beneath them. The counter is ONE straight level slab across the picture. Nothing below the counter — no legs, no stool, no floor.
+6. Abby's plain white bar towel is not in this picture; nothing lies on the marble but the two drinks, their coasters and the nut bowl.
+@image2 shows the same bar empty, for the geometry of the counter and back bar only.
+No caption, no speech balloon and no typeset words anywhere; the ONLY lettering in the picture is the mirrored bar name on the window glass, exactly as in @image1.
