@@ -1210,3 +1210,116 @@
     box-shadow: none !important;
   }
 }
+
+/* ------------------------------------------- 13. Studio Dispatch Grid */
+
+.studio-dispatch-wrap {
+  max-width: 1040px;
+  margin: 1.75rem auto 3.5rem;
+  padding: 0 1.25rem;
+}
+
+.studio-dispatch-head {
+  text-align: center;
+  margin-bottom: 2.25rem;
+}
+
+.studio-dispatch-eyebrow {
+  font-family: var(--br-caps);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.85rem;
+  color: #c5a059;
+  margin-bottom: 0.35rem;
+}
+
+.studio-dispatch-title {
+  font-family: var(--br-serif);
+  font-size: clamp(2rem, 5vw, 2.75rem);
+  font-weight: 700;
+  color: var(--br-paper);
+  margin: 0 0 0.6rem;
+  letter-spacing: -0.01em;
+}
+
+.studio-dispatch-sub {
+  font-size: 1.05rem;
+  color: rgba(253, 251, 246, 0.78);
+  max-width: 680px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+.studio-dispatch-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 1.35rem;
+  margin-top: 1.75rem;
+}
+
+.studio-dispatch-card {
+  background: #1c1813;
+  border: 1px solid rgba(253, 251, 246, 0.15);
+  border-radius: 6px;
+  padding: 1.6rem;
+  text-decoration: none;
+  color: var(--br-paper);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.22s ease;
+  position: relative;
+}
+
+.studio-dispatch-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(197, 160, 89, 0.65);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.55);
+  background: #231e17;
+}
+
+.studio-dispatch-card-badge {
+  font-family: var(--br-caps);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #c5a059;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.studio-dispatch-card-title {
+  font-family: var(--br-serif);
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin: 0 0 0.45rem;
+  color: #fff;
+}
+
+.studio-dispatch-card-desc {
+  font-size: 0.92rem;
+  color: rgba(253, 251, 246, 0.72);
+  line-height: 1.45;
+  margin-bottom: 1.35rem;
+  flex: 1;
+}
+
+.studio-dispatch-card-action {
+  font-family: var(--br-caps);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #c5a059;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.studio-dispatch-footer-note {
+  text-align: center;
+  margin-top: 2.75rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid rgba(253, 251, 246, 0.1);
+  font-size: 0.92rem;
+  color: rgba(253, 251, 246, 0.65);
+}

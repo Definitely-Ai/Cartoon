@@ -1,4 +1,4 @@
-import { Suspense } from "react";
+﻿import { Suspense } from "react";
 import Link from "next/link";
 import { getStudioDays, getStudioToday, type StudioDay } from "@/lib/db";
 import { PublishError } from "@/lib/githubPublish";
@@ -10,15 +10,11 @@ import Waiting from "./Waiting";
 // studio database — a new batch appears the moment it's drawn.
 
 export const metadata = {
-  title: "Today",
+  title: "Today | The Swinging Door Studio",
 };
 
 export const dynamic = "force-dynamic";
 
-// The front door is the one page in this segment that waits on the database,
-// so the wait screen is wrapped around it here rather than dropped in a
-// loading.tsx — a loading file at this level would also come between him and
-// the cast pages, which are already on disk and need no waiting for.
 export default function StudioToday() {
   return (
     <Suspense fallback={<Waiting />}>
@@ -53,38 +49,69 @@ async function TodayTable() {
           )}
         </>
       ) : (
-        <section className="br-table">
-          <div className="br-table-head">
-            <h1 className="br-date">{setupNote ? "The table isn’t answering" : "Nothing on the table"}</h1>
-            {/* Two readers, two sentences: he needs to know whether anything
-                is wrong and what to do, and the operator needs the actual
-                complaint — which is no use to him at all in the same breath. */}
-            {setupNote ? (
-              <>
-                <p className="br-status">
-                  The studio&rsquo;s records aren&rsquo;t answering just now. Nothing is lost — try
-                  again in a minute.
-                </p>
-                <p className="br-hint">{setupNote}</p>
-              </>
-            ) : (
-              <p className="br-status">
-                Ask your AI for cartoons — &ldquo;make one where they&rsquo;re on a boat&rdquo; — and
-                they land here the moment they&rsquo;re drawn. (Hookup lives under{" "}
-                <Link href="/connect">Connect your AI</Link>.)
-              </p>
-            )}
-            {/* An empty table is not proof there is no work: a set drawn from
-                a written brief sits under Review, not here, and he has been
-                sent to score one before now. */}
-            <p className="br-howto">
-              If you were told new cartoons are ready, they&rsquo;re waiting on{" "}
-              <Link href="/review">Review</Link>. Browse the complete archive of 595+ generations in{" "}
-              <Link href="/gallery"><strong>The Image Vault</strong></Link>, or explore{" "}
-              <Link href="/collection">The Collection</Link>.
+        <div className="studio-dispatch-wrap">
+          <div className="studio-dispatch-head">
+            <p className="studio-dispatch-eyebrow">The Studio Dispatch</p>
+            <h1 className="studio-dispatch-title">The Swinging Door</h1>
+            <p className="studio-dispatch-sub">
+              {setupNote
+                ? "The live daily table is quiet right now, but the complete studio archive, proof desk, and character model sheets are ready below."
+                : "Welcome to the private studio workshop. Browse the complete image archive, inspect the verified final editions, or score pending briefs."}
             </p>
           </div>
-        </section>
+
+          <div className="studio-dispatch-grid">
+            <Link href="/gallery" className="studio-dispatch-card">
+              <span className="studio-dispatch-card-badge">612 Images · Cloud & Local</span>
+              <h2 className="studio-dispatch-card-title">The Image Vault</h2>
+              <p className="studio-dispatch-card-desc">
+                Browse every cartoon generated for the strip: finals, knockout runs, candidate tests, and real-time Replicate sync with prompt inspection.
+              </p>
+              <span className="studio-dispatch-card-action">Open Vault →</span>
+            </Link>
+
+            <Link href="/gallery?category=final" className="studio-dispatch-card">
+              <span className="studio-dispatch-card-badge">Production Master</span>
+              <h2 className="studio-dispatch-card-title">Final 20 Editions</h2>
+              <p className="studio-dispatch-card-desc">
+                The canonical Wall Street satire suites: 10 Trio scenes (A01–A10) and 10 Duo scenes (B01–B10) with complete chyrons and chalkboard menus.
+              </p>
+              <span className="studio-dispatch-card-action">View Finals →</span>
+            </Link>
+
+            <Link href="/review" className="studio-dispatch-card">
+              <span className="studio-dispatch-card-badge">Scoring Desk</span>
+              <h2 className="studio-dispatch-card-title">The Review Desk</h2>
+              <p className="studio-dispatch-card-desc">
+                Review pending batches, rate scene composition and captions against the studio standard, and inspect performance metrics.
+              </p>
+              <span className="studio-dispatch-card-action">Go to Review →</span>
+            </Link>
+
+            <Link href="/models" className="studio-dispatch-card">
+              <span className="studio-dispatch-card-badge">Harrington Vision</span>
+              <h2 className="studio-dispatch-card-title">The Cast & Bibles</h2>
+              <p className="studio-dispatch-card-desc">
+                Definitive reference studies and quality standards for Drew (flamingo), Barclay (golden retriever), and Abby (proprietor).
+              </p>
+              <span className="studio-dispatch-card-action">Inspect Cast →</span>
+            </Link>
+          </div>
+
+          <div className="studio-dispatch-footer-note">
+            <p>
+              To generate new daily cartoons with your assistant, connect via{" "}
+              <Link href="/connect" style={{ color: "#c5a059", textDecoration: "underline" }}>
+                Connect your AI
+              </Link>
+              . All historical editions are cataloged under{" "}
+              <Link href="/collection" style={{ color: "#c5a059", textDecoration: "underline" }}>
+                The Collection
+              </Link>
+              .
+            </p>
+          </div>
+        </div>
       )}
     </main>
   );
