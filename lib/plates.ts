@@ -381,25 +381,32 @@ export async function composeGag(input: {
 }
 
 /** A revision pass on a candidate plate: the picture is @image1 and only
- *  the named faults change. Used when a candidate is nearly right. */
-export function reviseDuoPrompt(): string {
+ *  the numbered changes happen. Used when a candidate is nearly right. */
+export function revisePrompt(changes: string[]): string {
   return [
-    "Redraw @image1 as the SAME picture: same two characters, same poses, same framing, same room, " +
-      "same switched-off television, same chalkboard exactly where it is. " + STYLE,
-    "Make ONLY these two changes and nothing else:",
-    "1. THE COUNTER. The marble counter runs from Barclay's side across the middle of the picture and " +
-      "ENDS AT DREW'S BODY: it does not continue past him to the left. To the LEFT of Drew there is NO " +
-      "marble at all — only the window wall and the window sill, and Drew's own chair back. The slab is " +
-      "ONE straight level surface between and in front of the two gentlemen, its near edge hidden by " +
-      "their bodies, with the drinks and nut bowl on it. Nothing marble shows behind Drew's back or past " +
-      "his left side.",
-    "2. THE BOTTLES. Every bottle on the back bar is a MODERN, REAL-LOOKING spirits bottle — the shapes " +
-      "of today's bourbon, gin, vodka, rye and scotch bottles, some tall, some squat, some square-" +
-      "shouldered, a few with a cork or a metal cap — filled to different levels. Each carries a modern " +
-      "printed label: a crest, a band, a medallion, a plain colour block with fine decorative lines, " +
-      "designed the way a real brand would design it. THE LABELS ARE NOT LEGIBLE: any text-like marks " +
-      "are too small and too fine to read, mere suggestion of type, and not one real letter, word or " +
-      "number appears anywhere on any bottle.",
+    "Redraw @image1 as the SAME picture: same characters, same poses, same framing, same room, " +
+      "same television, same chalkboard, same bottles, everything exactly where it is. " + STYLE,
+    `Make ONLY ${changes.length === 1 ? "this change" : "these changes"} and nothing else:`,
+    ...changes.map((c, i) => `${i + 1}. ${c}`),
     NO_TEXT,
   ].join("\n");
 }
+
+export const CHANGE = {
+  bottlesModern:
+    "THE BOTTLES. Every bottle on the back bar is a MODERN, REAL-LOOKING spirits bottle — the shapes " +
+    "of today's bourbon, gin, vodka, rye and scotch bottles, some tall, some squat, some square-" +
+    "shouldered, a few with a cork or a metal cap — filled to different levels. Each carries a modern " +
+    "printed label: a crest, a band, a medallion, a plain colour block with fine decorative lines, " +
+    "designed the way a real brand would design it. THE LABELS ARE NOT LEGIBLE: any text-like marks " +
+    "are too small and too fine to read, mere suggestion of type, and not one real letter, word or " +
+    "number appears anywhere on any bottle.",
+  counterFullWidth:
+    "THE COUNTER. The marble counter runs the FULL WIDTH of the picture, from the right edge past " +
+    "Barclay, between the two gentlemen, past Drew, all the way to the window wall at the left edge. " +
+    "It is ONE straight, level slab: its near edge and its far edge are two horizontal lines, the " +
+    "marble at exactly the same height beside Drew at the window end as in front of him. The " +
+    "gentlemen sit AT it on the near side: each man's torso stands in front of the slab's near edge " +
+    "and hides it where he sits, so the marble shows beside and between them, never as a band drawn " +
+    "across a chest. Drinks and the nut bowl on the slab. Nothing below the counter.",
+} as const;
