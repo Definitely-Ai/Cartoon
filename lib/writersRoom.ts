@@ -102,7 +102,8 @@ function speakerNote(speaker: CastName): string {
 function abbyNote(hasAbby: boolean): string {
   return hasAbby
     ? " Abby is SMILING in this panel — an unmistakable smile, mouth corners up, eyes bright — NEVER sad, " +
-      "neutral or downcast; her beat is ACTIVE and cheerful: pouring, presenting a glass, laughing at her own line."
+      "neutral or downcast; her beat is cheerful and her own: POLISHING A CLEAN GLASS with her plain white towel " +
+      "on the service side, or laughing at her own line — she NEVER pours into a gentleman's drink."
     : "";
 }
 
