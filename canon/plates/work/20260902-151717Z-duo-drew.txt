@@ -1,0 +1,5 @@
+Redraw @image1 as EXACTLY the same picture. Antique steel-engraving cartoon style exactly as @image1: fine pen crosshatching and stippling, full tonal range, black-and-white only, no colour, no photographic rendering.
+Make ONLY these changes: Drew is speaking. Drew's bill is SLIGHTLY PARTED, caught mid-word — the upper and lower mandible separate by a small gap along the outer half of the bill, the bill's shape otherwise unchanged.
+Barclay keeps the mouth CLOSED and looks at Drew: the eyes turned toward Drew's face.
+Every other pixel — the room, the counter, the bottles, the switched-off television, the blank chalkboard, the clothes, the hands, the drinks — stays exactly as in @image1.
+No caption, no speech balloon and no typeset words anywhere; the ONLY lettering in the picture is the mirrored bar name on the window glass, exactly as in @image1.
