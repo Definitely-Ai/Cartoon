@@ -1,0 +1,5 @@
+Redraw @image1 as EXACTLY the same picture. Antique steel-engraving cartoon style exactly as @image1: fine pen crosshatching and stippling, full tonal range, black-and-white only, no colour, no photographic rendering.
+Make ONLY these changes: Barclay is speaking. Barclay's mouth is OPEN mid-word — lips parted, a little of the dark inside of the mouth showing, no tongue, no teeth bared, the muzzle otherwise unchanged.
+Drew keeps the mouth CLOSED and looks at Barclay: the eyes turned toward Barclay's face.
+Every other pixel — the room, the counter, the bottles, the switched-off television, the blank chalkboard, the clothes, the hands, the drinks — stays exactly as in @image1.
+No caption, no speech balloon and no typeset words anywhere; the ONLY lettering in the picture is the mirrored bar name on the window glass, exactly as in @image1.
