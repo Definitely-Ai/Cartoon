@@ -21,7 +21,6 @@ export default function GalleryClient({
   const [hasMore, setHasMore] = useState<boolean>(true);
   const [loading, setLoading] = useState<boolean>(false);
   const [failedImages, setFailedImages] = useState<Set<string>>(new Set());
-  const [copiedPrompt, setCopiedPrompt] = useState<boolean>(false);
   const [isPending, startTransition] = useTransition();
 
   const fetchItems = useCallback(
@@ -135,13 +134,6 @@ export default function GalleryClient({
     return () => window.removeEventListener("keydown", onKeyDown);
   }, [selectedIndex, handlePrev, handleNext]);
 
-  const copyPrompt = (promptText?: string) => {
-    if (!promptText) return;
-    navigator.clipboard.writeText(promptText);
-    setCopiedPrompt(true);
-    setTimeout(() => setCopiedPrompt(false), 2200);
-  };
-
   const handleImageError = (id: string) => {
     setFailedImages((prev) => new Set(prev).add(id));
   };
@@ -154,7 +146,7 @@ export default function GalleryClient({
             <p className="gallery-eyebrow">Studio Prints & Master Archive</p>
             <h1 className="gallery-title">The Image Vault</h1>
             <p className="gallery-sub">
-              Curated finished cartoons, verified master reference plates, and production prints — sorted chronologically by time generated.
+              Verified finished cartoons and master reference plates — sorted chronologically by time generated.
             </p>
           </div>
           <div className="gallery-actions">
@@ -199,12 +191,6 @@ export default function GalleryClient({
                 onClick={() => handleCategoryChange("master")}
               >
                 Master Plates ({counts.masters || 10})
-              </button>
-              <button
-                className={`gallery-tab-btn ${category === "showcase" ? "active" : ""}`}
-                onClick={() => handleCategoryChange("showcase")}
-              >
-                Money Series ({counts.showcase || 10})
               </button>
             </div>
 
@@ -258,7 +244,7 @@ export default function GalleryClient({
                   </div>
                 )}
                 <span className={`gallery-badge ${item.category}`}>
-                  {item.category === "final" ? "FINAL" : item.category === "master" ? "MASTER" : "SERIES"}
+                  {item.category === "final" ? "FINAL" : "MASTER"}
                 </span>
                 {item.sceneType && (
                   <span className="gallery-scene-tag">{item.sceneType.toUpperCase()}</span>
@@ -320,7 +306,7 @@ export default function GalleryClient({
               <div className="gallery-modal-header">
                 <div>
                   <span className={`gallery-badge ${selectedItem.category}`}>
-                    {selectedItem.category === "final" ? "FINAL" : selectedItem.category === "master" ? "MASTER" : "SERIES"}
+                    {selectedItem.category === "final" ? "FINAL" : "MASTER"}
                   </span>
                   <h2 className="gallery-modal-title">{selectedItem.title}</h2>
                 </div>
@@ -368,18 +354,6 @@ export default function GalleryClient({
                 </div>
               )}
 
-              {selectedItem.prompt && (
-                <div className="gallery-meta-block">
-                  <div className="gallery-meta-label">Generation Prompt Snippet</div>
-                  <p
-                    className="gallery-meta-val"
-                    style={{ maxHeight: "110px", overflowY: "auto", fontSize: "0.8rem", whiteSpace: "pre-wrap" }}
-                  >
-                    {selectedItem.prompt}
-                  </p>
-                </div>
-              )}
-
               <div className="gallery-meta-block">
                 <div className="gallery-meta-label">Catalog Record</div>
                 <p className="gallery-meta-val">Generated: {selectedItem.formattedTime}</p>
@@ -398,11 +372,6 @@ export default function GalleryClient({
                 >
                   ⬇ Download Art
                 </a>
-                {selectedItem.prompt && (
-                  <button className="gallery-btn-secondary" onClick={() => copyPrompt(selectedItem.prompt)}>
-                    {copiedPrompt ? "✓ Copied!" : "📋 Copy Prompt"}
-                  </button>
-                )}
               </div>
             </div>
           </div>

@@ -4,7 +4,7 @@ import manifestItems from "@/lib/gallery-manifest.json";
 export interface GalleryItem {
   id: string;
   title: string;
-  category: "final" | "master" | "showcase";
+  category: "final" | "master";
   sceneType?: "trio" | "duo" | "solo" | "base";
   src: string;
   caption?: string;
@@ -13,10 +13,8 @@ export interface GalleryItem {
   board?: string;
   action?: string;
   turn?: string;
-  prompt?: string;
   timestamp: string;
   formattedTime: string;
-  model?: string;
 }
 
 export async function GET(request: NextRequest) {
@@ -45,10 +43,9 @@ export async function GET(request: NextRequest) {
     items = items.filter((item) => {
       const matchCaption = item.caption?.toLowerCase().includes(query);
       const matchTitle = item.title.toLowerCase().includes(query);
-      const matchPrompt = item.prompt?.toLowerCase().includes(query);
       const matchTv = item.tv?.toLowerCase().includes(query);
       const matchBoard = item.board?.toLowerCase().includes(query);
-      return matchCaption || matchTitle || matchPrompt || matchTv || matchBoard;
+      return matchCaption || matchTitle || matchTv || matchBoard;
     });
   }
 
@@ -80,7 +77,6 @@ export async function GET(request: NextRequest) {
       total: allItems.length,
       finals: allItems.filter((i) => i.category === "final").length,
       masters: allItems.filter((i) => i.category === "master").length,
-      showcase: allItems.filter((i) => i.category === "showcase").length,
     },
   });
 }

@@ -5,7 +5,7 @@ import "./gallery.css";
 
 export const metadata = {
   title: "The Image Vault | The Swinging Door",
-  description: "Curated collection of verified final editions, master reference plates, and studio archive.",
+  description: "Curated collection of verified final editions and master reference plates.",
 };
 
 export const dynamic = "force-dynamic";
@@ -17,7 +17,6 @@ export default function GalleryPage() {
     total: all.length,
     finals: all.filter((i) => i.category === "final").length,
     masters: all.filter((i) => i.category === "master").length,
-    showcase: all.filter((i) => i.category === "showcase").length,
   };
 
   return <GalleryClient initialItems={initialItems} initialCounts={initialCounts} />;

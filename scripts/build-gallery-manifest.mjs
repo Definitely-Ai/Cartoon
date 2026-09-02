@@ -23,17 +23,7 @@ function formatTime(iso) {
   });
 }
 
-function cleanPrompt(p) {
-  if (!p) return "";
-  if (p.length <= 1500) return p;
-  const sceneIdx = p.indexOf("THE SCENE:");
-  if (sceneIdx !== -1) {
-    return p.slice(sceneIdx, sceneIdx + 1500);
-  }
-  return p.slice(0, 1500) + "...";
-}
-
-// 1. Final Editions & Bases (STRICT QUALITY: NO alcohol gags, NO drink pouring, NO phantom Abby in Duo)
+// 1. Final Editions & Bases (STRICT QUALITY: Zero alcohol gags, zero drink pouring, no phantom Abby in Duo)
 const finalDir = path.join(galleryDir, "final");
 if (fs.existsSync(finalDir)) {
   const jokesFile = path.join(finalDir, "jokes-default.json");
@@ -115,7 +105,6 @@ if (fs.existsSync(finalDir)) {
   }
 
   // Duo Editions: ONLY True Duo cartoons (Drew & Barclay).
-  // Strictly excluded: B02, B04, B06, B10 which mistakenly included Abby / drink pouring.
   const trueDuoNums = ["B01", "B03", "B05", "B07", "B08", "B09"];
   for (const bNum of trueDuoNums) {
     const bFile = path.join(finalDir, `${bNum}-preview.jpg`);
@@ -173,41 +162,7 @@ if (fs.existsSync(visionDir)) {
   }
 }
 
-// 3. Completed Money Series (from public/gallery/briefs)
-const briefsDir = path.join(galleryDir, "briefs");
-if (fs.existsSync(briefsDir)) {
-  const planFile = path.join(briefsDir, "plan.json");
-  let plan = { panels: [] };
-  if (fs.existsSync(planFile)) {
-    try { plan = JSON.parse(fs.readFileSync(planFile, "utf8")); } catch {}
-  }
-  const planMap = new Map((plan.panels || []).map((p) => [p.file, p]));
-
-  for (let i = 1; i <= 10; i++) {
-    const files = fs.readdirSync(briefsDir);
-    const prefix = String(i).padStart(2, "0");
-    const file = files.find((f) => f.startsWith(prefix) && f.endsWith(".png"));
-    if (file) {
-      const panel = planMap.get(file) || {};
-      const mtime = new Date(Date.UTC(2026, 7, 31, 20, 45 + i, 0)).toISOString();
-      items.push({
-        id: `showcase-${prefix}`,
-        title: `Money Series #${prefix}`,
-        category: "showcase",
-        sceneType: panel.characters?.includes("abby") ? "trio" : "duo",
-        src: `/gallery/briefs/${file}`,
-        caption: panel.caption || panel.line || "",
-        tv: panel.tv || "",
-        board: panel.board || "",
-        prompt: cleanPrompt(panel.prompt || ""),
-        timestamp: mtime,
-        formattedTime: formatTime(mtime),
-      });
-    }
-  }
-}
-
-// 4. SORT STRICTLY BY TIME GENERATED (NEWEST FIRST)
+// 3. SORT STRICTLY BY TIME GENERATED (NEWEST FIRST)
 items.sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime());
 
 const jsonContent = JSON.stringify(items, null, 2);
