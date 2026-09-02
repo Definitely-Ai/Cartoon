@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useEffect, useState, useTransition, useCallback } from "react";
 import type { GalleryItem } from "@/app/api/gallery/route";
@@ -13,7 +13,6 @@ export default function GalleryClient({
   const [items, setItems] = useState<GalleryItem[]>(initialItems);
   const [counts, setCounts] = useState(initialCounts);
   const [category, setCategory] = useState<string>("all");
-  const [scene, setScene] = useState<string>("all");
   const [sortOrder, setSortOrder] = useState<"newest" | "oldest">("newest");
   const [search, setSearch] = useState<string>("");
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
@@ -21,15 +20,15 @@ export default function GalleryClient({
   const [hasMore, setHasMore] = useState<boolean>(true);
   const [loading, setLoading] = useState<boolean>(false);
   const [failedImages, setFailedImages] = useState<Set<string>>(new Set());
+  const [copiedPrompt, setCopiedPrompt] = useState<boolean>(false);
   const [isPending, startTransition] = useTransition();
 
   const fetchItems = useCallback(
-    async (cat: string, scn: string, srt: string, q: string, pg: number, append = false) => {
+    async (cat: string, srt: string, q: string, pg: number, append = false) => {
       setLoading(true);
       try {
         const params = new URLSearchParams({
           category: cat,
-          scene: scn,
           sort: srt,
           q,
           page: String(pg),
@@ -59,18 +58,15 @@ export default function GalleryClient({
     if (typeof window !== "undefined") {
       const sp = new URLSearchParams(window.location.search);
       const urlCat = sp.get("category");
-      const urlScene = sp.get("scene");
       const urlSort = sp.get("sort") as "newest" | "oldest" | null;
       const urlQ = sp.get("q") || "";
-      if (urlCat || urlScene || urlSort || urlQ) {
+      if (urlCat || urlSort || urlQ) {
         const cat = urlCat || "all";
-        const scn = urlScene || "all";
         const srt = urlSort || "newest";
         if (urlCat) setCategory(cat);
-        if (urlScene) setScene(scn);
         if (urlSort) setSortOrder(srt);
         if (urlQ) setSearch(urlQ);
-        fetchItems(cat, scn, srt, urlQ, 1, false);
+        fetchItems(cat, srt, urlQ, 1, false);
       }
     }
   }, [fetchItems]);
@@ -78,20 +74,14 @@ export default function GalleryClient({
   const handleCategoryChange = (newCat: string) => {
     setCategory(newCat);
     setPage(1);
-    fetchItems(newCat, scene, sortOrder, search, 1, false);
-  };
-
-  const handleSceneChange = (newScene: string) => {
-    setScene(newScene);
-    setPage(1);
-    fetchItems(category, newScene, sortOrder, search, 1, false);
+    fetchItems(newCat, sortOrder, search, 1, false);
   };
 
   const handleSortToggle = () => {
     const nextSort = sortOrder === "newest" ? "oldest" : "newest";
     setSortOrder(nextSort);
     setPage(1);
-    fetchItems(category, scene, nextSort, search, 1, false);
+    fetchItems(category, nextSort, search, 1, false);
   };
 
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -99,14 +89,14 @@ export default function GalleryClient({
     setSearch(q);
     setPage(1);
     startTransition(() => {
-      fetchItems(category, scene, sortOrder, q, 1, false);
+      fetchItems(category, sortOrder, q, 1, false);
     });
   };
 
   const handleLoadMore = () => {
     const nextPage = page + 1;
     setPage(nextPage);
-    fetchItems(category, scene, sortOrder, search, nextPage, true);
+    fetchItems(category, sortOrder, search, nextPage, true);
   };
 
   // Modal navigation
@@ -134,6 +124,13 @@ export default function GalleryClient({
     return () => window.removeEventListener("keydown", onKeyDown);
   }, [selectedIndex, handlePrev, handleNext]);
 
+  const copyPrompt = (promptText?: string) => {
+    if (!promptText) return;
+    navigator.clipboard.writeText(promptText);
+    setCopiedPrompt(true);
+    setTimeout(() => setCopiedPrompt(false), 2200);
+  };
+
   const handleImageError = (id: string) => {
     setFailedImages((prev) => new Set(prev).add(id));
   };
@@ -143,10 +140,10 @@ export default function GalleryClient({
       <div className="gallery-header">
         <div className="gallery-title-row">
           <div>
-            <p className="gallery-eyebrow">Studio Prints & Master Archive</p>
+            <p className="gallery-eyebrow">Studio Archive & Process</p>
             <h1 className="gallery-title">The Image Vault</h1>
             <p className="gallery-sub">
-              Verified finished cartoons and master reference plates — sorted chronologically by time generated.
+              Every cartoon cataloged with its generation prompt, background context, and design changes made.
             </p>
           </div>
           <div className="gallery-actions">
@@ -166,7 +163,7 @@ export default function GalleryClient({
             <input
               type="text"
               className="gallery-search-input"
-              placeholder="Search by caption, punchline, chyron, chalkboard menu, speaker..."
+              placeholder="Search by title, caption, changes, prompt, chyron, or chalkboard..."
               value={search}
               onChange={handleSearch}
             />
@@ -178,7 +175,7 @@ export default function GalleryClient({
                 className={`gallery-tab-btn ${category === "all" ? "active" : ""}`}
                 onClick={() => handleCategoryChange("all")}
               >
-                All Works ({counts.total || items.length})
+                All Prints ({counts.total || items.length})
               </button>
               <button
                 className={`gallery-tab-btn ${category === "final" ? "active" : ""}`}
@@ -190,28 +187,7 @@ export default function GalleryClient({
                 className={`gallery-tab-btn ${category === "master" ? "active" : ""}`}
                 onClick={() => handleCategoryChange("master")}
               >
-                Master Plates ({counts.masters || 10})
-              </button>
-            </div>
-
-            <div className="gallery-scene-pills">
-              <button
-                className={`gallery-pill-btn ${scene === "all" ? "active" : ""}`}
-                onClick={() => handleSceneChange("all")}
-              >
-                All Cast
-              </button>
-              <button
-                className={`gallery-pill-btn ${scene === "trio" ? "active" : ""}`}
-                onClick={() => handleSceneChange("trio")}
-              >
-                Trio (Drew, Barclay & Abby)
-              </button>
-              <button
-                className={`gallery-pill-btn ${scene === "duo" ? "active" : ""}`}
-                onClick={() => handleSceneChange("duo")}
-              >
-                Duo (Drew & Barclay)
+                Master Reference Plates ({counts.masters || 10})
               </button>
             </div>
           </div>
@@ -246,16 +222,13 @@ export default function GalleryClient({
                 <span className={`gallery-badge ${item.category}`}>
                   {item.category === "final" ? "FINAL" : "MASTER"}
                 </span>
-                {item.sceneType && (
-                  <span className="gallery-scene-tag">{item.sceneType.toUpperCase()}</span>
-                )}
               </div>
               <div className="gallery-card-body">
                 <h3 className="gallery-card-title">{item.title}</h3>
                 {item.caption && <p className="gallery-card-caption">&ldquo;{item.caption.replace(/^.*:\s*["“]?|["”]?$/g, "")}&rdquo;</p>}
                 <div className="gallery-card-meta-row">
                   <span>{item.formattedTime}</span>
-                  {item.sceneType && <span>{item.sceneType.toUpperCase()}</span>}
+                  <span style={{ color: "#c5a059" }}>Inspect Prompt & Changes →</span>
                 </div>
               </div>
             </div>
@@ -319,27 +292,50 @@ export default function GalleryClient({
                 </button>
               </div>
 
+              {/* Context: What was going on before */}
+              {selectedItem.before && (
+                <div className="gallery-meta-block gallery-meta-before">
+                  <div className="gallery-meta-label" style={{ color: "#e08266" }}>What Was Going on Before</div>
+                  <p className="gallery-meta-val" style={{ fontSize: "0.92rem", lineHeight: 1.5 }}>
+                    {selectedItem.before}
+                  </p>
+                </div>
+              )}
+
+              {/* Context: What changes were made */}
+              {selectedItem.changes && (
+                <div className="gallery-meta-block gallery-meta-changes">
+                  <div className="gallery-meta-label" style={{ color: "#68d391" }}>Changes & Fixes Applied</div>
+                  <p className="gallery-meta-val" style={{ fontSize: "0.92rem", lineHeight: 1.5 }}>
+                    {selectedItem.changes}
+                  </p>
+                </div>
+              )}
+
+              {/* Caption & Dialogue */}
               {selectedItem.caption && (
                 <div className="gallery-meta-block">
-                  <div className="gallery-meta-label">Attributed Dialogue & Caption</div>
+                  <div className="gallery-meta-label">Dialogue & Caption</div>
                   <p className="gallery-meta-val" style={{ fontStyle: "italic", fontSize: "1.08rem" }}>
                     {selectedItem.caption}
                   </p>
                 </div>
               )}
 
+              {/* Television Screen */}
               {selectedItem.tv && (
                 <div className="gallery-meta-block">
                   <div className="gallery-meta-label">Television Screen · Chyron</div>
                   <p className="gallery-meta-val" style={{ fontWeight: 600 }}>{selectedItem.tv}</p>
                   {selectedItem.tvPicture && (
                     <p className="gallery-meta-val" style={{ opacity: 0.82, marginTop: "0.35rem", fontSize: "0.85rem" }}>
-                      Visual: {selectedItem.tvPicture}
+                      Footage: {selectedItem.tvPicture}
                     </p>
                   )}
                 </div>
               )}
 
+              {/* Chalkboard Special */}
               {selectedItem.board && (
                 <div className="gallery-meta-block">
                   <div className="gallery-meta-label">Chalkboard Special</div>
@@ -347,6 +343,7 @@ export default function GalleryClient({
                 </div>
               )}
 
+              {/* Action Beat */}
               {selectedItem.action && (
                 <div className="gallery-meta-block">
                   <div className="gallery-meta-label">Staging Action Beat</div>
@@ -354,12 +351,30 @@ export default function GalleryClient({
                 </div>
               )}
 
+              {/* Generation Prompt */}
+              {selectedItem.prompt && (
+                <div className="gallery-meta-block gallery-meta-prompt">
+                  <div className="gallery-meta-label" style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                    <span>Generation Prompt</span>
+                    <button
+                      className="gallery-btn-inline-copy"
+                      onClick={() => copyPrompt(selectedItem.prompt)}
+                    >
+                      {copiedPrompt ? "✓ Copied" : "📋 Copy Prompt"}
+                    </button>
+                  </div>
+                  <p
+                    className="gallery-meta-val"
+                    style={{ maxHeight: "120px", overflowY: "auto", fontSize: "0.82rem", whiteSpace: "pre-wrap", fontFamily: "monospace" }}
+                  >
+                    {selectedItem.prompt}
+                  </p>
+                </div>
+              )}
+
               <div className="gallery-meta-block">
                 <div className="gallery-meta-label">Catalog Record</div>
                 <p className="gallery-meta-val">Generated: {selectedItem.formattedTime}</p>
-                {selectedItem.sceneType && (
-                  <p className="gallery-meta-val">Cast Staging: {selectedItem.sceneType.toUpperCase()}</p>
-                )}
               </div>
 
               <div className="gallery-modal-actions">

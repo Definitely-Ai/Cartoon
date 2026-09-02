@@ -1,11 +1,10 @@
-﻿import { NextRequest, NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import manifestItems from "@/lib/gallery-manifest.json";
 
 export interface GalleryItem {
   id: string;
   title: string;
   category: "final" | "master";
-  sceneType?: "trio" | "duo" | "solo" | "base";
   src: string;
   caption?: string;
   tv?: string;
@@ -13,6 +12,9 @@ export interface GalleryItem {
   board?: string;
   action?: string;
   turn?: string;
+  before?: string;
+  changes?: string;
+  prompt?: string;
   timestamp: string;
   formattedTime: string;
 }
@@ -20,7 +22,6 @@ export interface GalleryItem {
 export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
   const category = searchParams.get("category") || "all";
-  const scene = searchParams.get("scene") || "all";
   const sort = searchParams.get("sort") || "newest";
   const query = (searchParams.get("q") || "").toLowerCase().trim();
   const page = parseInt(searchParams.get("page") || "1", 10);
@@ -33,11 +34,6 @@ export async function GET(request: NextRequest) {
     items = items.filter((item) => item.category === category);
   }
 
-  // Filter by scene type
-  if (scene !== "all") {
-    items = items.filter((item) => item.sceneType === scene);
-  }
-
   // Filter by search query
   if (query) {
     items = items.filter((item) => {
@@ -45,7 +41,10 @@ export async function GET(request: NextRequest) {
       const matchTitle = item.title.toLowerCase().includes(query);
       const matchTv = item.tv?.toLowerCase().includes(query);
       const matchBoard = item.board?.toLowerCase().includes(query);
-      return matchCaption || matchTitle || matchTv || matchBoard;
+      const matchBefore = item.before?.toLowerCase().includes(query);
+      const matchChanges = item.changes?.toLowerCase().includes(query);
+      const matchPrompt = item.prompt?.toLowerCase().includes(query);
+      return matchCaption || matchTitle || matchTv || matchBoard || matchBefore || matchChanges || matchPrompt;
     });
   }
 
