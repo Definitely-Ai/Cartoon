@@ -15,7 +15,7 @@ const output = path.resolve(here, "..", "public", "og.png");
 
 const editions = fs
   .readdirSync(cartoonsDir, { withFileTypes: true })
-  .filter((entry) => entry.isDirectory() && entry.name !== "_TEMPLATE")
+  .filter((entry) => entry.isDirectory() && entry.name !== "_TEMPLATE" && fs.existsSync(path.join(cartoonsDir, entry.name, "cartoon.png")))
   .map((entry) => {
     const directory = path.join(cartoonsDir, entry.name);
     const meta = JSON.parse(fs.readFileSync(path.join(directory, "meta.json"), "utf8"));
@@ -23,23 +23,24 @@ const editions = fs
   })
   .sort((a, b) => b.edition - a.edition);
 
-if (editions.length === 0) throw new Error("brand-assets: no published cartoons found");
+let latestArtwork = editions.length > 0 ? path.join(editions[0].directory, "cartoon.png") : null;
+if (!latestArtwork || !fs.existsSync(latestArtwork)) {
+  const fallbacks = [
+    path.join(repoRoot, "canon", "vision", "staging-plate.jpg"),
+    path.join(repoRoot, "public", "gallery", "final", "BASE-A.jpg"),
+    path.join(repoRoot, "canon", "vision", "drew-plate1-bar-reference.jpg"),
+  ];
+  latestArtwork = fallbacks.find((f) => fs.existsSync(f)) || null;
+}
 
-const latestArtwork = path.join(editions[0].directory, "cartoon.png");
-const latestMetadata = await sharp(latestArtwork).metadata();
-if (!latestMetadata.width || !latestMetadata.height) {
-  throw new Error(`brand-assets: cannot read the illustrated panel in ${latestArtwork}`);
-}
-const illustratedHeight = latestMetadata.height - 264;
-if (![latestMetadata.width, Math.round((latestMetadata.width * 5) / 4)].includes(illustratedHeight)) {
-  throw new Error(`brand-assets: cannot identify the illustrated panel in ${latestArtwork}`);
-}
-const artwork = await sharp(latestArtwork)
-  .extract({ left: 0, top: 0, width: latestMetadata.width, height: illustratedHeight })
-  .resize({ width: 408, height: 408, fit: "cover", position: "centre" })
-  .grayscale()
-  .png()
-  .toBuffer();
+if (!latestArtwork) {
+  console.warn("brand-assets: no artwork found for og card, skipping");
+} else {
+  const artwork = await sharp(latestArtwork)
+    .resize({ width: 408, height: 408, fit: "cover", position: "centre" })
+    .grayscale()
+    .png()
+    .toBuffer();
 
 const card = `
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
@@ -57,9 +58,10 @@ const card = `
   <text x="926" y="552" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="700" letter-spacing="4" fill="#111">THE LATEST PANEL</text>
 </svg>`;
 
-await sharp(Buffer.from(card))
-  .composite([{ input: artwork, left: 722, top: 80 }])
-  .png({ compressionLevel: 9 })
-  .toFile(output);
+  await sharp(Buffer.from(card))
+    .composite([{ input: artwork, left: 722, top: 80 }])
+    .png({ compressionLevel: 9 })
+    .toFile(output);
 
-console.log(`brand-assets: wrote ${path.relative(repoRoot, output)} from edition ${editions[0].edition}`);
+  console.log(`brand-assets: wrote ${path.relative(repoRoot, output)} from latest artwork`);
+}

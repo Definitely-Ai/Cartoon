@@ -1,0 +1,537 @@
+[
+  {
+    "score": 16.0,
+    "speaker": "barclay",
+    "caption": "Energy was today's only winner, and I'm short it through the Suburban.",
+    "tv": "TEN OF ELEVEN S&P SECTORS FALL TO OPEN SEPTEMBER",
+    "tvPicture": "A gas pump with its nozzle hung in the cradle, the price display blank.",
+    "board": "REGULAR, FRIDAY $61 · REGULAR, TUESDAY $74 · PAY AT THE PUMP",
+    "characters": [
+      "drew",
+      "barclay",
+      "abby"
+    ],
+    "action": "Barclay, earnest and resigned, swirls the ice in his old fashioned; Drew, deadpan, studies him over the rim of his martini; Abby, laughing, tops up the nut bowl in front of Barclay with a generous shake.",
+    "turn": "THEFT at wallet height — a gas bill filed as a short position; the one winning sector is the one he is on the wrong side of.",
+    "topic": "energy sector",
+    "writer": "oil-and-september"
+  },
+  {
+    "score": 15.0,
+    "speaker": "abby",
+    "caption": "Wall Street has you two down as discretionary. On my books you're utilities.",
+    "tv": "CONSUMER DISCRETIONARY WORST SECTOR IN SEPTEMBER SELLOFF",
+    "tvPicture": "A red sports car on a dealer's turntable under showroom spotlights, no plates.",
+    "board": "PEAK HOURS 4–7 · OLD FASHIONED, METERED $18 · RATES SET BY COMMISSION",
+    "characters": [
+      "drew",
+      "barclay",
+      "abby"
+    ],
+    "action": "Abby, laughing at her own line, pours Barclay's old fashioned from a mixing glass in a long showy pour; Drew, deadpan, inclines his head as if accepting a reclassification; Barclay, earnest, sits up a little straighter, flattered, martini and old fashioned the only things on the marble.",
+    "turn": "THEFT — the regulars are reclassified out of the market's worst sector into its most defensive one, by the only person who keeps the books.",
+    "topic": "sector rotation",
+    "writer": "oil-and-september"
+  },
+  {
+    "score": 13.0,
+    "speaker": "barclay",
+    "caption": "I don't mind a rate hike. I'd just like two years of waiting for a cut counted as time served.",
+    "tv": "MARKETS NOW PRICE RATE HIKES, NOT CUTS",
+    "tvPicture": "A row of empty chairs in a waiting room under a plain wall clock.",
+    "board": "EASING $9 — DISCONTINUED 2024\nTIGHTENING — MARKET PRICE\nNO SUBSTITUTIONS",
+    "characters": [
+      "drew",
+      "barclay"
+    ],
+    "action": "Barclay, resigned but pleasant, turns his old fashioned a quarter-turn on its coaster; Drew, amused, lifts his martini an inch in salute to the request.",
+    "turn": "THEFT — two years of waiting on the Fed filed as a prison sentence; the Cheerful Concession grants the cost and asks for credit.",
+    "topic": "hike repricing",
+    "writer": "fed-and-rates"
+  },
+  {
+    "score": 13.0,
+    "speaker": "drew",
+    "caption": "The Dow lost eight-tenths today, its September average to the decimal — somebody did the reading.",
+    "tv": "SEPTEMBER: HISTORICALLY WALL STREET'S WORST MONTH",
+    "tvPicture": "A wall calendar with one page freshly turned over, its squares blank.",
+    "board": "FALL SURPRISE $16 · DISCONTINUED 1950 · ASK ABOUT OCTOBER",
+    "characters": [
+      "drew",
+      "barclay",
+      "abby"
+    ],
+    "action": "Drew, deadpan, bill slightly parted, tips his martini a quarter-inch toward the screen without taking his eyes off it; Barclay, earnest and faintly pained, cups his old fashioned in both paws; Abby, beaming, shakes a fresh scoop of nuts into the bowl between them.",
+    "turn": "PROMOTION — a decline that lands on the historical average to the decimal is promoted into diligence: the market did its homework.",
+    "topic": "September effect",
+    "writer": "oil-and-september"
+  },
+  {
+    "score": 13.0,
+    "speaker": "barclay",
+    "caption": "I'm not chasing this dip, Drew. I only bought the first two.",
+    "tv": "CHIP STOCKS DROP AGAIN; STRATEGISTS SAY BUY WEAKNESS",
+    "tvPicture": "a single falling line on a blank chart, axes bare",
+    "board": "RESOLVED TO SIT OUT: 3 · ACTUALLY SAT OUT: 0",
+    "characters": [
+      "drew",
+      "barclay",
+      "abby"
+    ],
+    "action": "Barclay, sincere, lifts his old fashioned as if toasting his own restraint; Drew, one eyebrow up, sips his martini; Abby, chuckling, tops off Barclay's water glass.",
+    "turn": "UNNOTICED CONTRADICTION — the accounting (two already) refutes the abstention in the same breath.",
+    "topic": "buying the dip",
+    "writer": "ai-and-chips"
+  },
+  {
+    "score": 13.0,
+    "speaker": "drew",
+    "caption": "There's something nostalgic about watching Nvidia trade like a chip company.",
+    "tv": "SEMICONDUCTOR STOCKS SLIDE ON TAIWAN TARIFF NEWS",
+    "tvPicture": "a factory smokestack against a plain sky",
+    "board": "THE MOAT $31 — DRAINED · REFILL DUE: NEXT EARNINGS",
+    "characters": [
+      "drew",
+      "barclay"
+    ],
+    "action": "Drew, wistful for exactly one second, tilts his martini toward the screen; Barclay, puzzled, peers into his old fashioned as though the answer sank.",
+    "turn": "EMOTIONAL MISFILE — nostalgia attached to a demotion; 'chip company' is the demotion.",
+    "topic": "Nvidia repricing",
+    "writer": "ai-and-chips"
+  },
+  {
+    "score": 12.0,
+    "speaker": "abby",
+    "caption": "I can hold your tab till the sixteenth. I can't hold the price.",
+    "tv": "FED ON PAUSE; NEXT DECISION MID-SEPTEMBER",
+    "tvPicture": "An hourglass on a plain shelf, sand halfway through.",
+    "board": "OLD FASHIONED $16\nCARRY, PER NIGHT $1\nSETTLES MID-MONTH",
+    "characters": [
+      "drew",
+      "barclay",
+      "abby"
+    ],
+    "action": "Abby, beaming, presents Barclay's old fashioned with a flourish and keeps talking; Barclay brightens at the first sentence and deflates at the second; Drew's beak dips toward his martini, eyes on Barclay.",
+    "turn": "COLLISION on hold — the Fed holds; Abby holds the tab, not the price. The House Ruling: macro question, bar arithmetic, mid-pour.",
+    "topic": "Fed hold",
+    "writer": "fed-and-rates"
+  },
+  {
+    "score": 12.0,
+    "speaker": "barclay",
+    "caption": "I bought AI infrastructure for the future. Today I'd settle for a hard hat.",
+    "tv": "DATA-CENTER BUILDOUT NAMES FALL ON CHIP TARIFFS",
+    "tvPicture": "a long windowless warehouse with rows of rooftop cooling fans",
+    "board": "THE DATA CENTER $22 · CHIPS SOLD SEPARATELY · POWER NOT INCLUDED",
+    "characters": [
+      "drew",
+      "barclay",
+      "abby"
+    ],
+    "action": "Barclay, hopeful, cradles his old fashioned in both hands; Drew, dry, regards him sidelong over the martini; Abby, laughing at the line, slides the nut bowl across the marble to Barclay.",
+    "turn": "DOWNGRADED WANT — the future swapped for the smallest physical thing infrastructure should have come with.",
+    "topic": "AI infrastructure",
+    "writer": "ai-and-chips"
+  },
+  {
+    "score": 12.0,
+    "speaker": "abby",
+    "caption": "I don't stock panic, gentlemen. Everything on that wall is aged.",
+    "tv": "WEDBUSH: CHIP SELLOFF IS 'SHORT-TERM PANIC'",
+    "tvPicture": "a red fire-alarm pull handle on a bare, unlabeled wall",
+    "board": "12 YEAR $18 · 18 YEAR $26 · 12 MINUTES — NOT CARRIED",
+    "characters": [
+      "drew",
+      "barclay",
+      "abby"
+    ],
+    "action": "Abby, delighted with herself, reaches a tall bottle down from the back bar; Drew, deadpan, raises his martini a half-inch in tribute; Barclay, reassured, settles back with his old fashioned.",
+    "turn": "COLLISION on 'aged' — the whiskey wall and the long-term holder in one word; the House Ruling as a sell.",
+    "topic": "short-term panic",
+    "writer": "ai-and-chips"
+  },
+  {
+    "score": 11.0,
+    "speaker": "barclay",
+    "caption": "I'm holding out for a five percent mortgage. We close Friday at six point six six.",
+    "tv": "MORTGAGE RATES CLIMB AS HIKE BETS GROW",
+    "tvPicture": "A two-story colonial house behind a trimmed lawn, front door shut.",
+    "board": "HAPPY HOUR 4–7\nLOCKED THIRTY YEARS\n$14, PLUS POINTS",
+    "characters": [
+      "drew",
+      "barclay",
+      "abby"
+    ],
+    "action": "Barclay, upbeat, raises his old fashioned as if announcing good news; Abby laughs and points the bar spoon at him in congratulation; Drew, deadpan, nudges his martini a coaster's width away from the celebration.",
+    "turn": "CONTRADICTION he does not notice — holding out for five, closing Friday at 6.66; the action falsifies the claim in five words.",
+    "topic": "mortgage rates",
+    "writer": "fed-and-rates"
+  },
+  {
+    "score": 11.0,
+    "speaker": "drew",
+    "caption": "The Fed remains on hold in concept, tightening in the minutes.",
+    "tv": "GLOBAL BOND YIELDS SOAR; RATE HIKE BETS RISE",
+    "tvPicture": "The television picture shows a stone government building with tall columns.",
+    "board": "PAUSE HOUR 4–7 · EVERY POUR $14, UNCHANGED · THREE OF TWELVE STAFF WANT $15",
+    "characters": [
+      "drew",
+      "barclay",
+      "abby"
+    ],
+    "action": "Drew, deadpan, holds his martini perfectly still; Barclay, uneasy, watches the ice shift in his old fashioned; Abby, grinning, holds up three fingers to the pair as if polling the room.",
+    "turn": "Status Report — the institution's stated posture and its own paperwork, filed side by side",
+    "topic": "Fed, rate hikes",
+    "writer": "tariffs"
+  },
+  {
+    "score": 11.0,
+    "speaker": "drew",
+    "caption": "The Dow did its whole September on the first, so the other twenty-nine days are optional.",
+    "tv": "STOCKS OPEN SEPTEMBER LOWER; DOW FALLS 0.8%",
+    "tvPicture": "The television picture shows a bronze bull statue on a cobblestone street.",
+    "board": "THE WORST MONTH $30 · DELIVERED TUESDAY, ALL OF IT · NO REFILLS UNTIL OCTOBER",
+    "characters": [
+      "drew",
+      "barclay"
+    ],
+    "action": "Drew, serene, folds his napkin and lays it beside his martini as though closing a ledger; Barclay, cautiously hopeful, cradles his old fashioned and glances toward the door as if the month might actually leave.",
+    "turn": "THEFT — a monthly average filed as a quota, met on day one",
+    "topic": "September selloff",
+    "writer": "tariffs"
+  },
+  {
+    "score": 11.0,
+    "speaker": "drew",
+    "caption": "Our tariff on Taiwan works out to a cover charge at the only bar in town.",
+    "tv": "NEW U.S. TARIFFS TARGET CHIPS FROM CHINA AND TAIWAN",
+    "tvPicture": "a single computer chip, close up, on a dark background",
+    "board": "ADMISSION 41% · PAYABLE BY THE GUEST · SECOND DOOR: NONE",
+    "characters": [
+      "drew",
+      "barclay",
+      "abby"
+    ],
+    "action": "Drew, bill parted, delivers it to his martini without looking up; Barclay, brows raised, holds his old fashioned an inch off its coaster; Abby, beaming, scoops fresh ice from the well into a rocks glass behind the bar.",
+    "turn": "THEFT — a tariff on the sole supplier refiled as a cover charge we pay to get in anyway.",
+    "topic": "chip tariffs",
+    "writer": "ai-and-chips"
+  },
+  {
+    "score": 10.0,
+    "speaker": "barclay",
+    "caption": "I asked for a raise in January, and so far the Fed's is the only one with three votes.",
+    "tv": "FED HOLDS AT 3.50–3.75%; DISSENTERS WANT HIKE",
+    "tvPicture": "The marble front of the Federal Reserve building, flag out front, steps empty.",
+    "board": "MARTINI $18 — CARRIED\nTHE DISSENT $19 — MINORITY SEATING",
+    "characters": [
+      "drew",
+      "barclay",
+      "abby"
+    ],
+    "action": "Barclay, sheepish and pleased with himself, lifts his old fashioned in a small toast to nobody; Drew studies his martini, deadpan, bill slightly parted; Abby laughs and drops a cherry into Barclay's glass as if awarding it.",
+    "turn": "COLLISION on raise — his comp review and the Fed's hike are the same word, and only one of them has votes.",
+    "topic": "Fed dissent",
+    "writer": "fed-and-rates"
+  },
+  {
+    "score": 10.0,
+    "speaker": "drew",
+    "caption": "The CPI on the tenth is just the check for August, and we've already eaten.",
+    "tv": "INFLATION REPORT DUE THURSDAY; FED WATCHING",
+    "tvPicture": "A grocery cart heaped with groceries parked in an empty supermarket aisle.",
+    "board": "DINNER $62\nDINNER, SEASONALLY ADJUSTED $58\nCORE DINNER, EX-DRINKS $41",
+    "characters": [
+      "drew",
+      "barclay",
+      "abby"
+    ],
+    "action": "Drew delivers it to the room, martini untouched, bill slightly parted; Barclay peers into his old fashioned like a man reading a receipt; Abby, smiling, slides the nut bowl toward them with the good half facing Barclay.",
+    "turn": "THEFT — a statistic renamed as the check for a meal already eaten; the Deflationary Definition with 'just' as the demotion marker.",
+    "topic": "CPI print",
+    "writer": "fed-and-rates"
+  },
+  {
+    "score": 10.0,
+    "speaker": "drew",
+    "caption": "We all say the Fed meeting won't matter, and then none of us orders until Wednesday afternoon.",
+    "tv": "FOMC MEETS SEPT 15–16; STREET BRACES",
+    "tvPicture": "An empty wooden podium in front of a blue curtain.",
+    "board": "ROUNDS POURED TONIGHT: 2\nROUNDS AWAITING GUIDANCE: 31",
+    "characters": [
+      "drew",
+      "barclay",
+      "abby"
+    ],
+    "action": "Abby stands ready with the shaker, laughing at the two of them; Drew, deadpan, has his martini at the same level it was an hour ago; Barclay watches the TV, old fashioned untouched, the ice melted to slivers.",
+    "turn": "COLLISION on orders inside a Practice Swing — we call it a non-event and then freeze every order until it is over; the speaker takes the swing too.",
+    "topic": "FOMC meeting",
+    "writer": "fed-and-rates"
+  },
+  {
+    "score": 10.0,
+    "speaker": "abby",
+    "caption": "Canada is welcome to tax my oysters, gentlemen. They've never been north of Fourteenth Street.",
+    "tv": "CANADA TO TARIFF 700 U.S. GOODS FROM SEPT 8",
+    "tvPicture": "The television picture shows a single lobster on a bed of crushed ice.",
+    "board": "BLUE POINTS $4 EACH · BLUE POINTS, EXPORT GRADE $6 · OFFERED NIGHTLY, NOT ONCE SHIPPED",
+    "characters": [
+      "drew",
+      "barclay",
+      "abby"
+    ],
+    "action": "Abby, laughing at her own line, presents Barclay's old fashioned with a small flourish, plain white towel over her shoulder; Barclay, delighted, reaches for the glass; Drew, deadpan, lifts his martini an inch in salute.",
+    "turn": "House Ruling — a retaliatory export tax ruled moot by oysters that never leave the neighborhood",
+    "topic": "Canada, seafood",
+    "writer": "tariffs"
+  },
+  {
+    "score": 10.0,
+    "speaker": "barclay",
+    "caption": "I own Nvidia, Broadcom and Marvell, so this is the first tariff I've paid before anything shipped.",
+    "tv": "CHIP STOCKS SLIDE ON NEW CHINA, TAIWAN TARIFFS",
+    "tvPicture": "The television picture shows a bare green circuit board with one large square chip.",
+    "board": "THE SEMICONDUCTOR $22 · COLLECTED AT THE RAIL · GOODS TO FOLLOW",
+    "characters": [
+      "drew",
+      "barclay"
+    ],
+    "action": "Barclay, rueful, taps the edge of his coaster like a card reader while his old fashioned sits untouched; Drew, deadpan, nudges the nut bowl toward him as if delivering the goods, martini steady in his other wing.",
+    "turn": "COLLISION on paid — the tariff debits his brokerage before customs sees a chip",
+    "topic": "chip tariffs",
+    "writer": "tariffs"
+  },
+  {
+    "score": 10.0,
+    "speaker": "barclay",
+    "caption": "Oil went through ninety-five this morning, and I'm long exactly one tank of regular.",
+    "tv": "OIL TOPS $95 ON STRAIT OF HORMUZ TENSIONS",
+    "tvPicture": "The television picture shows an oil tanker on open water.",
+    "board": "THE FILL-UP, LAST WEEK $54 · THE FILL-UP, TUESDAY $61 · HOLDERS OF THE FORMER: STOOL TWO",
+    "characters": [
+      "drew",
+      "barclay"
+    ],
+    "action": "Barclay, quietly pleased, pats the jacket pocket where his car keys are, old fashioned in the other hand; Drew, deadpan, raises his martini in a small toast.",
+    "turn": "COLLISION on long — a full tank filed as the day's only winning position",
+    "topic": "oil, energy",
+    "writer": "tariffs"
+  },
+  {
+    "score": 10.0,
+    "speaker": "barclay",
+    "caption": "We all complain September is the worst month and then we sell on the first.",
+    "tv": "DOW FALLS 0.8% TO OPEN SEPTEMBER",
+    "tvPicture": "a bare tree dropping its first leaves onto an empty sidewalk",
+    "board": "OLD FASHIONED, AUGUST $16 · OLD FASHIONED, NOW $15.87 · SEASONAL ADJUSTMENT SINCE 1950",
+    "characters": [
+      "drew",
+      "barclay"
+    ],
+    "action": "Barclay, earnest and a little rueful, turns his old fashioned a quarter-turn on its coaster; Drew, deadpan, watches the television and lifts his martini an inch.",
+    "turn": "PRACTICE SWING — the complaint about September and the selling on the first are the same act, speaker included.",
+    "topic": "September selloff",
+    "writer": "ai-and-chips"
+  },
+  {
+    "score": 10.0,
+    "speaker": "abby",
+    "caption": "That ice machine draws forty dollars a night in power, and I have never sold a cube.",
+    "tv": "ENERGY ONLY SECTOR HIGHER AS AI NAMES SLIDE",
+    "tvPicture": "high-voltage transmission towers marching across a flat field",
+    "board": "THE MODEL $14 · THE ELECTRIC BILL $14 · ROCKS — COMPLIMENTARY",
+    "characters": [
+      "drew",
+      "barclay",
+      "abby"
+    ],
+    "action": "Abby, smiling wide, hefts a fresh scoop of ice from the machine into the well; Drew, amused, lifts his martini in salute; Barclay, sympathetic, nods over his old fashioned.",
+    "turn": "ITEMISED BILL — AI capital spending broken into the bar's own numbers: all power, product given away.",
+    "topic": "AI power costs",
+    "writer": "ai-and-chips"
+  },
+  {
+    "score": 9.0,
+    "speaker": "barclay",
+    "caption": "Every year we agree September is the worst month, then we all come back from the Hamptons and sell.",
+    "tv": "SEPTEMBER'S FIRST SESSION OPENS IN THE RED",
+    "tvPicture": "An empty beach with a row of closed umbrellas and an unoccupied lifeguard chair.",
+    "board": "RETURNED FROM THE SHORE: 41 · RETURNED TO THE MARKET: 3",
+    "characters": [
+      "drew",
+      "barclay",
+      "abby"
+    ],
+    "action": "Barclay, earnest, lifts his old fashioned in a small confessional gesture as he speaks; Drew, deadpan, regards him sidelong over the rim of his martini; Abby, laughing, twists an orange peel over Barclay's glass with a flourish.",
+    "turn": "PRACTICE SWING — the group's complaint and the group's behaviour are the same act; we sell the September we dread, speaker included.",
+    "topic": "September selling",
+    "writer": "oil-and-september"
+  },
+  {
+    "score": 9.0,
+    "speaker": "drew",
+    "caption": "Energy independence remains ours in the ground and theirs at the pump.",
+    "tv": "CRUDE TOPS $95 AFTER STRAIT OF HORMUZ ATTACKS",
+    "tvPicture": "An oil pumpjack nodding alone in a flat field under a wide sky.",
+    "board": "WEST TEXAS SOUR $14 · PERSIAN GULF SOUR $14 · PRICE LIST PRINTED ABROAD",
+    "characters": [
+      "drew",
+      "barclay"
+    ],
+    "action": "Drew, deadpan, bill slightly parted, turns his martini a quarter-turn by the stem as he delivers the verdict; Barclay, earnest, pats his jacket for his wallet without noticing he is doing it, his old fashioned untouched on its coaster.",
+    "turn": "STATUS REPORT — two parallel clauses, the first the policy and the second the receipt; the contradiction sits in the gap between them.",
+    "topic": "oil, Hormuz",
+    "writer": "oil-and-september"
+  },
+  {
+    "score": 9.0,
+    "speaker": "drew",
+    "caption": "Bank of America is stressing a key level, which is refreshing after fifteen years of taking the test.",
+    "tv": "BANK OF AMERICA WARNS ON S&P 500 SUPPORT",
+    "tvPicture": "A bank's stone facade with tall columns and a heavy bronze door, no lettering.",
+    "board": "OLD FASHIONED $18 · SUGAR HELD IN RESERVE · WELL CAPITALIZED",
+    "characters": [
+      "drew",
+      "barclay"
+    ],
+    "action": "Drew, deadpan, bill slightly parted, lowers his martini onto the exact centre of its coaster like a man setting a level; Barclay, earnest, squints at the screen and then at the waterline of his own old fashioned.",
+    "turn": "COLLISION on 'stress' — the bank that has sat the stress test since 2009 finally gets to administer one; the reader assembles 'stress test' himself.",
+    "topic": "BofA key level",
+    "writer": "oil-and-september"
+  },
+  {
+    "score": 9.0,
+    "speaker": "barclay",
+    "caption": "I don't mind being the S&P's support level. I'd just like to have been asked.",
+    "tv": "BANK OF AMERICA FLAGS CRITICAL S&P 500 THRESHOLD",
+    "tvPicture": "A line chart dipping to touch a horizontal dashed line and bouncing, no labels.",
+    "board": "THE FLOOR $12 · CASH DEPOSIT REQUIRED · NON-REFUNDABLE",
+    "characters": [
+      "drew",
+      "barclay",
+      "abby"
+    ],
+    "action": "Barclay, earnest, both paws flat on the marble either side of his old fashioned as if bracing something heavy above him; Drew, deadpan, watches the screen over his martini; Abby, beaming, slides a fresh coaster under Barclay's glass and gives the bar a cheerful double-tap.",
+    "turn": "CHEERFUL CONCESSION — he grants that his money is the floor under the index and asks only for the courtesy of a notice.",
+    "topic": "S&P support",
+    "writer": "oil-and-september"
+  },
+  {
+    "score": 9.0,
+    "speaker": "drew",
+    "caption": "I've ordered my martini dry for twenty years, which makes me an early protectionist.",
+    "tv": "NEW TARIFFS ON 69 COUNTRIES TAKE EFFECT",
+    "tvPicture": "The television picture shows plain unmarked shipping containers stacked on a dock.",
+    "board": "GIN, STIRRED, UP $19 · VERMOUTH, A WHISPER — DUTY FREE · OLIVE, SPANISH — PRICED ON ARRIVAL",
+    "characters": [
+      "drew",
+      "barclay",
+      "abby"
+    ],
+    "action": "Drew, deadpan, holds his martini up to the light as if reading fine print; Abby, grinning, waves an unlabeled bottle of vermouth past the glass without tipping a drop; Barclay, amused, keeps both hands around his old fashioned on its coaster.",
+    "turn": "THEFT — a dry martini reclassified as twenty years of trade policy",
+    "topic": "tariffs, vermouth",
+    "writer": "tariffs"
+  },
+  {
+    "score": 8.0,
+    "speaker": "drew",
+    "caption": "Rates remain paused in concept, rising in operations.",
+    "tv": "FED STANDS PAT AS YIELDS, MORTGAGES JUMP",
+    "tvPicture": "An empty escalator in a marble lobby, stopped.",
+    "board": "FIXED $9\nFLOATING $9\nTIDE CHARTS ON REQUEST",
+    "characters": [
+      "drew",
+      "barclay"
+    ],
+    "action": "Drew states it to the middle distance, martini balanced on his wing; Barclay looks from the TV to his old fashioned and back, uneasy, both hands around the glass.",
+    "turn": "CONTRADICTION in two balanced clauses — the Status Report: paused, yet rising, and the stopped escalator on the TV is literally both.",
+    "topic": "Fed pause",
+    "writer": "fed-and-rates"
+  },
+  {
+    "score": 8.0,
+    "speaker": "abby",
+    "caption": "Yields are up at my bar too. That bottle used to make sixteen martinis.",
+    "tv": "GLOBAL BOND YIELDS SURGE ON HIKE FEARS",
+    "tvPicture": "A jagged line climbing steeply across a blank grid.",
+    "board": "DRY GIN $18 THE POUR\nPOURS PER LITER — IMPROVING",
+    "characters": [
+      "drew",
+      "barclay",
+      "abby"
+    ],
+    "action": "Abby laughs as she pours Drew's martini from a gin bottle held high, a long thin stream; Drew watches the stream with polite suspicion; Barclay cups his old fashioned protectively.",
+    "turn": "COLLISION on yields — bond yields up, bottle yields up; the reader does the arithmetic and finds the pour did the shrinking.",
+    "topic": "bond yields",
+    "writer": "fed-and-rates"
+  },
+  {
+    "score": 8.0,
+    "speaker": "barclay",
+    "caption": "Every wheel of cheddar Canada turns away has to land somewhere, and I'd like to be considered.",
+    "tv": "CANADA SETS 50% TARIFF ON U.S. DAIRY",
+    "tvPicture": "The television picture shows a red maple leaf flag on a flagpole against a plain sky.",
+    "board": "CHEESE PLATE $18 · TRUCKS HEADED FOR THE BORDER: 0 · TRUCKS HEADED FOR THIS BAR: 1",
+    "characters": [
+      "drew",
+      "barclay",
+      "abby"
+    ],
+    "action": "Barclay, hopeful, sits up straight as if being interviewed, his old fashioned squared on its coaster; Drew, deadpan, turns the nut bowl toward him as a first shipment; Abby, laughing, points her bar spoon at Barclay as though taking down his name.",
+    "turn": "Cheerful Concession — he grants the retaliation graciously and applies to be the replacement market",
+    "topic": "Canada, dairy",
+    "writer": "tariffs"
+  },
+  {
+    "score": 8.0,
+    "speaker": "abby",
+    "caption": "Consumer discretionary was the worst sector today, gentlemen, and both of you still tipped.",
+    "tv": "CONSUMER DISCRETIONARY WORST SECTOR OF THE DAY",
+    "tvPicture": "The television picture shows a shopping cart alone in an empty parking lot.",
+    "board": "OLD FASHIONED, NONESSENTIAL $16 · OLD FASHIONED, ESSENTIAL $16 · CLASSIFY WHEN ORDERING",
+    "characters": [
+      "drew",
+      "barclay",
+      "abby"
+    ],
+    "action": "Abby, laughing, points at the two of them like she has caught them being generous, plain white towel over her shoulder; Barclay, sheepish, straightens his coaster; Drew, deadpan, lifts his martini as if to concede he has been found out.",
+    "turn": "CONTRADICTION — the sector's worst day refuted by the bar's own tip arithmetic",
+    "topic": "consumer discretionary",
+    "writer": "tariffs"
+  },
+  {
+    "score": 6.0,
+    "speaker": "abby",
+    "caption": "Ninety-five a barrel, gentlemen, and for once the well costs more than my top shelf.",
+    "tv": "OIL SURGES AFTER OVERNIGHT HORMUZ SHIP ATTACK",
+    "tvPicture": "A lone cargo ship in a narrow strait between two rocky headlands, calm water.",
+    "board": "RAIL POUR $9 · STRAIT SURCHARGE $6 · CALL BRANDS UNAFFECTED",
+    "characters": [
+      "drew",
+      "barclay",
+      "abby"
+    ],
+    "action": "Abby, beaming, hoists a plain rail bottle from the speed well up to eye level like a trophy; Drew, deadpan, salutes it with his martini; Barclay, earnest, peers into his old fashioned as if re-pricing it.",
+    "turn": "COLLISION on 'the well' — the cheapest rail at the bar and the source of $95 crude are the same word, and tonight the cheap one is dearer.",
+    "topic": "oil price",
+    "writer": "oil-and-september"
+  },
+  {
+    "score": 6.0,
+    "speaker": "drew",
+    "caption": "Artificial intelligence remains inevitable in concept, tariffed in operations.",
+    "tv": "AI RALLY STALLS: NVIDIA, BROADCOM, MARVELL ALL LOWER",
+    "tvPicture": "a robot arm frozen mid-reach over an empty assembly line",
+    "board": "SINGULARITY HOUR 4–7 · ALL POURS CLEAR CUSTOMS FIRST",
+    "characters": [
+      "drew",
+      "barclay",
+      "abby"
+    ],
+    "action": "Drew, serene, says it to the screen with the martini stem between two fingers; Barclay, mouth slightly open, looks from the television to Drew; Abby, grinning, pulls a soda water from the gun for Barclay.",
+    "turn": "STATUS REPORT — two parallel clauses, the second one a customs form.",
+    "topic": "AI trade",
+    "writer": "ai-and-chips"
+  }
+]

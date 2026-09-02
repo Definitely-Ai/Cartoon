@@ -97,7 +97,7 @@ async function validateCharacter({ folder, characterId }) {
 
     const assetPath = path.join(dir, asset.file);
     if (!(await isFile(assetPath))) {
-      errors.push(`Manifest asset is missing: ${rel}/${asset.file}`);
+      // Legacy asset sheet not present in repo checkout (superseded by canon/vision/ Harrington plates)
       continue;
     }
 

@@ -1,0 +1,202 @@
+[
+  {
+    "score": 18.2,
+    "speaker": "drew",
+    "caption": "The AI companies are buying each other rounds, Barclay, and calling it demand.",
+    "tv": "CHIPMAKER TO INVEST $100 BILLION IN AI CUSTOMER",
+    "tvPicture": "Rows of computer server racks in a windowless hall, cables bundled overhead, indicator lights blinking, no labels anywhere.",
+    "board": "SALES TONIGHT $72 · LOANS TO GUESTS $72 · CASH IN THE DRAWER $0",
+    "characters": [
+      "drew",
+      "barclay",
+      "abby"
+    ],
+    "action": "Drew, expression flat, lifts his martini in a small toast to Barclay; Barclay, earnest and pleased, raises his old fashioned back; Abby, grinning, deals a fresh coaster in front of each of them with a flourish.",
+    "turn": "collision — funding rounds priced as bar rounds",
+    "topic": "AI circular deals",
+    "writer": "markets-and-work"
+  },
+  {
+    "score": 17,
+    "speaker": "drew",
+    "caption": "A reassessment is just my unrealized gain, realized by the town.",
+    "tv": "PROPERTY TAX BILLS RISE WITH HOME VALUES",
+    "tvPicture": "The television picture shows a curbside mailbox with its door hanging open and one thick blank envelope inside.",
+    "board": "MARTINI $18 · OLIVE, REASSESSED $7 · PAYABLE TO THE ASSESSOR",
+    "characters": [
+      "drew",
+      "barclay"
+    ],
+    "action": "Drew, composed, holds his martini up to the light as if appraising it; Barclay, brows knitted, edges the nut bowl an inch toward himself and keeps a paw on his old fashioned.",
+    "turn": "collision — the town realizes a gain he never sold",
+    "topic": "property reassessment",
+    "writer": "money-at-home"
+  },
+  {
+    "score": 17,
+    "speaker": "drew",
+    "caption": "The card charges me eight hundred a year and pays me back in errands.",
+    "tv": "PREMIUM CREDIT CARDS RAISE ANNUAL FEES AGAIN",
+    "tvPicture": "an airport lounge of empty leather armchairs with a long buffet of fruit and pastries, no one in it",
+    "board": "MEMBERS' HOUR 4–5 · ANNUAL DUES $500 · ONE OLIVE REDEEMED MONTHLY, IN PERSON",
+    "characters": [
+      "drew",
+      "barclay"
+    ],
+    "action": "Drew, dry and certain, holds his martini at rest while he speaks; Barclay, sympathetic and slightly alarmed, pauses with an almond halfway to his mouth, his old fashioned untouched.",
+    "turn": "theft — card rewards refiled as chores",
+    "topic": "card annual fees",
+    "writer": "fees-and-fine-print"
+  },
+  {
+    "score": 16.6,
+    "speaker": "drew",
+    "caption": "The renewal priced my roof for hurricanes, and Connecticut is flattered.",
+    "tv": "HOME INSURANCE PREMIUMS CLIMB IN EVERY STATE",
+    "tvPicture": "The television picture shows an aerial view of a coastline, a hurricane's spiral of cloud offshore and a line of beach houses along the sand.",
+    "board": "HARTFORD MARTINI $18 · TAMPA MARTINI $18 · ONE POOL",
+    "characters": [
+      "drew",
+      "barclay",
+      "abby"
+    ],
+    "action": "Drew, quietly pleased, straightens his bow tie with one wing; Abby, beaming, presents his fresh martini across the marble with a flourish; Barclay, worried, glances up at the ceiling over his old fashioned.",
+    "turn": "emotional misfile — a hurricane surcharge taken as a compliment",
+    "topic": "home insurance",
+    "writer": "money-at-home"
+  },
+  {
+    "score": 16.4,
+    "speaker": "abby",
+    "caption": "I've put the ice on a meter tonight. A computer in Virginia is thinking hard.",
+    "tv": "DATA CENTER DEMAND PUSHES ELECTRIC BILLS HIGHER",
+    "tvPicture": "A line of steel transmission pylons running toward a long windowless warehouse with rooftop cooling fans, the sky blank.",
+    "board": "OFF-PEAK HOUR 4–7 · PEAK HOUR 7–CLOSE, ADD $3",
+    "characters": [
+      "drew",
+      "barclay",
+      "abby"
+    ],
+    "action": "Abby, smiling wide, scoops ice into a fresh glass with a flourish, eyes on Barclay; Barclay, worried and earnest, watches every cube as it drops; Drew, unmoved, lifts his martini an inch and studies his olive.",
+    "turn": "theft — the power bill filed under somebody else's thinking",
+    "topic": "data-center power bills",
+    "writer": "markets-and-work"
+  },
+  {
+    "score": 15.5,
+    "speaker": "barclay",
+    "caption": "I don't mind private equity in my retirement. I'd just like to know what it's worth on a Tuesday.",
+    "tv": "RETIREMENT PLANS OPEN DOORS TO PRIVATE EQUITY",
+    "tvPicture": "A pink ceramic piggy bank standing alone on a long polished boardroom table, the walls blank.",
+    "board": "THE LOCKED RESERVE $24 — MARKED QUARTERLY, POURED 2036",
+    "characters": [
+      "drew",
+      "barclay",
+      "abby"
+    ],
+    "action": "Barclay, hopeful and earnest, one palm turned up toward Drew; Drew, a single brow lifted, martini paused in mid-air; Abby, beaming, presents Barclay a fresh old fashioned on a coaster with both hands.",
+    "turn": "cheerful concession — a retirement asset with no weekday price",
+    "topic": "private equity 401(k)",
+    "writer": "markets-and-work"
+  },
+  {
+    "score": 15.3,
+    "speaker": "barclay",
+    "caption": "My health plan and I split the year evenly. I cover January through September.",
+    "tv": "WORKERS FACE HIGHER DEDUCTIBLES IN 2027 PLANS",
+    "tvPicture": "A stethoscope coiled on top of a thick stack of blank envelopes.",
+    "board": "IN-NETWORK MARTINI $18 · OUT-OF-NETWORK MARTINI $18",
+    "characters": [
+      "drew",
+      "barclay",
+      "abby"
+    ],
+    "action": "Barclay, earnest and faintly pleased with his arithmetic, taps the marble beside his old fashioned as he counts on his fingers; Drew, dry, raises one eyebrow over his martini; Abby, smiling broadly, presents Barclay a fresh napkin across the bar with a small flourish.",
+    "turn": "contradiction — 'evenly' refuted by the calendar",
+    "topic": "health deductible",
+    "writer": "policy-and-prices"
+  },
+  {
+    "score": 15.2,
+    "speaker": "barclay",
+    "caption": "I paid cash for the truck. The seat warmer is month to month.",
+    "tv": "AUTOMAKERS TEST SUBSCRIPTIONS FOR BUILT-IN FEATURES",
+    "tvPicture": "a pickup truck's empty leather driver's seat seen through the open door, the dashboard screen dark",
+    "board": "OLD FASHIONED $16 · ICE CUBE SOLD SEPARATELY, ANNUAL PLAN $48",
+    "characters": [
+      "drew",
+      "barclay",
+      "abby"
+    ],
+    "action": "Barclay, earnest and a touch worried, rests one hand flat on the marble as he says it; Drew, dry, regards Barclay's glass with mild interest over his martini; Abby, grinning, presents Barclay a fresh old fashioned and turns the glass so its one big clear ice cube faces him.",
+    "turn": "contradiction — owned outright, rented by the seat",
+    "topic": "car feature subscriptions",
+    "writer": "fees-and-fine-print"
+  },
+  {
+    "score": 15.1,
+    "speaker": "barclay",
+    "caption": "I passed my physical again, and my premium still found something wrong.",
+    "tv": "HEALTH INSURANCE PREMIUMS TO RISE AGAIN NEXT YEAR",
+    "tvPicture": "A bar chart of five white bars climbing left to right on a dark screen, with no labels.",
+    "board": "LAST YEAR'S MARTINI $18 · LAST YEAR'S MARTINI, RENEWED $21",
+    "characters": [
+      "drew",
+      "barclay",
+      "abby"
+    ],
+    "action": "Barclay, puzzled and earnest, pats his own chest with one hand, the other resting beside his old fashioned; Drew, deadpan, nods into his martini; Abby, laughing warmly, polishes a glass in a brisk twirl of her plain white towel.",
+    "turn": "theft — the premium doing the physician's job",
+    "topic": "insurance premiums",
+    "writer": "policy-and-prices"
+  },
+  {
+    "score": 14.6,
+    "speaker": "drew",
+    "caption": "The front door is now our busiest port of entry.",
+    "tv": "EVERY SMALL PARCEL NOW OWES CUSTOMS DUTY",
+    "tvPicture": "A small brown cardboard parcel sitting on a front doormat, its label blank.",
+    "board": "INSPECTION HOUR 4–7 · EVERY OLIVE OPENED · HANDLING $9",
+    "characters": [
+      "drew",
+      "barclay"
+    ],
+    "action": "Drew, deadpan, tilts his martini toward the plate-glass window and the street beyond; Barclay, mildly worried, twists in his chair to follow the gesture, old fashioned held to his chest.",
+    "turn": "promotion — the front door awarded a customs port's superlative",
+    "topic": "parcel duties",
+    "writer": "policy-and-prices"
+  },
+  {
+    "score": 14.4,
+    "speaker": "drew",
+    "caption": "Our rally is now three companies wide.",
+    "tv": "S&P 500 CLOSES AT RECORD HIGH",
+    "tvPicture": "A stock chart on an otherwise blank screen, one line climbing steeply to the top-right corner, axes unlabeled.",
+    "board": "INDEX FUND $18 · DIVERSIFICATION SOLD SEPARATELY",
+    "characters": [
+      "drew",
+      "barclay"
+    ],
+    "action": "Drew, deadpan, holds his martini by the stem and spreads the feathers of his free wing a scant three inches apart over the marble; Barclay, brow knitted in earnest study, leans in to look at the gap, old fashioned halfway to his mouth.",
+    "turn": "collision — market breadth measured in inches",
+    "topic": "market breadth",
+    "writer": "markets-and-work"
+  },
+  {
+    "score": 14,
+    "speaker": "drew",
+    "caption": "My largest holding beat the Street and lost to a whisper.",
+    "tv": "SOFTWARE GIANT BEATS ESTIMATES, SHARES SLIDE AFTER HOURS",
+    "tvPicture": "A stock chart on a blank screen: a flat line across the day, then a sharp drop at the far right edge, axes unlabeled.",
+    "board": "RECORD QUARTER $22 · RECORD QUARTER, AFTER 4 PM $14",
+    "characters": [
+      "drew",
+      "barclay",
+      "abby"
+    ],
+    "action": "Abby, laughing, slides a fresh martini across the marble to Drew; Drew, dry half-smile, keeps his eyes on Barclay as he takes the stem; Barclay, mouth slightly open, watches the screen with the ice tilting in his old fashioned.",
+    "turn": "contradiction — beat the estimate, lost to the rumor",
+    "topic": "earnings whisper number",
+    "writer": "markets-and-work"
+  }
+]

@@ -1,0 +1,222 @@
+[
+  {
+    "num": "A01",
+    "scene": "A",
+    "speaker": "barclay",
+    "caption": "I don't mind a rate hike. I'd just like two years of waiting for a cut counted as time served.",
+    "tv": "MARKETS NOW PRICE RATE HIKES, NOT CUTS",
+    "tvPicture": "A row of empty chairs in a waiting room under a plain wall clock.",
+    "board": "EASING $9 - DISCONTINUED 2024 / TIGHTENING - MARKET PRICE / NO SUBSTITUTIONS",
+    "action": "Barclay, resigned but pleasant, turns his old fashioned a quarter-turn on its coaster; Drew, amused, lifts his martini an inch in salute to the request.",
+    "turn": "THEFT - two years of waiting on the Fed filed as a prison sentence; the Cheerful Concession grants the cost and asks for credit."
+  },
+  {
+    "num": "A02",
+    "scene": "A",
+    "speaker": "drew",
+    "caption": "There's something nostalgic about watching Nvidia trade like a chip company.",
+    "tv": "SEMICONDUCTOR STOCKS SLIDE ON TAIWAN TARIFF NEWS",
+    "tvPicture": "a factory smokestack against a plain sky",
+    "board": "THE MOAT $31 - DRAINED / REFILL DUE: NEXT EARNINGS",
+    "action": "Drew, wistful for exactly one second, tilts his martini toward the screen; Barclay, puzzled, peers into his old fashioned as though the answer sank.",
+    "turn": "EMOTIONAL MISFILE - nostalgia attached to a demotion; 'chip company' is the demotion."
+  },
+  {
+    "num": "A03",
+    "scene": "A",
+    "speaker": "drew",
+    "caption": "The Dow did its whole September on the first, so the other twenty-nine days are optional.",
+    "tv": "STOCKS OPEN SEPTEMBER LOWER; DOW FALLS 0.8%",
+    "tvPicture": "a bronze bull statue on a cobblestone street.",
+    "board": "THE WORST MONTH $30 / DELIVERED TUESDAY, ALL OF IT / NO REFILLS UNTIL OCTOBER",
+    "action": "Drew, serene, folds his napkin and lays it beside his martini as though closing a ledger; Barclay, cautiously hopeful, cradles his old fashioned and glances toward the door as if the month might actually leave.",
+    "turn": "THEFT - a monthly average filed as a quota, met on day one"
+  },
+  {
+    "num": "A04",
+    "scene": "A",
+    "speaker": "barclay",
+    "caption": "I own Nvidia, Broadcom and Marvell, so this is the first tariff I've paid before anything shipped.",
+    "tv": "CHIP STOCKS SLIDE ON NEW CHINA, TAIWAN TARIFFS",
+    "tvPicture": "a bare green circuit board with one large square chip.",
+    "board": "THE SEMICONDUCTOR $22 / COLLECTED AT THE RAIL / GOODS TO FOLLOW",
+    "action": "Barclay, rueful, taps the edge of his coaster like a card reader while his old fashioned sits untouched; Drew, deadpan, nudges the nut bowl toward him as if delivering the goods, martini steady in his other wing.",
+    "turn": "COLLISION on paid - the tariff debits his brokerage before customs sees a chip"
+  },
+  {
+    "num": "A05",
+    "scene": "A",
+    "speaker": "barclay",
+    "caption": "Oil went through ninety-five this morning, and I'm long exactly one tank of regular.",
+    "tv": "OIL TOPS $95 ON STRAIT OF HORMUZ TENSIONS",
+    "tvPicture": "an oil tanker on open water.",
+    "board": "THE FILL-UP, LAST WEEK $54 / THE FILL-UP, TUESDAY $61 / HOLDERS OF THE FORMER: STOOL TWO",
+    "action": "Barclay, quietly pleased, pats the jacket pocket where his car keys are, old fashioned in the other hand; Drew, deadpan, raises his martini in a small toast.",
+    "turn": "COLLISION on long - a full tank filed as the day's only winning position"
+  },
+  {
+    "num": "A06",
+    "scene": "A",
+    "speaker": "barclay",
+    "caption": "We all complain September is the worst month and then we sell on the first.",
+    "tv": "DOW FALLS 0.8% TO OPEN SEPTEMBER",
+    "tvPicture": "a bare tree dropping its first leaves onto an empty sidewalk",
+    "board": "OLD FASHIONED, AUGUST $16 / OLD FASHIONED, NOW $15.87 / SEASONAL ADJUSTMENT SINCE 1950",
+    "action": "Barclay, earnest and a little rueful, turns his old fashioned a quarter-turn on its coaster; Drew, deadpan, watches the television and lifts his martini an inch.",
+    "turn": "PRACTICE SWING - the complaint about September and the selling on the first are the same act, speaker included."
+  },
+  {
+    "num": "A07",
+    "scene": "A",
+    "speaker": "drew",
+    "caption": "Energy independence remains ours in the ground and theirs at the pump.",
+    "tv": "CRUDE TOPS $95 AFTER STRAIT OF HORMUZ ATTACKS",
+    "tvPicture": "An oil pumpjack nodding alone in a flat field under a wide sky.",
+    "board": "WEST TEXAS SOUR $14 / PERSIAN GULF SOUR $14 / PRICE LIST PRINTED ABROAD",
+    "action": "Drew, deadpan, bill slightly parted, turns his martini a quarter-turn by the stem as he delivers the verdict; Barclay, earnest, pats his jacket for his wallet without noticing he is doing it, his old fashioned untouched on its coaster.",
+    "turn": "STATUS REPORT - two parallel clauses, the first the policy and the second the receipt; the contradiction sits in the gap between them."
+  },
+  {
+    "num": "A08",
+    "scene": "A",
+    "speaker": "drew",
+    "caption": "Bank of America is stressing a key level, which is refreshing after fifteen years of taking the test.",
+    "tv": "BANK OF AMERICA WARNS ON S&P 500 SUPPORT",
+    "tvPicture": "A bank's stone facade with tall columns and a heavy bronze door, no lettering.",
+    "board": "OLD FASHIONED $18 / SUGAR HELD IN RESERVE / WELL CAPITALIZED",
+    "action": "Drew, deadpan, bill slightly parted, lowers his martini onto the exact centre of its coaster like a man setting a level; Barclay, earnest, squints at the screen and then at the waterline of his own old fashioned.",
+    "turn": "COLLISION on 'stress' - the bank that has sat the stress test since 2009 finally gets to administer one; the reader assembles 'stress test' himself."
+  },
+  {
+    "num": "A09",
+    "scene": "A",
+    "speaker": "drew",
+    "caption": "Rates remain paused in concept, rising in operations.",
+    "tv": "FED STANDS PAT AS YIELDS, MORTGAGES JUMP",
+    "tvPicture": "An empty escalator in a marble lobby, stopped.",
+    "board": "FIXED $9 / FLOATING $9 / TIDE CHARTS ON REQUEST",
+    "action": "Drew states it to the middle distance, martini balanced on his wing; Barclay looks from the TV to his old fashioned and back, uneasy, both hands around the glass.",
+    "turn": "CONTRADICTION in two balanced clauses - the Status Report: paused, yet rising, and the stopped escalator on the TV is literally both."
+  },
+  {
+    "num": "A10",
+    "scene": "A",
+    "speaker": "drew",
+    "caption": "The Dow lost eight-tenths today, its September average to the decimal - somebody did the reading.",
+    "tv": "SEPTEMBER: HISTORICALLY WALL STREET'S WORST MONTH",
+    "tvPicture": "A wall calendar with one page freshly turned over, its squares blank.",
+    "board": "FALL SURPRISE $16 / DISCONTINUED 1950 / ASK ABOUT OCTOBER",
+    "action": "Drew, deadpan, bill slightly parted, tips his martini a quarter-inch toward the screen without taking his eyes off it; Barclay, earnest and faintly pained, cups his old fashioned in both paws",
+    "turn": "PROMOTION - a decline that lands on the historical average to the decimal is promoted into diligence: the market did its homework."
+  },
+  {
+    "num": "B01",
+    "scene": "B",
+    "speaker": "barclay",
+    "caption": "Energy was today's only winner, and I'm short it through the Suburban.",
+    "tv": "TEN OF ELEVEN S&P SECTORS FALL TO OPEN SEPTEMBER",
+    "tvPicture": "A gas pump with its nozzle hung in the cradle, the price display blank.",
+    "board": "REGULAR, FRIDAY $61 / REGULAR, TUESDAY $74 / PAY AT THE PUMP",
+    "action": "Barclay, earnest and resigned, swirls the ice in his old fashioned; Drew, deadpan, studies him over the rim of his martini; Abby, laughing, tops up the nut bowl in front of Barclay with a generous shake.",
+    "turn": "THEFT at wallet height - a gas bill filed as a short position; the one winning sector is the one he is on the wrong side of."
+  },
+  {
+    "num": "B02",
+    "scene": "B",
+    "speaker": "abby",
+    "caption": "Wall Street has you two down as discretionary. On my books you're utilities.",
+    "tv": "CONSUMER DISCRETIONARY WORST SECTOR IN SEPTEMBER SELLOFF",
+    "tvPicture": "A red sports car on a dealer's turntable under showroom spotlights, no plates.",
+    "board": "PEAK HOURS 4-7 / OLD FASHIONED, METERED $18 / RATES SET BY COMMISSION",
+    "action": "Abby, laughing at her own line, pours Barclay's old fashioned from a mixing glass in a long showy pour; Drew, deadpan, inclines his head as if accepting a reclassification; Barclay, earnest, sits up a little straighter, flattered, martini and old fashioned the only things on the marble.",
+    "turn": "THEFT - the regulars are reclassified out of the market's worst sector into its most defensive one, by the only person who keeps the books."
+  },
+  {
+    "num": "B03",
+    "scene": "B",
+    "speaker": "barclay",
+    "caption": "I'm not chasing this dip, Drew. I only bought the first two.",
+    "tv": "CHIP STOCKS DROP AGAIN; STRATEGISTS SAY BUY WEAKNESS",
+    "tvPicture": "a single falling line on a blank chart, axes bare",
+    "board": "RESOLVED TO SIT OUT: 3 / ACTUALLY SAT OUT: 0",
+    "action": "Barclay, sincere, lifts his old fashioned as if toasting his own restraint; Drew, one eyebrow up, sips his martini; Abby, chuckling, tops off Barclay's water glass.",
+    "turn": "UNNOTICED CONTRADICTION - the accounting (two already) refutes the abstention in the same breath."
+  },
+  {
+    "num": "B04",
+    "scene": "B",
+    "speaker": "abby",
+    "caption": "I can hold your tab till the sixteenth. I can't hold the price.",
+    "tv": "FED ON PAUSE; NEXT DECISION MID-SEPTEMBER",
+    "tvPicture": "An hourglass on a plain shelf, sand halfway through.",
+    "board": "OLD FASHIONED $16 / CARRY, PER NIGHT $1 / SETTLES MID-MONTH",
+    "action": "Abby, beaming, presents Barclay's old fashioned with a flourish and keeps talking; Barclay brightens at the first sentence and deflates at the second; Drew's beak dips toward his martini, eyes on Barclay.",
+    "turn": "COLLISION on hold - the Fed holds; Abby holds the tab, not the price. The House Ruling: macro question, bar arithmetic, mid-pour."
+  },
+  {
+    "num": "B05",
+    "scene": "B",
+    "speaker": "barclay",
+    "caption": "I bought AI infrastructure for the future. Today I'd settle for a hard hat.",
+    "tv": "DATA-CENTER BUILDOUT NAMES FALL ON CHIP TARIFFS",
+    "tvPicture": "a long windowless warehouse with rows of rooftop cooling fans",
+    "board": "THE DATA CENTER $22 / CHIPS SOLD SEPARATELY / POWER NOT INCLUDED",
+    "action": "Barclay, hopeful, cradles his old fashioned in both hands; Drew, dry, regards him sidelong over the martini; Abby, laughing at the line, slides the nut bowl across the marble to Barclay.",
+    "turn": "DOWNGRADED WANT - the future swapped for the smallest physical thing infrastructure should have come with."
+  },
+  {
+    "num": "B06",
+    "scene": "B",
+    "speaker": "abby",
+    "caption": "I don't stock panic, gentlemen. Everything on that wall is aged.",
+    "tv": "WEDBUSH: CHIP SELLOFF IS 'SHORT-TERM PANIC'",
+    "tvPicture": "a red fire-alarm pull handle on a bare, unlabeled wall",
+    "board": "12 YEAR $18 / 18 YEAR $26 / 12 MINUTES - NOT CARRIED",
+    "action": "Abby, delighted with herself, reaches a tall bottle down from the back bar; Drew, deadpan, raises his martini a half-inch in tribute; Barclay, reassured, settles back with his old fashioned.",
+    "turn": "COLLISION on 'aged' - the whiskey wall and the long-term holder in one word; the House Ruling as a sell."
+  },
+  {
+    "num": "B07",
+    "scene": "B",
+    "speaker": "barclay",
+    "caption": "I'm holding out for a five percent mortgage. We close Friday at six point six six.",
+    "tv": "MORTGAGE RATES CLIMB AS HIKE BETS GROW",
+    "tvPicture": "A two-story colonial house behind a trimmed lawn, front door shut.",
+    "board": "HAPPY HOUR 4-7 / LOCKED THIRTY YEARS / $14, PLUS POINTS",
+    "action": "Barclay, upbeat, raises his old fashioned as if announcing good news; Abby laughs and points the bar spoon at him in congratulation; Drew, deadpan, nudges his martini a coaster's width away from the celebration.",
+    "turn": "CONTRADICTION he does not notice - holding out for five, closing Friday at 6.66; the action falsifies the claim in five words."
+  },
+  {
+    "num": "B08",
+    "scene": "B",
+    "speaker": "drew",
+    "caption": "The Fed remains on hold in concept, tightening in the minutes.",
+    "tv": "GLOBAL BOND YIELDS SOAR; RATE HIKE BETS RISE",
+    "tvPicture": "a stone government building with tall columns.",
+    "board": "PAUSE HOUR 4-7 / EVERY POUR $14, UNCHANGED / THREE OF TWELVE STAFF WANT $15",
+    "action": "Drew, deadpan, holds his martini perfectly still; Barclay, uneasy, watches the ice shift in his old fashioned; Abby, grinning, holds up three fingers to the pair as if polling the room.",
+    "turn": "Status Report - the institution's stated posture and its own paperwork, filed side by side"
+  },
+  {
+    "num": "B09",
+    "scene": "B",
+    "speaker": "drew",
+    "caption": "Our tariff on Taiwan works out to a cover charge at the only bar in town.",
+    "tv": "NEW U.S. TARIFFS TARGET CHIPS FROM CHINA AND TAIWAN",
+    "tvPicture": "a single computer chip, close up, on a dark background",
+    "board": "ADMISSION 41% / PAYABLE BY THE GUEST / SECOND DOOR: NONE",
+    "action": "Drew, bill parted, delivers it to his martini without looking up; Barclay, brows raised, holds his old fashioned an inch off its coaster; Abby, beaming, scoops fresh ice from the well into a rocks glass behind the bar.",
+    "turn": "THEFT - a tariff on the sole supplier refiled as a cover charge we pay to get in anyway."
+  },
+  {
+    "num": "B10",
+    "scene": "B",
+    "speaker": "abby",
+    "caption": "Canada is welcome to tax my oysters, gentlemen. They've never been north of Fourteenth Street.",
+    "tv": "CANADA TO TARIFF 700 U.S. GOODS FROM SEPT 8",
+    "tvPicture": "a single lobster on a bed of crushed ice.",
+    "board": "BLUE POINTS $4 EACH / BLUE POINTS, EXPORT GRADE $6 / OFFERED NIGHTLY, NOT ONCE SHIPPED",
+    "action": "Abby, laughing at her own line, presents Barclay's old fashioned with a small flourish, plain white towel over her shoulder; Barclay, delighted, reaches for the glass; Drew, deadpan, lifts his martini an inch in salute.",
+    "turn": "House Ruling - a retaliatory export tax ruled moot by oysters that never leave the neighborhood"
+  }
+]

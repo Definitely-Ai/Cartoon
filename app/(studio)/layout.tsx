@@ -18,6 +18,7 @@ const PLACES: Place[] = [
   { href: "/review", label: "Review" },
   { href: "/collection", label: "The Collection", under: ["/day"] },
   { href: "/keepers", label: "Keepers" },
+  { href: "/gallery", label: "Image Vault", under: ["/gallery"] },
   { href: "/models", label: "The Cast" },
   { href: "/registry", label: "The Registry" },
 ];

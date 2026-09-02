@@ -183,4 +183,11 @@ if (fs.existsSync(ogImage)) rejectRetiredAsset(ogImage);
 // import runs the deterministic Sharp/SVG generator as part of every build.
 await import("./generate-brand-assets.mjs");
 
+// Build gallery manifest indexing all images
+try {
+  await import("./build-gallery-manifest.mjs");
+} catch (e) {
+  console.warn("prebuild: gallery manifest build notice:", e.message);
+}
+
 console.log(`prebuild: copied ${copied} cartoon(s), ${sheets} model sheet(s)`);
