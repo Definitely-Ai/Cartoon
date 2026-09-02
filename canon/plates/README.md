@@ -38,3 +38,7 @@ or nothing when the still already exists.
   lines, so the writer gives the board two to four short lines.
 - The chyron is one line and shrinks to fit left of the timestamp.
 - The caption is two typeset lines at most; a third line is an error.
+
+## Notes for later
+
+- `duo-drew.png` (approved 2026-09-02): the join at the top of the bill paste box is slightly soft where the open bill meets the face. Reads fine at full size; the founder said it doesn't bother him for now. If it ever does, widen the feather or the `drew.mouth` box in `duo.json` and re-paste from `work/20260902-151717Z-duo-drew-raw.png` — no new draw needed.
