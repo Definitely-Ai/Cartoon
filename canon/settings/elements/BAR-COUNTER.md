@@ -10,6 +10,10 @@
   ends run out of frame.
 - **One level.** No raised rail, no upper drink shelf, no second tier, no
   step. Everything on the bar stands on the one surface.
+- **Camera square to the counter.** Its near edge and far edge are two
+  horizontal lines across the whole picture — never climbing toward the
+  window end. (Operator ruling 2026-09-01, third pass: "I can see it on the
+  far and close edge of the bar.")
 - **One straight plane.** Where the marble shows beside or between the
   gentlemen it lines up exactly with the marble in front of them — same top
   edge, same height, one unbroken line frame-left to frame-right. A slab
