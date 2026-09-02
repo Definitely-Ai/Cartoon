@@ -379,3 +379,27 @@ export async function composeGag(input: {
   art = await dressBoard(art, input.spec, input.board);
   return finishPlate(art, input.speaker, input.caption);
 }
+
+/** A revision pass on a candidate plate: the picture is @image1 and only
+ *  the named faults change. Used when a candidate is nearly right. */
+export function reviseDuoPrompt(): string {
+  return [
+    "Redraw @image1 as the SAME picture: same two characters, same poses, same framing, same room, " +
+      "same switched-off television, same chalkboard exactly where it is. " + STYLE,
+    "Make ONLY these two changes and nothing else:",
+    "1. THE COUNTER. The marble counter runs from Barclay's side across the middle of the picture and " +
+      "ENDS AT DREW'S BODY: it does not continue past him to the left. To the LEFT of Drew there is NO " +
+      "marble at all — only the window wall and the window sill, and Drew's own chair back. The slab is " +
+      "ONE straight level surface between and in front of the two gentlemen, its near edge hidden by " +
+      "their bodies, with the drinks and nut bowl on it. Nothing marble shows behind Drew's back or past " +
+      "his left side.",
+    "2. THE BOTTLES. Every bottle on the back bar is a MODERN, REAL-LOOKING spirits bottle — the shapes " +
+      "of today's bourbon, gin, vodka, rye and scotch bottles, some tall, some squat, some square-" +
+      "shouldered, a few with a cork or a metal cap — filled to different levels. Each carries a modern " +
+      "printed label: a crest, a band, a medallion, a plain colour block with fine decorative lines, " +
+      "designed the way a real brand would design it. THE LABELS ARE NOT LEGIBLE: any text-like marks " +
+      "are too small and too fine to read, mere suggestion of type, and not one real letter, word or " +
+      "number appears anywhere on any bottle.",
+    NO_TEXT,
+  ].join("\n");
+}
