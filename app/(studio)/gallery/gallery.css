@@ -1,4 +1,4 @@
-﻿/* THE IMAGE VAULT — Studio Proofs & Generations Archive
+/* THE IMAGE VAULT — Studio Proofs & Generations Archive
    Scoped to match the Back Room oak and cream aesthetic. */
 
 .gallery-wrap {
@@ -56,7 +56,7 @@
   align-items: center;
 }
 
-.gallery-refresh-btn {
+.gallery-sort-toggle-btn {
   background: rgba(253, 251, 246, 0.08);
   border: 1px solid rgba(253, 251, 246, 0.25);
   color: var(--br-paper, #fdfbf6);
@@ -73,15 +73,10 @@
   gap: 0.5rem;
 }
 
-.gallery-refresh-btn:hover:not(:disabled) {
+.gallery-sort-toggle-btn:hover {
   background: rgba(197, 160, 89, 0.2);
   border-color: #c5a059;
   color: #fff;
-}
-
-.gallery-refresh-btn:disabled {
-  opacity: 0.6;
-  cursor: default;
 }
 
 .gallery-controls {
@@ -308,15 +303,22 @@
   border-color: #c5a059;
 }
 
-.gallery-badge.replicate {
-  background: rgba(37, 99, 235, 0.9);
+.gallery-badge.master {
+  background: #8b2626;
   color: #fff;
-  border-color: rgba(96, 165, 250, 0.5);
+  border-color: #b23b3b;
 }
 
-.gallery-badge.knockout {
-  background: rgba(60, 50, 40, 0.88);
-  color: rgba(253, 251, 246, 0.9);
+.gallery-badge.showcase {
+  background: #9a5b13;
+  color: #fff;
+  border-color: #c4761b;
+}
+
+.gallery-badge.drafts {
+  background: rgba(50, 42, 34, 0.9);
+  color: rgba(253, 251, 246, 0.85);
+  border-color: rgba(253, 251, 246, 0.2);
 }
 
 .gallery-scene-tag {

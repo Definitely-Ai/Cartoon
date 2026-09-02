@@ -5,7 +5,7 @@ import "./gallery.css";
 
 export const metadata = {
   title: "The Image Vault | The Swinging Door",
-  description: "Comprehensive gallery of all generated cartoons, finals, knockouts, and live Replicate stream.",
+  description: "Curated collection of verified final editions, master reference plates, and studio archive.",
 };
 
 export const dynamic = "force-dynamic";
@@ -16,9 +16,9 @@ export default function GalleryPage() {
   const initialCounts = {
     total: all.length,
     finals: all.filter((i) => i.category === "final").length,
-    knockouts: all.filter((i) => i.category === "knockout").length,
-    replicate: 0,
-    inspect: all.filter((i) => i.category === "inspect").length,
+    masters: all.filter((i) => i.category === "master").length,
+    showcase: all.filter((i) => i.category === "showcase").length,
+    drafts: all.filter((i) => i.category === "drafts").length,
   };
 
   return <GalleryClient initialItems={initialItems} initialCounts={initialCounts} />;
