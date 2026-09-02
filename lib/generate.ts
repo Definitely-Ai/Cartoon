@@ -325,7 +325,8 @@ export function referenceList(
       path: "canon/vision/staging-plate.jpg",
       label:
         "THE EMPTY SET — this same bar BEFORE the cast walks in, attached for its geometry only. THE MARBLE " +
-        "COUNTER IN THIS TILE IS THE COUNTER: seat the gentlemen on the NEAR side of THIS counter SEEN FROM BEHIND, with their " +
+        "COUNTER IN THIS TILE IS THE COUNTER, and its near and far edges stay exactly as HORIZONTAL as this tile draws them, " +
+        "the same height beside each gentleman as in front of him: seat the gentlemen on the NEAR side of THIS counter SEEN FROM BEHIND, with their " +
         "drinks standing ON THIS SAME SLAB — never invent a second, nearer surface for the drinks, and never " +
         "leave this counter standing behind their backs as scenery. Abby, when cast, works on the FAR side of " +
         "this same counter. Copy the back bar with its high shelves, the television above it, the " +
