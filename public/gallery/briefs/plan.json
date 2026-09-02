@@ -1,0 +1,215 @@
+{
+  "batch": "20260831-204830-ten-cartoons-at-the-bar-money",
+  "brief": "Ten cartoons at the bar. Money in kitchen words - a bar bill, a premium, a fare, a renewal, a rate, a tip - a different subject every time. Bring Abby into four. Every caption lands on its own.",
+  "writer": "openai/gpt-5",
+  "model": "openai/gpt-image-2",
+  "quality": "high",
+  "createdAt": "2026-08-31T20:51:58.449Z",
+  "panels": [
+    {
+      "speaker": "barclay",
+      "caption": "The second page is just four new names for my tip.",
+      "action": "Barclay holds the check presenter open; a second slip shows four short lines: Service, Admin, Wellness, Kitchen. Abby polishes a glass mid-wipe.",
+      "tv": "MANDATORY SERVICE FEES SPREAD",
+      "tvPicture": "The television picture shows three receipt printers spooling long curls of paper into a bin.",
+      "board": "OLD FASHIONED $18 · HOSPITALITY SOLD SEPARATELY.",
+      "characters": [
+        "drew",
+        "barclay",
+        "abby"
+      ],
+      "away": "",
+      "signs": [],
+      "turn": "theft — fees relabeled as tip",
+      "setting": "",
+      "scene": "Barclay holds the check presenter open; a second slip shows four short lines: Service, Admin, Wellness, Kitchen. Abby polishes a glass mid-wipe. IN THIS PANEL, CAMERA behind the two gentlemen on the CUSTOMER SIDE — their bodies block the counter's near edge — with ABBY working the FAR service side across the counter, the back bar behind HER alone. The television picture shows The television picture shows three receipt printers spooling long curls of paper into a bin. Stage it exactly as THE SIDES describes. Abby's face reads WARM — amused or at ease, NEVER sad or downcast; when she serves, delivers or lands the line she is genuinely SMILING.",
+      "slug": "the-second-page-is-just-four",
+      "n": 1,
+      "file": "01-the-second-page-is-just-four.png"
+    },
+    {
+      "speaker": "drew",
+      "caption": "The first checked bag is our smallest subscription.",
+      "action": "Drew smooths his sweater vest; Barclay rolls his empty glass between his palms.",
+      "tv": "AIRLINES RAISE BAG FEES",
+      "tvPicture": "The television picture shows a suitcase teetering on an airport scale with the digital display covered by a glare.",
+      "board": "",
+      "characters": [
+        "drew",
+        "barclay"
+      ],
+      "away": "",
+      "signs": [],
+      "turn": "theft — bag fee as subscription",
+      "setting": "",
+      "scene": "Drew smooths his sweater vest; Barclay rolls his empty glass between his palms. IN THIS PANEL, CAMERA behind the two gentlemen on the CUSTOMER SIDE — their bodies block the counter's near edge — and NOBODY on the FAR service side: the back bar stands across the counter, behind no one. The television picture shows The television picture shows a suitcase teetering on an airport scale with the digital display covered by a glare. Stage it exactly as THE SIDES describes. DREW IS THE ONE SPEAKING IN THIS PANEL: his bill is SLIGHTLY PARTED, caught mid-word.",
+      "slug": "the-first-checked-bag-is-our",
+      "n": 2,
+      "file": "02-the-first-checked-bag-is-our.png"
+    },
+    {
+      "speaker": "barclay",
+      "caption": "I'm cutting back this year; add the nine-dollar ice cube.",
+      "action": "Barclay lifts two fingers toward Abby. Abby lowers an old fashioned with one oversized clear cube.",
+      "tv": "",
+      "tvPicture": "",
+      "board": "PREMIUM ICE $9 — CLEAR.",
+      "characters": [
+        "drew",
+        "barclay",
+        "abby"
+      ],
+      "away": "",
+      "signs": [],
+      "turn": "contradiction — austerity then upgrade",
+      "setting": "",
+      "scene": "Barclay lifts two fingers toward Abby. Abby lowers an old fashioned with one oversized clear cube. IN THIS PANEL, CAMERA behind the two gentlemen on the CUSTOMER SIDE — their bodies block the counter's near edge — with ABBY working the FAR service side across the counter, the back bar behind HER alone. Stage it exactly as THE SIDES describes. Abby's face reads WARM — amused or at ease, NEVER sad or downcast; when she serves, delivers or lands the line she is genuinely SMILING.",
+      "slug": "i-m-cutting-back-this-year",
+      "n": 3,
+      "file": "03-i-m-cutting-back-this-year.png"
+    },
+    {
+      "speaker": "barclay",
+      "caption": "I don't need prestige; I just want one remote.",
+      "action": "Barclay mimics clicking a remote with his thumb; Drew swirls his martini without looking.",
+      "tv": "STREAMING BUNDLES RAISE RATES",
+      "tvPicture": "The television picture shows a low table scattered with several identical remote controls pointing in different directions.",
+      "board": "THE BUNDLE $29 · THE BUNDLE, ONE YEAR LATER $39.",
+      "characters": [
+        "drew",
+        "barclay"
+      ],
+      "away": "",
+      "signs": [],
+      "turn": "theft — luxury traded for remote",
+      "setting": "",
+      "scene": "Barclay mimics clicking a remote with his thumb; Drew swirls his martini without looking. IN THIS PANEL, CAMERA behind the two gentlemen on the CUSTOMER SIDE — their bodies block the counter's near edge — and NOBODY on the FAR service side: the back bar stands across the counter, behind no one. The television picture shows The television picture shows a low table scattered with several identical remote controls pointing in different directions. Stage it exactly as THE SIDES describes.",
+      "slug": "i-don-t-need-prestige-i",
+      "n": 4,
+      "file": "04-i-don-t-need-prestige-i.png"
+    },
+    {
+      "speaker": "barclay",
+      "caption": "I don't mind paying more; I just want to know which pothole.",
+      "action": "Barclay traces a small circle on the marble with his fingertip; Drew nods once.",
+      "tv": "CITY APPROVES PROPERTY TAX HIKE",
+      "tvPicture": "The television picture shows a fresh patch in asphalt surrounded by three bright traffic cones.",
+      "board": "",
+      "characters": [
+        "drew",
+        "barclay"
+      ],
+      "away": "",
+      "signs": [],
+      "turn": "theft — tax as pothole repair",
+      "setting": "",
+      "scene": "Barclay traces a small circle on the marble with his fingertip; Drew nods once. IN THIS PANEL, CAMERA behind the two gentlemen on the CUSTOMER SIDE — their bodies block the counter's near edge — and NOBODY on the FAR service side: the back bar stands across the counter, behind no one. The television picture shows The television picture shows a fresh patch in asphalt surrounded by three bright traffic cones. Stage it exactly as THE SIDES describes.",
+      "slug": "i-don-t-mind-paying-more",
+      "n": 5,
+      "file": "05-i-don-t-mind-paying-more.png"
+    },
+    {
+      "speaker": "drew",
+      "caption": "I buy tomatoes by email address.",
+      "action": "Drew lifts a single almond from the bowl like he's scanning it; Abby sets a martini down and doesn't let go yet.",
+      "tv": "LOYALTY PRICES REQUIRE SIGN-IN",
+      "tvPicture": "The television picture shows a supermarket self-check lane with a glowing barcode scanner and a keypad lit up.",
+      "board": "",
+      "characters": [
+        "drew",
+        "barclay",
+        "abby"
+      ],
+      "away": "",
+      "signs": [],
+      "turn": "theft — groceries as login",
+      "setting": "",
+      "scene": "Drew lifts a single almond from the bowl like he's scanning it; Abby sets a martini down and doesn't let go yet. IN THIS PANEL, CAMERA behind the two gentlemen on the CUSTOMER SIDE — their bodies block the counter's near edge — with ABBY working the FAR service side across the counter, the back bar behind HER alone. The television picture shows The television picture shows a supermarket self-check lane with a glowing barcode scanner and a keypad lit up. Stage it exactly as THE SIDES describes. DREW IS THE ONE SPEAKING IN THIS PANEL: his bill is SLIGHTLY PARTED, caught mid-word. Abby's face reads WARM — amused or at ease, NEVER sad or downcast; when she serves, delivers or lands the line she is genuinely SMILING.",
+      "slug": "i-buy-tomatoes-by-email-address",
+      "n": 6,
+      "file": "06-i-buy-tomatoes-by-email-address.png"
+    },
+    {
+      "speaker": "drew",
+      "caption": "The resort fee is our cover charge for the hallway.",
+      "action": "Drew resets his olive on the pick; Barclay smiles without enthusiasm.",
+      "tv": "HOTEL FEES UNDER SCRUTINY",
+      "tvPicture": "The television picture shows a hotel corridor with identical doors and a luggage cart parked alone.",
+      "board": "",
+      "characters": [
+        "drew",
+        "barclay"
+      ],
+      "away": "",
+      "signs": [],
+      "turn": "theft — resort fee as cover charge",
+      "setting": "",
+      "scene": "Drew resets his olive on the pick; Barclay smiles without enthusiasm. IN THIS PANEL, CAMERA behind the two gentlemen on the CUSTOMER SIDE — their bodies block the counter's near edge — and NOBODY on the FAR service side: the back bar stands across the counter, behind no one. The television picture shows The television picture shows a hotel corridor with identical doors and a luggage cart parked alone. Stage it exactly as THE SIDES describes. DREW IS THE ONE SPEAKING IN THIS PANEL: his bill is SLIGHTLY PARTED, caught mid-word.",
+      "slug": "the-resort-fee-is-our-cover",
+      "n": 7,
+      "file": "07-the-resort-fee-is-our-cover.png"
+    },
+    {
+      "speaker": "drew",
+      "caption": "Self-checkout is just me doing payroll for the scanner.",
+      "action": "Drew idly builds a wall of peanuts on his side of the bowl; Abby dries a glass.",
+      "tv": "GROCERS EXPAND SELF-CHECKOUT",
+      "tvPicture": "The television picture shows a row of unmanned checkout stations with their lights blinking the same color.",
+      "board": "ITEMS SCANNED: 14 · UNEXPECTED ITEM: 1.",
+      "characters": [
+        "drew",
+        "barclay",
+        "abby"
+      ],
+      "away": "",
+      "signs": [],
+      "turn": "theft — labor moved to customer",
+      "setting": "",
+      "scene": "Drew idly builds a wall of peanuts on his side of the bowl; Abby dries a glass. IN THIS PANEL, CAMERA behind the two gentlemen on the CUSTOMER SIDE — their bodies block the counter's near edge — with ABBY working the FAR service side across the counter, the back bar behind HER alone. The television picture shows The television picture shows a row of unmanned checkout stations with their lights blinking the same color. Stage it exactly as THE SIDES describes. DREW IS THE ONE SPEAKING IN THIS PANEL: his bill is SLIGHTLY PARTED, caught mid-word. Abby's face reads WARM — amused or at ease, NEVER sad or downcast; when she serves, delivers or lands the line she is genuinely SMILING.",
+      "slug": "self-checkout-is-just-me-doing",
+      "n": 8,
+      "file": "08-self-checkout-is-just-me-doing.png"
+    },
+    {
+      "speaker": "drew",
+      "caption": "The maintenance fee is a cover charge for my balance.",
+      "action": "Drew levels his martini to eye the meniscus; Barclay checks his watch.",
+      "tv": "BANKS REVAMP ACCOUNT FEES",
+      "tvPicture": "The television picture shows velvet ropes forming a short empty queue in front of a closed doorway.",
+      "board": "",
+      "characters": [
+        "drew",
+        "barclay"
+      ],
+      "away": "",
+      "signs": [],
+      "turn": "theft — bank fee as cover charge",
+      "setting": "",
+      "scene": "Drew levels his martini to eye the meniscus; Barclay checks his watch. IN THIS PANEL, CAMERA behind the two gentlemen on the CUSTOMER SIDE — their bodies block the counter's near edge — and NOBODY on the FAR service side: the back bar stands across the counter, behind no one. The television picture shows The television picture shows velvet ropes forming a short empty queue in front of a closed doorway. Stage it exactly as THE SIDES describes. DREW IS THE ONE SPEAKING IN THIS PANEL: his bill is SLIGHTLY PARTED, caught mid-word.",
+      "slug": "the-maintenance-fee-is-a-cover",
+      "n": 9,
+      "file": "09-the-maintenance-fee-is-a-cover.png"
+    },
+    {
+      "speaker": "barclay",
+      "caption": "I'm done with auto-renewals; leave the tab open.",
+      "action": "Barclay sets his card back in his wallet and gestures for another; Abby keeps the towel in her hand.",
+      "tv": "SUBSCRIPTIONS DEFAULT TO AUTO-RENEW",
+      "tvPicture": "The television picture shows a large on–off slider graphic tilted to the on position.",
+      "board": "",
+      "characters": [
+        "drew",
+        "barclay",
+        "abby"
+      ],
+      "away": "",
+      "signs": [],
+      "turn": "contradiction — renounce renewals then open tab",
+      "setting": "",
+      "scene": "Barclay sets his card back in his wallet and gestures for another; Abby keeps the towel in her hand. IN THIS PANEL, CAMERA behind the two gentlemen on the CUSTOMER SIDE — their bodies block the counter's near edge — with ABBY working the FAR service side across the counter, the back bar behind HER alone. The television picture shows The television picture shows a large on–off slider graphic tilted to the on position. Stage it exactly as THE SIDES describes. Abby's face reads WARM — amused or at ease, NEVER sad or downcast; when she serves, delivers or lands the line she is genuinely SMILING.",
+      "slug": "i-m-done-with-auto-renewals",
+      "n": 10,
+      "file": "10-i-m-done-with-auto-renewals.png"
+    }
+  ]
+}

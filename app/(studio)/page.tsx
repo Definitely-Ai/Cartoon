@@ -1,4 +1,4 @@
-﻿import { Suspense } from "react";
+import { Suspense } from "react";
 import Link from "next/link";
 import { getStudioDays, getStudioToday, type StudioDay } from "@/lib/db";
 import { PublishError } from "@/lib/githubPublish";
@@ -62,10 +62,10 @@ async function TodayTable() {
 
           <div className="studio-dispatch-grid">
             <Link href="/gallery" className="studio-dispatch-card">
-              <span className="studio-dispatch-card-badge">612 Images · Cloud & Local</span>
+              <span className="studio-dispatch-card-badge">Studio Prints & Archive</span>
               <h2 className="studio-dispatch-card-title">The Image Vault</h2>
               <p className="studio-dispatch-card-desc">
-                Browse every cartoon generated for the strip: finals, knockout runs, candidate tests, and real-time Replicate sync with prompt inspection.
+                Browse verified finished prints, master reference plates, and studio workshop cartoons — sorted chronologically by time generated.
               </p>
               <span className="studio-dispatch-card-action">Open Vault →</span>
             </Link>

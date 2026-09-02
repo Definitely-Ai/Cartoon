@@ -4,7 +4,7 @@ import manifestItems from "@/lib/gallery-manifest.json";
 export interface GalleryItem {
   id: string;
   title: string;
-  category: "final" | "knockout" | "replicate" | "inspect" | "canon";
+  category: "final" | "master" | "showcase" | "drafts";
   sceneType?: "trio" | "duo" | "solo" | "base";
   src: string;
   caption?: string;
@@ -14,128 +14,58 @@ export interface GalleryItem {
   action?: string;
   turn?: string;
   prompt?: string;
-  batch?: string;
-  date: string;
+  timestamp: string;
+  formattedTime: string;
   model?: string;
-  predictionId?: string;
-}
-
-const REPLICATE_API = "https://api.replicate.com/v1";
-
-function getReplicateToken(): string | null {
-  const names = ["REPLICATE_API_TOKEN", "REPLICATE_API_KEY", "REPLICATE_TOKEN"];
-  for (const name of names) {
-    const val = process.env[name];
-    if (val) return val;
-  }
-  return null;
-}
-
-// Fetch predictions from Replicate API
-async function fetchReplicatePredictions(): Promise<GalleryItem[]> {
-  const token = getReplicateToken();
-  if (!token) return [];
-
-  try {
-    const res = await fetch(`${REPLICATE_API}/predictions`, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-      next: { revalidate: 30 },
-    });
-
-    if (!res.ok) return [];
-
-    const data = await res.json();
-    const predictions = (data.results || []) as Array<{
-      id: string;
-      model?: string;
-      version?: string;
-      status: string;
-      created_at: string;
-      output?: string | string[] | null;
-      input?: {
-        prompt?: string;
-        aspect_ratio?: string;
-        [key: string]: unknown;
-      };
-    }>;
-
-    const items: GalleryItem[] = [];
-
-    for (const p of predictions) {
-      if (p.status !== "succeeded" || !p.output) continue;
-      const outputs = Array.isArray(p.output) ? p.output : [p.output];
-      const prompt = p.input?.prompt || "";
-      const isTrio = /abby/i.test(prompt);
-      const isDuo = /drew/i.test(prompt) && /barclay/i.test(prompt) && !isTrio;
-
-      outputs.forEach((url, idx) => {
-        if (typeof url === "string" && (url.startsWith("http") || url.startsWith("/"))) {
-          items.push({
-            id: `replicate-${p.id}-${idx}`,
-            title: `Replicate: ${p.id.slice(0, 8)}`,
-            category: "replicate",
-            sceneType: isTrio ? "trio" : isDuo ? "duo" : "solo",
-            src: url,
-            prompt: prompt,
-            model: p.model || "flux-pro / gpt-image-2",
-            predictionId: p.id,
-            date: p.created_at ? p.created_at.slice(0, 10) : new Date().toISOString().slice(0, 10),
-          });
-        }
-      });
-    }
-
-    return items;
-  } catch (err) {
-    console.error("Failed to fetch Replicate predictions:", err);
-    return [];
-  }
 }
 
 export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
   const category = searchParams.get("category") || "all";
   const scene = searchParams.get("scene") || "all";
+  const sort = searchParams.get("sort") || "newest";
   const query = (searchParams.get("q") || "").toLowerCase().trim();
   const page = parseInt(searchParams.get("page") || "1", 10);
   const limit = parseInt(searchParams.get("limit") || "40", 10);
 
-  const localItems = manifestItems as GalleryItem[];
-  const replicateItems = await fetchReplicatePredictions();
-
-  // Combine and sort newest first
-  let allItems = [...replicateItems, ...localItems];
+  let items = [...(manifestItems as GalleryItem[])];
 
   // Filter by category
   if (category !== "all") {
-    allItems = allItems.filter((item) => item.category === category);
+    items = items.filter((item) => item.category === category);
   }
 
   // Filter by scene type
   if (scene !== "all") {
-    allItems = allItems.filter((item) => item.sceneType === scene);
+    items = items.filter((item) => item.sceneType === scene);
   }
 
   // Filter by search query
   if (query) {
-    allItems = allItems.filter((item) => {
+    items = items.filter((item) => {
       const matchCaption = item.caption?.toLowerCase().includes(query);
       const matchTitle = item.title.toLowerCase().includes(query);
       const matchPrompt = item.prompt?.toLowerCase().includes(query);
       const matchTv = item.tv?.toLowerCase().includes(query);
       const matchBoard = item.board?.toLowerCase().includes(query);
-      const matchBatch = item.batch?.toLowerCase().includes(query);
-      return matchCaption || matchTitle || matchPrompt || matchTv || matchBoard || matchBatch;
+      return matchCaption || matchTitle || matchPrompt || matchTv || matchBoard;
     });
   }
 
+  // Sort by time generated
+  items.sort((a, b) => {
+    const timeA = new Date(a.timestamp).getTime() || 0;
+    const timeB = new Date(b.timestamp).getTime() || 0;
+    return sort === "oldest" ? timeA - timeB : timeB - timeA;
+  });
+
   // Pagination
-  const total = allItems.length;
+  const total = items.length;
   const totalPages = Math.ceil(total / limit);
   const start = (page - 1) * limit;
-  const pagedItems = allItems.slice(start, start + limit);
+  const pagedItems = items.slice(start, start + limit);
+
+  const allItems = manifestItems as GalleryItem[];
 
   return NextResponse.json({
     items: pagedItems,
@@ -147,11 +77,11 @@ export async function GET(request: NextRequest) {
       hasMore: page < totalPages,
     },
     counts: {
-      total: localItems.length + replicateItems.length,
-      finals: localItems.filter((i) => i.category === "final").length,
-      knockouts: localItems.filter((i) => i.category === "knockout").length,
-      replicate: replicateItems.length,
-      inspect: localItems.filter((i) => i.category === "inspect").length,
+      total: allItems.length,
+      finals: allItems.filter((i) => i.category === "final").length,
+      masters: allItems.filter((i) => i.category === "master").length,
+      showcase: allItems.filter((i) => i.category === "showcase").length,
+      drafts: allItems.filter((i) => i.category === "drafts").length,
     },
   });
 }

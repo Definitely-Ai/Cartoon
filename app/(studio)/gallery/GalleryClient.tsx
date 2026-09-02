@@ -14,6 +14,7 @@ export default function GalleryClient({
   const [counts, setCounts] = useState(initialCounts);
   const [category, setCategory] = useState<string>("all");
   const [scene, setScene] = useState<string>("all");
+  const [sortOrder, setSortOrder] = useState<"newest" | "oldest">("newest");
   const [search, setSearch] = useState<string>("");
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const [page, setPage] = useState<number>(1);
@@ -24,12 +25,13 @@ export default function GalleryClient({
   const [isPending, startTransition] = useTransition();
 
   const fetchItems = useCallback(
-    async (cat: string, scn: string, q: string, pg: number, append = false) => {
+    async (cat: string, scn: string, srt: string, q: string, pg: number, append = false) => {
       setLoading(true);
       try {
         const params = new URLSearchParams({
           category: cat,
           scene: scn,
+          sort: srt,
           q,
           page: String(pg),
           limit: "40",
@@ -59,29 +61,38 @@ export default function GalleryClient({
       const sp = new URLSearchParams(window.location.search);
       const urlCat = sp.get("category");
       const urlScene = sp.get("scene");
+      const urlSort = sp.get("sort") as "newest" | "oldest" | null;
       const urlQ = sp.get("q") || "";
-      if (urlCat || urlScene || urlQ) {
-        if (urlCat) setCategory(urlCat);
-        if (urlScene) setScene(urlScene);
+      if (urlCat || urlScene || urlSort || urlQ) {
+        const cat = urlCat || "all";
+        const scn = urlScene || "all";
+        const srt = urlSort || "newest";
+        if (urlCat) setCategory(cat);
+        if (urlScene) setScene(scn);
+        if (urlSort) setSortOrder(srt);
         if (urlQ) setSearch(urlQ);
-        fetchItems(urlCat || "all", urlScene || "all", urlQ, 1, false);
-        return;
+        fetchItems(cat, scn, srt, urlQ, 1, false);
       }
     }
-    // Default initial fetch to sync live Replicate predictions
-    fetchItems("all", "all", "", 1, false);
   }, [fetchItems]);
 
   const handleCategoryChange = (newCat: string) => {
     setCategory(newCat);
     setPage(1);
-    fetchItems(newCat, scene, search, 1, false);
+    fetchItems(newCat, scene, sortOrder, search, 1, false);
   };
 
   const handleSceneChange = (newScene: string) => {
     setScene(newScene);
     setPage(1);
-    fetchItems(category, newScene, search, 1, false);
+    fetchItems(category, newScene, sortOrder, search, 1, false);
+  };
+
+  const handleSortToggle = () => {
+    const nextSort = sortOrder === "newest" ? "oldest" : "newest";
+    setSortOrder(nextSort);
+    setPage(1);
+    fetchItems(category, scene, nextSort, search, 1, false);
   };
 
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -89,19 +100,14 @@ export default function GalleryClient({
     setSearch(q);
     setPage(1);
     startTransition(() => {
-      fetchItems(category, scene, q, 1, false);
+      fetchItems(category, scene, sortOrder, q, 1, false);
     });
   };
 
   const handleLoadMore = () => {
     const nextPage = page + 1;
     setPage(nextPage);
-    fetchItems(category, scene, search, nextPage, true);
-  };
-
-  const handleRefresh = () => {
-    setPage(1);
-    fetchItems(category, scene, search, 1, false);
+    fetchItems(category, scene, sortOrder, search, nextPage, true);
   };
 
   // Modal navigation
@@ -145,15 +151,19 @@ export default function GalleryClient({
       <div className="gallery-header">
         <div className="gallery-title-row">
           <div>
-            <p className="gallery-eyebrow">Studio Proofs & Archive</p>
+            <p className="gallery-eyebrow">Studio Prints & Archive</p>
             <h1 className="gallery-title">The Image Vault</h1>
             <p className="gallery-sub">
-              Every cartoon ever drawn for The Swinging Door — curated finals, knockout runs, inspect studies, and live Replicate generations.
+              Verified finished cartoons, master reference plates, and studio workshop prints — sorted by time generated.
             </p>
           </div>
           <div className="gallery-actions">
-            <button className="gallery-refresh-btn" onClick={handleRefresh} disabled={loading} title="Check Replicate API for new generations">
-              <span>{loading ? "⟳ Syncing..." : "⟳ Refresh Feed"}</span>
+            <button
+              className="gallery-sort-toggle-btn"
+              onClick={handleSortToggle}
+              title="Toggle sort order by generation timestamp"
+            >
+              <span>{sortOrder === "newest" ? "⏱️ Newest Generated" : "⏱️ Oldest First"}</span>
             </button>
           </div>
         </div>
@@ -164,7 +174,7 @@ export default function GalleryClient({
             <input
               type="text"
               className="gallery-search-input"
-              placeholder="Search captions, gags, headlines, chalkboard items, prompts..."
+              placeholder="Search by caption, punchline, headline, chalkboard menu, speaker..."
               value={search}
               onChange={handleSearch}
             />
@@ -176,7 +186,7 @@ export default function GalleryClient({
                 className={`gallery-tab-btn ${category === "all" ? "active" : ""}`}
                 onClick={() => handleCategoryChange("all")}
               >
-                All Works ({counts.total || items.length})
+                All Prints ({counts.total || items.length})
               </button>
               <button
                 className={`gallery-tab-btn ${category === "final" ? "active" : ""}`}
@@ -185,22 +195,22 @@ export default function GalleryClient({
                 Final 20 Editions ({counts.finals || 23})
               </button>
               <button
-                className={`gallery-tab-btn ${category === "replicate" ? "active" : ""}`}
-                onClick={() => handleCategoryChange("replicate")}
+                className={`gallery-tab-btn ${category === "master" ? "active" : ""}`}
+                onClick={() => handleCategoryChange("master")}
               >
-                Replicate Stream {counts.replicate ? `(${counts.replicate})` : ""}
+                Master Plates ({counts.masters || 10})
               </button>
               <button
-                className={`gallery-tab-btn ${category === "knockout" ? "active" : ""}`}
-                onClick={() => handleCategoryChange("knockout")}
+                className={`gallery-tab-btn ${category === "showcase" ? "active" : ""}`}
+                onClick={() => handleCategoryChange("showcase")}
               >
-                Knockout Runs ({counts.knockouts || 541})
+                Money Series ({counts.showcase || 10})
               </button>
               <button
-                className={`gallery-tab-btn ${category === "inspect" ? "active" : ""}`}
-                onClick={() => handleCategoryChange("inspect")}
+                className={`gallery-tab-btn ${category === "drafts" ? "active" : ""}`}
+                onClick={() => handleCategoryChange("drafts")}
               >
-                Inspect Plates ({counts.inspect || 31})
+                Studio Drafts ({counts.drafts || 16})
               </button>
             </div>
 
@@ -229,8 +239,7 @@ export default function GalleryClient({
       </div>
 
       <div className="gallery-stats-bar">
-        <span>Cataloging {items.length} image{items.length === 1 ? "" : "s"} {category !== "all" ? `· Filtered by ${category}` : ""}</span>
-        {counts.replicate > 0 && <span className="gallery-stats-live">Live Synced with Replicate</span>}
+        <span>Cataloging {items.length} print{items.length === 1 ? "" : "s"} · Sorted by time generated ({sortOrder})</span>
       </div>
 
       <div className="gallery-grid">
@@ -254,7 +263,9 @@ export default function GalleryClient({
                     <p>{item.title}</p>
                   </div>
                 )}
-                <span className={`gallery-badge ${item.category}`}>{item.category}</span>
+                <span className={`gallery-badge ${item.category}`}>
+                  {item.category === "final" ? "FINAL" : item.category === "master" ? "MASTER" : item.category === "showcase" ? "SERIES" : "DRAFT"}
+                </span>
                 {item.sceneType && (
                   <span className="gallery-scene-tag">{item.sceneType.toUpperCase()}</span>
                 )}
@@ -263,8 +274,8 @@ export default function GalleryClient({
                 <h3 className="gallery-card-title">{item.title}</h3>
                 {item.caption && <p className="gallery-card-caption">&ldquo;{item.caption.replace(/^.*:\s*["“]?|["”]?$/g, "")}&rdquo;</p>}
                 <div className="gallery-card-meta-row">
-                  <span>{item.date}</span>
-                  {item.model && <span>{item.model.split("/").pop()}</span>}
+                  <span>{item.formattedTime}</span>
+                  {item.sceneType && <span>{item.sceneType.toUpperCase()}</span>}
                 </div>
               </div>
             </div>
@@ -314,7 +325,9 @@ export default function GalleryClient({
             <div className="gallery-modal-sidebar">
               <div className="gallery-modal-header">
                 <div>
-                  <span className={`gallery-badge ${selectedItem.category}`}>{selectedItem.category}</span>
+                  <span className={`gallery-badge ${selectedItem.category}`}>
+                    {selectedItem.category === "final" ? "FINAL" : selectedItem.category === "master" ? "MASTER" : selectedItem.category === "showcase" ? "SERIES" : "DRAFT"}
+                  </span>
                   <h2 className="gallery-modal-title">{selectedItem.title}</h2>
                 </div>
                 <button
@@ -328,7 +341,7 @@ export default function GalleryClient({
 
               {selectedItem.caption && (
                 <div className="gallery-meta-block">
-                  <div className="gallery-meta-label">Dialogue & Caption</div>
+                  <div className="gallery-meta-label">Attributed Dialogue & Caption</div>
                   <p className="gallery-meta-val" style={{ fontStyle: "italic", fontSize: "1.08rem" }}>
                     {selectedItem.caption}
                   </p>
@@ -341,7 +354,7 @@ export default function GalleryClient({
                   <p className="gallery-meta-val" style={{ fontWeight: 600 }}>{selectedItem.tv}</p>
                   {selectedItem.tvPicture && (
                     <p className="gallery-meta-val" style={{ opacity: 0.82, marginTop: "0.35rem", fontSize: "0.85rem" }}>
-                      Footage: {selectedItem.tvPicture}
+                      Visual: {selectedItem.tvPicture}
                     </p>
                   )}
                 </div>
@@ -375,10 +388,9 @@ export default function GalleryClient({
 
               <div className="gallery-meta-block">
                 <div className="gallery-meta-label">Catalog Record</div>
-                <p className="gallery-meta-val">Date: {selectedItem.date} {selectedItem.sceneType ? `· Cast: ${selectedItem.sceneType.toUpperCase()}` : ""}</p>
-                {selectedItem.model && <p className="gallery-meta-val">Model: {selectedItem.model}</p>}
-                {selectedItem.predictionId && (
-                  <p className="gallery-meta-val" style={{ wordBreak: "break-all" }}>Prediction ID: {selectedItem.predictionId}</p>
+                <p className="gallery-meta-val">Generated: {selectedItem.formattedTime}</p>
+                {selectedItem.sceneType && (
+                  <p className="gallery-meta-val">Cast Staging: {selectedItem.sceneType.toUpperCase()}</p>
                 )}
               </div>
 
