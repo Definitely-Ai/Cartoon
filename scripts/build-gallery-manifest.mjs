@@ -6,8 +6,21 @@ const here = path.dirname(fileURLToPath(import.meta.url));
 const repoRoot = path.resolve(here, "..");
 const galleryDir = path.join(repoRoot, "public", "gallery");
 const manifestPath = path.join(galleryDir, "manifest.json");
+const libManifestPath = path.join(repoRoot, "lib", "gallery-manifest.json");
 
 const items = [];
+
+// Helper to extract clean dynamic prompt
+function cleanPrompt(p) {
+  if (!p) return "";
+  if (p.length <= 1500) return p;
+  // If it's a huge base prompt, extract the dynamic/scene part or trim
+  const sceneIdx = p.indexOf("THE SCENE:");
+  if (sceneIdx !== -1) {
+    return p.slice(sceneIdx, sceneIdx + 1500);
+  }
+  return p.slice(0, 1500) + "...";
+}
 
 // 1. Index Final editions
 const finalDir = path.join(galleryDir, "final");
@@ -134,7 +147,7 @@ if (fs.existsSync(knockoutDir)) {
         caption: gag.caption || "",
         tv: gag.tv || "",
         board: gag.board || "",
-        prompt: prompt,
+        prompt: cleanPrompt(prompt),
         date: "2026-09-01",
       });
     }
@@ -157,5 +170,7 @@ if (fs.existsSync(inspectDir)) {
   }
 }
 
-fs.writeFileSync(manifestPath, JSON.stringify(items, null, 2));
-console.log(`Gallery manifest built: ${items.length} items indexed.`);
+const jsonContent = JSON.stringify(items, null, 2);
+fs.writeFileSync(manifestPath, jsonContent);
+fs.writeFileSync(libManifestPath, jsonContent);
+console.log(`Gallery manifest built: ${items.length} items indexed (size: ${Math.round(jsonContent.length / 1024)} KB).`);

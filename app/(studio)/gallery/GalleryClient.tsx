@@ -1,7 +1,6 @@
 ﻿"use client";
 
 import { useEffect, useState, useTransition } from "react";
-import Image from "next/image";
 import type { GalleryItem } from "@/app/api/gallery/route";
 
 export default function GalleryClient({ initialItems, initialCounts }: { initialItems: GalleryItem[]; initialCounts: Record<string, number> }) {
@@ -42,6 +41,11 @@ export default function GalleryClient({ initialItems, initialCounts }: { initial
       setLoading(false);
     }
   };
+
+  // Sync live on initial mount
+  useEffect(() => {
+    fetchItems("all", "all", "", 1, false);
+  }, []);
 
   const handleCategoryChange = (newCat: string) => {
     setCategory(newCat);
@@ -131,13 +135,13 @@ export default function GalleryClient({ initialItems, initialCounts }: { initial
                 className={`gallery-tab-btn ${category === "knockout" ? "active" : ""}`}
                 onClick={() => handleCategoryChange("knockout")}
               >
-                Knockout Runs ({counts.knockouts || 570})
+                Knockout Runs ({counts.knockouts || 541})
               </button>
               <button
                 className={`gallery-tab-btn ${category === "inspect" ? "active" : ""}`}
                 onClick={() => handleCategoryChange("inspect")}
               >
-                Inspect Plates
+                Inspect Plates ({counts.inspect || 31})
               </button>
             </div>
 

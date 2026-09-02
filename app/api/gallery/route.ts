@@ -1,8 +1,6 @@
 ﻿import { NextRequest, NextResponse } from "next/server";
-import fs from "node:fs";
-import path from "node:path";
+import manifestItems from "@/lib/gallery-manifest.json";
 
-// Types
 export interface GalleryItem {
   id: string;
   title: string;
@@ -34,7 +32,7 @@ function getReplicateToken(): string | null {
 }
 
 // Fetch predictions from Replicate API
-async function fetchReplicatePredictions(limit = 100): Promise<GalleryItem[]> {
+async function fetchReplicatePredictions(): Promise<GalleryItem[]> {
   const token = getReplicateToken();
   if (!token) return [];
 
@@ -43,7 +41,7 @@ async function fetchReplicatePredictions(limit = 100): Promise<GalleryItem[]> {
       headers: {
         Authorization: `Bearer ${token}`,
       },
-      next: { revalidate: 60 }, // Cache for 60 seconds
+      next: { revalidate: 30 },
     });
 
     if (!res.ok) return [];
@@ -96,20 +94,6 @@ async function fetchReplicatePredictions(limit = 100): Promise<GalleryItem[]> {
   }
 }
 
-// Load local manifest
-function loadLocalManifest(): GalleryItem[] {
-  try {
-    const manifestPath = path.join(process.cwd(), "public", "gallery", "manifest.json");
-    if (fs.existsSync(manifestPath)) {
-      const content = fs.readFileSync(manifestPath, "utf8");
-      return JSON.parse(content);
-    }
-  } catch (err) {
-    console.error("Failed to load local gallery manifest:", err);
-  }
-  return [];
-}
-
 export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
   const category = searchParams.get("category") || "all";
@@ -118,7 +102,7 @@ export async function GET(request: NextRequest) {
   const page = parseInt(searchParams.get("page") || "1", 10);
   const limit = parseInt(searchParams.get("limit") || "40", 10);
 
-  const localItems = loadLocalManifest();
+  const localItems = manifestItems as GalleryItem[];
   const replicateItems = await fetchReplicatePredictions();
 
   // Combine and sort newest first
