@@ -79,7 +79,8 @@ async function TodayTable() {
                 sent to score one before now. */}
             <p className="br-howto">
               If you were told new cartoons are ready, they&rsquo;re waiting on{" "}
-              <Link href="/review">Review</Link>. Everything ever drawn is in{" "}
+              <Link href="/review">Review</Link>. Browse the complete archive of 595+ generations in{" "}
+              <Link href="/gallery"><strong>The Image Vault</strong></Link>, or explore{" "}
               <Link href="/collection">The Collection</Link>.
             </p>
           </div>

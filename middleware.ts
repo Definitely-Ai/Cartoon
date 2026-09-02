@@ -19,7 +19,7 @@
 
 export const config = {
   matcher: [
-    "/((?!login|api/backroom/login|api/backroom/logout|api/mcp|_next/static|_next/image|icon.svg|favicon.ico|og.png).*)",
+    "/((?!login|api/backroom/login|api/backroom/logout|api/mcp|gallery|api/gallery|_next/static|_next/image|icon.svg|favicon.ico|og.png).*)",
   ],
   // Node runtime: Vercel's middleware wrapper is CommonJS-flavoured and
   // references Node globals, which crashed the default Edge runtime.
