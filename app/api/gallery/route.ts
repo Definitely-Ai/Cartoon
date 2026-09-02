@@ -4,7 +4,7 @@ import manifestItems from "@/lib/gallery-manifest.json";
 export interface GalleryItem {
   id: string;
   title: string;
-  category: "final" | "master" | "showcase" | "drafts";
+  category: "final" | "master" | "showcase";
   sceneType?: "trio" | "duo" | "solo" | "base";
   src: string;
   caption?: string;
@@ -81,7 +81,6 @@ export async function GET(request: NextRequest) {
       finals: allItems.filter((i) => i.category === "final").length,
       masters: allItems.filter((i) => i.category === "master").length,
       showcase: allItems.filter((i) => i.category === "showcase").length,
-      drafts: allItems.filter((i) => i.category === "drafts").length,
     },
   });
 }

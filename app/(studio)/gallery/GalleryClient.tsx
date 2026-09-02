@@ -151,10 +151,10 @@ export default function GalleryClient({
       <div className="gallery-header">
         <div className="gallery-title-row">
           <div>
-            <p className="gallery-eyebrow">Studio Prints & Archive</p>
+            <p className="gallery-eyebrow">Studio Prints & Master Archive</p>
             <h1 className="gallery-title">The Image Vault</h1>
             <p className="gallery-sub">
-              Verified finished cartoons, master reference plates, and studio workshop prints — sorted by time generated.
+              Curated finished cartoons, verified master reference plates, and production prints — sorted chronologically by time generated.
             </p>
           </div>
           <div className="gallery-actions">
@@ -174,7 +174,7 @@ export default function GalleryClient({
             <input
               type="text"
               className="gallery-search-input"
-              placeholder="Search by caption, punchline, headline, chalkboard menu, speaker..."
+              placeholder="Search by caption, punchline, chyron, chalkboard menu, speaker..."
               value={search}
               onChange={handleSearch}
             />
@@ -186,13 +186,13 @@ export default function GalleryClient({
                 className={`gallery-tab-btn ${category === "all" ? "active" : ""}`}
                 onClick={() => handleCategoryChange("all")}
               >
-                All Prints ({counts.total || items.length})
+                All Works ({counts.total || items.length})
               </button>
               <button
                 className={`gallery-tab-btn ${category === "final" ? "active" : ""}`}
                 onClick={() => handleCategoryChange("final")}
               >
-                Final 20 Editions ({counts.finals || 23})
+                Final Editions ({counts.finals || 18})
               </button>
               <button
                 className={`gallery-tab-btn ${category === "master" ? "active" : ""}`}
@@ -205,12 +205,6 @@ export default function GalleryClient({
                 onClick={() => handleCategoryChange("showcase")}
               >
                 Money Series ({counts.showcase || 10})
-              </button>
-              <button
-                className={`gallery-tab-btn ${category === "drafts" ? "active" : ""}`}
-                onClick={() => handleCategoryChange("drafts")}
-              >
-                Studio Drafts ({counts.drafts || 16})
               </button>
             </div>
 
@@ -225,7 +219,7 @@ export default function GalleryClient({
                 className={`gallery-pill-btn ${scene === "trio" ? "active" : ""}`}
                 onClick={() => handleSceneChange("trio")}
               >
-                Trio (Drew, Abby, Barclay)
+                Trio (Drew, Barclay & Abby)
               </button>
               <button
                 className={`gallery-pill-btn ${scene === "duo" ? "active" : ""}`}
@@ -264,7 +258,7 @@ export default function GalleryClient({
                   </div>
                 )}
                 <span className={`gallery-badge ${item.category}`}>
-                  {item.category === "final" ? "FINAL" : item.category === "master" ? "MASTER" : item.category === "showcase" ? "SERIES" : "DRAFT"}
+                  {item.category === "final" ? "FINAL" : item.category === "master" ? "MASTER" : "SERIES"}
                 </span>
                 {item.sceneType && (
                   <span className="gallery-scene-tag">{item.sceneType.toUpperCase()}</span>
@@ -326,7 +320,7 @@ export default function GalleryClient({
               <div className="gallery-modal-header">
                 <div>
                   <span className={`gallery-badge ${selectedItem.category}`}>
-                    {selectedItem.category === "final" ? "FINAL" : selectedItem.category === "master" ? "MASTER" : selectedItem.category === "showcase" ? "SERIES" : "DRAFT"}
+                    {selectedItem.category === "final" ? "FINAL" : selectedItem.category === "master" ? "MASTER" : "SERIES"}
                   </span>
                   <h2 className="gallery-modal-title">{selectedItem.title}</h2>
                 </div>
