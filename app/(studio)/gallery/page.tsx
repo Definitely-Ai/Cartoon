@@ -18,7 +18,6 @@ export default function GalleryPage() {
     finals: all.filter((i) => i.category === "final").length,
     masters: all.filter((i) => i.category === "master").length,
     showcase: all.filter((i) => i.category === "showcase").length,
-    drafts: all.filter((i) => i.category === "drafts").length,
   };
 
   return <GalleryClient initialItems={initialItems} initialCounts={initialCounts} />;
