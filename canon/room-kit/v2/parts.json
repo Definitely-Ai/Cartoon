@@ -227,30 +227,69 @@
       "source": "canon/room-kit/v2/parts/chair-right.png"
     },
     {
-      "id": "figure-drew",
-      "mask": "masks/figure-drew.png",
-      "note": "the flamingo seated in the left-hand bar chair, seen from BEHIND and a little to his left: the curve of his back and shoulders rising out of the chair's leather roll, his long neck sweeping up and to the right in a deep question-mark, his head turned so we see the far side of his face in three-quarter back view, his heavy downturned beak pointing along the bar toward his companion, and his near feathered hand resting on the marble",
+      "id": "figure-drew-01-rest",
+      "mask": "masks/figure-drew-01-rest.png",
+      "note": "DREW-01 REST / LISTENING DOWN. Drew - the white-plumed anthropomorphic flamingo in a V-neck knitted sweater vest, crisp white turned-down collar and small solid-black silk bow tie - SEATED IN THE LEFT-HAND CHAIR AT THE MARBLE COUNTER, SEEN FROM BEHIND AND SLIGHTLY TO HIS RIGHT: body turned 146 degrees from the lens so his right shoulder is toward us and the chair back stands in front of him, head yaw 132 degrees and THE HEAD CARRIED DOWN, the line from the centre of his eye to the black tip of his bill lying 56 degrees below horizontal. His eye is on his own martini on its coaster; the lid is heavy and THE BILL IS CLOSED. One neck reversal, the head forward of where the neck left the body. Near feathered hand on the marble at the martini stem. Shoulders 1.32 m, crown 1.65 m on a 0.76 m seat. Cropped at the counter: chest-up, no legs, no stools. He is a PATRON on the room side of the marble. He never looks at us.",
       "mode": "full",
       "feather": 3,
       "toneMatch": true,
       "enabled": false,
-      "values": "values/figure-drew.png",
-      "shadow": null,
+      "values": "values/figure-drew-01-rest.png",
+      "shadow": "shadows/figure-drew-01-rest.png",
       "prompt": "05-render-from-values.prompt.txt",
-      "source": "canon/room-kit/v2/parts/figure-drew.png"
+      "source": null
     },
     {
-      "id": "figure-barclay",
-      "mask": "masks/figure-barclay.png",
-      "note": "the golden retriever seated in the right-hand bar chair, seen from BEHIND and a little to his right: his rounded shoulders and the back of his dark suit jacket rising out of the chair's leather roll, the back of his head with its drop ears turned left toward his companion so his muzzle shows in profile with the black nose, and his near hand resting on the marble",
+      "id": "figure-drew-02-toward",
+      "mask": "masks/figure-drew-02-toward.png",
+      "note": "DREW-02 TURNED TO BARCLAY, HEAD UP - the anchor pose. Drew SEATED IN THE LEFT-HAND CHAIR AT THE MARBLE COUNTER, SEEN FROM BEHIND AND SLIGHTLY TO HIS RIGHT - body turned 146 degrees from the lens so his right shoulder is toward us and the chair back stands in front of him - HIS HEAD TURNED BACK AND ACROSS TO BARCLAY IN THE RIGHT-HAND CHAIR: head yaw 118 degrees, and THE HEAD IS CARRIED UP, the line from the centre of his eye to the black tip of his bill lying 42 degrees below horizontal. His eye slides sideways at Barclay's face; the bill is CLOSED, a slender even-taper wedge whose BLACK OUTER THIRD IS THE OUTLINE with one bright highlight ribbon inside it. One neck reversal, the head carried forward of where the neck left the body. Near hand on the martini stem, at least three digits closed on it and one crossing in front. Shoulders 1.32 m, crown 1.65 m on a 0.76 m seat. Cropped at the counter: chest-up, no legs, no stools. He never looks at us.",
       "mode": "full",
       "feather": 3,
       "toneMatch": true,
       "enabled": false,
-      "values": "values/figure-barclay.png",
-      "shadow": null,
+      "values": "values/figure-drew-02-toward.png",
+      "shadow": "shadows/figure-drew-02-toward.png",
       "prompt": "05-render-from-values.prompt.txt",
-      "source": "canon/room-kit/v2/parts/figure-barclay.png"
+      "source": null
+    },
+    {
+      "id": "figure-barclay-01-rest",
+      "mask": "masks/figure-barclay-01-rest.png",
+      "note": "BARCLAY-01 REST / LISTENING. Barclay - the golden retriever in a dark suit jacket over a pale open-collared shirt, no tie - SEATED IN THE RIGHT-HAND CHAIR AT THE MARBLE COUNTER, SEEN FROM BEHIND AND SLIGHTLY TO HIS LEFT: body turned -144 degrees from the lens so his left shoulder is toward us, head yaw -130 degrees, the line from eye-centre to nose tip 34 degrees below horizontal. MOUTH CLOSED WITH THE CORNER HOOK UP, brows up with one faint forehead crease, lids clear of the dark; the black lip band a FINE LINE running two nose-widths to under the front corner of the eye. One full drop ear on the near side, the far ear a tuft at most. Both fur-backed hands on the marble round the old fashioned. Shoulders 1.36 m, crown 1.71 m on a 0.76 m seat. Cropped at the counter: chest-up, no legs, no stools. He never looks out of the panel.",
+      "mode": "full",
+      "feather": 3,
+      "toneMatch": true,
+      "enabled": false,
+      "values": "values/figure-barclay-01-rest.png",
+      "shadow": "shadows/figure-barclay-01-rest.png",
+      "prompt": "05-render-from-values.prompt.txt",
+      "source": null
+    },
+    {
+      "id": "figure-barclay-02-toward",
+      "mask": "masks/figure-barclay-02-toward.png",
+      "note": "BARCLAY-02 TURNED TO DREW - the second anchor. Barclay SEATED IN THE RIGHT-HAND CHAIR AT THE MARBLE COUNTER, SEEN FROM BEHIND AND SLIGHTLY TO HIS LEFT - body turned -144 degrees from the lens - HIS HEAD TURNED BACK AND ACROSS TO DREW IN THE LEFT-HAND CHAIR: head yaw -118 degrees, the line from eye-centre to nose tip 26 degrees below horizontal. NEAR-PROFILE TO THREE-QUARTER, WITH BOTH EYES DRAWN AND WHOLE, the far one at least half the width of the near one, and the black lip band still running its full two nose-widths to under the front corner of the near eye as the head comes round. MOUTH CLOSED, CORNER UP. One full drop ear on the near side rooting level with the top of the eye and finishing level with the bottom of the jaw; the far ear a tuft. Both fur-backed hands on the marble round the old fashioned. Shoulders 1.36 m, crown 1.71 m on a 0.76 m seat. Cropped at the counter: chest-up, no legs, no stools.",
+      "mode": "full",
+      "feather": 3,
+      "toneMatch": true,
+      "enabled": false,
+      "values": "values/figure-barclay-02-toward.png",
+      "shadow": "shadows/figure-barclay-02-toward.png",
+      "prompt": "05-render-from-values.prompt.txt",
+      "source": null
+    },
+    {
+      "id": "figure-abby-01-ledge",
+      "mask": "masks/figure-abby-01-ledge.png",
+      "note": "ABBY-01 NEUTRAL AT THE LEDGE. Abby - the West Highland terrier proprietor, round soft show-groomed westie head with NO PROJECTING MUZZLE, her big black nose sitting DIRECTLY UNDER HER EYES, two small pricked ears both up, a studded leather collar with one teardrop gem, a fitted light blouse open two buttons with the sleeves rolled back - STANDING ON THE FAR SERVICE SIDE, DIRECTLY ACROSS THE MARBLE FROM THE TWO SEATED GENTLEMEN, body turned -22 degrees into the frame toward them, head yaw -34 degrees and looking DOWN at them, the line from eye-centre to nose tip 10 degrees below horizontal - she stands while they sit, so her head is HIGHER in the frame than either of theirs. BOTH EYES ARE DRAWN, the far one at least half the width of the near one. A warm closed-lip smile, corners clearly up. One hand closed on a working object on the marble; the towel over her LEFT shoulder and her hands empty of it. THE COUNTER'S FAR EDGE CROSSES HER AT THE WAIST AND HIDES HER BELOW IT - she is COVERED BY the counter, never covering it, and the back bar's ledge and shelves stand BEHIND her. Nothing on her is lettered. She is looking at the gentlemen, never out of the panel.",
+      "mode": "full",
+      "feather": 3,
+      "toneMatch": true,
+      "enabled": false,
+      "values": "values/figure-abby-01-ledge.png",
+      "shadow": "shadows/figure-abby-01-ledge.png",
+      "prompt": "05-render-from-values.prompt.txt",
+      "source": null
     }
   ]
 }

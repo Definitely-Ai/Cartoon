@@ -208,6 +208,49 @@ STOOL_TURN = (-0.30, 0.30)      # each chair turned ~17 deg toward the other: th
 STOOL_Z = 0.86
 SEAT_H = 0.76
 
+# ---------------------------------------------------------------- the poses
+# WHERE ABBY STANDS. The bible puts her "on the far service side, DIRECTLY
+# ACROSS THE MARBLE from the two seated gentlemen", with "the counter's far
+# edge crossing her at the waist". Solved, that is z = 2.00: her waist (y 1.02)
+# lands on page row 1175 and the marble's far edge on row 1177, so the counter
+# crosses her exactly where the bible says it does. She is BETWEEN them in x,
+# but at 0.66 rather than the midpoint 0.87 - at 0.87 her head projects to
+# px 773 and sits straight on the shelf unit's divider (px 742..784, the one
+# the founder has already watched go missing once). At 0.66 her head is at
+# px 656, clear of it by 32 px, and still reads as centred between the chairs.
+ABBY_X, ABBY_Z = 0.66, 2.00
+ABBY_CROWN = 1.76       # she stands and they sit, so her head must be HIGHER in
+                        # the frame than either of theirs: crown row 751 against
+                        # Barclay's 775 and Drew's 828
+
+# THE POSE SET, from CAST-PLAN.md. Three numbers per pose and everything else
+# is derived from them (figure() below). Body yaw, head yaw and pitch are the
+# plan's own, unrounded; `hand` is where the near hand comes to rest ON the
+# marble (COUNTER_H 1.07, the top running z 1.146..1.766); `occluder` is the
+# part that stands in front of this one and cuts its silhouette.
+POSES = {
+    "figure-drew-01-rest": dict(
+        who="drew", body=146, head=132, pitch=56, iris=(0.002, -0.006),
+        at=(STOOL_XS[0], STOOL_Z + 0.03), hand=(0.740, 1.090, 1.300),
+        occluder="chair-left"),
+    "figure-drew-02-toward": dict(
+        who="drew", body=146, head=118, pitch=42, iris=(0.007, 0.000),
+        at=(STOOL_XS[0], STOOL_Z + 0.03), hand=(0.740, 1.090, 1.300),
+        occluder="chair-left"),
+    "figure-barclay-01-rest": dict(
+        who="barclay", body=-144, head=-130, pitch=34,
+        at=(STOOL_XS[1], STOOL_Z + 0.03), hand=(1.050, 1.090, 1.320),
+        occluder="chair-right"),
+    "figure-barclay-02-toward": dict(
+        who="barclay", body=-144, head=-118, pitch=26,
+        at=(STOOL_XS[1], STOOL_Z + 0.03), hand=(1.050, 1.090, 1.320),
+        occluder="chair-right"),
+    "figure-abby-01-ledge": dict(
+        who="abby", body=-22, head=-34, pitch=10,
+        at=(ABBY_X, ABBY_Z), hand=(0.860, 1.090, 1.660),
+        occluder="counter"),
+}
+
 # ------------------------------------------------------------------ the camera
 # Where the artist is standing and what they are pointing at. The corner where
 # the window wall meets the back wall is at x = RETURN_X; aiming just to the
@@ -366,7 +409,13 @@ _X, _Y = np.meshgrid(np.arange(W, dtype=np.float32), np.arange(H, dtype=np.float
 # pixels that part is visible on. That is the mask the assembler cuts with.
 # Nobody traces an outline by hand any more.
 BASE_PARTS = ("ceiling", "back-wall", "return-wall", "floor")   # walls, crown, floor; nothing else
-DISABLED = ("bottles-lower", "bottles-upper", "sconce-left", "sconce-right", "cabinets", "chair-left", "chair-right", "figure-drew", "figure-barclay")   # founder 2026-09-05: characters and chairs out
+DISABLED = (("bottles-lower", "bottles-upper", "sconce-left", "sconce-right", "chair-left", "chair-right",
+             "cabinets") + tuple(POSES))   # the chairs are ON in this copy: a seated
+                                                 # pose has to be cut by the leather that
+                                                 # stands in front of it, so the chair must
+                                                 # be drawn to have a mask to cut with.
+                                                 # Every pose stays OFF until the founder
+                                                 # passes the staging (STEP 2).
                                                  # bottles later; the left lamp removed
                                                  # bottles later. Still parts; just off.
 # THE POSTS LAY LAST of the three. A slab is housed BETWEEN two posts, so the
@@ -374,12 +423,17 @@ DISABLED = ("bottles-lower", "bottles-upper", "sconce-left", "sconce-right", "ca
 # face that runs on behind a post toward the wall - and there the post is in
 # front. Laying the carcass first is what let a slab's render creep over a
 # divider and take it off the page.
-LAY_ORDER = ("cabinets", "ledge", "shelf-lower", "bottles-lower", "bottles-upper",
-             "shelf-upper", "backbar", "tv", "board", "sconce-left", "sconce-right",
-             "window-frame", "glass", "counter", "chair-left", "chair-right", "figure-drew", "figure-barclay")
+LAY_ORDER = (("cabinets", "ledge", "shelf-lower", "bottles-lower", "bottles-upper",
+              "shelf-upper", "backbar", "tv", "board", "sconce-left", "sconce-right",
+              "window-frame", "glass", "counter", "chair-left", "chair-right")
+             + tuple(POSES))   # every pose AFTER the chairs: its own values block-in is
+                               # then drawn with the chair already standing behind it
 PART_NOTES = {
-    "figure-drew": "the flamingo seated in the left-hand bar chair, seen from BEHIND and a little to his left: the curve of his back and shoulders rising out of the chair's leather roll, his long neck sweeping up and to the right in a deep question-mark, his head turned so we see the far side of his face in three-quarter back view, his heavy downturned beak pointing along the bar toward his companion, and his near feathered hand resting on the marble",
-    "figure-barclay": "the golden retriever seated in the right-hand bar chair, seen from BEHIND and a little to his right: his rounded shoulders and the back of his dark suit jacket rising out of the chair's leather roll, the back of his head with its drop ears turned left toward his companion so his muzzle shows in profile with the black nose, and his near hand resting on the marble",
+    "figure-drew-01-rest": "DREW-01 REST / LISTENING DOWN. Drew - the white-plumed anthropomorphic flamingo in a V-neck knitted sweater vest, crisp white turned-down collar and small solid-black silk bow tie - SEATED IN THE LEFT-HAND CHAIR AT THE MARBLE COUNTER, SEEN FROM BEHIND AND SLIGHTLY TO HIS RIGHT: body turned 146 degrees from the lens so his right shoulder is toward us and the chair back stands in front of him, head yaw 132 degrees and THE HEAD CARRIED DOWN, the line from the centre of his eye to the black tip of his bill lying 56 degrees below horizontal. His eye is on his own martini on its coaster; the lid is heavy and THE BILL IS CLOSED. One neck reversal, the head forward of where the neck left the body. Near feathered hand on the marble at the martini stem. Shoulders 1.32 m, crown 1.65 m on a 0.76 m seat. Cropped at the counter: chest-up, no legs, no stools. He is a PATRON on the room side of the marble. He never looks at us.",
+    "figure-drew-02-toward": "DREW-02 TURNED TO BARCLAY, HEAD UP - the anchor pose. Drew SEATED IN THE LEFT-HAND CHAIR AT THE MARBLE COUNTER, SEEN FROM BEHIND AND SLIGHTLY TO HIS RIGHT - body turned 146 degrees from the lens so his right shoulder is toward us and the chair back stands in front of him - HIS HEAD TURNED BACK AND ACROSS TO BARCLAY IN THE RIGHT-HAND CHAIR: head yaw 118 degrees, and THE HEAD IS CARRIED UP, the line from the centre of his eye to the black tip of his bill lying 42 degrees below horizontal. His eye slides sideways at Barclay's face; the bill is CLOSED, a slender even-taper wedge whose BLACK OUTER THIRD IS THE OUTLINE with one bright highlight ribbon inside it. One neck reversal, the head carried forward of where the neck left the body. Near hand on the martini stem, at least three digits closed on it and one crossing in front. Shoulders 1.32 m, crown 1.65 m on a 0.76 m seat. Cropped at the counter: chest-up, no legs, no stools. He never looks at us.",
+    "figure-barclay-01-rest": "BARCLAY-01 REST / LISTENING. Barclay - the golden retriever in a dark suit jacket over a pale open-collared shirt, no tie - SEATED IN THE RIGHT-HAND CHAIR AT THE MARBLE COUNTER, SEEN FROM BEHIND AND SLIGHTLY TO HIS LEFT: body turned -144 degrees from the lens so his left shoulder is toward us, head yaw -130 degrees, the line from eye-centre to nose tip 34 degrees below horizontal. MOUTH CLOSED WITH THE CORNER HOOK UP, brows up with one faint forehead crease, lids clear of the dark; the black lip band a FINE LINE running two nose-widths to under the front corner of the eye. One full drop ear on the near side, the far ear a tuft at most. Both fur-backed hands on the marble round the old fashioned. Shoulders 1.36 m, crown 1.71 m on a 0.76 m seat. Cropped at the counter: chest-up, no legs, no stools. He never looks out of the panel.",
+    "figure-barclay-02-toward": "BARCLAY-02 TURNED TO DREW - the second anchor. Barclay SEATED IN THE RIGHT-HAND CHAIR AT THE MARBLE COUNTER, SEEN FROM BEHIND AND SLIGHTLY TO HIS LEFT - body turned -144 degrees from the lens - HIS HEAD TURNED BACK AND ACROSS TO DREW IN THE LEFT-HAND CHAIR: head yaw -118 degrees, the line from eye-centre to nose tip 26 degrees below horizontal. NEAR-PROFILE TO THREE-QUARTER, WITH BOTH EYES DRAWN AND WHOLE, the far one at least half the width of the near one, and the black lip band still running its full two nose-widths to under the front corner of the near eye as the head comes round. MOUTH CLOSED, CORNER UP. One full drop ear on the near side rooting level with the top of the eye and finishing level with the bottom of the jaw; the far ear a tuft. Both fur-backed hands on the marble round the old fashioned. Shoulders 1.36 m, crown 1.71 m on a 0.76 m seat. Cropped at the counter: chest-up, no legs, no stools.",
+    "figure-abby-01-ledge": "ABBY-01 NEUTRAL AT THE LEDGE. Abby - the West Highland terrier proprietor, round soft show-groomed westie head with NO PROJECTING MUZZLE, her big black nose sitting DIRECTLY UNDER HER EYES, two small pricked ears both up, a studded leather collar with one teardrop gem, a fitted light blouse open two buttons with the sleeves rolled back - STANDING ON THE FAR SERVICE SIDE, DIRECTLY ACROSS THE MARBLE FROM THE TWO SEATED GENTLEMEN, body turned -22 degrees into the frame toward them, head yaw -34 degrees and looking DOWN at them, the line from eye-centre to nose tip 10 degrees below horizontal - she stands while they sit, so her head is HIGHER in the frame than either of theirs. BOTH EYES ARE DRAWN, the far one at least half the width of the near one. A warm closed-lip smile, corners clearly up. One hand closed on a working object on the marble; the towel over her LEFT shoulder and her hands empty of it. THE COUNTER'S FAR EDGE CROSSES HER AT THE WAIST AND HIDES HER BELOW IT - she is COVERED BY the counter, never covering it, and the back bar's ledge and shelves stand BEHIND her. Nothing on her is lettered. She is looking at the gentlemen, never out of the panel.",
     "cabinets": "the cabinets under the back bar's working ledge: a run of panelled walnut cupboard doors, each a raised-and-fielded panel with a small brass knob, down to a plinth",
     "ledge": "the back bar's working ledge: a marble-topped counter at waist height running the width of the unit, its polished top pale and veined, its front a slim moulded marble edge, its back flush into the cabinet - empty, nothing standing on it",
     "backbar": "the back bar's carcass: THREE THICK SOLID WALNUT POSTS standing on the marble ledge - a 12 cm post at each end and one 12 cm divider between them - each running UNBROKEN from the ledge up past the upper shelf and stopping in a solid square head above it, each catching the window light down its near side so it reads BRIGHTER than the wall showing between the posts, with a dark arris down its far side, the two left-hand posts turning a deep side face toward the camera so they read as solid square posts standing OFF the panelled wall, and each throwing a soft shadow on the panelling beside it. There is NO back panel, NO top rail, NO cornice and NO shelf drawn here: the panelled wall shows between the posts and runs on above their heads to the frieze rail",
@@ -1031,45 +1085,341 @@ def _oval(cx, cy, cz, rx, ry, n=28):
     return [(cx + rx * math.cos(2 * math.pi * i / n), cy + ry * math.sin(2 * math.pi * i / n), cz) for i in range(n)]
 
 
-def figure(img: np.ndarray, d, who: str, x: float, z: float) -> None:
-    """A seated figure from behind: a block-in the character prompt is rendered
-    from. Torso in the chair, one arm forward to the marble, neck, head. Drew is
-    the brightest thing in the picture (white plumage); Barclay a dark jacket
-    under a furred head. Geometry from the cast plan (2026-09-05): shoulders at
-    1.32 / 1.36 m, heads to 1.65 / 1.71 m, on SEAT_H 0.76 chairs."""
-    zb = z + 0.02                                    # the body plane, just inside the chair's back
+# --------------------------------------------------------------- the cast
+# ONE POSE PER LAYER. Every angle below is the plan's own number in the plan's
+# own convention (reports/2026-09-05/CAST-PLAN.md): BODY YAW measured from
+# camera-forward, 0 deg = chest square to the lens, 180 deg = back square to
+# the lens, + = chest rotated toward frame-right, with the 16 degree camera pan
+# already inside the number; HEAD YAW in the same frame; PITCH = degrees BELOW
+# horizontal of the line eye-centre -> bill tip (Drew) or eye-centre -> nose tip
+# (Barclay, Abby), negative meaning the look is raised.
+#
+# The angles are not decoration. Everything the block-in draws - which shoulder
+# is toward us, which eye is the near one, which ear is the full leather and
+# which is the tuft, where the bill lands - is DERIVED from them, so changing a
+# pose is changing three numbers and nothing else.
+_RIMG = (math.cos(_YAW), -math.sin(_YAW))    # frame-right, in plan
+_FCAM = (math.sin(_YAW), math.cos(_YAW))     # the way the camera looks
+
+
+def _yawdir(yaw_deg: float) -> tuple[float, float]:
+    """The plan direction a chest or a head faces at the plan's yaw."""
+    t = math.radians(yaw_deg)
+    d0 = (-math.sin(_YAW), -math.cos(_YAW))          # square to the lens
+    return (d0[0] * math.cos(t) + _RIMG[0] * math.sin(t),
+            d0[1] * math.cos(t) + _RIMG[1] * math.sin(t))
+
+
+def _side(v: tuple[float, float]) -> tuple[float, float]:
+    """The figure's OWN right hand side, given the way he faces. Facing away
+    from the camera a man's right hand is on our right, which is what fixes the
+    sign: at body +146 Drew turns his right shoulder to the lens and at -144
+    Barclay turns his left, exactly as the plan says they do."""
+    return (v[1], -v[0])
+
+
+def _depth(p) -> float:
+    """Camera depth of a world point. Bigger is further away. This is what
+    decides near from far - the near eye, the near ear, the near shoulder -
+    instead of a hand-written guess that has to be re-guessed every pose."""
+    return (p[0] - CAM_X) * _FCAM[0] + (p[2] - CAM_Z) * _FCAM[1]
+
+
+def _skull_rx(a: float, b: float, hd: tuple[float, float]) -> float:
+    """The PAGE half-width of a skull turned to `hd`. A head is an ellipsoid,
+    longer front-to-back than it is wide, so a head in profile is WIDER on the
+    page than a head square to us - the opposite of what a flat card turned with
+    the yaw would do, which is why the head is drawn as a billboard whose radius
+    is solved here rather than as a card that collapses to a line at 90 degrees."""
+    hr = _side(hd)
+    return math.hypot(a * (hd[0] * _RIMG[0] + hd[1] * _RIMG[1]),
+                      b * (hr[0] * _RIMG[0] + hr[1] * _RIMG[1]))
+
+
+def _face(c, rx: float, ry: float, n: int = 30):
+    """An oval standing in the world, square to the camera: a skull, a hand, an
+    eye. Built on the camera's own right vector so it projects as an ellipse
+    instead of foreshortening away."""
+    return [(c[0] + _RIMG[0] * rx * math.cos(2 * math.pi * i / n),
+             c[1] + ry * math.sin(2 * math.pi * i / n),
+             c[2] + _RIMG[1] * rx * math.cos(2 * math.pi * i / n)) for i in range(n)]
+
+
+def _band(a, b, wa: float, wb: float):
+    """A tapered quad between two world points, its width laid across the page:
+    a neck segment, an arm, an ear, a lip band."""
+    return [(a[0] - _RIMG[0] * wa / 2, a[1], a[2] - _RIMG[1] * wa / 2),
+            (a[0] + _RIMG[0] * wa / 2, a[1], a[2] + _RIMG[1] * wa / 2),
+            (b[0] + _RIMG[0] * wb / 2, b[1], b[2] + _RIMG[1] * wb / 2),
+            (b[0] - _RIMG[0] * wb / 2, b[1], b[2] - _RIMG[1] * wb / 2)]
+
+
+def _lattice(img, pts3, step: int, v: int) -> None:
+    """A diamond knit lattice drawn INTO the values inside a polygon (no contour)."""
+    proj = [P(*p) for p in pts3]
+    m = Image.new("L", (W, H), 0); ImageDraw.Draw(m).polygon(proj, fill=255)
+    mask = np.asarray(m) > 127
+    li = Image.new("L", (W, H), 255); dl = ImageDraw.Draw(li)
+    xs = [p[0] for p in proj]; ys = [p[1] for p in proj]
+    x0, x1, y0, y1 = int(min(xs)) - 2, int(max(xs)) + 2, int(min(ys)) - 2, int(max(ys)) + 2
+    for k in range(x0 - (y1 - y0), x1 + (y1 - y0), step):
+        dl.line([(k, y0), (k + (y1 - y0), y1)], fill=0, width=1)
+        dl.line([(k, y1), (k + (y1 - y0), y0)], fill=0, width=1)
+    lines = np.asarray(li) < 128
+    img[mask & lines] = v
+
+
+def _tone(img, d, pts3, v0, v1=None, axis="y"):
+    """A filled value with NO contour line. A line drawn where the picture has
+    no edge comes through the render as a black scratch; the bill's highlight
+    ribbon is a value, not an edge."""
+    poly(d, pts3, 255)
+    shade(img, pts3, v0, v1, axis)
+
+
+# The physiques, in metres, on the camera solve: shoulders 1.32 / 1.36, crowns
+# 1.65 / 1.71 on a 0.76 m seat; Abby stands, so her crown is the highest head in
+# the frame. skull = (front-to-back, across, top-to-bottom) half-axes.
+PHYSIQUE = {
+    "drew":    dict(hip_y=0.92, hip_hw=0.200, sh_y=1.32, sh_hw=0.175, neck_y=1.335,
+                    crown=1.65, skull=(0.088, 0.078, 0.066), fwd=0.11, wave=0.055,
+                    neck_w=(0.098, 0.058), arm_w=0.132,
+                    v=dict(torso=(104, 128), collar=244, neck=(212, 226), head=222,
+                           arm=(200, 216), hand=212)),
+    "barclay": dict(hip_y=0.92, hip_hw=0.220, sh_y=1.36, sh_hw=0.215, neck_y=1.345,
+                    crown=1.71, skull=(0.115, 0.100, 0.098), fwd=0.02, wave=0.012,
+                    neck_w=(0.126, 0.104), arm_w=0.150,
+                    v=dict(torso=(48, 68), collar=226, neck=(138, 150), head=150,
+                           arm=(50, 66), hand=150)),
+    "abby":    dict(hip_y=0.98, hip_hw=0.190, sh_y=1.50, sh_hw=0.170, neck_y=1.500,
+                    crown=ABBY_CROWN, skull=(0.100, 0.100, 0.093), fwd=0.03, wave=0.008,
+                    neck_w=(0.088, 0.076), arm_w=0.104,
+                    v=dict(torso=(200, 218), collar=64, neck=(206, 214), head=224,
+                           arm=(204, 216), hand=210)),
+}
+
+_ARM = None      # the pixels of the pose's near arm and hand. They reach PAST
+                 # the thing that cuts the rest of the figure - the hand lies ON
+                 # the marble - so the counter may hide Abby's waist and must not
+                 # touch her hand.
+
+
+def figure(img: np.ndarray, d, who: str, pose: dict) -> None:
+    """ONE POSE, blocked in as graded values: the silhouette, the scale, the
+    light and the gaze the character prompt is then rendered inside.
+
+    Built from the pose's three numbers and nothing else. Torso and shoulders on
+    the body yaw; the neck (Drew's one-reversal question mark, Barclay's short
+    furred neck, Abby's slim one) carrying the head to where the head yaw puts
+    it; the skull as a billboard whose width is solved for that yaw; the bill,
+    the muzzle or the nose swung out along the head yaw and dropped by the
+    PITCH, which is the plan's own definition of the line eye-centre -> tip; the
+    near arm forward onto the marble. Near and far - which eye, which ear, which
+    shoulder - are decided by camera depth, not by hand.
+    """
+    global _ARM
+    q = PHYSIQUE[who]
+    v = q["v"]
+    bx, bz = pose["at"]
+    body = _yawdir(pose["body"])
+    bside = _side(body)
+    hdir = _yawdir(pose["head"])
+    hside = _side(hdir)
+    pit = math.radians(pose["pitch"])
+    hip_y, sh_y, sh_hw = q["hip_y"], q["sh_y"], q["sh_hw"]
+
+    B = lambda s, y, f=0.0: (bx + bside[0] * s + body[0] * f, y,
+                             bz + bside[1] * s + body[1] * f)
+
+    # ---- torso and shoulders, square to the BODY yaw ------------------------
+    torso_pts = [B(-q["hip_hw"], hip_y), B(q["hip_hw"], hip_y),
+                 B(sh_hw * 1.04, sh_y - 0.09), B(sh_hw * 0.72, sh_y),
+                 B(0.058, sh_y + 0.02), B(-0.058, sh_y + 0.02),
+                 B(-sh_hw * 0.72, sh_y), B(-sh_hw * 1.04, sh_y - 0.09)]
+    _blob(img, d, torso_pts, v["torso"][0], v["torso"][1], "y")
     if who == "drew":
-        hips, sh, top = 0.40, 0.34, 1.32
-        torso = [(x - hips / 2, 0.92, zb), (x + hips / 2, 0.92, zb), (x + sh / 2 + 0.02, top - 0.06, zb),
-                 (x + sh / 2 - 0.04, top, zb), (x, top + 0.02, zb), (x - sh / 2 + 0.04, top, zb), (x - sh / 2 - 0.02, top - 0.06, zb)]
-        _blob(img, d, torso, 150, 176, "y")          # the knitted vest across his back
-        # near arm forward to the marble, and the hand
-        _blob(img, d, [(x + 0.10, top - 0.03, zb), (x + 0.18, top - 0.10, zb), (x + 0.30, 1.10, 1.03), (x + 0.22, 1.08, 1.03)], 200, 214, "y")
-        _blob(img, d, _oval(x + 0.27, 1.095, 1.05, 0.055, 0.02), 210)
-        _blob(img, d, [(x - 0.07, top + 0.01, zb), (x + 0.07, top + 0.01, zb), (x + 0.06, top + 0.06, zb), (x - 0.06, top + 0.06, zb)], 240)  # collar band
-        # the question-mark neck: a curve from the collar up and to the right
-        pts = [(x + 0.00, 1.40), (x + 0.02, 1.46), (x + 0.06, 1.52), (x + 0.10, 1.56), (x + 0.11, 1.60)]
-        w = [0.09, 0.08, 0.07, 0.065, 0.06]
-        for (a, b), (c, e), wa, wb in zip(pts[:-1], pts[1:], w[:-1], w[1:]):
-            _blob(img, d, [(a - wa / 2, b, zb - 0.04), (a + wa / 2, b, zb - 0.04), (c + wb / 2, e, zb - 0.06), (c - wb / 2, e, zb - 0.06)], 214, 224, "y", 1)
-        _blob(img, d, _oval(x + 0.10, 1.60, zb - 0.06, 0.095, 0.062), 222)          # the head
-        _blob(img, d, [(x + 0.17, 1.575, zb - 0.06), (x + 0.26, 1.52, zb - 0.08), (x + 0.17, 1.545, zb - 0.06)], 196, 196, "x", 2)   # the beak
-        _blob(img, d, [(x + 0.235, 1.535, zb - 0.08), (x + 0.26, 1.52, zb - 0.08), (x + 0.235, 1.515, zb - 0.08)], 20)             # its black tip
+        # THE VEST IS A GARMENT: a honeycomb knit lattice over the whole back and a
+        # ribbed band at each armhole and the V. Two rounds rendered the vest as
+        # plumage when it was only a tone (2026-09-06); a knit is a texture the
+        # engraving model follows, as it follows the wood's grain.
+        _lattice(img, torso_pts, 9, 62)
+        for sx_ in (-1, 1):
+            rib = [B(sx_ * sh_hw * 1.04, sh_y - 0.09), B(sx_ * sh_hw * 0.72, sh_y),
+                   B(sx_ * sh_hw * 0.72 - sx_ * 0.035, sh_y - 0.01), B(sx_ * sh_hw * 1.04 - sx_ * 0.035, sh_y - 0.10)]
+            _tone(img, d, rib, 86, 70, "y")
+            hand(d, P(*rib[2]), P(*rib[3]), 1)
+    if who == "barclay":
+        hand(d, P(*B(0.0, hip_y + 0.02)), P(*B(0.0, sh_y - 0.03)), 1)   # the jacket's centre seam
+    # ---- the neck: base at the shoulders, top under the skull ---------------
+    # ONE polygon, not a stack of quads. Segment quads leave a seam and an
+    # outline at every joint and the block-in came back reading as folded card
+    # rather than as a neck; the two rails are sampled finely and closed into a
+    # single contour instead.
+    hy = q["crown"] - q["skull"][2]
+    nb = (bx, bz)
+    ht = (bx + hdir[0] * q["fwd"], bz + hdir[1] * q["fwd"])
+    w0, w1 = q["neck_w"]
+    segs, rail_l, rail_r = 16, [], []
+    for i in range(segs + 1):
+        t = i / segs
+        # ONE REVERSAL, and one only: the sweep leans BACK out of the shoulders
+        # and comes FORWARD at the top, so the head is carried forward of where
+        # the neck left the body. A single sine does exactly that and cannot
+        # accidentally grow a second bend.
+        off = -q["wave"] * math.sin(2 * math.pi * t)
+        cur = (nb[0] + (ht[0] - nb[0]) * t + hdir[0] * off,
+               q["neck_y"] + (hy - q["neck_y"]) * t,
+               nb[1] + (ht[1] - nb[1]) * t + hdir[1] * off)
+        wc = w0 + (w1 - w0) * t
+        rail_l.append((cur[0] - _RIMG[0] * wc / 2, cur[1], cur[2] - _RIMG[1] * wc / 2))
+        rail_r.append((cur[0] + _RIMG[0] * wc / 2, cur[1], cur[2] + _RIMG[1] * wc / 2))
+    _blob(img, d, rail_l + rail_r[::-1], v["neck"][0], v["neck"][1], "y", 2)
+    # THE COLLAR LAST of the three. Drawn before the neck it is covered by it,
+    # and the shirt collar has to show on BOTH sides of the neck it circles.
+    _blob(img, d, [B(-0.062, sh_y + 0.005), B(0.062, sh_y + 0.005),
+                   B(0.052, sh_y + 0.053), B(-0.052, sh_y + 0.053)], v["collar"])
+
+    # ---- the head, turned per the yaw ---------------------------------------
+    a3, b3, c3 = q["skull"]
+    rx = _skull_rx(a3, b3, hdir)
+    hc = (ht[0], hy, ht[1])
+    # the near side of the face: the eye that is drawn, the ear that is a whole
+    # leather. Decided by depth, so it follows the yaw on its own.
+    es = 1 if _depth((hc[0] + hside[0] * b3, hy, hc[2] + hside[1] * b3)) < \
+              _depth((hc[0] - hside[0] * b3, hy, hc[2] - hside[1] * b3)) else -1
+    eye = (hc[0] + hdir[0] * a3 * 0.42 + hside[0] * es * b3 * 0.60,
+           hy + c3 * 0.22,
+           hc[2] + hdir[1] * a3 * 0.42 + hside[1] * es * b3 * 0.60)
+    far = (hc[0] + hdir[0] * a3 * 0.52 - hside[0] * es * b3 * 0.34,
+           hy + c3 * 0.22,
+           hc[2] + hdir[1] * a3 * 0.52 - hside[1] * es * b3 * 0.34)
+    tip_of = lambda L: (eye[0] + hdir[0] * L * math.cos(pit),
+                        eye[1] - L * math.sin(pit),
+                        eye[2] + hdir[1] * L * math.cos(pit))
+    lerp = lambda A, Z, t: (A[0] + (Z[0] - A[0]) * t, A[1] + (Z[1] - A[1]) * t,
+                            A[2] + (Z[2] - A[2]) * t)
+    up = lambda p, dy: (p[0], p[1] + dy, p[2])
+
+    # AN EAR ROOTS BEHIND THE EYE, never over the face. Rooted on the skull's
+    # equator alone it projects onto the middle of a head turned in profile and
+    # comes back as a slab across the muzzle; pulled back along the head's own
+    # axis it hangs where a retriever's ear hangs.
+    ear_x = lambda s: (hc[0] + hside[0] * s * b3 * 0.70 - hdir[0] * a3 * 0.75,
+                       hc[2] + hside[1] * s * b3 * 0.70 - hdir[1] * a3 * 0.75)
+    if who == "barclay":                       # the far drop ear, BEHIND the skull
+        er = ear_x(-es)
+        _blob(img, d, _band((er[0], hy + c3 * 0.30, er[1]),
+                            (er[0], hy - c3 * 0.55, er[1]), 0.026, 0.030),
+              118, 128, "y", 1)                # a tuft at most, never a second full ear
+
+    _blob(img, d, _face(hc, rx, c3), v["head"], v["head"] - 14, "y")
+
+    if who == "drew":
+        # THE BILL. A slender wedge of EVEN taper, its depth at the feathers one
+        # third of its length from eye-centre to tip, bending in one line to the
+        # tip; the BLACK IS THE OUTER THIRD OF THAT LENGTH AND IS THE OUTLINE
+        # there, with ONE bright ribbon inside it. Bible wording, not the master
+        # prompt's cap. The pitch IS the drop of this line: 42 degrees below
+        # horizontal on DREW-02, 56 on DREW-01 with the eye down in the martini.
+        L = 0.190
+        tip, dep = tip_of(L), 0.46 * 0.190     # HEAVIER than the bible's third: the approved plates and the
+        tip = (tip[0], tip[1] - 0.022, tip[2]) # published set carry a deep bill bending down to a black tip, and a
+        root = lerp(eye, tip, 0.12)            # thin wedge here left the mask reaching past every rendered bill (2026-09-06)
+        _blob(img, d, [up(root, dep / 2), tip,  # the wedge floated off the head
+                       up(root, -dep / 2)], 196, 208, "x")
+        b0 = lerp(eye, tip, 0.667)
+        db = dep * (1 - 0.667) / (1 - 0.12)
+        _blob(img, d, [up(b0, db / 2), tip, up(b0, -db / 2)], 22)
+        r0, r1 = lerp(eye, tip, 0.715), lerp(eye, tip, 0.945)
+        _tone(img, d, [up(r0, db * 0.30), up(r1, db * 0.055),
+                       up(r1, db * 0.005), up(r0, db * 0.14)], 232)
+        # THE EYE IS BUILT WHITE FIRST. A dark dot on a pale head is a bird dot,
+        # and a bird dot is a redraw in every bible in the folder - and the
+        # block-in is the conditioning, so what is drawn here is what comes
+        # back. Visible white, then a distinct dark iris inside it; no closed
+        # outline round it and no lash, which is Drew's own rule.
+        gx, gy = pose.get("iris", (0.0, 0.0))
+        _tone(img, d, _face(up(eye, 0.004), 0.024, 0.0160), 240)
+        _tone(img, d, _face((eye[0] + _RIMG[0] * gx, eye[1] + 0.004 + gy,
+                             eye[2] + _RIMG[1] * gx), 0.0105, 0.0105), 68)
+    elif who == "barclay":
+        L = 0.135                              # the muzzle, blunt, not a point
+        tip = tip_of(L)
+        root = lerp(eye, tip, 0.20)
+        _blob(img, d, [up(root, 0.048), up(tip, 0.026), up(tip, -0.026), up(root, -0.040)],
+              136, 150, "y")
+        nose = (tip[0] + hdir[0] * 0.010, tip[1] + 0.004, tip[2] + hdir[1] * 0.010)
+        _blob(img, d, _face(nose, 0.024, 0.020), 26)                # the blackest mark on his head
+        lip = lerp(eye, tip, 0.29)             # TWO NOSE-WIDTHS, ending under the
+        _tone(img, d, _band(up(tip, -0.016), up(lip, -0.012), 0.010, 0.010), 44)  # eye's front corner
+        # HIS EYE IN THREE MARKS, in the bible's own order: paper-white sclera
+        # filling the rear 60 per cent, one solid dark mass pressed against the
+        # FRONT corner and taking the front 40 and no more.
+        _blob(img, d, _face(up(eye, 0.002), 0.023, 0.016), 242, 236, "y", 1)
+        _tone(img, d, _face((eye[0] + hdir[0] * 0.0092, eye[1] + 0.002,
+                             eye[2] + hdir[1] * 0.0092), 0.0092, 0.0130), 34)
+        _blob(img, d, _face(up(far, 0.002), 0.013, 0.012), 240, 234, "y", 1)   # HALF the near one
+        _tone(img, d, _face((far[0] + hdir[0] * 0.005, far[1] + 0.002,
+                             far[2] + hdir[1] * 0.005), 0.005, 0.010), 46)
+        er = ear_x(es)
+        _blob(img, d, _band((er[0], hy + c3 * 0.30, er[1]),         # the near drop ear, rooting
+                            (er[0], hy - c3 - 0.012, er[1]), 0.058, 0.070),   # level with the top of
+              98, 118, "y", 1)                                      # the eye, ending at the jaw
     else:
-        hips, sh, top = 0.44, 0.44, 1.36
-        torso = [(x - hips / 2, 0.92, zb), (x + hips / 2, 0.92, zb), (x + sh / 2 + 0.02, top - 0.07, zb),
-                 (x + sh / 2 - 0.05, top, zb), (x, top + 0.02, zb), (x - sh / 2 + 0.05, top, zb), (x - sh / 2 - 0.02, top - 0.07, zb)]
-        _blob(img, d, torso, 48, 68, "y")            # the dark suit jacket, rounded shoulders
-        hand(d, P(x, 0.94, zb), P(x, top - 0.02, zb), 1)                            # the jacket's centre seam
-        _blob(img, d, [(x - 0.14, top - 0.04, zb), (x - 0.22, top - 0.11, zb), (x - 0.22, 1.10, 1.03), (x - 0.14, 1.08, 1.03)], 46, 60, "y")   # near arm to the marble
-        _blob(img, d, _oval(x - 0.20, 1.095, 1.05, 0.06, 0.022), 150)              # the furred hand
-        _blob(img, d, [(x - 0.07, top + 0.01, zb), (x + 0.07, top + 0.01, zb), (x + 0.06, top + 0.07, zb), (x - 0.06, top + 0.07, zb)], 226)  # pale shirt collar
-        _blob(img, d, [(x - 0.06, 1.42, zb - 0.02), (x + 0.06, 1.42, zb - 0.02), (x + 0.05, 1.52, zb - 0.04), (x - 0.05, 1.52, zb - 0.04)], 140, 150, "y", 1)  # short neck, fur
-        _blob(img, d, _oval(x - 0.08, 1.62, zb - 0.04, 0.12, 0.10), 148, 160, "y")  # the head, turned left
-        for ex in (x - 0.19, x + 0.03):                                              # drop ears with fringe
-            _blob(img, d, [(ex - 0.03, 1.66, zb - 0.03), (ex + 0.03, 1.66, zb - 0.03), (ex + 0.035, 1.42, zb - 0.02), (ex - 0.035, 1.42, zb - 0.02)], 112, 128, "y", 1)
-        _blob(img, d, [(x - 0.19, 1.60, zb - 0.05), (x - 0.30, 1.585, zb - 0.06), (x - 0.30, 1.555, zb - 0.06), (x - 0.19, 1.54, zb - 0.05)], 138, 138, "x", 2)   # the muzzle in profile
-        _blob(img, d, _oval(x - 0.305, 1.575, zb - 0.06, 0.02, 0.014), 24)         # the black nose
+        # ABBY. A round soft show-groomed westie head: her big black nose sits
+        # DIRECTLY UNDER HER EYES and there is no muzzle to draw at all. The fur
+        # silhouette is a shade darker than the face inside it so the groomed
+        # head reads as fur and not as a bald oval.
+        _blob(img, d, _face(hc, rx * 1.13, c3 * 1.11), 204, 214, "y")
+        for s in (1, -1):                       # two small PRICKED ears, both up
+            ep = (hc[0] + hside[0] * s * b3 * 0.62, hc[2] + hside[1] * s * b3 * 0.62)
+            _blob(img, d, [(ep[0] - _RIMG[0] * 0.034, hy + c3 * 0.48, ep[1] - _RIMG[1] * 0.034),
+                           (ep[0] + _RIMG[0] * 0.034, hy + c3 * 0.48, ep[1] + _RIMG[1] * 0.034),
+                           (ep[0] + _RIMG[0] * 0.008, hy + c3 + 0.072, ep[1] + _RIMG[1] * 0.008)],
+                  198, 210, "y", 1)
+        _blob(img, d, _face(hc, rx * 0.93, c3 * 0.92), v["head"], v["head"] - 12, "y")
+        nose = (hc[0] + hdir[0] * a3 * 0.55, eye[1] - 0.036, hc[2] + hdir[1] * a3 * 0.55)
+        _blob(img, d, _face(nose, 0.022, 0.018), 24)
+        # HER EYES ARE THE MOST BEAUTIFUL THING IN THE PANEL and they are built
+        # like a HUMAN eye, not an animal's button: the WHITE first, a drawn
+        # iris inside it, a distinct pupil SMALLER than the iris. Two dark
+        # rounds on a white head is the eerie read her negatives name, and a
+        # block-in that carries it teaches the model to draw it.
+        for c_, ex, ey, ir, pu in ((eye, 0.028, 0.0185, 0.0140, 0.0058),
+                                   (far, 0.016, 0.0115, 0.0082, 0.0034)):
+            _blob(img, d, _face(c_, ex, ey), 244, 238, "y", 1)      # wider than it is tall
+            _tone(img, d, _face(c_, ir, ir), 120)                   # the iris, mid-tone
+            _tone(img, d, _face(c_, pu, pu), 34)                    # a smaller pupil
+        _tone(img, d, _band((hc[0], q["neck_y"] + 0.030, hc[2]),    # the studded collar
+                            (hc[0], q["neck_y"] + 0.008, hc[2]), 0.098, 0.098), v["collar"])
+
+    # ---- the near arm, forward onto the marble ------------------------------
+    # From here on the pixels are exempt from the occluder: the hand lies ON the
+    # counter, so the counter that hides Abby's waist must not take her hand.
+    own0 = np.array(_OWN[_CUR], dtype=np.uint8) > 127
+    shl, shr = B(-sh_hw * 0.94, sh_y - 0.04), B(sh_hw * 0.94, sh_y - 0.04)
+    near = shl if _depth(shl) < _depth(shr) else shr
+    hp = pose["hand"]
+    elb = (near[0] * 0.45 + hp[0] * 0.55, near[1] * 0.55 + hp[1] * 0.45 - 0.03,
+           near[2] * 0.45 + hp[2] * 0.55)
+    aw = q["arm_w"]
+    _blob(img, d, _band(near, elb, aw, aw * 0.80), v["arm"][0], v["arm"][1], "y", 1)
+    _blob(img, d, _band(elb, up(hp, 0.022), aw * 0.80, aw * 0.60), v["arm"][0], v["arm"][1], "y", 1)
+    _blob(img, d, _face(hp, 0.060, 0.025), v["hand"])
+    _ARM = (np.array(_OWN[_CUR], dtype=np.uint8) > 127) & ~own0
+
+    # ---- the shadows: a SEPARATE layer, never the silhouette ----------------
+    # The light is the window, at frame-left, so the hand throws back and to the
+    # right. Started clear of the hand's own mask (the SHADOW_GAP lesson): a
+    # shadow that shares pixels with its caster darkens the caster.
+    cast(img, [(hp[0] - 0.010, COUNTER_H + 0.001, hp[2] + 0.075),
+               (hp[0] + 0.175, COUNTER_H + 0.001, hp[2] + 0.075),
+               (hp[0] + 0.175, COUNTER_H + 0.001, hp[2] + 0.210),
+               (hp[0] - 0.010, COUNTER_H + 0.001, hp[2] + 0.210)], 0.62, 0.97, "x")
+    if pose["occluder"] != "counter":          # the contact shadow in the chair
+        cast(img, [B(-sh_hw * 0.98, hip_y + 0.16), B(sh_hw * 0.98, hip_y + 0.16),
+                   B(sh_hw * 0.98, hip_y + 0.03), B(-sh_hw * 0.98, hip_y + 0.03)],
+             0.58, 0.92, "y")
 
 
 def chair(img: np.ndarray, d, x: float, z: float, turn: float = 0.0) -> None:
@@ -1513,17 +1863,36 @@ def build(values: bool, enabled=None, force=()) -> Image.Image:
         part(name)
         if not _SKIP:
             chair(img, d, sx, STOOL_Z, turn)
-    for name, who, sx, ch in zip(("figure-drew", "figure-barclay"), ("drew", "barclay"), STOOL_XS, ("chair-left", "chair-right")):
-        part(name)
-        if not _SKIP:
-            figure(img, d, who, sx, STOOL_Z)
-            # the sitter is INSIDE the chair: the chair's back stands in front of his
-            # body, so his own silhouette is cut to what shows above and beside it
-            if ch in _OWN and name in _OWN:
-                fig = np.asarray(_OWN[name], dtype=np.uint8) > 127
-                sit = np.asarray(_OWN[ch], dtype=np.uint8) > 127
-                _OWN[name] = Image.fromarray(((fig & ~sit) * 255).astype(np.uint8))
-                _OWND = ImageDraw.Draw(_OWN[name])
+    for pid, pose in POSES.items():
+        part(pid)
+        if _SKIP:
+            continue
+        was_img = img.copy()
+        was_ln = np.array(line, dtype=np.uint8)
+        figure(img, d, pose["who"], pose)
+        # WHAT STANDS IN FRONT OF THE POSE CUTS IT, and the same operation does
+        # both cases. The sitter is INSIDE the chair: the leather stands in
+        # front of his body, so his silhouette is what shows above and beside
+        # it. Abby stands BEHIND the marble: the counter's far edge crosses her
+        # at the waist and hides her below it - she is covered BY the counter,
+        # never covering it. Her near arm and hand are the one exemption: they
+        # lie ON the marble, and a blanket cut takes the hand off the counter
+        # it is resting on.
+        # The block-in itself is restored too, not just the mask. Leaving the
+        # figure painted over the chair would hand the model a conditioning
+        # picture of a man sitting THROUGH the leather and then throw the
+        # answer away - which is the shared-values bug wearing a different hat.
+        occ = pose["occluder"]
+        if occ in _OWN and pid in _OWN:
+            cut = np.asarray(_OWN[occ], dtype=np.uint8) > 127
+            if occ == "counter" and _ARM is not None:
+                cut = cut & ~_ARM
+            fig = np.asarray(_OWN[pid], dtype=np.uint8) > 127
+            _OWN[pid] = Image.fromarray(((fig & ~cut) * 255).astype(np.uint8))
+            img[cut] = was_img[cut]
+            ln = np.array(line, dtype=np.uint8)
+            ln[cut] = was_ln[cut]
+            line.paste(Image.fromarray(ln), (0, 0))
 
     lamplight(img)
     ln = np.asarray(line, dtype=np.float32)

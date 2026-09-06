@@ -67,9 +67,18 @@ NO_CHAIRS = "- THERE ARE NO CHAIRS AND NO STOOLS: the front of the bar and the f
 # removed: those parts are not in its conditioning, and a part the prompt
 # describes but the picture lacks gets invented - stools on the bar front, a
 # television in an empty compartment.
+def fig_key(i: str) -> str:
+    """A pose part (figure-drew-02-toward) is its character for prompt purposes."""
+    for k in ("figure-drew", "figure-barclay", "figure-abby"):
+        if i.startswith(k):
+            return k
+    return i
+
+
 PART_LINES = {
     "figure-drew": "- SEATED AT THE LEFT-HAND CHAIR",
     "figure-barclay": "- SEATED AT THE RIGHT-HAND CHAIR",
+    "figure-abby": "- BEHIND THE LEDGE",
     "tv": "- THE TELEVISION hangs",
     "board": "- THE CHALKBOARD hangs",
     "chair-left": "- THE TWO BAR CHAIRS",
@@ -82,6 +91,7 @@ PART_LINES = {
 PART_NOUNS = {
     "figure-drew": "flamingo, bird, person, figure, man, character",
     "figure-barclay": "dog, retriever, person, figure, man, character",
+    "figure-abby": "bartender, terrier, dog, person, figure, woman, character",
     "tv": "television, screen, monitor, flat screen",
     "board": "chalkboard, blackboard, framed board, picture, frame",
     "chair-left": "chair, stool, seat, barstool",
@@ -393,27 +403,52 @@ def cmd_render(a) -> None:
     me = order.index(part["id"])
     absent = [p["id"] for p in man["parts"] if (order.index(p["id"]) > me or not p.get("enabled", True))
               and p["id"] not in (a.with_ or []) and p["id"] != part["id"]]     # never the part being rendered
-    drop = {PART_LINES[i] for i in absent if i in PART_LINES}
+    drop = {PART_LINES[fig_key(i)] for i in absent if fig_key(i) in PART_LINES}
     prompt = "\n".join(ln for ln in prompt.split("\n") if not any(ln.startswith(pfx) for pfx in drop))
-    extra = sorted({PART_NOUNS[i] for i in absent if i in PART_NOUNS})
+    extra = sorted({PART_NOUNS[fig_key(i)] for i in absent if fig_key(i) in PART_NOUNS})
     if extra:
         neg = (neg + ", " if neg else "") + ", ".join(extra)
-    present = [i for i in ("figure-drew", "figure-barclay") if i not in absent and i in order]
+    present = sorted({fig_key(i) for i in order if fig_key(i) in ("figure-drew", "figure-barclay", "figure-abby") and i not in absent})
     if present:
         # a character is in the picture: the EMPTY-room sentence must not deny him
         prompt = prompt.replace("no people, no animals, ", "")
-        prompt = prompt.replace("the two stools described above", "the two chairs and the seated " + " and ".join("flamingo" if i == "figure-drew" else "retriever" for i in present) + " described above")
-    if a.part.startswith("figure"):
-        neg = NEG_TEXT + (", straight neck, stiff neck, goose, swan, pink, colour, bird dot eyes, blank eyes, bare human skin, wing mitts, tail, display plumes, hat, shoes, second flamingo, duplicate figure, floating, standing, front view, facing the camera, full face, flat fill, photographic"
-                          if a.part == "figure-drew" else
+        prompt = prompt.replace("the two stools described above", "the two chairs and the " + " and ".join({"figure-drew": "seated flamingo", "figure-barclay": "seated retriever", "figure-abby": "bartender behind the ledge"}[i] for i in present) + " described above")
+    if a.part.startswith("figure-abby"):
+        neg = NEG_TEXT + ", generic dog, cat, fox, bare human skin, standing on the bar, floating, second bartender, duplicate figure, flat fill, photographic"
+    elif a.part.startswith("figure"):
+        neg = NEG_TEXT + (", swan, goose, duck, round head, small beak, short beak, stubby beak, bird dot eye, bare bird, unclothed, naked, no clothes, plain plumage over the whole torso, feathered torso without a vest, straight neck, stiff neck, goose, swan, pink, colour, bird dot eyes, blank eyes, bare human skin, wing mitts, tail, display plumes, hat, shoes, second flamingo, duplicate figure, floating, standing, front view, facing the camera, full face, flat fill, photographic"
+                          if a.part.startswith("figure-drew") else
                           ", generic dog, wolf, cartoon dog, tail, heavy neck beard, bare human skin, hat, standing, floating, second dog, duplicate figure, front view, facing the camera, full face, flat fill, photographic")
     if any(i.startswith("chair") for i in absent) and "NO CHAIRS" not in prompt:
         prompt += NO_CHAIRS
+    if a.ref:
+        # The model is only told about Picture 1; the character's own art must be
+        # named or it is treated as style (three undressed rounds, 2026-09-06).
+        prompt += ("\n- THE PICTURES AFTER PICTURE 1 ARE THIS CHARACTER'S OWN REFERENCE ART - his bust, his head, and the pair "
+                   "seated at this bar seen from behind: reproduce his identity, his species' texture AND HIS CLOTHING from them "
+                   "exactly. The same character sits in Picture 1's block-in; draw him as those pictures draw him.\n")
     prompt += PART_CLAUSE.format(note=note)
     out = WORK / f"{a.part}-s{a.seed}.png"
-    if tall:
+    if a.crop and not tall:
+        # A DETAIL RENDER: the figure is a quarter of the frame, so a bow tie is a few
+        # pixels; rendered from a 2:3 crop at full resolution he gets four times the
+        # pixels, then the piece is scaled back into the frame for laying.
+        x0, y0, x1, y1 = [int(v) for v in a.crop.split(",")]
+        piece_cond = cond[y0:y1, x0:x1]
+        if a.plain:
+            mm = mask_of(part, grow=6, feather=3)[y0:y1, x0:x1]
+            piece_cond = piece_cond * mm + 140.0 * (1 - mm)        # the figure on a flat field
+        save(piece_cond, cond_p)
+        size = (1184, int(round(1184 * (y1 - y0) / (x1 - x0) / 32)) * 32)
+        generate(out, prompt, cond_p, a.seed, a.fast, neg, size=size, extra_refs=a.ref)
+        piece = Image.open(out).convert("L").resize((x1 - x0, y1 - y0), Image.LANCZOS)
+        piece.save(WORK / f"{a.part}-s{a.seed}-crop.png")
+        full_img = Image.fromarray(np.clip(plate, 0, 255).astype(np.uint8))
+        full_img.paste(piece, (x0, y0))
+        full_img.save(out)
+    elif tall:
         size = (1024, int(round(1024 * tall / 1200 / 32)) * 32)        # same aspect, on the 32-grid
-        generate(out, prompt, cond_p, a.seed, a.fast, neg, size, extra_refs=a.ref)
+        generate(out, prompt, cond_p, a.seed, a.fast, neg, size=size, extra_refs=a.ref)
         tall_img = Image.open(out).convert("L").resize((1200, tall), Image.LANCZOS)
         tall_img.crop((0, 0, 1200, 1800)).save(out)                   # back to the plate's frame
         tall_img.save(WORK / f"{a.part}-s{a.seed}-tall.png")
@@ -509,6 +544,8 @@ def main() -> None:
     r = sub.add_parser("render"); r.add_argument("part"); r.add_argument("--seed", type=int, default=4)
     r.add_argument("--fast", action="store_true"); r.add_argument("--with", dest="with_", nargs="*")
     r.add_argument("--ref", action="append", default=[], help="extra reference image (a character bust or head tile); repeatable")
+    r.add_argument("--plain", action="store_true", help="with --crop: a flat grey field outside the part's silhouette, so the figure can be keyed from the render")
+    r.add_argument("--crop", default=None, help="x0,y0,x1,y1 (2:3): render this crop of the frame at full resolution and scale it back into place - four times the pixels on a figure")
     r.add_argument("--tall", action="store_true", help="render on the taller canvas so the frame's cut-off object is drawn whole")
     r.set_defaults(f=cmd_render)
     ap_ = sub.add_parser("approve"); ap_.add_argument("part"); ap_.add_argument("file"); ap_.set_defaults(f=cmd_approve)

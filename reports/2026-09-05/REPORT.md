@@ -2671,3 +2671,163 @@ Built for Rick. Every image the studio generated today, in the order it happened
 
 ---
 
+## 204. the cast, round 1 (Opus + Sonnet teammates): the published set Rick accepted, look cards and reference kits for Drew, Barclay and Abby, posed block-ins, and the judging tool
+
+![the cast, round 1 (Opus + Sonnet teammates): the published set Rick accepted, look cards and reference kits for Drew, Barclay and Abby, posed block-ins, and the judging tool](images/204-the-cast-round-1-opus-sonnet-teammates-the-published-set-rick-accepted-look-cards-and-reference-kits-for-drew-.png)
+
+**The ask.** start to work on the 3 characters use opus and sonnet teammates to make sure the characters are huggable have beautiful texture for their species are huggable but professional look at the cartoons set etc understand what i mean
+
+**The thinking.** Six teammates. The published set (eight most recent panels) shows what Rick has accepted: Drew's white stippled plumage and heavy-lidded eye, the retriever in profile with drop ears and worried brows, Abby as a West Highland terrier bartender - and one thing to fix at the source: every caption in that set calls the dog Mango, while the bible names him Barclay. Each character has a look card (what huggable but professional means for him or her in this canon, the stroke language of the species, the three things past renders got wrong), a reference kit cut from the approved plates (bust, head tile, study), the anchor-pose prompt with the bible's block verbatim, and a 14-line judge checklist. The pose block-ins (Drew and Barclay turned to each other, Abby at the ledge, both rests) are drawn in code with their silhouettes cut by the chairs, Drew's crown 20 px clear of the sign's DOOR. A judging tool lays each render beside the bust and head tile with the checklist. Next: Drew's anchor pose rendered with his bust and head as references, judged against the checklist.
+
+**Settings.** workflow cast-recreation-round-1; look cards saved to reports/2026-09-05/CAST-LOOK-CARDS.md; kits in scratchpad/cast/{flamingo,dog,abby}/; poses patch scratchpad/cast/poses/figure-poses.patch; scripts/cast-qc.py
+
+**Verdict.** ready to render
+
+*Logged 23:36.*
+
+---
+
+## 205. cast pose block-ins on the plate: Drew turned to Barclay, Barclay turned to Drew, Abby behind the ledge - the construction drawing the characters are rendered from
+
+![cast pose block-ins on the plate: Drew turned to Barclay, Barclay turned to Drew, Abby behind the ledge - the construction drawing the characters are rendered from](images/205-cast-pose-block-ins-on-the-plate-drew-turned-to-barclay-barclay-turned-to-drew-abby-behind-the-ledge-the-const.png)
+
+**The ask.** they will all need multiple poses and to be looking at each other for different captions
+
+**The thinking.** The grey figures are the block-ins, not art: torso in the chair, the near hand on the marble, the neck, the head turned per the plan's yaw and pitch, Drew's bill as a slender wedge with a black outer third, Barclay's muzzle and drop ears, Abby's pointed ears and collar. Each pose is its own layer with its own mask and shadow, switched off until approved.
+
+**Settings.** five poses: figure-drew-01-rest, figure-drew-02-toward, figure-barclay-01-rest, figure-barclay-02-toward, figure-abby-01-ledge
+
+**Verdict.** block-ins verified against the sign and the shelf divider
+
+*Logged 23:36.*
+
+---
+
+## 206. figure-drew-02-toward render seed 7 laid in full plate
+
+![figure-drew-02-toward render seed 7 laid in full plate](images/206-figure-drew-02-toward-render-seed-7-laid-in-full-plate.png)
+
+**The thinking.** Rendered in context - the plate as it stands behind this part, with only this part's own silhouette blocked in as values - so the pen, light and perspective are inherited; only the mask is laid back. Part note: DREW-02 TURNED TO BARCLAY, HEAD UP - the anchor pose. Drew SEATED IN THE LEFT-HAND CHAIR AT THE MARBLE COUNTER, SEEN FROM BEHIND AND SLIGHTLY TO HIS RIGHT - body turned 146 degrees from the lens so his right shoulder is toward us and the chair back stands in front of him - HIS HEAD TURNED BACK AND ACROSS TO BARCLAY IN THE RIGHT-HAND CHAIR: head yaw 118 degrees, and THE HEAD IS CARRIED UP, the line from the centre of his eye to the black tip of his bill lying 42 degrees below horizontal. His eye slides sideways at Barclay's face; the bill is CLOSED, a slender even-taper wedge whose BLACK OUTER THIRD IS THE OUTLINE with one bright highlight ribbon inside it. One neck reversal, the head carried forward of where the neck left the body. Near hand on the martini stem, at least three digits closed on it and one crossing in front. Shoulders 1.32 m, crown 1.65 m on a 0.76 m seat. Cropped at the counter: chest-up, no legs, no stools. He never looks at us.
+
+**Settings.** local/sensenova-u1.5, seed 7, full 40 steps cfg 4, negative: text, letters, words, lettering, signage, sign, numbers, typography, writing, inscription, shop name, banner, poster, straight neck, stiff neck, goose, swan, pink, colour, bird dot eyes, blank eyes, bare human skin, wing mitts, tail, display plumes, hat, shoes, second flamingo, duplicate figure, floating, standing, front view, facing the camera, full face, flat fill, photographic
+
+**Prompt.** [prompts/206-figure-drew-02-toward-render-seed-7-laid-in-full-plate.prompt.txt](prompts/206-figure-drew-02-toward-render-seed-7-laid-in-full-plate.prompt.txt)
+
+*Logged 23:45.*
+
+---
+
+## 207. figure-drew-02-toward render seed 21 laid in full plate
+
+![figure-drew-02-toward render seed 21 laid in full plate](images/207-figure-drew-02-toward-render-seed-21-laid-in-full-plate.png)
+
+**The thinking.** Rendered in context - the plate as it stands behind this part, with only this part's own silhouette blocked in as values - so the pen, light and perspective are inherited; only the mask is laid back. Part note: DREW-02 TURNED TO BARCLAY, HEAD UP - the anchor pose. Drew SEATED IN THE LEFT-HAND CHAIR AT THE MARBLE COUNTER, SEEN FROM BEHIND AND SLIGHTLY TO HIS RIGHT - body turned 146 degrees from the lens so his right shoulder is toward us and the chair back stands in front of him - HIS HEAD TURNED BACK AND ACROSS TO BARCLAY IN THE RIGHT-HAND CHAIR: head yaw 118 degrees, and THE HEAD IS CARRIED UP, the line from the centre of his eye to the black tip of his bill lying 42 degrees below horizontal. His eye slides sideways at Barclay's face; the bill is CLOSED, a slender even-taper wedge whose BLACK OUTER THIRD IS THE OUTLINE with one bright highlight ribbon inside it. One neck reversal, the head carried forward of where the neck left the body. Near hand on the martini stem, at least three digits closed on it and one crossing in front. Shoulders 1.32 m, crown 1.65 m on a 0.76 m seat. Cropped at the counter: chest-up, no legs, no stools. He never looks at us.
+
+**Settings.** local/sensenova-u1.5, seed 21, full 40 steps cfg 4, negative: text, letters, words, lettering, signage, sign, numbers, typography, writing, inscription, shop name, banner, poster, straight neck, stiff neck, goose, swan, pink, colour, bird dot eyes, blank eyes, bare human skin, wing mitts, tail, display plumes, hat, shoes, second flamingo, duplicate figure, floating, standing, front view, facing the camera, full face, flat fill, photographic
+
+**Prompt.** [prompts/207-figure-drew-02-toward-render-seed-21-laid-in-full-plate.prompt.txt](prompts/207-figure-drew-02-toward-render-seed-21-laid-in-full-plate.prompt.txt)
+
+*Logged 23:46.*
+
+---
+
+## 208. figure-drew-02-toward render seed 7 laid in full plate
+
+![figure-drew-02-toward render seed 7 laid in full plate](images/208-figure-drew-02-toward-render-seed-7-laid-in-full-plate.png)
+
+**The thinking.** Rendered in context - the plate as it stands behind this part, with only this part's own silhouette blocked in as values - so the pen, light and perspective are inherited; only the mask is laid back. Part note: DREW-02 TURNED TO BARCLAY, HEAD UP - the anchor pose. Drew SEATED IN THE LEFT-HAND CHAIR AT THE MARBLE COUNTER, SEEN FROM BEHIND AND SLIGHTLY TO HIS RIGHT - body turned 146 degrees from the lens so his right shoulder is toward us and the chair back stands in front of him - HIS HEAD TURNED BACK AND ACROSS TO BARCLAY IN THE RIGHT-HAND CHAIR: head yaw 118 degrees, and THE HEAD IS CARRIED UP, the line from the centre of his eye to the black tip of his bill lying 42 degrees below horizontal. His eye slides sideways at Barclay's face; the bill is CLOSED, a slender even-taper wedge whose BLACK OUTER THIRD IS THE OUTLINE with one bright highlight ribbon inside it. One neck reversal, the head carried forward of where the neck left the body. Near hand on the martini stem, at least three digits closed on it and one crossing in front. Shoulders 1.32 m, crown 1.65 m on a 0.76 m seat. Cropped at the counter: chest-up, no legs, no stools. He never looks at us.
+
+**Settings.** local/sensenova-u1.5, seed 7, full 40 steps cfg 4, negative: text, letters, words, lettering, signage, sign, numbers, typography, writing, inscription, shop name, banner, poster, straight neck, stiff neck, goose, swan, pink, colour, bird dot eyes, blank eyes, bare human skin, wing mitts, tail, display plumes, hat, shoes, second flamingo, duplicate figure, floating, standing, front view, facing the camera, full face, flat fill, photographic
+
+**Prompt.** [prompts/208-figure-drew-02-toward-render-seed-7-laid-in-full-plate.prompt.txt](prompts/208-figure-drew-02-toward-render-seed-7-laid-in-full-plate.prompt.txt)
+
+*Logged 23:46.*
+
+---
+
+## 209. figure-drew-02-toward render seed 33 laid in full plate
+
+![figure-drew-02-toward render seed 33 laid in full plate](images/209-figure-drew-02-toward-render-seed-33-laid-in-full-plate.png)
+
+**The thinking.** Rendered in context - the plate as it stands behind this part, with only this part's own silhouette blocked in as values - so the pen, light and perspective are inherited; only the mask is laid back. Part note: DREW-02 TURNED TO BARCLAY, HEAD UP - the anchor pose. Drew SEATED IN THE LEFT-HAND CHAIR AT THE MARBLE COUNTER, SEEN FROM BEHIND AND SLIGHTLY TO HIS RIGHT - body turned 146 degrees from the lens so his right shoulder is toward us and the chair back stands in front of him - HIS HEAD TURNED BACK AND ACROSS TO BARCLAY IN THE RIGHT-HAND CHAIR: head yaw 118 degrees, and THE HEAD IS CARRIED UP, the line from the centre of his eye to the black tip of his bill lying 42 degrees below horizontal. His eye slides sideways at Barclay's face; the bill is CLOSED, a slender even-taper wedge whose BLACK OUTER THIRD IS THE OUTLINE with one bright highlight ribbon inside it. One neck reversal, the head carried forward of where the neck left the body. Near hand on the martini stem, at least three digits closed on it and one crossing in front. Shoulders 1.32 m, crown 1.65 m on a 0.76 m seat. Cropped at the counter: chest-up, no legs, no stools. He never looks at us.
+
+**Settings.** local/sensenova-u1.5, seed 33, full 40 steps cfg 4, negative: text, letters, words, lettering, signage, sign, numbers, typography, writing, inscription, shop name, banner, poster, straight neck, stiff neck, goose, swan, pink, colour, bird dot eyes, blank eyes, bare human skin, wing mitts, tail, display plumes, hat, shoes, second flamingo, duplicate figure, floating, standing, front view, facing the camera, full face, flat fill, photographic
+
+**Prompt.** [prompts/209-figure-drew-02-toward-render-seed-33-laid-in-full-plate.prompt.txt](prompts/209-figure-drew-02-toward-render-seed-33-laid-in-full-plate.prompt.txt)
+
+*Logged 23:47.*
+
+---
+
+## 210. figure-drew-02-toward render seed 21 laid in full plate
+
+![figure-drew-02-toward render seed 21 laid in full plate](images/210-figure-drew-02-toward-render-seed-21-laid-in-full-plate.png)
+
+**The thinking.** Rendered in context - the plate as it stands behind this part, with only this part's own silhouette blocked in as values - so the pen, light and perspective are inherited; only the mask is laid back. Part note: DREW-02 TURNED TO BARCLAY, HEAD UP - the anchor pose. Drew SEATED IN THE LEFT-HAND CHAIR AT THE MARBLE COUNTER, SEEN FROM BEHIND AND SLIGHTLY TO HIS RIGHT - body turned 146 degrees from the lens so his right shoulder is toward us and the chair back stands in front of him - HIS HEAD TURNED BACK AND ACROSS TO BARCLAY IN THE RIGHT-HAND CHAIR: head yaw 118 degrees, and THE HEAD IS CARRIED UP, the line from the centre of his eye to the black tip of his bill lying 42 degrees below horizontal. His eye slides sideways at Barclay's face; the bill is CLOSED, a slender even-taper wedge whose BLACK OUTER THIRD IS THE OUTLINE with one bright highlight ribbon inside it. One neck reversal, the head carried forward of where the neck left the body. Near hand on the martini stem, at least three digits closed on it and one crossing in front. Shoulders 1.32 m, crown 1.65 m on a 0.76 m seat. Cropped at the counter: chest-up, no legs, no stools. He never looks at us.
+
+**Settings.** local/sensenova-u1.5, seed 21, full 40 steps cfg 4, negative: text, letters, words, lettering, signage, sign, numbers, typography, writing, inscription, shop name, banner, poster, straight neck, stiff neck, goose, swan, pink, colour, bird dot eyes, blank eyes, bare human skin, wing mitts, tail, display plumes, hat, shoes, second flamingo, duplicate figure, floating, standing, front view, facing the camera, full face, flat fill, photographic
+
+**Prompt.** [prompts/210-figure-drew-02-toward-render-seed-21-laid-in-full-plate.prompt.txt](prompts/210-figure-drew-02-toward-render-seed-21-laid-in-full-plate.prompt.txt)
+
+*Logged 23:47.*
+
+---
+
+## 211. figure-drew-02-toward render seed 44 laid in full plate
+
+![figure-drew-02-toward render seed 44 laid in full plate](images/211-figure-drew-02-toward-render-seed-44-laid-in-full-plate.png)
+
+**The thinking.** Rendered in context - the plate as it stands behind this part, with only this part's own silhouette blocked in as values - so the pen, light and perspective are inherited; only the mask is laid back. Part note: DREW-02 TURNED TO BARCLAY, HEAD UP - the anchor pose. Drew SEATED IN THE LEFT-HAND CHAIR AT THE MARBLE COUNTER, SEEN FROM BEHIND AND SLIGHTLY TO HIS RIGHT - body turned 146 degrees from the lens so his right shoulder is toward us and the chair back stands in front of him - HIS HEAD TURNED BACK AND ACROSS TO BARCLAY IN THE RIGHT-HAND CHAIR: head yaw 118 degrees, and THE HEAD IS CARRIED UP, the line from the centre of his eye to the black tip of his bill lying 42 degrees below horizontal. His eye slides sideways at Barclay's face; the bill is CLOSED, a slender even-taper wedge whose BLACK OUTER THIRD IS THE OUTLINE with one bright highlight ribbon inside it. One neck reversal, the head carried forward of where the neck left the body. Near hand on the martini stem, at least three digits closed on it and one crossing in front. Shoulders 1.32 m, crown 1.65 m on a 0.76 m seat. Cropped at the counter: chest-up, no legs, no stools. He never looks at us.
+
+**Settings.** local/sensenova-u1.5, seed 44, full 40 steps cfg 4, negative: text, letters, words, lettering, signage, sign, numbers, typography, writing, inscription, shop name, banner, poster, straight neck, stiff neck, goose, swan, pink, colour, bird dot eyes, blank eyes, bare human skin, wing mitts, tail, display plumes, hat, shoes, second flamingo, duplicate figure, floating, standing, front view, facing the camera, full face, flat fill, photographic
+
+**Prompt.** [prompts/211-figure-drew-02-toward-render-seed-44-laid-in-full-plate.prompt.txt](prompts/211-figure-drew-02-toward-render-seed-44-laid-in-full-plate.prompt.txt)
+
+*Logged 23:47.*
+
+---
+
+## 212. figure-drew-02-toward render seed 33 laid in full plate
+
+![figure-drew-02-toward render seed 33 laid in full plate](images/212-figure-drew-02-toward-render-seed-33-laid-in-full-plate.png)
+
+**The thinking.** Rendered in context - the plate as it stands behind this part, with only this part's own silhouette blocked in as values - so the pen, light and perspective are inherited; only the mask is laid back. Part note: DREW-02 TURNED TO BARCLAY, HEAD UP - the anchor pose. Drew SEATED IN THE LEFT-HAND CHAIR AT THE MARBLE COUNTER, SEEN FROM BEHIND AND SLIGHTLY TO HIS RIGHT - body turned 146 degrees from the lens so his right shoulder is toward us and the chair back stands in front of him - HIS HEAD TURNED BACK AND ACROSS TO BARCLAY IN THE RIGHT-HAND CHAIR: head yaw 118 degrees, and THE HEAD IS CARRIED UP, the line from the centre of his eye to the black tip of his bill lying 42 degrees below horizontal. His eye slides sideways at Barclay's face; the bill is CLOSED, a slender even-taper wedge whose BLACK OUTER THIRD IS THE OUTLINE with one bright highlight ribbon inside it. One neck reversal, the head carried forward of where the neck left the body. Near hand on the martini stem, at least three digits closed on it and one crossing in front. Shoulders 1.32 m, crown 1.65 m on a 0.76 m seat. Cropped at the counter: chest-up, no legs, no stools. He never looks at us.
+
+**Settings.** local/sensenova-u1.5, seed 33, full 40 steps cfg 4, negative: text, letters, words, lettering, signage, sign, numbers, typography, writing, inscription, shop name, banner, poster, straight neck, stiff neck, goose, swan, pink, colour, bird dot eyes, blank eyes, bare human skin, wing mitts, tail, display plumes, hat, shoes, second flamingo, duplicate figure, floating, standing, front view, facing the camera, full face, flat fill, photographic
+
+**Prompt.** [prompts/212-figure-drew-02-toward-render-seed-33-laid-in-full-plate.prompt.txt](prompts/212-figure-drew-02-toward-render-seed-33-laid-in-full-plate.prompt.txt)
+
+*Logged 23:48.*
+
+---
+
+## 213. figure-drew-02-toward render seed 44 laid in full plate
+
+![figure-drew-02-toward render seed 44 laid in full plate](images/213-figure-drew-02-toward-render-seed-44-laid-in-full-plate.png)
+
+**The thinking.** Rendered in context - the plate as it stands behind this part, with only this part's own silhouette blocked in as values - so the pen, light and perspective are inherited; only the mask is laid back. Part note: DREW-02 TURNED TO BARCLAY, HEAD UP - the anchor pose. Drew SEATED IN THE LEFT-HAND CHAIR AT THE MARBLE COUNTER, SEEN FROM BEHIND AND SLIGHTLY TO HIS RIGHT - body turned 146 degrees from the lens so his right shoulder is toward us and the chair back stands in front of him - HIS HEAD TURNED BACK AND ACROSS TO BARCLAY IN THE RIGHT-HAND CHAIR: head yaw 118 degrees, and THE HEAD IS CARRIED UP, the line from the centre of his eye to the black tip of his bill lying 42 degrees below horizontal. His eye slides sideways at Barclay's face; the bill is CLOSED, a slender even-taper wedge whose BLACK OUTER THIRD IS THE OUTLINE with one bright highlight ribbon inside it. One neck reversal, the head carried forward of where the neck left the body. Near hand on the martini stem, at least three digits closed on it and one crossing in front. Shoulders 1.32 m, crown 1.65 m on a 0.76 m seat. Cropped at the counter: chest-up, no legs, no stools. He never looks at us.
+
+**Settings.** local/sensenova-u1.5, seed 44, full 40 steps cfg 4, negative: text, letters, words, lettering, signage, sign, numbers, typography, writing, inscription, shop name, banner, poster, straight neck, stiff neck, goose, swan, pink, colour, bird dot eyes, blank eyes, bare human skin, wing mitts, tail, display plumes, hat, shoes, second flamingo, duplicate figure, floating, standing, front view, facing the camera, full face, flat fill, photographic
+
+**Prompt.** [prompts/213-figure-drew-02-toward-render-seed-44-laid-in-full-plate.prompt.txt](prompts/213-figure-drew-02-toward-render-seed-44-laid-in-full-plate.prompt.txt)
+
+*Logged 23:48.*
+
+---
+
+## 214. Drew, anchor pose, round 1: four seeds with his bust and head as references - undressed on every seed, no seed with the bible's bill; the neck reads on 7 and 33
+
+![Drew, anchor pose, round 1: four seeds with his bust and head as references - undressed on every seed, no seed with the bible's bill; the neck reads on 7 and 33](images/214-drew-anchor-pose-round-1-four-seeds-with-his-bust-and-head-as-references-undressed-on-every-seed-no-seed-with-.png)
+
+**The ask.** make sure the characters are huggable have beautiful texture for their species are huggable but professional
+
+**The thinking.** First reference-guided renders of the new pose part, judged on the tool's sheet beside the bust and head tile. The plumage texture is right and the neck curves on two seeds, but every seed dropped the sweater vest, collar and bow tie into plain plumage - the look card's known failure number two - because the block-in's vest tone sat too close to the plumage; and the bill never took the black outer third. Round two: the vest goes to a garment tone in the block-in, the negatives forbid a bare bird, and the wardrobe sheet joins as a third reference. The bill will likely need the plan's head route: a separate head render and a code-side transplant.
+
+**Settings.** figure-drew-02-toward, seeds 7/21/33/44, refs bust+head, prompt line from the bible, 40 steps
+
+**Verdict.** all four rejected - round two running
+
+*Logged 23:55.*
+
+---
+
