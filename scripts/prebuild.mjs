@@ -122,6 +122,24 @@ if (fs.existsSync(canonSrc)) {
   }
 }
 
+// The sticker desk's web assets: canon/room-kit/v2/ is the full local studio
+// record (history/, stickers/ full-res, tall/, values/, masks/, shadows/,
+// work/) - well over a gigabyte, entirely regenerable, and gitignored except
+// for its curated web/ subfolder (built by scripts/build-desk-web-assets.py).
+// Copy ONLY that web/ subfolder into public/ - never the room-kit tree
+// itself, or the deploy bloats with history nobody should ship.
+const roomKitWebSrc = path.join(repoRoot, "canon", "room-kit", "v2", "web");
+const roomKitWebDest = path.join(canonDest, "room-kit", "v2", "web");
+if (fs.existsSync(roomKitWebSrc)) {
+  fs.cpSync(roomKitWebSrc, roomKitWebDest, { recursive: true });
+  console.log("prebuild: copied room-kit web assets");
+} else {
+  console.warn(
+    "prebuild: canon/room-kit/v2/web not found - run `python scripts/build-desk-web-assets.py` " +
+      "on the local studio machine to generate it (the sticker desk pages will have nothing to show)."
+  );
+}
+
 // The character-model proof gallery: every QC'd training scene image (and
 // its caption) is copied to public/models/ with a manifest, so /models can
 // show the founder the exact pixels the fine-tune will learn from.

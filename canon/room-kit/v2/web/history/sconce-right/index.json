@@ -1,0 +1,18 @@
+[
+  {
+    "version": "v001",
+    "date": "2026-09-04",
+    "label": "s4",
+    "note": "a LIT brass wall sconce on the back wall to the right of the chalkboard: an oval brass backplate with a beaded edge, a curved brass arm, a candle-cup, and a pleated cream fabric shade glowing from within, brightest at its open lower rim, throwing light up and down the panelling round it - reports/2026-09-04 #050",
+    "verdict": "candidate",
+    "thumb": "thumbs/v001.jpg"
+  },
+  {
+    "version": "v002",
+    "date": "2026-09-04",
+    "label": "approved",
+    "note": "the version standing in parts/sconce-right.png - the source room-part.py lays for this object (currently switched OFF in parts.json) - a LIT brass wall sconce on the back wall to the right of the chalkboard: an oval brass backplate with a beaded edge, a curved brass arm, a candle-cup, and a pleated cream fabric shade glowing from within, brightest at its open lower rim, throwing light up and down the panelling round it -",
+    "verdict": "approved",
+    "thumb": "thumbs/v002.jpg"
+  }
+]

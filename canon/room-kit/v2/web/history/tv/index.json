@@ -1,0 +1,58 @@
+[
+  {
+    "version": "v001",
+    "date": "2026-09-04",
+    "label": "s7",
+    "note": "the switched-off flat-screen television in a slim matte-black frame, flush on the panelling - reports/2026-09-04 #079",
+    "verdict": "candidate",
+    "thumb": "thumbs/v001.jpg"
+  },
+  {
+    "version": "v002",
+    "date": "2026-09-04",
+    "label": "s4",
+    "note": "the switched-off flat-screen television in a slim matte-black frame, flush on the panelling - reports/2026-09-04 #085",
+    "verdict": "candidate",
+    "thumb": "thumbs/v002.jpg"
+  },
+  {
+    "version": "v003",
+    "date": "2026-09-04",
+    "label": "s21",
+    "note": "the switched-off flat-screen television in a slim matte-black frame, flush on the panelling - reports/2026-09-04 #106",
+    "verdict": "candidate",
+    "thumb": "thumbs/v003.jpg"
+  },
+  {
+    "version": "v004",
+    "date": "2026-09-04",
+    "label": "s33",
+    "note": "the switched-off flat-screen television in a slim matte-black frame, flush on the panelling - reports/2026-09-04 #108",
+    "verdict": "candidate",
+    "thumb": "thumbs/v004.jpg"
+  },
+  {
+    "version": "v005",
+    "date": "2026-09-04",
+    "label": "s44",
+    "note": "the switched-off flat-screen television in a slim matte-black frame, flush on the panelling - reports/2026-09-04 #110",
+    "verdict": "candidate",
+    "thumb": "thumbs/v005.jpg"
+  },
+  {
+    "version": "v006",
+    "date": "2026-09-05",
+    "label": "s11",
+    "note": "the switched-off flat-screen television in a slim matte-black frame, flush on the panelling - settings: local/sensenova-u1.5, seed 11, full 40 steps cfg 4 - reports/2026-09-05 #052",
+    "verdict": "candidate",
+    "thumb": "thumbs/v006.jpg"
+  },
+  {
+    "version": "v007",
+    "date": "2026-09-05",
+    "label": "approved",
+    "note": "the version standing in parts/tv.png - the source room-part.py lays for this object - the switched-off flat-screen television in a slim matte-black frame, flush on the panelling -",
+    "verdict": "approved",
+    "thumb": "thumbs/v007.jpg"
+  }
+]

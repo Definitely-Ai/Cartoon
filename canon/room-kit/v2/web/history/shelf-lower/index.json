@@ -1,0 +1,34 @@
+[
+  {
+    "version": "v001",
+    "date": "2026-09-05",
+    "label": "s4",
+    "note": "the lower shelf of the back bar: a plain WALNUT board housed into the cheeks, its polished wood top catching the light - wood, not marble, not stone - reports/2026-09-05 #004",
+    "verdict": "candidate",
+    "thumb": "thumbs/v001.jpg"
+  },
+  {
+    "version": "v002",
+    "date": "2026-09-05",
+    "label": "s7",
+    "note": "the lower shelf of the back bar: a plain WALNUT board housed into the cheeks, its polished wood top catching the light - wood, not marble, not stone - settings: local/sensenova-u1.5, seed 7, full 40 steps cfg 4 - reports/2026-09-05 #048",
+    "verdict": "candidate",
+    "thumb": "thumbs/v002.jpg"
+  },
+  {
+    "version": "v003",
+    "date": "2026-09-05",
+    "label": "approved",
+    "note": "the version standing in parts/shelf-lower.png - the source room-part.py lays for this object (currently switched OFF in parts.json) - the lower shelf of the back bar: a plain WALNUT board housed into the cheeks, its polished wood top catching the light - wood, not marble, not stone -",
+    "verdict": "approved",
+    "thumb": "thumbs/v003.jpg"
+  },
+  {
+    "version": "v004",
+    "date": "2026-09-05",
+    "label": "C3 slab s7 - FOUNDER APPROVED",
+    "note": "The floating-slab unit: two heavy walnut slabs housed into three posts on the marble ledge, wall panelling open behind and above, shadows as a code layer. Chosen by the founder over the niche and the carcass; highlight of the day.",
+    "verdict": "founder: approved 2026-09-05 - highlight of the day",
+    "thumb": "thumbs/v004.jpg"
+  }
+]

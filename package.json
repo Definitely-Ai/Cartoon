@@ -20,7 +20,7 @@
     "training:refs": "node scripts/training/make-variant-refs.mjs",
     "library:refresh": "node scripts/build-studio-library.mjs",
     "reports:refresh": "node scripts/build-studio-reports.mjs",
-    "test:studio": "node scripts/test-studio-library.mjs && node --experimental-strip-types --test scripts/test-studio-reports.mjs tests/studio-part-approval.test.mjs && node --test scripts/test-studio-reports-live.mjs scripts/test-studio-library-snapshot.mjs scripts/test-studio-library-cast.mjs scripts/test-prepare-studio-preview.mjs scripts/test-studio-notes.mjs"
+    "test:studio": "node scripts/test-studio-library.mjs && node --experimental-strip-types --test scripts/test-studio-reports.mjs tests/studio-part-approval.test.mjs tests/studio-desk.test.mjs && node --test scripts/test-studio-reports-live.mjs scripts/test-studio-library-snapshot.mjs scripts/test-studio-library-cast.mjs scripts/test-prepare-studio-preview.mjs scripts/test-studio-notes.mjs"
   },
   "dependencies": {
     "next": "15.5.23",

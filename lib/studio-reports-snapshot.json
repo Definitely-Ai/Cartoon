@@ -2,8 +2,8 @@
   "schemaVersion": 1,
   "repo": "Definitely-Ai/Cartoon",
   "branch": "main",
-  "generatedAt": "2026-09-03T19:37:43.134Z",
-  "githubCheckedAt": "2026-09-03T19:37:43.609Z",
+  "generatedAt": "2026-09-06T03:30:19.470Z",
+  "githubCheckedAt": "2026-09-06T03:30:19.872Z",
   "source": "github-verified",
   "snapshotSha": "9eebda2703f8e48df74e0212e5c7cfb28d149e43",
   "liveCheckNote": null,
@@ -31606,1351 +31606,2506 @@
     }
   ],
   "local": {
-    "capturedAt": "2026-09-03T19:37:43.134Z",
-    "head": "06f18dbdc109ab1c769a57b4021be989a578c6c6",
+    "capturedAt": "2026-09-06T03:30:19.470Z",
+    "head": "1944b4806f6a553c32b55c365d907041f52f8db0",
     "remoteHead": "9eebda2703f8e48df74e0212e5c7cfb28d149e43",
     "behind": 2,
-    "ahead": 0,
+    "ahead": 1,
     "files": [
       {
         "path": ".gitignore",
         "status": "modified",
-        "modifiedAt": "2026-09-03T19:27:04.934Z"
-      },
-      {
-        "path": "README.md",
-        "status": "modified",
-        "modifiedAt": "2026-09-03T19:30:45.166Z"
-      },
-      {
-        "path": "app/(studio)/collection/page.tsx",
-        "status": "modified",
-        "modifiedAt": "2026-09-03T19:10:34.798Z"
-      },
-      {
-        "path": "app/(studio)/connect/page.tsx",
-        "status": "modified",
-        "modifiedAt": "2026-09-03T19:13:33.406Z"
-      },
-      {
-        "path": "app/(studio)/keepers/page.tsx",
-        "status": "modified",
-        "modifiedAt": "2026-09-03T19:10:34.799Z"
+        "modifiedAt": "2026-09-06T03:12:56.824Z"
       },
       {
         "path": "app/(studio)/layout.tsx",
         "status": "modified",
-        "modifiedAt": "2026-09-03T19:30:45.165Z"
+        "modifiedAt": "2026-09-06T03:09:38.724Z"
       },
       {
-        "path": "app/(studio)/models/page.tsx",
+        "path": "lib/studio-library-manifest.json",
         "status": "modified",
-        "modifiedAt": "2026-09-03T19:10:34.800Z"
-      },
-      {
-        "path": "app/(studio)/page.tsx",
-        "status": "modified",
-        "modifiedAt": "2026-09-03T19:31:00.237Z"
-      },
-      {
-        "path": "app/(studio)/review/ScoringScreen.tsx",
-        "status": "modified",
-        "modifiedAt": "2026-09-03T19:10:34.799Z"
-      },
-      {
-        "path": "app/api/backroom/plate/route.ts",
-        "status": "modified",
-        "modifiedAt": "2026-09-02T16:55:22.004Z"
-      },
-      {
-        "path": "app/api/backroom/smoke/route.ts",
-        "status": "modified",
-        "modifiedAt": "2026-09-02T16:22:36.571Z"
-      },
-      {
-        "path": "app/api/backroom/train/route.ts",
-        "status": "modified",
-        "modifiedAt": "2026-09-02T16:16:31.115Z"
-      },
-      {
-        "path": "app/api/backroom/variants/route.ts",
-        "status": "modified",
-        "modifiedAt": "2026-09-02T16:16:31.115Z"
-      },
-      {
-        "path": "app/api/mcp/route.ts",
-        "status": "modified",
-        "modifiedAt": "2026-09-03T19:24:09.180Z"
-      },
-      {
-        "path": "app/login/layout.tsx",
-        "status": "modified",
-        "modifiedAt": "2026-09-03T19:32:07.082Z"
-      },
-      {
-        "path": "app/login/page.tsx",
-        "status": "modified",
-        "modifiedAt": "2026-09-03T19:32:07.083Z"
-      },
-      {
-        "path": "canon/MASTER-PROMPT.md",
-        "status": "modified",
-        "modifiedAt": "2026-09-02T16:26:25.378Z"
-      },
-      {
-        "path": "canon/plates/README.md",
-        "status": "modified",
-        "modifiedAt": "2026-09-02T16:44:09.553Z"
-      },
-      {
-        "path": "canon/plates/duo-drew.png",
-        "status": "modified",
-        "modifiedAt": "2026-09-03T18:53:11.435Z"
-      },
-      {
-        "path": "canon/plates/duo.json",
-        "status": "modified",
-        "modifiedAt": "2026-09-02T18:46:24.437Z"
-      },
-      {
-        "path": "canon/plates/duo.png",
-        "status": "modified",
-        "modifiedAt": "2026-09-03T18:53:10.993Z"
-      },
-      {
-        "path": "canon/plates/trio.json",
-        "status": "modified",
-        "modifiedAt": "2026-09-02T18:46:24.448Z"
-      },
-      {
-        "path": "lib/dialogue.ts",
-        "status": "modified",
-        "modifiedAt": "2026-09-02T16:16:31.116Z"
-      },
-      {
-        "path": "lib/gallery-manifest.json",
-        "status": "modified",
-        "modifiedAt": "2026-09-03T19:15:12.316Z"
-      },
-      {
-        "path": "lib/generate.ts",
-        "status": "modified",
-        "modifiedAt": "2026-09-03T18:57:47.021Z"
-      },
-      {
-        "path": "lib/plates.ts",
-        "status": "modified",
-        "modifiedAt": "2026-09-02T17:42:51.771Z"
-      },
-      {
-        "path": "lib/replicate.ts",
-        "status": "removed",
-        "modifiedAt": null
-      },
-      {
-        "path": "lib/writersRoom.ts",
-        "status": "modified",
-        "modifiedAt": "2026-09-02T16:26:25.378Z"
-      },
-      {
-        "path": "middleware.ts",
-        "status": "modified",
-        "modifiedAt": "2026-09-03T19:03:26.385Z"
-      },
-      {
-        "path": "next.config.ts",
-        "status": "modified",
-        "modifiedAt": "2026-09-03T19:03:26.385Z"
-      },
-      {
-        "path": "package-lock.json",
-        "status": "modified",
-        "modifiedAt": "2026-09-02T17:01:05.442Z"
+        "modifiedAt": "2026-09-06T03:30:19.393Z"
       },
       {
         "path": "package.json",
         "status": "modified",
-        "modifiedAt": "2026-09-03T19:37:42.789Z"
-      },
-      {
-        "path": "public/gallery/manifest.json",
-        "status": "modified",
-        "modifiedAt": "2026-09-03T19:15:12.316Z"
-      },
-      {
-        "path": "public/models/index.json",
-        "status": "modified",
-        "modifiedAt": "2026-09-03T19:15:12.147Z"
-      },
-      {
-        "path": "public/og.png",
-        "status": "modified",
-        "modifiedAt": "2026-09-03T19:15:12.278Z"
+        "modifiedAt": "2026-09-06T03:16:56.465Z"
       },
       {
         "path": "scripts/prebuild.mjs",
         "status": "modified",
-        "modifiedAt": "2026-09-03T19:17:01.275Z"
+        "modifiedAt": "2026-09-06T03:00:21.914Z"
       },
       {
-        "path": ".claude/workflows/inspect-local.js",
+        "path": "scripts/room-part.py",
+        "status": "modified",
+        "modifiedAt": "2026-09-06T02:56:41.643Z"
+      },
+      {
+        "path": "app/(studio)/desk/DeskClient.tsx",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T03:10:28.361Z"
+      },
+      {
+        "path": "app/(studio)/desk/desk.module.css",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T03:10:17.263Z"
+      },
+      {
+        "path": "app/(studio)/desk/page.tsx",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T03:08:45.424Z"
+      },
+      {
+        "path": "app/api/desk/decisions/route.ts",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T03:06:36.584Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/base.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:39.936Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/backbar/index.json",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:40.462Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/backbar/thumbs/v001.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:40.266Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/backbar/thumbs/v002.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:40.288Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/backbar/thumbs/v003.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:40.308Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/backbar/thumbs/v004.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:40.327Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/backbar/thumbs/v005.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:40.338Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/backbar/thumbs/v006.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:40.349Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/backbar/thumbs/v007.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:40.368Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/backbar/thumbs/v008.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:40.379Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/backbar/thumbs/v009.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:40.387Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/backbar/thumbs/v010.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:40.395Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/backbar/thumbs/v011.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:40.405Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/backbar/thumbs/v012.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:40.415Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/backbar/thumbs/v013.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:40.425Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/backbar/thumbs/v014.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:40.436Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/backbar/thumbs/v015.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:40.444Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/backbar/thumbs/v016.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:40.453Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/backbar/thumbs/v017.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:40.462Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/base/index.json",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:40.663Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/base/thumbs/v001.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:40.482Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/base/thumbs/v002.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:40.501Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/base/thumbs/v003.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:40.522Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/base/thumbs/v004.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:40.542Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/base/thumbs/v005.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:40.562Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/base/thumbs/v006.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:40.582Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/base/thumbs/v007.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:40.601Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/base/thumbs/v008.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:40.622Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/base/thumbs/v009.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:40.643Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/base/thumbs/v010.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:40.662Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/board/index.json",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:40.675Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/board/thumbs/v001.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:40.669Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/board/thumbs/v002.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:40.673Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/bottles-lower/index.json",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:40.717Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/bottles-lower/thumbs/v001.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:40.695Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/bottles-lower/thumbs/v002.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:40.716Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/bottles-upper/index.json",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:40.759Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/bottles-upper/thumbs/v001.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:40.739Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/bottles-upper/thumbs/v002.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:40.759Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/cabinets/index.json",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:40.799Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/cabinets/thumbs/v001.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:40.767Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/cabinets/thumbs/v002.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:40.775Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/cabinets/thumbs/v003.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:40.782Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/cabinets/thumbs/v004.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:40.791Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/cabinets/thumbs/v005.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:40.799Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/chair-left/index.json",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:41.136Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/chair-left/thumbs/v001.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:40.819Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/chair-left/thumbs/v002.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:40.840Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/chair-left/thumbs/v003.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:40.861Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/chair-left/thumbs/v004.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:40.886Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/chair-left/thumbs/v005.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:40.907Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/chair-left/thumbs/v006.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:40.930Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/chair-left/thumbs/v007.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:40.953Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/chair-left/thumbs/v008.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:40.977Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/chair-left/thumbs/v009.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:40.998Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/chair-left/thumbs/v010.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:41.022Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/chair-left/thumbs/v011.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:41.043Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/chair-left/thumbs/v012.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:41.067Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/chair-left/thumbs/v013.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:41.090Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/chair-left/thumbs/v014.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:41.115Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/chair-left/thumbs/v015.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:41.136Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/chair-right/index.json",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:41.345Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/chair-right/thumbs/v001.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:41.156Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/chair-right/thumbs/v002.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:41.181Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/chair-right/thumbs/v003.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:41.201Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/chair-right/thumbs/v004.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:41.226Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/chair-right/thumbs/v005.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:41.249Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/chair-right/thumbs/v006.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:41.273Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/chair-right/thumbs/v007.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:41.302Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/chair-right/thumbs/v008.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:41.324Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/chair-right/thumbs/v009.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:41.345Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/counter/index.json",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:41.453Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/counter/thumbs/v001.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:41.355Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/counter/thumbs/v002.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:41.363Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/counter/thumbs/v003.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:41.372Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/counter/thumbs/v004.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:41.380Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/counter/thumbs/v005.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:41.389Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/counter/thumbs/v006.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:41.398Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/counter/thumbs/v007.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:41.408Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/counter/thumbs/v008.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:41.417Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/counter/thumbs/v009.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:41.427Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/counter/thumbs/v010.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:41.434Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/counter/thumbs/v011.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:41.444Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/counter/thumbs/v012.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:41.453Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/figure-barclay/index.json",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:41.485Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/figure-barclay/thumbs/v001.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:41.463Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/figure-barclay/thumbs/v002.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:41.475Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/figure-barclay/thumbs/v003.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:41.485Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/figure-drew/index.json",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:41.530Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/figure-drew/thumbs/v001.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:41.497Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/figure-drew/thumbs/v002.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:41.508Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/figure-drew/thumbs/v003.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:41.519Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/figure-drew/thumbs/v004.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:41.530Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/glass/index.json",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:41.557Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/glass/thumbs/v001.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:41.542Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/glass/thumbs/v002.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:41.557Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/ledge/index.json",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:41.574Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/ledge/thumbs/v001.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:41.560Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/ledge/thumbs/v002.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:41.562Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/ledge/thumbs/v003.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:41.564Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/ledge/thumbs/v004.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:41.567Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/ledge/thumbs/v005.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:41.570Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/ledge/thumbs/v006.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:41.572Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/ledge/thumbs/v007.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:41.574Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/sconce-left/index.json",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:41.614Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/sconce-left/thumbs/v001.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:41.594Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/sconce-left/thumbs/v002.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:41.613Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/sconce-right/index.json",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:41.656Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/sconce-right/thumbs/v001.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:41.635Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/sconce-right/thumbs/v002.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:41.656Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/shelf-lower/index.json",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:41.720Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/shelf-lower/thumbs/v001.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:41.676Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/shelf-lower/thumbs/v002.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:41.699Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/shelf-lower/thumbs/v003.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:41.719Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/shelf-lower/thumbs/v004.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:41.720Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/shelf-upper/index.json",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:41.805Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/shelf-upper/thumbs/v001.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:41.742Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/shelf-upper/thumbs/v002.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:41.762Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/shelf-upper/thumbs/v003.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:41.784Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/shelf-upper/thumbs/v004.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:41.804Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/shelf-upper/thumbs/v005.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:41.805Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/sign/index.json",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:41.927Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/sign/thumbs/v001.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:41.826Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/sign/thumbs/v002.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:41.841Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/sign/thumbs/v003.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:41.852Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/sign/thumbs/v004.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:41.859Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/sign/thumbs/v005.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:41.869Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/sign/thumbs/v006.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:41.879Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/sign/thumbs/v007.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:41.891Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/sign/thumbs/v008.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:41.904Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/sign/thumbs/v009.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:41.916Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/sign/thumbs/v010.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:41.927Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/tv/index.json",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:41.965Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/tv/thumbs/v001.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:41.934Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/tv/thumbs/v002.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:41.939Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/tv/thumbs/v003.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:41.943Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/tv/thumbs/v004.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:41.949Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/tv/thumbs/v005.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:41.955Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/tv/thumbs/v006.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:41.959Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/tv/thumbs/v007.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:41.965Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/window-frame/index.json",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:41.992Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/window-frame/thumbs/v001.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:41.978Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/history/window-frame/thumbs/v002.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:41.992Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/plate-signed.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:39.964Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04.json",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T03:10:06.683Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/001.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:42.008Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/002.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:42.025Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/003.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:42.044Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/004.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:42.058Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/005.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:42.071Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/006.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:42.087Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/007.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:42.102Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/008.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:42.118Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/009.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:42.136Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/010.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:42.148Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/011.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:42.167Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/012.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:42.187Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/013.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:42.200Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/014.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:42.219Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/015.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:42.230Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/016.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:42.242Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/017.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:42.265Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/018.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:42.273Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/019.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:42.292Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/020.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:42.302Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/021.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:42.314Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/022.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:42.322Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/023.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:42.332Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/024.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:42.386Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/025.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:42.423Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/026.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:42.479Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/027.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:42.519Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/028.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:42.533Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/029.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:42.544Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/030.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:42.559Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/031.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:42.571Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/032.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:42.623Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/033.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:42.660Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/034.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:42.713Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/035.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:42.753Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/036.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:42.767Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/037.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:42.783Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/038.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:42.794Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/039.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:42.849Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/040.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:42.884Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/041.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:42.903Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/042.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:42.927Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/043.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:42.943Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/044.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:42.952Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/045.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:42.959Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/046.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:42.969Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/047.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:43.022Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/048.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:43.059Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/049.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:43.110Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/050.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:43.148Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/051.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:43.164Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/052.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:43.219Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/053.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:43.254Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/054.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:43.264Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/055.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:43.320Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/056.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:43.359Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/057.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:43.412Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/058.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:43.451Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/059.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:43.466Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/060.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:43.480Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/061.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:43.494Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/062.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:43.504Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/063.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:43.523Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/064.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:43.579Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/065.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:43.616Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/066.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:43.630Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/067.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:43.685Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/068.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:43.720Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/069.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:43.735Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/070.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:43.748Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/071.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:43.803Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/072.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:43.840Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/073.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:43.894Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/074.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:43.932Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/075.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:43.945Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/076.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:43.957Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/077.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:43.967Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/078.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:44.021Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/079.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:44.059Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/080.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:44.112Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/081.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:44.149Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/082.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:44.204Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/083.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:44.241Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/084.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:44.308Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/085.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:44.347Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/086.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:44.407Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/087.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:44.444Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/088.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:44.502Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/089.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:44.538Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/090.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:44.550Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/091.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:44.559Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/092.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:44.568Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/093.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:44.606Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/094.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:44.643Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/095.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:44.681Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/096.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:44.718Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/097.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:44.728Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/098.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:44.742Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/099.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:44.778Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/100.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:44.815Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/101.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:44.853Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/102.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:44.890Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/103.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:44.899Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/104.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:44.915Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/105.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:44.977Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/106.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:45.016Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/107.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:45.071Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/108.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:45.109Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/109.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:45.164Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/110.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:45.201Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/111.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:45.210Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-04/thumbs/112.jpg",
+        "status": "untracked",
+        "modifiedAt": "2026-09-06T02:59:45.219Z"
+      },
+      {
+        "path": "canon/room-kit/v2/web/reports/2026-09-05.json",
         "status": "untracked",
-        "modifiedAt": "2026-09-01T19:21:52.582Z"
+        "modifiedAt": "2026-09-06T03:10:06.684Z"
       },
       {
-        "path": "app/(studio)/library/LibraryClient.tsx",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/001.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T19:31:00.238Z"
+        "modifiedAt": "2026-09-06T02:59:45.274Z"
       },
       {
-        "path": "app/(studio)/library/library.css",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/002.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T19:07:51.471Z"
+        "modifiedAt": "2026-09-06T02:59:45.306Z"
       },
       {
-        "path": "app/(studio)/library/page.tsx",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/003.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T19:07:51.471Z"
+        "modifiedAt": "2026-09-06T02:59:45.354Z"
       },
       {
-        "path": "app/(studio)/newspaper/NewspaperProof.tsx",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/004.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T19:02:40.276Z"
+        "modifiedAt": "2026-09-06T02:59:45.386Z"
       },
       {
-        "path": "app/(studio)/newspaper/newspaper.css",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/005.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T19:20:50.283Z"
+        "modifiedAt": "2026-09-06T02:59:45.435Z"
       },
       {
-        "path": "app/(studio)/newspaper/page.tsx",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/006.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T19:02:40.276Z"
+        "modifiedAt": "2026-09-06T02:59:45.467Z"
       },
       {
-        "path": "app/(studio)/notes/NotesClient.tsx",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/007.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T19:36:26.572Z"
+        "modifiedAt": "2026-09-06T02:59:45.500Z"
       },
       {
-        "path": "app/(studio)/notes/notes.css",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/008.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T19:32:53.605Z"
+        "modifiedAt": "2026-09-06T02:59:45.514Z"
       },
       {
-        "path": "app/(studio)/notes/page.tsx",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/009.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T19:32:53.604Z"
+        "modifiedAt": "2026-09-06T02:59:45.562Z"
       },
       {
-        "path": "app/(studio)/reports/ReportPreview.tsx",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/010.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T18:59:21.385Z"
+        "modifiedAt": "2026-09-06T02:59:45.594Z"
       },
       {
-        "path": "app/(studio)/reports/page.tsx",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/011.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T19:07:18.452Z"
+        "modifiedAt": "2026-09-06T02:59:45.643Z"
       },
       {
-        "path": "app/(studio)/reports/reports.css",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/012.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T19:06:06.426Z"
+        "modifiedAt": "2026-09-06T02:59:45.677Z"
       },
       {
-        "path": "app/(studio)/room/PartApproval.tsx",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/013.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T19:32:09.329Z"
+        "modifiedAt": "2026-09-06T02:59:45.682Z"
       },
       {
-        "path": "app/(studio)/room/RoomClient.tsx",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/014.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T19:30:44.248Z"
+        "modifiedAt": "2026-09-06T02:59:45.694Z"
       },
       {
-        "path": "app/(studio)/room/page.tsx",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/015.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T19:27:24.019Z"
+        "modifiedAt": "2026-09-06T02:59:45.741Z"
       },
       {
-        "path": "app/(studio)/room/room.module.css",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/016.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T19:30:44.921Z"
+        "modifiedAt": "2026-09-06T02:59:45.773Z"
       },
       {
-        "path": "app/(studio)/topics/evidence/route.ts",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/017.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T18:53:47.687Z"
+        "modifiedAt": "2026-09-06T02:59:45.819Z"
       },
       {
-        "path": "app/(studio)/topics/page.tsx",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/018.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T19:08:36.297Z"
+        "modifiedAt": "2026-09-06T02:59:45.852Z"
       },
       {
-        "path": "app/(studio)/topics/topics.module.css",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/019.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T18:53:47.687Z"
+        "modifiedAt": "2026-09-06T02:59:45.900Z"
       },
       {
-        "path": "app/api/library/[id]/route.ts",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/020.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T19:26:37.428Z"
+        "modifiedAt": "2026-09-06T02:59:45.930Z"
       },
       {
-        "path": "app/api/reports/image/route.ts",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/021.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T18:57:26.722Z"
+        "modifiedAt": "2026-09-06T02:59:45.940Z"
       },
       {
-        "path": "app/api/reports/route.ts",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/022.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T18:52:09.480Z"
+        "modifiedAt": "2026-09-06T02:59:45.991Z"
       },
       {
-        "path": "app/api/room/approve/route.ts",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/023.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T19:23:44.874Z"
+        "modifiedAt": "2026-09-06T02:59:46.024Z"
       },
       {
-        "path": "app/api/studio-notes/route.ts",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/024.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T19:32:53.604Z"
+        "modifiedAt": "2026-09-06T02:59:46.075Z"
       },
       {
-        "path": "app/workspace-legacy.css",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/025.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T19:14:40.742Z"
+        "modifiedAt": "2026-09-06T02:59:46.108Z"
       },
       {
-        "path": "app/workspace.css",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/026.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T19:32:07.853Z"
+        "modifiedAt": "2026-09-06T02:59:46.157Z"
       },
       {
-        "path": "briefs/20260901-170000-ten-cartoons-at-the-bar/01-my-kids-don-t-want-the.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/027.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-01T21:03:19.773Z"
+        "modifiedAt": "2026-09-06T02:59:46.190Z"
       },
       {
-        "path": "briefs/20260901-170000-ten-cartoons-at-the-bar/01-my-kids-don-t-want-the.r2.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/028.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-01T20:44:49.439Z"
+        "modifiedAt": "2026-09-06T02:59:46.237Z"
       },
       {
-        "path": "briefs/20260901-170000-ten-cartoons-at-the-bar/01-my-kids-don-t-want-the.r2.txt",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/029.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-01T20:44:49.633Z"
+        "modifiedAt": "2026-09-06T02:59:46.269Z"
       },
       {
-        "path": "briefs/20260901-170000-ten-cartoons-at-the-bar/01-my-kids-don-t-want-the.r3.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/030.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-01T20:45:34.273Z"
+        "modifiedAt": "2026-09-06T02:59:46.281Z"
       },
       {
-        "path": "briefs/20260901-170000-ten-cartoons-at-the-bar/01-my-kids-don-t-want-the.r3.txt",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/031.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-01T20:45:34.470Z"
+        "modifiedAt": "2026-09-06T02:59:46.312Z"
       },
       {
-        "path": "briefs/20260901-170000-ten-cartoons-at-the-bar/01-my-kids-don-t-want-the.r4.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/032.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-01T20:46:19.063Z"
+        "modifiedAt": "2026-09-06T02:59:46.322Z"
       },
       {
-        "path": "briefs/20260901-170000-ten-cartoons-at-the-bar/01-my-kids-don-t-want-the.r4.txt",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/033.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-01T20:46:19.268Z"
+        "modifiedAt": "2026-09-06T02:59:46.354Z"
       },
       {
-        "path": "briefs/20260901-170000-ten-cartoons-at-the-bar/01-my-kids-don-t-want-the.txt",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/034.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-01T21:03:20.231Z"
+        "modifiedAt": "2026-09-06T02:59:46.386Z"
       },
       {
-        "path": "briefs/20260901-170000-ten-cartoons-at-the-bar/finished/01-my-kids-don-t-want-the.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/035.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-01T21:03:20.084Z"
+        "modifiedAt": "2026-09-06T02:59:46.418Z"
       },
       {
-        "path": "briefs/20260901-170000-ten-cartoons-at-the-bar/finished/01-my-kids-don-t-want-the.r2.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/036.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-01T20:44:49.633Z"
+        "modifiedAt": "2026-09-06T02:59:46.449Z"
       },
       {
-        "path": "briefs/20260901-170000-ten-cartoons-at-the-bar/finished/01-my-kids-don-t-want-the.r3.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/037.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-01T20:45:34.469Z"
+        "modifiedAt": "2026-09-06T02:59:46.460Z"
       },
       {
-        "path": "briefs/20260901-170000-ten-cartoons-at-the-bar/finished/01-my-kids-don-t-want-the.r4.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/038.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-01T20:46:19.268Z"
+        "modifiedAt": "2026-09-06T02:59:46.468Z"
       },
       {
-        "path": "briefs/20260901-170000-ten-cartoons-at-the-bar/gags.json",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/039.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-01T21:04:28.558Z"
+        "modifiedAt": "2026-09-06T02:59:46.480Z"
       },
       {
-        "path": "briefs/20260901-170000-ten-cartoons-at-the-bar/passes/01/1-staging-seed304.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/040.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-01T21:03:20.143Z"
+        "modifiedAt": "2026-09-06T02:59:46.512Z"
       },
       {
-        "path": "briefs/20260901-170000-ten-cartoons-at-the-bar/passes/01/2-signage-seed11.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/041.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-01T21:03:20.165Z"
+        "modifiedAt": "2026-09-06T02:59:46.544Z"
       },
       {
-        "path": "briefs/20260901-170000-ten-cartoons-at-the-bar/passes/01/3-labels-seed22.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/042.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-01T21:03:20.186Z"
+        "modifiedAt": "2026-09-06T02:59:46.584Z"
       },
       {
-        "path": "briefs/20260901-170000-ten-cartoons-at-the-bar/passes/01/3b-labels-spelled-seed41.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/043.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-01T21:03:20.211Z"
+        "modifiedAt": "2026-09-06T02:59:46.616Z"
       },
       {
-        "path": "briefs/20260901-170000-ten-cartoons-at-the-bar/plan.json",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/044.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-01T20:43:19.851Z"
+        "modifiedAt": "2026-09-06T02:59:46.649Z"
       },
       {
-        "path": "briefs/20260901-180654-codex-best-three/01-mortgage-inheritance.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/045.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-01T22:01:54.985Z"
+        "modifiedAt": "2026-09-06T02:59:46.682Z"
       },
       {
-        "path": "briefs/20260901-180654-codex-best-three/02-renewal-price.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/046.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-01T22:13:57.592Z"
+        "modifiedAt": "2026-09-06T02:59:46.714Z"
       },
       {
-        "path": "briefs/20260901-180654-codex-best-three/03-tip-before-coffee.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/047.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-01T22:14:58.696Z"
+        "modifiedAt": "2026-09-06T02:59:46.746Z"
       },
       {
-        "path": "briefs/20260901-180654-codex-best-three/finished/01-mortgage-inheritance.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/048.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-01T22:15:33.591Z"
+        "modifiedAt": "2026-09-06T02:59:46.779Z"
       },
       {
-        "path": "briefs/20260901-180654-codex-best-three/finished/02-renewal-price.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/049.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-01T22:15:33.839Z"
+        "modifiedAt": "2026-09-06T02:59:46.811Z"
       },
       {
-        "path": "briefs/20260901-180654-codex-best-three/finished/03-tip-before-coffee.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/050.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-01T22:15:34.087Z"
+        "modifiedAt": "2026-09-06T02:59:46.844Z"
       },
       {
-        "path": "briefs/20260901-180654-codex-best-three/generation-notes.md",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/051.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-01T22:15:20.436Z"
+        "modifiedAt": "2026-09-06T02:59:46.876Z"
       },
       {
-        "path": "briefs/20260901-180654-codex-best-three/plan.json",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/052.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-01T22:09:53.617Z"
+        "modifiedAt": "2026-09-06T02:59:46.909Z"
       },
       {
-        "path": "briefs/20260901-183829-reference-rebuild-v2/01-airline-scenic-route.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/053.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-01T22:32:30.690Z"
+        "modifiedAt": "2026-09-06T02:59:46.942Z"
       },
       {
-        "path": "briefs/20260901-183829-reference-rebuild-v2/02-roof-on-the-house.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/054.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-01T22:32:04.032Z"
+        "modifiedAt": "2026-09-06T02:59:46.975Z"
       },
       {
-        "path": "briefs/20260901-183829-reference-rebuild-v2/finished/01-airline-scenic-route.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/055.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-01T22:40:57.992Z"
+        "modifiedAt": "2026-09-06T02:59:47.008Z"
       },
       {
-        "path": "briefs/20260901-183829-reference-rebuild-v2/finished/02-roof-on-the-house.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/056.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-01T22:40:58.214Z"
+        "modifiedAt": "2026-09-06T02:59:47.039Z"
       },
       {
-        "path": "briefs/20260901-183829-reference-rebuild-v2/generation-notes.md",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/057.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-01T22:40:39.485Z"
+        "modifiedAt": "2026-09-06T02:59:47.071Z"
       },
       {
-        "path": "briefs/20260901-183829-reference-rebuild-v2/plan.json",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/058.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-01T22:40:39.485Z"
+        "modifiedAt": "2026-09-06T02:59:47.105Z"
       },
       {
-        "path": "briefs/20260901-204319-ten-cartoons-at-the-bar-for/02-inflation-is-almost-back-to-normal.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/059.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-01T21:55:41.878Z"
+        "modifiedAt": "2026-09-06T02:59:47.136Z"
       },
       {
-        "path": "briefs/20260901-204319-ten-cartoons-at-the-bar-for/02-inflation-is-almost-back-to-normal.txt",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/060.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-01T21:55:42.111Z"
+        "modifiedAt": "2026-09-06T02:59:47.168Z"
       },
       {
-        "path": "briefs/20260901-204319-ten-cartoons-at-the-bar-for/03-i-ve-never-paid-full-price.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/061.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-01T22:26:07.261Z"
+        "modifiedAt": "2026-09-06T02:59:47.199Z"
       },
       {
-        "path": "briefs/20260901-204319-ten-cartoons-at-the-bar-for/03-i-ve-never-paid-full-price.txt",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/062.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-01T22:26:07.450Z"
+        "modifiedAt": "2026-09-06T02:59:47.240Z"
       },
       {
-        "path": "briefs/20260901-204319-ten-cartoons-at-the-bar-for/05-no-resort-fee-on-your-tab.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/063.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-01T22:55:55.080Z"
+        "modifiedAt": "2026-09-06T02:59:47.273Z"
       },
       {
-        "path": "briefs/20260901-204319-ten-cartoons-at-the-bar-for/05-no-resort-fee-on-your-tab.r2.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/064.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-01T22:56:42.122Z"
+        "modifiedAt": "2026-09-06T02:59:47.305Z"
       },
       {
-        "path": "briefs/20260901-204319-ten-cartoons-at-the-bar-for/05-no-resort-fee-on-your-tab.r2.txt",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/065.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-01T22:56:42.292Z"
+        "modifiedAt": "2026-09-06T02:59:47.337Z"
       },
       {
-        "path": "briefs/20260901-204319-ten-cartoons-at-the-bar-for/05-no-resort-fee-on-your-tab.r3.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/066.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-01T22:57:35.123Z"
+        "modifiedAt": "2026-09-06T02:59:47.347Z"
       },
       {
-        "path": "briefs/20260901-204319-ten-cartoons-at-the-bar-for/05-no-resort-fee-on-your-tab.r3.txt",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/067.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-01T22:57:35.305Z"
+        "modifiedAt": "2026-09-06T02:59:47.358Z"
       },
       {
-        "path": "briefs/20260901-204319-ten-cartoons-at-the-bar-for/05-no-resort-fee-on-your-tab.txt",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/068.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-01T22:55:55.258Z"
+        "modifiedAt": "2026-09-06T02:59:47.362Z"
       },
       {
-        "path": "briefs/20260901-204319-ten-cartoons-at-the-bar-for/finished/02-inflation-is-almost-back-to-normal.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/069.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-01T21:55:42.110Z"
+        "modifiedAt": "2026-09-06T02:59:47.396Z"
       },
       {
-        "path": "briefs/20260901-204319-ten-cartoons-at-the-bar-for/finished/03-i-ve-never-paid-full-price.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/070.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-01T22:26:07.450Z"
+        "modifiedAt": "2026-09-06T02:59:47.427Z"
       },
       {
-        "path": "briefs/20260901-204319-ten-cartoons-at-the-bar-for/finished/05-no-resort-fee-on-your-tab.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/071.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-01T22:55:55.258Z"
+        "modifiedAt": "2026-09-06T02:59:47.460Z"
       },
       {
-        "path": "briefs/20260901-204319-ten-cartoons-at-the-bar-for/finished/05-no-resort-fee-on-your-tab.r2.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/072.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-01T22:56:42.292Z"
+        "modifiedAt": "2026-09-06T02:59:47.493Z"
       },
       {
-        "path": "briefs/20260901-204319-ten-cartoons-at-the-bar-for/finished/05-no-resort-fee-on-your-tab.r3.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/073.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-01T22:57:35.304Z"
+        "modifiedAt": "2026-09-06T02:59:47.526Z"
       },
       {
-        "path": "briefs/20260901-204319-ten-cartoons-at-the-bar-for/plan.json",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/074.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-01T22:53:33.739Z"
+        "modifiedAt": "2026-09-06T02:59:47.559Z"
       },
       {
-        "path": "briefs/20260902-164223-plate-desk-smoke-test/01-the-fed-held-rates-steady-so.txt",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/075.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-02T16:42:44.600Z"
+        "modifiedAt": "2026-09-06T02:59:47.590Z"
       },
       {
-        "path": "briefs/20260902-164223-plate-desk-smoke-test/02-i-don-t-panic-i-just.txt",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/076.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-02T16:43:01.507Z"
+        "modifiedAt": "2026-09-06T02:59:47.622Z"
       },
       {
-        "path": "briefs/20260902-164223-plate-desk-smoke-test/finished/01-the-fed-held-rates-steady-so.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/077.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-02T16:42:44.599Z"
+        "modifiedAt": "2026-09-06T02:59:47.656Z"
       },
       {
-        "path": "briefs/20260902-164223-plate-desk-smoke-test/finished/02-i-don-t-panic-i-just.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/078.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-02T16:43:01.507Z"
+        "modifiedAt": "2026-09-06T02:59:47.689Z"
       },
       {
-        "path": "briefs/20260902-164223-plate-desk-smoke-test/plan.json",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/079.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-02T16:43:01.507Z"
+        "modifiedAt": "2026-09-06T02:59:47.721Z"
       },
       {
-        "path": "canon/fonts/CabinSketch-Bold.ttf",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/080.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-02T17:00:47.534Z"
+        "modifiedAt": "2026-09-06T02:59:47.754Z"
       },
       {
-        "path": "canon/fonts/CabinSketch-OFL.txt",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/081.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-02T17:01:01.015Z"
+        "modifiedAt": "2026-09-06T02:59:47.787Z"
       },
       {
-        "path": "canon/fonts/RockSalt-LICENSE.txt",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/082.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-02T17:01:00.819Z"
+        "modifiedAt": "2026-09-06T02:59:47.818Z"
       },
       {
-        "path": "canon/fonts/RockSalt-Regular.ttf",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/083.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-02T17:01:00.661Z"
+        "modifiedAt": "2026-09-06T02:59:47.852Z"
       },
       {
-        "path": "canon/plates/base/duo-base.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/084.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T18:44:54.207Z"
+        "modifiedAt": "2026-09-06T02:59:47.893Z"
       },
       {
-        "path": "canon/plates/base/light-map.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/085.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T18:51:43.319Z"
+        "modifiedAt": "2026-09-06T02:59:47.925Z"
       },
       {
-        "path": "canon/plates/duo-barclay.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/086.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T18:53:11.699Z"
+        "modifiedAt": "2026-09-06T02:59:47.931Z"
       },
       {
-        "path": "canon/plates/parts.json",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/087.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T18:53:08.391Z"
+        "modifiedAt": "2026-09-06T02:59:47.941Z"
       },
       {
-        "path": "canon/plates/parts/barclay-ear.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/088.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T18:46:15.617Z"
+        "modifiedAt": "2026-09-06T02:59:47.974Z"
       },
       {
-        "path": "canon/plates/parts/board.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/089.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T18:46:15.557Z"
+        "modifiedAt": "2026-09-06T02:59:48.008Z"
       },
       {
-        "path": "canon/plates/parts/marble.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/090.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T18:46:15.577Z"
+        "modifiedAt": "2026-09-06T02:59:48.043Z"
       },
       {
-        "path": "canon/plates/parts/window-view.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/091.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T18:46:15.596Z"
+        "modifiedAt": "2026-09-06T02:59:48.073Z"
       },
       {
-        "path": "canon/plates/src/style-swatch.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/092.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-02T16:42:23.313Z"
+        "modifiedAt": "2026-09-06T02:59:48.105Z"
       },
       {
-        "path": "canon/plates/work/20260902-163437Z-duo-barclay-raw.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/093.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-02T16:34:38.534Z"
+        "modifiedAt": "2026-09-06T02:59:48.134Z"
       },
       {
-        "path": "canon/plates/work/20260902-163437Z-duo-barclay.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/094.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-02T16:34:38.535Z"
+        "modifiedAt": "2026-09-06T02:59:48.167Z"
       },
       {
-        "path": "canon/plates/work/20260902-163437Z-duo-barclay.txt",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/095.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-02T16:34:38.535Z"
+        "modifiedAt": "2026-09-06T02:59:48.172Z"
       },
       {
-        "path": "canon/plates/work/20260902-165542Z-duo-drew-r1-raw.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/096.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-02T16:55:49.600Z"
+        "modifiedAt": "2026-09-06T02:59:48.179Z"
       },
       {
-        "path": "canon/plates/work/20260902-165542Z-duo-drew-r1.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/097.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-02T16:55:49.601Z"
+        "modifiedAt": "2026-09-06T02:59:48.190Z"
       },
       {
-        "path": "canon/plates/work/20260902-165542Z-duo-drew-r1.txt",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/098.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-02T16:55:49.601Z"
+        "modifiedAt": "2026-09-06T02:59:48.222Z"
       },
       {
-        "path": "canon/plates/work/20260902-165549Z-duo-drew-r2-raw.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/099.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-02T16:55:54.777Z"
+        "modifiedAt": "2026-09-06T02:59:48.255Z"
       },
       {
-        "path": "canon/plates/work/20260902-165549Z-duo-drew-r2.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/100.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-02T16:55:54.778Z"
+        "modifiedAt": "2026-09-06T02:59:48.287Z"
       },
       {
-        "path": "canon/plates/work/20260902-165549Z-duo-drew-r2.txt",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/101.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-02T16:55:54.778Z"
+        "modifiedAt": "2026-09-06T02:59:48.319Z"
       },
       {
-        "path": "canon/plates/work/20260902-165554Z-duo-drew-r3-raw.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/102.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-02T16:55:59.901Z"
+        "modifiedAt": "2026-09-06T02:59:48.351Z"
       },
       {
-        "path": "canon/plates/work/20260902-165554Z-duo-drew-r3.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/103.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-02T16:55:59.902Z"
+        "modifiedAt": "2026-09-06T02:59:48.383Z"
       },
       {
-        "path": "canon/plates/work/20260902-165554Z-duo-drew-r3.txt",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/104.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-02T16:55:59.902Z"
+        "modifiedAt": "2026-09-06T02:59:48.395Z"
       },
       {
-        "path": "canon/plates/work/20260902-165559Z-duo-drew-r4-raw.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/105.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-02T16:56:05.044Z"
+        "modifiedAt": "2026-09-06T02:59:48.437Z"
       },
       {
-        "path": "canon/plates/work/20260902-165559Z-duo-drew-r4.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/106.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-02T16:56:05.044Z"
+        "modifiedAt": "2026-09-06T02:59:48.467Z"
       },
       {
-        "path": "canon/plates/work/20260902-165559Z-duo-drew-r4.txt",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/107.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-02T16:56:05.044Z"
+        "modifiedAt": "2026-09-06T02:59:48.501Z"
       },
       {
-        "path": "canon/plates/work/20260902-165605Z-duo-drew-r5-raw.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/108.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-02T16:56:10.203Z"
+        "modifiedAt": "2026-09-06T02:59:48.534Z"
       },
       {
-        "path": "canon/plates/work/20260902-165605Z-duo-drew-r5.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/109.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-02T16:56:10.204Z"
+        "modifiedAt": "2026-09-06T02:59:48.566Z"
       },
       {
-        "path": "canon/plates/work/20260902-165605Z-duo-drew-r5.txt",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/110.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-02T16:56:10.204Z"
+        "modifiedAt": "2026-09-06T02:59:48.578Z"
       },
       {
-        "path": "canon/plates/work/20260902-165610Z-duo-barclay-r1-raw.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/111.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-02T16:56:15.591Z"
+        "modifiedAt": "2026-09-06T02:59:48.608Z"
       },
       {
-        "path": "canon/plates/work/20260902-165610Z-duo-barclay-r1.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/112.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-02T16:56:15.592Z"
+        "modifiedAt": "2026-09-06T02:59:48.616Z"
       },
       {
-        "path": "canon/plates/work/20260902-165610Z-duo-barclay-r1.txt",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/113.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-02T16:56:15.592Z"
+        "modifiedAt": "2026-09-06T02:59:48.624Z"
       },
       {
-        "path": "canon/plates/work/20260902-165615Z-duo-barclay-r2-raw.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/114.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-02T16:56:20.825Z"
+        "modifiedAt": "2026-09-06T02:59:48.655Z"
       },
       {
-        "path": "canon/plates/work/20260902-165615Z-duo-barclay-r2.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/115.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-02T16:56:20.826Z"
+        "modifiedAt": "2026-09-06T02:59:48.688Z"
       },
       {
-        "path": "canon/plates/work/20260902-165615Z-duo-barclay-r2.txt",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/116.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-02T16:56:20.826Z"
+        "modifiedAt": "2026-09-06T02:59:48.720Z"
       },
       {
-        "path": "canon/plates/work/20260902-165620Z-duo-barclay-r3-raw.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/117.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-02T16:56:26.006Z"
+        "modifiedAt": "2026-09-06T02:59:48.753Z"
       },
       {
-        "path": "canon/plates/work/20260902-165620Z-duo-barclay-r3.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/118.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-02T16:56:26.015Z"
+        "modifiedAt": "2026-09-06T02:59:48.785Z"
       },
       {
-        "path": "canon/plates/work/20260902-165620Z-duo-barclay-r3.txt",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/119.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-02T16:56:26.016Z"
+        "modifiedAt": "2026-09-06T02:59:48.796Z"
       },
       {
-        "path": "canon/plates/work/20260902-202137Z-duo-drew-r1-raw.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/120.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-02T20:21:43.122Z"
+        "modifiedAt": "2026-09-06T02:59:48.803Z"
       },
       {
-        "path": "canon/plates/work/20260902-202137Z-duo-drew-r1.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/121.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-02T20:21:43.123Z"
+        "modifiedAt": "2026-09-06T02:59:48.813Z"
       },
       {
-        "path": "canon/plates/work/20260902-202137Z-duo-drew-r1.txt",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/122.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-02T20:21:43.123Z"
+        "modifiedAt": "2026-09-06T02:59:48.832Z"
       },
       {
-        "path": "canon/plates/work/20260902-202143Z-duo-drew-r2-raw.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/123.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-02T20:21:48.272Z"
+        "modifiedAt": "2026-09-06T02:59:48.864Z"
       },
       {
-        "path": "canon/plates/work/20260902-202143Z-duo-drew-r2.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/124.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-02T20:21:48.273Z"
+        "modifiedAt": "2026-09-06T02:59:48.897Z"
       },
       {
-        "path": "canon/plates/work/20260902-202143Z-duo-drew-r2.txt",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/125.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-02T20:21:48.273Z"
+        "modifiedAt": "2026-09-06T02:59:48.931Z"
       },
       {
-        "path": "canon/plates/work/20260902-202148Z-duo-drew-r3-raw.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/126.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-02T20:21:53.354Z"
+        "modifiedAt": "2026-09-06T02:59:48.973Z"
       },
       {
-        "path": "canon/plates/work/20260902-202148Z-duo-drew-r3.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/127.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-02T20:21:53.355Z"
+        "modifiedAt": "2026-09-06T02:59:48.990Z"
       },
       {
-        "path": "canon/plates/work/20260902-202148Z-duo-drew-r3.txt",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/128.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-02T20:21:53.355Z"
+        "modifiedAt": "2026-09-06T02:59:49.023Z"
       },
       {
-        "path": "canon/plates/work/20260902-202153Z-duo-drew-r4-raw.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/129.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-02T20:21:58.466Z"
+        "modifiedAt": "2026-09-06T02:59:49.055Z"
       },
       {
-        "path": "canon/plates/work/20260902-202153Z-duo-drew-r4.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/130.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-02T20:21:58.467Z"
+        "modifiedAt": "2026-09-06T02:59:49.086Z"
       },
       {
-        "path": "canon/plates/work/20260902-202153Z-duo-drew-r4.txt",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/131.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-02T20:21:58.467Z"
+        "modifiedAt": "2026-09-06T02:59:49.117Z"
       },
       {
-        "path": "canon/plates/work/20260902-202158Z-duo-barclay-r1-raw.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/132.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-02T20:22:03.834Z"
+        "modifiedAt": "2026-09-06T02:59:49.149Z"
       },
       {
-        "path": "canon/plates/work/20260902-202158Z-duo-barclay-r1.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/133.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-02T20:22:03.835Z"
+        "modifiedAt": "2026-09-06T02:59:49.180Z"
       },
       {
-        "path": "canon/plates/work/20260902-202158Z-duo-barclay-r1.txt",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/134.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-02T20:22:03.835Z"
+        "modifiedAt": "2026-09-06T02:59:49.212Z"
       },
       {
-        "path": "canon/plates/work/20260902-202203Z-duo-barclay-r2-raw.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/135.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-02T20:22:09.061Z"
+        "modifiedAt": "2026-09-06T02:59:49.242Z"
       },
       {
-        "path": "canon/plates/work/20260902-202203Z-duo-barclay-r2.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/136.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-02T20:22:09.062Z"
+        "modifiedAt": "2026-09-06T02:59:49.275Z"
       },
       {
-        "path": "canon/plates/work/20260902-202203Z-duo-barclay-r2.txt",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/137.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-02T20:22:09.062Z"
+        "modifiedAt": "2026-09-06T02:59:49.307Z"
       },
       {
-        "path": "canon/plates/work/20260902-202209Z-duo-barclay-r3-raw.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/138.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-02T20:22:14.264Z"
+        "modifiedAt": "2026-09-06T02:59:49.340Z"
       },
       {
-        "path": "canon/plates/work/20260902-202209Z-duo-barclay-r3.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/139.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-02T20:22:14.265Z"
+        "modifiedAt": "2026-09-06T02:59:49.374Z"
       },
       {
-        "path": "canon/plates/work/20260902-202209Z-duo-barclay-r3.txt",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/140.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-02T20:22:14.265Z"
+        "modifiedAt": "2026-09-06T02:59:49.405Z"
       },
       {
-        "path": "canon/plates/work/20260902-202214Z-duo-barclay-r4-raw.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/141.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-02T20:22:19.467Z"
+        "modifiedAt": "2026-09-06T02:59:49.437Z"
       },
       {
-        "path": "canon/plates/work/20260902-202214Z-duo-barclay-r4.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/142.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-02T20:22:19.468Z"
+        "modifiedAt": "2026-09-06T02:59:49.445Z"
       },
       {
-        "path": "canon/plates/work/20260902-202214Z-duo-barclay-r4.txt",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/143.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-02T20:22:19.478Z"
+        "modifiedAt": "2026-09-06T02:59:49.458Z"
       },
       {
-        "path": "canon/plates/work/assembled-lit.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/144.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T18:53:09.847Z"
+        "modifiedAt": "2026-09-06T02:59:49.466Z"
       },
       {
-        "path": "canon/plates/work/assembled.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/145.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T18:53:09.493Z"
+        "modifiedAt": "2026-09-06T02:59:49.499Z"
       },
       {
-        "path": "canon/plates/work/candidates/wider-s2/duo-barclay.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/146.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-02T16:57:56.111Z"
+        "modifiedAt": "2026-09-06T02:59:49.530Z"
       },
       {
-        "path": "canon/plates/work/candidates/wider-s2/duo-drew.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/147.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-02T16:57:55.824Z"
+        "modifiedAt": "2026-09-06T02:59:49.572Z"
       },
       {
-        "path": "canon/plates/work/candidates/wider-s2/duo.json",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/148.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-02T16:57:56.298Z"
+        "modifiedAt": "2026-09-06T02:59:49.604Z"
       },
       {
-        "path": "canon/plates/work/candidates/wider-s2/duo.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/149.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-02T16:57:55.700Z"
+        "modifiedAt": "2026-09-06T02:59:49.635Z"
       },
       {
-        "path": "canon/plates/work/stills/a-large-stock-market-line-chart-plunging-steeply.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/150.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-02T16:43:00.929Z"
+        "modifiedAt": "2026-09-06T02:59:49.668Z"
       },
       {
-        "path": "canon/plates/work/stills/a-large-stock-market-line-chart-plunging-steeply.txt",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/151.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-02T16:43:00.931Z"
+        "modifiedAt": "2026-09-06T02:59:49.692Z"
       },
       {
-        "path": "canon/plates/work/stills/the-grand-columned-facade-of-the-federal-reserve.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/152.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-02T16:42:43.981Z"
+        "modifiedAt": "2026-09-06T02:59:49.725Z"
       },
       {
-        "path": "canon/plates/work/stills/the-grand-columned-facade-of-the-federal-reserve.txt",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/153.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-02T16:42:43.981Z"
+        "modifiedAt": "2026-09-06T02:59:49.756Z"
       },
       {
-        "path": "canon/room-kit/v1/00-room-structure.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/154.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T18:49:44.670Z"
+        "modifiedAt": "2026-09-06T02:59:49.788Z"
       },
       {
-        "path": "canon/room-kit/v1/00-room-structure.prompt.txt",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/155.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T18:49:03.417Z"
+        "modifiedAt": "2026-09-06T02:59:49.820Z"
       },
       {
-        "path": "canon/room-kit/v2/00-base.prompt.txt",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/156.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T19:04:24.613Z"
+        "modifiedAt": "2026-09-06T02:59:49.852Z"
       },
       {
-        "path": "canon/room-kit/v2/00-lines.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/157.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T19:18:32.778Z"
+        "modifiedAt": "2026-09-06T02:59:49.885Z"
       },
       {
-        "path": "canon/room-kit/v2/01-base-strip-s1.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/158.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T19:10:46.803Z"
+        "modifiedAt": "2026-09-06T02:59:49.909Z"
       },
       {
-        "path": "canon/room-kit/v2/01-base-strip-s2.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/159.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T19:10:46.822Z"
+        "modifiedAt": "2026-09-06T02:59:49.941Z"
       },
       {
-        "path": "canon/room-kit/v2/01-base-strip-s5.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/160.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T19:10:46.840Z"
+        "modifiedAt": "2026-09-06T02:59:49.971Z"
       },
       {
-        "path": "canon/room-kit/v2/01-strip.prompt.txt",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/161.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T19:07:16.712Z"
+        "modifiedAt": "2026-09-06T02:59:50.003Z"
       },
       {
-        "path": "canon/room-kit/v2/01-values.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/162.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T19:18:32.785Z"
+        "modifiedAt": "2026-09-06T02:59:50.034Z"
       },
       {
-        "path": "canon/room-kit/v2/02-base-scratch-s2.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/163.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T19:10:46.869Z"
+        "modifiedAt": "2026-09-06T02:59:50.046Z"
       },
       {
-        "path": "canon/room-kit/v2/02-base-scratch-s5.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/164.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T19:10:46.889Z"
+        "modifiedAt": "2026-09-06T02:59:50.077Z"
       },
       {
-        "path": "canon/room-kit/v2/03-panelling.prompt.txt",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/165.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T19:14:35.123Z"
+        "modifiedAt": "2026-09-06T02:59:50.109Z"
       },
       {
-        "path": "canon/room-kit/v2/04-panelling-s1.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/166.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T19:18:32.599Z"
+        "modifiedAt": "2026-09-06T02:59:50.142Z"
       },
       {
-        "path": "canon/room-kit/v2/04-panelling-s4.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/167.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T19:18:32.620Z"
+        "modifiedAt": "2026-09-06T02:59:50.174Z"
       },
       {
-        "path": "canon/room-kit/v2/05-render-from-values.prompt.txt",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/168.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T19:19:13.062Z"
+        "modifiedAt": "2026-09-06T02:59:50.215Z"
       },
       {
-        "path": "canon/room-kit/v2/06-from-values-s1.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/169.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T19:21:41.147Z"
+        "modifiedAt": "2026-09-06T02:59:50.248Z"
       },
       {
-        "path": "canon/room-kit/v2/06-from-values-s4.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/170.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T19:21:41.170Z"
+        "modifiedAt": "2026-09-06T02:59:50.280Z"
       },
       {
-        "path": "canon/vision/studies/duo-behind.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/171.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-01T20:42:59.552Z"
+        "modifiedAt": "2026-09-06T02:59:50.313Z"
       },
       {
-        "path": "canon/vision/studies/duo-behind.txt",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/172.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-01T20:42:59.573Z"
+        "modifiedAt": "2026-09-06T02:59:50.346Z"
       },
       {
-        "path": "canon/vision/studies/duo.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/173.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-01T19:14:57.657Z"
+        "modifiedAt": "2026-09-06T02:59:50.355Z"
       },
       {
-        "path": "canon/vision/studies/duo.txt",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/174.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-01T19:14:57.678Z"
+        "modifiedAt": "2026-09-06T02:59:50.367Z"
       },
       {
-        "path": "canon/vision/studies/master-duo.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/175.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-01T21:56:17.958Z"
+        "modifiedAt": "2026-09-06T02:59:50.400Z"
       },
       {
-        "path": "canon/vision/studies/master-trio.png",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/176.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-01T22:26:22.677Z"
+        "modifiedAt": "2026-09-06T02:59:50.432Z"
       },
       {
-        "path": "docs/AGENTS-HANDOFF.md",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/177.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T19:34:10.615Z"
+        "modifiedAt": "2026-09-06T02:59:50.464Z"
       },
       {
-        "path": "docs/OVERHAUL.md",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/178.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T18:57:15.221Z"
+        "modifiedAt": "2026-09-06T02:59:50.497Z"
       },
       {
-        "path": "docs/STUDIO-NOTES.md",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/179.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T19:36:01.942Z"
+        "modifiedAt": "2026-09-06T02:59:50.505Z"
       },
       {
-        "path": "docs/STUDIO-PREVIEW-PACKAGE.md",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/180.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T19:25:43.825Z"
+        "modifiedAt": "2026-09-06T02:59:50.537Z"
       },
       {
-        "path": "docs/STUDIO-REPORTS.md",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/181.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T19:06:06.426Z"
+        "modifiedAt": "2026-09-06T02:59:50.569Z"
       },
       {
-        "path": "docs/deployment-gallery-assets.json",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/182.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T19:19:09.310Z"
+        "modifiedAt": "2026-09-06T02:59:50.603Z"
       },
       {
-        "path": "docs/local-part-approvals.md",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/183.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T19:32:09.329Z"
+        "modifiedAt": "2026-09-06T02:59:50.635Z"
       },
       {
-        "path": "docs/naples-topics-research-2026-09-03.md",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/184.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T18:54:58.324Z"
+        "modifiedAt": "2026-09-06T02:59:50.668Z"
       },
       {
-        "path": "docs/private-studio-deployment.md",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/185.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T19:37:13.870Z"
+        "modifiedAt": "2026-09-06T02:59:50.700Z"
       },
       {
-        "path": "docs/sql/studio-notes.sql",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/186.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T19:29:40.434Z"
+        "modifiedAt": "2026-09-06T02:59:50.732Z"
       },
       {
-        "path": "lib/auravision.ts",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/187.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T18:56:51.609Z"
+        "modifiedAt": "2026-09-06T02:59:50.765Z"
       },
       {
-        "path": "lib/openrouter.ts",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/188.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-01T18:39:16.066Z"
+        "modifiedAt": "2026-09-06T02:59:50.797Z"
       },
       {
-        "path": "lib/studio-library-files.ts",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/189.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T18:57:21.178Z"
+        "modifiedAt": "2026-09-06T02:59:50.828Z"
       },
       {
-        "path": "lib/studio-library-manifest.json",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/190.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T19:37:31.023Z"
+        "modifiedAt": "2026-09-06T02:59:50.861Z"
       },
       {
-        "path": "lib/studio-library-types.ts",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/191.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T19:30:20.701Z"
+        "modifiedAt": "2026-09-06T02:59:50.893Z"
       },
       {
-        "path": "lib/studio-library.ts",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/192.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T18:50:25.938Z"
+        "modifiedAt": "2026-09-06T02:59:50.925Z"
       },
       {
-        "path": "lib/studio-notes-core.ts",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/193.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T19:32:53.593Z"
+        "modifiedAt": "2026-09-06T02:59:50.957Z"
       },
       {
-        "path": "lib/studio-notes-images.ts",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/194.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T19:32:53.594Z"
+        "modifiedAt": "2026-09-06T02:59:50.990Z"
       },
       {
-        "path": "lib/studio-notes-server.ts",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/195.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T19:36:26.572Z"
+        "modifiedAt": "2026-09-06T02:59:51.021Z"
       },
       {
-        "path": "lib/studio-part-approval.ts",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/196.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T19:26:17.102Z"
+        "modifiedAt": "2026-09-06T02:59:51.052Z"
       },
       {
-        "path": "lib/studio-reports-core.ts",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/197.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T18:50:28.306Z"
+        "modifiedAt": "2026-09-06T02:59:51.067Z"
       },
       {
-        "path": "lib/studio-reports.ts",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/198.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T18:52:09.479Z"
+        "modifiedAt": "2026-09-06T02:59:51.103Z"
       },
       {
-        "path": "lib/studio-room.ts",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/199.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T19:34:27.843Z"
+        "modifiedAt": "2026-09-06T02:59:51.136Z"
       },
       {
-        "path": "lib/studio-topics.ts",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/200.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T19:16:20.612Z"
+        "modifiedAt": "2026-09-06T02:59:51.167Z"
       },
       {
-        "path": "lib/warp.ts",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/201.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-02T17:03:31.073Z"
+        "modifiedAt": "2026-09-06T02:59:51.174Z"
       },
       {
-        "path": "output/pdf/newspaper-editorial-proof.pdf",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/202.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T19:05:28.955Z"
+        "modifiedAt": "2026-09-06T02:59:51.204Z"
       },
       {
-        "path": "public/studio-print/newspaper-editorial-proof.pdf",
+        "path": "canon/room-kit/v2/web/reports/2026-09-05/thumbs/203.jpg",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T19:05:28.969Z"
+        "modifiedAt": "2026-09-06T02:59:51.211Z"
       },
       {
-        "path": "public/studio-room/00-room-structure.png",
+        "path": "canon/room-kit/v2/web/reports/index.json",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T18:49:44.670Z"
+        "modifiedAt": "2026-09-06T03:10:06.684Z"
       },
       {
-        "path": "public/studio-room/previous-duo.png",
+        "path": "canon/room-kit/v2/web/stickers/backbar.png",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T18:47:48.374Z"
+        "modifiedAt": "2026-09-06T02:59:40.040Z"
       },
       {
-        "path": "public/studio-room/previous-trio.png",
+        "path": "canon/room-kit/v2/web/stickers/board.png",
         "status": "untracked",
-        "modifiedAt": "2026-09-02T16:16:18.857Z"
+        "modifiedAt": "2026-09-06T02:59:40.065Z"
       },
       {
-        "path": "scripts/build-newspaper-proof.py",
+        "path": "canon/room-kit/v2/web/stickers/bottles-lower.png",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T19:05:28.033Z"
+        "modifiedAt": "2026-09-06T02:59:40.011Z"
       },
       {
-        "path": "scripts/build-plate.py",
+        "path": "canon/room-kit/v2/web/stickers/bottles-upper.png",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T18:52:07.403Z"
+        "modifiedAt": "2026-09-06T02:59:40.017Z"
       },
       {
-        "path": "scripts/build-studio-library.mjs",
+        "path": "canon/room-kit/v2/web/stickers/cabinets.png",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T19:37:13.869Z"
+        "modifiedAt": "2026-09-06T02:59:39.997Z"
       },
       {
-        "path": "scripts/build-studio-reports.mjs",
+        "path": "canon/room-kit/v2/web/stickers/chair-left.png",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T19:17:01.276Z"
+        "modifiedAt": "2026-09-06T02:59:40.187Z"
       },
       {
-        "path": "scripts/build-studio-snapshot.mjs",
+        "path": "canon/room-kit/v2/web/stickers/chair-right.png",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T19:23:14.746Z"
+        "modifiedAt": "2026-09-06T02:59:40.208Z"
       },
       {
-        "path": "scripts/check-local-image-policy.mjs",
+        "path": "canon/room-kit/v2/web/stickers/counter.png",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T18:57:47.021Z"
+        "modifiedAt": "2026-09-06T02:59:40.168Z"
       },
       {
-        "path": "scripts/check-warp.mjs",
+        "path": "canon/room-kit/v2/web/stickers/figure-barclay.png",
         "status": "untracked",
-        "modifiedAt": "2026-09-02T17:04:29.618Z"
+        "modifiedAt": "2026-09-06T02:59:40.241Z"
       },
       {
-        "path": "scripts/composite-band.mjs",
+        "path": "canon/room-kit/v2/web/stickers/figure-drew.png",
         "status": "untracked",
-        "modifiedAt": "2026-09-01T20:58:21.495Z"
+        "modifiedAt": "2026-09-06T02:59:40.223Z"
       },
       {
-        "path": "scripts/draw-local.mjs",
+        "path": "canon/room-kit/v2/web/stickers/glass.png",
         "status": "untracked",
-        "modifiedAt": "2026-09-01T20:08:32.837Z"
+        "modifiedAt": "2026-09-06T02:59:40.121Z"
       },
       {
-        "path": "scripts/draw-room-lines.py",
+        "path": "canon/room-kit/v2/web/stickers/ledge.png",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T19:18:32.641Z"
+        "modifiedAt": "2026-09-06T02:59:40.003Z"
       },
       {
-        "path": "scripts/labels-pass.mjs",
+        "path": "canon/room-kit/v2/web/stickers/manifest.json",
         "status": "untracked",
-        "modifiedAt": "2026-09-01T21:04:28.597Z"
+        "modifiedAt": "2026-09-06T02:59:40.244Z"
       },
       {
-        "path": "scripts/lib/studio-library-cast.mjs",
+        "path": "canon/room-kit/v2/web/stickers/sconce-left.png",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T19:36:00.031Z"
+        "modifiedAt": "2026-09-06T02:59:40.068Z"
       },
       {
-        "path": "scripts/lib/validate-studio-library-snapshot.mjs",
+        "path": "canon/room-kit/v2/web/stickers/sconce-right.png",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T19:19:39.814Z"
+        "modifiedAt": "2026-09-06T02:59:40.068Z"
       },
       {
-        "path": "scripts/plate-desk.mjs",
+        "path": "canon/room-kit/v2/web/stickers/shelf-lower.png",
         "status": "untracked",
-        "modifiedAt": "2026-09-02T20:21:28.472Z"
+        "modifiedAt": "2026-09-06T02:59:40.007Z"
       },
       {
-        "path": "scripts/prepare-studio-preview.mjs",
+        "path": "canon/room-kit/v2/web/stickers/shelf-upper.png",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T19:25:43.824Z"
+        "modifiedAt": "2026-09-06T02:59:40.028Z"
       },
       {
-        "path": "scripts/signage-pass.mjs",
+        "path": "canon/room-kit/v2/web/stickers/tv-screen.png",
         "status": "untracked",
-        "modifiedAt": "2026-09-01T21:04:28.578Z"
+        "modifiedAt": "2026-09-06T02:59:40.244Z"
       },
       {
-        "path": "scripts/test-prepare-studio-preview.mjs",
+        "path": "canon/room-kit/v2/web/stickers/tv.png",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T19:25:43.824Z"
+        "modifiedAt": "2026-09-06T02:59:40.056Z"
       },
       {
-        "path": "scripts/test-studio-library-cast.mjs",
+        "path": "canon/room-kit/v2/web/stickers/window-frame.png",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T19:36:00.031Z"
+        "modifiedAt": "2026-09-06T02:59:40.093Z"
       },
       {
-        "path": "scripts/test-studio-library-snapshot.mjs",
+        "path": "docs/sql/room-desk.sql",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T19:18:35.111Z"
+        "modifiedAt": "2026-09-06T03:06:26.268Z"
       },
       {
-        "path": "scripts/test-studio-library.mjs",
+        "path": "lib/studio-desk-core.ts",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T19:01:56.793Z"
+        "modifiedAt": "2026-09-06T03:05:41.354Z"
       },
       {
-        "path": "scripts/test-studio-notes.mjs",
+        "path": "lib/studio-desk-server.ts",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T19:34:36.064Z"
+        "modifiedAt": "2026-09-06T03:06:14.354Z"
       },
       {
-        "path": "scripts/test-studio-reports-live.mjs",
+        "path": "scripts/build-desk-web-assets.py",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T19:01:24.689Z"
+        "modifiedAt": "2026-09-06T03:09:56.555Z"
       },
       {
-        "path": "scripts/test-studio-reports.mjs",
+        "path": "scripts/cast-qc.py",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T18:57:26.723Z"
+        "modifiedAt": "2026-09-06T02:56:48.457Z"
       },
       {
-        "path": "tests/studio-part-approval.test.mjs",
+        "path": "scripts/desk-pull.py",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T19:28:42.005Z"
+        "modifiedAt": "2026-09-06T03:29:23.034Z"
       },
       {
-        "path": "tmp/pdfs/newspaper-proof.png",
+        "path": "tests/studio-desk.test.mjs",
         "status": "untracked",
-        "modifiedAt": "2026-09-03T19:05:30.023Z"
+        "modifiedAt": "2026-09-06T03:16:49.588Z"
       }
     ]
   }

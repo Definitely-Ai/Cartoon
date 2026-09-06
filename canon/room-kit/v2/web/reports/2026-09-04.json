@@ -1,0 +1,679 @@
+{
+  "date": "2026-09-04",
+  "pdf": "output/pdf/ricks-studio-daily-update-2026-09-04.pdf",
+  "entries": [
+    {
+      "num": "001",
+      "title": "comparison-sheet-base-sheet",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/001.jpg"
+    },
+    {
+      "num": "002",
+      "title": "comparison-sheet-b2-sheet",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/002.jpg"
+    },
+    {
+      "num": "003",
+      "title": "comparison-sheet-strip-sheet",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/003.jpg"
+    },
+    {
+      "num": "004",
+      "title": "comparison-sheet-pan-sheet",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/004.jpg"
+    },
+    {
+      "num": "005",
+      "title": "comparison-sheet-val-sheet",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/005.jpg"
+    },
+    {
+      "num": "006",
+      "title": "comparison-sheet-v2-sheet",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/006.jpg"
+    },
+    {
+      "num": "007",
+      "title": "comparison-sheet-v3-sheet",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/007.jpg"
+    },
+    {
+      "num": "008",
+      "title": "comparison-sheet-cam-sheet",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/008.jpg"
+    },
+    {
+      "num": "009",
+      "title": "four-seeds-crown-moulding-taller-wall-pulled-back",
+      "verdict": "The founder chose seed 4's crown.",
+      "thumb": "2026-09-04/thumbs/009.jpg"
+    },
+    {
+      "num": "010",
+      "title": "seed-4-full-plate-crown-moulding-tall-wall",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/010.jpg"
+    },
+    {
+      "num": "011",
+      "title": "four-seeds-panelling-to-ceiling-three-tiers-window-wall-dark",
+      "verdict": "Wall tone held on every seed.",
+      "thumb": "2026-09-04/thumbs/011.jpg"
+    },
+    {
+      "num": "012",
+      "title": "progression-reeded-panels-then-grain-drawn-then-levels-lifted",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/012.jpg"
+    },
+    {
+      "num": "013",
+      "title": "full-plate-walnut-grain-drawn-levels-lifted-seed-4",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/013.jpg"
+    },
+    {
+      "num": "014",
+      "title": "comparison-sheet-fixtures-sheet",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/014.jpg"
+    },
+    {
+      "num": "015",
+      "title": "full-plate-first-fixtures-shelves-television-chalkboard-stools-seed-4",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/015.jpg"
+    },
+    {
+      "num": "016",
+      "title": "full-plate-first-fixtures-seed-44",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/016.jpg"
+    },
+    {
+      "num": "017",
+      "title": "comparison-sheet-streetneg",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/017.jpg"
+    },
+    {
+      "num": "018",
+      "title": "full-plate-street-hot-dog-stand-and-mirrored-gilded-sign",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/018.jpg"
+    },
+    {
+      "num": "019",
+      "title": "window-close-up-mirrored-sign-street-hot-dog-cart-people",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/019.jpg"
+    },
+    {
+      "num": "020",
+      "title": "construction-value-drawing-walls-crown-counter-window",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/020.jpg"
+    },
+    {
+      "num": "021",
+      "title": "side-view-camera-right-seven-degree-pan-club-chairs-framed-window",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/021.jpg"
+    },
+    {
+      "num": "022",
+      "title": "window-close-up-side-view-architrave-sill-sheen-sign",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/022.jpg"
+    },
+    {
+      "num": "023",
+      "title": "part-masks-colour-coded-one-region-per-part",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/023.jpg"
+    },
+    {
+      "num": "024",
+      "title": "back-bar-upper-shelf-seed-7-raw-render",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/024.jpg"
+    },
+    {
+      "num": "025",
+      "title": "back-bar-upper-shelf-seed-7-laid-in-full-plate",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/025.jpg"
+    },
+    {
+      "num": "026",
+      "title": "back-bar-upper-shelf-seed-21-raw-render",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/026.jpg"
+    },
+    {
+      "num": "027",
+      "title": "back-bar-upper-shelf-seed-21-laid-in-full-plate",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/027.jpg"
+    },
+    {
+      "num": "028",
+      "title": "whole-plate-assembled-base-plus-nine-parts-modular",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/028.jpg"
+    },
+    {
+      "num": "029",
+      "title": "chairs-close-up-club-chairs-at-standing-eye-height",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/029.jpg"
+    },
+    {
+      "num": "030",
+      "title": "whole-plate-eye-lowered-to-170cm-chair-backs-read-side-on",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/030.jpg"
+    },
+    {
+      "num": "031",
+      "title": "back-bar-first-pass-with-bottles",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/031.jpg"
+    },
+    {
+      "num": "032",
+      "title": "bottles-on-lower-shelf-seed-4-raw-render",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/032.jpg"
+    },
+    {
+      "num": "033",
+      "title": "bottles-on-lower-shelf-seed-4-laid-in-full-plate",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/033.jpg"
+    },
+    {
+      "num": "034",
+      "title": "bottles-on-upper-shelf-seed-4-raw-render",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/034.jpg"
+    },
+    {
+      "num": "035",
+      "title": "bottles-on-upper-shelf-seed-4-laid-in-full-plate",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/035.jpg"
+    },
+    {
+      "num": "036",
+      "title": "back-bar-cabinet-dark-recessed-back-bottles-in-four-profiles",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/036.jpg"
+    },
+    {
+      "num": "037",
+      "title": "whole-plate-empty-shelves-sill-lip-removed-sash-window",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/037.jpg"
+    },
+    {
+      "num": "038",
+      "title": "whole-plate-lit-back-bar-gilded-sign-leather-chairs",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/038.jpg"
+    },
+    {
+      "num": "039",
+      "title": "base-walls-crown-floor-seed-4-raw-render",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/039.jpg"
+    },
+    {
+      "num": "040",
+      "title": "base-walls-crown-floor-seed-4-levelled-preview",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/040.jpg"
+    },
+    {
+      "num": "041",
+      "title": "comparison-sheet-base-sweep",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/041.jpg"
+    },
+    {
+      "num": "042",
+      "title": "comparison-sheet-base-sweep2",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/042.jpg"
+    },
+    {
+      "num": "043",
+      "title": "whole-plate-wall-lamps-with-light-pools-on-panelling",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/043.jpg"
+    },
+    {
+      "num": "044",
+      "title": "window-close-up-gilded-sign-block-shade-bevel",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/044.jpg"
+    },
+    {
+      "num": "045",
+      "title": "comparison-sheet-sign-variants",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/045.jpg"
+    },
+    {
+      "num": "046",
+      "title": "window-sign-redone-one-outline-small-shade-light-leaf",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/046.jpg"
+    },
+    {
+      "num": "047",
+      "title": "wall-lamp-left-seed-4-raw-render",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/047.jpg"
+    },
+    {
+      "num": "048",
+      "title": "wall-lamp-left-seed-4-laid-in-full-plate",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/048.jpg"
+    },
+    {
+      "num": "049",
+      "title": "wall-lamp-right-seed-4-raw-render",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/049.jpg"
+    },
+    {
+      "num": "050",
+      "title": "wall-lamp-right-seed-4-laid-in-full-plate",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/050.jpg"
+    },
+    {
+      "num": "051",
+      "title": "whole-plate-camera-panned-fourteen-degrees-window-wider",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/051.jpg"
+    },
+    {
+      "num": "052",
+      "title": "base-walls-crown-floor-seed-7-raw-render",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/052.jpg"
+    },
+    {
+      "num": "053",
+      "title": "base-walls-crown-floor-seed-7-levelled-preview",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/053.jpg"
+    },
+    {
+      "num": "054",
+      "title": "whole-plate-left-lamp-removed-sign-centred-back-bar-raised-to-rail",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/054.jpg"
+    },
+    {
+      "num": "055",
+      "title": "base-walls-crown-floor-seed-11-raw-render",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/055.jpg"
+    },
+    {
+      "num": "056",
+      "title": "base-walls-crown-floor-seed-11-levelled-preview",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/056.jpg"
+    },
+    {
+      "num": "057",
+      "title": "base-walls-crown-floor-seed-33-raw-render",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/057.jpg"
+    },
+    {
+      "num": "058",
+      "title": "base-walls-crown-floor-seed-33-levelled-preview",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/058.jpg"
+    },
+    {
+      "num": "059",
+      "title": "comparison-sheet-base-sweep3",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/059.jpg"
+    },
+    {
+      "num": "060",
+      "title": "whole-plate-back-bar-with-marble-ledge-and-six-cabinet-doors",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/060.jpg"
+    },
+    {
+      "num": "061",
+      "title": "whole-plate-no-lamps-window-light-only-simplified-chairs",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/061.jpg"
+    },
+    {
+      "num": "062",
+      "title": "comparison-sheet-sign-legibility",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/062.jpg"
+    },
+    {
+      "num": "063",
+      "title": "whole-plate-modern-dark-capitals-mirrored-sign",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/063.jpg"
+    },
+    {
+      "num": "064",
+      "title": "right-leather-club-chair-seed-4-raw-render",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/064.jpg"
+    },
+    {
+      "num": "065",
+      "title": "right-leather-club-chair-seed-4-laid-in-full-plate",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/065.jpg"
+    },
+    {
+      "num": "066",
+      "title": "chairs-close-up-full-backs-with-apron-base",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/066.jpg"
+    },
+    {
+      "num": "067",
+      "title": "left-leather-club-chair-seed-33-raw-render",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/067.jpg"
+    },
+    {
+      "num": "068",
+      "title": "left-leather-club-chair-seed-33-laid-in-full-plate",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/068.jpg"
+    },
+    {
+      "num": "069",
+      "title": "comparison-sheet-chair-left-sweep",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/069.jpg"
+    },
+    {
+      "num": "070",
+      "title": "chairs-close-up-full-backs-turned-legs-no-seat-visible",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/070.jpg"
+    },
+    {
+      "num": "071",
+      "title": "left-leather-club-chair-seed-44-raw-render",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/071.jpg"
+    },
+    {
+      "num": "072",
+      "title": "left-leather-club-chair-seed-44-laid-in-full-plate",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/072.jpg"
+    },
+    {
+      "num": "073",
+      "title": "left-leather-club-chair-seed-66-raw-render",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/073.jpg"
+    },
+    {
+      "num": "074",
+      "title": "left-leather-club-chair-seed-66-laid-in-full-plate",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/074.jpg"
+    },
+    {
+      "num": "075",
+      "title": "comparison-sheet-chair-left-sweep2",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/075.jpg"
+    },
+    {
+      "num": "076",
+      "title": "chairs-close-up-matching-leather-left-seed-55-right-seed-7",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/076.jpg"
+    },
+    {
+      "num": "077",
+      "title": "comparison-sheet-sign-script",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/077.jpg"
+    },
+    {
+      "num": "078",
+      "title": "television-blank-seed-7-raw-render",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/078.jpg"
+    },
+    {
+      "num": "079",
+      "title": "television-blank-seed-7-laid-in-full-plate",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/079.jpg"
+    },
+    {
+      "num": "080",
+      "title": "chalkboard-blank-seed-4-raw-render",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/080.jpg"
+    },
+    {
+      "num": "081",
+      "title": "chalkboard-blank-seed-4-laid-in-full-plate",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/081.jpg"
+    },
+    {
+      "num": "082",
+      "title": "window-glass-street-view-seed-21-raw-render",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/082.jpg"
+    },
+    {
+      "num": "083",
+      "title": "window-glass-street-view-seed-21-laid-in-full-plate",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/083.jpg"
+    },
+    {
+      "num": "084",
+      "title": "television-blank-seed-4-raw-render",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/084.jpg"
+    },
+    {
+      "num": "085",
+      "title": "television-blank-seed-4-laid-in-full-plate",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/085.jpg"
+    },
+    {
+      "num": "086",
+      "title": "right-leather-club-chair-seed-7-raw-render",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/086.jpg"
+    },
+    {
+      "num": "087",
+      "title": "right-leather-club-chair-seed-7-laid-in-full-plate",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/087.jpg"
+    },
+    {
+      "num": "088",
+      "title": "television-blank-seed-11-raw-render",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/088.jpg"
+    },
+    {
+      "num": "089",
+      "title": "television-blank-seed-11-laid-in-full-plate",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/089.jpg"
+    },
+    {
+      "num": "090",
+      "title": "comparison-sheet-pair-sweep",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/090.jpg"
+    },
+    {
+      "num": "091",
+      "title": "comparison-sheet-tv-sweep",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/091.jpg"
+    },
+    {
+      "num": "092",
+      "title": "comparison-sheet-pairfast-sweep",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/092.jpg"
+    },
+    {
+      "num": "093",
+      "title": "left-leather-club-chair-seed-7-raw-render",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/093.jpg"
+    },
+    {
+      "num": "094",
+      "title": "left-leather-club-chair-seed-7-laid-in-full-plate",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/094.jpg"
+    },
+    {
+      "num": "095",
+      "title": "left-leather-club-chair-seed-55-raw-render",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/095.jpg"
+    },
+    {
+      "num": "096",
+      "title": "left-leather-club-chair-seed-55-laid-in-full-plate",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/096.jpg"
+    },
+    {
+      "num": "097",
+      "title": "comparison-sheet-tall-sweep",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/097.jpg"
+    },
+    {
+      "num": "098",
+      "title": "whole-plate-closer-camera-chairs-turned-inward-backs-only-no-legs",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/098.jpg"
+    },
+    {
+      "num": "099",
+      "title": "left-leather-club-chair-seed-11-raw-render",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/099.jpg"
+    },
+    {
+      "num": "100",
+      "title": "left-leather-club-chair-seed-11-laid-in-full-plate",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/100.jpg"
+    },
+    {
+      "num": "101",
+      "title": "left-leather-club-chair-seed-21-raw-render",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/101.jpg"
+    },
+    {
+      "num": "102",
+      "title": "left-leather-club-chair-seed-21-laid-in-full-plate",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/102.jpg"
+    },
+    {
+      "num": "103",
+      "title": "comparison-sheet-tall-sweep2",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/103.jpg"
+    },
+    {
+      "num": "104",
+      "title": "whole-plate-even-haze-over-pane-clean-capitals",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/104.jpg"
+    },
+    {
+      "num": "105",
+      "title": "television-blank-seed-21-raw-render",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/105.jpg"
+    },
+    {
+      "num": "106",
+      "title": "television-blank-seed-21-laid-in-full-plate",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/106.jpg"
+    },
+    {
+      "num": "107",
+      "title": "television-blank-seed-33-raw-render",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/107.jpg"
+    },
+    {
+      "num": "108",
+      "title": "television-blank-seed-33-laid-in-full-plate",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/108.jpg"
+    },
+    {
+      "num": "109",
+      "title": "television-blank-seed-44-raw-render",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/109.jpg"
+    },
+    {
+      "num": "110",
+      "title": "television-blank-seed-44-laid-in-full-plate",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/110.jpg"
+    },
+    {
+      "num": "111",
+      "title": "comparison-sheet-tv-sweep2",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/111.jpg"
+    },
+    {
+      "num": "112",
+      "title": "whole-plate-foggier-pane-arched-sign-television-drawn-in-code",
+      "verdict": null,
+      "thumb": "2026-09-04/thumbs/112.jpg"
+    }
+  ],
+  "show": null
+}

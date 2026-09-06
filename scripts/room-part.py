@@ -163,11 +163,19 @@ def sheen(a: np.ndarray, m: np.ndarray) -> np.ndarray:
     return a + (255.0 - a) * s * m
 
 
-def generate(out: Path, prompt: str, ref: Path, seed: int, fast: bool, neg: str = "",
+def data_uri(p) -> str:
+    """A reference image as the data URI the server accepts (a character bust or head tile)."""
+    import base64
+    b = Path(p).read_bytes()
+    kind = "png" if b[1:4] == b"PNG" else "jpeg"
+    return f"data:image/{kind};base64," + base64.b64encode(b).decode()
+
+
+def generate(out: Path, prompt: str, ref: Path, seed: int, fast: bool, neg: str = "", extra_refs=(),
              size: tuple = (RW, RH)) -> None:
     uri = "data:image/png;base64," + base64.b64encode(ref.read_bytes()).decode()
     payload = {"prompt": prompt, "model": MODEL, "width": size[0], "height": size[1], "fast": fast,
-               "seed": seed, "input_images": [uri], "negative_prompt": neg, "tag": "room-part"}
+               "seed": seed, "input_images": [uri] + [data_uri(p) for p in extra_refs], "negative_prompt": neg, "tag": "room-part"}
     if not fast:
         payload["steps"] = 40
         payload["guidance"] = 4.0
@@ -405,12 +413,12 @@ def cmd_render(a) -> None:
     out = WORK / f"{a.part}-s{a.seed}.png"
     if tall:
         size = (1024, int(round(1024 * tall / 1200 / 32)) * 32)        # same aspect, on the 32-grid
-        generate(out, prompt, cond_p, a.seed, a.fast, neg, size)
+        generate(out, prompt, cond_p, a.seed, a.fast, neg, size, extra_refs=a.ref)
         tall_img = Image.open(out).convert("L").resize((1200, tall), Image.LANCZOS)
         tall_img.crop((0, 0, 1200, 1800)).save(out)                   # back to the plate's frame
         tall_img.save(WORK / f"{a.part}-s{a.seed}-tall.png")
     else:
-        generate(out, prompt, cond_p, a.seed, a.fast, neg)
+        generate(out, prompt, cond_p, a.seed, a.fast, neg, extra_refs=a.ref)
     # and a preview with it laid in, so it can be judged in context
     # the candidate laid AT ITS OWN LAYER of the full plate, so the parts in
     # front of it occlude it exactly as a build would (the same candidate lays
@@ -500,6 +508,7 @@ def main() -> None:
     sub.add_parser("list").set_defaults(f=cmd_list)
     r = sub.add_parser("render"); r.add_argument("part"); r.add_argument("--seed", type=int, default=4)
     r.add_argument("--fast", action="store_true"); r.add_argument("--with", dest="with_", nargs="*")
+    r.add_argument("--ref", action="append", default=[], help="extra reference image (a character bust or head tile); repeatable")
     r.add_argument("--tall", action="store_true", help="render on the taller canvas so the frame's cut-off object is drawn whole")
     r.set_defaults(f=cmd_render)
     ap_ = sub.add_parser("approve"); ap_.add_argument("part"); ap_.add_argument("file"); ap_.set_defaults(f=cmd_approve)

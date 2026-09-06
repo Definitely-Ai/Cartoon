@@ -1,0 +1,18 @@
+[
+  {
+    "version": "v001",
+    "date": "2026-09-05",
+    "label": "s4",
+    "note": "the window's joinery: the opening cut through the panelled wall, its reveal, the wide architrave on the room face and, stepped back inside the reveal, the dark sash frame that holds the single pane - settings: local/sensenova-u1.5, seed 4, full 40 steps cfg 4 - reports/2026-09-05 #056",
+    "verdict": "candidate",
+    "thumb": "thumbs/v001.jpg"
+  },
+  {
+    "version": "v002",
+    "date": "2026-09-05",
+    "label": "approved",
+    "note": "the version standing in parts/window-frame.png - the source room-part.py lays for this object - the window's joinery: the opening cut through the panelled wall, its reveal, the wide architrave on the room face and, stepped back inside the reveal, the dark sash frame that holds the single pane -",
+    "verdict": "approved",
+    "thumb": "thumbs/v002.jpg"
+  }
+]

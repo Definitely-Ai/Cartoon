@@ -1,0 +1,18 @@
+[
+  {
+    "version": "v001",
+    "date": "2026-09-04",
+    "label": "s4",
+    "note": "the row of liquor bottles standing on the upper shelf: varied heights and shapes, clear and dark glass, plain blank paper labels with NO lettering - reports/2026-09-04 #035",
+    "verdict": "candidate",
+    "thumb": "thumbs/v001.jpg"
+  },
+  {
+    "version": "v002",
+    "date": "2026-09-04",
+    "label": "approved",
+    "note": "the version standing in parts/bottles-upper.png - the source room-part.py lays for this object (currently switched OFF in parts.json) - the row of liquor bottles standing on the upper shelf: varied heights and shapes, clear and dark glass, plain blank paper labels with NO lettering -",
+    "verdict": "approved",
+    "thumb": "thumbs/v002.jpg"
+  }
+]

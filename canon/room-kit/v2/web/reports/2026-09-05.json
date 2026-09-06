@@ -1,0 +1,1225 @@
+{
+  "date": "2026-09-05",
+  "pdf": "output/pdf/ricks-studio-end-of-day-2026-09-05.pdf",
+  "entries": [
+    {
+      "num": "001",
+      "title": "base-walls-crown-floor-seed-21-raw-render",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/001.jpg"
+    },
+    {
+      "num": "002",
+      "title": "base-walls-crown-floor-seed-21-levelled-preview",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/002.jpg"
+    },
+    {
+      "num": "003",
+      "title": "back-bar-lower-shelf-seed-4-raw-render",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/003.jpg"
+    },
+    {
+      "num": "004",
+      "title": "back-bar-lower-shelf-seed-4-laid-in-full-plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/004.jpg"
+    },
+    {
+      "num": "005",
+      "title": "main-bar-marble-counter-seed-7-raw-render",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/005.jpg"
+    },
+    {
+      "num": "006",
+      "title": "main-bar-marble-counter-seed-7-laid-in-full-plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/006.jpg"
+    },
+    {
+      "num": "007",
+      "title": "left-leather-club-chair-seed-4-laid-in-full-plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/007.jpg"
+    },
+    {
+      "num": "008",
+      "title": "comparison-sheet-counter-sweep",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/008.jpg"
+    },
+    {
+      "num": "009",
+      "title": "back-bar-carcass-seed-4-raw-render",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/009.jpg"
+    },
+    {
+      "num": "010",
+      "title": "back-bar-carcass-seed-4-laid-in-full-plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/010.jpg"
+    },
+    {
+      "num": "011",
+      "title": "back-bar-carcass-seed-11-raw-render",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/011.jpg"
+    },
+    {
+      "num": "012",
+      "title": "back-bar-carcass-seed-11-laid-in-full-plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/012.jpg"
+    },
+    {
+      "num": "013",
+      "title": "comparison-sheet-backbar-sweep",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/013.jpg"
+    },
+    {
+      "num": "014",
+      "title": "whole-plate-pale-ceiling-one-crown-lit-shelving-moulded-ledge",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/014.jpg"
+    },
+    {
+      "num": "015",
+      "title": "cabinet-doors-under-ledge-seed-4-raw-render",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/015.jpg"
+    },
+    {
+      "num": "016",
+      "title": "cabinet-doors-under-ledge-seed-4-laid-in-full-plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/016.jpg"
+    },
+    {
+      "num": "017",
+      "title": "bartenders-marble-ledge-seed-4-raw-render",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/017.jpg"
+    },
+    {
+      "num": "018",
+      "title": "bartenders-marble-ledge-seed-4-laid-in-full-plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/018.jpg"
+    },
+    {
+      "num": "019",
+      "title": "window-frame-and-reveal-seed-4-raw-render",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/019.jpg"
+    },
+    {
+      "num": "020",
+      "title": "window-frame-and-reveal-seed-4-laid-in-full-plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/020.jpg"
+    },
+    {
+      "num": "021",
+      "title": "bar-alone-chairs-removed-first-attempt-stools-invented",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/021.jpg"
+    },
+    {
+      "num": "022",
+      "title": "back-bar-carcass-seed-7-raw-render",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/022.jpg"
+    },
+    {
+      "num": "023",
+      "title": "back-bar-carcass-seed-7-laid-in-full-plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/023.jpg"
+    },
+    {
+      "num": "024",
+      "title": "back-bar-lower-shelf-seed-7-raw-render",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/024.jpg"
+    },
+    {
+      "num": "025",
+      "title": "back-bar-lower-shelf-seed-7-laid-in-full-plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/025.jpg"
+    },
+    {
+      "num": "026",
+      "title": "back-bar-upper-shelf-seed-4-raw-render",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/026.jpg"
+    },
+    {
+      "num": "027",
+      "title": "back-bar-upper-shelf-seed-4-laid-in-full-plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/027.jpg"
+    },
+    {
+      "num": "028",
+      "title": "main-bar-marble-counter-seed-4-raw-render",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/028.jpg"
+    },
+    {
+      "num": "029",
+      "title": "main-bar-marble-counter-seed-4-laid-in-full-plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/029.jpg"
+    },
+    {
+      "num": "030",
+      "title": "bar-alone-perfected-clean-marble-lip-open-shelving-no-echoes",
+      "verdict": "The bar is right; the chairs go back next.",
+      "thumb": "2026-09-05/thumbs/030.jpg"
+    },
+    {
+      "num": "031",
+      "title": "left-leather-club-chair-seed-4-raw-render",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/031.jpg"
+    },
+    {
+      "num": "032",
+      "title": "whole-plate-chairs-back-on-over-the-perfected-bar",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/032.jpg"
+    },
+    {
+      "num": "033",
+      "title": "bartenders-marble-ledge render seed 4 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/033.jpg"
+    },
+    {
+      "num": "034",
+      "title": "whole-plate assembled with cabinet-doors-under-ledge bartenders-marble-ledge back-bar-carcass back-bar-lower-shelf back-bar-upper-shelf television-blank chalkboard-blank window-frame-and-reveal window-glass-street-view main-bar-marble-counter left-leather-club-chair right-leather-club-chair and window-sign",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/034.jpg"
+    },
+    {
+      "num": "035",
+      "title": "main-bar-marble-counter render seed 4 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/035.jpg"
+    },
+    {
+      "num": "036",
+      "title": "whole-plate assembled with cabinet-doors-under-ledge bartenders-marble-ledge back-bar-carcass back-bar-lower-shelf back-bar-upper-shelf television-blank chalkboard-blank window-frame-and-reveal window-glass-street-view main-bar-marble-counter left-leather-club-chair right-leather-club-chair and window-sign",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/036.jpg"
+    },
+    {
+      "num": "037",
+      "title": "whole-plate-both-bars-thin-square-edged-pale-marble-slabs-chairs-laid-over",
+      "verdict": "Both edges read as thin marble slabs; the bar under the chairs did not change.",
+      "thumb": "2026-09-05/thumbs/037.jpg"
+    },
+    {
+      "num": "038",
+      "title": "bars-close-up-main-bar-slab-edge-and-ledge-slab-edge-with-chairs",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/038.jpg"
+    },
+    {
+      "num": "039",
+      "title": "window-close-up-sign-three-lines-compressed-heavy-face-wider-tracking",
+      "verdict": "Heavier and spaced; still bounded by the pane. The lever left is the camera.",
+      "thumb": "2026-09-05/thumbs/039.jpg"
+    },
+    {
+      "num": "040",
+      "title": "base-walls-crown-floor render seed 21 full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/040.jpg"
+    },
+    {
+      "num": "041",
+      "title": "whole-plate assembled with cabinet-doors-under-ledge bartenders-marble-ledge back-bar-carcass back-bar-lower-shelf back-bar-upper-shelf television-blank chalkboard-blank window-frame-and-reveal window-glass-street-view main-bar-marble-counter left-leather-club-chair right-leather-club-chair and window-sign",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/041.jpg"
+    },
+    {
+      "num": "042",
+      "title": "cabinet-doors-under-ledge render seed 4 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/042.jpg"
+    },
+    {
+      "num": "043",
+      "title": "whole-plate assembled with cabinet-doors-under-ledge bartenders-marble-ledge back-bar-carcass back-bar-lower-shelf back-bar-upper-shelf television-blank chalkboard-blank window-frame-and-reveal window-glass-street-view main-bar-marble-counter left-leather-club-chair right-leather-club-chair and window-sign",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/043.jpg"
+    },
+    {
+      "num": "044",
+      "title": "bartenders-marble-ledge render seed 4 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/044.jpg"
+    },
+    {
+      "num": "045",
+      "title": "whole-plate assembled with cabinet-doors-under-ledge bartenders-marble-ledge back-bar-carcass back-bar-lower-shelf back-bar-upper-shelf television-blank chalkboard-blank window-frame-and-reveal window-glass-street-view main-bar-marble-counter left-leather-club-chair right-leather-club-chair and window-sign",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/045.jpg"
+    },
+    {
+      "num": "046",
+      "title": "back-bar-carcass render seed 7 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/046.jpg"
+    },
+    {
+      "num": "047",
+      "title": "whole-plate assembled with cabinet-doors-under-ledge bartenders-marble-ledge back-bar-carcass back-bar-lower-shelf back-bar-upper-shelf television-blank chalkboard-blank window-frame-and-reveal window-glass-street-view main-bar-marble-counter left-leather-club-chair right-leather-club-chair and window-sign",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/047.jpg"
+    },
+    {
+      "num": "048",
+      "title": "back-bar-lower-shelf render seed 7 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/048.jpg"
+    },
+    {
+      "num": "049",
+      "title": "whole-plate assembled with cabinet-doors-under-ledge bartenders-marble-ledge back-bar-carcass back-bar-lower-shelf back-bar-upper-shelf television-blank chalkboard-blank window-frame-and-reveal window-glass-street-view main-bar-marble-counter left-leather-club-chair right-leather-club-chair and window-sign",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/049.jpg"
+    },
+    {
+      "num": "050",
+      "title": "back-bar-upper-shelf render seed 4 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/050.jpg"
+    },
+    {
+      "num": "051",
+      "title": "whole-plate assembled with cabinet-doors-under-ledge bartenders-marble-ledge back-bar-carcass back-bar-lower-shelf back-bar-upper-shelf television-blank chalkboard-blank window-frame-and-reveal window-glass-street-view main-bar-marble-counter left-leather-club-chair right-leather-club-chair and window-sign",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/051.jpg"
+    },
+    {
+      "num": "052",
+      "title": "television-blank render seed 11 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/052.jpg"
+    },
+    {
+      "num": "053",
+      "title": "whole-plate assembled with cabinet-doors-under-ledge bartenders-marble-ledge back-bar-carcass back-bar-lower-shelf back-bar-upper-shelf television-blank chalkboard-blank window-frame-and-reveal window-glass-street-view main-bar-marble-counter left-leather-club-chair right-leather-club-chair and window-sign",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/053.jpg"
+    },
+    {
+      "num": "054",
+      "title": "chalkboard-blank render seed 4 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/054.jpg"
+    },
+    {
+      "num": "055",
+      "title": "whole-plate assembled with cabinet-doors-under-ledge bartenders-marble-ledge back-bar-carcass back-bar-lower-shelf back-bar-upper-shelf television-blank chalkboard-blank window-frame-and-reveal window-glass-street-view main-bar-marble-counter left-leather-club-chair right-leather-club-chair and window-sign",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/055.jpg"
+    },
+    {
+      "num": "056",
+      "title": "window-frame-and-reveal render seed 4 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/056.jpg"
+    },
+    {
+      "num": "057",
+      "title": "whole-plate assembled with cabinet-doors-under-ledge bartenders-marble-ledge back-bar-carcass back-bar-lower-shelf back-bar-upper-shelf television-blank chalkboard-blank window-frame-and-reveal window-glass-street-view main-bar-marble-counter left-leather-club-chair right-leather-club-chair and window-sign",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/057.jpg"
+    },
+    {
+      "num": "058",
+      "title": "window-glass-street-view render seed 21 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/058.jpg"
+    },
+    {
+      "num": "059",
+      "title": "whole-plate assembled with cabinet-doors-under-ledge bartenders-marble-ledge back-bar-carcass back-bar-lower-shelf back-bar-upper-shelf television-blank chalkboard-blank window-frame-and-reveal window-glass-street-view main-bar-marble-counter left-leather-club-chair right-leather-club-chair and window-sign",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/059.jpg"
+    },
+    {
+      "num": "060",
+      "title": "main-bar-marble-counter render seed 4 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/060.jpg"
+    },
+    {
+      "num": "061",
+      "title": "whole-plate assembled with cabinet-doors-under-ledge bartenders-marble-ledge back-bar-carcass back-bar-lower-shelf back-bar-upper-shelf television-blank chalkboard-blank window-frame-and-reveal window-glass-street-view main-bar-marble-counter left-leather-club-chair right-leather-club-chair and window-sign",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/061.jpg"
+    },
+    {
+      "num": "062",
+      "title": "left-leather-club-chair and right-leather-club-chair render seed 4 tall-canvas laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/062.jpg"
+    },
+    {
+      "num": "063",
+      "title": "left-leather-club-chair and right-leather-club-chair render seed 7 tall-canvas laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/063.jpg"
+    },
+    {
+      "num": "064",
+      "title": "whole-plate assembled with cabinet-doors-under-ledge bartenders-marble-ledge back-bar-carcass back-bar-lower-shelf back-bar-upper-shelf television-blank chalkboard-blank window-frame-and-reveal window-glass-street-view main-bar-marble-counter left-leather-club-chair right-leather-club-chair and window-sign",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/064.jpg"
+    },
+    {
+      "num": "065",
+      "title": "whole-plate assembled with cabinet-doors-under-ledge bartenders-marble-ledge back-bar-carcass back-bar-lower-shelf back-bar-upper-shelf television-blank chalkboard-blank window-frame-and-reveal window-glass-street-view main-bar-marble-counter left-leather-club-chair right-leather-club-chair and window-sign",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/065.jpg"
+    },
+    {
+      "num": "066",
+      "title": "whole-plate-camera-panned-sixteen-degrees-sign-a-third-bigger-plain-bar-front",
+      "verdict": "Sign a third bigger and legible; bar front plain. Two faults to fix: the carcass grew black slabs in its compartments on this seed, and the left chair clips the frame at this pan.",
+      "thumb": "2026-09-05/thumbs/066.jpg"
+    },
+    {
+      "num": "067",
+      "title": "window-close-up-sixteen-degrees-three-line-sign-street-hot-dog-cart",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/067.jpg"
+    },
+    {
+      "num": "068",
+      "title": "comparison-sheet-chair-pair-tall-canvas-seeds-4-and-7-at-sixteen-degrees",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/068.jpg"
+    },
+    {
+      "num": "069",
+      "title": "back-bar-carcass render seed 7 fast laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/069.jpg"
+    },
+    {
+      "num": "070",
+      "title": "back-bar-carcass render seed 4 fast laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/070.jpg"
+    },
+    {
+      "num": "071",
+      "title": "back-bar-carcass render seed 11 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/071.jpg"
+    },
+    {
+      "num": "072",
+      "title": "left-leather-club-chair and right-leather-club-chair render seed 4 tall-canvas laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/072.jpg"
+    },
+    {
+      "num": "073",
+      "title": "left-leather-club-chair and right-leather-club-chair render seed 11 tall-canvas laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/073.jpg"
+    },
+    {
+      "num": "074",
+      "title": "whole-plate assembled with cabinet-doors-under-ledge bartenders-marble-ledge back-bar-carcass back-bar-lower-shelf back-bar-upper-shelf television-blank chalkboard-blank window-frame-and-reveal window-glass-street-view main-bar-marble-counter left-leather-club-chair right-leather-club-chair and window-sign",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/074.jpg"
+    },
+    {
+      "num": "075",
+      "title": "whole-plate assembled with cabinet-doors-under-ledge bartenders-marble-ledge back-bar-carcass back-bar-lower-shelf back-bar-upper-shelf television-blank chalkboard-blank window-frame-and-reveal window-glass-street-view main-bar-marble-counter left-leather-club-chair right-leather-club-chair and window-sign",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/075.jpg"
+    },
+    {
+      "num": "076",
+      "title": "back-bar-carcass render seed 7 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/076.jpg"
+    },
+    {
+      "num": "077",
+      "title": "back-bar-carcass render seed 4 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/077.jpg"
+    },
+    {
+      "num": "078",
+      "title": "back-bar-carcass render seed 7 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/078.jpg"
+    },
+    {
+      "num": "079",
+      "title": "back-bar-carcass render seed 4 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/079.jpg"
+    },
+    {
+      "num": "080",
+      "title": "back-bar-carcass render seed 7 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/080.jpg"
+    },
+    {
+      "num": "081",
+      "title": "back-bar-carcass render seed 4 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/081.jpg"
+    },
+    {
+      "num": "082",
+      "title": "whole-plate assembled with cabinet-doors-under-ledge bartenders-marble-ledge back-bar-carcass back-bar-lower-shelf back-bar-upper-shelf television-blank chalkboard-blank window-frame-and-reveal window-glass-street-view main-bar-marble-counter left-leather-club-chair right-leather-club-chair and window-sign",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/082.jpg"
+    },
+    {
+      "num": "083",
+      "title": "back-bar-carcass render seed 7 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/083.jpg"
+    },
+    {
+      "num": "084",
+      "title": "back-bar-carcass render seed 4 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/084.jpg"
+    },
+    {
+      "num": "085",
+      "title": "whole-plate assembled with cabinet-doors-under-ledge bartenders-marble-ledge back-bar-carcass back-bar-lower-shelf back-bar-upper-shelf television-blank chalkboard-blank window-frame-and-reveal window-glass-street-view main-bar-marble-counter left-leather-club-chair right-leather-club-chair and window-sign",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/085.jpg"
+    },
+    {
+      "num": "086",
+      "title": "comparison-sheet-back-bar-carcass-dark-walnut-backs-seeds-7-and-4-at-sixteen-degrees",
+      "verdict": "Seed 7 clean on all three sections; approved.",
+      "thumb": "2026-09-05/thumbs/086.jpg"
+    },
+    {
+      "num": "087",
+      "title": "whole-plate-sixteen-degrees-final-dark-walnut-shelving-plain-bar-front-thin-marble-chairs-turned-in",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/087.jpg"
+    },
+    {
+      "num": "088",
+      "title": "back-bar-carcass render seed 7 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/088.jpg"
+    },
+    {
+      "num": "089",
+      "title": "whole-plate assembled with cabinet-doors-under-ledge bartenders-marble-ledge back-bar-carcass back-bar-lower-shelf back-bar-upper-shelf television-blank chalkboard-blank window-frame-and-reveal window-glass-street-view main-bar-marble-counter left-leather-club-chair right-leather-club-chair and window-sign",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/089.jpg"
+    },
+    {
+      "num": "090",
+      "title": "left-leather-club-chair and right-leather-club-chair render seed 4 tall-canvas laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/090.jpg"
+    },
+    {
+      "num": "091",
+      "title": "left-leather-club-chair and right-leather-club-chair render seed 11 tall-canvas laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/091.jpg"
+    },
+    {
+      "num": "092",
+      "title": "whole-plate assembled with cabinet-doors-under-ledge bartenders-marble-ledge back-bar-carcass back-bar-lower-shelf back-bar-upper-shelf television-blank chalkboard-blank window-frame-and-reveal window-glass-street-view main-bar-marble-counter left-leather-club-chair right-leather-club-chair and window-sign",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/092.jpg"
+    },
+    {
+      "num": "093",
+      "title": "whole-plate assembled with cabinet-doors-under-ledge bartenders-marble-ledge back-bar-carcass back-bar-lower-shelf back-bar-upper-shelf television-blank chalkboard-blank window-frame-and-reveal window-glass-street-view main-bar-marble-counter left-leather-club-chair right-leather-club-chair and window-sign",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/093.jpg"
+    },
+    {
+      "num": "094",
+      "title": "right-leather-club-chair render seed 7 tall-canvas laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/094.jpg"
+    },
+    {
+      "num": "095",
+      "title": "back bar values: open shelves with the wall's own panelling behind them",
+      "verdict": "construction - the wall is the back",
+      "thumb": "2026-09-05/thumbs/095.jpg"
+    },
+    {
+      "num": "096",
+      "title": "chair values: upright backs, a slim roll, a padded seat that shows, smooth leather",
+      "verdict": "construction - a chair, not a tub",
+      "thumb": "2026-09-05/thumbs/096.jpg"
+    },
+    {
+      "num": "097",
+      "title": "sign face: Bahnschrift Bold, the DIN letter - modern, readable, classy",
+      "verdict": "typesetting - candidate for the founder",
+      "thumb": "2026-09-05/thumbs/097.jpg"
+    },
+    {
+      "num": "098",
+      "title": "right-leather-club-chair render seed 21 tall-canvas laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/098.jpg"
+    },
+    {
+      "num": "099",
+      "title": "right-leather-club-chair render seed 33 tall-canvas laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/099.jpg"
+    },
+    {
+      "num": "100",
+      "title": "right-leather-club-chair render seed 4 fast tall-canvas laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/100.jpg"
+    },
+    {
+      "num": "101",
+      "title": "right-leather-club-chair render seed 7 fast tall-canvas laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/101.jpg"
+    },
+    {
+      "num": "102",
+      "title": "left-leather-club-chair and right-leather-club-chair render seed 7 tall-canvas laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/102.jpg"
+    },
+    {
+      "num": "103",
+      "title": "left-leather-club-chair and right-leather-club-chair render seed 21 tall-canvas laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/103.jpg"
+    },
+    {
+      "num": "104",
+      "title": "right chair sweep: pair seeds 4/7/21, solo full 21/33, solo fast 4/7 - none smooth with a roll",
+      "verdict": "rejected all - move the right chair inside the frame",
+      "thumb": "2026-09-05/thumbs/104.jpg"
+    },
+    {
+      "num": "105",
+      "title": "left-leather-club-chair and right-leather-club-chair render seed 4 tall-canvas laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/105.jpg"
+    },
+    {
+      "num": "106",
+      "title": "left-leather-club-chair and right-leather-club-chair render seed 21 tall-canvas laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/106.jpg"
+    },
+    {
+      "num": "107",
+      "title": "left-leather-club-chair and right-leather-club-chair render seed 33 tall-canvas laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/107.jpg"
+    },
+    {
+      "num": "108",
+      "title": "whole-plate assembled with cabinet-doors-under-ledge bartenders-marble-ledge back-bar-carcass back-bar-lower-shelf back-bar-upper-shelf television-blank chalkboard-blank window-frame-and-reveal window-glass-street-view main-bar-marble-counter left-leather-club-chair right-leather-club-chair and window-sign",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/108.jpg"
+    },
+    {
+      "num": "109",
+      "title": "whole-plate assembled with cabinet-doors-under-ledge bartenders-marble-ledge back-bar-carcass back-bar-lower-shelf back-bar-upper-shelf television-blank chalkboard-blank window-frame-and-reveal window-glass-street-view main-bar-marble-counter left-leather-club-chair right-leather-club-chair and window-sign",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/109.jpg"
+    },
+    {
+      "num": "110",
+      "title": "full plate: open shelves against the wall, upright chairs with seats, Bahnschrift sign",
+      "verdict": "for the founder's verdict",
+      "thumb": "2026-09-05/thumbs/110.jpg"
+    },
+    {
+      "num": "111",
+      "title": "whole-plate assembled with cabinet-doors-under-ledge bartenders-marble-ledge television-blank chalkboard-blank window-frame-and-reveal window-glass-street-view main-bar-marble-counter and window-sign",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/111.jpg"
+    },
+    {
+      "num": "112",
+      "title": "bar alone, chairs removed: the counter's own render arches its right end - the 'duplicate chair back'",
+      "verdict": "defect isolated to the counter part - re-render",
+      "thumb": "2026-09-05/thumbs/112.jpg"
+    },
+    {
+      "num": "113",
+      "title": "wall alone, shelf unit removed: the base's panelling where the shelves stood",
+      "verdict": "for the founder's approval",
+      "thumb": "2026-09-05/thumbs/113.jpg"
+    },
+    {
+      "num": "114",
+      "title": "main-bar-marble-counter render seed 7 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/114.jpg"
+    },
+    {
+      "num": "115",
+      "title": "main-bar-marble-counter render seed 11 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/115.jpg"
+    },
+    {
+      "num": "116",
+      "title": "main-bar-marble-counter render seed 21 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/116.jpg"
+    },
+    {
+      "num": "117",
+      "title": "main-bar-marble-counter render seed 33 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/117.jpg"
+    },
+    {
+      "num": "118",
+      "title": "whole-plate assembled with cabinet-doors-under-ledge bartenders-marble-ledge television-blank chalkboard-blank window-frame-and-reveal window-glass-street-view main-bar-marble-counter and window-sign",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/118.jpg"
+    },
+    {
+      "num": "119",
+      "title": "counter re-rendered with the chairs off: seeds 7, 11, 21, 33 against the arched render - seed 7 chosen",
+      "verdict": "seed 7 approved into the plate - bar shown to the founder for approval",
+      "thumb": "2026-09-05/thumbs/119.jpg"
+    },
+    {
+      "num": "120",
+      "title": "shelf unit round 1: three built-in designs by Opus teammates (niche, carcass, floating slabs) - values only, all three rejected by the critics",
+      "verdict": "all three rejected before rendering - fixes merged into round 2",
+      "thumb": "2026-09-05/thumbs/120.jpg"
+    },
+    {
+      "num": "121",
+      "title": "root cause of the duplicate chair back: the counter's block-in was cut from the single occluded values image, so the chair was inside it",
+      "verdict": "root cause confirmed - structural fix before any more counter seeds",
+      "thumb": "2026-09-05/thumbs/121.jpg"
+    },
+    {
+      "num": "122",
+      "title": "wall check with the shelf unit off: construction correct, render reeded - every panel field is 40-48 vertical lines instead of a walnut board",
+      "verdict": "geometry approved; render to be re-done - base candidates to follow for the founder",
+      "thumb": "2026-09-05/thumbs/122.jpg"
+    },
+    {
+      "num": "123",
+      "title": "base-walls-crown-floor render seed 7 full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/123.jpg"
+    },
+    {
+      "num": "124",
+      "title": "base-walls-crown-floor render seed 21 full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/124.jpg"
+    },
+    {
+      "num": "125",
+      "title": "base-walls-crown-floor render seed 33 full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/125.jpg"
+    },
+    {
+      "num": "126",
+      "title": "base-walls-crown-floor render seed 44 full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/126.jpg"
+    },
+    {
+      "num": "127",
+      "title": "base wall re-rendered with a positive-only panelling prompt: seeds 7, 21, 33, 44 - all worse than the current wall, prompt reverted",
+      "verdict": "rejected all four - current base kept",
+      "thumb": "2026-09-05/thumbs/127.jpg"
+    },
+    {
+      "num": "128",
+      "title": "cabinet-doors-under-ledge render seed 7 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/128.jpg"
+    },
+    {
+      "num": "129",
+      "title": "cabinet-doors-under-ledge render seed 21 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/129.jpg"
+    },
+    {
+      "num": "130",
+      "title": "cabinet-doors-under-ledge render seed 33 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/130.jpg"
+    },
+    {
+      "num": "131",
+      "title": "whole-plate assembled with cabinet-doors-under-ledge bartenders-marble-ledge television-blank chalkboard-blank window-frame-and-reveal window-glass-street-view main-bar-marble-counter and window-sign",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/131.jpg"
+    },
+    {
+      "num": "132",
+      "title": "bartenders-marble-ledge render seed 7 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/132.jpg"
+    },
+    {
+      "num": "133",
+      "title": "bartenders-marble-ledge render seed 21 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/133.jpg"
+    },
+    {
+      "num": "134",
+      "title": "bartenders-marble-ledge render seed 33 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/134.jpg"
+    },
+    {
+      "num": "135",
+      "title": "whole-plate assembled with cabinet-doors-under-ledge bartenders-marble-ledge television-blank chalkboard-blank window-frame-and-reveal window-glass-street-view main-bar-marble-counter and window-sign",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/135.jpg"
+    },
+    {
+      "num": "136",
+      "title": "main-bar-marble-counter render seed 7 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/136.jpg"
+    },
+    {
+      "num": "137",
+      "title": "main-bar-marble-counter render seed 21 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/137.jpg"
+    },
+    {
+      "num": "138",
+      "title": "main-bar-marble-counter render seed 33 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/138.jpg"
+    },
+    {
+      "num": "139",
+      "title": "main-bar-marble-counter render seed 44 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/139.jpg"
+    },
+    {
+      "num": "140",
+      "title": "whole-plate assembled with cabinet-doors-under-ledge bartenders-marble-ledge television-blank chalkboard-blank window-frame-and-reveal window-glass-street-view main-bar-marble-counter and window-sign",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/140.jpg"
+    },
+    {
+      "num": "141",
+      "title": "whole-plate assembled with cabinet-doors-under-ledge bartenders-marble-ledge television-blank chalkboard-blank window-frame-and-reveal window-glass-street-view main-bar-marble-counter and window-sign",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/141.jpg"
+    },
+    {
+      "num": "142",
+      "title": "the bar clean: cabinets s33, ledge s33, counter s21 re-rendered from their own block-ins - the plate passes the straight-edge check (6.0 px, was 31)",
+      "verdict": "bar clean - for the founder's approval",
+      "thumb": "2026-09-05/thumbs/142.jpg"
+    },
+    {
+      "num": "143",
+      "title": "tools built by Opus teammates: per-object version history (every version of every object, filed and labelled) and the sticker desk (drag-and-drop layers over the rendered room)",
+      "verdict": "in place - every object now has a labelled history and a movable layer",
+      "thumb": "2026-09-05/thumbs/143.jpg"
+    },
+    {
+      "num": "144",
+      "title": "shelf unit round 2: the three designs refined to the round-1 critiques (right end inside the frame, uprights placed by projected clearance, real member widths) - critics still 3 to 6 out of 10; rendering all three for the founder",
+      "verdict": "rendered candidates to follow for the founder's choice",
+      "thumb": "2026-09-05/thumbs/144.jpg"
+    },
+    {
+      "num": "145",
+      "title": "back-bar-carcass and back-bar-lower-shelf and back-bar-upper-shelf render seed 7 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/145.jpg"
+    },
+    {
+      "num": "146",
+      "title": "back-bar-carcass and back-bar-lower-shelf and back-bar-upper-shelf render seed 21 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/146.jpg"
+    },
+    {
+      "num": "147",
+      "title": "back-bar-carcass and back-bar-lower-shelf and back-bar-upper-shelf render seed 7 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/147.jpg"
+    },
+    {
+      "num": "148",
+      "title": "back-bar-carcass and back-bar-lower-shelf and back-bar-upper-shelf render seed 21 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/148.jpg"
+    },
+    {
+      "num": "149",
+      "title": "back-bar-carcass and back-bar-lower-shelf and back-bar-upper-shelf render seed 7 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/149.jpg"
+    },
+    {
+      "num": "150",
+      "title": "back-bar-carcass and back-bar-lower-shelf and back-bar-upper-shelf render seed 21 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/150.jpg"
+    },
+    {
+      "num": "151",
+      "title": "first renders of the three round-2 shelf designs: blurred bands where the shelves should be - a conditioning bug, not a verdict",
+      "verdict": "discarded - re-rendering with the fix",
+      "thumb": "2026-09-05/thumbs/151.jpg"
+    },
+    {
+      "num": "152",
+      "title": "back-bar-carcass and back-bar-lower-shelf and back-bar-upper-shelf render seed 7 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/152.jpg"
+    },
+    {
+      "num": "153",
+      "title": "back-bar-carcass and back-bar-lower-shelf and back-bar-upper-shelf render seed 21 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/153.jpg"
+    },
+    {
+      "num": "154",
+      "title": "back-bar-carcass and back-bar-lower-shelf and back-bar-upper-shelf render seed 7 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/154.jpg"
+    },
+    {
+      "num": "155",
+      "title": "back-bar-carcass and back-bar-lower-shelf and back-bar-upper-shelf render seed 21 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/155.jpg"
+    },
+    {
+      "num": "156",
+      "title": "back-bar-carcass and back-bar-lower-shelf and back-bar-upper-shelf render seed 7 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/156.jpg"
+    },
+    {
+      "num": "157",
+      "title": "back-bar-carcass and back-bar-lower-shelf and back-bar-upper-shelf render seed 21 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/157.jpg"
+    },
+    {
+      "num": "158",
+      "title": "shelf unit round 3 rendered: niche, carcass and floating slabs with shadows as a code layer - three candidates for the founder's choice",
+      "verdict": "candidates A s21, B s21, C s7 sent to the founder",
+      "thumb": "2026-09-05/thumbs/158.jpg"
+    },
+    {
+      "num": "159",
+      "title": "whole-plate assembled with bartenders-marble-ledge back-bar-lower-shelf back-bar-upper-shelf back-bar-carcass television-blank chalkboard-blank window-frame-and-reveal window-glass-street-view main-bar-marble-counter and window-sign",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/159.jpg"
+    },
+    {
+      "num": "160",
+      "title": "whole-plate assembled with bartenders-marble-ledge back-bar-lower-shelf back-bar-upper-shelf back-bar-carcass television-blank chalkboard-blank window-frame-and-reveal window-glass-street-view main-bar-marble-counter and window-sign",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/160.jpg"
+    },
+    {
+      "num": "161",
+      "title": "HIGHLIGHT OF THE DAY - the founder's pick: the floating-slab back bar, C slab seed 7",
+      "verdict": "FOUNDER APPROVED - highlight of the day",
+      "thumb": "2026-09-05/thumbs/161.jpg"
+    },
+    {
+      "num": "162",
+      "title": "whole-plate assembled with bartenders-marble-ledge back-bar-lower-shelf back-bar-upper-shelf back-bar-carcass television-blank chalkboard-blank window-frame-and-reveal window-glass-street-view main-bar-marble-counter and window-sign",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/162.jpg"
+    },
+    {
+      "num": "163",
+      "title": "plate with the founder's shelf unit in and the cabinets off - the state every modular part is reviewed against",
+      "verdict": "current plate",
+      "thumb": "2026-09-05/thumbs/163.jpg"
+    },
+    {
+      "num": "164",
+      "title": "window-frame-and-reveal render seed 7 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/164.jpg"
+    },
+    {
+      "num": "165",
+      "title": "window-frame-and-reveal render seed 21 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/165.jpg"
+    },
+    {
+      "num": "166",
+      "title": "whole-plate assembled with bartenders-marble-ledge back-bar-lower-shelf back-bar-upper-shelf back-bar-carcass television-blank chalkboard-blank window-frame-and-reveal window-glass-street-view main-bar-marble-counter and window-sign",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/166.jpg"
+    },
+    {
+      "num": "167",
+      "title": "whole-plate assembled with bartenders-marble-ledge back-bar-lower-shelf back-bar-upper-shelf back-bar-carcass television-blank chalkboard-blank window-frame-and-reveal window-glass-street-view main-bar-marble-counter left-leather-club-chair right-leather-club-chair and window-sign",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/167.jpg"
+    },
+    {
+      "num": "168",
+      "title": "figure-drew render seed 7 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/168.jpg"
+    },
+    {
+      "num": "169",
+      "title": "figure-drew render seed 21 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/169.jpg"
+    },
+    {
+      "num": "170",
+      "title": "figure-drew render seed 33 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/170.jpg"
+    },
+    {
+      "num": "171",
+      "title": "figure-drew render seed 44 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/171.jpg"
+    },
+    {
+      "num": "172",
+      "title": "whole-plate assembled with bartenders-marble-ledge back-bar-lower-shelf back-bar-upper-shelf back-bar-carcass television-blank chalkboard-blank window-frame-and-reveal window-glass-street-view main-bar-marble-counter left-leather-club-chair right-leather-club-chair figure-drew and window-sign",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/172.jpg"
+    },
+    {
+      "num": "173",
+      "title": "Drew seated in the left chair, seen from behind: seeds 7, 21, 33, 44 - seed 7 chosen",
+      "verdict": "seed 7 approved into the plate",
+      "thumb": "2026-09-05/thumbs/173.jpg"
+    },
+    {
+      "num": "174",
+      "title": "window sill: one marble slab under the pane replaces the stack of rails the founder read as a railing; the sign set in Franklin Gothic and lifted clear of the hot-dog cart",
+      "verdict": "approved - shown to the founder in the review",
+      "thumb": "2026-09-05/thumbs/174.jpg"
+    },
+    {
+      "num": "175",
+      "title": "figure-barclay render seed 7 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/175.jpg"
+    },
+    {
+      "num": "176",
+      "title": "figure-barclay render seed 21 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/176.jpg"
+    },
+    {
+      "num": "177",
+      "title": "figure-barclay render seed 33 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/177.jpg"
+    },
+    {
+      "num": "178",
+      "title": "whole-plate assembled with bartenders-marble-ledge back-bar-lower-shelf back-bar-upper-shelf back-bar-carcass television-blank chalkboard-blank window-frame-and-reveal window-glass-street-view main-bar-marble-counter left-leather-club-chair right-leather-club-chair figure-drew figure-barclay and window-sign",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/178.jpg"
+    },
+    {
+      "num": "179",
+      "title": "Barclay seated in the right chair, seen from behind: seeds 7, 21, 33 - seed 7 chosen, rendered against the plate that already carries Drew",
+      "verdict": "seed 7 approved - the pair shown to the founder",
+      "thumb": "2026-09-05/thumbs/179.jpg"
+    },
+    {
+      "num": "180",
+      "title": "the plate at the end of the day: sill, Franklin Gothic sign, floating slabs, chairs back on, Drew and Barclay seated",
+      "verdict": "for the founder's verdict - shown with the layer-by-layer page",
+      "thumb": "2026-09-05/thumbs/180.jpg"
+    },
+    {
+      "num": "181",
+      "title": "whole-plate assembled with bartenders-marble-ledge back-bar-lower-shelf back-bar-upper-shelf back-bar-carcass television-blank chalkboard-blank window-frame-and-reveal window-glass-street-view main-bar-marble-counter and window-sign",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/181.jpg"
+    },
+    {
+      "num": "182",
+      "title": "the cast understood: Drew, Barclay and Abby read from their bibles by Opus teammates, and the recreation plan (reports/2026-09-05/CAST-PLAN.md)",
+      "verdict": "plan ready - two founder decisions requested before any render",
+      "thumb": "2026-09-05/thumbs/182.jpg"
+    },
+    {
+      "num": "183",
+      "title": "window-frame-and-reveal render seed 7 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/183.jpg"
+    },
+    {
+      "num": "184",
+      "title": "window-frame-and-reveal render seed 21 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/184.jpg"
+    },
+    {
+      "num": "185",
+      "title": "bartenders-marble-ledge render seed 7 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/185.jpg"
+    },
+    {
+      "num": "186",
+      "title": "bartenders-marble-ledge render seed 33 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/186.jpg"
+    },
+    {
+      "num": "187",
+      "title": "whole-plate assembled with bartenders-marble-ledge back-bar-lower-shelf back-bar-upper-shelf back-bar-carcass television-blank chalkboard-blank window-frame-and-reveal window-glass-street-view main-bar-marble-counter and window-sign",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/187.jpg"
+    },
+    {
+      "num": "188",
+      "title": "window-frame-and-reveal render seed 7 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/188.jpg"
+    },
+    {
+      "num": "189",
+      "title": "window-frame-and-reveal render seed 21 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/189.jpg"
+    },
+    {
+      "num": "190",
+      "title": "window-frame-and-reveal render seed 33 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/190.jpg"
+    },
+    {
+      "num": "191",
+      "title": "window-frame-and-reveal render seed 7 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/191.jpg"
+    },
+    {
+      "num": "192",
+      "title": "window-frame-and-reveal render seed 21 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/192.jpg"
+    },
+    {
+      "num": "193",
+      "title": "window-glass-street-view render seed 21 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/193.jpg"
+    },
+    {
+      "num": "194",
+      "title": "window-glass-street-view render seed 7 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/194.jpg"
+    },
+    {
+      "num": "195",
+      "title": "whole-plate assembled with bartenders-marble-ledge back-bar-lower-shelf back-bar-upper-shelf back-bar-carcass television-blank chalkboard-blank window-frame-and-reveal window-glass-street-view main-bar-marble-counter and window-sign",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/195.jpg"
+    },
+    {
+      "num": "196",
+      "title": "whole-plate assembled with bartenders-marble-ledge back-bar-lower-shelf back-bar-upper-shelf back-bar-carcass television-blank chalkboard-blank window-frame-and-reveal window-glass-street-view main-bar-marble-counter and window-sign",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/196.jpg"
+    },
+    {
+      "num": "197",
+      "title": "the window made clean: sill removed, the pane brought down to sit on the marble, the bartender's ledge run into the window wall",
+      "verdict": "shown to the founder",
+      "thumb": "2026-09-05/thumbs/197.jpg"
+    },
+    {
+      "num": "198",
+      "title": "bartenders-marble-ledge render seed 7 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/198.jpg"
+    },
+    {
+      "num": "199",
+      "title": "bartenders-marble-ledge render seed 21 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/199.jpg"
+    },
+    {
+      "num": "200",
+      "title": "whole-plate assembled with bartenders-marble-ledge back-bar-lower-shelf back-bar-upper-shelf back-bar-carcass television-blank chalkboard-blank window-frame-and-reveal window-glass-street-view main-bar-marble-counter and window-sign",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/200.jpg"
+    },
+    {
+      "num": "201",
+      "title": "the wall meeting the bartender's counter: one lip, shadow as a layer, the marble's straight edges inked in code",
+      "verdict": "shown to the founder",
+      "thumb": "2026-09-05/thumbs/201.jpg"
+    },
+    {
+      "num": "202",
+      "title": "day closed by the founder: the plate as approved, the end-of-day report for Rick finalized (output/pdf/ricks-studio-end-of-day-2026-09-05.pdf)",
+      "verdict": "founder: today's work is done",
+      "thumb": "2026-09-05/thumbs/202.jpg"
+    },
+    {
+      "num": "203",
+      "title": "email to Rick drafted to go with the end-of-day report (output/email/ricks-studio-end-of-day-email-2026-09-05.txt)",
+      "verdict": "ready to send",
+      "thumb": "2026-09-05/thumbs/203.jpg"
+    }
+  ],
+  "show": "reports/2026-09-05/SHOW.html"
+}

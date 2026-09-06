@@ -1,0 +1,26 @@
+[
+  {
+    "version": "v001",
+    "date": "2026-09-05",
+    "label": "s7",
+    "note": "Barclay as a modular part seated in the right chair, seen from behind; block-in from the cast plan, the dog character block from the bible, silhouette cut by the chair back.",
+    "verdict": "approved 2026-09-05 into the plate - retriever from behind, drop ear, black nose in profile, dark jacket",
+    "thumb": "thumbs/v001.jpg"
+  },
+  {
+    "version": "v002",
+    "date": "2026-09-05",
+    "label": "s21",
+    "note": "Barclay as a modular part seated in the right chair, seen from behind; block-in from the cast plan, the dog character block from the bible, silhouette cut by the chair back.",
+    "verdict": "rejected (s21 black blob behind the head; s33 hound-like)",
+    "thumb": "thumbs/v002.jpg"
+  },
+  {
+    "version": "v003",
+    "date": "2026-09-05",
+    "label": "s33",
+    "note": "Barclay as a modular part seated in the right chair, seen from behind; block-in from the cast plan, the dog character block from the bible, silhouette cut by the chair back.",
+    "verdict": "rejected (s21 black blob behind the head; s33 hound-like)",
+    "thumb": "thumbs/v003.jpg"
+  }
+]

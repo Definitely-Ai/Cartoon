@@ -46,6 +46,8 @@ canon/room-kit/v2/tall/
 canon/room-kit/v2/values/
 canon/room-kit/v2/masks/
 canon/room-kit/v2/shadows/
+# The sticker desk's pulled decisions stay tracked (they are Rick's choices); only the machine's last-pull mark is local
+canon/room-kit/v2/decisions/.last-pull.json
 canon/plates/work/
 tmp/
 reports/*/SHOW-images/

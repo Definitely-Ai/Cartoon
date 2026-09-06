@@ -1,0 +1,17 @@
+{
+  "generated": "2026-09-05T23:10:06",
+  "dates": [
+    {
+      "date": "2026-09-05",
+      "entries": 203,
+      "pdf": "output/pdf/ricks-studio-end-of-day-2026-09-05.pdf",
+      "show": "reports/2026-09-05/SHOW.html"
+    },
+    {
+      "date": "2026-09-04",
+      "entries": 112,
+      "pdf": "output/pdf/ricks-studio-daily-update-2026-09-04.pdf",
+      "show": null
+    }
+  ]
+}

@@ -1,0 +1,82 @@
+[
+  {
+    "version": "v001",
+    "date": "2026-09-04",
+    "label": "mirrored-sign-street-hot-dog-cart-people",
+    "note": "sign version from reports/2026-09-04 #019 - reports/2026-09-04 #019",
+    "verdict": "candidate",
+    "thumb": "thumbs/v001.jpg"
+  },
+  {
+    "version": "v002",
+    "date": "2026-09-04",
+    "label": "side-view-architrave-sill-sheen-sign",
+    "note": "sign version from reports/2026-09-04 #022 - reports/2026-09-04 #022",
+    "verdict": "candidate",
+    "thumb": "thumbs/v002.jpg"
+  },
+  {
+    "version": "v003",
+    "date": "2026-09-04",
+    "label": "gilded-sign-block-shade-bevel",
+    "note": "sign version from reports/2026-09-04 #044 - reports/2026-09-04 #044",
+    "verdict": "candidate",
+    "thumb": "thumbs/v003.jpg"
+  },
+  {
+    "version": "v004",
+    "date": "2026-09-04",
+    "label": "sign-variants",
+    "note": "sign version from reports/2026-09-04 #045 - reports/2026-09-04 #045",
+    "verdict": "candidate",
+    "thumb": "thumbs/v004.jpg"
+  },
+  {
+    "version": "v005",
+    "date": "2026-09-04",
+    "label": "sign-redone-one-outline-small-shade-light-le",
+    "note": "asked for: The sign looks terrible. - Four stacked effects at 230 px turned the letters to mud; one crisp outline, a small shade, worked at 4x and warped once. - reports/2026-09-04 #046",
+    "verdict": "candidate",
+    "thumb": "thumbs/v005.jpg"
+  },
+  {
+    "version": "v006",
+    "date": "2026-09-04",
+    "label": "sign-legibility",
+    "note": "sign version from reports/2026-09-04 #062 - reports/2026-09-04 #062",
+    "verdict": "candidate",
+    "thumb": "thumbs/v006.jpg"
+  },
+  {
+    "version": "v007",
+    "date": "2026-09-04",
+    "label": "sign-script",
+    "note": "sign version from reports/2026-09-04 #077 - reports/2026-09-04 #077",
+    "verdict": "candidate",
+    "thumb": "thumbs/v007.jpg"
+  },
+  {
+    "version": "v008",
+    "date": "2026-09-05",
+    "label": "sign-three-lines-compressed-heavy-face-wider",
+    "note": "asked for: The sign's characters are too small and too close together. - The box is re-solved from the pane's homography for this camera so it spans the whole visible pane; tracking is widened; a compressed heavy face (Impact) gives the tallest letters the width allows. - reports/2026-09-05 #039",
+    "verdict": "candidate - Heavier and spaced; still bounded by the pane. The lever left is the camera.",
+    "thumb": "thumbs/v008.jpg"
+  },
+  {
+    "version": "v009",
+    "date": "2026-09-05",
+    "label": "sixteen-degrees-three-line-sign-street-hot-d",
+    "note": "The whole pane is in frame at 16 degrees; the sign spans it. - reports/2026-09-05 #067",
+    "verdict": "candidate",
+    "thumb": "thumbs/v009.jpg"
+  },
+  {
+    "version": "v010",
+    "date": "2026-09-05",
+    "label": "sign-face-bahnschrift-bold-the-din-letter-mo",
+    "note": "asked for: the chairs still look weird fix the seats and the leather and you messed up the shelves understand there is a wall behind the shelves you are really starting to go off track and messing this up the sign is looking more legible we just need a little bit better text that looks modern readable and classy - Impact made the sign legible but it is a poster face, heavy and compressed. The founder asked for a little better text - modern, readable, classy. Bahnschrift is Windows' DIN-style face: the letter of European signage and instruments, open counters, even strokes, unmistakably modern. - settings: sign-on-glass.py: FONT bahnschrift.ttf, set_variation_by_name('Bold'); TRACK 0.10; FROST 0.45; U 0.03-0.80, V 0.30-0.82 - reports/2026-09-05 #097",
+    "verdict": "founder: typesetting - candidate for the founder",
+    "thumb": "thumbs/v010.jpg"
+  }
+]

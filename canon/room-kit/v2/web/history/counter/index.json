@@ -1,0 +1,98 @@
+[
+  {
+    "version": "v001",
+    "date": "2026-09-05",
+    "label": "s4",
+    "note": "the bar: the polished marble counter top, its slim moulded lip and the walnut-panelled bar front beneath it - settings: local/sensenova-u1.5, seed 4, full 40 steps cfg 4 - reports/2026-09-05 #060",
+    "verdict": "candidate",
+    "thumb": "thumbs/v001.jpg"
+  },
+  {
+    "version": "v002",
+    "date": "2026-09-05",
+    "label": "s7",
+    "note": "the bar: the polished marble counter top, its slim moulded lip and the walnut-panelled bar front beneath it - settings: local/sensenova-u1.5, seed 7, full 40 steps cfg 4 - reports/2026-09-05 #114",
+    "verdict": "candidate",
+    "thumb": "thumbs/v002.jpg"
+  },
+  {
+    "version": "v003",
+    "date": "2026-09-05",
+    "label": "s11",
+    "note": "the bar: the polished marble counter top, its slim moulded lip and the walnut-panelled bar front beneath it - settings: local/sensenova-u1.5, seed 11, full 40 steps cfg 4 - reports/2026-09-05 #115",
+    "verdict": "candidate",
+    "thumb": "thumbs/v003.jpg"
+  },
+  {
+    "version": "v004",
+    "date": "2026-09-05",
+    "label": "s21",
+    "note": "the bar: the polished marble counter top, its slim moulded lip and the walnut-panelled bar front beneath it - settings: local/sensenova-u1.5, seed 21, full 40 steps cfg 4 - reports/2026-09-05 #116",
+    "verdict": "candidate",
+    "thumb": "thumbs/v004.jpg"
+  },
+  {
+    "version": "v005",
+    "date": "2026-09-05",
+    "label": "s33",
+    "note": "the bar: the polished marble counter top, its slim moulded lip and the walnut-panelled bar front beneath it - settings: local/sensenova-u1.5, seed 33, full 40 steps cfg 4 - reports/2026-09-05 #117",
+    "verdict": "candidate",
+    "thumb": "thumbs/v005.jpg"
+  },
+  {
+    "version": "v006",
+    "date": "2026-09-05",
+    "label": "approved",
+    "note": "the version standing in parts/counter.png - the source room-part.py lays for this object - the bar: the polished marble counter top, its slim moulded lip and the walnut-panelled bar front beneath it -",
+    "verdict": "approved",
+    "thumb": "thumbs/v006.jpg"
+  },
+  {
+    "version": "v007",
+    "date": "2026-09-05",
+    "label": "s7 chairs off",
+    "note": "Straight marble slab, thin square lip, plain hatched walnut front, rendered with the chairs switched off. Still conditioned on a plate whose cabinets/ledge strip above the counter carries the same arch, so the bar is not clean until cabinets and ledge are re-rendered first.",
+    "verdict": "approved into the plate 2026-09-05 15:20 - interim",
+    "thumb": "thumbs/v007.jpg"
+  },
+  {
+    "version": "v008",
+    "date": "2026-09-05",
+    "label": "s4 arched (replaced)",
+    "note": "The render the founder saw as a duplicate chair back on the bar: its right end bows up into an arch with a studded roll. Root cause (teammate diagnosis): the counter's block-in was cut from the single occluded values image, so the old chair's silhouette was INSIDE the counter's own block-in and the model drew it as part of the bar.",
+    "verdict": "founder: duplicate chair back - replaced by s7",
+    "thumb": "thumbs/v008.jpg"
+  },
+  {
+    "version": "v009",
+    "date": "2026-09-05",
+    "label": "s7 chairs off, per-part values",
+    "note": "Re-rendered after the root-cause fix: the block-in is this part's own values image (nothing in front of it); chairs and shelf unit switched off; judged on a plate with the candidate laid at its own layer.",
+    "verdict": "rejected: plate edge worst 33.9 px, cap 9.0 px (best was s21)",
+    "thumb": "thumbs/v009.jpg"
+  },
+  {
+    "version": "v010",
+    "date": "2026-09-05",
+    "label": "s21 chairs off, per-part values",
+    "note": "Re-rendered after the root-cause fix: the block-in is this part's own values image (nothing in front of it); chairs and shelf unit switched off; judged on a plate with the candidate laid at its own layer.",
+    "verdict": "approved 2026-09-05 (chairs off, per-part values): plate edge worst 6.0 px, cap 10.0 px",
+    "thumb": "thumbs/v010.jpg"
+  },
+  {
+    "version": "v011",
+    "date": "2026-09-05",
+    "label": "s33 chairs off, per-part values",
+    "note": "Re-rendered after the root-cause fix: the block-in is this part's own values image (nothing in front of it); chairs and shelf unit switched off; judged on a plate with the candidate laid at its own layer.",
+    "verdict": "rejected: plate edge worst 6.0 px, cap 10.0 px (best was s21)",
+    "thumb": "thumbs/v011.jpg"
+  },
+  {
+    "version": "v012",
+    "date": "2026-09-05",
+    "label": "s44 chairs off, per-part values",
+    "note": "Re-rendered after the root-cause fix: the block-in is this part's own values image (nothing in front of it); chairs and shelf unit switched off; judged on a plate with the candidate laid at its own layer.",
+    "verdict": "rejected: plate edge worst 25.3 px, cap 8.0 px (best was s21)",
+    "thumb": "thumbs/v012.jpg"
+  }
+]
