@@ -1,0 +1,1 @@
+Contact sheet built by scripts/build-barclay-round1-sheet.py: the six round-1 renders at 420 px beside canon/characters/dog/kit/bust.png and kit/head.png, each render labelled with its seed and its one-line verdict.

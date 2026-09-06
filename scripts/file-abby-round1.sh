@@ -1,0 +1,58 @@
+#!/usr/bin/env bash
+# ABBY ROUND 1 - file every render of the round into reports/2026-09-06:
+# the six seeds, the two-seed diagnostic that found what broke them, and the
+# contact sheet.
+set -eu
+
+PY="C:/Python313/python.exe"
+L="Z:/ImageGenerator/Cartoon/scripts/report-log.py"
+R1="C:/Users/admin/AppData/Local/Temp/claude/Z--ImageGenerator/7e90a839-5703-42df-8007-3e3f206ae0ae/scratchpad/cast-studies/abby/round-1"
+
+ASK="The founder: 'its a flamingo you did a terrible job you must perfect each character.' Round 1 for ABBY, the West Highland terrier proprietor, with no judges' list yet - so the round is drawn straight against canon/characters/abby/CHARACTER-BIBLE.md: a true fluffy westie, beautiful and in command; her eyes built from the bible's five parts (white at each side of the iris, a drawn iris with radiating lines, a smaller round pupil, exactly one catchlight, lids with lashes); her gaze inside the scene and never on the reader; a warm closed-lip smile; fur-backed hands and never paws; exactly one towel, in her hands with the shoulder bare; the studded collar with its front buckle, its single ring and ONE teardrop gem; the blouse open two buttons with the bust left trim; no tail; no lettering on her; and she is the only figure in the room."
+
+SET="local/qwen-image-edit-2511 via POST 127.0.0.1:8000/api/generate, fast Lightning 8 steps, cfg 1.0, euler/simple, shift 3.0, 4:5 1344x1680, negative_refs on (LOCAL_NEGATIVE is inert at cfg 1), tag study-abby-r1, 3 references: P1 canon/plates/trio.png cropped 486,470,360,450 (the approved plate's Abby, head only); P2 canon/vision/studies/abby.png, the official portrait, with its shipped label replaced because that label says 'no muzzle' where the bible says 'short square muzzle'; P3 canon/characters/abby/kit/bust.png, added this round for framing. Seven extra EDITs on top of cast-study.py's own five."
+
+THOUGHT="Two decisions before a pixel was drawn, both from reading the assets at full size. (1) cast-study.py's shipped Picture 1 for Abby is a HEAD - trio.png at 486,470,360,450 stops at her collar - so four of the six things the bible says can be COUNTED on a finished Abby (the towel, one hand on a working object, hands not paws, the counter crossing her at the waist) are outside the base picture, and Drew's round 1 proved this model creeps CLOSER than Picture 1. (2) The box was NOT widened: Abby is sandwiched in trio.png, Drew's bill reaching x~500 and Barclay's muzzle starting at x~780, so any 4:5 box wide enough to hold her hands drags a gentleman into the base. Instead canon/characters/abby/kit/bust.png went on as Picture 3 for DISTANCE AND STAGING ONLY - checked on a coordinate grid at full size, 308x688 and clean of both gentlemen, drawing exactly the chest-up staging wanted. The seven extra EDITs are the bible's own counts, worded as corrections because both identity tiles draw the failures: the eye (missed by the reference card at 87.6%/83.5% below luminance 60 and by all four filed panels), the gaze (on the reader in 4 of 4), the open neckline (0 of 4), the teardrop (wrong in 3 of 4), the towel (present in 1 of 4)."
+
+for S in 41 7 21 33 44 55; do
+  case "$S" in
+    41) T="Abby round 1 seed 41 the study splits her into a human bartender and a pet terrier"
+        V="REJECT. The round's whole fault, in its clearest form: Abby is drawn as TWO BEINGS. A human woman in a blouse stands behind the bar polishing a glass with the towel, and a real FOUR-LEGGED West Highland terrier sits on the marble beside her wearing Abby's studded collar and teardrop pendant. Nothing in the picture is the character. The bar, the bottles and the marble are handsome and the pendant is drawn correctly on the dog, which is the only thing to salvage.";;
+    7)  T="Abby round 1 seed 7 the worst of the six two human men and a four-legged terrier"
+        V="REJECT, and the worst of the six. TWO human men in suits and shirtsleeves work the bar, one holding a wine glass and one holding the towel, with the four-legged terrier sitting on the counter between them wearing the collar and pendant. Three figures, none of them Abby, in a room that is not the Swinging Door - a window, a pendant lamp and a bar rail that belong to some other pub.";;
+    21) T="Abby round 1 seed 21 one human bartender with the terrier as his pet on the counter"
+        V="REJECT. A single human man in a waistcoat garnishes a plate at the marble; the terrier sits on the counter at frame-left wearing the collar and pendant, plainly his pet. The engraving is competent and the back bar is well built, but the character is absent and the counter is being sat on, which the bible forbids outright.";;
+    33) T="Abby round 1 seed 33 two stacked terriers and a human man three figures none of them abby"
+        V="REJECT, and the most revealing of the six. TWO terriers are stacked one above the other, both in the studded collar with the teardrop, and a human man in a dark shirt holds the towel and the glass beside them. Two Abby tiles cut at two distances went on the wire this round (Picture 1 the head crop, Picture 3 the kit bust) and this seed drew both of them.";;
+    44) T="Abby round 1 seed 44 human man and pet terrier with the room dissolving into hatching"
+        V="REJECT. A bearded human man in an open shirt polishes the glass with the towel; the four-legged terrier sits on the marble in the collar. Below the counter the room stops being a room and becomes a field of vertical hatching, and the back bar has been replaced by a window onto a garden. Not the Swinging Door and not the cast.";;
+    55) T="Abby round 1 seed 55 best of the six the only anthropomorphic abby but a human still tends the bar"
+        V="BEST OF THE SIX, and still a reject. This is the only seed that drew ABBY HERSELF: an upright terrier in the pale open blouse, filling the foreground. What lands - the collar is a black leather band with ONE row of round domed studs all the same size, a buckle at the FRONT and a single ring below it, and from that ring hangs ONE teardrop gem in a beaded silver bezel closing to a point, which is the bible's shape drawn right for the first time this round; both ears pricked; a closed warm lip-line; the blouse open at the throat; and the best EYES in the repository so far - a drawn iris ring with radiating lines, a distinct round pupil clearly smaller than the iris, exactly one catchlight, an upper lid with lashes and a soft lower lid, four of the bible's five parts. What fails - (1) a HUMAN bartender in a waistcoat and tie stands at the back bar behind her, which alone is a redraw; (2) the fifth part of the eye is still missing, the iris filling the opening with no white showing at either side; (3) she stares straight out at the reader, the founder's named complaint; (4) the camera is far closer than Picture 1, her head filling two thirds of the frame, so there are no hands, no towel, no arms and no counter to judge; (5) the glass stands on the marble untouched instead of in her hand.";;
+  esac
+  "$PY" "$L" "$R1/abby-seed$S.png" --date 2026-09-06 --title "$T" \
+    --ask "$ASK" --thought "$THOUGHT" --settings "$SET" \
+    --prompt-file "$R1/abby-seed$S.prompt.txt" --verdict "$V"
+done
+
+DTHOUGHT="All six seeds failed the same way - Abby split into a four-legged pet terrier plus a separate human doing her job - so the round was diagnosed rather than repeated. Three suspects, removed together: (1) THE WORDS. My eye EDIT opened 'HER EYES ARE HUMAN EYES' and closed 'she is a glamorous, self-assured woman of forty-five', both quoted from CHARACTER-BIBLE.md section 2 where they are addressed to a human reader who already knows Abby is a dog; handed to an edit model at cfg 1 they are nouns, and the model drew the nouns. Every human noun was rewritten out while every structural instruction was kept. (2) PICTURE 3. Three tiles of Abby cut at different distances is three instances of her on the wire, and seed 33 drew two of them stacked; the kit bust was dropped and the framing put into words. (3) THE NEGATIONS. 'no second bartender, no customer ... no signature' - a negation is as inert as LOCAL_NEGATIVE on the cfg-1 Lightning path, and five of six renders carry a pencil signature anyway; replaced with a positive count, ONE living figure and she is a dog, plus a new leading EDIT saying in as many words that Abby is a terrier who stands on two legs, exactly as this strip's flamingo and retriever are drawn."
+
+DSET="$SET  DIAGNOSTIC VARIANT: 2 references (P3 dropped), every human noun removed from the edits, the negation list replaced by a positive one-figure count, and a new leading EDIT establishing the upright terrier. tag study-abby-r1-diag."
+
+"$PY" "$L" "$R1/diagnostic/abby-seed7.png" --date 2026-09-06 \
+  --title "Abby round 1 diagnostic seed 7 removing the human nouns and the third tile leaves one terrier and no human" \
+  --ask "$ASK" --thought "$DTHOUGHT" --settings "$DSET" \
+  --prompt-file "$R1/diagnostic/abby-seed7.prompt.txt" \
+  --verdict "THE DIAGNOSIS HOLDS. On the seed that drew two men and a pet terrier, the same seed now draws ONE upright terrier in the blouse and collar and no human anywhere. The four-legged pet is gone, the second and third figures are gone, the eyes carry four of the bible's five parts, and the collar, buckle, ring and teardrop are all correct. Still a reject as a picture: the ROOM has gone with them - blank studio paper, a vignette of hatching, a pencil signature at the bottom right - and it is a head-and-collar portrait, no arms, no hands, no towel, no counter, with the gaze still on the reader. Round 2's job is to put the room and the distance back without letting the humans back in."
+
+"$PY" "$L" "$R1/diagnostic/abby-seed55.png" --date 2026-09-06 \
+  --title "Abby round 1 diagnostic seed 55 the pet terrier is killed but one human bartender survives in the background" \
+  --ask "$ASK" --thought "$DTHOUGHT" --settings "$DSET" \
+  --prompt-file "$R1/diagnostic/abby-seed55.prompt.txt" \
+  --verdict "HALF THE FIX. The four-legged pet terrier is gone and Abby is one upright terrier in the foreground with the collar, the buckle, the single ring, the teardrop in its beaded bezel and the open blouse - but a HUMAN bartender in a waistcoat and tie still stands at the back bar behind her, so the human noun was not the only route in; the base picture's own bar keeps offering a slot for someone to fill. The camera is still far closer than asked, her head filling the frame, so there are still no hands, no towel and no counter. Two of two diagnostic seeds kill the pet terrier; one of two kills the human."
+
+"$PY" "$L" "$R1/sheet.png" --date 2026-09-06 \
+  --title "Abby round 1 contact sheet six seeds beside the kit bust and head tiles" \
+  --ask "$ASK" \
+  --thought "The six renders at 420 px in seed order, beside the two kit tiles the round was judged against - canon/characters/abby/kit/bust.png, which was also Picture 3 on the wire, and canon/characters/abby/kit/head.png - each panel carrying its seed and its verdict so the sheet reads on its own." \
+  --settings "Built by scripts/build-abby-round1-sheet.py. Sources: the six PNGs in the round-1 directory and the two kit tiles. 1702x1456." \
+  --verdict "ALL SIX REJECTED, and they fail identically: Abby is split into a four-legged pet terrier wearing her collar and a separate human doing her job. Seed 55 is the best of the six - the only one with an anthropomorphic Abby in front, and the first correct teardrop pendant and the best eyes the repository has produced. The same-day diagnostic names the cause and half-fixes it; round 2 runs on those edits with the room put back."

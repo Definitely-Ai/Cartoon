@@ -181,10 +181,10 @@ def data_uri(p) -> str:
     return f"data:image/{kind};base64," + base64.b64encode(b).decode()
 
 
-def generate(out: Path, prompt: str, ref: Path, seed: int, fast: bool, neg: str = "", extra_refs=(),
+def generate(out: Path, prompt: str, ref: Path, seed: int, fast: bool, neg: str = "", extra_refs=(), model: str = None,
              size: tuple = (RW, RH)) -> None:
     uri = "data:image/png;base64," + base64.b64encode(ref.read_bytes()).decode()
-    payload = {"prompt": prompt, "model": MODEL, "width": size[0], "height": size[1], "fast": fast,
+    payload = {"prompt": prompt, "model": model or MODEL, "width": size[0], "height": size[1], "fast": fast,
                "seed": seed, "input_images": [uri] + [data_uri(p) for p in extra_refs], "negative_prompt": neg, "tag": "room-part"}
     if not fast:
         payload["steps"] = 40
@@ -440,7 +440,7 @@ def cmd_render(a) -> None:
             piece_cond = piece_cond * mm + 140.0 * (1 - mm)        # the figure on a flat field
         save(piece_cond, cond_p)
         size = (1184, int(round(1184 * (y1 - y0) / (x1 - x0) / 32)) * 32)
-        generate(out, prompt, cond_p, a.seed, a.fast, neg, size=size, extra_refs=a.ref)
+        generate(out, prompt, cond_p, a.seed, a.fast, neg, size=size, extra_refs=a.ref, model=a.model)
         piece = Image.open(out).convert("L").resize((x1 - x0, y1 - y0), Image.LANCZOS)
         piece.save(WORK / f"{a.part}-s{a.seed}-crop.png")
         full_img = Image.fromarray(np.clip(plate, 0, 255).astype(np.uint8))
@@ -448,12 +448,12 @@ def cmd_render(a) -> None:
         full_img.save(out)
     elif tall:
         size = (1024, int(round(1024 * tall / 1200 / 32)) * 32)        # same aspect, on the 32-grid
-        generate(out, prompt, cond_p, a.seed, a.fast, neg, size=size, extra_refs=a.ref)
+        generate(out, prompt, cond_p, a.seed, a.fast, neg, size=size, extra_refs=a.ref, model=a.model)
         tall_img = Image.open(out).convert("L").resize((1200, tall), Image.LANCZOS)
         tall_img.crop((0, 0, 1200, 1800)).save(out)                   # back to the plate's frame
         tall_img.save(WORK / f"{a.part}-s{a.seed}-tall.png")
     else:
-        generate(out, prompt, cond_p, a.seed, a.fast, neg, extra_refs=a.ref)
+        generate(out, prompt, cond_p, a.seed, a.fast, neg, extra_refs=a.ref, model=a.model)
     # and a preview with it laid in, so it can be judged in context
     # the candidate laid AT ITS OWN LAYER of the full plate, so the parts in
     # front of it occlude it exactly as a build would (the same candidate lays
@@ -544,6 +544,7 @@ def main() -> None:
     r = sub.add_parser("render"); r.add_argument("part"); r.add_argument("--seed", type=int, default=4)
     r.add_argument("--fast", action="store_true"); r.add_argument("--with", dest="with_", nargs="*")
     r.add_argument("--ref", action="append", default=[], help="extra reference image (a character bust or head tile); repeatable")
+    r.add_argument("--model", default=None, help="model id for this render (the cast uses local/qwen-image-edit-2511, the house model that drew the approved plates)")
     r.add_argument("--plain", action="store_true", help="with --crop: a flat grey field outside the part's silhouette, so the figure can be keyed from the render")
     r.add_argument("--crop", default=None, help="x0,y0,x1,y1 (2:3): render this crop of the frame at full resolution and scale it back into place - four times the pixels on a figure")
     r.add_argument("--tall", action="store_true", help="render on the taller canvas so the frame's cut-off object is drawn whole")
