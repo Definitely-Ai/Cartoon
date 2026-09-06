@@ -103,8 +103,8 @@ export async function finishCartoon(artBytes: Buffer, caption: string): Promise<
   }
   if (!meta.width || !meta.height) throw new PublishError(400, "Cannot read the image dimensions.");
   const ratio = meta.height / meta.width;
-  if (ratio < 0.8 || ratio > 1.6) {
-    throw new PublishError(400, "Send square or portrait artwork (between 1:1 and about 2:3).");
+  if (ratio < 0.7 || ratio > 1.6) {
+    throw new PublishError(400, "Send horizontal (4:3), square (1:1), or portrait artwork (up to 2:3).");
   }
   if (meta.width < 900) {
     throw new PublishError(
@@ -138,8 +138,10 @@ export async function finishCartoon(artBytes: Buffer, caption: string): Promise<
     );
   }
 
-  // Nearest house shape: square below 1.125, else 4:5 portrait.
-  const artHeight = ratio < 1.125 ? TARGET_WIDTH : Math.round((TARGET_WIDTH * 5) / 4);
+  // Nearest house shape: 4:3 landscape, 1:1 square, or 4:5 portrait.
+  let artHeight = TARGET_WIDTH;
+  if (ratio < 0.85) artHeight = Math.round((TARGET_WIDTH * 3) / 4); // 4:3
+  else if (ratio > 1.125) artHeight = Math.round((TARGET_WIDTH * 5) / 4); // 4:5
 
   const art = await sharp(artBytes)
     .flatten({ background: "#ffffff" })

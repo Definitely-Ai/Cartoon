@@ -8,9 +8,7 @@ import { formatDateAP } from "@/lib/format";
 // day — live from the studio database. Each day is one tappable row:
 // date, how many requests it held, a strip of thumbnails, the tallies.
 
-export const metadata = {
-  title: "The Collection",
-};
+export const metadata = { title: "Daily batches" };
 
 export const dynamic = "force-dynamic";
 
@@ -40,33 +38,34 @@ export default async function CollectionPage() {
   return (
     <main id="content" className="br-main">
       <header className="br-table-head">
-        <h1 className="br-date">The Collection</h1>
+        <h1 className="br-date">Daily batches</h1>
         <p className="br-status">
           {summaries.length === 0
-            ? "Every cartoon ever made, filed by day."
+            ? "Cartoons filed into daily review batches."
             : `${total} cartoon${total === 1 ? "" : "s"} across ${summaries.length} day${
                 summaries.length === 1 ? "" : "s"
               }. Tap a day to lay it out on the table.`}
         </p>
+        <p className="br-status"><Link href="/library">Open the image library</Link> for the full artwork archive, references, and work in progress.</p>
       </header>
 
       {summaries.length === 0 ? (
         // The founder's sentence first, the machine's complaint second: he
         // can act on one of them and the operator can act on the other.
-        <div style={{ textAlign: "center" }}>
+        <div className="legacy-empty">
           {setupNote ? (
             <>
               <p className="br-status">
-                The collection isn&rsquo;t answering just now. Nothing is lost — try again in a
-                minute.
+                Daily batches are unavailable right now. The image library is ready to browse
+                while the connection is checked.
               </p>
-              <p className="br-hint">{setupNote}</p>
+              <details className="legacy-connection"><summary>Connection details</summary><p className="br-hint">{setupNote}</p></details>
             </>
           ) : (
             <p className="br-status">
-              Nothing filed yet — the first day of cartoons lands here the moment it&rsquo;s
-              drawn. Ask your AI for one (the hookup lives under{" "}
-              <Link href="/connect">Connect your AI</Link>).
+              No daily batches have been filed here yet. The existing drawings are in the{" "}
+              <Link href="/library">image library</Link>; the room rebuild is on the{" "}
+              <Link href="/room">drawing board</Link>. A batch appears here after it is filed.
             </p>
           )}
         </div>

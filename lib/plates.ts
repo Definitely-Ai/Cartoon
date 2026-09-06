@@ -1,4 +1,5 @@
 import sharp from "sharp";
+import { quadFromBox, warpLayerToQuad, type Quad } from "./warp";
 
 // THE PLATE PIPELINE. The bar is drawn ONCE per cast — a "plate" with the
 // television switched off and the chalkboard wiped — and never drawn again.
@@ -30,6 +31,12 @@ export type PlateSpec = {
   screen: Box;
   /** The chalkboard's SLATE (inside the wooden frame). */
   board: Box;
+  /** The same two surfaces as the FOUR CORNERS they actually have in the
+   *  drawing (TL, TR, BR, BL) — the room is seen at an angle, so neither is
+   *  an upright rectangle. When present, the insets are perspective-warped
+   *  onto these; the boxes above stay for the face pastes and as a fallback. */
+  screenQuad?: Quad;
+  boardQuad?: Quad;
   /** Per character: the regions a speaker variant is allowed to change. */
   faces: Record<string, { mouth: Box; eyes: Box }>;
 };
@@ -231,86 +238,234 @@ export async function pasteRegions(plate: Buffer, variant: Buffer, boxes: Box[])
 }
 
 // ------------------------------------------------------------- dressing
+//
+// An inset is built flat, as an upright layer the size of the surface's
+// bounding box, then laid onto the surface's real four corners with a
+// perspective warp (lib/warp.ts), so it sits IN the room instead of on top
+// of it. The founder's rulings of 2026-09-02: the television must read as a
+// real lit set carrying ordinary broadcast footage — not a fake screen, not
+// an overdramatic news graphic — and the chalk must read as chalk written
+// by a hand, never as a typeface.
 
-/** Put footage on the screen and typeset the chyron over it, CNBC grammar. */
-export async function dressScreen(
-  plate: Buffer,
-  spec: PlateSpec,
-  still: Buffer | null,
-  chyron: string,
-  time = "1:14 PM ET"
-): Promise<Buffer> {
-  const { x, y, w, h } = spec.screen;
-  const band = Math.round(h * 0.17);
-  const layers: sharp.OverlayOptions[] = [];
-  if (still) {
-    const footage = await sharp(still)
-      .flatten({ background: "#ffffff" })
-      .grayscale()
-      .resize(w, h, { fit: "cover" })
-      .linear(0.9, 8) // sit the footage a touch back from paper white so it reads as a lit screen, not a hole
-      .png()
-      .toBuffer();
-    layers.push({ input: footage, left: x, top: y });
-  }
-  // The chyron is ONE line and it fits: shrink to the room left of the
-  // timestamp rather than run under it.
-  const timeFs = Math.round(band * 0.3);
-  const timeW = Math.round(time.length * timeFs * 0.58);
-  const room = w * 0.94 - timeW - w * 0.03;
-  const fs = Math.max(10, Math.min(Math.round(band * 0.5), Math.floor(room / (Math.max(chyron.length, 1) * 0.6))));
-  const bugW = Math.round(w * 0.16), bugH = Math.round(h * 0.2);
-  const svg = Buffer.from(`<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}">
-  <defs>
-    <linearGradient id="v" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#000" stop-opacity="0.18"/><stop offset="0.5" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity="0.22"/>
-    </linearGradient>
-  </defs>
-  <rect width="${w}" height="${h}" fill="url(#v)"/>
-  <rect x="${Math.round(w * 0.03)}" y="${Math.round(h * 0.05)}" width="${bugW}" height="${bugH}" fill="#111" fill-opacity="0.85"/>
-  <text x="${Math.round(w * 0.03) + bugW / 2}" y="${Math.round(h * 0.05) + bugH * 0.48}" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="${Math.round(bugH * 0.36)}" fill="#fff">CNBC</text>
-  <text x="${Math.round(w * 0.03) + bugW / 2}" y="${Math.round(h * 0.05) + bugH * 0.86}" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="${Math.round(bugH * 0.3)}" fill="#fff">LIVE</text>
-  <rect x="0" y="${h - band}" width="${w}" height="${band}" fill="#0c0c0c"/>
-  <rect x="0" y="${h - band}" width="${w}" height="3" fill="#ffffff" fill-opacity="0.9"/>
-  <text x="${Math.round(w * 0.03)}" y="${h - band + band * 0.68}" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="${fs}" fill="#fff">${xml(chyron.toUpperCase())}</text>
-  <text x="${w - Math.round(w * 0.03)}" y="${h - band + band * 0.68}" text-anchor="end" font-family="Arial, Helvetica, sans-serif" font-size="${timeFs}" fill="#ddd">${xml(time)}</text>
-</svg>`);
-  layers.push({ input: await sharp(svg).png().toBuffer(), left: x, top: y });
-  return sharp(plate).composite(layers).png().toBuffer();
+/** Where an inset lands: the quad when the spec has one, else the box. */
+function surface(spec: PlateSpec, which: "screen" | "board"): { quad: Quad; w: number; h: number } {
+  const box = spec[which];
+  const quad = (which === "screen" ? spec.screenQuad : spec.boardQuad) ?? quadFromBox(box);
+  const xs = quad.map((p) => p[0]), ys = quad.map((p) => p[1]);
+  return { quad, w: Math.round(Math.max(...xs) - Math.min(...xs)), h: Math.round(Math.max(...ys) - Math.min(...ys)) };
 }
 
-/** Hand-lettered chalk on the slate: two to six short lines, centred. */
-export async function dressBoard(plate: Buffer, spec: PlateSpec, lines: string[]): Promise<Buffer> {
-  const { x, y, w, h } = spec.board;
-  // A slate is narrow. Every line is broken to at most ~11 characters —
-  // "HOUSE SPECIAL" becomes two lines — so the chalk stays big enough to
-  // read; then the type is sized to the longest surviving line.
-  const clean = lines
-    .map((l) => l.trim())
-    .filter(Boolean)
-    .flatMap((l) => wrap(l, 11))
-    .slice(0, 7);
-  if (clean.length === 0) return plate;
-  const longest = Math.max(...clean.map((l) => l.length));
-  const fs = Math.max(12, Math.min(Math.round(h / (clean.length * 1.9)), Math.round((w * 0.9) / (longest * 0.7)), Math.round(h * 0.11)));
-  const gap = Math.round(fs * 1.55);
-  const blockH = gap * clean.length;
-  const first = Math.round((h - blockH) / 2 + fs * 0.9);
-  const rule = (yy: number) => `<path d="M${Math.round(w * 0.3)} ${yy}H${Math.round(w * 0.7)}" stroke="#e7e3da" stroke-opacity="0.8" stroke-width="2"/>`;
-  const tspans = clean
-    .map((l, i) => {
-      const yy = first + i * gap;
-      const price = /\$\s?\d/.test(l);
-      return `<text x="${w / 2}" y="${yy}" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="${price ? Math.round(fs * 1.15) : fs}" fill="#ecebe6" fill-opacity="0.94" letter-spacing="1.5">${xml(l.toUpperCase())}</text>`;
-    })
-    .join("\n");
-  const rules = clean.length > 1 ? rule(first + Math.round(fs * 0.55)) : "";
-  const svg = Buffer.from(`<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}">
-  ${tspans}
-  ${rules}
+/** Lay a flat layer onto a surface of the plate. */
+async function lay(plate: Buffer, layer: Buffer, quad: Quad): Promise<Buffer> {
+  const meta = await sharp(plate).metadata();
+  const warped = await warpLayerToQuad(layer, quad, meta.width!, meta.height!);
+  return sharp(plate).composite([{ input: warped, left: 0, top: 0 }]).png().toBuffer();
+}
+
+/**
+ * The television's picture as a flat layer: the footage toned like a lit LCD in
+ * a dim room, with the SAME broadcast furniture the rest of the desk uses
+ * (screenOverlay) laid over it. Built flat and then warped onto the screen's
+ * four real corners by dressScreen, so the picture faces exactly where the
+ * television faces — a still dropped in square reads as a sticker on the wall.
+ */
+export async function screenLayer(w: number, h: number, still: Buffer | null, chyron: string, time = "1:14 PM ET"): Promise<Buffer> {
+  const base = still
+    ? await sharp(still)
+        .flatten({ background: "#ffffff" })
+        .grayscale()
+        .resize(w, h, { fit: "cover" })
+        // A screen is lit: its white sits a little under the paper's and its
+        // black a little over the room's. Compressing harder turns it to fog.
+        .linear(0.84, 9)
+        .png()
+        .toBuffer()
+    : await sharp({ create: { width: w, height: h, channels: 3, background: "#1a1a1a" } }).png().toBuffer();
+  const glass = Buffer.from(`<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}">
+  <defs>
+    <linearGradient id="sheen" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff" stop-opacity="0.09"/><stop offset="0.45" stop-color="#fff" stop-opacity="0.02"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="vig" cx="0.5" cy="0.5" r="0.78">
+      <stop offset="0.62" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity="0.2"/>
+    </radialGradient>
+  </defs>
+  <rect width="${w}" height="${h}" fill="url(#vig)"/>
+  <rect width="${w}" height="${h}" fill="url(#sheen)"/>
 </svg>`);
-  const chalk = await sharp(svg).png().toBuffer();
-  return sharp(plate).composite([{ input: chalk, left: x, top: y }]).png().toBuffer();
+  return sharp(base)
+    .composite([
+      { input: await sharp(glass).png().toBuffer(), left: 0, top: 0 },
+      { input: await screenOverlay(w, h, chyron, time), left: 0, top: 0 },
+    ])
+    .png()
+    .toBuffer();
+}
+
+/** Put footage on the screen and the headline over it. */
+export async function dressScreen(plate: Buffer, spec: PlateSpec, still: Buffer | null, chyron: string, time = "1:14 PM ET"): Promise<Buffer> {
+  const { quad, w, h } = surface(spec, "screen");
+  return lay(plate, await screenLayer(w, h, still, chyron, time), quad);
+}
+
+/**
+ * The founder's ruling (2026-09-02): the chalk must be chalk, written by a
+ * hand. So the chalk is DRAWN by the local model on the slate itself
+ * (scripts/plate-desk.mjs asks for it and pastes the slate band back with
+ * pasteBand). This typeset version is only the fallback when no drawing is
+ * available, laid onto the slate's corners.
+ */
+export async function dressBoard(plate: Buffer, spec: PlateSpec, lines: string[]): Promise<Buffer> {
+  const clean = lines.map((l) => l.trim()).filter(Boolean).flatMap((l) => wrap(l, 9)).slice(0, 7);
+  if (clean.length === 0) return plate;
+  const { quad, w, h } = surface(spec, "board");
+  const longest = Math.max(...clean.map((l) => l.length));
+  const fs = Math.max(12, Math.min(Math.round(h / (clean.length * 1.9)), Math.round((w * 0.92) / (longest * 0.66)), Math.round(h * 0.12)));
+  const gap = Math.round(fs * 1.5);
+  const first = Math.round((h - gap * clean.length) / 2 + fs * 0.9);
+  const tspans = clean
+    .map((l, i) => `<text x="${w / 2}" y="${first + i * gap}" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="${/\$\s?\d/.test(l) ? Math.round(fs * 1.15) : fs}" fill="#ecebe6" fill-opacity="0.92" letter-spacing="1">${xml(l.toUpperCase())}</text>`)
+    .join("\n");
+  const layer = await sharp(Buffer.from(`<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}">${tspans}</svg>`)).png().toBuffer();
+  return lay(plate, layer, quad);
+}
+
+/*/**
+ * THE BROADCAST FURNITURE, as a transparent layer over footage the model has
+ * already drawn on the glass. Modelled line for line on the founder's own
+ * approved panel (canon/plates/src/duo-source.png), which is what a real
+ * television looks like across a room:
+ *
+ *   - top left, the network bug: the peacock fan, the wordmark under it, LIVE
+ *     under that. No plate, no pill, no box behind it — broadcast bugs sit
+ *     directly on the picture and hold up over bright footage with a soft
+ *     shadow, which is what this uses.
+ *   - a hairline rule the full width of the screen, then the lower third: one
+ *     solid band, the headline set left in bold capitals.
+ *   - the time in its own cell at the right end of the band, divided from the
+ *     headline by a hairline, set over two lines the way a network sets it.
+ */
+export async function screenOverlay(w: number, h: number, chyron: string, time = "1:14 PM ET"): Promise<Buffer> {
+  const band = Math.round(h * 0.115);
+  const pad = Math.round(w * 0.028);
+  const y0 = h - band;
+
+  // The time cell: "1:14 PM" over "ET", right-aligned in its own compartment.
+  const [clock, zone] = (() => {
+    const m = time.match(/^(.*?)\s*(ET|EST|EDT|PT|CT)?$/i);
+    return [(m?.[1] ?? time).trim(), (m?.[2] ?? "").toUpperCase()];
+  })();
+  const clockFs = Math.round(band * 0.3);
+  const cellW = Math.max(Math.round(w * 0.13), Math.round(clock.length * clockFs * 0.6) + pad * 2);
+  const cellX = w - cellW;
+
+  // The headline fills the room left of that cell and never runs under it.
+  const room = cellX - pad * 2;
+  const fs = Math.max(9, Math.min(Math.round(band * 0.46), Math.floor(room / (Math.max(chyron.length, 1) * 0.57))));
+
+  // The peacock: six tapered petals fanning from a point, the way the mark
+  // reads at bug size. Drawn rather than lettered so it survives the warp.
+  const bugFs = Math.round(h * 0.062);
+  const bx = pad + Math.round(bugFs * 1.35), by = Math.round(h * 0.055) + Math.round(bugFs * 1.5);
+  const r = bugFs * 1.35;
+  const petals = Array.from({ length: 6 }, (_, i) => {
+    const a = (-64 + i * 25.6) * (Math.PI / 180);
+    const tipX = bx + Math.sin(a) * r, tipY = by - Math.cos(a) * r;
+    const wid = r * 0.15;
+    const px = Math.cos(a) * wid, py = Math.sin(a) * wid;
+    return `<path d="M${bx.toFixed(1)} ${by.toFixed(1)} Q${(tipX + px).toFixed(1)} ${(tipY + py).toFixed(1)} ${tipX.toFixed(1)} ${tipY.toFixed(1)} Q${(tipX - px).toFixed(1)} ${(tipY - py).toFixed(1)} ${bx.toFixed(1)} ${by.toFixed(1)} Z" fill="#fff" fill-opacity="${(0.72 + (i % 2) * 0.22).toFixed(2)}"/>`;
+  }).join("");
+
+  const sans = "Arial, Helvetica, sans-serif";
+  const svg = Buffer.from(`<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}">
+  <defs>
+    <!-- A bug has to hold up over a bright sky as well as a dark chart, and a
+         plate behind it looks pasted on. Broadcast does this with a shadow:
+         a tight dark halo, then a wider soft one. -->
+    <filter id="sh" x="-60%" y="-60%" width="220%" height="220%">
+      <feDropShadow dx="0" dy="0" stdDeviation="${(bugFs * 0.1).toFixed(2)}" flood-color="#000" flood-opacity="0.95"/>
+      <feDropShadow dx="0" dy="${Math.max(1, Math.round(bugFs * 0.05))}" stdDeviation="${(bugFs * 0.34).toFixed(2)}" flood-color="#000" flood-opacity="0.8"/>
+    </filter>
+  </defs>
+  <g filter="url(#sh)">
+    ${petals}
+    <text x="${bx}" y="${by + bugFs * 1.05}" text-anchor="middle" font-family="${sans}" font-weight="700" font-size="${bugFs}" fill="#fff" letter-spacing="${(bugFs * 0.04).toFixed(1)}">CNBC</text>
+    <text x="${bx}" y="${by + bugFs * 1.9}" text-anchor="middle" font-family="${sans}" font-weight="700" font-size="${Math.round(bugFs * 0.62)}" fill="#fff" fill-opacity="0.95" letter-spacing="${(bugFs * 0.06).toFixed(1)}">LIVE</text>
+  </g>
+  <rect x="0" y="${y0 - 2}" width="${w}" height="2" fill="#fff" fill-opacity="0.92"/>
+  <rect x="0" y="${y0}" width="${w}" height="${band}" fill="#0a0b0d" fill-opacity="0.9"/>
+  <text x="${pad}" y="${y0 + Math.round(band * 0.68)}" font-family="${sans}" font-weight="700" font-size="${fs}" fill="#fff" letter-spacing="${(fs * 0.02).toFixed(1)}">${xml(chyron.toUpperCase())}</text>
+  <rect x="${cellX}" y="${y0 + Math.round(band * 0.16)}" width="1.5" height="${Math.round(band * 0.68)}" fill="#fff" fill-opacity="0.35"/>
+  <text x="${cellX + cellW / 2}" y="${y0 + Math.round(band * 0.46)}" text-anchor="middle" font-family="${sans}" font-weight="600" font-size="${clockFs}" fill="#fff" fill-opacity="0.95">${xml(clock)}</text>
+  ${zone ? `<text x="${cellX + cellW / 2}" y="${y0 + Math.round(band * 0.82)}" text-anchor="middle" font-family="${sans}" font-weight="600" font-size="${Math.round(clockFs * 0.85)}" fill="#fff" fill-opacity="0.88">${xml(zone)}</text>` : ""}
+</svg>`);
+  return sharp(svg).png().toBuffer();
+}
+
+/** The headline and bug over footage the model drew in place. */
+export async function dressScreenText(plate: Buffer, spec: PlateSpec, chyron: string, time = "1:14 PM ET"): Promise<Buffer> {
+  if (!chyron.trim()) return plate;
+  const { quad, w, h } = surface(spec, "screen");
+  return lay(plate, await screenOverlay(w, h, chyron, time), quad);
+}
+
+/**
+ * Paste one rectangular band of a drawing onto the plate with a feathered
+ * edge (the desk's scripts/composite-band.mjs, as a function). The local
+ * model edits one thing well and everything else slightly, so each drawing
+ * is trusted only for the band it was asked to change: the slate band for
+ * the chalk, the screen band for the footage. The source is fitted to the
+ * plate's size first.
+ */
+export async function pasteBand(plate: Buffer, drawing: Buffer, band: Box, feather = 18): Promise<Buffer> {
+  const meta = await sharp(plate).metadata();
+  const W = meta.width!, H = meta.height!;
+  const { x, y, w, h } = band;
+  const rgb = await sharp(drawing).flatten({ background: "#ffffff" }).grayscale().resize(W, H, { fit: "fill" }).extract({ left: x, top: y, width: w, height: h }).removeAlpha().raw().toBuffer();
+  const rgba = Buffer.alloc(w * h * 4);
+  const ramp = (d: number) => Math.max(0, Math.min(1, d / feather));
+  for (let j = 0; j < h; j++) {
+    for (let i = 0; i < w; i++) {
+      const a = Math.round(255 * Math.min(ramp(i + 1), ramp(w - i), ramp(j + 1), ramp(h - j)));
+      const p = j * w + i;
+      rgba[p * 4] = rgb[p]; rgba[p * 4 + 1] = rgb[p]; rgba[p * 4 + 2] = rgb[p]; rgba[p * 4 + 3] = a;
+    }
+  }
+  const overlay = await sharp(rgba, { raw: { width: w, height: h, channels: 4 } }).png().toBuffer();
+  return sharp(plate).composite([{ input: overlay, left: x, top: y }]).png().toBuffer();
+}
+
+/** The bands the desk pastes back from an in-place drawing on the duo/trio plate. */
+export const BANDS: Record<"screen" | "board", Box> = {
+  screen: { x: 440, y: 90, w: 500, h: 380 },
+  board: { x: 950, y: 120, w: 245, h: 620 },
+};
+
+/** One gag from in-place drawings: the speaker variant of the plate, the
+ *  model's own chalk and footage pasted back band by band, the headline and
+ *  bug laid onto the glass, the caption beneath. */
+export async function composeGagInPlace(input: {
+  plate: Buffer;
+  spec: PlateSpec;
+  chalkDrawing: Buffer | null;
+  screenDrawing: Buffer | null;
+  chyron: string;
+  speaker: string;
+  caption: string;
+  time?: string;
+}): Promise<Buffer> {
+  let art = input.plate;
+  if (input.chalkDrawing) art = await pasteBand(art, input.chalkDrawing, BANDS.board);
+  if (input.screenDrawing) {
+    // A LIT SCREEN IN A DIM ROOM, NEVER A HOLE CUT IN THE WALL. The model
+    // draws the footage at paper white, which reads as a light box; pulling
+    // the whites down and lifting the blacks a little puts the picture back
+    // behind glass, the way a television looks across a room.
+    const toned = await sharp(input.screenDrawing).flatten({ background: "#ffffff" }).grayscale().linear(0.8, 20).png().toBuffer();
+    art = await pasteBand(art, toned, BANDS.screen);
+  }
+  if (input.screenDrawing && input.chyron) art = await dressScreenText(art, input.spec, input.chyron, input.time);
+  return finishPlate(art, input.speaker, input.caption);
 }
 
 // ------------------------------------------------------------- finishing

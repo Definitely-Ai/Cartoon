@@ -1,118 +1,19 @@
-import { Suspense } from "react";
 import Link from "next/link";
-import { getStudioDays, getStudioToday, type StudioDay } from "@/lib/db";
-import { PublishError } from "@/lib/githubPublish";
-import { formatDateAP } from "@/lib/format";
-import DayBoard from "./DayBoard";
-import Waiting from "./Waiting";
-
-// Today: the newest day's batches, straight onto the table, live from the
-// studio database — a new batch appears the moment it's drawn.
-
-export const metadata = {
-  title: "Today | The Swinging Door Studio",
-};
-
-export const dynamic = "force-dynamic";
-
-export default function StudioToday() {
-  return (
-    <Suspense fallback={<Waiting />}>
-      <TodayTable />
-    </Suspense>
-  );
-}
-
-async function TodayTable() {
-  let today: StudioDay | null = null;
-  let days: string[] = [];
-  let setupNote: string | null = null;
-  try {
-    days = await getStudioDays();
-    today = days.length ? await getStudioToday() : null;
-  } catch (err) {
-    setupNote = err instanceof PublishError ? err.message : "The studio database isn't answering.";
-  }
-
-  const previous = today ? days.filter((d) => d !== today.day)[0] : undefined;
-
-  return (
-    <main id="content" className="br-main">
-      {today ? (
-        <>
-          <DayBoard day={today} />
-          {previous && (
-            <p className="br-more-days">
-              <Link href={`/day/${previous}`}>‹ {formatDateAP(previous)}</Link> ·{" "}
-              <Link href="/collection">the whole collection</Link>
-            </p>
-          )}
-        </>
-      ) : (
-        <div className="studio-dispatch-wrap">
-          <div className="studio-dispatch-head">
-            <p className="studio-dispatch-eyebrow">The Studio Dispatch</p>
-            <h1 className="studio-dispatch-title">The Swinging Door</h1>
-            <p className="studio-dispatch-sub">
-              {setupNote
-                ? "The live daily table is quiet right now, but the complete studio archive, proof desk, and character model sheets are ready below."
-                : "Welcome to the private studio workshop. Browse the complete image archive, inspect the verified final editions, or score pending briefs."}
-            </p>
-          </div>
-
-          <div className="studio-dispatch-grid">
-            <Link href="/gallery" className="studio-dispatch-card">
-              <span className="studio-dispatch-card-badge">Studio Prints & Archive</span>
-              <h2 className="studio-dispatch-card-title">The Image Vault</h2>
-              <p className="studio-dispatch-card-desc">
-                Browse verified finished prints, master reference plates, and studio workshop cartoons — sorted chronologically by time generated.
-              </p>
-              <span className="studio-dispatch-card-action">Open Vault →</span>
-            </Link>
-
-            <Link href="/gallery?category=final" className="studio-dispatch-card">
-              <span className="studio-dispatch-card-badge">Production Master</span>
-              <h2 className="studio-dispatch-card-title">Final 20 Editions</h2>
-              <p className="studio-dispatch-card-desc">
-                The canonical Wall Street satire suites: 10 Trio scenes (A01–A10) and 10 Duo scenes (B01–B10) with complete chyrons and chalkboard menus.
-              </p>
-              <span className="studio-dispatch-card-action">View Finals →</span>
-            </Link>
-
-            <Link href="/review" className="studio-dispatch-card">
-              <span className="studio-dispatch-card-badge">Scoring Desk</span>
-              <h2 className="studio-dispatch-card-title">The Review Desk</h2>
-              <p className="studio-dispatch-card-desc">
-                Review pending batches, rate scene composition and captions against the studio standard, and inspect performance metrics.
-              </p>
-              <span className="studio-dispatch-card-action">Go to Review →</span>
-            </Link>
-
-            <Link href="/models" className="studio-dispatch-card">
-              <span className="studio-dispatch-card-badge">Harrington Vision</span>
-              <h2 className="studio-dispatch-card-title">The Cast & Bibles</h2>
-              <p className="studio-dispatch-card-desc">
-                Definitive reference studies and quality standards for Drew (flamingo), Barclay (golden retriever), and Abby (proprietor).
-              </p>
-              <span className="studio-dispatch-card-action">Inspect Cast →</span>
-            </Link>
-          </div>
-
-          <div className="studio-dispatch-footer-note">
-            <p>
-              To generate new daily cartoons with your assistant, connect via{" "}
-              <Link href="/connect" style={{ color: "#c5a059", textDecoration: "underline" }}>
-                Connect your AI
-              </Link>
-              . All historical editions are cataloged under{" "}
-              <Link href="/collection" style={{ color: "#c5a059", textDecoration: "underline" }}>
-                The Collection
-              </Link>
-              .
-            </p>
-          </div>
-        </div>
-      )}
-    </main>
-  );
+import Image from "next/image";
+export const metadata = { title: "Rick’s studio" };
+const desks = [
+  { href: "/library", title: "Every image, in one place.", description: "Artwork, early ideas, working parts and studies for Drew, Barclay and Abby. Open any image for a closer look.", action: "Explore the image library" },
+  { href: "/reports", title: "See what changed.", description: "A day-by-day account of the work, with the pictures and GitHub changes behind it. Written in plain English.", action: "Read the daily report" },
+  { href: "/newspaper", title: "Picture it in print.", description: "See the cartoon on a newspaper page, adjust its column width and print an editorial proof.", action: "Open the newspaper proof" },
+];
+export default function StudioHome() {
+  return <main id="content" className="workspace-main">
+    <header className="desk-heading"><p className="desk-eyebrow">Rick’s working studio</p><h1>A good cartoon.<br /><em>A place to build it together.</em></h1><p className="desk-intro">The artwork, the work in progress, and a clear view of what comes next. Welcome to The Swinging Door.</p></header>
+    <section className="studio-feature" aria-labelledby="current-work">
+      <Link href="/room" className="studio-feature-image" aria-label="Inspect the current bar scene and room rebuild"><Image src="/studio-room/previous-duo.png" width={1200} height={1800} alt="The current working scene: Drew and Barclay at the marble bar, with bottle shelves and the New York window behind them." priority /><span>Current working scene · open to inspect</span></Link>
+      <div className="studio-feature-copy"><p className="desk-eyebrow">On the drawing board</p><h2 id="current-work">Build the room.<br />One piece at a time.</h2><p>Start with a room a person could actually build. Give each finished part its own layer, so a small correction stays small.</p><ol className="studio-next-steps"><li><span>First</span> Just the wall, the window and the bar.</li><li><span>Then</span> Add each shelf, the TV and the chalkboard.</li><li><span>Next</span> Refine Barclay’s head, then place the cast.</li></ol><Link href="/room" className="desk-button">Visit the drawing room ↗</Link><p className="desk-small">Working locally on the RTX 4090. New studies await review.</p></div>
+    </section>
+    <section className="studio-desks" aria-label="Your workspaces">{desks.map((d,i)=><Link href={d.href} className="studio-desk" key={d.href}><span className="studio-desk-number">0{i+1}</span><h2>{d.title}</h2><p>{d.description}</p><span className="studio-desk-action">{d.action} →</span></Link>)}</section>
+    <section className="studio-bottom-grid"><div><p className="desk-eyebrow">The local conversation</p><h2>What’s on Naples’ mind?</h2><p>Financial story ideas, Google Trends evidence, and what we still need to learn from our own audience.</p><Link href="/topics" className="desk-text-link">Explore the topic desk →</Link></div><div><p className="desk-eyebrow">Keep the conversation going</p><h2>Look. React. Refine.</h2><p>Leave a note for each other, discuss a particular image, or review a batch together. Keep the character references close at hand.</p><div className="desk-link-row"><Link href="/notes">Shared notes →</Link><Link href="/models">Meet the cast →</Link></div></div></section>
+  </main>;
 }

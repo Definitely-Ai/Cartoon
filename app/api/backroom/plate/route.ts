@@ -2,7 +2,7 @@ import { NextResponse, type NextRequest } from "next/server";
 import sharp from "sharp";
 import { BACKROOM_COOKIE, isDoorOpen, isTriggerOpen } from "@/lib/backroom-auth";
 import { PublishError, commitFiles, readRepoFile } from "@/lib/githubPublish";
-import { generateImage, uploadFile } from "@/lib/replicate";
+import { generateImageAuraVision as generateImage, uploadFileAuraVision as uploadFile } from "@/lib/auravision";
 import {
   CAST,
   type Cast,
@@ -38,7 +38,9 @@ import {
 export const runtime = "nodejs";
 export const maxDuration = 300;
 
-const MODEL = "openai/gpt-image-2";
+// The house drawing model is free and local (see canon/plates/README.md);
+// PLATE_MODEL overrides it. Nothing here ever reaches Replicate.
+const MODEL = process.env.PLATE_MODEL || "local/sensenova-u1.5";
 const WORK = "canon/plates/work";
 
 function stamp(): string {
@@ -70,7 +72,7 @@ async function draw(prompt: string, refs: string[], quality: string, aspect = "2
     aspect_ratio: aspect,
     output_format: "png",
     number_of_images: 1,
-  }, 280_000);
+  });
 }
 
 function page(title: string, image: Buffer, notes: string[], committed: string): Response {

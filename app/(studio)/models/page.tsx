@@ -42,7 +42,7 @@ const PLATES = [
 const HOUSE_RULES = [
   "Eighty percent of cartoons happen inside The Swinging Door; the same room, the same day's news.",
   "The camera looks toward the bar from the dining room: the back bar, the television above it and the chalkboard fill the background, and the marble runs across in front. Drew and Barclay sit at it on the room side — patrons, with the counter between them and the bottles.",
-  "Abby is the only other character in the bar. No human being appears anywhere except on the television.",
+  "Drew, Barclay and Abby are the principal cast. The planned modern New York view may include anonymous people outside the window.",
   "The TV names the story and the chalkboard prices it, and both illustrate that cartoon's own joke — never a stock scene.",
   "The only lettering in a panel is the lettering the brief asked for. Bezels, napkins, cuffs and chart axes stay blank — invented micro-text always comes back as nonsense.",
   "Nobody looks out of the panel. Every gaze belongs inside the scene: at each other, at the screen, at the board, or at the work in their hands.",
@@ -167,8 +167,8 @@ export default function ModelsPage() {
         </h2>
         {showcase.length > 0 ? (
           <p style={{ color: "#5a5145", marginTop: 10, maxWidth: "62ch" }}>
-            Written to this week&rsquo;s actual tape and drawn to the plates. Score any panel 1–10 and say what you
-            see — every note reaches the operator before the next round.
+            Selected studio cartoons and studies. Score any panel 1–10 and describe what you see;
+            check the save message so you know your note reached the shared studio.
           </p>
         ) : null}
         {/* Written for Rick, who opens this page cold and should not have to
@@ -186,23 +186,19 @@ export default function ModelsPage() {
             }}
           >
             <p style={{ fontFamily: serif, fontSize: 21, margin: "0 0 12px", color: "#221d16" }}>
-              A new set of cartoons is being drawn right now.
+              The room and characters are still being refined.
             </p>
             <p style={{ margin: "0 0 12px", color: "#4a4136", lineHeight: 1.65 }}>
-              The cartoons that used to sit here have been taken down. We checked every one of them closely and
-              they had faults we have since fixed — so rather than leave work on the wall that we already know is
-              wrong, the wall is empty until the new set is ready.
+              This page has no selected cartoons on display at the moment. The image library keeps the
+              existing artwork, early studies, and working parts together so you can compare them.
             </p>
             <p style={{ margin: "0 0 12px", color: "#4a4136", lineHeight: 1.65 }}>
-              What changed: the three characters were rebuilt from the ground up. Abby has proper eyes now, with a
-              white, an iris and a pupil, instead of black buttons. Drew&rsquo;s arms end in hands rather than
-              wings. The bar keeps the same bottles, the same marble and the same television every time.
+              The current approach is to build the room in separate pieces, then refine and place the cast.
+              Barclay&rsquo;s head, the wall and window join, and the shelves still need close artistic review.
             </p>
             <p style={{ margin: 0, color: "#4a4136", lineHeight: 1.65 }}>
-              <Link href="/review" style={{ color: "#1a1a1a", fontWeight: 600 }}>
-                Go to Review
-              </Link>{" "}
-              to see the new set as it is drawn, and to score each cartoon out of ten.
+              <Link href="/room" style={{ color: "#1a1a1a", fontWeight: 600 }}>Open the drawing room</Link>{" "}
+              for the current plan, or <Link href="/library">browse all images</Link>.
             </p>
           </div>
         ) : (

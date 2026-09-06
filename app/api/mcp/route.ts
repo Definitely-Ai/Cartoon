@@ -88,13 +88,14 @@ const TOOLS = [
   {
     name: "make_cartoons",
     description:
-      "THE way to draw for the founder: the studio generates the artwork server-side (hosted " +
-      "FLUX conditioned on the locked character sheets), typesets the caption, and files each " +
+      "Draw using the studio's local RTX 4090 through AuraVision, typeset the caption, and file each " +
       "cartoon into today's batch — you send only text. Write 1–5 distinct candidates from the " +
       "canon (call get_canon first). Each candidate: the [SCENE] sentence in canon vocabulary, " +
       "the exact caption (≤20 words), a short title, who is in the scene, style_notes naming " +
       "its one deliberate variation, and either tv+board words (bar scene) or setting (away " +
-      "game). Takes a minute or two per candidate — tell the founder they're being drawn.",
+      "game). The server must be able to reach the local workstation; a deployed website does not " +
+      "automatically have that connection. Runtime depends on the local queue. Do not say drawing " +
+      "has started until the request is accepted. Hosted image providers are disabled.",
     inputSchema: {
       type: "object",
       properties: {

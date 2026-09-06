@@ -1,0 +1,7 @@
+stills: local/sensenova-u1.5
+PLATE=duo/drew
+STILL=canon/plates/work/stills/the-grand-columned-facade-of-the-federal-reserve.png
+CAPTION drew: "The Fed held rates steady. So did my mortgage. Only one of them was asked."
+TV=FED HOLDS RATES STEADY
+TV_PICTURE=the grand columned facade of the Federal Reserve building on a grey day, a few small figures on its wide steps
+BOARD=PATIENCE | $14

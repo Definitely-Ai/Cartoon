@@ -1,0 +1,224 @@
+{
+  "batch": "20260901-204319-ten-cartoons-at-the-bar-for",
+  "brief": "Ten cartoons at the bar for Rick. Money in kitchen words, a different bill every time, Abby in four.",
+  "writer": "claude (writers' room workflow)",
+  "model": "local/qwen-image-edit-2511",
+  "quality": "fast (lightning 8-step)",
+  "createdAt": "2026-09-01T20:43:19.851Z",
+  "panels": [
+    {
+      "speaker": "barclay",
+      "caption": "My kids don't want the house, Drew, they want the three-percent mortgage.",
+      "action": "Barclay raises his old fashioned an inch off the marble, the cherry rolling against the cube. Drew's martini rests on its coaster, his feathered hands folded in front of it, his head turned to Barclay.",
+      "tv": "FEW HOMES FOR SALE AS OWNERS STAY PUT",
+      "tvPicture": "a moving truck parked at a curb with its ramp up and its rear doors shut, no lettering on the truck",
+      "board": "",
+      "characters": [
+        "drew",
+        "barclay"
+      ],
+      "away": "",
+      "signs": [],
+      "turn": "theft — the loan filed as the family heirloom",
+      "scene": "Barclay raises his old fashioned an inch off the marble, the cherry rolling against the cube. Drew's martini rests on its coaster, his feathered hands folded in front of it, his head turned to Barclay. IN THIS PANEL, CAMERA behind the two gentlemen on the CUSTOMER SIDE — their bodies block the counter's near edge — and NOBODY on the FAR service side: the back bar stands across the counter, behind no one. The television picture shows a moving truck parked at a curb with its ramp up and its rear doors shut, no lettering on the truck. Stage it exactly as THE SIDES describes.",
+      "slug": "my-kids-don-t-want-the",
+      "setting": "",
+      "lane": "The Category Theft",
+      "n": 1,
+      "file": "01-my-kids-don-t-want-the.png"
+    },
+    {
+      "speaker": "drew",
+      "caption": "Inflation is almost back to normal, and nobody has told my dry cleaner.",
+      "action": "Drew lifts his martini by the stem and the coaster comes up with it, stuck to the foot of the glass. Barclay holds his old fashioned in both hands and watches the coaster.",
+      "tv": "INFLATION COOLS AGAIN",
+      "tvPicture": "a long row of nested shopping carts in an empty parking lot",
+      "board": "PRICES ON THIS BOARD: 12 · PRICES THAT CAME DOWN: 0",
+      "characters": [
+        "drew",
+        "barclay"
+      ],
+      "away": "",
+      "signs": [],
+      "turn": "collision — inflation down, prices stuck (the coaster acts it out)",
+      "scene": "Drew lifts his martini by the stem and the coaster comes up with it, stuck to the foot of the glass. Barclay holds his old fashioned in both hands and watches the coaster. IN THIS PANEL, CAMERA behind the two gentlemen on the CUSTOMER SIDE — their bodies block the counter's near edge — and NOBODY on the FAR service side: the back bar stands across the counter, behind no one. The television picture shows a long row of nested shopping carts in an empty parking lot. Stage it exactly as THE SIDES describes. DREW IS THE ONE SPEAKING IN THIS PANEL: his bill is SLIGHTLY PARTED, caught mid-word.",
+      "slug": "inflation-is-almost-back-to-normal",
+      "setting": "",
+      "lane": "The Literalist",
+      "n": 2,
+      "file": "02-inflation-is-almost-back-to-normal.png"
+    },
+    {
+      "speaker": "barclay",
+      "caption": "I've never paid full price for anything. I just pay the renewal.",
+      "action": "Barclay holds his old fashioned in both hands, shoulders settled and content. Drew's hand lies flat on the marble beside his untouched martini, his head turned to Barclay.",
+      "tv": "PROMOTIONAL RATES END FOR MILLIONS OF CUSTOMERS",
+      "tvPicture": "a curbside mailbox stuffed so full of plain envelopes that its door hangs open",
+      "board": "OLD FASHIONED, FIRST YEAR $9 · YEAR FOUR $16",
+      "characters": [
+        "drew",
+        "barclay"
+      ],
+      "away": "",
+      "signs": [],
+      "turn": "contradiction — never full price, always the renewal",
+      "scene": "Barclay holds his old fashioned in both hands, shoulders settled and content. Drew's hand lies flat on the marble beside his untouched martini, his head turned to Barclay. IN THIS PANEL, CAMERA behind the two gentlemen on the CUSTOMER SIDE — their bodies block the counter's near edge — and NOBODY on the FAR service side: the back bar stands across the counter, behind no one. The television picture shows a curbside mailbox stuffed so full of plain envelopes that its door hangs open. Stage it exactly as THE SIDES describes.",
+      "slug": "i-ve-never-paid-full-price",
+      "setting": "",
+      "lane": "The Unnoticed Contradiction",
+      "n": 3,
+      "file": "03-i-ve-never-paid-full-price.png"
+    },
+    {
+      "speaker": "drew",
+      "caption": "It's good to see my grocery bill taking an interest in foreign policy.",
+      "action": "Drew lifts his martini an inch in a small toast toward the television. Barclay turns the nut bowl a quarter turn and studies it.",
+      "tv": "NEW TARIFFS REACH GROCERY SHELVES",
+      "tvPicture": "a supermarket aisle of shelves stocked with plain unlabelled cans and boxes, nobody in the aisle",
+      "board": "",
+      "characters": [
+        "drew",
+        "barclay"
+      ],
+      "away": "",
+      "signs": [],
+      "turn": "misfile — a tariff on his groceries filed as civic engagement",
+      "scene": "Drew lifts his martini an inch in a small toast toward the television. Barclay turns the nut bowl a quarter turn and studies it. IN THIS PANEL, CAMERA behind the two gentlemen on the CUSTOMER SIDE — their bodies block the counter's near edge — and NOBODY on the FAR service side: the back bar stands across the counter, behind no one. The television picture shows a supermarket aisle of shelves stocked with plain unlabelled cans and boxes, nobody in the aisle. Stage it exactly as THE SIDES describes. DREW IS THE ONE SPEAKING IN THIS PANEL: his bill is SLIGHTLY PARTED, caught mid-word.",
+      "slug": "it-s-good-to-see-my",
+      "setting": "",
+      "lane": "The Emotional Misfile",
+      "n": 4,
+      "file": "04-it-s-good-to-see-my.png"
+    },
+    {
+      "speaker": "abby",
+      "caption": "No resort fee on your tab. I'd have to buy better nuts.",
+      "action": "Abby tops up the nut bowl from a large glass jar, smiling. Barclay already has a hand in the bowl; Drew has his martini lifted an inch off its coaster.",
+      "tv": "HOTEL RESORT FEES FACE NEW RULES",
+      "tvPicture": "an empty hotel swimming pool ringed with lounge chairs, nobody in them",
+      "board": "",
+      "characters": [
+        "drew",
+        "barclay",
+        "abby"
+      ],
+      "away": "",
+      "signs": [],
+      "turn": "contradiction — she rules out the fee and demotes her own amenity",
+      "scene": "Abby tops up the nut bowl from a large glass jar, smiling. Barclay already has a hand in the bowl; Drew has his martini lifted an inch off its coaster. IN THIS PANEL, CAMERA behind the two gentlemen on the CUSTOMER SIDE — their bodies block the counter's near edge — with ABBY working the FAR service side across the counter, the back bar behind HER alone. The television picture shows an empty hotel swimming pool ringed with lounge chairs, nobody in them. Stage it exactly as THE SIDES describes. Abby's face reads WARM — amused or at ease, NEVER sad or downcast; when she serves, delivers or lands the line she is genuinely SMILING.",
+      "slug": "no-resort-fee-on-your-tab",
+      "setting": "",
+      "lane": "The House Ruling",
+      "n": 5,
+      "file": "05-no-resort-fee-on-your-tab.png"
+    },
+    {
+      "speaker": "drew",
+      "caption": "Artificial intelligence is just electricity with a business plan.",
+      "action": "Abby lowers one large ice cube into Barclay's rocks glass with a pair of tongs, smiling, while Barclay steadies the glass with one hand. Drew holds his martini by the stem and watches the television.",
+      "tv": "DATA CENTERS PUSH POWER DEMAND HIGHER",
+      "tvPicture": "a row of high-voltage transmission towers marching toward one long windowless building",
+      "board": "",
+      "characters": [
+        "drew",
+        "barclay",
+        "abby"
+      ],
+      "away": "",
+      "signs": [],
+      "turn": "definition — the boom demoted to its utility bill",
+      "scene": "Abby lowers one large ice cube into Barclay's rocks glass with a pair of tongs, smiling, while Barclay steadies the glass with one hand. Drew holds his martini by the stem and watches the television. IN THIS PANEL, CAMERA behind the two gentlemen on the CUSTOMER SIDE — their bodies block the counter's near edge — with ABBY working the FAR service side across the counter, the back bar behind HER alone. The television picture shows a row of high-voltage transmission towers marching toward one long windowless building. Stage it exactly as THE SIDES describes. DREW IS THE ONE SPEAKING IN THIS PANEL: his bill is SLIGHTLY PARTED, caught mid-word. Abby's face reads WARM — amused or at ease, NEVER sad or downcast; when she serves, delivers or lands the line she is genuinely SMILING.",
+      "slug": "artificial-intelligence-is-just-electricity-with",
+      "setting": "",
+      "lane": "The Deflationary Definition",
+      "n": 6,
+      "file": "06-artificial-intelligence-is-just-electricity-with.png"
+    },
+    {
+      "speaker": "barclay",
+      "caption": "Rates came down at the Fed, Drew, and stayed right where they were on my credit card.",
+      "action": "Barclay slides a credit card back into his wallet, held up in front of his chest. Drew rests one feathered hand flat on the marble beside the nut bowl, his martini untouched, his head turned to Barclay.",
+      "tv": "CREDIT CARD RATES NEAR RECORD HIGH",
+      "tvPicture": "the marble front of the Federal Reserve building with its tall bronze doors shut, the facade blank of any carved lettering",
+      "board": "",
+      "characters": [
+        "drew",
+        "barclay"
+      ],
+      "away": "",
+      "signs": [],
+      "turn": "status report — down at the Fed, unchanged at the register",
+      "scene": "Barclay slides a credit card back into his wallet, held up in front of his chest. Drew rests one feathered hand flat on the marble beside the nut bowl, his martini untouched, his head turned to Barclay. IN THIS PANEL, CAMERA behind the two gentlemen on the CUSTOMER SIDE — their bodies block the counter's near edge — and NOBODY on the FAR service side: the back bar stands across the counter, behind no one. The television picture shows the marble front of the Federal Reserve building with its tall bronze doors shut, the facade blank of any carved lettering. Stage it exactly as THE SIDES describes.",
+      "slug": "rates-came-down-at-the-fed",
+      "setting": "",
+      "lane": "The Status Report",
+      "n": 7,
+      "file": "07-rates-came-down-at-the-fed.png"
+    },
+    {
+      "speaker": "drew",
+      "caption": "We all complain about the insurance premium and then buy the place on the water.",
+      "action": "Drew lays his free hand flat on his own sweater vest, martini in the other hand, guilty as charged. Barclay rubs the back of his own neck with one hand.",
+      "tv": "HOME INSURANCE PREMIUMS UP AGAIN",
+      "tvPicture": "a beach house on tall stilts with surf breaking under it",
+      "board": "",
+      "characters": [
+        "drew",
+        "barclay"
+      ],
+      "away": "",
+      "signs": [],
+      "turn": "contradiction — the complaint and the cause are the same people, the speaker first",
+      "scene": "Drew lays his free hand flat on his own sweater vest, martini in the other hand, guilty as charged. Barclay rubs the back of his own neck with one hand. IN THIS PANEL, CAMERA behind the two gentlemen on the CUSTOMER SIDE — their bodies block the counter's near edge — and NOBODY on the FAR service side: the back bar stands across the counter, behind no one. The television picture shows a beach house on tall stilts with surf breaking under it. Stage it exactly as THE SIDES describes. DREW IS THE ONE SPEAKING IN THIS PANEL: his bill is SLIGHTLY PARTED, caught mid-word.",
+      "slug": "we-all-complain-about-the-insurance",
+      "setting": "",
+      "lane": "The Practice Swing",
+      "n": 8,
+      "file": "08-we-all-complain-about-the-insurance.png"
+    },
+    {
+      "speaker": "abby",
+      "caption": "The old fashioned is fourteen here and thirty-one delivered.",
+      "action": "Abby sets a fresh old fashioned down in front of Barclay and keeps her hand on the glass, smiling. Barclay looks at the glass; Drew lifts his martini by the stem.",
+      "tv": "DELIVERY APP FEES UNDER SCRUTINY",
+      "tvPicture": "an insulated delivery bag standing open on a doorstep, empty",
+      "board": "DELIVERY RADIUS: THIS ROOM",
+      "characters": [
+        "drew",
+        "barclay",
+        "abby"
+      ],
+      "away": "",
+      "signs": [],
+      "turn": "theft — the delivery fee priced from the bar's side of the door",
+      "scene": "Abby sets a fresh old fashioned down in front of Barclay and keeps her hand on the glass, smiling. Barclay looks at the glass; Drew lifts his martini by the stem. IN THIS PANEL, CAMERA behind the two gentlemen on the CUSTOMER SIDE — their bodies block the counter's near edge — with ABBY working the FAR service side across the counter, the back bar behind HER alone. The television picture shows an insulated delivery bag standing open on a doorstep, empty. Stage it exactly as THE SIDES describes. Abby's face reads WARM — amused or at ease, NEVER sad or downcast; when she serves, delivers or lands the line she is genuinely SMILING.",
+      "slug": "the-old-fashioned-is-fourteen-here",
+      "setting": "",
+      "lane": "The Sell",
+      "n": 9,
+      "file": "09-the-old-fashioned-is-fourteen-here.png"
+    },
+    {
+      "speaker": "barclay",
+      "caption": "I don't mind tipping twenty percent on a coffee. I'd just like the coffee first.",
+      "action": "Abby slides Barclay's old fashioned the last inch toward him, smiling, her hand still on the glass. Barclay has both hands folded on the marble, waiting; Drew lifts his martini by the stem.",
+      "tv": "TIP SCREENS SPREAD TO SELF-CHECKOUT",
+      "tvPicture": "an empty paper coffee cup on a counter beside a tablet on a stand, its screen dark and turned toward an empty stool, nobody behind the counter",
+      "board": "",
+      "characters": [
+        "drew",
+        "barclay",
+        "abby"
+      ],
+      "away": "",
+      "signs": [],
+      "turn": "concession — the tip granted, the coffee requested",
+      "scene": "Abby slides Barclay's old fashioned the last inch toward him, smiling, her hand still on the glass. Barclay has both hands folded on the marble, waiting; Drew lifts his martini by the stem. IN THIS PANEL, CAMERA behind the two gentlemen on the CUSTOMER SIDE — their bodies block the counter's near edge — with ABBY working the FAR service side across the counter, the back bar behind HER alone. The television picture shows an empty paper coffee cup on a counter beside a tablet on a stand, its screen dark and turned toward an empty stool, nobody behind the counter. Stage it exactly as THE SIDES describes. Abby's face reads WARM — amused or at ease, NEVER sad or downcast; when she serves, delivers or lands the line she is genuinely SMILING.",
+      "slug": "i-don-t-mind-tipping-twenty",
+      "setting": "",
+      "lane": "The Cheerful Concession",
+      "n": 10,
+      "file": "10-i-don-t-mind-tipping-twenty.png"
+    }
+  ]
+}

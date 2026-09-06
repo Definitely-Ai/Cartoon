@@ -4,9 +4,9 @@
   "type": "module",
   "description": "Static site for the cartoon company. The repo's filesystem is the CMS: /cartoons and /canon are read at build time.",
   "scripts": {
-    "predev": "node scripts/validate-character-canon.mjs && node scripts/prebuild.mjs",
+    "predev": "node scripts/validate-character-canon.mjs && node scripts/prebuild.mjs && node scripts/build-studio-library.mjs && node scripts/build-studio-reports.mjs",
     "dev": "next dev",
-    "prebuild": "node scripts/validate-character-canon.mjs && node scripts/prebuild.mjs",
+    "prebuild": "node scripts/validate-character-canon.mjs && node scripts/prebuild.mjs && node scripts/build-studio-library.mjs && node scripts/build-studio-reports.mjs",
     "build": "next build",
     "start": "next start",
     "typecheck": "tsc --noEmit",
@@ -17,10 +17,14 @@
     "training:variants": "node scripts/training/make-setting-variants.mjs",
     "training:build": "node scripts/training/build-training-set.mjs",
     "check:prompt": "node scripts/check-prompt-assembly.mjs",
-    "training:refs": "node scripts/training/make-variant-refs.mjs"
+    "training:refs": "node scripts/training/make-variant-refs.mjs",
+    "library:refresh": "node scripts/build-studio-library.mjs",
+    "reports:refresh": "node scripts/build-studio-reports.mjs",
+    "test:studio": "node scripts/test-studio-library.mjs && node --experimental-strip-types --test scripts/test-studio-reports.mjs tests/studio-part-approval.test.mjs && node --test scripts/test-studio-reports-live.mjs scripts/test-studio-library-snapshot.mjs scripts/test-studio-library-cast.mjs scripts/test-prepare-studio-preview.mjs scripts/test-studio-notes.mjs"
   },
   "dependencies": {
     "next": "15.5.23",
+    "opentype.js": "^2.0.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "sharp": "^0.34.1"

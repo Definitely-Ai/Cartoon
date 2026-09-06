@@ -1,0 +1,7 @@
+stills: local/sensenova-u1.5
+PLATE=duo/barclay
+STILL=canon/plates/work/stills/a-large-stock-market-line-chart-plunging-steeply.png
+CAPTION barclay: "I don't panic. I just re-read the menu very slowly."
+TV=S&P 500 FALLS 3%
+TV_PICTURE=a large stock-market line chart plunging steeply from upper left to lower right over a faint grid, a financial-district skyline faint behind it
+BOARD=HOUSE SPECIAL | LOWER FLOOR | $18

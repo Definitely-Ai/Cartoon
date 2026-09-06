@@ -6,6 +6,15 @@ const nextConfig: NextConfig = {
   // delay) for images that are already the size we drew them. Every
   // <Image> gets explicit width/height, so layout never shifts.
   images: { unoptimized: true },
+  async headers() {
+    return [{
+      source: "/studio-library/:path*",
+      headers: [{ key: "Cache-Control", value: "private, no-store" }, { key: "X-Robots-Tag", value: "noindex, nofollow" }],
+    }, {
+      source: "/studio-print/:path*",
+      headers: [{ key: "Cache-Control", value: "private, no-store" }],
+    }];
+  },
 
   // The old /backroom addresses keep working — the studio simply moved to
   // the front of the house when the whole site went private.

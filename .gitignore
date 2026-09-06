@@ -30,3 +30,22 @@ scripts/training/training-set-v2/
 scripts/training/.detect/
 public/showcase/
 public/vision/
+
+.vercel/
+.vercel
+
+# Imported working artwork is deployed in a private snapshot package. This
+# repository is public; do not accidentally publish the complete review archive.
+public/studio-library/
+
+# Room kit v2: regenerable bulk (draw-room-lines.py + room-part.py rebuild it); the approved parts, plate, prompts and manifest stay tracked
+canon/room-kit/v2/history/
+canon/room-kit/v2/work/
+canon/room-kit/v2/stickers/
+canon/room-kit/v2/tall/
+canon/room-kit/v2/values/
+canon/room-kit/v2/masks/
+canon/room-kit/v2/shadows/
+canon/plates/work/
+tmp/
+reports/*/SHOW-images/

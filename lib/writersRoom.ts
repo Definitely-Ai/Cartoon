@@ -17,7 +17,7 @@
 // So: the writer fills the creative slots, the house supplies the stage.
 
 import { PublishError, readRepoFile } from "@/lib/githubPublish";
-import { generateText } from "@/lib/replicate";
+import { generateText } from "@/lib/openrouter";
 
 export const WRITER_MODEL = process.env.WRITER_MODEL || "openai/gpt-5";
 

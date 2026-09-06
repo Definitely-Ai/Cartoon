@@ -1,0 +1,39 @@
+/* Existing review/record pages remain functional inside the ivory workspace. */
+.workspace-shell .br-main.br-wire,
+.workspace-shell .br-main:has(>.br-table-head) { max-width: 1040px; padding: 46px 32px 60px; }
+.workspace-shell .br-table-head { text-align: left; margin-bottom: 28px; }
+.workspace-shell .br-date { font-family: var(--br-serif); font-size: clamp(30px, 4vw, 46px); line-height: 1.15; font-weight: 400; letter-spacing: -.6px; text-transform: none; color: var(--desk-ink); }
+.workspace-shell .br-status { font-family: Arial, sans-serif; font-size: 15px; line-height: 1.8; font-style: normal; color: var(--desk-muted); margin-top: 14px; }
+.workspace-shell .br-status a,
+.workspace-shell .br-more-days a,
+.workspace-shell .br-wire a { color: var(--desk-accent); text-underline-offset: 4px; }
+.workspace-shell .br-hint { font-family: Arial, sans-serif; line-height: 1.65; color: #6b6153; overflow-wrap: anywhere; }
+.workspace-shell .legacy-empty { padding: 26px 30px; background: var(--desk-card); border: 1px solid var(--desk-line); max-width: 850px; }
+.workspace-shell .legacy-empty .br-status { margin-top: 0; }
+.workspace-shell .legacy-connection { margin-top: 14px; font: 12px/1.7 Arial, sans-serif; color: #756a58; }
+.workspace-shell .legacy-connection summary { cursor: pointer; text-underline-offset: 3px; }
+.workspace-shell .br-wire-section { margin: 30px 0; padding-top: 24px; border-top: 1px solid var(--desk-line); max-width: 810px; }
+.workspace-shell .br-wire-section > p,
+.workspace-shell .br-wire-section .br-steps { font: 14px/1.85 Arial, sans-serif; color: #55594f; }
+.workspace-shell .br-wire-head { font: 400 27px/1.3 var(--br-serif); color: var(--desk-ink); text-transform: none; letter-spacing: -.3px; border: 0; margin-bottom: 14px; }
+.workspace-shell .br-wire-section .br-address code,
+.workspace-shell .br-wire-section .br-instructions { background: var(--desk-card); border: 1px solid var(--desk-line); color: #3e4539; padding: 18px; }
+.workspace-shell .br-copy-btn { background: var(--desk-ink); color: #fffdf8; border: 1px solid var(--desk-ink); font: 600 12px/1.5 Arial, sans-serif; letter-spacing: 0; text-transform: none; }
+.workspace-shell .br-copy-btn:hover { background: var(--desk-accent); border-color: var(--desk-accent); }
+.workspace-shell .br-wire-section .br-warn { padding: 12px 0; color: #785443; font-size: 12px; }
+.workspace-shell .br-wire code { border-color: var(--desk-line); overflow-wrap: anywhere; }
+.workspace-shell .br-wire-note { color: #64665c; }
+.workspace-shell .br-month-head { font-family: var(--br-serif); color: var(--desk-ink); text-transform: none; letter-spacing: 0; border-color: var(--desk-line); }
+.workspace-shell .br-ledger-link { border-color: var(--desk-line); background: var(--desk-card); color: var(--desk-ink); padding: 22px; }
+.workspace-shell .br-ledger-link:hover { border-color: var(--desk-accent); }
+.workspace-shell .br-ledger-date { font: 600 15px/1.5 Arial, sans-serif; text-transform: none; letter-spacing: 0; }
+.workspace-shell .br-chip { font: 12px/1.7 Arial, sans-serif; color: #6b6153; }
+.workspace-shell .br-proof-no { color: #64665c; }
+.workspace-shell .paper-sheet { border-color: var(--desk-line); box-shadow: none; }
+.workspace-shell .paper-sheet a.paper-btn { background: #221d16; color: #fdfbf6; }
+.workspace-shell .paper-sheet a.paper-btn:hover { background: #453a2d; color: #fff; }
+@media (max-width: 620px) {
+  .workspace-shell .br-main.br-wire,
+  .workspace-shell .br-main:has(>.br-table-head) { padding: 32px 22px 45px; }
+  .workspace-shell .legacy-empty { padding: 22px; }
+}

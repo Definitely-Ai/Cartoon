@@ -20,6 +20,16 @@ import { fileURLToPath } from "node:url";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const repoRoot = path.resolve(here, "..");
+// A reviewed release package already contains its generated serving assets.
+// Rebuilding from its deliberately smaller source set would erase the archive
+// and replace the curated gallery. Validate and retain that exact snapshot.
+if (process.env.STUDIO_ASSET_MODE === "snapshot") {
+  for (const relative of ["lib/gallery-manifest.json", "lib/studio-library-manifest.json", "lib/studio-reports-snapshot.json", "public/models/index.json", "public/studio-print/newspaper-editorial-proof.pdf"]) {
+    if (!fs.existsSync(path.join(repoRoot, relative))) throw new Error(`Snapshot package is missing ${relative}`);
+  }
+  console.log("prebuild: retaining the reviewed serving assets; library hook validates the complete image inventory.");
+  process.exit(0);
+}
 const cartoonsSrc = path.join(repoRoot, "cartoons");
 const canonSrc = path.join(repoRoot, "canon", "characters");
 const cartoonsDest = path.resolve(here, "..", "public", "cartoons");

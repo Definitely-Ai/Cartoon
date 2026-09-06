@@ -1,23 +1,29 @@
 import sharp from "sharp";
 import { PublishError, readRepoFile } from "./githubPublish";
-import { generateImage, uploadFile } from "./replicate";
+import { assertLocalImageModel, generateImageAuraVision as generateImage, uploadFileAuraVision as uploadFile } from "./auravision";
 
 // The art department. ChatGPT (or any connected chat AI) never touches
 // image bytes — it sends text through make_cartoons, and this module
-// turns that text into a drawn panel: compose the canon prompt, build a
-// reference board from the founder's Harrington plates, and call a hosted
-// FLUX model (Replicate). Only the server ever holds pixels, which is the
-// whole reason the phone flow works.
+// turns that text into a drawn panel: compose the canon prompt, attach the
+// cast's portrait studies and the empty set plate, and hand it to AuraVision
+// (lib/auravision.ts), the studio's own image server. Only the server ever
+// holds pixels, which is the whole reason the phone flow works.
 
+// THE HOUSE MODEL IS FREE AND LOCAL (2026-09-01). Qwen-Image-Edit-2511 —
+// open weights, Apache-2.0 — runs on the studio's RTX 4090 through ComfyUI
+// behind AuraVision. It takes up to three reference pictures and a text
+// instruction and keeps the people in the pictures looking like themselves,
+// which is exactly the strip's problem. Only local/ model IDs can generate
+// images. Legacy prompt formats below remain readable for old work, but no
+// hosted provider or environment override can execute an image request.
+const DEFAULT_MODEL = "local/qwen-image-edit-2511";
 
-// FLUX.1 Kontext takes one conditioning image + an instruction prompt —
-// the strongest hosted option for "match these exact characters" before any
-// fine-tune exists. Once one does, IMAGE_MODEL points at it instead.
-// The house model. gpt-image-2 is the first one that letters a chalkboard
-// correctly, keeps the cast on the right side of the bar, and draws a
-// television picture that illustrates its own headline. IMAGE_QUALITY
-// dials the cost: "low" (~$0.012 an image) is what the batch is drawn at.
-const DEFAULT_MODEL = "openai/gpt-image-2";
+/** True for the studio's local/ model path. It gets its own prompt (the LOCAL fence) and its own
+ *  reference set, because a model that reads pictures well and prose less
+ *  well wants a shorter brief and better pictures. */
+export function isLocalModel(model: string = imageModel()): boolean {
+  return model.startsWith("local/");
+}
 
 // The trigger words baked into the fine-tune by scripts/training. They are the
 // whole point of it: the model knows who these three are, so the prompt can
@@ -208,15 +214,33 @@ async function cropAtTheCounter(bytes: Buffer): Promise<Buffer> {
 }
 
 /** FLUX.2 takes references as a real array and lets the prompt address each
- *  one by index, so the cast no longer has to share one collaged board. */
+ *  one by index, so the cast no longer has to share one collaged board. The
+ *  local model reads its references the same way (Picture 1, Picture 2 …). */
 export function isMultiRef(model: string): boolean {
   return (
     model.includes("flux-2") ||
     model.includes("nano-banana") ||
     model.includes("seedream") ||
-    model.includes("gpt-image")
+    model.includes("gpt-image") ||
+    isLocalModel(model)
   );
 }
+
+// What the local model must NOT draw, said in the negative channel it has
+// and the hosted models do not. Every item is a fault the founder has caught
+// in a real panel; the positive prompt says the rule, this says the failure.
+//
+// KEEP IT TO FAULTS THAT ARE NOT ALSO THINGS IN THE ROOM. The first draft of
+// this list said "bottles behind the gentlemen", "a second counter", "frame",
+// "stools", "floor" — and at cfg 4 the model, told to steer away from
+// bottles, counters and frames, drew a blank grey wall behind the cast: no
+// back bar, no window, no panelling. The Lightning run at cfg 1 (where the
+// negative is never read) kept the room, which is how the list was caught.
+const LOCAL_NEGATIVE =
+  "color, colour, photograph, photorealistic, 3D render, oil painting, watercolor, soft airbrush shading, " +
+  "blurry, low detail, flat cel shading, extra people, humans, a second bartender, duplicate character, " +
+  "merged characters, deformed hands, extra fingers, claws, nails, tail, garbled text, misspelled words, " +
+  "gibberish lettering, speech bubble, caption text, watermark, signature, legs, feet";
 
 /** Each vendor names the reference array differently, and Black Forest Labs
  *  alone insists on a safety dial. One place to keep the differences. */
@@ -224,13 +248,32 @@ function multiRefInput(
   model: string,
   prompt: string,
   images: string[],
-  quality?: string
+  quality?: string,
+  extra: Record<string, unknown> = {}
 ): Record<string, unknown> {
+  if (isLocalModel(model)) {
+    // ComfyUI on the studio's GPU. Full quality is 40 steps at cfg 4; IMAGE_FAST=1
+    // (or extra.fast) switches in the Lightning LoRA — 8 steps, cfg 1 — for
+    // roughing out a batch at a fifth of the time. Seeds are honoured, so a
+    // good roll can be re-drawn with one change.
+    // 4:5, the house shape, drawn directly. At 2:3 cropAtTheCounter cut a sixth
+    // off the bottom of every local panel — and this model puts the drinks and
+    // the hands in exactly that sixth.
+    return {
+      prompt,
+      input_images: images,
+      aspect_ratio: process.env.IMAGE_ASPECT_LOCAL || "4:5",
+      negative_prompt: LOCAL_NEGATIVE,
+      output_format: "png",
+      fast: process.env.IMAGE_FAST === "1",
+      ...extra,
+    };
+  }
   if (model.includes("flux-2")) {
-    return { prompt, input_images: images, aspect_ratio: "4:5", output_format: "png", safety_tolerance: 2 };
+    return { prompt, input_images: images, aspect_ratio: "4:5", output_format: "png", safety_tolerance: 2, ...extra };
   }
   if (model.includes("seedream")) {
-    return { prompt, image_input: images, aspect_ratio: "4:5", size: "2K" };
+    return { prompt, image_input: images, aspect_ratio: "4:5", size: "2K", ...extra };
   }
   if (model.includes("gpt-image")) {
     // OpenAI prices this one by variant — low is ~$0.012 an image against
@@ -262,10 +305,76 @@ function multiRefInput(
       aspect_ratio: process.env.IMAGE_ASPECT || "2:3",
       output_format: "png",
       number_of_images: 1,
+      ...extra,
     };
   }
   // google/nano-banana
-  return { prompt, image_input: images, aspect_ratio: "4:5", output_format: "png" };
+  return { prompt, image_input: images, aspect_ratio: "4:5", output_format: "png", ...extra };
+}
+
+// ------------------------------------------------ the local reference set
+//
+// The local model takes THREE pictures, and it copies composition from them
+// far more literally than the hosted models do. That changes what to send:
+//
+//   Picture 1 — the DUO study (canon/vision/studies/duo.png): Drew and Barclay
+//               already seated at the near side of the marble, drinks on the
+//               slab, faces in three-quarter. It carries identity AND the
+//               staging the founder failed nine of twenty-five panels on, in
+//               one picture the model wants to keep.
+//   Picture 2 — Abby's study, only when she is cast.
+//   Picture 3 — the empty set plate, CROPPED AT THE COUNTER: the plate's own
+//               foreground (three club chairs, the floor) is exactly what the
+//               house never draws, and a model that copies composition would
+//               copy that too. Cut at the marble's near edge, the plate IS the
+//               house crop.
+//
+// The set plate is 1024×1536; the marble's near edge sits at about y=1060.
+const SET_PLATE_COUNTER_CROP: [number, number, number, number] = [0, 0, 1024, 1064];
+
+const LOCAL_REFS = {
+  trio: {
+    path: "canon/vision/studies/master-trio.png",
+    label:
+      "a finished panel of this strip with all three characters: Drew the white flamingo gentleman on the LEFT and Barclay the golden retriever gentleman on the RIGHT, seated at the marble counter of The Swinging Door, and Abby the West Highland White Terrier proprietor standing BEHIND the counter on the far service side — copy THIS exact camera, this seating, and these three characters identically — same faces, same builds, same wardrobe — and change only what the scene says they are doing and holding",
+  },
+  duo: {
+    path: "canon/vision/studies/master-duo.png",
+    label:
+      "a finished panel of this strip: Drew the white flamingo gentleman on the LEFT and Barclay the golden retriever gentleman on the RIGHT, seated at the marble counter of The Swinging Door and seen from the customer side just behind and above them — their backs toward the viewer, each face turned in three-quarter over his own shoulder, the marble beyond them at mid-chest with their drinks on it, the back bar across the counter. KEEP this exact camera, this seating and these two characters — same faces, same builds, same wardrobe — and change only what the scene says they are doing and holding. Its television is DARK and its chalkboard BLANK only because it is a reference: in the cartoon the television and the chalkboard show exactly what THE TELEVISION and THE CHALKBOARD paragraphs below say, and the bottles are filled to different levels with the six named labels",
+  },
+  abby: {
+    path: "canon/vision/studies/abby.png",
+    label:
+      "Abby, the West Highland terrier who owns the bar — copy THIS face exactly: the round soft fluffy head, the big black nose close under the eyes, the glamorous lidded human-style eyes, the studded collar with its gem, the open blouse and smooth throat; give her a warm smile",
+  },
+  set: {
+    path: "canon/vision/staging-plate.jpg",
+    box: SET_PLATE_COUNTER_CROP,
+    label:
+      "the EMPTY Swinging Door set before the cast walks in, attached for its geometry: THIS marble counter, THIS back bar with its high shelves and six lettered bottles, THIS television, THIS chalkboard, THIS window and panelling are the room — copy them exactly, with the gentlemen seated at the NEAR side of this counter and the back bar across it on the far side. Its screen and chalkboard are blank on purpose and are lettered only as the scene says",
+  },
+} as const;
+
+/** The three pictures the local model gets, in Picture 1..N order. */
+export function localReferenceList(
+  characters: string[],
+  barScene: boolean
+): { label: string; path: string; box?: [number, number, number, number] }[] {
+  const cast = characters.map((c) => c.toLowerCase());
+  const list: { label: string; path: string; box?: [number, number, number, number] }[] = [];
+  const gentlemen = cast.some((c) => ["drew", "barclay", "mango"].includes(c));
+  const hasAbby = cast.includes("abby");
+  if (gentlemen && hasAbby) {
+    list.push({ ...LOCAL_REFS.trio });
+    list.push({ ...LOCAL_REFS.abby });
+  } else if (gentlemen) {
+    list.push({ ...LOCAL_REFS.duo });
+  } else if (hasAbby) {
+    list.push({ ...LOCAL_REFS.abby });
+  }
+  if (barScene) list.push({ ...LOCAL_REFS.set });
+  return list.slice(0, 3);
 }
 
 /** The ordered reference list for the multi-reference path: one entry per
@@ -273,8 +382,10 @@ function multiRefInput(
  *  refers to, so the two must be built from the same list. */
 export function referenceList(
   characters: string[],
-  barScene: boolean
+  barScene: boolean,
+  model: string = imageModel()
 ): { label: string; path: string; box?: [number, number, number, number] }[] {
+  if (isLocalModel(model)) return localReferenceList(characters, barScene);
   // THE MODEL TAKES SIX IMAGES. Adding a third tile to Drew and a second to
   // Barclay quietly pushed every three-hander to seven, and the whole cast of
   // twelve Abby panels failed while all six two-handers went through — a
@@ -343,10 +454,11 @@ export function referenceList(
 async function uploadReferences(
   characters: string[],
   barScene: boolean,
-  explicit?: { path: string; box?: [number, number, number, number] }[]
+  explicit?: { path: string; box?: [number, number, number, number] }[],
+  model: string = imageModel()
 ): Promise<string[]> {
   const urls: string[] = [];
-  for (const [i, ref] of (explicit ?? referenceList(characters, barScene)).entries()) {
+  for (const [i, ref] of (explicit ?? referenceList(characters, barScene, model)).entries()) {
     const file = await readRepoFile(ref.path);
     if (!file) continue;
     let img = sharp(file.bytes);
@@ -391,26 +503,47 @@ export async function generateCartoonArt(input: {
    *  better picture is to stop showing it. Never use this for a filed
    *  cartoon: without the plates the cast drifts immediately. */
   noReferences?: boolean;
+  /** Local model only: a fixed seed, so a good roll can be re-drawn with one
+   *  change; the Lightning fast mode; and a short tag folded into the saved
+   *  filename on the image server. */
+  seed?: number;
+  fast?: boolean;
+  tag?: string;
+  /** Local model only: sampler dials passed straight through to AuraVision
+   *  (steps, guidance, shift, negative_refs, sampler, scheduler, lora …). */
+  sampling?: Record<string, unknown>;
 }): Promise<Buffer> {
   const model = input.model ?? imageModel();
+  assertLocalImageModel(model);
   const multiRef = isMultiRef(model);
   const fineTuned = !model.includes("kontext") && !multiRef;
 
-  // FLUX.2: each reference is its own input image, addressed by index in the
-  // prompt. No collage, so no tile out-argues another — and safety_tolerance
-  // is a real dial rather than an opaque refusal.
+  // FLUX.2 and the local model: each reference is its own input image,
+  // addressed by index in the prompt. No collage, so no tile out-argues
+  // another.
   if (multiRef) {
-    const art = await generateImage(
+    const extra: Record<string, unknown> = { ...(input.sampling ?? {}) };
+    if (input.seed !== undefined) extra.seed = input.seed;
+    if (input.fast !== undefined) extra.fast = input.fast;
+    if (input.tag) extra.tag = input.tag;
+    let art = await generateImage(
       model,
       multiRefInput(
         model,
         input.prompt,
         input.noReferences
           ? []
-          : await uploadReferences(input.characters, input.barScene ?? false, input.references),
-        input.quality
+          : await uploadReferences(input.characters, input.barScene ?? false, input.references, model),
+        input.quality,
+        extra
       )
     );
+    // The local model draws the engraving with a faint colour cast — a warm
+    // or green wash over lines that carry no hue of their own. That is not a
+    // colour illustration to be rejected (the house rule against desaturating
+    // colour art still stands for hosted output); it is monochrome ink with a
+    // tint, and the tint goes.
+    if (isLocalModel(model)) art = await sharp(art).grayscale().png().toBuffer();
     return input.barScene ? cropAtTheCounter(art) : art;
   }
 
@@ -488,7 +621,123 @@ function fencesOf(masterPrompt: string) {
   if (fences.length < 1) {
     throw new PublishError(500, "The master prompt has no BASE fence — canon/MASTER-PROMPT.md is malformed.");
   }
-  return { base: fences[0], abbyBlock: fences[1] ?? "", awayBlock: fences[2] ?? "" };
+  return { base: fences[0], abbyBlock: fences[1] ?? "", awayBlock: fences[2] ?? "", localBlock: fences[3] ?? "" };
+}
+
+/**
+ * The prompt for the local model — the LOCAL fence of canon/MASTER-PROMPT.md
+ * with its slots filled, behind a roster that names the three pictures the
+ * way Qwen-Image-Edit reads them ("Picture 1 …").
+ *
+ * Why a separate fence and not the BASE block: the BASE block runs to some
+ * 4,500 tokens of rules written for a model that follows prose closely. The
+ * local model was trained on captions a tenth that length; hand it the BASE
+ * block and the scene — the one part that changes — arrives after four
+ * thousand tokens of room and lands soft. The LOCAL fence is the BASE block's
+ * own sentences, compiled down to what the pictures cannot say (the crop,
+ * the sides, the six bottles, the lettering rules) and the scene last. It is
+ * canon, kept in the master prompt beside the others, so it is edited there
+ * and never here.
+ */
+function localPrompt(masterPrompt: string, candidate: Candidate): string {
+  const { localBlock } = fencesOf(masterPrompt);
+  if (!localBlock) {
+    throw new PublishError(500, "The master prompt has no LOCAL fence — canon/MASTER-PROMPT.md needs its Local block for the local model.");
+  }
+  if (candidate.setting) {
+    throw new PublishError(400, "The local model is staged for the bar only so far. An away scene needs a reviewed local reference setup before drawing.");
+  }
+  const cast = candidate.characters.map((c) => c.toLowerCase());
+  const hasAbby = cast.includes("abby");
+  const tv = (candidate.tv ?? "").trim();
+  const board = (candidate.board ?? "").trim();
+
+  const paragraphs = localBlock.split("\n\n").map((p) => {
+    if (p.startsWith("ABBY ")) {
+      return hasAbby ? p : "Nobody stands on the service side: the back bar stands across the counter behind no one, and no bartender, server or second figure of any kind is in the room.";
+    }
+    if (p.startsWith("THE TELEVISION") && !tv) {
+      return "THE TELEVISION above the back bar is SWITCHED OFF: plain dark glass with nothing on it — no network bug, no chyron, no picture, and no lettering of any kind on or around the screen.";
+    }
+    if (p.startsWith("THE CHALKBOARD") && !board) {
+      return "THE CHALKBOARD is WIPED CLEAN: bare dark slate inside its wooden frame, no chalk marks, no lettering.";
+    }
+    return p;
+  });
+
+  // stage() closes the scene with "as THE SIDES describes" — the BASE block's
+  // paragraph name. The LOCAL fence folds THE SIDES into THE STAGE.
+  const scene = candidate.scene.trim().replace(/as THE SIDES describes/g, "as THE STAGE describes");
+  const body = paragraphs
+    .join("\n\n")
+    .replaceAll("[TV]", tv || "BREAKING")
+    .replaceAll("[BOARD]", board || "HAPPY HOUR 4–?")
+    .replaceAll("[SCENE]", scene);
+
+  const refs = localReferenceList(candidate.characters, true);
+  const roster = refs.map((r, i) => `Picture ${i + 1} is ${r.label}.`).join(" ");
+  const count = cast.filter((c) => ["drew", "barclay", "mango", "abby"].includes(c)).length;
+
+  // AN EDIT MODEL WANTS EDITS. Told descriptively that "the television is
+  // switched on and shows …", it kept the reference's dark screen four rolls
+  // out of four; the fence reads to it as a description of the reference, not
+  // as a change to make. So the changes come first, numbered and imperative —
+  // the screen, the board, the business, the cast — and the fence follows as
+  // the rules everything else must keep obeying.
+  const tvPicture = (candidate.scene.match(/The television picture shows ([^.]+)\./)?.[1] ?? "").trim();
+  const action = candidate.scene.split(/ IN THIS PANEL, CAMERA/)[0].trim();
+  const edits: string[] = [];
+  edits.push(
+    tv
+      ? `THE TELEVISION: switch it ON. Its screen shows ${tvPicture || "the footage this headline would show"}, drawn ` +
+        `in the same engraved style, with a lower-third chyron band across the bottom of the screen reading exactly ` +
+        `"${tv}" in bold capitals, a small CNBC bug with a LIVE tag at the band's left end, a small time stamp at its ` +
+        `right end, and NO other words anywhere on the screen.`
+      : "THE TELEVISION: leave it switched OFF — plain dark glass, no words, no picture."
+  );
+  edits.push(
+    board
+      ? `THE CHALKBOARD: letter it in hand-drawn chalk capitals, exactly and only: "${board}". Correct spelling, large, ` +
+        "legible, the whole board inside the picture."
+      : "THE CHALKBOARD: leave it a blank wiped slate."
+  );
+  edits.push(
+    "THE BOTTLES on the back bar: fill every bottle to a different level — some near full, some half, a few low, the " +
+      "liquid line showing through the glass — and letter exactly TWO labels, large and legible: BIRDIE BOURBON on the " +
+      "leftmost bottle of the top shelf and DIVOT DRIVE GIN on the rightmost; every other label is a blank paper panel " +
+      "with no marks."
+  );
+  if (hasAbby) {
+    const isTrioPic1 = refs[0]?.path?.includes("master-trio");
+    if (isTrioPic1) {
+      edits.push(
+        "ABBY: standing BEHIND the counter on the far service side, directly across the marble from the gentlemen, " +
+          "the counter's far edge crossing her at the waist, her head higher in the frame than theirs, smiling, mid-task as the business below says."
+      );
+    } else {
+      edits.push(
+        `ADD ABBY (Picture ${refs.findIndex((r) => r.path.endsWith("abby.png")) + 1}) standing BEHIND the counter on the ` +
+          "far service side, directly across the marble from the gentlemen, the counter's far edge crossing her at the " +
+          "waist, her head higher in the frame than theirs, smiling, mid-task as the business below says."
+      );
+    }
+  }
+  edits.push(`THE BUSINESS: ${action}`);
+  edits.push(
+    "EVERYTHING ELSE stays exactly as Picture 1: the camera, the two gentlemen's seats, faces, builds and wardrobe, " +
+      "the marble with the martini, the old fashioned and the nut bowl, the back bar, the window, the panelling and the " +
+      "sconces. Nobody looks out of the picture. No paper, card or phone appears unless the business names it."
+  );
+
+  return (
+    `REFERENCES. ${roster}\n\n` +
+    `MAKE THESE CHANGES TO PICTURE 1 AND KEEP EVERYTHING ELSE. The result is ONE new single-panel cartoon in the same ` +
+    `engraved style, one unbroken scene edge to edge, containing EXACTLY ${count} character` +
+    `${count > 1 ? "s, each a separate individual, never merged, never duplicated, never omitted" : ""}.\n` +
+    edits.map((e, i) => `${i + 1}. ${e}`).join("\n") +
+    "\n\nTHE RULES THE FINISHED PICTURE OBEYS:\n\n" +
+    body
+  );
 }
 
 /** Cut everything from the sentence starting at `from` through the end of the
@@ -622,8 +871,11 @@ export function assemblePrompt(
   candidate: Candidate,
   fineTuned: boolean = isFineTuned(),
   staged = false,
-  multiRef = isMultiRef(imageModel())
+  multiRef = isMultiRef(imageModel()),
+  model: string = imageModel()
 ): string {
+  // The local model reads its own fence; nothing below applies to it.
+  if (isLocalModel(model)) return localPrompt(masterPrompt, candidate);
   if (fineTuned) return fineTunedPrompt(masterPrompt, candidate);
 
   const { base, abbyBlock, awayBlock } = fencesOf(masterPrompt);

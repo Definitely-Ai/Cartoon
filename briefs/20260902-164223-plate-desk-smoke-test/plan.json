@@ -1,0 +1,49 @@
+{
+  "batch": "20260902-164223-plate-desk-smoke-test",
+  "brief": "plate desk smoke test",
+  "writer": "plate desk (pipeline check, not a writers' room batch)",
+  "model": "local/sensenova-u1.5",
+  "quality": "approved plates + fast stills",
+  "createdAt": "2026-09-02T16:43:01.506Z",
+  "panels": [
+    {
+      "n": 1,
+      "file": "01-the-fed-held-rates-steady-so.png",
+      "slug": "the-fed-held-rates-steady-so",
+      "speaker": "drew",
+      "caption": "The Fed held rates steady. So did my mortgage. Only one of them was asked.",
+      "characters": [
+        "drew",
+        "barclay"
+      ],
+      "cast": "duo",
+      "tv": "FED HOLDS RATES STEADY",
+      "tvPicture": "the grand columned facade of the Federal Reserve building on a grey day, a few small figures on its wide steps",
+      "board": [
+        "PATIENCE",
+        "$14"
+      ],
+      "still": "canon/plates/work/stills/the-grand-columned-facade-of-the-federal-reserve.png"
+    },
+    {
+      "n": 2,
+      "file": "02-i-don-t-panic-i-just.png",
+      "slug": "i-don-t-panic-i-just",
+      "speaker": "barclay",
+      "caption": "I don't panic. I just re-read the menu very slowly.",
+      "characters": [
+        "drew",
+        "barclay"
+      ],
+      "cast": "duo",
+      "tv": "S&P 500 FALLS 3%",
+      "tvPicture": "a large stock-market line chart plunging steeply from upper left to lower right over a faint grid, a financial-district skyline faint behind it",
+      "board": [
+        "HOUSE SPECIAL",
+        "LOWER FLOOR",
+        "$18"
+      ],
+      "still": "canon/plates/work/stills/a-large-stock-market-line-chart-plunging-steeply.png"
+    }
+  ]
+}

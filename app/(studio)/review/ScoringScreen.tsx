@@ -141,8 +141,8 @@ export default async function ScoringScreen({
 
   const title = !plan
     ? trouble
-      ? "The cartoons aren’t answering"
-      : "No cartoons yet"
+      ? "The review desk is unavailable"
+      : "No review batch is open yet"
     : current
       ? "The new cartoons"
       : "Score this set";
@@ -174,8 +174,8 @@ export default async function ScoringScreen({
               {made === total
                 ? `All ${total} are drawn.`
                 : made === 0
-                  ? `Still drawing — none of the ${total} are in yet. Check back shortly.`
-                  : `Still drawing — ${made} of ${total} are in so far. Score those and check back shortly for the rest.`}
+                  ? `None of the ${total} planned drawings have been filed in this set yet.`
+                  : `${made} of ${total} planned drawings are available to review.`}
             </p>
 
             {/* The long view: every set, when it was drawn, how much is scored.
@@ -194,9 +194,9 @@ export default async function ScoringScreen({
                 at the top shows what you have done and what is left, and you can jump to any of them.
               </p>
               <p>
-                Nothing needs saving by hand and nothing gets lost: what you tap and type is kept on
-                this device straight away and sent on a moment later. Come back to any cartoon and
-                score it again whenever you like — the new score replaces the old one.
+                Your changes are kept on this device and sent to the shared studio. Check the save
+                message before leaving the page. Come back to any cartoon and score it again
+                whenever you like — the new score replaces the old one.
               </p>
               <p className="rv-howto-blunt">
                 Be blunt. A low score with a sentence saying why is the most useful thing on this
@@ -213,9 +213,9 @@ export default async function ScoringScreen({
             state of a studio nobody has asked for cartoons from. */}
         {!plan && !trouble && (
           <p className="rv-empty">
-            Nothing has been drawn for you to score yet. Ask your AI for cartoons and the set will be
-            waiting here — the hookup lives under{" "}
-            <Link href="/connect">Connect your AI</Link>.
+            A set appears here after its review plan is filed. Browse the existing drawings in the{" "}
+            <Link href="/library">image library</Link>, or visit the <Link href="/room">drawing room</Link>{" "}
+            to see what we are building next.
           </p>
         )}
 
@@ -225,10 +225,10 @@ export default async function ScoringScreen({
         {hitch && (
           <div className="rv-trouble" role="alert">
             <p>
-              Nothing is lost — the cartoons and your scores are where they were. Try again in a
-              minute.
+              The latest review records could not be loaded. Try again shortly, or open the{" "}
+              <Link href="/library">image library</Link> to continue looking through the artwork.
             </p>
-            <p className="rv-trouble-detail">{hitch}</p>
+            <details className="legacy-connection"><summary>Connection details</summary><p className="rv-trouble-detail">{hitch}</p></details>
           </div>
         )}
       </header>

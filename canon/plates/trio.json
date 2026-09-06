@@ -2,16 +2,16 @@
   "width": 1200,
   "height": 1800,
   "screen": {
-    "x": 462,
-    "y": 118,
-    "w": 456,
-    "h": 314
+    "x": 472,
+    "y": 129,
+    "w": 437,
+    "h": 288
   },
   "board": {
-    "x": 1032,
-    "y": 172,
-    "w": 118,
-    "h": 520
+    "x": 989,
+    "y": 221,
+    "w": 153,
+    "h": 369
   },
   "faces": {
     "drew": {
@@ -56,5 +56,42 @@
         "h": 70
       }
     }
-  }
+  },
+  "screenQuad": [
+    [
+      468,
+      125
+    ],
+    [
+      913,
+      89
+    ],
+    [
+      913,
+      421
+    ],
+    [
+      468,
+      429
+    ]
+  ],
+  "boardQuad": [
+    [
+      985,
+      217
+    ],
+    [
+      1147,
+      204
+    ],
+    [
+      1146,
+      594
+    ],
+    [
+      985,
+      598
+    ]
+  ],
+  "_quads": "TL,TR,BR,BL of the TELEVISION'S GLASS and the CHALKBOARD'S SLATE, fitted to the drawing (2026-09-02). Neither is a rectangle - the back wall is seen at an angle, so both top edges rise to the right and the right-hand edges are the taller ones. Everything laid on either surface is perspective-warped onto these corners; a square inset reads as a sticker."
 }

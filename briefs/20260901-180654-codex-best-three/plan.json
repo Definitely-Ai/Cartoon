@@ -1,0 +1,53 @@
+{
+  "batch": "20260901-180654-codex-best-three",
+  "brief": "Three strongest caption-led Swinging Door cartoons, selected after canon, staging, and factual-premise review.",
+  "writer": "Codex caption audit of the existing writers-room batch",
+  "model": "OpenAI built-in image generation",
+  "quality": "reference-guided, review-ready proof",
+  "createdAt": "2026-09-01T18:06:54-04:00",
+  "status": "review-only; not published or committed",
+  "panels": [
+    {
+      "speaker": "barclay",
+      "caption": "My kids don't want the house, Drew, they want the three-percent mortgage.",
+      "action": "Barclay raises his old fashioned an inch; Drew turns toward him with his martini resting on its coaster.",
+      "tv": "FEW HOMES FOR SALE AS OWNERS STAY PUT",
+      "tvPicture": "a moving truck parked at a curb with its rear doors shut",
+      "board": "",
+      "characters": ["drew", "barclay"],
+      "turn": "category theft — the loan becomes the family heirloom",
+      "n": 1,
+      "slug": "mortgage-inheritance",
+      "file": "01-mortgage-inheritance.png",
+      "finished": "finished/01-mortgage-inheritance.png"
+    },
+    {
+      "speaker": "barclay",
+      "caption": "I've never paid full price for anything. I just pay the renewal.",
+      "action": "Barclay holds his old fashioned in both hands, content; Drew turns toward him beside his untouched martini.",
+      "tv": "PROMOTIONAL RATES END FOR MILLIONS OF CUSTOMERS",
+      "tvPicture": "a curbside mailbox stuffed with plain envelopes",
+      "board": "OLD FASHIONED, FIRST YEAR $9 · YEAR FOUR $16",
+      "characters": ["drew", "barclay"],
+      "turn": "contradiction — never full price, always the renewal",
+      "n": 2,
+      "slug": "renewal-price",
+      "file": "02-renewal-price.png",
+      "finished": "finished/02-renewal-price.png"
+    },
+    {
+      "speaker": "barclay",
+      "caption": "I don't mind tipping twenty percent on a coffee. I'd just like the coffee first.",
+      "action": "Abby smiles while sliding Barclay's old fashioned the final inch; Barclay waits with folded hands and Drew lifts his martini.",
+      "tv": "TIP SCREENS SPREAD TO SELF-CHECKOUT",
+      "tvPicture": "an empty coffee cup beside a tablet on a stand",
+      "board": "",
+      "characters": ["drew", "barclay", "abby"],
+      "turn": "cheerful concession — the tip is granted and the coffee requested",
+      "n": 3,
+      "slug": "tip-before-coffee",
+      "file": "03-tip-before-coffee.png",
+      "finished": "finished/03-tip-before-coffee.png"
+    }
+  ]
+}

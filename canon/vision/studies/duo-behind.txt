@@ -1,0 +1,16 @@
+local/qwen-image-edit-2511 (fast, Lightning 8-step, cfg 1, seed 41) — 2026-09-01
+
+THE STAGING STUDY for the local model: Drew and Barclay seated at the near side of the marble, seen from
+the customer side over their shoulders, faces in three-quarter, drinks and nut bowl on the slab, the back
+bar across the counter, television dark, chalkboard wiped, nothing printed anywhere.
+
+Drawn from Picture 1 = briefs/20260829-142804-twenty-five-cartoons-at-the-bar/15-i-don-t-need-valet-i.png
+(one of the two panels the founder scored 4 for scene — his best) with its television, chalkboard and the
+parking ticket painted out; Picture 2 = studies/duo.png (identity); Picture 3 = staging-plate.jpg cropped
+at the counter (room). Used as Picture 1 for every bar panel drawn locally, because this model copies
+Picture 1's camera and seating almost literally — and this is the camera and seating the founder wants.
+
+Two refinement passes (filled bottles, live screen) were tried and retired: each pass re-cropped the
+previous one, and by the second the counter and the drinks had left the frame. The dark screen and the
+thin bottles are therefore corrected per panel by the numbered EDITS at the top of the local prompt
+(lib/generate.ts localPrompt), not by the reference.

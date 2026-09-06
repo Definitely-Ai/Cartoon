@@ -1,0 +1,57 @@
+{
+  "_doc": "Measured in scripts/draw-room-lines.py. The TV and the board are not square to the camera, so a paste has to be warped onto THESE corners - clockwise from top-left. Regenerate whenever the camera or the fixtures move.",
+  "screenQuad": [
+    [
+      420.6,
+      257.9
+    ],
+    [
+      837.3,
+      216.0
+    ],
+    [
+      837.3,
+      463.6
+    ],
+    [
+      420.6,
+      487.2
+    ]
+  ],
+  "boardQuad": [
+    [
+      964.4,
+      217.5
+    ],
+    [
+      1145.2,
+      199.8
+    ],
+    [
+      1145.2,
+      432.4
+    ],
+    [
+      964.4,
+      443.1
+    ]
+  ],
+  "windowQuad": [
+    [
+      348.8,
+      203.3
+    ],
+    [
+      -92.0,
+      -164.3
+    ],
+    [
+      -92.0,
+      1091.1
+    ],
+    [
+      348.8,
+      972.5
+    ]
+  ]
+}

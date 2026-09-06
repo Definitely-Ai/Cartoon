@@ -10,7 +10,7 @@ import DoorNotes from "./DoorNotes";
 // page itself stays fully static.
 
 export const metadata: Metadata = {
-  title: "The Door",
+  title: "Studio sign in",
 };
 
 export default function BackroomLogin() {
@@ -21,13 +21,9 @@ export default function BackroomLogin() {
       <div className="br-door-head">
         {/* BRAND: replace when final */}
         <h1 className="br-title">The Swinging Door</h1>
-        <p className="br-sub">The studio · members only</p>
+        <p className="br-sub">Rick’s studio</p>
       </div>
-      <div className="br-door" aria-hidden="true">
-        <span className="br-door-panel" />
-        <span className="br-door-panel" />
-        <span className="br-peephole" />
-      </div>
+      <p className="studio-welcome">The drawings. The conversation.<br />The next good line.</p>
 
       <form action="/api/backroom/login" method="post" className="br-knock">
         <div className="br-field">

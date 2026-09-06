@@ -1,0 +1,5 @@
+{
+  "_doc": "Written by scripts/sticker-desk.mjs and read by scripts/compose-layers.py. Per layer: dx, dy in plate pixels from where room-part.py put it; visible; file, a version of that layer under canon/room-kit/v2/. A layer this file does not mention keeps its own place and its enabled flag from parts.json. Delete this file, or empty layers, to put everything back.",
+  "saved": "2026-09-05T19:25:46.825Z",
+  "layers": {}
+}

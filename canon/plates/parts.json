@@ -1,0 +1,645 @@
+{
+  "_doc": [
+    "THE PARTS SYSTEM. The room is one drawing (base/duo-base.png, the founder's own",
+    "approved plate) and every change to it is a PART: a region with a hand-authored",
+    "outline, its own prompt, and its own render. scripts/build-plate.mjs assembles",
+    "base + parts in order, so any single part can be re-rolled and the plate rebuilt",
+    "without touching anything else.",
+    "",
+    "WHY PARTS ARE RENDERED IN CONTEXT, NOT IN ISOLATION. Each part's render is a full",
+    "render of the whole plate; only the part's own outline is composited back. Drawing",
+    "a shelf on its own canvas would give it its own lighting (collage), its own",
+    "perspective (a flat warp distorts three-dimensional bottles), and no usable alpha",
+    "(engraved hatching has no solid edge - paper shows through the strokes, so keying",
+    "a cut-out leaves halos). Rendering in context inherits light, perspective and pen",
+    "style for free; the stored outline does the cutting.",
+    "",
+    "OUTLINES ARE POLYGONS, not PNG masks: editable, reviewable in a diff, and they",
+    "carry their own feather. An outline must follow the OBJECT, and where a part",
+    "borders Drew or Barclay it must follow their silhouette - a rectangle that clips a",
+    "character is what put scribbles on Drew's collar and wire on Barclay's ear.",
+    "",
+    "MODE. Always 'fast' (8-step) for anything whose outline touches a character:",
+    "full mode redraws the cast with a coarser pen (Drew's stroke density 17 -> 55).",
+    "Full mode only where the whole outline is the subject and no character is in it."
+  ],
+  "plate": {
+    "width": 1200,
+    "height": 1800,
+    "base": "canon/plates/base/duo-base.png"
+  },
+  "parts": [
+    {
+      "id": "board",
+      "enabled": true,
+      "order": 10,
+      "mode": "full",
+      "feather": 22,
+      "note": "The chalkboard reshaped to the founder's own proportions (slate ratio 0.45, was 0.20). Outline stops at Barclay's skull below, and short of the right sconce - the sconce is its own business and a board render was re-drawing it.",
+      "source": "canon/plates/parts/board.png",
+      "outline": [
+        [
+          958,
+          118
+        ],
+        [
+          1170,
+          118
+        ],
+        [
+          1170,
+          762
+        ],
+        [
+          1122,
+          760
+        ],
+        [
+          1095,
+          725
+        ],
+        [
+          1060,
+          700
+        ],
+        [
+          1005,
+          690
+        ],
+        [
+          958,
+          678
+        ]
+      ],
+      "respectsCast": true,
+      "toneMatch": true
+    },
+    {
+      "id": "marble",
+      "enabled": true,
+      "order": 20,
+      "mode": "fast",
+      "feather": 34,
+      "note": "The bar top thinned from a block of masonry to a slim slab with a moulded lip. Outline is the marble the camera can actually see, between and beside the two of them.",
+      "source": "canon/plates/parts/marble.png",
+      "outline": [
+        [
+          372,
+          1068
+        ],
+        [
+          846,
+          1068
+        ],
+        [
+          866,
+          1230
+        ],
+        [
+          822,
+          1404
+        ],
+        [
+          706,
+          1516
+        ],
+        [
+          540,
+          1492
+        ],
+        [
+          418,
+          1398
+        ],
+        [
+          374,
+          1240
+        ]
+      ],
+      "respectsCast": true,
+      "toneMatch": true
+    },
+    {
+      "id": "window-view",
+      "enabled": true,
+      "order": 30,
+      "mode": "fast",
+      "feather": 18,
+      "note": "What is seen through the glass. The glass ONLY - never the frame or the reveal, which is what crushed the corner into black slabs. It no longer needs to trace Drew by hand: the cast is subtracted from it automatically (respectsCast).",
+      "source": "canon/plates/parts/window-view.png",
+      "outline": [
+        [
+          16,
+          94
+        ],
+        [
+          252,
+          108
+        ],
+        [
+          252,
+          1128
+        ],
+        [
+          14,
+          1132
+        ]
+      ],
+      "respectsCast": true,
+      "toneMatch": true
+    },
+    {
+      "id": "window-frame",
+      "enabled": false,
+      "order": 40,
+      "mode": "fast",
+      "feather": 20,
+      "note": "The window's reveal, its mouldings, and the corner where it meets the panelling, plus the ceiling cornice above. Broken by the window renders; needs its own roll.",
+      "source": "canon/plates/parts/window-frame.png",
+      "outline": [
+        [
+          176,
+          48
+        ],
+        [
+          436,
+          48
+        ],
+        [
+          436,
+          262
+        ],
+        [
+          352,
+          760
+        ],
+        [
+          330,
+          1186
+        ],
+        [
+          228,
+          1178
+        ],
+        [
+          224,
+          120
+        ]
+      ],
+      "respectsCast": true,
+      "toneMatch": true
+    },
+    {
+      "id": "shelf-top",
+      "enabled": false,
+      "order": 50,
+      "mode": "full",
+      "feather": 18,
+      "note": "The upper bottle shelf. Outline runs from clear of Drew's head to Barclay's skull.",
+      "source": "canon/plates/parts/shelf-top.png",
+      "outline": [
+        [
+          468,
+          422
+        ],
+        [
+          948,
+          422
+        ],
+        [
+          948,
+          664
+        ],
+        [
+          880,
+          690
+        ],
+        [
+          700,
+          702
+        ],
+        [
+          468,
+          700
+        ]
+      ],
+      "respectsCast": true,
+      "toneMatch": true
+    },
+    {
+      "id": "shelf-lower",
+      "enabled": false,
+      "order": 60,
+      "mode": "full",
+      "feather": 18,
+      "note": "The lower bottle shelf, between the two of them.",
+      "source": "canon/plates/parts/shelf-lower.png",
+      "outline": [
+        [
+          470,
+          712
+        ],
+        [
+          948,
+          712
+        ],
+        [
+          948,
+          900
+        ],
+        [
+          860,
+          940
+        ],
+        [
+          560,
+          952
+        ],
+        [
+          470,
+          900
+        ]
+      ],
+      "respectsCast": true,
+      "toneMatch": true
+    },
+    {
+      "id": "barclay-ear",
+      "enabled": true,
+      "order": 70,
+      "mode": "full",
+      "feather": 18,
+      "note": "His drop ear and the back of his skull, which the founder's plate leaves as a soft smudge. Outline is his head only, so it cannot drag the old tall board back onto the wall.",
+      "source": "canon/plates/parts/barclay-ear.png",
+      "outline": [
+        [
+          1000,
+          688
+        ],
+        [
+          1060,
+          700
+        ],
+        [
+          1095,
+          725
+        ],
+        [
+          1122,
+          760
+        ],
+        [
+          1142,
+          800
+        ],
+        [
+          1152,
+          850
+        ],
+        [
+          1147,
+          900
+        ],
+        [
+          1132,
+          950
+        ],
+        [
+          1105,
+          995
+        ],
+        [
+          1050,
+          1014
+        ],
+        [
+          1000,
+          1012
+        ]
+      ],
+      "respectsCast": false,
+      "toneMatch": true
+    },
+    {
+      "id": "sign",
+      "enabled": true,
+      "order": 90,
+      "mode": "code",
+      "note": "The house name on the glass. Never the model's job: gilded in code from the founder's own letterforms (scratchpad gild2.py). Runs last, after every pixel change.",
+      "params": {
+        "gold": 242,
+        "key": 38,
+        "keyWeight": 2,
+        "halo": 0.6
+      }
+    },
+    {
+      "id": "sconce-right",
+      "enabled": false,
+      "order": 45,
+      "mode": "full",
+      "feather": 14,
+      "note": "The right-hand wall sconce. Cut out because board renders kept re-drawing it (stroke density +7).",
+      "source": "canon/plates/parts/sconce-right.png",
+      "outline": [
+        [
+          1096,
+          236
+        ],
+        [
+          1196,
+          236
+        ],
+        [
+          1196,
+          438
+        ],
+        [
+          1096,
+          438
+        ]
+      ],
+      "respectsCast": false,
+      "toneMatch": true
+    },
+    {
+      "id": "drinks",
+      "enabled": false,
+      "order": 25,
+      "mode": "full",
+      "feather": 12,
+      "note": "The martini, the old fashioned, their coasters and the nut bowl. Cut out so the marble can be re-rolled without re-drawing the glassware.",
+      "source": "canon/plates/parts/drinks.png",
+      "outline": [
+        [
+          430,
+          1030
+        ],
+        [
+          720,
+          1030
+        ],
+        [
+          740,
+          1300
+        ],
+        [
+          700,
+          1360
+        ],
+        [
+          470,
+          1350
+        ],
+        [
+          428,
+          1240
+        ]
+      ],
+      "respectsCast": true,
+      "toneMatch": true
+    }
+  ],
+  "lighting": {
+    "_doc": [
+      "HOW THE ROOM IS LIT. Pasted verbatim into every part prompt so no render has to invent a",
+      "light direction - inventing one is how a re-rolled part starts reading as a collage."
+    ],
+    "prompt": "THE LIGHT IN THIS ROOM IS FIXED AND EVERY SURFACE OBEYS IT. The daylight source is the tall window at frame LEFT: surfaces facing left are lit, surfaces facing right fall away into shadow, and the light weakens with distance from the glass. Two wall sconces throw a small warm pool onto the panelling immediately around each of them and light nothing else. The back bar and the panelling recede into deep walnut shadow, and the marble counter is the brightest thing in the room after the window itself. Nothing in the picture casts a second, contradicting shadow.",
+    "lightMap": "canon/plates/base/light-map.png",
+    "note": "light-map.png is the room's illumination field, taken once from the base plate by heavy blur. A part can be relit onto it (frequency separation: keep the part's own strokes, adopt the room's tone), which is also how the whole room's lighting could be changed later - edit the map, rebuild."
+  },
+  "protect": {
+    "_doc": [
+      "PROTECTED REGIONS, subtracted from every part whose respectsCast is true. The cast is here",
+      "because an outline that clips Drew or Barclay is what scribbled his collar and wired his ear; the two wall",
+      "sconces are here because board and window renders kept quietly re-drawing them. A part that IS one of these",
+      "(barclay-ear, sconce-right) sets respectsCast false so it can draw itself."
+    ],
+    "drew": [
+      [
+        250,
+        596
+      ],
+      [
+        215,
+        650
+      ],
+      [
+        185,
+        700
+      ],
+      [
+        173,
+        750
+      ],
+      [
+        170,
+        800
+      ],
+      [
+        178,
+        850
+      ],
+      [
+        196,
+        900
+      ],
+      [
+        216,
+        950
+      ],
+      [
+        226,
+        1000
+      ],
+      [
+        214,
+        1050
+      ],
+      [
+        175,
+        1108
+      ],
+      [
+        125,
+        1150
+      ],
+      [
+        98,
+        1205
+      ],
+      [
+        62,
+        1400
+      ],
+      [
+        44,
+        1700
+      ],
+      [
+        44,
+        1800
+      ],
+      [
+        700,
+        1800
+      ],
+      [
+        688,
+        1520
+      ],
+      [
+        640,
+        1400
+      ],
+      [
+        556,
+        1356
+      ],
+      [
+        430,
+        1318
+      ],
+      [
+        390,
+        1240
+      ],
+      [
+        396,
+        1100
+      ],
+      [
+        432,
+        1000
+      ],
+      [
+        470,
+        900
+      ],
+      [
+        470,
+        760
+      ],
+      [
+        430,
+        690
+      ],
+      [
+        380,
+        610
+      ],
+      [
+        280,
+        570
+      ]
+    ],
+    "barclay": [
+      [
+        760,
+        880
+      ],
+      [
+        800,
+        760
+      ],
+      [
+        880,
+        680
+      ],
+      [
+        980,
+        650
+      ],
+      [
+        1090,
+        690
+      ],
+      [
+        1160,
+        800
+      ],
+      [
+        1175,
+        960
+      ],
+      [
+        1140,
+        1040
+      ],
+      [
+        1152,
+        1200
+      ],
+      [
+        1200,
+        1300
+      ],
+      [
+        1200,
+        1800
+      ],
+      [
+        700,
+        1800
+      ],
+      [
+        690,
+        1500
+      ],
+      [
+        730,
+        1350
+      ],
+      [
+        800,
+        1250
+      ],
+      [
+        790,
+        1100
+      ],
+      [
+        760,
+        1000
+      ]
+    ],
+    "feather": 6,
+    "sconce-right": [
+      [
+        1092,
+        228
+      ],
+      [
+        1200,
+        228
+      ],
+      [
+        1200,
+        446
+      ],
+      [
+        1092,
+        446
+      ]
+    ],
+    "sconce-left": [
+      [
+        236,
+        236
+      ],
+      [
+        344,
+        236
+      ],
+      [
+        344,
+        452
+      ],
+      [
+        236,
+        452
+      ]
+    ]
+  }
+}

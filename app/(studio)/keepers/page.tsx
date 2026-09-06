@@ -31,17 +31,18 @@ export default async function KeepersPage() {
         {setupNote ? (
           <>
             <p className="br-status">
-              The gallery isn&rsquo;t answering just now. Nothing is lost — try again in a minute.
+              Saved keeper selections are unavailable right now. You can still browse the{" "}
+              <Link href="/library">image library</Link>.
             </p>
-            <p className="br-hint">{setupNote}</p>
+            <details className="legacy-connection"><summary>Connection details</summary><p className="br-hint">{setupNote}</p></details>
           </>
         ) : (
           <p className="br-status">
             {keepers.length === 0 ? (
               <>
-                Nothing starred yet — the good ones end up here. Tap{" "}
-                <strong>Keep this one</strong> under any cartoon on <Link href="/">Today</Link> and
-                it joins the gallery.
+                No cartoons have been starred in the daily batches yet. When a batch is filed,
+                choose <strong>Keep this one</strong> under a cartoon to collect it here. Browse{" "}
+                <Link href="/collection">daily batches</Link> or the <Link href="/library">full image library</Link>.
               </>
             ) : (
               `${keepers.length} starred cartoon${keepers.length === 1 ? "" : "s"}, newest first.`

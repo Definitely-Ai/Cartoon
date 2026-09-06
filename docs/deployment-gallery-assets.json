@@ -1,0 +1,237 @@
+{
+  "version": 1,
+  "sourceRepository": "Definitely-Ai/Cartoon",
+  "sourceCommit": "9eebda2703f8e48df74e0212e5c7cfb28d149e43",
+  "sourceManifest": "lib/gallery-manifest.json",
+  "sourceManifestSha256": "12fee6a3566923f9e51f982fe5150a9885da40a2746a0f91a22566b749efde52",
+  "generatedAt": "2026-09-03T19:19:09.309Z",
+  "imageCount": 28,
+  "totalBytes": 18772951,
+  "note": "Selective private-deployment allowlist from newer origin/main worktree. Preserve original bytes and newer manifest metadata. Do not regenerate the selected-gallery manifest in the package.",
+  "assets": [
+    {
+      "url": "/gallery/final/B08-preview.jpg",
+      "publicPath": "public/gallery/final/B08-preview.jpg",
+      "bytes": 344230,
+      "sha256": "478023ab55002fd960180ff918d01c5d9063246e49a9ceeace6bbd8def6da170",
+      "width": 900,
+      "height": 1125
+    },
+    {
+      "url": "/gallery/final/A07-preview.jpg",
+      "publicPath": "public/gallery/final/A07-preview.jpg",
+      "bytes": 346009,
+      "sha256": "4bca2cfd1b601da248c2e6c4141582fcb66e51002be69220f5642ce4fe9c7e4c",
+      "width": 900,
+      "height": 1125
+    },
+    {
+      "url": "/gallery/final/B03-preview.jpg",
+      "publicPath": "public/gallery/final/B03-preview.jpg",
+      "bytes": 319334,
+      "sha256": "2216b34598c1859c46c7536cd92ce4a0c20ba3ed8889756e999b3dcaa517f403",
+      "width": 900,
+      "height": 1125
+    },
+    {
+      "url": "/gallery/final/B09-preview.jpg",
+      "publicPath": "public/gallery/final/B09-preview.jpg",
+      "bytes": 346147,
+      "sha256": "a551b1b9c71a65091586da454391edea35ba08680607156b891ae0a0cdaf4de9",
+      "width": 900,
+      "height": 1125
+    },
+    {
+      "url": "/gallery/final/B05-preview.jpg",
+      "publicPath": "public/gallery/final/B05-preview.jpg",
+      "bytes": 340125,
+      "sha256": "b47d8848f916d0b569af695821f41d5a61fc72d3275dfaccd9f959b198385e2b",
+      "width": 900,
+      "height": 1125
+    },
+    {
+      "url": "/gallery/final/A03-preview.jpg",
+      "publicPath": "public/gallery/final/A03-preview.jpg",
+      "bytes": 356387,
+      "sha256": "1850c4fd8f9489900d7ec326fda38ae44944a55c2fbf99cd87c4bbea5c511194",
+      "width": 900,
+      "height": 1125
+    },
+    {
+      "url": "/gallery/final/B07-preview.jpg",
+      "publicPath": "public/gallery/final/B07-preview.jpg",
+      "bytes": 347346,
+      "sha256": "5ed8fb628e6c0be20e2c52493c1e1570125f27209090c5fefad2e9bb06401dd2",
+      "width": 900,
+      "height": 1125
+    },
+    {
+      "url": "/gallery/final/A08-preview.jpg",
+      "publicPath": "public/gallery/final/A08-preview.jpg",
+      "bytes": 340700,
+      "sha256": "34681892bd0447dbf5a2154a2107e62aa9a1805993d61c0a4aca0610c0af96f6",
+      "width": 900,
+      "height": 1125
+    },
+    {
+      "url": "/gallery/final/A05-preview.jpg",
+      "publicPath": "public/gallery/final/A05-preview.jpg",
+      "bytes": 343389,
+      "sha256": "5ac23efc8ff17ab94282daf28b22b2e02fc65ac64a10180a91cd57056f11c93b",
+      "width": 900,
+      "height": 1125
+    },
+    {
+      "url": "/gallery/final/A10-preview.jpg",
+      "publicPath": "public/gallery/final/A10-preview.jpg",
+      "bytes": 328791,
+      "sha256": "887722a0e6b197bbe084bb002ae244127da31bceaa6441a4777bd993bb60da3f",
+      "width": 900,
+      "height": 1125
+    },
+    {
+      "url": "/gallery/final/B01-preview.jpg",
+      "publicPath": "public/gallery/final/B01-preview.jpg",
+      "bytes": 322554,
+      "sha256": "86068e0e23e67c18de7299a299b3a84e60676aaafbebb00c5bd51fd855167df6",
+      "width": 900,
+      "height": 1125
+    },
+    {
+      "url": "/gallery/final/A01-preview.jpg",
+      "publicPath": "public/gallery/final/A01-preview.jpg",
+      "bytes": 334264,
+      "sha256": "c7880e0a560b22d1dcf09a39e4be301fe8a875581ea0397478d62bc782972e9e",
+      "width": 900,
+      "height": 1125
+    },
+    {
+      "url": "/gallery/final/A04-preview.jpg",
+      "publicPath": "public/gallery/final/A04-preview.jpg",
+      "bytes": 337478,
+      "sha256": "3a820f2adeaa1da07bfb329a092328d72842db0649ec4093053c6695752c2c3f",
+      "width": 900,
+      "height": 1125
+    },
+    {
+      "url": "/gallery/final/A09-preview.jpg",
+      "publicPath": "public/gallery/final/A09-preview.jpg",
+      "bytes": 336184,
+      "sha256": "04007189f761534d18a4a578a02f4e7e71be6d27d96844622f8b5653a36e4998",
+      "width": 900,
+      "height": 1125
+    },
+    {
+      "url": "/gallery/final/A02-preview.jpg",
+      "publicPath": "public/gallery/final/A02-preview.jpg",
+      "bytes": 333245,
+      "sha256": "467b66e53e007d82230dda13f74720cf1833ca2341d2817842d0b762aa05fdc7",
+      "width": 900,
+      "height": 1125
+    },
+    {
+      "url": "/gallery/final/A06-preview.jpg",
+      "publicPath": "public/gallery/final/A06-preview.jpg",
+      "bytes": 332849,
+      "sha256": "1eac8547697238d090b9b0c1c5a1e95aafd48ef6e1120d1644cc031ea523ca9f",
+      "width": 900,
+      "height": 1125
+    },
+    {
+      "url": "/gallery/final/BASE-B.jpg",
+      "publicPath": "public/gallery/final/BASE-B.jpg",
+      "bytes": 354433,
+      "sha256": "10074c9f62fe005da36b525ab06bf2c962b00a339ced4f4d843de7cf0b227360",
+      "width": 900,
+      "height": 1125
+    },
+    {
+      "url": "/gallery/final/BASE-A.jpg",
+      "publicPath": "public/gallery/final/BASE-A.jpg",
+      "bytes": 344147,
+      "sha256": "e89d673e8a0f7d0d16e5a39752ad5b06e076547ba3abfcd05eaaa430cda9a4fa",
+      "width": 900,
+      "height": 1125
+    },
+    {
+      "url": "/gallery/vision/staging-plate.jpg",
+      "publicPath": "public/gallery/vision/staging-plate.jpg",
+      "bytes": 644754,
+      "sha256": "3cd3c400860425dac92978599616c71c0f9e375d680415e463f5694139232a96",
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "url": "/gallery/vision/drew-plate1-bar-reference.jpg",
+      "publicPath": "public/gallery/vision/drew-plate1-bar-reference.jpg",
+      "bytes": 53416,
+      "sha256": "88342d3fc2bddadf88290c1f411d4de81fe344c12be16c521c76b81d9a1e9788",
+      "width": 430,
+      "height": 500
+    },
+    {
+      "url": "/gallery/vision/barclay-reference.jpg",
+      "publicPath": "public/gallery/vision/barclay-reference.jpg",
+      "bytes": 3248939,
+      "sha256": "4d237e357f48112051079d3a54d99a62e666cae9cd7b6876647ba95f251056dc",
+      "width": 3000,
+      "height": 4000
+    },
+    {
+      "url": "/gallery/vision/abby-reference.jpg",
+      "publicPath": "public/gallery/vision/abby-reference.jpg",
+      "bytes": 1497505,
+      "sha256": "f2c3d2351a43a8168f5dceed6d79ccc22f836ac685deffff341ea896bf167263",
+      "width": 1980,
+      "height": 3190
+    },
+    {
+      "url": "/gallery/vision/tv-reference.jpg",
+      "publicPath": "public/gallery/vision/tv-reference.jpg",
+      "bytes": 1457306,
+      "sha256": "12b5092060c4df0006a9064605f50d4cfb22ca8ee79fceda5fa584877d8f8db4",
+      "width": 2500,
+      "height": 1700
+    },
+    {
+      "url": "/gallery/vision/the-cast.jpg",
+      "publicPath": "public/gallery/vision/the-cast.jpg",
+      "bytes": 434326,
+      "sha256": "7bb309f423954286412a6ef3a6ce18d1400766e422ef7ba1d66af42ab14f7c60",
+      "width": 1972,
+      "height": 776
+    },
+    {
+      "url": "/gallery/vision/plate-4-nineteenth-hole-and-tariffs.jpg",
+      "publicPath": "public/gallery/vision/plate-4-nineteenth-hole-and-tariffs.jpg",
+      "bytes": 1059619,
+      "sha256": "50f5a34e79a22efd8da30b4feb00b816ce53470769d6a196c4d8b9c3e606e5f3",
+      "width": 1622,
+      "height": 2232
+    },
+    {
+      "url": "/gallery/vision/plate-3-national-mall.jpg",
+      "publicPath": "public/gallery/vision/plate-3-national-mall.jpg",
+      "bytes": 1659525,
+      "sha256": "69a0485cb44d63d56a7708a3328598c3a522596be922596821b304a350fa712a",
+      "width": 3946,
+      "height": 1785
+    },
+    {
+      "url": "/gallery/vision/plate-2-debt-ceiling-and-retirement.jpg",
+      "publicPath": "public/gallery/vision/plate-2-debt-ceiling-and-retirement.jpg",
+      "bytes": 1411730,
+      "sha256": "4433535474da8db7d5b6bbacd3c45c86c48c59f25c0978a5ef47ce112624219f",
+      "width": 1751,
+      "height": 3894
+    },
+    {
+      "url": "/gallery/vision/plate-1-security-and-martini-menu.jpg",
+      "publicPath": "public/gallery/vision/plate-1-security-and-martini-menu.jpg",
+      "bytes": 1198219,
+      "sha256": "eceb439e95de69186866109a56ae361ba8adfc90d45dd5f10286a072424edb11",
+      "width": 1633,
+      "height": 2752
+    }
+  ]
+}

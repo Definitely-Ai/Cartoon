@@ -1,0 +1,37 @@
+{
+  "batch": "20260901-183829-reference-rebuild-v2",
+  "brief": "Reference-locked Swinging Door rebuild using the user's supplied finished panels, preserving hands, bottle shelves, room geometry, and chalkboards exactly while adding deterministic captions.",
+  "writer": "Codex caption audit",
+  "model": "user-supplied reference artwork; no art regeneration in selected finals",
+  "quality": "reference-locked final proof",
+  "createdAt": "2026-09-01T18:38:29-04:00",
+  "status": "review-only; not published or committed",
+  "panels": [
+    {
+      "speaker": "drew",
+      "caption": "I booked the two-stop fare. My luggage went direct.",
+      "action": "Drew and Barclay sit naturally at the customer side with their drinks and intact reference hands.",
+      "tv": "airport luggage beside an empty jet bridge",
+      "board": "DIRECT POUR $18 · LAYOVER POUR, TWO STOPS $12",
+      "characters": ["drew", "barclay"],
+      "turn": "inversion — the passenger takes the connection while the luggage goes direct",
+      "n": 1,
+      "slug": "airline-two-stop-direct-luggage",
+      "file": "01-airline-scenic-route.png",
+      "finished": "finished/01-airline-scenic-route.png"
+    },
+    {
+      "speaker": "abby",
+      "caption": "There's about four dollars of whiskey in that glass and fourteen dollars of roof.",
+      "action": "Abby smiles while pouring Barclay's old fashioned; all hands, glass contacts, and props remain exactly as supplied.",
+      "tv": "a brick rowhouse roof with a ladder",
+      "board": "OLD FASHIONED $18 · WHISKEY, ICE, CHERRY, ROOF",
+      "characters": ["drew", "barclay", "abby"],
+      "turn": "itemized bill — the roof becomes the drink's most expensive ingredient",
+      "n": 2,
+      "slug": "fourteen-dollars-of-roof",
+      "file": "02-roof-on-the-house.png",
+      "finished": "finished/02-roof-on-the-house.png"
+    }
+  ]
+}
