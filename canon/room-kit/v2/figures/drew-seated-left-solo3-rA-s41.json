@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-08T14:11:41",
+  "generated_at": "2026-09-08T14:45:42",
   "script": "scripts/cast-place.py",
   "character": "drew",
   "pose": "seated-left-solo3",
@@ -8,8 +8,8 @@
     "grey": 140.0,
     "chair_fraction": 0.1854,
     "marble_fraction": 0.1338,
-    "line_fraction": 0.03,
-    "flat_fraction": 0.6714,
+    "line_fraction": 0.031,
+    "flat_fraction": 0.6707,
     "chair_poly_plate": [
       [
         0,
@@ -45,7 +45,7 @@
   },
   "paste_feather": null,
   "staging_reference": "C:\\Users\\admin\\AppData\\Local\\Temp\\claude\\Z--ImageGenerator\\7e90a839-5703-42df-8007-3e3f206ae0ae\\scratchpad\\cast-scene\\drew\\round-1\\staging-flamingo.png",
-  "staging_label": "THE APPROVED STAGING, cropped to ONE BIRD ALONE - the camera and the body angle the founder chose for this bar, and nothing else in it. Copy ONLY the POSE: the patron is seen FROM BEHIND and a little to his LEFT, his back and the knit of his sweater vest turned to us, his neck rising out of the collar in an easy S, his head turned to his RIGHT so the bill reads in profile and one heavy-lidded eye shows, his near hand resting on the marble. COPY THIS BODY ANGLE AND THIS TURN OF THE HEAD AND NOTHING ELSE. Do not copy its room, its crop, its light, its bottles or its lettering. There is exactly ONE creature in it, and there is exactly ONE creature in the finished picture.",
+  "staging_label": "x",
   "staging_label_overridden": true,
   "plate": "Z:\\ImageGenerator\\Cartoon\\canon\\room-kit\\v2\\plate.png",
   "box": [
@@ -75,12 +75,12 @@
   "keep_first": false,
   "edit_override": null,
   "extra_edit": [
-    "THE FINISHED PICTURE CONTAINS EXACTLY ONE LIVING CREATURE, and it is Drew. There is no dog, no labrador, no second bird, no second flamingo, no barman, no other person and no other animal anywhere in it - not beside him, not across the marble, not behind the bar, not reflected anywhere. The RIGHT-HAND chair he turns his head toward stays EMPTY."
+    "x"
   ],
   "canon_missed": [],
   "server": "http://127.0.0.1:8000",
   "request": {
-    "prompt": "REFERENCES. Picture 1 is THE SET for this edit, keyed down to what matters - this IS the picture being edited. The LEFT leather club chair and the marble bar top are the studio's own approved pixels, in the studio's engraved pen, at exactly the size and the place and the perspective the finished picture uses; the few dark strokes above them are the wall's silhouette lines. EVERYTHING ELSE IS FLAT FEATURELESS MID-GREY and is not a room: it is blank paper. The chair is the anchor - the bird sits IN that chair, at that size, in that light. Picture 2 is DREW, the studio's official portrait — copy THIS bird identically: the small refined head, the slender pale bill with its black outer third, the heavy-lidded amiable eye, the long S-curve neck, the white collar band and small black bow tie, the V-neck knitted sweater vest, and the feathered hands with four fingers and a thumb and no claws. Picture 3 is THE APPROVED STAGING, cropped to ONE BIRD ALONE - the camera and the body angle the founder chose for this bar, and nothing else in it. Copy ONLY the POSE: the patron is seen FROM BEHIND and a little to his LEFT, his back and the knit of his sweater vest turned to us, his neck rising out of the collar in an easy S, his head turned to his RIGHT so the bill reads in profile and one heavy-lidded eye shows, his near hand resting on the marble. COPY THIS BODY ANGLE AND THIS TURN OF THE HEAD AND NOTHING ELSE. Do not copy its room, its crop, its light, its bottles or its lettering. There is exactly ONE creature in it, and there is exactly ONE creature in the finished picture..\n\nMAKE THESE CHANGES TO PICTURE 1 AND KEEP EVERYTHING ELSE. The result is Picture 1 itself with EXACTLY ONE character added into it, one unbroken scene edge to edge, in the same engraved black-and-white pen.\n1. ADD DREW (Picture 2), the white flamingo gentleman, SEATED IN the empty LEFT leather club chair, filling it as a man fills a chair, and stage him exactly the way Picture 3 stages its patrons. Show him FROM BEHIND and a little to his LEFT, over his shoulder. Turn his back to the camera so the knit of the V-neck sweater vest runs across his shoulder blades. Let the chair's studded leather roll cross his LOWER BACK, its brass studs passing in front of the bottom of the vest, so he is plainly down inside the chair and not perched in front of it. Carry his neck up out of the vest and the white collar band in one easy S-curve, well above that roll. Turn his head to his RIGHT, toward the other chair, so the head and the slender pale bill read in profile - three-quarter at the very most - and the heavy-lidded eye shows. Rest his near feathered hand on the marble slab. Do NOT face him toward the camera. Do NOT draw a front view: no chest square to us, no bow-tie knot facing us, never both eyes. Keep the crown of his head clear of the mirrored window lettering above. Draw him in the SAME engraved pen, the same size, the same light and the same perspective as the chair he sits in, sitting behind the marble's near edge and never floating in front of it.\n2. KEEP EVERYTHING ELSE EXACTLY AS PICTURE 1. The left leather club chair, the marble slab and its edges, and the few dark silhouette lines of the wall are the whole of the set: they do not move, they are not redrawn, they keep every line they have. THE FLAT GREY AROUND THEM STAYS FLAT, EMPTY AND FEATURELESS - it is blank paper, not a room seen through fog. Do not invent anything in it: no window, no street, no shelves, no bottles, no mirror, no lettering, no hatching, no shading, no floor, no second figure. Nothing whatever is added anywhere except the one bird seated in the left chair.\n3. THE FINISHED PICTURE CONTAINS EXACTLY ONE LIVING CREATURE, and it is Drew. There is no dog, no labrador, no second bird, no second flamingo, no barman, no other person and no other animal anywhere in it - not beside him, not across the marble, not behind the bar, not reflected anywhere. The RIGHT-HAND chair he turns his head toward stays EMPTY.\n\nTHE RULES THE FINISHED PICTURE OBEYS:\n\nA single-panel gag cartoon drawn like an antique steel engraving: fine pen crosshatching and stippling on every surface — wood grain, knit stitches, fur and feathers laid in individual strokes, glass catching light — with a full tonal range from deep rich blacks through silvery greys to bright paper highlights. Confident contour lines over the hatching. The panel is composed full, corner to corner. Black-and-white only; no flat fills, no cel shading, no photographic rendering, no color.\n\nDREW is exactly the flamingo gentleman of his reference: white plumage feathered all over in fine dash-strokes with no sleeve or cuff, the long high S-curve neck and small refined head, a slender pale bill with a black outer third and a plain slit nostril, one heavy-lidded amiable eye with a clear iris and catchlight, a crisp white collar band under a small black bow tie, a V-neck knitted sweater vest with no pockets over a pale shirt, feathered hands with four fingers and a thumb and no nails, his martini within reach.",
+    "prompt": "REFERENCES. Picture 1 is THE SET for this edit, keyed down to what matters - this IS the picture being edited. The LEFT leather club chair and the marble bar top are the studio's own approved pixels, in the studio's engraved pen, at exactly the size and the place and the perspective the finished picture uses; the few dark strokes above them are the wall's silhouette lines. EVERYTHING ELSE IS FLAT FEATURELESS MID-GREY and is not a room: it is blank paper. The chair is the anchor - the bird sits IN that chair, at that size, in that light. Picture 2 is DREW, the studio's official portrait — copy THIS bird identically: the small refined head, the slender pale bill with its black outer third, the heavy-lidded amiable eye, the long S-curve neck, the white collar band and small black bow tie, the V-neck knitted sweater vest, and the feathered hands with four fingers and a thumb and no claws. Picture 3 is x.\n\nMAKE THESE CHANGES TO PICTURE 1 AND KEEP EVERYTHING ELSE. The result is Picture 1 itself with EXACTLY ONE character added into it, one unbroken scene edge to edge, in the same engraved black-and-white pen.\n1. ADD DREW (Picture 2), the white flamingo gentleman, SEATED IN the empty LEFT leather club chair, filling it as a man fills a chair, and stage him exactly the way Picture 3 stages its patrons. Show him FROM BEHIND and a little to his LEFT, over his shoulder. Turn his back to the camera so the knit of the V-neck sweater vest runs across his shoulder blades. Let the chair's studded leather roll cross his LOWER BACK, its brass studs passing in front of the bottom of the vest, so he is plainly down inside the chair and not perched in front of it. Carry his neck up out of the vest and the white collar band in one easy S-curve, well above that roll. Turn his head to his RIGHT, toward the other chair, so the head and the slender pale bill read in profile - three-quarter at the very most - and the heavy-lidded eye shows. Rest his near feathered hand on the marble slab. Do NOT face him toward the camera. Do NOT draw a front view: no chest square to us, no bow-tie knot facing us, never both eyes. Keep the crown of his head clear of the mirrored window lettering above. Draw him in the SAME engraved pen, the same size, the same light and the same perspective as the chair he sits in, sitting behind the marble's near edge and never floating in front of it.\n2. KEEP EVERYTHING ELSE EXACTLY AS PICTURE 1. The left leather club chair, the marble slab and its edges, and the few dark silhouette lines of the wall are the whole of the set: they do not move, they are not redrawn, they keep every line they have. THE FLAT GREY AROUND THEM STAYS FLAT, EMPTY AND FEATURELESS - it is blank paper, not a room seen through fog. Do not invent anything in it: no window, no street, no shelves, no bottles, no mirror, no lettering, no hatching, no shading, no floor, no second figure. Nothing whatever is added anywhere except the one bird seated in the left chair.\n3. x\n\nTHE RULES THE FINISHED PICTURE OBEYS:\n\nA single-panel gag cartoon drawn like an antique steel engraving: fine pen crosshatching and stippling on every surface — wood grain, knit stitches, fur and feathers laid in individual strokes, glass catching light — with a full tonal range from deep rich blacks through silvery greys to bright paper highlights. Confident contour lines over the hatching. The panel is composed full, corner to corner. Black-and-white only; no flat fills, no cel shading, no photographic rendering, no color.\n\nDREW is exactly the flamingo gentleman of his reference: white plumage feathered all over in fine dash-strokes with no sleeve or cuff, the long high S-curve neck and small refined head, a slender pale bill with a black outer third and a plain slit nostril, one heavy-lidded amiable eye with a clear iris and catchlight, a crisp white collar band under a small black bow tie, a V-neck knitted sweater vest with no pockets over a pale shirt, feathered hands with four fingers and a thumb and no nails, his martini within reach.",
     "model": "local/qwen-image-edit-2511",
     "provider": "local",
     "aspect_ratio": "4:5",
@@ -100,8 +100,8 @@
         1024,
         1280
       ],
-      "bytes": 124547,
-      "sha256": "06518fc346f52a1f"
+      "bytes": 124424,
+      "sha256": "f73ea8b18b3eb887"
     },
     {
       "picture": 2,
@@ -117,7 +117,7 @@
     {
       "picture": 3,
       "path": "C:\\Users\\admin\\AppData\\Local\\Temp\\claude\\Z--ImageGenerator\\7e90a839-5703-42df-8007-3e3f206ae0ae\\scratchpad\\cast-scene\\drew\\round-1\\staging-flamingo.png",
-      "label": "THE APPROVED STAGING, cropped to ONE BIRD ALONE - the camera and the body angle the founder chose for this bar, and nothing else in it. Copy ONLY the POSE: the patron is seen FROM BEHIND and a little to his LEFT, his back and the knit of his sweater vest turned to us, his neck rising out of the collar in an easy S, his head turned to his RIGHT so the bill reads in profile and one heavy-lidded eye shows, his near hand resting on the marble. COPY THIS BODY ANGLE AND THIS TURN OF THE HEAD AND NOTHING ELSE. Do not copy its room, its crop, its light, its bottles or its lettering. There is exactly ONE creature in it, and there is exactly ONE creature in the finished picture.",
+      "label": "x",
       "size": [
         514,
         900
@@ -126,7 +126,7 @@
       "sha256": "1330a094fac7da76"
     }
   ],
-  "prompt": "REFERENCES. Picture 1 is THE SET for this edit, keyed down to what matters - this IS the picture being edited. The LEFT leather club chair and the marble bar top are the studio's own approved pixels, in the studio's engraved pen, at exactly the size and the place and the perspective the finished picture uses; the few dark strokes above them are the wall's silhouette lines. EVERYTHING ELSE IS FLAT FEATURELESS MID-GREY and is not a room: it is blank paper. The chair is the anchor - the bird sits IN that chair, at that size, in that light. Picture 2 is DREW, the studio's official portrait — copy THIS bird identically: the small refined head, the slender pale bill with its black outer third, the heavy-lidded amiable eye, the long S-curve neck, the white collar band and small black bow tie, the V-neck knitted sweater vest, and the feathered hands with four fingers and a thumb and no claws. Picture 3 is THE APPROVED STAGING, cropped to ONE BIRD ALONE - the camera and the body angle the founder chose for this bar, and nothing else in it. Copy ONLY the POSE: the patron is seen FROM BEHIND and a little to his LEFT, his back and the knit of his sweater vest turned to us, his neck rising out of the collar in an easy S, his head turned to his RIGHT so the bill reads in profile and one heavy-lidded eye shows, his near hand resting on the marble. COPY THIS BODY ANGLE AND THIS TURN OF THE HEAD AND NOTHING ELSE. Do not copy its room, its crop, its light, its bottles or its lettering. There is exactly ONE creature in it, and there is exactly ONE creature in the finished picture..\n\nMAKE THESE CHANGES TO PICTURE 1 AND KEEP EVERYTHING ELSE. The result is Picture 1 itself with EXACTLY ONE character added into it, one unbroken scene edge to edge, in the same engraved black-and-white pen.\n1. ADD DREW (Picture 2), the white flamingo gentleman, SEATED IN the empty LEFT leather club chair, filling it as a man fills a chair, and stage him exactly the way Picture 3 stages its patrons. Show him FROM BEHIND and a little to his LEFT, over his shoulder. Turn his back to the camera so the knit of the V-neck sweater vest runs across his shoulder blades. Let the chair's studded leather roll cross his LOWER BACK, its brass studs passing in front of the bottom of the vest, so he is plainly down inside the chair and not perched in front of it. Carry his neck up out of the vest and the white collar band in one easy S-curve, well above that roll. Turn his head to his RIGHT, toward the other chair, so the head and the slender pale bill read in profile - three-quarter at the very most - and the heavy-lidded eye shows. Rest his near feathered hand on the marble slab. Do NOT face him toward the camera. Do NOT draw a front view: no chest square to us, no bow-tie knot facing us, never both eyes. Keep the crown of his head clear of the mirrored window lettering above. Draw him in the SAME engraved pen, the same size, the same light and the same perspective as the chair he sits in, sitting behind the marble's near edge and never floating in front of it.\n2. KEEP EVERYTHING ELSE EXACTLY AS PICTURE 1. The left leather club chair, the marble slab and its edges, and the few dark silhouette lines of the wall are the whole of the set: they do not move, they are not redrawn, they keep every line they have. THE FLAT GREY AROUND THEM STAYS FLAT, EMPTY AND FEATURELESS - it is blank paper, not a room seen through fog. Do not invent anything in it: no window, no street, no shelves, no bottles, no mirror, no lettering, no hatching, no shading, no floor, no second figure. Nothing whatever is added anywhere except the one bird seated in the left chair.\n3. THE FINISHED PICTURE CONTAINS EXACTLY ONE LIVING CREATURE, and it is Drew. There is no dog, no labrador, no second bird, no second flamingo, no barman, no other person and no other animal anywhere in it - not beside him, not across the marble, not behind the bar, not reflected anywhere. The RIGHT-HAND chair he turns his head toward stays EMPTY.\n\nTHE RULES THE FINISHED PICTURE OBEYS:\n\nA single-panel gag cartoon drawn like an antique steel engraving: fine pen crosshatching and stippling on every surface — wood grain, knit stitches, fur and feathers laid in individual strokes, glass catching light — with a full tonal range from deep rich blacks through silvery greys to bright paper highlights. Confident contour lines over the hatching. The panel is composed full, corner to corner. Black-and-white only; no flat fills, no cel shading, no photographic rendering, no color.\n\nDREW is exactly the flamingo gentleman of his reference: white plumage feathered all over in fine dash-strokes with no sleeve or cuff, the long high S-curve neck and small refined head, a slender pale bill with a black outer third and a plain slit nostril, one heavy-lidded amiable eye with a clear iris and catchlight, a crisp white collar band under a small black bow tie, a V-neck knitted sweater vest with no pockets over a pale shirt, feathered hands with four fingers and a thumb and no nails, his martini within reach.",
+  "prompt": "REFERENCES. Picture 1 is THE SET for this edit, keyed down to what matters - this IS the picture being edited. The LEFT leather club chair and the marble bar top are the studio's own approved pixels, in the studio's engraved pen, at exactly the size and the place and the perspective the finished picture uses; the few dark strokes above them are the wall's silhouette lines. EVERYTHING ELSE IS FLAT FEATURELESS MID-GREY and is not a room: it is blank paper. The chair is the anchor - the bird sits IN that chair, at that size, in that light. Picture 2 is DREW, the studio's official portrait — copy THIS bird identically: the small refined head, the slender pale bill with its black outer third, the heavy-lidded amiable eye, the long S-curve neck, the white collar band and small black bow tie, the V-neck knitted sweater vest, and the feathered hands with four fingers and a thumb and no claws. Picture 3 is x.\n\nMAKE THESE CHANGES TO PICTURE 1 AND KEEP EVERYTHING ELSE. The result is Picture 1 itself with EXACTLY ONE character added into it, one unbroken scene edge to edge, in the same engraved black-and-white pen.\n1. ADD DREW (Picture 2), the white flamingo gentleman, SEATED IN the empty LEFT leather club chair, filling it as a man fills a chair, and stage him exactly the way Picture 3 stages its patrons. Show him FROM BEHIND and a little to his LEFT, over his shoulder. Turn his back to the camera so the knit of the V-neck sweater vest runs across his shoulder blades. Let the chair's studded leather roll cross his LOWER BACK, its brass studs passing in front of the bottom of the vest, so he is plainly down inside the chair and not perched in front of it. Carry his neck up out of the vest and the white collar band in one easy S-curve, well above that roll. Turn his head to his RIGHT, toward the other chair, so the head and the slender pale bill read in profile - three-quarter at the very most - and the heavy-lidded eye shows. Rest his near feathered hand on the marble slab. Do NOT face him toward the camera. Do NOT draw a front view: no chest square to us, no bow-tie knot facing us, never both eyes. Keep the crown of his head clear of the mirrored window lettering above. Draw him in the SAME engraved pen, the same size, the same light and the same perspective as the chair he sits in, sitting behind the marble's near edge and never floating in front of it.\n2. KEEP EVERYTHING ELSE EXACTLY AS PICTURE 1. The left leather club chair, the marble slab and its edges, and the few dark silhouette lines of the wall are the whole of the set: they do not move, they are not redrawn, they keep every line they have. THE FLAT GREY AROUND THEM STAYS FLAT, EMPTY AND FEATURELESS - it is blank paper, not a room seen through fog. Do not invent anything in it: no window, no street, no shelves, no bottles, no mirror, no lettering, no hatching, no shading, no floor, no second figure. Nothing whatever is added anywhere except the one bird seated in the left chair.\n3. x\n\nTHE RULES THE FINISHED PICTURE OBEYS:\n\nA single-panel gag cartoon drawn like an antique steel engraving: fine pen crosshatching and stippling on every surface — wood grain, knit stitches, fur and feathers laid in individual strokes, glass catching light — with a full tonal range from deep rich blacks through silvery greys to bright paper highlights. Confident contour lines over the hatching. The panel is composed full, corner to corner. Black-and-white only; no flat fills, no cel shading, no photographic rendering, no color.\n\nDREW is exactly the flamingo gentleman of his reference: white plumage feathered all over in fine dash-strokes with no sleeve or cuff, the long high S-curve neck and small refined head, a slender pale bill with a black outer third and a plain slit nostril, one heavy-lidded amiable eye with a clear iris and catchlight, a crisp white collar band under a small black bow tie, a V-neck knitted sweater vest with no pockets over a pale shirt, feathered hands with four fingers and a thumb and no nails, his martini within reach.",
   "clean_prompt": null,
   "clean_pass": false,
   "expected_size": [
@@ -144,23 +144,14 @@
     "feather": 2.0,
     "align": 6
   },
-  "result": {
-    "seed_used": 41,
-    "elapsed_seconds": 52.6,
-    "server_local_path": "Z:\\ImageGenerator\\outputs\\gen_1788891153950454500_ed2250_place-drew_local_qwen-image-edit-2511.png",
-    "raw_size": [
-      1344,
-      1679
-    ],
-    "raw": "C:\\Users\\admin\\AppData\\Local\\Temp\\claude\\Z--ImageGenerator\\7e90a839-5703-42df-8007-3e3f206ae0ae\\scratchpad\\cast-scene\\drew\\round-1\\s41\\drew-seated-left-solo3-rA-s41-raw.png"
-  },
+  "rekeyed_from": "C:/Users/admin/AppData/Local/Temp/claude/Z--ImageGenerator/7e90a839-5703-42df-8007-3e3f206ae0ae/scratchpad/cast-scene/drew/round-1/s41/drew-seated-left-solo3-rA-s41-raw.png",
   "key_result": {
     "route": "A",
     "keyed_against": "flat-field",
     "tone_fit": "pct (trim gain 1.000 out of range - the field was not kept flat)",
-    "join_mean_abs_levels": 46.0,
-    "join_seam_px": 34923,
-    "plate_fraction_replaced": 0.131,
+    "join_mean_abs_levels": 49.87,
+    "join_seam_px": 41130,
+    "plate_fraction_replaced": 0.1309,
     "key_tone_gain": 1.0,
     "key_tone_offset": 0.0,
     "composite_tone_gain": 1.0,
@@ -170,27 +161,28 @@
       -6
     ],
     "blobs": 1,
-    "raw_fraction": 0.87951171875,
+    "raw_fraction": 0.879451171875,
     "seat_touched": true,
     "kept": 1,
-    "kept_px": 267078,
+    "kept_px": 264516,
     "flat_guard": {
       "flat_grey": 140.0,
       "tol": 10.0,
-      "rejected_px": 0,
-      "rejected_fraction": 0.0
+      "flat_std": 3.0,
+      "rejected_px": 31592,
+      "rejected_fraction": 0.0617
     },
-    "sticker_px": 283035,
-    "sticker_fraction_of_box": 0.5528,
+    "sticker_px": 282756,
+    "sticker_fraction_of_box": 0.5523,
     "sticker_bbox_plate": [
       95,
       725,
       664,
       1384
     ],
-    "cleanliness_outside_sticker_gt12": 0.9159,
-    "room_drift_vs_plate_outside_sticker": 0.8856,
-    "changed_fraction_whole_box": 0.9097
+    "cleanliness_outside_sticker_gt12": 0.9157,
+    "room_drift_vs_plate_outside_sticker": 0.8847,
+    "changed_fraction_whole_box": 0.9098
   },
   "outputs": {
     "sticker": "Z:\\ImageGenerator\\Cartoon\\canon\\room-kit\\v2\\figures\\drew-seated-left-solo3-rA-s41.png",

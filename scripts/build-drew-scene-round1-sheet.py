@@ -56,12 +56,12 @@ d.text((PAD, 82), "ROUND 1's CHANGE: Picture 3 cropped to the FLAMINGO ALONE (th
        fill="black", font=F_H)
 
 sheet.paste(port, (PAD, TOP))
-d.text((PAD, TOP+port.height+8), "PICTURE 2 - canon/vision/studies/drew.png", fill="black", font=F_L)
-d.text((PAD, TOP+port.height+50), "THE PORTRAIT: copy THIS bird", fill="black", font=F_S)
+d.text((PAD, TOP+port.height+8), "PICTURE 2 - the portrait", fill="black", font=F_L)
+d.text((PAD, TOP+port.height+52), "canon/vision/studies/drew.png - copy THIS bird", fill="black", font=F_S)
 sy = TOP + port.height + LAB + PAD
 sheet.paste(stg, (PAD, sy))
-d.text((PAD, sy+stg.height+8), "PICTURE 3 - staging-flamingo.png (NEW)", fill="black", font=F_L)
-d.text((PAD, sy+stg.height+50), "duo-behind.png cropped to one bird: the pose, no dog", fill="black", font=F_S)
+d.text((PAD, sy+stg.height+8), "PICTURE 3 - NEW this round", fill="black", font=F_L)
+d.text((PAD, sy+stg.height+52), "staging-flamingo.png: duo-behind cropped to ONE bird", fill="black", font=F_S)
 
 rows = []
 for i, s in enumerate(SEEDS):

@@ -26,12 +26,42 @@ WHAT Picture 1 is and in HOW MUCH of the render is allowed back onto the plate.
               LOOK but re-inks it, so this trades the plate's own lines for a
               seamless figure: the join to judge is the crop's border ring.
 
-Both routes get Picture 3 = canon/vision/studies/duo-behind.png, the staging the
-founder scored highest, and EDIT 1 defaults to THE PINNED STAGING (see
+  --route S   THE STICKER ROUTE (2026-09-08). Both A and B still hand the model
+              a picture of THE ROOM and ask it to add a figure at the model's own
+              judgement of scale and seat - and every round proved it will not
+              use OUR left chair for that judgement, however little of the room
+              it is shown: it stages him at a side table of his own. Route S
+              removes the judgement instead of shrinking the room: Picture 1 is a
+              WHITE SHEET (255) carrying only the left chair's own rendered
+              pixels (through masks/chair-left.png), one thin ink line for the
+              marble's near top edge (a horizon, nothing more), and a very PALE
+              under-drawing of the exact seated pose - the construction's own
+              figure-drew-02-toward block-in (values/ and masks/), blended
+              --under-blend (default 0.55) toward white. EDIT 1 asks the model to
+              draw Drew EXACTLY FILLING that under-drawing - same size, same
+              seat, same turn of the head - so the scale and the seat are no
+              longer his to choose. The key is an absolute one, not a difference
+              key: after the render is scaled back to the box, alpha is pixels
+              darker than --white-thresh (232) after a 1px blur, inside
+              dilate(figure mask, 24px), minus the chair's own mask, keeping only
+              components that overlap the figure mask by more than 400px, 1.5px
+              feather. The sticker is saved as RGBA exactly as route A saves one;
+              the laid preview is built through room-part's own assemble()
+              (imported as a module, never run as a command), with the render
+              handed in as an override for the figure-drew-02-toward part - so
+              the part's own parts.json rules (ring tone-match, feather, cast
+              shadow) do the compositing, the same way room-part.py lays its own
+              candidates.
+
+Routes A and B get Picture 3 = canon/vision/studies/duo-behind.png, the staging
+the founder scored highest, and EDIT 1 defaults to THE PINNED STAGING (see
 ADD_EDIT): from behind and a little to his left, the knit across the shoulder
 blades, the leather roll on the lower back, the neck in its S, the head turned
 RIGHT to the other chair in profile with the lidded eye showing, the near hand on
-the marble - never a front view.
+the marble - never a front view. Route S's under-drawing already fixes the pose,
+so it sends NO Picture 3 by default; --staging-solo adds one - the previous
+team's flamingo-only crop of duo-behind.png, cast alone so no second character
+leaks in with it.
 
 `--route legacy` is the first launch's behaviour (plate crop as Picture 1, keyed
 against the plate or a clean twin) and is kept only to reproduce the old numbers.
@@ -151,6 +181,58 @@ the set, so the chair alone is a weaker anchor than it looks - if the crop still
 drifts after Picture 3 is fixed, keep one more structural line (the bar front's
 near edge) in the field rather than widening the box.
 
+WHAT ROUND 1 MEASURED (2026-09-08, route A, seeds 41 7 21 33 44 55, six renders)
+--------------------------------------------------------------------------------
+Round 1 changed exactly what the bake-off said to change - Picture 3 cropped to
+the FLAMINGO ALONE (--staging with the left third of duo-behind.png, its label
+rewritten by the new --staging-label), plus one extra numbered EDIT naming the
+cast out loud - and nothing else about the route.
+
+  THE FIX WORKED. The labrador is gone at all six seeds. It was in 4 of 4
+  bake-off renders. Picture 3's CAST was being copied, and cropping it stopped
+  that; no wording ever did.
+
+  THE STAGING STILL FAILS, IDENTICALLY, AT ALL SIX SEEDS. Drew comes back square
+  to the camera or three-quarter FRONT - never from behind - on the FAR side of
+  the marble in the barman's place, at roughly 1.6-2x the plate's scale, seated
+  in a tufted wing chair the model invents while the plate's own studded club
+  chair stays visibly EMPTY in the foreground.
+
+  THE CAUSE IS THE FIELD, NOT THE WORDING. What survives the grey at this box is
+  the chair's studded ROLL and nothing else of the chair - and a roll at the
+  bottom of a crop reads as the near lip of a counter, which makes the marble a
+  table with a FAR side to sit at. The chair has to be legible AS a chair (its
+  back, or a drawn silhouette guide) before "seated IN it" can mean anything.
+
+  PICTURE 3 STILL LEAKS ITS ROOM. The crop is a crop of the pub, so the BIRDIE
+  BOURBON bottles, the panelling and the mirrored lettering turn up in seeds 21,
+  44 and 55. Round 2's Picture 3 should be the bird cut out on blank paper.
+
+  THE FLAT FIELD WAS NOT KEPT FLAT at any seed (0.88-0.95 of the box changed;
+  seed 41 scribbled the ground, seed 7 blew it white). The bake-off's one real
+  win did not survive this prompt, so the difference key returned a box-filling
+  slab (0.42-0.55 of the box) instead of an outline round the bird.
+
+                 join levels   plate replaced   sticker frac   field kept
+    seed 41         49.87          13.09%          0.5523        0.916
+    seed  7         60.65          10.05%          0.4239        0.948
+    seed 21         58.49          12.99%          0.5481        0.933
+    seed 33         44.17          13.01%          0.5490        0.905
+    seed 44         54.25          12.92%          0.5449        0.881
+    seed 55         45.30          12.98%          0.5476        0.924
+
+  BEST SEED 7: the only one that reads as Drew at 2x - bill, lidded eye, collar
+  band, bow tie, V-neck knit, feathered hand on the martini - and the least
+  destructive of the six.
+
+  THE KEY GUARD ADDED THIS ROUND (--flat-std, --flat-reject-tol). A featureless
+  neighbourhood is never engraved feather, knit or leather, so it may not enter
+  the sticker. It was written first as a flat-GREY test and measured inert
+  (0 px rejected at seeds 41 and 7, because neither render left the ground near
+  140), then generalised to blank paper at ANY tone, which rejects 6-31%. It
+  does not rescue a render that re-inked the whole field; it only stops a slab
+  of blank paper being laid onto the approved plate.
+
 NEVER run room-part.py, never touch parts.json.
 """
 from __future__ import annotations
@@ -174,14 +256,27 @@ SCRATCH = Path(
     "C:/Users/admin/AppData/Local/Temp/claude/Z--ImageGenerator/"
     "7e90a839-5703-42df-8007-3e3f206ae0ae/scratchpad/cast-scene"
 )
-FIGURES = ROOT / "canon" / "room-kit" / "v2" / "figures"
-PLATE = ROOT / "canon" / "room-kit" / "v2" / "plate.png"
+KIT = ROOT / "canon" / "room-kit" / "v2"
+FIGURES = KIT / "figures"
+PLATE = KIT / "plate.png"
+STAGING_SOLO_CROP = SCRATCH / "drew" / "round-1" / "staging-flamingo.png"   # route S: --staging-solo
 
 # --------------------------------------------------------- the house recipe
 _spec = importlib.util.spec_from_file_location("cast_study", ROOT / "scripts" / "cast-study.py")
 cs = importlib.util.module_from_spec(_spec)
 assert _spec.loader is not None
 _spec.loader.exec_module(cs)                            # main() is __main__-guarded
+
+# --------------------------------------------------------- room-part, for route S
+# Imported exactly the way cast-study is imported above - a module loaded from its
+# file, never run as a command - so assemble() can be called directly. Its own
+# main() is __main__-guarded, so this executes none of its subcommands; assemble()
+# and manifest() only READ canon/room-kit/v2/parts.json, they never write it, and
+# nothing here calls cmd_build or cmd_approve. NEVER run room-part.py as a script.
+_spec_rp = importlib.util.spec_from_file_location("room_part", ROOT / "scripts" / "room-part.py")
+rp = importlib.util.module_from_spec(_spec_rp)
+assert _spec_rp.loader is not None
+_spec_rp.loader.exec_module(rp)
 
 WORK = (1344, 1680)                                     # what "4:5" resolves to on the bridge
 
@@ -257,6 +352,25 @@ PICTURE3_LABEL = (
     "three-quarter so the bill and one lidded eye read against the room. COPY THIS BODY ANGLE AND THIS TURN "
     "OF THE HEAD. Do not copy its room, its crop, its lighting or its second bird"
 )
+# route S's optional Picture 3 (--staging-solo): the previous team's flamingo-only
+# crop of duo-behind.png. It still leaks room fragments of its OWN crop (see the
+# round-1 note above), so the label says not to copy them.
+PICTURE3_LABEL_SOLO = (
+    "THE FLAMINGO ALONE, cropped out of the approved staging so only his body angle and the turn of his head "
+    "carry - seen from behind and a little to his side, head turned in three-quarter so the bill and one "
+    "lidded eye read. COPY THIS BODY ANGLE AND THIS TURN OF THE HEAD ONLY. Everything else visible in this "
+    "picture - any room fragment, any bottle, any lettering behind him - belongs to a different crop and a "
+    "different edit: do not copy any of it"
+)
+PICTURE1_LABEL_STICKER = (
+    "A BLANK WHITE SHEET OF PAPER - this IS the picture being edited - carrying three things and nothing "
+    "else: the LEFT leather club chair's own already-finished pixels, in the studio's own engraved pen, at "
+    "exactly the size, the place and the perspective the finished picture uses; one thin ink line marking the "
+    "marble counter's near top edge, so the seat has a horizon; and a very PALE, faint pencil UNDER-DRAWING of "
+    "a seated bird already down in the chair, waiting to be drawn in finished line. EVERYWHERE ELSE ON THE "
+    "SHEET IS BLANK WHITE PAPER: no room, no wall, no window, no shelf, no second character, no bottle, no "
+    "lettering"
+)
 PICTURE2_LABEL = {
     "drew": (
         "DREW, the studio's official portrait — copy THIS bird identically: the small refined head, the "
@@ -288,6 +402,26 @@ ADD_EDIT = {
         "in front of it."
     )
 }
+# ROUTE S's EDIT 1 - the under-drawing already fixes the pose, the scale and the
+# seat, so this edit's job is to say "fill it", not to restage it. Every NOT
+# sentence from the pinned staging above still applies; the new one is the paper
+# itself, which must stay blank everywhere the under-drawing does not reach.
+ADD_EDIT_STICKER = {
+    "drew": (
+        "DRAW DREW (Picture 2), the white flamingo gentleman, EXACTLY FILLING the pale pencil under-drawing "
+        "already on the page - the same size, the same seat in that chair, the same turn of the head, nothing "
+        "restaged. He is seen FROM BEHIND and a little to his LEFT, over his shoulder, the knit of the V-neck "
+        "sweater vest running across his shoulder blades. Turn his head to his RIGHT, toward where the other "
+        "chair would be, so the head and the slender pale bill read in three-quarter at the very most, and the "
+        "one heavy-lidded eye shows. Carry his neck, the white collar band and the knit vest up ABOVE the "
+        "chair back, into the gap the under-drawing already leaves clear for them. The chair back stays IN "
+        "FRONT of his lower body, exactly as the chair's own pixels already show it - do not draw any part of "
+        "him in front of the chair. Draw him in the SAME engraved pen, the same size and the same light as the "
+        "chair. NOTHING ELSE: the page stays BLANK WHITE PAPER everywhere the under-drawing does not reach - "
+        "no room, no wall, no window, no table, no more of the marble than the one thin line already on the "
+        "page, no second character, no bottle, no lettering of any kind."
+    )
+}
 KEEP_EDIT = (
     "KEEP EVERYTHING ELSE EXACTLY AS PICTURE 1, pixel for pixel: the camera, the crop, the marble slab and "
     "its edge, the panelled bar front, the window and the street beyond it, the mirrored window lettering, "
@@ -304,6 +438,17 @@ KEEP_EDIT_FLAT = (
     "it is blank paper, not a room seen through fog. Do not invent anything in it: no window, no street, no "
     "shelves, no bottles, no mirror, no lettering, no hatching, no shading, no floor, no second figure. "
     "Nothing whatever is added anywhere except the one bird seated in the left chair."
+)
+# EDIT 2 for --route S: the page is mostly blank paper, not fog and not a room -
+# the same corrective KEEP_EDIT_FLAT makes for the grey field, written for white.
+KEEP_EDIT_STICKER = (
+    "KEEP EVERYTHING ELSE EXACTLY AS PICTURE 1. The left leather club chair keeps every one of its own pixels "
+    "exactly as given, and the thin ink line marking the marble's near edge stays exactly where it is and "
+    "exactly that thin. THE REST OF THE PAGE STAYS BLANK WHITE PAPER - it is not a room seen through fog and "
+    "not fog either, it is empty paper. Do not invent anything on it: no window, no street, no shelves, no "
+    "bottles, no mirror, no lettering, no hatching, no shading, no floor, no second figure, no table, no more "
+    "of the marble than the one line already given. Nothing whatever is added anywhere except finishing the "
+    "one bird whose pale under-drawing is already on the page."
 )
 # THE CLEAN TWIN's only edit. Same seed, same references, same rules, the ADD
 # sentence removed and the chair explicitly left empty: the same room, re-inked
@@ -350,8 +495,8 @@ def rules_block(mode: str, character: str) -> tuple[str, list[str]]:
 
 def build_prompt(character: str, edit: str, extra_edits: list[str], rules: str,
                  keep_first: bool, labels: list[str], clean: bool = False,
-                 keep_edit: str = KEEP_EDIT) -> str:
-    add = edit.strip() or ADD_EDIT[character]
+                 keep_edit: str = KEEP_EDIT, add_edit: dict = ADD_EDIT) -> str:
+    add = edit.strip() or add_edit[character]
     edits = [keep_edit, add] if keep_first else [add, keep_edit]
     edits += [e.strip() for e in extra_edits if e.strip()]
     head = (
@@ -460,6 +605,95 @@ def flat_field(base: np.ndarray, box: tuple[int, int, int, int], character: str,
             "chair_poly_plate": [list(pt) for pt in FIELD_CHAIR_POLY[character]],
             "marble_rows_plate": list(FIELD_MARBLE_ROWS),
             "line_sigma": FIELD_LINE_SIGMA, "line_pct": FIELD_LINE_PCT}
+    return field, info
+
+
+# --------------------------------------------------- THE WHITE SHEET (route S)
+# Routes A and B still hand the model a picture of the ROOM and ask it to place
+# the figure at its own judgement of scale and seat; every round proved it will
+# not use OUR left chair for that judgement. Route S removes the judgement
+# instead: Picture 1 is blank white paper carrying only the chair (the anchor),
+# a single line for the marble (a horizon) and a PALE UNDER-DRAWING of the exact
+# pose already solved by the construction - the model's only job is to fill it.
+STICKER_FIGURE_PART = "figure-drew-02-toward"       # the part id in parts.json / the mask+values filenames
+STICKER_FIGURE_MASK = "canon/room-kit/v2/masks/figure-drew-02-toward.png"
+STICKER_FIGURE_VALUES = "canon/room-kit/v2/values/figure-drew-02-toward.png"
+STICKER_CHAIR_MASK = "canon/room-kit/v2/masks/chair-left.png"
+STICKER_COUNTER_MASK = "canon/room-kit/v2/masks/counter.png"
+STICKER_WHITE = 255.0
+STICKER_LINE_INK = 70.0        # the marble line's tone - a clear stroke, not the room's own ink
+STICKER_LINE_HALFWIDTH = 1     # px each side of the traced curve, before feather - a THIN line
+STICKER_LINE_FEATHER = 0.6
+STICKER_FIGURE_FEATHER = 1.5   # the under-drawing's own edge, so its silhouette doesn't alias
+STICKER_CHAIR_FEATHER = 1.0    # the chair's edge, laid last so it stays crisp
+
+
+def sticker_masks(box: tuple[int, int, int, int]) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
+    """The three masks route S needs, cropped to `box` (plate pixels): the figure
+    block-in's own silhouette, the chair's own mask, and a THIN line traced along
+    the marble counter's near top edge - masks/counter.png's own top boundary per
+    column, which is exactly that edge (measured directly against the plate:
+    counter.png's mask inside this box runs from its bright near-top edge down
+    through the bar's front panel to the crop floor, so its topmost row per
+    column IS the marble's near top edge, nothing more has to be guessed)."""
+    x0, y0, x1, y1 = box
+
+    def crop(rel: str) -> np.ndarray:
+        full = np.asarray(Image.open(ROOT / rel).convert("L"))
+        return full[y0:y1, x0:x1] > 127
+
+    fig = crop(STICKER_FIGURE_MASK)
+    chair = crop(STICKER_CHAIR_MASK)
+    counter = crop(STICKER_COUNTER_MASK)
+    h, w = fig.shape
+    line = np.zeros((h, w), bool)
+    for c in np.where(counter.any(axis=0))[0]:
+        r = int(np.where(counter[:, c])[0].min())
+        line[max(0, r - STICKER_LINE_HALFWIDTH):min(h, r + STICKER_LINE_HALFWIDTH + 1), c] = True
+    return fig, chair, line
+
+
+def sticker_field(base: np.ndarray, box: tuple[int, int, int, int], character: str,
+                  under_blend: float = 0.55) -> tuple[np.ndarray, dict]:
+    """Picture 1 for --route S: a WHITE SHEET carrying only the left chair's own
+    rendered pixels, the marble's near top edge as a thin line, and a PALE
+    under-drawing of the seated block-in pose, blended `under_blend` toward white.
+
+    Composited farthest-to-nearest, exactly as the room itself would occlude
+    them: the marble line first (the figure sits in front of most of it), the
+    under-drawing next (pale, so it still reads as paper more than as a bird),
+    and the chair's real pixels LAST, on top, because the chair stands in front
+    of his lower body - the same depth order the finished picture must keep."""
+    x0, y0, x1, y1 = box
+    fig, chair, line = sticker_masks(box)
+
+    def soft(mask: np.ndarray, feather: float) -> np.ndarray:
+        a = mask.astype(np.float64) * 255.0
+        if feather > 0:
+            a = np.asarray(Image.fromarray(a.astype(np.uint8)).filter(ImageFilter.GaussianBlur(feather)),
+                           dtype=np.float64)
+        return a / 255.0
+
+    field = np.full(base.shape, STICKER_WHITE)
+
+    line_soft = soft(line, STICKER_LINE_FEATHER)
+    field = field * (1 - line_soft) + STICKER_LINE_INK * line_soft
+
+    fig_values = np.asarray(Image.open(ROOT / STICKER_FIGURE_VALUES).convert("L"),
+                            dtype=np.float64)[y0:y1, x0:x1]
+    fig_soft = soft(fig, STICKER_FIGURE_FEATHER)
+    undertone = fig_values * (1 - under_blend) + STICKER_WHITE * under_blend
+    field = field * (1 - fig_soft) + undertone * fig_soft
+
+    chair_soft = soft(chair, STICKER_CHAIR_FEATHER)
+    field = field * (1 - chair_soft) + base * chair_soft
+
+    info = {"white": STICKER_WHITE, "under_blend": under_blend,
+            "chair_fraction": round(float(chair.mean()), 4),
+            "figure_fraction": round(float(fig.mean()), 4),
+            "line_fraction": round(float(line.mean()), 4),
+            "white_fraction": round(float((~(chair | fig | line)).mean()), 4),
+            "figure_part": STICKER_FIGURE_PART, "line_ink": STICKER_LINE_INK}
     return field, info
 
 
@@ -618,18 +852,33 @@ def main() -> None:
     ap.add_argument("--extra-edit", action="append", default=[], help="one more numbered EDIT (repeatable)")
     ap.add_argument("--plate", default=str(PLATE))
     ap.add_argument("--portrait", default="", help="use THIS file as Picture 2")
-    ap.add_argument("--route", default="A", choices=("A", "B", "legacy"),
+    ap.add_argument("--route", default="A", choices=("A", "B", "S", "legacy"),
                     help="A = flat-field Picture 1 + difference key onto the real plate; "
                          "B = the plate crop as Picture 1 and the whole render pasted back with a "
-                         "feathered border; legacy = the first launch's plate-keyed behaviour")
+                         "feathered border; S = white-sheet Picture 1 with a pale under-drawing of the "
+                         "block-in pose, keyed by absolute darkness and laid through room-part's own "
+                         "assemble(); legacy = the first launch's plate-keyed behaviour")
     ap.add_argument("--flat-grey", type=float, default=140.0,
                     help="route A: the grey everything but the chair, the marble and the wall lines becomes")
     ap.add_argument("--paste-feather", type=int, default=12,
                     help="route B: the feathered border, in plate pixels, on the pasted crop")
-    ap.add_argument("--staging", default="", help="use THIS file as Picture 3 (default: duo-behind.png)")
+    ap.add_argument("--under-blend", type=float, default=0.55,
+                    help="route S: how far the under-drawing's block-in tones are blended toward white "
+                         "(0 = the block-in's own tones, 1 = invisible)")
+    ap.add_argument("--white-thresh", type=float, default=232.0,
+                    help="route S: a rendered pixel this dark or darker (after a 1px blur) is ink, not "
+                         "the sheet's own white paper - the key's threshold")
+    ap.add_argument("--staging-solo", action="store_true",
+                    help="route S: send Picture 3 = the previous team's flamingo-only crop of "
+                         "duo-behind.png (default for route S: no Picture 3 at all)")
+    ap.add_argument("--staging", default="", help="use THIS file as Picture 3 (default: duo-behind.png; "
+                                                  "route S: none unless --staging-solo)")
     ap.add_argument("--no-staging", action="store_true", help="send only two references")
     ap.add_argument("--staging-label", default="",
                     help="replace PICTURE3_LABEL (use with a --staging crop that is no longer the duo)")
+    ap.add_argument("--flat-std", type=float, default=3.0,
+                    help="route A only: local standard deviation (9px window) at or below which a "
+                         "neighbourhood counts as blank paper and cannot enter the sticker")
     ap.add_argument("--flat-reject-tol", type=float, default=10.0,
                     help="route A only: a rendered pixel this close to the flat grey AND sitting in a "
                          "featureless neighbourhood cannot enter the sticker - it is the model DELETING "
@@ -686,37 +935,54 @@ def main() -> None:
     out.mkdir(parents=True, exist_ok=True)
     FIGURES.mkdir(parents=True, exist_ok=True)
 
-    # PICTURE 1: route A flattens the crop to the set; B and legacy send it whole.
-    # Either way it is upscaled to the shape the bridge will draw at.
+    # PICTURE 1: route A flattens the crop to the set; route S blanks it to white
+    # paper with a pale under-drawing; B and legacy send it whole. Either way it
+    # is upscaled to the shape the bridge will draw at.
     field, field_info = (None, None)
     if a.route == "A":
         field, field_info = flat_field(base, box, who, a.flat_grey)
         p1_img = Image.fromarray(np.clip(field, 0, 255).astype(np.uint8))
         p1_img.save(out / "flat-field.png")
+    elif a.route == "S":
+        field, field_info = sticker_field(base, box, who, a.under_blend)
+        p1_img = Image.fromarray(np.clip(field, 0, 255).astype(np.uint8))
+        p1_img.save(out / "white-sheet.png")
     else:
         p1_img = crop
     p1_path = out / "picture1.png"
     p1_img.resize(WORK, Image.LANCZOS).save(p1_path)
     p2_path = Path(a.portrait) if a.portrait else ROOT / PORTRAIT[who]
-    p3_path = None if a.no_staging else (Path(a.staging) if a.staging else ROOT / STAGING)
+    # Picture 3: routes A/B/legacy default to the pinned duo-behind staging; route
+    # S's under-drawing already fixes the pose, so it defaults to NONE unless
+    # --staging-solo asks for the flamingo-only crop.
+    if a.staging_solo:
+        p3_default = STAGING_SOLO_CROP
+    elif a.route == "S":
+        p3_default = None
+    else:
+        p3_default = ROOT / STAGING
+    p3_path = None if a.no_staging else (Path(a.staging) if a.staging else p3_default)
 
     rules, missed = rules_block(a.rules, who)
     if missed:
         print("[canon drift] not found in the LOCAL fence, so it did not reach the prompt:")
         for m in missed:
             print("   -", m)
-    p1_label = PICTURE1_LABEL_FLAT if a.route == "A" else PICTURE1_LABEL
-    keep_edit = KEEP_EDIT_FLAT if a.route == "A" else KEEP_EDIT
-    p3_label = a.staging_label.strip() or PICTURE3_LABEL
+    p1_label = PICTURE1_LABEL_FLAT if a.route == "A" else (PICTURE1_LABEL_STICKER if a.route == "S" else PICTURE1_LABEL)
+    keep_edit = KEEP_EDIT_FLAT if a.route == "A" else (KEEP_EDIT_STICKER if a.route == "S" else KEEP_EDIT)
+    add_edit_map = ADD_EDIT_STICKER if a.route == "S" else ADD_EDIT
+    p3_label_default = PICTURE3_LABEL_SOLO if a.staging_solo else PICTURE3_LABEL
+    p3_label = a.staging_label.strip() or p3_label_default
     labels = [p1_label, PICTURE2_LABEL[who]] + ([p3_label] if p3_path else [])
-    prompt = build_prompt(who, a.edit, a.extra_edit, rules, a.keep_first, labels, keep_edit=keep_edit)
+    prompt = build_prompt(who, a.edit, a.extra_edit, rules, a.keep_first, labels,
+                          keep_edit=keep_edit, add_edit=add_edit_map)
     clean_rules, _ = rules_block("pen" if a.rules != "none" else "none", who)
     # the engraving paragraph ONLY - DREW's canon paragraph would draw him into the twin
     clean_rules = clean_rules.split(NEWLINE + NEWLINE)[0] if clean_rules else ""
     clean_labels = [p1_label, "THE SAME EMPTY ROOM AGAIN, the identical picture, for reference"]
     sidecar_staging_label = p3_label if p3_path else None
     clean_prompt = build_prompt(who, a.edit, a.extra_edit, clean_rules, a.keep_first, clean_labels,
-                                clean=True, keep_edit=keep_edit)
+                                clean=True, keep_edit=keep_edit, add_edit=add_edit_map)
 
     ref_paths = [p1_path, p2_path] + ([p3_path] if p3_path else [])
     images, refmeta = [], []
@@ -727,8 +993,14 @@ def main() -> None:
 
     for i in range(max(1, a.rolls)):
         seed = a.seed + i
-        name = f"{who}-{a.pose_name}-r{a.route}-s{seed}" if a.route != "legacy" \
-            else f"{who}-{a.pose_name}-s{seed}"
+        # --tag names the ROUND as well as the request. Without this a second
+        # round at the same seed silently overwrote the first round's approved
+        # sticker, laid preview and sidecar in canon/room-kit/v2/figures (it did,
+        # on 2026-09-08, to route S seed 7). The house name is
+        # <who>-<pose>-r<route>[-<tag>]-s<seed>.
+        _t = f"-{a.tag.strip()}" if a.tag.strip() else ""
+        name = f"{who}-{a.pose_name}-r{a.route}{_t}-s{seed}" if a.route != "legacy" \
+            else f"{who}-{a.pose_name}{_t}-s{seed}"
         tag = a.tag or f"place-{who}"
         req = cs.build_request(prompt, images, seed, not a.full, tag, "")
         (out / f"{name}.prompt.txt").write_text(prompt, encoding="utf8")
@@ -740,6 +1012,9 @@ def main() -> None:
             "route": a.route,
             "flat_field": field_info,
             "paste_feather": a.paste_feather if a.route == "B" else None,
+            "under_blend": a.under_blend if a.route == "S" else None,
+            "white_thresh": a.white_thresh if a.route == "S" else None,
+            "staging_solo": a.staging_solo,
             "staging_reference": str(p3_path) if p3_path else None,
             "staging_label": sidecar_staging_label,
             "staging_label_overridden": bool(a.staging_label.strip()),
@@ -843,6 +1118,87 @@ def main() -> None:
             changed = np.abs(matched - base) > a.measure_thresh
             cleanliness = float(changed.mean())        # here it reads "how much of the room was re-inked"
             room_drift = cleanliness
+        elif a.route == "S":
+            # ROUTE S - AN ABSOLUTE KEY, not a difference key. Picture 1 was
+            # blank white paper apart from the chair, the marble line and a PALE
+            # under-drawing, so anything the render actually drew is simply
+            # darker than the paper - there is no room re-inked to tone-match or
+            # align against, so neither is attempted here.
+            ref_name, fit = "white-sheet (absolute threshold key, no tone fit)", "none"
+            ka, kb = 1.0, 0.0
+            dy, dx = 0, 0
+            fig_mask_local, chair_mask_local, line_mask_local = sticker_masks(box)
+            dark = _blur(small, 1.0) < a.white_thresh
+            changed = dark          # for "changed_fraction_whole_box" below: Picture 1 was white paper,
+                                    # so "differs from Picture 1" and "has ink at all" are the same test
+            fig_dilated = disk_iter(fig_mask_local, ndimage.binary_dilation, 24)
+            candidate = dark & fig_dilated & ~chair_mask_local
+            if roi_mask is not None:
+                candidate &= roi_mask
+            lab, n = ndimage.label(candidate, ndimage.generate_binary_structure(2, 2))
+            overlaps = ndimage.sum(fig_mask_local, lab, range(1, n + 1)) if n else np.zeros(0)
+            keep_ids = [i + 1 for i, ov in enumerate(overlaps) if ov > 400]
+            sticker_mask = np.isin(lab, keep_ids) if keep_ids else np.zeros(base.shape, bool)
+            # HOLE FILL (round 2, 2026-09-08). Drew is a WHITE bird: the absolute
+            # key keeps only pixels darker than --white-thresh, so his own paper
+            # interior - the vest, the belly, the neck, the crown - never enters
+            # the sticker and what is laid on the plate is a lattice of ink with
+            # the room showing through it (round 1 covered 0.51-0.67 of the
+            # figure mask). Closing the hairline gaps between strokes and then
+            # filling what is enclosed makes him opaque WITHOUT reaching any new
+            # ink: both operations run on the components already kept, so no
+            # blank paper outside the bird can be added by them.
+            sticker_mask = disk_iter(sticker_mask, ndimage.binary_closing, 3)
+            sticker_mask = ndimage.binary_fill_holes(sticker_mask)
+            alpha = feather(sticker_mask, 1.5)
+
+            def _topmost_height(mask_bool: np.ndarray) -> int | None:
+                """The row-span of the topmost connected blob - the head, since
+                the head is always the topmost thing in this pose (see 'scale'
+                in the sidecar)."""
+                lb, cnt = ndimage.label(mask_bool, ndimage.generate_binary_structure(2, 2))
+                if not cnt:
+                    return None
+                objs = ndimage.find_objects(lb)
+                i = min(range(cnt), key=lambda k: objs[k][0].start)
+                return int(objs[i][0].stop - objs[i][0].start)
+
+            alpha_head_h = _topmost_height(sticker_mask)
+            mask_head_h = _topmost_height(fig_mask_local)
+            scale = (alpha_head_h / mask_head_h) if (alpha_head_h and mask_head_h) else None
+            matched, ga, gb = tone_match(small, base, "pct")   # the RGBA sticker's own tone only
+            keyinfo = {
+                "blobs": int(n), "raw_fraction": round(float(dark.mean()), 4),
+                "kept": len(keep_ids), "kept_px": int(sticker_mask.sum()), "seat_touched": None,
+                "white_thresh": a.white_thresh,
+                "figure_mask_px": int(fig_mask_local.sum()),
+                "figure_mask_dilated_px": int(fig_dilated.sum()),
+                "chair_mask_px": int(chair_mask_local.sum()),
+                "alpha_fraction_inside_figure_mask": (
+                    round(float((sticker_mask & fig_mask_local).sum() / sticker_mask.sum()), 4)
+                    if sticker_mask.sum() else 0.0),
+                "figure_mask_fraction_covered": (
+                    round(float((sticker_mask & fig_mask_local).sum() / fig_mask_local.sum()), 4)
+                    if fig_mask_local.sum() else 0.0),
+                "scale_topmost_blob_alpha_over_mask": round(scale, 4) if scale is not None else None,
+                "topmost_blob_height_alpha_px": alpha_head_h,
+                "topmost_blob_height_mask_px": mask_head_h,
+            }
+            outside = alpha == 0
+            # cleanliness: of the paper that is neither the sticker nor one of
+            # the two given anchors (the chair, the marble line), how much did
+            # the model draw on when it should have stayed blank white.
+            free = outside & ~(chair_mask_local | line_mask_local)
+            n_free = int(free.sum())
+            cleanliness = float((dark & free).sum() / n_free) if n_free else 0.0
+            # room drift: did the model keep the ONE anchor it was given - the
+            # chair - or redraw it too.
+            chair_outside = chair_mask_local & outside
+            if chair_outside.sum():
+                chair_changed = np.abs(matched - base) > a.measure_thresh
+                room_drift = float((chair_changed & chair_outside).sum() / chair_outside.sum())
+            else:
+                room_drift = 0.0
         else:
             if a.route == "A":
                 # ROUTE A - the key reference is the FLAT FIELD that was SENT as
@@ -879,10 +1235,14 @@ def main() -> None:
                 m1 = ndimage.uniform_filter(keyed, 9)
                 m2 = ndimage.uniform_filter(keyed * keyed, 9)
                 local_std = np.sqrt(np.clip(m2 - m1 * m1, 0.0, None))
-                flat = (np.abs(keyed - g) <= a.flat_reject_tol) & (local_std <= 3.0)
+                # BLANK PAPER, at any tone: a featureless neighbourhood is never
+                # engraved feather, knit or leather. The grey test stays as a
+                # second door in, for the case the model DOES keep the field.
+                flat = (local_std <= a.flat_std) | (
+                    (np.abs(keyed - g) <= a.flat_reject_tol) & (local_std <= a.flat_std * 2))
                 flat = disk_iter(flat, ndimage.binary_opening, 2)
                 flat = disk_iter(flat, ndimage.binary_dilation, 1)
-                flat_guard = {"flat_grey": g, "tol": a.flat_reject_tol,
+                flat_guard = {"flat_grey": g, "tol": a.flat_reject_tol, "flat_std": a.flat_std,
                               "rejected_px": int(flat.sum()),
                               "rejected_fraction": round(float(flat.mean()), 4)}
                 roi_mask = (~flat) if roi_mask is None else (roi_mask & ~flat)
@@ -924,8 +1284,29 @@ def main() -> None:
         sticker_path = FIGURES / f"{name}.png"
         sticker.save(sticker_path)
 
-        laid = plate.convert("RGB")
-        laid.paste(sticker.convert("RGB"), (x0, y0), sticker)
+        if a.route == "S":
+            # THE LAID PREVIEW, through room-part's OWN assemble() - not this
+            # script's paste. The RAW render (not the sticker's own pct-toned
+            # copy) is pasted into a copy of the approved plate at the box and
+            # handed to assemble() as the override candidate for the
+            # figure-drew-02-toward part, so its own parts.json rules (ring
+            # tone-match, its 3px feather, its cast shadow) do the compositing -
+            # the same call room-part.py's own render command makes to preview a
+            # candidate in context. assemble()/manifest() only READ parts.json;
+            # nothing here writes it or plate.png, and room-part.py is never run
+            # as a command. (This preview is therefore base+parts fresh through
+            # assemble(), not literally plate.png - it carries none of plate.png's
+            # own later code passes such as ink_edges or the window sign.)
+            cand_arr = np.asarray(plate, dtype=np.float64).copy()
+            cand_arr[y0:y1, x0:x1] = small
+            cand_path = out / f"{name}-candidate.png"
+            Image.fromarray(np.clip(cand_arr, 0, 255).astype(np.uint8)).save(cand_path)
+            man = rp.manifest()
+            laid_arr = rp.assemble(man, upto=None, quiet=True, override={STICKER_FIGURE_PART: cand_path})
+            laid = Image.fromarray(np.clip(laid_arr, 0, 255).astype(np.uint8)).convert("RGB")
+        else:
+            laid = plate.convert("RGB")
+            laid.paste(sticker.convert("RGB"), (x0, y0), sticker)
         laid_path = FIGURES / f"{name}-laid.png"
         laid.save(laid_path)
 

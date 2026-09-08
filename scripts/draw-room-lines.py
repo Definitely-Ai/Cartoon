@@ -565,8 +565,8 @@ PART_NOTES = {
     "backbar": "the back bar's INLAID RECESS: a wide rectangular opening CUT INTO the panelled walnut wall above the marble ledge, its face frame ONE slim FLAT walnut band lying FLUSH with the panelling - no architrave, no bolection, no bead, nothing standing proud of the wall, just a plain flat band with a fine dark joint line where it meets the panelling - and the inside of the cut LINED WITH PLAIN VERTICAL WALNUT BOARDS, quiet, close-grained, a little darker and calmer than the wall, with NO raised-and-fielded panels, NO mouldings and NO frame inside the frame; a deep dark soffit across its head, the left reveal returning back into the wall in shadow, a bright arris down the right-hand edge of the opening, and BENEATH THE FRAME THE WALL'S OWN PANELLING RUNNING ON UNTOUCHED down to the marble ledge - the unit stops dead at its own bottom rail, there is no splashback and no panel of its own below it. This is JOINERY AND A HOLE IN A WALL - it is NEVER a picture, a painting, a mirror, a window, a doorway, a poster, a screen, a television or an empty dark panel. The lining boards and the face band are SMOOTH POLISHED WALNUT, SPARSE SOFT FIGURE, NO REEDING, NO FLUTING, NO FINE PARALLEL STRIPING - a few broad soft sweeps of grain in a wide board, and the flat face band plain",
     "shelf-lower": "the lower shelf inside the inlaid recess: a plain 3 cm walnut board running the full width of the opening from reveal to reveal, and it IS THE FLOOR OF THE RECESS - nothing shows beneath it. Seen from a little above, so its polished top catches the daylight and a dark square front edge runs under it - wood, not marble, not stone, and no bracket, no moulding, no nosing",
     "shelf-upper": "the upper shelf inside the inlaid recess: a plain 3 cm walnut board running the full width of the opening from reveal to reveal, seen from BELOW so its bright front edge stands over its own dark underside, and throwing a soft shadow down the boarded back of the recess beneath it",
-    "bottles-lower": "the row of EIGHT real liquor bottles standing on the lower shelf of the inlaid recess, well in front of its boarded back: REAL BOTTLES OF DIFFERENT SHAPES AND SIZES, FEW AND BIG, NO TWO NEIGHBOURS ALIKE - among them a square-shouldered bourbon, a tall round-shouldered scotch, a broad squat rum, a SQUARE GIN FLASK with parallel sides and a sharp shoulder, a bulbous decanter-like rye, a tall slim vodka, a broad-shouldered whiskey and a wide-shouldered tequila - each with its own neck, its own shoulder and its own closure, a foil capsule under a dark screw cap or a taller cork stopper. Clear glass is pale with a bright highlight down its window side; the dark spirits are deep warm amber, glassy, and both read CLEARLY LIGHTER than the dark boards behind them. EVERY BOTTLE IS AT LEAST HALF FULL AND NO TWO TO THE SAME LEVEL: the liquid inside is DARKER than the empty glass above it and the two meet at a clean horizontal FILL LINE across the bottle. Each bottle STANDS ON THE BOARD, with a small dark pool of contact shadow at its foot and a soft shadow thrown up the boarding behind it, leaning away from the window at frame-left. Each bottle wears ONE paper label, and their shapes differ - rectangles, wrap-around bands, ovals, shields - lighter than the glass, with a crisp edge. THE LABELS ARE BLANK: no lettering, no words, no letters, no numerals, no pseudo-text of any kind - the brand names are typeset onto them in code afterwards, exactly as the window is gilded",
-    "bottles-upper": "the row of SIX real liquor bottles standing on the upper shelf of the inlaid recess, well in front of its boarded back: REAL BOTTLES OF DIFFERENT SHAPES AND SIZES, FEW AND BIG, NO TWO NEIGHBOURS ALIKE - among them a square-shouldered bourbon, a tall round-shouldered scotch, a broad squat rum, a SQUARE GIN FLASK with parallel sides and a sharp shoulder, a bulbous decanter-like rye, a tall slim vodka, a broad-shouldered whiskey and a wide-shouldered tequila - each with its own neck, its own shoulder and its own closure, a foil capsule under a dark screw cap or a taller cork stopper. Clear glass is pale with a bright highlight down its window side; the dark spirits are deep warm amber, glassy, and both read CLEARLY LIGHTER than the dark boards behind them. EVERY BOTTLE IS AT LEAST HALF FULL AND NO TWO TO THE SAME LEVEL: the liquid inside is DARKER than the empty glass above it and the two meet at a clean horizontal FILL LINE across the bottle. Each bottle STANDS ON THE BOARD, with a small dark pool of contact shadow at its foot and a soft shadow thrown up the boarding behind it, leaning away from the window at frame-left. Each bottle wears ONE paper label, and their shapes differ - rectangles, wrap-around bands, ovals, shields - lighter than the glass, with a crisp edge. THE LABELS ARE BLANK: no lettering, no words, no letters, no numerals, no pseudo-text of any kind - the brand names are typeset onto them in code afterwards, exactly as the window is gilded",
+    "bottles-lower": "the row of ELEVEN real liquor bottles standing shoulder to shoulder on the lower shelf of the inlaid recess, well in front of its boarded back - A NORMAL BAR'S BACK SHELF, crowded and mixed: EVERY BOTTLE A DIFFERENT SHAPE, HEIGHT AND WIDTH, no two neighbours alike - squat flasks beside tall slim bottles, square shoulders beside round, a decanter, a long-necked bottle, a stubby one - with different closures: foil capsules under dark caps, pale rounded cork stoppers, tall black caps. The glass is mixed too: CLEAR bottles pale with a bright highlight down the window side, DARK-GLASS bottles deep, glassy and clearly darker than their clear neighbours, all reading against the darker boards behind. EVERY BOTTLE IS AT LEAST HALF FULL and the levels differ: the liquid inside is DARKER than the empty glass above it and the two meet at a clean horizontal FILL LINE. Each bottle STANDS ON THE BOARD with a small pool of contact shadow at its foot and a soft shadow up the boarding behind it, leaning away from the window at frame-left. Each wears ONE paper label - most white paper, a few BLACK paper - placed high or low as the block-in places it, some with a small second label on the neck; the labels are PLAIN AND BLANK: no lettering, no words, no letters, no numerals, no pseudo-text, no drawing - their emblems are stamped on in code afterwards, exactly as the window is gilded",
+    "bottles-upper": "the row of NINE real liquor bottles standing shoulder to shoulder on the upper shelf of the inlaid recess, well in front of its boarded back - A NORMAL BAR'S BACK SHELF, crowded and mixed: EVERY BOTTLE A DIFFERENT SHAPE, HEIGHT AND WIDTH, no two neighbours alike - squat flasks beside tall slim bottles, square shoulders beside round, a decanter, a long-necked bottle, a stubby one - with different closures: foil capsules under dark caps, pale rounded cork stoppers, tall black caps. The glass is mixed too: CLEAR bottles pale with a bright highlight down the window side, DARK-GLASS bottles deep, glassy and clearly darker than their clear neighbours, all reading against the darker boards behind. EVERY BOTTLE IS AT LEAST HALF FULL and the levels differ: the liquid inside is DARKER than the empty glass above it and the two meet at a clean horizontal FILL LINE. Each bottle STANDS ON THE BOARD with a small pool of contact shadow at its foot and a soft shadow up the boarding behind it, leaning away from the window at frame-left. Each wears ONE paper label - most white paper, a few BLACK paper - placed high or low as the block-in places it, some with a small second label on the neck; the labels are PLAIN AND BLANK: no lettering, no words, no letters, no numerals, no pseudo-text, no drawing - their emblems are stamped on in code afterwards, exactly as the window is gilded",
     "tv": "the switched-off flat-screen television in a slim matte-black frame, flush on the panelling",
     "board": "the chalkboard in its plain wooden frame, its slate matt black and unmarked",
     "window-frame": "the window's joinery, CLEAN STRAIGHT LINES: the opening cut through the panelled wall, its reveal, a plain flat square architrave on the room face - the same simple flat band on all four sides, the bottom exactly like the sides - and, stepped back inside the reveal, the dark sash frame that holds the single pane. There is NO window sill, NO projecting ledge or shelf under the pane, NO moulded nosing, NO rail: under the pane the flat architrave band simply meets the panelled wall",
@@ -818,9 +818,16 @@ BOTTLE_PITCH = 0.152            # RETIRED as a spacing rule (2026-09-08). A row 
 # like they have real labels like real liquor bottles they should have
 # different shapes and sizes and they should all be at least half full".
 #
-# So the four cartoon profiles are gone. EIGHT REAL SILHOUETTES at true bottle
-# heights in metres, each with its own shoulder, neck and closure, and each
-# drawn as the four things the model actually renders from:
+# ROUND 2 (founder, 2026-09-08, verbatim): "the bottles shouldnt all the look
+# the same it should be like a normal bar with lots of differnet bottles the
+# bottles shouldnt have creative names or even names at all on them they just
+# need emblems". FOURTEEN REAL SILHOUETTES now (up from eight), a normal bar's
+# worth of variety on the shelf, and NAMES ARE GONE from the default path: the
+# label carries one bold EMBLEM (scripts/label-bottles.py --mode emblems), not
+# a house brand. `--mode names` keeps the old lettered pipeline alive for
+# whoever still wants it - see BRANDS / BRAND_BY_KIND below, unchanged in kind.
+#
+# Each kind is drawn as the four things the model actually renders from:
 #
 #   THE GLASS, BY KIND. Clear glass is pale with a bright rim down its lit edge;
 #         a dark spirit is mid-dark. Both are graded left to right, because the
@@ -830,21 +837,57 @@ BOTTLE_PITCH = 0.152            # RETIRED as a spacing rule (2026-09-08). A row 
 #         it darker than the empty glass above. That is the whole of "visibly
 #         filled to different levels", and it is the one thing a blank cylinder
 #         cannot fake. Never below half: FILL_RANGE.
-#   THE CLOSURE. A dark foil capsule down the neck under a darker cap, wider
-#         than the neck - a short screw cap on the whiskies, a taller cork
-#         stopper on the rye and the tequila.
-#   THE LABEL. A LIGHTER patch - rectangle, band, oval or shield - sized to the
-#         bottle it is on and never under LABEL_MIN_PX tall on the page, because
-#         scripts/label-bottles.py has to typeset a house brand onto it from
-#         labels.json exactly as sign-on-glass.py letters the pane. THE VALUES
-#         CARRY A BLANK PATCH AND NOTHING ELSE: the model letters any rectangle
-#         it is handed and it garbles it, so the names are code.
+#   THE CLOSURE. `cap_style` is its OWN field now, alongside shape and glass,
+#         not inferred from (cap_h, cap_k) after the fact (critic, 2026-09-08:
+#         "all 20 caps render as the same short dark rectangle" - cap_h/cap_k
+#         alone only changed a rectangle's size, never its shape or tone, so
+#         the three styles never actually read as different things). Three
+#         real styles, three different shapes in bottle():
+#           "capsule" - the original foil sleeve down the neck (CAPSULE_V)
+#                       under a short dark rectangle cap (CAP_V) - unchanged.
+#           "cork"    - NO foil sleeve (a real corked bottle has none): a
+#                       ROUNDED dome (CORK_SIL, through the same _sil() a
+#                       body's own silhouette uses) in a LIGHT tone (CORK_V) -
+#                       a pale bulb where every other bottle has a dark block.
+#           "tall"    - the capsule's sleeve-plus-rectangle again, but cap_h
+#                       and cap_k are both pushed well past the capsule kinds'
+#                       (0.027-0.034 / 1.45-1.65 against 0.016-0.023 / 1.16-
+#                       1.34), so the black rectangle itself stands taller and
+#                       wider, not just a few page pixels more of the same
+#                       short block.
+#         cap_h and cap_k still set the closure's own height and width, same
+#         as always; cap_style only decides which of the three shapes those
+#         two numbers get drawn as.
+#   THE LABEL. A LIGHTER (or, for a black-label bottle, DARKER) patch -
+#         rectangle, band, oval or shield - sized to the bottle it is on. THE
+#         VALUES CARRY A BLANK PATCH AND NOTHING ELSE: the model letters or
+#         emblems any rectangle it is handed and it garbles it, so both names
+#         and emblems are set in code, onto this same blank patch.
 #
 # A silhouette is a list of (v, r): v runs up the GLASS (base 0, top of neck 1;
 # the cap sits above that) and r is the half-width as a fraction of w/2. The
 # points are joined straight, so a square shoulder is one short steep run and a
 # round one is four shallow ones - the profile IS the drawing, and no kind here
 # shares another's.
+#
+# HEIGHT AND WIDTH NOW SPAN THE FULL REAL RANGE (critic's brief, 2026-09-08:
+# "from a squat half-height rum to a tall slim vodka nearly to the shelf
+# above"). The lower shelf clears 0.46 m before a bottle touches the board
+# above it (SHELF_HEADROOM already spent); `vodka` stands 0.430 m, 3 cm short
+# of that - "nearly to the shelf above", read literally. `rum` stands 0.205 m,
+# not quite half of that - the squat half-height kind, wide enough (0.238 m)
+# that the two read as opposite ends of one shelf, not two sizes of the same
+# bottle. Every other kind falls between them, no two alike, so ELEVEN LOWER
+# reads as a normal bar's shelf and not a repeat.
+#
+# WIDTH IS NOW THE KIND'S OWN METRE, NOT A SCALED FRACTION (BOTTLE_W_SCALE
+# retired to 1.0, see below) - eleven and nine bottles across the same 1.80 m
+# opening need real width variety to sit close without a fixed multiplier
+# fighting it: 0.088 m (vodka) to 0.238 m (rum), calibrated by hand against
+# bottle_row()'s own gap arithmetic so the lower row's gaps average ~3 cm and
+# the upper row's ~6 cm - SMALL AND UNEVEN, not the 7-17 cm gaps eight-and-six
+# bottles left in this same opening.
+#
 # SHOULDER_V, the round's first fix (critic, 2026-09-08). `fill` used to split
 # the WHOLE glass, base 0 to the top of the neck 1, and on eleven of twenty
 # bottles the line landed in the NECK - which is not a liquid level, it is a
@@ -855,53 +898,120 @@ BOTTLE_PITCH = 0.152            # RETIRED as a spacing rule (2026-09-08). A row 
 # `label` is the label's height as a fraction of THE BODY, floored in PAGE
 # PIXELS (LABEL_MIN_PX) - a fraction alone gave a 0.24 m rum an 18 px label.
 BOTTLE_KINDS = {
-    "bourbon": dict(h=0.315, w=0.092, glass="dark", cap=(0.020, 1.30), shape="shield",
+    "bourbon": dict(h=0.320, w=0.140, glass="dark", cap=(0.020, 1.28), shape="shield",
+                    cap_style="capsule",
                     label=0.58, shoulder=0.61,
                     sil=[(0.00, 0.96), (0.03, 1.00), (0.55, 1.00), (0.60, 0.99),
                          (0.65, 0.58), (0.69, 0.30), (0.72, 0.27), (1.00, 0.26)]),
-    "scotch":  dict(h=0.330, w=0.086, glass="dark", cap=(0.018, 1.24), shape="oval",
+    "scotch":  dict(h=0.325, w=0.122, glass="dark", cap=(0.027, 1.45), shape="oval",
+                    cap_style="tall",
                     label=0.56, shoulder=0.63,
                     sil=[(0.00, 0.95), (0.03, 1.00), (0.50, 1.00), (0.59, 0.96),
                          (0.67, 0.80), (0.74, 0.55), (0.80, 0.34), (0.85, 0.26),
                          (1.00, 0.25)]),
-    "rum":     dict(h=0.320, w=0.102, glass="dark", cap=(0.018, 1.26), shape="band",
-                    label=0.60, shoulder=0.595,
-                    sil=[(0.00, 0.94), (0.04, 1.00), (0.44, 1.00), (0.53, 0.97),
-                         (0.63, 0.84), (0.72, 0.58), (0.79, 0.36), (0.84, 0.29),
-                         (1.00, 0.28)]),
+    # THE SQUAT HALF-HEIGHT KIND (founder's own example, 2026-09-08). Wide and
+    # low - a broad flagon shoulder, a short neck, a cork stopper - so the
+    # shelf's low end is a real shape and not just a scaled-down bourbon.
+    "rum":     dict(h=0.205, w=0.238, glass="dark", cap=(0.030, 1.55), shape="band",
+                    cap_style="cork",
+                    label=0.58, shoulder=0.66,
+                    sil=[(0.00, 0.90), (0.05, 1.00), (0.55, 1.00), (0.62, 0.96),
+                         (0.70, 0.75), (0.78, 0.48), (0.84, 0.30), (1.00, 0.28)]),
     # THE GIN IS A SQUARE FLASK (critic, 2026-09-08: it was the one silhouette
     # with no shoulder at all - a cone that tapered from its foot to its cap,
-    # which is a carafe and not a bottle). Now: parallel sides at full width the
+    # which is a carafe and not a bottle). Parallel sides at full width the
     # whole height of the body, then ONE short steep run into the neck. That
     # corner is the shoulder, and it is what says flask rather than cylinder.
-    "gin":     dict(h=0.320, w=0.084, glass="clear", cap=(0.017, 1.22), shape="rectangle",
+    "gin":     dict(h=0.310, w=0.112, glass="clear", cap=(0.017, 1.20), shape="rectangle",
+                    cap_style="capsule",
                     label=0.58, shoulder=0.62,
                     sil=[(0.00, 0.97), (0.02, 1.00), (0.58, 1.00), (0.62, 0.99),
                          (0.68, 0.66), (0.73, 0.36), (0.76, 0.30), (1.00, 0.29)]),
-    "rye":     dict(h=0.362, w=0.104, glass="dark", cap=(0.028, 1.48), shape="oval",
+    "rye":     dict(h=0.360, w=0.132, glass="dark", cap=(0.030, 1.50), shape="oval",
+                    cap_style="tall",
                     label=0.62, shoulder=0.50,
                     sil=[(0.00, 0.72), (0.06, 0.86), (0.16, 0.97), (0.28, 1.00),
                          (0.40, 0.98), (0.50, 0.88), (0.58, 0.72), (0.66, 0.50),
                          (0.72, 0.34), (0.78, 0.27), (1.00, 0.26)]),
-    "vodka":   dict(h=0.340, w=0.084, glass="clear", cap=(0.016, 1.20), shape="band",
-                    label=0.55, shoulder=0.66,
-                    sil=[(0.00, 0.97), (0.03, 1.00), (0.66, 1.00), (0.72, 0.95),
-                         (0.78, 0.72), (0.83, 0.44), (0.87, 0.28), (1.00, 0.24)]),
-    "whiskey": dict(h=0.325, w=0.098, glass="dark", cap=(0.017, 1.24), shape="rectangle",
+    # THE TALL SLIM KIND (founder's other example). Nearly to the shelf above:
+    # 0.430 m against a 0.460 m clearance, 3 cm to spare - the tallest thing on
+    # either shelf, and the narrowest (0.088 m) so it never reads as a stretched
+    # copy of a normal bottle.
+    "vodka":   dict(h=0.430, w=0.088, glass="clear", cap=(0.016, 1.16), shape="band",
+                    cap_style="capsule",
+                    label=0.52, shoulder=0.72,
+                    sil=[(0.00, 0.97), (0.02, 1.00), (0.70, 1.00), (0.75, 0.95),
+                         (0.80, 0.70), (0.85, 0.42), (0.89, 0.26), (1.00, 0.24)]),
+    "whiskey": dict(h=0.300, w=0.156, glass="dark", cap=(0.023, 1.34), shape="rectangle",
+                    cap_style="cork",
                     label=0.58, shoulder=0.58,
                     sil=[(0.00, 0.88), (0.05, 1.00), (0.40, 1.00), (0.54, 0.98),
                          (0.64, 0.90), (0.72, 0.72), (0.79, 0.48), (0.85, 0.30),
                          (1.00, 0.28)]),
-    "tequila": dict(h=0.325, w=0.096, glass="clear", cap=(0.026, 1.42), shape="shield",
+    "tequila": dict(h=0.290, w=0.127, glass="clear", cap=(0.028, 1.46), shape="shield",
+                    cap_style="cork",
                     label=0.56, shoulder=0.60,
                     sil=[(0.00, 0.96), (0.03, 1.00), (0.58, 1.00), (0.65, 0.98),
                          (0.70, 0.70), (0.74, 0.42), (0.77, 0.30), (1.00, 0.29)]),
+    # SIX NEW KINDS (2026-09-08), so eleven-lower/nine-upper never has to repeat
+    # a silhouette within a row. Bulbous snifter-necked brandy; a wide short
+    # sherry flagon; a tall slim triple sec under a tall black cap; a
+    # shield-labelled amaro; a slim absinthe, also under a tall black cap; a
+    # short wide port.
+    "brandy":  dict(h=0.340, w=0.120, glass="dark", cap=(0.022, 1.30), shape="oval",
+                    cap_style="capsule",
+                    label=0.60, shoulder=0.55,
+                    sil=[(0.00, 0.90), (0.05, 0.98), (0.42, 1.00), (0.50, 0.97),
+                         (0.58, 0.86), (0.66, 0.62), (0.73, 0.40), (0.79, 0.28),
+                         (1.00, 0.26)]),
+    "sherry":  dict(h=0.240, w=0.177, glass="dark", cap=(0.028, 1.50), shape="band",
+                    cap_style="cork",
+                    label=0.58, shoulder=0.66,
+                    sil=[(0.00, 0.93), (0.04, 1.00), (0.60, 1.00), (0.66, 0.95),
+                         (0.73, 0.70), (0.80, 0.44), (0.85, 0.30), (1.00, 0.28)]),
+    "triple_sec": dict(h=0.375, w=0.092, glass="clear", cap=(0.032, 1.60), shape="rectangle",
+                    cap_style="tall",
+                    label=0.56, shoulder=0.68,
+                    sil=[(0.00, 0.96), (0.02, 1.00), (0.62, 1.00), (0.68, 0.97),
+                         (0.74, 0.68), (0.80, 0.40), (0.84, 0.27), (1.00, 0.26)]),
+    # AMARO'S SHOULDER IS NOW A SMOOTH ROUND CURVE (critic's second fix,
+    # 2026-09-08: at render scale it read the same as bourbon's and gin's
+    # abrupt single-corner shoulder, three "identical rounded shoulders" in a
+    # row on the upper shelf). MORE POINTS over a LONGER v-span than either of
+    # those two - the radius bleeds off gradually instead of turning a hard
+    # corner, which is what a round-shouldered shape needs to read as round
+    # rather than as one more flask.
+    "amaro":   dict(h=0.300, w=0.150, glass="dark", cap=(0.026, 1.42), shape="shield",
+                    cap_style="cork",
+                    label=0.58, shoulder=0.66,
+                    sil=[(0.00, 0.94), (0.04, 1.00), (0.48, 1.00), (0.56, 0.99),
+                         (0.62, 0.94), (0.68, 0.80), (0.73, 0.58), (0.78, 0.38),
+                         (0.83, 0.28), (1.00, 0.27)]),
+    # ABSINTHE'S SHOULDER IS NOW A LONG STRAIGHT DIAGONAL (critic's second
+    # fix): whiskey already owns the long MULTI-STEP curved taper on this
+    # shelf, so absinthe's taper is stretched to start much lower on the body
+    # (v 0.50 instead of 0.66) and run in three long straight segments rather
+    # than whiskey's many short ones - a slim wine-bottle slope beside
+    # whiskey's rounder one, not a repeat of it.
+    "absinthe": dict(h=0.295, w=0.130, glass="clear", cap=(0.034, 1.65), shape="band",
+                    cap_style="tall",
+                    label=0.55, shoulder=0.60,
+                    sil=[(0.00, 0.95), (0.04, 1.00), (0.44, 1.00), (0.50, 0.97),
+                         (0.60, 0.86), (0.68, 0.68), (0.76, 0.48), (0.82, 0.32),
+                         (1.00, 0.27)]),
+    "port":    dict(h=0.230, w=0.180, glass="dark", cap=(0.023, 1.34), shape="rectangle",
+                    cap_style="cork",
+                    label=0.58, shoulder=0.58,
+                    sil=[(0.00, 0.90), (0.05, 1.00), (0.50, 1.00), (0.58, 0.97),
+                         (0.66, 0.80), (0.73, 0.52), (0.79, 0.32), (1.00, 0.29)]),
 }
-# FEWER, BIGGER BOTTLES (critic, 2026-09-08). Twenty bottles gave twenty labels
-# that could carry a rule pair and nothing else. Every kind's width is scaled
-# here - the HEIGHTS are the kinds' own, 30-35 cm, real bottle heights - and the
-# rows are cut to eight below and six above, which buys about 75% more label.
-BOTTLE_W_SCALE = 1.75
+# WIDTH IS NOW THE KIND'S OWN NUMBER (critic, 2026-09-08). The old 1.75
+# multiplier existed to inflate eight generic widths into "fewer, bigger"
+# bottles; now every kind's `w` IS its true width in metres, hand-calibrated
+# against bottle_row()'s gap arithmetic (see the block comment above), so the
+# scale is kept at 1.0 rather than deleted - anything downstream that still
+# multiplies by it is unaffected.
+BOTTLE_W_SCALE = 1.0
 # The glass, as (empty left, empty right, liquid left, liquid right). The empty
 # half is LIGHTER than the liquid half in both materials - that is what draws
 # the fill line - and clear glass clears the lining (84-118) at both ends while
@@ -917,41 +1027,121 @@ BOTTLE_W_SCALE = 1.75
 # frame); the clear glass came UP; and THE DARK SPIRITS CAME UP TOO, because a
 # dark spirit under a lamp is a warm mid-tone with a bright edge, not a hole -
 # taken down with the lining they landed in it and the gate read 14.
+#
+# ROUND 2's FIRST NUMBERS STILL FAILED THE GATE (critic, 2026-09-08: "only ~4
+# of 20 read as dark"). Dark liquid at 74-54, median 64, sits 3 LEVELS from the
+# lining's own median (67) - inside GLASS_SEP_MIN's 25-level gate, not past it;
+# the "100-level fill step" comment above was true of the STEP (empty-to-liquid
+# CONTRAST) but said nothing about where the liquid tone sat relative to the
+# lining BEHIND it, and that is what a bottle needs to read as a bottle rather
+# than a gap in the lining. So the dark liquid tone comes DOWN again - the
+# opposite direction from round 2's own fix, because round 2 was correcting a
+# too-DARK liquid that matched the CAP, and this corrects a too-LIGHT one that
+# matches the LINING; both are "make it distinct from its neighbour," aimed at
+# different neighbours. Below, median 38 clears the lining's 67 by 29, past the
+# gate; the empty-glass tone comes down with it (198-176 to 168-148) so the
+# small band above the fill line does not read as a different, paler glass.
+# THE FILL STEP STAYS >= 100 LEVELS EITHER WAY (168-46=122, 148-30=118) - the
+# rule this round was told to keep.
 GLASS_V = {"clear": (228.0, 206.0, 148.0, 126.0),
-           "dark":  (198.0, 176.0, 74.0, 54.0)}   # FILL STEP >= 100 levels: the render of
-                                                  # 2026-09-08 (s7, s21) drew every bottle dark
-                                                  # to the shoulder on a 50-level step
+           "dark":  (168.0, 148.0, 46.0, 30.0)}  # FILL STEP >= 100 levels, AND
+                                                  # the liquid median (38) clears
+                                                  # the lining's (67) by >= GLASS_SEP_MIN
 MENISCUS_V = 34.0               # a 2.5 px dark line where liquid meets glass
-RIM_V = {"clear": 250.0, "dark": 206.0}      # the lit edge, down the window side
-EDGE_V = {"clear": 58.0, "dark": 40.0}       # and the dark turn on the other
+# THE SPECULAR HIGHLIGHT WAS COVERING THE DARK BODY (critic, same round): at
+# RIM_V["dark"]=206 the dark bottle's own lit edge read almost as bright as the
+# CLEAR bottle's (250) - on a narrow dark bottle that one bright stripe down
+# the window side, run the FULL height including the liquid, read as "half of
+# this bottle is pale glass" and the liquid tone underneath never got seen.
+# Dimmed to 130 (a highlight, not a near-white blaze) and narrowed - RIM_F is
+# now per-glass, and dark's strip is little over half clear glass's width - so
+# the true body tone (46-30) is what a reader's eye lands on, not the shine.
+RIM_V = {"clear": 250.0, "dark": 130.0}      # the lit edge, down the window side
+EDGE_V = {"clear": 58.0, "dark": 22.0}       # and the dark turn on the other -
+                                              # dark's edge came down too, clear
+                                              # of the new body tone (46-30)
 GLASS_SEP_MIN = 25.0            # levels between a body's median and its lining
-RIM_F, EDGE_F = 0.30, 0.18      # each as a fraction of the half-width AT THAT
-                                # HEIGHT, so a neck's highlight is narrower than
-                                # a belly's - which is what makes it a cylinder
+RIM_F = {"clear": 0.30, "dark": 0.17}   # each as a fraction of the half-width AT
+EDGE_F = 0.18                           # THAT HEIGHT, so a neck's highlight is
+                                # narrower than a belly's - which is what makes
+                                # it a cylinder. RIM_F is per-glass (above); a
+                                # dark bottle's specular strip is narrower as
+                                # well as dimmer, so it never eats "most of the
+                                # body" the way a clear-width strip did at 206
 CAP_V = (26.0, 16.0)            # the cap: the darkest thing on the bottle
 CAPSULE_V = (52.0, 32.0)        # the foil down the neck under it
 CAPSULE_H = 0.09                # of the glass height
-LABEL_V = (244.0, 216.0)        # the paper: the lightest thing in the recess,
+# THE CORK STOPPER (founder: "the cork ... rounded, light" - see cap_style in
+# BOTTLE_KINDS and bottle() below). LIGHT is relative to CAP_V/CAPSULE_V, not
+# to the page: 168 sits well above both of those and above the new dark-glass
+# body tone, so a cork instantly reads as a pale dome where every other bottle
+# on the shelf shows a dark block. CORK_SIL is its own tiny silhouette, run
+# through the same _sil() a bottle's own body uses - full width at the base,
+# tapering to a rounded crown - not a rectangle at all.
+CORK_V = (168.0, 140.0)
+CORK_SIL = [(0.00, 1.00), (0.35, 1.00), (0.62, 0.88), (0.82, 0.62), (1.00, 0.32)]
+LABEL_V = (244.0, 216.0)        # WHITE paper: the lightest thing in the recess,
                                 # and it has to stay clear of clear EMPTY glass
+# BLACK-LABEL PAPER (founder, 2026-09-08: "a few BLACK-LABEL bottles ... among
+# the white-label ones"). Dark paper, a light emblem inked onto it later by
+# label-bottles.py --mode emblems (it inverts: white device on black paper).
+# Set BELOW the dark spirit's own liquid tone (now 46-30) and the lining
+# (60-74) so it still reads as the darkest large patch on its own bottle,
+# second only to the cap - a black label that sat AT the lining's tone would
+# vanish into it. Brought down with the liquid tone in this round, same
+# reasoning: it has to stay the darkest LARGE patch on ITS bottle even now
+# that the liquid under it reads much darker than it used to.
+LABEL_V_BLACK = (30.0, 20.0)
 LABEL_W_F = 0.88                # of the body's width where the label sits, so a
                                 # sliver of lit glass survives either side of it
 LABEL_MIN_PX = 34.0             # THE LABEL FLOOR, IN PAGE PIXELS, and it is now
 LABEL_MIN_W_PX = 34.0           # a floor in BOTH directions (critic: at 22 px a
                                 # label carries a rule pair and no name at all).
-                                # 34 px each way is what scripts/label-bottles.py
-                                # needs to set the longest word of a house brand
-                                # at a 6 px cap height
+                                # 34 px each way is what a set brand name needs.
+                                # ELEVEN-UP-FROM-EIGHT (2026-09-08): the height
+                                # floor still holds everywhere (span_m below is
+                                # forced up to it), but the WIDTH floor no
+                                # longer can be, on the narrowest kinds (vodka,
+                                # triple_sec) at this many-bottles-per-shelf
+                                # width - measured, not assumed: see the build
+                                # log. scripts/label-bottles.py's emblem mode
+                                # carries its own lower floor, EMBLEM_MIN_PX =
+                                # 26.0, for exactly those labels: a bold device
+                                # still reads at 26 px where a set word would not.
 LABEL_PX_MARGIN = 0.8           # asked for over the floor, so rounding cannot
                                 # land a label at 33.9 px
 LABEL_FOOT_PX = 2.0             # glass left under the label, on the page
 LIQUID_PX = 4.0                 # AND THE LIQUID SHOWING ABOVE IT. Without this
                                 # the label's top edge IS the fill line and the
                                 # step across it is paper against glass
-FILL_RANGE = (0.55, 0.78)       # "at least half full", now read on THE BODY:
-                                # the split is at f * shoulder, so 0.55 is half
-                                # the body and 0.78 leaves a real empty band
+FILL_RANGE = (0.50, 0.78)       # "at least half full", now read on THE BODY:
+                                # the split is at f * shoulder, so 0.50 is the
+                                # literal floor and 0.78 leaves a real empty
+                                # band. WIDENED FROM 0.55 (critic, 2026-09-08:
+                                # "fill spans only 0.64-0.78 ... widen it
+                                # toward the 0.5 floor") - the achieved spread
+                                # also depends on each kind's own `need_v`
+                                # below, which is a real per-bottle floor a
+                                # short label-bearing body cannot get under
 EMPTY_BAND_MIN_PX = 8.0         # of empty glass between the fill line and the
 FILL_STEP_MIN = 40.0            # shoulder, and this much tone across the line
+# LABEL POSITION, high or low on the body (founder, 2026-09-08: "some labels
+# high on the shoulder, some low"). "high" is the original rule: the label's
+# top is pinned just under the fill line (so a strip of liquid always shows
+# above it) and never above the shoulder. "low" anchors the label's top well
+# down the body instead - LOW_TOP_FRAC of the shoulder height - and only lets
+# it rise off that anchor when the label's own minimum span needs the room.
+LOW_TOP_FRAC = 0.46
+# NECK LABELS (founder: "3-4 bottles with a small extra neck label"). A small
+# band wrapped around the NECK, between the shoulder and the capsule, on a few
+# bottles only. NECK_LABEL_MARGIN keeps it clear of both; NECK_LABEL_SPAN_FRAC
+# is how much of that clear band the label itself actually spans - the rest is
+# bare neck above and below it, which is what makes it read as an extra label
+# and not a second body label pushed up.
+NECK_LABEL_MARGIN = 0.03
+NECK_LABEL_SPAN_FRAC = 0.46
+NECK_LABEL_MIN_V = 0.07          # skip the neck label if less than this much of
+                                  # hb's v-range is clear between shoulder and capsule
 # THE BOTTLES' OWN SHADOWS (critic, 2026-09-08: "they are stickers"). Two per
 # bottle, both through cast() inside the row's own part, so masks/ hold members
 # and shadows/ hold the shading: a CONTACT shadow on the board the bottle
@@ -972,35 +1162,104 @@ BOTTLE_EDGE_M = 0.045           # the clearance between a row's end bottle and
 BOTTLE_GAP_MIN = 0.030          # and between two neighbours: 9 px of lining
 SHELF_HEADROOM = 0.03           # the founder's rule: a row's tallest bottle
                                 # clears the board or the head above it by 3 cm
-# THE TWO ROWS, WRITTEN OUT AND NOT SAMPLED. A random draw put two rums side by
-# side and the row read as a repeat. EIGHT BELOW AND SIX ABOVE now, not eleven
-# and nine (critic, 2026-09-08: fewer, bigger, so the labels can carry a name),
-# and still different mixes AND different pitches so the eye cannot find the
-# module: ~0.23 m of centre pitch below, ~0.30 above.
+# THE TWO ROWS, WRITTEN OUT AND NOT SAMPLED (still true, 2026-09-08 round 2).
+# ELEVEN LOWER, NINE UPPER (up from eight and six) - "a normal bar's back
+# shelf", per the founder, and enough bottles that a random draw could no
+# longer be trusted not to put two similar shapes side by side, so the order
+# below was picked by hand: no two NEIGHBOURS share a KIND, a LABEL SHAPE, or
+# (mostly) a GLASS TONE, and the heights zig-zag rather than climb or fall, so
+# the skyline reads as a real shelf and not a sorted one.
 #
-# The lower row is ALL EIGHT KINDS, once each, so the shelf keeps every
-# silhouette; the upper row is six of them. Neighbours share neither a KIND nor
-# a LABEL SHAPE in either row - the shapes run shield, oval, band, rectangle
-# below and oval, shield, rectangle, band, shield, rectangle above.
+# The upper row reuses six of the eleven lower kinds (scotch, tequila, rum,
+# bourbon, gin, whiskey - the same six the eight-bottle round shared) plus the
+# three new kinds too tall for the lower row's company to bother with up here
+# (amaro, absinthe, port all clear the upper ceiling, 0.33 m, with room to
+# spare) - which is exactly what a real bar does: some bottles are one of a
+# kind, some styles repeat shelf to shelf. `vodka`, `rye` and `triple_sec` -
+# the three tallest kinds - are LOWER ONLY: at 0.430/0.360/0.375 m they clear
+# the lower shelf's 0.46 m ceiling but not the upper's 0.33 m one.
 #
-# The rye is the tallest thing on the shelf (0.355) and it is BELOW ONLY: its
-# body stops at half its height, so it needs the depth to carry a 34 px label
-# under its fill line, and the upper compartment is 0.36 m clear. The vodka is
-# below only for the same reason at the other end - 0.34 would leave under 3 cm
-# over its cap up there.
+# `labelpos` is per bottle: "high" pins the label just under the fill line (the
+# original rule), "low" anchors it down the body instead - see LOW_TOP_FRAC.
+# `ground` is per bottle: "white" (the paper the model was already painting) or
+# "black" (LABEL_V_BLACK, a dark label with a light emblem) - four of the
+# twenty, spread across both rows, per the founder's "a few ... among the
+# white-label ones". `neck` marks the (four, of twenty) bottles that also carry
+# a small extra label on the neck.
+#
+# THE UPPER ROW'S dh WAS TOO SMALL TO SPREAD ANYTHING (critic's third fix,
+# 2026-09-08: "heights 0.199-0.324 m on paper, but 6 of 9 bottles top out on
+# the same line"). On the LOWER row a few mm of dh is enough because the
+# ELEVEN KINDS' OWN heights already span 0.205-0.379 m - dh only zig-zags the
+# order. The upper row reuses six of those eleven kinds, but six of the nine
+# it draws from (scotch, tequila, bourbon, gin, amaro, whiskey) all stand
+# 0.290-0.325 m tall on their own - a real bar reuses styles shelf to shelf,
+# but that reuse leaves nothing here to do the lower row's job of spreading
+# the SKYLINE. So upper dh is no longer a few mm: it runs -0.055 to +0.020,
+# deliberately spending the headroom up to the 0.33 m ceiling (bourbon +0.008
+# -> 0.328 m, scotch -0.004 -> 0.321 m) on one end and pulling two more
+# (tequila -0.040, whiskey -0.055) DOWN into the 0.24-0.25 m middle the row
+# previously had nothing in - between amaro's untouched 0.300 and rum/port's
+# own low 0.20/0.23. `gin` moves only -0.015 (0.295, not the -0.045 first
+# tried): gin's own label-vs-body arithmetic (need_v in bottle()) needs its
+# body kept above ~0.28 m or its fill line gets shoved to FILL_RANGE's ceiling
+# regardless of what `fills` below asks for, undoing the OTHER half of this
+# same round's fix. Final skyline, sorted: 0.215(rum), 0.235(port),
+# 0.245(whiskey), 0.250(tequila), 0.295(gin), 0.300(amaro), 0.315(absinthe),
+# 0.321(scotch), 0.328(bourbon) - a real climb across the row, not two clumps
+# with a gap in the middle.
 BOTTLE_ROWS = {
-    "lower": dict(kinds=("bourbon", "scotch", "rum", "gin", "tequila", "rye",
-                         "vodka", "whiskey"),
-                  fills=(0.72, 0.68, 0.70, 0.69, 0.755, 0.76, 0.63, 0.655),
-                  dh=(0.005, -0.006, 0.004, -0.005, 0.006, -0.004, -0.006, 0.005),
-                  jit=(0.0, -0.09, 0.07, 0.11, -0.06, 0.08, -0.11, 0.0)),
-    "upper": dict(kinds=("scotch", "tequila", "whiskey", "rum", "bourbon", "gin"),
-                  fills=(0.775, 0.71, 0.735, 0.68, 0.745, 0.64),
-                  dh=(-0.006, 0.004, -0.005, 0.005, -0.004, 0.006),
-                  jit=(0.0, 0.10, -0.08, 0.09, -0.11, 0.0)),
+    "lower": dict(
+        kinds=("bourbon", "gin", "rum", "scotch", "vodka", "whiskey", "tequila",
+               "brandy", "triple_sec", "sherry", "rye"),
+        # WIDENED TOWARD THE 0.5 FLOOR (critic's fifth fix, 2026-09-08: "fill
+        # spans only 0.64-0.78 with 7 of 20 pinned at 0.78"). Four of these
+        # eleven (rum, whiskey, tequila, sherry) cannot get under ~0.78-1.10
+        # regardless of what `fills` asks for - their own body is too short
+        # for LABEL_MIN_PX's floor to fit any lower (bottle()'s `need_v`) - so
+        # they are left at the ceiling on purpose. The other seven are set at
+        # a small margin over their OWN need_v (vodka's own floor is 0.583,
+        # triple_sec's 0.638, and so on up to gin's 0.744), which is what
+        # actually staggers the fill LINE across the shelf instead of the
+        # seven of them all landing on 0.78 by the same label-size floor.
+        fills=(0.730, 0.750, 0.780, 0.710, 0.600, 0.780, 0.780,
+               0.735, 0.650, 0.780, 0.740),
+        dh=(0.004, -0.005, 0.006, -0.004, 0.003, -0.006, 0.005,
+            -0.003, 0.004, -0.005, 0.006),
+        jit=(0.00, -0.12, 0.09, -0.08, 0.14, -0.10, 0.07,
+             -0.13, 0.10, -0.09, 0.00),
+        labelpos=("high", "low", "high", "low", "high", "low", "high",
+                  "high", "low", "high", "low"),
+        ground=("white", "white", "black", "white", "white", "white", "white",
+                "black", "white", "white", "white"),
+        neck=(False, True, False, False, False, False, True,
+              False, False, False, False)),
+    "upper": dict(
+        kinds=("scotch", "tequila", "rum", "bourbon", "gin", "amaro", "whiskey",
+               "absinthe", "port"),
+        # See the lower row's own note above `fills`: four of these nine
+        # (tequila, rum, whiskey, port) sit at the ceiling because their body
+        # cannot clear their own need_v under it. The other five, absinthe
+        # included now that its redrawn shoulder (see BOTTLE_KINDS) sits at
+        # 0.60 rather than the first attempt's 0.56, are set a small margin
+        # over their own floor.
+        fills=(0.735, 0.780, 0.780, 0.700, 0.755, 0.715, 0.780,
+               0.745, 0.780),
+        dh=(-0.004, -0.040, 0.010, 0.008, -0.015, 0.000, -0.055,
+            0.020, 0.005),
+        jit=(0.00, 0.13, -0.10, 0.08, -0.14, 0.11, -0.09,
+             0.12, 0.00),
+        labelpos=("low", "high", "low", "high", "low", "high", "low",
+                  "high", "low"),
+        ground=("white", "white", "white", "white", "white", "white", "black",
+                "white", "black"),
+        neck=(False, True, False, False, False, False, False,
+              False, True)),
 }
 # The house brands: the LOCAL fence of canon/MASTER-PROMPT.md and the published
-# set in canon/showcase-retired/. NOTHING IS INVENTED HERE.
+# set in canon/showcase-retired/. NOTHING IS INVENTED HERE. RETAINED for
+# --mode names (scripts/label-bottles.py); the default path (--mode emblems)
+# never reads BRANDS or BRAND_BY_KIND at all.
 BRANDS = ("BIRDIE BOURBON", "DIVOT DRIVE GIN", "PAR-TEE SCOTCH", "19TH HOLE RYE",
           "ROUGH RIDER GIN", "TEE TIME TENNESSEE WHISKEY", "EAGLE EYE VODKA",
           "CADDY'S CHOICE RUM", "BACK NINE", "BUNKER")
@@ -1009,7 +1268,11 @@ BRANDS = ("BIRDIE BOURBON", "DIVOT DRIVE GIN", "PAR-TEE SCOTCH", "19TH HOLE RYE"
 # up carrying EAGLE EYE VODKA. That is the rule and `brand` follows it; this
 # second reading is exported alongside it as `brandForKind` so a later pass can
 # swap to a kind-true shelf without re-deriving anything. The tequila has no
-# category name in the canon list, so it takes the two that carry none.
+# category name in the canon list, so it takes the two that carry none. The six
+# kinds added in round 2 have no canon category name either, so each is mapped
+# onto whichever existing brand reads least wrong for it - none of this is used
+# by the default --mode emblems path; it exists only so --mode names still
+# works on every kind on the shelf and brandForKind's export never KeyErrors.
 BRAND_BY_KIND = {
     "bourbon": ("BIRDIE BOURBON",),
     "scotch":  ("PAR-TEE SCOTCH",),
@@ -1019,8 +1282,15 @@ BRAND_BY_KIND = {
     "vodka":   ("EAGLE EYE VODKA",),
     "whiskey": ("TEE TIME TENNESSEE WHISKEY",),
     "tequila": ("BACK NINE", "BUNKER"),
+    "brandy":  ("BIRDIE BOURBON",),
+    "sherry":  ("CADDY'S CHOICE RUM",),
+    "triple_sec": ("DIVOT DRIVE GIN",),
+    "amaro":   ("19TH HOLE RYE",),
+    "absinthe": ("EAGLE EYE VODKA",),
+    "port":    ("BACK NINE",),
 }
 LABELS: list = []               # what bottles() measures, for labels.json
+
 
 
 def _rad(sil, v: float) -> float:
@@ -1107,8 +1377,22 @@ def _label_face(shape: str, quad):
     return [(xl, yt, z), (xr, yt, z), (xr, yb, z), (xl, yb, z)]
 
 
+def _neck_zone(sh: float):
+    """The v-range (base 0..1) a NECK LABEL may occupy: a small band centred in
+    the clear neck between the shoulder and the capsule, MARGIN clear of each.
+    None if that gap is too tight to bother (a few kinds' necks are short)."""
+    lo = sh + NECK_LABEL_MARGIN
+    hi = 1.0 - CAPSULE_H - NECK_LABEL_MARGIN
+    if hi - lo < NECK_LABEL_MIN_V:
+        return None
+    span = (hi - lo) * NECK_LABEL_SPAN_FRAC
+    mid = (lo + hi) / 2
+    return mid - span / 2, mid + span / 2
+
+
 def bottle(img: np.ndarray, d, x: float, y0: float, z: float, kind: str,
-           h: float, fill: float) -> dict:
+           h: float, fill: float, labelpos: str = "high", ground: str = "white",
+           neck: bool = False) -> dict:
     """ONE REAL BOTTLE, blocked in - and it hands back its label's geometry.
 
     The order is the order glass is actually read in: the silhouette knocks the
@@ -1117,6 +1401,13 @@ def bottle(img: np.ndarray, d, x: float, y0: float, z: float, kind: str,
     come down the sides, the foil and the cap close the neck, and the LABEL GOES
     ON LAST because paper covers glass. With the rim laid after the label every
     label came back with a white bite out of its window-side edge.
+
+    `labelpos` ("high"/"low") and `ground` ("white"/"black") vary the body
+    label bottle to bottle - see LOW_TOP_FRAC and LABEL_V_BLACK above. `neck`
+    adds a small second label on the neck, when the kind's neck has the room
+    (`_neck_zone`); its geometry rides back on the returned dict's
+    `_neckRecord` key, for bottle_row() to lift out and append to LABELS in
+    its own right - a neck label is its own emblem, not part of the body one.
     """
     k = BOTTLE_KINDS[kind]
     sil, hw = k["sil"], k["w"] * BOTTLE_W_SCALE / 2
@@ -1141,29 +1432,78 @@ def bottle(img: np.ndarray, d, x: float, y0: float, z: float, kind: str,
     shade(img, _sil(x, y0, z, hb, hw, sil, 0.0, fv), lv0, lv1, "x")
     dv = 2.5 / (pxm * hb)                            # the fill line itself, as ink
     shade(img, _sil(x, y0, z, hb, hw, sil, max(0.0, fv - dv), min(1.0, fv + dv)), MENISCUS_V)
-    shade(img, _sil(x, y0, z, hb, hw, sil, 0.0, 1.0, -1.0, -1.0 + RIM_F),
+    shade(img, _sil(x, y0, z, hb, hw, sil, 0.0, 1.0, -1.0, -1.0 + RIM_F[k["glass"]]),
           RIM_V[k["glass"]], RIM_V[k["glass"]] * 0.86, "y")
     shade(img, _sil(x, y0, z, hb, hw, sil, 0.0, 1.0, 1.0 - EDGE_F, 1.0),
           EDGE_V[k["glass"]])
-    caps = _sil(x, y0, z, hb, hw, sil, 1.0 - CAPSULE_H, 1.0)
-    poly(d, caps, 255)
-    shade(img, caps, CAPSULE_V[0], CAPSULE_V[1], "x")
+    # THE CLOSURE, by cap_style (see the block comment above BOTTLE_KINDS).
+    # "capsule" and "tall" both wear the foil sleeve down the neck under a
+    # dark rectangle cap - "tall" is only bigger, via its own kind's cap_h/
+    # cap_k. "cork" skips the sleeve entirely (a real corked bottle has no
+    # foil under it) and draws a rounded, LIGHT dome instead of a rectangle -
+    # CORK_SIL run through the same _sil() the body itself uses, so the dome
+    # tapers rather than being a stack of straight edges.
+    cap_style = k.get("cap_style", "capsule")
+    if cap_style != "cork":
+        caps = _sil(x, y0, z, hb, hw, sil, 1.0 - CAPSULE_H, 1.0)
+        poly(d, caps, 255)
+        shade(img, caps, CAPSULE_V[0], CAPSULE_V[1], "x")
     nw = hw * _rad(sil, 1.0) * cap_k
-    cap = [(x - nw, y0 + h, z), (x + nw, y0 + h, z),
-           (x + nw, y0 + hb, z), (x - nw, y0 + hb, z)]
-    poly(d, cap, 255)
-    shade(img, cap, CAP_V[0], CAP_V[1], "x")
+    if cap_style == "cork":
+        cap = _sil(x, y0 + hb, z, cap_h, nw, CORK_SIL, 0.0, 1.0)
+        poly(d, cap, 255)
+        shade(img, cap, CORK_V[0], CORK_V[1], "x")
+    else:
+        cap = [(x - nw, y0 + h, z), (x + nw, y0 + h, z),
+               (x + nw, y0 + hb, z), (x - nw, y0 + hb, z)]
+        poly(d, cap, 255)
+        shade(img, cap, CAP_V[0], CAP_V[1], "x")
     # THE LABEL. Its height is a fraction of the BODY floored at LABEL_MIN_PX
-    # PAGE PIXELS, and it is hung DOWNWARD from a top set by the fill line, not
+    # PAGE PIXELS. "high" hangs it DOWNWARD from a top set by the fill line, not
     # upward from a fraction: a label pushed up from below climbs onto the
     # shoulder, and a label sized in metres comes out 24 px on one bottle and 36
     # on another because the recess is a tenth deeper at one end than the other.
-    hi = min(_label_top(sil), sh, fv - LIQUID_PX / (pxm * hb))
+    # "low" anchors its top down at LOW_TOP_FRAC of the shoulder instead - well
+    # clear of the fill line, since FILL_RANGE guarantees liquid behind it
+    # either way - rising off that anchor only as far as its own span needs.
+    liquid_ceiling = fv - LIQUID_PX / (pxm * hb)
+    if labelpos == "low":
+        hi = max(min(sh * LOW_TOP_FRAC, liquid_ceiling),
+                  LABEL_FOOT_PX / (pxm * hb) + span_m / hb)
+        hi = min(hi, sh, liquid_ceiling)
+    else:
+        hi = min(_label_top(sil), sh, liquid_ceiling)
     lo = max(LABEL_FOOT_PX / (pxm * hb), hi - span_m / hb)
+    label_v = LABEL_V if ground == "white" else LABEL_V_BLACK
     quad = _label_box(x, y0, z, hb, hw, sil, lo, hi)
     face = _label_face(k["shape"], quad)
-    shade(img, face, LABEL_V[0], LABEL_V[1], "x")
+    shade(img, face, label_v[0], label_v[1], "x")
     poly(d, face, None, 0, 1)
+    # THE NECK LABEL, on the few bottles that carry one - drawn in the same
+    # pass, its own small band of paper on the bare neck between the shoulder
+    # and the capsule (see _neck_zone). Its geometry rides back on
+    # `_neckRecord`; bottle_row() lifts it into LABELS as its own entry, kind
+    # "neck", because label-bottles.py sets one emblem per PAPER, not per
+    # bottle.
+    neck_rec = None
+    if neck:
+        zone = _neck_zone(sh)
+        if zone is not None:
+            nlo, nhi = zone
+            nquad = _label_box(x, y0, z, hb, hw, sil, nlo, nhi)
+            nface = _label_face("band", nquad)
+            shade(img, nface, label_v[0], label_v[1], "x")
+            poly(d, nface, None, 0, 1)
+            npx = [P(*q) for q in nquad]
+            neck_rec = {
+                "kind": "neck", "bottleKind": kind, "shape": "band",
+                "glass": k["glass"], "ground": ground,
+                "quad": [[round(v, 1) for v in p] for p in npx],
+                "widthPx": round(abs(npx[1][0] - npx[0][0]), 1),
+                "heightPx": round(abs(npx[3][1] - npx[0][1]), 1),
+                "world": {"x": round(x, 4), "z": round(z, 4),
+                          "labelY": [round(y0 + hb * nlo, 4), round(y0 + hb * nhi, 4)]},
+            }
     poly(d, body, None, 0, 1)
     poly(d, cap, None, 0, 1)
     px = [P(*q) for q in quad]
@@ -1175,6 +1515,7 @@ def bottle(img: np.ndarray, d, x: float, y0: float, z: float, kind: str,
             "quad": [[round(v, 1) for v in p] for p in px],
             "widthPx": round(abs(px[1][0] - px[0][0]), 1),
             "heightPx": round(abs(px[3][1] - px[0][1]), 1),
+            "labelPos": labelpos, "ground": ground,
             # the empty glass between the fill line and the top of the body, and
             # the strip of liquid showing between the fill line and the label
             "emptyBandPx": round(abs(fill_row - sh_row), 1),
@@ -1186,7 +1527,8 @@ def bottle(img: np.ndarray, d, x: float, y0: float, z: float, kind: str,
                       "fillPx": round(fill_row, 1),
                       "shoulderPx": round(sh_row, 1),
                       "topPx": round(P(x, y0 + h, z)[1], 1),
-                      "basePx": round(P(x, y0, z)[1], 1)}}
+                      "basePx": round(P(x, y0, z)[1], 1)},
+            "_neckRecord": neck_rec}
 
 
 def bottle_shadow(img: np.ndarray, x: float, y0: float, kind: str, h: float) -> None:
@@ -1250,6 +1592,9 @@ def bottle_row(img: np.ndarray, d, sy: float, row: str, ceiling: float) -> None:
     """
     spec = BOTTLE_ROWS[row]
     kinds, fills, dhs, jits = spec["kinds"], spec["fills"], spec["dh"], spec["jit"]
+    labelposes = spec.get("labelpos", ("high",) * len(kinds))
+    grounds = spec.get("ground", ("white",) * len(kinds))
+    necks = spec.get("neck", (False,) * len(kinds))
     n = len(kinds)
     top = ceiling - sy - SHELF_HEADROOM
     hs = [min(BOTTLE_KINDS[k]["h"] + dh, top) for k, dh in zip(kinds, dhs)]
@@ -1271,12 +1616,18 @@ def bottle_row(img: np.ndarray, d, sy: float, row: str, ceiling: float) -> None:
     for i in range(n):
         bottle_shadow(img, xs[i], sy, kinds[i], hs[i])
     for i in range(n):
-        rec = bottle(img, d, xs[i], sy, BOTTLE_Z, kinds[i], hs[i], fills[i])
+        rec = bottle(img, d, xs[i], sy, BOTTLE_Z, kinds[i], hs[i], fills[i],
+                     labelpos=labelposes[i], ground=grounds[i], neck=necks[i])
+        neck_rec = rec.pop("_neckRecord", None)
         rec.update({"part": "bottles-" + row, "row": row, "index": i,
                     "gapLeft": round(gaps[i - 1], 4) if i else None,
                     "headroom": round(ceiling - sy - hs[i], 4)})
         if not _SKIP:
             LABELS.append(rec)
+            if neck_rec is not None:
+                neck_rec.update({"part": "bottles-" + row, "row": row,
+                                 "index": i, "parentIndex": i})
+                LABELS.append(neck_rec)
 
 
 def stile_centres() -> list[float]:
@@ -2628,31 +2979,47 @@ if __name__ == "__main__":
                                      and _labels[_i]["widthPx"] >= LABEL_MIN_W_PX)
     _seen: dict = {}
     for _r in _labels:
-        _opts = BRAND_BY_KIND[_r["kind"]]
-        _seen[_r["kind"]] = _seen.get(_r["kind"], -1) + 1
-        _r["brandForKind"] = _opts[_seen[_r["kind"]] % len(_opts)]
+        _bkind = _r["bottleKind"] if _r["kind"] == "neck" else _r["kind"]
+        _opts = BRAND_BY_KIND[_bkind]
+        _seen[_bkind] = _seen.get(_bkind, -1) + 1
+        _r["brandForKind"] = _opts[_seen[_bkind] % len(_opts)]
     (out / "labels.json").write_text(json.dumps({
-        "_doc": "Measured in scripts/draw-room-lines.py. One entry per bottle in the "
-                "inlaid recess. `quad` is the label's box on the page - four corners, "
+        "_doc": "Measured in scripts/draw-room-lines.py. One entry per label in the "
+                "inlaid recess - a body label per bottle (`kind` = the bottle's own "
+                "kind, e.g. \"rum\") plus one extra entry per neck label (`kind` = "
+                "\"neck\", `bottleKind` names the bottle it rides on; see `neck` "
+                "below). `quad` is the label's box on the page - four corners, "
                 "CLOCKWISE FROM TOP-LEFT - in the same convention as quads.json, so a "
-                "typeset name is warped onto THOSE corners the way sign-on-glass.py "
-                "warps the gilding onto the pane. `shape` is how the paper is cut "
-                "(rectangle, band, oval, shield): inset the type for oval and shield. "
-                "`brand` is the house name that belongs on this bottle and it is the "
-                "ONLY place a bottle name is ever written - the block-in hands the "
-                "model a blank patch. `brand` follows the round's own rule: labels "
-                "sorted by area, the canon names sorted longest first, cycled - so the "
-                "longest name never lands on the smallest patch, and a name can repeat "
-                "on a shelf of twenty bottles as a real back bar's do. `brandForKind` "
-                "is the same list read the other way, one whose category word matches "
-                "the bottle's silhouette, for a pass that wants a kind-true shelf "
-                "instead. Regenerate whenever the camera, the recess or the rows move.",
+                "typeset name or emblem is warped onto THOSE corners the way "
+                "sign-on-glass.py warps the gilding onto the pane. `shape` is how the "
+                "paper is cut (rectangle, band, oval, shield): inset the design for "
+                "oval and shield. `ground` is \"white\" or \"black\" - a black-label "
+                "bottle's paper is drawn dark (LABEL_V_BLACK) and its device inverts, "
+                "light on dark. `labelPos` is \"high\" (pinned under the fill line) "
+                "or \"low\" (anchored down the body) - see LOW_TOP_FRAC. DEFAULT PATH "
+                "is scripts/label-bottles.py --mode emblems: no words at all, one "
+                "device per label from its emblem library, chosen deterministically "
+                "by label index so neighbours never match. `brand` and `brandForKind` "
+                "remain, for --mode names only: `brand` is the house name assigned by "
+                "LABEL AREA - labels sorted largest first, the canon names sorted "
+                "longest first, cycled, so the longest name never lands on the "
+                "smallest patch, and a name can repeat on a shelf this size as a real "
+                "back bar's do; `brandForKind` is the same list read the other way, "
+                "one whose category word matches the bottle's own kind (`neck` "
+                "entries use their `bottleKind`). Regenerate whenever the camera, the "
+                "recess or the rows move.",
         "font": {"minLabelPx": LABEL_MIN_PX, "minLabelWidthPx": LABEL_MIN_W_PX,
-                 "capHeightMinPx": 6.0,
-                 "note": "every label on this shelf clears both floors. Set the "
-                         "brand's LONGEST WORD to the label's inner width at a cap "
-                         "height of at least capHeightMinPx; under that, set the "
-                         "brand's initials as a monogram between the rules instead"},
+                 "capHeightMinPx": 6.0, "emblemMinPx": 26.0,
+                 "note": "for --mode names: every label clears both floors where the "
+                         "row's own width budget allows it (some of the eleven-lower/"
+                         "nine-upper shelf's narrowest labels do not - see the build "
+                         "log's own count). Set the brand's LONGEST WORD to the "
+                         "label's inner width at a cap height of at least "
+                         "capHeightMinPx; under that, set the brand's initials as a "
+                         "monogram between the rules instead. For --mode emblems: a "
+                         "bold device reads down to emblemMinPx, well under the name "
+                         "floor, which is the whole reason the founder asked for "
+                         "devices instead of words on a shelf this crowded"},
         "brands": list(BRANDS),
         "brandsByKind": {k: list(v) for k, v in BRAND_BY_KIND.items()},
         "labels": _labels,
