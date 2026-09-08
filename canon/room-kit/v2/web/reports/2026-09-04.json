@@ -1,6 +1,7 @@
 {
   "date": "2026-09-04",
   "pdf": "output/pdf/ricks-studio-daily-update-2026-09-04.pdf",
+  "show": null,
   "entries": [
     {
       "num": "001",
@@ -674,6 +675,5 @@
       "verdict": null,
       "thumb": "2026-09-04/thumbs/112.jpg"
     }
-  ],
-  "show": null
+  ]
 }

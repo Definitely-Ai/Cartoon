@@ -1,0 +1,835 @@
+{
+  "date": "2026-09-06",
+  "pdf": null,
+  "show": null,
+  "entries": [
+    {
+      "num": "001",
+      "title": "figure-drew-02-toward render seed 7 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-06/thumbs/001.jpg"
+    },
+    {
+      "num": "002",
+      "title": "figure-drew-02-toward render seed 21 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-06/thumbs/002.jpg"
+    },
+    {
+      "num": "003",
+      "title": "figure-drew-02-toward render seed 33 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-06/thumbs/003.jpg"
+    },
+    {
+      "num": "004",
+      "title": "figure-drew-02-toward render seed 44 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-06/thumbs/004.jpg"
+    },
+    {
+      "num": "005",
+      "title": "Drew, anchor pose, round 2: garment-tone vest, bare-bird negatives, wardrobe sheet as a third reference - still undressed on all four seeds",
+      "verdict": "rejected - round three with a drawn knit and the duo-behind study",
+      "thumb": "2026-09-06/thumbs/005.jpg"
+    },
+    {
+      "num": "006",
+      "title": "figure-drew-02-toward render seed 7 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-06/thumbs/006.jpg"
+    },
+    {
+      "num": "007",
+      "title": "figure-drew-02-toward render seed 21 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-06/thumbs/007.jpg"
+    },
+    {
+      "num": "008",
+      "title": "figure-drew-02-toward render seed 33 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-06/thumbs/008.jpg"
+    },
+    {
+      "num": "009",
+      "title": "figure-drew-02-toward render seed 44 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-06/thumbs/009.jpg"
+    },
+    {
+      "num": "010",
+      "title": "Drew, anchor pose, round 3: knit lattice drawn into the vest, the from-behind study as reference - still a bare bird; the lattice came back as scales",
+      "verdict": "rejected - round four as a detail render",
+      "thumb": "2026-09-06/thumbs/010.jpg"
+    },
+    {
+      "num": "011",
+      "title": "figure-drew-02-toward render seed 7 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-06/thumbs/011.jpg"
+    },
+    {
+      "num": "012",
+      "title": "figure-drew-02-toward render seed 21 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-06/thumbs/012.jpg"
+    },
+    {
+      "num": "013",
+      "title": "figure-drew-02-toward render seed 33 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-06/thumbs/013.jpg"
+    },
+    {
+      "num": "014",
+      "title": "figure-drew-02-toward render seed 44 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-06/thumbs/014.jpg"
+    },
+    {
+      "num": "015",
+      "title": "Drew, anchor pose, round 4: the detail render works for the clothes - knit vest and collar on three seeds; the head is still a swan, so it gets its own render",
+      "verdict": "body route found - head route running",
+      "thumb": "2026-09-06/thumbs/015.jpg"
+    },
+    {
+      "num": "016",
+      "title": "figure-drew-02-toward render seed 101 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-06/thumbs/016.jpg"
+    },
+    {
+      "num": "017",
+      "title": "figure-drew-02-toward render seed 102 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-06/thumbs/017.jpg"
+    },
+    {
+      "num": "018",
+      "title": "figure-drew-02-toward render seed 103 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-06/thumbs/018.jpg"
+    },
+    {
+      "num": "019",
+      "title": "figure-drew-02-toward render seed 104 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-06/thumbs/019.jpg"
+    },
+    {
+      "num": "020",
+      "title": "Drew's head, rendered on its own from a tight crop with the head tile leading: seed 101 is the first proper Drew head - and why the composite showed a dark block beside it",
+      "verdict": "head route works - composite geometry being aligned",
+      "thumb": "2026-09-06/thumbs/020.jpg"
+    },
+    {
+      "num": "021",
+      "title": "figure-drew-02-toward render seed 7 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-06/thumbs/021.jpg"
+    },
+    {
+      "num": "022",
+      "title": "figure-drew-02-toward render seed 44 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-06/thumbs/022.jpg"
+    },
+    {
+      "num": "023",
+      "title": "figure-drew-02-toward render seed 101 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-06/thumbs/023.jpg"
+    },
+    {
+      "num": "024",
+      "title": "figure-drew-02-toward render seed 102 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-06/thumbs/024.jpg"
+    },
+    {
+      "num": "025",
+      "title": "figure-drew-02-toward render seed 104 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-06/thumbs/025.jpg"
+    },
+    {
+      "num": "026",
+      "title": "Drew, round 5: body (knit vest) plus head renders composited through the silhouette - the head is right on seed 104, but the head render's own background leaks wherever the rendered head sits smaller than the block-in",
+      "verdict": "head identity found; composite retired in favour of the head-as-reference loop",
+      "thumb": "2026-09-06/thumbs/026.jpg"
+    },
+    {
+      "num": "027",
+      "title": "figure-drew-02-toward render seed 7 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-06/thumbs/027.jpg"
+    },
+    {
+      "num": "028",
+      "title": "figure-drew-02-toward render seed 44 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-06/thumbs/028.jpg"
+    },
+    {
+      "num": "029",
+      "title": "figure-drew-02-toward render seed 201 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-06/thumbs/029.jpg"
+    },
+    {
+      "num": "030",
+      "title": "figure-drew-02-toward render seed 202 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-06/thumbs/030.jpg"
+    },
+    {
+      "num": "031",
+      "title": "Drew, round 6 and the keyed composite: the vest holds, the head is Drew on its own render, the join is the open problem - state saved for Monday (CAST-STATUS.md)",
+      "verdict": "no pose approved yet; the body route and the head route are found; the join is Monday's first job",
+      "thumb": "2026-09-06/thumbs/031.jpg"
+    },
+    {
+      "num": "032",
+      "title": "Drew character study, round 1, seed 41 - the study rig proves out, the bill does not",
+      "verdict": "RIG PASSES, CHARACTER FAILS. The rig is right: one figure, no second bird, the engraved pen and the full tonal range held, every bottle label blank, no stray lettering on the shelf, the bow tie, collar band, knitted vest and feathered hand all present, the martini and nut bowl on the marble. Drew himself is a REJECT and the founder's word is fair. (1) THE BILL is the fatal fault - heavy, deeply hooked, curling to a point below the jaw with the black filling the whole lower half. A flamingo's bill is shallow, kinked once and downturned only at the end, with the black on the OUTER THIRD. This reads vulture, not flamingo. (2) THE NECK has no S-curve: it is thick and short, and the head sits on it as a bulb. The one reversal the founder asked for is absent. (3) THE PLUMAGE is drawn in scale-like leaf strokes, not the fine dash-strokes of the house line. (4) The camera crept much closer than Picture 1's crop, so the head fills the frame and the sweater vest is half out of it. (5) Two small strays: a fragment of mirrored window lettering at top-left and an extra glass at bottom-right. What IS right and must be kept: the eye - heavy-lidded, visible white, dark iris with a catchlight, warm and human. Round 2 must attack the bill and the neck by name in the EDITS and pull the camera back.",
+      "thumb": "2026-09-06/thumbs/032.jpg"
+    },
+    {
+      "num": "033",
+      "title": "Drew round 1 seed 41 the room comes back the bill still hooks",
+      "verdict": "REJECT on the bill, PASS on the rig. The wider Picture 1 worked: the camera is back at the plate's distance, the window carries a clean mirrored THE SWINGING DOOR, both back-bar shelves, the marble, the martini and the nut bowl are all in frame, and the neck now has a real S with one reversal. But the bill is still the round-0 fault at three-quarter strength \u2014 the black is a long wedge down the lower mandible curling to a point below the jaw, not a cap on the outer third. Plumage still reads as leaf-shaped scales, not dash-strokes. Bottle labels carry pseudo-marks instead of blank paper.",
+      "thumb": "2026-09-06/thumbs/033.jpg"
+    },
+    {
+      "num": "034",
+      "title": "Drew round 1 seed 7 the shallowest bill but the blackest jaw",
+      "verdict": "REJECT. The best bill DEPTH of the six \u2014 shallow, one clean kink \u2014 but the black is the worst of the six: a heavy hooked wedge running most of the lower mandible and hanging well below the jaw. Stray: wisps of smoke rising off the martini, which nothing in the prompt asked for. Neck S is good. Eye is right.",
+      "thumb": "2026-09-06/thumbs/034.jpg"
+    },
+    {
+      "num": "035",
+      "title": "Drew round 1 seed 21 the deep scimitar and a forbidden shirt cuff",
+      "verdict": "REJECT, the weakest of the six. Deepest scimitar bill of the round with black over the whole lower half \u2014 the exact fault named in the edits. Second fault, and a hard one from the bible: a white shirt CUFF closes the wrist, so the arm reads as a sleeve. The armhole of the sweater vest is meant to be the only edge anywhere on that arm. Ragged drawn border on the frame edges.",
+      "thumb": "2026-09-06/thumbs/035.jpg"
+    },
+    {
+      "num": "036",
+      "title": "Drew round 1 seed 33 middling bill clean staging",
+      "verdict": "REJECT, mid-pack. Bill shallower than 41 and 21 with the black starting near halfway, still hooking below the jaw. Neck S clear and correct. Staging and wardrobe all present and clean; no cuff. Ragged drawn border at the frame edges. Plumage still scale-shaped.",
+      "thumb": "2026-09-06/thumbs/036.jpg"
+    },
+    {
+      "num": "037",
+      "title": "Drew round 1 seed 44 second best bill and the best head proportion",
+      "verdict": "REJECT but close \u2014 the runner-up. Black starts around 55 percent of the bill with the shallowest downturn after 55, and the head sits small and correct on the neck. Neck S is right, eye is right, vest ribbing and armhole are right, no cuff. Faults: the black still runs past the outer third and tips below the jaw, plumage is scale-shaped, and a ragged drawn border frames all four sides.",
+      "thumb": "2026-09-06/thumbs/037.jpg"
+    },
+    {
+      "num": "038",
+      "title": "Drew round 1 seed 55 the best flamingo of the round",
+      "verdict": "BEST OF THE ROUND, still a reject against the founder's bar. Closest to a real flamingo: the longest pale upper mandible, the shallowest downturn, the black wedge starting furthest out and the least hook of the six; the neck reads as a true S with one reversal, leaning back off the shoulders and forward into the head; the eye is exactly right \u2014 heavy-lidded, visible white, dark iris, one catchlight, warm and unhurried; the arm runs unbroken feathered from the vest armhole to the hand with NO cuff; collar band, black bow tie, ribbed V-neck vest, martini, nut bowl and mirrored window name all correct. What still fails: the black is roughly the outer 40-45 percent and still tips just below the jaw rather than capping the outer third, and the plumage is still shingled leaf-plates instead of rows of fine dash-strokes.",
+      "thumb": "2026-09-06/thumbs/038.jpg"
+    },
+    {
+      "num": "039",
+      "title": "Drew round 1 contact sheet six seeds beside the old kit tiles",
+      "verdict": "The round in one picture, the six renders at 420 px beside the character kit's own bust.png and head.png. The kit tiles are on the sheet on purpose: they are the OLD drawing, and they show the founder's complaint at its source \u2014 the kit's bill is the deep black-jawed hook, and every render on the sheet is further from it than the kit is. Progress this round is real and partial: camera, room, neck, eye, wardrobe and the no-cuff rule are settled; the bill's black and the plumage stroke are not. Seed 55 is the pick, seed 44 the runner-up.",
+      "thumb": "2026-09-06/thumbs/039.jpg"
+    },
+    {
+      "num": "040",
+      "title": "Drew round 3 - the root-cause fix: a composited Picture 1 with the correct head pasted on",
+      "verdict": "Works. The bill has one clean kink with the black cap on the outer third, the neck is a true S with one reversal and the head is carried high with daylight under the jaw. This one change fixed the neck in ALL SIX renders that followed.",
+      "thumb": "2026-09-06/thumbs/040.jpg"
+    },
+    {
+      "num": "041",
+      "title": "Drew round 3 seed 55 - the best flamingo yet: right bill, right neck, knitted vest, human hands",
+      "verdict": "The best Drew the studio has drawn. PASS on every character fault the founder named: the bill is a flamingo's - straight and pale for two thirds, one clean kink, a blunt downturn, the solid black a cap over the outer third covering both mandibles and wrapping the tip, no black jaw stripe, no hook. The neck is a true S with one reversal, slim, head carried high. The vest is genuinely KNITTED with a ribbed V band, ribbed armholes and visible stitches over a collared shirt with placket, buttons and the bow tie KNOT facing us. The hands have four fingers and an opposed thumb, no claws. The eye is warm and huggable. FAILS on staging, not on character: the turn-to-camera edit pulled him off his stool so the marble counter has left the picture, he holds the martini instead of resting his hand on the slab, the belt and trousers show, one stray rocks glass remains at frame-right, and the arm plumage is still leaf-shaped rather than dash-strokes.",
+      "thumb": "2026-09-06/thumbs/041.jpg"
+    },
+    {
+      "num": "042",
+      "title": "Drew round 3 contact sheet - six seeds against the old kit tiles, and the staging-versus-character trade",
+      "verdict": "BEST IS SEED 55. Read against the two kit tiles frame-left - which still carry the old hooked black-jawed bill and the hunched neck - all six new renders have a proper S-neck, so the composited Picture 1 fixed that outright. The bill only comes out right when the model is pushed to REDRAW the character (variant A, seeds 55 and 21); whenever the prompt protects Picture 1's staging (B and C, seeds 41/7/33/44) the room comes back correctly but the bill re-absorbs the plate's hook. Seed 44 grew a human bartender and seed 41's first take grew two extra figures - the negative prompt cannot catch that, because at cfg 1.0 the fast Lightning pass never reads it. Staging and character are in direct competition at 8 steps and the next round has to settle it.",
+      "thumb": "2026-09-06/thumbs/042.jpg"
+    },
+    {
+      "num": "043",
+      "title": "Drew round 4 reference fix 1 - the bill built as a flat two-tone diagram",
+      "verdict": "Built as ordered. NOT USED AS A REFERENCE IN THE END - see the render below where the model drew it as an object in the room.",
+      "thumb": "2026-09-06/thumbs/043.jpg"
+    },
+    {
+      "num": "044",
+      "title": "Drew round 4 reference fix 2 - Picture 1 rebuilt with the corrected bill and one drink",
+      "verdict": "The strongest lever in the round. For the first time the reference itself shows the right bill, the marble across the chest, no belt, no trousers, the hand flat on the slab and exactly one drink.",
+      "thumb": "2026-09-06/thumbs/044.jpg"
+    },
+    {
+      "num": "045",
+      "title": "Drew round 4 pass 1 seed 55",
+      "verdict": "clean - one drink, no belt, no trousers, hand flat on the marble, S-neck and knitted vest intact; the bill is the corrected bent stick with the black cap. Copied rather than re-engraved.",
+      "thumb": "2026-09-06/thumbs/045.jpg"
+    },
+    {
+      "num": "046",
+      "title": "Drew round 4 pass 1 seed 21",
+      "verdict": "REJECT - a human bartender in a bow tie stands behind the bar. Carried forward on the judges' instruction; it fails the same way seed 44 failed last round.",
+      "thumb": "2026-09-06/thumbs/046.jpg"
+    },
+    {
+      "num": "047",
+      "title": "Drew round 4 pass 1 seed 62",
+      "verdict": "BEST OF THE ROUND - the cleanest join between bill and face, the most open eye, clean staging, one drink, no second figure.",
+      "thumb": "2026-09-06/thumbs/047.jpg"
+    },
+    {
+      "num": "048",
+      "title": "Drew round 4 pass 1 seed 78",
+      "verdict": "REJECT - a second bird, a small white flamingo figure, stands on the marble beside the martini.",
+      "thumb": "2026-09-06/thumbs/048.jpg"
+    },
+    {
+      "num": "049",
+      "title": "Drew round 4 pass 1 seed 84",
+      "verdict": "REJECT - a human bartender behind the bar.",
+      "thumb": "2026-09-06/thumbs/049.jpg"
+    },
+    {
+      "num": "050",
+      "title": "Drew round 4 pass 1 seed 93",
+      "verdict": "Clean staging and no second figure, but the near shoulder drifts to a white shirt sleeve and the vest loses its armhole rib.",
+      "thumb": "2026-09-06/thumbs/050.jpg"
+    },
+    {
+      "num": "051",
+      "title": "Drew round 4 pass 2 tried at full quality - 30 steps cfg 4 is worse, not better",
+      "verdict": "REJECTED, and worth recording. The extra steps did not re-engrave the bill; they coarsened the whole drawing - fatter strokes, bigger leaf plates on the plumage, a heavier vest. The house fast recipe is still the right one.",
+      "thumb": "2026-09-06/thumbs/051.jpg"
+    },
+    {
+      "num": "052",
+      "title": "Drew round 4 contact sheet - six seeds beside the re-cut kit tiles",
+      "verdict": "PARTIAL PASS. What is fixed for the first time: the bill is a short bent stick with one corner and the black crossing BOTH mandibles at one line; no belt, no waistband, no trousers; the hand rests flat and the martini stands by itself; exactly one drink; the marble crosses the chest. What still fails: the bill is COPIED from the reference rather than re-drawn in the house pen, so it reads slightly like a pasted shape; the plumage is still leaf plates because the portrait's plumage is; and three of six seeds hallucinated a second figure. Best seed 62.",
+      "thumb": "2026-09-06/thumbs/052.jpg"
+    },
+    {
+      "num": "053",
+      "title": "Drew round 4B seed 62 the bill is finally a flamingos bill",
+      "verdict": "BEST OF THE ROUND. The bill is right at last: deep and massive at the face, carrying its depth forward, then one smooth heavy bend of about forty degrees through the whole jaw to a blunt rounded end, with the black a single continuous mass from the bend outward - top ridge, both sides, lower mandible and the wrapped tip - one highlight along the ridge, a nostril slit high on the pale part and a gape line running back to the eye. No ruled edge, no outline, no pasted cut-out. Head carried above the shoulder, one figure, one drink, hand flat on the marble, camera at Picture 1's distance. STILL WRONG: the plumage is still closed leaf and teardrop plates rather than open dashes (EDIT 13 loses to the tile, whose own plumage is drawn that way), the upper lid still angles down toward the bill so he reads wry rather than glad, and the bottle labels are still ornate.",
+      "thumb": "2026-09-06/thumbs/053.jpg"
+    },
+    {
+      "num": "054",
+      "title": "Drew round 4B seed 55 good bill narrow eye",
+      "verdict": "CLEAN. Same correct deep bent bill, though the tip curls a shade more pointed than 62 and the black is thinner along the top ridge at the bend. Neck strokes are finer here than on 62. Eye narrower and sleepier. Staging clean: one figure, one drink, no belt.",
+      "thumb": "2026-09-06/thumbs/054.jpg"
+    },
+    {
+      "num": "055",
+      "title": "Drew round 4B seed 93 clean staging heavy eye",
+      "verdict": "CLEAN. Bill correct, staging correct - one figure, one drink, hand flat on the marble, head high, bow tie and ribbed vest present. The eye is the heaviest of the three clean seeds and the crown plumage is the most leaf-like. Third of three.",
+      "thumb": "2026-09-06/thumbs/055.jpg"
+    },
+    {
+      "num": "056",
+      "title": "Drew round 4B seed 21 REJECT a black cap of scribble glyphs on his crown",
+      "verdict": "REJECT. A black peaked cap covered in scribbled glyph marks is drawn onto his crown over the eye, and the sweater vest turns into a buttoned sleeved cardigan. The bill itself is correct. Seed fault, not a prompt fault.",
+      "thumb": "2026-09-06/thumbs/056.jpg"
+    },
+    {
+      "num": "057",
+      "title": "Drew round 4B seed 78 REJECT two photographic men in the frame",
+      "verdict": "REJECT. Two photographic human men appear - one bearded head grafted onto Drew's own body at the counter, one behind the bar with a notebook - despite EDIT 6 naming both faults. The bill on the flamingo head is correct. The solo rule still loses on this seed.",
+      "thumb": "2026-09-06/thumbs/057.jpg"
+    },
+    {
+      "num": "058",
+      "title": "Drew round 4B seed 84 REJECT photographic human bartender",
+      "verdict": "REJECT. A photographic human bartender in a dotted waistcoat stands behind the bar reaching for the martini. Drew himself is correct - bill, neck, collar, bow tie - but the frame is not his alone.",
+      "thumb": "2026-09-06/thumbs/058.jpg"
+    },
+    {
+      "num": "059",
+      "title": "Drew round 4B contact sheet six seeds beside the re-cut kit tiles",
+      "verdict": "Three clean of six. Best is seed 62. The bill is fixed and the fix came from the REFERENCE, not the prose: the identical prose failed for four rounds while the tile carried a flat retouched bill. Open faults for round 5: leaf-plate plumage, the down-angled upper lid, ornate bottle labels, and human figures on seeds 21, 78 and 84.",
+      "thumb": "2026-09-06/thumbs/059.jpg"
+    },
+    {
+      "num": "060",
+      "title": "Drew round 4B the rebuilt Picture 1 the reference that fixed the bill",
+      "verdict": "This is the change that moved the bill. Nothing else about the recipe changed - same model, same fast 8-step cfg 1 pass, same six seeds - and the bill came right on every one of the six. Remaining weakness carried by this same tile: the portrait's own plumage is drawn in closed leaf and teardrop plates, so every render inherits them, and the neck is one reversal rather than the two the judges asked for.",
+      "thumb": "2026-09-06/thumbs/060.jpg"
+    },
+    {
+      "num": "061",
+      "title": "Drew round 4 judge - seed62 best, still REJECT",
+      "verdict": "REJECT - round 4 does not pass. Best of six (seed62) still fails: missing highlight ribbon in bill black, eye reads stern/squinting not warm, bill curve still swan-adjacent not diagnostically flamingo. Needs round 5 with EDITs for eye warmth, one-arc-only brow, bill highlight ribbon, and a sharper diagnostic downward kink in the bill.",
+      "thumb": "2026-09-06/thumbs/061.jpg"
+    },
+    {
+      "num": "062",
+      "title": "Barclay character study round 1 seed 41 - a real retriever, but the camera crept in",
+      "verdict": "HOLD. He is unmistakably a golden retriever now \u2014 layered fur in individual strokes, drop ear with fringe, black nose the blackest mark, mouth closed with the corner hooking up, the eye carrying paper-white and one catchlight. Two faults: the camera pushed past Picture 1's crop so the head fills the frame and the jacket is half out of it, and the bottle labels came back with scribbled pseudo-lettering instead of the blank panels edit 3 asked for. The muzzle is also the longest and heaviest of the six. Not the pick.",
+      "thumb": "2026-09-06/thumbs/062.jpg"
+    },
+    {
+      "num": "063",
+      "title": "Barclay character study round 1 seed 7 - the warmest face of the round",
+      "verdict": "KEEP AS THE FACE REFERENCE. The best expression in the six: both inner brows lifted with one faint forehead crease, the closed lip line hooking clearly UP at the corner, cheeks full, the eye's dark mass at the front of the opening with paper-white behind it and a single catchlight, ten-odd freckles in loose rows. Ear fringe is fine, not wiry. Faults: the flag pin came back as a blank white triangle with no canton (checklist 12 fail), the lip band is grey and stops short of the eye's front corner, and two bottle labels still carry pseudo-text. Second place.",
+      "thumb": "2026-09-06/thumbs/063.jpg"
+    },
+    {
+      "num": "064",
+      "title": "Barclay character study round 1 seed 21 - good face, the ear turns woolly",
+      "verdict": "NO. The face is close to seed 7's \u2014 closed mouth, corner up, eye built right \u2014 but the camera sits nearer than Picture 1 again, the ear leather has gone to a dense woolly mass rather than separate fringe strokes (his recorded failure mode 3), no flag pin appears at all, and the labels carry pseudo-text. Usable evidence, not the pick.",
+      "thumb": "2026-09-06/thumbs/064.jpg"
+    },
+    {
+      "num": "065",
+      "title": "Barclay character study round 1 seed 33 - REJECT, a second dog on the shelf",
+      "verdict": "REJECT. Barclay himself is fine, but the model hallucinated a SECOND character standing among the bottles on the back bar \u2014 a small jacketed dog, complete with its own head and legs. Exactly the 'EXACTLY 1 character' rule the study prompt states twice, broken. Fatal on its own; filed so the round shows what the seed did.",
+      "thumb": "2026-09-06/thumbs/065.jpg"
+    },
+    {
+      "num": "066",
+      "title": "Barclay character study round 1 seed 44 - BEST, the camera held and the flag pin drawn right",
+      "verdict": "BEST OF THE ROUND. The only render that passes the whole spine of his checklist at once: camera and chest-up crop held to Picture 1 (head does not fill the frame, shoulders and jacket front in), first glance friendly \u2014 closed mouth with the corner hook lifting above the line's middle, worry only in the lifted inner brows; the eye in three marks with paper-white behind the dark and one catchlight, lid clear of the dark; freckles in arcing rows on the near muzzle; one drop ear rooting level with the eye and finishing at the jaw with separate fringe strokes down the nape; modest ruff with the pale collar showing both sides; no tail; hand wrapping the rocks glass with no nail or claw at any fingertip. And the USA flag pin is properly DRAWN on the lapel \u2014 dark canton, stars stippled pale, alternating bars, a fine staff along the hoist \u2014 which no other seed managed. Remaining faults for round 2: the black lip band is a grey line that stops short of the eye's front corner instead of a fine true-black line ending under it; the freckles run six to ten, under the fifteen to twenty in three rows; a couple of bottle labels still carry faint pseudo-marks.",
+      "thumb": "2026-09-06/thumbs/066.jpg"
+    },
+    {
+      "num": "067",
+      "title": "Barclay character study round 1 seed 55 - warm face, pin lands on the shoulder",
+      "verdict": "NO, BUT CLOSE. Camera held as well as seed 44, the warmest muzzle freckling of the six and a good three-mark eye, closed mouth with the corner up. Two faults put it behind 44: the flag pin is drawn large and legible but pinned to the upper ARM/shoulder rather than the lapel (checklist 12 fail), and a stray thin looping line hangs off the rear corner of the eye. Third place.",
+      "thumb": "2026-09-06/thumbs/067.jpg"
+    },
+    {
+      "num": "068",
+      "title": "Barclay character study round 1 - the contact sheet, six seeds against the reference kit",
+      "verdict": "Round 1 is a pass on the SPECIES and a hold on the DETAIL. Six for six he is now a golden retriever drawn like one \u2014 layered fur in individual strokes, drop ear with fringe, black nose, closed mouth with the corner turning up, the human eye with visible white and a catchlight \u2014 which is the thing the founder said was missing. SEED 44 IS THE PICK: it alone holds Picture 1's camera AND draws the flag pin properly on the lapel with a legible canton. Seed 7 is the warmest face and seed 55 is third; seed 33 is a reject (a second dog hallucinated on the back-bar shelf); seeds 41 and 21 pushed the camera in past the plate's crop. Round 2 should carry seed 44 forward with three fixes: make the black lip band a fine TRUE-BLACK line running two nose-widths to directly under the front corner of the near eye, raise the muzzle freckles to fifteen to twenty in three arcing rows, and kill the last pseudo-lettering on the bottle labels.",
+      "thumb": "2026-09-06/thumbs/068.jpg"
+    },
+    {
+      "num": "069",
+      "title": "Barclay character study round 2 seed 41 the head turns but the pick returns",
+      "verdict": "PASS on the pose, FAIL on the prop. The composited Picture 1 held: true three-quarter, both eyes whole and both pupils into the room, mouth closed, solid black nose, the black lip line running back and hooking up, freckles in arcing rows, ear a leather with fringe. But a thin curved pick has grown back out of the cherry - the one seed of six that re-invented it - and the bottle labels carry pseudo-text. The flag pin is a faint blank diamond, not a flag.",
+      "thumb": "2026-09-06/thumbs/069.jpg"
+    },
+    {
+      "num": "070",
+      "title": "Barclay character study round 2 seed 7 clean prop heavy ruff",
+      "verdict": "PASS on the prop and the pose - cherry and ice cube in the glass with nothing above the rim, three-quarter head, closed mouth, black lip line. Weaker than 44: the far eye is small, the ruff under the jaw is a heavy dark mass, and the pale collar barely shows on the far side. Labels carry pseudo-text; the pin is a blank diamond.",
+      "thumb": "2026-09-06/thumbs/070.jpg"
+    },
+    {
+      "num": "071",
+      "title": "Barclay character study round 2 seed 21 reject blank balloon over the far eye",
+      "verdict": "REJECT. A blank white speech-balloon shape is drawn over his far eye and brow - fatal, and exactly the balloon the fence forbids. Everything below the eyes is sound (prop correct, lip line, freckles), but the picture cannot be shown.",
+      "thumb": "2026-09-06/thumbs/071.jpg"
+    },
+    {
+      "num": "072",
+      "title": "Barclay character study round 2 seed 33 strong head labels carry pseudo-text",
+      "verdict": "PASS, second best. The strongest far eye of the six at better than half the near eye's width, clean lifted inner brows, three clear freckle rows, the lip line unbroken and hooked, cherry and cube correct. Held back by pseudo-text on the bottle labels, a crazed white marble at the left edge, and a blank diamond where the flag pin should be.",
+      "thumb": "2026-09-06/thumbs/072.jpg"
+    },
+    {
+      "num": "073",
+      "title": "Barclay character study round 2 seed 44 best both eyes lip-line hook and the correct glass",
+      "verdict": "BEST OF THE ROUND. Every one of the judges' top four fixes lands: the rocks glass holds one large ice cube and one dark stemless cherry with no pick, skewer or stem anywhere; the head is in a true three-quarter with BOTH eyes whole and both pupils aimed into the room; the lip line is one unbroken true-black stroke from under the back of the nose to under the front corner of the near eye, finishing in a small hook that lifts; the drop ear is a leather of fine individual directional strokes, not a woolly slab. The nose is the blackest mark on the page, the freckles read as three arcing rows, the coat is long feathered strokes with paper showing between them, and the inner brows lift so he reads kind and a little concerned. STILL OPEN: the flag pin is a faint blank diamond, not a legible canton-and-bars flag; the head still takes about 46 percent of the frame's height rather than the third asked for; the nose highlight is a long glossy streak rather than a pinpoint; some bottle labels carry engraved medallions; the marble crazes into white at the bottom-left; and a soft bloom survives around the skull from the composite seam.",
+      "thumb": "2026-09-06/thumbs/073.jpg"
+    },
+    {
+      "num": "074",
+      "title": "Barclay character study round 2 seed 55 reject white bar across the muzzle",
+      "verdict": "REJECT. A blank white caption bar is drawn straight across his muzzle. Notable anyway as the only seed of six that drew a genuinely legible USA flag - canton, stars and bars - but it put it on his upper sleeve, which the judges forbade, not on the lapel.",
+      "thumb": "2026-09-06/thumbs/074.jpg"
+    },
+    {
+      "num": "075",
+      "title": "Barclay character study round 2 contact sheet six seeds beside the kit tiles",
+      "verdict": "Seed 44 is the round's best and the first Barclay in this project that answers the founder's brief: a golden retriever drawn like one, turned into the room with both eyes on the reader's side of his muzzle, the black lip line and the black nose carrying the face, and his own drink in front of him with no olive and no pick. Seeds 21 and 55 are rejects for a blank balloon and a blank caption bar. Four of the six are usable. What is still not right in any of the six: the USA flag pin comes back as a blank diamond on the lapel (seed 55 drew a real flag but on the sleeve), the camera sits closer than the third-of-frame asked for, and the composite seam behind the skull leaves a soft bloom. Those are the round-3 list.",
+      "thumb": "2026-09-06/thumbs/075.jpg"
+    },
+    {
+      "num": "076",
+      "title": "Barclay character study round 3 seed 41 best the head finally turns all the way into the room",
+      "verdict": "BEST OF THE ROUND, and the best Barclay this project has drawn. The pose the last two rounds could not get is here: a FULL three-quarter, the far eye a complete open eye with its own lid, its own paper-white, its own iris and its own brow, set clear of the muzzle bridge with a finger's width of far cheek beside it, and both pupils aimed at the same spot in the room. Both inner brows lift in the pale domes the note asked for, so the worry is in the brows and not in a squint. Mouth closed; the lip-line is one unbroken true-black band that runs forward along the muzzle and hooks up at the corner. The nose is the blackest mark on the page. Freckles read in arcing rows, the ears are two separate leathers with fringe, the collar shows on both sides, the glass rim is unbroken with the ice cube inside and no pick, skewer or stem anywhere. STILL OPEN: the camera pushed in - the head takes about half the frame's height, not the third asked for, and the lapels are crowded at the bottom edge; the flag pin is AGAIN a blank pale triangle rather than a canton-and-bars flag; two bottle labels carry pseudo-writing and one small pale rectangle sits at the right edge; the marble crazes into a crackle field at the left; the cherry rides at the liquid line rather than fully below it; the fingers are only half separated; and the panelling behind his ear carries a soft vertical blur inherited from the paste-up seam.",
+      "thumb": "2026-09-06/thumbs/076.jpg"
+    },
+    {
+      "num": "077",
+      "title": "Barclay character study round 3 seed 44 reject a human bartender appeared behind the counter",
+      "verdict": "REJECT, and the most instructive failure of the six. A full HUMAN bartender - man, bow tie, waistcoat, hand on chin - is drawn behind the counter, with a table lamp, a wine glass and a hanging pendant lamp that belong to no canon room. Barclay himself slid back toward profile and grew a beaded collar round his neck. The service side of the counter has to be named as EMPTY in as many words; 'exactly one character' in the fence and 'no second dog, no figurine' in the edits did not stop a person appearing.",
+      "thumb": "2026-09-06/thumbs/077.jpg"
+    },
+    {
+      "num": "078",
+      "title": "Barclay character study round 3 seed 7 reject the room fell away and the coat went spotted",
+      "verdict": "REJECT. The model took its staging from Picture 2 instead of Picture 1: the bar is gone and he sits on blank paper, with a scribbled signature at the bottom edge. The coat is drawn in heavy round SPOTS rather than layered strokes, which reads as a spaniel and not a golden retriever, and the head fills the frame. Worth keeping for one thing only - it drew the most legible USA flag pin of the six, canton, stars and bars, on the near lapel. Whatever that seed did to the pin is what the other five need.",
+      "thumb": "2026-09-06/thumbs/078.jpg"
+    },
+    {
+      "num": "079",
+      "title": "Barclay character study round 3 seed 12 second best softer eyes and a glossy nose",
+      "verdict": "SECOND BEST. Same true three-quarter, both eyes whole with white showing round the iris, closed mouth, black lip band, room and prop all correct, one character only. Behind seed 41 on three counts: the far eye is smaller, the nose carries a broad glossy shine instead of one pinpoint highlight, and the near ear merges into the ruff. Same open faults as 41 - camera too close, blank-triangle pin, pseudo-writing on a label, crazed marble.",
+      "thumb": "2026-09-06/thumbs/079.jpg"
+    },
+    {
+      "num": "080",
+      "title": "Barclay character study round 3 seed 68 good pose sleepier eyes one lettered label",
+      "verdict": "PASS, third. The pose holds and the room, the glass and the single-character rule all hold; the ears are the cleanest pair of the six, each a separate leather lifting clear of the shoulder. Held back by sleepier, smaller eyes with heavier upper lids, a broad glossy nose highlight, a lip-line that thins to grey along the muzzle, and a bottle label carrying legible pseudo-text.",
+      "thumb": "2026-09-06/thumbs/080.jpg"
+    },
+    {
+      "num": "081",
+      "title": "Barclay character study round 3 seed 91 reject back to profile with a spotted coat",
+      "verdict": "REJECT. The head regressed to the old near-profile with only one eye drawn, and the coat went to heavy spots again. It did draw a clean USA flag - canton, stars and bars - but on the SHOULDER, which the note forbids, not on the lapel. The camera distance, ironically, is the best of the six.",
+      "thumb": "2026-09-06/thumbs/081.jpg"
+    },
+    {
+      "num": "082",
+      "title": "Barclay character study round 3 contact sheet six seeds beside the kit tiles",
+      "verdict": "The round's one big win is structural: with the three-quarter DRAWN into Picture 1 from kit/head.png rather than prompted, four of six seeds came back with the head turned properly into the room and the far eye whole and off the muzzle bridge - the fault that has failed every previous round. Seed 41 is the best Barclay the project has: full three-quarter, both eyes open and human, both inner brows lifted, unbroken black lip band, black nose, two separate fringed ears, collar on both sides, unbroken glass rim with no pick. Seeds 12 and 68 are usable behind it. Three rejects, each a different lesson: 44 invented a HUMAN bartender (the empty service side must be named), 7 took Picture 2's blank-paper staging instead of Picture 1's room and drew a spotted coat, 91 fell back to profile. STILL OPEN AFTER THREE ROUNDS, and the round-4 list: the flag pin is a blank pale triangle in every seed that got the pose right, while the two seeds that drew a real flag (7 on the lapel, 91 on the shoulder) are the two that got other things wrong; the camera keeps pushing in to about half-frame instead of the third asked for, which the wider Picture 1 crop should now be tried against; bottle labels keep growing pseudo-writing and the marble keeps crazing; and the paste-up seam behind the skull still shows as a soft vertical blur in the panelling.",
+      "thumb": "2026-09-06/thumbs/082.jpg"
+    },
+    {
+      "num": "083",
+      "title": "Barclay round 3 - JUDGE verdict: REJECT (seed 41, best of six)",
+      "verdict": "REJECT - not perfected. Rebuild P1 (no pasted head), promote the barclay study to Picture 1, and add EDITs for matched eyes, closed lip-line, visible neck and ruff, two-leaf collar and the lapel pin.",
+      "thumb": "2026-09-06/thumbs/083.jpg"
+    },
+    {
+      "num": "084",
+      "title": "Barclay round 4 pass A seed 41 the promoted drawing sent uncut draws a standing portrait on paper",
+      "verdict": "REJECT, and it taught the round its lesson. The CHARACTER jumped: a real neck, a small skull on wide shoulders, two collar leaves over a buttoned placket, no tie, a notched lapel with the flag pin on it, the wristwatch, layered ears, clean pen line, three rows of whisker pips, both eyes level, a warm up-hooked mouth. The PICTURE failed: the uncut Picture 2 handed over its standing three-quarter-length pose (belt, trousers, second hand in a pocket) and, worse, the room never built at all - blank paper, a spiral binding down the left edge, the counter shrunk to a shelf in the corner. An edit model keeps its base picture's ground, and that drawing's ground is studio paper.",
+      "thumb": "2026-09-06/thumbs/084.jpg"
+    },
+    {
+      "num": "085",
+      "title": "Barclay round 4 pass B seed 41 cutting picture 2 to the chest kills the standing pose but not the blank paper",
+      "verdict": "REJECT. The belt and trousers went, so the diagnosis was right. The blank paper did not: the spiral binding came back larger and a signature scribble appeared in the corner. Words cannot beat the base picture on this path - LOCAL_NEGATIVE is inert at cfg 1 and the base's ground is what the model keeps. Picture 1 itself had to carry the room.",
+      "thumb": "2026-09-06/thumbs/085.jpg"
+    },
+    {
+      "num": "086",
+      "title": "Barclay round 4 pass C seed 41 the uncut duo plate as an ink tile redraws the whole two-character plate",
+      "verdict": "REJECT, and the third tile is dropped for the round. The model redrew the whole approved plate: flamingo, martini, mirrored window lettering, both armchairs. On this model an uncut duo plate is staging that no label can switch off. Nothing was lost by dropping it - the ink it was wanted for is already inside Picture 1, whose room IS that plate.",
+      "thumb": "2026-09-06/thumbs/086.jpg"
+    },
+    {
+      "num": "087",
+      "title": "Barclay character study round 4 seed 41 the promoted drawing seated in the approved room",
+      "verdict": "THE BEST OF ROUND 4 and the round's anchor seed. Every fault the note named in the crown-to-collar band is fixed: a real neck with a hand's width of ruff between jaw and collar, a small skull on wide shoulders with the crown well below the top edge, two matched eyes on one level line each with a white crescent at the inner corner and one catchlight, a closed lip-line running the full two nose-widths and finishing in a hook that curls clearly ABOVE the band's middle so the smile reads warm at a glance, layered drop ears with white paper between ear and shoulder, three rows of whisker pips and no ticking anywhere else, two pale collar leaves over a buttoned placket with NO tie of any kind, a real notched lapel with its fold and shoulder seam carrying one small well-formed flag pin with a dark canton and bars, clean black pen with the nose and pupils the only solids, one character, no tail, no signature, the room to all four edges. Cleanest set of the six: bottle labels read as blank panels and the marble is not crazed. Faults left: a second tumbler doubled below the held glass, a stirrer standing in the drink (EDIT 13 forbids both), the wrist hidden by the counter so the watch never gets drawn, and the nose highlight is a broad glossy bar rather than one pinpoint.",
+      "thumb": "2026-09-06/thumbs/087.jpg"
+    },
+    {
+      "num": "088",
+      "title": "Barclay character study round 4 seed 3 the promoted drawing seated in the approved room",
+      "verdict": "Reject on one fault, otherwise as strong as the winner. TWO flag pins on the lapel - a small correct one on the notch and a large one below it - against EDIT 9's 'the ONLY mark on his clothing'. The head band is good: matched eyes, up-hooked closed mouth, real neck, layered ear. Marble crazed, doubled glass, stirrer.",
+      "thumb": "2026-09-06/thumbs/088.jpg"
+    },
+    {
+      "num": "089",
+      "title": "Barclay character study round 4 seed 17 the promoted drawing seated in the approved room",
+      "verdict": "Good, third place. The cleanest NOSE of the six - small, modestly modelled, no glossy bar - and a well-drawn ear. Marked down for the near eye reading more lidded than its partner, a break in the lip-line where the hook starts, a lapel with no pocket or seam, and the worst marble of the round: a hard crazed crackle field across the whole counter.",
+      "thumb": "2026-09-06/thumbs/089.jpg"
+    },
+    {
+      "num": "090",
+      "title": "Barclay character study round 4 seed 29 the promoted drawing seated in the approved room",
+      "verdict": "Reject. The jacket has gone almost solid black, so the notched lapel loses its fold and the pin's canton is coarse; the chest fur crowds the collar. The head band itself passes - matched eyes, up-hooked mouth, real neck, layered ear. Crazed marble, doubled glass, stirrer.",
+      "thumb": "2026-09-06/thumbs/090.jpg"
+    },
+    {
+      "num": "091",
+      "title": "Barclay character study round 4 seed 58 the promoted drawing seated in the approved room",
+      "verdict": "Reject on a stray. A pale chevron artifact sits on the right edge with a visible vertical seam beside it. The lapel is the best drawn of the six (notch, fold, pocket, shoulder seam) and the ear fringe is excellent, but the pin's canton is faint and the near eye carries a heavier lid than its partner.",
+      "thumb": "2026-09-06/thumbs/091.jpg"
+    },
+    {
+      "num": "092",
+      "title": "Barclay character study round 4 seed 73 the promoted drawing seated in the approved room",
+      "verdict": "RUNNER-UP, and the best HEAD of the round: the two eyes are the most closely matched pair of the six, both wide, both level, each with its white crescent and its catchlight, and the lapel is a real notched lapel with fold, pocket and shoulder seam carrying a legible pin. Beaten by seed 41 on the room only - the bottle labels carry pseudo-marks where 41's read as blank panels, the marble is a hard crazed crackle field, and a pale slatted object intrudes at mid-left. Doubled glass and stirrer as everywhere.",
+      "thumb": "2026-09-06/thumbs/092.jpg"
+    },
+    {
+      "num": "093",
+      "title": "Barclay round 4 contact sheet six seeds beside the canon kit bust and head",
+      "verdict": "The round lands. All six share a real neck, a small skull on wide shoulders, two collar leaves over a buttoned placket with no tie, a notched lapel with a flag pin, layered drop ears clear of the shoulder, three rows of whisker pips on an otherwise clean coat, clean black pen with no grey wash, one character, no tail and no blank paper. BEST: SEED 41 - the anchor - on the cleanest room of the six. Runner-up seed 73 for the best-matched pair of eyes and the best lapel. Three faults are common to every seed and are the round-5 list: the held glass is doubled by a second tumbler below it, a stirrer stands in the drink, and the wrist never clears the counter so the wristwatch the note asks for is never drawn. The marble crazes on four of the six.",
+      "thumb": "2026-09-06/thumbs/093.jpg"
+    },
+    {
+      "num": "094",
+      "title": "Abby round 1 seed 41 the study splits her into a human bartender and a pet terrier",
+      "verdict": "REJECT. The round's whole fault, in its clearest form: Abby is drawn as TWO BEINGS. A human woman in a blouse stands behind the bar polishing a glass with the towel, and a real FOUR-LEGGED West Highland terrier sits on the marble beside her wearing Abby's studded collar and teardrop pendant. Nothing in the picture is the character. The bar, the bottles and the marble are handsome and the pendant is drawn correctly on the dog, which is the only thing to salvage.",
+      "thumb": "2026-09-06/thumbs/094.jpg"
+    },
+    {
+      "num": "095",
+      "title": "Abby round 1 seed 7 the worst of the six two human men and a four-legged terrier",
+      "verdict": "REJECT, and the worst of the six. TWO human men in suits and shirtsleeves work the bar, one holding a wine glass and one holding the towel, with the four-legged terrier sitting on the counter between them wearing the collar and pendant. Three figures, none of them Abby, in a room that is not the Swinging Door - a window, a pendant lamp and a bar rail that belong to some other pub.",
+      "thumb": "2026-09-06/thumbs/095.jpg"
+    },
+    {
+      "num": "096",
+      "title": "Abby round 1 seed 21 one human bartender with the terrier as his pet on the counter",
+      "verdict": "REJECT. A single human man in a waistcoat garnishes a plate at the marble; the terrier sits on the counter at frame-left wearing the collar and pendant, plainly his pet. The engraving is competent and the back bar is well built, but the character is absent and the counter is being sat on, which the bible forbids outright.",
+      "thumb": "2026-09-06/thumbs/096.jpg"
+    },
+    {
+      "num": "097",
+      "title": "Abby round 1 seed 33 two stacked terriers and a human man three figures none of them abby",
+      "verdict": "REJECT, and the most revealing of the six. TWO terriers are stacked one above the other, both in the studded collar with the teardrop, and a human man in a dark shirt holds the towel and the glass beside them. Two Abby tiles cut at two distances went on the wire this round (Picture 1 the head crop, Picture 3 the kit bust) and this seed drew both of them.",
+      "thumb": "2026-09-06/thumbs/097.jpg"
+    },
+    {
+      "num": "098",
+      "title": "Abby round 1 seed 44 human man and pet terrier with the room dissolving into hatching",
+      "verdict": "REJECT. A bearded human man in an open shirt polishes the glass with the towel; the four-legged terrier sits on the marble in the collar. Below the counter the room stops being a room and becomes a field of vertical hatching, and the back bar has been replaced by a window onto a garden. Not the Swinging Door and not the cast.",
+      "thumb": "2026-09-06/thumbs/098.jpg"
+    },
+    {
+      "num": "099",
+      "title": "Abby round 1 seed 55 best of the six the only anthropomorphic abby but a human still tends the bar",
+      "verdict": "BEST OF THE SIX, and still a reject. This is the only seed that drew ABBY HERSELF: an upright terrier in the pale open blouse, filling the foreground. What lands - the collar is a black leather band with ONE row of round domed studs all the same size, a buckle at the FRONT and a single ring below it, and from that ring hangs ONE teardrop gem in a beaded silver bezel closing to a point, which is the bible's shape drawn right for the first time this round; both ears pricked; a closed warm lip-line; the blouse open at the throat; and the best EYES in the repository so far - a drawn iris ring with radiating lines, a distinct round pupil clearly smaller than the iris, exactly one catchlight, an upper lid with lashes and a soft lower lid, four of the bible's five parts. What fails - (1) a HUMAN bartender in a waistcoat and tie stands at the back bar behind her, which alone is a redraw; (2) the fifth part of the eye is still missing, the iris filling the opening with no white showing at either side; (3) she stares straight out at the reader, the founder's named complaint; (4) the camera is far closer than Picture 1, her head filling two thirds of the frame, so there are no hands, no towel, no arms and no counter to judge; (5) the glass stands on the marble untouched instead of in her hand.",
+      "thumb": "2026-09-06/thumbs/099.jpg"
+    },
+    {
+      "num": "100",
+      "title": "Abby round 1 diagnostic seed 7 removing the human nouns and the third tile leaves one terrier and no human",
+      "verdict": "THE DIAGNOSIS HOLDS. On the seed that drew two men and a pet terrier, the same seed now draws ONE upright terrier in the blouse and collar and no human anywhere. The four-legged pet is gone, the second and third figures are gone, the eyes carry four of the bible's five parts, and the collar, buckle, ring and teardrop are all correct. Still a reject as a picture: the ROOM has gone with them - blank studio paper, a vignette of hatching, a pencil signature at the bottom right - and it is a head-and-collar portrait, no arms, no hands, no towel, no counter, with the gaze still on the reader. Round 2's job is to put the room and the distance back without letting the humans back in.",
+      "thumb": "2026-09-06/thumbs/100.jpg"
+    },
+    {
+      "num": "101",
+      "title": "Abby round 1 diagnostic seed 55 the pet terrier is killed but one human bartender survives in the background",
+      "verdict": "HALF THE FIX. The four-legged pet terrier is gone and Abby is one upright terrier in the foreground with the collar, the buckle, the single ring, the teardrop in its beaded bezel and the open blouse - but a HUMAN bartender in a waistcoat and tie still stands at the back bar behind her, so the human noun was not the only route in; the base picture's own bar keeps offering a slot for someone to fill. The camera is still far closer than asked, her head filling the frame, so there are still no hands, no towel and no counter. Two of two diagnostic seeds kill the pet terrier; one of two kills the human.",
+      "thumb": "2026-09-06/thumbs/101.jpg"
+    },
+    {
+      "num": "102",
+      "title": "Abby round 1 contact sheet six seeds beside the kit bust and head tiles",
+      "verdict": "ALL SIX REJECTED, and they fail identically: Abby is split into a four-legged pet terrier wearing her collar and a separate human doing her job. Seed 55 is the best of the six - the only one with an anthropomorphic Abby in front, and the first correct teardrop pendant and the best eyes the repository has produced. The same-day diagnostic names the cause and half-fixes it; round 2 runs on those edits with the room put back.",
+      "thumb": "2026-09-06/thumbs/102.jpg"
+    },
+    {
+      "num": "103",
+      "title": "Abby character study round 2 pass 1 seed 55 the sc04 tile and the judges wording",
+      "verdict": "REJECT. A human woman in a blouse with a real four-legged westie held against her chest. The bar is gone: blank sketchbook paper behind them.",
+      "thumb": "2026-09-06/thumbs/103.jpg"
+    },
+    {
+      "num": "104",
+      "title": "Abby character study round 2 pass 1 seed 7 the sc04 tile and the judges wording",
+      "verdict": "REJECT. A human woman at a table with a four-legged terrier sitting beside her; a wristwatch on her arm. No bar, no counter, no back bar.",
+      "thumb": "2026-09-06/thumbs/104.jpg"
+    },
+    {
+      "num": "105",
+      "title": "Abby character study round 2 pass 1 seed 41 the sc04 tile and the judges wording",
+      "verdict": "REJECT. A human woman and TWO four-legged westies on blank paper. Three beings, none of them Abby.",
+      "thumb": "2026-09-06/thumbs/105.jpg"
+    },
+    {
+      "num": "106",
+      "title": "Abby character study round 2 pass 1 seed 21 the sc04 tile and the judges wording",
+      "verdict": "REJECT. Split again - a human figure plus the terrier as a pet. Room gone.",
+      "thumb": "2026-09-06/thumbs/106.jpg"
+    },
+    {
+      "num": "107",
+      "title": "Abby character study round 2 pass 1 seed 33 the sc04 tile and the judges wording",
+      "verdict": "REJECT. Split again. Room gone.",
+      "thumb": "2026-09-06/thumbs/107.jpg"
+    },
+    {
+      "num": "108",
+      "title": "Abby character study round 2 pass 1 seed 44 the sc04 tile and the judges wording",
+      "verdict": "REJECT. Split again. Room gone.",
+      "thumb": "2026-09-06/thumbs/108.jpg"
+    },
+    {
+      "num": "109",
+      "title": "Abby round 2 isolation seed 55 human nouns purged and Picture 1 back to the shipped plate crop",
+      "verdict": "PASS. One upright anthropomorphic Abby, no human, no second dog: the first clean single-Abby render of the project on the standard prompt. Closed mouth, real eyes with whites and a drawn iris, collar and teardrop, blouse open. Fails on staging: no room, no hands, no counter, and the head fills the frame. This is the configuration the shipped six were run on.",
+      "thumb": "2026-09-06/thumbs/109.jpg"
+    },
+    {
+      "num": "110",
+      "title": "Abby round 2 isolation seed 55 room edit moved early with the shipped plate crop",
+      "verdict": "REJECT. Moving the room edit early bought nothing and cost the identity: a human youth with a four-legged westie, on paper. The room edit is not the lever; leave the order alone.",
+      "thumb": "2026-09-06/thumbs/110.jpg"
+    },
+    {
+      "num": "111",
+      "title": "Abby round 2 isolation seed 55 the sc04 crop demoted to a staging-only Picture 3",
+      "verdict": "MIXED, still a reject. The staging tile DID bring the room back - a full back bar, ranked bottles, the counter across the bottom - but the figure split again: a human bartender with the terrier beside him. The room is recoverable from a third tile; the identity is not survivable next to a torso reference.",
+      "thumb": "2026-09-06/thumbs/111.jpg"
+    },
+    {
+      "num": "112",
+      "title": "Abby character study round 2 seed 55 one upright terrier the split is fixed",
+      "verdict": "BEST OF THE SIX. One Abby and nothing else alive. Carrot skull, short square muzzle, fully closed warm smile, collar-buckle-ring-teardrop, blouse open two buttons with the decolletage showing. Best eyes of the round - white at both sides of the iris, a drawn iris with a rim, a distinctly smaller pupil, one catchlight, lashes and a lid - and the gaze furthest off the lens, down and to her left. FAILS: no room, no counter, no hands, no towel, and the head fills the frame instead of the top third.",
+      "thumb": "2026-09-06/thumbs/112.jpg"
+    },
+    {
+      "num": "113",
+      "title": "Abby character study round 2 seed 7 one upright terrier the split is fixed",
+      "verdict": "One Abby, no second being. Eyes right, mouth closed, teardrop clean. The gaze sits nearer the reader than 55 and the chin is dropped. No room, no hands, no counter, no towel.",
+      "thumb": "2026-09-06/thumbs/113.jpg"
+    },
+    {
+      "num": "114",
+      "title": "Abby character study round 2 seed 41 one upright terrier the split is fixed",
+      "verdict": "One Abby. The cleanest, quietest line of the six - but the gaze comes closest of all six to meeting the reader, which is the founder's oldest complaint about her. No room, no hands, no counter, no towel.",
+      "thumb": "2026-09-06/thumbs/114.jpg"
+    },
+    {
+      "num": "115",
+      "title": "Abby character study round 2 seed 21 one upright terrier the split is fixed",
+      "verdict": "One Abby. Faint pencil scribbles run along the bottom edge where a signature keeps trying to appear. No room, no hands, no counter, no towel.",
+      "thumb": "2026-09-06/thumbs/115.jpg"
+    },
+    {
+      "num": "116",
+      "title": "Abby character study round 2 seed 33 one upright terrier the split is fixed",
+      "verdict": "One Abby, but her left shoulder runs off the frame and the bust reads heaviest of the six against the OPEN THE NECKLINE NOT THE FIGURE rule. No room, no hands, no counter.",
+      "thumb": "2026-09-06/thumbs/116.jpg"
+    },
+    {
+      "num": "117",
+      "title": "Abby character study round 2 seed 44 one upright terrier the split is fixed",
+      "verdict": "One Abby. The finest lashes and lids of the round and the iris rim clearly drawn - but the gaze tips UP and away from the work her hands are supposed to be doing. No room, no hands, no counter, no towel.",
+      "thumb": "2026-09-06/thumbs/117.jpg"
+    },
+    {
+      "num": "118",
+      "title": "Abby round 2 contact sheet six seeds beside the kit bust and head",
+      "verdict": "Round 1 was 0 of 6 on identity; round 2 is 6 of 6. What round 3 owes Rick is the room, the counter and both hands - all six of these are portraits on bare paper.",
+      "thumb": "2026-09-06/thumbs/118.jpg"
+    },
+    {
+      "num": "119",
+      "title": "Abby round 3, seed 41 - the judges' sc12 Picture 1, tested and rejected on lettering",
+      "verdict": "THE DIAGNOSIS IS RIGHT AND THE PLATE IS WRONG. Right: a full-plate Picture 1 brings the whole room back at once - the counter, the back bar, all three characters, both of Abby's hands, the towel, the occlusion at her waist. That is the round-2 failure cured in one move. Wrong: sc12 is a PUBLISHED strip and it is covered in lettering - a live television chyron, a lettered chalkboard and a lettered receipt in Barclay's hands. At cfg 1 the model copied all three and then invented more of it: the chyron came back as 'PPICE GAUES CONES IN AS EXPECTEO', the bottle labels grew scribble, and the receipt kept its columns. Pseudo-text is what INSPECTION.md check 17 calls fatal. Two further drifts: the camera pulled back off the marble into stools and floor, and the left wall grew invented posters. The fix is not to fight the plate with words - it is to send a plate that has nothing to copy. canon/plates/trio.png is the APPROVED BLANK PLATE and carries the identical construction with the screen already off, the slate already wiped, every label already blank and no receipt. Picture 1 changed to trio.png for the rest of the round.",
+      "thumb": "2026-09-06/thumbs/119.jpg"
+    },
+    {
+      "num": "120",
+      "title": "Abby round 3 - her eye, drawn by hand (look-card Step 5, skipped until now)",
+      "verdict": "It does its job and it also taught the round something. It works: the near eye across all six renders measures 23-26% below L60 against 52.3% for the best tile in the repository, with genuine paper-white on both sides of the iris. It has one cost, seen at seed 33 and faintly at 21: a diagram sent as a reference can be drawn INTO the room as a picture - seed 33 put a cartoon westie with one giant eye and a starburst inside the wiped slate. Round 4's tile needs a role line that forbids it appearing as a picture on any wall.",
+      "thumb": "2026-09-06/thumbs/120.jpg"
+    },
+    {
+      "num": "121",
+      "title": "Abby character study, round 3, seed 55 - the room comes back with the plate",
+      "verdict": "RUNNER-UP OF SIX. The round-2 failure is cured: the room, the marble, the back bar, the sconce and the mirrored window are all there, the counter crosses her at the waist, both hands work the glass and the towel, and Drew and Barclay sit on the near side. Nothing is lettered but the window name - slate blank, every bottle label blank. Her eye is the largest and best drawn of the six: measured 23.8% below L60 with white at 245 and 246 against a paper of 251, so there is real paper-white at both sides of the iris. Marked below seed 44 on two counts: the lip line opens into a distinct dark gap right of centre where the edit says never parted, and the long coat still runs past the jaw down onto the throat.",
+      "thumb": "2026-09-06/thumbs/121.jpg"
+    },
+    {
+      "num": "122",
+      "title": "Abby character study, round 3, seed 41 - the quietest line, the weakest eye",
+      "verdict": "THIRD. The cleanest, quietest drawing of the six and the closest of them all to Picture 1's own framing, with no strays anywhere in the frame. It is also the ONLY render of the six whose eye misses the white test: the far side of the near iris shades to 219 against a paper of 241, so the white is on one side of the iris and not the other. Dark fraction is fine at 24.5%. Mouth parted right of centre, gaze square at the reader.",
+      "thumb": "2026-09-06/thumbs/122.jpg"
+    },
+    {
+      "num": "123",
+      "title": "Abby character study, round 3, seed 7 - clean face, two strays",
+      "verdict": "FOURTH. Slate blank, room right, occlusion right, both hands right, and a good eye at 23.3% dark with white at 238 and 233 on a paper of 245. Two strays keep it out of the top three: a curl of smoke rises off the back bar behind her left ear, and Drew's face is mottled where the rest of the plate is crisp.",
+      "thumb": "2026-09-06/thumbs/123.jpg"
+    },
+    {
+      "num": "124",
+      "title": "Abby character study, round 3, seed 21 - a ghost in the wiped slate",
+      "verdict": "REJECT. Abby herself is sound - room, counter, both hands, towel, and an eye at 24.4% dark that all but passes the white test (237 and 232 on a paper of 252, the second side marginal). The reject is the slate: a ghost figure has surfaced inside it, a face and shoulders in faint pencil, where EDIT 2 says a blank wiped slate. Same family of fault as seed 33 and the same cause - a picture-shaped reference finding a picture-shaped hole in the room.",
+      "thumb": "2026-09-06/thumbs/124.jpg"
+    },
+    {
+      "num": "125",
+      "title": "Abby character study, round 3, seed 33 - the eye chart climbs into the slate",
+      "verdict": "REJECT, and the most useful failure of the round. Abby is good: the room, the counter, both hands, the towel, and the eye at 25.7% dark with white at 237 and 234 on a paper of 241. But the EYE CHART sent as Picture 3 has been drawn INTO the blank slate as a cartoon - a westie head with one giant eye and a starburst, exactly the diagram's own motifs. The tile did its job on her face and then leaked onto the wall. Round 4's Picture 3 role line must forbid it appearing as a picture anywhere in the room, and the wiped-slate edit should name the slate as bare of pictures as well as bare of words.",
+      "thumb": "2026-09-06/thumbs/125.jpg"
+    },
+    {
+      "num": "126",
+      "title": "Abby character study, round 3, seed 44 - BEST OF THE ROUND",
+      "verdict": "BEST OF THE SIX, and the first Abby of the whole task that is a scene rather than a portrait. Every construction fix lands together: the room and the back bar behind her, the marble crossing her at the waist and hiding her below it, both hands working - the left closed round the bowl of the stemmed glass, the right pressing the folded towel down inside it - Drew seated frame-left and Barclay frame-right on the near side, her head high in the frame because she stands while they sit. Nothing is lettered anywhere but the mirrored window name: slate blank, every bottle label blank, no receipt, no caption, no signature. The face: the best measured eye of the round at 24.3% below L60 with white at 250 and 250 against a paper of 253 - genuine paper-white at BOTH sides of the iris, a drawn iris ring, a pupil smaller than the iris, one catchlight, lid and lash - the cleanest closed smile of the six with both corners lifted, ears matched in size and height, a flat black nose smaller than the eye opening, and the teardrop gem in its beaded bezel that the wardrobe edit asked for and earlier rounds drew as a heart. THREE FAULTS REMAIN, and they are the same three in all six, so they are language and reference faults rather than seed faults: (1) THE GAZE - she looks out at the reader, which is the founder's oldest complaint about her; the gaze edit loses to Picture 1, where she also looks out. (2) THE JAWLINE - the long show-coat still runs past the jaw down onto the throat instead of stopping dead at it. (3) THE LIP LINE opens a small dark gap right of centre. Round 4 should hold this Picture 1 and this eye tile and repair those three.",
+      "thumb": "2026-09-06/thumbs/126.jpg"
+    },
+    {
+      "num": "127",
+      "title": "Abby round 3 - contact sheet, six seeds beside the kit tiles",
+      "verdict": "6 of 6 bring back the room, the counter, both hands and the towel; round 2 was 0 of 6. The near eye measures 23-26% below L60 across all six against 52.3% for the best tile in the repository, and 4 of 6 also clear the paper-white-at-both-sides test. 2 of 6 are rejects, both for the same new fault - a picture appearing inside the wiped slate. Best of the round: seed 44.",
+      "thumb": "2026-09-06/thumbs/127.jpg"
+    },
+    {
+      "num": "128",
+      "title": "Abby round 4 - the new Picture 2: the plates Rick accepted, in place of the kit tiles",
+      "verdict": "IT WORKED, AND IT IS THE ONE THING THAT DID. The Bichon is gone 6 of 6: every render in the round now carries the broad flat-topped skull, the small close-set triangular ears and the short blunt bearded muzzle of the accepted plates, where round 3 gave a round fluffy lapdog head with wide tufted ears in all six. The diptych did not leak - no render drew two Abbys, a gutter or a framed panel. What the tile did NOT fix, because it carries these faults itself and the EDITS could not out-argue it: the open blouse with a shading line between the breasts (both crops show it), and the fur running past the jaw down the throat (both crops show that too). The heart pendant came through on one seed of six.",
+      "thumb": "2026-09-06/thumbs/128.jpg"
+    },
+    {
+      "num": "129",
+      "title": "Abby character study, round 4, seed 55 - the ears finally read as a terrier's",
+      "verdict": "RUNNER-UP OF SIX. The cleanest EAR read of the round and the thing the reference swap was for: two small hard-edged triangles carried erect and close-set on top of a broad flat skull, with the topknot between them, where round 3 gave wide-set tufted lapdog ears. The eye is second-best of the round - 24.6% below L60 with white measured at 253 and 253 against a paper of 254, so there is exact paper-white at both sides of the iris - and both pupils sit LEFT, onto Drew, so the founder's oldest complaint about her is finally answered on this seed. Nothing is lettered but the mirrored window; slate blank, every bottle label a blank panel. Marked below seed 44 on two counts: the back bar falls back into coarse dark hatch instead of the wood grain the EDIT asks for, and the bottom-left border breaks into spiked hatch fringe where the EDIT asks for a clean cut. The shared faults of the round are all here too - the lip parts on a gap, the coat runs past the jaw onto the throat, the blouse gapes.",
+      "thumb": "2026-09-06/thumbs/129.jpg"
+    },
+    {
+      "num": "130",
+      "title": "Abby character study, round 4, seed 41 - the only clean edge, the truest iris",
+      "verdict": "THIRD, and it holds the two things no other seed got. THE BORDER: it is the ONLY render of the six that answers the clean-edge EDIT - ink runs to a straight cut on all four sides, no spiked fringe, no washed band, no margin (measured mean edge tone 22 top, 25 bottom, 137 left, 35 right, against 187/229/219 on seed 44). THE IRIS: it is the only render that draws the chart's actual construction - a genuinely MID-GREY iris with a separate black pupil floating inside it - where the other seeds fuse iris and pupil into one dark disc with a grey rim. Its cost is the thinnest white margin of the round, 224 and 226 against a paper of 241, and the most frontal gaze of the six: the pupils sit near centre, so she reads closer to the lens than 55, 21 or 44. Quiet, clean, no strays, nothing lettered.",
+      "thumb": "2026-09-06/thumbs/130.jpg"
+    },
+    {
+      "num": "131",
+      "title": "Abby character study, round 4, seed 7 - the hardest coat and a fourth ear",
+      "verdict": "FOURTH. It draws the SHORTEST, HARDEST coat of the six and is the closest any render came to the harsh double coat the EDIT asks for - short straight strokes with tonal breaks, rather than the long silky sweep the other seeds kept. The eye is clean at 22.6% dark with white at 231 and 226 on a paper of 241. Two faults hold it down. FOUR EAR FORMS: extra ear-shaped tufts of fur stand outside both real ears, so the head reads with four pricked shapes instead of two. And the lip line opens on a visible tooth right of centre, where the EDIT says the lips touch along their whole length.",
+      "thumb": "2026-09-06/thumbs/131.jpg"
+    },
+    {
+      "num": "132",
+      "title": "Abby character study, round 4, seed 21 - the only heart pendant of the round",
+      "verdict": "FIFTH, and it carries one finding worth keeping: it is the ONLY seed of the six that drew the HEART pendant the judges asked for. Every other seed fell back to the old oval gem, which is canon's own fence wording ('a teardrop gem pendant') winning over the EDIT - so the heart IS reachable at this recipe and the fence is what is fighting it. Otherwise: gaze plainly left onto Drew, the best grey modelling under the jaw and along the far shoulder of the round, a good eye at 24.7% dark with white at 243 and 245 on a paper of 254. Faults: the same four-ear-form artifact as seed 7, and the bottom edge washes out into a pale band instead of cutting square.",
+      "thumb": "2026-09-06/thumbs/132.jpg"
+    },
+    {
+      "num": "133",
+      "title": "Abby character study, round 4, seed 33 - REJECT, the slate fills with pseudo-text",
+      "verdict": "REJECT, AND FATAL. The wiped slate has filled with a dense mass of letter-like glyphs - pseudo-text, which INSPECTION.md check 17 calls fatal on sight. This is the SAME seed that drew the eye chart into the slate in round 3, so seed 33 has a standing habit of filling that one panel: the hardened Picture 3 role line stopped the chart getting in but did not stop the scribble. It is also the only eye of the six to fail the white test, 187 on the far side of the iris against a paper of 238, and the only render whose near eye is the FAR one - her head has turned the wrong way. Recommendation: drop seed 33 from Abby's rotation; it has now failed the same check twice for the same reason.",
+      "thumb": "2026-09-06/thumbs/133.jpg"
+    },
+    {
+      "num": "134",
+      "title": "Abby character study, round 4, seed 44 - BEST OF THE ROUND",
+      "verdict": "BEST OF THE SIX, and the best Abby of the whole task so far. THE EYE IS THE BEST MEASURED OF ANY ROUND: 22.0% of the opening below L60, with the white on each side of the iris measured at 254 and 254 against a paper of 254 - both sclera crescents are EXACT paper white, clearly separated at the inner corner and the outer corner, which is precisely what the judges asked for and what no tile in the repository contains. THE GAZE IS OFF THE LENS: both pupils sit left, onto Drew, both eyes are on the page and the far eye is about four fifths the near one's width, so the head turn reads without losing an eye. THE BREED IS RIGHT: broad flat-topped skull wider than it is tall, two small close-set erect triangular ears and nothing extra, a short blunt muzzle with its beard fringe, a heavy black studded collar sitting up on the neck. THE ROOM IS RIGHT: back bar in readable wood grain with legible bottle silhouettes and clear glass, the counter crossing her at the waist, both hands working the glass and the towel, Drew and Barclay seated on the near side, the slate blank, every label a blank panel with no letterform anywhere. FOUR FAULTS REMAIN, and they are shared by every seed, so they are language and canon faults rather than seed faults: (1) the lip line still opens a dark gap; (2) the long coat still runs past the jaw down the throat and into the blouse; (3) the blouse still gapes with a shading line between the breasts; (4) the pendant is an oval, not the heart. The bottom-left border also frays into hatch fringe, which only seed 41 avoided.",
+      "thumb": "2026-09-06/thumbs/134.jpg"
+    },
+    {
+      "num": "135",
+      "title": "Abby round 4 - the contact sheet, six seeds against the tiles that were dropped",
+      "verdict": "THE ROUND IN ONE PICTURE. WON: the breed. The Bichon is gone 6 of 6 - flat-topped skull, small close-set triangular ears, blunt bearded muzzle in every render, against 0 of 6 in round 3. WON: the eye, by number - the near eye measures 22.0-26.8% below L60 across the five good seeds, and seed 44 puts exact paper white (254/254 on a paper of 254) at both sides of the iris. WON: the gaze, in 4 of 6 - the pupils sit left onto Drew where all six of round 3 stared at the reader. WON: the back bar, now wood grain with legible bottles in 4 of 6. LOST: the jawline, 6 of 6 - the coat still crosses onto the throat. LOST: the closed lip, 6 of 6. LOST: the modest blouse, 6 of 6. LOST: all three of Drew's fixes, 6 of 6 - his neck is still drawn in overlapping scales, still one unbroken C-hook, and only his EYE improved, which is the one Drew fix that landed. The reason is visible in the prompt: the auto-appended tail EDIT tells the model that everything other than the studied character stays exactly as Picture 1, and Picture 1 draws the scaled neck. Drew needs his own pass, or a corrected Picture 1. And three of the four remaining Abby faults are canon's own fence wording ('open two buttons over a smooth sleek throat', 'a teardrop gem pendant', 'a round soft fluffy westie head') being read AFTER the EDITS that contradict it - the fence, not the prompt, is now the thing fighting the judges.",
+      "thumb": "2026-09-06/thumbs/135.jpg"
+    },
+    {
+      "num": "136",
+      "title": "DREW, perfected as a standalone study with the house recipe: a flamingo - round 4, seed 62, the best of 24 judged renders",
+      "verdict": "shown to the founder; judges: close, four fixes left",
+      "thumb": "2026-09-06/thumbs/136.jpg"
+    },
+    {
+      "num": "137",
+      "title": "BARCLAY, standalone study, round 4 seed 73: a golden retriever drawn like one",
+      "verdict": "shown to the founder; judges: three fixes left",
+      "thumb": "2026-09-06/thumbs/137.jpg"
+    },
+    {
+      "num": "138",
+      "title": "ABBY, standalone study, round 4 seed 41: the West Highland terrier proprietor behind the bar",
+      "verdict": "shown to the founder; judges: two fixes left",
+      "thumb": "2026-09-06/thumbs/138.jpg"
+    }
+  ]
+}

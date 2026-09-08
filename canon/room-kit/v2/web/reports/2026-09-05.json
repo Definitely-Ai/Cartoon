@@ -1,6 +1,7 @@
 {
   "date": "2026-09-05",
   "pdf": "output/pdf/ricks-studio-end-of-day-2026-09-05.pdf",
+  "show": "reports/2026-09-05/SHOW.html",
   "entries": [
     {
       "num": "001",
@@ -1219,7 +1220,72 @@
       "title": "email to Rick drafted to go with the end-of-day report (output/email/ricks-studio-end-of-day-email-2026-09-05.txt)",
       "verdict": "ready to send",
       "thumb": "2026-09-05/thumbs/203.jpg"
+    },
+    {
+      "num": "204",
+      "title": "the cast, round 1 (Opus + Sonnet teammates): the published set Rick accepted, look cards and reference kits for Drew, Barclay and Abby, posed block-ins, and the judging tool",
+      "verdict": "ready to render",
+      "thumb": "2026-09-05/thumbs/204.jpg"
+    },
+    {
+      "num": "205",
+      "title": "cast pose block-ins on the plate: Drew turned to Barclay, Barclay turned to Drew, Abby behind the ledge - the construction drawing the characters are rendered from",
+      "verdict": "block-ins verified against the sign and the shelf divider",
+      "thumb": "2026-09-05/thumbs/205.jpg"
+    },
+    {
+      "num": "206",
+      "title": "figure-drew-02-toward render seed 7 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/206.jpg"
+    },
+    {
+      "num": "207",
+      "title": "figure-drew-02-toward render seed 21 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/207.jpg"
+    },
+    {
+      "num": "208",
+      "title": "figure-drew-02-toward render seed 7 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/208.jpg"
+    },
+    {
+      "num": "209",
+      "title": "figure-drew-02-toward render seed 33 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/209.jpg"
+    },
+    {
+      "num": "210",
+      "title": "figure-drew-02-toward render seed 21 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/210.jpg"
+    },
+    {
+      "num": "211",
+      "title": "figure-drew-02-toward render seed 44 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/211.jpg"
+    },
+    {
+      "num": "212",
+      "title": "figure-drew-02-toward render seed 33 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/212.jpg"
+    },
+    {
+      "num": "213",
+      "title": "figure-drew-02-toward render seed 44 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-05/thumbs/213.jpg"
+    },
+    {
+      "num": "214",
+      "title": "Drew, anchor pose, round 1: four seeds with his bust and head as references - undressed on every seed, no seed with the bible's bill; the neck reads on 7 and 33",
+      "verdict": "all four rejected - round two running",
+      "thumb": "2026-09-05/thumbs/214.jpg"
     }
-  ],
-  "show": "reports/2026-09-05/SHOW.html"
+  ]
 }
