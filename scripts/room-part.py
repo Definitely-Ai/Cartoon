@@ -523,12 +523,22 @@ def cmd_build(_a) -> None:
     if tv and tv.get("source") and tv.get("enabled", True):
         plate = blank_screen(plate)
     from ink import ink_edges
+    before = plate.copy()                        # the figures are laid AFTER the marble and the bottles:
+    figs = [p for p in man["parts"] if p["id"].startswith("figure-") and p.get("source") and p.get("enabled", True)]
     plate = ink_edges(plate, man)                # the straight edges of the marble, in code
     save(plate, KIT / "plate.png")
-    if any(p["id"].startswith("bottles-") and p.get("source") and p.get("enabled", True) for p in man["parts"])             and (KIT / "labels.json").exists():
+    if any(p["id"].startswith("bottles-") and p.get("source") and p.get("enabled", True) for p in man["parts"]) \
+            and (KIT / "labels.json").exists():
         # the bottle labels are typeset in code onto the label quads (lettering is never the model's)
         subprocess.run([sys.executable, str(ROOT / "scripts/label-bottles.py"),
                         str(KIT / "plate.png"), str(KIT / "plate.png")], check=True)
+        plate = load(KIT / "plate.png")
+    if figs:                                     # nothing drawn for the room prints on a figure
+        keep = np.zeros(plate.shape[:2], bool)
+        for p in figs:
+            keep |= mask_of(p, grow=0, feather=0) > 0.5
+        plate[keep] = before[keep]
+        save(plate, KIT / "plate.png")
     print(f"wrote {(KIT / 'plate.png').relative_to(ROOT)}")
     glass = next((p for p in man["parts"] if p["id"] == "glass"), None)
     if glass and glass.get("source"):

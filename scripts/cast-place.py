@@ -3,9 +3,9 @@
     python scripts/cast-place.py --character drew|barclay|abby --seed 41 --route A|B|S
         [--box X0,Y0,X1,Y1] [--edit "..."] [--plate PATH] [--pose-name NAME]
         [--rolls N] [--thresh 18] [--out DIR] [--dry-run]
-        [--under-lines/--no-under-lines] [--under-blend 0.30] [--fill/--no-fill]
-        [--under-remap LO,HI] [--sheet-grey 255]
-        [--also PART=STICKER.PNG ...]   (route S only; see WHAT TEAM 4/5 ADDED below)
+        [--under-lines/--no-under-lines] [--under-blend 0] [--fill/--no-fill]
+        [--cut-by-blockin/--no-cut-by-blockin] [--under-remap LO,HI] [--sheet-grey 255]
+        [--also PART=STICKER.PNG ...]   (route S only; see WHAT TEAM 4/5/6 ADDED below)
 
 THE TWO ROUTES (--route, 2026-09-08)
 ------------------------------------
@@ -294,6 +294,40 @@ working changes underneath them:
     MEANING (how far below the sheet's own tone counts as ink) even when the
     sheet itself is no longer pure white. Default 255 (identical to before).
 
+WHAT TEAM 6 ADDED (2026-09-08). Today's lab (reports/2026-09-08, entries
+~070-085) settled the recipe that finally gets the model to draw the
+portrait's head: the block-in REMAPPED into a mid-grey band, with NO pencil
+lines and NO staging picture. Two changes make that the route S default, and
+a third stops a render's furniture and glassware riding onto the sticker
+alongside the figure it belongs to:
+
+  * --under-remap 100,180 --under-blend 0 --no-under-lines are now route S's
+    OWN defaults (previously --under-remap was off and --under-lines defaulted
+    ON) - pass --under-lines or a different --under-remap/--under-blend to go
+    back to the earlier recipe for comparison. Picture 3 stays off by default
+    for route S regardless (--staging-solo still adds it), unchanged from
+    Team 4/5.
+  * --cut-by-blockin (default ON; --no-cut-by-blockin to disable). The lab's
+    remaining fault was a sticker that carried the marble slab, a martini and
+    the chair rail because it was cut by the occluder's OWN mask only - the
+    candidate ink was otherwise confined merely to a generous 24px dilation of
+    the figure's block-in mask before its blobs were labelled, wide enough
+    that a blob touching the figure can still wander onto nearby set dressing.
+    This adds one more, tighter word after the key and the hole fill: the kept
+    alpha is ANDed against dilate(figure block-in mask, 12px) with the
+    occluder's own mask excluded again at the same time, so nothing outside
+    the figure's own silhouette (plus a 12px margin) can ride along, however
+    it got kept upstream.
+  * Per-character HEAD_SENTENCE (Team 4) is unchanged for Drew and Barclay;
+    Abby's now names her own eye rule in words - white showing both sides of a
+    drawn iris, a smaller round pupil, one catchlight, a lashed upper lid,
+    closing in her warm closed-lip half-smile (canon/vision/studies/abby.txt)
+    - on top of what the under-drawing already marks for her eyes.
+  * POSE_NAME gives each character's own pose word (seated-left, seated-right,
+    ledge) as --pose-name's default, so the output name
+    <character>-<pose>-r<route>[-<tag>]-s<seed>.png no longer has to be told
+    the pose by hand for Barclay or Abby.
+
 NEVER run room-part.py, never touch parts.json.
 """
 from __future__ import annotations
@@ -390,6 +424,11 @@ DEFAULT_ROI = {
 # Drew's or Barclay's (about 215x489 against 452x701 and 373x612), so her floor
 # is set lower, at 300px, in place of the 400px the two seated birds use.
 MIN_FIGURE_OVERLAP = {"drew": 400, "barclay": 400, "abby": 300}
+# Route S's per-character POSE NAME - names the output file (see main()'s
+# pose_name resolution and "<character>-<pose>-r<route>[-<tag>]-s<seed>.png"),
+# taken from the character table: Drew and Barclay each SIT (in the left and
+# right chair respectively), Abby STANDS at the ledge.
+POSE_NAME = {"drew": "seated-left", "barclay": "seated-right", "abby": "ledge"}
 
 PORTRAIT = {
     "drew": "canon/vision/studies/drew.png",
@@ -563,9 +602,10 @@ HEAD_SENTENCE = {
         "side of the nose, the far eye smaller than the near one where the head turns three-quarter - that IS "
         "her head: draw a solid, small, round westie head exactly filling it, joined to the neck, her short "
         "square muzzle rounding gently down to her black nose exactly where it is marked, both pricked ears "
-        "standing up from the skull, her large glossy human-like eyes where the eyes are marked, one clear "
-        "catchlight in each. Her head is never a flat disc, a bare eyeless skull or drooping ears, and never "
-        "floats free of the neck."
+        "standing up from the skull, and her eyes drawn EXACTLY TO HER OWN EYE RULE where the eyes are "
+        "marked: white showing both sides of a drawn iris, a smaller round pupil, one catchlight, a lashed "
+        "upper lid, closing in her warm closed-lip half-smile. Her head is never a flat disc, a bare eyeless "
+        "skull or drooping ears, and never floats free of the neck."
     ),
 }
 ADD_EDIT_STICKER = {
@@ -863,6 +903,10 @@ STICKER_OCCLUDER_FEATHER = 1.0  # the occluder's edge, laid last so it stays cri
 STICKER_UNDER_LINE_TONE = 150.0
 STICKER_UNDER_LINE_SOBEL_THRESH = 24.0
 STICKER_UNDER_LINE_WIDTH = 2      # target line width in px, after thinning
+# --cut-by-blockin (Team 6, 2026-09-08): the final radius, in px, that the kept
+# sticker mask is dilated out from the figure's OWN block-in mask before it is
+# ANDed back in - see the route S key, below.
+STICKER_BLOCKIN_CUT_PX = 12
 
 
 def sticker_masks(box: tuple[int, int, int, int], character: str) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
@@ -1220,21 +1264,26 @@ def main() -> None:
                     help="route A: the grey everything but the chair, the marble and the wall lines becomes")
     ap.add_argument("--paste-feather", type=int, default=12,
                     help="route B: the feathered border, in plate pixels, on the pasted crop")
-    ap.add_argument("--under-blend", type=float, default=0.30,
-                    help="route S: how far the under-drawing's block-in tones are blended toward white "
-                         "(0 = the block-in's own tones, 1 = invisible)")
-    ap.add_argument("--under-lines", dest="under_lines", action="store_true", default=True,
-                    help="route S (default ON): draw the under-drawing as a PENCIL LINE DRAWING - the "
-                         "figure mask's outline and the internal tone edges of the values image, thinned "
-                         "to about 2px, at grey 150 - on top of the faint tone fill, so the head is "
-                         "visible as lines and not just a faint grey shape")
+    ap.add_argument("--under-blend", type=float, default=0.0,
+                    help="route S (default 0, Team 6 2026-09-08 - the lab's own recipe): how far the "
+                         "under-drawing's block-in tones are blended toward the sheet's own tone (0 = the "
+                         "block-in's own tones, now remapped by --under-remap instead; 1 = invisible)")
+    ap.add_argument("--under-lines", dest="under_lines", action="store_true", default=False,
+                    help="route S: draw the under-drawing as a PENCIL LINE DRAWING - the figure mask's "
+                         "outline and the internal tone edges of the values image, thinned to about 2px, "
+                         "at grey 150 - on top of the tone fill, so the head is visible as lines rather "
+                         "than a faint grey shape (default OFF as of Team 6, 2026-09-08 - the lab found "
+                         "--under-remap alone, with NO lines and NO staging picture, was the one recipe "
+                         "that made the model draw the portrait's head; use --under-lines to bring the "
+                         "lines back for comparison)")
     ap.add_argument("--no-under-lines", dest="under_lines", action="store_false",
-                    help="route S: disable --under-lines, leaving only the faint tone fill")
-    ap.add_argument("--under-remap", default="",
+                    help="route S: the explicit off-switch for --under-lines (already the default)")
+    ap.add_argument("--under-remap", default="100,180",
                     help="route S: LO,HI - before --under-blend, remap the block-in's own tones INSIDE "
                          "the figure mask linearly from [0,255] to [LO,HI], so a white head (~245 grey) "
-                         "becomes a pale grey figure that reads on the sheet (default: off, tones pass "
-                         "through unchanged)")
+                         "becomes a pale grey figure that reads on the sheet (default '100,180' as of "
+                         "Team 6, 2026-09-08 - a darker band top, to help the seeds that still collapsed "
+                         "the head; pass '' to send the block-in's own tones through unchanged)")
     ap.add_argument("--sheet-grey", type=float, default=255.0,
                     help="route S: the sheet's own paper tone instead of 255 - the field starts at this "
                          "grey, the under-drawing blends toward it, and --white-thresh's ink test moves "
@@ -1249,6 +1298,14 @@ def main() -> None:
                          "the room showing through it")
     ap.add_argument("--no-fill", dest="fill", action="store_false",
                     help="route S: disable the hole fill")
+    ap.add_argument("--cut-by-blockin", dest="cut_by_blockin", action="store_true", default=True,
+                    help="route S (default ON): after keying (and the hole fill, if any), also limit the "
+                         f"sticker's alpha to dilate(figure block-in mask, {STICKER_BLOCKIN_CUT_PX}px), "
+                         "re-applying the occluder cut at the same time - so furniture, marble and "
+                         "glassware outside the figure's own silhouette can never ride along just because "
+                         "they sat within the wider band the ink test itself used")
+    ap.add_argument("--no-cut-by-blockin", dest="cut_by_blockin", action="store_false",
+                    help="route S: disable --cut-by-blockin")
     ap.add_argument("--also", action="append", default=[], metavar="PART=STICKER.PNG",
                     help="route S (repeatable): lay another already-accepted sticker into the laid preview "
                          "at ITS OWN part (e.g. --also figure-drew-02-toward=canon/room-kit/v2/figures/"
@@ -1270,7 +1327,9 @@ def main() -> None:
                     help="route A only: a rendered pixel this close to the flat grey AND sitting in a "
                          "featureless neighbourhood cannot enter the sticker - it is the model DELETING "
                          "set, not adding a bird (0 = off)")
-    ap.add_argument("--pose-name", default="seated-left", help="names the sticker: drew-<pose>-s<seed>.png")
+    ap.add_argument("--pose-name", default="", help="names the sticker: <character>-<pose>-r<route>-s<seed>.png "
+                                                    "(default: the character's own pose table - seated-left "
+                                                    "for drew, seated-right for barclay, ledge for abby)")
     ap.add_argument("--seat", default="", help="X0,Y0,X1,Y1 in plate pixels - a blob must touch this to be him")
     ap.add_argument("--roi", default="", help="X0,Y0,X1,Y1 in plate pixels - the sticker may not leave this "
                                               "envelope (default: the pose's own mask box plus a margin)")
@@ -1304,6 +1363,7 @@ def main() -> None:
     under_remap = parse_pair(a.under_remap) if a.under_remap.strip() else None
 
     who = a.character
+    pose_name = a.pose_name.strip() or POSE_NAME[who]
     box = parse_box(a.box) if a.box else DEFAULT_BOX[who]
     x0, y0, x1, y1 = box
     bw, bh = x1 - x0, y1 - y0
@@ -1389,8 +1449,8 @@ def main() -> None:
         # on 2026-09-08, to route S seed 7). The house name is
         # <who>-<pose>-r<route>[-<tag>]-s<seed>.
         _t = f"-{a.tag.strip()}" if a.tag.strip() else ""
-        name = f"{who}-{a.pose_name}-r{a.route}{_t}-s{seed}" if a.route != "legacy" \
-            else f"{who}-{a.pose_name}{_t}-s{seed}"
+        name = f"{who}-{pose_name}-r{a.route}{_t}-s{seed}" if a.route != "legacy" \
+            else f"{who}-{pose_name}{_t}-s{seed}"
         tag = a.tag or f"place-{who}"
         req = cs.build_request(prompt, images, seed, not a.full, tag, "")
         (out / f"{name}.prompt.txt").write_text(prompt, encoding="utf8")
@@ -1398,7 +1458,7 @@ def main() -> None:
             "generated_at": dt.datetime.now().isoformat(timespec="seconds"),
             "script": "scripts/cast-place.py",
             "character": who,
-            "pose": a.pose_name,
+            "pose": pose_name,
             "route": a.route,
             "flat_field": field_info,
             "paste_feather": a.paste_feather if a.route == "B" else None,
@@ -1408,6 +1468,7 @@ def main() -> None:
             "sheet_grey": a.sheet_grey if a.route == "S" else None,
             "white_thresh": a.white_thresh if a.route == "S" else None,
             "fill": a.fill if a.route == "S" else None,
+            "cut_by_blockin": a.cut_by_blockin if a.route == "S" else None,
             "also": a.also if a.route == "S" else None,
             "staging_solo": a.staging_solo,
             "staging_reference": str(p3_path) if p3_path else None,
@@ -1552,6 +1613,25 @@ def main() -> None:
             if a.fill:
                 sticker_mask = disk_iter(sticker_mask, ndimage.binary_closing, 3)
                 sticker_mask = ndimage.binary_fill_holes(sticker_mask)
+            # --cut-by-blockin (Team 6, 2026-09-08; default ON). The candidate
+            # pixels above were already confined to a 24px dilation of the
+            # figure's own block-in mask before labelling, which is generous
+            # enough that a connected blob of ink can still wander onto the
+            # marble slab, a martini glass or the chair rail beside the figure
+            # and be kept, because nothing there is excluded except the
+            # occluder's OWN mask - and binary_fill_holes above can also refill
+            # occluder pixels that sit inside an enclosed hole of the kept
+            # component. This is the final, tighter word on what may survive:
+            # dilate the figure's own block-in mask by a further
+            # STICKER_BLOCKIN_CUT_PX (12) and AND it back onto the sticker,
+            # re-applying the occluder exclusion at the same time so neither
+            # cut is undone by anything upstream of this line.
+            cut_by_blockin_removed_px = 0
+            if a.cut_by_blockin:
+                blockin_cut = disk_iter(fig_mask_local, ndimage.binary_dilation, STICKER_BLOCKIN_CUT_PX)
+                before_px = int(sticker_mask.sum())
+                sticker_mask = sticker_mask & blockin_cut & ~occ_mask_local
+                cut_by_blockin_removed_px = before_px - int(sticker_mask.sum())
             alpha = feather(sticker_mask, 1.5)
 
             def _topmost_height(mask_bool: np.ndarray) -> int | None:
@@ -1575,6 +1655,8 @@ def main() -> None:
                 "white_thresh": a.white_thresh, "sheet_grey": a.sheet_grey,
                 "white_thresh_effective": white_thresh_eff,
                 "min_figure_overlap_px": min_overlap, "fill": a.fill,
+                "cut_by_blockin": a.cut_by_blockin, "cut_by_blockin_px": STICKER_BLOCKIN_CUT_PX,
+                "cut_by_blockin_removed_px": cut_by_blockin_removed_px,
                 "figure_mask_px": int(fig_mask_local.sum()),
                 "figure_mask_dilated_px": int(fig_dilated.sum()),
                 "occluder_mask_px": int(occ_mask_local.sum()),

@@ -1,0 +1,1 @@
+Contact sheet assembled locally from the four laid previews of tag t5r1 (seeds 44, 7, 21, 41). No model call. Source command for every panel: C:/Python313/python.exe scripts/cast-place.py --character abby --route S --seed <seed> --tag t5r1
