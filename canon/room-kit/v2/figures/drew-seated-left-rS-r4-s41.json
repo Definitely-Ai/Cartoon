@@ -1,0 +1,165 @@
+{
+  "generated_at": "2026-09-08T17:32:30",
+  "script": "scripts/cast-place.py",
+  "character": "drew",
+  "pose": "seated-left",
+  "route": "S",
+  "flat_field": {
+    "white": 255.0,
+    "under_blend": 0.3,
+    "chair_fraction": 0.15,
+    "figure_fraction": 0.1722,
+    "line_fraction": 0.0037,
+    "white_fraction": 0.6751,
+    "figure_part": "figure-drew-02-toward",
+    "line_ink": 70.0
+  },
+  "paste_feather": null,
+  "under_blend": 0.3,
+  "white_thresh": 232.0,
+  "staging_solo": false,
+  "staging_reference": null,
+  "staging_label": null,
+  "staging_label_overridden": false,
+  "plate": "Z:\\ImageGenerator\\Cartoon\\canon\\room-kit\\v2\\plate.png",
+  "box": [
+    20,
+    700,
+    660,
+    1500
+  ],
+  "box_size": [
+    640,
+    800
+  ],
+  "seat_region": [
+    0,
+    1240,
+    520,
+    1800
+  ],
+  "roi": [
+    140,
+    770,
+    620,
+    1340
+  ],
+  "seed": 41,
+  "rules_mode": "pen",
+  "keep_first": false,
+  "edit_override": null,
+  "extra_edit": null,
+  "canon_missed": [],
+  "server": "http://127.0.0.1:8000",
+  "request": {
+    "prompt": "REFERENCES. Picture 1 is A BLANK WHITE SHEET OF PAPER - this IS the picture being edited - carrying three things and nothing else: the LEFT leather club chair's own already-finished pixels, in the studio's own engraved pen, at exactly the size, the place and the perspective the finished picture uses; one thin ink line marking the marble counter's near top edge, so the seat has a horizon; and a very PALE, faint pencil UNDER-DRAWING of a seated bird already down in the chair, waiting to be drawn in finished line. EVERYWHERE ELSE ON THE SHEET IS BLANK WHITE PAPER: no room, no wall, no window, no shelf, no second character, no bottle, no lettering. Picture 2 is DREW, the studio's official portrait — copy THIS bird identically: the small refined head, the slender pale bill with its black outer third, the heavy-lidded amiable eye, the long S-curve neck, the white collar band and small black bow tie, the V-neck knitted sweater vest, and the feathered hands with four fingers and a thumb and no claws.\n\nMAKE THESE CHANGES TO PICTURE 1 AND KEEP EVERYTHING ELSE. The result is Picture 1 itself with EXACTLY ONE character added into it, one unbroken scene edge to edge, in the same engraved black-and-white pen.\n1. DRAW DREW (Picture 2), the white flamingo gentleman, EXACTLY FILLING the pale pencil under-drawing already on the page - the same size, the same seat in that chair, the same turn of the head, nothing restaged. He is seen FROM BEHIND and a little to his LEFT, over his shoulder, the knit of the V-neck sweater vest running across his shoulder blades. Turn his head to his RIGHT, toward where the other chair would be, so the head and the slender pale bill read in three-quarter at the very most, and the one heavy-lidded eye shows. Carry his neck, the white collar band and the knit vest up ABOVE the chair back, into the gap the under-drawing already leaves clear for them. The chair back stays IN FRONT of his lower body, exactly as the chair's own pixels already show it - do not draw any part of him in front of the chair. Draw him in the SAME engraved pen, the same size and the same light as the chair. NOTHING ELSE: the page stays BLANK WHITE PAPER everywhere the under-drawing does not reach - no room, no wall, no window, no table, no more of the marble than the one thin line already on the page, no second character, no bottle, no lettering of any kind.\n2. KEEP EVERYTHING ELSE EXACTLY AS PICTURE 1. The left leather club chair keeps every one of its own pixels exactly as given, and the thin ink line marking the marble's near edge stays exactly where it is and exactly that thin. THE REST OF THE PAGE STAYS BLANK WHITE PAPER - it is not a room seen through fog and not fog either, it is empty paper. Do not invent anything on it: no window, no street, no shelves, no bottles, no mirror, no lettering, no hatching, no shading, no floor, no second figure, no table, no more of the marble than the one line already given. Nothing whatever is added anywhere except finishing the one bird whose pale under-drawing is already on the page.\n\nTHE RULES THE FINISHED PICTURE OBEYS:\n\nA single-panel gag cartoon drawn like an antique steel engraving: fine pen crosshatching and stippling on every surface — wood grain, knit stitches, fur and feathers laid in individual strokes, glass catching light — with a full tonal range from deep rich blacks through silvery greys to bright paper highlights. Confident contour lines over the hatching. The panel is composed full, corner to corner. Black-and-white only; no flat fills, no cel shading, no photographic rendering, no color.\n\nDREW is exactly the flamingo gentleman of his reference: white plumage feathered all over in fine dash-strokes with no sleeve or cuff, the long high S-curve neck and small refined head, a slender pale bill with a black outer third and a plain slit nostril, one heavy-lidded amiable eye with a clear iris and catchlight, a crisp white collar band under a small black bow tie, a V-neck knitted sweater vest with no pockets over a pale shirt, feathered hands with four fingers and a thumb and no nails, his martini within reach.",
+    "model": "local/qwen-image-edit-2511",
+    "provider": "local",
+    "aspect_ratio": "4:5",
+    "input_images": "<2 data URIs - see references>",
+    "negative_prompt": "color, colour, photograph, photorealistic, 3D render, oil painting, watercolor, soft airbrush shading, blurry, low detail, flat cel shading, extra people, humans, a second bartender, duplicate character, merged characters, deformed hands, extra fingers, claws, nails, tail, garbled text, misspelled words, gibberish lettering, speech bubble, caption text, watermark, signature, legs, feet",
+    "output_format": "png",
+    "fast": true,
+    "tag": "r4",
+    "seed": 41
+  },
+  "references": [
+    {
+      "picture": 1,
+      "path": "C:\\Users\\admin\\AppData\\Local\\Temp\\claude\\Z--ImageGenerator\\7e90a839-5703-42df-8007-3e3f206ae0ae\\scratchpad\\cast-scene\\drew\\round-21\\picture1.png",
+      "label": "A BLANK WHITE SHEET OF PAPER - this IS the picture being edited - carrying three things and nothing else: the LEFT leather club chair's own already-finished pixels, in the studio's own engraved pen, at exactly the size, the place and the perspective the finished picture uses; one thin ink line marking the marble counter's near top edge, so the seat has a horizon; and a very PALE, faint pencil UNDER-DRAWING of a seated bird already down in the chair, waiting to be drawn in finished line. EVERYWHERE ELSE ON THE SHEET IS BLANK WHITE PAPER: no room, no wall, no window, no shelf, no second character, no bottle, no lettering",
+      "size": [
+        1024,
+        1280
+      ],
+      "bytes": 123345,
+      "sha256": "a256698838a9199e"
+    },
+    {
+      "picture": 2,
+      "path": "Z:\\ImageGenerator\\Cartoon\\canon\\vision\\studies\\drew.png",
+      "label": "DREW, the studio's official portrait — copy THIS bird identically: the small refined head, the slender pale bill with its black outer third, the heavy-lidded amiable eye, the long S-curve neck, the white collar band and small black bow tie, the V-neck knitted sweater vest, and the feathered hands with four fingers and a thumb and no claws",
+      "size": [
+        1024,
+        1536
+      ],
+      "bytes": 517600,
+      "sha256": "44c9feea732f33d6"
+    }
+  ],
+  "prompt": "REFERENCES. Picture 1 is A BLANK WHITE SHEET OF PAPER - this IS the picture being edited - carrying three things and nothing else: the LEFT leather club chair's own already-finished pixels, in the studio's own engraved pen, at exactly the size, the place and the perspective the finished picture uses; one thin ink line marking the marble counter's near top edge, so the seat has a horizon; and a very PALE, faint pencil UNDER-DRAWING of a seated bird already down in the chair, waiting to be drawn in finished line. EVERYWHERE ELSE ON THE SHEET IS BLANK WHITE PAPER: no room, no wall, no window, no shelf, no second character, no bottle, no lettering. Picture 2 is DREW, the studio's official portrait — copy THIS bird identically: the small refined head, the slender pale bill with its black outer third, the heavy-lidded amiable eye, the long S-curve neck, the white collar band and small black bow tie, the V-neck knitted sweater vest, and the feathered hands with four fingers and a thumb and no claws.\n\nMAKE THESE CHANGES TO PICTURE 1 AND KEEP EVERYTHING ELSE. The result is Picture 1 itself with EXACTLY ONE character added into it, one unbroken scene edge to edge, in the same engraved black-and-white pen.\n1. DRAW DREW (Picture 2), the white flamingo gentleman, EXACTLY FILLING the pale pencil under-drawing already on the page - the same size, the same seat in that chair, the same turn of the head, nothing restaged. He is seen FROM BEHIND and a little to his LEFT, over his shoulder, the knit of the V-neck sweater vest running across his shoulder blades. Turn his head to his RIGHT, toward where the other chair would be, so the head and the slender pale bill read in three-quarter at the very most, and the one heavy-lidded eye shows. Carry his neck, the white collar band and the knit vest up ABOVE the chair back, into the gap the under-drawing already leaves clear for them. The chair back stays IN FRONT of his lower body, exactly as the chair's own pixels already show it - do not draw any part of him in front of the chair. Draw him in the SAME engraved pen, the same size and the same light as the chair. NOTHING ELSE: the page stays BLANK WHITE PAPER everywhere the under-drawing does not reach - no room, no wall, no window, no table, no more of the marble than the one thin line already on the page, no second character, no bottle, no lettering of any kind.\n2. KEEP EVERYTHING ELSE EXACTLY AS PICTURE 1. The left leather club chair keeps every one of its own pixels exactly as given, and the thin ink line marking the marble's near edge stays exactly where it is and exactly that thin. THE REST OF THE PAGE STAYS BLANK WHITE PAPER - it is not a room seen through fog and not fog either, it is empty paper. Do not invent anything on it: no window, no street, no shelves, no bottles, no mirror, no lettering, no hatching, no shading, no floor, no second figure, no table, no more of the marble than the one line already given. Nothing whatever is added anywhere except finishing the one bird whose pale under-drawing is already on the page.\n\nTHE RULES THE FINISHED PICTURE OBEYS:\n\nA single-panel gag cartoon drawn like an antique steel engraving: fine pen crosshatching and stippling on every surface — wood grain, knit stitches, fur and feathers laid in individual strokes, glass catching light — with a full tonal range from deep rich blacks through silvery greys to bright paper highlights. Confident contour lines over the hatching. The panel is composed full, corner to corner. Black-and-white only; no flat fills, no cel shading, no photographic rendering, no color.\n\nDREW is exactly the flamingo gentleman of his reference: white plumage feathered all over in fine dash-strokes with no sleeve or cuff, the long high S-curve neck and small refined head, a slender pale bill with a black outer third and a plain slit nostril, one heavy-lidded amiable eye with a clear iris and catchlight, a crisp white collar band under a small black bow tie, a V-neck knitted sweater vest with no pockets over a pale shirt, feathered hands with four fingers and a thumb and no nails, his martini within reach.",
+  "clean_prompt": null,
+  "clean_pass": false,
+  "expected_size": [
+    1344,
+    1680
+  ],
+  "key": {
+    "thresh": 18.0,
+    "measure_thresh": 12.0,
+    "blur": 1.5,
+    "close": 4,
+    "open": 3,
+    "min_area": 400,
+    "gap": 8,
+    "feather": 2.0,
+    "align": 6
+  },
+  "result": {
+    "seed_used": 41,
+    "elapsed_seconds": 34.5,
+    "server_local_path": "Z:\\ImageGenerator\\outputs\\gen_1788903184383059000_75eb81_r4_local_qwen-image-edit-2511.png",
+    "raw_size": [
+      1344,
+      1421
+    ],
+    "raw": "C:\\Users\\admin\\AppData\\Local\\Temp\\claude\\Z--ImageGenerator\\7e90a839-5703-42df-8007-3e3f206ae0ae\\scratchpad\\cast-scene\\drew\\round-21\\drew-seated-left-rS-r4-s41-raw.png"
+  },
+  "key_result": {
+    "route": "S",
+    "keyed_against": "white-sheet (absolute threshold key, no tone fit)",
+    "tone_fit": "none",
+    "join_mean_abs_levels": 40.56,
+    "join_seam_px": 25240,
+    "plate_fraction_replaced": 0.0484,
+    "key_tone_gain": 1.0,
+    "key_tone_offset": 0.0,
+    "composite_tone_gain": 1.0,
+    "composite_tone_offset": 0.0,
+    "shift_applied": [
+      0,
+      0
+    ],
+    "blobs": 69,
+    "raw_fraction": 0.3773,
+    "kept": 1,
+    "kept_px": 91514,
+    "seat_touched": null,
+    "white_thresh": 232.0,
+    "figure_mask_px": 88161,
+    "figure_mask_dilated_px": 162348,
+    "chair_mask_px": 76810,
+    "alpha_fraction_inside_figure_mask": 0.7142,
+    "figure_mask_fraction_covered": 0.7414,
+    "scale_topmost_blob_alpha_over_mask": 0.7985,
+    "topmost_blob_height_alpha_px": 539,
+    "topmost_blob_height_mask_px": 675,
+    "sticker_px": 104547,
+    "sticker_fraction_of_box": 0.2042,
+    "sticker_bbox_plate": [
+      114,
+      757,
+      663,
+      1383
+    ],
+    "cleanliness_outside_sticker_gt12": 0.139,
+    "room_drift_vs_plate_outside_sticker": 0.7208,
+    "changed_fraction_whole_box": 0.3773
+  },
+  "outputs": {
+    "sticker": "Z:\\ImageGenerator\\Cartoon\\canon\\room-kit\\v2\\figures\\drew-seated-left-rS-r4-s41.png",
+    "laid": "Z:\\ImageGenerator\\Cartoon\\canon\\room-kit\\v2\\figures\\drew-seated-left-rS-r4-s41-laid.png",
+    "crop2x": "Z:\\ImageGenerator\\Cartoon\\canon\\room-kit\\v2\\figures\\drew-seated-left-rS-r4-s41-crop2x.png",
+    "picture1": "C:\\Users\\admin\\AppData\\Local\\Temp\\claude\\Z--ImageGenerator\\7e90a839-5703-42df-8007-3e3f206ae0ae\\scratchpad\\cast-scene\\drew\\round-21\\picture1.png"
+  }
+}

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-08T17:03:20",
+  "generated_at": "2026-09-08T17:01:30",
   "script": "scripts/cast-place.py",
   "character": "drew",
   "pose": "seated-left",
@@ -44,7 +44,7 @@
     620,
     1340
   ],
-  "seed": 7,
+  "seed": 44,
   "rules_mode": "pen",
   "keep_first": false,
   "edit_override": null,
@@ -61,7 +61,7 @@
     "output_format": "png",
     "fast": true,
     "tag": "r2",
-    "seed": 7
+    "seed": 44
   },
   "references": [
     {
@@ -116,52 +116,61 @@
     "feather": 2.0,
     "align": 6
   },
-  "rekeyed_from": "C:/Users/admin/AppData/Local/Temp/claude/Z--ImageGenerator/7e90a839-5703-42df-8007-3e3f206ae0ae/scratchpad/cast-scene/drew3/round-2/drew-seated-left-rS-r2-s7-raw.png",
+  "result": {
+    "seed_used": 44,
+    "elapsed_seconds": 48.4,
+    "server_local_path": "Z:\\ImageGenerator\\outputs\\gen_1788901338836811600_cc6179_r2_local_qwen-image-edit-2511.png",
+    "raw_size": [
+      1344,
+      1529
+    ],
+    "raw": "C:\\Users\\admin\\AppData\\Local\\Temp\\claude\\Z--ImageGenerator\\7e90a839-5703-42df-8007-3e3f206ae0ae\\scratchpad\\cast-scene\\drew3\\round-2\\drew-seated-left-rS-r2-s44-raw.png"
+  },
   "key_result": {
     "route": "S",
     "keyed_against": "white-sheet (absolute threshold key, no tone fit)",
     "tone_fit": "none",
-    "join_mean_abs_levels": 43.9,
-    "join_seam_px": 26355,
-    "plate_fraction_replaced": 0.053,
+    "join_mean_abs_levels": 44.58,
+    "join_seam_px": 24362,
+    "plate_fraction_replaced": 0.0513,
     "key_tone_gain": 1.0,
     "key_tone_offset": 0.0,
-    "composite_tone_gain": 1.02,
+    "composite_tone_gain": 1.0,
     "composite_tone_offset": 0.0,
     "shift_applied": [
       0,
       0
     ],
-    "blobs": 188,
-    "raw_fraction": 0.4067,
+    "blobs": 202,
+    "raw_fraction": 0.3392,
     "kept": 1,
-    "kept_px": 101000,
+    "kept_px": 98267,
     "seat_touched": null,
     "white_thresh": 232.0,
     "figure_mask_px": 88161,
     "figure_mask_dilated_px": 162348,
     "chair_mask_px": 76810,
-    "alpha_fraction_inside_figure_mask": 0.7261,
-    "figure_mask_fraction_covered": 0.8318,
-    "scale_topmost_blob_alpha_over_mask": 0.7822,
-    "topmost_blob_height_alpha_px": 528,
+    "alpha_fraction_inside_figure_mask": 0.6948,
+    "figure_mask_fraction_covered": 0.7745,
+    "scale_topmost_blob_alpha_over_mask": 0.7985,
+    "topmost_blob_height_alpha_px": 539,
     "topmost_blob_height_mask_px": 675,
-    "sticker_px": 114392,
-    "sticker_fraction_of_box": 0.2234,
+    "sticker_px": 110772,
+    "sticker_fraction_of_box": 0.2164,
     "sticker_bbox_plate": [
       114,
-      768,
+      757,
       663,
       1383
     ],
-    "cleanliness_outside_sticker_gt12": 0.1838,
-    "room_drift_vs_plate_outside_sticker": 0.868,
-    "changed_fraction_whole_box": 0.4067
+    "cleanliness_outside_sticker_gt12": 0.1082,
+    "room_drift_vs_plate_outside_sticker": 0.707,
+    "changed_fraction_whole_box": 0.3392
   },
   "outputs": {
-    "sticker": "Z:\\ImageGenerator\\Cartoon\\canon\\room-kit\\v2\\figures\\drew-seated-left-rS-r2-s7.png",
-    "laid": "Z:\\ImageGenerator\\Cartoon\\canon\\room-kit\\v2\\figures\\drew-seated-left-rS-r2-s7-laid.png",
-    "crop2x": "Z:\\ImageGenerator\\Cartoon\\canon\\room-kit\\v2\\figures\\drew-seated-left-rS-r2-s7-crop2x.png",
+    "sticker": "Z:\\ImageGenerator\\Cartoon\\canon\\room-kit\\v2\\figures\\drew-seated-left-rS-r2-s44.png",
+    "laid": "Z:\\ImageGenerator\\Cartoon\\canon\\room-kit\\v2\\figures\\drew-seated-left-rS-r2-s44-laid.png",
+    "crop2x": "Z:\\ImageGenerator\\Cartoon\\canon\\room-kit\\v2\\figures\\drew-seated-left-rS-r2-s44-crop2x.png",
     "picture1": "C:\\Users\\admin\\AppData\\Local\\Temp\\claude\\Z--ImageGenerator\\7e90a839-5703-42df-8007-3e3f206ae0ae\\scratchpad\\cast-scene\\drew3\\round-2\\picture1.png"
   }
 }

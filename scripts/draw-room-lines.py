@@ -2174,7 +2174,7 @@ def _tone(img, d, pts3, v0, v1=None, axis="y"):
 # the frame. skull = (front-to-back, across, top-to-bottom) half-axes.
 PHYSIQUE = {
     "drew":    dict(hip_y=0.92, hip_hw=0.200, sh_y=1.32, sh_hw=0.175, neck_y=1.335,
-                    crown=1.65, skull=(0.088, 0.078, 0.066), fwd=0.11, wave=0.055,
+                    crown=1.65, skull=(0.074, 0.064, 0.056), fwd=0.11, wave=0.055,   # a flamingo's SMALL skull (was 0.088/0.078/0.066: goose heads, 2026-09-08)
                     neck_w=(0.098, 0.058), arm_w=0.132,
                     v=dict(torso=(104, 128), collar=244, neck=(212, 226), head=222,
                            arm=(200, 216), hand=212)),
@@ -2314,17 +2314,39 @@ def figure(img: np.ndarray, d, who: str, pose: dict) -> None:
         # prompt's cap. The pitch IS the drop of this line: 42 degrees below
         # horizontal on DREW-02, 56 on DREW-01 with the eye down in the martini.
         L = 0.190
-        tip, dep = tip_of(L), 0.46 * 0.190     # HEAVIER than the bible's third: the approved plates and the
-        tip = (tip[0], tip[1] - 0.022, tip[2]) # published set carry a deep bill bending down to a black tip, and a
-        root = lerp(eye, tip, 0.12)            # thin wedge here left the mask reaching past every rendered bill (2026-09-06)
-        _blob(img, d, [up(root, dep / 2), tip,  # the wedge floated off the head
-                       up(root, -dep / 2)], 196, 208, "x")
-        b0 = lerp(eye, tip, 0.667)
-        db = dep * (1 - 0.667) / (1 - 0.12)
-        _blob(img, d, [up(b0, db / 2), tip, up(b0, -db / 2)], 22)
-        r0, r1 = lerp(eye, tip, 0.715), lerp(eye, tip, 0.945)
-        _tone(img, d, [up(r0, db * 0.30), up(r1, db * 0.055),
-                       up(r1, db * 0.005), up(r0, db * 0.14)], 232)
+        # THE BILL, AS THE PORTRAIT DRAWS IT (canon/vision/studies/drew.png): thick at
+        # the face, running forward, then BENDING STEEPLY DOWN to a rounded BLACK tip.
+        # A straight even-taper cone here (2026-09-06 to 09-08) came back from the
+        # edit model as goose and stork heads, because the under-drawing led it.
+        # Built in the head's own frame (s forward along hdir, y up), rotated so the
+        # eye -> tip line keeps the pose's pitch, then placed at the root.
+        root = up(lerp(eye, tip_of(L), 0.12), -0.006)
+        base_pitch = math.radians(46.0)         # the curve below drops 46 deg root->tip
+        rot = pit - base_pitch
+        def _bp(s, y):
+            cs, sn = math.cos(rot), math.sin(rot)   # rotate (s, y) down by rot
+            s2, y2 = s * cs + y * sn, -s * sn + y * cs
+            return (root[0] + hdir[0] * s2, root[1] + y2, root[2] + hdir[1] * s2)
+        P0, P1, P2 = (0.0, 0.0), (0.72 * L, -0.05 * L), (0.50 * L, -0.52 * L)
+        def _c(t):
+            return ((1 - t) ** 2 * P0[0] + 2 * (1 - t) * t * P1[0] + t * t * P2[0],
+                    (1 - t) ** 2 * P0[1] + 2 * (1 - t) * t * P1[1] + t * t * P2[1])
+        def _side_pts(t0, t1, n=9):
+            upper, lower = [], []
+            for k in range(n):
+                t = t0 + (t1 - t0) * k / (n - 1)
+                c = _c(t); c2 = _c(min(1.0, t + 0.02)); c1 = _c(max(0.0, t - 0.02))
+                tx, ty = c2[0] - c1[0], c2[1] - c1[1]; m = math.hypot(tx, ty) or 1.0
+                nx, ny = -ty / m, tx / m
+                dep = (0.40 * (1 - t) + 0.12 * t) * L
+                upper.append(_bp(c[0] + nx * dep / 2, c[1] + ny * dep / 2))
+                lower.append(_bp(c[0] - nx * dep / 2, c[1] - ny * dep / 2))
+            return upper + lower[::-1]
+        _blob(img, d, _side_pts(0.0, 1.0), 196, 208, "x")          # the pale bill
+        _blob(img, d, _side_pts(0.56, 1.0), 22)                      # the black outer part
+        hl = [_bp(*_c(t)) for t in (0.60, 0.70, 0.80, 0.90)]
+        _tone(img, d, [up(hl[0], 0.004), up(hl[1], 0.004), up(hl[2], 0.003), up(hl[3], 0.002),
+                       up(hl[3], -0.001), up(hl[2], -0.001), up(hl[1], -0.001), up(hl[0], -0.001)], 232)  # one ribbon
         # THE EYE IS BUILT WHITE FIRST. A dark dot on a pale head is a bird dot,
         # and a bird dot is a redraw in every bible in the folder - and the
         # block-in is the conditioning, so what is drawn here is what comes

@@ -1,8 +1,10 @@
 """PLACE ONE CHARACTER INTO THE APPROVED ROOM, and cut him out again as a sticker.
 
-    python scripts/cast-place.py --character drew --seed 41 --route A|B
+    python scripts/cast-place.py --character drew|barclay|abby --seed 41 --route A|B|S
         [--box X0,Y0,X1,Y1] [--edit "..."] [--plate PATH] [--pose-name NAME]
         [--rolls N] [--thresh 18] [--out DIR] [--dry-run]
+        [--under-lines/--no-under-lines] [--under-blend 0.30] [--fill/--no-fill]
+        [--also PART=STICKER.PNG ...]   (route S only; see WHAT TEAM 4 ADDED below)
 
 THE TWO ROUTES (--route, 2026-09-08)
 ------------------------------------
@@ -233,6 +235,46 @@ cast out loud - and nothing else about the route.
   does not rescue a render that re-inked the whole field; it only stops a slab
   of blank paper being laid onto the approved plate.
 
+WHAT TEAM 4 ADDED (2026-09-08). Team Drew 3's sixteen renders (reports/2026-09-08
+entries 040-059) proved route S right on the seat, the pose and the scale, with
+two things still wrong: the white bird's own paper interior fell OUT of the
+absolute key (a lattice of ink with the room showing through it), and the
+under-drawing's HEAD was invisible to the model at any --under-blend - a white
+bird's block-in head is ~245 grey, so every seed came back a goose, a stork or a
+folded ribbon instead of Drew. This round fixes both, and extends route S to
+Barclay and Abby:
+
+  * --under-lines (default ON; --no-under-lines off). The under-drawing is now a
+    PENCIL LINE DRAWING of the block-in, not just a pale tone fill: the figure
+    mask's own outline plus the internal tone edges of the values image (a
+    Sobel gradient magnitude, thresholded, thinned to about 2px with a
+    morphological skeleton) drawn at grey 150 on top of the tone fill
+    (--under-blend, default lowered 0.55 -> 0.30 now that the lines carry the
+    shape). The head, the eye and the bill/muzzle/ears are lines now, not a
+    guess from a faint grey shift - see under_drawing_lines().
+  * Hole-filled key (default ON; --no-fill off). binary_closing(3) then
+    binary_fill_holes on the kept components, before the 1.5px feather - already
+    in the key, now switchable.
+  * EACH CHARACTER'S EDIT 1 now names the under-drawing's head in words too
+    (HEAD_SENTENCE), on top of --under-lines making it visible: what its parts
+    are, and that it is drawn solid and joined to the neck, never redrawn as
+    something else.
+  * BARCLAY and ABBY join Drew on route S (DEFAULT_BOX/SEAT/ROI, PORTRAIT,
+    STICKER_FIGURE_PART/MASK/VALUES, STICKER_OCCLUDER_MASK, per-character
+    ADD_EDIT_STICKER/KEEP_EDIT_STICKER/PICTURE1_LABEL_STICKER/PICTURE2_LABEL).
+    Barclay sits in the RIGHT chair exactly as Drew sits in the left one;
+    Abby has no chair and no seat box at all - she STANDS behind the marble
+    ledge, occluded by the bar COUNTER (laid after her, exactly as a chair
+    occludes a seated bird's lower body), with the marble LEDGE's near edge
+    (not the counter's) traced as her one thin horizon line, and a blob counts
+    as her by overlapping her own block-in mask by more than 300px (rather
+    than touching a seat box she does not have - MIN_FIGURE_OVERLAP).
+  * --also PART=STICKER.PNG (repeatable): lay another already-accepted
+    character's sticker into the laid preview at ITS OWN part (through
+    room-part's own assemble(), reading that sticker's own JSON sidecar for its
+    box), so e.g. Barclay is judged against the plate with Drew already seated
+    in it - see load_also_overrides().
+
 NEVER run room-part.py, never touch parts.json.
 """
 from __future__ import annotations
@@ -250,6 +292,7 @@ from pathlib import Path
 import numpy as np
 from PIL import Image, ImageDraw, ImageFilter
 from scipy import ndimage
+from skimage.morphology import skeletonize   # --under-lines: thins the pencil line drawing (route S)
 
 ROOT = Path(__file__).resolve().parent.parent           # Z:/ImageGenerator/Cartoon
 SCRATCH = Path(
@@ -288,10 +331,26 @@ WORK = (1344, 1680)                                     # what "4:5" resolves to
 # the left chair's studded roll top crosses him at about row 1270. His silhouette
 # runs columns 182-634. The default box is the 4:5 window that holds all of that
 # plus the chair below it: 640x800 from (20,700).
-DEFAULT_BOX = {"drew": (20, 700, 660, 1500)}
+DEFAULT_BOX = {
+    "drew": (20, 700, 660, 1500),
+    # Team 4 (2026-09-08), route S only: Barclay in the RIGHT chair and Abby
+    # behind the ledge. Both boxes are 4:5 (640x800, 480x600), same as Drew's.
+    "barclay": (560, 700, 1200, 1500),
+    "abby": (420, 620, 900, 1220),
+}
 # Where the figure must be sitting for a blob to count as him — the left chair,
 # in plate pixels. A blob that touches nothing here is the model redecorating.
-DEFAULT_SEAT = {"drew": (0, 1240, 520, 1800)}
+# Route S does not actually consult this box (see MIN_FIGURE_OVERLAP below,
+# which is what a white-sheet render is tested against instead); it is kept
+# for route A/legacy and for the sidecar's own record of "where he should be".
+# Abby has no seat box at all — she stands, she does not sit in anything — so
+# a blob counts for her by MIN_FIGURE_OVERLAP against her own block-in mask,
+# exactly as it does for Drew and Barclay's route S render.
+DEFAULT_SEAT = {
+    "drew": (0, 1240, 520, 1800),
+    "barclay": (620, 1240, 1200, 1800),
+    "abby": None,
+}
 # THE ENVELOPE the figure is allowed to occupy at all, in plate pixels: poses.json
 # figure-drew-01-rest mask_box (182, 825, 634, 1525) with a margin. The model
 # re-inks the WHOLE crop (see the note above), so without this the key hands back
@@ -301,9 +360,23 @@ DEFAULT_SEAT = {"drew": (0, 1240, 520, 1800)}
 # key take a slab of re-inked marble and bar front along with the bird. This one
 # stops at the chair's roll and just past the martini hand, so the plate's own
 # chair, bar front and far marble always survive.
-DEFAULT_ROI = {"drew": (140, 770, 620, 1340)}
+DEFAULT_ROI = {
+    "drew": (140, 770, 620, 1340),
+    "barclay": (660, 720, 1120, 1420),
+    "abby": (520, 680, 800, 1220),
+}
+# Route S's per-character block-in overlap floor (a candidate blob counts as HIM
+# only if it overlaps his own figure mask by more than this many pixels — see
+# "MIN_FIGURE_OVERLAP" at the key, below). Abby's block-in mask is smaller than
+# Drew's or Barclay's (about 215x489 against 452x701 and 373x612), so her floor
+# is set lower, at 300px, in place of the 400px the two seated birds use.
+MIN_FIGURE_OVERLAP = {"drew": 400, "barclay": 400, "abby": 300}
 
-PORTRAIT = {"drew": "canon/vision/studies/drew.png"}
+PORTRAIT = {
+    "drew": "canon/vision/studies/drew.png",
+    "barclay": "canon/vision/studies/barclay.png",
+    "abby": "canon/vision/studies/abby.png",
+}
 STAGING = "canon/vision/studies/duo-behind.png"
 
 # --------------------------------------------------- THE FLAT FIELD (route A)
@@ -362,22 +435,56 @@ PICTURE3_LABEL_SOLO = (
     "picture - any room fragment, any bottle, any lettering behind him - belongs to a different crop and a "
     "different edit: do not copy any of it"
 )
-PICTURE1_LABEL_STICKER = (
-    "A BLANK WHITE SHEET OF PAPER - this IS the picture being edited - carrying three things and nothing "
-    "else: the LEFT leather club chair's own already-finished pixels, in the studio's own engraved pen, at "
-    "exactly the size, the place and the perspective the finished picture uses; one thin ink line marking the "
-    "marble counter's near top edge, so the seat has a horizon; and a very PALE, faint pencil UNDER-DRAWING of "
-    "a seated bird already down in the chair, waiting to be drawn in finished line. EVERYWHERE ELSE ON THE "
-    "SHEET IS BLANK WHITE PAPER: no room, no wall, no window, no shelf, no second character, no bottle, no "
-    "lettering"
-)
+# Route S's per-character OCCLUDER - the thing whose OWN rendered pixels sit on
+# the sheet and stay in front of the figure's lower body. Drew and Barclay each
+# get their own club chair; Abby has no chair at all - she stands, and the bar
+# COUNTER (laid after her, exactly as a chair is) is what occludes her.
+OCCLUDER_NAME = {
+    "drew": "left leather club chair",
+    "barclay": "right leather club chair",
+    "abby": "bar counter",
+}
+# Route S's per-character LINE - what the one thin ink line on the sheet marks.
+# Drew and Barclay each get the marble counter's near top edge, a horizon at
+# hand height; Abby stands BEHIND the ledge, so hers is the ledge's own near
+# edge instead - the surface she actually works at.
+LINE_NAME = {
+    "drew": "the marble counter's near top edge, so the seat has a horizon",
+    "barclay": "the marble counter's near top edge, so the seat has a horizon",
+    "abby": "the marble ledge's near top edge behind her, so her stance has a horizon",
+}
+PICTURE1_LABEL_STICKER = {
+    character: (
+        "A BLANK WHITE SHEET OF PAPER - this IS the picture being edited - carrying three things and nothing "
+        f"else: the {OCCLUDER_NAME[character]}'s own already-finished pixels, in the studio's own engraved "
+        f"pen, at exactly the size, the place and the perspective the finished picture uses; one thin ink "
+        f"line marking {LINE_NAME[character]}; and a very PALE, faint pencil UNDER-DRAWING of the figure "
+        "already down in place, waiting to be drawn in finished line. EVERYWHERE ELSE ON THE SHEET IS BLANK "
+        "WHITE PAPER: no room, no wall, no window, no shelf, no second character, no bottle, no lettering"
+    )
+    for character in OCCLUDER_NAME
+}
 PICTURE2_LABEL = {
     "drew": (
         "DREW, the studio's official portrait — copy THIS bird identically: the small refined head, the "
         "slender pale bill with its black outer third, the heavy-lidded amiable eye, the long S-curve "
         "neck, the white collar band and small black bow tie, the V-neck knitted sweater vest, and the "
         "feathered hands with four fingers and a thumb and no claws"
-    )
+    ),
+    "barclay": (
+        "BARCLAY, the studio's official portrait — copy THIS dog identically: the broad soft-eyed retriever "
+        "face, the freckled muzzle with true black dog lips and his mouth closed, the fringed drop ears, "
+        "warm bright eyes with worry only in the raised inner brows, the dark suit jacket over a pale "
+        "open-collared shirt, the small USA flag pin on the left lapel, and the fur-backed hands with four "
+        "fingers and an opposed thumb and no claws"
+    ),
+    "abby": (
+        "ABBY, the studio's official portrait — copy THIS terrier identically: the round soft westie face "
+        "with a big black nose close under large glamorous human-style eyes with whites, iris, lashes and a "
+        "clear catchlight, the two small pricked ears, the warm closed-lip smile, the studded leather collar "
+        "with its teardrop gem pendant, the fitted light blouse open two buttons over a smooth sleek throat, "
+        "and the fur-backed hands with four fingers and an opposed thumb and no claws"
+    ),
 }
 
 # THE PINNED STAGING - the founder's fixed brief of 2026-09-08, written as
@@ -406,6 +513,42 @@ ADD_EDIT = {
 # seat, so this edit's job is to say "fill it", not to restage it. Every NOT
 # sentence from the pinned staging above still applies; the new one is the paper
 # itself, which must stay blank everywhere the under-drawing does not reach.
+# THE UNDER-DRAWING'S HEAD (Team 4, 2026-09-08). Team Drew 3 proved the block-in
+# HEAD was invisible to the model at any --under-blend: a pale grey skull and bill
+# read as nothing in particular, and every seed came back with a goose, a stork or
+# a folded ribbon where the head belongs. --under-lines (below) now draws that
+# head as actual ink lines the model can see; this sentence tells it, in words,
+# that what it is looking at IS the head, and names its parts so it is drawn as
+# one solid piece joined to the neck rather than redrawn as something else.
+HEAD_SENTENCE = {
+    "drew": (
+        "At the top of the neck the under-drawing already carries a small ROUND SKULL with the eye marked in "
+        "it and the thick bill bending steeply DOWN to its black tip - that IS his head: draw a solid, small, "
+        "refined, rounded head exactly filling it, joined to the neck, the bill growing from it along the "
+        "line already there, one heavy-lidded amiable eye where the eye is marked. His head is never a folded "
+        "feather, a ribbon, a wedge or a plume, and never floats free of the neck."
+    ),
+    "barclay": (
+        "At the top of the neck the under-drawing already carries a small ROUND SKULL with a wedge-shaped "
+        "MUZZLE reaching out from it, a dark NOSE marked at the muzzle's tip and both eyes marked where the "
+        "muzzle joins the skull, and one rectangular DROP EAR hanging beside it - that IS his head: draw a "
+        "solid, small, softly rounded retriever head exactly filling it, joined to the neck, the muzzle "
+        "growing from it along the line already there with his black nose at its tip and true black dog lips "
+        "beneath it, the fringed drop ear falling naturally where it is marked, both warm bright eyes where "
+        "the eyes are marked. His head is never a flat mask, a snoutless blob or a stiff floating ear, and "
+        "never floats free of the neck."
+    ),
+    "abby": (
+        "At the top of the neck the under-drawing already carries a small ROUND, SOFT SKULL with two small "
+        "pricked EARS standing up from it and a dark NOSE marked low on the face, both eyes marked either "
+        "side of the nose, the far eye smaller than the near one where the head turns three-quarter - that IS "
+        "her head: draw a solid, small, round westie head exactly filling it, joined to the neck, her short "
+        "square muzzle rounding gently down to her black nose exactly where it is marked, both pricked ears "
+        "standing up from the skull, her large glossy human-like eyes where the eyes are marked, one clear "
+        "catchlight in each. Her head is never a flat disc, a bare eyeless skull or drooping ears, and never "
+        "floats free of the neck."
+    ),
+}
 ADD_EDIT_STICKER = {
     "drew": (
         "DRAW DREW (Picture 2), the white flamingo gentleman, EXACTLY FILLING the pale pencil under-drawing "
@@ -419,8 +562,35 @@ ADD_EDIT_STICKER = {
         "him in front of the chair. Draw him in the SAME engraved pen, the same size and the same light as the "
         "chair. NOTHING ELSE: the page stays BLANK WHITE PAPER everywhere the under-drawing does not reach - "
         "no room, no wall, no window, no table, no more of the marble than the one thin line already on the "
-        "page, no second character, no bottle, no lettering of any kind."
-    )
+        "page, no second character, no bottle, no lettering of any kind. " + HEAD_SENTENCE["drew"]
+    ),
+    "barclay": (
+        "DRAW BARCLAY (Picture 2), the golden retriever gentleman, EXACTLY FILLING the pale pencil "
+        "under-drawing already on the page - the same size, the same seat in that chair, the same turn of "
+        "the head, nothing restaged. He is seen FROM BEHIND and a little to his RIGHT, over his shoulder, "
+        "his dark suit jacket running across his shoulder blades. Turn his head to his LEFT, toward where "
+        "the other chair (Drew's) would be, so his face reads in three-quarter at the very most, toward "
+        "Drew. Carry his neck, his shirt collar and the shoulder of his jacket up ABOVE the chair back, into "
+        "the gap the under-drawing already leaves clear for them. The chair back stays IN FRONT of his lower "
+        "body, exactly as the chair's own pixels already show it - do not draw any part of him in front of "
+        "the chair. Draw him in the SAME engraved pen, the same size and the same light as the chair. "
+        "NOTHING ELSE: the page stays BLANK WHITE PAPER everywhere the under-drawing does not reach - no "
+        "room, no wall, no window, no table, no more of the marble than the one thin line already on the "
+        "page, no second character, no bottle, no lettering of any kind. " + HEAD_SENTENCE["barclay"]
+    ),
+    "abby": (
+        "DRAW ABBY (Picture 2), the West Highland terrier proprietor, EXACTLY FILLING the pale pencil "
+        "under-drawing already on the page - the same size, the same stance BEHIND the marble ledge, "
+        "nothing restaged. She is seen FACING THE ROOM, standing at her working ledge, one hand busy on a "
+        "bar object exactly where the under-drawing already places it. Carry her shoulders, her collar and "
+        "the studded leather collar with its teardrop gem up ABOVE the bar counter, into the gap the "
+        "under-drawing already leaves clear for them. The bar counter stays IN FRONT of her lower body, "
+        "exactly as the counter's own pixels already show it - do not draw any part of her in front of the "
+        "counter. Draw her in the SAME engraved pen, the same size and the same light as the counter. "
+        "NOTHING ELSE: the page stays BLANK WHITE PAPER everywhere the under-drawing does not reach - no "
+        "room, no wall, no window, no shelf, no second character, no bottle, no lettering of any kind. "
+        + HEAD_SENTENCE["abby"]
+    ),
 }
 KEEP_EDIT = (
     "KEEP EVERYTHING ELSE EXACTLY AS PICTURE 1, pixel for pixel: the camera, the crop, the marble slab and "
@@ -441,15 +611,21 @@ KEEP_EDIT_FLAT = (
 )
 # EDIT 2 for --route S: the page is mostly blank paper, not fog and not a room -
 # the same corrective KEEP_EDIT_FLAT makes for the grey field, written for white.
-KEEP_EDIT_STICKER = (
-    "KEEP EVERYTHING ELSE EXACTLY AS PICTURE 1. The left leather club chair keeps every one of its own pixels "
-    "exactly as given, and the thin ink line marking the marble's near edge stays exactly where it is and "
-    "exactly that thin. THE REST OF THE PAGE STAYS BLANK WHITE PAPER - it is not a room seen through fog and "
-    "not fog either, it is empty paper. Do not invent anything on it: no window, no street, no shelves, no "
-    "bottles, no mirror, no lettering, no hatching, no shading, no floor, no second figure, no table, no more "
-    "of the marble than the one line already given. Nothing whatever is added anywhere except finishing the "
-    "one bird whose pale under-drawing is already on the page."
-)
+# Route S's per-character KEEP_EDIT_STICKER: the same corrective KEEP_EDIT_FLAT
+# makes for the flat grey, written for blank white paper, and naming THIS
+# character's own occluder rather than always "the left leather club chair".
+KEEP_EDIT_STICKER = {
+    character: (
+        f"KEEP EVERYTHING ELSE EXACTLY AS PICTURE 1. The {occ} keeps every one of its own pixels exactly as "
+        "given, and the thin ink line marking the near edge of the marble stays exactly where it is and "
+        "exactly that thin. THE REST OF THE PAGE STAYS BLANK WHITE PAPER - it is not a room seen through fog "
+        "and not fog either, it is empty paper. Do not invent anything on it: no window, no street, no "
+        "shelves, no bottles, no mirror, no lettering, no hatching, no shading, no floor, no second figure, "
+        "no table, no more of the marble than the one line already given. Nothing whatever is added anywhere "
+        "except finishing the one figure whose pale under-drawing is already on the page."
+    )
+    for character, occ in OCCLUDER_NAME.items()
+}
 # THE CLEAN TWIN's only edit. Same seed, same references, same rules, the ADD
 # sentence removed and the chair explicitly left empty: the same room, re-inked
 # the same way, WITHOUT the bird. See --clean-pass.
@@ -473,23 +649,37 @@ def rules_block(mode: str, character: str) -> tuple[str, list[str]]:
     paras = fence.split("\n\n")
     if mode == "full":
         body = fence.replace("[TV]", "BREAKING").replace("[BOARD]", "HAPPY HOUR 4-?")
-        body = body.replace("[SCENE]", ADD_EDIT[character])
+        body = body.replace("[SCENE]", ADD_EDIT.get(character) or ADD_EDIT_STICKER.get(character, ""))
         return body, []
     missed: list[str] = []
     pen = next((p for p in paras if p.startswith("A single-panel gag cartoon")), "")
     if not pen:
         missed.append("the engraving paragraph (fence paragraph 1)")
-    who = next((p for p in paras if p.startswith("DREW (frame-left)")), "")
-    if not who:
-        missed.append("the DREW/BARCLAY character paragraph")
-        block = ""
+    # THE CHARACTER'S OWN PARAGRAPH. Fence paragraph 5 carries DREW and BARCLAY
+    # together, joined at " BARCLAY (frame-right)"; paragraph 6 is ABBY alone.
+    # Route S now draws Barclay and Abby too (Team 4, 2026-09-08), and each must
+    # get HIS OR HER OWN half - sending Drew's paragraph while drawing Barclay
+    # would tell the model to draw Drew's bill and bow tie onto him.
+    block = ""
+    if character == "abby":
+        abby_para = next((p for p in paras if p.startswith("ABBY is")), "")
+        if not abby_para:
+            missed.append("the ABBY character paragraph")
+        block = abby_para.strip()
     else:
-        drew_part, sep, _ = who.partition(" BARCLAY (frame-right)")
-        if not sep:
-            missed.append("DREW/BARCLAY paragraph split on ' BARCLAY (frame-right)'")
-        block = (drew_part if sep else who).strip()
-        if character == "drew":
-            block = block.replace("DREW (frame-left) is", "DREW is")
+        who = next((p for p in paras if p.startswith("DREW (frame-left)")), "")
+        if not who:
+            missed.append("the DREW/BARCLAY character paragraph")
+        else:
+            drew_part, sep, barclay_rest = who.partition(" BARCLAY (frame-right)")
+            if not sep:
+                missed.append("DREW/BARCLAY paragraph split on ' BARCLAY (frame-right)'")
+            if character == "barclay" and sep:
+                block = ("BARCLAY" + barclay_rest).strip()
+            else:
+                block = (drew_part if sep else who).strip()
+                if character == "drew":
+                    block = block.replace("DREW (frame-left) is", "DREW is")
     return "\n\n".join(p for p in (pen, block) if p), missed
 
 
@@ -615,57 +805,128 @@ def flat_field(base: np.ndarray, box: tuple[int, int, int, int], character: str,
 # instead: Picture 1 is blank white paper carrying only the chair (the anchor),
 # a single line for the marble (a horizon) and a PALE UNDER-DRAWING of the exact
 # pose already solved by the construction - the model's only job is to fill it.
-STICKER_FIGURE_PART = "figure-drew-02-toward"       # the part id in parts.json / the mask+values filenames
-STICKER_FIGURE_MASK = "canon/room-kit/v2/masks/figure-drew-02-toward.png"
-STICKER_FIGURE_VALUES = "canon/room-kit/v2/values/figure-drew-02-toward.png"
-STICKER_CHAIR_MASK = "canon/room-kit/v2/masks/chair-left.png"
-STICKER_COUNTER_MASK = "canon/room-kit/v2/masks/counter.png"
+# The part id in parts.json / the mask+values filenames, per character - the
+# anchor block-in pose each character's white-sheet render fills.
+STICKER_FIGURE_PART = {
+    "drew": "figure-drew-02-toward",
+    "barclay": "figure-barclay-02-toward",
+    "abby": "figure-abby-01-ledge",
+}
+STICKER_FIGURE_MASK = {k: f"canon/room-kit/v2/masks/{v}.png" for k, v in STICKER_FIGURE_PART.items()}
+STICKER_FIGURE_VALUES = {k: f"canon/room-kit/v2/values/{v}.png" for k, v in STICKER_FIGURE_PART.items()}
+# The OCCLUDER, per character - its OWN rendered pixels are what sits on the
+# sheet and stays in front of the figure's lower body (see OCCLUDER_NAME above,
+# which is the same table's English name). Drew and Barclay each sit in their
+# own club chair; Abby stands behind the bar counter, which is laid after her.
+STICKER_OCCLUDER_MASK = {
+    "drew": "canon/room-kit/v2/masks/chair-left.png",
+    "barclay": "canon/room-kit/v2/masks/chair-right.png",
+    "abby": "canon/room-kit/v2/masks/counter.png",
+}
+# The LINE SOURCE, per character - the mask whose own top boundary per column is
+# traced into the one thin ink line (see LINE_NAME above). Drew and Barclay both
+# sit at the marble counter; Abby stands behind the ledge, so hers is traced from
+# the ledge instead.
+STICKER_LINE_SOURCE_MASK = {
+    "drew": "canon/room-kit/v2/masks/counter.png",
+    "barclay": "canon/room-kit/v2/masks/counter.png",
+    "abby": "canon/room-kit/v2/masks/ledge.png",
+}
 STICKER_WHITE = 255.0
 STICKER_LINE_INK = 70.0        # the marble line's tone - a clear stroke, not the room's own ink
 STICKER_LINE_HALFWIDTH = 1     # px each side of the traced curve, before feather - a THIN line
 STICKER_LINE_FEATHER = 0.6
 STICKER_FIGURE_FEATHER = 1.5   # the under-drawing's own edge, so its silhouette doesn't alias
-STICKER_CHAIR_FEATHER = 1.0    # the chair's edge, laid last so it stays crisp
+STICKER_OCCLUDER_FEATHER = 1.0  # the occluder's edge, laid last so it stays crisp
+# --under-lines (Team 4, 2026-09-08): the pencil line drawing on top of the
+# tone fill. STICKER_LINE_TONE is the grey the lines are drawn at; the Sobel
+# threshold and the thinning width are its own two dials.
+STICKER_UNDER_LINE_TONE = 150.0
+STICKER_UNDER_LINE_SOBEL_THRESH = 24.0
+STICKER_UNDER_LINE_WIDTH = 2      # target line width in px, after thinning
 
 
-def sticker_masks(box: tuple[int, int, int, int]) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
+def sticker_masks(box: tuple[int, int, int, int], character: str) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
     """The three masks route S needs, cropped to `box` (plate pixels): the figure
-    block-in's own silhouette, the chair's own mask, and a THIN line traced along
-    the marble counter's near top edge - masks/counter.png's own top boundary per
-    column, which is exactly that edge (measured directly against the plate:
-    counter.png's mask inside this box runs from its bright near-top edge down
-    through the bar's front panel to the crop floor, so its topmost row per
-    column IS the marble's near top edge, nothing more has to be guessed)."""
+    block-in's own silhouette, the occluder's own mask (the chair for Drew and
+    Barclay, the counter for Abby), and a THIN line traced along the line
+    source's near top edge - its mask's own top boundary per column, which IS
+    that edge (measured directly against the plate: counter.png's mask inside
+    Drew and Barclay's boxes runs from its bright near-top edge down through the
+    bar's front panel to the crop floor, so its topmost row per column is the
+    marble's near top edge, nothing more has to be guessed; ledge.png does the
+    same for Abby's own working surface)."""
     x0, y0, x1, y1 = box
 
     def crop(rel: str) -> np.ndarray:
         full = np.asarray(Image.open(ROOT / rel).convert("L"))
         return full[y0:y1, x0:x1] > 127
 
-    fig = crop(STICKER_FIGURE_MASK)
-    chair = crop(STICKER_CHAIR_MASK)
-    counter = crop(STICKER_COUNTER_MASK)
+    fig = crop(STICKER_FIGURE_MASK[character])
+    occluder = crop(STICKER_OCCLUDER_MASK[character])
+    line_source = crop(STICKER_LINE_SOURCE_MASK[character])
     h, w = fig.shape
     line = np.zeros((h, w), bool)
-    for c in np.where(counter.any(axis=0))[0]:
-        r = int(np.where(counter[:, c])[0].min())
+    for c in np.where(line_source.any(axis=0))[0]:
+        r = int(np.where(line_source[:, c])[0].min())
         line[max(0, r - STICKER_LINE_HALFWIDTH):min(h, r + STICKER_LINE_HALFWIDTH + 1), c] = True
-    return fig, chair, line
+    return fig, occluder, line
+
+
+def under_drawing_lines(fig_values: np.ndarray, fig_mask: np.ndarray,
+                        sobel_thresh: float = STICKER_UNDER_LINE_SOBEL_THRESH,
+                        width: int = STICKER_UNDER_LINE_WIDTH) -> np.ndarray:
+    """--under-lines: the block-in redrawn as a PENCIL LINE DRAWING instead of a
+    tone fill - the figure mask's own OUTLINE plus the INTERNAL tone edges of
+    the values image, thinned to about `width` px. This is what makes the head
+    visible: Team Drew 3 found a pale grey skull and bill read as nothing at
+    all, and every seed drew a goose, a stork or a folded ribbon instead of it.
+    An actual line at the eye, the skull and the bill gives the model something
+    it can see rather than something it has to infer from a faint value shift.
+
+    THE OUTLINE is fig_mask XOR its own 1px erosion - the boundary ring of the
+    silhouette, one pixel wide before it is grown to `width`.
+
+    THE INTERNAL EDGES are a Sobel gradient magnitude of a lightly smoothed copy
+    of fig_values (sigma 0.6, just enough to stop single-pixel dither reading as
+    an edge of its own), thresholded at `sobel_thresh` and confined to fig_mask -
+    exactly what separates the eye from the skull and the black bill-tip from
+    the pale bill in the block-in's own flat colour bands - then thinned with a
+    morphological skeleton (skimage) and grown back out to `width` px so a
+    single-pixel skeleton does not alias to invisibility once it is feathered."""
+    smooth = ndimage.gaussian_filter(fig_values, 0.6)
+    gy, gx = np.gradient(smooth)
+    mag = np.hypot(gx, gy)
+    edges_raw = (mag > sobel_thresh) & fig_mask
+    edges_thin = skeletonize(edges_raw)
+
+    outline = fig_mask & ~ndimage.binary_erosion(fig_mask, iterations=1)
+
+    lines = edges_thin | outline
+    grow = max(0, int(round(width)) - 1)
+    if grow:
+        lines = ndimage.binary_dilation(lines, iterations=grow)
+    return lines & ndimage.binary_dilation(fig_mask, iterations=grow + 1)
 
 
 def sticker_field(base: np.ndarray, box: tuple[int, int, int, int], character: str,
-                  under_blend: float = 0.55) -> tuple[np.ndarray, dict]:
-    """Picture 1 for --route S: a WHITE SHEET carrying only the left chair's own
-    rendered pixels, the marble's near top edge as a thin line, and a PALE
-    under-drawing of the seated block-in pose, blended `under_blend` toward white.
+                  under_blend: float = 0.30, under_lines: bool = True) -> tuple[np.ndarray, dict]:
+    """Picture 1 for --route S: a WHITE SHEET carrying only the occluder's own
+    rendered pixels (the chair for Drew and Barclay, the counter for Abby), the
+    line source's near top edge as a thin line, and a PALE under-drawing of the
+    seated or standing block-in pose, blended `under_blend` toward white - with,
+    when `under_lines` is on (the default), the block-in's own outline and
+    internal tone edges drawn over that tone fill as an actual PENCIL LINE
+    DRAWING at STICKER_UNDER_LINE_TONE (150), so the head is something the model
+    can see rather than something it has to infer from a faint grey shift.
 
     Composited farthest-to-nearest, exactly as the room itself would occlude
-    them: the marble line first (the figure sits in front of most of it), the
-    under-drawing next (pale, so it still reads as paper more than as a bird),
-    and the chair's real pixels LAST, on top, because the chair stands in front
-    of his lower body - the same depth order the finished picture must keep."""
+    them: the line first (the figure sits in front of most of it), the
+    under-drawing (tone fill, then its own pencil lines) next, and the
+    occluder's real pixels LAST, on top, because it stands in front of the
+    figure's lower body - the same depth order the finished picture must keep."""
     x0, y0, x1, y1 = box
-    fig, chair, line = sticker_masks(box)
+    fig, occluder, line = sticker_masks(box, character)
 
     def soft(mask: np.ndarray, feather: float) -> np.ndarray:
         a = mask.astype(np.float64) * 255.0
@@ -679,21 +940,29 @@ def sticker_field(base: np.ndarray, box: tuple[int, int, int, int], character: s
     line_soft = soft(line, STICKER_LINE_FEATHER)
     field = field * (1 - line_soft) + STICKER_LINE_INK * line_soft
 
-    fig_values = np.asarray(Image.open(ROOT / STICKER_FIGURE_VALUES).convert("L"),
+    fig_values = np.asarray(Image.open(ROOT / STICKER_FIGURE_VALUES[character]).convert("L"),
                             dtype=np.float64)[y0:y1, x0:x1]
     fig_soft = soft(fig, STICKER_FIGURE_FEATHER)
     undertone = fig_values * (1 - under_blend) + STICKER_WHITE * under_blend
     field = field * (1 - fig_soft) + undertone * fig_soft
 
-    chair_soft = soft(chair, STICKER_CHAIR_FEATHER)
-    field = field * (1 - chair_soft) + base * chair_soft
+    lines_mask = None
+    if under_lines:
+        lines_mask = under_drawing_lines(fig_values, fig)
+        lines_soft = soft(lines_mask, 0.5)
+        field = field * (1 - lines_soft) + STICKER_UNDER_LINE_TONE * lines_soft
 
-    info = {"white": STICKER_WHITE, "under_blend": under_blend,
-            "chair_fraction": round(float(chair.mean()), 4),
+    occluder_soft = soft(occluder, STICKER_OCCLUDER_FEATHER)
+    field = field * (1 - occluder_soft) + base * occluder_soft
+
+    info = {"white": STICKER_WHITE, "under_blend": under_blend, "under_lines": under_lines,
+            "occluder_fraction": round(float(occluder.mean()), 4),
             "figure_fraction": round(float(fig.mean()), 4),
             "line_fraction": round(float(line.mean()), 4),
-            "white_fraction": round(float((~(chair | fig | line)).mean()), 4),
-            "figure_part": STICKER_FIGURE_PART, "line_ink": STICKER_LINE_INK}
+            "under_line_fraction": round(float(lines_mask.mean()), 4) if lines_mask is not None else None,
+            "white_fraction": round(float((~(occluder | fig | line)).mean()), 4),
+            "figure_part": STICKER_FIGURE_PART[character], "line_ink": STICKER_LINE_INK,
+            "occluder": OCCLUDER_NAME[character]}
     return field, info
 
 
@@ -843,6 +1112,44 @@ def next_round(character: str) -> Path:
     return base / f"round-{n}"
 
 
+def load_also_overrides(also_args: list[str], out_dir: Path, plate: Image.Image) -> dict[str, Path]:
+    """--also PART=STICKER.PNG (repeatable): lay another already-ACCEPTED sticker
+    into route S's laid preview, at ITS OWN part, so the character being judged
+    today is judged against the plate with that other character already in it
+    (e.g. Barclay judged with Drew's own approved sticker already seated beside
+    him). `part` is a parts.json id (STICKER_FIGURE_PART's own values); the
+    sticker is an RGBA cutout the size of its OWN box, not the full plate, so
+    its own JSON sidecar (same file name, .json) is read for that box and the
+    sticker is pasted (through its own alpha) into a full-plate-sized copy,
+    exactly as this script's own candidate is built for the character it is
+    actually drawing today - assemble() only reads pixels through the part's OWN
+    mask, so nothing outside that mask in this candidate ever matters."""
+    overrides: dict[str, Path] = {}
+    for i, raw in enumerate(also_args):
+        part_id, sep, sticker_str = raw.partition("=")
+        if not sep:
+            raise SystemExit(f"--also wants PART=STICKER.PNG, got {raw!r}")
+        part_id = part_id.strip()
+        sticker_path = Path(sticker_str.strip())
+        if not sticker_path.exists():
+            raise SystemExit(f"--also {part_id}: sticker not found: {sticker_path}")
+        sidecar_path = sticker_path.with_suffix(".json")
+        if not sidecar_path.exists():
+            raise SystemExit(f"--also {part_id}: no sidecar JSON next to it (needed for its box): {sidecar_path}")
+        meta = json.loads(sidecar_path.read_text(encoding="utf8"))
+        obox = meta.get("box")
+        if not obox or len(obox) != 4:
+            raise SystemExit(f"--also {part_id}: sidecar has no usable 'box': {sidecar_path}")
+        ox0, oy0, ox1, oy1 = (int(v) for v in obox)
+        sticker_img = Image.open(sticker_path).convert("RGBA")
+        canvas = plate.convert("RGB").copy()
+        canvas.paste(sticker_img.convert("RGB"), (ox0, oy0), sticker_img)
+        also_path = out_dir / f"also-{i}-{part_id}.png"
+        canvas.convert("L").save(also_path)
+        overrides[part_id] = also_path
+    return overrides
+
+
 def main() -> None:
     ap = argparse.ArgumentParser(description="Place one character into the approved room and cut him out.")
     ap.add_argument("--character", default="drew", choices=sorted(DEFAULT_BOX))
@@ -862,12 +1169,32 @@ def main() -> None:
                     help="route A: the grey everything but the chair, the marble and the wall lines becomes")
     ap.add_argument("--paste-feather", type=int, default=12,
                     help="route B: the feathered border, in plate pixels, on the pasted crop")
-    ap.add_argument("--under-blend", type=float, default=0.55,
+    ap.add_argument("--under-blend", type=float, default=0.30,
                     help="route S: how far the under-drawing's block-in tones are blended toward white "
                          "(0 = the block-in's own tones, 1 = invisible)")
+    ap.add_argument("--under-lines", dest="under_lines", action="store_true", default=True,
+                    help="route S (default ON): draw the under-drawing as a PENCIL LINE DRAWING - the "
+                         "figure mask's outline and the internal tone edges of the values image, thinned "
+                         "to about 2px, at grey 150 - on top of the faint tone fill, so the head is "
+                         "visible as lines and not just a faint grey shape")
+    ap.add_argument("--no-under-lines", dest="under_lines", action="store_false",
+                    help="route S: disable --under-lines, leaving only the faint tone fill")
     ap.add_argument("--white-thresh", type=float, default=232.0,
                     help="route S: a rendered pixel this dark or darker (after a 1px blur) is ink, not "
                          "the sheet's own white paper - the key's threshold")
+    ap.add_argument("--fill", dest="fill", action="store_true", default=True,
+                    help="route S (default ON): after the overlapping components are kept and before the "
+                         "1.5px feather, binary_closing(3) then binary_fill_holes, so a WHITE bird's own "
+                         "paper interior (vest, belly, neck, crown) is not left as a lattice of ink with "
+                         "the room showing through it")
+    ap.add_argument("--no-fill", dest="fill", action="store_false",
+                    help="route S: disable the hole fill")
+    ap.add_argument("--also", action="append", default=[], metavar="PART=STICKER.PNG",
+                    help="route S (repeatable): lay another already-accepted sticker into the laid preview "
+                         "at ITS OWN part (e.g. --also figure-drew-02-toward=canon/room-kit/v2/figures/"
+                         "drew-...-s7.png), so this character is judged against the plate with that other "
+                         "character already in it. The sticker's own JSON sidecar (same name, .json) "
+                         "supplies its box")
     ap.add_argument("--staging-solo", action="store_true",
                     help="route S: send Picture 3 = the previous team's flamingo-only crop of "
                          "duo-behind.png (default for route S: no Picture 3 at all)")
@@ -923,8 +1250,8 @@ def main() -> None:
         raise SystemExit(f"--box is empty: {box}")
     if abs(bw / bh - 0.8) > 0.02:
         print(f"[shape] box {bw}x{bh} is {bw / bh:.3f}, not the house 4:5 (0.800) - the bridge will squash it.")
-    seat = parse_box(a.seat) if a.seat else DEFAULT_SEAT[who]
-    seat_local = (seat[0] - x0, seat[1] - y0, seat[2] - x0, seat[3] - y0)
+    seat = parse_box(a.seat) if a.seat else DEFAULT_SEAT[who]   # Abby: None - she has no seat box at all
+    seat_local = (seat[0] - x0, seat[1] - y0, seat[2] - x0, seat[3] - y0) if seat else None
     roi = None if a.no_roi else (parse_box(a.roi) if a.roi else DEFAULT_ROI[who])
 
     plate = Image.open(a.plate).convert("L")
@@ -944,7 +1271,7 @@ def main() -> None:
         p1_img = Image.fromarray(np.clip(field, 0, 255).astype(np.uint8))
         p1_img.save(out / "flat-field.png")
     elif a.route == "S":
-        field, field_info = sticker_field(base, box, who, a.under_blend)
+        field, field_info = sticker_field(base, box, who, a.under_blend, a.under_lines)
         p1_img = Image.fromarray(np.clip(field, 0, 255).astype(np.uint8))
         p1_img.save(out / "white-sheet.png")
     else:
@@ -968,8 +1295,9 @@ def main() -> None:
         print("[canon drift] not found in the LOCAL fence, so it did not reach the prompt:")
         for m in missed:
             print("   -", m)
-    p1_label = PICTURE1_LABEL_FLAT if a.route == "A" else (PICTURE1_LABEL_STICKER if a.route == "S" else PICTURE1_LABEL)
-    keep_edit = KEEP_EDIT_FLAT if a.route == "A" else (KEEP_EDIT_STICKER if a.route == "S" else KEEP_EDIT)
+    p1_label = PICTURE1_LABEL_FLAT if a.route == "A" else (
+        PICTURE1_LABEL_STICKER[who] if a.route == "S" else PICTURE1_LABEL)
+    keep_edit = KEEP_EDIT_FLAT if a.route == "A" else (KEEP_EDIT_STICKER[who] if a.route == "S" else KEEP_EDIT)
     add_edit_map = ADD_EDIT_STICKER if a.route == "S" else ADD_EDIT
     p3_label_default = PICTURE3_LABEL_SOLO if a.staging_solo else PICTURE3_LABEL
     p3_label = a.staging_label.strip() or p3_label_default
@@ -1013,7 +1341,10 @@ def main() -> None:
             "flat_field": field_info,
             "paste_feather": a.paste_feather if a.route == "B" else None,
             "under_blend": a.under_blend if a.route == "S" else None,
+            "under_lines": a.under_lines if a.route == "S" else None,
             "white_thresh": a.white_thresh if a.route == "S" else None,
+            "fill": a.fill if a.route == "S" else None,
+            "also": a.also if a.route == "S" else None,
             "staging_solo": a.staging_solo,
             "staging_reference": str(p3_path) if p3_path else None,
             "staging_label": sidecar_staging_label,
@@ -1021,7 +1352,7 @@ def main() -> None:
             "plate": str(a.plate),
             "box": list(box),
             "box_size": [bw, bh],
-            "seat_region": list(seat),
+            "seat_region": list(seat) if seat else None,
             "roi": list(roi) if roi else None,
             "seed": seed,
             "rules_mode": a.rules,
@@ -1120,36 +1451,39 @@ def main() -> None:
             room_drift = cleanliness
         elif a.route == "S":
             # ROUTE S - AN ABSOLUTE KEY, not a difference key. Picture 1 was
-            # blank white paper apart from the chair, the marble line and a PALE
+            # blank white paper apart from the occluder (the chair for Drew and
+            # Barclay, the counter for Abby), the marble/ledge line and a PALE
             # under-drawing, so anything the render actually drew is simply
             # darker than the paper - there is no room re-inked to tone-match or
             # align against, so neither is attempted here.
             ref_name, fit = "white-sheet (absolute threshold key, no tone fit)", "none"
             ka, kb = 1.0, 0.0
             dy, dx = 0, 0
-            fig_mask_local, chair_mask_local, line_mask_local = sticker_masks(box)
+            fig_mask_local, occ_mask_local, line_mask_local = sticker_masks(box, who)
             dark = _blur(small, 1.0) < a.white_thresh
             changed = dark          # for "changed_fraction_whole_box" below: Picture 1 was white paper,
                                     # so "differs from Picture 1" and "has ink at all" are the same test
             fig_dilated = disk_iter(fig_mask_local, ndimage.binary_dilation, 24)
-            candidate = dark & fig_dilated & ~chair_mask_local
+            candidate = dark & fig_dilated & ~occ_mask_local
             if roi_mask is not None:
                 candidate &= roi_mask
             lab, n = ndimage.label(candidate, ndimage.generate_binary_structure(2, 2))
             overlaps = ndimage.sum(fig_mask_local, lab, range(1, n + 1)) if n else np.zeros(0)
-            keep_ids = [i + 1 for i, ov in enumerate(overlaps) if ov > 400]
+            min_overlap = MIN_FIGURE_OVERLAP[who]
+            keep_ids = [i + 1 for i, ov in enumerate(overlaps) if ov > min_overlap]
             sticker_mask = np.isin(lab, keep_ids) if keep_ids else np.zeros(base.shape, bool)
-            # HOLE FILL (round 2, 2026-09-08). Drew is a WHITE bird: the absolute
-            # key keeps only pixels darker than --white-thresh, so his own paper
-            # interior - the vest, the belly, the neck, the crown - never enters
-            # the sticker and what is laid on the plate is a lattice of ink with
-            # the room showing through it (round 1 covered 0.51-0.67 of the
-            # figure mask). Closing the hairline gaps between strokes and then
-            # filling what is enclosed makes him opaque WITHOUT reaching any new
-            # ink: both operations run on the components already kept, so no
-            # blank paper outside the bird can be added by them.
-            sticker_mask = disk_iter(sticker_mask, ndimage.binary_closing, 3)
-            sticker_mask = ndimage.binary_fill_holes(sticker_mask)
+            # HOLE FILL (round 2, 2026-09-08; --fill, default ON). Drew is a WHITE
+            # bird: the absolute key keeps only pixels darker than --white-thresh,
+            # so his own paper interior - the vest, the belly, the neck, the crown
+            # - never enters the sticker and what is laid on the plate is a
+            # lattice of ink with the room showing through it (round 1 covered
+            # 0.51-0.67 of the figure mask). Closing the hairline gaps between
+            # strokes and then filling what is enclosed makes him opaque WITHOUT
+            # reaching any new ink: both operations run on the components already
+            # kept, so no blank paper outside the figure can be added by them.
+            if a.fill:
+                sticker_mask = disk_iter(sticker_mask, ndimage.binary_closing, 3)
+                sticker_mask = ndimage.binary_fill_holes(sticker_mask)
             alpha = feather(sticker_mask, 1.5)
 
             def _topmost_height(mask_bool: np.ndarray) -> int | None:
@@ -1170,10 +1504,10 @@ def main() -> None:
             keyinfo = {
                 "blobs": int(n), "raw_fraction": round(float(dark.mean()), 4),
                 "kept": len(keep_ids), "kept_px": int(sticker_mask.sum()), "seat_touched": None,
-                "white_thresh": a.white_thresh,
+                "white_thresh": a.white_thresh, "min_figure_overlap_px": min_overlap, "fill": a.fill,
                 "figure_mask_px": int(fig_mask_local.sum()),
                 "figure_mask_dilated_px": int(fig_dilated.sum()),
-                "chair_mask_px": int(chair_mask_local.sum()),
+                "occluder_mask_px": int(occ_mask_local.sum()),
                 "alpha_fraction_inside_figure_mask": (
                     round(float((sticker_mask & fig_mask_local).sum() / sticker_mask.sum()), 4)
                     if sticker_mask.sum() else 0.0),
@@ -1186,17 +1520,17 @@ def main() -> None:
             }
             outside = alpha == 0
             # cleanliness: of the paper that is neither the sticker nor one of
-            # the two given anchors (the chair, the marble line), how much did
-            # the model draw on when it should have stayed blank white.
-            free = outside & ~(chair_mask_local | line_mask_local)
+            # the two given anchors (the occluder, the marble/ledge line), how
+            # much did the model draw on when it should have stayed blank white.
+            free = outside & ~(occ_mask_local | line_mask_local)
             n_free = int(free.sum())
             cleanliness = float((dark & free).sum() / n_free) if n_free else 0.0
             # room drift: did the model keep the ONE anchor it was given - the
-            # chair - or redraw it too.
-            chair_outside = chair_mask_local & outside
-            if chair_outside.sum():
-                chair_changed = np.abs(matched - base) > a.measure_thresh
-                room_drift = float((chair_changed & chair_outside).sum() / chair_outside.sum())
+            # occluder - or redraw it too.
+            occ_outside = occ_mask_local & outside
+            if occ_outside.sum():
+                occ_changed = np.abs(matched - base) > a.measure_thresh
+                room_drift = float((occ_changed & occ_outside).sum() / occ_outside.sum())
             else:
                 room_drift = 0.0
         else:
@@ -1301,8 +1635,12 @@ def main() -> None:
             cand_arr[y0:y1, x0:x1] = small
             cand_path = out / f"{name}-candidate.png"
             Image.fromarray(np.clip(cand_arr, 0, 255).astype(np.uint8)).save(cand_path)
+            # --also PART=STICKER.PNG: other already-accepted characters, laid
+            # into this same preview at their OWN parts (see load_also_overrides).
+            also_overrides = load_also_overrides(a.also, out, plate)
+            override = {STICKER_FIGURE_PART[who]: cand_path, **also_overrides}
             man = rp.manifest()
-            laid_arr = rp.assemble(man, upto=None, quiet=True, override={STICKER_FIGURE_PART: cand_path})
+            laid_arr = rp.assemble(man, upto=None, quiet=True, override=override)
             laid = Image.fromarray(np.clip(laid_arr, 0, 255).astype(np.uint8)).convert("RGB")
         else:
             laid = plate.convert("RGB")

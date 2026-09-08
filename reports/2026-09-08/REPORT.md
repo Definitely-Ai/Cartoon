@@ -594,3 +594,251 @@ Built for Rick. Every image the studio generated today, in the order it happened
 
 ---
 
+## 046. Drew seated left - route S round 2 - seed 7 (hole-filled key)
+
+![Drew seated left - route S round 2 - seed 7 (hole-filled key)](images/046-drew-seated-left-route-s-round-2-seed-7-hole-filled-key.png)
+
+**The ask.** Team Drew 3, round 2 of route S. Seat Drew in the LEFT leather club chair of the approved plate, seen from behind and a little to his left, head turned to his right in three-quarter so the bill and one lidded eye read, knit vest and collar above the chair back, chair back across his lower body - and the room's own pixels untouched. Exactly one thing changes from round 1.
+
+**The thinking.** Round 1 proved route S had solved the SEAT and the SCALE - all four seeds put him down in our chair at the block-in's place. Both remaining failures shared one cause: Drew is a WHITE bird and the absolute key keeps only pixels darker than 232, so his paper interior never entered the sticker and what was laid on the plate was a lattice of ink (mask_covered 0.51-0.67) with the window and the panelling showing through him. So this round adds a hole-fill and nothing else: after the overlapping components are kept and before the 1.5px feather, binary_closing(3) then binary_fill_holes on the kept mask, --white-thresh left at 232. It cannot reach new ink because it only runs inside components already kept. Measured here: seed 7's coverage went 0.665 -> 0.832 with free-page ink unchanged (0.1847 -> 0.1838). The menu's own opacity knob was rejected as a bad trade - --white-thresh 246 buys less coverage and blows seed 7's free-page ink to 0.601.
+
+**Settings.** scripts/cast-place.py --character drew --route S --seed 7 --staging-solo --tag r2 | local/qwen-image-edit-2511 via AuraVision 127.0.0.1:8000 | box 20,700,660,1500 | roi 140,770,620,1340 | under-blend 0.55 | white-thresh 232 | key: close(3)+fill_holes+feather 1.5
+
+**Prompt.** [prompts/046-drew-seated-left-route-s-round-2-seed-7-hole-filled-key.prompt.txt](prompts/046-drew-seated-left-route-s-round-2-seed-7-hole-filled-key.prompt.txt)
+
+**Verdict.** 11/20. identity 3 - the collar band, the black bow tie, the V-neck knit and the feathered hand with fingers all read, but the crown is crested and speckled instead of small and refined and the eye is round and staring, not heavy-lidded. pose 2 - he is three-quarter FRONT with the bow-tie knot facing us, the one thing the brief says NOT to draw; the under-drawing's back view did not carry. seat 4 - down in OUR left chair, chair back across the lower body, vest and arms above the roll. cleanliness 2 - the sticker still carries Picture 3's martini, a saucer, the counter slab's edge and a piece of the chair's own studded roll, and a soft grey aura the model drew round the bill washes out the panelling behind it. The hole-fill worked exactly as measured - he is opaque now, not a lattice.
+
+*Logged 16:55.*
+
+---
+
+## 047. Drew seated left - route S round 2 - seed 21 (hole-filled key)
+
+![Drew seated left - route S round 2 - seed 21 (hole-filled key)](images/047-drew-seated-left-route-s-round-2-seed-21-hole-filled-key.png)
+
+**The ask.** Team Drew 3, round 2 of route S, second seed. Same brief: Drew down in the LEFT club chair, seen from behind and a little to his left, head turned right in three-quarter, the room's own pixels untouched.
+
+**The thinking.** Same single change as seed 7 - binary_closing(3) then binary_fill_holes on the kept components before the 1.5px feather, --white-thresh still 232 - so this seed tests whether the hole-fill is a general fix or a seed-7 accident. Round 1 measured seed 21 at mask_covered 0.661; the prediction was 0.879.
+
+**Settings.** scripts/cast-place.py --character drew --route S --seed 21 --staging-solo --tag r2 | local/qwen-image-edit-2511 via AuraVision 127.0.0.1:8000 | box 20,700,660,1500 | roi 140,770,620,1340 | under-blend 0.55 | white-thresh 232 | key: close(3)+fill_holes+feather 1.5
+
+**Prompt.** [prompts/047-drew-seated-left-route-s-round-2-seed-21-hole-filled-key.prompt.txt](prompts/047-drew-seated-left-route-s-round-2-seed-21-hole-filled-key.prompt.txt)
+
+**Verdict.** 10/20. identity 2 - the head has come apart: a patterned ball with a tiny eye and no crown, and the bill is a flat wedge without the pale shaft and black outer third. The bow tie, the V-neck knit and the fingered hand survive. pose 2 - three-quarter FRONT again, tie knot to camera. seat 4 - correctly in our chair, chair back across the lower body. cleanliness 2 - Picture 3's bowl of olives and the counter slab came into the sticker, and a pale ghost of the bill smears across the panelling. Coverage went 0.661 -> 0.781, so the hole-fill generalises; the head is a render failure, not a key failure.
+
+*Logged 16:55.*
+
+---
+
+## 048. Drew seated left - route S round 2 - seed 41 (hole-filled key)
+
+![Drew seated left - route S round 2 - seed 41 (hole-filled key)](images/048-drew-seated-left-route-s-round-2-seed-41-hole-filled-key.png)
+
+**The ask.** Team Drew 3, round 2 of route S, third seed. Same brief: Drew down in the LEFT club chair, from behind and a little to his left, head turned right in three-quarter, the room's own pixels untouched.
+
+**The thinking.** Seed 41 is the seed that failed the sheet test in round 1 - it did not keep the paper white but re-inked the whole box (raw ink fraction 0.95 this round, free-page ink 0.916). It is here to show what the hole-fill does NOT fix: measured on round 1's own raw, close+fill moved seed 41's coverage only 0.9701 -> 0.9705, because when the whole sheet is ink there are no holes to fill. The fill is a fix for a WHITE bird keyed out of white paper, not a fix for a model that paints the paper.
+
+**Settings.** scripts/cast-place.py --character drew --route S --seed 41 --staging-solo --tag r2 | local/qwen-image-edit-2511 via AuraVision 127.0.0.1:8000 | box 20,700,660,1500 | roi 140,770,620,1340 | under-blend 0.55 | white-thresh 232 | key: close(3)+fill_holes+feather 1.5 | 1091s (the 4090 is shared with the back-bar team)
+
+**Prompt.** [prompts/048-drew-seated-left-route-s-round-2-seed-41-hole-filled-key.prompt.txt](prompts/048-drew-seated-left-route-s-round-2-seed-41-hole-filled-key.prompt.txt)
+
+**Verdict.** 10/20. identity 3 - the best head of the round: the pale bill really does carry a black outer third, the eye is heavy-lidded and amiable, and the collar band, bow tie, V-neck knit and fingered hand all read - but he is drawn mid-grey and scaly rather than white and feathered. pose 2 - three-quarter FRONT with the bow-tie knot to camera, the brief's explicit NOT, for the third seed running. seat 4 - down in our chair at the block-in's place, the studded roll across his lower body. cleanliness 1 - the worst of the round: the model inked 95% of the sheet, so the key kept one blob that is 40% not-Drew - a pale slab of re-inked paper, the marble counter, a saucer and a piece of the chair's own roll - and that slab washes the panelling and the marble where it lands.
+
+*Logged 17:02.*
+
+---
+
+## 049. Drew seated left - route S round 2 - seed 44 (hole-filled key)
+
+![Drew seated left - route S round 2 - seed 44 (hole-filled key)](images/049-drew-seated-left-route-s-round-2-seed-44-hole-filled-key.png)
+
+**The ask.** Team Drew 3, round 2 of route S, fourth seed. Same brief: Drew down in the LEFT club chair, from behind and a little to his left, head turned right in three-quarter, the room's own pixels untouched.
+
+**The thinking.** Seed 44 is the seed the transparency hurt most in round 1 - the key kept only 0.513 of his silhouette and the paper interior ATE HIS HEAD outright. On round 1's own raw the hole-fill lifts that to 0.732 with free-page ink going DOWN (0.0898 -> 0.0871), so this seed was the clearest test of the change. It passed the test on those pixels; what came back this time is a different draw, and the model itself did not draw a head.
+
+**Settings.** scripts/cast-place.py --character drew --route S --seed 44 --staging-solo --tag r2 | local/qwen-image-edit-2511 via AuraVision 127.0.0.1:8000 | box 20,700,660,1500 | roi 140,770,620,1340 | under-blend 0.55 | white-thresh 232 | key: close(3)+fill_holes+feather 1.5
+
+**Prompt.** [prompts/049-drew-seated-left-route-s-round-2-seed-44-hole-filled-key.prompt.txt](prompts/049-drew-seated-left-route-s-round-2-seed-44-hole-filled-key.prompt.txt)
+
+**Verdict.** 9/20, the weakest of the round. identity 1 - there is no face: the head is a flat crosshatched wedge with no eye at all and a doubled, broken bill. The wardrobe is the only thing that reads - collar band, black bow tie, V-neck knit, a hand with fingers. pose 2 - three-quarter FRONT again, and with no readable bill or eye the turn of the head cannot be judged. seat 4 - correctly down in our left chair, studded roll across his lower body. cleanliness 2 - martini, saucer, counter slab and a piece of the chair's roll in the sticker, and the pale ghost round the head is now laid as a solid wedge across the window and the panelling. Coverage 0.513 -> 0.775, so the key is fixed; the drawing is not.
+
+*Logged 17:03.*
+
+---
+
+## 050. Drew seated left - route S round 3 - Picture 3 OFF - seed 7
+
+![Drew seated left - route S round 3 - Picture 3 OFF - seed 7](images/050-drew-seated-left-route-s-round-3-picture-3-off-seed-7.png)
+
+**The ask.** Team Drew 3, route S, round 3. Seat Drew in the LEFT leather club chair, seen from behind and a little to his left, head turned to his right in three-quarter so the bill and one lidded eye read, knit vest and collar above the chair back, chair back in front of his lower body. The room must stay the plate's own untouched pixels.
+
+**The thinking.** The one change this round: PICTURE 3 OFF - dropped --staging-solo, route S's own documented default. Not for cleanliness but because Picture 3 WAS the pose bug: staging-flamingo.png is labelled 'from behind' but is in fact a three-quarter FRONT view - chest to camera, white collar and black bow-tie knot facing us, V-neck vest front, martini in the near hand. All four of round 2's seeds reproduced that exact body angle and the martini with it, so the true back-view under-drawing was losing to it at --under-blend 0.55. Dropping it removes the front-view instruction and the martini/olives/saucer furniture in one move. Everything else held: --under-blend 0.55, --white-thresh 232, box and ROI unchanged.
+
+**Settings.** scripts/cast-place.py --character drew --route S --seed 7 --tag r3 | local/qwen-image-edit-2511 via AuraVision 127.0.0.1:8000 | route S white-sheet Picture 1, under-blend 0.55, white-thresh 232, rules pen, NO Picture 3 (staging_solo=false, 2 references)
+
+**Prompt.** [prompts/050-drew-seated-left-route-s-round-3-picture-3-off-seed-7.prompt.txt](prompts/050-drew-seated-left-route-s-round-3-picture-3-off-seed-7.prompt.txt)
+
+**Verdict.** 11/20 - identity 2, pose 3, seat 4, clean 2. The front view and the martini are GONE: the back view is won. But the head is a mangled crest with no readable bill and no eye, and the key returned 161 blobs with room fragments in the sticker.
+
+*Logged 17:21.*
+
+---
+
+## 051. Drew seated left - route S round 3 - Picture 3 OFF - seed 21
+
+![Drew seated left - route S round 3 - Picture 3 OFF - seed 21](images/051-drew-seated-left-route-s-round-3-picture-3-off-seed-21.png)
+
+**The ask.** Team Drew 3, route S, round 3. Seat Drew in the LEFT leather club chair, seen from behind and a little to his left, head turned to his right in three-quarter so the bill and one lidded eye read, knit vest and collar above the chair back, chair back in front of his lower body. The room must stay the plate's own untouched pixels.
+
+**The thinking.** The one change this round: PICTURE 3 OFF - dropped --staging-solo, route S's own documented default. Not for cleanliness but because Picture 3 WAS the pose bug: staging-flamingo.png is labelled 'from behind' but is in fact a three-quarter FRONT view - chest to camera, white collar and black bow-tie knot facing us, V-neck vest front, martini in the near hand. All four of round 2's seeds reproduced that exact body angle and the martini with it, so the true back-view under-drawing was losing to it at --under-blend 0.55. Dropping it removes the front-view instruction and the martini/olives/saucer furniture in one move. Everything else held: --under-blend 0.55, --white-thresh 232, box and ROI unchanged.
+
+**Settings.** scripts/cast-place.py --character drew --route S --seed 21 --tag r3 | local/qwen-image-edit-2511 via AuraVision 127.0.0.1:8000 | route S white-sheet Picture 1, under-blend 0.55, white-thresh 232, rules pen, NO Picture 3 (staging_solo=false, 2 references)
+
+**Prompt.** [prompts/051-drew-seated-left-route-s-round-3-picture-3-off-seed-21.prompt.txt](prompts/051-drew-seated-left-route-s-round-3-picture-3-off-seed-21.prompt.txt)
+
+**Verdict.** 8/20 - identity 2, pose 2, seat 3, clean 1. Worst of the four. The knit vest across the shoulder blades is excellent, but the head is DETACHED - the bill floats free above the neck stub - and the head's white interior lays as an opaque blob punched over the room. scale 0.15 because the topmost blob is that floating bill.
+
+*Logged 17:21.*
+
+---
+
+## 052. Drew seated left - route S round 3 - Picture 3 OFF - seed 41
+
+![Drew seated left - route S round 3 - Picture 3 OFF - seed 41](images/052-drew-seated-left-route-s-round-3-picture-3-off-seed-41.png)
+
+**The ask.** Team Drew 3, route S, round 3. Seat Drew in the LEFT leather club chair, seen from behind and a little to his left, head turned to his right in three-quarter so the bill and one lidded eye read, knit vest and collar above the chair back, chair back in front of his lower body. The room must stay the plate's own untouched pixels.
+
+**The thinking.** The one change this round: PICTURE 3 OFF - dropped --staging-solo, route S's own documented default. Not for cleanliness but because Picture 3 WAS the pose bug: staging-flamingo.png is labelled 'from behind' but is in fact a three-quarter FRONT view - chest to camera, white collar and black bow-tie knot facing us, V-neck vest front, martini in the near hand. All four of round 2's seeds reproduced that exact body angle and the martini with it, so the true back-view under-drawing was losing to it at --under-blend 0.55. Dropping it removes the front-view instruction and the martini/olives/saucer furniture in one move. Everything else held: --under-blend 0.55, --white-thresh 232, box and ROI unchanged.
+
+**Settings.** scripts/cast-place.py --character drew --route S --seed 41 --tag r3 | local/qwen-image-edit-2511 via AuraVision 127.0.0.1:8000 | route S white-sheet Picture 1, under-blend 0.55, white-thresh 232, rules pen, NO Picture 3 (staging_solo=false, 2 references)
+
+**Prompt.** [prompts/052-drew-seated-left-route-s-round-3-picture-3-off-seed-41.prompt.txt](prompts/052-drew-seated-left-route-s-round-3-picture-3-off-seed-41.prompt.txt)
+
+**Verdict.** 13/20 - identity 3, pose 3, seat 4, clean 3. BEST OF THE ROUND. White collar band, a clear small black bow tie, the knit V-neck vest and a properly feathered hand with fingers on the marble. Still fails on the head: a flat folded ribbon terminating in a bill-like wedge, no skull, no eye.
+
+*Logged 17:21.*
+
+---
+
+## 053. Drew seated left - route S round 3 - Picture 3 OFF - seed 44
+
+![Drew seated left - route S round 3 - Picture 3 OFF - seed 44](images/053-drew-seated-left-route-s-round-3-picture-3-off-seed-44.png)
+
+**The ask.** Team Drew 3, route S, round 3. Seat Drew in the LEFT leather club chair, seen from behind and a little to his left, head turned to his right in three-quarter so the bill and one lidded eye read, knit vest and collar above the chair back, chair back in front of his lower body. The room must stay the plate's own untouched pixels.
+
+**The thinking.** The one change this round: PICTURE 3 OFF - dropped --staging-solo, route S's own documented default. Not for cleanliness but because Picture 3 WAS the pose bug: staging-flamingo.png is labelled 'from behind' but is in fact a three-quarter FRONT view - chest to camera, white collar and black bow-tie knot facing us, V-neck vest front, martini in the near hand. All four of round 2's seeds reproduced that exact body angle and the martini with it, so the true back-view under-drawing was losing to it at --under-blend 0.55. Dropping it removes the front-view instruction and the martini/olives/saucer furniture in one move. Everything else held: --under-blend 0.55, --white-thresh 232, box and ROI unchanged.
+
+**Settings.** scripts/cast-place.py --character drew --route S --seed 44 --tag r3 | local/qwen-image-edit-2511 via AuraVision 127.0.0.1:8000 | route S white-sheet Picture 1, under-blend 0.55, white-thresh 232, rules pen, NO Picture 3 (staging_solo=false, 2 references)
+
+**Prompt.** [prompts/053-drew-seated-left-route-s-round-3-picture-3-off-seed-44.prompt.txt](prompts/053-drew-seated-left-route-s-round-3-picture-3-off-seed-44.prompt.txt)
+
+**Verdict.** 12/20 - identity 2, pose 3, seat 4, clean 3. The clearest back view and the cleanest key of the four (0.1053 outside the sticker). Knit vest and standing collar read well, but the neck breaks between the collar and a grey head wedge over the window.
+
+*Logged 17:21.*
+
+---
+
+## 054. Drew seated left - route S round 3 contact sheet - Picture 3 OFF
+
+![Drew seated left - route S round 3 contact sheet - Picture 3 OFF](images/054-drew-seated-left-route-s-round-3-contact-sheet-picture-3-off.png)
+
+**The ask.** One contact sheet of the four round-3 laid crops with seed and total in the caption.
+
+**The thinking.** Round 3's one change was Picture 3 OFF. The sheet is the four laid previews cropped x 0-800, y 600-1600 at 1x. Read left to right: the front view and the martini that dominated round 2 are gone at every seed, and the body now reads from behind with the knit vest across the shoulder blades and the chair back in front of the lower body. The whole of the remaining failure has moved into the head - at all four seeds the head above the chair back comes back as a pale wedge or ribbon with no skull and no eye, and at seed 21 it detaches entirely. Measured: the head/neck band (y826-1130) is paler than the body band (y1130-1400) at every seed (mean tone 152/122/169 vs 137/112/142), which is the head being the one part of the under-drawing with no chair pixels beside it to anchor it.
+
+**Settings.** build-round3-sheet.py, four laid crops at 1x, captions from round-3-scores.json
+
+**Verdict.** Round 3 FAILS the gate (PASS = total >= 17 with no score below 4). Best seed 41 at 13/20, up from round 2's best of 11. The change did what it was predicted to do - the pose bug was Picture 3 - but it bought about 2 points, not the 3-4 hoped, because it exposed a head that the under-drawing is too faint to specify. Round 4: --under-blend 0.55 -> 0.30.
+
+*Logged 17:21.*
+
+---
+
+## 055. Drew seated left - route S round 4 under-blend 0.30 - seed 7
+
+![Drew seated left - route S round 4 under-blend 0.30 - seed 7](images/055-drew-seated-left-route-s-round-4-under-blend-0-30-seed-7.png)
+
+**The ask.** Team Drew 3, round 4 (route S). Seat Drew in the LEFT leather club chair of the approved plate, seen from behind and a little to his left, head turned right in three-quarter so the bill and one lidded eye read, knit vest and collar above the chair back, chair back in front of his lower body. Room pixels must stay untouched. Round 4's single change: --under-blend 0.55 -> 0.30 (darken the under-drawing so the head band carries tone). Picture 3 stays OFF.
+
+**The thinking.** Round 3 won the body and moved the whole failure into the head: at every seed the head above the chair back came back as a pale wedge with no skull and no eye. Measured cause was that the head/neck band of the under-drawing is paler than the body band, so the head is the one stretch of Picture 1 where the model is told least. This round darkens the under-drawing (--under-blend 0.30) and changes nothing else. Deliberately NOT touching --white-thresh: the drawing itself is wrong, and raising the key would only lay a mangled head more solidly. NOTE: the round's literal command line carried --staging-solo (Picture 3 ON) and no --under-blend, which is exactly round 2's configuration and would have applied none of this round's stated change; I ran the round as stated instead - 0.30, Picture 3 OFF, 2 references - and flagged it.
+
+**Settings.** route S, local/qwen-image-edit-2511 via AuraVision 127.0.0.1:8000, --under-blend 0.30, --white-thresh 232, Picture 3 OFF (2 references), rules=pen, box 20,700,660,1500, roi 140,770,620,1340, seed 7
+
+**Prompt.** [prompts/055-drew-seated-left-route-s-round-4-under-blend-0-30-seed-7.prompt.txt](prompts/055-drew-seated-left-route-s-round-4-under-blend-0-30-seed-7.prompt.txt)
+
+**Verdict.** 8/20. FAIL. Body/vest/collar/bow tie read from behind, but the head is still a folded feathered ribbon - no skull, no bill, no eye. Chair studs and marble fragments keyed into the sticker (93 blobs, cleanliness 0.153). identity 2, pose 2, seat 2, cleanliness 2.
+
+*Logged 17:37.*
+
+---
+
+## 056. Drew seated left - route S round 4 under-blend 0.30 - seed 21
+
+![Drew seated left - route S round 4 under-blend 0.30 - seed 21](images/056-drew-seated-left-route-s-round-4-under-blend-0-30-seed-21.png)
+
+**The ask.** Team Drew 3, round 4 (route S). Seat Drew in the LEFT leather club chair of the approved plate, seen from behind and a little to his left, head turned right in three-quarter so the bill and one lidded eye read, knit vest and collar above the chair back, chair back in front of his lower body. Room pixels must stay untouched. Round 4's single change: --under-blend 0.55 -> 0.30 (darken the under-drawing so the head band carries tone). Picture 3 stays OFF.
+
+**The thinking.** Second seed of the 0.30 sweep, same settings, sequential.
+
+**Settings.** route S, local/qwen-image-edit-2511 via AuraVision 127.0.0.1:8000, --under-blend 0.30, --white-thresh 232, Picture 3 OFF (2 references), rules=pen, box 20,700,660,1500, roi 140,770,620,1340, seed 21
+
+**Prompt.** [prompts/056-drew-seated-left-route-s-round-4-under-blend-0-30-seed-21.prompt.txt](prompts/056-drew-seated-left-route-s-round-4-under-blend-0-30-seed-21.prompt.txt)
+
+**Verdict.** 7/20. FAIL, worst of the four. The bill and eye are drawn beautifully but float COMPLETELY DETACHED above the body with no skull, the neck ending in feathers. Head band tone did invert correctly (115.3 head vs 118.1 body, vs 122/112 in round 3). topmost-blob scale 0.17, mask covered 0.57, 141 blobs. identity 2, pose 2, seat 1, cleanliness 2.
+
+*Logged 17:37.*
+
+---
+
+## 057. Drew seated left - route S round 4 under-blend 0.30 - seed 41
+
+![Drew seated left - route S round 4 under-blend 0.30 - seed 41](images/057-drew-seated-left-route-s-round-4-under-blend-0-30-seed-41.png)
+
+**The ask.** Team Drew 3, round 4 (route S). Seat Drew in the LEFT leather club chair of the approved plate, seen from behind and a little to his left, head turned right in three-quarter so the bill and one lidded eye read, knit vest and collar above the chair back, chair back in front of his lower body. Room pixels must stay untouched. Round 4's single change: --under-blend 0.55 -> 0.30 (darken the under-drawing so the head band carries tone). Picture 3 stays OFF.
+
+**The thinking.** Third seed of the 0.30 sweep, same settings, sequential.
+
+**Settings.** route S, local/qwen-image-edit-2511 via AuraVision 127.0.0.1:8000, --under-blend 0.30, --white-thresh 232, Picture 3 OFF (2 references), rules=pen, box 20,700,660,1500, roi 140,770,620,1340, seed 41
+
+**Prompt.** [prompts/057-drew-seated-left-route-s-round-4-under-blend-0-30-seed-41.prompt.txt](prompts/057-drew-seated-left-route-s-round-4-under-blend-0-30-seed-41.prompt.txt)
+
+**Verdict.** 9/20. FAIL. Best body of the four - proper small black bow tie, white collar, knit V-neck vest, feathered hand with fingers on the marble, seen from behind and a little to his left. Head still a folded wedge with a wire bill and a dot for an eye; in the laid it reads as a pale grey chevron smear on the wall. Head/body tone gap closed from +27 to +3.3 (140.1 vs 136.8). identity 2, pose 3, seat 2, cleanliness 2.
+
+*Logged 17:37.*
+
+---
+
+## 058. Drew seated left - route S round 4 under-blend 0.30 - seed 44 - BEST
+
+![Drew seated left - route S round 4 under-blend 0.30 - seed 44 - BEST](images/058-drew-seated-left-route-s-round-4-under-blend-0-30-seed-44-best.png)
+
+**The ask.** Team Drew 3, round 4 (route S). Seat Drew in the LEFT leather club chair of the approved plate, seen from behind and a little to his left, head turned right in three-quarter so the bill and one lidded eye read, knit vest and collar above the chair back, chair back in front of his lower body. Room pixels must stay untouched. Round 4's single change: --under-blend 0.55 -> 0.30 (darken the under-drawing so the head band carries tone). Picture 3 stays OFF.
+
+**The thinking.** Fourth seed of the 0.30 sweep, same settings, sequential.
+
+**Settings.** route S, local/qwen-image-edit-2511 via AuraVision 127.0.0.1:8000, --under-blend 0.30, --white-thresh 232, Picture 3 OFF (2 references), rules=pen, box 20,700,660,1500, roi 140,770,620,1340, seed 44
+
+**Prompt.** [prompts/058-drew-seated-left-route-s-round-4-under-blend-0-30-seed-44-best.prompt.txt](prompts/058-drew-seated-left-route-s-round-4-under-blend-0-30-seed-44-best.prompt.txt)
+
+**Verdict.** 10/20. BEST OF ROUND, still FAIL. FIRST REAL HEAD in four rounds: a genuine rounded skull joined to the S-neck, an eye and a full bill, over the white collar and knit V-neck vest, feathered hand with fingers on the marble. Misses: head reads FULL PROFILE not three-quarter, head too large to be the portrait's small refined head, bill lacks the black outer third, eye round not heavy-lidded, and he sits above the chair rather than down in it (scale 0.79). Best cleanliness of the round (0.0825) and best mask coverage (0.854). identity 3, pose 2, seat 2, cleanliness 3.
+
+*Logged 17:37.*
+
+---
+
+## 059. Drew round 4 contact sheet - four seeds at under-blend 0.30
+
+![Drew round 4 contact sheet - four seeds at under-blend 0.30](images/059-drew-round-4-contact-sheet-four-seeds-at-under-blend-0-30.png)
+
+**The ask.** One contact sheet of the four round-4 laid crops with seed and total in the caption.
+
+**The thinking.** Four seeds at the same settings so the head failure can be compared across them. The sheet is what shows the round's real result: seed 44 is the first render in four rounds with an actual skull, eye and bill, while 7, 21 and 41 still put a pale wedge or a detached bill above the collar - so the head fix is seed-dependent, not settled.
+
+**Settings.** laid previews cropped x0-800 y600-1600 at 1x, seeds 7/21/41/44, route S, --under-blend 0.30, Picture 3 OFF
+
+**Verdict.** Round 4 FAILS: best total 10/20 (seed 44), threshold is 17 with nothing below 4. Darkening the under-drawing did move the drawing - one seed in four now draws a real head, where round 3 drew none - but it did not settle it, and measurement shows the lever is now exhausted.
+
+*Logged 17:37.*
+
+---
+
