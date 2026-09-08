@@ -1,0 +1,835 @@
+{
+  "_doc": "Measured in scripts/draw-room-lines.py. One entry per bottle in the inlaid recess. `quad` is the label's box on the page - four corners, CLOCKWISE FROM TOP-LEFT - in the same convention as quads.json, so a typeset name is warped onto THOSE corners the way sign-on-glass.py warps the gilding onto the pane. `shape` is how the paper is cut (rectangle, band, oval, shield): inset the type for oval and shield. `brand` is the house name that belongs on this bottle and it is the ONLY place a bottle name is ever written - the block-in hands the model a blank patch. `brand` follows the round's own rule: labels sorted by area, the canon names sorted longest first, cycled - so the longest name never lands on the smallest patch, and a name can repeat on a shelf of twenty bottles as a real back bar's do. `brandForKind` is the same list read the other way, one whose category word matches the bottle's silhouette, for a pass that wants a kind-true shelf instead. Regenerate whenever the camera, the recess or the rows move.",
+  "font": {
+    "minLabelPx": 34.0,
+    "minLabelWidthPx": 34.0,
+    "capHeightMinPx": 6.0,
+    "note": "every label on this shelf clears both floors. Set the brand's LONGEST WORD to the label's inner width at a cap height of at least capHeightMinPx; under that, set the brand's initials as a monogram between the rules instead"
+  },
+  "brands": [
+    "BIRDIE BOURBON",
+    "DIVOT DRIVE GIN",
+    "PAR-TEE SCOTCH",
+    "19TH HOLE RYE",
+    "ROUGH RIDER GIN",
+    "TEE TIME TENNESSEE WHISKEY",
+    "EAGLE EYE VODKA",
+    "CADDY'S CHOICE RUM",
+    "BACK NINE",
+    "BUNKER"
+  ],
+  "brandsByKind": {
+    "bourbon": [
+      "BIRDIE BOURBON"
+    ],
+    "scotch": [
+      "PAR-TEE SCOTCH"
+    ],
+    "rum": [
+      "CADDY'S CHOICE RUM"
+    ],
+    "gin": [
+      "DIVOT DRIVE GIN",
+      "ROUGH RIDER GIN"
+    ],
+    "rye": [
+      "19TH HOLE RYE"
+    ],
+    "vodka": [
+      "EAGLE EYE VODKA"
+    ],
+    "whiskey": [
+      "TEE TIME TENNESSEE WHISKEY"
+    ],
+    "tequila": [
+      "BACK NINE",
+      "BUNKER"
+    ]
+  },
+  "labels": [
+    {
+      "kind": "bourbon",
+      "shape": "shield",
+      "glass": "dark",
+      "fill": 0.732,
+      "shoulder": 0.61,
+      "fillV": 0.4465,
+      "height": 0.32,
+      "width": 0.161,
+      "quad": [
+        [
+          525.3,
+          854.3
+        ],
+        [
+          565.9,
+          854.9
+        ],
+        [
+          565.9,
+          889.8
+        ],
+        [
+          525.3,
+          889.0
+        ]
+      ],
+      "widthPx": 40.6,
+      "heightPx": 34.7,
+      "emptyBandPx": 14.9,
+      "liquidAboveLabelPx": 3.7,
+      "world": {
+        "x": -0.2499,
+        "base": 1.35,
+        "z": 4.16,
+        "labelY": [
+          1.3566,
+          1.4708
+        ],
+        "fillY": 1.4839,
+        "shoulderY": 1.533,
+        "fillPx": 850.6,
+        "shoulderPx": 835.7,
+        "topPx": 793.9,
+        "basePx": 891.4
+      },
+      "part": "bottles-lower",
+      "row": "lower",
+      "index": 0,
+      "gapLeft": null,
+      "headroom": 0.17,
+      "brand": "BUNKER",
+      "areaRank": 9,
+      "letterable": true,
+      "brandForKind": "BIRDIE BOURBON"
+    },
+    {
+      "kind": "scotch",
+      "shape": "oval",
+      "glass": "dark",
+      "fill": 0.686,
+      "shoulder": 0.63,
+      "fillV": 0.4324,
+      "height": 0.324,
+      "width": 0.1505,
+      "quad": [
+        [
+          592.8,
+          855.7
+        ],
+        [
+          631.6,
+          856.2
+        ],
+        [
+          631.6,
+          891.1
+        ],
+        [
+          592.8,
+          890.4
+        ]
+      ],
+      "widthPx": 38.8,
+      "heightPx": 34.7,
+      "emptyBandPx": 18.7,
+      "liquidAboveLabelPx": 3.7,
+      "world": {
+        "x": -0.0229,
+        "base": 1.35,
+        "z": 4.16,
+        "labelY": [
+          1.3565,
+          1.4693
+        ],
+        "fillY": 1.4823,
+        "shoulderY": 1.5428,
+        "fillPx": 851.9,
+        "shoulderPx": 833.3,
+        "topPx": 792.8,
+        "basePx": 892.7
+      },
+      "part": "bottles-lower",
+      "row": "lower",
+      "index": 1,
+      "gapLeft": 0.0713,
+      "headroom": 0.166,
+      "brand": "DIVOT DRIVE GIN",
+      "areaRank": 12,
+      "letterable": true,
+      "brandForKind": "PAR-TEE SCOTCH"
+    },
+    {
+      "kind": "rum",
+      "shape": "band",
+      "glass": "dark",
+      "fill": 0.718,
+      "shoulder": 0.595,
+      "fillV": 0.4269,
+      "height": 0.324,
+      "width": 0.1785,
+      "quad": [
+        [
+          658.0,
+          857.0
+        ],
+        [
+          704.5,
+          857.6
+        ],
+        [
+          704.5,
+          892.6
+        ],
+        [
+          658.0,
+          891.7
+        ]
+      ],
+      "widthPx": 46.5,
+      "heightPx": 34.7,
+      "emptyBandPx": 16.1,
+      "liquidAboveLabelPx": 3.7,
+      "world": {
+        "x": 0.2065,
+        "base": 1.35,
+        "z": 4.16,
+        "labelY": [
+          1.3564,
+          1.4678
+        ],
+        "fillY": 1.4806,
+        "shoulderY": 1.5321,
+        "fillPx": 853.3,
+        "shoulderPx": 837.2,
+        "topPx": 792.9,
+        "basePx": 894.1
+      },
+      "part": "bottles-lower",
+      "row": "lower",
+      "index": 2,
+      "gapLeft": 0.0649,
+      "headroom": 0.166,
+      "brand": "PAR-TEE SCOTCH",
+      "areaRank": 6,
+      "letterable": true,
+      "brandForKind": "CADDY'S CHOICE RUM"
+    },
+    {
+      "kind": "gin",
+      "shape": "rectangle",
+      "glass": "clear",
+      "fill": 0.698,
+      "shoulder": 0.62,
+      "fillV": 0.4326,
+      "height": 0.315,
+      "width": 0.147,
+      "quad": [
+        [
+          734.8,
+          858.5
+        ],
+        [
+          775.3,
+          859.0
+        ],
+        [
+          775.3,
+          894.0
+        ],
+        [
+          734.8,
+          893.2
+        ]
+      ],
+      "widthPx": 40.5,
+      "heightPx": 34.7,
+      "emptyBandPx": 17.7,
+      "liquidAboveLabelPx": 3.7,
+      "world": {
+        "x": 0.4455,
+        "base": 1.35,
+        "z": 4.16,
+        "labelY": [
+          1.3563,
+          1.4663
+        ],
+        "fillY": 1.4789,
+        "shoulderY": 1.5348,
+        "fillPx": 854.8,
+        "shoulderPx": 837.1,
+        "topPx": 795.9,
+        "basePx": 895.6
+      },
+      "part": "bottles-lower",
+      "row": "lower",
+      "index": 3,
+      "gapLeft": 0.0763,
+      "headroom": 0.175,
+      "brand": "TEE TIME TENNESSEE WHISKEY",
+      "areaRank": 10,
+      "letterable": true,
+      "brandForKind": "DIVOT DRIVE GIN"
+    },
+    {
+      "kind": "tequila",
+      "shape": "shield",
+      "glass": "clear",
+      "fill": 0.755,
+      "shoulder": 0.6,
+      "fillV": 0.453,
+      "height": 0.331,
+      "width": 0.168,
+      "quad": [
+        [
+          806.3,
+          856.4
+        ],
+        [
+          853.9,
+          857.0
+        ],
+        [
+          853.9,
+          892.0
+        ],
+        [
+          806.3,
+          891.1
+        ]
+      ],
+      "widthPx": 47.5,
+      "heightPx": 34.7,
+      "emptyBandPx": 14.4,
+      "liquidAboveLabelPx": 3.7,
+      "world": {
+        "x": 0.6821,
+        "base": 1.35,
+        "z": 4.16,
+        "labelY": [
+          1.3672,
+          1.4757
+        ],
+        "fillY": 1.4882,
+        "shoulderY": 1.533,
+        "fillPx": 852.7,
+        "shoulderPx": 838.4,
+        "topPx": 790.9,
+        "basePx": 897.1
+      },
+      "part": "bottles-lower",
+      "row": "lower",
+      "index": 4,
+      "gapLeft": 0.0791,
+      "headroom": 0.159,
+      "brand": "BIRDIE BOURBON",
+      "areaRank": 5,
+      "letterable": true,
+      "brandForKind": "BACK NINE"
+    },
+    {
+      "kind": "rye",
+      "shape": "oval",
+      "glass": "dark",
+      "fill": 0.76,
+      "shoulder": 0.5,
+      "fillV": 0.3802,
+      "height": 0.358,
+      "width": 0.182,
+      "quad": [
+        [
+          888.7,
+          861.6
+        ],
+        [
+          929.1,
+          862.1
+        ],
+        [
+          929.1,
+          897.0
+        ],
+        [
+          888.7,
+          896.2
+        ]
+      ],
+      "widthPx": 40.4,
+      "heightPx": 34.7,
+      "emptyBandPx": 12.9,
+      "liquidAboveLabelPx": 3.7,
+      "world": {
+        "x": 0.9241,
+        "base": 1.35,
+        "z": 4.16,
+        "labelY": [
+          1.3561,
+          1.4632
+        ],
+        "fillY": 1.4755,
+        "shoulderY": 1.515,
+        "fillPx": 857.8,
+        "shoulderPx": 845.0,
+        "topPx": 782.2,
+        "basePx": 898.6
+      },
+      "part": "bottles-lower",
+      "row": "lower",
+      "index": 5,
+      "gapLeft": 0.067,
+      "headroom": 0.132,
+      "brand": "CADDY'S CHOICE RUM",
+      "areaRank": 11,
+      "letterable": true,
+      "brandForKind": "19TH HOLE RYE"
+    },
+    {
+      "kind": "vodka",
+      "shape": "band",
+      "glass": "clear",
+      "fill": 0.637,
+      "shoulder": 0.66,
+      "fillV": 0.4202,
+      "height": 0.334,
+      "width": 0.147,
+      "quad": [
+        [
+          968.1,
+          859.9
+        ],
+        [
+          1011.6,
+          860.4
+        ],
+        [
+          1011.6,
+          898.7
+        ],
+        [
+          968.1,
+          897.8
+        ]
+      ],
+      "widthPx": 43.5,
+      "heightPx": 37.9,
+      "emptyBandPx": 25.1,
+      "liquidAboveLabelPx": 3.7,
+      "world": {
+        "x": 1.1656,
+        "base": 1.35,
+        "z": 4.16,
+        "labelY": [
+          1.3561,
+          1.4715
+        ],
+        "fillY": 1.4836,
+        "shoulderY": 1.5599,
+        "fillPx": 856.2,
+        "shoulderPx": 831.0,
+        "topPx": 790.1,
+        "basePx": 900.2
+      },
+      "part": "bottles-lower",
+      "row": "lower",
+      "index": 6,
+      "gapLeft": 0.077,
+      "headroom": 0.156,
+      "brand": "EAGLE EYE VODKA",
+      "areaRank": 4,
+      "letterable": true,
+      "brandForKind": "EAGLE EYE VODKA"
+    },
+    {
+      "kind": "whiskey",
+      "shape": "rectangle",
+      "glass": "dark",
+      "fill": 0.679,
+      "shoulder": 0.58,
+      "fillV": 0.3938,
+      "height": 0.33,
+      "width": 0.1715,
+      "quad": [
+        [
+          1042.2,
+          864.2
+        ],
+        [
+          1090.9,
+          864.9
+        ],
+        [
+          1090.9,
+          900.2
+        ],
+        [
+          1042.2,
+          899.3
+        ]
+      ],
+      "widthPx": 48.7,
+      "heightPx": 35.0,
+      "emptyBandPx": 19.5,
+      "liquidAboveLabelPx": 3.7,
+      "world": {
+        "x": 1.3882,
+        "base": 1.35,
+        "z": 4.16,
+        "labelY": [
+          1.356,
+          1.4613
+        ],
+        "fillY": 1.4732,
+        "shoulderY": 1.5315,
+        "fillPx": 860.6,
+        "shoulderPx": 841.1,
+        "topPx": 791.5,
+        "basePx": 901.8
+      },
+      "part": "bottles-lower",
+      "row": "lower",
+      "index": 7,
+      "gapLeft": 0.0634,
+      "headroom": 0.16,
+      "brand": "CADDY'S CHOICE RUM",
+      "areaRank": 1,
+      "letterable": true,
+      "brandForKind": "TEE TIME TENNESSEE WHISKEY"
+    },
+    {
+      "kind": "scotch",
+      "shape": "oval",
+      "glass": "dark",
+      "fill": 0.775,
+      "shoulder": 0.63,
+      "fillV": 0.4883,
+      "height": 0.324,
+      "width": 0.1505,
+      "quad": [
+        [
+          524.9,
+          691.9
+        ],
+        [
+          563.3,
+          691.2
+        ],
+        [
+          563.3,
+          726.1
+        ],
+        [
+          524.9,
+          726.5
+        ]
+      ],
+      "widthPx": 38.4,
+      "heightPx": 34.7,
+      "emptyBandPx": 13.2,
+      "liquidAboveLabelPx": 4.3,
+      "world": {
+        "x": -0.2551,
+        "base": 1.87,
+        "z": 4.16,
+        "labelY": [
+          1.892,
+          2.0063
+        ],
+        "fillY": 2.0194,
+        "shoulderY": 2.0628,
+        "fillPx": 687.5,
+        "shoulderPx": 674.3,
+        "topPx": 634.4,
+        "basePx": 733.0
+      },
+      "part": "bottles-upper",
+      "row": "upper",
+      "index": 0,
+      "gapLeft": null,
+      "headroom": 0.036,
+      "brand": "ROUGH RIDER GIN",
+      "areaRank": 13,
+      "letterable": true,
+      "brandForKind": "PAR-TEE SCOTCH"
+    },
+    {
+      "kind": "tequila",
+      "shape": "shield",
+      "glass": "clear",
+      "fill": 0.724,
+      "shoulder": 0.6,
+      "fillV": 0.4344,
+      "height": 0.329,
+      "width": 0.168,
+      "quad": [
+        [
+          618.0,
+          695.7
+        ],
+        [
+          661.8,
+          694.9
+        ],
+        [
+          661.8,
+          729.9
+        ],
+        [
+          618.0,
+          730.3
+        ]
+      ],
+      "widthPx": 43.9,
+      "heightPx": 34.7,
+      "emptyBandPx": 15.5,
+      "liquidAboveLabelPx": 4.4,
+      "world": {
+        "x": 0.0697,
+        "base": 1.87,
+        "z": 4.16,
+        "labelY": [
+          1.8765,
+          1.9887
+        ],
+        "fillY": 2.0016,
+        "shoulderY": 2.0518,
+        "fillPx": 691.3,
+        "shoulderPx": 675.8,
+        "topPx": 630.1,
+        "basePx": 732.1
+      },
+      "part": "bottles-upper",
+      "row": "upper",
+      "index": 1,
+      "gapLeft": 0.1656,
+      "headroom": 0.031,
+      "brand": "19TH HOLE RYE",
+      "areaRank": 7,
+      "letterable": true,
+      "brandForKind": "BUNKER"
+    },
+    {
+      "kind": "whiskey",
+      "shape": "rectangle",
+      "glass": "dark",
+      "fill": 0.735,
+      "shoulder": 0.58,
+      "fillV": 0.4263,
+      "height": 0.32,
+      "width": 0.1715,
+      "quad": [
+        [
+          725.7,
+          694.6
+        ],
+        [
+          769.5,
+          693.9
+        ],
+        [
+          769.5,
+          728.8
+        ],
+        [
+          725.7,
+          729.3
+        ]
+      ],
+      "widthPx": 43.8,
+      "heightPx": 34.7,
+      "emptyBandPx": 14.7,
+      "liquidAboveLabelPx": 4.4,
+      "world": {
+        "x": 0.4216,
+        "base": 1.87,
+        "z": 4.16,
+        "labelY": [
+          1.8764,
+          1.9865
+        ],
+        "fillY": 1.9992,
+        "shoulderY": 2.0457,
+        "fillPx": 690.2,
+        "shoulderPx": 675.5,
+        "topPx": 629.9,
+        "basePx": 731.1
+      },
+      "part": "bottles-upper",
+      "row": "upper",
+      "index": 2,
+      "gapLeft": 0.1821,
+      "headroom": 0.04,
+      "brand": "BACK NINE",
+      "areaRank": 8,
+      "letterable": true,
+      "brandForKind": "TEE TIME TENNESSEE WHISKEY"
+    },
+    {
+      "kind": "rum",
+      "shape": "band",
+      "glass": "dark",
+      "fill": 0.702,
+      "shoulder": 0.595,
+      "fillV": 0.4177,
+      "height": 0.325,
+      "width": 0.1785,
+      "quad": [
+        [
+          827.0,
+          693.2
+        ],
+        [
+          876.3,
+          692.4
+        ],
+        [
+          876.3,
+          727.8
+        ],
+        [
+          827.0,
+          728.3
+        ]
+      ],
+      "widthPx": 49.4,
+      "heightPx": 35.1,
+      "emptyBandPx": 17.5,
+      "liquidAboveLabelPx": 4.4,
+      "world": {
+        "x": 0.7489,
+        "base": 1.87,
+        "z": 4.16,
+        "labelY": [
+          1.8762,
+          1.9858
+        ],
+        "fillY": 1.9982,
+        "shoulderY": 2.0527,
+        "fillPx": 688.8,
+        "shoulderPx": 671.3,
+        "topPx": 625.4,
+        "basePx": 730.1
+      },
+      "part": "bottles-upper",
+      "row": "upper",
+      "index": 3,
+      "gapLeft": 0.1523,
+      "headroom": 0.035,
+      "brand": "TEE TIME TENNESSEE WHISKEY",
+      "areaRank": 0,
+      "letterable": true,
+      "brandForKind": "CADDY'S CHOICE RUM"
+    },
+    {
+      "kind": "bourbon",
+      "shape": "shield",
+      "glass": "dark",
+      "fill": 0.745,
+      "shoulder": 0.61,
+      "fillV": 0.4544,
+      "height": 0.311,
+      "width": 0.161,
+      "quad": [
+        [
+          943.5,
+          689.9
+        ],
+        [
+          991.3,
+          689.1
+        ],
+        [
+          991.3,
+          724.1
+        ],
+        [
+          943.5,
+          724.6
+        ]
+      ],
+      "widthPx": 47.8,
+      "heightPx": 34.7,
+      "emptyBandPx": 14.9,
+      "liquidAboveLabelPx": 4.4,
+      "world": {
+        "x": 1.0991,
+        "base": 1.87,
+        "z": 4.16,
+        "labelY": [
+          1.8841,
+          1.9901
+        ],
+        "fillY": 2.0022,
+        "shoulderY": 2.0475,
+        "fillPx": 685.5,
+        "shoulderPx": 670.6,
+        "topPx": 626.8,
+        "basePx": 728.9
+      },
+      "part": "bottles-upper",
+      "row": "upper",
+      "index": 4,
+      "gapLeft": 0.1805,
+      "headroom": 0.049,
+      "brand": "ROUGH RIDER GIN",
+      "areaRank": 3,
+      "letterable": true,
+      "brandForKind": "BIRDIE BOURBON"
+    },
+    {
+      "kind": "gin",
+      "shape": "rectangle",
+      "glass": "clear",
+      "fill": 0.674,
+      "shoulder": 0.62,
+      "fillV": 0.4177,
+      "height": 0.326,
+      "width": 0.147,
+      "quad": [
+        [
+          1048.2,
+          689.2
+        ],
+        [
+          1093.4,
+          688.4
+        ],
+        [
+          1093.4,
+          725.7
+        ],
+        [
+          1048.2,
+          726.2
+        ]
+      ],
+      "widthPx": 45.1,
+      "heightPx": 37.0,
+      "emptyBandPx": 20.9,
+      "liquidAboveLabelPx": 4.4,
+      "world": {
+        "x": 1.4005,
+        "base": 1.87,
+        "z": 4.16,
+        "labelY": [
+          1.876,
+          1.9871
+        ],
+        "fillY": 1.9991,
+        "shoulderY": 2.0616,
+        "fillPx": 684.8,
+        "shoulderPx": 663.9,
+        "topPx": 618.9,
+        "basePx": 728.0
+      },
+      "part": "bottles-upper",
+      "row": "upper",
+      "index": 5,
+      "gapLeft": 0.1474,
+      "headroom": 0.034,
+      "brand": "DIVOT DRIVE GIN",
+      "areaRank": 2,
+      "letterable": true,
+      "brandForKind": "ROUGH RIDER GIN"
+    }
+  ]
+}

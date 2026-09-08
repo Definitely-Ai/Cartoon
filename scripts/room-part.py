@@ -525,6 +525,10 @@ def cmd_build(_a) -> None:
     from ink import ink_edges
     plate = ink_edges(plate, man)                # the straight edges of the marble, in code
     save(plate, KIT / "plate.png")
+    if any(p["id"].startswith("bottles-") and p.get("source") and p.get("enabled", True) for p in man["parts"])             and (KIT / "labels.json").exists():
+        # the bottle labels are typeset in code onto the label quads (lettering is never the model's)
+        subprocess.run([sys.executable, str(ROOT / "scripts/label-bottles.py"),
+                        str(KIT / "plate.png"), str(KIT / "plate.png")], check=True)
     print(f"wrote {(KIT / 'plate.png').relative_to(ROOT)}")
     glass = next((p for p in man["parts"] if p["id"] == "glass"), None)
     if glass and glass.get("source"):

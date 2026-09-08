@@ -109,87 +109,178 @@ LEDGE_DEPTH = 0.45              # deeper than the shelves: a counter, not a shel
 LEDGE_LIP = 0.04                # a thin slab edge, like the main bar's
 CABINET_DOORS = 6               # two per section, so the door joints meet the uprights above
 PLINTH_H = 0.10
-# --------------------------------------------------- C3-SLAB: the shelf unit
-# The ledge and the cabinets are APPROVED and keep BACKBAR_X. The shelf unit
-# above them is a SEPARATE build with its OWN extent, because BACKBAR_X[1] =
-# 2.16 m projects to px 1386 - a hundred and eighty px outside a 1200 px frame -
-# so no unit built on it can ever show a right-hand end. That missing end is
-# what the founder saw as "one of the dividers on the right side of the shelf
-# is gone" (2026-09-05). The unit STOPS at 1.55 m, px 1133, and the marble
-# ledge runs on past it out of frame, which is how a real back bar reads: a
-# shelf unit standing on a longer counter.
-SHELF_X = (-0.43, 1.55)         # the SHELF UNIT's own extent, not the ledge's.
-                                # left cheek  px 435.8..473.4, and 46 px of clean
-                                #   lit panel field between it and the corner
-                                #   stile's lit edge at px 389.4
-                                # right cheek px 1085.1..1132.6, INSIDE the frame,
-                                #   its cast shadow ending at px 1147 with 40 px
-                                #   of clean wall before the stile at world 1.78
-DIVIDER_X = 0.56                # the one divider, placed by PROJECTED clearance:
-                                # it clears the stile at world 0.06 by 97 px and
-                                # the stile at world 0.92 by 62 px, and it falls
-                                # on the unit's centre, so the two bays come out
-                                # as equal 0.81 m openings
-CHEEK_W = 0.12                  # 12 cm posts: 38, 42 and 47 px of front face on
-                                # the page. 4.5 cm was 15 px - a line, not a
-                                # member - and 15 px of tone beside a 45 px stile
-                                # is what "they look like they are a part of the
-                                # wall" means
-SHELF_T = 0.085                 # a HEAVY slab: 8.5 cm of solid walnut on edge,
-                                # 29-31 px of front edge, so the lit arris, the
-                                # board and the undercut are all members and not
-                                # one of them is a hairline (round-2 critics)
-SHELF_DEPTH = 0.35              # deep enough that the two posts away from the
-                                # camera axis turn a 18.7 px and a 38.8 px side
-                                # face. The right cheek stands 0.10 m off the
-                                # camera axis and turns 2.9 px, which is edge-on:
-                                # see SIDE_MIN_PX
-SHELF_YS = (1.48, 2.00)         # top of each slab. Two compartments of 0.395 and
-                                # 0.435 m clear - both take a 0.35 m bottle
-                                # standing up, which is the tallest this script
-                                # draws (the round-2 critics asked for 0.33 m)
-UNIT_TOP = SHELF_YS[1] + 0.11   # THE HEAD. The posts run 11 cm - 36 px - PAST
-                                # the upper slab and stop there, so the top of
-                                # the unit is three solid post heads with the
-                                # wall's own panelling between them. Stopping
-                                # the posts flush with the slab left the head as
-                                # a board, an arris and an undercut piled on a
-                                # top edge: four thin horizontals and nothing
-                                # solid, which is the hairline stack the round-2
-                                # critics called out. Still OPEN ABOVE: no top
-                                # rail, no cornice, and the panelling runs on
-                                # from the post heads to the frieze rail
-BACKBAR_Y = (LEDGE_H, UNIT_TOP)
-# A post is FOUR strips across its 12 cm face, not one flat tone: (width, top
-# value, bottom value). The two bright strips are 26 of the 47 px of the right
-# cheek and they sit at 158-220 against a wall that reads 137-144 behind it, so
-# the cheek is a LIT MEMBER standing in front of the opening it frames rather
-# than a dark stripe that reads as the edge of a recess (round-2 critics).
-POST_STRIPS = ((0.030, 220, 208),      # the lit arris down the window side
-               (0.045, 190, 158),      # the face, still catching the window
-               (0.021, 136, 102),      # turning away
-               (0.024,  34,  24))      # the shadowed arris down the other side
-POST_ARRIS = POST_STRIPS[0][0]
-POST_DARK = POST_STRIPS[-1][0]
-SLAB_ARRIS = 0.032              # the lit arris on a slab front edge: 11 px at 198+
-SLAB_UNDER = 0.014              # the dark undercut beneath it
-POST_SHADOW = 0.05              # what a post throws on the wall beside it
-SLAB_SHADOW = 0.16              # and a slab beneath it: 50 px, MULTIPLIED, so
-                                # the panelling still modulates through it
-SLAB_CORE = 0.03                # the hard core of that shadow, at the contact
+# ------------------------------------------------- I1-FLUSH: the inlaid unit
+# The founder, 2026-09-08: "i dont like the shelf now that i see what you
+# pointed out we need a inlaid shelf that has 2 rows of bottle and then an area
+# to make drinks below it on the bartenders bar make sure it looks inlaid into
+# the wall dont messup the walls look or carry the walls look into the shelf".
+#
+# So the unit stops being a carcass STANDING ON the ledge. It is a HOLE cut into
+# the panelling with a slim flat band round it, and four things follow:
+#
+#   FLUSH.  The face frame lies IN the wall plane, ZF_REC = WALL_Z. Nothing is
+#           proud of the panelling, so the unit throws NOTHING on the wall
+#           outside it and the wall is not disturbed, only cut - which is what
+#           "dont messup the walls look" asks for. What makes the frame read is
+#           its tone and a joint line at each edge, nothing else.
+#   ITS OWN MATERIAL.  The lining is plain vertical walnut boards at ZB_REC,
+#           quiet and a little darker than the wall, with NO raised-and-fielded
+#           panels: "dont ... carry the walls look into the shelf". And a dark
+#           rectangle inside a frame renders as a picture or a switched-off
+#           screen, so the interior is given real texture - ten wide boards, a
+#           joint between each, grain in every one - and both rows of bottles
+#           stand IN FRONT of it. It is never handed over empty.
+#   TWO ROWS.  Two 3 cm boards, 0.49 m and 0.39 m clear: both well over the
+#           0.33 m a standing bottle needs.
+#   THE DRINKS AREA.  The marble ledge runs on underneath as the bartender's
+#           bar, and between the marble and the bottom of the opening the WALL'S
+#           OWN PANELLING is the back of it. Round 3 deleted the plain band this
+#           unit used to draw there: see FRAME_Y below.
+RECESS_D = 0.40                 # how far the recess is cut back into the wall.
+                                # 0.40 turns a 39.6 px left reveal at this
+                                # camera; the right reveal is edge-on whatever
+                                # this number is - see RIGHT_ARRIS
+ZF_REC = WALL_Z                 # THE FACE FRAME IS FLUSH. No architrave, no
+                                # proud member, no cast shadow on the panelling
+ZB_REC = WALL_Z + RECESS_D      # the lining, at the back of the cut
+FACE_W = 0.085                  # the face frame: ONE slim flat band, 8.5 cm.
+                                # 24.9 px down its left side, 31.3 px down its
+                                # right, 28.0 px top and bottom - every side
+                                # over the 20 px under which a member vanishes.
+                                # 6 cm would have been 18 px on the left
+RECESS_Y = (1.32, 2.23)         # the opening: bottom, head. The head came DOWN
+                                # 3 cm in round 3. The bare wall over the frame
+                                # was quoted as 34.6 rows, but that was one
+                                # subtraction taken at the MIDDLE column: the
+                                # frieze rail runs 31 rows downhill from the
+                                # right of the opening to the left and the
+                                # frame's top edge runs downhill with it, so the
+                                # gap has to be measured column by column
+                                # against 01-values-base.png. Measured that way
+                                # it was 29 px at its worst against the mask and
+                                # 22 px against the footprint the conditioning
+                                # actually lays (the mask grown 4 and feathered
+                                # 1.5) - under the 25 px the wall needs to read
+                                # as wall. 3 cm is 8 px here and buys both back.
+                                # The opening shrinks from the TOP ONLY: both
+                                # boards stay where they are and the upper
+                                # compartment still clears 0.36 m, well over the
+                                # 0.33 a standing bottle needs
+FRAME_Y = (RECESS_Y[0] - FACE_W, RECESS_Y[1] + FACE_W)
+# THERE IS NO SPLASHBACK. The unit stops dead at FRAME_Y[0] - the frame's outer
+# bottom edge - and the WALL'S OWN PANELLING runs on untouched from there down to
+# the marble at LEDGE_H. The plain band this unit used to draw in that gap was
+# not "inlaid", it was a patch: 53,161 px of finished panelling re-rendered over
+# 91 rows, and it ran into the marble ledge's own mask on the way down. An inlaid
+# unit cuts the wall and stops; it does not repaint the wall under itself.
+SHELF_T = 0.03                  # the founder's 3 cm board. 9.8 px of front edge
+                                # is UNDER the 20 px rule, so the thickness is
+                                # not asked to carry the shelf on its own: the
+                                # lower board reads as a lit 8.6 px top face
+                                # over a dark 9.8 px edge, the upper as a lit
+                                # 9.8 px edge over 3.4 px of underside and 30 px
+                                # of its own cast shadow. ONE member each way,
+                                # never three hairlines stacked
+SHELF_YS = (1.35, 1.87)         # TOP of each board. The lower board IS the
+                                # floor of the recess - nothing is left under it
+                                # for the model to read as an empty dark field -
+                                # and the upper one is 0.17 m ABOVE the eye, so
+                                # its underside shows. Anything within 0.15 m of
+                                # EYE 1.70 projects edge-on and reads as a line
+BOARD_W = 0.235                 # one board of the lining: 68 px at the left of
+                                # the opening, 84 px at the right. EIGHT across,
+                                # so the seven joints are 68-84 px apart. At
+                                # 14.5 cm the joints came out 40 px apart and the
+                                # lining read as reeding; at 19 cm they were
+                                # 53-64 and ten boards each carrying up to four
+                                # narrow hearts put it back there (founder,
+                                # 2026-09-08: "clean up the wood grain around the
+                                # shelf"). Wider boards are ALSO what a polished
+                                # walnut lining is made of: two fewer joints, two
+                                # fewer sets of figure, and the vertical
+                                # repetition down 20 per cent
+BOARD_JOINT = 0.006             # the joint between two boards: 1.7-2.0 px on
+                                # the page, and never wider. It was 0.018 (5 px)
+                                # with a hand() line ruled down the middle of it
+                                # at value 0, and those nine lines ran the full
+                                # height of the recess as black wires straight
+                                # across both bottle rows. The boards keep their
+                                # pitch (53-63 px) and their alternating tones -
+                                # only the joint got thin, and it stopped being
+                                # ink
+JOINT_K = 0.86                  # AND IT STOPPED BEING A VALUE. The joint and the
+GRAIN_K = 0.91                  # figure are MULTIPLIERS on the board's own tone
+FIGURE_DROP = 14.0              # now, k 0.86, floored so that neither can take a
+                                # board more than 14 below ITSELF AT THAT PIXEL
+                                # - not below the board's nominal tone, which
+                                # pins the floor above the board's own shaded
+                                # edge and leaves a joint landing there one
+                                # value deep instead of twelve. Nothing inside
+                                # the recess is written as an absolute value
+                                # except the boards: at the lining's tone
+                                # (84-118) grain()'s additive heart line lands in
+                                # the 60s and prints as a wire, and a hand() line
+                                # prints as a wire at 0 whatever the board under
+                                # it is doing. A multiplier cannot do either -
+                                # it is the same rule cast() has always followed
+# THE TWO PITCHES walnut is drawn at. Same construction (_figure_field), same
+# narrow-deep-heart idea, different scale - and the difference is the whole of
+# the founder's "clean up the wood grain around the shelf" (2026-09-08).
+#   THE WALL, unchanged and not to be changed: its panel fields are already in
+#         the approved plate. Two to three cycles across a 90 px field and two
+#         to four hearts 0.030 of it wide - 2.7 px - is cathedral grain on a
+#         lit panel.
+#   THE LINING, new: UNDER ONE CYCLE across a board, ONE OR TWO hearts, each
+#         0.095 of the board wide (6-8 px of sigma). Polished walnut with sparse
+#         soft figure. At the wall's numbers ten boards carried up to forty
+#         narrow near-vertical marks across the opening and the recess read as
+#         REEDING - the one thing the prompt has forbidden all along.
+GRAIN_FREQS = ((1.0, 1.7, 0.14), (2.1, 3.0, 0.07))
+GRAIN_HEARTS, GRAIN_HEART_W = (2, 4), 0.030
+LINING_FREQS = ((0.28, 0.52, 0.10), (0.62, 0.95, 0.05))
+LINING_HEARTS, LINING_HEART_W = (1, 3), 0.095
+LINING_V = (74.0, 60.0)         # the lining's tone, left to right - AND IT WENT
+                                # DOWN 44 (critic, 2026-09-08: "clear glass sits
+                                # ON the lining"). At 118-84 it ran through the
+                                # same values as a clear bottle's liquid and the
+                                # row read as a pattern painted on the back of
+                                # the box. At 60-74 it is what the back of a box
+                                # is - the darkest large field inside the frame -
+                                # and both materials clear it, the clear glass
+                                # from above and the dark spirits from below.
+                                # The wall's panel fields in the same bays read
+                                # about 130-155, so the interior now sits ~80
+                                # under the wall: a cut, and never a hole, since
+                                # its boards, joints and figure all survive
+FRAME_V = (186.0, 150.0)        # the flat band, left to right. It has to clear
+                                # the panel fields it is cut into by enough to
+                                # be a band and not a patch: measured on
+                                # 01-values.png it runs 26 over the wall on the
+                                # left and 20 on the right, and still sits below
+                                # the panels' own lit surrounds (~198), so it
+                                # reads as one quiet polished band of walnut and
+                                # never as another moulding
+HEAD_SHADE = 0.17               # what the head throws down the lining
+REVEAL_SHADE = 0.22             # and what the left reveal throws across it
 SHADOW_GAP = 0.009              # 3 px of clearance between a member's edge and
                                 # the first row of the shadow it throws. PIL
                                 # rasterises a polygon inclusively, so a shadow
                                 # that starts on the member's own edge shares
                                 # 1-2 px with its mask - and the assembler would
-                                # multiply the member's render by its own
-                                # shadow along that seam. The member's 2 px
-                                # stop-line sits in the gap, so nothing shows
-SIDE_MIN_PX = 10.0              # a side face narrower than this is edge-on: it
-                                # is merged into the arris it stands on instead
-                                # of being drawn as a plane of its own, which is
-                                # what a collapsed sliver looks like
-BOTTLE_PITCH = 0.152
+                                # multiply the member's render by its own shadow
+                                # along that seam
+SHELF_SHADOW = 0.12             # the upper board's shadow on the lining: 36 px
+BOTTLE_Z = WALL_Z + 0.16        # where a bottle stands: 16 cm back from the
+                                # face, 24 cm in front of the lining. Far enough
+                                # in that the frame reads in front of the row,
+                                # near enough out that no bottle is swallowed by
+                                # the left reveal and none is cut by the frame
+RIGHT_ARRIS = 0.012             # the right reveal stands 0.19 m from the
+                                # camera's own x and projects to 5 px - edge-on.
+                                # It is drawn as ONE lit arris on the opening's
+                                # right edge instead of as a plane of its own,
+                                # because a 5 px plane is not a plane, it is
+                                # what a collapsed member looks like
 # Both hang in the TOP tier and both respect the bays: the set is centred on
 # the first two bays with an even margin to the stiles either side, the board
 # is centred in the third. Straddling a stile at random was what made them look
@@ -287,6 +378,38 @@ def P(x: float, y: float, z: float) -> tuple[float, float]:
     xc = dx * c - dz * sn
     zc = max(dx * sn + dz * c, 0.05)
     return CX + F * xc / zc, CY - F * (y - EYE) / zc
+
+
+def _solve(f, target: float, lo: float, hi: float) -> float:
+    """Bisect for the world x whose PROJECTION lands on a page column.
+
+    Every number the founder and the critics argue about is in pixels and every
+    number this file is written in is in metres. Solving rather than guessing is
+    what keeps the unit's right-hand end inside the frame.
+    """
+    for _ in range(90):
+        m = (lo + hi) / 2
+        if f(m) < target:
+            lo = m
+        else:
+            hi = m
+    return round((lo + hi) / 2, 4)
+
+
+# WHERE THE CUT STARTS AND STOPS, solved in pixels and kept in metres.
+#   LEFT  outer edge at page 468. The corner stile is built 352.6..389.4 and
+#         renders about 24 px further right, so 468 leaves ~55 px of clean lit
+#         panel between the wall's own stile and the band - the band can never
+#         merge into it.
+#   RIGHT outer edge at page 1146. The stile at world 1.78 begins at 1187.2, so
+#         the unit stops 41 px clear of it AND 44 px inside the 1190 px line
+#         beyond which the frame cuts an object and the model re-imagines it.
+# The two stiles at world 0.06 and 0.92 fall INSIDE the opening and are simply
+# cut away by it - which is what an inlaid unit does to the panelling it is let
+# into. They run on above the frame and below it, untouched.
+FRAME_X = (_solve(lambda v: P(v, EYE, ZF_REC)[0], 468.0, -1.6, 1.0),
+           _solve(lambda v: P(v, EYE, ZF_REC)[0], 1146.0, 0.5, 3.0))
+RECESS_X = (FRAME_X[0] + FACE_W, FRAME_X[1] - FACE_W)
 
 
 _JIT = np.random.RandomState(20260904)
@@ -409,8 +532,11 @@ _X, _Y = np.meshgrid(np.arange(W, dtype=np.float32), np.arange(H, dtype=np.float
 # pixels that part is visible on. That is the mask the assembler cuts with.
 # Nobody traces an outline by hand any more.
 BASE_PARTS = ("ceiling", "back-wall", "return-wall", "floor")   # walls, crown, floor; nothing else
-DISABLED = (("bottles-lower", "bottles-upper", "sconce-left", "sconce-right", "chair-left", "chair-right",
-             "cabinets") + tuple(POSES))   # the chairs are ON in this copy: a seated
+DISABLED = (("sconce-left", "sconce-right",
+             "cabinets") + tuple(POSES))   # I1-FLUSH: BOTH BOTTLE ROWS ARE ON.
+                                                 # An inlaid unit with empty shelves is a
+                                                 # framed dark field, and the model renders
+                                                 # one of those as a picture or a screen   # the chairs are ON in this copy: a seated
                                                  # pose has to be cut by the leather that
                                                  # stands in front of it, so the chair must
                                                  # be drawn to have a mask to cut with.
@@ -423,8 +549,8 @@ DISABLED = (("bottles-lower", "bottles-upper", "sconce-left", "sconce-right", "c
 # face that runs on behind a post toward the wall - and there the post is in
 # front. Laying the carcass first is what let a slab's render creep over a
 # divider and take it off the page.
-LAY_ORDER = (("cabinets", "ledge", "shelf-lower", "bottles-lower", "bottles-upper",
-              "shelf-upper", "backbar", "tv", "board", "sconce-left", "sconce-right",
+LAY_ORDER = (("cabinets", "ledge", "backbar", "shelf-lower", "bottles-lower",
+              "bottles-upper", "shelf-upper", "tv", "board", "sconce-left", "sconce-right",
               "window-frame", "glass", "counter", "chair-left", "chair-right")
              + tuple(POSES))   # every pose AFTER the chairs: its own values block-in is
                                # then drawn with the chair already standing behind it
@@ -436,11 +562,11 @@ PART_NOTES = {
     "figure-abby-01-ledge": "ABBY-01 NEUTRAL AT THE LEDGE. Abby - the West Highland terrier proprietor, round soft show-groomed westie head with NO PROJECTING MUZZLE, her big black nose sitting DIRECTLY UNDER HER EYES, two small pricked ears both up, a studded leather collar with one teardrop gem, a fitted light blouse open two buttons with the sleeves rolled back - STANDING ON THE FAR SERVICE SIDE, DIRECTLY ACROSS THE MARBLE FROM THE TWO SEATED GENTLEMEN, body turned -22 degrees into the frame toward them, head yaw -34 degrees and looking DOWN at them, the line from eye-centre to nose tip 10 degrees below horizontal - she stands while they sit, so her head is HIGHER in the frame than either of theirs. BOTH EYES ARE DRAWN, the far one at least half the width of the near one. A warm closed-lip smile, corners clearly up. One hand closed on a working object on the marble; the towel over her LEFT shoulder and her hands empty of it. THE COUNTER'S FAR EDGE CROSSES HER AT THE WAIST AND HIDES HER BELOW IT - she is COVERED BY the counter, never covering it, and the back bar's ledge and shelves stand BEHIND her. Nothing on her is lettered. She is looking at the gentlemen, never out of the panel.",
     "cabinets": "the cabinets under the back bar's working ledge: a run of panelled walnut cupboard doors, each a raised-and-fielded panel with a small brass knob, down to a plinth",
     "ledge": "the back bar's working ledge: a marble-topped counter at waist height running the width of the unit, its polished top pale and veined, its front a slim moulded marble edge, its back flush into the cabinet - empty, nothing standing on it",
-    "backbar": "the back bar's carcass: THREE THICK SOLID WALNUT POSTS standing on the marble ledge - a 12 cm post at each end and one 12 cm divider between them - each running UNBROKEN from the ledge up past the upper shelf and stopping in a solid square head above it, each catching the window light down its near side so it reads BRIGHTER than the wall showing between the posts, with a dark arris down its far side, the two left-hand posts turning a deep side face toward the camera so they read as solid square posts standing OFF the panelled wall, and each throwing a soft shadow on the panelling beside it. There is NO back panel, NO top rail, NO cornice and NO shelf drawn here: the panelled wall shows between the posts and runs on above their heads to the frieze rail",
-    "shelf-lower": "the lower shelf of the back bar: a HEAVY 8.5 cm SOLID WALNUT SLAB housed between the posts, seen from a little above so a sliver of its polished top shows, its front edge a thick board with a bright lit arris along the top and a dark undercut beneath, and a soft shadow thrown down the panelled wall below it - wood, not marble, not stone",
-    "shelf-upper": "the upper shelf of the back bar: a HEAVY 8.5 cm SOLID WALNUT SLAB housed between the posts, seen from BELOW so its UNDERSIDE is in deep shadow, its front edge a thick dark board with a bright arris catching reflected light along its lower edge, and a soft shadow thrown down the panelled wall below it",
-    "bottles-lower": "the row of liquor bottles standing on the lower shelf: varied heights and shapes, clear and dark glass, plain blank paper labels with NO lettering",
-    "bottles-upper": "the row of liquor bottles standing on the upper shelf: varied heights and shapes, clear and dark glass, plain blank paper labels with NO lettering",
+    "backbar": "the back bar's INLAID RECESS: a wide rectangular opening CUT INTO the panelled walnut wall above the marble ledge, its face frame ONE slim FLAT walnut band lying FLUSH with the panelling - no architrave, no bolection, no bead, nothing standing proud of the wall, just a plain flat band with a fine dark joint line where it meets the panelling - and the inside of the cut LINED WITH PLAIN VERTICAL WALNUT BOARDS, quiet, close-grained, a little darker and calmer than the wall, with NO raised-and-fielded panels, NO mouldings and NO frame inside the frame; a deep dark soffit across its head, the left reveal returning back into the wall in shadow, a bright arris down the right-hand edge of the opening, and BENEATH THE FRAME THE WALL'S OWN PANELLING RUNNING ON UNTOUCHED down to the marble ledge - the unit stops dead at its own bottom rail, there is no splashback and no panel of its own below it. This is JOINERY AND A HOLE IN A WALL - it is NEVER a picture, a painting, a mirror, a window, a doorway, a poster, a screen, a television or an empty dark panel. The lining boards and the face band are SMOOTH POLISHED WALNUT, SPARSE SOFT FIGURE, NO REEDING, NO FLUTING, NO FINE PARALLEL STRIPING - a few broad soft sweeps of grain in a wide board, and the flat face band plain",
+    "shelf-lower": "the lower shelf inside the inlaid recess: a plain 3 cm walnut board running the full width of the opening from reveal to reveal, and it IS THE FLOOR OF THE RECESS - nothing shows beneath it. Seen from a little above, so its polished top catches the daylight and a dark square front edge runs under it - wood, not marble, not stone, and no bracket, no moulding, no nosing",
+    "shelf-upper": "the upper shelf inside the inlaid recess: a plain 3 cm walnut board running the full width of the opening from reveal to reveal, seen from BELOW so its bright front edge stands over its own dark underside, and throwing a soft shadow down the boarded back of the recess beneath it",
+    "bottles-lower": "the row of EIGHT real liquor bottles standing on the lower shelf of the inlaid recess, well in front of its boarded back: REAL BOTTLES OF DIFFERENT SHAPES AND SIZES, FEW AND BIG, NO TWO NEIGHBOURS ALIKE - among them a square-shouldered bourbon, a tall round-shouldered scotch, a broad squat rum, a SQUARE GIN FLASK with parallel sides and a sharp shoulder, a bulbous decanter-like rye, a tall slim vodka, a broad-shouldered whiskey and a wide-shouldered tequila - each with its own neck, its own shoulder and its own closure, a foil capsule under a dark screw cap or a taller cork stopper. Clear glass is pale with a bright highlight down its window side; the dark spirits are deep warm amber, glassy, and both read CLEARLY LIGHTER than the dark boards behind them. EVERY BOTTLE IS AT LEAST HALF FULL AND NO TWO TO THE SAME LEVEL: the liquid inside is DARKER than the empty glass above it and the two meet at a clean horizontal FILL LINE across the bottle. Each bottle STANDS ON THE BOARD, with a small dark pool of contact shadow at its foot and a soft shadow thrown up the boarding behind it, leaning away from the window at frame-left. Each bottle wears ONE paper label, and their shapes differ - rectangles, wrap-around bands, ovals, shields - lighter than the glass, with a crisp edge. THE LABELS ARE BLANK: no lettering, no words, no letters, no numerals, no pseudo-text of any kind - the brand names are typeset onto them in code afterwards, exactly as the window is gilded",
+    "bottles-upper": "the row of SIX real liquor bottles standing on the upper shelf of the inlaid recess, well in front of its boarded back: REAL BOTTLES OF DIFFERENT SHAPES AND SIZES, FEW AND BIG, NO TWO NEIGHBOURS ALIKE - among them a square-shouldered bourbon, a tall round-shouldered scotch, a broad squat rum, a SQUARE GIN FLASK with parallel sides and a sharp shoulder, a bulbous decanter-like rye, a tall slim vodka, a broad-shouldered whiskey and a wide-shouldered tequila - each with its own neck, its own shoulder and its own closure, a foil capsule under a dark screw cap or a taller cork stopper. Clear glass is pale with a bright highlight down its window side; the dark spirits are deep warm amber, glassy, and both read CLEARLY LIGHTER than the dark boards behind them. EVERY BOTTLE IS AT LEAST HALF FULL AND NO TWO TO THE SAME LEVEL: the liquid inside is DARKER than the empty glass above it and the two meet at a clean horizontal FILL LINE across the bottle. Each bottle STANDS ON THE BOARD, with a small dark pool of contact shadow at its foot and a soft shadow thrown up the boarding behind it, leaning away from the window at frame-left. Each bottle wears ONE paper label, and their shapes differ - rectangles, wrap-around bands, ovals, shields - lighter than the glass, with a crisp edge. THE LABELS ARE BLANK: no lettering, no words, no letters, no numerals, no pseudo-text of any kind - the brand names are typeset onto them in code afterwards, exactly as the window is gilded",
     "tv": "the switched-off flat-screen television in a slim matte-black frame, flush on the panelling",
     "board": "the chalkboard in its plain wooden frame, its slate matt black and unmarked",
     "window-frame": "the window's joinery, CLEAN STRAIGHT LINES: the opening cut through the panelled wall, its reveal, a plain flat square architrave on the room face - the same simple flat band on all four sides, the bottom exactly like the sides - and, stepped back inside the reveal, the dark sash frame that holds the single pane. There is NO window sill, NO projecting ledge or shelf under the pane, NO moulded nosing, NO rail: under the pane the flat architrave band simply meets the panelled wall",
@@ -492,6 +618,7 @@ def reset_parts(enabled, force=()) -> None:
     _ENABLED = set(enabled) if enabled is not None else None
     _FORCE = set(force)
     _PID, _SKIP = 0, False
+    LABELS.clear()
     _LAB.paste(0, (0, 0, W, H))
     _OWN.clear()
     _SHADOW.clear()
@@ -536,7 +663,50 @@ def part_masks() -> dict:
     return {n: (np.asarray(_OWN[n], dtype=np.uint8) > 127) for n in _NAMES if n in _OWN}
 
 
-def grain(img: np.ndarray, pts, strength: float = 9.0, seed: int = 0) -> None:
+def _figure_field(pts, seed: int, freqs, hearts, heart_w: float,
+                  heart_a: float = 2.8):
+    """THE FIGURE OF ONE BOARD, as a field. The house construction, shared.
+
+    The wall's grain() and the recess's lining both draw walnut, and there is
+    now one function that knows how: a straight warp with barely any wander, a
+    couple of broad sine modulations, and NARROW DEEP HEART LINES - the sharp
+    figure the engraver has to draw around, which is the one thing that stops
+    the pen falling back into reeding.
+
+    What differs between them is PITCH and COUNT, not construction. A wall panel
+    field is 90 px wide and wants two or three features across it; a lining board
+    is 68-84 px of POLISHED walnut and wants one or two soft wide ones - the
+    founder, 2026-09-08: "clean up the wood grain around the shelf".
+
+    THE DRAW ORDER OFF THE RandomState IS FIXED AND MUST NOT CHANGE - both
+    frequencies first, then both phases, then the hearts - because the wall's
+    panels are already in the approved plate and reordering it redraws every one
+    of them.
+    """
+    mask = _rast(pts)
+    ys, xs = np.nonzero(mask > 0.5)
+    if len(xs) < 24:
+        return None, None
+    x0, x1, y0, y1 = xs.min(), xs.max(), ys.min(), ys.max()
+    rs = np.random.RandomState(seed % 2**31)
+    u = (_X - x0) / max(x1 - x0, 1)
+    v = (_Y - y0) / max(y1 - y0, 1)
+    # the board wanders as it runs; barely any wander. Movement in the figure
+    # reads as drapery; walnut runs STRAIGHT up the board.
+    warp = (u + 0.014 * np.sin(2.1 * v + rs.uniform(0, 6.28))
+              + 0.007 * np.sin(4.3 * v + rs.uniform(0, 6.28)))
+    fs = [rs.uniform(a, b) for a, b, _amp in freqs]
+    g = np.zeros((H, W), np.float32)
+    for f, (_a, _b, amp) in zip(fs, freqs):
+        g += amp * np.sin(2 * np.pi * (f * warp + rs.uniform(0, 1)))
+    for _ in range(rs.randint(hearts[0], hearts[1])):
+        g -= heart_a * np.exp(-((warp - rs.uniform(0.12, 0.88)) / heart_w) ** 2)
+    return g, mask
+
+
+def grain(img: np.ndarray, pts, strength: float = 9.0, seed: int = 0,
+          freqs=GRAIN_FREQS, hearts=GRAIN_HEARTS,
+          heart_w: float = GRAIN_HEART_W) -> None:
     """Cathedral grain, drawn into the VALUES of one panel field.
 
     Four seeds in a row came back with the fields reeded like corduroy, and the
@@ -548,33 +718,16 @@ def grain(img: np.ndarray, pts, strength: float = 9.0, seed: int = 0) -> None:
 
     This goes in the values, never in the line layer. A grain line drawn as a
     LINE comes through the render as a hard black scratch.
+
+    The defaults are the wall's and they are unchanged: same seeds, same draws,
+    same pixels. The keywords exist so the lining can borrow the construction at
+    a lower strength and a lower pitch.
     """
     if _SKIP:
         return
-    m = Image.new("L", (W, H), 0)
-    ImageDraw.Draw(m).polygon([P(*q) for q in pts], fill=255)
-    mask = np.asarray(m, dtype=np.float32) / 255.0
-    ys, xs = np.nonzero(mask > 0.5)
-    if len(xs) < 24:
+    g, mask = _figure_field(pts, seed, freqs, hearts, heart_w)
+    if g is None:
         return
-    x0, x1, y0, y1 = xs.min(), xs.max(), ys.min(), ys.max()
-    rs = np.random.RandomState(seed % 2**31)
-    u = (_X - x0) / max(x1 - x0, 1)
-    v = (_Y - y0) / max(y1 - y0, 1)
-    # the board wanders as it runs; that wander is what stops it being stripes
-    # Barely any wander. Movement in the figure reads as drapery; walnut runs
-    # STRAIGHT up the board. The sharp heart lines below are what stop the pen
-    # falling back into reeding, so the straightness costs nothing.
-    warp = (u + 0.014 * np.sin(2.1 * v + rs.uniform(0, 6.28))
-              + 0.007 * np.sin(4.3 * v + rs.uniform(0, 6.28)))
-    g = np.zeros((H, W), np.float32)
-    for f, a in ((rs.uniform(1.0, 1.7), 0.14), (rs.uniform(2.1, 3.0), 0.07)):
-        g += a * np.sin(2 * np.pi * (f * warp + rs.uniform(0, 1)))
-    # The dark heart of the board. These have to be NARROW and DEEP: a broad
-    # soft modulation just reads as more shading and the pen hatches over it,
-    # but a sharp figure line is a feature the engraver has to draw around.
-    for _ in range(rs.randint(2, 4)):
-        g -= 2.8 * np.exp(-((warp - rs.uniform(0.12, 0.88)) / 0.030) ** 2)
     img += g * strength * mask
 
 
@@ -654,65 +807,476 @@ def crown(img: np.ndarray, d, y_top: float, depth: float,
     hand(d, P(ax, y_top, az), P(bx, y_top, bz), 2)
 
 
-def bottle(img: np.ndarray, d, x: float, y0: float, z: float, h: float, w: float,
-           v: float, kind: str = "wine") -> None:
-    """One bottle, blocked in. Four profiles, because a row of one silhouette
-    repeated reads as a cut-out frieze and a real back bar never has that:
-    wine (sloped shoulder), square (a gin or whisky bottle, straight shoulder),
-    round (a brandy bulb), tall (a thin liqueur). Lit from the window, a blank
-    label, a cap. Labels carry NO lettering - the model letters any rectangle it
-    is given, and it garbles it.
+BOTTLE_PITCH = 0.152            # RETIRED as a spacing rule (2026-09-08). A row is
+                                # laid out from the bottles' OWN widths now - see
+                                # bottle_row() - because one fixed pitch put a
+                                # wide rum shoulder to shoulder with a wide flask
+                                # and left the slim vodka swimming. Kept as a
+                                # number in case anything downstream reads it
+# --------------------------------------------------------------- THE BOTTLES
+# The founder, 2026-09-08: "improve the bottles drastically they should look
+# like they have real labels like real liquor bottles they should have
+# different shapes and sizes and they should all be at least half full".
+#
+# So the four cartoon profiles are gone. EIGHT REAL SILHOUETTES at true bottle
+# heights in metres, each with its own shoulder, neck and closure, and each
+# drawn as the four things the model actually renders from:
+#
+#   THE GLASS, BY KIND. Clear glass is pale with a bright rim down its lit edge;
+#         a dark spirit is mid-dark. Both are graded left to right, because the
+#         light comes from the window at frame-left, and both carry one narrow
+#         dark edge on the other side so the cylinder turns.
+#   THE FILL LINE. A horizontal cut across the silhouette with the liquid BELOW
+#         it darker than the empty glass above. That is the whole of "visibly
+#         filled to different levels", and it is the one thing a blank cylinder
+#         cannot fake. Never below half: FILL_RANGE.
+#   THE CLOSURE. A dark foil capsule down the neck under a darker cap, wider
+#         than the neck - a short screw cap on the whiskies, a taller cork
+#         stopper on the rye and the tequila.
+#   THE LABEL. A LIGHTER patch - rectangle, band, oval or shield - sized to the
+#         bottle it is on and never under LABEL_MIN_PX tall on the page, because
+#         scripts/label-bottles.py has to typeset a house brand onto it from
+#         labels.json exactly as sign-on-glass.py letters the pane. THE VALUES
+#         CARRY A BLANK PATCH AND NOTHING ELSE: the model letters any rectangle
+#         it is handed and it garbles it, so the names are code.
+#
+# A silhouette is a list of (v, r): v runs up the GLASS (base 0, top of neck 1;
+# the cap sits above that) and r is the half-width as a fraction of w/2. The
+# points are joined straight, so a square shoulder is one short steep run and a
+# round one is four shallow ones - the profile IS the drawing, and no kind here
+# shares another's.
+# SHOULDER_V, the round's first fix (critic, 2026-09-08). `fill` used to split
+# the WHOLE glass, base 0 to the top of the neck 1, and on eleven of twenty
+# bottles the line landed in the NECK - which is not a liquid level, it is a
+# bottle with a stripe on it. `shoulder` is the v at which THE BODY ENDS: the
+# last height at which the glass is still near its full width, read off the
+# silhouette below it. The fill line is f * shoulder, so f is a fraction OF THE
+# BODY and the level is always in the glass a bottle actually holds liquid in.
+# `label` is the label's height as a fraction of THE BODY, floored in PAGE
+# PIXELS (LABEL_MIN_PX) - a fraction alone gave a 0.24 m rum an 18 px label.
+BOTTLE_KINDS = {
+    "bourbon": dict(h=0.315, w=0.092, glass="dark", cap=(0.020, 1.30), shape="shield",
+                    label=0.58, shoulder=0.61,
+                    sil=[(0.00, 0.96), (0.03, 1.00), (0.55, 1.00), (0.60, 0.99),
+                         (0.65, 0.58), (0.69, 0.30), (0.72, 0.27), (1.00, 0.26)]),
+    "scotch":  dict(h=0.330, w=0.086, glass="dark", cap=(0.018, 1.24), shape="oval",
+                    label=0.56, shoulder=0.63,
+                    sil=[(0.00, 0.95), (0.03, 1.00), (0.50, 1.00), (0.59, 0.96),
+                         (0.67, 0.80), (0.74, 0.55), (0.80, 0.34), (0.85, 0.26),
+                         (1.00, 0.25)]),
+    "rum":     dict(h=0.320, w=0.102, glass="dark", cap=(0.018, 1.26), shape="band",
+                    label=0.60, shoulder=0.595,
+                    sil=[(0.00, 0.94), (0.04, 1.00), (0.44, 1.00), (0.53, 0.97),
+                         (0.63, 0.84), (0.72, 0.58), (0.79, 0.36), (0.84, 0.29),
+                         (1.00, 0.28)]),
+    # THE GIN IS A SQUARE FLASK (critic, 2026-09-08: it was the one silhouette
+    # with no shoulder at all - a cone that tapered from its foot to its cap,
+    # which is a carafe and not a bottle). Now: parallel sides at full width the
+    # whole height of the body, then ONE short steep run into the neck. That
+    # corner is the shoulder, and it is what says flask rather than cylinder.
+    "gin":     dict(h=0.320, w=0.084, glass="clear", cap=(0.017, 1.22), shape="rectangle",
+                    label=0.58, shoulder=0.62,
+                    sil=[(0.00, 0.97), (0.02, 1.00), (0.58, 1.00), (0.62, 0.99),
+                         (0.68, 0.66), (0.73, 0.36), (0.76, 0.30), (1.00, 0.29)]),
+    "rye":     dict(h=0.362, w=0.104, glass="dark", cap=(0.028, 1.48), shape="oval",
+                    label=0.62, shoulder=0.50,
+                    sil=[(0.00, 0.72), (0.06, 0.86), (0.16, 0.97), (0.28, 1.00),
+                         (0.40, 0.98), (0.50, 0.88), (0.58, 0.72), (0.66, 0.50),
+                         (0.72, 0.34), (0.78, 0.27), (1.00, 0.26)]),
+    "vodka":   dict(h=0.340, w=0.084, glass="clear", cap=(0.016, 1.20), shape="band",
+                    label=0.55, shoulder=0.66,
+                    sil=[(0.00, 0.97), (0.03, 1.00), (0.66, 1.00), (0.72, 0.95),
+                         (0.78, 0.72), (0.83, 0.44), (0.87, 0.28), (1.00, 0.24)]),
+    "whiskey": dict(h=0.325, w=0.098, glass="dark", cap=(0.017, 1.24), shape="rectangle",
+                    label=0.58, shoulder=0.58,
+                    sil=[(0.00, 0.88), (0.05, 1.00), (0.40, 1.00), (0.54, 0.98),
+                         (0.64, 0.90), (0.72, 0.72), (0.79, 0.48), (0.85, 0.30),
+                         (1.00, 0.28)]),
+    "tequila": dict(h=0.325, w=0.096, glass="clear", cap=(0.026, 1.42), shape="shield",
+                    label=0.56, shoulder=0.60,
+                    sil=[(0.00, 0.96), (0.03, 1.00), (0.58, 1.00), (0.65, 0.98),
+                         (0.70, 0.70), (0.74, 0.42), (0.77, 0.30), (1.00, 0.29)]),
+}
+# FEWER, BIGGER BOTTLES (critic, 2026-09-08). Twenty bottles gave twenty labels
+# that could carry a rule pair and nothing else. Every kind's width is scaled
+# here - the HEIGHTS are the kinds' own, 30-35 cm, real bottle heights - and the
+# rows are cut to eight below and six above, which buys about 75% more label.
+BOTTLE_W_SCALE = 1.75
+# The glass, as (empty left, empty right, liquid left, liquid right). The empty
+# half is LIGHTER than the liquid half in both materials - that is what draws
+# the fill line - and clear glass clears the lining (84-118) at both ends while
+# a dark spirit sits under it at both.
+#
+# THE GLASS CLEARS THE LINING (critic, 2026-09-08: "clear glass sits ON the
+# lining"). At the old numbers a clear bottle's liquid ran 118-92 and a dark
+# glass ran 118-92 and the lining it stood against ran 118-84: the same tone, so
+# a whole row of bottles read as a pattern painted on the back of the box. THREE
+# things moved, and the gate is GLASS_SEP_MIN - every bottle body's median must
+# sit that far from the lining beside it. The lining went DOWN to 60-74, which is
+# where the back of a box belongs anyway (the darkest large field inside the
+# frame); the clear glass came UP; and THE DARK SPIRITS CAME UP TOO, because a
+# dark spirit under a lamp is a warm mid-tone with a bright edge, not a hole -
+# taken down with the lining they landed in it and the gate read 14.
+GLASS_V = {"clear": (228.0, 206.0, 148.0, 126.0),
+           "dark":  (198.0, 176.0, 74.0, 54.0)}   # FILL STEP >= 100 levels: the render of
+                                                  # 2026-09-08 (s7, s21) drew every bottle dark
+                                                  # to the shoulder on a 50-level step
+MENISCUS_V = 34.0               # a 2.5 px dark line where liquid meets glass
+RIM_V = {"clear": 250.0, "dark": 206.0}      # the lit edge, down the window side
+EDGE_V = {"clear": 58.0, "dark": 40.0}       # and the dark turn on the other
+GLASS_SEP_MIN = 25.0            # levels between a body's median and its lining
+RIM_F, EDGE_F = 0.30, 0.18      # each as a fraction of the half-width AT THAT
+                                # HEIGHT, so a neck's highlight is narrower than
+                                # a belly's - which is what makes it a cylinder
+CAP_V = (26.0, 16.0)            # the cap: the darkest thing on the bottle
+CAPSULE_V = (52.0, 32.0)        # the foil down the neck under it
+CAPSULE_H = 0.09                # of the glass height
+LABEL_V = (244.0, 216.0)        # the paper: the lightest thing in the recess,
+                                # and it has to stay clear of clear EMPTY glass
+LABEL_W_F = 0.88                # of the body's width where the label sits, so a
+                                # sliver of lit glass survives either side of it
+LABEL_MIN_PX = 34.0             # THE LABEL FLOOR, IN PAGE PIXELS, and it is now
+LABEL_MIN_W_PX = 34.0           # a floor in BOTH directions (critic: at 22 px a
+                                # label carries a rule pair and no name at all).
+                                # 34 px each way is what scripts/label-bottles.py
+                                # needs to set the longest word of a house brand
+                                # at a 6 px cap height
+LABEL_PX_MARGIN = 0.8           # asked for over the floor, so rounding cannot
+                                # land a label at 33.9 px
+LABEL_FOOT_PX = 2.0             # glass left under the label, on the page
+LIQUID_PX = 4.0                 # AND THE LIQUID SHOWING ABOVE IT. Without this
+                                # the label's top edge IS the fill line and the
+                                # step across it is paper against glass
+FILL_RANGE = (0.55, 0.78)       # "at least half full", now read on THE BODY:
+                                # the split is at f * shoulder, so 0.55 is half
+                                # the body and 0.78 leaves a real empty band
+EMPTY_BAND_MIN_PX = 8.0         # of empty glass between the fill line and the
+FILL_STEP_MIN = 40.0            # shoulder, and this much tone across the line
+# THE BOTTLES' OWN SHADOWS (critic, 2026-09-08: "they are stickers"). Two per
+# bottle, both through cast() inside the row's own part, so masks/ hold members
+# and shadows/ hold the shading: a CONTACT shadow on the board the bottle
+# stands on, and a soft CAST shadow up the lining behind it. The window is at
+# frame-left, so both lean right, and the cast one leans further the higher it
+# climbs - which is what a light source at one side of a room does.
+BOTTLE_CONTACT_K = (0.34, 0.74)   # darkest at the foot, opening away from it
+BOTTLE_CAST_K = (0.92, 0.56)      # top of the lining shadow, then its foot
+BOTTLE_CONTACT_DX = 0.030         # how far the pool leans off the foot
+BOTTLE_CAST_DX = (0.022, 0.085)   # and the lining shadow, at the foot and head
+BOTTLE_CAST_H = 0.82              # how far up the bottle the lining shadow runs
+BOTTLE_EDGE_M = 0.045           # the clearance between a row's end bottle and
+                                # the reveal beside it, IN WORLD METRES. Anything
+                                # whose world x lies between the two reveals is
+                                # inside the cut and in front of both of them;
+                                # held back by the opening's PAGE columns instead
+                                # the end bottle stands through the left reveal
+BOTTLE_GAP_MIN = 0.030          # and between two neighbours: 9 px of lining
+SHELF_HEADROOM = 0.03           # the founder's rule: a row's tallest bottle
+                                # clears the board or the head above it by 3 cm
+# THE TWO ROWS, WRITTEN OUT AND NOT SAMPLED. A random draw put two rums side by
+# side and the row read as a repeat. EIGHT BELOW AND SIX ABOVE now, not eleven
+# and nine (critic, 2026-09-08: fewer, bigger, so the labels can carry a name),
+# and still different mixes AND different pitches so the eye cannot find the
+# module: ~0.23 m of centre pitch below, ~0.30 above.
+#
+# The lower row is ALL EIGHT KINDS, once each, so the shelf keeps every
+# silhouette; the upper row is six of them. Neighbours share neither a KIND nor
+# a LABEL SHAPE in either row - the shapes run shield, oval, band, rectangle
+# below and oval, shield, rectangle, band, shield, rectangle above.
+#
+# The rye is the tallest thing on the shelf (0.355) and it is BELOW ONLY: its
+# body stops at half its height, so it needs the depth to carry a 34 px label
+# under its fill line, and the upper compartment is 0.36 m clear. The vodka is
+# below only for the same reason at the other end - 0.34 would leave under 3 cm
+# over its cap up there.
+BOTTLE_ROWS = {
+    "lower": dict(kinds=("bourbon", "scotch", "rum", "gin", "tequila", "rye",
+                         "vodka", "whiskey"),
+                  fills=(0.72, 0.68, 0.70, 0.69, 0.755, 0.76, 0.63, 0.655),
+                  dh=(0.005, -0.006, 0.004, -0.005, 0.006, -0.004, -0.006, 0.005),
+                  jit=(0.0, -0.09, 0.07, 0.11, -0.06, 0.08, -0.11, 0.0)),
+    "upper": dict(kinds=("scotch", "tequila", "whiskey", "rum", "bourbon", "gin"),
+                  fills=(0.775, 0.71, 0.735, 0.68, 0.745, 0.64),
+                  dh=(-0.006, 0.004, -0.005, 0.005, -0.004, 0.006),
+                  jit=(0.0, 0.10, -0.08, 0.09, -0.11, 0.0)),
+}
+# The house brands: the LOCAL fence of canon/MASTER-PROMPT.md and the published
+# set in canon/showcase-retired/. NOTHING IS INVENTED HERE.
+BRANDS = ("BIRDIE BOURBON", "DIVOT DRIVE GIN", "PAR-TEE SCOTCH", "19TH HOLE RYE",
+          "ROUGH RIDER GIN", "TEE TIME TENNESSEE WHISKEY", "EAGLE EYE VODKA",
+          "CADDY'S CHOICE RUM", "BACK NINE", "BUNKER")
+# AND WHICH OF THEM BELONGS ON WHICH KIND OF BOTTLE. The task's own assignment
+# rule is by SIZE - largest label, longest name, cycling - so a bourbon can end
+# up carrying EAGLE EYE VODKA. That is the rule and `brand` follows it; this
+# second reading is exported alongside it as `brandForKind` so a later pass can
+# swap to a kind-true shelf without re-deriving anything. The tequila has no
+# category name in the canon list, so it takes the two that carry none.
+BRAND_BY_KIND = {
+    "bourbon": ("BIRDIE BOURBON",),
+    "scotch":  ("PAR-TEE SCOTCH",),
+    "rum":     ("CADDY'S CHOICE RUM",),
+    "gin":     ("DIVOT DRIVE GIN", "ROUGH RIDER GIN"),
+    "rye":     ("19TH HOLE RYE",),
+    "vodka":   ("EAGLE EYE VODKA",),
+    "whiskey": ("TEE TIME TENNESSEE WHISKEY",),
+    "tequila": ("BACK NINE", "BUNKER"),
+}
+LABELS: list = []               # what bottles() measures, for labels.json
+
+
+def _rad(sil, v: float) -> float:
+    """The half-width fraction at height v, straight-line between the nodes."""
+    v = min(max(v, 0.0), 1.0)
+    for i in range(len(sil) - 1):
+        v0, r0 = sil[i]
+        v1, r1 = sil[i + 1]
+        if v0 <= v <= v1:
+            t = 0.0 if v1 <= v0 else (v - v0) / (v1 - v0)
+            return r0 + (r1 - r0) * t
+    return sil[-1][1]
+
+
+def _label_top(sil) -> float:
+    """The highest v a label may reach: where the glass is still near full
+    width. A label never climbs onto a shoulder, whatever fraction it asks for -
+    on the tapered gin that is 0.58, on the bulbous rye 0.50."""
+    best = 0.50
+    for v, r in sil:
+        if r >= 0.80:
+            best = max(best, v)
+    return min(0.72, best)
+
+
+def px_per_m(x: float, y: float, z: float) -> float:
+    """Page rows to one world metre of HEIGHT at (x, z). 303 at the left of the
+    recess and 336 at the right, which is a tenth - and a tenth is the whole
+    margin a 34 px label has on a 51 px body. Every label and every fill line is
+    sized from the number AT ITS OWN BOTTLE, not from an average."""
+    return abs(P(x, y + 0.10, z)[1] - P(x, y, z)[1]) * 10.0
+
+
+def _sil(x: float, y0: float, z: float, hb: float, hw: float, sil,
+         a: float = 0.0, b: float = 1.0, k0: float = -1.0, k1: float = 1.0):
+    """A slice of one silhouette, as a closed world polygon.
+
+    a..b cuts it horizontally - which is how the fill line gets to be a real
+    edge across the glass instead of a line drawn on it - and k0..k1 cuts it in
+    from the sides as a FRACTION OF THE HALF-WIDTH AT EACH HEIGHT, which is how
+    the lit rim narrows into the neck with the glass instead of running up it as
+    a stripe of one constant width. A stripe of constant width is what a flat
+    sheet has; a cylinder's highlight tapers.
     """
-    prof = {"wine":   (1.00, 0.62, 0.75, 0.19),
-            "square": (1.25, 0.78, 0.84, 0.22),
-            "round":  (1.32, 0.52, 0.68, 0.20),
-            "tall":   (0.80, 0.70, 0.78, 0.16)}[kind]
-    w = w * prof[0]
-    hw, nw = w / 2, w * prof[3]
-    ys, yn = y0 + h * prof[1], y0 + h * prof[2]
-    if kind == "round":                                   # a bulb: bowed sides
-        body = [(x - hw * 0.8, y0, z), (x + hw * 0.8, y0, z), (x + hw, y0 + h * 0.2, z),
-                (x + hw, ys, z), (x - hw, ys, z), (x - hw * 0.8, y0 + h * 0.2, z)]
-    else:
-        body = [(x - hw, y0, z), (x + hw, y0, z), (x + hw, ys, z), (x - hw, ys, z)]
-    shoulder = [(x - hw, ys, z), (x + hw, ys, z), (x + nw, yn, z), (x - nw, yn, z)]
-    neck = [(x - nw, yn, z), (x + nw, yn, z), (x + nw, y0 + h, z), (x - nw, y0 + h, z)]
-    cap = [(x - nw * 1.15, y0 + h, z), (x + nw * 1.15, y0 + h, z),
-           (x + nw * 1.15, y0 + h + 0.022, z), (x - nw * 1.15, y0 + h + 0.022, z)]
-    for q in (body, shoulder, neck, cap):
-        poly(d, q, 255)                                   # it stands in front of the back
-    shade(img, body, v + 26, v - 18, "x")
-    shade(img, shoulder, v + 10, v - 14, "x")
-    shade(img, neck, v + 4, v - 22, "x")
-    shade(img, cap, 30)
-    l0, l1 = (0.14, 0.50) if kind != "square" else (0.22, 0.60)
-    label = [(x - hw + 0.008, y0 + h * l0, z), (x + hw - 0.008, y0 + h * l0, z),
-             (x + hw - 0.008, y0 + h * l1, z), (x - hw + 0.008, y0 + h * l1, z)]
-    shade(img, label, 216, 176, "x")
-    poly(d, label, None, 0, 1)
-    out = body[:2] + [body[2]] if kind != "round" else body[:3]
-    outline = ([body[0], body[1]] + ([body[2]] if kind == "round" else [])
-               + [(x + hw, ys, z), (x + nw, yn, z), (x + nw * 1.15, y0 + h + 0.022, z),
-                  (x - nw * 1.15, y0 + h + 0.022, z), (x - nw, yn, z), (x - hw, ys, z)]
-               + ([body[5]] if kind == "round" else []))
-    poly(d, outline, None, 0, 1)
+    vs = sorted({a, b} | {v for v, _ in sil if a < v < b})
+    right = [(x + hw * _rad(sil, v) * k1, y0 + hb * v, z) for v in vs]
+    left = [(x + hw * _rad(sil, v) * k0, y0 + hb * v, z) for v in reversed(vs)]
+    return right + left
 
 
-def bottles(img: np.ndarray, d, sy: float, seed: int) -> None:
-    """A row along one shelf: mixed profiles, dark and clear glass, deterministic,
-    skipping the uprights."""
-    rs = np.random.RandomState(seed)
-    x = SHELF_X[0] + CHEEK_W + 0.06
-    ups = uprights()
-    kinds = ["wine", "wine", "square", "round", "tall", "square", "wine"]
-    while x < SHELF_X[1] - CHEEK_W - 0.06:
-        if all(abs(x - u) > CHEEK_W * 1.4 for u in ups):
-            dark = rs.uniform() < 0.45
-            bottle(img, d, x, sy, WALL_Z - SHELF_DEPTH * 0.55,
-                   rs.uniform(0.24, 0.35), rs.uniform(0.066, 0.084),
-                   rs.uniform(38, 60) if dark else rs.uniform(96, 128),
-                   kinds[rs.randint(len(kinds))])
-        x += BOTTLE_PITCH * rs.uniform(0.94, 1.10)
+def _label_box(x: float, y0: float, z: float, hb: float, hw: float, sil,
+               lo: float, hi: float):
+    """The label's box in world metres - and it is as wide as the NARROWEST part
+    of the glass it spans, so a label on a tapering gin does not hang off the
+    bottle at its top edge. Clockwise from top-left, like every other quad in
+    this kit."""
+    r = min(_rad(sil, lo), _rad(sil, hi))
+    a = hw * r * LABEL_W_F
+    ylo, yhi = y0 + hb * lo, y0 + hb * hi
+    return [(x - a, yhi, z), (x + a, yhi, z), (x + a, ylo, z), (x - a, ylo, z)]
+
+
+def _label_face(shape: str, quad):
+    """The paper itself, cut to its shape inside the box the quad measures.
+
+    The BOX is what labels.json exports and what label-bottles.py typesets into;
+    the SHAPE is what the engraver sees. Four of them, so a row of labels is not
+    a row of identical white rectangles - which is exactly how the last round's
+    read, and it is why the founder called the bottles fake.
+    """
+    (xl, yt, z), (xr, _b, _c) = quad[0], quad[1]
+    yb = quad[2][1]
+    cx, cy = (xl + xr) / 2, (yt + yb) / 2
+    ax, ay = (xr - xl) / 2, (yt - yb) / 2
+    if shape == "oval":
+        return [(cx + ax * math.cos(2 * math.pi * i / 28),
+                 cy + ay * math.sin(2 * math.pi * i / 28), z) for i in range(28)]
+    if shape == "shield":
+        return [(xl, yt, z), (xr, yt, z), (xr, yb + ay * 0.42, z),
+                (cx, yb, z), (xl, yb + ay * 0.42, z)]
+    if shape == "band":                        # a wrap: it runs the full width of
+        return [(xl, yt, z), (xr, yt, z),      # the glass and is short for its
+                (xr, yb, z), (xl, yb, z)]      # width, a hoop rather than a panel
+    return [(xl, yt, z), (xr, yt, z), (xr, yb, z), (xl, yb, z)]
+
+
+def bottle(img: np.ndarray, d, x: float, y0: float, z: float, kind: str,
+           h: float, fill: float) -> dict:
+    """ONE REAL BOTTLE, blocked in - and it hands back its label's geometry.
+
+    The order is the order glass is actually read in: the silhouette knocks the
+    lining out of the line layer, the empty glass and the liquid go in as two
+    graded fields with a hard edge between them, the lit rim and the dark turn
+    come down the sides, the foil and the cap close the neck, and the LABEL GOES
+    ON LAST because paper covers glass. With the rim laid after the label every
+    label came back with a white bite out of its window-side edge.
+    """
+    k = BOTTLE_KINDS[kind]
+    sil, hw = k["sil"], k["w"] * BOTTLE_W_SCALE / 2
+    cap_h, cap_k = k["cap"]
+    hb = h - cap_h                                   # base to the top of the neck
+    sh = k["shoulder"]                               # and THE TOP OF THE BODY
+    pxm = px_per_m(x, y0, z)
+    # THE FILL LINE IS ON THE BODY. f is a fraction of the body, never of the
+    # glass, so f * shoulder is the split and the line cannot climb the neck.
+    # It is then held high enough to clear the label and the strip of liquid
+    # that has to show above it - a label whose top edge IS the fill line puts
+    # paper against empty glass there, and the step stops meaning anything.
+    span_m = max(k["label"] * sh * hb, (LABEL_MIN_PX + LABEL_PX_MARGIN) / pxm)
+    need_v = ((LABEL_FOOT_PX + LIQUID_PX) / pxm + span_m) / (sh * hb)
+    f = min(max(fill, FILL_RANGE[0]), FILL_RANGE[1])
+    f = min(max(f, need_v), FILL_RANGE[1])
+    fv = f * sh
+    body = _sil(x, y0, z, hb, hw, sil)
+    poly(d, body, 255)                               # it stands in front of the lining
+    ev0, ev1, lv0, lv1 = GLASS_V[k["glass"]]
+    shade(img, _sil(x, y0, z, hb, hw, sil, fv, 1.0), ev0, ev1, "x")
+    shade(img, _sil(x, y0, z, hb, hw, sil, 0.0, fv), lv0, lv1, "x")
+    dv = 2.5 / (pxm * hb)                            # the fill line itself, as ink
+    shade(img, _sil(x, y0, z, hb, hw, sil, max(0.0, fv - dv), min(1.0, fv + dv)), MENISCUS_V)
+    shade(img, _sil(x, y0, z, hb, hw, sil, 0.0, 1.0, -1.0, -1.0 + RIM_F),
+          RIM_V[k["glass"]], RIM_V[k["glass"]] * 0.86, "y")
+    shade(img, _sil(x, y0, z, hb, hw, sil, 0.0, 1.0, 1.0 - EDGE_F, 1.0),
+          EDGE_V[k["glass"]])
+    caps = _sil(x, y0, z, hb, hw, sil, 1.0 - CAPSULE_H, 1.0)
+    poly(d, caps, 255)
+    shade(img, caps, CAPSULE_V[0], CAPSULE_V[1], "x")
+    nw = hw * _rad(sil, 1.0) * cap_k
+    cap = [(x - nw, y0 + h, z), (x + nw, y0 + h, z),
+           (x + nw, y0 + hb, z), (x - nw, y0 + hb, z)]
+    poly(d, cap, 255)
+    shade(img, cap, CAP_V[0], CAP_V[1], "x")
+    # THE LABEL. Its height is a fraction of the BODY floored at LABEL_MIN_PX
+    # PAGE PIXELS, and it is hung DOWNWARD from a top set by the fill line, not
+    # upward from a fraction: a label pushed up from below climbs onto the
+    # shoulder, and a label sized in metres comes out 24 px on one bottle and 36
+    # on another because the recess is a tenth deeper at one end than the other.
+    hi = min(_label_top(sil), sh, fv - LIQUID_PX / (pxm * hb))
+    lo = max(LABEL_FOOT_PX / (pxm * hb), hi - span_m / hb)
+    quad = _label_box(x, y0, z, hb, hw, sil, lo, hi)
+    face = _label_face(k["shape"], quad)
+    shade(img, face, LABEL_V[0], LABEL_V[1], "x")
+    poly(d, face, None, 0, 1)
+    poly(d, body, None, 0, 1)
+    poly(d, cap, None, 0, 1)
+    px = [P(*q) for q in quad]
+    fill_row = P(x, y0 + hb * fv, z)[1]
+    sh_row = P(x, y0 + hb * sh, z)[1]
+    return {"kind": kind, "shape": k["shape"], "glass": k["glass"],
+            "fill": round(f, 3), "shoulder": sh, "fillV": round(fv, 4),
+            "height": round(h, 4), "width": round(k["w"] * BOTTLE_W_SCALE, 4),
+            "quad": [[round(v, 1) for v in p] for p in px],
+            "widthPx": round(abs(px[1][0] - px[0][0]), 1),
+            "heightPx": round(abs(px[3][1] - px[0][1]), 1),
+            # the empty glass between the fill line and the top of the body, and
+            # the strip of liquid showing between the fill line and the label
+            "emptyBandPx": round(abs(fill_row - sh_row), 1),
+            "liquidAboveLabelPx": round(abs(fill_row - px[0][1]), 1),
+            "world": {"x": round(x, 4), "base": round(y0, 4), "z": round(z, 4),
+                      "labelY": [round(y0 + hb * lo, 4), round(y0 + hb * hi, 4)],
+                      "fillY": round(y0 + hb * fv, 4),
+                      "shoulderY": round(y0 + hb * sh, 4),
+                      "fillPx": round(fill_row, 1),
+                      "shoulderPx": round(sh_row, 1),
+                      "topPx": round(P(x, y0 + h, z)[1], 1),
+                      "basePx": round(P(x, y0, z)[1], 1)}}
+
+
+def bottle_shadow(img: np.ndarray, x: float, y0: float, kind: str, h: float) -> None:
+    """WHAT ONE BOTTLE THROWS, and it is two marks and not one.
+
+    THE CONTACT SHADOW is on the BOARD, in the board's own horizontal plane at
+    the bottle's foot: the small dense pool that says an object is standing on a
+    surface rather than pasted in front of it. On the lower board, which is
+    below the eye and read top-down, that pool is the four or five rows of lit
+    top face beside the foot. On the upper board, read from underneath, the top
+    face is not visible at all - the pool is drawn anyway, in the right plane,
+    and the board laid after this row takes it back off the page. It is not
+    faked onto somewhere it could be seen.
+
+    THE CAST SHADOW is on the LINING behind, and it starts where the lining
+    comes out from behind the board - y_at_px()'s rule, the same one the shelf's
+    own shadow follows - so no row of it lands inside the board. It leans RIGHT,
+    because the window is at frame-left, and it leans further the higher it
+    climbs; it softens upward (BOTTLE_CAST_K) because a shadow does.
+
+    Both go through cast(), so they MULTIPLY the boards and the lining and every
+    joint and every run of figure survives underneath; and both are drawn BEFORE
+    the row's own glass, so a bottle is never darkened by its neighbour's
+    shadow. What falls inside the row's own silhouette is cleared out of the
+    shadow layer at export, on the rule that a part never shades itself.
+    """
+    k = BOTTLE_KINDS[kind]
+    hw = k["w"] * BOTTLE_W_SCALE / 2
+    dx = BOTTLE_CONTACT_DX
+    zf = max(ZF_REC + 0.012, BOTTLE_Z - 0.080)
+    zb = min(ZB_REC - 0.004, BOTTLE_Z + 0.17)
+    cast(img, [(x - hw * 0.55 + dx, y0, zf), (x + hw * 1.15 + dx, y0, zf),
+               (x + hw * 1.15 + dx, y0, zb), (x - hw * 0.55 + dx, y0, zb)],
+         BOTTLE_CONTACT_K[0], BOTTLE_CONTACT_K[1], "y")
+    yb = max(y0, y_at_px(P(x, y0, ZF_REC)[1], x, ZB_REC)) + 0.006
+    yt = y0 + h * BOTTLE_CAST_H
+    if yt <= yb:
+        return
+    d0, d1 = BOTTLE_CAST_DX
+    cast(img, [(x - hw * 0.75 + d1, yt, ZB_REC), (x + hw * 0.75 + d1, yt, ZB_REC),
+               (x + hw * 1.02 + d0, yb, ZB_REC), (x - hw * 1.02 + d0, yb, ZB_REC)],
+         BOTTLE_CAST_K[0], BOTTLE_CAST_K[1], "y")
+
+
+def bottle_row(img: np.ndarray, d, sy: float, row: str, ceiling: float) -> None:
+    """A ROW STANDING ON ONE SHELF, laid out from the bottles' OWN widths.
+
+    The row is half of what stops the lining reading as a framed dark field, so
+    it runs the whole width of the opening; the ends are held back by the RECESS
+    WALLS THEMSELVES, in world metres, BOTTLE_EDGE_M in from each reveal. Held
+    back by the opening's PAGE columns instead - which is what this did first -
+    the end bottle stood 4 cm THROUGH the left reveal, because at the bottles'
+    own depth the reveal plane projects 16 px right of where the frame's inner
+    edge does.
+
+    What is left over after the widths is shared out evenly as GAPS and then
+    nudged by a written jitter that sums to zero, so both ends stay exactly where
+    the arithmetic put them and the pitch still never repeats. A fixed pitch
+    cannot do this: the widths now run 0.078 to 0.104 and a constant centre
+    spacing puts the two widest neighbours 1 cm apart and the two narrowest 4.
+    """
+    spec = BOTTLE_ROWS[row]
+    kinds, fills, dhs, jits = spec["kinds"], spec["fills"], spec["dh"], spec["jit"]
+    n = len(kinds)
+    top = ceiling - sy - SHELF_HEADROOM
+    hs = [min(BOTTLE_KINDS[k]["h"] + dh, top) for k, dh in zip(kinds, dhs)]
+    ws = [BOTTLE_KINDS[k]["w"] * BOTTLE_W_SCALE for k in kinds]
+    lo = RECESS_X[0] + BOTTLE_EDGE_M
+    hi = RECESS_X[1] - BOTTLE_EDGE_M
+    gap = (hi - lo - sum(ws)) / (n - 1)
+    gaps = [gap * (1.0 + j) for j in jits[:n - 1]]
+    gaps = [g + (gap * (n - 1) - sum(gaps)) / (n - 1) for g in gaps]   # ends pinned
+    xs, x = [], lo
+    for i in range(n):
+        xs.append(x + ws[i] / 2)
+        x += ws[i] + (gaps[i] if i < n - 1 else 0.0)
+    # THE SHADOWS GO DOWN FIRST, onto the board and the lining, and the glass is
+    # laid over them. Run the other way round - after the row, which is where
+    # this started - a bottle's cast shadow darkened the NEIGHBOUR standing in
+    # it, because cast() multiplies the values as it is called and the export
+    # can only clear the shadow LAYER afterwards, never the plate.
+    for i in range(n):
+        bottle_shadow(img, xs[i], sy, kinds[i], hs[i])
+    for i in range(n):
+        rec = bottle(img, d, xs[i], sy, BOTTLE_Z, kinds[i], hs[i], fills[i])
+        rec.update({"part": "bottles-" + row, "row": row, "index": i,
+                    "gapLeft": round(gaps[i - 1], 4) if i else None,
+                    "headroom": round(ceiling - sy - hs[i], 4)})
+        if not _SKIP:
+            LABELS.append(rec)
 
 
 def stile_centres() -> list[float]:
@@ -737,33 +1301,6 @@ def stile_edges_px(y: float = 1.50) -> list[tuple[float, float]]:
     return [(P(c - h, y, WALL_Z)[0], P(c + h, y, WALL_Z)[0]) for c in stile_centres()]
 
 
-def uprights() -> list[float]:
-    """Centre x of the internal uprights. C3-SLAB uses ONE thick divider: two
-    wide bays read as a built unit, three narrow ones read as a wine rack."""
-    return [DIVIDER_X]
-
-
-def upright_spans() -> list[tuple[float, float]]:
-    """(x0, x1) of every post: the two end cheeks and the divider."""
-    return ([(SHELF_X[0], SHELF_X[0] + CHEEK_W)]
-            + [(u - CHEEK_W / 2, u + CHEEK_W / 2) for u in uprights()]
-            + [(SHELF_X[1] - CHEEK_W, SHELF_X[1])])
-
-
-def shelf_bays() -> list[tuple[float, float, bool, bool]]:
-    """The clear openings BETWEEN the posts. A slab, its end lines and its cast
-    shadow are drawn ONLY here, so a post is never crossed by one and no shelf
-    pixel ever lands on a divider face."""
-    sp = upright_spans()
-    out = []
-    for i in range(len(sp) - 1):
-        L, R = sp[i], sp[i + 1]
-        out.append((L[1], R[0],                       # and which END is clipped
-                    (L[0] + L[1]) / 2 > CAM_X,        # by the post beside it
-                    (R[0] + R[1]) / 2 < CAM_X))
-    return out
-
-
 def x_at_px(px: float, z: float) -> float:
     """The inverse of P() in x: which world x, at depth z, lands on this column.
 
@@ -777,12 +1314,6 @@ def x_at_px(px: float, z: float) -> float:
     c, sn = math.cos(_YAW), math.sin(_YAW)
     dz = z - CAM_Z
     return CAM_X + dz * (sn + u * c) / (c - u * sn)
-
-
-def side_face_x(x0: float, x1: float) -> float:
-    """Which side of a post the eye actually sees. Everything left of the
-    camera's own x shows its RIGHT face, everything right of it its LEFT."""
-    return x1 if (x0 + x1) / 2 < CAM_X else x0
 
 
 def sconce(img: np.ndarray, d, plate_pt, shade_pt, on_return: bool) -> None:
@@ -887,159 +1418,269 @@ def y_at_px(row: float, x: float, z: float) -> float:
     return EYE - (row - CY) * zc / F
 
 
-def slab_bay(img: np.ndarray, d, x0: float, x1: float, sy: float,
-             zf: float, zb: float, clip_l: bool = False, clip_r: bool = False) -> None:
-    """One bay of a heavy floating slab, drawn in the order the light works.
+def dim(img: np.ndarray, mask: np.ndarray, k) -> None:
+    """Darken what is ALREADY THERE by MULTIPLYING it, and never past a floor.
 
-    First the shadow it throws on the panelling under it - through cast(), so it
-    MULTIPLIES the wall instead of replacing it and lands in this part's SHADOW
-    layer instead of its silhouette. Drawn with shade() it did both wrong things
-    at once: the mask claimed a flat grey rectangle over the wall, the model was
-    handed that rectangle as the thing to render, and it rendered a smear
-    (2026-09-05). Then the ONE horizontal face the eye can see: the top if the
-    slab is below the eye, the underside if it is above. At EYE 1.70 that face
-    is only 6-7 px, and no height between the ledge and the frieze rail makes it
-    more (20 px would need the board 0.80 m off eye level, i.e. below 0.90 or
-    above 2.50), so the THICKNESS is carried by the front edge instead: 29-31 px
-    of it, stacked as a lit arris, the board, and a dark undercut. A flat grey
-    bar reads as a line; that stack reads as timber.
+    This is cast()'s rule applied to a material instead of to a shadow, and it
+    is here because every dark mark inside the recess has to survive being drawn
+    on a board that is only 84-118 to begin with. shade() and hand() both WRITE
+    a number: shade() writes the value it is given, hand() writes 0. On the
+    wall, at 130-200, a written 44 is a joint. On the lining it is a black wire,
+    and nine of them ran the full height of the cut straight across both rows of
+    bottles.
+
+    `k` may be a scalar or a field. The floor is FIGURE_DROP below the board's
+    own tone AT THAT PIXEL, so no mark may take a board more than 14 values
+    below itself however light the board is, and a mark on a dark board is never
+    deeper than the same mark on a light one - the thing an additive figure gets
+    wrong. Floored against the board's NOMINAL tone instead, which is where this
+    started, the floor bit hardest exactly where the board is already darkest:
+    a joint landing on a board's shaded edge came out ONE value deep instead of
+    twelve - present in the arithmetic and invisible on the page.
     """
+    if _SKIP:
+        return
+    floor = 1.0 - FIGURE_DROP / np.maximum(img, 1.0)
+    f = np.minimum(np.maximum(k, floor), 1.0)
+    img *= 1.0 - mask * (1.0 - f)
+
+
+def _rast(pts=None, line=None, width: int = 2) -> np.ndarray:
+    """0..1 coverage for a projected polygon, or for a projected line of a fixed
+    PAGE width - which is how a joint gets to be 2 px wide and not 2 px wide at
+    one end of the wall and 5 px at the other."""
+    m = Image.new("L", (W, H), 0)
+    dd = ImageDraw.Draw(m)
+    if pts is not None:
+        dd.polygon([P(*q) for q in pts], fill=255)
+    else:
+        dd.line([P(*q) for q in line], fill=255, width=width)
+    return np.asarray(m, np.float32) / 255.0
+
+
+def lining_figure(img: np.ndarray, pts, seed: int) -> None:
+    """The boards' figure, as a MULTIPLIER on the board's own tone.
+
+    Same construction as the wall's grain() - _figure_field() is now the one
+    place that knows how walnut is drawn - but at a LOWER STRENGTH AND A LOWER
+    PITCH, and applied through dim(). grain() ADDS `g * strength`, and at
+    strength 8 on a board of 84 its hearts land at 62: on a lit wall that is
+    figure, inside a dark recess it is a wire. Here the same hearts become
+    k 0.91 and stop there.
+
+    THE PITCH IS THE ROUND (founder, 2026-09-08: "clean up the wood grain around
+    the shelf"). At the wall's own numbers - 1.0-1.7 and 2.1-3.0 cycles across
+    the board, two to four hearts 1.7 px wide - ten boards carried up to forty
+    narrow near-vertical marks across the opening and the lining read as
+    REEDING, the one thing the prompt has forbidden all along. Now: under one
+    cycle across a board, ONE OR TWO hearts, and each of them 0.095 of the
+    board's width - 6-8 px of sigma, a soft sweep of figure a hand's breadth
+    wide instead of a scratch. Wider boards on top of that (BOARD_W), so there
+    are eight of them and seven joints where there were ten and nine.
+    """
+    if _SKIP:
+        return
+    g, mask = _figure_field(pts, seed, LINING_FREQS, LINING_HEARTS,
+                            LINING_HEART_W)
+    if g is None:
+        return
+    # the broad modulation is worth about k 0.985; only the wide soft hearts
+    # reach GRAIN_K, and nothing goes past it
+    dim(img, mask, 1.0 - np.clip(-g, 0.0, 1.0) * (1.0 - GRAIN_K))
+
+
+def lining(img: np.ndarray, d) -> None:
+    """THE INSIDE OF THE CUT: plain vertical walnut boards.
+
+    Not the wall's raised-and-fielded panels - the founder's "dont ... carry the
+    walls look into the shelf" - and not one flat dark rectangle either, which
+    is what the model turns into a picture or a switched-off screen. So: real
+    boards, a joint between each, figure in every one, board-to-board variation
+    so no two neighbours share a tone, and an overall value that falls left to
+    right with the room's own light and sits about 80 below the panel fields
+    the recess is cut into - the back of a box is the darkest large field
+    inside its own frame, and at 118-84 it was not: it ran through exactly the
+    values a clear bottle's liquid runs through, and twenty bottles read as a
+    pattern painted on it. Calmer than the wall, and a great deal darker.
+
+    EVERY DARK MARK IN HERE IS A MULTIPLIER. The joints and the figure go on
+    through dim() at k 0.86, floored FIGURE_DROP below the board under them,
+    so the darkest thing inside the recess is still the head's shade and not a
+    line. Written values and hand() lines are what put nine black wires down the
+    face of the last round's lining, across both rows of bottles.
+
+    The two shades the cut throws on this lining are NOT here: they go on last,
+    in recess_shade(), so that they fall on the bottles standing in front of the
+    boards as well as on the boards. Through cast() either way, so they MULTIPLY
+    what is under them and every joint and every run of grain survives - a flat
+    grey band handed to the model comes back as a smear (2026-09-05).
+    """
+    x0, x1 = RECESS_X
+    y0, y1 = RECESS_Y
+    n = max(2, int(round((x1 - x0) / BOARD_W)))
+    rs = np.random.RandomState(90811)
+    vs = [LINING_V[0] + (LINING_V[1] - LINING_V[0]) * ((i + 0.5) / n)
+          + rs.uniform(-8.0, 8.0)      # no two neighbours share a tone: boards
+          for i in range(n)]           # cut from one log still differ, and a
+                                       # run of identical strips is reeding
+    for i in range(n):
+        a = x0 + (x1 - x0) * i / n
+        b = x0 + (x1 - x0) * (i + 1) / n
+        v = vs[i]
+        q = [(a, y1, ZB_REC), (b, y1, ZB_REC), (b, y0, ZB_REC), (a, y0, ZB_REC)]
+        poly(d, q, 255)
+        shade(img, q, v + 7, v - 7, "x")
+        lining_figure(img, q, int(abs(a) * 811 + 97 * i + 17))
+    # THE JOINTS, and they go on AFTER every board is painted. 2 px of page,
+    # never more, and a multiplier floored on whichever of the two boards it
+    # lies between is the darker - not a written value, and NOT a hand() line:
+    # nine ruled lines at value 0 is what the last round put across both rows of
+    # bottles. Drawn inside the loop, as they were first written, a joint lost
+    # its right-hand half the moment the next board was laid, because shade()
+    # OVERWRITES the values it fills rather than multiplying them - and the
+    # joints measured LIGHTER than the boards they divide.
+    for i in range(n - 1):
+        bx = x0 + (x1 - x0) * (i + 1) / n
+        dim(img, _rast(line=[(bx, y1, ZB_REC), (bx, y0, ZB_REC)], width=2), JOINT_K)
+
+
+def recess_shade(img: np.ndarray) -> None:
+    """The soft shade the cut throws INSIDE itself: one under the head, one down
+    the left reveal.
+
+    It is drawn LAST, after the boards and both rows, and that is the point.
+    cast() multiplies whatever is already under it, so run here it darkens the
+    tops of the upper bottles standing under the head and the left-hand bottles
+    standing beside the reveal, exactly as it darkens the lining behind them.
+    Run before them - which is where it started - the boards and the bottles
+    were laid over their own shade at full value and each row came out lit by a
+    different lamp from the wall behind it.
+
+    Both bands stop clear of the two boards, and where a band begins at a board
+    it begins BELOW the lowest row that board covers - y_at_px()'s rule - so no
+    row of shade lands inside a member's own mask.
+    """
+    x0, x1 = RECESS_X
+    y0, y1 = RECESS_Y
+    cast(img, [(x0, y1 - SHADOW_GAP, ZB_REC), (x1, y1 - SHADOW_GAP, ZB_REC),
+               (x1, y1 - SHADOW_GAP - HEAD_SHADE, ZB_REC),
+               (x0, y1 - SHADOW_GAP - HEAD_SHADE, ZB_REC)], 0.52, 1.0, "y")
+    xs = x0 + SHADOW_GAP
+    lo_a = max(SHELF_YS[0], y_at_px(P(x0, SHELF_YS[0], ZF_REC)[1], x0, ZB_REC)) + SHADOW_GAP
+    lo_b = min(SHELF_YS[1] - SHELF_T,
+               y_at_px(P(x0, SHELF_YS[1] - SHELF_T, ZF_REC)[1], x0, ZB_REC)) - SHADOW_GAP
+    up_a = max(SHELF_YS[1], y_at_px(P(x0, SHELF_YS[1], ZF_REC)[1], x0, ZB_REC)) + SHADOW_GAP
+    for a, b in ((lo_a, lo_b), (up_a, y1 - SHADOW_GAP)):
+        cast(img, [(xs, b, ZB_REC), (xs + REVEAL_SHADE, b, ZB_REC),
+                   (xs + REVEAL_SHADE, a, ZB_REC), (xs, a, ZB_REC)], 0.70, 1.0, "x")
+
+
+def reveals(img: np.ndarray, d) -> None:
+    """The three faces of the cut itself.
+
+    THE LEFT REVEAL is a real plane, 39.6 px of return, and it faces AWAY from
+    the window: it is in shade and falls off going back, which is the single
+    clearest thing saying the opening has depth.
+
+    THE SOFFIT across the head is seen from below and is the darkest surface in
+    the unit. It is only 13.9 px on its own - a flush recess cannot make it more
+    without raking it into a pelmet - so it is not asked to work alone: the
+    head's cast shade continues it down the lining for another 50 px, and the
+    two read as one shadowed head.
+
+    THE RIGHT REVEAL is edge-on. That jamb stands 0.19 m from the camera's own x
+    and its plane projects to 5 px, so it is drawn as ONE lit arris on the
+    opening's right edge instead - the same rule the old SIDE_MIN_PX stated for
+    a post's side face. It faces the window, so it is the bright one.
+    """
+    x0, x1 = RECESS_X
+    y0, y1 = RECESS_Y
+    lr = [(x0, y1, ZF_REC), (x0, y1, ZB_REC), (x0, y0, ZB_REC), (x0, y0, ZF_REC)]
+    poly(d, lr, 255)
+    shade(img, lr, 92, 34, "x")
+    poly(d, lr, None, 0, 1)
+    sf = [(x0, y1, ZF_REC), (x1, y1, ZF_REC), (x1, y1, ZB_REC), (x0, y1, ZB_REC)]
+    poly(d, sf, 255)
+    shade(img, sf, 30, 17, "y")
+    poly(d, sf, None, 0, 1)
+    ar = [(x1 - RIGHT_ARRIS, y1, ZF_REC), (x1, y1, ZF_REC),
+          (x1, y0, ZF_REC), (x1 - RIGHT_ARRIS, y0, ZF_REC)]
+    poly(d, ar, 255)
+    shade(img, ar, 210, 186, "y")
+    poly(d, ar, None, 0, 1)
+
+
+def shelf_board(img: np.ndarray, d, sy: float) -> None:
+    """One 3 cm board, housed across the recess from reveal to reveal.
+
+    Below the eye it is read TOP-DOWN: a lit top face running back to the
+    lining, then the dark front edge under it. Above the eye it is read the
+    other way up: a lit front edge, then its own underside, then the shadow it
+    throws on the lining - one contiguous dark band. Either way the thickness is
+    ONE member and not a stack: at 3 cm there are ten pixels to spend, and three
+    members in ten pixels are three scratches (the round-2 hairline stack).
+    """
+    x0, x1 = RECESS_X
     y0, y1 = sy - SHELF_T, sy
-    # everything laid ON THE WALL - the shadow as well as the slab's own
-    # horizontal face - has to stop where the post beside it hides the wall, or
-    # the shelf's own mask claims a strip of the post.
-    bx0 = x_at_px(P(x0, y1, zf)[0], zb) if clip_l else x0
-    bx1 = x_at_px(P(x1, y1, zf)[0], zb) if clip_r else x1
-    # and it starts BELOW the lowest row the slab itself covers, not at the
-    # slab's own y: see y_at_px(). min() picks the right one either way round -
-    # the front edge for a slab under the eye, the soffit line for one above it.
-    tL = min(y0, y_at_px(P(x0, y0, zf)[1], bx0, zb)) - SHADOW_GAP
-    tR = min(y0, y_at_px(P(x1, y0, zf)[1], bx1, zb)) - SHADOW_GAP
-    # and it stops just clear of the post at each end of the bay, on the same
-    # rule: the wall x that projects to the post's outermost drawn column.
-    sx0 = x_at_px(max(P(x0, 0.0, zf)[0], P(x0, 0.0, zb)[0]), zb) + SHADOW_GAP
-    sx1 = x_at_px(min(P(x1, 0.0, zf)[0], P(x1, 0.0, zb)[0]), zb) - SHADOW_GAP
-    cast(img, [(sx0, tL, zb), (sx1, tR, zb),
-               (sx1, tR - SLAB_CORE, zb), (sx0, tL - SLAB_CORE, zb)], 0.50, 0.62, "y")
-    cast(img, [(sx0, tL - SLAB_CORE, zb), (sx1, tR - SLAB_CORE, zb),
-               (sx1, tR - SLAB_SHADOW, zb), (sx0, tL - SLAB_SHADOW, zb)], 0.64, 1.0, "y")
-    top_face = EYE > y1
-    yf = y1 if top_face else y0
-    face = [(bx0, yf, zb), (bx1, yf, zb), (x1, yf, zf), (x0, yf, zf)]
-    poly(d, face, 255)
-    if top_face:
-        shade(img, face, 176, 198, "y")   # a lit top, seen almost edge-on -
-                                          # kept close to the arris above it so the
-                                          # two read as ONE lit top and not as a
-                                          # 6 px grey hairline stacked on an 11 px
-                                          # white one
+    if EYE > y1:
+        face = [(x0, y1, ZB_REC), (x1, y1, ZB_REC), (x1, y1, ZF_REC), (x0, y1, ZF_REC)]
+        poly(d, face, 255)
+        shade(img, face, 178, 200, "y")     # lit, and brightest at its front
+        poly(d, face, None, 0, 1)
+        edge = [(x0, y1, ZF_REC), (x1, y1, ZF_REC), (x1, y0, ZF_REC), (x0, y0, ZF_REC)]
+        poly(d, edge, 255)
+        shade(img, edge, 64, 42, "x")       # the dark square edge under it
+        poly(d, edge, None, 0, 2)
     else:
-        shade(img, face, 20, 11, "y")     # an underside, in deep shadow
-    hand(d, P(bx0, yf, zb), P(bx1, yf, zb), 1)
-    if top_face:
-        stack = ((y1 - SLAB_ARRIS, y1, 208, 194),          # the lit arris
-                 (y0 + SLAB_UNDER, y1 - SLAB_ARRIS, 86, 44),
-                 (y0, y0 + SLAB_UNDER, 20, 13))            # the undercut
-    else:
-        stack = ((y0 + SLAB_ARRIS, y1, 78, 42),            # the board, dark
-                 (y0, y0 + SLAB_ARRIS, 206, 192))          # a lit lower arris:
-    for a, b, v0, v1 in stack:                             # light off the ledge
-        if b - a < 1e-6:
-            continue
-        q = [(x0, b, zf), (x1, b, zf), (x1, a, zf), (x0, a, zf)]
-        poly(d, q, 255)
-        shade(img, q, v0, v1, "x")
-    for yy in (y1, y0):                    # the slab's own top and bottom lines,
-        hand(d, P(x0 + 0.006, yy, zf), P(x1 - 0.006, yy, zf), 2)   # stopped just
-    for xe in (x0 + 0.014, x1 - 0.014):    # short of the posts, and the housing
-        hand(d, P(xe, y1, zf), P(xe, y0, zf), 2)   # joint just inside the bay -
-                                           # the post's own stop-line closes both
+        under = [(x0, y0, ZB_REC), (x1, y0, ZB_REC), (x1, y0, ZF_REC), (x0, y0, ZF_REC)]
+        poly(d, under, 255)
+        shade(img, under, 20, 12, "y")
+        poly(d, under, None, 0, 1)
+        edge = [(x0, y1, ZF_REC), (x1, y1, ZF_REC), (x1, y0, ZF_REC), (x0, y0, ZF_REC)]
+        poly(d, edge, 255)
+        shade(img, edge, 200, 166, "x")
+        poly(d, edge, None, 0, 2)
+        # and what it throws on the lining. It starts BELOW the lowest row the
+        # board itself covers, not at the board's own y: y_at_px() is what keeps
+        # the first rows of a shadow out of its caster's own mask.
+        t = min(y0, y_at_px(P(x0, y0, ZF_REC)[1], x0, ZB_REC)) - SHADOW_GAP
+        cast(img, [(x0, t, ZB_REC), (x1, t, ZB_REC),
+                   (x1, t - SHELF_SHADOW, ZB_REC), (x0, t - SHELF_SHADOW, ZB_REC)],
+             0.44, 1.0, "y")
 
 
-def post_shadow(img: np.ndarray, x0: float, x1: float, zf: float, zb: float) -> None:
-    """What one post throws on the panelling beside it. It is BROKEN wherever a
-    slab's own shadow crosses it, because two parts must not darken the same
-    pixel: each part's shadow layer is multiplied onto the plate as that part is
-    laid, so an overlap is applied twice and prints as a black notch.
+def face_frame(img: np.ndarray, d) -> None:
+    """THE FACE FRAME, FLUSH: one slim flat band of walnut lying IN the wall
+    plane.
 
-    It also starts at the wall x that projects to the post's OUTERMOST drawn
-    column, not at the post's own x1. For the two posts left of the camera those
-    are the same thing - their side face runs back to the wall at x1 - but the
-    right cheek is right of the camera, so its front face at z=3.65 projects 7 px
-    FURTHER RIGHT than the wall does at the same x, and a band begun at x1 laid
-    2600 px of shadow map over the cheek's own dark arris."""
-    xs = x_at_px(max(P(x1, 0.0, zf)[0], P(x1, 0.0, zb)[0]), zb) + SHADOW_GAP
-    for a, b in ((BACKBAR_Y[0], SHELF_YS[0] - SHELF_T - SLAB_SHADOW),
-                 (SHELF_YS[0], SHELF_YS[1] - SHELF_T - SLAB_SHADOW),
-                 (SHELF_YS[1], UNIT_TOP)):
-        # a segment that starts at a slab's top starts BELOW the lowest row that
-        # slab covers, on the same rule y_at_px() states, or the band's first two
-        # rows land inside the slab's own mask.
-        if a in SHELF_YS:
-            a = max(a, y_at_px(P(x1, a, zf)[1], x1, zb)) + SHADOW_GAP
-        if b - a < 0.02:
-            continue
-        cast(img, [(xs, b, zb), (xs + POST_SHADOW, b, zb),
-                   (xs + POST_SHADOW, a, zb), (xs, a, zb)], 0.46, 0.94, "x")
-
-
-def post(img: np.ndarray, d, x0: float, x1: float, zf: float, zb: float) -> None:
-    """One post, as a SOLID 12 cm member standing on the ledge.
-
-    The front face runs UNBROKEN from the ledge to the head - that is the answer
-    to a divider disappearing - and is drawn as POST_STRIPS: a lit arris down
-    the window side, two strips of face turning away from it, a shadowed arris
-    down the other side, with a hard dark stop-line on both edges. The two
-    bright strips sit ABOVE the value of the wall showing between the posts, so
-    a post reads as a lit member in front of the opening rather than as the dark
-    edge of a recess. The side face is 35 cm of return, BROKEN wherever a slab is
-    housed into it; on a post within 0.20 m of the camera's own x it is edge-on
-    and would project as a 3 px sliver, so there it is merged into the arris it
-    stands on - bright if that is the window side, dark if it is not - instead of
-    being drawn as a plane of its own.
+    No architrave, no bead, no bolection, nothing proud - and therefore nothing
+    thrown on the panelling outside it. That is the whole of "inlaid": the wall
+    is not disturbed, it is cut. What makes the band read is tone (above the
+    panel fields it interrupts, below their lit surrounds) and a joint line at
+    each of its four edges, and the straight ones are INKED IN CODE after the
+    render like the marble's are.
     """
-    sx = side_face_x(x0, x1)
-    wpx = abs(P(sx, BACKBAR_Y[0], zb)[0] - P(sx, BACKBAR_Y[0], zf)[0])
-    if wpx >= SIDE_MIN_PX:
-        for a, b in ((BACKBAR_Y[0], SHELF_YS[0] - SHELF_T),
-                     (SHELF_YS[0], SHELF_YS[1] - SHELF_T),
-                     (SHELF_YS[1], UNIT_TOP)):
-            if b - a < 0.012:
-                continue
-            s = [(sx, b, zf), (sx, b, zb), (sx, a, zb), (sx, a, zf)]
-            poly(d, s, 255)
-            # graded ALONG THE RETURN, not down it: light where the arris turns
-            # the corner and falling away into the wall. A side face at one flat
-            # dark value is a black stripe beside a post; a side face that goes
-            # off toward the wall is the thing that says the post stands in
-            # front of the panelling rather than on it. Both posts that show a
-            # side face stand left of the camera axis, so the front of the
-            # return is the LOW column and the wall end is the high one.
-            shade(img, s, 84, 28, "x")
-            poly(d, s, None, 0, 1)
-    a = x0
-    for w, v0, v1 in POST_STRIPS:
-        b = a + w
-        q = [(a, UNIT_TOP, zf), (b, UNIT_TOP, zf), (b, BACKBAR_Y[0], zf), (a, BACKBAR_Y[0], zf)]
+    fx0, fx1 = FRAME_X
+    fy0, fy1 = FRAME_Y
+    x0, x1 = RECESS_X
+    y0, y1 = RECESS_Y
+    lv, rv = FRAME_V
+    bands = ((fx0, x0, fy0, fy1, lv + 4, lv - 8, "y"),      # the left stile
+             (x1, fx1, fy0, fy1, rv + 4, rv - 8, "y"),      # the right
+             (x0, x1, y1, fy1, lv + 2, rv + 2, "x"),        # the head
+             (x0, x1, fy0, y0, lv - 6, rv - 6, "x"))        # the bottom rail
+    for a, b, c, e, v0, v1, ax in bands:
+        q = [(a, e, ZF_REC), (b, e, ZF_REC), (b, c, ZF_REC), (a, c, ZF_REC)]
         poly(d, q, 255)
-        shade(img, q, v0, v1, "y")
-        a = b
-    if wpx < SIDE_MIN_PX:                  # the edge-on sliver, merged in
-        s = [(sx, UNIT_TOP, zf), (sx, UNIT_TOP, zb),
-             (sx, BACKBAR_Y[0], zb), (sx, BACKBAR_Y[0], zf)]
-        poly(d, s, 255)
-        lit = abs(sx - x0) < abs(sx - x1)  # the window side of the post
-        shade(img, s, 210, 198, "y") if lit else shade(img, s, 30, 20, "y")
-    grain(img, [(x0 + POST_ARRIS, UNIT_TOP, zf), (x1 - POST_DARK, UNIT_TOP, zf),
-                (x1 - POST_DARK, BACKBAR_Y[0], zf), (x0 + POST_ARRIS, BACKBAR_Y[0], zf)],
-          7.5, int(abs(x0) * 1097 + 313))
-    poly(d, [(x0, UNIT_TOP, zf), (x1, UNIT_TOP, zf),
-             (x1, BACKBAR_Y[0], zf), (x0, BACKBAR_Y[0], zf)], None, 0, 2)
-    for sy in SHELF_YS:                    # the through housings, on the face
-        hand(d, P(x0, sy, zf), P(x1, sy, zf), 1)
-        hand(d, P(x0, sy - SHELF_T, zf), P(x1, sy - SHELF_T, zf), 1)
-
-
+        shade(img, q, v0, v1, ax)
+    poly(d, [(fx0, fy1, ZF_REC), (fx1, fy1, ZF_REC),
+             (fx1, fy0, ZF_REC), (fx0, fy0, ZF_REC)], None, 0, 2)
+    poly(d, [(x0, y1, ZF_REC), (x1, y1, ZF_REC),
+             (x1, y0, ZF_REC), (x0, y0, ZF_REC)], None, 0, 2)
+    for a, b, y_, v in ((fx0, fx1, fy1, 30), (fx0, fx1, fy0, 30),
+                        (x0, x1, y1, 24), (x0, x1, y0, 24)):
+        INK.append({"part": "backbar", "width": 2, "value": v,
+                    "points": [P(a, y_, ZF_REC), P(b, y_, ZF_REC)]})
 def ring(x: float, y: float, z: float, r: float, n: int = 24):
     """A horizontal circle in world space. A seat is round; drawn as a square
     quad it projects to a parallelogram and reads as a sheet of glass."""
@@ -1623,62 +2264,52 @@ def build(values: bool, enabled=None, force=()) -> Image.Image:
     for y_, z_ in ((LEDGE_H, WALL_Z), (LEDGE_H, zc), (LEDGE_H - LEDGE_LIP, zc)):
         INK.append({"part": "ledge", "width": 2, "value": 26, "points": [P(BACKBAR_X[0], y_, z_), P(BACKBAR_X[1], y_, z_)]})
 
-    # ---- THE SHELF UNIT: variant C3-SLAB, thick floating slabs ---------------
-    # The founder's three complaints (2026-09-05) and the three answers.
-    #   "they look like they are a part of the wall"  ->  THICK, AND LIT LIKE
-    #   SOLIDS. 12 cm posts and 8.5 cm slabs, every member turning a lit arris
-    #   and a shadowed arris to the camera and casting a MULTIPLIED shadow on the
-    #   panelling beside and beneath it. A member with a shadow is standing off a
-    #   surface; a member without one is painted on it.
-    #   "one of the dividers on the right side of the shelf is gone"  ->  the
-    #   unit ENDS INSIDE THE FRAME. Its right cheek's front face lands at
-    #   px 1085..1133 and the marble ledge runs on past it; and every post is
-    #   placed by PROJECTED clearance from the wall's stiles, so none of them
-    #   stands on the one thing that can swallow it.
-    #   "the shelves dont look like they were built into the wall it just looks
-    #   flat"  ->  HOUSED, AND DRAWN WITH DEPTH. A slab is drawn only in the
-    #   clear bay BETWEEN two posts, with a hard housing line at each end; the
-    #   posts run unbroken past it and their side faces are cut where it goes in.
-    # And there is NO back, NO top rail and NOTHING in the compartments: the
-    # wall's own panelling shows between the posts and runs on above their heads
-    # to the frieze rail. Nothing is drawn in the openings, so nothing there
-    # belongs to these parts' masks and there is nothing for the model to invent
-    # a back panel, a picture or a screen in.
+    # ---- THE INLAID UNIT: variant I1-FLUSH -----------------------------------
+    # Back to front, which is also the order the light works in: the lining at
+    # the back of the cut with the head's shade and the left reveal's on it,
+    # then the faces of the cut itself; then the two boards and the two rows
+    # standing in front of the lining; and last the flat band that lies in the
+    # wall plane round the whole thing.
+    #
+    # NOTHING is drawn outside FRAME_X / FRAME_Y - there is no splashback and no
+    # member of any kind below the bottom rail. The frame is flush, so the unit
+    # throws nothing on the panelling and the wall's look is untouched; the
+    # panelling simply runs on under the frame to the marble, and the wall's
+    # stiles at world 0.06 and 0.92 stop at the frame and run on again above and
+    # below it, which is what being let into a wall looks like.
+    #
     # EVERY shadow this unit throws goes through cast(), inside the part that
-    # throws it: a slab's shadow on the wall belongs to that slab, a post's to
-    # the backbar. So masks/<part>.png hold members only - cheeks, dividers,
-    # slab faces, arrises - and shadows/<part>.png hold the shading, and the
-    # model is never handed a flat grey rectangle to render.
-    zf, zb = WALL_Z - SHELF_DEPTH, WALL_Z
-
+    # throws it, so masks/<part>.png hold members only and shadows/<part>.png
+    # hold the shading - the model is never handed a flat grey rectangle.
     part("backbar")
-    for x0, x1 in upright_spans():
-        post_shadow(img, x0, x1, zf, zb)
+    lining(img, d)
+    reveals(img, d)
 
-    # the slabs, in painter's order for THIS eye height: a shelf below the eye is
-    # drawn before its bottles (they stand on its top); one above the eye after
-    # (its front edge hides their feet)
-    for name, sy, seed in (("shelf-lower", SHELF_YS[0], 11), ("shelf-upper", SHELF_YS[1], 23)):
-        bname = "bottles-" + name.split("-")[1]
-        def shelf(sy=sy, name=name):
+    # the boards, in painter's order for THIS eye height: the lower board is
+    # below the eye and is drawn BEFORE its row (the bottles stand on its lit
+    # top face); the upper is above the eye and drawn AFTER (its front edge
+    # hides their feet, which is what says they are standing on it)
+    # THE COMPARTMENT CEILING travels with the row: the lower row must clear the
+    # underside of the upper board (SHELF_YS[1] - SHELF_T) and the upper row the
+    # head of the cut (RECESS_Y[1]), and bottle_row() holds every bottle
+    # SHELF_HEADROOM under whichever of the two is over it.
+    for name, sy, ceil in (("shelf-lower", SHELF_YS[0], SHELF_YS[1] - SHELF_T),
+                           ("shelf-upper", SHELF_YS[1], RECESS_Y[1])):
+        rname = name.split("-")[1]
+        def board(sy=sy, name=name):
             part(name)
-            for bx0, bx1, cl, cr in shelf_bays():
-                slab_bay(img, d, bx0, bx1, sy, zf, zb, cl, cr)
-        def row(sy=sy, seed=seed, bname=bname):
-            part(bname)
-            bottles(img, d, sy, seed)
+            shelf_board(img, d, sy)
+        def row(sy=sy, rname=rname, ceil=ceil):
+            part("bottles-" + rname)
+            bottle_row(img, d, sy, rname, ceil)
         if EYE > sy:
-            shelf(); row()
+            board(); row()
         else:
-            row(); shelf()
+            row(); board()
 
     part("backbar")
-    # THE POSTS LAST. A slab's horizontal face runs on behind the post toward the
-    # wall and the post is in front of that; drawn in the other order the slab
-    # paints over the divider, which is precisely what the founder watched happen
-    # to the one on the right.
-    for x0, x1 in upright_spans():
-        post(img, d, x0, x1, zf, zb)
+    recess_shade(img)          # last, so it falls on the bottles too
+    face_frame(img, d)
 
     # The set and the board are BLANK. The joke fills them, so the base must not
     # invent a picture or a word - and the quads are written out below so the
@@ -1894,6 +2525,57 @@ def build(values: bool, enabled=None, force=()) -> Image.Image:
             ln[cut] = was_ln[cut]
             line.paste(Image.fromarray(ln), (0, 0))
 
+    # THE RECESS IS BEHIND WHAT STANDS IN IT, and the bookkeeping has to say so
+    # twice - once in the masks, once in the shadow layers.
+    #
+    # MASKS. A part's silhouette is its OWN, drawn as if nothing stood in front
+    # of it, and that is right for a chair in front of a bar. It is NOT right
+    # inside a recess: the lining runs on behind both boards and both rows
+    # because it is drawn first, and left in the mask it would be laid straight
+    # back OVER the bottles the moment the carcass was laid - the same bug as a
+    # figure's mask carrying the chair that stands in front of it. So every part
+    # of the unit is cut by every part of the unit laid AFTER it.
+    #
+    # SHADOWS. A part's shadow layer is multiplied onto the plate as that part
+    # is laid, so it can only mean anything where something is ALREADY there.
+    # A shadow on the part's own body would darken its render twice, and one on
+    # a part laid later is thrown away when that part is laid - and lands twice
+    # in the conditioning. Both are cleared here, on the same rule.
+    _UNIT = [p for p in LAY_ORDER
+             if p in ("backbar", "shelf-lower", "bottles-lower",
+                      "bottles-upper", "shelf-upper")]
+    # NOT ONE PIXEL OUTSIDE THE FRAME, and in particular not one BELOW it. The
+    # unit's outer edge is inked by hand(), which records itself 4 px wide in the
+    # silhouette and wanders up to 2 px on top of that, so the frame's bottom
+    # edge alone used to hang 3-4 rows of mask over panelling this unit must not
+    # touch. Everything the unit is lives inside the face frame's outer
+    # rectangle, so every one of its masks is cut to it.
+    _fb = Image.new("L", (W, H), 0)
+    ImageDraw.Draw(_fb).polygon(
+        [P(FRAME_X[0], FRAME_Y[1], ZF_REC), P(FRAME_X[1], FRAME_Y[1], ZF_REC),
+         P(FRAME_X[1], FRAME_Y[0], ZF_REC), P(FRAME_X[0], FRAME_Y[0], ZF_REC)],
+        fill=255)
+    _fbm = np.asarray(_fb, dtype=np.uint8) > 127
+    for _p in _UNIT:
+        if _p in _OWN:
+            _OWN[_p] = Image.fromarray(
+                (((np.asarray(_OWN[_p], dtype=np.uint8) > 127) & _fbm) * 255
+                 ).astype(np.uint8))
+    for _i, _p in enumerate(_UNIT):
+        if _p not in _OWN:
+            continue
+        _after = np.zeros((H, W), bool)
+        for _q in _UNIT[_i + 1:]:
+            if _q in _OWN:
+                _after |= np.asarray(_OWN[_q], dtype=np.uint8) > 127
+        _self = np.asarray(_OWN[_p], dtype=np.uint8) > 127
+        if _p in _SHADOW:
+            _SHADOW[_p] = np.where(_self | _after, 1.0, _SHADOW[_p]).astype(np.float32)
+            if float(_SHADOW[_p].min()) > 0.999:
+                del _SHADOW[_p]          # it threw nothing on anything already laid
+        if _after.any():
+            _OWN[_p] = Image.fromarray((((_self & ~_after)) * 255).astype(np.uint8))
+
     lamplight(img)
     ln = np.asarray(line, dtype=np.float32)
     if not values:
@@ -1929,6 +2611,52 @@ if __name__ == "__main__":
     build(False).save(out / "00-lines.png")
     build(True).save(out / "01-values.png")
     (out / "ink.json").write_text(json.dumps([{**e, "points": [[round(x, 1), round(y, 1)] for x, y in e["points"]]} for e in INK]), encoding="utf8")
+    # THE LABEL GEOMETRY, for scripts/label-bottles.py. Every bottle's label as
+    # a PAGE QUAD - four corners, clockwise from top-left, exactly as quads.json
+    # gives the screen and the board - plus its shape, its bottle kind and the
+    # house brand that belongs on it. The brands are assigned by LABEL AREA:
+    # sorted largest first and given the canon names longest first, cycling
+    # through the list, so the longest name never lands on the smallest patch.
+    # Lettering is code. The model is handed a blank patch and nothing else.
+    _labels = [dict(r) for r in LABELS]
+    _order = sorted(range(len(_labels)), key=lambda i: -(_labels[i]["widthPx"] * _labels[i]["heightPx"]))
+    _names = sorted(BRANDS, key=lambda s: -len(s))
+    for _rank, _i in enumerate(_order):
+        _labels[_i]["brand"] = _names[_rank % len(_names)]
+        _labels[_i]["areaRank"] = _rank
+        _labels[_i]["letterable"] = (_labels[_i]["heightPx"] >= LABEL_MIN_PX
+                                     and _labels[_i]["widthPx"] >= LABEL_MIN_W_PX)
+    _seen: dict = {}
+    for _r in _labels:
+        _opts = BRAND_BY_KIND[_r["kind"]]
+        _seen[_r["kind"]] = _seen.get(_r["kind"], -1) + 1
+        _r["brandForKind"] = _opts[_seen[_r["kind"]] % len(_opts)]
+    (out / "labels.json").write_text(json.dumps({
+        "_doc": "Measured in scripts/draw-room-lines.py. One entry per bottle in the "
+                "inlaid recess. `quad` is the label's box on the page - four corners, "
+                "CLOCKWISE FROM TOP-LEFT - in the same convention as quads.json, so a "
+                "typeset name is warped onto THOSE corners the way sign-on-glass.py "
+                "warps the gilding onto the pane. `shape` is how the paper is cut "
+                "(rectangle, band, oval, shield): inset the type for oval and shield. "
+                "`brand` is the house name that belongs on this bottle and it is the "
+                "ONLY place a bottle name is ever written - the block-in hands the "
+                "model a blank patch. `brand` follows the round's own rule: labels "
+                "sorted by area, the canon names sorted longest first, cycled - so the "
+                "longest name never lands on the smallest patch, and a name can repeat "
+                "on a shelf of twenty bottles as a real back bar's do. `brandForKind` "
+                "is the same list read the other way, one whose category word matches "
+                "the bottle's silhouette, for a pass that wants a kind-true shelf "
+                "instead. Regenerate whenever the camera, the recess or the rows move.",
+        "font": {"minLabelPx": LABEL_MIN_PX, "minLabelWidthPx": LABEL_MIN_W_PX,
+                 "capHeightMinPx": 6.0,
+                 "note": "every label on this shelf clears both floors. Set the "
+                         "brand's LONGEST WORD to the label's inner width at a cap "
+                         "height of at least capHeightMinPx; under that, set the "
+                         "brand's initials as a monogram between the rules instead"},
+        "brands": list(BRANDS),
+        "brandsByKind": {k: list(v) for k, v in BRAND_BY_KIND.items()},
+        "labels": _labels,
+    }, indent=2), encoding="utf8")
     # A VALUES IMAGE PER PART. The block-in a part is rendered from must never
     # contain what stands in front of it: the counter's block-in once carried the
     # chairs' silhouette and the model drew a chair back into the bar
@@ -1937,6 +2665,16 @@ if __name__ == "__main__":
     (out / "values").mkdir(exist_ok=True)
     for i, name in enumerate(LAY_ORDER):
         behind = [p for p in LAY_ORDER[:i] if p not in DISABLED]
+        if name == "backbar":
+            # THE RECESS IS NEVER HANDED TO THE MODEL EMPTY. Its boards and
+            # both rows are laid AFTER it, so LAY_ORDER[:i] does not carry
+            # them - and a dark field inside a frame is exactly what comes
+            # back as a picture or a switched-off screen. They go into its
+            # block-in anyway; they are cut out of its mask above, so not
+            # one of their pixels is ever taken from its render.
+            behind = behind + [p for p in ("shelf-lower", "bottles-lower",
+                                           "bottles-upper", "shelf-upper")
+                               if p not in DISABLED]
         build(True, list(BASE_PARTS) + behind + [name], force=(name,)).save(out / "values" / f"{name}.png")
     # MASKS from a build with every part forced on: a switched-off object keeps
     # its full silhouette on disk, so it can be cut as a sticker, previewed or

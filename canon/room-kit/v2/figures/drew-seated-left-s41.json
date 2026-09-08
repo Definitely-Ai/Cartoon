@@ -1,0 +1,135 @@
+{
+  "generated_at": "2026-09-08T11:05:50",
+  "script": "scripts/cast-place.py",
+  "character": "drew",
+  "pose": "seated-left",
+  "plate": "Z:\\ImageGenerator\\Cartoon\\canon\\room-kit\\v2\\plate.png",
+  "box": [
+    20,
+    700,
+    660,
+    1500
+  ],
+  "box_size": [
+    640,
+    800
+  ],
+  "seat_region": [
+    0,
+    1240,
+    520,
+    1800
+  ],
+  "roi": [
+    140,
+    770,
+    620,
+    1340
+  ],
+  "seed": 41,
+  "rules_mode": "pen",
+  "keep_first": false,
+  "edit_override": "ADD DREW (Picture 2), the white flamingo gentleman, SITTING DOWN INTO the empty LEFT leather club chair of Picture 1, his weight in its seat and his back against its back, filling it as a man fills a chair. HIS PLACE IN THE CHAIR IS EXACT: his spine is on that chair's OWN CENTRE LINE, not to the left of it, and he sits LOW - the chair's studded leather roll passes IN FRONT OF HIS LOWER BACK, its brass studs and its dark leather OVERLAPPING the bottom of his knitted sweater vest, so that he is plainly BEHIND that roll and inside the chair, never perched above it or in front of it. Only his shoulders, his long neck and his head rise clear above the roll; his shoulders sit just a little above it, and the crown of his head stops WELL BELOW the mirrored window lettering. He is seen FROM BEHIND and a little to his LEFT, over his shoulder: his back and far shoulder are to the camera, his head turned to his RIGHT toward the second chair on the right, so the pale bill and one heavy-lidded eye read in three-quarter, almost profile. The long neck rises out of the sweater vest in one easy S-curve. One feathered hand reaches up and forward to rest ON THE MARBLE SLAB THAT IS ALREADY THERE, with a martini optional beside it. He wears the crisp white collar band, the small black bow tie and the V-neck knitted sweater vest of Picture 2, drawn in the SAME engraved pen, the same size, the same light and the same perspective as the room around him, seated behind the marble's near edge and never floating in front of it.",
+  "extra_edit": [
+    "DO NOT REDRAW THE MARBLE. The marble slab, its near edge, its veining and its white are already correct in Picture 1 and stay exactly as they are: no new counter, ledge, table, slab or pale patch is drawn under him, around his hands or anywhere else. His hand and the martini simply sit on the marble that is already in Picture 1, and the panelled bar front, the window, the street beyond it, the mirrored lettering and the second chair are untouched."
+  ],
+  "canon_missed": [],
+  "server": "http://127.0.0.1:8000",
+  "request": {
+    "prompt": "REFERENCES. Picture 1 is THE APPROVED ROOM of The Swinging Door, cropped around the EMPTY left leather club chair at the marble bar — this IS the picture being edited. Its camera, its crop, its light, its engraved pen and every line of the room are already correct and must survive unchanged. Picture 2 is DREW, the studio's official portrait — copy THIS bird identically: the small refined head, the slender pale bill with its black outer third, the heavy-lidded amiable eye, the long S-curve neck, the white collar band and small black bow tie, the V-neck knitted sweater vest, and the feathered hands with four fingers and a thumb and no claws.\n\nMAKE THESE CHANGES TO PICTURE 1 AND KEEP EVERYTHING ELSE. The result is Picture 1 itself with EXACTLY ONE character added into it, one unbroken scene edge to edge, in the same engraved black-and-white pen.\n1. ADD DREW (Picture 2), the white flamingo gentleman, SITTING DOWN INTO the empty LEFT leather club chair of Picture 1, his weight in its seat and his back against its back, filling it as a man fills a chair. HIS PLACE IN THE CHAIR IS EXACT: his spine is on that chair's OWN CENTRE LINE, not to the left of it, and he sits LOW - the chair's studded leather roll passes IN FRONT OF HIS LOWER BACK, its brass studs and its dark leather OVERLAPPING the bottom of his knitted sweater vest, so that he is plainly BEHIND that roll and inside the chair, never perched above it or in front of it. Only his shoulders, his long neck and his head rise clear above the roll; his shoulders sit just a little above it, and the crown of his head stops WELL BELOW the mirrored window lettering. He is seen FROM BEHIND and a little to his LEFT, over his shoulder: his back and far shoulder are to the camera, his head turned to his RIGHT toward the second chair on the right, so the pale bill and one heavy-lidded eye read in three-quarter, almost profile. The long neck rises out of the sweater vest in one easy S-curve. One feathered hand reaches up and forward to rest ON THE MARBLE SLAB THAT IS ALREADY THERE, with a martini optional beside it. He wears the crisp white collar band, the small black bow tie and the V-neck knitted sweater vest of Picture 2, drawn in the SAME engraved pen, the same size, the same light and the same perspective as the room around him, seated behind the marble's near edge and never floating in front of it.\n2. KEEP EVERYTHING ELSE EXACTLY AS PICTURE 1, pixel for pixel: the camera, the crop, the marble slab and its edge, the panelled bar front, the window and the street beyond it, the mirrored window lettering, the second chair, the light and every hatching line of the room. Nothing moves, nothing is redrawn, nothing is added anywhere except the one figure in the left chair.\n3. DO NOT REDRAW THE MARBLE. The marble slab, its near edge, its veining and its white are already correct in Picture 1 and stay exactly as they are: no new counter, ledge, table, slab or pale patch is drawn under him, around his hands or anywhere else. His hand and the martini simply sit on the marble that is already in Picture 1, and the panelled bar front, the window, the street beyond it, the mirrored lettering and the second chair are untouched.\n\nTHE RULES THE FINISHED PICTURE OBEYS:\n\nA single-panel gag cartoon drawn like an antique steel engraving: fine pen crosshatching and stippling on every surface — wood grain, knit stitches, fur and feathers laid in individual strokes, glass catching light — with a full tonal range from deep rich blacks through silvery greys to bright paper highlights. Confident contour lines over the hatching. The panel is composed full, corner to corner. Black-and-white only; no flat fills, no cel shading, no photographic rendering, no color.\n\nDREW is exactly the flamingo gentleman of his reference: white plumage feathered all over in fine dash-strokes with no sleeve or cuff, the long high S-curve neck and small refined head, a slender pale bill with a black outer third and a plain slit nostril, one heavy-lidded amiable eye with a clear iris and catchlight, a crisp white collar band under a small black bow tie, a V-neck knitted sweater vest with no pockets over a pale shirt, feathered hands with four fingers and a thumb and no nails, his martini within reach.",
+    "model": "local/qwen-image-edit-2511",
+    "provider": "local",
+    "aspect_ratio": "4:5",
+    "input_images": "<2 data URIs - see references>",
+    "negative_prompt": "color, colour, photograph, photorealistic, 3D render, oil painting, watercolor, soft airbrush shading, blurry, low detail, flat cel shading, extra people, humans, a second bartender, duplicate character, merged characters, deformed hands, extra fingers, claws, nails, tail, garbled text, misspelled words, gibberish lettering, speech bubble, caption text, watermark, signature, legs, feet",
+    "output_format": "png",
+    "fast": true,
+    "tag": "place-drew-r1",
+    "seed": 41
+  },
+  "references": [
+    {
+      "picture": 1,
+      "path": "C:\\Users\\admin\\AppData\\Local\\Temp\\claude\\Z--ImageGenerator\\7e90a839-5703-42df-8007-3e3f206ae0ae\\scratchpad\\cast-scene\\drew\\round-1\\picture1.png",
+      "label": "THE APPROVED ROOM of The Swinging Door, cropped around the EMPTY left leather club chair at the marble bar — this IS the picture being edited. Its camera, its crop, its light, its engraved pen and every line of the room are already correct and must survive unchanged",
+      "size": [
+        1024,
+        1280
+      ],
+      "bytes": 336847,
+      "sha256": "bc94624f29e19211"
+    },
+    {
+      "picture": 2,
+      "path": "Z:\\ImageGenerator\\Cartoon\\canon\\vision\\studies\\drew.png",
+      "label": "DREW, the studio's official portrait — copy THIS bird identically: the small refined head, the slender pale bill with its black outer third, the heavy-lidded amiable eye, the long S-curve neck, the white collar band and small black bow tie, the V-neck knitted sweater vest, and the feathered hands with four fingers and a thumb and no claws",
+      "size": [
+        1024,
+        1536
+      ],
+      "bytes": 517600,
+      "sha256": "44c9feea732f33d6"
+    }
+  ],
+  "prompt": "REFERENCES. Picture 1 is THE APPROVED ROOM of The Swinging Door, cropped around the EMPTY left leather club chair at the marble bar — this IS the picture being edited. Its camera, its crop, its light, its engraved pen and every line of the room are already correct and must survive unchanged. Picture 2 is DREW, the studio's official portrait — copy THIS bird identically: the small refined head, the slender pale bill with its black outer third, the heavy-lidded amiable eye, the long S-curve neck, the white collar band and small black bow tie, the V-neck knitted sweater vest, and the feathered hands with four fingers and a thumb and no claws.\n\nMAKE THESE CHANGES TO PICTURE 1 AND KEEP EVERYTHING ELSE. The result is Picture 1 itself with EXACTLY ONE character added into it, one unbroken scene edge to edge, in the same engraved black-and-white pen.\n1. ADD DREW (Picture 2), the white flamingo gentleman, SITTING DOWN INTO the empty LEFT leather club chair of Picture 1, his weight in its seat and his back against its back, filling it as a man fills a chair. HIS PLACE IN THE CHAIR IS EXACT: his spine is on that chair's OWN CENTRE LINE, not to the left of it, and he sits LOW - the chair's studded leather roll passes IN FRONT OF HIS LOWER BACK, its brass studs and its dark leather OVERLAPPING the bottom of his knitted sweater vest, so that he is plainly BEHIND that roll and inside the chair, never perched above it or in front of it. Only his shoulders, his long neck and his head rise clear above the roll; his shoulders sit just a little above it, and the crown of his head stops WELL BELOW the mirrored window lettering. He is seen FROM BEHIND and a little to his LEFT, over his shoulder: his back and far shoulder are to the camera, his head turned to his RIGHT toward the second chair on the right, so the pale bill and one heavy-lidded eye read in three-quarter, almost profile. The long neck rises out of the sweater vest in one easy S-curve. One feathered hand reaches up and forward to rest ON THE MARBLE SLAB THAT IS ALREADY THERE, with a martini optional beside it. He wears the crisp white collar band, the small black bow tie and the V-neck knitted sweater vest of Picture 2, drawn in the SAME engraved pen, the same size, the same light and the same perspective as the room around him, seated behind the marble's near edge and never floating in front of it.\n2. KEEP EVERYTHING ELSE EXACTLY AS PICTURE 1, pixel for pixel: the camera, the crop, the marble slab and its edge, the panelled bar front, the window and the street beyond it, the mirrored window lettering, the second chair, the light and every hatching line of the room. Nothing moves, nothing is redrawn, nothing is added anywhere except the one figure in the left chair.\n3. DO NOT REDRAW THE MARBLE. The marble slab, its near edge, its veining and its white are already correct in Picture 1 and stay exactly as they are: no new counter, ledge, table, slab or pale patch is drawn under him, around his hands or anywhere else. His hand and the martini simply sit on the marble that is already in Picture 1, and the panelled bar front, the window, the street beyond it, the mirrored lettering and the second chair are untouched.\n\nTHE RULES THE FINISHED PICTURE OBEYS:\n\nA single-panel gag cartoon drawn like an antique steel engraving: fine pen crosshatching and stippling on every surface — wood grain, knit stitches, fur and feathers laid in individual strokes, glass catching light — with a full tonal range from deep rich blacks through silvery greys to bright paper highlights. Confident contour lines over the hatching. The panel is composed full, corner to corner. Black-and-white only; no flat fills, no cel shading, no photographic rendering, no color.\n\nDREW is exactly the flamingo gentleman of his reference: white plumage feathered all over in fine dash-strokes with no sleeve or cuff, the long high S-curve neck and small refined head, a slender pale bill with a black outer third and a plain slit nostril, one heavy-lidded amiable eye with a clear iris and catchlight, a crisp white collar band under a small black bow tie, a V-neck knitted sweater vest with no pockets over a pale shirt, feathered hands with four fingers and a thumb and no nails, his martini within reach.",
+  "clean_prompt": null,
+  "clean_pass": false,
+  "expected_size": [
+    1344,
+    1680
+  ],
+  "key": {
+    "thresh": 18.0,
+    "measure_thresh": 12.0,
+    "blur": 1.5,
+    "close": 4,
+    "open": 3,
+    "min_area": 400,
+    "gap": 8,
+    "feather": 2.0,
+    "align": 6
+  },
+  "result": {
+    "seed_used": 41,
+    "elapsed_seconds": 84.8,
+    "server_local_path": "Z:\\ImageGenerator\\outputs\\gen_1788880035399289000_24efaa_place-drew-r1_local_qwen-image-edit-2511.png",
+    "raw_size": [
+      1243,
+      1554
+    ],
+    "raw": "C:\\Users\\admin\\AppData\\Local\\Temp\\claude\\Z--ImageGenerator\\7e90a839-5703-42df-8007-3e3f206ae0ae\\scratchpad\\cast-scene\\drew\\round-1\\drew-seated-left-s41-raw.png"
+  },
+  "key_result": {
+    "keyed_against": "plate-crop",
+    "key_tone_gain": 1.0,
+    "key_tone_offset": 0.0,
+    "composite_tone_gain": 1.0,
+    "composite_tone_offset": 0.0,
+    "shift_applied": [
+      6,
+      -6
+    ],
+    "blobs": 1,
+    "raw_fraction": 0.916271484375,
+    "seat_touched": true,
+    "kept": 1,
+    "kept_px": 271040,
+    "sticker_px": 283578,
+    "sticker_fraction_of_box": 0.5539,
+    "sticker_bbox_plate": [
+      95,
+      725,
+      664,
+      1384
+    ],
+    "cleanliness_outside_sticker_gt12": 0.9193,
+    "room_drift_vs_plate_outside_sticker": 0.9193,
+    "changed_fraction_whole_box": 0.9194
+  },
+  "outputs": {
+    "sticker": "Z:\\ImageGenerator\\Cartoon\\canon\\room-kit\\v2\\figures\\drew-seated-left-s41.png",
+    "laid": "Z:\\ImageGenerator\\Cartoon\\canon\\room-kit\\v2\\figures\\drew-seated-left-s41-laid.png",
+    "crop2x": "Z:\\ImageGenerator\\Cartoon\\canon\\room-kit\\v2\\figures\\drew-seated-left-s41-crop2x.png",
+    "picture1": "C:\\Users\\admin\\AppData\\Local\\Temp\\claude\\Z--ImageGenerator\\7e90a839-5703-42df-8007-3e3f206ae0ae\\scratchpad\\cast-scene\\drew\\round-1\\picture1.png"
+  }
+}
