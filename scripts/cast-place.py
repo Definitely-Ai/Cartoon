@@ -4,7 +4,8 @@
         [--box X0,Y0,X1,Y1] [--edit "..."] [--plate PATH] [--pose-name NAME]
         [--rolls N] [--thresh 18] [--out DIR] [--dry-run]
         [--under-lines/--no-under-lines] [--under-blend 0.30] [--fill/--no-fill]
-        [--also PART=STICKER.PNG ...]   (route S only; see WHAT TEAM 4 ADDED below)
+        [--under-remap LO,HI] [--sheet-grey 255]
+        [--also PART=STICKER.PNG ...]   (route S only; see WHAT TEAM 4/5 ADDED below)
 
 THE TWO ROUTES (--route, 2026-09-08)
 ------------------------------------
@@ -274,6 +275,24 @@ Barclay and Abby:
     room-part's own assemble(), reading that sticker's own JSON sidecar for its
     box), so e.g. Barclay is judged against the plate with Drew already seated
     in it - see load_also_overrides().
+
+WHAT TEAM 5 ADDED (2026-09-08). Team 4's --under-lines fixed the folded-ribbon
+head but left it an open question how the block-in itself should show a WHITE
+figure (a bird at ~245 grey) so it reads as solid on white paper at all, with
+or without lines. Two more dials, both default OFF/255 so nothing already
+working changes underneath them:
+
+  * --under-remap LO,HI. Before --under-blend is applied, the block-in's own
+    tones INSIDE the figure mask only are remapped linearly from [0,255] to
+    [LO,HI] - so a white head (~245) becomes a pale grey figure that reads
+    against the sheet, without touching the room, the chair or the marble
+    line. Off by default (the block-in's own tones pass through unchanged).
+  * --sheet-grey G. The sheet's own paper tone, instead of a fixed 255 - the
+    field starts at G, the under-drawing blends toward G (not white), and the
+    absolute key's ink test moves with it: a rendered pixel is ink when it is
+    darker than G - (255 - --white-thresh), so --white-thresh keeps its old
+    MEANING (how far below the sheet's own tone counts as ink) even when the
+    sheet itself is no longer pure white. Default 255 (identical to before).
 
 NEVER run room-part.py, never touch parts.json.
 """
@@ -909,16 +928,36 @@ def under_drawing_lines(fig_values: np.ndarray, fig_mask: np.ndarray,
     return lines & ndimage.binary_dilation(fig_mask, iterations=grow + 1)
 
 
+def remap_figure_values(fig_values: np.ndarray, fig_mask: np.ndarray,
+                        lo: float, hi: float) -> np.ndarray:
+    """--under-remap LO,HI: linearly remap the block-in's own tones from
+    [0,255] to [LO,HI], INSIDE the figure mask only - everywhere else (which
+    --under-blend never touches anyway) is left as-is. This is what turns a
+    white bird's ~245-grey head into a pale grey figure that still reads
+    against the sheet after --under-blend, instead of vanishing into it."""
+    remapped = lo + (hi - lo) * (fig_values / 255.0)
+    out = fig_values.copy()
+    out[fig_mask] = remapped[fig_mask]
+    return out
+
+
 def sticker_field(base: np.ndarray, box: tuple[int, int, int, int], character: str,
-                  under_blend: float = 0.30, under_lines: bool = True) -> tuple[np.ndarray, dict]:
-    """Picture 1 for --route S: a WHITE SHEET carrying only the occluder's own
-    rendered pixels (the chair for Drew and Barclay, the counter for Abby), the
-    line source's near top edge as a thin line, and a PALE under-drawing of the
-    seated or standing block-in pose, blended `under_blend` toward white - with,
-    when `under_lines` is on (the default), the block-in's own outline and
-    internal tone edges drawn over that tone fill as an actual PENCIL LINE
-    DRAWING at STICKER_UNDER_LINE_TONE (150), so the head is something the model
-    can see rather than something it has to infer from a faint grey shift.
+                  under_blend: float = 0.30, under_lines: bool = True,
+                  under_remap: tuple[float, float] | None = None,
+                  sheet_grey: float = STICKER_WHITE) -> tuple[np.ndarray, dict]:
+    """Picture 1 for --route S: a SHEET (paper tone `sheet_grey`, default white
+    255) carrying only the occluder's own rendered pixels (the chair for Drew
+    and Barclay, the counter for Abby), the line source's near top edge as a
+    thin line, and a PALE under-drawing of the seated or standing block-in
+    pose, blended `under_blend` toward the sheet's own tone - with, when
+    `under_lines` is on (the default), the block-in's own outline and internal
+    tone edges drawn over that tone fill as an actual PENCIL LINE DRAWING at
+    STICKER_UNDER_LINE_TONE (150), so the head is something the model can see
+    rather than something it has to infer from a faint grey shift. When
+    `under_remap` (LO, HI) is given, the block-in's own tones are remapped
+    into that range FIRST (see remap_figure_values()), before either the line
+    drawing or the blend reads them - so a white head becomes a pale grey
+    figure instead of invisible paper.
 
     Composited farthest-to-nearest, exactly as the room itself would occlude
     them: the line first (the figure sits in front of most of it), the
@@ -935,15 +974,17 @@ def sticker_field(base: np.ndarray, box: tuple[int, int, int, int], character: s
                            dtype=np.float64)
         return a / 255.0
 
-    field = np.full(base.shape, STICKER_WHITE)
+    field = np.full(base.shape, sheet_grey)
 
     line_soft = soft(line, STICKER_LINE_FEATHER)
     field = field * (1 - line_soft) + STICKER_LINE_INK * line_soft
 
     fig_values = np.asarray(Image.open(ROOT / STICKER_FIGURE_VALUES[character]).convert("L"),
                             dtype=np.float64)[y0:y1, x0:x1]
+    if under_remap is not None:
+        fig_values = remap_figure_values(fig_values, fig, under_remap[0], under_remap[1])
     fig_soft = soft(fig, STICKER_FIGURE_FEATHER)
-    undertone = fig_values * (1 - under_blend) + STICKER_WHITE * under_blend
+    undertone = fig_values * (1 - under_blend) + sheet_grey * under_blend
     field = field * (1 - fig_soft) + undertone * fig_soft
 
     lines_mask = None
@@ -955,7 +996,9 @@ def sticker_field(base: np.ndarray, box: tuple[int, int, int, int], character: s
     occluder_soft = soft(occluder, STICKER_OCCLUDER_FEATHER)
     field = field * (1 - occluder_soft) + base * occluder_soft
 
-    info = {"white": STICKER_WHITE, "under_blend": under_blend, "under_lines": under_lines,
+    info = {"white": sheet_grey, "under_blend": under_blend, "under_lines": under_lines,
+            "under_remap": list(under_remap) if under_remap is not None else None,
+            "sheet_grey": sheet_grey,
             "occluder_fraction": round(float(occluder.mean()), 4),
             "figure_fraction": round(float(fig.mean()), 4),
             "line_fraction": round(float(line.mean()), 4),
@@ -1104,6 +1147,14 @@ def parse_box(text: str) -> tuple[int, int, int, int]:
     return tuple(parts)  # type: ignore[return-value]
 
 
+def parse_pair(text: str) -> tuple[float, float]:
+    """--under-remap LO,HI."""
+    parts = [float(x) for x in re.split(r"[,x ]+", text.strip()) if x != ""]
+    if len(parts) != 2:
+        raise SystemExit(f"wants LO,HI - got {text!r}")
+    return parts[0], parts[1]  # type: ignore[return-value]
+
+
 def next_round(character: str) -> Path:
     base = SCRATCH / character
     n = 1
@@ -1179,6 +1230,15 @@ def main() -> None:
                          "visible as lines and not just a faint grey shape")
     ap.add_argument("--no-under-lines", dest="under_lines", action="store_false",
                     help="route S: disable --under-lines, leaving only the faint tone fill")
+    ap.add_argument("--under-remap", default="",
+                    help="route S: LO,HI - before --under-blend, remap the block-in's own tones INSIDE "
+                         "the figure mask linearly from [0,255] to [LO,HI], so a white head (~245 grey) "
+                         "becomes a pale grey figure that reads on the sheet (default: off, tones pass "
+                         "through unchanged)")
+    ap.add_argument("--sheet-grey", type=float, default=255.0,
+                    help="route S: the sheet's own paper tone instead of 255 - the field starts at this "
+                         "grey, the under-drawing blends toward it, and --white-thresh's ink test moves "
+                         "with it (ink = darker than --sheet-grey - (255 - --white-thresh))")
     ap.add_argument("--white-thresh", type=float, default=232.0,
                     help="route S: a rendered pixel this dark or darker (after a 1px blur) is ink, not "
                          "the sheet's own white paper - the key's threshold")
@@ -1241,6 +1301,7 @@ def main() -> None:
                          "instead of against the plate (the model re-inks the room, so the plate is a "
                          "poor key reference)")
     a = ap.parse_args()
+    under_remap = parse_pair(a.under_remap) if a.under_remap.strip() else None
 
     who = a.character
     box = parse_box(a.box) if a.box else DEFAULT_BOX[who]
@@ -1271,7 +1332,8 @@ def main() -> None:
         p1_img = Image.fromarray(np.clip(field, 0, 255).astype(np.uint8))
         p1_img.save(out / "flat-field.png")
     elif a.route == "S":
-        field, field_info = sticker_field(base, box, who, a.under_blend, a.under_lines)
+        field, field_info = sticker_field(base, box, who, a.under_blend, a.under_lines,
+                                          under_remap, a.sheet_grey)
         p1_img = Image.fromarray(np.clip(field, 0, 255).astype(np.uint8))
         p1_img.save(out / "white-sheet.png")
     else:
@@ -1342,6 +1404,8 @@ def main() -> None:
             "paste_feather": a.paste_feather if a.route == "B" else None,
             "under_blend": a.under_blend if a.route == "S" else None,
             "under_lines": a.under_lines if a.route == "S" else None,
+            "under_remap": list(under_remap) if (a.route == "S" and under_remap is not None) else None,
+            "sheet_grey": a.sheet_grey if a.route == "S" else None,
             "white_thresh": a.white_thresh if a.route == "S" else None,
             "fill": a.fill if a.route == "S" else None,
             "also": a.also if a.route == "S" else None,
@@ -1460,7 +1524,11 @@ def main() -> None:
             ka, kb = 1.0, 0.0
             dy, dx = 0, 0
             fig_mask_local, occ_mask_local, line_mask_local = sticker_masks(box, who)
-            dark = _blur(small, 1.0) < a.white_thresh
+            # --sheet-grey: the ink test moves with the sheet's own paper tone, so
+            # --white-thresh keeps its old MEANING (how far below the sheet's own
+            # tone counts as ink) even when the sheet itself is not pure white.
+            white_thresh_eff = a.sheet_grey - (255.0 - a.white_thresh)
+            dark = _blur(small, 1.0) < white_thresh_eff
             changed = dark          # for "changed_fraction_whole_box" below: Picture 1 was white paper,
                                     # so "differs from Picture 1" and "has ink at all" are the same test
             fig_dilated = disk_iter(fig_mask_local, ndimage.binary_dilation, 24)
@@ -1504,7 +1572,9 @@ def main() -> None:
             keyinfo = {
                 "blobs": int(n), "raw_fraction": round(float(dark.mean()), 4),
                 "kept": len(keep_ids), "kept_px": int(sticker_mask.sum()), "seat_touched": None,
-                "white_thresh": a.white_thresh, "min_figure_overlap_px": min_overlap, "fill": a.fill,
+                "white_thresh": a.white_thresh, "sheet_grey": a.sheet_grey,
+                "white_thresh_effective": white_thresh_eff,
+                "min_figure_overlap_px": min_overlap, "fill": a.fill,
                 "figure_mask_px": int(fig_mask_local.sum()),
                 "figure_mask_dilated_px": int(fig_dilated.sum()),
                 "occluder_mask_px": int(occ_mask_local.sum()),

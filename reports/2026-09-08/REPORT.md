@@ -842,3 +842,111 @@ Built for Rick. Every image the studio generated today, in the order it happened
 
 ---
 
+## 060. Team 4 Abby round 1 seed 7 route S laid preview
+
+![Team 4 Abby round 1 seed 7 route S laid preview](images/060-team-4-abby-round-1-seed-7-route-s-laid-preview.png)
+
+**The ask.** Round 1 for Abby on route S: run cast-place.py --character abby --route S --seed 7 --tag t4r1, keep the sticker and the laid preview, and score identity, pose, seat and cleanliness out of 5 each.
+
+**The thinking.** Route S hands the model a white sheet carrying only the bar counter's own pixels, the marble ledge's near top edge as one thin line, and a pale pencil under-drawing of the figure-abby-01-ledge block-in (under_blend 0.30, under-lines ON). Picture 2 is Abby's official portrait. The render is keyed by ink on white into an RGBA sticker, cut by the counter mask, and laid through room-part assemble(override=) so the approved plate is never redrawn. Seed 7 was the first of four (7, 21, 41, 44). The first submission died on a 20-minute HTTP timeout with ComfyUI queued behind other teams; system_stats answered 200 on the retry poll and the re-run rendered in 40.5 s.
+
+**Settings.** local/qwen-image-edit-2511 via AuraVision 127.0.0.1:8000; route S; box 420,620,900,1220; roi 520,680,800,1220; under_blend 0.30; under_lines True; white_thresh 232; fill True; rules pen; seed 7; 40.5 s; sticker 77476 px in 39 blobs; cleanliness 0.4017; room drift 0.6505
+
+**Prompt.** [prompts/060-team-4-abby-round-1-seed-7-route-s-laid-preview.prompt.txt](prompts/060-team-4-abby-round-1-seed-7-route-s-laid-preview.prompt.txt)
+
+**Verdict.** REJECT, 6/20. Identity 1: the model drew a HUMAN WOMAN with long dark hair in a white blouse where Abby belongs, and put a small westie DOG beside her wearing Abby's own studded collar and gem - it read the portrait as 'woman with her dog' instead of copying the terrier. Pose 2: body roughly faces the room at the block-in's place but she leans on the counter and the block-in's head is not filled. Seat 2: scale about right, but a slab of marble ledge came into the sticker so it lays as a floating marble block. Cleanliness 1: two figures, a marble slab, 39 blobs, cut off at the bottom.
+
+*Logged 18:27.*
+
+---
+
+## 061. Team 4 Abby round 1 seed 21 route S laid preview
+
+![Team 4 Abby round 1 seed 21 route S laid preview](images/061-team-4-abby-round-1-seed-21-route-s-laid-preview.png)
+
+**The ask.** Round 1 for Abby on route S, seed 21 of the four (7, 21, 41, 44): same command, same flags, score identity, pose, seat and cleanliness.
+
+**The thinking.** Second seed of the round, identical configuration to seed 7 - white sheet Picture 1 with the counter's own pixels, the ledge's near edge as one line, the figure-abby-01-ledge block-in as a pale pencil under-drawing at under_blend 0.30, Picture 2 the official portrait. Watching for whether the seed 7 failure (a human woman drawn where Abby belongs, the westie relegated to a pet at her side) is a seed accident or the route's behaviour with this portrait.
+
+**Settings.** local/qwen-image-edit-2511 via AuraVision 127.0.0.1:8000; route S; box 420,620,900,1220; roi 520,680,800,1220; under_blend 0.30; under_lines True; white_thresh 232; fill True; rules pen; seed 21; 83.2 s; sticker 76226 px in 41 blobs; cleanliness 0.4237; room drift 0.6598
+
+**Prompt.** [prompts/061-team-4-abby-round-1-seed-21-route-s-laid-preview.prompt.txt](prompts/061-team-4-abby-round-1-seed-21-route-s-laid-preview.prompt.txt)
+
+**Verdict.** REJECT, 6/20. Identity 1: a human woman again - long dark hair, human face, human hands with painted nails - now wearing Abby's studded collar and teardrop gem herself, with the westie standing beside her as her pet. The portrait is being read as 'woman and her dog', not as one terrier woman. Pose 2: torso faces the room at about the block-in's place, but the head is a human head and the block-in's own head is ignored. Seat 2: scale plausible, but the sticker carries a slab of the marble ledge so she lays as marble-on-marble. Cleanliness 1: two figures, a highball glass, a bar mat, a marble slab and a stray ink cross above the head - 41 blobs, cut off at the bottom edge.
+
+*Logged 18:28.*
+
+---
+
+## 062. Drew seated left - route S - V1-remap seed 21
+
+![Drew seated left - route S - V1-remap seed 21](images/062-drew-seated-left-route-s-v1-remap-seed-21.png)
+
+**The ask.** Lab variant V1-remap: route S with --no-under-lines, --under-blend 0, --under-remap 110,205 (remap the block-in's own tones inside the figure mask from [0,255] to [110,205] so the white bird's head reads as a pale grey figure on the sheet instead of vanishing), plus an --extra-edit spelling out that the under-drawing's round skull with the eye marked and the bill bending down to a black tip IS his head, to draw solid and joined to the neck, never a folded feather/ribbon/wedge/plume and never floating free of the neck. Seed 21 of two (21, 44).
+
+**The thinking.** The open question left by today's earlier rounds is only how Picture 1 should show the figure so the model draws Drew's head solid and in place - the white bird's head in the values was invisible on the white sheet at any blend, and --under-lines came back as ribbons. V1 answers this by remapping the block-in's tone range so the head band is a visible pale grey shape on the sheet (not white-on-white), with lines off, plus the explicit skull/bill/eye instruction in the edit text.
+
+**Settings.** route S, local/qwen-image-edit-2511 via AuraVision 127.0.0.1:8000, --no-under-lines, --under-blend 0, --under-remap 110,205, --white-thresh 232, --fill, box 20,700,660,1500, roi 140,770,620,1340, seed 21, 44.4s (first submission failed with a connection error; ComfyUI answered 200 on the system_stats retry poll and the re-run succeeded), sticker 88554px in 111 blobs, cleanliness 0.1739, room drift vs plate 0.8044
+
+**Prompt.** [prompts/062-drew-seated-left-route-s-v1-remap-seed-21.prompt.txt](prompts/062-drew-seated-left-route-s-v1-remap-seed-21.prompt.txt)
+
+**Verdict.** Seat/pose/room clean again - correct chair, marble line untouched, collar and knit vest read well down onto the shoulders. Head still fails: above the neck's feathered collar a scaled, curved ribbon/wing-shaped patch floats with a plain white gap between it and the collar - no eye, no bill, no rounded skull, and no join to the neck. The remap made the tone band visible instead of invisible, but the model still did not read it as a head to draw solid; it drew a detached decorative fragment instead. Identity fails.
+
+*Logged 18:47.*
+
+---
+
+## 063. Drew seated left - route S - V1-remap seed 44 - BEST HEAD YET
+
+![Drew seated left - route S - V1-remap seed 44 - BEST HEAD YET](images/063-drew-seated-left-route-s-v1-remap-seed-44-best-head-yet.png)
+
+**The ask.** Lab variant V1-remap: route S with --no-under-lines, --under-blend 0, --under-remap 110,205 (remap the block-in's own tones inside the figure mask from [0,255] to [110,205] so the white bird's head reads as a pale grey figure on the sheet instead of vanishing), plus an --extra-edit spelling out that the under-drawing's round skull with the eye marked and the bill bending down to a black tip IS his head, to draw solid and joined to the neck, never a folded feather/ribbon/wedge/plume and never floating free of the neck. Seed 44 of two (21, 44).
+
+**The thinking.** Same settings as seed 21, second and last seed of the V1-remap variant. Testing whether the remap answer to the open question (how Picture 1 shows the figure so the model draws a solid head) is a seed accident or repeatable.
+
+**Settings.** route S, local/qwen-image-edit-2511 via AuraVision 127.0.0.1:8000, --no-under-lines, --under-blend 0, --under-remap 110,205, --white-thresh 232, --fill, box 20,700,660,1500, roi 140,770,620,1340, seed 44, 253.2s (queued behind other teams sharing the GPU, no connection error this time), sticker 88519px in 222 blobs, cleanliness 0.0600, room drift vs plate 0.6751
+
+**Prompt.** [prompts/063-drew-seated-left-route-s-v1-remap-seed-44-best-head-yet.prompt.txt](prompts/063-drew-seated-left-route-s-v1-remap-seed-44-best-head-yet.prompt.txt)
+
+**Verdict.** BEST HEAD OF THE DAY. A genuine solid, small, rounded skull sits joined cleanly to the neck with no gap and no seam - one heavy-lidded amiable eye reads on it, and the thick bill bends steeply down to a proper solid black outer tip, all in one continuous line from the neck. No folded feather, no ribbon, no wedge, no floating fragment. Reads in full profile rather than three-quarter (open item: the brief wants the bill/eye readable in three-quarter, this came out side-on), and a faint soft grey smear ghosts the wall just behind/above the head - likely a hole-fill or key-edge artifact, not part of the figure. Seat, collar, knit vest and feathered hand on the marble all clean and correct. The remap answer works on this seed; identity/head finally passes where every prior route-S round failed.
+
+*Logged 18:53.*
+
+---
+
+## 064. Drew seated left - route S variant V2-tone055 - seed 21
+
+![Drew seated left - route S variant V2-tone055 - seed 21](images/064-drew-seated-left-route-s-variant-v2-tone055-seed-21.png)
+
+**The ask.** Team Drew 3, route S, variant V2-tone055 (this lab's seed 21 of 2). Same brief: seat Drew in the LEFT leather club chair of the approved plate, room pixels untouched. This variant returns --under-blend to 0.55 (from round 4's 0.30) and turns OFF the pencil-line under-drawing (--no-under-lines) since it kept coming back as a ribbon, and adds one long --extra-edit spelling out exactly what the head under-drawing already carries - a small round skull with the eye marked in it and a thick bill bending steeply down to a black tip - and ordering a solid, small, refined, rounded head drawn there, joined to the neck, never a folded feather, a ribbon, a wedge or a plume.
+
+**The thinking.** First seed of the tone055 sweep. Head is a detached, purely feather-textured wing/ribbon shape sitting above a gap over the neck - no skull, no eye, no clean bill; the extra-edit did not take on this seed. Identity barely reads since he is drawn mostly from behind as a feathered silhouette. Seat and scale are correct, down in the chair at the block-in's place. Cleanliness is hurt by a stray feathered scrap keyed in on the marble beside him.
+
+**Settings.** scripts/cast-place.py --character drew --route S --seed 21 --tag lab-V2-tone055 --no-under-lines --under-blend 0.55 --extra-edit "..." | local/qwen-image-edit-2511 via AuraVision 127.0.0.1:8000 | box 20,700,660,1500 | roi 140,770,620,1340 | seat 0,1240,520,1800 | under-blend 0.55 | under-lines OFF | white-thresh 232 (default) | Picture 3 OFF (2 references, route S default) | rules=pen | retried once after a ComfyUI connection failure (round-30), succeeded on retry in 309.9s (round-33)
+
+**Prompt.** [prompts/064-drew-seated-left-route-s-variant-v2-tone055-seed-21.prompt.txt](prompts/064-drew-seated-left-route-s-variant-v2-tone055-seed-21.prompt.txt)
+
+**Verdict.** FAIL on the head. Head: a detached, feather-textured wing/ribbon with no skull, no eye and no bill, floating above a visible gap over the neck. Identity: barely reads, seen mostly from behind as a feathered silhouette. Seat: correct, down in the left chair at the block-in's place. Cleanliness: a stray feathered scrap keyed in on the marble beside him.
+
+*Logged 18:55.*
+
+---
+
+## 065. Drew seated left - route S variant V2-tone055 - seed 44
+
+![Drew seated left - route S variant V2-tone055 - seed 44](images/065-drew-seated-left-route-s-variant-v2-tone055-seed-44.png)
+
+**The ask.** Team Drew 3, route S, variant V2-tone055 (this lab's seed 44 of 2). Same brief: seat Drew in the LEFT leather club chair of the approved plate, room pixels untouched. This variant returns --under-blend to 0.55 (from round 4's 0.30) and turns OFF the pencil-line under-drawing (--no-under-lines) since it kept coming back as a ribbon, and adds one long --extra-edit spelling out exactly what the head under-drawing already carries - a small round skull with the eye marked in it and a thick bill bending steeply down to a black tip - and ordering a solid, small, refined, rounded head drawn there, joined to the neck, never a folded feather, a ribbon, a wedge or a plume.
+
+**The thinking.** Second seed of the tone055 sweep, same settings, sequential, first try (no connection error, 42.5s). The best head of the sweep so far: the shape is joined directly to the neck with no gap, and reads as an actual head+bill - a dark bill bending down to a black tip - rather than a ribbon, though it is still flag/pennant-shaped rather than a clean round skull and no heavy-lidded eye is legible in it.
+
+**Settings.** scripts/cast-place.py --character drew --route S --seed 44 --tag lab-V2-tone055 --no-under-lines --under-blend 0.55 --extra-edit "..." | local/qwen-image-edit-2511 via AuraVision 127.0.0.1:8000 | box 20,700,660,1500 | roi 140,770,620,1340 | seat 0,1240,520,1800 | under-blend 0.55 | under-lines OFF | white-thresh 232 (default) | Picture 3 OFF (2 references, route S default) | rules=pen | 42.5s, first try
+
+**Prompt.** [prompts/065-drew-seated-left-route-s-variant-v2-tone055-seed-44.prompt.txt](prompts/065-drew-seated-left-route-s-variant-v2-tone055-seed-44.prompt.txt)
+
+**Verdict.** Best head of the sweep, still not the brief. Head: joined to the neck with no gap and reads as a head+bill (dark bill bending down to a black tip), but flag/pennant-shaped rather than a clean round skull and no heavy-lidded eye is legible; a soft grey halo bleeds onto the shelf behind it. Identity: strong - collar band, black bow tie, knit V-neck vest, martini glass, fingered hand on the marble - but drawn three-quarter FRONT facing camera, not from behind. Seat: correct, down in the left chair at the block-in's place. Cleanliness: a faint dark smear on the marble to the right of the hand.
+
+*Logged 18:55.*
+
+---
+
