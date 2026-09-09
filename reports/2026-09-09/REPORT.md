@@ -2166,3 +2166,147 @@ Built for Rick. Every image the studio generated today, in the order it happened
 
 ---
 
+## 130. chainA-1 pass A seed 7 whole-plate edit
+
+![chainA-1 pass A seed 7 whole-plate edit](images/130-chaina-1-pass-a-seed-7-whole-plate-edit.png)
+
+**The ask.** Founder's note on the seed-7 proof: restore the approved window, gild THE SWINGING DOOR, put Abby behind the ledge and Drew/Barclay seated on the near side in their own chairs, redraw the bottles as a real back shelf - and fix the IDENTITY failure (Drew a vulture/turkey, Barclay a hound/poodle/llama/human).
+
+**The thinking.** Pass A: Picture 1 is the approved plate with Drew's block-in painted in at 100-180 grey, heads full; EDITS carried this pass: ['drew']; p2=drew, p3=none, head-edit=True. After the render, tone-matched to the plate over the room and ['window-frame', 'glass'] restored from the plate through their own masks (tone-matched to the render's own ring just outside each) before the gilded sign went on last.
+
+**Settings.** local/qwen-image-edit-2511, seed 7, fast 8-step cfg 1, aspect 2:3 -> bridge (1232, 1840), blockin-heads full, p2 drew, p3 none, head-edit True, match-keep True, room-from-plate True (dilate 10px), 182.4s
+
+**Prompt.** [prompts/130-chaina-1-pass-a-seed-7-whole-plate-edit.prompt.txt](prompts/130-chaina-1-pass-a-seed-7-whole-plate-edit.prompt.txt)
+
+*Logged 11:46.*
+
+---
+
+## 131. chainA-2 pass B seed 7 whole-plate edit
+
+![chainA-2 pass B seed 7 whole-plate edit](images/131-chaina-2-pass-b-seed-7-whole-plate-edit.png)
+
+**The ask.** Founder's note on the seed-7 proof: restore the approved window, gild THE SWINGING DOOR, put Abby behind the ledge and Drew/Barclay seated on the near side in their own chairs, redraw the bottles as a real back shelf - and fix the IDENTITY failure (Drew a vulture/turkey, Barclay a hound/poodle/llama/human).
+
+**The thinking.** Pass B: Picture 1 is a previous render (Z:\ImageGenerator\Cartoon\canon\room-kit\v2\work\chainA-1-s7-raw.png) with Barclay's block-in painted in at 100-180 grey, heads full - everyone else already drawn in it kept exactly as is; EDITS carried this pass: ['barclay']; p2=barclay, p3=none, head-edit=True. After the render, tone-matched to the plate over the room and ['window-frame', 'glass'] restored from the plate through their own masks (tone-matched to the render's own ring just outside each) before the gilded sign went on last.
+
+**Settings.** local/qwen-image-edit-2511, seed 7, fast 8-step cfg 1, aspect 2:3 -> bridge (1232, 1840), blockin-heads full, p2 barclay, p3 none, head-edit True, match-keep True, room-from-plate True (dilate 10px), 182.2s
+
+**Prompt.** [prompts/131-chaina-2-pass-b-seed-7-whole-plate-edit.prompt.txt](prompts/131-chaina-2-pass-b-seed-7-whole-plate-edit.prompt.txt)
+
+*Logged 11:49.*
+
+---
+
+## 132. chainA-3 pass B seed 7 whole-plate edit
+
+![chainA-3 pass B seed 7 whole-plate edit](images/132-chaina-3-pass-b-seed-7-whole-plate-edit.png)
+
+**The ask.** Founder's note on the seed-7 proof: restore the approved window, gild THE SWINGING DOOR, put Abby behind the ledge and Drew/Barclay seated on the near side in their own chairs, redraw the bottles as a real back shelf - and fix the IDENTITY failure (Drew a vulture/turkey, Barclay a hound/poodle/llama/human).
+
+**The thinking.** Pass B: Picture 1 is a previous render (Z:\ImageGenerator\Cartoon\canon\room-kit\v2\work\chainA-2-s7-raw.png) with Abby's block-in painted in at 100-180 grey, heads full - everyone else already drawn in it kept exactly as is; EDITS carried this pass: ['abby']; p2=abby, p3=none, head-edit=True. After the render, tone-matched to the plate over the room and ['window-frame', 'glass'] restored from the plate through their own masks (tone-matched to the render's own ring just outside each) before the gilded sign went on last.
+
+**Settings.** local/qwen-image-edit-2511, seed 7, fast 8-step cfg 1, aspect 2:3 -> bridge (1232, 1840), blockin-heads full, p2 abby, p3 none, head-edit True, match-keep True, room-from-plate True (dilate 10px), 182.4s
+
+**Prompt.** [prompts/132-chaina-3-pass-b-seed-7-whole-plate-edit.prompt.txt](prompts/132-chaina-3-pass-b-seed-7-whole-plate-edit.prompt.txt)
+
+*Logged 11:52.*
+
+---
+
+## 133. chainB-1 pass A seed 7 whole-plate edit
+
+![chainB-1 pass A seed 7 whole-plate edit](images/133-chainb-1-pass-a-seed-7-whole-plate-edit.png)
+
+**The ask.** Founder's note on the seed-7 proof: restore the approved window, gild THE SWINGING DOOR, put Abby behind the ledge and Drew/Barclay seated on the near side in their own chairs, redraw the bottles as a real back shelf - and fix the IDENTITY failure (Drew a vulture/turkey, Barclay a hound/poodle/llama/human).
+
+**The thinking.** Pass A: Picture 1 is the approved plate with Drew's block-in painted in at 100-180 grey, heads full; EDITS carried this pass: ['drew']; p2=drew, p3=none, head-edit=True. After the render, tone-matched to the plate over the room and ['window-frame', 'glass'] restored from the plate through their own masks (tone-matched to the render's own ring just outside each) before the gilded sign went on last.
+
+**Settings.** local/qwen-image-edit-2511, seed 7, fast 8-step cfg 1, aspect 2:3 -> bridge (1232, 1840), blockin-heads full, p2 drew, p3 none, head-edit True, match-keep True, room-from-plate True (dilate 10px), 113.9s
+
+**Prompt.** [prompts/133-chainb-1-pass-a-seed-7-whole-plate-edit.prompt.txt](prompts/133-chainb-1-pass-a-seed-7-whole-plate-edit.prompt.txt)
+
+*Logged 11:56.*
+
+---
+
+## 134. chainB-2 pass B seed 7 whole-plate edit
+
+![chainB-2 pass B seed 7 whole-plate edit](images/134-chainb-2-pass-b-seed-7-whole-plate-edit.png)
+
+**The ask.** Founder's note on the seed-7 proof: restore the approved window, gild THE SWINGING DOOR, put Abby behind the ledge and Drew/Barclay seated on the near side in their own chairs, redraw the bottles as a real back shelf - and fix the IDENTITY failure (Drew a vulture/turkey, Barclay a hound/poodle/llama/human).
+
+**The thinking.** Pass B: Picture 1 is a previous render (Z:\ImageGenerator\Cartoon\canon\room-kit\v2\work\chainB-1-s7-raw.png) with Barclay's block-in painted in at 100-180 grey, heads full - everyone else already drawn in it kept exactly as is; EDITS carried this pass: ['barclay']; p2=barclay, p3=none, head-edit=True. After the render, tone-matched to the plate over the room and ['window-frame', 'glass'] restored from the plate through their own masks (tone-matched to the render's own ring just outside each) before the gilded sign went on last.
+
+**Settings.** local/qwen-image-edit-2511, seed 7, fast 8-step cfg 1, aspect 2:3 -> bridge (1232, 1840), blockin-heads full, p2 barclay, p3 none, head-edit True, match-keep True, room-from-plate True (dilate 10px), 63.7s
+
+**Prompt.** [prompts/134-chainb-2-pass-b-seed-7-whole-plate-edit.prompt.txt](prompts/134-chainb-2-pass-b-seed-7-whole-plate-edit.prompt.txt)
+
+*Logged 11:57.*
+
+---
+
+## 135. chainB-3 pass B seed 7 whole-plate edit
+
+![chainB-3 pass B seed 7 whole-plate edit](images/135-chainb-3-pass-b-seed-7-whole-plate-edit.png)
+
+**The ask.** Founder's note on the seed-7 proof: restore the approved window, gild THE SWINGING DOOR, put Abby behind the ledge and Drew/Barclay seated on the near side in their own chairs, redraw the bottles as a real back shelf - and fix the IDENTITY failure (Drew a vulture/turkey, Barclay a hound/poodle/llama/human).
+
+**The thinking.** Pass B: Picture 1 is a previous render (Z:\ImageGenerator\Cartoon\canon\room-kit\v2\work\chainB-2-s7-raw.png) with Abby's block-in painted in at 100-180 grey, heads full - everyone else already drawn in it kept exactly as is; EDITS carried this pass: ['abby']; p2=abby, p3=none, head-edit=True. After the render, tone-matched to the plate over the room and ['window-frame', 'glass'] restored from the plate through their own masks (tone-matched to the render's own ring just outside each) before the gilded sign went on last.
+
+**Settings.** local/qwen-image-edit-2511, seed 7, fast 8-step cfg 1, aspect 2:3 -> bridge (1232, 1840), blockin-heads full, p2 abby, p3 none, head-edit True, match-keep True, room-from-plate True (dilate 10px), 63.8s
+
+**Prompt.** [prompts/135-chainb-3-pass-b-seed-7-whole-plate-edit.prompt.txt](prompts/135-chainb-3-pass-b-seed-7-whole-plate-edit.prompt.txt)
+
+*Logged 11:58.*
+
+---
+
+## 136. chainB-1 pass A seed 44 whole-plate edit
+
+![chainB-1 pass A seed 44 whole-plate edit](images/136-chainb-1-pass-a-seed-44-whole-plate-edit.png)
+
+**The ask.** Founder's note on the seed-7 proof: restore the approved window, gild THE SWINGING DOOR, put Abby behind the ledge and Drew/Barclay seated on the near side in their own chairs, redraw the bottles as a real back shelf - and fix the IDENTITY failure (Drew a vulture/turkey, Barclay a hound/poodle/llama/human).
+
+**The thinking.** Pass A: Picture 1 is the approved plate with Drew's block-in painted in at 100-180 grey, heads full; EDITS carried this pass: ['drew']; p2=drew, p3=none, head-edit=True. After the render, tone-matched to the plate over the room and ['window-frame', 'glass'] restored from the plate through their own masks (tone-matched to the render's own ring just outside each) before the gilded sign went on last.
+
+**Settings.** local/qwen-image-edit-2511, seed 44, fast 8-step cfg 1, aspect 2:3 -> bridge (1232, 1840), blockin-heads full, p2 drew, p3 none, head-edit True, match-keep True, room-from-plate True (dilate 10px), 63.8s
+
+**Prompt.** [prompts/136-chainb-1-pass-a-seed-44-whole-plate-edit.prompt.txt](prompts/136-chainb-1-pass-a-seed-44-whole-plate-edit.prompt.txt)
+
+*Logged 11:59.*
+
+---
+
+## 137. chainB-2 pass B seed 44 whole-plate edit
+
+![chainB-2 pass B seed 44 whole-plate edit](images/137-chainb-2-pass-b-seed-44-whole-plate-edit.png)
+
+**The ask.** Founder's note on the seed-7 proof: restore the approved window, gild THE SWINGING DOOR, put Abby behind the ledge and Drew/Barclay seated on the near side in their own chairs, redraw the bottles as a real back shelf - and fix the IDENTITY failure (Drew a vulture/turkey, Barclay a hound/poodle/llama/human).
+
+**The thinking.** Pass B: Picture 1 is a previous render (Z:\ImageGenerator\Cartoon\canon\room-kit\v2\work\chainB-1-s44-raw.png) with Barclay's block-in painted in at 100-180 grey, heads full - everyone else already drawn in it kept exactly as is; EDITS carried this pass: ['barclay']; p2=barclay, p3=none, head-edit=True. After the render, tone-matched to the plate over the room and ['window-frame', 'glass'] restored from the plate through their own masks (tone-matched to the render's own ring just outside each) before the gilded sign went on last.
+
+**Settings.** local/qwen-image-edit-2511, seed 44, fast 8-step cfg 1, aspect 2:3 -> bridge (1232, 1840), blockin-heads full, p2 barclay, p3 none, head-edit True, match-keep True, room-from-plate True (dilate 10px), 63.8s
+
+**Prompt.** [prompts/137-chainb-2-pass-b-seed-44-whole-plate-edit.prompt.txt](prompts/137-chainb-2-pass-b-seed-44-whole-plate-edit.prompt.txt)
+
+*Logged 12:00.*
+
+---
+
+## 138. chainB-3 pass B seed 44 whole-plate edit
+
+![chainB-3 pass B seed 44 whole-plate edit](images/138-chainb-3-pass-b-seed-44-whole-plate-edit.png)
+
+**The ask.** Founder's note on the seed-7 proof: restore the approved window, gild THE SWINGING DOOR, put Abby behind the ledge and Drew/Barclay seated on the near side in their own chairs, redraw the bottles as a real back shelf - and fix the IDENTITY failure (Drew a vulture/turkey, Barclay a hound/poodle/llama/human).
+
+**The thinking.** Pass B: Picture 1 is a previous render (Z:\ImageGenerator\Cartoon\canon\room-kit\v2\work\chainB-2-s44-raw.png) with Abby's block-in painted in at 100-180 grey, heads full - everyone else already drawn in it kept exactly as is; EDITS carried this pass: ['abby']; p2=abby, p3=none, head-edit=True. After the render, tone-matched to the plate over the room and ['window-frame', 'glass'] restored from the plate through their own masks (tone-matched to the render's own ring just outside each) before the gilded sign went on last.
+
+**Settings.** local/qwen-image-edit-2511, seed 44, fast 8-step cfg 1, aspect 2:3 -> bridge (1232, 1840), blockin-heads full, p2 abby, p3 none, head-edit True, match-keep True, room-from-plate True (dilate 10px), 63.6s
+
+**Prompt.** [prompts/138-chainb-3-pass-b-seed-44-whole-plate-edit.prompt.txt](prompts/138-chainb-3-pass-b-seed-44-whole-plate-edit.prompt.txt)
+
+*Logged 12:01.*
+
+---
+
