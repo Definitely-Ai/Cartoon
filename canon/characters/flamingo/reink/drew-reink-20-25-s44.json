@@ -1,0 +1,19 @@
+{
+  "character": "drew",
+  "seed": 44,
+  "steps": 20,
+  "cfg": 2.5,
+  "fast": false,
+  "picture1": "canon/vision/studies/drew.png",
+  "picture1_meta": {
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 517600,
+    "sha256": "44c9feea732f33d6"
+  },
+  "model": "local/qwen-image-edit-2511",
+  "seconds": 108.734302,
+  "generated_at": "2026-09-09T08:17:33"
+}
