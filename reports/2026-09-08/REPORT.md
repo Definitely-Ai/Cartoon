@@ -2166,3 +2166,809 @@ Built for Rick. Every image the studio generated today, in the order it happened
 
 ---
 
+## 136. s3A-barclay pass A seed 7 whole-plate edit
+
+![s3A-barclay pass A seed 7 whole-plate edit](images/136-s3a-barclay-pass-a-seed-7-whole-plate-edit.png)
+
+**The ask.** Founder's note on the seed-7 proof: restore the approved window, gild THE SWINGING DOOR, put Abby behind the ledge and Drew/Barclay seated on the near side in their own chairs, redraw the bottles as a real back shelf - and fix the IDENTITY failure (Drew a vulture/turkey, Barclay a hound/poodle/llama/human).
+
+**The thinking.** Pass A: Picture 1 is the approved plate with Drew's and Barclay's block-ins painted in at 100-180 grey, heads full (and Abby's); EDITS carried this pass: ['drew', 'barclay', 'abby']; p2=drew, p3=barclay, head-edit=True. After the render, tone-matched to the plate over the room and ['window-frame', 'glass'] restored from the plate through their own masks (tone-matched to the render's own ring just outside each) before the gilded sign went on last.
+
+**Settings.** local/qwen-image-edit-2511, seed 7, fast 8-step cfg 1, aspect 2:3 -> bridge (1232, 1840), blockin-heads full, p2 drew, p3 barclay, head-edit True, match-keep True, room-from-plate False, 62.0s
+
+**Prompt.** [prompts/136-s3a-barclay-pass-a-seed-7-whole-plate-edit.prompt.txt](prompts/136-s3a-barclay-pass-a-seed-7-whole-plate-edit.prompt.txt)
+
+*Logged 22:19.*
+
+---
+
+## 137. s3A-barclay pass A seed 7 - block-in heads full, Abby in pass A, Barclay solo P3
+
+![s3A-barclay pass A seed 7 - block-in heads full, Abby in pass A, Barclay solo P3](images/137-s3a-barclay-pass-a-seed-7-block-in-heads-full-abby-in-pass-a-barclay-solo-p3.png)
+
+**The ask.** The founder's five points on the scene: (1) keep the approved window view, (2) THE SWINGING DOOR gilded on the glass, (3) Abby as her portrait - white Westie lady, pale blouse, studded collar with pendant - behind the working ledge, (4) Drew in the LEFT chair and Barclay in the RIGHT chair, both on the near side seen from behind and turned to each other, (5) the bottles a real bar's back shelf, many and varied, plain labels, no lettering - and it must look GOOD, one engraved hand, no seams.
+
+**The thinking.** Scene-3 pass A, variant A-barclay: the whole approved plate as Picture 1 with all three block-ins painted in at 100-180 grey and HEADS KEPT (--blockin-heads full), because headless necks turned into human men tonight and Drew needs the bill shape to land on; Picture 2 Drew's portrait, Picture 3 Barclay's portrait ALONE at full size (the only arrangement that has held his retriever identity); EDITS drew,barclay,abby. Post: tone-match to the plate over the room, window-frame+glass restored from the plate with --match-keep so the scan does not sit paler than the re-inked room, gilded sign last.
+
+**Settings.** local/qwen-image-edit-2511, seed 7, fast 8-step cfg 1, aspect 2:3, blockin-heads full, abby-in-pass-a, p2 drew, p3 barclay, edits drew+barclay+abby, keep window-frame+glass, match-keep on, 62.0s
+
+**Prompt.** [prompts/137-s3a-barclay-pass-a-seed-7-block-in-heads-full-abby-in-pass-a-barclay-solo-p3.prompt.txt](prompts/137-s3a-barclay-pass-a-seed-7-block-in-heads-full-abby-in-pass-a-barclay-solo-p3.prompt.txt)
+
+**Verdict.** Seating right, identity wrong. Drew LEFT and Barclay RIGHT, near side, chair backs in front of their lower bodies - but Drew's head came back a vulture/eagle with a heavy hooked bill over a plaid jacket (no knit vest, no bow tie) and his bill points away from Barclay, not toward him. Barclay reads as a retriever in a dark knit with a white collar and bow tie - the closest identity of the two. Abby is NOT there: a human man in a top hat tends the bar behind the ledge, an added figure the plate never had. Window and sign restored exactly. Bottles varied and plain. Score s1 3, s2 1, s3 2, s4 3 = 9/20.
+
+*Logged 22:20.*
+
+---
+
+## 138. s3A-barclay pass A seed 44 whole-plate edit
+
+![s3A-barclay pass A seed 44 whole-plate edit](images/138-s3a-barclay-pass-a-seed-44-whole-plate-edit.png)
+
+**The ask.** Founder's note on the seed-7 proof: restore the approved window, gild THE SWINGING DOOR, put Abby behind the ledge and Drew/Barclay seated on the near side in their own chairs, redraw the bottles as a real back shelf - and fix the IDENTITY failure (Drew a vulture/turkey, Barclay a hound/poodle/llama/human).
+
+**The thinking.** Pass A: Picture 1 is the approved plate with Drew's and Barclay's block-ins painted in at 100-180 grey, heads full (and Abby's); EDITS carried this pass: ['drew', 'barclay', 'abby']; p2=drew, p3=barclay, head-edit=True. After the render, tone-matched to the plate over the room and ['window-frame', 'glass'] restored from the plate through their own masks (tone-matched to the render's own ring just outside each) before the gilded sign went on last.
+
+**Settings.** local/qwen-image-edit-2511, seed 44, fast 8-step cfg 1, aspect 2:3 -> bridge (1232, 1840), blockin-heads full, p2 drew, p3 barclay, head-edit True, match-keep True, room-from-plate False, 62.0s
+
+**Prompt.** [prompts/138-s3a-barclay-pass-a-seed-44-whole-plate-edit.prompt.txt](prompts/138-s3a-barclay-pass-a-seed-44-whole-plate-edit.prompt.txt)
+
+*Logged 22:21.*
+
+---
+
+## 139. s3A-barclay pass A seed 44 - block-in heads full, Abby in pass A, Barclay solo P3
+
+![s3A-barclay pass A seed 44 - block-in heads full, Abby in pass A, Barclay solo P3](images/139-s3a-barclay-pass-a-seed-44-block-in-heads-full-abby-in-pass-a-barclay-solo-p3.png)
+
+**The ask.** The founder's five points on the scene: (1) keep the approved window view, (2) THE SWINGING DOOR gilded on the glass, (3) Abby as her portrait - white Westie lady, pale blouse, studded collar with pendant - behind the working ledge, (4) Drew in the LEFT chair and Barclay in the RIGHT chair, both on the near side seen from behind and turned to each other, (5) the bottles a real bar's back shelf, many and varied, plain labels, no lettering - and it must look GOOD, one engraved hand, no seams.
+
+**The thinking.** Same variant as entry 137 at a second seed, to see how much of pass A is seed luck: whole approved plate as Picture 1, all three block-ins painted at 100-180 grey with heads kept, Picture 2 Drew alone, Picture 3 Barclay alone at full size, EDITS drew,barclay,abby; window+glass restored with --match-keep, sign gilded last.
+
+**Settings.** local/qwen-image-edit-2511, seed 44, fast 8-step cfg 1, aspect 2:3, blockin-heads full, abby-in-pass-a, p2 drew, p3 barclay, edits drew+barclay+abby, keep window-frame+glass, match-keep on, 62.0s
+
+**Prompt.** [prompts/139-s3a-barclay-pass-a-seed-44-block-in-heads-full-abby-in-pass-a-barclay-solo-p3.prompt.txt](prompts/139-s3a-barclay-pass-a-seed-44-block-in-heads-full-abby-in-pass-a-barclay-solo-p3.prompt.txt)
+
+**Verdict.** Seating holds, the cast turns into an aviary. Both men are on the near side in their own chairs, backs to us, turned inward, chair backs in front of their lower bodies - that part is reliable. Everything above the collar is not: Drew is a duck-dog hybrid in a pinstripe suit (no knit vest), Barclay is a long-necked bird in a dark blazer, and behind the ledge stands a rabbit-billed creature wearing DREW's knit V-neck and bow tie, with a fourth long-necked bird looming over the recess - an extra character the plate never had. A hard-edged black rectangle sits on the right figure's shoulder, a block-in remnant and a visible seam. Window and sign exact. Score s1 3, s2 0, s3 1, s4 2 = 6/20.
+
+*Logged 22:22.*
+
+---
+
+## 140. s3A-barclay pass A seed 3 whole-plate edit
+
+![s3A-barclay pass A seed 3 whole-plate edit](images/140-s3a-barclay-pass-a-seed-3-whole-plate-edit.png)
+
+**The ask.** Founder's note on the seed-7 proof: restore the approved window, gild THE SWINGING DOOR, put Abby behind the ledge and Drew/Barclay seated on the near side in their own chairs, redraw the bottles as a real back shelf - and fix the IDENTITY failure (Drew a vulture/turkey, Barclay a hound/poodle/llama/human).
+
+**The thinking.** Pass A: Picture 1 is the approved plate with Drew's and Barclay's block-ins painted in at 100-180 grey, heads full (and Abby's); EDITS carried this pass: ['drew', 'barclay', 'abby']; p2=drew, p3=barclay, head-edit=True. After the render, tone-matched to the plate over the room and ['window-frame', 'glass'] restored from the plate through their own masks (tone-matched to the render's own ring just outside each) before the gilded sign went on last.
+
+**Settings.** local/qwen-image-edit-2511, seed 3, fast 8-step cfg 1, aspect 2:3 -> bridge (1232, 1840), blockin-heads full, p2 drew, p3 barclay, head-edit True, match-keep True, room-from-plate False, 62.0s
+
+**Prompt.** [prompts/140-s3a-barclay-pass-a-seed-3-whole-plate-edit.prompt.txt](prompts/140-s3a-barclay-pass-a-seed-3-whole-plate-edit.prompt.txt)
+
+*Logged 22:23.*
+
+---
+
+## 141. s3A-barclay pass A seed 3 - block-in heads full, Abby in pass A, Barclay solo P3
+
+![s3A-barclay pass A seed 3 - block-in heads full, Abby in pass A, Barclay solo P3](images/141-s3a-barclay-pass-a-seed-3-block-in-heads-full-abby-in-pass-a-barclay-solo-p3.png)
+
+**The ask.** The founder's five points on the scene: (1) keep the approved window view, (2) THE SWINGING DOOR gilded on the glass, (3) Abby as her portrait - white Westie lady, pale blouse, studded collar with pendant - behind the working ledge, (4) Drew in the LEFT chair and Barclay in the RIGHT chair, both on the near side seen from behind and turned to each other, (5) the bottles a real bar's back shelf, many and varied, plain labels, no lettering - and it must look GOOD, one engraved hand, no seams.
+
+**The thinking.** Third seed of variant A-barclay, same references and same EDITS, to finish the seed sweep before switching Picture 3 to the Barclay+Abby tile.
+
+**Settings.** local/qwen-image-edit-2511, seed 3, fast 8-step cfg 1, aspect 2:3, blockin-heads full, abby-in-pass-a, p2 drew, p3 barclay, edits drew+barclay+abby, keep window-frame+glass, match-keep on, 62.0s
+
+**Prompt.** [prompts/141-s3a-barclay-pass-a-seed-3-block-in-heads-full-abby-in-pass-a-barclay-solo-p3.prompt.txt](prompts/141-s3a-barclay-pass-a-seed-3-block-in-heads-full-abby-in-pass-a-barclay-solo-p3.prompt.txt)
+
+**Verdict.** The cleanest staging of the three and still the wrong faces. Drew LEFT, Barclay RIGHT, both near side from behind, turned to each other, chair backs across their laps, one figure behind the ledge and no extras - the blocking the founder asked for. Costumes are close too: the left man wears the knit vest and white sleeves, the right man a dark blazer with a white collar. The heads fail: Drew is a vulture with a heavy hooked bill instead of the slender pale bill that bends down, Barclay is a spotted vulture/turkey rather than a golden retriever, and behind the ledge stands a lynx-eared cat in Drew's own vest and bow tie, not Abby the white Westie. Room, window, sign and bottles all read right - bottles many, varied, plain-labelled, no lettering. Score s1 4, s2 1, s3 4, s4 3 = 12/20 - the best of the A-barclay seeds.
+
+*Logged 22:23.*
+
+---
+
+## 142. s3A-tile pass A seed 7 whole-plate edit
+
+![s3A-tile pass A seed 7 whole-plate edit](images/142-s3a-tile-pass-a-seed-7-whole-plate-edit.png)
+
+**The ask.** Founder's note on the seed-7 proof: restore the approved window, gild THE SWINGING DOOR, put Abby behind the ledge and Drew/Barclay seated on the near side in their own chairs, redraw the bottles as a real back shelf - and fix the IDENTITY failure (Drew a vulture/turkey, Barclay a hound/poodle/llama/human).
+
+**The thinking.** Pass A: Picture 1 is the approved plate with Drew's and Barclay's block-ins painted in at 100-180 grey, heads full (and Abby's); EDITS carried this pass: ['drew', 'barclay', 'abby']; p2=drew, p3=tile, head-edit=True. After the render, tone-matched to the plate over the room and ['window-frame', 'glass'] restored from the plate through their own masks (tone-matched to the render's own ring just outside each) before the gilded sign went on last.
+
+**Settings.** local/qwen-image-edit-2511, seed 7, fast 8-step cfg 1, aspect 2:3 -> bridge (1232, 1840), blockin-heads full, p2 drew, p3 tile, head-edit True, match-keep True, room-from-plate False, 62.1s
+
+**Prompt.** [prompts/142-s3a-tile-pass-a-seed-7-whole-plate-edit.prompt.txt](prompts/142-s3a-tile-pass-a-seed-7-whole-plate-edit.prompt.txt)
+
+*Logged 22:25.*
+
+---
+
+## 143. s3A-tile pass A seed 7 - block-in heads full, Abby in pass A, Barclay+Abby tile as P3
+
+![s3A-tile pass A seed 7 - block-in heads full, Abby in pass A, Barclay+Abby tile as P3](images/143-s3a-tile-pass-a-seed-7-block-in-heads-full-abby-in-pass-a-barclay-abby-tile-as-p3.png)
+
+**The ask.** The founder's five points on the scene: (1) keep the approved window view, (2) THE SWINGING DOOR gilded on the glass, (3) Abby as her portrait - white Westie lady, pale blouse, studded collar with pendant - behind the working ledge, (4) Drew in the LEFT chair and Barclay in the RIGHT chair, both on the near side seen from behind and turned to each other, (5) the bottles a real bar's back shelf, many and varied, plain labels, no lettering - and it must look GOOD, one engraved hand, no seams.
+
+**The thinking.** Variant A-tile: everything as A-barclay except Picture 3 is the old Barclay+Abby side-by-side tile instead of Barclay alone, so Abby's portrait actually reaches the model in pass A - the trade is that both dogs arrive at half size, which is what lost Barclay's identity in earlier rounds. Seed 7 first, to compare head to head with entry 137.
+
+**Settings.** local/qwen-image-edit-2511, seed 7, fast 8-step cfg 1, aspect 2:3, blockin-heads full, abby-in-pass-a, p2 drew, p3 tile, edits drew+barclay+abby, keep window-frame+glass, match-keep on, 62.1s
+
+**Prompt.** [prompts/143-s3a-tile-pass-a-seed-7-block-in-heads-full-abby-in-pass-a-barclay-abby-tile-as-p3.prompt.txt](prompts/143-s3a-tile-pass-a-seed-7-block-in-heads-full-abby-in-pass-a-barclay-abby-tile-as-p3.prompt.txt)
+
+**Verdict.** The tile costs Barclay and does not buy Abby. Seating is right again - both men near side, in their own chairs, backs to us, turned to each other - but Drew is a vulture with a hooked bill in a checked jacket, the right chair holds a pale bird wearing ABBY's studded collar instead of a retriever in a blazer, and behind the ledge is a moustached human barman in a bowler hat, an added person. Sending the two dogs at half size in one tile leaked Abby's collar onto Barclay and gave neither a face. Window, sign and bottles restored clean. Score s1 3, s2 0, s3 2, s4 3 = 8/20.
+
+*Logged 22:25.*
+
+---
+
+## 144. s3A-tile pass A seed 44 whole-plate edit
+
+![s3A-tile pass A seed 44 whole-plate edit](images/144-s3a-tile-pass-a-seed-44-whole-plate-edit.png)
+
+**The ask.** Founder's note on the seed-7 proof: restore the approved window, gild THE SWINGING DOOR, put Abby behind the ledge and Drew/Barclay seated on the near side in their own chairs, redraw the bottles as a real back shelf - and fix the IDENTITY failure (Drew a vulture/turkey, Barclay a hound/poodle/llama/human).
+
+**The thinking.** Pass A: Picture 1 is the approved plate with Drew's and Barclay's block-ins painted in at 100-180 grey, heads full (and Abby's); EDITS carried this pass: ['drew', 'barclay', 'abby']; p2=drew, p3=tile, head-edit=True. After the render, tone-matched to the plate over the room and ['window-frame', 'glass'] restored from the plate through their own masks (tone-matched to the render's own ring just outside each) before the gilded sign went on last.
+
+**Settings.** local/qwen-image-edit-2511, seed 44, fast 8-step cfg 1, aspect 2:3 -> bridge (1232, 1840), blockin-heads full, p2 drew, p3 tile, head-edit True, match-keep True, room-from-plate False, 62.0s
+
+**Prompt.** [prompts/144-s3a-tile-pass-a-seed-44-whole-plate-edit.prompt.txt](prompts/144-s3a-tile-pass-a-seed-44-whole-plate-edit.prompt.txt)
+
+*Logged 22:26.*
+
+---
+
+## 145. s3A-tile pass A seed 44 - block-in heads full, Abby in pass A, Barclay+Abby tile as P3
+
+![s3A-tile pass A seed 44 - block-in heads full, Abby in pass A, Barclay+Abby tile as P3](images/145-s3a-tile-pass-a-seed-44-block-in-heads-full-abby-in-pass-a-barclay-abby-tile-as-p3.png)
+
+**The ask.** The founder's five points on the scene: (1) keep the approved window view, (2) THE SWINGING DOOR gilded on the glass, (3) Abby as her portrait - white Westie lady, pale blouse, studded collar with pendant - behind the working ledge, (4) Drew in the LEFT chair and Barclay in the RIGHT chair, both on the near side seen from behind and turned to each other, (5) the bottles a real bar's back shelf, many and varied, plain labels, no lettering - and it must look GOOD, one engraved hand, no seams.
+
+**The thinking.** Second seed of the tile variant, matched to the A-barclay sweep so the two Picture-3 arrangements can be read seed for seed.
+
+**Settings.** local/qwen-image-edit-2511, seed 44, fast 8-step cfg 1, aspect 2:3, blockin-heads full, abby-in-pass-a, p2 drew, p3 tile, edits drew+barclay+abby, keep window-frame+glass, match-keep on, 62.0s
+
+**Prompt.** [prompts/145-s3a-tile-pass-a-seed-44-block-in-heads-full-abby-in-pass-a-barclay-abby-tile-as-p3.prompt.txt](prompts/145-s3a-tile-pass-a-seed-44-block-in-heads-full-abby-in-pass-a-barclay-abby-tile-as-p3.prompt.txt)
+
+**Verdict.** Identities swap seats and a fourth animal walks in. The blocking is right - two figures near side in their own chairs from behind, turned to each other, chairs across their laps - but the LEFT chair holds a long-muzzled white setter (a dog where Drew's bill belongs), the RIGHT chair a heavy turkey head with the same hard black rectangle stamped on its shoulder that seed 44 produced in the barclay variant, and the ledge is shared by a cat-eared creature in Drew's knit vest and a flamingo neck rising out of the recess. Window, sign and bottles fine. Score s1 3, s2 0, s3 1, s4 2 = 6/20.
+
+*Logged 22:26.*
+
+---
+
+## 146. s3A-tile pass A seed 3 whole-plate edit
+
+![s3A-tile pass A seed 3 whole-plate edit](images/146-s3a-tile-pass-a-seed-3-whole-plate-edit.png)
+
+**The ask.** Founder's note on the seed-7 proof: restore the approved window, gild THE SWINGING DOOR, put Abby behind the ledge and Drew/Barclay seated on the near side in their own chairs, redraw the bottles as a real back shelf - and fix the IDENTITY failure (Drew a vulture/turkey, Barclay a hound/poodle/llama/human).
+
+**The thinking.** Pass A: Picture 1 is the approved plate with Drew's and Barclay's block-ins painted in at 100-180 grey, heads full (and Abby's); EDITS carried this pass: ['drew', 'barclay', 'abby']; p2=drew, p3=tile, head-edit=True. After the render, tone-matched to the plate over the room and ['window-frame', 'glass'] restored from the plate through their own masks (tone-matched to the render's own ring just outside each) before the gilded sign went on last.
+
+**Settings.** local/qwen-image-edit-2511, seed 3, fast 8-step cfg 1, aspect 2:3 -> bridge (1232, 1840), blockin-heads full, p2 drew, p3 tile, head-edit True, match-keep True, room-from-plate False, 60.2s
+
+**Prompt.** [prompts/146-s3a-tile-pass-a-seed-3-whole-plate-edit.prompt.txt](prompts/146-s3a-tile-pass-a-seed-3-whole-plate-edit.prompt.txt)
+
+*Logged 22:27.*
+
+---
+
+## 147. s3A-tile pass A seed 3 - block-in heads full, Abby in pass A, Barclay+Abby tile as P3
+
+![s3A-tile pass A seed 3 - block-in heads full, Abby in pass A, Barclay+Abby tile as P3](images/147-s3a-tile-pass-a-seed-3-block-in-heads-full-abby-in-pass-a-barclay-abby-tile-as-p3.png)
+
+**The ask.** The founder's five points on the scene: (1) keep the approved window view, (2) THE SWINGING DOOR gilded on the glass, (3) Abby as her portrait - white Westie lady, pale blouse, studded collar with pendant - behind the working ledge, (4) Drew in the LEFT chair and Barclay in the RIGHT chair, both on the near side seen from behind and turned to each other, (5) the bottles a real bar's back shelf, many and varied, plain labels, no lettering - and it must look GOOD, one engraved hand, no seams.
+
+**The thinking.** Last seed of the sweep: the tile variant at seed 3, the seed that gave the cleanest staging in the barclay variant.
+
+**Settings.** local/qwen-image-edit-2511, seed 3, fast 8-step cfg 1, aspect 2:3, blockin-heads full, abby-in-pass-a, p2 drew, p3 tile, edits drew+barclay+abby, keep window-frame+glass, match-keep on, 60.2s
+
+**Prompt.** [prompts/147-s3a-tile-pass-a-seed-3-block-in-heads-full-abby-in-pass-a-barclay-abby-tile-as-p3.prompt.txt](prompts/147-s3a-tile-pass-a-seed-3-block-in-heads-full-abby-in-pass-a-barclay-abby-tile-as-p3.prompt.txt)
+
+**Verdict.** The best-looking plate of the six and the identities are still not ours. Staging is exactly the ask - Drew LEFT, Barclay RIGHT, near side, backs to us, turned to each other, chair backs across their laps, one figure behind the ledge, no extras, no rectangle artifacts, no seams, one engraved hand throughout, bottles many and varied with plain labels and no lettering, window and sign exact. The heads: Drew is a vulture with a heavy hooked bill instead of a slender pale one, the right chair holds a bird wearing ABBY's studded collar and pendant over a checked waistcoat instead of a retriever gentleman in a dark blazer, and behind the ledge stands a wolfish husky in a waistcoat and bow tie, male-reading, not the white Westie lady. Score s1 4, s2 1, s3 4, s4 4 = 13/20 - the highest of the six.
+
+*Logged 22:28.*
+
+---
+
+## 148. scene 3 PASS A contact sheet - two variants, three seeds, scored
+
+![scene 3 PASS A contact sheet - two variants, three seeds, scored](images/148-scene-3-pass-a-contact-sheet-two-variants-three-seeds-scored.png)
+
+**The ask.** Run scene 3's pass A twice - Barclay's portrait alone as Picture 3, and the old Barclay+Abby tile - at seeds 7, 44 and 3, and score every plate on seating, identity, room and quality against the founder's five points.
+
+**The thinking.** Six whole-plate pass-A renders, one at a time on the resident model, all at the tool's fast 8-step setting with the block-in HEADS kept this time (headless necks had been coming back as human men). Scored 0-5 on s1 seating (Drew LEFT, Barclay RIGHT, near side from behind, turned to each other, chairs across their laps, Abby behind the ledge), s2 identity against the portraits, s3 room as the approved plate with no extra objects or lettering, s4 one engraved hand and no seams.
+
+**Settings.** 3x2 sheet, 1482x1638, captions carry variant, seed, total and the four sub-scores
+
+**Prompt.** [prompts/148-scene-3-pass-a-contact-sheet-two-variants-three-seeds-scored.prompt.txt](prompts/148-scene-3-pass-a-contact-sheet-two-variants-three-seeds-scored.prompt.txt)
+
+**Verdict.** Seating is solved and identity is not. All six seat Drew LEFT and Barclay RIGHT on the near side from behind with the chair backs across their laps, and all six restore the window and the gilded sign exactly - the block-in heads did stop the headless-neck human men in the chairs. Not one of the six draws a character we own: Drew is a vulture or a setter at every seed, Barclay is a turkey, a vulture or a bird wearing Abby's studded collar, and the ledge is held by a human barman (seed 7, both variants), a lynx or cat in Drew's own knit vest (seed 3 barclay, seed 44 tile), or a wolfish husky (seed 3 tile) - never the white Westie lady. Seed 44 is the worst in both variants: a fourth animal, a flamingo neck out of the recess, and a hard black rectangle stamped on the right figure's shoulder. Seed 3 is the best in both: single figure behind the ledge, no extras, clean engraving. Best two: A-tile seed 3 (13/20) and A-barclay seed 3 (12/20).
+
+*Logged 22:29.*
+
+---
+
+## 149. s3R2-barclay pass R seed 7 head-repair edit
+
+![s3R2-barclay pass R seed 7 head-repair edit](images/149-s3r2-barclay-pass-r-seed-7-head-repair-edit.png)
+
+**The ask.** Founder's note on the seed-7 proof: restore the approved window, gild THE SWINGING DOOR, put Abby behind the ledge and Drew/Barclay seated on the near side in their own chairs, redraw the bottles as a real back shelf - and fix the IDENTITY failure (Drew a vulture/turkey, Barclay a hound/poodle/llama/human).
+
+**The thinking.** Pass R: Picture 1 is a previous render (Z:\ImageGenerator\Cartoon\canon\room-kit\v2\work\s3A-barclay-s3-raw.png), already right except the head(s) being repaired; EDITS carried this pass: ['barclay']; repair=['barclay'], abby-absent=False. After the render, tone-matched to the plate over the room and ['window-frame', 'glass'] restored from the plate through their own masks before the gilded sign went on last.
+
+**Settings.** local/qwen-image-edit-2511, seed 7, fast 8-step cfg 1, aspect 2:3 -> bridge (1232, 1840), blockin-heads none, p2 n/a, p3 n/a, head-edit True, match-keep False, room-from-plate False, 49.8s
+
+**Prompt.** [prompts/149-s3r2-barclay-pass-r-seed-7-head-repair-edit.prompt.txt](prompts/149-s3r2-barclay-pass-r-seed-7-head-repair-edit.prompt.txt)
+
+*Logged 22:32.*
+
+---
+
+## 150. s3R1-barclay pass R seed 7 head-repair edit
+
+![s3R1-barclay pass R seed 7 head-repair edit](images/150-s3r1-barclay-pass-r-seed-7-head-repair-edit.png)
+
+**The ask.** Founder's note on the seed-7 proof: restore the approved window, gild THE SWINGING DOOR, put Abby behind the ledge and Drew/Barclay seated on the near side in their own chairs, redraw the bottles as a real back shelf - and fix the IDENTITY failure (Drew a vulture/turkey, Barclay a hound/poodle/llama/human).
+
+**The thinking.** Pass R: Picture 1 is a previous render (Z:\ImageGenerator\Cartoon\canon\room-kit\v2\work\s3A-tile-s3-raw.png), already right except the head(s) being repaired; EDITS carried this pass: ['barclay']; repair=['barclay'], abby-absent=False. After the render, tone-matched to the plate over the room and ['window-frame', 'glass'] restored from the plate through their own masks before the gilded sign went on last.
+
+**Settings.** local/qwen-image-edit-2511, seed 7, fast 8-step cfg 1, aspect 2:3 -> bridge (1232, 1840), blockin-heads none, p2 n/a, p3 n/a, head-edit True, match-keep False, room-from-plate False, 50.8s
+
+**Prompt.** [prompts/150-s3r1-barclay-pass-r-seed-7-head-repair-edit.prompt.txt](prompts/150-s3r1-barclay-pass-r-seed-7-head-repair-edit.prompt.txt)
+
+*Logged 22:33.*
+
+---
+
+## 151. s3R2-barclay pass R seed 21 head-repair edit
+
+![s3R2-barclay pass R seed 21 head-repair edit](images/151-s3r2-barclay-pass-r-seed-21-head-repair-edit.png)
+
+**The ask.** Founder's note on the seed-7 proof: restore the approved window, gild THE SWINGING DOOR, put Abby behind the ledge and Drew/Barclay seated on the near side in their own chairs, redraw the bottles as a real back shelf - and fix the IDENTITY failure (Drew a vulture/turkey, Barclay a hound/poodle/llama/human).
+
+**The thinking.** Pass R: Picture 1 is a previous render (Z:\ImageGenerator\Cartoon\canon\room-kit\v2\work\s3A-barclay-s3-raw.png), already right except the head(s) being repaired; EDITS carried this pass: ['barclay']; repair=['barclay'], abby-absent=False. After the render, tone-matched to the plate over the room and ['window-frame', 'glass'] restored from the plate through their own masks before the gilded sign went on last.
+
+**Settings.** local/qwen-image-edit-2511, seed 21, fast 8-step cfg 1, aspect 2:3 -> bridge (1232, 1840), blockin-heads none, p2 n/a, p3 n/a, head-edit True, match-keep False, room-from-plate False, 80.1s
+
+**Prompt.** [prompts/151-s3r2-barclay-pass-r-seed-21-head-repair-edit.prompt.txt](prompts/151-s3r2-barclay-pass-r-seed-21-head-repair-edit.prompt.txt)
+
+*Logged 22:33.*
+
+---
+
+## 152. Scene 3 repair R1 - Barclay head, candidate 1 (A-tile seed 3), seed 7
+
+![Scene 3 repair R1 - Barclay head, candidate 1 (A-tile seed 3), seed 7](images/152-scene-3-repair-r1-barclay-head-candidate-1-a-tile-seed-3-seed-7.png)
+
+**The ask.** Founder point 4: Barclay must be the golden retriever gentleman (dark blazer, open collar, small flag pin) in the RIGHT chair. Candidate 1 seated him right but drew a long-billed spotted bird-dog head. Repair only that head against his portrait.
+
+**The thinking.** Pass R: Picture 1 = the s3A-tile seed-3 raw render, Picture 2 = canon/vision/studies/barclay.png ALONE at full size; the EDITS say redraw ONLY Barclay's head and face to match the portrait feature for feature and keep his body, seat, pose, size and place exactly. Window-frame + glass restored from the plate, THE SWINGING DOOR gilded last.
+
+**Settings.** local/qwen-image-edit-2511, seed 7, 8 steps, cfg 1.0, euler/simple, shift 3.0, 1232x1840, 2 references, 50.8s, pass R (--repair barclay --pass2 s3A-tile-s3-raw.png)
+
+**Prompt.** [prompts/152-scene-3-repair-r1-barclay-head-candidate-1-a-tile-seed-3-seed-7.prompt.txt](prompts/152-scene-3-repair-r1-barclay-head-candidate-1-a-tile-seed-3-seed-7.prompt.txt)
+
+**Verdict.** FAIL on identity. The head came back unchanged: the same long pointed pale bill, spotted crown, floppy side-ear and studded pendant collar as the input - no golden retriever muzzle, no drop ear with fringe, no dark blazer, no flag pin. Identity 1/5. Everything else IS held: Drew, the extra wolf figure behind the bar, the chairs, the marble, the back bar, the restored window and the gilded sign are all where Picture 1 had them - kept 5/5.
+
+*Logged 22:33.*
+
+---
+
+## 153. s3R1-barclay pass R seed 21 head-repair edit
+
+![s3R1-barclay pass R seed 21 head-repair edit](images/153-s3r1-barclay-pass-r-seed-21-head-repair-edit.png)
+
+**The ask.** Founder's note on the seed-7 proof: restore the approved window, gild THE SWINGING DOOR, put Abby behind the ledge and Drew/Barclay seated on the near side in their own chairs, redraw the bottles as a real back shelf - and fix the IDENTITY failure (Drew a vulture/turkey, Barclay a hound/poodle/llama/human).
+
+**The thinking.** Pass R: Picture 1 is a previous render (Z:\ImageGenerator\Cartoon\canon\room-kit\v2\work\s3A-tile-s3-raw.png), already right except the head(s) being repaired; EDITS carried this pass: ['barclay']; repair=['barclay'], abby-absent=False. After the render, tone-matched to the plate over the room and ['window-frame', 'glass'] restored from the plate through their own masks before the gilded sign went on last.
+
+**Settings.** local/qwen-image-edit-2511, seed 21, fast 8-step cfg 1, aspect 2:3 -> bridge (1232, 1840), blockin-heads none, p2 n/a, p3 n/a, head-edit True, match-keep False, room-from-plate False, 50.0s
+
+**Prompt.** [prompts/153-s3r1-barclay-pass-r-seed-21-head-repair-edit.prompt.txt](prompts/153-s3r1-barclay-pass-r-seed-21-head-repair-edit.prompt.txt)
+
+*Logged 22:34.*
+
+---
+
+## 154. Scene 3 candidate 2 - Barclay head repair, seed 7
+
+![Scene 3 candidate 2 - Barclay head repair, seed 7](images/154-scene-3-candidate-2-barclay-head-repair-seed-7.png)
+
+**The ask.** Repair Barclay's head only on the A-barclay seed 3 render: redraw the head and face to match the official portrait (golden retriever gentleman) and change nothing else - body, seat, pose, room, Drew, window and sign all as Picture 1 has them.
+
+**The thinking.** Pass A seats both men right but Barclay came back a vulture. A head-only repair pass (--pass2 on the seed-3 raw, --repair barclay) sends the previous render as Picture 1 and Barclay's portrait ALONE as Picture 2, so the edit list asks for one head and nothing else - safer than a whole-plate re-roll that would risk Drew, the window and the sign. Seed 7 of two.
+
+**Settings.** local/qwen-image-edit-2511 via AuraVision bridge 127.0.0.1:8000; pass R (repair barclay); pass2 source s3A-barclay-s3-raw.png; picture2 = canon/vision/studies/barclay.png alone; seed 7, 8 steps, cfg 1.0, euler/simple, shift 3.0, 1232x1840 -> 1200x1800; keep window-frame,glass; match-keep off; 49.8s
+
+**Prompt.** [prompts/154-scene-3-candidate-2-barclay-head-repair-seed-7.prompt.txt](prompts/154-scene-3-candidate-2-barclay-head-repair-seed-7.prompt.txt)
+
+**Verdict.** FAIL on identity, cost on kept. The head is unchanged in species: same long pointed vulture bill, bald speckled neck, small round bird eye and a stiff rectangular ear-flap - none of the portrait's soft muzzle, black dog nose, drop ear with fringe or warm human-looking eye. Identity 1/5, no rise over the input. Worse, the repair leaked: the figure behind the bar swapped his knit V-neck vest for a dark dinner jacket, both club chairs are redrawn larger with different studding, the marble inlay shifted, and a small colour blob (a blue/red pin) appeared in a black-and-white plate. Kept 3/5. Not a candidate.
+
+*Logged 22:35.*
+
+---
+
+## 155. Scene 3 candidate 2 - Barclay head repair, seed 21
+
+![Scene 3 candidate 2 - Barclay head repair, seed 21](images/155-scene-3-candidate-2-barclay-head-repair-seed-21.png)
+
+**The ask.** Repair Barclay's head only on the A-barclay seed 3 render: redraw the head and face to match the official portrait (golden retriever gentleman) and change nothing else - body, seat, pose, room, Drew, window and sign all as Picture 1 has them.
+
+**The thinking.** Second seed of the same head-only repair pass, to see whether the seed alone decides identity the way it did in pass A. Same Picture 1 (the seed-3 raw), same Picture 2 (Barclay's portrait alone), same one-line edit.
+
+**Settings.** local/qwen-image-edit-2511 via AuraVision bridge 127.0.0.1:8000; pass R (repair barclay); pass2 source s3A-barclay-s3-raw.png; picture2 = canon/vision/studies/barclay.png alone; seed 21, 8 steps, cfg 1.0, euler/simple, shift 3.0, 1232x1840 -> 1200x1800; keep window-frame,glass; match-keep off; 80.1s
+
+**Prompt.** [prompts/155-scene-3-candidate-2-barclay-head-repair-seed-21.prompt.txt](prompts/155-scene-3-candidate-2-barclay-head-repair-seed-21.prompt.txt)
+
+**Verdict.** FAIL on identity, perfect on kept. The model reproduced Picture 1 almost exactly and simply declined to touch the head: the vulture bill, bald speckled neck, bird eye and rectangular ear-flap all come back as they were, so identity is 1/5, no rise over the input. Everything else is held - the V-neck bartender, both chairs, the marble and its inlay, Drew, the restored window and the gilded sign are all as Picture 1 had them; kept 5/5. Read together with seed 7 this says the repair pass cannot pull the head off the bird it inherits: either it copies Picture 1 (seed 21) or it re-inks the room around the same bird (seed 7). The bird has to be stopped before it is drawn, not after.
+
+*Logged 22:35.*
+
+---
+
+## 156. Scene 3 repair R1 - Barclay head, candidate 1 (A-tile seed 3), seed 21
+
+![Scene 3 repair R1 - Barclay head, candidate 1 (A-tile seed 3), seed 21](images/156-scene-3-repair-r1-barclay-head-candidate-1-a-tile-seed-3-seed-21.png)
+
+**The ask.** Second seed of the same Barclay head repair on candidate 1: redraw ONLY Barclay's head and face to match his portrait, keep body, seat, pose, size and place.
+
+**The thinking.** Same pass R as seed 7, seed changed to 21 to see whether the failure was seed-bound. Picture 1 = s3A-tile-s3-raw.png, Picture 2 = canon/vision/studies/barclay.png ALONE.
+
+**Settings.** local/qwen-image-edit-2511, seed 21, 8 steps, cfg 1.0, euler/simple, shift 3.0, 1232x1840, 2 references, 50.0s, pass R (--repair barclay --pass2 s3A-tile-s3-raw.png)
+
+**Prompt.** [prompts/156-scene-3-repair-r1-barclay-head-candidate-1-a-tile-seed-3-seed-21.prompt.txt](prompts/156-scene-3-repair-r1-barclay-head-candidate-1-a-tile-seed-3-seed-21.prompt.txt)
+
+**Verdict.** FAIL on identity, same as seed 7. Side by side with the input the head is the same creature: long pointed pale bill, mottled crown, one big drooping ear flap, studded collar with a teardrop pendant. Not a golden retriever - no soft freckled muzzle, no drop ear with long fringe, no dark blazer over an open collar, no flag pin. Identity 1/5, kept 5/5 (Drew, the extra wolf figure, both chairs, marble, back bar, restored window and gilded sign all unchanged). Two seeds agree: this repair pass does not move that head at all - the model does not accept the billed figure as 'the dog in the right chair', so the REDRAW instruction lands on nothing. Next lever is not another seed: the head must be masked/cropped (a tight Barclay crop the way --bottles-crop does the recess) or the candidate rebuilt from a pass A whose Barclay already reads as a dog.
+
+*Logged 22:35.*
+
+---
+
+## 157. s3R2-abby pass R seed 7 head-repair edit
+
+![s3R2-abby pass R seed 7 head-repair edit](images/157-s3r2-abby-pass-r-seed-7-head-repair-edit.png)
+
+**The ask.** Founder's note on the seed-7 proof: restore the approved window, gild THE SWINGING DOOR, put Abby behind the ledge and Drew/Barclay seated on the near side in their own chairs, redraw the bottles as a real back shelf - and fix the IDENTITY failure (Drew a vulture/turkey, Barclay a hound/poodle/llama/human).
+
+**The thinking.** Pass R: Picture 1 is a previous render (Z:\ImageGenerator\Cartoon\canon\room-kit\v2\work\s3A-barclay-s3-raw.png), already right except the head(s) being repaired; EDITS carried this pass: ['abby']; repair=['abby'], abby-absent=False. After the render, tone-matched to the plate over the room and ['window-frame', 'glass'] restored from the plate through their own masks before the gilded sign went on last.
+
+**Settings.** local/qwen-image-edit-2511, seed 7, fast 8-step cfg 1, aspect 2:3 -> bridge (1232, 1840), blockin-heads none, p2 n/a, p3 n/a, head-edit True, match-keep False, room-from-plate False, 50.1s
+
+**Prompt.** [prompts/157-s3r2-abby-pass-r-seed-7-head-repair-edit.prompt.txt](prompts/157-s3r2-abby-pass-r-seed-7-head-repair-edit.prompt.txt)
+
+*Logged 22:37.*
+
+---
+
+## 158. s3R1-abby pass R seed 7 head-repair edit
+
+![s3R1-abby pass R seed 7 head-repair edit](images/158-s3r1-abby-pass-r-seed-7-head-repair-edit.png)
+
+**The ask.** Founder's note on the seed-7 proof: restore the approved window, gild THE SWINGING DOOR, put Abby behind the ledge and Drew/Barclay seated on the near side in their own chairs, redraw the bottles as a real back shelf - and fix the IDENTITY failure (Drew a vulture/turkey, Barclay a hound/poodle/llama/human).
+
+**The thinking.** Pass R: Picture 1 is a previous render (Z:/ImageGenerator/Cartoon/canon/room-kit/v2/work/s3A-tile-s3-raw.png), already right except the head(s) being repaired; EDITS carried this pass: ['abby']; repair=['abby'], abby-absent=False. After the render, tone-matched to the plate over the room and ['window-frame', 'glass'] restored from the plate through their own masks before the gilded sign went on last.
+
+**Settings.** local/qwen-image-edit-2511, seed 7, fast 8-step cfg 1, aspect 2:3 -> bridge (1232, 1840), blockin-heads none, p2 n/a, p3 n/a, head-edit True, match-keep False, room-from-plate False, 49.8s
+
+**Prompt.** [prompts/158-s3r1-abby-pass-r-seed-7-head-repair-edit.prompt.txt](prompts/158-s3r1-abby-pass-r-seed-7-head-repair-edit.prompt.txt)
+
+*Logged 22:38.*
+
+---
+
+## 159. s3R2-abby pass R seed 21 head-repair edit
+
+![s3R2-abby pass R seed 21 head-repair edit](images/159-s3r2-abby-pass-r-seed-21-head-repair-edit.png)
+
+**The ask.** Founder's note on the seed-7 proof: restore the approved window, gild THE SWINGING DOOR, put Abby behind the ledge and Drew/Barclay seated on the near side in their own chairs, redraw the bottles as a real back shelf - and fix the IDENTITY failure (Drew a vulture/turkey, Barclay a hound/poodle/llama/human).
+
+**The thinking.** Pass R: Picture 1 is a previous render (Z:\ImageGenerator\Cartoon\canon\room-kit\v2\work\s3A-barclay-s3-raw.png), already right except the head(s) being repaired; EDITS carried this pass: ['abby']; repair=['abby'], abby-absent=False. After the render, tone-matched to the plate over the room and ['window-frame', 'glass'] restored from the plate through their own masks before the gilded sign went on last.
+
+**Settings.** local/qwen-image-edit-2511, seed 21, fast 8-step cfg 1, aspect 2:3 -> bridge (1232, 1840), blockin-heads none, p2 n/a, p3 n/a, head-edit True, match-keep False, room-from-plate False, 50.5s
+
+**Prompt.** [prompts/159-s3r2-abby-pass-r-seed-21-head-repair-edit.prompt.txt](prompts/159-s3r2-abby-pass-r-seed-21-head-repair-edit.prompt.txt)
+
+*Logged 22:39.*
+
+---
+
+## 160. s3R1-abby pass R seed 21 head-repair edit
+
+![s3R1-abby pass R seed 21 head-repair edit](images/160-s3r1-abby-pass-r-seed-21-head-repair-edit.png)
+
+**The ask.** Founder's note on the seed-7 proof: restore the approved window, gild THE SWINGING DOOR, put Abby behind the ledge and Drew/Barclay seated on the near side in their own chairs, redraw the bottles as a real back shelf - and fix the IDENTITY failure (Drew a vulture/turkey, Barclay a hound/poodle/llama/human).
+
+**The thinking.** Pass R: Picture 1 is a previous render (Z:/ImageGenerator/Cartoon/canon/room-kit/v2/work/s3A-tile-s3-raw.png), already right except the head(s) being repaired; EDITS carried this pass: ['abby']; repair=['abby'], abby-absent=False. After the render, tone-matched to the plate over the room and ['window-frame', 'glass'] restored from the plate through their own masks before the gilded sign went on last.
+
+**Settings.** local/qwen-image-edit-2511, seed 21, fast 8-step cfg 1, aspect 2:3 -> bridge (1232, 1840), blockin-heads none, p2 n/a, p3 n/a, head-edit True, match-keep False, room-from-plate False, 49.9s
+
+**Prompt.** [prompts/160-s3r1-abby-pass-r-seed-21-head-repair-edit.prompt.txt](prompts/160-s3r1-abby-pass-r-seed-21-head-repair-edit.prompt.txt)
+
+*Logged 22:39.*
+
+---
+
+## 161. Scene 3 - candidate 2 (A-barclay s3) - Abby head repair, seed 7
+
+![Scene 3 - candidate 2 (A-barclay s3) - Abby head repair, seed 7](images/161-scene-3-candidate-2-a-barclay-s3-abby-head-repair-seed-7.png)
+
+**The ask.** Repair step for candidate 2: redraw ONLY Abby's head and face to match her portrait, keeping her body/seat/pose and both gentlemen exactly as the candidate render has them. Founder's point (3): Abby as her portrait - white Westie lady, pale blouse, studded collar with pendant, closed-lip half-smile, human-looking eyes - behind the working ledge.
+
+**The thinking.** Looked at the input first: Abby is PRESENT in s3A-barclay-s3-raw (a pointy-eared cat/owl head wearing Drew's knit V-neck vest, white collar and black bow tie), so --abby-absent was NOT used - a plain REDRAW, not a draw-her-in. Picture 1 = the candidate raw render, Picture 2 = abby.png alone at full size, EDITS = repair abby only. Queue polled empty before submit; one render at a time.
+
+**Settings.** local/qwen-image-edit-2511, pass R (repair abby), seed 7, 8 steps cfg 1.0 euler/simple shift 3.0, 1232x1840 -> 1200x1800, 2 references, keep window-frame+glass, sign gilded last, 50.1s
+
+**Prompt.** [prompts/161-scene-3-candidate-2-a-barclay-s3-abby-head-repair-seed-7.prompt.txt](prompts/161-scene-3-candidate-2-a-barclay-s3-abby-head-repair-seed-7.prompt.txt)
+
+**Verdict.** REJECT - identity 0/5, kept 4/5. Worse than the input: Abby came back as a grinning HUMAN MAN in a top hat with a moustache - a straight breach of the no-humans fence, and further from the Westie portrait than the cat/owl it replaced. Everything else held: Drew and Barclay keep their seats, poses, drinks and chairs, the room, window view and gilded sign are unchanged; only mild drift in Barclay's chair back.
+
+*Logged 22:40.*
+
+---
+
+## 162. Scene 3 - candidate 2 (A-barclay s3) - Abby head repair, seed 21
+
+![Scene 3 - candidate 2 (A-barclay s3) - Abby head repair, seed 21](images/162-scene-3-candidate-2-a-barclay-s3-abby-head-repair-seed-21.png)
+
+**The ask.** Repair step for candidate 2: redraw ONLY Abby's head and face to match her portrait, keeping her body/seat/pose and both gentlemen exactly as the candidate render has them. Founder's point (3): Abby as her portrait - white Westie lady, pale blouse, studded collar with pendant, closed-lip half-smile, human-looking eyes - behind the working ledge.
+
+**The thinking.** Same repair pass as seed 7, second seed. Abby is present in the input so no --abby-absent. Queue polled until clear (the seed-7 job was still draining) before this submit - one render at a time.
+
+**Settings.** local/qwen-image-edit-2511, pass R (repair abby), seed 21, 8 steps cfg 1.0 euler/simple shift 3.0, 1232x1840 -> 1200x1800, 2 references, keep window-frame+glass, sign gilded last, 50.5s
+
+**Prompt.** [prompts/162-scene-3-candidate-2-a-barclay-s3-abby-head-repair-seed-21.prompt.txt](prompts/162-scene-3-candidate-2-a-barclay-s3-abby-head-repair-seed-21.prompt.txt)
+
+**Verdict.** BEST OF THE STEP, still short - identity 2/5, kept 4/5. Genuine gain over the input: Abby now has human-looking eyes with whites, iris and pupil and a real closed-lip half-smile instead of the input's blank round owl stare, and the head is softer and rounder. Still wrong: she reads as a pointed-ear cat/fox, not a shaggy white Westie; the big black button nose is a small dark dot; and the wardrobe is untouched - she is still in Drew's knit V-neck vest, white collar and black bow tie, with no pale blouse, no studded collar and no pendant. The repair prompt only names the head and face, so the collar-down wardrobe never gets asked for - that is the next lever. Kept is good: both gentlemen hold their seats, poses, drinks and chairs, the room, bottles, window view and gilded sign are unchanged, Abby stays behind the ledge with the same body and glass; small drift only - Barclay's chair back sits slightly higher and a small dark brooch appeared on the back of Drew's vest.
+
+*Logged 22:41.*
+
+---
+
+## 163. Scene 3 - candidate 1 (A-tile seed 3): Abby head repair, seed 7
+
+![Scene 3 - candidate 1 (A-tile seed 3): Abby head repair, seed 7](images/163-scene-3-candidate-1-a-tile-seed-3-abby-head-repair-seed-7.png)
+
+**The ask.** Founder point 3: Abby must be her portrait - the white Westie lady, pale blouse, studded collar with pendant, closed-lip half-smile, human-looking eyes - standing behind the working ledge. Repair her head alone on the approved candidate-1 render without disturbing Drew, Barclay, the room, the window or the sign.
+
+**The thinking.** Looked at s3A-tile-s3 first: Abby IS present behind the ledge (a grey wolf/husky head in a bow tie and checked waistcoat), so this is a REDRAW, not a draw-in - no --abby-absent. Pass R sends the candidate-1 raw as Picture 1 and Abby's portrait ALONE as Picture 2, with a single numbered edit that touches only her head and face, so Drew's and Barclay's heads (already fixed in their own passes) are never put at risk. Seed 7 first of two.
+
+**Settings.** scripts/scene-edit.py --tag s3R1-abby --pass2 work/s3A-tile-s3-raw.png --repair abby --seed 7 | local/qwen-image-edit-2511, pass R, 2 refs, 8 steps cfg 1.0 euler/simple, 1232x1840, keep=window-frame,glass, 49.8s
+
+**Prompt.** [prompts/163-scene-3-candidate-1-a-tile-seed-3-abby-head-repair-seed-7.prompt.txt](prompts/163-scene-3-candidate-1-a-tile-seed-3-abby-head-repair-seed-7.prompt.txt)
+
+**Verdict.** REJECT - no real change. The head is still the grey wolf/husky of the input: same pricked wolf ears, same long dark muzzle, same flat closed mouth, only a touch fluffier and rounder. None of the portrait's marks arrived - no white Westie coat, no studded collar with the teardrop pendant, no pale blouse (she is still in the bow tie and man's checked waistcoat), no whites either side of the iris. Identity 1/5. Kept is perfect though: Drew, Barclay, the bottles, the chairs, the restored window and the gilded sign are all untouched, and her own stance, hands and size are exactly Picture 1's. Kept 5/5.
+
+*Logged 22:41.*
+
+---
+
+## 164. Scene 3 - candidate 1 (A-tile seed 3): Abby head repair, seed 21
+
+![Scene 3 - candidate 1 (A-tile seed 3): Abby head repair, seed 21](images/164-scene-3-candidate-1-a-tile-seed-3-abby-head-repair-seed-21.png)
+
+**The ask.** Founder point 3: Abby must be her portrait - the white Westie lady, pale blouse, studded collar with pendant, closed-lip half-smile, human-looking eyes - standing behind the working ledge. Repair her head alone on the approved candidate-1 render without disturbing Drew, Barclay, the room, the window or the sign.
+
+**The thinking.** Same repair pass as seed 7 - candidate-1 raw as Picture 1, Abby's portrait alone as Picture 2, one numbered edit on her head and face only - re-rolled at seed 21 because seed 7 barely moved the head off the input's wolf.
+
+**Settings.** scripts/scene-edit.py --tag s3R1-abby --pass2 work/s3A-tile-s3-raw.png --repair abby --seed 21 | local/qwen-image-edit-2511, pass R, 2 refs, 8 steps cfg 1.0 euler/simple, 1232x1840, keep=window-frame,glass, 49.9s
+
+**Prompt.** [prompts/164-scene-3-candidate-1-a-tile-seed-3-abby-head-repair-seed-21.prompt.txt](prompts/164-scene-3-candidate-1-a-tile-seed-3-abby-head-repair-seed-21.prompt.txt)
+
+**Verdict.** BEST OF THE TWO, and the best Abby so far - the breed finally turned over. The wolf is gone: the head is now a white West Highland terrier, round and fluffy, with the portrait's pricked fringed ears, the big black button nose sitting close under the eyes, and larger human-style eyes with brows and catchlights. Two things still miss the portrait. The mouth is a wide open toothy grin where the study has a closed-lip half-smile - it reads a shade broader and cartoonier than the rest of the plate. And the wardrobe at the collar never changed: she is still in the bow tie, white shirt and man's checked waistcoat, with no pale blouse, no studded leather collar and no teardrop pendant, so she still reads as a gentleman bartender from the neck down. Identity 3/5. Kept is nearly clean - Drew, Barclay, the bottles, the chairs, the restored window and the gilded sign are untouched and her stance, hands and place are Picture 1's - but the new head is noticeably larger and taller than the one it replaced, enough that her ears now cut into the bottle shelf behind her. Kept 4/5. Next lever for her: a repair pass that names the closed-lip mouth and the collar-and-blouse wardrobe as their own edits, and holds the head to the size it has.
+
+*Logged 22:41.*
+
+---
+
+## 165. s3R2-drew pass R seed 7 head-repair edit
+
+![s3R2-drew pass R seed 7 head-repair edit](images/165-s3r2-drew-pass-r-seed-7-head-repair-edit.png)
+
+**The ask.** Founder's note on the seed-7 proof: restore the approved window, gild THE SWINGING DOOR, put Abby behind the ledge and Drew/Barclay seated on the near side in their own chairs, redraw the bottles as a real back shelf - and fix the IDENTITY failure (Drew a vulture/turkey, Barclay a hound/poodle/llama/human).
+
+**The thinking.** Pass R: Picture 1 is a previous render (Z:/ImageGenerator/Cartoon/canon/room-kit/v2/work/s3R2-abby-s21-raw.png), already right except the head(s) being repaired; EDITS carried this pass: ['drew']; repair=['drew'], abby-absent=False. After the render, tone-matched to the plate over the room and ['window-frame', 'glass'] restored from the plate through their own masks before the gilded sign went on last.
+
+**Settings.** local/qwen-image-edit-2511, seed 7, fast 8-step cfg 1, aspect 2:3 -> bridge (1232, 1840), blockin-heads none, p2 n/a, p3 n/a, head-edit True, match-keep False, room-from-plate False, 54.0s
+
+**Prompt.** [prompts/165-s3r2-drew-pass-r-seed-7-head-repair-edit.prompt.txt](prompts/165-s3r2-drew-pass-r-seed-7-head-repair-edit.prompt.txt)
+
+*Logged 22:43.*
+
+---
+
+## 166. s3R1-drew pass R seed 7 head-repair edit
+
+![s3R1-drew pass R seed 7 head-repair edit](images/166-s3r1-drew-pass-r-seed-7-head-repair-edit.png)
+
+**The ask.** Founder's note on the seed-7 proof: restore the approved window, gild THE SWINGING DOOR, put Abby behind the ledge and Drew/Barclay seated on the near side in their own chairs, redraw the bottles as a real back shelf - and fix the IDENTITY failure (Drew a vulture/turkey, Barclay a hound/poodle/llama/human).
+
+**The thinking.** Pass R: Picture 1 is a previous render (Z:\ImageGenerator\Cartoon\canon\room-kit\v2\work\s3R1-abby-s21-raw.png), already right except the head(s) being repaired; EDITS carried this pass: ['drew']; repair=['drew'], abby-absent=False. After the render, tone-matched to the plate over the room and ['window-frame', 'glass'] restored from the plate through their own masks before the gilded sign went on last.
+
+**Settings.** local/qwen-image-edit-2511, seed 7, fast 8-step cfg 1, aspect 2:3 -> bridge (1232, 1840), blockin-heads none, p2 n/a, p3 n/a, head-edit True, match-keep False, room-from-plate False, 54.2s
+
+**Prompt.** [prompts/166-s3r1-drew-pass-r-seed-7-head-repair-edit.prompt.txt](prompts/166-s3r1-drew-pass-r-seed-7-head-repair-edit.prompt.txt)
+
+*Logged 22:44.*
+
+---
+
+## 167. s3R2-drew pass R seed 21 head-repair edit
+
+![s3R2-drew pass R seed 21 head-repair edit](images/167-s3r2-drew-pass-r-seed-21-head-repair-edit.png)
+
+**The ask.** Founder's note on the seed-7 proof: restore the approved window, gild THE SWINGING DOOR, put Abby behind the ledge and Drew/Barclay seated on the near side in their own chairs, redraw the bottles as a real back shelf - and fix the IDENTITY failure (Drew a vulture/turkey, Barclay a hound/poodle/llama/human).
+
+**The thinking.** Pass R: Picture 1 is a previous render (Z:/ImageGenerator/Cartoon/canon/room-kit/v2/work/s3R2-abby-s21-raw.png), already right except the head(s) being repaired; EDITS carried this pass: ['drew']; repair=['drew'], abby-absent=False. After the render, tone-matched to the plate over the room and ['window-frame', 'glass'] restored from the plate through their own masks before the gilded sign went on last.
+
+**Settings.** local/qwen-image-edit-2511, seed 21, fast 8-step cfg 1, aspect 2:3 -> bridge (1232, 1840), blockin-heads none, p2 n/a, p3 n/a, head-edit True, match-keep False, room-from-plate False, 55.7s
+
+**Prompt.** [prompts/167-s3r2-drew-pass-r-seed-21-head-repair-edit.prompt.txt](prompts/167-s3r2-drew-pass-r-seed-21-head-repair-edit.prompt.txt)
+
+*Logged 22:45.*
+
+---
+
+## 168. Scene 3 repair R1 - Drew's head, seed 7
+
+![Scene 3 repair R1 - Drew's head, seed 7](images/168-scene-3-repair-r1-drew-s-head-seed-7.png)
+
+**The ask.** Founder point 4: Drew must be his portrait - small refined head, slender pale bill bending down with a black outer third, heavy-lidded amiable eye - in the LEFT chair, seen from behind, without disturbing Barclay, Abby, the room, the window or the seats.
+
+**The thinking.** Candidate 1 (A-tile seed 3, then the Abby repair at seed 21) seats both men right but Drew's head came back a spotted vulture with a heavy hooked bill. Third pass: Picture 1 is the previous render s3R1-abby-s21-raw.png, Picture 2 is Drew's portrait ALONE, and the only EDIT is REDRAW DREW'S HEAD to match it, body/seat/pose/size/place untouched. Seed 7 of two.
+
+**Settings.** scripts/scene-edit.py --tag s3R1-drew --pass2 canon/room-kit/v2/work/s3R1-abby-s21-raw.png --repair drew --seed 7 | local/qwen-image-edit-2511, 8 steps, cfg 1, 1232x1840, 54.2 s, keep window-frame+glass, sign gilded last
+
+**Prompt.** [prompts/168-scene-3-repair-r1-drew-s-head-seed-7.prompt.txt](prompts/168-scene-3-repair-r1-drew-s-head-seed-7.prompt.txt)
+
+**Verdict.** PARTIAL. Identity 2/5: the bill is right at last - slender, pale, dark outer third, and the head is small and refined instead of the vulture's - but the plumage came back BLACK where the portrait is white, the bill runs straight out and tips up instead of bending down, and the eye is a small round bead, not the heavy-lidded amiable one. Kept 2/5: the whole plate re-rolled - ABBY's white westie head came back dark-furred wolfish, the back-bar bottles and labels re-inked, mean abs diff 35.5 over the frame. Drew's seat, pose and size did hold.
+
+*Logged 22:45.*
+
+---
+
+## 169. Scene 3 candidate 2 - Drew head repair, seed 7
+
+![Scene 3 candidate 2 - Drew head repair, seed 7](images/169-scene-3-candidate-2-drew-head-repair-seed-7.png)
+
+**The ask.** Repair Drew's head on the A-barclay seed-3 line (candidate 2), pass R over s3R2-abby-s21-raw.png, so he matches the flamingo portrait feature for feature while everything else stays put.
+
+**The thinking.** Pass R sends the previous render as Picture 1 and Drew's portrait ALONE as Picture 2, with a single numbered EDIT redrawing only his head. Seed 7 of two.
+
+**Settings.** scene-edit.py --tag s3R2-drew --pass2 s3R2-abby-s21-raw.png --repair drew --seed 7; local/qwen-image-edit-2511, Lightning 8-step, 55s
+
+**Prompt.** [prompts/169-scene-3-candidate-2-drew-head-repair-seed-7.prompt.txt](prompts/169-scene-3-candidate-2-drew-head-repair-seed-7.prompt.txt)
+
+**Verdict.** IDENTITY 2/5 - the bill straightened a little and picked up a black outer third, but the head is still a mottled vulture with a hooked tip and a big round staring eye, no white collar, no bow tie, and it still floats at the ledge above a headless body. KEPT 2/5 - the whole plate was re-inked much darker: Abby's face went from a light fuzzy westie to a solid black cat mask, the back bar and chairs shifted hard (mean abs diff 42-71 per region). Window and gilded sign exact. Not usable.
+
+*Logged 22:45.*
+
+---
+
+## 170. Scene 3 candidate 2 - Drew head repair, seed 21
+
+![Scene 3 candidate 2 - Drew head repair, seed 21](images/170-scene-3-candidate-2-drew-head-repair-seed-21.png)
+
+**The ask.** Repair Drew's head on the A-barclay seed-3 line (candidate 2), pass R over s3R2-abby-s21-raw.png, so he matches the flamingo portrait feature for feature while everything else stays put.
+
+**The thinking.** Same pass R, second seed. If one seed lands the flamingo head without disturbing Barclay, Abby or the room, that is the candidate to carry forward.
+
+**Settings.** scene-edit.py --tag s3R2-drew --pass2 s3R2-abby-s21-raw.png --repair drew --seed 21; local/qwen-image-edit-2511, Lightning 8-step, 56s
+
+**Prompt.** [prompts/170-scene-3-candidate-2-drew-head-repair-seed-21.prompt.txt](prompts/170-scene-3-candidate-2-drew-head-repair-seed-21.prompt.txt)
+
+**Verdict.** IDENTITY 1/5 - Drew's head is unchanged: the same hooked vulture bill with the black on the inner hook instead of the outer third, spotted feathering, round unlidded eye, and it is still detached, hovering at the working ledge while the body in the left chair has no head or neck at all. KEPT 3/5 - much gentler than seed 7 (diffs 15-21), Abby's face survives, but Barclay picked up a black ball stuck on his muzzle that was not there before and the whole room is lightly re-inked. Window and sign exact. Not usable.
+
+*Logged 22:46.*
+
+---
+
+## 171. s3R1-drew pass R seed 21 head-repair edit
+
+![s3R1-drew pass R seed 21 head-repair edit](images/171-s3r1-drew-pass-r-seed-21-head-repair-edit.png)
+
+**The ask.** Founder's note on the seed-7 proof: restore the approved window, gild THE SWINGING DOOR, put Abby behind the ledge and Drew/Barclay seated on the near side in their own chairs, redraw the bottles as a real back shelf - and fix the IDENTITY failure (Drew a vulture/turkey, Barclay a hound/poodle/llama/human).
+
+**The thinking.** Pass R: Picture 1 is a previous render (Z:\ImageGenerator\Cartoon\canon\room-kit\v2\work\s3R1-abby-s21-raw.png), already right except the head(s) being repaired; EDITS carried this pass: ['drew']; repair=['drew'], abby-absent=False. After the render, tone-matched to the plate over the room and ['window-frame', 'glass'] restored from the plate through their own masks before the gilded sign went on last.
+
+**Settings.** local/qwen-image-edit-2511, seed 21, fast 8-step cfg 1, aspect 2:3 -> bridge (1232, 1840), blockin-heads none, p2 n/a, p3 n/a, head-edit True, match-keep False, room-from-plate False, 54.2s
+
+**Prompt.** [prompts/171-s3r1-drew-pass-r-seed-21-head-repair-edit.prompt.txt](prompts/171-s3r1-drew-pass-r-seed-21-head-repair-edit.prompt.txt)
+
+*Logged 22:46.*
+
+---
+
+## 172. Scene 3 repair R1 - Drew's head, seed 21
+
+![Scene 3 repair R1 - Drew's head, seed 21](images/172-scene-3-repair-r1-drew-s-head-seed-21.png)
+
+**The ask.** Founder point 4: Drew must be his portrait - small refined head, slender pale bill bending down with a black outer third, heavy-lidded amiable eye - in the LEFT chair, seen from behind, without disturbing Barclay, Abby, the room, the window or the seats.
+
+**The thinking.** Same third pass as seed 7, second seed. Picture 1 is s3R1-abby-s21-raw.png, Picture 2 is Drew's portrait ALONE, the only EDIT redraws his head. Seed 7 had fixed the bill but blackened Drew AND flipped Abby's white westie head to dark fur; seed 21 is the check on whether that collateral damage is the seed or the pass.
+
+**Settings.** scripts/scene-edit.py --tag s3R1-drew --pass2 canon/room-kit/v2/work/s3R1-abby-s21-raw.png --repair drew --seed 21 | local/qwen-image-edit-2511, 8 steps, cfg 1, 1232x1840, 54.2 s, keep window-frame+glass, sign gilded last
+
+**Prompt.** [prompts/172-scene-3-repair-r1-drew-s-head-seed-21.prompt.txt](prompts/172-scene-3-repair-r1-drew-s-head-seed-21.prompt.txt)
+
+**Verdict.** BEST OF THE TWO, still not Drew. Identity 2/5: the vulture is gone - the head is small and refined and the bill is at last slender and pale with a dark outer end - but the plumage came back dark grey and stippled where the portrait is white, the eye is a round bead under a hard brow instead of the heavy-lidded amiable one, and there is no high S-curve neck. Kept 4/5: Abby stays her white westie self (seed 7 turned her dark), Barclay, the bottles, the shelves, the chairs, the marble and the restored window all hold, Drew keeps his seat, pose and size; only a soft global re-ink and a slight scale drift, mean abs diff 17.3 against 35.5 at seed 7.
+
+*Logged 22:47.*
+
+---
+
+## 173. s3C1 bottles-crop seed 7 recess-only edit
+
+![s3C1 bottles-crop seed 7 recess-only edit](images/173-s3c1-bottles-crop-seed-7-recess-only-edit.png)
+
+**The ask.** Redraw the bottles as a real back shelf without risking the room, the window or the seated cast that a whole-plate re-roll would put at risk.
+
+**The thinking.** Picture 1 is a 4:5 crop of the recess alone from Z:/ImageGenerator/Cartoon/canon/room-kit/v2/work/s3R1-drew-s21-raw.png (box (427, 284, 1186, 1233)); Picture 2 is the plate. After the render, the crop was scaled back and tone-matched to the ring just outside the recess (room-part.py's own tone_match, gain 0.88 offset +20), then pasted through the feathered union of the recess's five masks; ['window-frame', 'glass'] restored from the plate before the gilded sign went on last.
+
+**Settings.** local/qwen-image-edit-2511, seed 7, fast 8-step cfg 1, crop (427, 284, 1186, 1233) -> 4:5, bottles-p2 plate, match-keep False, 49.9s
+
+**Prompt.** [prompts/173-s3c1-bottles-crop-seed-7-recess-only-edit.prompt.txt](prompts/173-s3c1-bottles-crop-seed-7-recess-only-edit.prompt.txt)
+
+*Logged 22:49.*
+
+---
+
+## 174. s3C2 bottles-crop seed 7 recess-only edit
+
+![s3C2 bottles-crop seed 7 recess-only edit](images/174-s3c2-bottles-crop-seed-7-recess-only-edit.png)
+
+**The ask.** Redraw the bottles as a real back shelf without risking the room, the window or the seated cast that a whole-plate re-roll would put at risk.
+
+**The thinking.** Picture 1 is a 4:5 crop of the recess alone from Z:/ImageGenerator/Cartoon/canon/room-kit/v2/work/s3R2-abby-s21-raw.png (box (427, 284, 1186, 1233)); Picture 2 is the plate. After the render, the crop was scaled back and tone-matched to the ring just outside the recess (room-part.py's own tone_match, gain 0.88 offset +23), then pasted through the feathered union of the recess's five masks; ['window-frame', 'glass'] restored from the plate before the gilded sign went on last.
+
+**Settings.** local/qwen-image-edit-2511, seed 7, fast 8-step cfg 1, crop (427, 284, 1186, 1233) -> 4:5, bottles-p2 plate, match-keep False, 51.1s
+
+**Prompt.** [prompts/174-s3c2-bottles-crop-seed-7-recess-only-edit.prompt.txt](prompts/174-s3c2-bottles-crop-seed-7-recess-only-edit.prompt.txt)
+
+*Logged 22:50.*
+
+---
+
+## 175. s3C1 bottles-crop seed 21 recess-only edit
+
+![s3C1 bottles-crop seed 21 recess-only edit](images/175-s3c1-bottles-crop-seed-21-recess-only-edit.png)
+
+**The ask.** Redraw the bottles as a real back shelf without risking the room, the window or the seated cast that a whole-plate re-roll would put at risk.
+
+**The thinking.** Picture 1 is a 4:5 crop of the recess alone from Z:/ImageGenerator/Cartoon/canon/room-kit/v2/work/s3R1-drew-s21-raw.png (box (427, 284, 1186, 1233)); Picture 2 is the plate. After the render, the crop was scaled back and tone-matched to the ring just outside the recess (room-part.py's own tone_match, gain 0.88 offset +23), then pasted through the feathered union of the recess's five masks; ['window-frame', 'glass'] restored from the plate before the gilded sign went on last.
+
+**Settings.** local/qwen-image-edit-2511, seed 21, fast 8-step cfg 1, crop (427, 284, 1186, 1233) -> 4:5, bottles-p2 plate, match-keep False, 86.3s
+
+**Prompt.** [prompts/175-s3c1-bottles-crop-seed-21-recess-only-edit.prompt.txt](prompts/175-s3c1-bottles-crop-seed-21-recess-only-edit.prompt.txt)
+
+*Logged 22:51.*
+
+---
+
+## 176. b3A bottles-crop seed 7 recess-only edit
+
+![b3A bottles-crop seed 7 recess-only edit](images/176-b3a-bottles-crop-seed-7-recess-only-edit.png)
+
+**The ask.** Redraw the bottles as a real back shelf without risking the room, the window or the seated cast that a whole-plate re-roll would put at risk.
+
+**The thinking.** Picture 1 is a 4:5 crop of the recess alone from plate (box (427, 284, 1186, 1233)); Picture 2 is the plate. After the render, the crop was scaled back and tone-matched to the ring just outside the recess (room-part.py's own tone_match, gain 1.06 offset -4), then pasted through the feathered union of the recess's five masks; ['window-frame', 'glass'] restored from the plate before the gilded sign went on last.
+
+**Settings.** local/qwen-image-edit-2511, seed 7, fast 8-step cfg 1, crop (427, 284, 1186, 1233) -> 4:5, bottles-p2 plate, bottles-ref False, match-keep False, 50.0s
+
+**Prompt.** [prompts/176-b3a-bottles-crop-seed-7-recess-only-edit.prompt.txt](prompts/176-b3a-bottles-crop-seed-7-recess-only-edit.prompt.txt)
+
+*Logged 23:06.*
+
+---
+
+## 177. b3A bottles-crop seed 21 recess-only edit
+
+![b3A bottles-crop seed 21 recess-only edit](images/177-b3a-bottles-crop-seed-21-recess-only-edit.png)
+
+**The ask.** Redraw the bottles as a real back shelf without risking the room, the window or the seated cast that a whole-plate re-roll would put at risk.
+
+**The thinking.** Picture 1 is a 4:5 crop of the recess alone from plate (box (427, 284, 1186, 1233)); Picture 2 is the plate. After the render, the crop was scaled back and tone-matched to the ring just outside the recess (room-part.py's own tone_match, gain 0.97 offset +6), then pasted through the feathered union of the recess's five masks; ['window-frame', 'glass'] restored from the plate before the gilded sign went on last.
+
+**Settings.** local/qwen-image-edit-2511, seed 21, fast 8-step cfg 1, crop (427, 284, 1186, 1233) -> 4:5, bottles-p2 plate, bottles-ref False, match-keep False, 49.8s
+
+**Prompt.** [prompts/177-b3a-bottles-crop-seed-21-recess-only-edit.prompt.txt](prompts/177-b3a-bottles-crop-seed-21-recess-only-edit.prompt.txt)
+
+*Logged 23:07.*
+
+---
+
+## 178. b3A bottles-crop seed 41 recess-only edit
+
+![b3A bottles-crop seed 41 recess-only edit](images/178-b3a-bottles-crop-seed-41-recess-only-edit.png)
+
+**The ask.** Redraw the bottles as a real back shelf without risking the room, the window or the seated cast that a whole-plate re-roll would put at risk.
+
+**The thinking.** Picture 1 is a 4:5 crop of the recess alone from plate (box (427, 284, 1186, 1233)); Picture 2 is the plate. After the render, the crop was scaled back and tone-matched to the ring just outside the recess (room-part.py's own tone_match, gain 1.03 offset -0), then pasted through the feathered union of the recess's five masks; ['window-frame', 'glass'] restored from the plate before the gilded sign went on last.
+
+**Settings.** local/qwen-image-edit-2511, seed 41, fast 8-step cfg 1, crop (427, 284, 1186, 1233) -> 4:5, bottles-p2 plate, bottles-ref False, match-keep False, 50.0s
+
+**Prompt.** [prompts/178-b3a-bottles-crop-seed-41-recess-only-edit.prompt.txt](prompts/178-b3a-bottles-crop-seed-41-recess-only-edit.prompt.txt)
+
+*Logged 23:08.*
+
+---
+
+## 179. b3A bottles-crop seed 44 recess-only edit
+
+![b3A bottles-crop seed 44 recess-only edit](images/179-b3a-bottles-crop-seed-44-recess-only-edit.png)
+
+**The ask.** Redraw the bottles as a real back shelf without risking the room, the window or the seated cast that a whole-plate re-roll would put at risk.
+
+**The thinking.** Picture 1 is a 4:5 crop of the recess alone from plate (box (427, 284, 1186, 1233)); Picture 2 is the plate. After the render, the crop was scaled back and tone-matched to the ring just outside the recess (room-part.py's own tone_match, gain 0.90 offset +14), then pasted through the feathered union of the recess's five masks; ['window-frame', 'glass'] restored from the plate before the gilded sign went on last.
+
+**Settings.** local/qwen-image-edit-2511, seed 44, fast 8-step cfg 1, crop (427, 284, 1186, 1233) -> 4:5, bottles-p2 plate, bottles-ref False, match-keep False, 49.9s
+
+**Prompt.** [prompts/179-b3a-bottles-crop-seed-44-recess-only-edit.prompt.txt](prompts/179-b3a-bottles-crop-seed-44-recess-only-edit.prompt.txt)
+
+*Logged 23:09.*
+
+---
+
+## 180. b3A bottles-crop seed 3 recess-only edit
+
+![b3A bottles-crop seed 3 recess-only edit](images/180-b3a-bottles-crop-seed-3-recess-only-edit.png)
+
+**The ask.** Redraw the bottles as a real back shelf without risking the room, the window or the seated cast that a whole-plate re-roll would put at risk.
+
+**The thinking.** Picture 1 is a 4:5 crop of the recess alone from plate (box (427, 284, 1186, 1233)); Picture 2 is the plate. After the render, the crop was scaled back and tone-matched to the ring just outside the recess (room-part.py's own tone_match, gain 0.97 offset +8), then pasted through the feathered union of the recess's five masks; ['window-frame', 'glass'] restored from the plate before the gilded sign went on last.
+
+**Settings.** local/qwen-image-edit-2511, seed 3, fast 8-step cfg 1, crop (427, 284, 1186, 1233) -> 4:5, bottles-p2 plate, bottles-ref False, match-keep False, 49.9s
+
+**Prompt.** [prompts/180-b3a-bottles-crop-seed-3-recess-only-edit.prompt.txt](prompts/180-b3a-bottles-crop-seed-3-recess-only-edit.prompt.txt)
+
+*Logged 23:10.*
+
+---
+
+## 181. b3A bottles-crop seed 11 recess-only edit
+
+![b3A bottles-crop seed 11 recess-only edit](images/181-b3a-bottles-crop-seed-11-recess-only-edit.png)
+
+**The ask.** Redraw the bottles as a real back shelf without risking the room, the window or the seated cast that a whole-plate re-roll would put at risk.
+
+**The thinking.** Picture 1 is a 4:5 crop of the recess alone from plate (box (427, 284, 1186, 1233)); Picture 2 is the plate. After the render, the crop was scaled back and tone-matched to the ring just outside the recess (room-part.py's own tone_match, gain 1.10 offset -7), then pasted through the feathered union of the recess's five masks; ['window-frame', 'glass'] restored from the plate before the gilded sign went on last.
+
+**Settings.** local/qwen-image-edit-2511, seed 11, fast 8-step cfg 1, crop (427, 284, 1186, 1233) -> 4:5, bottles-p2 plate, bottles-ref False, match-keep False, 50.0s
+
+**Prompt.** [prompts/181-b3a-bottles-crop-seed-11-recess-only-edit.prompt.txt](prompts/181-b3a-bottles-crop-seed-11-recess-only-edit.prompt.txt)
+
+*Logged 23:10.*
+
+---
+
+## 182. b3A bottles-crop seed 55 recess-only edit
+
+![b3A bottles-crop seed 55 recess-only edit](images/182-b3a-bottles-crop-seed-55-recess-only-edit.png)
+
+**The ask.** Redraw the bottles as a real back shelf without risking the room, the window or the seated cast that a whole-plate re-roll would put at risk.
+
+**The thinking.** Picture 1 is a 4:5 crop of the recess alone from plate (box (427, 284, 1186, 1233)); Picture 2 is the plate. After the render, the crop was scaled back and tone-matched to the ring just outside the recess (room-part.py's own tone_match, gain 0.95 offset +9), then pasted through the feathered union of the recess's five masks; ['window-frame', 'glass'] restored from the plate before the gilded sign went on last.
+
+**Settings.** local/qwen-image-edit-2511, seed 55, fast 8-step cfg 1, crop (427, 284, 1186, 1233) -> 4:5, bottles-p2 plate, bottles-ref False, match-keep False, 49.9s
+
+**Prompt.** [prompts/182-b3a-bottles-crop-seed-55-recess-only-edit.prompt.txt](prompts/182-b3a-bottles-crop-seed-55-recess-only-edit.prompt.txt)
+
+*Logged 23:11.*
+
+---
+
+## 183. b3A bottles-crop seed 62 recess-only edit
+
+![b3A bottles-crop seed 62 recess-only edit](images/183-b3a-bottles-crop-seed-62-recess-only-edit.png)
+
+**The ask.** Redraw the bottles as a real back shelf without risking the room, the window or the seated cast that a whole-plate re-roll would put at risk.
+
+**The thinking.** Picture 1 is a 4:5 crop of the recess alone from plate (box (427, 284, 1186, 1233)); Picture 2 is the plate. After the render, the crop was scaled back and tone-matched to the ring just outside the recess (room-part.py's own tone_match, gain 0.94 offset +10), then pasted through the feathered union of the recess's five masks; ['window-frame', 'glass'] restored from the plate before the gilded sign went on last.
+
+**Settings.** local/qwen-image-edit-2511, seed 62, fast 8-step cfg 1, crop (427, 284, 1186, 1233) -> 4:5, bottles-p2 plate, bottles-ref False, match-keep False, 50.0s
+
+**Prompt.** [prompts/183-b3a-bottles-crop-seed-62-recess-only-edit.prompt.txt](prompts/183-b3a-bottles-crop-seed-62-recess-only-edit.prompt.txt)
+
+*Logged 23:12.*
+
+---
+

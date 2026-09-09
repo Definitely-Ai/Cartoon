@@ -1,44 +1,66 @@
 """ONE WHOLE-SCENE PASS by the house edit model - v3, HEADLESS BLOCK-INS + solo P3.
+THIS COPY (scene-edit-chain.py): ONE CHARACTER PER PASS, chained.
 
-    python scripts/scene-edit-next.py --seed 7 [--seed 41 ...] [--tag NAME]
-        [--aspect 2:3|4:5] [--blockins/--no-blockins] [--blockin-heads none|full]
+    python scripts/scene-edit-chain.py --seed 7 [--seed 41 ...] [--tag NAME]
+        [--aspect 2:3|4:5] [--blockins drew,barclay,abby] [--no-blockins] [--blockin-heads none|full]
         [--abby-in-pass-a] [--pass2 canon/room-kit/v2/work/scene2-sA-final.png]
         [--edits drew,barclay] [--keep window-frame,glass] [--match-keep/--no-match-keep]
         [--p2 drew|barclay|abby|PATH] [--p3 barclay|tile|abby|none|PATH]
         [--repair drew|barclay|abby ...] [--abby-absent]
-        [--bottles-crop plate|canon/room-kit/v2/work/scene2-sA-final.png] [--bottles-p2 plate|none]
-        [--bottles-ref canon/plates/duo-shelf-ref.png] [--bottles-edit TEXT]
+        [--bottles-crop canon/room-kit/v2/work/scene2-sA-final.png] [--bottles-p2 plate|none]
+        [--chain drew,barclay,abby[,bottles] --seed N] [--chain-dry-stub PATH]
         [--head-edit/--no-head-edit] [--full] [--dry-run] [--out-dir DIR]
 
-WHY V5 (this same working copy, the founder's "perfect the bottles" night)
+WHY THIS COPY EXISTS (2026-09-08, one lab session later still)
 -----------------------------------------------------------------
-The founder rejected both shelves tried so far (blobby code-blocked bottles,
-small gappy house-model bottles) and pointed at canon/plates/duo.png's own
-back bar as the look he wants. Four small additions, --bottles-crop's own
-pipeline otherwise unchanged:
-  - --bottles-crop now also accepts the literal "plate" - the approved plate
-    itself (canon/room-kit/v2/plate.png) as the source render, so the
-    recess's OWN current (rejected) bottles can be re-rolled, or the flag
-    dry-run-inspected, without needing a prior -final.png on disk.
-  - --bottles-ref <path> sends a LOOK REFERENCE as Picture 2 instead of the
-    plate's own crop of the recess: some other accepted drawing's back bar
-    (canon/plates/duo.png's, cropped to bottles3/duo-shelf-ref.png below),
-    prepared through cast-study.py's own prepare_reference() like every
-    other reference this file sends. The roster line is explicit that only
-    the KIND of shelf - bottles' richness, variety, labels - is being
-    copied, never the reference's own room: "Picture 2 shows the KIND of
-    back shelf wanted - copy its bottles' richness, variety and labels, not
-    its room." --bottles-p2 plate stays the default Picture 2 whenever
-    --bottles-ref is not given - nothing about the old default changes.
-  - --bottles-edit <text> swaps in a different bottles EDIT sentence -
-    tonight's revision of what "a real bar's back shelf" means - wherever
-    EDIT_TEXT['bottles'] would otherwise be sent (--bottles-crop and a
-    whole-plate pass's own "bottles" edit alike), without editing this
-    file's own EDIT_TEXT table.
-  - Every final.png, whichever pass wrote it, now gets a same-named
-    "-shelf.png" beside it - SHELF_CROP_BOX (x 540-1200, y 500-1000 of the
-    FINISHED plate, always 1200x1800) enlarged 2x - so the bottles can be
-    judged at a glance without opening the whole plate.
+Tonight's finding: painting all three seated block-ins into Picture 1 AT ONCE
+makes the model scramble who is who (the flamingo lands behind the bar), and
+text-only ADD edits with no block-in for that character never come out right
+either - but a character built from ONE portrait at full size (Picture 2) and
+ONE block-in comes out right, every time. So the scene now gets built ONE
+CHARACTER PER PASS, each pass's render feeding the next as --pass2:
+  - --blockins <names> (comma list from drew,barclay,abby; default
+    drew,barclay - unchanged for a plain pass A) now names EXACTLY which
+    figures get their block-in painted into Picture 1, and - new - it works
+    in --pass2 mode too: the same paint_blockins() remap (100-180 grey, the
+    part's own mask, blockin-heads none/full exactly as before) painted into
+    the PREVIOUS RENDER instead of the plate. Left unspecified, --pass2 mode
+    paints nothing (unchanged from before this flag took a name list) - a
+    later pass must name its own --blockins explicitly. --no-blockins is the
+    old boolean's disable side, kept working: it paints nothing, whatever
+    --blockins says.
+  - --p2/--p3 now resolve per pass (a new `pass_` argument on
+    resolve_p2_mode/resolve_p3_mode): pass A's defaults (p2 drew, p3 barclay
+    alone or the old tile) are unchanged; --pass2 mode's DEFAULT is also
+    unchanged (p2 Abby's portrait in the old exact wording, p3 the plate's
+    own back-bar crop when found) - but an EXPLICIT --p2/--p3 now works in
+    --pass2 mode too, so a later solo pass can send THAT character's own
+    portrait as Picture 2 (--p3 none, since a solo pass needs no third
+    reference) instead of always Abby's.
+  - The EDIT for a single later-pass character now also says the grey figure
+    already in its chair/behind the ledge IS that character AND that whoever
+    is already drawn in Picture 1 (the previous pass's cast) stays exactly as
+    they are - blockin_identity_edits() below, added whenever --pass2 is used
+    together with --blockins; pass A's own drew+barclay/abby sentences are
+    untouched, verbatim, for backward compatibility.
+  - --chain drew,barclay,abby[,bottles] --seed N runs those passes in
+    sequence automatically: pass 1 has no --pass2 (Picture 1 is the plate);
+    each later pass's Picture 1 is the PREVIOUS pass's raw render with that
+    one pass's --blockins painted in; --p2 is always that pass's own
+    character, --p3 always "none"; a trailing "bottles" step runs
+    --bottles-crop on the chain's own last render. Outputs are tagged
+    <tag>-<step>-s<seed>-raw/-final(/-room). Exactly one seed per chain run -
+    the caller runs a separate --chain for each seed wanted.
+  - --chain-dry-stub PATH: --dry-run + --chain only. A dry run makes no real
+    render, so there is nothing for pass 2 to chain from; this path stands in
+    for pass 1's (non-existent) raw render just that once. Every later step in
+    a dry run chains from the PREVIOUS step's own Picture 1 instead (the only
+    artifact a dry run actually produces) - ignored entirely outside
+    --dry-run, where a real chain always chains its own actual raw renders.
+
+This file is a working copy of scene-edit.py's own v4 - see below for that
+file's unchanged pipeline history. scripts/scene-edit.py is mid-run and must
+not be touched; the founder merges whichever of this copy's changes hold up.
 
 WHY V4 (this same working copy, one lab session later)
 -----------------------------------------------------------------
@@ -125,10 +147,8 @@ THE PIPELINE, TOP TO BOTTOM
       c. scripts/sign-on-glass.py, LAST, because gilding is pixels and
          anything painted after it wipes it.
     <tag>-s<seed>-raw.png is the untouched render; <tag>-s<seed>-final.png is
-    the finished plate; <tag>-s<seed>-shelf.png (save_shelf_crop()) is a 2x
-    crop of the recess off that final, for judging the bottles at a glance;
-    <tag>-s<seed>.json is the sidecar (seed, pass, edits, keep, seconds, and
-    the rest for the record).
+    the finished plate; <tag>-s<seed>.json is the sidecar (seed, pass, edits,
+    keep, seconds, and the rest for the record).
 
 TWO PASSES, ONE SCRIPT
 -----------------------
@@ -145,7 +165,7 @@ model local/qwen-image-edit-2511. room-part.py is IMPORTED here for
 manifest()/mask_of()/load()/save() - never run as a command.
 """
 from __future__ import annotations
-import argparse, datetime as dt, importlib.util, json, subprocess, sys, time
+import argparse, copy, datetime as dt, importlib.util, json, subprocess, sys, time
 from pathlib import Path
 
 import numpy as np
@@ -253,6 +273,50 @@ BLOCKIN_DREW_BARCLAY = ("The two pale grey figures already drawn in the two chai
 BLOCKIN_ABBY = ("The pale grey figure already drawn behind the ledge IS Abby: draw her as her portrait exactly "
     "there, standing behind the marble working ledge in front of the inlaid back bar, facing the room, at that "
     "size, drawn from the waist up.")
+# ---- ONE-CHARACTER-PER-PASS block-in identity (this copy's own addition) --
+# The per-name identify-and-place clause, reused whether a pass paints ONE
+# block-in alone into pass A's plate (no other figure to keep untouched yet)
+# or into a --pass2 render (where the founder's brief also wants the "stays
+# exactly as they are" sentence below, appended once by blockin_identity_edits).
+BLOCKIN_IDENTITY = {
+    "drew": ("The pale grey figure already drawn in the left chair IS Drew: draw him as his portrait exactly "
+             "there, seated in that chair on the near side of the bar, seen from behind, at that size, the chair "
+             "back in front of his lower body."),
+    "barclay": ("The pale grey figure already drawn in the right chair IS Barclay: draw him as his portrait "
+                "exactly there, seated in that chair on the near side of the bar, seen from behind, at that size, "
+                "the chair back in front of his lower body."),
+    "abby": ("The pale grey figure already drawn behind the ledge IS Abby: draw her as her portrait exactly "
+             "there, standing behind the marble working ledge in front of the inlaid back bar, facing the room, "
+             "at that size, drawn from the waist up."),
+}
+BLOCKIN_STAY_TEXT = "The characters already drawn in Picture 1 stay exactly as they are."
+
+
+def blockin_identity_edits(painted: list[str], pass_: str) -> list[str]:
+    """One EDIT sentence per painted block-in, identifying it as its
+    character. Pass A's classic drew+barclay pair (and Abby alone) keep the
+    ORIGINAL combined sentences verbatim (BLOCKIN_DREW_BARCLAY / BLOCKIN_ABBY)
+    for exact backward compatibility with every existing pass-A call; any
+    other combination - a SOLO block-in in pass A (one character per pass),
+    or any block-in painted into a --pass2 render - gets BLOCKIN_IDENTITY's
+    sentence per name instead, and, only for a --pass2 build (pass_ == "B"),
+    the founder's added sentence that whoever else is already drawn in
+    Picture 1 (the previous pass's own cast) stays exactly as they are."""
+    if not painted:
+        return []
+    edits: list[str] = []
+    remaining = list(painted)
+    if pass_ != "B" and "drew" in remaining and "barclay" in remaining:
+        edits.append(BLOCKIN_DREW_BARCLAY)
+        remaining = [n for n in remaining if n not in ("drew", "barclay")]
+    for name in remaining:
+        if pass_ != "B" and name == "abby":
+            edits.append(BLOCKIN_ABBY)
+        else:
+            edits.append(BLOCKIN_IDENTITY[name])
+    if pass_ == "B":
+        edits.append(BLOCKIN_STAY_TEXT)
+    return edits
 # --head-edit (default ON), the founder's exact sentence, appended after the
 # character edits: the block-ins gave the model a bill and a skull to lead
 # from; this tells it, in the same numbered breath, to throw that lead away
@@ -354,6 +418,24 @@ P2_DREW_TEXT = (
     "S-curve neck, white plumage in fine strokes, the white collar and small black bow tie, the knitted V-neck "
     "sweater vest, feathered hands with four fingers and a thumb."
 )
+# ---- pass B (--pass2) roster text -----------------------------------------
+# LEGACY_* is byte-for-byte v2/v3's own pass-B roster (default: no --p2/--p3
+# given, so Picture 2 is always Abby, Picture 3 the back-bar crop when found)
+# - kept verbatim so every existing call that never touches --p2/--p3 in
+# --pass2 mode reads exactly as it always has. GENERIC_PASS_B_PREAMBLE is
+# this copy's own text for when --p2/--p3 ARE given explicitly (the --chain's
+# own later-pass character), since "Only Abby and the bottles still need
+# work" would be wrong when the pass in question is adding Barclay alone.
+LEGACY_PASS_B_PREAMBLE = ("REFERENCES. Picture 1 is a PREVIOUS RENDER of this exact scene, already correct in its "
+    "camera, its crop, its light, its room, its window and its seated cast: keep every one of those exactly as "
+    "they are. Only Abby and the bottles still need work. ")
+LEGACY_ABBY_PASS_B_TEXT = ("Picture 2 is ABBY, the studio's official portrait - copy THIS lady identically: the "
+    "round soft head with the big black nose close under the eyes, the glamorous lidded eyes with white showing "
+    "both sides of the iris and a lashed upper lid, the closed-lip half-smile, the smooth open neckline, the "
+    "studded collar with its pendant.")
+GENERIC_PASS_B_PREAMBLE = ("REFERENCES. Picture 1 is a PREVIOUS RENDER of this exact scene: its camera, its crop, "
+    "its light, its room, its window and everyone already drawn in it are already correct, apart from the pale "
+    "grey block-in just painted into it for this pass. ")
 
 
 def portrait_solo_text(name: str, pic_num: int) -> str:
@@ -367,21 +449,84 @@ def portrait_solo_text(name: str, pic_num: int) -> str:
     return P3_SOLO_TEXT[name].replace("Picture 3", f"Picture {pic_num}")
 
 
-def resolve_p3_mode(a) -> str:
-    """--p3's effective value for THIS run: explicit if given (including the
-    new "none" - two references only); otherwise "tile" when --abby-in-pass-a
-    needs Abby's portrait alongside Barclay's (the tile is the only way this
-    script sends both within three references), else the default "barclay"
-    (alone, at full size)."""
+def resolve_p3_mode(a, pass_: str = "A") -> str:
+    """--p3's effective value for THIS run, now per PASS: pass A's rule is
+    unchanged - explicit if given (including "none" - two references only),
+    otherwise "tile" when --abby-in-pass-a needs Abby's portrait alongside
+    Barclay's, else the default "barclay" alone. --pass2 mode (pass_ == "B"):
+    explicit if given (new capability - the --chain's "--p3 none" for a solo
+    later pass, or any other name/path/tile), else "" - a sentinel
+    build_references reads as "fall back to the old back-bar-crop default",
+    exactly as before this per-pass version existed."""
     if a.p3.strip():
         return a.p3.strip()
+    if pass_ != "A":
+        return ""
     return "tile" if a.abby_in_pass_a else "barclay"
 
 
-def resolve_p2_mode(a) -> str:
-    """--p2's effective value for THIS run: explicit if given, else the
-    default "drew" - unchanged from before --p2 existed."""
-    return a.p2.strip() or "drew"
+def resolve_p2_mode(a, pass_: str = "A") -> str:
+    """--p2's effective value for THIS run, now per PASS: pass A's default is
+    unchanged ("drew"). --pass2 mode (pass_ == "B") defaults to "abby" -
+    exactly the old hardcoded pass-B Picture 2 - but an EXPLICIT --p2 now
+    takes effect there too (new capability - the --chain's own character per
+    later pass), where before --p2 was silently ignored in pass B."""
+    if a.p2.strip():
+        return a.p2.strip()
+    return "drew" if pass_ == "A" else "abby"
+
+
+def resolve_pic_reference(mode: str, pic_num: int) -> tuple[Path, str]:
+    """A reference image + its sentence for Picture `pic_num`, resolving
+    `mode` the same way every non-default --p2/--p3 mode already resolved
+    before this helper existed (factored out of build_references' pass-A
+    branch, unchanged, so pass B can share it too): a name in PORTRAIT_PATH
+    becomes that character's own portrait, described by portrait_solo_text();
+    anything else is treated as a path, described generically by its own
+    filename."""
+    if mode in PORTRAIT_PATH:
+        p, _ = cs.prepare_reference(ROOT / PORTRAIT_PATH[mode])
+        return p, portrait_solo_text(mode, pic_num)
+    src = Path(mode)
+    if not src.is_absolute():
+        src = ROOT / src
+    p, _ = cs.prepare_reference(src)
+    return p, f"Picture {pic_num} is the reference portrait {src.name} - copy it identically."
+
+
+def build_tile_reference(out_dir: Path, tag: str) -> tuple[Path, str]:
+    """Picture 3's old side-by-side BARCLAY+ABBY tile (--p3 tile), factored
+    out of build_references' pass-A branch, unchanged, so pass B can build
+    the same tile too if ever asked for it."""
+    bc = Image.open(ROOT / "canon/vision/studies/barclay.png").convert("L")
+    ab = Image.open(ROOT / "canon/vision/studies/abby.png").convert("L")
+    h = 1024
+    bc = bc.resize((round(bc.width * h / bc.height), h), Image.LANCZOS)
+    ab = ab.resize((round(ab.width * h / ab.height), h), Image.LANCZOS)
+    tile = Image.new("L", (bc.width + ab.width + 24, h), 255)
+    tile.paste(bc, (0, 0)); tile.paste(ab, (bc.width + 24, 0))
+    tp = out_dir / f"{tag}-picture3-tile.png"; tile.save(tp)
+    p3, _ = cs.prepare_reference(tp)
+    return p3, P3_TILE_TEXT
+
+
+def resolve_blockins(a, pass_: str) -> list[str]:
+    """--blockins <names> resolved for THIS pass. --no-blockins (the old
+    boolean flag's disable side) always wins and paints nothing, whatever
+    --blockins says. Otherwise an explicit --blockins is split on commas and
+    used AS GIVEN, in any pass - pass A (the plate) or --pass2 (a previous
+    render - this copy's new capability, painting a later pass's ONE
+    block-in into it exactly as pass A paints onto the plate). Left
+    unspecified, the default is 'drew,barclay' in pass A (unchanged from
+    before --blockins took a name list) and nothing at all in --pass2 or
+    --repair mode (also unchanged - neither ever painted a block-in before
+    this copy existed), so a --chain step - or any other later pass wanting
+    one - must name its own --blockins explicitly."""
+    if a.no_blockins:
+        return []
+    if a.blockins is not None:
+        return [x.strip() for x in a.blockins.split(",") if x.strip()]
+    return ["drew", "barclay"] if pass_ == "A" else []
 
 
 # --------------------------------------------------------------- Picture 1
@@ -422,7 +567,14 @@ def build_picture1(a, man: dict, out_dir: Path) -> tuple[Path, list[str], str]:
     "R" (--repair) loads from --pass2 exactly like "B" does - no block-ins,
     the render as it stands - it only differs from "B" in what build_references
     and build_prompt do with it afterwards (one or more single-head fixes
-    instead of Abby-and-bottles)."""
+    instead of Abby-and-bottles).
+
+    --blockins now works in EITHER "A" or "B": whichever figures
+    resolve_blockins() names for this pass are painted into Picture 1 -
+    the plate itself in pass A, the --pass2 render in pass B - with the
+    SAME paint_blockins() (same 100-180 remap, same masks, same
+    --blockin-heads treatment) either way. "R" never paints a block-in,
+    same as before this flag took a name list."""
     pass_ = "R" if a.repair else ("B" if a.pass2 else "A")
     painted: list[str] = []
     if a.pass2:
@@ -432,14 +584,23 @@ def build_picture1(a, man: dict, out_dir: Path) -> tuple[Path, list[str], str]:
         plate = rp.load(src)                      # room-part.py's load(): grayscale, resized to 1200x1800 if not already
     else:
         plate = rp.load(KIT / "plate.png")
-        if a.blockins:
-            figs = ["drew", "barclay"] + (["abby"] if a.abby_in_pass_a else [])
+    if pass_ != "R":
+        figs = resolve_blockins(a, pass_)
+        if pass_ == "A" and a.abby_in_pass_a and "abby" not in figs:
+            figs = figs + ["abby"]
+        if figs:
             plate = paint_blockins(plate, man, figs, a.blockin_heads)
             painted = figs
     if a.aspect == "4:5":
         x0, y0, x1, y1 = CROP_4_5
         plate = plate[y0:y1, x0:x1]
-    fname = f"picture1-pass{pass_}.png" if a.dry_run else f"{a.tag}-picture1-pass{pass_}.png"
+    # --chain (getattr, since ordinary calls never set this attribute) always
+    # gets the tag-prefixed name even under --dry-run: a chain's own steps
+    # can share the same pass_ label (every character-added-to-a--pass2-render
+    # step is pass "B"), and the untagged dry-run shorthand below would then
+    # have step 3 silently overwrite step 2's Picture 1.
+    untagged_dry_run = a.dry_run and not getattr(a, "chain_step", False)
+    fname = f"picture1-pass{pass_}.png" if untagged_dry_run else f"{a.tag}-picture1-pass{pass_}.png"
     p1_path = out_dir / fname
     rp.save(plate, p1_path)
     return p1_path, painted, pass_
@@ -489,61 +650,57 @@ def build_references(a, man: dict, p1_path: Path, pass_: str, out_dir: Path, p3_
         if p2_mode == "drew":
             p2, _ = cs.prepare_reference(ROOT / "canon/vision/studies/drew.png")
             p2_text = P2_DREW_TEXT
-        elif p2_mode in PORTRAIT_PATH:
-            p2, _ = cs.prepare_reference(ROOT / PORTRAIT_PATH[p2_mode])
-            p2_text = portrait_solo_text(p2_mode, 2)
         else:
-            p2_src = Path(p2_mode)
-            if not p2_src.is_absolute():
-                p2_src = ROOT / p2_src
-            p2, _ = cs.prepare_reference(p2_src)
-            p2_text = f"Picture 2 is the reference portrait {p2_src.name} - copy it identically."
+            p2, p2_text = resolve_pic_reference(p2_mode, 2)
         images = [p1, p2]
         p3_text = ""
         if p3_mode == "none" or not p3_mode:
             pass                                    # two references only
         elif p3_mode == "tile":
-            bc = Image.open(ROOT / "canon/vision/studies/barclay.png").convert("L")
-            ab = Image.open(ROOT / "canon/vision/studies/abby.png").convert("L")
-            h = 1024
-            bc = bc.resize((round(bc.width * h / bc.height), h), Image.LANCZOS)
-            ab = ab.resize((round(ab.width * h / ab.height), h), Image.LANCZOS)
-            tile = Image.new("L", (bc.width + ab.width + 24, h), 255)
-            tile.paste(bc, (0, 0)); tile.paste(ab, (bc.width + 24, 0))
-            tp = out_dir / f"{a.tag}-picture3-tile.png"; tile.save(tp)
-            p3, _ = cs.prepare_reference(tp)
+            p3, p3_text = build_tile_reference(out_dir, a.tag)
             images.append(p3)
-            p3_text = P3_TILE_TEXT
-        elif p3_mode in PORTRAIT_PATH:
-            p3, _ = cs.prepare_reference(ROOT / PORTRAIT_PATH[p3_mode])
-            images.append(p3)
-            p3_text = portrait_solo_text(p3_mode, 3)
         else:
-            p3_src = Path(p3_mode)
-            if not p3_src.is_absolute():
-                p3_src = ROOT / p3_src
-            p3, _ = cs.prepare_reference(p3_src)
+            p3, p3_text = resolve_pic_reference(p3_mode, 3)
             images.append(p3)
-            p3_text = f"Picture 3 is the reference portrait {p3_src.name} - copy it identically."
         roster = ROSTER_P1_A + " " + p2_text + (" " + p3_text if p3_text else "")
         return images, roster
-    # pass B - --p2/--p3 do not apply here (unchanged from v2): Picture 2 is
-    # Abby's own portrait, Picture 3 (when found) the plate's own back-bar crop.
-    p2, _ = cs.prepare_reference(ROOT / "canon/vision/studies/abby.png")
+    # pass B (--pass2). DEFAULT (p2_mode "abby", p3_mode "" - i.e. neither
+    # --p2 nor --p3 given): Picture 2 is Abby's own portrait in the OLD exact
+    # wording, Picture 3 (when found) the plate's own back-bar crop - byte for
+    # byte the v2/v3 behaviour, unchanged. An EXPLICIT --p2/--p3 (this copy's
+    # new capability, for a --chain's later solo pass) is built the same
+    # general way pass A's own Picture 2/3 already are, so a later pass can
+    # send THAT character's own portrait as Picture 2 instead of always Abby's.
+    legacy_p2_p3 = (p2_mode == "abby" and p3_mode == "")
+    if p2_mode == "abby":
+        p2, _ = cs.prepare_reference(ROOT / "canon/vision/studies/abby.png")
+        p2_text = LEGACY_ABBY_PASS_B_TEXT
+    elif p2_mode == "drew":
+        p2, _ = cs.prepare_reference(ROOT / "canon/vision/studies/drew.png")
+        p2_text = P2_DREW_TEXT
+    else:
+        p2, p2_text = resolve_pic_reference(p2_mode, 2)
     images = [p1, p2]
-    bb_note = ""
-    bb = backbar_crop(man, out_dir, a.tag)
-    if bb:
-        p3, _ = cs.prepare_reference(bb)
+    p3_text = ""
+    if p3_mode == "":
+        bb = backbar_crop(man, out_dir, a.tag)
+        if bb:
+            p3, _ = cs.prepare_reference(bb)
+            images.append(p3)
+            p3_text = (" Picture 3 is the approved plate's OWN back-bar recess, cropped close - the true shape of "
+                       "its two shelves - for the bottles' scale and placement only, not for anything else in it.")
+    elif p3_mode == "none":
+        pass                                        # two references only
+    elif p3_mode == "tile":
+        p3, p3_text = build_tile_reference(out_dir, a.tag)
         images.append(p3)
-        bb_note = (" Picture 3 is the approved plate's OWN back-bar recess, cropped close - the true shape of its "
-                   "two shelves - for the bottles' scale and placement only, not for anything else in it.")
-    roster = ("REFERENCES. Picture 1 is a PREVIOUS RENDER of this exact scene, already correct in its camera, its "
-        "crop, its light, its room, its window and its seated cast: keep every one of those exactly as they are. "
-        "Only Abby and the bottles still need work. Picture 2 is ABBY, the studio's official portrait - copy THIS "
-        "lady identically: the round soft head with the big black nose close under the eyes, the glamorous lidded "
-        "eyes with white showing both sides of the iris and a lashed upper lid, the closed-lip half-smile, the "
-        "smooth open neckline, the studded collar with its pendant." + bb_note)
+        p3_text = " " + p3_text
+    else:
+        p3, extra_text = resolve_pic_reference(p3_mode, 3)
+        images.append(p3)
+        p3_text = " " + extra_text
+    preamble = LEGACY_PASS_B_PREAMBLE if legacy_p2_p3 else GENERIC_PASS_B_PREAMBLE
+    roster = preamble + p2_text + p3_text
     return images, roster
 
 
@@ -565,11 +722,8 @@ def build_prompt(a, roster: str, painted: list[str], edits_selected: list[str], 
             elif key == "abby":
                 edits.append(EDIT_TEXT["abby_B"] if pass_ == "B" else abby_a_edit_text(p3_mode))
             else:
-                edits.append(a.bottles_edit.strip() or EDIT_TEXT[key])
-        if "drew" in painted and "barclay" in painted:
-            edits.append(BLOCKIN_DREW_BARCLAY)
-        if "abby" in painted:
-            edits.append(BLOCKIN_ABBY)
+                edits.append(EDIT_TEXT[key])
+        edits.extend(blockin_identity_edits(painted, pass_))
         if a.head_edit and ("drew" in edits_selected or "barclay" in edits_selected):
             edits.append(HEAD_EDIT_TEXT)
     edits.append(KEEP_EVERYTHING_ELSE)
@@ -635,23 +789,6 @@ def restore_parts(image: np.ndarray, plate: np.ndarray, man: dict, keep_ids: lis
                 plate_src = percentile_tone_match(plate, out, ring)
         out = out * (1 - soft) + plate_src * soft
     return out
-
-
-# ------------------------------------------------------------- shelf judging
-SHELF_CROP_BOX = (540, 500, 1200, 1000)   # x0,y0,x1,y1 of the FINISHED plate (always 1200x1800), not the raw render
-
-
-def save_shelf_crop(final_path: Path) -> Path:
-    """Beside every `<prefix>-final.png`, a 2x-enlarged crop of the recess (SHELF_CROP_BOX, read off the FINAL -
-    after tone-match, --keep restore and the sign, not the raw render) so the founder can judge the bottles at a
-    glance - named by swapping the final's own '-final' for '-shelf', so <tag>-s<seed>-final.png gets
-    <tag>-s<seed>-shelf.png beside it."""
-    x0, y0, x1, y1 = SHELF_CROP_BOX
-    piece = Image.open(final_path).convert("L").crop((x0, y0, x1, y1))
-    piece = piece.resize((piece.width * 2, piece.height * 2), Image.LANCZOS)
-    shelf_path = final_path.with_name(final_path.name.replace("-final", "-shelf"))
-    piece.save(shelf_path)
-    return shelf_path
 
 
 # ------------------------------------------------------------- --room-from-plate
@@ -760,28 +897,17 @@ def backbar_union_mask(man: dict, feather: float = 3.0) -> np.ndarray:
 def run_bottles_crop(a, man: dict, out_dir: Path) -> None:
     """--bottles-crop: the bottles EDIT alone, on a tight 4:5 crop of the
     recess, instead of the whole plate. Picture 1 is that crop from the given
-    render (the literal value "plate" uses the approved plate itself as the
-    source); Picture 2 is either a LOOK REFERENCE (--bottles-ref <path>, some
-    other accepted drawing's back bar, prepared via cast-study.py's own
-    prepare_reference() like every other reference this file sends - copied
-    for its bottles' richness/variety/labels only, never its room) or,
-    absent that (--bottles-p2 plate, the default), the SAME crop of the
-    approved plate, the true shape of the two shelves, for scale and
-    placement only. The bottles EDIT sentence itself is EDIT_TEXT['bottles']
-    unless --bottles-edit <text> overrides it. After the render, the patch is
-    releveled to the ring just outside the recess with room-part.py's own
-    tone_match() - the same primitive every part in that script is
-    composited back with, not the whole-frame percentile match a full
-    re-render needs - then pasted through the feathered union of the five
-    recess masks, and only THEN does the usual finish run: --keep parts
-    restored from the plate, the sign last, then save_shelf_crop() beside
-    the final for judging."""
-    if a.bottles_crop == "plate":
-        src = KIT / "plate.png"
-    else:
-        src = Path(a.bottles_crop)
-        if not src.is_absolute():
-            src = ROOT / src
+    render; Picture 2 (--bottles-p2 plate, the default) is the SAME crop of
+    the approved plate, the true shape of the two shelves, for scale and
+    placement only. After the render, the patch is releveled to the ring just
+    outside the recess with room-part.py's own tone_match() - the same
+    primitive every part in that script is composited back with, not the
+    whole-frame percentile match a full re-render needs - then pasted through
+    the feathered union of the five recess masks, and only THEN does the
+    usual finish run: --keep parts restored from the plate, the sign last."""
+    src = Path(a.bottles_crop)
+    if not src.is_absolute():
+        src = ROOT / src
     box = bottles_crop_box()
     x0, y0, x1, y1 = box
     render = rp.load(src)
@@ -790,17 +916,9 @@ def run_bottles_crop(a, man: dict, out_dir: Path) -> None:
     p1_path = out_dir / p1_name
     rp.save(crop, p1_path)
 
-    bottles_ref_src = None
     images = [cs.prepare_reference(p1_path)[0]]
     p2_text = ""
-    if a.bottles_ref.strip():
-        bottles_ref_src = Path(a.bottles_ref.strip())
-        if not bottles_ref_src.is_absolute():
-            bottles_ref_src = ROOT / bottles_ref_src
-        images.append(cs.prepare_reference(bottles_ref_src)[0])
-        p2_text = (" Picture 2 shows the KIND of back shelf wanted - copy its bottles' richness, variety and "
-                   "labels, not its room.")
-    elif a.bottles_p2 == "plate":
+    if a.bottles_p2 == "plate":
         plate_crop = rp.load(KIT / "plate.png")[y0:y1, x0:x1]
         p2_name = "picture2-passC.png" if a.dry_run else f"{a.tag}-picture2-passC.png"
         p2_path = out_dir / p2_name
@@ -809,30 +927,25 @@ def run_bottles_crop(a, man: dict, out_dir: Path) -> None:
         p2_text = (" Picture 2 is the approved plate's OWN crop of this same recess - the true shape of its two "
                    "shelves - for scale and placement only, not for anything else in it.")
 
-    source_desc = "the approved plate itself" if a.bottles_crop == "plate" else "a previous render of The Swinging Door"
-    roster = ("REFERENCES. Picture 1 is a close 4:5 crop of the inlaid recess and its two shelves, cropped from "
-              f"{source_desc}, in the same engraved black-and-white pen - its camera, its crop and its light are "
-              "already correct." + p2_text)
-    bottles_text = a.bottles_edit.strip() or EDIT_TEXT["bottles"]
+    roster = ("REFERENCES. Picture 1 is a close 4:5 crop of the inlaid recess and its two shelves, cropped from a "
+              "previous render of The Swinging Door, in the same engraved black-and-white pen - its camera, its "
+              "crop and its light are already correct." + p2_text)
     body = ("MAKE THESE CHANGES TO PICTURE 1 AND KEEP EVERYTHING ELSE. The result is Picture 1 itself with the "
             "bottles added, one unbroken crop edge to edge, in the same engraved black-and-white pen.\n"
-            f"1. {bottles_text}\n2. {KEEP_EVERYTHING_ELSE}")
+            f"1. {EDIT_TEXT['bottles']}\n2. {KEEP_EVERYTHING_ELSE}")
     prompt = roster + "\n\n" + body
     prompt_name = "picture1-passC.prompt.txt" if a.dry_run else f"{a.tag}-passC-bottles.prompt.txt"
     prompt_path = out_dir / prompt_name
     prompt_path.write_text(prompt, encoding="utf8")
 
     print(f"Picture 1 (bottles-crop): {p1_path.relative_to(ROOT) if p1_path.is_relative_to(ROOT) else p1_path}")
-    print(f"crop box (x0,y0,x1,y1): {box}, aspect 4:5, bottles-p2: {a.bottles_p2!r}, "
-          f"bottles-ref: {a.bottles_ref or None!r}, match-keep: {a.match_keep}")
+    print(f"crop box (x0,y0,x1,y1): {box}, aspect 4:5, bottles-p2: {a.bottles_p2!r}, match-keep: {a.match_keep}")
 
     if a.dry_run:
         sidecar = {
             "generated_at": dt.datetime.now().isoformat(timespec="seconds"),
             "script": "scripts/scene-edit-next.py", "dry_run": True, "mode": "bottles-crop",
             "bottles_crop_source": str(src), "crop_box": list(box), "bottles_p2": a.bottles_p2,
-            "bottles_ref": str(bottles_ref_src) if bottles_ref_src else None,
-            "bottles_edit": a.bottles_edit.strip() or None,
             "keep": [k.strip() for k in a.keep.split(",") if k.strip()], "match_keep": a.match_keep,
             "seeds": a.seed, "picture1": str(p1_path), "references": len(images),
         }
@@ -868,25 +981,20 @@ def run_bottles_crop(a, man: dict, out_dir: Path) -> None:
         rp.save(restored, presign)
         final_path = WORK / f"{a.tag}-s{seed}-final.png"
         subprocess.run([sys.executable, str(ROOT / "scripts/sign-on-glass.py"), str(presign), str(final_path)], check=True)
-        shelf_path = save_shelf_crop(final_path)
         seconds = round(time.time() - t0, 1)
         sidecar = {
             "generated_at": dt.datetime.now().isoformat(timespec="seconds"), "script": "scripts/scene-edit-next.py",
             "seed": seed, "seed_used": res.get("seed_used"), "mode": "bottles-crop", "crop_box": list(box),
-            "bottles_crop_source": str(src), "bottles_p2": a.bottles_p2,
-            "bottles_ref": str(bottles_ref_src) if bottles_ref_src else None,
-            "bottles_edit": a.bottles_edit.strip() or None, "keep": keep_ids,
+            "bottles_crop_source": str(src), "bottles_p2": a.bottles_p2, "keep": keep_ids,
             "match_keep": a.match_keep, "full": a.full, "model": cs.MODEL, "tone_gain": gain, "tone_offset": off,
-            "tag": a.tag, "seconds": seconds, "server_metadata": res.get("metadata"), "shelf": str(shelf_path),
+            "tag": a.tag, "seconds": seconds, "server_metadata": res.get("metadata"),
         }
         (WORK / f"{a.tag}-s{seed}.json").write_text(json.dumps(sidecar, indent=2), encoding="utf8")
-        p2_note = (f"the look reference {bottles_ref_src.name}" if bottles_ref_src
-                   else ("the plate" if a.bottles_p2 == "plate" else "not sent"))
         report(final_path, f"{a.tag} bottles-crop seed {seed} recess-only edit",
                ask="Redraw the bottles as a real back shelf without risking the room, the window or the seated "
                    "cast that a whole-plate re-roll would put at risk.",
                thought=(f"Picture 1 is a 4:5 crop of the recess alone from {a.bottles_crop} (box {box}); Picture 2 "
-                        f"is {p2_note}. After the render, the crop "
+                        f"is {'the plate' if a.bottles_p2 == 'plate' else 'not sent'}. After the render, the crop "
                         "was scaled back and tone-matched to the ring just outside the recess (room-part.py's own "
                         f"tone_match, gain {gain:.2f} offset {off:+.0f}), then pasted through the feathered union "
                         f"of the recess's five masks; {keep_ids} restored from the plate"
@@ -894,9 +1002,8 @@ def run_bottles_crop(a, man: dict, out_dir: Path) -> None:
                         + " before the gilded sign went on last."),
                prompt_file=prompt_path,
                settings=f"{cs.MODEL}, seed {seed}, {'fast 8-step cfg 1' if not a.full else 'full 40-step cfg 4'}, "
-                        f"crop {box} -> 4:5, bottles-p2 {a.bottles_p2}, bottles-ref {bool(bottles_ref_src)}, "
-                        f"match-keep {a.match_keep}, {seconds}s")
-        print(f"  {final_path.relative_to(ROOT)}  seed={seed}  {seconds}s  + {shelf_path.relative_to(ROOT)}")
+                        f"crop {box} -> 4:5, bottles-p2 {a.bottles_p2}, match-keep {a.match_keep}, {seconds}s")
+        print(f"  {final_path.relative_to(ROOT)}  seed={seed}  {seconds}s")
 
 
 # ------------------------------------------------------------ --composite-only
@@ -905,8 +1012,8 @@ def run_composite_only(a, man: dict) -> None:
     match, the --keep restore, the gilded sign, and --room-from-plate's extra composite when that flag is set) on
     an EXISTING raw render, the way to test a post-processing change for free. The render is expected to be a
     `<tag>-s<seed>-raw.png` written by a previous run of this script; its own tag-seed prefix names the outputs,
-    written beside it in the same directory, exactly like a real render would - <prefix>-final.png and
-    <prefix>-shelf.png (save_shelf_crop()) always, plus <prefix>-room.png when --room-from-plate is set."""
+    written beside it in the same directory, exactly like a real render would - <prefix>-final.png always, plus
+    <prefix>-room.png when --room-from-plate is set."""
     src = Path(a.composite_only)
     if not src.is_absolute():
         src = ROOT / src
@@ -934,10 +1041,8 @@ def run_composite_only(a, man: dict) -> None:
     rp.save(restored, presign)
     final_path = out_dir / f"{prefix}-final.png"
     subprocess.run([sys.executable, str(ROOT / "scripts/sign-on-glass.py"), str(presign), str(final_path)], check=True)
-    shelf_path = save_shelf_crop(final_path)
     print(f"[composite-only] source: {src.relative_to(ROOT) if src.is_relative_to(ROOT) else src}")
     print(f"  {final_path.relative_to(ROOT) if final_path.is_relative_to(ROOT) else final_path}  keep={keep_ids} match-keep={a.match_keep}")
-    print(f"  {shelf_path.relative_to(ROOT) if shelf_path.is_relative_to(ROOT) else shelf_path}")
 
     if a.room_from_plate:
         room_img = build_room_from_plate(toned, plate_truth, man, keep_ids,
@@ -956,7 +1061,15 @@ def main() -> None:
                      help="required unless --composite-only is given (composite-only makes no render, so no "
                           "seed is needed - the output names come off the given render's own tag-seed prefix)")
     ap.add_argument("--aspect", choices=["2:3", "4:5"], default="2:3")
-    ap.add_argument("--blockins", action=argparse.BooleanOptionalAction, default=True)
+    ap.add_argument("--blockins", default=None,
+                     help="comma list from drew,barclay,abby: which block-in(s) to paint into Picture 1 - the "
+                          "plate in pass A, or (this copy's new capability) a --pass2 render, exactly the same "
+                          "remap/masks/blockin-heads either way. Default: 'drew,barclay' in pass A (unchanged); "
+                          "nothing at all in --pass2/--repair mode (also unchanged) - name your own here for a "
+                          "later solo pass, e.g. --blockins barclay with --pass2 <pass-1 render>.")
+    ap.add_argument("--no-blockins", dest="no_blockins", action="store_true",
+                     help="paint no block-in at all, whatever --blockins says (the old --blockins/--no-blockins "
+                          "boolean's disable side, still honoured)")
     ap.add_argument("--blockin-heads", choices=["none", "full"], default="none",
                      help="none (default): erase the block-in above the neck per figure, so only the portrait's "
                           "head lands there; full: v2's old whole-figure paint, head included")
@@ -968,13 +1081,17 @@ def main() -> None:
                      help="default OFF: after restoring --keep parts from the plate, percentile-match the restored "
                           "region's tone to a 40px band of the render just outside it, so a paler scan does not sit "
                           "against a darker re-inked room")
-    ap.add_argument("--p2", default="drew", help="pass A's Picture 2: a name (drew/barclay/abby) or a path to an "
-                     "image. Default: 'drew' (unchanged from v3).")
-    ap.add_argument("--p3", default="", help="pass A's Picture 3: 'tile' (old Barclay+Abby side by side), a name "
-                     "(barclay/abby/drew), 'none' (two references only), or a path to an image. Default: 'barclay' "
-                     "alone at full size, unless --abby-in-pass-a is set, which defaults to 'tile' so Abby's "
-                     "portrait is still sent. Pass B's Picture 3 (the back-bar crop, when found) is unaffected by "
-                     "this flag.")
+    ap.add_argument("--p2", default="", help="Picture 2: a name (drew/barclay/abby) or a path to an image. "
+                     "Default when unset: 'drew' in pass A (unchanged from v3), 'abby' in --pass2 mode (also "
+                     "unchanged - the old hardcoded pass-B Picture 2); an explicit value now works in --pass2 "
+                     "mode too (this copy's new capability), for a later solo pass sending THAT character's own "
+                     "portrait, e.g. --p2 barclay.")
+    ap.add_argument("--p3", default="", help="Picture 3: 'tile' (old Barclay+Abby side by side), a name "
+                     "(barclay/abby/drew), 'none' (two references only), or a path to an image. Default when "
+                     "unset: pass A - 'barclay' alone at full size, unless --abby-in-pass-a is set, which "
+                     "defaults to 'tile' so Abby's portrait is still sent; --pass2 mode - the plate's own "
+                     "back-bar crop when found (unchanged). An explicit value now works in --pass2 mode too - "
+                     "e.g. --p3 none for a solo later pass that needs no third reference.")
     ap.add_argument("--repair", action="append", default=[], choices=["drew", "barclay", "abby"],
                      help="repeatable: a head-only fix pass (requires --pass2). Every name given lands in ONE pass "
                           "- Picture 1 is --pass2's render, Picture 2 (and 3, 4...) is each name's own portrait "
@@ -985,18 +1102,20 @@ def main() -> None:
                           "redrawing a head that is not there")
     ap.add_argument("--bottles-crop", default="", help="a previous render (a *-final.png) to run a bottles-only "
                      "pass on the RECESS crop alone (masks/backbar.png's own box, grown 40px, squared to 4:5 by "
-                     "height) instead of the whole plate; independent of --pass2/--repair. The literal value "
-                     "'plate' uses canon/room-kit/v2/plate.png itself as the source.")
+                     "height) instead of the whole plate; independent of --pass2/--repair")
     ap.add_argument("--bottles-p2", choices=["plate", "none"], default="plate",
                      help="--bottles-crop's Picture 2: 'plate' (default) sends the approved plate's own crop of "
-                          "the same recess, for the true shelf shape; 'none' sends the render's crop alone. "
-                          "Ignored (and overridden) whenever --bottles-ref is given.")
-    ap.add_argument("--bottles-ref", default="", help="--bottles-crop's Picture 2: a LOOK REFERENCE image (e.g. a "
-                     "crop of some other accepted drawing's back bar) sent instead of the plate's own recess crop "
-                     "- copy its bottles' richness, variety and labels, not its room. Overrides --bottles-p2 when "
-                     "given; --bottles-p2 plate stays the default Picture 2 when this is absent.")
-    ap.add_argument("--bottles-edit", default="", help="replace EDIT_TEXT['bottles'] - the bottles EDIT sentence "
-                     "itself - with this text, in both --bottles-crop and a whole-plate pass's own 'bottles' edit")
+                          "the same recess, for the true shelf shape; 'none' sends the render's crop alone")
+    ap.add_argument("--chain", default="", help="comma list from drew,barclay,abby[,bottles]: run those passes "
+                     "in sequence automatically, one character block-in and one character portrait per pass "
+                     "(--p2 that character, --p3 none), each pass's raw render feeding the next as --pass2; a "
+                     "trailing 'bottles' runs --bottles-crop on the chain's own last render. Outputs are tagged "
+                     "<tag>-<step>-s<seed>-raw/-final(/-room). Requires exactly one --seed - run a separate "
+                     "--chain per seed wanted.")
+    ap.add_argument("--chain-dry-stub", default="", help="--chain --dry-run only: a stand-in image path used as "
+                     "pass 1's (non-existent, in a dry run) raw render when building pass 2's Picture 1. Every "
+                     "later step in a dry run chains from the PREVIOUS step's own Picture 1 instead. Ignored "
+                     "outside --dry-run, where a real chain always chains its own actual raw renders.")
     ap.add_argument("--room-from-plate", action="store_true",
                      help="also save <tag>-s<seed>-room.png (or <prefix>-room.png under --composite-only): the "
                           "APPROVED PLATE everywhere, with the (plate-tone-matched) render showing only inside "
@@ -1035,12 +1154,24 @@ def main() -> None:
         run_bottles_crop(a, man, out_dir)
         return
 
+    if a.chain:
+        run_chain(a, man)
+        return
+
     if a.repair and not a.pass2:
         raise SystemExit("--repair requires --pass2 <a previous render> - Picture 1 for a repair pass IS that render")
 
+    run_pass(a, man, out_dir)
+
+
+def run_pass(a, man: dict, out_dir: Path) -> tuple[Path, list[tuple[Path, Path]]]:
+    """ONE pass, exactly as main() always ran it (build Picture 1 -> references -> prompt -> either the dry-run
+    sidecar or a real render per --seed) - factored out so --chain can run this once per step with its own private
+    copy of the parsed args, threading each step's raw render into the next as --pass2. Returns (picture1 path, a
+    list of (raw_path, final_path) per seed actually rendered - empty under --dry-run, since nothing is rendered)."""
     p1_path, painted, pass_ = build_picture1(a, man, out_dir)
-    p3_mode = resolve_p3_mode(a) if pass_ == "A" else ""
-    p2_mode = resolve_p2_mode(a) if pass_ == "A" else ""
+    p3_mode = resolve_p3_mode(a, pass_) if pass_ in ("A", "B") else ""
+    p2_mode = resolve_p2_mode(a, pass_) if pass_ in ("A", "B") else ""
 
     if pass_ == "R":
         edits_selected = list(a.repair)
@@ -1057,13 +1188,15 @@ def main() -> None:
 
     images, roster = build_references(a, man, p1_path, pass_, out_dir, p3_mode, p2_mode)
     prompt = build_prompt(a, roster, painted, edits_selected, pass_, p3_mode, p2_mode)
-    prompt_path = out_dir / (f"picture1-pass{pass_}.prompt.txt" if a.dry_run else f"{a.tag}-pass{pass_}-edit.prompt.txt")
+    untagged_dry_run = a.dry_run and not getattr(a, "chain_step", False)
+    prompt_path = out_dir / (f"picture1-pass{pass_}.prompt.txt" if untagged_dry_run
+                              else f"{a.tag}-pass{pass_}-edit.prompt.txt")
     prompt_path.write_text(prompt, encoding="utf8")
 
     print(f"Picture 1: {p1_path.relative_to(ROOT) if p1_path.is_relative_to(ROOT) else p1_path}")
     print(f"pass {pass_}, aspect {a.aspect}, blockins painted: {painted or 'none'} (heads: {a.blockin_heads}), "
           f"edits: {edits_selected}, keep: {keep_ids}, match-keep: {a.match_keep}")
-    if pass_ == "A":
+    if pass_ in ("A", "B"):
         print(f"p2: {p2_mode!r}, p3: {p3_mode!r}, head-edit: {a.head_edit}")
     if pass_ == "R":
         print(f"repair: {a.repair}, abby-absent: {a.abby_absent}")
@@ -1081,10 +1214,11 @@ def main() -> None:
         (out_dir / (f"picture1-pass{pass_}.json" if not a.tag else f"{a.tag}-picture1-pass{pass_}.json")).write_text(
             json.dumps(sidecar, indent=2), encoding="utf8")
         print("[dry run] no render made")
-        return
+        return p1_path, []
 
     plate_truth = rp.load(KIT / "plate.png")
     room = non_figure_mask(man)
+    results: list[tuple[Path, Path]] = []
     for seed in a.seed:
         req = {
             # "fast": not a.full is this script's own version of cast-study.py's
@@ -1115,7 +1249,6 @@ def main() -> None:
         rp.save(restored, presign)
         final_path = WORK / f"{a.tag}-s{seed}-final.png"
         subprocess.run([sys.executable, str(ROOT / "scripts/sign-on-glass.py"), str(presign), str(final_path)], check=True)
-        shelf_path = save_shelf_crop(final_path)
 
         room_path = None
         if a.room_from_plate:
@@ -1136,16 +1269,22 @@ def main() -> None:
             "pass2_source": a.pass2 or None, "p2_mode": p2_mode or None, "p3_mode": p3_mode or None,
             "head_edit": a.head_edit, "repair": a.repair, "abby_absent": a.abby_absent,
             "room_from_plate": a.room_from_plate, "dilate_figures": a.dilate_figures if a.room_from_plate else None,
-            "tag": a.tag, "seconds": seconds, "server_metadata": res.get("metadata"), "shelf": str(shelf_path),
+            "tag": a.tag, "seconds": seconds, "server_metadata": res.get("metadata"),
         }
         (WORK / f"{a.tag}-s{seed}.json").write_text(json.dumps(sidecar, indent=2), encoding="utf8")
+        who = " and ".join(f"{n.capitalize()}'s" for n in painted)
+        plural = "s" if len(painted) != 1 else ""
         if pass_ == "A":
-            p1_desc = ("the approved plate with Drew's and Barclay's block-ins painted in at 100-180 grey, heads "
-                       f"{a.blockin_heads}" + (" (and Abby's)" if "abby" in painted else ""))
+            p1_desc = (f"the approved plate with {who} block-in{plural} painted in at 100-180 grey, heads "
+                       f"{a.blockin_heads}" if painted else "the approved plate, no block-in painted")
             extra_note = f"; p2={p2_mode}, p3={p3_mode}, head-edit={a.head_edit}"
         elif pass_ == "R":
             p1_desc = f"a previous render ({a.pass2}), already right except the head(s) being repaired"
             extra_note = f"; repair={a.repair}, abby-absent={a.abby_absent}"
+        elif painted:
+            p1_desc = (f"a previous render ({a.pass2}) with {who} block-in{plural} painted in at 100-180 grey, "
+                       f"heads {a.blockin_heads} - everyone else already drawn in it kept exactly as is")
+            extra_note = f"; p2={p2_mode}, p3={p3_mode}, head-edit={a.head_edit}"
         else:
             p1_desc = "a previous pass-A render, already right about the room and the cast"
             extra_note = ""
@@ -1166,8 +1305,81 @@ def main() -> None:
                         f"p2 {p2_mode or 'n/a'}, p3 {p3_mode or 'n/a'}, head-edit {a.head_edit}, "
                         f"match-keep {a.match_keep}, room-from-plate {a.room_from_plate}"
                         + (f" (dilate {a.dilate_figures}px)" if a.room_from_plate else "") + f", {seconds}s")
-        print(f"  {final_path.relative_to(ROOT)}  seed={seed}  {seconds}s  + {shelf_path.relative_to(ROOT)}"
+        print(f"  {final_path.relative_to(ROOT)}  seed={seed}  {seconds}s"
               + (f"  + {room_path.relative_to(ROOT)}" if room_path else ""))
+        results.append((raw_path, final_path))
+    return p1_path, results
+
+
+# --------------------------------------------------------------------- --chain
+def run_chain(a, man: dict) -> None:
+    """--chain drew,barclay,abby[,bottles] --seed N: the founder's one-character-per-pass finding, automated.
+    Pass 1 has no --pass2 (Picture 1 is the plate, --blockins/--edits/--p2 that first character alone, --p3
+    none); every later character pass's Picture 1 is the PREVIOUS pass's raw render with THAT pass's one
+    --blockins painted in, --p2 that character, --p3 none - exactly the "paint one block-in, show one portrait"
+    combination tonight's lab session found comes out right. A trailing "bottles" step runs --bottles-crop on
+    the chain's own last render. Each step is tagged <tag>-<step> (1-based), so its own outputs land at
+    <tag>-<step>-s<seed>-raw/-final(/-room, and -bottles for the bottles step).
+
+    --chain-dry-stub stands in for pass 1's (non-existent, under --dry-run) raw render only when building pass
+    2's Picture 1; pass 3 onward, in a dry run, chains from the PREVIOUS step's own Picture 1 instead - the only
+    artifact a dry run actually produces. A real (non-dry-run) chain always chains its own actual raw renders and
+    never touches --chain-dry-stub."""
+    steps = [s.strip() for s in a.chain.split(",") if s.strip()]
+    bad = [s for s in steps if s not in ("drew", "barclay", "abby", "bottles")]
+    if bad:
+        raise SystemExit(f"--chain: unknown step(s) {bad} - choose from drew,barclay,abby,bottles")
+    if "bottles" in steps and steps.index("bottles") != len(steps) - 1:
+        raise SystemExit("--chain: 'bottles' may only appear once, last")
+    char_steps = [s for s in steps if s != "bottles"]
+    if not char_steps:
+        raise SystemExit("--chain: at least one character step (drew/barclay/abby) is required")
+    if len(a.seed) != 1:
+        raise SystemExit("--chain: exactly one --seed is required - the caller runs a separate --chain per seed")
+    seed = a.seed[0]
+    out_dir = Path(a.out_dir) if a.out_dir else WORK
+    out_dir.mkdir(parents=True, exist_ok=True)
+
+    prev_source: Path | None = None    # what the NEXT character step's --pass2 should point to
+    prev_final: Path | None = None     # the last character step's -final.png (bottles needs a real render)
+    for i, name in enumerate(char_steps):
+        print(f"--chain step {i + 1}/{len(char_steps)}: {name}")
+        step = copy.copy(a)
+        step.tag = f"{a.tag}-{i + 1}"
+        step.seed = [seed]
+        step.blockins = name
+        step.no_blockins = False
+        step.edits = name
+        step.p2 = name
+        step.p3 = "none"
+        step.repair = []
+        step.bottles_crop = ""
+        step.chain = ""
+        step.chain_step = True         # tag-prefixed Picture 1 / prompt names even under --dry-run - see build_picture1
+        step.abby_in_pass_a = False
+        if i == 0:
+            step.pass2 = ""
+        elif i == 1 and a.dry_run and a.chain_dry_stub:
+            step.pass2 = a.chain_dry_stub          # only when pass 1 (a dry run) made no real render to chain from
+        else:
+            step.pass2 = str(prev_source)
+        p1_path, results = run_pass(step, man, out_dir)
+        if results:                                # a real render happened this step
+            prev_source, prev_final = results[0]
+        else:                                       # dry run: chain from this step's own Picture 1
+            prev_source = p1_path
+
+    if "bottles" in steps:
+        if not prev_final:
+            raise SystemExit("--chain: the 'bottles' step needs a real render from the last character step - "
+                              "it cannot run under --dry-run")
+        print("--chain step (final): bottles")
+        bottles_a = copy.copy(a)
+        bottles_a.tag = f"{a.tag}-bottles"
+        bottles_a.seed = [seed]
+        bottles_a.bottles_crop = str(prev_final)
+        bottles_a.chain = ""
+        run_bottles_crop(bottles_a, man, out_dir)
 
 
 if __name__ == "__main__":
