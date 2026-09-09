@@ -2327,7 +2327,7 @@ def figure(img: np.ndarray, d, who: str, pose: dict) -> None:
             cs, sn = math.cos(rot), math.sin(rot)   # rotate (s, y) down by rot
             s2, y2 = s * cs + y * sn, -s * sn + y * cs
             return (root[0] + hdir[0] * s2, root[1] + y2, root[2] + hdir[1] * s2)
-        P0, P1, P2 = (0.0, 0.0), (0.72 * L, -0.05 * L), (0.50 * L, -0.52 * L)
+        P0, P1, P2 = (0.0, 0.0), (0.66 * L, -0.06 * L), (0.52 * L, -0.46 * L)   # slimmer, a little less steep (vulture reads, 2026-09-08 pm)
         def _c(t):
             return ((1 - t) ** 2 * P0[0] + 2 * (1 - t) * t * P1[0] + t * t * P2[0],
                     (1 - t) ** 2 * P0[1] + 2 * (1 - t) * t * P1[1] + t * t * P2[1])
@@ -2338,7 +2338,7 @@ def figure(img: np.ndarray, d, who: str, pose: dict) -> None:
                 c = _c(t); c2 = _c(min(1.0, t + 0.02)); c1 = _c(max(0.0, t - 0.02))
                 tx, ty = c2[0] - c1[0], c2[1] - c1[1]; m = math.hypot(tx, ty) or 1.0
                 nx, ny = -ty / m, tx / m
-                dep = (0.40 * (1 - t) + 0.12 * t) * L
+                dep = (0.27 * (1 - t) + 0.10 * t) * L    # the portrait's slender bill, not a hook
                 upper.append(_bp(c[0] + nx * dep / 2, c[1] + ny * dep / 2))
                 lower.append(_bp(c[0] - nx * dep / 2, c[1] - ny * dep / 2))
             return upper + lower[::-1]

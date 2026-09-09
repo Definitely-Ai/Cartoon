@@ -15,3 +15,15 @@
 ## Open for the founder
 - Judge the first sticker that passes the panel; then the remaining poses per character (rest / toward / ledge) follow the same recipe.
 - The Supabase table for the desk (docs/sql/room-desk.sql) still needs your go.
+
+## 20:45 - the founder's verdict and the rethink
+The all-three composite and the emblem bottles were rejected outright ("one of the worst things I've ever seen ... rethink your
+approach"). Diagnosis: the patchwork - every object rendered separately by sensenova from a flat block-in and pasted through a
+mask, the cast keyed out as stickers - can never read as one drawing. The plates Rick accepted were drawn WHOLE by the house
+edit model. Proof tonight: scripts/scene-edit.py (the approved room as Picture 1, the portraits as references, five edits) at
+seed 7 gave all three characters as their portraits in one engraved hand with real bottles and the room's layout kept
+(entry 09x in the report). Faults left: the cast faces the camera in a row instead of Drew and Barclay seated from behind; the
+crop seam. Proposed way forward (needs the founder's go): the code kit stays the LAYOUT and the object library (what stands
+where, versions, stickers as layout markers); the house model draws the final plate whole from that layout and the portraits;
+modular changes become edits to the layout followed by a whole re-render, with per-object masks used only to pick between
+candidate renders. Also learned: the model's first step after a fresh load takes 10-20 min (not a wedge); batch by model.
