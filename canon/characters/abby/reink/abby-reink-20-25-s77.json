@@ -1,0 +1,19 @@
+{
+  "character": "abby",
+  "seed": 77,
+  "steps": 20,
+  "cfg": 2.5,
+  "fast": false,
+  "picture1": "canon/vision/studies/abby.png",
+  "picture1_meta": {
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 502733,
+    "sha256": "541e6a5a659b14cb"
+  },
+  "model": "local/qwen-image-edit-2511",
+  "seconds": 120.816246,
+  "generated_at": "2026-09-09T10:14:54"
+}
