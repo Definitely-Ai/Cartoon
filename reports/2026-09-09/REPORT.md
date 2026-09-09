@@ -1364,3 +1364,111 @@ Built for Rick. Every image the studio generated today, in the order it happened
 
 ---
 
+## 085. Drew re-inked by the house model in its own pen, seed 3
+
+![Drew re-inked by the house model in its own pen, seed 3](images/085-drew-re-inked-by-the-house-model-in-its-own-pen-seed-3.png)
+
+**The ask.** Founder: 'do it' - the cast regenerated for this model, one character at a time, Drew first.
+
+**The thinking.** The official portrait is Picture 1 and the only reference; the house model redraws it feature for feature in its own engraved hand at the slow sampler band, so the reference used in every scene pass is in the same pen as the plate.
+
+**Settings.** local/qwen-image-edit-2511, steps 20, cfg 2.5, no Lightning LoRA, 4:5, seed 3
+
+**Prompt.** [prompts/085-drew-re-inked-by-the-house-model-in-its-own-pen-seed-3.prompt.txt](prompts/085-drew-re-inked-by-the-house-model-in-its-own-pen-seed-3.prompt.txt)
+
+**Verdict.** candidate - to the founder beside the original
+
+*Logged 08:29.*
+
+---
+
+## 086. Drew re-inked by the house model in its own pen, seed 11
+
+![Drew re-inked by the house model in its own pen, seed 11](images/086-drew-re-inked-by-the-house-model-in-its-own-pen-seed-11.png)
+
+**The ask.** Founder: 'do it' - the cast regenerated for this model, one character at a time, Drew first.
+
+**The thinking.** The official portrait is Picture 1 and the only reference; the house model redraws it feature for feature in its own engraved hand at the slow sampler band, so the reference used in every scene pass is in the same pen as the plate.
+
+**Settings.** local/qwen-image-edit-2511, steps 20, cfg 2.5, no Lightning LoRA, 4:5, seed 11
+
+**Prompt.** [prompts/086-drew-re-inked-by-the-house-model-in-its-own-pen-seed-11.prompt.txt](prompts/086-drew-re-inked-by-the-house-model-in-its-own-pen-seed-11.prompt.txt)
+
+**Verdict.** candidate - to the founder beside the original
+
+*Logged 08:31.*
+
+---
+
+## 087. Drew re-inked by the house model in its own pen, seed 55
+
+![Drew re-inked by the house model in its own pen, seed 55](images/087-drew-re-inked-by-the-house-model-in-its-own-pen-seed-55.png)
+
+**The ask.** Founder: 'do it' - the cast regenerated for this model, one character at a time, Drew first.
+
+**The thinking.** The official portrait is Picture 1 and the only reference; the house model redraws it feature for feature in its own engraved hand at the slow sampler band, so the reference used in every scene pass is in the same pen as the plate.
+
+**Settings.** local/qwen-image-edit-2511, steps 20, cfg 2.5, no Lightning LoRA, 4:5, seed 55
+
+**Prompt.** [prompts/087-drew-re-inked-by-the-house-model-in-its-own-pen-seed-55.prompt.txt](prompts/087-drew-re-inked-by-the-house-model-in-its-own-pen-seed-55.prompt.txt)
+
+**Verdict.** candidate - to the founder beside the original
+
+*Logged 08:32.*
+
+---
+
+## 088. Drew re-inked by the house model in its own pen, seed 62
+
+![Drew re-inked by the house model in its own pen, seed 62](images/088-drew-re-inked-by-the-house-model-in-its-own-pen-seed-62.png)
+
+**The ask.** Founder: 'do it' - the cast regenerated for this model, one character at a time, Drew first.
+
+**The thinking.** The official portrait is Picture 1 and the only reference; the house model redraws it feature for feature in its own engraved hand at the slow sampler band, so the reference used in every scene pass is in the same pen as the plate.
+
+**Settings.** local/qwen-image-edit-2511, steps 20, cfg 2.5, no Lightning LoRA, 4:5, seed 62
+
+**Prompt.** [prompts/088-drew-re-inked-by-the-house-model-in-its-own-pen-seed-62.prompt.txt](prompts/088-drew-re-inked-by-the-house-model-in-its-own-pen-seed-62.prompt.txt)
+
+**Verdict.** candidate - to the founder beside the original
+
+*Logged 08:34.*
+
+---
+
+## 089. Drew re-inked by the house model in its own pen, seed 77
+
+![Drew re-inked by the house model in its own pen, seed 77](images/089-drew-re-inked-by-the-house-model-in-its-own-pen-seed-77.png)
+
+**The ask.** Founder: 'do it' - the cast regenerated for this model, one character at a time, Drew first.
+
+**The thinking.** The official portrait is Picture 1 and the only reference; the house model redraws it feature for feature in its own engraved hand at the slow sampler band, so the reference used in every scene pass is in the same pen as the plate.
+
+**Settings.** local/qwen-image-edit-2511, steps 20, cfg 2.5, no Lightning LoRA, 4:5, seed 77
+
+**Prompt.** [prompts/089-drew-re-inked-by-the-house-model-in-its-own-pen-seed-77.prompt.txt](prompts/089-drew-re-inked-by-the-house-model-in-its-own-pen-seed-77.prompt.txt)
+
+**Verdict.** candidate - to the founder beside the original
+
+*Logged 08:36.*
+
+---
+
+## 090. Drew re-inked by the house model in its own pen, seed 90
+
+![Drew re-inked by the house model in its own pen, seed 90](images/090-drew-re-inked-by-the-house-model-in-its-own-pen-seed-90.png)
+
+**The ask.** Founder: 'do it' - the cast regenerated for this model, one character at a time, Drew first.
+
+**The thinking.** The official portrait is Picture 1 and the only reference; the house model redraws it feature for feature in its own engraved hand at the slow sampler band, so the reference used in every scene pass is in the same pen as the plate.
+
+**Settings.** local/qwen-image-edit-2511, steps 20, cfg 2.5, no Lightning LoRA, 4:5, seed 90
+
+**Prompt.** [prompts/090-drew-re-inked-by-the-house-model-in-its-own-pen-seed-90.prompt.txt](prompts/090-drew-re-inked-by-the-house-model-in-its-own-pen-seed-90.prompt.txt)
+
+**Verdict.** candidate - to the founder beside the original
+
+*Logged 08:38.*
+
+---
+
