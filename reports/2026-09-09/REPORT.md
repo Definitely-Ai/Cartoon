@@ -3130,3 +3130,39 @@ Built for Rick. Every image the studio generated today, in the order it happened
 
 ---
 
+## 186. cd6 Drew detail pass, seed 7 - redrawn in place at full resolution
+
+![cd6 Drew detail pass, seed 7 - redrawn in place at full resolution](images/186-cd6-drew-detail-pass-seed-7-redrawn-in-place-at-full-resolution.png)
+
+**The ask.** Founder: 'they must look perfect, it must be an amazing looking cartoon, the characters are the centerpiece' - redraw each character at the same full resolution the portrait itself gets, in a crop of their own place in the composed plate, and paste back without risking the room.
+
+**The thinking.** Picture 1 is a (0, 480, 816, 1500) crop of canon/room-kit/v2/work/base3-headless-blockins.png upscaled to 1344x1680; Picture 2 is drew's approved portrait. After the render, the crop was scaled back to the box and tone-matched to the ring just outside it (room-part.py's own tone_match, gain 1.10 offset -0), then pasted through drew's own figure mask dilated 24 px and feathered 4.0 px, minus the chair-left mask in front of them, before the gilded sign went on last.
+
+**Settings.** local/qwen-image-edit-2511, seed 7, fast Lightning, box (0, 480, 816, 1500) -> 1344x1680, 126.3s
+
+**Prompt.** [prompts/186-cd6-drew-detail-pass-seed-7-redrawn-in-place-at-full-resolution.prompt.txt](prompts/186-cd6-drew-detail-pass-seed-7-redrawn-in-place-at-full-resolution.prompt.txt)
+
+**Verdict.** candidate - to the founder beside the plate
+
+*Logged 14:07.*
+
+---
+
+## 187. cd6 Drew detail pass, seed 44 - redrawn in place at full resolution
+
+![cd6 Drew detail pass, seed 44 - redrawn in place at full resolution](images/187-cd6-drew-detail-pass-seed-44-redrawn-in-place-at-full-resolution.png)
+
+**The ask.** Founder: 'they must look perfect, it must be an amazing looking cartoon, the characters are the centerpiece' - redraw each character at the same full resolution the portrait itself gets, in a crop of their own place in the composed plate, and paste back without risking the room.
+
+**The thinking.** Picture 1 is a (0, 480, 816, 1500) crop of canon/room-kit/v2/work/base3-headless-blockins.png upscaled to 1344x1680; Picture 2 is drew's approved portrait. After the render, the crop was scaled back to the box and tone-matched to the ring just outside it (room-part.py's own tone_match, gain 0.94 offset +10), then pasted through drew's own figure mask dilated 24 px and feathered 4.0 px, minus the chair-left mask in front of them, before the gilded sign went on last.
+
+**Settings.** local/qwen-image-edit-2511, seed 44, fast Lightning, box (0, 480, 816, 1500) -> 1344x1680, 480.7s
+
+**Prompt.** [prompts/187-cd6-drew-detail-pass-seed-44-redrawn-in-place-at-full-resolution.prompt.txt](prompts/187-cd6-drew-detail-pass-seed-44-redrawn-in-place-at-full-resolution.prompt.txt)
+
+**Verdict.** candidate - to the founder beside the plate
+
+*Logged 14:15.*
+
+---
+

@@ -26,12 +26,28 @@ this file never re-types the approved character descriptions by hand.
     python scripts/cast-detail-v2.py --plate <composed plate png> --character drew|barclay|abby
         --seed N [--seed M ...] [--box X0,Y0,X1,Y1]
         [--steps 20 --cfg 2.5 | --fast] [--tag NAME] [--out-dir DIR] [--dry-run]
-        [--head-from-portrait [--head-full-tone]]
+        [--head-from-portrait [--head-full-tone] | --figure-from-portrait [--figure-full-tone]]
 
 Picture 1: a crop of --plate at the character's DEFAULT_BOX (plate pixels,
 4:5, generous around their place - --box overrides), upscaled to 1344x1680.
 Picture 2: the character's approved reference (canon/vision/studies/<name>.png)
 via cast-study.py's own prepare_reference(). No Picture 3.
+
+--figure-from-portrait (default off, mutually exclusive with --head-from-
+portrait): pastes the character's own WHOLE portrait figure onto the plate,
+in place of the grey block-in, before the crop for Picture 1 is taken - the
+block-in's own figure mask is first erased to canon/room-kit/v2/plate.png's
+own pixels (the plate with NO block-ins), then the portrait figure is scaled
+to the mask's own bounding-box height x1.05, bottom on the mask's own
+bottom, centred on the mask's own centroid, toned the same firm 90-200 grey
+under-drawing --head-from-portrait uses (--figure-full-tone keeps the
+portrait's own full tone instead) - and finally the occluder in front of
+them (chair-left/chair-right/counter) is re-applied on top through its own
+mask, so the figure sits BEHIND the furniture exactly as it always did. See
+paste_figure_on_plate() below. The EDIT text changes too: instead of asking
+the model to invent a figure over a block-in, it is told the character
+already drawn IS them, and to redraw in place, turning to face the other
+seat (Drew -> the right chair, Barclay -> the left chair, Abby -> the room).
 
 --head-from-portrait (default off): today's finding is that with a headless
 grey block-in in the crop, the house model draws the body perfectly (vest,
@@ -115,6 +131,11 @@ OCCLUDER_FEATHER = 3.0   # matches scene-edit.py's own FURNITURE_OVER_FIGURES re
 
 POSTURE = {"drew": "sits", "barclay": "sits", "abby": "stands"}
 PRONOUN = {"drew": "him", "barclay": "him", "abby": "her"}
+# --figure-from-portrait's "turning to face": Drew and Barclay turn to face
+# each other across the bar (Drew is the left chair, so he turns toward the
+# right chair where Barclay sits, and vice versa); Abby stands behind the
+# ledge facing the room (the seated gentlemen), never turned to a chair.
+FACE_TARGET = {"drew": "the right chair", "barclay": "the left chair", "abby": "the room"}
 
 NEGATIVE = "text, letters, words, lettering, signature, colour, photographic, blurry, extra limbs, second character"
 
@@ -154,6 +175,18 @@ HEAD_ALPHA_CLOSE = 22        # closes the alpha across fine fur linework (Abby's
 #             (both ears present, no lean either way). Already frontal -
 #             no flip.
 HEAD_FLIP = {"drew": False, "barclay": False, "abby": False}
+
+# ---------------------------------------------------------- --figure-from-portrait
+# Unlike --head-from-portrait (which only ever pastes the top HEAD_FRAC of the
+# portrait), this pastes the WHOLE portrait figure - same portrait_alpha() cutout,
+# scaled to the block-in mask's own bounding-box height instead of a head-sized
+# anchor band, bottom-anchored to the mask's own bottom rather than a collar
+# seam, and re-toned the same 90-200 by default. No HEAD_FLIP-style mirroring
+# here: the whole-figure portraits are already drawn in the pose the room wants.
+FIGURE_HEIGHT_BOOST = 1.05    # the pasted figure is scaled slightly taller than the block-in mask's own bbox height
+FIGURE_PASTE_ALPHA_DILATE = 12   # the pasted figure's OWN alpha dilates less than the block-in mask's ALPHA_DILATE
+                                  # (24): the portrait figure is already the right size and place, so the paste-back
+                                  # only needs to cover its own soft resize edge, not a generous safety margin
 
 
 def portrait_alpha(gray: np.ndarray) -> np.ndarray:
@@ -280,16 +313,130 @@ def paste_head_on_plate(plate: np.ndarray, character: str, full_tone: bool) -> t
     return new_plate, head_alpha_full, debug
 
 
+def portrait_figure_cutout(character: str) -> tuple[np.ndarray, np.ndarray]:
+    """(gray, alpha): the WHOLE portrait figure - not just the head band
+    portrait_head_cutout() takes - tight-cropped to its own ink, alpha keyed
+    from the white paper (portrait_alpha(), already closed and hole-filled)."""
+    gray_full = np.asarray(Image.open(ROOT / rk.PORTRAIT[character]).convert("L"), dtype=np.float32)
+    fig = portrait_alpha(gray_full)
+    ys, xs = np.where(fig)
+    y0, y1, x0, x1 = int(ys.min()), int(ys.max()), int(xs.min()), int(xs.max())
+    return gray_full[y0:y1 + 1, x0:x1 + 1], fig[y0:y1 + 1, x0:x1 + 1].astype(np.float32)
+
+
+def figure_anchor(character: str) -> tuple[float, float, float]:
+    """(cx, bottom, height): the centroid x, bounding-box bottom row and
+    height of the block-in's own FULL figure mask (masks/figure-<part>.png -
+    the same file head_anchor() reads, but this uses the WHOLE silhouette,
+    never just its topmost band)."""
+    part = se.FIGURE_PART[character]
+    m = rp.load(rp.KIT / "masks" / f"{part}.png") > 127
+    ys, xs = np.where(m)
+    y0, y1 = int(ys.min()), int(ys.max())
+    cx = float(xs.mean())
+    return cx, float(y1), float(y1 - y0 + 1)
+
+
+def paste_figure_on_plate(plate: np.ndarray, character: str, full_tone: bool) -> tuple[np.ndarray, np.ndarray, dict]:
+    """Paste the character's own WHOLE portrait figure onto `plate`, in place
+    of the grey block-in - so the model sees the actual character already
+    drawn, at the size and place the room wants, instead of a block to fill.
+
+    Order: (1) the block-in's own FULL figure mask is erased to
+    canon/room-kit/v2/plate.png's own pixels - the plate with NO block-ins at
+    all, so the grey is gone before anything is pasted; (2) the portrait
+    figure (portrait_figure_cutout, toned exactly as paste_head_on_plate()
+    tones the head) is scaled to the mask's own bounding-box height x
+    FIGURE_HEIGHT_BOOST, its bottom on the mask's own bottom, centred on the
+    mask's own centroid; (3) the occluder in front of them (chair-left /
+    chair-right / counter) is re-applied ON TOP through its own feathered
+    mask, so the furniture already in the plate stands in front of the
+    figure exactly as it always did - the figure is pasted BEHIND it, never
+    over it.
+
+    Returns (new plate, the pasted figure's own alpha at full plate
+    resolution - to dilate FIGURE_PASTE_ALPHA_DILATE px into the paste-back
+    alpha later, debug info for the sidecar)."""
+    part = se.FIGURE_PART[character]
+    fig_mask = rp.load(rp.KIT / "masks" / f"{part}.png") > 127
+    clean = rp.load(rp.KIT / "plate.png")
+    erased = plate.copy()
+    erased[fig_mask] = clean[fig_mask]
+
+    src_gray, src_alpha = portrait_figure_cutout(character)
+    cx, bottom, target_h = figure_anchor(character)
+    scale = (target_h * FIGURE_HEIGHT_BOOST) / src_gray.shape[0]
+    new_w = max(1, int(round(src_gray.shape[1] * scale)))
+    new_h = max(1, int(round(src_gray.shape[0] * scale)))
+
+    gray = np.asarray(Image.fromarray(np.clip(src_gray, 0, 255).astype(np.uint8))
+                       .resize((new_w, new_h), Image.LANCZOS), dtype=np.float32)
+    alpha = np.asarray(Image.fromarray((np.clip(src_alpha, 0, 1) * 255).astype(np.uint8))
+                        .resize((new_w, new_h), Image.LANCZOS), dtype=np.float32) / 255.0
+
+    if not full_tone:
+        gray = HEAD_TONE_LO + (gray / 255.0) * (HEAD_TONE_HI - HEAD_TONE_LO)
+
+    # Same two anchoring tricks paste_head_on_plate() uses: horizontal on the
+    # cutout's own alpha-weighted centroid (robust to an off-centre mass),
+    # vertical on the cutout's own lowest ink meeting the mask's own bottom
+    # row directly - a figure's feet/hem sit AT the block-in's own floor, not
+    # centred on it.
+    xx, yy = np.meshgrid(np.arange(new_w, dtype=np.float32), np.arange(new_h, dtype=np.float32))
+    mass = float(alpha.sum())
+    src_cx = float((xx * alpha).sum() / mass)
+    ox = int(round(cx - src_cx))
+
+    alpha_rows = np.where(alpha.max(axis=1) > 0.5)[0]
+    src_bottom = float(alpha_rows.max()) if len(alpha_rows) else new_h - 1.0
+    oy = int(round(bottom - src_bottom))
+
+    ph, pw = erased.shape[:2]
+    px0, py0 = max(0, ox), max(0, oy)
+    px1, py1 = min(pw, ox + new_w), min(ph, oy + new_h)
+    sx0, sy0 = px0 - ox, py0 - oy
+    sx1, sy1 = sx0 + (px1 - px0), sy0 + (py1 - py0)
+
+    new_plate = erased.copy()
+    figure_alpha_full = np.zeros((ph, pw), dtype=np.float32)
+    if px1 > px0 and py1 > py0:
+        a = alpha[sy0:sy1, sx0:sx1]
+        g = gray[sy0:sy1, sx0:sx1]
+        region = new_plate[py0:py1, px0:px1]
+        new_plate[py0:py1, px0:px1] = region * (1 - a) + g * a
+        figure_alpha_full[py0:py1, px0:px1] = a
+
+    occ_id = OCCLUDER_PART[character]
+    occ_soft = rp.mask_of({"mask": f"masks/{occ_id}.png"}, feather=OCCLUDER_FEATHER)
+    new_plate = new_plate * (1 - occ_soft) + plate * occ_soft
+
+    debug = {
+        "source_cutout_size": [int(src_gray.shape[1]), int(src_gray.shape[0])],
+        "scale": round(scale, 4), "pasted_size": [new_w, new_h], "anchor_centroid_x": round(cx, 1),
+        "anchor_bottom": round(bottom, 1), "anchor_height": round(target_h, 1), "paste_offset": [ox, oy],
+        "tone": "full" if full_tone else f"{HEAD_TONE_LO}-{HEAD_TONE_HI}", "occluder": occ_id,
+    }
+    return new_plate, figure_alpha_full, debug
+
+
 # ------------------------------------------------------------------- prompt
-def prompt_for(character: str) -> str:
+def prompt_for(character: str, figure_from_portrait: bool = False) -> str:
     name, title = character.upper(), character.title()
     posture, pronoun, features = POSTURE[character], PRONOUN[character], rk.WHO[character]
     roster = (f"REFERENCES. Picture 1 is a piece of the approved room of The Swinging Door with {title} already "
               f"in it, roughly drawn; Picture 2 is {title}'s official portrait.")
-    edit1 = (f"REDRAW {name} IN PLACE, exactly where the figure already {posture} and at the same size and turn, "
-             f"as the character in Picture 2 feature for feature ({features}), in the same engraved black-and-white "
-             f"pen as the room around {pronoun}, with continuous grey tone and fine hatching, so that this piece "
-             "reads as one drawing.")
+    if figure_from_portrait:
+        # Picture 1 already carries the actual character (paste_figure_on_plate
+        # put the whole portrait there, in place of the block-in) - so the ask
+        # is REDRAW what's already there, not invent a figure from a block.
+        edit1 = (f"The character already drawn in this piece IS {name} - redraw {pronoun} in place, exactly there "
+                 "and at that size, seated in the chair (or standing behind the ledge), in the same engraved pen "
+                 f"as the room, turning to face {FACE_TARGET[character]}.")
+    else:
+        edit1 = (f"REDRAW {name} IN PLACE, exactly where the figure already {posture} and at the same size and turn, "
+                 f"as the character in Picture 2 feature for feature ({features}), in the same engraved black-and-white "
+                 f"pen as the room around {pronoun}, with continuous grey tone and fine hatching, so that this piece "
+                 "reads as one drawing.")
     edit2 = ("KEEP EVERYTHING ELSE exactly as Picture 1: the marble, the chair, the ledge, the shelf, the "
              "panelling, the light. No lettering, no caption, no signature.")
     standard = (f"This character is the centrepiece of the cartoon: draw {pronoun} beautifully, warm and huggable, "
@@ -332,8 +479,8 @@ def part_by_id(man: dict, pid: str) -> dict:
     return next(p for p in man["parts"] if p["id"] == pid)
 
 
-def character_alpha(man: dict, character: str, head_alpha_full: np.ndarray | None = None
-                     ) -> tuple[np.ndarray, np.ndarray]:
+def character_alpha(man: dict, character: str, head_alpha_full: np.ndarray | None = None,
+                     figure_alpha_full: np.ndarray | None = None) -> tuple[np.ndarray, np.ndarray]:
     """(hard, soft): the union of this character's own figure mask, dilated
     ALPHA_DILATE px and feathered ALPHA_FEATHER px (scene-edit.py's own
     figures_union_mask - a single-part union here), MINUS the occluder in
@@ -346,7 +493,16 @@ def character_alpha(man: dict, character: str, head_alpha_full: np.ndarray | Non
     and feathered the same as the figure mask, then UNIONED in before the
     occluder is subtracted, so the paste-back alpha is guaranteed to cover
     the pasted head even where it reaches past the headless block-in's own
-    mask (Drew's S-neck in particular)."""
+    mask (Drew's S-neck in particular).
+
+    When --figure-from-portrait pasted the whole figure, `figure_alpha_full`
+    is THAT paste's own alpha at plate resolution: unioned in the same way,
+    but dilated only FIGURE_PASTE_ALPHA_DILATE px (12, not 24) - the pasted
+    figure is already sized and placed to the block-in mask itself, so its
+    own paste-back only needs to cover its soft resize edge, not a block-in's
+    full safety margin. head_alpha_full and figure_alpha_full are never both
+    given (--head-from-portrait and --figure-from-portrait are mutually
+    exclusive at the CLI)."""
     fig_part = part_by_id(man, se.FIGURE_PART[character])
     occ_part = part_by_id(man, OCCLUDER_PART[character])
 
@@ -357,6 +513,11 @@ def character_alpha(man: dict, character: str, head_alpha_full: np.ndarray | Non
         fig_hard = fig_hard | head_hard
         head_soft = np.clip(ndimage.gaussian_filter(head_hard.astype(np.float32), sigma=ALPHA_FEATHER), 0.0, 1.0)
         fig_soft = np.maximum(fig_soft, head_soft)
+    if figure_alpha_full is not None:
+        paste_hard = ndimage.binary_dilation(figure_alpha_full > 0.5, iterations=FIGURE_PASTE_ALPHA_DILATE)
+        fig_hard = fig_hard | paste_hard
+        paste_soft = np.clip(ndimage.gaussian_filter(paste_hard.astype(np.float32), sigma=ALPHA_FEATHER), 0.0, 1.0)
+        fig_soft = np.maximum(fig_soft, paste_soft)
 
     occ_hard = rp.mask_of(occ_part) > 0.5
     hard = fig_hard & ~occ_hard
@@ -392,11 +553,19 @@ def main() -> None:
     ap.add_argument("--out-dir", default="", help="where Picture 1/2, the prompt and every output go (default: "
                      "canon/room-kit/v2/work/)")
     ap.add_argument("--dry-run", action="store_true", help="write Picture 1, Picture 2 and the prompt; render nothing")
-    ap.add_argument("--head-from-portrait", action="store_true", help="paste the character's own portrait head onto "
-                     "the plate at the block-in's head anchor before the crop is taken (default off)")
+    portrait_mode = ap.add_mutually_exclusive_group()
+    portrait_mode.add_argument("--head-from-portrait", action="store_true", help="paste the character's own "
+                     "portrait head onto the plate at the block-in's head anchor before the crop is taken "
+                     "(default off; mutually exclusive with --figure-from-portrait)")
+    portrait_mode.add_argument("--figure-from-portrait", action="store_true", help="paste the character's own "
+                     "WHOLE portrait figure onto the plate, in place of the grey block-in, before the crop is "
+                     "taken (default off; mutually exclusive with --head-from-portrait)")
     ap.add_argument("--head-full-tone", action="store_true", help="keep the pasted head at the portrait's own full "
                      "tone instead of the default 90-200 grey under-drawing remap (only matters with "
                      "--head-from-portrait)")
+    ap.add_argument("--figure-full-tone", action="store_true", help="keep the pasted figure at the portrait's own "
+                     "full tone instead of the default 90-200 grey under-drawing remap (only matters with "
+                     "--figure-from-portrait)")
     a = ap.parse_args()
 
     out_dir = Path(a.out_dir) if a.out_dir else se.WORK
@@ -409,12 +578,15 @@ def main() -> None:
     plate = rp.load(plate_src)
 
     head_alpha_full, head_debug = None, None
+    figure_alpha_full, figure_debug = None, None
     if a.head_from_portrait:
         plate, head_alpha_full, head_debug = paste_head_on_plate(plate, a.character, a.head_full_tone)
+    elif a.figure_from_portrait:
+        plate, figure_alpha_full, figure_debug = paste_figure_on_plate(plate, a.character, a.figure_full_tone)
 
     box = parse_box(a.box) if a.box else DEFAULT_BOX[a.character]
     p1_path = build_picture1(plate, box, out_dir, a.tag, a.character)
-    prompt = prompt_for(a.character)
+    prompt = prompt_for(a.character, a.figure_from_portrait)
     prompt_path = out_dir / f"{a.tag}-{a.character}.prompt.txt"
     prompt_path.write_text(prompt, encoding="utf8")
 
@@ -424,6 +596,12 @@ def main() -> None:
               f"portrait head -> {head_debug['pasted_size'][0]}x{head_debug['pasted_size'][1]} (scale "
               f"{head_debug['scale']}, flip {head_debug['flip']}, tone {head_debug['tone']}) centred on anchor "
               f"{head_debug['anchor_centroid']} (anchor height {head_debug['anchor_height']})")
+    if figure_debug:
+        print(f"figure-from-portrait: {figure_debug['source_cutout_size'][0]}x{figure_debug['source_cutout_size'][1]} "
+              f"portrait figure -> {figure_debug['pasted_size'][0]}x{figure_debug['pasted_size'][1]} (scale "
+              f"{figure_debug['scale']}, tone {figure_debug['tone']}) centred on x={figure_debug['anchor_centroid_x']} "
+              f"bottom={figure_debug['anchor_bottom']} (anchor height {figure_debug['anchor_height']}), "
+              f"behind {figure_debug['occluder']}")
     print(f"Picture 1: {p1_path.relative_to(ROOT) if p1_path.is_relative_to(ROOT) else p1_path}")
     print(f"Picture 2: {rk.PORTRAIT[a.character]}")
 
@@ -436,6 +614,8 @@ def main() -> None:
             "seeds": a.seed, "picture1": str(p1_path), "picture2": str(p2_path), "prompt_file": str(prompt_path),
             "occluder": OCCLUDER_PART[a.character], "alpha_dilate": ALPHA_DILATE, "alpha_feather": ALPHA_FEATHER,
             "head_from_portrait": a.head_from_portrait, "head_full_tone": a.head_full_tone, "head": head_debug,
+            "figure_from_portrait": a.figure_from_portrait, "figure_full_tone": a.figure_full_tone,
+            "figure": figure_debug,
         }
         (out_dir / f"{a.tag}-{a.character}-dryrun.json").write_text(json.dumps(sidecar, indent=2), encoding="utf8")
         print(f"Picture 2 (copy): {p2_path.relative_to(ROOT) if p2_path.is_relative_to(ROOT) else p2_path}")
@@ -447,7 +627,7 @@ def main() -> None:
     p2_uri, _ = cs.prepare_reference(ROOT / rk.PORTRAIT[a.character])
     images = [p1_uri, p2_uri]
 
-    hard_alpha, soft_alpha = character_alpha(man, a.character, head_alpha_full)
+    hard_alpha, soft_alpha = character_alpha(man, a.character, head_alpha_full, figure_alpha_full)
     x0, y0, x1, y1 = box
     bw, bh = x1 - x0, y1 - y0
 
@@ -458,7 +638,19 @@ def main() -> None:
             req["guidance"] = a.cfg
         t0 = time.time()
         res = cs.post(req, a.server)
-        png = cs.fetch(res["image_url"], a.server)
+        image_url = res.get("image_url")
+        if not res.get("success", True) or not image_url:
+            # A bad render still comes back HTTP 200 with success:false (or,
+            # seen 2026-09-09 on a barclay --head-from-portrait --fast pass,
+            # success:true but no image_url) - cs.fetch()'s own url.startswith()
+            # would then blow up on None with an AttributeError that points
+            # nowhere near the real cause. Same guard room-part.py's own
+            # generate() uses for the same bridge, character-agnostic so it
+            # covers every character here (barclay's chair-right occluder,
+            # abby's counter) exactly the same way.
+            raise SystemExit(f"{a.character} seed {seed}: render returned no image "
+                              f"(success={res.get('success')}, error={res.get('error')!r}) - {res}")
+        png = cs.fetch(image_url, a.server)
         raw_path = out_dir / f"{a.tag}-{a.character}-s{seed}-raw.png"
         raw_path.write_bytes(png)
 
@@ -486,6 +678,8 @@ def main() -> None:
             "seconds": seconds, "server_metadata": res.get("metadata"), "picture1": str(p1_path),
             "picture2": rk.PORTRAIT[a.character], "final": str(final_path), "detail": str(detail_path),
             "head_from_portrait": a.head_from_portrait, "head_full_tone": a.head_full_tone, "head": head_debug,
+            "figure_from_portrait": a.figure_from_portrait, "figure_full_tone": a.figure_full_tone,
+            "figure": figure_debug,
         }
         (out_dir / f"{a.tag}-{a.character}-s{seed}.json").write_text(json.dumps(sidecar, indent=2), encoding="utf8")
 
