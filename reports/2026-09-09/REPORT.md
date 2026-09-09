@@ -1900,3 +1900,253 @@ Built for Rick. Every image the studio generated today, in the order it happened
 
 ---
 
+## 115. Abby re-inked by the house model in its own pen, seed 7
+
+![Abby re-inked by the house model in its own pen, seed 7](images/115-abby-re-inked-by-the-house-model-in-its-own-pen-seed-7.png)
+
+**The ask.** Founder: 'do it' - the cast regenerated for this model, one character at a time, Drew first.
+
+**The thinking.** The official portrait is Picture 1 and the only reference; the house model redraws it feature for feature in its own engraved hand at the slow sampler band, so the reference used in every scene pass is in the same pen as the plate.
+
+**Settings.** local/qwen-image-edit-2511, steps 20, cfg 2.5, no Lightning LoRA, 4:5, seed 7
+
+**Prompt.** [prompts/115-abby-re-inked-by-the-house-model-in-its-own-pen-seed-7.prompt.txt](prompts/115-abby-re-inked-by-the-house-model-in-its-own-pen-seed-7.prompt.txt)
+
+**Verdict.** candidate - to the founder beside the original
+
+*Logged 10:45.*
+
+---
+
+## 116. Abby re-inked by the house model in its own pen, seed 21
+
+![Abby re-inked by the house model in its own pen, seed 21](images/116-abby-re-inked-by-the-house-model-in-its-own-pen-seed-21.png)
+
+**The ask.** Founder: 'do it' - the cast regenerated for this model, one character at a time, Drew first.
+
+**The thinking.** The official portrait is Picture 1 and the only reference; the house model redraws it feature for feature in its own engraved hand at the slow sampler band, so the reference used in every scene pass is in the same pen as the plate.
+
+**Settings.** local/qwen-image-edit-2511, steps 20, cfg 2.5, no Lightning LoRA, 4:5, seed 21
+
+**Prompt.** [prompts/116-abby-re-inked-by-the-house-model-in-its-own-pen-seed-21.prompt.txt](prompts/116-abby-re-inked-by-the-house-model-in-its-own-pen-seed-21.prompt.txt)
+
+**Verdict.** candidate - to the founder beside the original
+
+*Logged 10:47.*
+
+---
+
+## 117. Abby re-inked by the house model in its own pen, seed 44
+
+![Abby re-inked by the house model in its own pen, seed 44](images/117-abby-re-inked-by-the-house-model-in-its-own-pen-seed-44.png)
+
+**The ask.** Founder: 'do it' - the cast regenerated for this model, one character at a time, Drew first.
+
+**The thinking.** The official portrait is Picture 1 and the only reference; the house model redraws it feature for feature in its own engraved hand at the slow sampler band, so the reference used in every scene pass is in the same pen as the plate.
+
+**Settings.** local/qwen-image-edit-2511, steps 20, cfg 2.5, no Lightning LoRA, 4:5, seed 44
+
+**Prompt.** [prompts/117-abby-re-inked-by-the-house-model-in-its-own-pen-seed-44.prompt.txt](prompts/117-abby-re-inked-by-the-house-model-in-its-own-pen-seed-44.prompt.txt)
+
+**Verdict.** candidate - to the founder beside the original
+
+*Logged 10:49.*
+
+---
+
+## 118. Abby re-inked by the house model in its own pen, seed 62
+
+![Abby re-inked by the house model in its own pen, seed 62](images/118-abby-re-inked-by-the-house-model-in-its-own-pen-seed-62.png)
+
+**The ask.** Founder: 'do it' - the cast regenerated for this model, one character at a time, Drew first.
+
+**The thinking.** The official portrait is Picture 1 and the only reference; the house model redraws it feature for feature in its own engraved hand at the slow sampler band, so the reference used in every scene pass is in the same pen as the plate.
+
+**Settings.** local/qwen-image-edit-2511, steps 20, cfg 2.5, no Lightning LoRA, 4:5, seed 62
+
+**Prompt.** [prompts/118-abby-re-inked-by-the-house-model-in-its-own-pen-seed-62.prompt.txt](prompts/118-abby-re-inked-by-the-house-model-in-its-own-pen-seed-62.prompt.txt)
+
+**Verdict.** candidate - to the founder beside the original
+
+*Logged 10:50.*
+
+---
+
+## 119. Abby re-inked by the house model in its own pen, seed 77
+
+![Abby re-inked by the house model in its own pen, seed 77](images/119-abby-re-inked-by-the-house-model-in-its-own-pen-seed-77.png)
+
+**The ask.** Founder: 'do it' - the cast regenerated for this model, one character at a time, Drew first.
+
+**The thinking.** The official portrait is Picture 1 and the only reference; the house model redraws it feature for feature in its own engraved hand at the slow sampler band, so the reference used in every scene pass is in the same pen as the plate.
+
+**Settings.** local/qwen-image-edit-2511, steps 20, cfg 2.5, no Lightning LoRA, 4:5, seed 77
+
+**Prompt.** [prompts/119-abby-re-inked-by-the-house-model-in-its-own-pen-seed-77.prompt.txt](prompts/119-abby-re-inked-by-the-house-model-in-its-own-pen-seed-77.prompt.txt)
+
+**Verdict.** candidate - to the founder beside the original
+
+*Logged 10:52.*
+
+---
+
+## 120. Abby re-inked by the house model in its own pen, seed 7
+
+![Abby re-inked by the house model in its own pen, seed 7](images/120-abby-re-inked-by-the-house-model-in-its-own-pen-seed-7.png)
+
+**The ask.** Founder: 'do it' - the cast regenerated for this model, one character at a time, Drew first.
+
+**The thinking.** The official portrait is Picture 1 and the only reference; the house model redraws it feature for feature in its own engraved hand at the slow sampler band, so the reference used in every scene pass is in the same pen as the plate.
+
+**Settings.** local/qwen-image-edit-2511, steps 20, cfg 2.5, no Lightning LoRA, 4:5, seed 7
+
+**Prompt.** [prompts/120-abby-re-inked-by-the-house-model-in-its-own-pen-seed-7.prompt.txt](prompts/120-abby-re-inked-by-the-house-model-in-its-own-pen-seed-7.prompt.txt)
+
+**Verdict.** candidate - to the founder beside the original
+
+*Logged 10:56.*
+
+---
+
+## 121. Abby re-inked by the house model in its own pen, seed 21
+
+![Abby re-inked by the house model in its own pen, seed 21](images/121-abby-re-inked-by-the-house-model-in-its-own-pen-seed-21.png)
+
+**The ask.** Founder: 'do it' - the cast regenerated for this model, one character at a time, Drew first.
+
+**The thinking.** The official portrait is Picture 1 and the only reference; the house model redraws it feature for feature in its own engraved hand at the slow sampler band, so the reference used in every scene pass is in the same pen as the plate.
+
+**Settings.** local/qwen-image-edit-2511, steps 20, cfg 2.5, no Lightning LoRA, 4:5, seed 21
+
+**Prompt.** [prompts/121-abby-re-inked-by-the-house-model-in-its-own-pen-seed-21.prompt.txt](prompts/121-abby-re-inked-by-the-house-model-in-its-own-pen-seed-21.prompt.txt)
+
+**Verdict.** candidate - to the founder beside the original
+
+*Logged 10:58.*
+
+---
+
+## 122. Abby re-inked by the house model in its own pen, seed 44
+
+![Abby re-inked by the house model in its own pen, seed 44](images/122-abby-re-inked-by-the-house-model-in-its-own-pen-seed-44.png)
+
+**The ask.** Founder: 'do it' - the cast regenerated for this model, one character at a time, Drew first.
+
+**The thinking.** The official portrait is Picture 1 and the only reference; the house model redraws it feature for feature in its own engraved hand at the slow sampler band, so the reference used in every scene pass is in the same pen as the plate.
+
+**Settings.** local/qwen-image-edit-2511, steps 20, cfg 2.5, no Lightning LoRA, 4:5, seed 44
+
+**Prompt.** [prompts/122-abby-re-inked-by-the-house-model-in-its-own-pen-seed-44.prompt.txt](prompts/122-abby-re-inked-by-the-house-model-in-its-own-pen-seed-44.prompt.txt)
+
+**Verdict.** candidate - to the founder beside the original
+
+*Logged 11:00.*
+
+---
+
+## 123. Abby re-inked by the house model in its own pen, seed 62
+
+![Abby re-inked by the house model in its own pen, seed 62](images/123-abby-re-inked-by-the-house-model-in-its-own-pen-seed-62.png)
+
+**The ask.** Founder: 'do it' - the cast regenerated for this model, one character at a time, Drew first.
+
+**The thinking.** The official portrait is Picture 1 and the only reference; the house model redraws it feature for feature in its own engraved hand at the slow sampler band, so the reference used in every scene pass is in the same pen as the plate.
+
+**Settings.** local/qwen-image-edit-2511, steps 20, cfg 2.5, no Lightning LoRA, 4:5, seed 62
+
+**Prompt.** [prompts/123-abby-re-inked-by-the-house-model-in-its-own-pen-seed-62.prompt.txt](prompts/123-abby-re-inked-by-the-house-model-in-its-own-pen-seed-62.prompt.txt)
+
+**Verdict.** candidate - to the founder beside the original
+
+*Logged 11:01.*
+
+---
+
+## 124. Abby re-inked by the house model in its own pen, seed 77
+
+![Abby re-inked by the house model in its own pen, seed 77](images/124-abby-re-inked-by-the-house-model-in-its-own-pen-seed-77.png)
+
+**The ask.** Founder: 'do it' - the cast regenerated for this model, one character at a time, Drew first.
+
+**The thinking.** The official portrait is Picture 1 and the only reference; the house model redraws it feature for feature in its own engraved hand at the slow sampler band, so the reference used in every scene pass is in the same pen as the plate.
+
+**Settings.** local/qwen-image-edit-2511, steps 20, cfg 2.5, no Lightning LoRA, 4:5, seed 77
+
+**Prompt.** [prompts/124-abby-re-inked-by-the-house-model-in-its-own-pen-seed-77.prompt.txt](prompts/124-abby-re-inked-by-the-house-model-in-its-own-pen-seed-77.prompt.txt)
+
+**Verdict.** candidate - to the founder beside the original
+
+*Logged 11:03.*
+
+---
+
+## 125. Abby re-inked by the house model in its own pen, seed 101
+
+![Abby re-inked by the house model in its own pen, seed 101](images/125-abby-re-inked-by-the-house-model-in-its-own-pen-seed-101.png)
+
+**The ask.** Founder: 'do it' - the cast regenerated for this model, one character at a time, Drew first.
+
+**The thinking.** The official portrait is Picture 1 and the only reference; the house model redraws it feature for feature in its own engraved hand at the slow sampler band, so the reference used in every scene pass is in the same pen as the plate.
+
+**Settings.** local/qwen-image-edit-2511, steps 20, cfg 2.5, no Lightning LoRA, 4:5, seed 101
+
+**Prompt.** [prompts/125-abby-re-inked-by-the-house-model-in-its-own-pen-seed-101.prompt.txt](prompts/125-abby-re-inked-by-the-house-model-in-its-own-pen-seed-101.prompt.txt)
+
+**Verdict.** candidate - to the founder beside the original
+
+*Logged 11:05.*
+
+---
+
+## 126. Abby re-inked by the house model in its own pen, seed 505
+
+![Abby re-inked by the house model in its own pen, seed 505](images/126-abby-re-inked-by-the-house-model-in-its-own-pen-seed-505.png)
+
+**The ask.** Founder: 'do it' - the cast regenerated for this model, one character at a time, Drew first.
+
+**The thinking.** The official portrait is Picture 1 and the only reference; the house model redraws it feature for feature in its own engraved hand at the slow sampler band, so the reference used in every scene pass is in the same pen as the plate.
+
+**Settings.** local/qwen-image-edit-2511, steps 20, cfg 2.5, no Lightning LoRA, 4:5, seed 505
+
+**Prompt.** [prompts/126-abby-re-inked-by-the-house-model-in-its-own-pen-seed-505.prompt.txt](prompts/126-abby-re-inked-by-the-house-model-in-its-own-pen-seed-505.prompt.txt)
+
+**Verdict.** candidate - to the founder beside the original
+
+*Logged 11:07.*
+
+---
+
+## 127. Abby re-inked by the house model in its own pen, seed 606
+
+![Abby re-inked by the house model in its own pen, seed 606](images/127-abby-re-inked-by-the-house-model-in-its-own-pen-seed-606.png)
+
+**The ask.** Founder: 'do it' - the cast regenerated for this model, one character at a time, Drew first.
+
+**The thinking.** The official portrait is Picture 1 and the only reference; the house model redraws it feature for feature in its own engraved hand at the slow sampler band, so the reference used in every scene pass is in the same pen as the plate.
+
+**Settings.** local/qwen-image-edit-2511, steps 20, cfg 2.5, no Lightning LoRA, 4:5, seed 606
+
+**Prompt.** [prompts/127-abby-re-inked-by-the-house-model-in-its-own-pen-seed-606.prompt.txt](prompts/127-abby-re-inked-by-the-house-model-in-its-own-pen-seed-606.prompt.txt)
+
+**Verdict.** candidate - to the founder beside the original
+
+*Logged 11:09.*
+
+---
+
+## 128. Abby re-ink v2, seed 7: the huggable face with clean lids; a margin scrawl removed in code
+
+![Abby re-ink v2, seed 7: the huggable face with clean lids; a margin scrawl removed in code](images/128-abby-re-ink-v2-seed-7-the-huggable-face-with-clean-lids-a-margin-scrawl-removed-in-code.png)
+
+**The ask.** Founder, on the first Abby pick: 'not happy with her, her eyelids are messed up bad and she needs to look attractive and huggable'.
+
+**The thinking.** The edit now says her face is the point: big clear warm eyes under one clean lashed lid exactly as the portrait draws it, no lash comb, no makeup, a sweet closed-lip half-smile, a plush coat. Eight seeds; the Opus judge scored lids and huggability first. Seed 7 has the best pair of eyes and the warmest face; its only fault was a signature scrawl in the bottom-left margin, replaced with the paper above it. Seed 77 is the alternative.
+
+**Settings.** scripts/reink-portrait.py --character abby --tag abby-reink-v2, 20 steps, cfg 2.5, seed 7; margin patched in code
+
+**Verdict.** To the founder beside the original.
+
+*Logged 11:18.*
+
+---
+

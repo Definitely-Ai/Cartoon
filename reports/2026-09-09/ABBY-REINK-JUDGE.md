@@ -77,3 +77,60 @@ shows its iris is an unfilled ring and its smile a long dark grin. Keep it as th
 
 **Disqualified on marks:** s11 (letters inscribed in the pendant), s404 (signature scrawl in the margin).
 **Disqualified on ground:** s202 and s404 (drawn background and plate border where the canon wants empty paper).
+
+## Round 3 (v2, founder's note)
+
+Founder rejected the round-2 pick (`abby-reink-20-25-s101.png`): *"her eyelids are messed up bad and
+she needs to look attractive and huggable."* Field: 8 v2 plates in `canon/characters/abby/reink/`
+(`abby-reink-v2-s7 / s21 / s44 / s62 / s77 / s101 / s505 / s606`). Judged on the founder's two words
+FIRST, then identity, hand, ground, and a contrast sweep for marks.
+
+**Lid rule (founder's test), per eye:** ONE clean upper lid — a single dark line that *thickens* into a
+fine lash fringe, exactly as in `canon/vision/studies/abby.png`. Not heavy, not a doubled arc, not
+drooping, not smeared, not a comb of long separated spikes. Under it: white sclera either side of a
+tonal iris, one distinct round pupil, one small round catchlight, soft lower lid.
+
+**Huggable rule:** plush coat, sweet closed-lip half-smile, big clear eyes, warm and kind. Nothing
+sultry, sleepy, startled or cartoon-cute.
+
+| Plate | Lids /10 | Hug /10 | ID /10 | Hand /10 | What the eyes actually do | Killer |
+|---|---|---|---|---|---|---|
+| **s77** | **6** | **7** | **9** | **9** | near eye canon-clean (one dark lid line thickening to a fine fringe, tonal iris, round pupil, one catchlight, white both sides); **far eye is a comb of ~10 long separated curled lashes over a soft grey lid with a second arc inside it** | — clean sheet, no marks |
+| s7 | 7 | 8 | 9 | 7 | **best pair in the field** — both lids are one crisp line thickening outward, both irises tonal with round pupils and single catchlights; far fringe only slightly separated at the outer end | **DISQUALIFIED: cursive signature scrawl in the bottom-left margin** (confirmed at 6x, isolated from the figure); faint hatch tone upper-left/right |
+| s101 | 3 | 5 | 8 | 8 | **heavy solid-black lid wedge on BOTH eyes** plus separated lash spikes above it, hard black contour right round the eye and lower lid; oversized iris, hard-edged white crescent | repeats the exact heavy-lid doll look the founder just rejected; long dark smirk with a dark corner gap |
+| s606 | 2 | 4 | 7 | 7 | near eye has **no lash line at all and no white either side** (iris fills the opening); far eye has an extreme comb of long curled uppers **plus a second comb of lower lashes**, pupil smeared into the iris | cartoon-cute; mouth parted showing lip/tongue, not a closed-lip smile |
+| s62 | 2 | 4 | 8 | 5 | **far eye is a pupil-less ring with a blown-out catchlight**; comb lashes above and below | drawn hatched background + rounded plate border — ground DQ |
+| s21 | 1 | 3 | 7 | 5 | **far eye blank white — no iris, no pupil**, lash comb over nothing | drawn vignette background; open grinning mouth showing teeth |
+| s505 | 2 | 4 | 7 | 4 | hard black rim right round both eyes, comb lashes, drawn brow shadow; wide startled doll eyes | **whole sheet is a drawn hatched background** (corners 195/208/78) — ground DQ |
+| s44 | 1 | 3 | 2 | 5 | **human eyes** — doubled lid crease, drawn eyebrows, false-lash combs | **not Abby**: human nose, human lips, human cheeks, no muzzle, no button nose; drawn hatch ground |
+
+Collar (buckle + studs), marquise pendant, open blouse with placket, rolled cuff and no hand in frame
+are present and correct on s7, s77, s101, s606, s62, s505. Pendants on s77 and s101 checked at 4x —
+no lettering. Contrast sweep of the whole sheet: **s7 is the only mark-carrying plate**; s77, s101 and
+s606 are clean. Plain unwashed paper: s77, s101, s606, s7 only.
+
+### Round 3 verdict
+
+**No plate passes the founder's words outright.** Not one of the eight builds two clean, simple,
+canon-lashed lids. Say that to him plainly rather than pretending otherwise.
+
+**Plate to show the founder: `abby-reink-v2-s77.png`.** It is the best of what exists: a warm, soft,
+kind face with a closed-lip smile, plush head, plain unwashed paper, nothing lettered on the sheet, and
+the full kit (ears with hatched inner fringe, stippled button nose, studded collar with buckle and
+marquise pendant, open blouse with placket, rolled cuff, no hand in frame). But it is a **one-eye
+pass** — the near eye is canon, the far eye is still a cosmetic lash comb over a doubled lid. It does
+not fully answer *"her eyelids are messed up bad."*
+
+**Runner-up: `abby-reink-v2-s101.png`** — cleanest sheet and closest pendant beading, but its lids are
+a heavy black wedge on both eyes. It repeats the very look he rejected; do not offer it as an
+alternative, keep it only as a fallback body/collar reference.
+
+**The real finding: `abby-reink-v2-s7.png` has the best two eyelids and the warmest, most huggable face
+in the entire field** — both lids are a single line thickening into a fringe, both irises tonal with a
+round pupil and one catchlight — and it is lost **only** to a cursive signature scrawl in the
+bottom-left margin, inside the outer 2% of the sheet. Fastest route to what the founder asked for:
+re-roll seed 7 with the no-signature clause hardened, and pull the far-eye lashes back from a comb to a
+thickening lash line. Do not ship the signed plate.
+
+**Disqualified on marks:** s7 (signature). **On ground:** s21, s44, s505, s62 (drawn backgrounds /
+plate borders). **On identity:** s44 (human face).

@@ -30,12 +30,22 @@ WHO = {
              "tie, a knitted V-neck sweater vest, feathered hands with four fingers and a thumb"),
     "barclay": ("BARCLAY, the golden retriever gentleman: a soft golden coat, a broad kind muzzle, drop ears, warm "
                 "human-looking eyes, a dark blazer over an open-collared shirt with a small flag pin"),
-    "abby": ("ABBY, the white West Highland terrier lady who owns the bar: pricked ears, a dark button nose, "
-             "human-looking eyes with white showing both sides of the iris and a lashed upper lid, a closed-lip "
-             "half-smile, a pale blouse and a studded collar with a pendant"),
+    "abby": ("ABBY, the white West Highland terrier lady who owns the bar - ATTRACTIVE AND HUGGABLE: a soft, warm, "
+             "pretty face; big clear human-looking eyes with white showing both sides of a gentle iris, one catchlight, "
+             "and ONE clean, simple, lashed upper eyelid drawn exactly as Picture 1 draws it - no heavy lashes, no lash comb, "
+             "no makeup, no drooping or doubled lids; a sweet closed-lip half-smile; a plush, fluffy white coat in fine "
+             "strokes; pricked ears, a dark button nose, a sleek throat; a pale blouse and a studded collar with a pendant"),
 }
 NEGATIVE = ("text, letters, words, lettering, typography, caption, signature, watermark, colour, photographic, "
             "blurry, second character, extra limbs, deformed hands, bare skin")
+
+
+ABBY_FACE_EDIT = (
+    "\n3. HER FACE IS THE POINT: she is lovely, kind and huggable. Her eyes are large, clear and warm, each with a "
+    "gentle iris and pupil and one catchlight, under ONE clean simple lashed upper eyelid - the lids exactly as "
+    "Picture 1 draws them, never heavy, never doubled, never drooping, no lash comb, no makeup. Her mouth is a sweet "
+    "closed-lip half-smile. Her coat is plush and soft."
+)
 
 
 def prompt_for(character: str) -> str:
@@ -48,7 +58,7 @@ def prompt_for(character: str) -> str:
         "deep blacks to bright paper, the plumage and fur laid in individual fine strokes, no hard outlines, no flat fills.\n"
         "2. The paper around the figure stays plain and empty: no room, no furniture, no border, no lettering, no caption, "
         "no signature, nothing added and nothing removed."
-    )
+    ) + (ABBY_FACE_EDIT if character == "abby" else "")
 
 
 def main() -> None:
