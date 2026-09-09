@@ -1,6 +1,6 @@
 {
   "date": "2026-09-08",
-  "pdf": null,
+  "pdf": "output/pdf/ricks-studio-end-of-day-2026-09-08.pdf",
   "show": null,
   "entries": [
     {
@@ -188,6 +188,990 @@
       "title": "The inlaid back bar perfected: lining calmed, fourteen real bottles, fill lines, typeset labels",
       "verdict": "Accepted into the plate; sent to the founder for approval.",
       "thumb": "2026-09-08/thumbs/031.jpg"
+    },
+    {
+      "num": "033",
+      "title": "Drew in the scene - round 1 contact sheet, six seeds, route A with Picture 3 cropped to the flamingo alone",
+      "verdict": "REJECTED as pictures, but the round moved the problem. THE FIX WORKED: the labrador is gone from all six seeds - cropping Picture 3 to the flamingo alone, plus EDIT 3 naming the cast, ended the dog that appeared in 4 of 4 bake-off renders. WHAT STILL FAILS, at all six seeds without exception: Drew is square to the camera or three-quarter FRONT, never from behind; he is on the FAR side of the marble, in the barman's place, at roughly 1.6-2x the plate's scale; and he sits in a tufted wing chair the model invents for him while the plate's own studded club chair stays visibly EMPTY in the foreground of every tile. THE CAUSE IS IN THE FIELD, NOT IN THE WORDING. Route A's flat field leaves only the chair's studded ROLL at the very bottom of the crop, which reads as the near lip of a counter, and the marble slab then reads as a table with a far side - so the model puts him across it. The model also copies Picture 3's ROOM: the crop still contains the back bar, and the BIRDIE BOURBON bottles, the panelling and the mirrored lettering turn up in seeds 21, 44 and 55. NUMBERS: join 44.2-60.7 grey levels, 10.0-13.1% of the plate replaced, and the field was NOT kept flat at any seed (0.88-0.95 changed), so the difference key returns a box-filling slab rather than an outline - the one thing the bake-off had going for it did not survive this prompt. BEST SEED 7: the only one that reads as Drew at 2x - bill, lidded eye, collar band, bow tie, V-neck knit and the feathered hand on the martini all correct - and the least destructive (10.0% of the plate, sticker 0.42 of the box against 0.55 everywhere else). ROUND 2: cut Picture 3 to the bird on blank paper, and put the CHAIR BACK into the flat field so there is something to sit in.",
+      "thumb": "2026-09-08/thumbs/033.jpg"
+    },
+    {
+      "num": "034",
+      "title": "Drew seated in the left club chair - route S seed 7",
+      "verdict": "12/20 - FAIL. identity 3, pose 4, seat 3, cleanliness 2. The seat is finally right: he is down IN our left chair with the studded roll across his lower back and the collar and vest above it, at the block-in's own place. Against that, the bill is heavy and dark instead of the portrait's slender pale bill with a black outer third; the model redrew its own studded chair roll inside the sticker, so the chair double-prints; and the sticker carries a counter slab, a martini and a saucer that belong to Picture 3's crop. Free-page ink 0.18, the dirtiest of the three usable seeds. Only 0.67 of his silhouette survived the key, so the panelling shows through his knit.",
+      "thumb": "2026-09-08/thumbs/034.jpg"
+    },
+    {
+      "num": "035",
+      "title": "Drew seated in the left club chair - route S seed 21",
+      "verdict": "13/20 - the best of the four, but still a FAIL. identity 4, pose 4, seat 3, cleanliness 2. Everything the founder asked to READ does read: the small refined head, the heavy-lidded eye, the bill, the white collar band, the small black bow tie, the knit V-neck vest and the feathered hand with fingers on the martini - and he is seated in OUR chair, from behind and a little to his left, head turned right, the studded roll across his lower back. What fails is the cut-out, not the drawing: 0.66 of his silhouette survived the key, so the bar's panelling and the window show through him and a white flamingo reads as a grey stippled heron; and the sticker brought a slab of marble and a bowl of olives onto the counter with him.",
+      "thumb": "2026-09-08/thumbs/035.jpg"
+    },
+    {
+      "num": "036",
+      "title": "Drew seated in the left club chair - route S seed 41",
+      "verdict": "6/20 - FAIL, and the worst of the four. identity 1, pose 2, seat 2, cleanliness 1. The sheet was not kept blank: the model put ink on 95% of the box, so the absolute key had nothing to separate and handed back a box-filling slab (one blob, 150k px). The head reads front-on with a striped skull and no bow tie, a second studded roll is drawn over the plate's own chair, and a grey smear crosses the marble. The script's own dirty-key warning fired at 92%. This is the same failure the flat-grey field had at seed 41 in the previous round - this seed re-inks whatever ground it is given.",
+      "thumb": "2026-09-08/thumbs/036.jpg"
+    },
+    {
+      "num": "037",
+      "title": "Drew seated in the left club chair - route S seed 44",
+      "verdict": "12/20 - FAIL, but the most useful render of the round. identity 4, pose 4, seat 3, cleanliness 1. On paper this is the truest Drew the studio has drawn in the chair: white plumage in fine dash-strokes, the slender pale bill, the heavy-lidded eye, the collar band, the small black bow tie, the knit V-neck vest, the feathered hand on the martini, seated in OUR chair from behind and a little to his left with his head turned right. And it is destroyed in the laid preview, because he is drawn WHITE: the absolute key keeps only what is darker than 232, so his paper-white interior is not his, and just 0.51 of his silhouette survived. His HEAD IS CUT OFF - a milky wedge over the window - and a smeared slab of marble came with him. The better the model draws Drew, the worse this key cuts him out.",
+      "thumb": "2026-09-08/thumbs/037.jpg"
+    },
+    {
+      "num": "038",
+      "title": "Team Drew 3 round 1 contact sheet - route S, four seeds",
+      "verdict": "The round in one picture. Best seed 21 at 13/20; no seed passes (PASS is 17 with nothing below 4). Seat and pose are solved by route S; identity and cleanliness are both being held down by the same thing - the absolute white-threshold key keeps only 0.51-0.66 of Drew's own silhouette, so the room shows through him.",
+      "thumb": "2026-09-08/thumbs/038.jpg"
+    },
+    {
+      "num": "039",
+      "title": "bottles-on-lower-shelf and bottles-on-upper-shelf render seed 21 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-08/thumbs/039.jpg"
+    },
+    {
+      "num": "040",
+      "title": "bottles-on-lower-shelf and bottles-on-upper-shelf render seed 7 laid in full plate",
+      "verdict": null,
+      "thumb": "2026-09-08/thumbs/040.jpg"
+    },
+    {
+      "num": "041",
+      "title": "whole-plate assembled with bartenders-marble-ledge back-bar-carcass back-bar-lower-shelf bottles-on-lower-shelf bottles-on-upper-shelf back-bar-upper-shelf television-blank chalkboard-blank window-frame-and-reveal window-glass-street-view main-bar-marble-counter left-leather-club-chair right-leather-club-chair and window-sign",
+      "verdict": null,
+      "thumb": "2026-09-08/thumbs/041.jpg"
+    },
+    {
+      "num": "042",
+      "title": "whole-plate assembled with bartenders-marble-ledge back-bar-carcass back-bar-lower-shelf bottles-on-lower-shelf bottles-on-upper-shelf back-bar-upper-shelf television-blank chalkboard-blank window-frame-and-reveal window-glass-street-view main-bar-marble-counter left-leather-club-chair right-leather-club-chair and window-sign",
+      "verdict": null,
+      "thumb": "2026-09-08/thumbs/042.jpg"
+    },
+    {
+      "num": "043",
+      "title": "whole-plate assembled with bartenders-marble-ledge back-bar-carcass back-bar-lower-shelf bottles-on-lower-shelf bottles-on-upper-shelf back-bar-upper-shelf television-blank chalkboard-blank window-frame-and-reveal window-glass-street-view main-bar-marble-counter left-leather-club-chair right-leather-club-chair and window-sign",
+      "verdict": null,
+      "thumb": "2026-09-08/thumbs/043.jpg"
+    },
+    {
+      "num": "044",
+      "title": "The back bar as a normal bar: twenty different bottles, no names, emblem labels drawn in code",
+      "verdict": "Accepted into the plate; sent to the founder.",
+      "thumb": "2026-09-08/thumbs/044.jpg"
+    },
+    {
+      "num": "046",
+      "title": "Drew seated left - route S round 2 - seed 7 (hole-filled key)",
+      "verdict": "11/20. identity 3 - the collar band, the black bow tie, the V-neck knit and the feathered hand with fingers all read, but the crown is crested and speckled instead of small and refined and the eye is round and staring, not heavy-lidded. pose 2 - he is three-quarter FRONT with the bow-tie knot facing us, the one thing the brief says NOT to draw; the under-drawing's back view did not carry. seat 4 - down in OUR left chair, chair back across the lower body, vest and arms above the roll. cleanliness 2 - the sticker still carries Picture 3's martini, a saucer, the counter slab's edge and a piece of the chair's own studded roll, and a soft grey aura the model drew round the bill washes out the panelling behind it. The hole-fill worked exactly as measured - he is opaque now, not a lattice.",
+      "thumb": "2026-09-08/thumbs/046.jpg"
+    },
+    {
+      "num": "047",
+      "title": "Drew seated left - route S round 2 - seed 21 (hole-filled key)",
+      "verdict": "10/20. identity 2 - the head has come apart: a patterned ball with a tiny eye and no crown, and the bill is a flat wedge without the pale shaft and black outer third. The bow tie, the V-neck knit and the fingered hand survive. pose 2 - three-quarter FRONT again, tie knot to camera. seat 4 - correctly in our chair, chair back across the lower body. cleanliness 2 - Picture 3's bowl of olives and the counter slab came into the sticker, and a pale ghost of the bill smears across the panelling. Coverage went 0.661 -> 0.781, so the hole-fill generalises; the head is a render failure, not a key failure.",
+      "thumb": "2026-09-08/thumbs/047.jpg"
+    },
+    {
+      "num": "048",
+      "title": "Drew seated left - route S round 2 - seed 41 (hole-filled key)",
+      "verdict": "10/20. identity 3 - the best head of the round: the pale bill really does carry a black outer third, the eye is heavy-lidded and amiable, and the collar band, bow tie, V-neck knit and fingered hand all read - but he is drawn mid-grey and scaly rather than white and feathered. pose 2 - three-quarter FRONT with the bow-tie knot to camera, the brief's explicit NOT, for the third seed running. seat 4 - down in our chair at the block-in's place, the studded roll across his lower body. cleanliness 1 - the worst of the round: the model inked 95% of the sheet, so the key kept one blob that is 40% not-Drew - a pale slab of re-inked paper, the marble counter, a saucer and a piece of the chair's own roll - and that slab washes the panelling and the marble where it lands.",
+      "thumb": "2026-09-08/thumbs/048.jpg"
+    },
+    {
+      "num": "049",
+      "title": "Drew seated left - route S round 2 - seed 44 (hole-filled key)",
+      "verdict": "9/20, the weakest of the round. identity 1 - there is no face: the head is a flat crosshatched wedge with no eye at all and a doubled, broken bill. The wardrobe is the only thing that reads - collar band, black bow tie, V-neck knit, a hand with fingers. pose 2 - three-quarter FRONT again, and with no readable bill or eye the turn of the head cannot be judged. seat 4 - correctly down in our left chair, studded roll across his lower body. cleanliness 2 - martini, saucer, counter slab and a piece of the chair's roll in the sticker, and the pale ghost round the head is now laid as a solid wedge across the window and the panelling. Coverage 0.513 -> 0.775, so the key is fixed; the drawing is not.",
+      "thumb": "2026-09-08/thumbs/049.jpg"
+    },
+    {
+      "num": "050",
+      "title": "Drew seated left - route S round 3 - Picture 3 OFF - seed 7",
+      "verdict": "11/20 - identity 2, pose 3, seat 4, clean 2. The front view and the martini are GONE: the back view is won. But the head is a mangled crest with no readable bill and no eye, and the key returned 161 blobs with room fragments in the sticker.",
+      "thumb": "2026-09-08/thumbs/050.jpg"
+    },
+    {
+      "num": "051",
+      "title": "Drew seated left - route S round 3 - Picture 3 OFF - seed 21",
+      "verdict": "8/20 - identity 2, pose 2, seat 3, clean 1. Worst of the four. The knit vest across the shoulder blades is excellent, but the head is DETACHED - the bill floats free above the neck stub - and the head's white interior lays as an opaque blob punched over the room. scale 0.15 because the topmost blob is that floating bill.",
+      "thumb": "2026-09-08/thumbs/051.jpg"
+    },
+    {
+      "num": "052",
+      "title": "Drew seated left - route S round 3 - Picture 3 OFF - seed 41",
+      "verdict": "13/20 - identity 3, pose 3, seat 4, clean 3. BEST OF THE ROUND. White collar band, a clear small black bow tie, the knit V-neck vest and a properly feathered hand with fingers on the marble. Still fails on the head: a flat folded ribbon terminating in a bill-like wedge, no skull, no eye.",
+      "thumb": "2026-09-08/thumbs/052.jpg"
+    },
+    {
+      "num": "053",
+      "title": "Drew seated left - route S round 3 - Picture 3 OFF - seed 44",
+      "verdict": "12/20 - identity 2, pose 3, seat 4, clean 3. The clearest back view and the cleanest key of the four (0.1053 outside the sticker). Knit vest and standing collar read well, but the neck breaks between the collar and a grey head wedge over the window.",
+      "thumb": "2026-09-08/thumbs/053.jpg"
+    },
+    {
+      "num": "054",
+      "title": "Drew seated left - route S round 3 contact sheet - Picture 3 OFF",
+      "verdict": "Round 3 FAILS the gate (PASS = total >= 17 with no score below 4). Best seed 41 at 13/20, up from round 2's best of 11. The change did what it was predicted to do - the pose bug was Picture 3 - but it bought about 2 points, not the 3-4 hoped, because it exposed a head that the under-drawing is too faint to specify. Round 4: --under-blend 0.55 -> 0.30.",
+      "thumb": "2026-09-08/thumbs/054.jpg"
+    },
+    {
+      "num": "055",
+      "title": "Drew seated left - route S round 4 under-blend 0.30 - seed 7",
+      "verdict": "8/20. FAIL. Body/vest/collar/bow tie read from behind, but the head is still a folded feathered ribbon - no skull, no bill, no eye. Chair studs and marble fragments keyed into the sticker (93 blobs, cleanliness 0.153). identity 2, pose 2, seat 2, cleanliness 2.",
+      "thumb": "2026-09-08/thumbs/055.jpg"
+    },
+    {
+      "num": "056",
+      "title": "Drew seated left - route S round 4 under-blend 0.30 - seed 21",
+      "verdict": "7/20. FAIL, worst of the four. The bill and eye are drawn beautifully but float COMPLETELY DETACHED above the body with no skull, the neck ending in feathers. Head band tone did invert correctly (115.3 head vs 118.1 body, vs 122/112 in round 3). topmost-blob scale 0.17, mask covered 0.57, 141 blobs. identity 2, pose 2, seat 1, cleanliness 2.",
+      "thumb": "2026-09-08/thumbs/056.jpg"
+    },
+    {
+      "num": "057",
+      "title": "Drew seated left - route S round 4 under-blend 0.30 - seed 41",
+      "verdict": "9/20. FAIL. Best body of the four - proper small black bow tie, white collar, knit V-neck vest, feathered hand with fingers on the marble, seen from behind and a little to his left. Head still a folded wedge with a wire bill and a dot for an eye; in the laid it reads as a pale grey chevron smear on the wall. Head/body tone gap closed from +27 to +3.3 (140.1 vs 136.8). identity 2, pose 3, seat 2, cleanliness 2.",
+      "thumb": "2026-09-08/thumbs/057.jpg"
+    },
+    {
+      "num": "058",
+      "title": "Drew seated left - route S round 4 under-blend 0.30 - seed 44 - BEST",
+      "verdict": "10/20. BEST OF ROUND, still FAIL. FIRST REAL HEAD in four rounds: a genuine rounded skull joined to the S-neck, an eye and a full bill, over the white collar and knit V-neck vest, feathered hand with fingers on the marble. Misses: head reads FULL PROFILE not three-quarter, head too large to be the portrait's small refined head, bill lacks the black outer third, eye round not heavy-lidded, and he sits above the chair rather than down in it (scale 0.79). Best cleanliness of the round (0.0825) and best mask coverage (0.854). identity 3, pose 2, seat 2, cleanliness 3.",
+      "thumb": "2026-09-08/thumbs/058.jpg"
+    },
+    {
+      "num": "059",
+      "title": "Drew round 4 contact sheet - four seeds at under-blend 0.30",
+      "verdict": "Round 4 FAILS: best total 10/20 (seed 44), threshold is 17 with nothing below 4. Darkening the under-drawing did move the drawing - one seed in four now draws a real head, where round 3 drew none - but it did not settle it, and measurement shows the lever is now exhausted.",
+      "thumb": "2026-09-08/thumbs/059.jpg"
+    },
+    {
+      "num": "060",
+      "title": "Team 4 Abby round 1 seed 7 route S laid preview",
+      "verdict": "REJECT, 6/20. Identity 1: the model drew a HUMAN WOMAN with long dark hair in a white blouse where Abby belongs, and put a small westie DOG beside her wearing Abby's own studded collar and gem - it read the portrait as 'woman with her dog' instead of copying the terrier. Pose 2: body roughly faces the room at the block-in's place but she leans on the counter and the block-in's head is not filled. Seat 2: scale about right, but a slab of marble ledge came into the sticker so it lays as a floating marble block. Cleanliness 1: two figures, a marble slab, 39 blobs, cut off at the bottom.",
+      "thumb": "2026-09-08/thumbs/060.jpg"
+    },
+    {
+      "num": "061",
+      "title": "Team 4 Abby round 1 seed 21 route S laid preview",
+      "verdict": "REJECT, 6/20. Identity 1: a human woman again - long dark hair, human face, human hands with painted nails - now wearing Abby's studded collar and teardrop gem herself, with the westie standing beside her as her pet. The portrait is being read as 'woman and her dog', not as one terrier woman. Pose 2: torso faces the room at about the block-in's place, but the head is a human head and the block-in's own head is ignored. Seat 2: scale plausible, but the sticker carries a slab of the marble ledge so she lays as marble-on-marble. Cleanliness 1: two figures, a highball glass, a bar mat, a marble slab and a stray ink cross above the head - 41 blobs, cut off at the bottom edge.",
+      "thumb": "2026-09-08/thumbs/061.jpg"
+    },
+    {
+      "num": "062",
+      "title": "Drew seated left - route S - V1-remap seed 21",
+      "verdict": "Seat/pose/room clean again - correct chair, marble line untouched, collar and knit vest read well down onto the shoulders. Head still fails: above the neck's feathered collar a scaled, curved ribbon/wing-shaped patch floats with a plain white gap between it and the collar - no eye, no bill, no rounded skull, and no join to the neck. The remap made the tone band visible instead of invisible, but the model still did not read it as a head to draw solid; it drew a detached decorative fragment instead. Identity fails.",
+      "thumb": "2026-09-08/thumbs/062.jpg"
+    },
+    {
+      "num": "063",
+      "title": "Drew seated left - route S - V1-remap seed 44 - BEST HEAD YET",
+      "verdict": "BEST HEAD OF THE DAY. A genuine solid, small, rounded skull sits joined cleanly to the neck with no gap and no seam - one heavy-lidded amiable eye reads on it, and the thick bill bends steeply down to a proper solid black outer tip, all in one continuous line from the neck. No folded feather, no ribbon, no wedge, no floating fragment. Reads in full profile rather than three-quarter (open item: the brief wants the bill/eye readable in three-quarter, this came out side-on), and a faint soft grey smear ghosts the wall just behind/above the head - likely a hole-fill or key-edge artifact, not part of the figure. Seat, collar, knit vest and feathered hand on the marble all clean and correct. The remap answer works on this seed; identity/head finally passes where every prior route-S round failed.",
+      "thumb": "2026-09-08/thumbs/063.jpg"
+    },
+    {
+      "num": "064",
+      "title": "Drew seated left - route S variant V2-tone055 - seed 21",
+      "verdict": "FAIL on the head. Head: a detached, feather-textured wing/ribbon with no skull, no eye and no bill, floating above a visible gap over the neck. Identity: barely reads, seen mostly from behind as a feathered silhouette. Seat: correct, down in the left chair at the block-in's place. Cleanliness: a stray feathered scrap keyed in on the marble beside him.",
+      "thumb": "2026-09-08/thumbs/064.jpg"
+    },
+    {
+      "num": "065",
+      "title": "Drew seated left - route S variant V2-tone055 - seed 44",
+      "verdict": "Best head of the sweep, still not the brief. Head: joined to the neck with no gap and reads as a head+bill (dark bill bending down to a black tip), but flag/pennant-shaped rather than a clean round skull and no heavy-lidded eye is legible; a soft grey halo bleeds onto the shelf behind it. Identity: strong - collar band, black bow tie, knit V-neck vest, martini glass, fingered hand on the marble - but drawn three-quarter FRONT facing camera, not from behind. Seat: correct, down in the left chair at the block-in's place. Cleanliness: a faint dark smear on the marble to the right of the hand.",
+      "thumb": "2026-09-08/thumbs/065.jpg"
+    },
+    {
+      "num": "066",
+      "title": "Drew seated left - team 5 round 1 - route S seed 44 - BEST of the round",
+      "verdict": "BEST OF THE ROUND, 16/20 - one point short of a pass. Identity 4: a genuine white flamingo gentleman - small refined skull, fine feather stipple, one heavy-lidded eye with a proper dark iris, the thick pale bill bending steeply down to a solid black tip, the white collar band and the knit V-neck vest across the shoulders. Pose 4: seated from behind and a little to his left, head turned to his right, but it lands nearer full profile than three-quarter. Seat 5: down in the left chair at the block-in's scale, the studded chair back correctly in front of his lower body, nothing floating. Cleanliness 3 and that is what fails him: the sticker carries a long marble-vein crack and a small marble chip floating free to the right of his hand, a thin shelf/rail line at the shoulder, and a soft pale rim around the head and bill that reads as a halo when he is laid on the dark panelling.",
+      "thumb": "2026-09-08/thumbs/066.jpg"
+    },
+    {
+      "num": "067",
+      "title": "Drew seated left - team 5 round 1 - route S seed 7",
+      "verdict": "FAIL, 5/20 - the worst seed of the round and a total head collapse. Identity 1: no head at all, only a detached feathered crescent floating high over the window with a wide grey smear under it; no eye, no bill, no collar, no hands. Pose 1: the body is a knit-textured lump with no readable turn and no arms. Seat 2: the torso is roughly in the chair but the head fragment floats free above the room. Cleanliness 1: the sticker carries the studded chair rail along its whole bottom edge and a slab of marble counter off to the right.",
+      "thumb": "2026-09-08/thumbs/067.jpg"
+    },
+    {
+      "num": "068",
+      "title": "Drew seated left - team 5 round 1 - route S seed 21",
+      "verdict": "FAIL, 7/20. Identity 1: the head is a small feathered lump with no eye at all and a heavy hooked hornbill bill hanging off it, joined to the neck by a thread; the body is one undifferentiated feathered mass with no knit vest reading and no hands. Pose 2: the head does turn to his right over the shoulder, which is the only part of the staging that survives. Seat 2: the body sits in the chair at roughly the right scale, but a marble slab floats on the counter beside him. Cleanliness 1: chair rail along the bottom edge and a marble slab chunk to the right, both inside the sticker.",
+      "thumb": "2026-09-08/thumbs/068.jpg"
+    },
+    {
+      "num": "069",
+      "title": "Team 5 Abby round 1 - route S seed 44 laid preview - BEST",
+      "verdict": "BEST OF THE ROUND, 13/20 - REJECT but the first Abby that is actually Abby. Identity 4: a real West Highland terrier lady, the portrait's own round soft skull, two pricked ears, big black nose and short square muzzle, drawn solid and joined to the neck, in her light blouse with the studded collar and teardrop pendant - huggable and professional, fur laid in individual strokes. Short of 5 only on her eye rule (the eyes are dark almonds with lashes and one catchlight but no white showing both sides of a drawn iris and no smaller round pupil) and on the warm closed-lip half-smile, which reads flat. Pose 3: she stands behind the ledge facing the room at the block-in's place, but the head is essentially frontal where the block-in marks a three-quarter turn (both eyes equal, no far-eye foreshortening) and neither hand is on a working object. Seat 4: right place, right scale, head and collar clear above the counter, counter in front of the lower body, nothing floating. Cleanliness 2: the sticker carries a dark studded counter rail and a whole slab of veined marble across the bottom third, painted where her torso belongs between the ledge line and the counter mask, so she lays as marble-on-marble; the figure itself is whole and nothing is cut off.",
+      "thumb": "2026-09-08/thumbs/069.jpg"
+    },
+    {
+      "num": "070",
+      "title": "Drew seated left - team 5 round 1 - route S seed 41",
+      "verdict": "FAIL, 10/20 - the best wardrobe of the round wasted on a collapsed head. Identity 2: white collar, black bow tie, knit V-neck vest and a feathered hand round a martini all read beautifully, but above the neck there is no skull and no eye - only a folded ribbon or wedge with a black-tipped hook, exactly the failure the earlier lab named. Pose 2: he is turned nearer three-quarter FRONT than seen from behind, and the head reads nothing. Seat 4: correctly down in the left chair at the block-in's scale with the chair back in front of his lower body. Cleanliness 2: the sticker carries the martini glass and its marble reflection, a dark scrap beside the bow tie and a dark rail fragment along the bottom.",
+      "thumb": "2026-09-08/thumbs/070.jpg"
+    },
+    {
+      "num": "071",
+      "title": "Team 5 Abby round 1 - route S seed 7 laid preview",
+      "verdict": "REJECT, 6/20. Identity 1: the split is back - a HUMAN WOMAN with long dark hair, hoop earrings, a human face and human hands with painted nails stands in the block-in's place wearing Abby's own studded collar and teardrop gem, and the westie is demoted to a small pet sitting at her right shoulder in a second collar. The portrait was read as 'woman and her dog', not as one terrier lady. Pose 2: the torso is roughly at the block-in's place with both hands down on the marble, but the head is a human head and the block-in's marked skull, ears and nose are ignored. Seat 2: scale is plausible, but a slab of veined marble came into the sticker and lays over the plate's own marble as a floating block. Cleanliness 1: two figures, the marble slab, the counter rail band, and the top of her hair fades off unfinished at the top of the drawn area.",
+      "thumb": "2026-09-08/thumbs/071.jpg"
+    },
+    {
+      "num": "072",
+      "title": "Team 5 Abby round 1 - route S seed 21 laid preview",
+      "verdict": "REJECT, 6/20. Identity 1: a human woman again - long dark hair falling over a human face, human hands - bent over the ledge in the block-in's place, with only a stray white paw and a scrap of fur at her left to stand for the terrier. Not one westie feature is drawn where the block-in marks the skull, ears and nose. Pose 2: the body leans forward over the ledge instead of standing to it, and the head is human and largely hidden by hair. Seat 2: about the right scale and place, but the sticker's marble slab lays over the plate's marble so the whole lower half reads as a floating block. Cleanliness 1: bottles and a piece of the back-bar shelf ride along at her left, a big marble slab with a hatched apron rides along below, 39 blobs, and the top of her head fades off unfinished.",
+      "thumb": "2026-09-08/thumbs/072.jpg"
+    },
+    {
+      "num": "073",
+      "title": "Team 5 Abby round 1 - route S seed 41 laid preview",
+      "verdict": "REJECT, 6/20 - the worst of the round. Identity 1: a smiling human woman in Abby's blouse and studded collar with the teardrop gem, flanked by TWO separate westie dogs, one at each shoulder, the right-hand one wearing a second studded collar and pendant of its own. Three creatures where the brief asks for one, and none of them is Abby. Pose 2: the torso stands at about the block-in's place facing the room, but the head is human and the block-in's head is ignored. Seat 2: plausible scale, but the sticker's marble slab and the dogs' forelegs lay over the plate's own counter so nothing sits in the room properly. Cleanliness 1: three figures, a bottle, the counter rail band and a marble slab - 43 blobs, the dirtiest key of the four (0.6374 outside the sticker).",
+      "thumb": "2026-09-08/thumbs/073.jpg"
+    },
+    {
+      "num": "074",
+      "title": "Team 5 Abby round 1 contact sheet - route S, four seeds",
+      "verdict": "Round 1 FAILS. Seed 44 is best at 13/20 (identity 4, pose 3, seat 4, cleanliness 2) and is the first Abby in the studio that is genuinely the portrait's terrier lady; seeds 7, 21 and 41 all score 6/20 on the same fault, a human woman drawn in her place with the westie relegated to a pet beside her (two pets on seed 41). One change for round 2: an --extra-edit that names the failure - Abby is ONE creature, the terrier head on her own shoulders, never a human head or hair, never a separate dog or pet on the page. The negative prompt's 'humans, duplicate character' does not stop it, and the numbered EDIT text is what moved this same model on Drew's head earlier today. The marble slab in every sticker is round 3's change (a tighter roi or an explicit 'draw her torso, not the marble, below the ledge line'), not this round's.",
+      "thumb": "2026-09-08/thumbs/074.jpg"
+    },
+    {
+      "num": "075",
+      "title": "Drew - team 5 round 1 contact sheet - four seeds on the settled route S recipe",
+      "verdict": "ROUND 1 DOES NOT PASS. seed 44 = 16/20 (identity 4, pose 4, seat 5, cleanliness 3) - the best Drew the studio has made, one point short; seed 41 = 10/20; seed 21 = 7/20; seed 7 = 5/20. The single thing standing between seed 44 and a pass is the cut, not the render: the key kept TWO components instead of one, the second being ink that ran from his hand out along the marble, and the block-in cut then chopped that into free-floating marble crumbs beside him. Re-keying seed 44's own saved render at --white-thresh 226 (simulated through the script's own route-S key path, no GPU) drops the second component entirely - 2 kept components to 1, stray islands to zero - while the head's topmost blob height is unchanged at 527px and figure coverage only moves 0.867 to 0.847. That is round 2's one change.",
+      "thumb": "2026-09-08/thumbs/075.jpg"
+    },
+    {
+      "num": "076",
+      "title": "Barclay route S team5 round 1 seed 44 - the block-in's snout comes back as a BIRD'S BILL",
+      "verdict": "NO. identity 1, pose 2, seat 4, cleanliness 1 = 8/20. The model filled the block-in's long tapering snout LITERALLY and drew a bill - a flat pointed beak with a bird's mouth-line - on a long shaggy neck, with the eye riding high on the forehead and one drop dog ear behind it. That is not the golden retriever in canon/vision/studies/barclay.png. What DID come through is the wardrobe: dark tweed blazer, open pale collar, one small flag pin on the lapel. POSE: square to the camera with both arms folded across the chest and the whole lapel showing, not seen from behind and a little to his right as figure-barclay-02-toward stages him; the head is at least turned to his left, toward Drew. SEAT: fills the block-in well, sits in the RIGHT chair at the block-in's scale, the chair's roll in front of the lower body, nothing floating - only the crown rides about 15px above the block-in's. CLEANLINESS: the sticker carries the tufted chair back with its sunburst buttons on the right, a studded chair rail across the bottom, a slab of marble at the left, and a flat rectangular block of hatching where the block-in's ear box is - which also squares off the top-right of the head. cleanliness 0.1192, room drift 0.9359, 100.7s.",
+      "thumb": "2026-09-08/thumbs/076.jpg"
+    },
+    {
+      "num": "077",
+      "title": "Barclay route S team5 round 1 seed 44 - the block-in's snout comes back as a BIRD'S BILL - the keyed RGBA sticker",
+      "verdict": "NO. identity 1, pose 2, seat 4, cleanliness 1 = 8/20. The model filled the block-in's long tapering snout LITERALLY and drew a bill - a flat pointed beak with a bird's mouth-line - on a long shaggy neck, with the eye riding high on the forehead and one drop dog ear behind it. That is not the golden retriever in canon/vision/studies/barclay.png. What DID come through is the wardrobe: dark tweed blazer, open pale collar, one small flag pin on the lapel. POSE: square to the camera with both arms folded across the chest and the whole lapel showing, not seen from behind and a little to his right as figure-barclay-02-toward stages him; the head is at least turned to his left, toward Drew. SEAT: fills the block-in well, sits in the RIGHT chair at the block-in's scale, the chair's roll in front of the lower body, nothing floating - only the crown rides about 15px above the block-in's. CLEANLINESS: the sticker carries the tufted chair back with its sunburst buttons on the right, a studded chair rail across the bottom, a slab of marble at the left, and a flat rectangular block of hatching where the block-in's ear box is - which also squares off the top-right of the head. cleanliness 0.1192, room drift 0.9359, 100.7s.",
+      "thumb": "2026-09-08/thumbs/077.jpg"
+    },
+    {
+      "num": "078",
+      "title": "Barclay route S team5 round 1 seed 7 - a bill again, and the block-in's two eye circles drawn as two eyes",
+      "verdict": "NO. identity 1, pose 2, seat 4, cleanliness 1 = 8/20. The same bill as seed 44, and worse above it: the block-in draws TWO overlapping circles for the eye and this seed drew BOTH of them - a dark lidded eye beside a bare bulging eyeball with no lid - on the crown of the skull. The coat came back speckled and ticked like a shorthaired pointer rather than a retriever's layered feathering, on a long ostrich neck. Wardrobe is right again: tweed blazer, open collar, flag pin, and the round-dialled wristwatch actually drawn on the wrist. POSE square to the camera, hands together in front, head profile to his left - the head turn is right, the body is not. SEAT good: block-in scale, right chair, chair in front, nothing floating. CLEANLINESS: studded chair rail across the bottom, marble slab at the left, a grey haze at the right edge. cleanliness 0.2119, room drift 0.9356, 114.7s.",
+      "thumb": "2026-09-08/thumbs/078.jpg"
+    },
+    {
+      "num": "079",
+      "title": "Barclay route S team5 round 1 seed 7 - a bill again, and the block-in's two eye circles drawn as two eyes - the keyed RGBA sticker",
+      "verdict": "NO. identity 1, pose 2, seat 4, cleanliness 1 = 8/20. The same bill as seed 44, and worse above it: the block-in draws TWO overlapping circles for the eye and this seed drew BOTH of them - a dark lidded eye beside a bare bulging eyeball with no lid - on the crown of the skull. The coat came back speckled and ticked like a shorthaired pointer rather than a retriever's layered feathering, on a long ostrich neck. Wardrobe is right again: tweed blazer, open collar, flag pin, and the round-dialled wristwatch actually drawn on the wrist. POSE square to the camera, hands together in front, head profile to his left - the head turn is right, the body is not. SEAT good: block-in scale, right chair, chair in front, nothing floating. CLEANLINESS: studded chair rail across the bottom, marble slab at the left, a grey haze at the right edge. cleanliness 0.2119, room drift 0.9356, 114.7s.",
+      "thumb": "2026-09-08/thumbs/079.jpg"
+    },
+    {
+      "num": "080",
+      "title": "Barclay route S team5 round 1 seed 21 - BEST OF THE ROUND, a real golden retriever in the block-in's own pose",
+      "verdict": "BEST OF THE ROUND, and the first render that is BARCLAY. identity 4, pose 5, seat 5, cleanliness 2 = 16/20 - a FAIL by one point, on cleanliness alone. IDENTITY: a genuine golden retriever head - a broad modelled muzzle with a black button nose, whisker pips in rows, a closed lip line hooking clearly UP into a warm smile, a drop ear rooting level with the eye and finishing in separate fringe strokes, a modest ruff, layered fur drawn in individual strokes. Wardrobe is the portrait's: dark tweed blazer with a real notched lapel carrying one well-formed flag pin, the pale open collar showing at the throat. Marked 4 not 5 because the eye is heavier-lidded and sleepier than the portrait's, with almost no white showing, and the shirt is nearly swallowed by the blazer. POSE 5: this is figure-barclay-02-toward exactly - seen from BEHIND and a little to his right, the back and far shoulder of the blazer toward us, the head turned to his LEFT into clean profile toward Drew's chair, muzzle and eye both readable, never square to the camera. SEAT 5: he fills the block-in almost line for line - crown, shoulder, back, near arm to the marble - in the RIGHT chair at the block-in's own scale, with the plate's chair roll in front of the lower body and nothing floating. CLEANLINESS 2 is what costs him the pass: the sticker carries a studded chair top-rail across the bottom that the model drew ABOVE the plate chair's own mask (so the occluder cut could not take it), a slab of marble counter with small marks on it at the left, and a vertical hatched panel at the right. The head itself is solid, joined to the neck, and nothing is cut off. cleanliness 0.2408, room drift 0.9447, 114.6s.",
+      "thumb": "2026-09-08/thumbs/080.jpg"
+    },
+    {
+      "num": "081",
+      "title": "Barclay route S team5 round 1 seed 21 - BEST OF THE ROUND, a real golden retriever in the block-in's own pose - the keyed RGBA sticker",
+      "verdict": "BEST OF THE ROUND, and the first render that is BARCLAY. identity 4, pose 5, seat 5, cleanliness 2 = 16/20 - a FAIL by one point, on cleanliness alone. IDENTITY: a genuine golden retriever head - a broad modelled muzzle with a black button nose, whisker pips in rows, a closed lip line hooking clearly UP into a warm smile, a drop ear rooting level with the eye and finishing in separate fringe strokes, a modest ruff, layered fur drawn in individual strokes. Wardrobe is the portrait's: dark tweed blazer with a real notched lapel carrying one well-formed flag pin, the pale open collar showing at the throat. Marked 4 not 5 because the eye is heavier-lidded and sleepier than the portrait's, with almost no white showing, and the shirt is nearly swallowed by the blazer. POSE 5: this is figure-barclay-02-toward exactly - seen from BEHIND and a little to his right, the back and far shoulder of the blazer toward us, the head turned to his LEFT into clean profile toward Drew's chair, muzzle and eye both readable, never square to the camera. SEAT 5: he fills the block-in almost line for line - crown, shoulder, back, near arm to the marble - in the RIGHT chair at the block-in's own scale, with the plate's chair roll in front of the lower body and nothing floating. CLEANLINESS 2 is what costs him the pass: the sticker carries a studded chair top-rail across the bottom that the model drew ABOVE the plate chair's own mask (so the occluder cut could not take it), a slab of marble counter with small marks on it at the left, and a vertical hatched panel at the right. The head itself is solid, joined to the neck, and nothing is cut off. cleanliness 0.2408, room drift 0.9447, 114.6s.",
+      "thumb": "2026-09-08/thumbs/081.jpg"
+    },
+    {
+      "num": "082",
+      "title": "Barclay route S team5 round 1 seed 41 - REJECT, a pedestal table and a tufted settee drawn where the head belongs",
+      "verdict": "REJECT, the worst of the four. identity 3, pose 1, seat 1, cleanliness 0 = 5/20. The head slot of the block-in was filled by FURNITURE: a round pedestal table on a turned column with a whole button-tufted settee standing on it, sprouting from the top of his skull, and the dog himself drawn small and low underneath it. IDENTITY 3 - the face that IS there is actually the closest of the four to the official portrait (soft worried brow, heavy-lidded gentle eyes, the closed smile, black nose, cream coat, tweed blazer over an open collar, a rocks glass in the hand) but the lapel carries TWO flag pins, one above the other. POSE 1: square to the camera, head not turned, glass raised - none of the block-in's staging. SEAT 1: he is drawn well below and well inside the block-in, at maybe two thirds its scale, so his crown sits where the block-in's throat is and the settee floats above him. CLEANLINESS 0: table, settee, rocks glass with a stirrer and a cherry, a chair arm rail across his lap, a grey halo rectangle behind his right shoulder, marble at the left. This is the render that triggered the script's own dirty-key warning - the model changed 36 percent of everything outside the sticker. cleanliness 0.3580, room drift 0.8691, 112.9s.",
+      "thumb": "2026-09-08/thumbs/082.jpg"
+    },
+    {
+      "num": "083",
+      "title": "Barclay route S team5 round 1 seed 41 - REJECT, a pedestal table and a tufted settee drawn where the head belongs - the keyed RGBA sticker",
+      "verdict": "REJECT, the worst of the four. identity 3, pose 1, seat 1, cleanliness 0 = 5/20. The head slot of the block-in was filled by FURNITURE: a round pedestal table on a turned column with a whole button-tufted settee standing on it, sprouting from the top of his skull, and the dog himself drawn small and low underneath it. IDENTITY 3 - the face that IS there is actually the closest of the four to the official portrait (soft worried brow, heavy-lidded gentle eyes, the closed smile, black nose, cream coat, tweed blazer over an open collar, a rocks glass in the hand) but the lapel carries TWO flag pins, one above the other. POSE 1: square to the camera, head not turned, glass raised - none of the block-in's staging. SEAT 1: he is drawn well below and well inside the block-in, at maybe two thirds its scale, so his crown sits where the block-in's throat is and the settee floats above him. CLEANLINESS 0: table, settee, rocks glass with a stirrer and a cherry, a chair arm rail across his lap, a grey halo rectangle behind his right shoulder, marble at the left. This is the render that triggered the script's own dirty-key warning - the model changed 36 percent of everything outside the sticker. cleanliness 0.3580, room drift 0.8691, 112.9s.",
+      "thumb": "2026-09-08/thumbs/083.jpg"
+    },
+    {
+      "num": "084",
+      "title": "Barclay route S team5 round 1 - the contact sheet, four laid crops with seed and total",
+      "verdict": "ROUND 1 DOES NOT PASS: best total 16/20 (seed 21), one point short of 17, and one score below 4. THE ROUTE IS RIGHT AND THE BLOCK-IN IS RIGHT: all four seeds sat in the RIGHT chair at the block-in's own scale with the chair in front of the lower body, and seed 21 filled the block-in almost line for line in exactly its staging - from behind and a little to his right, head turned left into profile toward Drew - which is the thing every earlier route failed at. TWO FAULTS RUN THROUGH THE ROUND. (1) THE HEAD COLLAPSES AT THREE SEEDS OF FOUR, and the block-in is why: Barclay's figure-barclay-02-toward snout is a long tapering spike with a ball at its tip, drawn at the flamingo's proportions, so a model that fills it literally draws a BIRD'S BILL - seeds 44 and 7 both did, and seed 7 also drew both of the block-in's two overlapping eye circles as two separate eyes. Seed 41 filled the head slot with a pedestal table and a settee instead. Only seed 21 read the spike as a dog's muzzle. (2) EVERY STICKER CARRIES FURNITURE THE MODEL INVENTED ON THE WHITE SHEET - a marble counter slab at the left on all four, a studded chair top-rail across the bottom on all four drawn ABOVE the plate chair's own mask so the occluder cut cannot reach it, plus a tufted chair back (44), a grey haze (7), and a table, a settee, a glass and a halo (41). That is what holds the best seed to cleanliness 2 and costs the round its pass. ROUND 2 CHANGES ONE THING: a single --extra-edit forbidding the model to draw ANY object or furniture on the sheet outside the character's own outline. Cleanliness is the only score seed 21 lost, so it is the only score that has to move for a pass; the head collapse costs seeds, not the round, and four fresh seeds under a clean sheet should land one.",
+      "thumb": "2026-09-08/thumbs/084.jpg"
+    },
+    {
+      "num": "085",
+      "title": "All three in the scene for the first time: Drew, Barclay and Abby as stickers on the winning recipe (seed 44 each)",
+      "verdict": "Milestone: the whole cast is in the room. Sent to the founder for direction.",
+      "thumb": "2026-09-08/thumbs/085.jpg"
+    },
+    {
+      "num": "086",
+      "title": "whole-plate assembled with bartenders-marble-ledge back-bar-carcass back-bar-lower-shelf bottles-on-lower-shelf bottles-on-upper-shelf back-bar-upper-shelf television-blank chalkboard-blank window-frame-and-reveal window-glass-street-view main-bar-marble-counter left-leather-club-chair right-leather-club-chair and window-sign",
+      "verdict": null,
+      "thumb": "2026-09-08/thumbs/086.jpg"
+    },
+    {
+      "num": "087",
+      "title": "Abby route S team 5 round 2 seed 44 - one terrier lady, but the far eye is gone",
+      "verdict": "12/20. identity 3 - one creature at last, no pet, collar and pendant and blouse right, but the muzzle drifts wheaten rather than westie and the head is turned so far that the FAR EYE IS NOT DRAWN AT ALL, which breaks her own eye rule; the hand on the ledge is a human hand with painted nails, not a fur-backed dog hand. pose 3 - body square to the room, head past three-quarter into near profile. seat 4 - right place, right scale, counter across the lower body, nothing floating. cleanliness 2 - the sticker carries a slab of invented back-bar, the marble ledge and the studded counter lip along with her.",
+      "thumb": "2026-09-08/thumbs/087.jpg"
+    },
+    {
+      "num": "088",
+      "title": "Abby route S team 5 round 2 seed 7 - the edit did not take, still a woman and her dog",
+      "verdict": "5/20. identity 1 - a human woman with dark hair and a human face wearing Abby's studded collar and pendant, with a separate live westie sitting on the ledge beside her; the exact split the edit forbids, drawn anyway. pose 1 - she faces the reader and smiles out of the panel, nothing like the block-in. seat 2 - she is at the ledge at the block-in's scale with the counter in front, but a dog sits ON the ledge and a stirred glass floats at her hand. cleanliness 1 - the sticker carries a whole second figure, the glass, the marble slab and the ledge.",
+      "thumb": "2026-09-08/thumbs/088.jpg"
+    },
+    {
+      "num": "089",
+      "title": "Abby route S team 5 round 2 seed 21 - a woman with no face and a westie at her elbow",
+      "verdict": "5/20. identity 1 - a human woman in long black hair, no terrier head at all, and a westie pet standing at her left; both halves of the banned split present at once. pose 1 - the head is a smear of hair with no face, no eye and no muzzle, and she hunches square over the ledge. seat 2 - right place and scale, counter in front, but the pet floats at the left edge. cleanliness 1 - second figure, marble slab, a solid black hatched block and bottle shapes all keyed in; the head is not solid.",
+      "thumb": "2026-09-08/thumbs/089.jpg"
+    },
+    {
+      "num": "090",
+      "title": "Abby route S team 5 round 2 seed 41 - BEST - the westie lady herself, one figure, both eyes",
+      "verdict": "16/20, best of the round and one point short of PASS. identity 5 - this is the official portrait's Abby: a groomed show-westie skull with two small pricked ears, a short square muzzle and a small black nose, and both eyes drawn to her own rule - white showing at each side of a drawn circular iris, a smaller round pupil, one catchlight, a lashed upper lid - over a closed-lip mouth, with the studded leather collar and its teardrop gem pendant at her throat and the pale blouse with rolled sleeves; fur laid in individual strokes, huggable and professional. pose 4 - standing behind the ledge facing the room as the block-in stages her, head turned a touch to her right, both eyes and the muzzle fully readable, though she reads closer to frontal than to a true three-quarter. seat 4 - dead on the block-in's place and scale, the counter across her lower body, nothing floating. cleanliness 3 - THE ONLY THING KEEPING HER FROM A PASS: the sticker carries a vertical strip of invented back-bar shelving beside her right arm, a small fur-or-foliage tuft at that shoulder, and the black studded counter lip along the bottom. The key cannot cut them out - the sidecar says kept 1 blob of 84163px, so the model drew that furniture JOINED to her body on a sheet that should have stayed blank paper behind her.",
+      "thumb": "2026-09-08/thumbs/090.jpg"
+    },
+    {
+      "num": "091",
+      "title": "Abby route S team 5 round 2 seed 41 - the keyed RGBA sticker on white",
+      "verdict": "Head solid and joined to the neck, nothing of her cut off, no second figure and no glassware - a real improvement on round 1. Remaining dirt is furniture only: the back-bar strip, one fur tuft at that shoulder, and the counter lip. cleanliness 3/5.",
+      "thumb": "2026-09-08/thumbs/091.jpg"
+    },
+    {
+      "num": "092",
+      "title": "Abby team 5 round 2 contact sheet - four laid crops with seed and total",
+      "verdict": "Round 2 does NOT pass: best is seed 41 at 16/20, held one point short by cleanliness 3. Next round changes one thing only - a second numbered EDIT that keeps the paper behind her blank, so the model stops drawing a back-bar and a counter lip that the key then cannot separate from her body.",
+      "thumb": "2026-09-08/thumbs/092.jpg"
+    },
+    {
+      "num": "093",
+      "title": "Drew round 2 seed 44 - white flamingo gentleman seated in the left chair, laid with Abby",
+      "verdict": "KEEP - the best Drew the studio has made. identity 4, pose 5, seat 5, cleanliness 4, total 18/20, PASSES. The head is the official portrait's: small refined skull under a feather stipple, heavy-lidded eye with a real pupil and a catchlight, a nostril slit, the bill bending down to a solid black tip. He is seated in the left chair from behind and a little to his left with his head turned to his right in three-quarter, at the block-in's scale, the chair in front of his lower body, both wing-hands landing on the marble. Knit V-neck vest, white collar and a black bow tie all read. Faults: two thin marble-edge slivers ride along to the right of his hands and a dark hatched shadow wedge sits at the lower right of the sticker; the skull and neck are a little heavier than the study's.",
+      "thumb": "2026-09-08/thumbs/093.jpg"
+    },
+    {
+      "num": "094",
+      "title": "Drew round 2 seed 7 - the model drew no head at all",
+      "verdict": "REJECT - identity 0, pose 0, seat 1, cleanliness 0, total 1/20. There is no bird. The neck ends in a stump; a severed piece of bill floats in the air above and to the right of it with a grey smear behind it, and the torso is a bare knit hump. The cut is as bad as the drawing: the sticker carries the studded chair rail along its whole bottom edge, a wedge of the marble slab, and a small card lying on the counter. The tighter ink test did not touch this failure, which confirms it is the drawing collapsing, not the key.",
+      "thumb": "2026-09-08/thumbs/094.jpg"
+    },
+    {
+      "num": "095",
+      "title": "Drew round 2 seed 21 - a stub head on a neck that never joins the body",
+      "verdict": "REJECT - identity 1, pose 1, seat 2, cleanliness 1, total 5/20. The head collapsed to a stub and the bill swelled to a great dark hook to fill the gap; there is no eye, and the neck is drawn in hard scales, a reptile's neck, not a flamingo's feathered one. Worse, the neck never joins the torso - there is clear white between the two, so the sticker is a head floating above a body. It also carries a fragment of cracked marble off to the right and the chair rail's studs along the bottom.",
+      "thumb": "2026-09-08/thumbs/095.jpg"
+    },
+    {
+      "num": "096",
+      "title": "Drew round 2 seed 41 - the wardrobe is right and the head was never painted",
+      "verdict": "REJECT - identity 1, pose 2, seat 4, cleanliness 2, total 9/20. From the neck down this is the best-dressed Drew of the four: knit V-neck vest, a crisp white collar, a black bow tie, seated at the right scale with the chair in front of his lower body. From the neck up the model never painted anything - the head and neck are the mid-grey band of the block-in itself, passed through as a flat hatched shape with no skull, no eye and no feather, only the bill's silhouette and its black tip surviving. Because that band is darker than the ink test, the key happily kept it and the measurements read it as a full-height head. The sticker also carries the tumbler in his hand and a marble sliver at the right.",
+      "thumb": "2026-09-08/thumbs/096.jpg"
+    },
+    {
+      "num": "097",
+      "title": "Drew round 2 contact sheet - four seeds side by side, seed 44 is the one",
+      "verdict": "Round 2 PASSES on seed 44 at 18/20. Seed 44's sticker and laid preview go forward as Drew; seeds 7, 21 and 41 are rejected. Recommend showing the founder seed 44 for approval rather than spending another round, and if he wants the last two points, a round 3 that only tightens the head - a --extra-edit naming the small refined skull, the heavy-lidded eye and the feather stipple - rather than touching Picture 1, which is now working.",
+      "thumb": "2026-09-08/thumbs/097.jpg"
+    },
+    {
+      "num": "098",
+      "title": "Barclay round 2 - route S seed 44 (t5r2), laid with Abby + Drew",
+      "verdict": "REJECT - total 3/20 (identity 1, pose 1, seat 1, cleanliness 0). The head collapsed into a long duck bill grafted onto a retriever skull at giant scale, and a whole second scene rode along in the sticker: a tufted club chair, a side table, a tumbler, a rug and a small correct-looking second Barclay seated in it. Nothing is at the block-in's staging.",
+      "thumb": "2026-09-08/thumbs/098.jpg"
+    },
+    {
+      "num": "099",
+      "title": "Barclay round 2 - route S seed 7 (t5r2), laid with Abby + Drew",
+      "verdict": "REJECT - total 3/20 (identity 1, pose 1, seat 1, cleanliness 0). A small bird-billed head with retriever ears sits on a long scaled neck wearing a bib; below it the torso IS a tufted chesterfield arm with a cuff and a wristwatch. No readable body, no correct species, furniture is most of the sticker.",
+      "thumb": "2026-09-08/thumbs/099.jpg"
+    },
+    {
+      "num": "100",
+      "title": "Barclay round 2 - route S seed 21 (t5r2), laid with Abby + Drew",
+      "verdict": "BEST OF THE ROUND but still short - total 14/20 (identity 4, pose 4, seat 4, cleanliness 2). A real golden retriever gentleman: refined muzzle with whisker dots, dark nose, floppy ear, heavy-lidded human-looking eye with one catchlight, closed-lip smile, dark blazer over an open-collared shirt with the small flag pin. Seen from behind and a little to his right with the head turned to his left toward Drew, sitting on the block-in almost exactly (93.5% of the block-in covered) with the right club chair in front of his lower body. The sticker still carries the chair's studded top rail across his lap, a hatched marble wedge at his right and a cuff/stem fragment at his left, and the laid preview shows that rail doubled against the plate's own.",
+      "thumb": "2026-09-08/thumbs/100.jpg"
+    },
+    {
+      "num": "101",
+      "title": "Barclay round 2 - route S seed 41 (t5r2), laid with Abby + Drew",
+      "verdict": "REJECT - total 8/20 (identity 2, pose 2, seat 3, cleanliness 1). The wardrobe is right - dark blazer, open collar, flag pin - but the head is a goose/duck bill with retriever ears instead of a muzzle, the body is turned to the camera rather than seen from behind, and a tumbler and two grey marble wedges plus a rail band ride along. The run also tripped the dirty-key warning (the model re-inked 59% of the room).",
+      "thumb": "2026-09-08/thumbs/101.jpg"
+    },
+    {
+      "num": "102",
+      "title": "Barclay round 2 contact sheet - four seeds side by side, seed 21 is the one",
+      "verdict": "Seed 21 (14/20) is the round's only usable Barclay; 44 and 7 are 3/20, 41 is 8/20. Round 2 does not PASS - the threshold is 17 with nothing below 4, and seed 21's cleanliness is 2.",
+      "thumb": "2026-09-08/thumbs/102.jpg"
+    },
+    {
+      "num": "103",
+      "title": "Abby route S team 5 round 3 seed 44 - one creature, but the skull has no ears and a toothy grin",
+      "verdict": "10/20. identity 2 - one creature and no pet, and the studded collar, teardrop pendant and open pale blouse are all right, but the head is not Abby: no pricked ears anywhere, the skull cut flat across the top, the eyes tiny and crowded against that edge, and a wide open toothy grin instead of her closed-lip half-smile. pose 2 - body square to the room and both eyes on the paper, but the head is malformed and truncated rather than staged. seat 4 - right place, right scale, the counter across her lower body, nothing floating. cleanliness 2 - 3 blobs kept: a marble slab, the black studded counter lip and dark panel scraps at both elbows ride along with her, and the head is not whole.",
+      "thumb": "2026-09-08/thumbs/103.jpg"
+    },
+    {
+      "num": "104",
+      "title": "Abby route S team 5 round 3 seed 7 - still a young woman and her westie, exactly as forbidden",
+      "verdict": "5/20. identity 1 - a human woman with a human face, human hair and human hands, plus a separate westie sitting against her shoulder; both halves of the split the edit forbids, drawn anyway. pose 1 - she faces the reader and smiles out of the panel, nothing like the block-in's staging. seat 2 - she is at the ledge at the block-in's scale with the counter in front, but the pet sits up on the ledge beside her. cleanliness 1 - the sticker carries a whole second figure and a marble slab across the bottom.",
+      "thumb": "2026-09-08/thumbs/104.jpg"
+    },
+    {
+      "num": "105",
+      "title": "Abby route S team 5 round 3 seed 21 - a woman with half a head, a westie at her elbow and a wine glass",
+      "verdict": "5/20. identity 1 - a human woman, human face and long human hair, no terrier head at all, with a westie pet standing at her left; the banned split again, and the top of her skull is never painted. pose 1 - she hunches square over the ledge with the crown of her head missing, no muzzle, no readable staging. seat 2 - right place and scale with the counter in front, but the pet and a stemmed glass sit on the ledge with her. cleanliness 1 - second figure, glassware, a marble slab and a solid black hatched block all keyed in; the head is not solid.",
+      "thumb": "2026-09-08/thumbs/105.jpg"
+    },
+    {
+      "num": "106",
+      "title": "Abby route S team 5 round 3 seed 41 - PASS - the westie lady herself on blank paper, 17/20",
+      "verdict": "17/20 - PASS, the first Abby to clear the bar. identity 5 - the official portrait's Abby: groomed westie skull, two pricked ears, short square muzzle, small black nose, closed-lip mouth, large eyes with iris, pupil, catchlight and lashed lid, studded collar and teardrop pendant, pale blouse with rolled sleeves, fur laid in individual strokes; huggable and professional. The only drift from canon is thin whites on the far eye and a slightly furry sweep in the open collar where the canon asks for smooth close-lying fur. pose 4 - standing behind the ledge facing the room as the block-in stages her, both eyes and the muzzle fully readable, one hand on the ledge; she reads dead frontal rather than turned into a true three-quarter. seat 4 - dead on the block-in's place and scale, the counter across her lower body, nothing floating, and she now shares the room with Drew in the left chair and Barclay in the right. cleanliness 4 - one blob, head solid and joined to the neck, nothing cut off, no second figure, no glassware, no back-bar and no shelving; what remains is the black studded counter lip across her waist, a faint marble smear beneath it and two short ledge-line stubs past her sleeves.",
+      "thumb": "2026-09-08/thumbs/106.jpg"
+    },
+    {
+      "num": "107",
+      "title": "Abby round 3 seed 41 - the keyed RGBA sticker on white, the back-bar finally gone",
+      "verdict": "cleanliness 4/5. The fault that held round 2 at 16 is gone - no invented shelving, no bottles, no wall, no second figure, no glassware, no halo, nothing cut off. What is left is furniture the model still insists on drawing at her waist: the studded counter lip and the two ledge-line stubs. Good enough to pass; the next thing to chase if the founder wants a 5.",
+      "thumb": "2026-09-08/thumbs/107.jpg"
+    },
+    {
+      "num": "108",
+      "title": "Abby team 5 round 3 contact sheet - four laid crops with seed and total, seed 41 passes at 17",
+      "verdict": "Round 3 PASSES on seed 41 at 17/20 with identity 5, pose 4, seat 4, cleanliness 4 - no score below 4. Seed 44 10/20, seeds 7 and 21 5/20 each. Abby's sticker for the scene is canon/room-kit/v2/figures/abby-ledge-rS-t5r3-s41.png. If the founder wants the last point, the one change to make is a third edit forbidding the studded counter lip and the ledge horizon line specifically, since that is the only ink left in the sticker that is not her.",
+      "thumb": "2026-09-08/thumbs/108.jpg"
+    },
+    {
+      "num": "109",
+      "title": "Barclay round 3 seed 44 - route S at 40 steps, the block-in inked as a grey cutout",
+      "verdict": "FAIL - total 7/20 (identity 1, pose 2, seat 3, cleanliness 1). Not Barclay: a grey cutout with a printed name label instead of a retriever, and furniture inside the sticker.",
+      "thumb": "2026-09-08/thumbs/109.jpg"
+    },
+    {
+      "num": "110",
+      "title": "Barclay round 3 seed 7 - the whole sheet re-inked, a transparent grey dummy in the chair",
+      "verdict": "FAIL - total 6/20 (identity 1, pose 2, seat 2, cleanliness 1). A ghost of the block-in, not a character; sticker is semi-transparent and carries chair and marble.",
+      "thumb": "2026-09-08/thumbs/110.jpg"
+    },
+    {
+      "num": "111",
+      "title": "Barclay round 3 seed 21 - a photographic human man in the blazer, square to camera",
+      "verdict": "FAIL - total 5/20 (identity 1, pose 1, seat 2, cleanliness 1). Wrong species and photographic: a human face in Barclay clothes, facing the camera, with furniture in the sticker.",
+      "thumb": "2026-09-08/thumbs/111.jpg"
+    },
+    {
+      "num": "112",
+      "title": "Barclay round 3 seed 41 - the block-in traced exactly, as a wooden mannequin",
+      "verdict": "FAIL - total 9/20 (identity 0, pose 3, seat 3, cleanliness 3). Best total of round 3 and still not a character: the staging is exact, the character is absent.",
+      "thumb": "2026-09-08/thumbs/112.jpg"
+    },
+    {
+      "num": "113",
+      "title": "Barclay team 5 round 3 contact sheet - four laid crops, --full traced the block-in on every seed",
+      "verdict": "Round 3 does NOT pass. Best seed 41 at 9/20 (identity 0, pose 3, seat 3, cleanliness 3), then 44 at 7, 7 at 6, 21 at 5 - every one far below the round-2 best of 14. --full is the wrong dial for route S: it buys staging fidelity by copying the under-drawing, and the under-drawing is not a character. Next round: take the 40-step pass off (or blend the block-in back toward white with --under-blend 0.55 if it stays on) and restore the no-objects EDIT that round 2 was carrying.",
+      "thumb": "2026-09-08/thumbs/113.jpg"
+    },
+    {
+      "num": "114",
+      "title": "RETHINK: one whole-scene pass by the house model from the approved room and the three portraits (seed 7)",
+      "verdict": "Direction confirmed by the proof; the founder decides whether the house model draws the whole plate from here.",
+      "thumb": "2026-09-08/thumbs/114.jpg"
+    },
+    {
+      "num": "115",
+      "title": "Whole-scene pass, seed 41: rejected (drifted to a sketchbook page)",
+      "verdict": "Rejected.",
+      "thumb": "2026-09-08/thumbs/115.jpg"
+    },
+    {
+      "num": "116",
+      "title": "s2A pass A seed 7 whole-plate edit",
+      "verdict": "Seating 4/5, identity 2/5, room 4/5, quality 4/5 - TOTAL 14/20. Joint best of the six. Both are seated in their own chairs on the near side of the bar, chair backs in front of their lower bodies, heads turned to each other, nobody behind the bar - the painted block-ins held, and the founder's 'wrong side of the bar' did not recur. The room, the restored window and the gilded sign are clean and seamless. Identity is the failure: Drew's head is a hook-billed vulture, not the flamingo's slender pale bill bending down with its black outer third, and Barclay reads three-quarter front rather than from behind and wears ABBY's studded collar and pendant - the Picture 3 tile carrying Barclay and Abby side by side bled her onto him. Closest of the six to the right two faces, which is why it keeps identity 2.",
+      "thumb": "2026-09-08/thumbs/116.jpg"
+    },
+    {
+      "num": "117",
+      "title": "s2A pass A seed 21 whole-plate edit",
+      "verdict": "Seating 1/5, identity 1/5, room 1/5, quality 3/5 - TOTAL 6/20. Rejected. Barclay became a HUMAN MAN in a suit placed BEHIND the bar - the founder's exact complaint, reproduced - the right club chair is gone from the room altogether, and the television and the panel beside it turned into framed human portraits. The block-in was overridden completely on the right-hand seat.",
+      "thumb": "2026-09-08/thumbs/117.jpg"
+    },
+    {
+      "num": "118",
+      "title": "s2A pass A seed 41 whole-plate edit",
+      "verdict": "Seating 4/5, identity 1/5, room 3/5, quality 3/5 - TOTAL 11/20. Both figures are in their chairs on the near side, so the staging holds, but Barclay is a hook-billed vulture in Abby's studded collar with a written name-card at his throat and a scribbled card in his hand - pseudo-lettering, which the fence forbids anywhere but the code sign. Drew's head is a flat grey cut-out that does not belong to the engraved hand around it.",
+      "thumb": "2026-09-08/thumbs/118.jpg"
+    },
+    {
+      "num": "119",
+      "title": "s2A pass A seed 44 whole-plate edit",
+      "verdict": "Seating 5/5, identity 1/5, room 4/5, quality 4/5 - TOTAL 14/20. Joint best, and the best SEATING of the six by a clear margin: both are genuinely seen FROM BEHIND, each filling his own chair on the near side, chair backs in front of their lower bodies, heads turned to each other - this is duo.png's accepted staging, reproduced. Identity is where it fails, and it fails by SWAP: Drew wears Barclay's dark pinstripe suit while Barclay wears Drew's white collar and bow tie plus Abby's studded collar, both heads are billed birds rather than a flamingo and a retriever, and Barclay carries a botched dark flap where his drop ear should be. Television speckled instead of dark and blank.",
+      "thumb": "2026-09-08/thumbs/119.jpg"
+    },
+    {
+      "num": "120",
+      "title": "s2A pass A seed 3 whole-plate edit",
+      "verdict": "Seating 4/5, identity 1/5, room 3/5, quality 4/5 - TOTAL 12/20. Both seated in their own chairs on the near side with the chair backs in front of them; Barclay reads three-quarter front rather than from behind. Drew is a hook-billed vulture, Barclay a muzzle-billed hybrid wearing Abby's studded collar and pendant. The television lit itself into a speckled night view instead of staying dark and blank. Beautiful pen throughout.",
+      "thumb": "2026-09-08/thumbs/120.jpg"
+    },
+    {
+      "num": "121",
+      "title": "s2A pass A seed 11 whole-plate edit",
+      "verdict": "Seating 3/5, identity 1/5, room 3/5, quality 2/5 - TOTAL 9/20. Rejected. Barclay became a HUMAN MAN with a pipe grafted straight through his face, looking up and away instead of across at Drew, so even the turn of the heads is lost. Drew keeps the knit vest, white collar and bow tie but wears the vulture head again. The grafted pipe alone puts this out of the running.",
+      "thumb": "2026-09-08/thumbs/121.jpg"
+    },
+    {
+      "num": "122",
+      "title": "scene2 PASS A contact sheet - six whole-plate seeds scored",
+      "verdict": "Totals out of 20: seed 44 = 14 (seating 5, identity 1, room 4, quality 4), seed 7 = 14 (seating 4, identity 2, room 4, quality 4), seed 3 = 12, seed 41 = 11, seed 11 = 9, seed 21 = 6. Carry seed 44 and seed 7: 44 has the best seating of the six - both genuinely from behind in their own chairs, duo.png's staging reproduced - and 7 has the closest pair of faces. Seating is SOLVED by the block-ins; identity is the open problem, and the first fix is to stop sending Barclay and Abby on one tile.",
+      "thumb": "2026-09-08/thumbs/122.jpg"
+    },
+    {
+      "num": "123",
+      "title": "s2B1 pass B seed 7 whole-plate edit",
+      "verdict": "Abby 0/5, bottles 2/5, room 3/5, quality 3/5 - TOTAL 8/20. Rejected. ABBY IS NOT IN THE PICTURE AT ALL: the working ledge in front of the recess is as empty as it was in Picture 1. The bottles are the same bottles Picture 1 already had - the same ten on the top shelf with the same gaps, not a real bar's shoulder-to-shoulder back shelf - though their labels are clean crests with no lettering. The window and the gilded sign came back cleanly in code. Cost: the percentile tone-match darkened the recess into mud and blew the marble's hatching to white, and both gentlemen drifted further into scaled reptiles under the model's hand.",
+      "thumb": "2026-09-08/thumbs/123.jpg"
+    },
+    {
+      "num": "124",
+      "title": "s2B2 pass B seed 7 whole-plate edit",
+      "verdict": "PASS B on candidate 2, scored 10/20 (abby 1, bottles 2, room 4, quality 3). Abby never appears: the space behind the working ledge is left as empty panelling. The cause is structural - Picture 1 here is pass A's raw render, which has no Abby and no grey block-in for her, and EDIT 1 tells the model her pose and place 'stay exactly as Picture 1 already has them', so an empty ledge is what it faithfully keeps. Drew and Barclay carry over unchanged, as asked. The bottles hardly move: both shelves keep wide gaps between bottles, flat outlined glass, almost no dark glass and no readable fill lines - though every label is lettering-free with a small emblem, as asked. The room, the restored window and the gilded sign are clean: no seams, no stray lettering, one engraved hand.",
+      "thumb": "2026-09-08/thumbs/124.jpg"
+    },
+    {
+      "num": "125",
+      "title": "s2B1 pass B seed 21 whole-plate edit",
+      "verdict": "Abby 0/5, bottles 2/5, room 3/5, quality 3/5 - TOTAL 8/20. Rejected. No Abby again - the ledge is empty. The bottles are Picture 1's bottles rearranged by a hair, still gapped and still all the same square flask, but no lettering on any label. The room survives, though the panelling above the recess washes out, the window sill doubles where the restored glass meets the bar's left end, and the whole plate reads flatter and greyer than the plate. Barclay is now a scaled head with a beak and he is still wearing Abby's studded collar and pendant.",
+      "thumb": "2026-09-08/thumbs/125.jpg"
+    },
+    {
+      "num": "126",
+      "title": "s2B2 pass B seed 21 whole-plate edit",
+      "verdict": "PASS B on candidate 2, scored 7/20 (abby 0, bottles 2, room 3, quality 2) - the worst of the three. A HUMAN MAN in a top hat is drawn behind the bar where Abby belongs, breaking the cast rule outright; he leans onto the near side of the marble, covers the recess and redraws the working ledge behind him. The bottles are unchanged and now half hidden behind him. His portrait-realist face also breaks the engraved cartoon hand the rest of the plate keeps. Window and sign are clean.",
+      "thumb": "2026-09-08/thumbs/126.jpg"
+    },
+    {
+      "num": "127",
+      "title": "s2B1 pass B seed 44 whole-plate edit",
+      "verdict": "Abby 0/5, bottles 2/5, room 4/5, quality 4/5 - TOTAL 10/20. Best of the three, and still rejected: no Abby anywhere. This is the crispest pen of the pass and the closest to Picture 1 in tone - marble hatching intact, recess clear, window and gilded sign clean - and the top shelf has the best spread of heights. Against it: one label on the top shelf carries a letter-like monogram where only a crest is allowed, a little loose scrawl sits on the bottom edge, and both gentlemen drifted reptilian again.",
+      "thumb": "2026-09-08/thumbs/127.jpg"
+    },
+    {
+      "num": "128",
+      "title": "s2B2 pass B seed 44 whole-plate edit",
+      "verdict": "PASS B on candidate 2, scored 11/20 (abby 1, bottles 3, room 4, quality 3) - the best of the three, and still not close. Abby is absent again, the same structural cause as seed 7; Drew and Barclay are unchanged. The bottles are the best of the three: the upper shelf is fuller and more varied, with a couple of genuinely dark bottles - but still gappy against the approved plate's own shoulder-to-shoulder shelf, fill lines are not drawn, and the lower row is half behind Barclay's head. Room, window and gilded sign clean, no seams. NEXT: paint Abby's block-in (figure-abby-01-ledge) into pass B's Picture 1 - scene-edit.py's build_picture1() skips paint_blockins whenever --pass2 is set - and switch her EDIT from the REDRAW wording to the ADD wording plus the block-in identification sentence.",
+      "thumb": "2026-09-08/thumbs/128.jpg"
+    },
+    {
+      "num": "129",
+      "title": "s2B2 pass B contact sheet - candidate 2, three seeds scored",
+      "verdict": "Seed 44 best at 11/20, seed 7 at 10/20, seed 21 at 7/20 - none acceptable. Abby is missing from every plate: seeds 7 and 44 leave the ledge empty, seed 21 draws a HUMAN man in a top hat there. The cause is structural, not a seed accident: scene-edit.py's build_picture1() only paints block-ins on pass A, so pass B's Picture 1 carries no grey ghost behind the ledge, and the pass-B EDIT for Abby says her pose and place stay exactly as Picture 1 has them - which is empty. The bottles moved hardly at all from Picture 1 and are still gappy, flat and unfilled against the approved plate's own shoulder-to-shoulder shelf, though they are correctly free of lettering. The room, the restored window, the gilded sign and the engraved hand are clean on all three.",
+      "thumb": "2026-09-08/thumbs/129.jpg"
+    },
+    {
+      "num": "130",
+      "title": "scene2 PASS B contact sheet - candidate 1, three seeds scored",
+      "verdict": "Totals out of 20: seed 44 = 10 (abby 0, bottles 2, room 4, quality 4), seed 7 = 8 (0/2/3/3), seed 21 = 8 (0/2/3/3). Seed 44 is the one to carry - crispest pen, closest tone to the plate, best spread of bottle heights - but no seed is deliverable: candidate 1's pass B failed its own job on all three. The fix is structural, not a seed: Abby needs a block-in behind the ledge in Picture 1 (paint_blockins on figure-abby-01-ledge, or run pass A with --abby-in-pass-a), and the bottles need to be exempted from the KEEP-EVERYTHING-ELSE sentence that is currently telling the model to leave them alone.",
+      "thumb": "2026-09-08/thumbs/130.jpg"
+    },
+    {
+      "num": "131",
+      "title": "s2N pass A seed 7 whole-plate edit",
+      "verdict": null,
+      "thumb": "2026-09-08/thumbs/131.jpg"
+    },
+    {
+      "num": "132",
+      "title": "s2N pass A seed 21 whole-plate edit",
+      "verdict": null,
+      "thumb": "2026-09-08/thumbs/132.jpg"
+    },
+    {
+      "num": "133",
+      "title": "s2N pass A seed 44 whole-plate edit",
+      "verdict": null,
+      "thumb": "2026-09-08/thumbs/133.jpg"
+    },
+    {
+      "num": "134",
+      "title": "s2NF pass A seed 7 whole-plate edit",
+      "verdict": null,
+      "thumb": "2026-09-08/thumbs/134.jpg"
+    },
+    {
+      "num": "135",
+      "title": "s2NF pass A seed 44 whole-plate edit",
+      "verdict": null,
+      "thumb": "2026-09-08/thumbs/135.jpg"
+    },
+    {
+      "num": "136",
+      "title": "s3A-barclay pass A seed 7 whole-plate edit",
+      "verdict": null,
+      "thumb": "2026-09-08/thumbs/136.jpg"
+    },
+    {
+      "num": "137",
+      "title": "s3A-barclay pass A seed 7 - block-in heads full, Abby in pass A, Barclay solo P3",
+      "verdict": "Seating right, identity wrong. Drew LEFT and Barclay RIGHT, near side, chair backs in front of their lower bodies - but Drew's head came back a vulture/eagle with a heavy hooked bill over a plaid jacket (no knit vest, no bow tie) and his bill points away from Barclay, not toward him. Barclay reads as a retriever in a dark knit with a white collar and bow tie - the closest identity of the two. Abby is NOT there: a human man in a top hat tends the bar behind the ledge, an added figure the plate never had. Window and sign restored exactly. Bottles varied and plain. Score s1 3, s2 1, s3 2, s4 3 = 9/20.",
+      "thumb": "2026-09-08/thumbs/137.jpg"
+    },
+    {
+      "num": "138",
+      "title": "s3A-barclay pass A seed 44 whole-plate edit",
+      "verdict": null,
+      "thumb": "2026-09-08/thumbs/138.jpg"
+    },
+    {
+      "num": "139",
+      "title": "s3A-barclay pass A seed 44 - block-in heads full, Abby in pass A, Barclay solo P3",
+      "verdict": "Seating holds, the cast turns into an aviary. Both men are on the near side in their own chairs, backs to us, turned inward, chair backs in front of their lower bodies - that part is reliable. Everything above the collar is not: Drew is a duck-dog hybrid in a pinstripe suit (no knit vest), Barclay is a long-necked bird in a dark blazer, and behind the ledge stands a rabbit-billed creature wearing DREW's knit V-neck and bow tie, with a fourth long-necked bird looming over the recess - an extra character the plate never had. A hard-edged black rectangle sits on the right figure's shoulder, a block-in remnant and a visible seam. Window and sign exact. Score s1 3, s2 0, s3 1, s4 2 = 6/20.",
+      "thumb": "2026-09-08/thumbs/139.jpg"
+    },
+    {
+      "num": "140",
+      "title": "s3A-barclay pass A seed 3 whole-plate edit",
+      "verdict": null,
+      "thumb": "2026-09-08/thumbs/140.jpg"
+    },
+    {
+      "num": "141",
+      "title": "s3A-barclay pass A seed 3 - block-in heads full, Abby in pass A, Barclay solo P3",
+      "verdict": "The cleanest staging of the three and still the wrong faces. Drew LEFT, Barclay RIGHT, both near side from behind, turned to each other, chair backs across their laps, one figure behind the ledge and no extras - the blocking the founder asked for. Costumes are close too: the left man wears the knit vest and white sleeves, the right man a dark blazer with a white collar. The heads fail: Drew is a vulture with a heavy hooked bill instead of the slender pale bill that bends down, Barclay is a spotted vulture/turkey rather than a golden retriever, and behind the ledge stands a lynx-eared cat in Drew's own vest and bow tie, not Abby the white Westie. Room, window, sign and bottles all read right - bottles many, varied, plain-labelled, no lettering. Score s1 4, s2 1, s3 4, s4 3 = 12/20 - the best of the A-barclay seeds.",
+      "thumb": "2026-09-08/thumbs/141.jpg"
+    },
+    {
+      "num": "142",
+      "title": "s3A-tile pass A seed 7 whole-plate edit",
+      "verdict": null,
+      "thumb": "2026-09-08/thumbs/142.jpg"
+    },
+    {
+      "num": "143",
+      "title": "s3A-tile pass A seed 7 - block-in heads full, Abby in pass A, Barclay+Abby tile as P3",
+      "verdict": "The tile costs Barclay and does not buy Abby. Seating is right again - both men near side, in their own chairs, backs to us, turned to each other - but Drew is a vulture with a hooked bill in a checked jacket, the right chair holds a pale bird wearing ABBY's studded collar instead of a retriever in a blazer, and behind the ledge is a moustached human barman in a bowler hat, an added person. Sending the two dogs at half size in one tile leaked Abby's collar onto Barclay and gave neither a face. Window, sign and bottles restored clean. Score s1 3, s2 0, s3 2, s4 3 = 8/20.",
+      "thumb": "2026-09-08/thumbs/143.jpg"
+    },
+    {
+      "num": "144",
+      "title": "s3A-tile pass A seed 44 whole-plate edit",
+      "verdict": null,
+      "thumb": "2026-09-08/thumbs/144.jpg"
+    },
+    {
+      "num": "145",
+      "title": "s3A-tile pass A seed 44 - block-in heads full, Abby in pass A, Barclay+Abby tile as P3",
+      "verdict": "Identities swap seats and a fourth animal walks in. The blocking is right - two figures near side in their own chairs from behind, turned to each other, chairs across their laps - but the LEFT chair holds a long-muzzled white setter (a dog where Drew's bill belongs), the RIGHT chair a heavy turkey head with the same hard black rectangle stamped on its shoulder that seed 44 produced in the barclay variant, and the ledge is shared by a cat-eared creature in Drew's knit vest and a flamingo neck rising out of the recess. Window, sign and bottles fine. Score s1 3, s2 0, s3 1, s4 2 = 6/20.",
+      "thumb": "2026-09-08/thumbs/145.jpg"
+    },
+    {
+      "num": "146",
+      "title": "s3A-tile pass A seed 3 whole-plate edit",
+      "verdict": null,
+      "thumb": "2026-09-08/thumbs/146.jpg"
+    },
+    {
+      "num": "147",
+      "title": "s3A-tile pass A seed 3 - block-in heads full, Abby in pass A, Barclay+Abby tile as P3",
+      "verdict": "The best-looking plate of the six and the identities are still not ours. Staging is exactly the ask - Drew LEFT, Barclay RIGHT, near side, backs to us, turned to each other, chair backs across their laps, one figure behind the ledge, no extras, no rectangle artifacts, no seams, one engraved hand throughout, bottles many and varied with plain labels and no lettering, window and sign exact. The heads: Drew is a vulture with a heavy hooked bill instead of a slender pale one, the right chair holds a bird wearing ABBY's studded collar and pendant over a checked waistcoat instead of a retriever gentleman in a dark blazer, and behind the ledge stands a wolfish husky in a waistcoat and bow tie, male-reading, not the white Westie lady. Score s1 4, s2 1, s3 4, s4 4 = 13/20 - the highest of the six.",
+      "thumb": "2026-09-08/thumbs/147.jpg"
+    },
+    {
+      "num": "148",
+      "title": "scene 3 PASS A contact sheet - two variants, three seeds, scored",
+      "verdict": "Seating is solved and identity is not. All six seat Drew LEFT and Barclay RIGHT on the near side from behind with the chair backs across their laps, and all six restore the window and the gilded sign exactly - the block-in heads did stop the headless-neck human men in the chairs. Not one of the six draws a character we own: Drew is a vulture or a setter at every seed, Barclay is a turkey, a vulture or a bird wearing Abby's studded collar, and the ledge is held by a human barman (seed 7, both variants), a lynx or cat in Drew's own knit vest (seed 3 barclay, seed 44 tile), or a wolfish husky (seed 3 tile) - never the white Westie lady. Seed 44 is the worst in both variants: a fourth animal, a flamingo neck out of the recess, and a hard black rectangle stamped on the right figure's shoulder. Seed 3 is the best in both: single figure behind the ledge, no extras, clean engraving. Best two: A-tile seed 3 (13/20) and A-barclay seed 3 (12/20).",
+      "thumb": "2026-09-08/thumbs/148.jpg"
+    },
+    {
+      "num": "149",
+      "title": "s3R2-barclay pass R seed 7 head-repair edit",
+      "verdict": null,
+      "thumb": "2026-09-08/thumbs/149.jpg"
+    },
+    {
+      "num": "150",
+      "title": "s3R1-barclay pass R seed 7 head-repair edit",
+      "verdict": null,
+      "thumb": "2026-09-08/thumbs/150.jpg"
+    },
+    {
+      "num": "151",
+      "title": "s3R2-barclay pass R seed 21 head-repair edit",
+      "verdict": null,
+      "thumb": "2026-09-08/thumbs/151.jpg"
+    },
+    {
+      "num": "152",
+      "title": "Scene 3 repair R1 - Barclay head, candidate 1 (A-tile seed 3), seed 7",
+      "verdict": "FAIL on identity. The head came back unchanged: the same long pointed pale bill, spotted crown, floppy side-ear and studded pendant collar as the input - no golden retriever muzzle, no drop ear with fringe, no dark blazer, no flag pin. Identity 1/5. Everything else IS held: Drew, the extra wolf figure behind the bar, the chairs, the marble, the back bar, the restored window and the gilded sign are all where Picture 1 had them - kept 5/5.",
+      "thumb": "2026-09-08/thumbs/152.jpg"
+    },
+    {
+      "num": "153",
+      "title": "s3R1-barclay pass R seed 21 head-repair edit",
+      "verdict": null,
+      "thumb": "2026-09-08/thumbs/153.jpg"
+    },
+    {
+      "num": "154",
+      "title": "Scene 3 candidate 2 - Barclay head repair, seed 7",
+      "verdict": "FAIL on identity, cost on kept. The head is unchanged in species: same long pointed vulture bill, bald speckled neck, small round bird eye and a stiff rectangular ear-flap - none of the portrait's soft muzzle, black dog nose, drop ear with fringe or warm human-looking eye. Identity 1/5, no rise over the input. Worse, the repair leaked: the figure behind the bar swapped his knit V-neck vest for a dark dinner jacket, both club chairs are redrawn larger with different studding, the marble inlay shifted, and a small colour blob (a blue/red pin) appeared in a black-and-white plate. Kept 3/5. Not a candidate.",
+      "thumb": "2026-09-08/thumbs/154.jpg"
+    },
+    {
+      "num": "155",
+      "title": "Scene 3 candidate 2 - Barclay head repair, seed 21",
+      "verdict": "FAIL on identity, perfect on kept. The model reproduced Picture 1 almost exactly and simply declined to touch the head: the vulture bill, bald speckled neck, bird eye and rectangular ear-flap all come back as they were, so identity is 1/5, no rise over the input. Everything else is held - the V-neck bartender, both chairs, the marble and its inlay, Drew, the restored window and the gilded sign are all as Picture 1 had them; kept 5/5. Read together with seed 7 this says the repair pass cannot pull the head off the bird it inherits: either it copies Picture 1 (seed 21) or it re-inks the room around the same bird (seed 7). The bird has to be stopped before it is drawn, not after.",
+      "thumb": "2026-09-08/thumbs/155.jpg"
+    },
+    {
+      "num": "156",
+      "title": "Scene 3 repair R1 - Barclay head, candidate 1 (A-tile seed 3), seed 21",
+      "verdict": "FAIL on identity, same as seed 7. Side by side with the input the head is the same creature: long pointed pale bill, mottled crown, one big drooping ear flap, studded collar with a teardrop pendant. Not a golden retriever - no soft freckled muzzle, no drop ear with long fringe, no dark blazer over an open collar, no flag pin. Identity 1/5, kept 5/5 (Drew, the extra wolf figure, both chairs, marble, back bar, restored window and gilded sign all unchanged). Two seeds agree: this repair pass does not move that head at all - the model does not accept the billed figure as 'the dog in the right chair', so the REDRAW instruction lands on nothing. Next lever is not another seed: the head must be masked/cropped (a tight Barclay crop the way --bottles-crop does the recess) or the candidate rebuilt from a pass A whose Barclay already reads as a dog.",
+      "thumb": "2026-09-08/thumbs/156.jpg"
+    },
+    {
+      "num": "157",
+      "title": "s3R2-abby pass R seed 7 head-repair edit",
+      "verdict": null,
+      "thumb": "2026-09-08/thumbs/157.jpg"
+    },
+    {
+      "num": "158",
+      "title": "s3R1-abby pass R seed 7 head-repair edit",
+      "verdict": null,
+      "thumb": "2026-09-08/thumbs/158.jpg"
+    },
+    {
+      "num": "159",
+      "title": "s3R2-abby pass R seed 21 head-repair edit",
+      "verdict": null,
+      "thumb": "2026-09-08/thumbs/159.jpg"
+    },
+    {
+      "num": "160",
+      "title": "s3R1-abby pass R seed 21 head-repair edit",
+      "verdict": null,
+      "thumb": "2026-09-08/thumbs/160.jpg"
+    },
+    {
+      "num": "161",
+      "title": "Scene 3 - candidate 2 (A-barclay s3) - Abby head repair, seed 7",
+      "verdict": "REJECT - identity 0/5, kept 4/5. Worse than the input: Abby came back as a grinning HUMAN MAN in a top hat with a moustache - a straight breach of the no-humans fence, and further from the Westie portrait than the cat/owl it replaced. Everything else held: Drew and Barclay keep their seats, poses, drinks and chairs, the room, window view and gilded sign are unchanged; only mild drift in Barclay's chair back.",
+      "thumb": "2026-09-08/thumbs/161.jpg"
+    },
+    {
+      "num": "162",
+      "title": "Scene 3 - candidate 2 (A-barclay s3) - Abby head repair, seed 21",
+      "verdict": "BEST OF THE STEP, still short - identity 2/5, kept 4/5. Genuine gain over the input: Abby now has human-looking eyes with whites, iris and pupil and a real closed-lip half-smile instead of the input's blank round owl stare, and the head is softer and rounder. Still wrong: she reads as a pointed-ear cat/fox, not a shaggy white Westie; the big black button nose is a small dark dot; and the wardrobe is untouched - she is still in Drew's knit V-neck vest, white collar and black bow tie, with no pale blouse, no studded collar and no pendant. The repair prompt only names the head and face, so the collar-down wardrobe never gets asked for - that is the next lever. Kept is good: both gentlemen hold their seats, poses, drinks and chairs, the room, bottles, window view and gilded sign are unchanged, Abby stays behind the ledge with the same body and glass; small drift only - Barclay's chair back sits slightly higher and a small dark brooch appeared on the back of Drew's vest.",
+      "thumb": "2026-09-08/thumbs/162.jpg"
+    },
+    {
+      "num": "163",
+      "title": "Scene 3 - candidate 1 (A-tile seed 3): Abby head repair, seed 7",
+      "verdict": "REJECT - no real change. The head is still the grey wolf/husky of the input: same pricked wolf ears, same long dark muzzle, same flat closed mouth, only a touch fluffier and rounder. None of the portrait's marks arrived - no white Westie coat, no studded collar with the teardrop pendant, no pale blouse (she is still in the bow tie and man's checked waistcoat), no whites either side of the iris. Identity 1/5. Kept is perfect though: Drew, Barclay, the bottles, the chairs, the restored window and the gilded sign are all untouched, and her own stance, hands and size are exactly Picture 1's. Kept 5/5.",
+      "thumb": "2026-09-08/thumbs/163.jpg"
+    },
+    {
+      "num": "164",
+      "title": "Scene 3 - candidate 1 (A-tile seed 3): Abby head repair, seed 21",
+      "verdict": "BEST OF THE TWO, and the best Abby so far - the breed finally turned over. The wolf is gone: the head is now a white West Highland terrier, round and fluffy, with the portrait's pricked fringed ears, the big black button nose sitting close under the eyes, and larger human-style eyes with brows and catchlights. Two things still miss the portrait. The mouth is a wide open toothy grin where the study has a closed-lip half-smile - it reads a shade broader and cartoonier than the rest of the plate. And the wardrobe at the collar never changed: she is still in the bow tie, white shirt and man's checked waistcoat, with no pale blouse, no studded leather collar and no teardrop pendant, so she still reads as a gentleman bartender from the neck down. Identity 3/5. Kept is nearly clean - Drew, Barclay, the bottles, the chairs, the restored window and the gilded sign are untouched and her stance, hands and place are Picture 1's - but the new head is noticeably larger and taller than the one it replaced, enough that her ears now cut into the bottle shelf behind her. Kept 4/5. Next lever for her: a repair pass that names the closed-lip mouth and the collar-and-blouse wardrobe as their own edits, and holds the head to the size it has.",
+      "thumb": "2026-09-08/thumbs/164.jpg"
+    },
+    {
+      "num": "165",
+      "title": "s3R2-drew pass R seed 7 head-repair edit",
+      "verdict": null,
+      "thumb": "2026-09-08/thumbs/165.jpg"
+    },
+    {
+      "num": "166",
+      "title": "s3R1-drew pass R seed 7 head-repair edit",
+      "verdict": null,
+      "thumb": "2026-09-08/thumbs/166.jpg"
+    },
+    {
+      "num": "167",
+      "title": "s3R2-drew pass R seed 21 head-repair edit",
+      "verdict": null,
+      "thumb": "2026-09-08/thumbs/167.jpg"
+    },
+    {
+      "num": "168",
+      "title": "Scene 3 repair R1 - Drew's head, seed 7",
+      "verdict": "PARTIAL. Identity 2/5: the bill is right at last - slender, pale, dark outer third, and the head is small and refined instead of the vulture's - but the plumage came back BLACK where the portrait is white, the bill runs straight out and tips up instead of bending down, and the eye is a small round bead, not the heavy-lidded amiable one. Kept 2/5: the whole plate re-rolled - ABBY's white westie head came back dark-furred wolfish, the back-bar bottles and labels re-inked, mean abs diff 35.5 over the frame. Drew's seat, pose and size did hold.",
+      "thumb": "2026-09-08/thumbs/168.jpg"
+    },
+    {
+      "num": "169",
+      "title": "Scene 3 candidate 2 - Drew head repair, seed 7",
+      "verdict": "IDENTITY 2/5 - the bill straightened a little and picked up a black outer third, but the head is still a mottled vulture with a hooked tip and a big round staring eye, no white collar, no bow tie, and it still floats at the ledge above a headless body. KEPT 2/5 - the whole plate was re-inked much darker: Abby's face went from a light fuzzy westie to a solid black cat mask, the back bar and chairs shifted hard (mean abs diff 42-71 per region). Window and gilded sign exact. Not usable.",
+      "thumb": "2026-09-08/thumbs/169.jpg"
+    },
+    {
+      "num": "170",
+      "title": "Scene 3 candidate 2 - Drew head repair, seed 21",
+      "verdict": "IDENTITY 1/5 - Drew's head is unchanged: the same hooked vulture bill with the black on the inner hook instead of the outer third, spotted feathering, round unlidded eye, and it is still detached, hovering at the working ledge while the body in the left chair has no head or neck at all. KEPT 3/5 - much gentler than seed 7 (diffs 15-21), Abby's face survives, but Barclay picked up a black ball stuck on his muzzle that was not there before and the whole room is lightly re-inked. Window and sign exact. Not usable.",
+      "thumb": "2026-09-08/thumbs/170.jpg"
+    },
+    {
+      "num": "171",
+      "title": "s3R1-drew pass R seed 21 head-repair edit",
+      "verdict": null,
+      "thumb": "2026-09-08/thumbs/171.jpg"
+    },
+    {
+      "num": "172",
+      "title": "Scene 3 repair R1 - Drew's head, seed 21",
+      "verdict": "BEST OF THE TWO, still not Drew. Identity 2/5: the vulture is gone - the head is small and refined and the bill is at last slender and pale with a dark outer end - but the plumage came back dark grey and stippled where the portrait is white, the eye is a round bead under a hard brow instead of the heavy-lidded amiable one, and there is no high S-curve neck. Kept 4/5: Abby stays her white westie self (seed 7 turned her dark), Barclay, the bottles, the shelves, the chairs, the marble and the restored window all hold, Drew keeps his seat, pose and size; only a soft global re-ink and a slight scale drift, mean abs diff 17.3 against 35.5 at seed 7.",
+      "thumb": "2026-09-08/thumbs/172.jpg"
+    },
+    {
+      "num": "173",
+      "title": "s3C1 bottles-crop seed 7 recess-only edit",
+      "verdict": null,
+      "thumb": "2026-09-08/thumbs/173.jpg"
+    },
+    {
+      "num": "174",
+      "title": "s3C2 bottles-crop seed 7 recess-only edit",
+      "verdict": null,
+      "thumb": "2026-09-08/thumbs/174.jpg"
+    },
+    {
+      "num": "175",
+      "title": "s3C1 bottles-crop seed 21 recess-only edit",
+      "verdict": null,
+      "thumb": "2026-09-08/thumbs/175.jpg"
+    },
+    {
+      "num": "176",
+      "title": "b3A bottles-crop seed 7 recess-only edit",
+      "verdict": null,
+      "thumb": "2026-09-08/thumbs/176.jpg"
+    },
+    {
+      "num": "177",
+      "title": "b3A bottles-crop seed 21 recess-only edit",
+      "verdict": null,
+      "thumb": "2026-09-08/thumbs/177.jpg"
+    },
+    {
+      "num": "178",
+      "title": "b3A bottles-crop seed 41 recess-only edit",
+      "verdict": null,
+      "thumb": "2026-09-08/thumbs/178.jpg"
+    },
+    {
+      "num": "179",
+      "title": "b3A bottles-crop seed 44 recess-only edit",
+      "verdict": null,
+      "thumb": "2026-09-08/thumbs/179.jpg"
+    },
+    {
+      "num": "180",
+      "title": "b3A bottles-crop seed 3 recess-only edit",
+      "verdict": null,
+      "thumb": "2026-09-08/thumbs/180.jpg"
+    },
+    {
+      "num": "181",
+      "title": "b3A bottles-crop seed 11 recess-only edit",
+      "verdict": null,
+      "thumb": "2026-09-08/thumbs/181.jpg"
+    },
+    {
+      "num": "182",
+      "title": "b3A bottles-crop seed 55 recess-only edit",
+      "verdict": null,
+      "thumb": "2026-09-08/thumbs/182.jpg"
+    },
+    {
+      "num": "183",
+      "title": "b3A bottles-crop seed 62 recess-only edit",
+      "verdict": null,
+      "thumb": "2026-09-08/thumbs/183.jpg"
+    },
+    {
+      "num": "184",
+      "title": "b3B bottles-crop seed 7 recess-only edit",
+      "verdict": null,
+      "thumb": "2026-09-08/thumbs/184.jpg"
+    },
+    {
+      "num": "185",
+      "title": "b3B bottles-crop seed 21 recess-only edit",
+      "verdict": null,
+      "thumb": "2026-09-08/thumbs/185.jpg"
+    },
+    {
+      "num": "186",
+      "title": "b3B bottles-crop seed 41 recess-only edit",
+      "verdict": null,
+      "thumb": "2026-09-08/thumbs/186.jpg"
+    },
+    {
+      "num": "187",
+      "title": "b3B bottles-crop seed 44 recess-only edit",
+      "verdict": null,
+      "thumb": "2026-09-08/thumbs/187.jpg"
+    },
+    {
+      "num": "188",
+      "title": "b3B bottles-crop seed 3 recess-only edit",
+      "verdict": null,
+      "thumb": "2026-09-08/thumbs/188.jpg"
+    },
+    {
+      "num": "189",
+      "title": "b3B bottles-crop seed 11 recess-only edit",
+      "verdict": null,
+      "thumb": "2026-09-08/thumbs/189.jpg"
+    },
+    {
+      "num": "190",
+      "title": "b3B bottles-crop seed 55 recess-only edit",
+      "verdict": null,
+      "thumb": "2026-09-08/thumbs/190.jpg"
+    },
+    {
+      "num": "191",
+      "title": "b3B bottles-crop seed 62 recess-only edit",
+      "verdict": null,
+      "thumb": "2026-09-08/thumbs/191.jpg"
+    },
+    {
+      "num": "192",
+      "title": "b3C21 bottles-crop seed 7 recess-only edit",
+      "verdict": null,
+      "thumb": "2026-09-08/thumbs/192.jpg"
+    },
+    {
+      "num": "193",
+      "title": "b3C21 bottles-crop seed 21 recess-only edit",
+      "verdict": null,
+      "thumb": "2026-09-08/thumbs/193.jpg"
+    },
+    {
+      "num": "194",
+      "title": "b3C11 bottles-crop seed 7 recess-only edit",
+      "verdict": null,
+      "thumb": "2026-09-08/thumbs/194.jpg"
+    },
+    {
+      "num": "195",
+      "title": "b3C11 bottles-crop seed 21 recess-only edit",
+      "verdict": null,
+      "thumb": "2026-09-08/thumbs/195.jpg"
+    },
+    {
+      "num": "196",
+      "title": "b3C55 bottles-crop seed 7 recess-only edit",
+      "verdict": null,
+      "thumb": "2026-09-08/thumbs/196.jpg"
+    },
+    {
+      "num": "197",
+      "title": "b3C55 bottles-crop seed 21 recess-only edit",
+      "verdict": null,
+      "thumb": "2026-09-08/thumbs/197.jpg"
     }
   ]
 }

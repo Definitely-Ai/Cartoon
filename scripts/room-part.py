@@ -219,7 +219,9 @@ def lay(plate: np.ndarray, part: dict, candidate: Path, quiet: bool = False) -> 
     cand = load(candidate)
     hard = mask_of(part, grow=1) > 0.5
     soft = mask_of(part, grow=1, feather=part.get("feather", 3))
-    if part.get("toneMatch"):
+    if part.get("verbatim"):
+        pass                                     # one drawing approved as-is (the recess, 2026-09-09): no tone or level fit
+    elif part.get("toneMatch"):
         cand, g, o = tone_match(plate, cand, hard)
         if not quiet:
             print(f"  {part['id']}: tone gain {g:.2f} offset {o:+.0f}")
@@ -527,7 +529,8 @@ def cmd_build(_a) -> None:
     figs = [p for p in man["parts"] if p["id"].startswith("figure-") and p.get("source") and p.get("enabled", True)]
     plate = ink_edges(plate, man)                # the straight edges of the marble, in code
     save(plate, KIT / "plate.png")
-    if any(p["id"].startswith("bottles-") and p.get("source") and p.get("enabled", True) for p in man["parts"]) \
+    LABELS_IN_CODE = False                       # 2026-09-09: no code emblems - the shelf is one drawing by the house model
+    if LABELS_IN_CODE and any(p["id"].startswith("bottles-") and p.get("source") and p.get("enabled", True) for p in man["parts"]) \
             and (KIT / "labels.json").exists():
         # the bottle labels are typeset in code onto the label quads (lettering is never the model's)
         subprocess.run([sys.executable, str(ROOT / "scripts/label-bottles.py"),

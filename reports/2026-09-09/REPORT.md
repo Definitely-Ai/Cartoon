@@ -1150,3 +1150,109 @@ Built for Rick. Every image the studio generated today, in the order it happened
 
 ---
 
+## 069. whole-plate assembled with bartenders-marble-ledge back-bar-carcass back-bar-lower-shelf bottles-on-lower-shelf bottles-on-upper-shelf back-bar-upper-shelf television-blank chalkboard-blank window-frame-and-reveal window-glass-street-view main-bar-marble-counter left-leather-club-chair right-leather-club-chair and window-sign
+
+![whole-plate assembled with bartenders-marble-ledge back-bar-carcass back-bar-lower-shelf bottles-on-lower-shelf bottles-on-upper-shelf back-bar-upper-shelf television-blank chalkboard-blank window-frame-and-reveal window-glass-street-view main-bar-marble-counter left-leather-club-chair right-leather-club-chair and window-sign](images/069-whole-plate-assembled-with-bartenders-marble-ledge-back-bar-carcass-back-bar-lower-shelf-bottles-on-lower-shel.png)
+
+**The thinking.** Base plus every approved, enabled part laid in order through its own silhouette; the TV's blank screen and the window's lettering are drawn in code last, because lettering is never left to the model.
+
+*Logged 07:52.*
+
+---
+
+## 070. whole-plate assembled with bartenders-marble-ledge back-bar-carcass back-bar-lower-shelf bottles-on-lower-shelf bottles-on-upper-shelf back-bar-upper-shelf television-blank chalkboard-blank window-frame-and-reveal window-glass-street-view main-bar-marble-counter left-leather-club-chair right-leather-club-chair and window-sign
+
+![whole-plate assembled with bartenders-marble-ledge back-bar-carcass back-bar-lower-shelf bottles-on-lower-shelf bottles-on-upper-shelf back-bar-upper-shelf television-blank chalkboard-blank window-frame-and-reveal window-glass-street-view main-bar-marble-counter left-leather-club-chair right-leather-club-chair and window-sign](images/070-whole-plate-assembled-with-bartenders-marble-ledge-back-bar-carcass-back-bar-lower-shelf-bottles-on-lower-shel.png)
+
+**The thinking.** Base plus every approved, enabled part laid in order through its own silhouette; the TV's blank screen and the window's lettering are drawn in code last, because lettering is never left to the model.
+
+*Logged 07:53.*
+
+---
+
+## 071. whole-plate assembled with bartenders-marble-ledge back-bar-carcass back-bar-lower-shelf bottles-on-lower-shelf bottles-on-upper-shelf back-bar-upper-shelf television-blank chalkboard-blank window-frame-and-reveal window-glass-street-view main-bar-marble-counter left-leather-club-chair right-leather-club-chair and window-sign
+
+![whole-plate assembled with bartenders-marble-ledge back-bar-carcass back-bar-lower-shelf bottles-on-lower-shelf bottles-on-upper-shelf back-bar-upper-shelf television-blank chalkboard-blank window-frame-and-reveal window-glass-street-view main-bar-marble-counter left-leather-club-chair right-leather-club-chair and window-sign](images/071-whole-plate-assembled-with-bartenders-marble-ledge-back-bar-carcass-back-bar-lower-shelf-bottles-on-lower-shel.png)
+
+**The thinking.** Base plus every approved, enabled part laid in order through its own silhouette; the TV's blank screen and the window's lettering are drawn in code last, because lettering is never left to the model.
+
+*Logged 07:53.*
+
+---
+
+## 072. whole-plate assembled with bartenders-marble-ledge back-bar-carcass back-bar-lower-shelf bottles-on-lower-shelf bottles-on-upper-shelf back-bar-upper-shelf television-blank chalkboard-blank window-frame-and-reveal window-glass-street-view main-bar-marble-counter left-leather-club-chair right-leather-club-chair and window-sign
+
+![whole-plate assembled with bartenders-marble-ledge back-bar-carcass back-bar-lower-shelf bottles-on-lower-shelf bottles-on-upper-shelf back-bar-upper-shelf television-blank chalkboard-blank window-frame-and-reveal window-glass-street-view main-bar-marble-counter left-leather-club-chair right-leather-club-chair and window-sign](images/072-whole-plate-assembled-with-bartenders-marble-ledge-back-bar-carcass-back-bar-lower-shelf-bottles-on-lower-shel.png)
+
+**The thinking.** Base plus every approved, enabled part laid in order through its own silhouette; the TV's blank screen and the window's lettering are drawn in code last, because lettering is never left to the model.
+
+*Logged 07:53.*
+
+---
+
+## 073. whole-plate assembled with bartenders-marble-ledge back-bar-carcass back-bar-lower-shelf bottles-on-lower-shelf bottles-on-upper-shelf back-bar-upper-shelf television-blank chalkboard-blank window-frame-and-reveal window-glass-street-view main-bar-marble-counter left-leather-club-chair right-leather-club-chair and window-sign
+
+![whole-plate assembled with bartenders-marble-ledge back-bar-carcass back-bar-lower-shelf bottles-on-lower-shelf bottles-on-upper-shelf back-bar-upper-shelf television-blank chalkboard-blank window-frame-and-reveal window-glass-street-view main-bar-marble-counter left-leather-club-chair right-leather-club-chair and window-sign](images/073-whole-plate-assembled-with-bartenders-marble-ledge-back-bar-carcass-back-bar-lower-shelf-bottles-on-lower-shel.png)
+
+**The thinking.** Base plus every approved, enabled part laid in order through its own silhouette; the TV's blank screen and the window's lettering are drawn in code last, because lettering is never left to the model.
+
+*Logged 07:53.*
+
+---
+
+## 074. whole-plate assembled with bartenders-marble-ledge back-bar-carcass back-bar-lower-shelf bottles-on-lower-shelf bottles-on-upper-shelf back-bar-upper-shelf television-blank chalkboard-blank window-frame-and-reveal window-glass-street-view main-bar-marble-counter left-leather-club-chair right-leather-club-chair and window-sign
+
+![whole-plate assembled with bartenders-marble-ledge back-bar-carcass back-bar-lower-shelf bottles-on-lower-shelf bottles-on-upper-shelf back-bar-upper-shelf television-blank chalkboard-blank window-frame-and-reveal window-glass-street-view main-bar-marble-counter left-leather-club-chair right-leather-club-chair and window-sign](images/074-whole-plate-assembled-with-bartenders-marble-ledge-back-bar-carcass-back-bar-lower-shelf-bottles-on-lower-shel.png)
+
+**The thinking.** Base plus every approved, enabled part laid in order through its own silhouette; the TV's blank screen and the window's lettering are drawn in code last, because lettering is never left to the model.
+
+*Logged 07:54.*
+
+---
+
+## 075. whole-plate assembled with bartenders-marble-ledge back-bar-carcass back-bar-lower-shelf bottles-on-lower-shelf bottles-on-upper-shelf back-bar-upper-shelf television-blank chalkboard-blank window-frame-and-reveal window-glass-street-view main-bar-marble-counter left-leather-club-chair right-leather-club-chair and window-sign
+
+![whole-plate assembled with bartenders-marble-ledge back-bar-carcass back-bar-lower-shelf bottles-on-lower-shelf bottles-on-upper-shelf back-bar-upper-shelf television-blank chalkboard-blank window-frame-and-reveal window-glass-street-view main-bar-marble-counter left-leather-club-chair right-leather-club-chair and window-sign](images/075-whole-plate-assembled-with-bartenders-marble-ledge-back-bar-carcass-back-bar-lower-shelf-bottles-on-lower-shel.png)
+
+**The thinking.** Base plus every approved, enabled part laid in order through its own silhouette; the TV's blank screen and the window's lettering are drawn in code last, because lettering is never left to the model.
+
+*Logged 07:54.*
+
+---
+
+## 076. whole-plate assembled with bartenders-marble-ledge back-bar-carcass back-bar-lower-shelf bottles-on-lower-shelf bottles-on-upper-shelf back-bar-upper-shelf television-blank chalkboard-blank window-frame-and-reveal window-glass-street-view main-bar-marble-counter left-leather-club-chair right-leather-club-chair and window-sign
+
+![whole-plate assembled with bartenders-marble-ledge back-bar-carcass back-bar-lower-shelf bottles-on-lower-shelf bottles-on-upper-shelf back-bar-upper-shelf television-blank chalkboard-blank window-frame-and-reveal window-glass-street-view main-bar-marble-counter left-leather-club-chair right-leather-club-chair and window-sign](images/076-whole-plate-assembled-with-bartenders-marble-ledge-back-bar-carcass-back-bar-lower-shelf-bottles-on-lower-shel.png)
+
+**The thinking.** Base plus every approved, enabled part laid in order through its own silhouette; the TV's blank screen and the window's lettering are drawn in code last, because lettering is never left to the model.
+
+*Logged 07:55.*
+
+---
+
+## 077. whole-plate assembled with bartenders-marble-ledge back-bar-carcass back-bar-lower-shelf bottles-on-lower-shelf bottles-on-upper-shelf back-bar-upper-shelf television-blank chalkboard-blank window-frame-and-reveal window-glass-street-view main-bar-marble-counter left-leather-club-chair right-leather-club-chair and window-sign
+
+![whole-plate assembled with bartenders-marble-ledge back-bar-carcass back-bar-lower-shelf bottles-on-lower-shelf bottles-on-upper-shelf back-bar-upper-shelf television-blank chalkboard-blank window-frame-and-reveal window-glass-street-view main-bar-marble-counter left-leather-club-chair right-leather-club-chair and window-sign](images/077-whole-plate-assembled-with-bartenders-marble-ledge-back-bar-carcass-back-bar-lower-shelf-bottles-on-lower-shel.png)
+
+**The thinking.** Base plus every approved, enabled part laid in order through its own silhouette; the TV's blank screen and the window's lettering are drawn in code last, because lettering is never left to the model.
+
+*Logged 07:56.*
+
+---
+
+## 078. APPROVED: the back bar shelf, seed 90 - into the kit as the five recess parts, verbatim
+
+![APPROVED: the back bar shelf, seed 90 - into the kit as the five recess parts, verbatim](images/078-approved-the-back-bar-shelf-seed-90-into-the-kit-as-the-five-recess-parts-verbatim.png)
+
+**The ask.** Founder: 'i like 90'.
+
+**The thinking.** The seed-90 recess redraw (house model, slow sampler band, letter-like marks patched in code, zero at 8x) is approved. It went into the kit as one drawing: backbar, both shelves and both bottle rows approved from the same plate, pasted verbatim (no tone fit, no code shadows, hard joins between the parts of one drawing), and the code label stamping switched off for good. The built plate's recess matches the approved plate to a mean of 0.3 grey levels.
+
+**Settings.** room-part.py approve x5 from work/s3D-s90-patched-final.png; parts.json: verbatim, toneMatch false, shadow null, feather 0 for the recess parts; LABELS_IN_CODE = False
+
+**Verdict.** Approved by the founder; in the plate.
+
+*Logged 07:56.*
+
+---
+

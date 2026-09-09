@@ -14,5 +14,13 @@
     "note": "the version standing in parts/bottles-lower.png - the source room-part.py lays for this object (currently switched OFF in parts.json) - the row of liquor bottles standing on the lower shelf: varied heights and shapes, clear and dark glass, plain blank paper labels with NO lettering -",
     "verdict": "approved",
     "thumb": "thumbs/v002.jpg"
+  },
+  {
+    "version": "v003",
+    "date": "2026-09-09",
+    "label": "seed-90-approved",
+    "note": "The house model's recess redraw (slow sampler band, marks patched in code), approved by the founder 2026-09-09 ('i like 90'); laid verbatim as one drawing with the other four recess parts",
+    "verdict": "approved",
+    "thumb": "thumbs/v003.jpg"
   }
 ]

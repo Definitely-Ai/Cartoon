@@ -1,0 +1,475 @@
+{
+  "date": "2026-09-09",
+  "pdf": null,
+  "show": null,
+  "entries": [
+    {
+      "num": "001",
+      "title": "Drew own-hand four-view reference sheet, seed 7 - strategy (a) test",
+      "verdict": "BEST IDENTITY, WORST CAMERAS. The four panels, four rules and four labels all survive and the labels are correctly spelled - the only seed where they do. Identity is excellent and consistent across all four panels: same bird, same knit vest, same bow tie, same slender pale bill with the black outer third, same heavy-lidded eye, engraved dash-stroke plumage throughout. But every panel is a BUST cropped at the belt - canon's own crop-at-the-counter law beat edits 1-3 - so there is no full figure, no trousers below the waistband and no shoes anywhere. Panel 1 (FRONT) is a profile, not a front; panel 3 (BACK) is a three-quarter rear with the face still showing, not a back. A martini appears in panel 2 although it was forbidden in the edit and in the negative - the fast Lightning pass runs at cfg 1 and never reads the negative. Panel 4 (HEAD CLOSE-UP) is the strongest single drawing of Drew's head the studio has: approvable on its own.",
+      "thumb": "2026-09-09/thumbs/001.jpg"
+    },
+    {
+      "num": "002",
+      "title": "Drew own-hand four-view reference sheet, seed 21 - strategy (a) test",
+      "verdict": "GRID COLLAPSED. The model ignored the four-panel division and drew TWO full-length figures, each spanning a whole column - torso in the top panel, legs and shoes in the bottom one - so the bottom row's two panels hold nothing but trousers. Two of the four printed labels came back as garbled type ('2 MREHIALSQ', '1 THERWAKER BACK'), which is a hard fail against the house rule that lettering is never left to the model. Neither figure is a back view and both hold or reach for a martini. The one useful finding: the full figure with trousers and shoes IS drawable - the model simply needs a panel tall enough to take it, and a 592x706 panel is not.",
+      "thumb": "2026-09-09/thumbs/002.jpg"
+    },
+    {
+      "num": "003",
+      "title": "Drew own-hand four-view reference sheet, seed 41 - strategy (a) test",
+      "verdict": "BEST STRUCTURE, ONE PANEL FERAL. The grid held, and this is the only seed that answered the brief: panel 1 is a TRUE full-length front view, head to shoes, trousers and dark shoes on his feet; panel 3 is a TRUE full-length back view with no face visible, the ribbed back of the sweater vest and the collar above it - exactly what was asked; panel 4 is a large clean head close-up with the bill, nostril slit and heavy-lidded eye all right. Panel 2 failed outright: it reverted to a LITERAL flamingo - a wading bird on two stick legs with a folded wing and a martini - which is the same regression (bird, not gentleman) the studio has hit before. One label came back as garbled type ('4 HIVSP DUD-CINSY - NIP'). Three of four panels here are approvable as they stand.",
+      "thumb": "2026-09-09/thumbs/003.jpg"
+    },
+    {
+      "num": "004",
+      "title": "Contact sheet - Drew own-hand reference sheets, three seeds against the portrait and the empty sheet",
+      "verdict": "YES, WITH ONE CHANGE OF SHAPE. No single seed is approvable whole, but every seed produced at least two approvable panels, and between them the three cover every camera asked for: seed 41 gives a true front, a true back and a good head; seed 7 gives the best identity and the cleanest head-and-bill; seed 21 proves the full figure with shoes is drawable when the panel is tall enough. What the model cannot do is hold FOUR cameras in ONE render - the failures are all cross-panel (grid collapse, one panel going feral, labels garbling). So the sheet should be drawn ONE PANEL PER RENDER, one camera at a time, and composited in code, which is also exactly the founder's one-object-at-a-time approval rule. Prop leakage (the martini in two of three sheets) and label garbling are both cfg-1 problems: the negative is not read at cfg 1, and lettering must be re-stamped in code after the render, never left to the model.",
+      "thumb": "2026-09-09/thumbs/004.jpg"
+    },
+    {
+      "num": "005",
+      "title": "s3A-cfg175 bottles-crop seed 21 recess-only edit",
+      "verdict": null,
+      "thumb": "2026-09-09/thumbs/005.jpg"
+    },
+    {
+      "num": "006",
+      "title": "s3A-cfg175 bottles-crop seed 44 recess-only edit",
+      "verdict": null,
+      "thumb": "2026-09-09/thumbs/006.jpg"
+    },
+    {
+      "num": "007",
+      "title": "s3B-20-25 bottles-crop seed 21 recess-only edit",
+      "verdict": null,
+      "thumb": "2026-09-09/thumbs/007.jpg"
+    },
+    {
+      "num": "008",
+      "title": "s3B-20-25 bottles-crop seed 44 recess-only edit",
+      "verdict": null,
+      "thumb": "2026-09-09/thumbs/008.jpg"
+    },
+    {
+      "num": "009",
+      "title": "s3C-28-3 bottles-crop seed 21 recess-only edit",
+      "verdict": null,
+      "thumb": "2026-09-09/thumbs/009.jpg"
+    },
+    {
+      "num": "010",
+      "title": "s3C-28-3 bottles-crop seed 44 recess-only edit",
+      "verdict": null,
+      "thumb": "2026-09-09/thumbs/010.jpg"
+    },
+    {
+      "num": "011",
+      "title": "S2 bottle library - bourbon seed 101 (fast 8-step cfg1)",
+      "verdict": "REJECT - the label's second panel came back with clear letter-like marks ('OA', a cross-like glyph, a dot) under the crest; reroll needed.",
+      "thumb": "2026-09-09/thumbs/011.jpg"
+    },
+    {
+      "num": "012",
+      "title": "S2 bottle library - bourbon seed 202 (full 40-step cfg4)",
+      "verdict": "REJECT - full 40-step/cfg4 honoured the no-lettering negative better (only a tiny illegible microprint survived) but drew a full hatched studio background + floor reflection across the whole page instead of plain white, defeating the flood-fill keying this library depends on.",
+      "thumb": "2026-09-09/thumbs/012.jpg"
+    },
+    {
+      "num": "013",
+      "title": "S2 bottle library - bourbon seed 303 (fast 8-step cfg1)",
+      "verdict": "ACCEPT - clean crest (wreath+star), one rule line, blank paper otherwise, no lettering anywhere. Final bourbon sticker.",
+      "thumb": "2026-09-09/thumbs/013.jpg"
+    },
+    {
+      "num": "014",
+      "title": "S2 bottle library - rye seed 304 (fast 8-step cfg1)",
+      "verdict": "ACCEPT - bulbous tall-neck rye, one crest, no lettering. Also stands in for the shelf's 'scotch' slots (same oval tall-neck family).",
+      "thumb": "2026-09-09/thumbs/014.jpg"
+    },
+    {
+      "num": "015",
+      "title": "S2 bottle library - rum seed 305 (fast 8-step cfg1)",
+      "verdict": "ACCEPT - broad squat flagon, one crest (off-centre but singular), no lettering. Also stands in for 'sherry' (both squat/dark/wide).",
+      "thumb": "2026-09-09/thumbs/015.jpg"
+    },
+    {
+      "num": "016",
+      "title": "S2 bottle library - gin seed 306 (fast 8-step cfg1)",
+      "verdict": "ACCEPT after a code retouch - the render came back with TWO circular devices on the label, the second one reading like a stylised 'U'/coin-legend; painted out in code (sampled the paper tone and flattened that one device), keeping the star/compass crest alone. No render spent. Also stands in for 'tequila'.",
+      "thumb": "2026-09-09/thumbs/016.jpg"
+    },
+    {
+      "num": "017",
+      "title": "S2 bottle library - vodka seed 307 (fast 8-step cfg1)",
+      "verdict": "ACCEPT - the tallest, slimmest bottle in the library, one shield crest, no lettering on the bottle itself (some faint blueprint-like scribble scattered in the BACKGROUND, well outside the bottle's own silhouette, dropped automatically by the keying). Also stands in for 'triple_sec'.",
+      "thumb": "2026-09-09/thumbs/017.jpg"
+    },
+    {
+      "num": "018",
+      "title": "S2 bottle library - whiskey seed 308 (fast 8-step cfg1)",
+      "verdict": "REJECT - a fully legible fake word ('FAIOPAC') plus corner marks and letters inside the crest ('JE'). Reroll.",
+      "thumb": "2026-09-09/thumbs/018.jpg"
+    },
+    {
+      "num": "019",
+      "title": "S2 bottle library - whiskey seed 408 (fast 8-step cfg1)",
+      "verdict": "ACCEPT after a small code retouch - clean crest, no lettering on the label proper, but a tiny illegible print-like squiggle in the label's bottom corner was painted out (sampled local tone, flattened a small patch). Final whiskey sticker.",
+      "thumb": "2026-09-09/thumbs/019.jpg"
+    },
+    {
+      "num": "020",
+      "title": "S2 bottle library - brandy seed 309 (fast 8-step cfg1)",
+      "verdict": "ACCEPT - round-shouldered cognac-style body, one main crest plus a small repeated seal near the divider (same star motif, not lettering) - kept as is. A stray cursive signature-like scribble in the floor/background area was dropped automatically by keying (outside the bottle). Also stands in for 'amaro'.",
+      "thumb": "2026-09-09/thumbs/020.jpg"
+    },
+    {
+      "num": "021",
+      "title": "S2 bottle library - absinthe seed 310 (fast 8-step cfg1)",
+      "verdict": "ACCEPT - slim bottle, cork stopper, one shield crest, no lettering.",
+      "thumb": "2026-09-09/thumbs/021.jpg"
+    },
+    {
+      "num": "022",
+      "title": "S2 bottle library - port seed 311 (fast 8-step cfg1)",
+      "verdict": "ACCEPT - short wide body, one clean shield crest, plain white page, no lettering anywhere. Final render of the strategy's 12-render budget.",
+      "thumb": "2026-09-09/thumbs/022.jpg"
+    },
+    {
+      "num": "023",
+      "title": "S2 bottle library - contact sheet (9 kinds, final)",
+      "verdict": "ACCEPT as the library for code placement - dense, varied, real-glass silhouettes, one crest each, no lettering anywhere.",
+      "thumb": "2026-09-09/thumbs/023.jpg"
+    },
+    {
+      "num": "024",
+      "title": "S2 - full plate, bottle library placed by code (candidate)",
+      "verdict": "Candidate for review - dense, varied, real-glass bottles wall to wall with a second rank behind, no lettering visible, window and sign intact. All 20 front-rank slots and all 18 back-rank gaps are filled from the 9-sticker library (kind_substitute.json); with only 9 distinct shapes across 38 placements a few repeats are visible on close inspection, most noticeably where the same kind lands in adjacent gaps upper-shelf - a founder pass may want 2-3 more kinds rendered to thin that out.",
+      "thumb": "2026-09-09/thumbs/024.jpg"
+    },
+    {
+      "num": "025",
+      "title": "S2 - recess crop 2x, bottle library placed by code (candidate)",
+      "verdict": "Candidate for review alongside the full plate and the library sheet.",
+      "thumb": "2026-09-09/thumbs/025.jpg"
+    },
+    {
+      "num": "026",
+      "title": "Strategy S1 best candidate b3B-s21, recess redraw plus code label cleaning - Opus critic pass",
+      "verdict": "NOT DELIVERABLE - 3/10, and not lettering-free. b3B-s21 is the right base: the densest, most bottle-like shelf of the four, real necks, capsules and varied heights, and the recess frame, both shelf lips, the window and the on-glass sign are all intact with no seam or ghosting. But the cleaning did not take. At 12x, the upper-right label at plate x1010-1065 y660-720 still carries a drawn border, a diamond crest AND three full rows of small type under it - a brand line, a subtitle and a third line - exactly the failure the founder rejected. The lower-left cluster (x545-745) has four more labels with two or three type rows each, and the black circular-emblem label at x855-890 y850-895 still has its three rows of Chinese-looking characters despite being one of the five hand-added targets. A baseline-aligned type-row detector run over the bottle masks scores 3 rows before cleaning and 3 after on s21 (s11 8 to 7, s44 7 to 6, s55 6 to 5): mechanically, the pass removed essentially none of the type it was built to remove. Where it did fire it left a second problem - hard-edged, flat, faintly noisy blank cards, most visibly the bright white strip under the black snowflake crest at x745-835 y700-730 and the big blank panels at x565-635 - which read as stickers taped over the bottles and are a regression on the raw render. Style is also well short of duo: duo is soft graphite with mid-tones, depth and believable glass, s21 is crushed blacks and blown whites with an outlined, photocopied look and a hard vertical-stripe backbar. Bottles also stop about 55px short of the recess wall on both sides instead of running wall to wall. Of the others: s55 is the same style but sparser on the top shelf and carries more surviving type; s11 is disfigured by large featureless white wipe rectangles; s44 is the weakest drawing, mushy blobs that never read as glass. The single most important fix is to stop hunting for labels that look like they have rows - the scanner cleaned 22 of roughly 32 labels on s21 and missed whole clusters - and instead reduce EVERY label-paper region in the recess to one emblem unconditionally, refilling the cleared area with a resample of that label's own engraved paper tone rather than a flat inpaint, then gate delivery on the type-row detector returning zero.",
+      "thumb": "2026-09-09/thumbs/026.jpg"
+    },
+    {
+      "num": "027",
+      "title": "S2v2 bottle library - decanter seed 501 - Setting B (no LoRA, 20 steps, cfg 2.5)",
+      "verdict": "Clean at 4x: continuous engraved tone, clear liquid line, one highlight, ruled border + guilloche border band + light hatch field + one 8-point-star crest in an oval cartouche, no letters. Keyed straight to sticker, no retouch needed.",
+      "thumb": "2026-09-09/thumbs/027.jpg"
+    },
+    {
+      "num": "028",
+      "title": "Bottles: the mid-band sampler shelf, seed 44, letter-like marks patched in code",
+      "verdict": "Zero letter-like marks remain anywhere in the recess at 8x, on either shelf. Both flagged labels now read as plain paper/plain black, matching the founder's emblems-only rule. This is the cleanest shelf yet - ready for Rick's sign-off pending his own look.",
+      "thumb": "2026-09-09/thumbs/028.jpg"
+    },
+    {
+      "num": "029",
+      "title": "S2v2 bottle library - cognac seed 502 - Setting B",
+      "verdict": null,
+      "thumb": "2026-09-09/thumbs/029.jpg"
+    },
+    {
+      "num": "030",
+      "title": "S2v2 bottle library - cognac seed 502 - Setting B",
+      "verdict": "No letters at 4x; ruled border + diamond guilloche field clean; the oval crest itself came out soft/abstract rather than crisp heraldry - acceptable (reads as an emblem, not text), kept rather than spend a re-roll on cosmetics.",
+      "thumb": "2026-09-09/thumbs/030.jpg"
+    },
+    {
+      "num": "031",
+      "title": "S2v2 bottle library - flask seed 503 - REJECTED (pseudo-lettering)",
+      "verdict": "REJECTED: clear pseudo-lettering in the label's lower band. Prompt revised (no separate band strip; border itself carries the repeating ornament) and re-rolled at seed 504.",
+      "thumb": "2026-09-09/thumbs/031.jpg"
+    },
+    {
+      "num": "032",
+      "title": "S2v2 bottle library - flask seed 504 - REJECTED (blank label, spurious page frame)",
+      "verdict": "REJECTED: label left blank (no ornament, no crest) and an unwanted ornate frame appeared round the whole page instead. Prompt rewritten again, re-rolled at seed 505.",
+      "thumb": "2026-09-09/thumbs/032.jpg"
+    },
+    {
+      "num": "033",
+      "title": "S2v2 bottle library - flask seed 505 - REJECTED (no crest, odd background)",
+      "verdict": "REJECTED: no crest drawn (a dark glossy void instead), page background became a marble surface instead of plain white. Reverted prompt to the original (working) phrasing plus a light touch, re-rolled at seed 506.",
+      "thumb": "2026-09-09/thumbs/033.jpg"
+    },
+    {
+      "num": "034",
+      "title": "S2v2 bottle library - flask seed 506 - REJECTED (pseudo-lettering, 4th straight fail)",
+      "verdict": "REJECTED: clear pseudo-lettering, 3 lines, inside the cartouche. Structural fix applied (small medallion instead of large label panel) rather than another wording tweak; re-rolled at seed 507.",
+      "thumb": "2026-09-09/thumbs/034.jpg"
+    },
+    {
+      "num": "035",
+      "title": "S2v2 bottle library - flask seed 507 - Setting B (medallion fix)",
+      "verdict": "ACCEPTED after 4 rejects (503-506). No lettering at 16x on the rim texture (abstract ticks/dashes, not letterforms). Keyed to sticker. Kind-specific lesson recorded: large flat labels on square clear-glass bottles are high-risk for this model at cfg 2.5 - use a small medallion instead.",
+      "thumb": "2026-09-09/thumbs/035.jpg"
+    },
+    {
+      "num": "036",
+      "title": "S2v2 bottle library - rye seed 508 - REJECTED (heavy lettering + ghost second bottle)",
+      "verdict": "REJECTED: heavy pseudo-lettering (two bold lines plus a script signature) and a ghost second bottle. Re-rolled at seed 509, no prompt change.",
+      "thumb": "2026-09-09/thumbs/036.jpg"
+    },
+    {
+      "num": "037",
+      "title": "S2v2 bottle library - rye seed 509 - REJECTED (blurred background objects, blank crest)",
+      "verdict": "REJECTED: blurred extra bottle shapes in both bottom corners, and the label's crest left blank. No lettering issue this time. Negative/prompt strengthened against background blur and extra objects; re-rolled at seed 510.",
+      "thumb": "2026-09-09/thumbs/037.jpg"
+    },
+    {
+      "num": "038",
+      "title": "S2v2 bottle library - rye seed 510 - REJECTED (heavy text, distorted cap, ghost bottle)",
+      "verdict": "REJECTED: dense multi-line pseudo-lettering, a distorted cap, and a ghost second bottle. Structural fix applied (small square label instead of full-height label) rather than another wording-only tweak; re-rolled at seed 511.",
+      "thumb": "2026-09-09/thumbs/038.jpg"
+    },
+    {
+      "num": "039",
+      "title": "S2v2 bottle library - rye seed 511 - REJECTED (rendered in colour, second bottle, blank crest)",
+      "verdict": "REJECTED: rendered in colour (amber glass), a second solid ghost bottle beside it, and a blank (crest-less) label. No lettering issue this time. Fixed the colour-triggering word globally (amber -> dark glass) and strengthened the single-object/monochrome instructions; re-rolled at seed 512.",
+      "thumb": "2026-09-09/thumbs/039.jpg"
+    },
+    {
+      "num": "040",
+      "title": "S2v2 bottle library - rye seed 512 - REJECTED (Picture 2's whole shelf leaked into background, no label)",
+      "verdict": "REJECTED: Picture 2's own shelf of ~9 bottles leaked into the background, and the main bottle had no label at all. Widened the guide silhouette (0.088m -> 0.105m) to remove the most extreme aspect ratio in the set; re-rolled at seed 513.",
+      "thumb": "2026-09-09/thumbs/040.jpg"
+    },
+    {
+      "num": "041",
+      "title": "S2v2 bottle library - rye seed 513 - REJECTED (two blank labels, otherwise clean)",
+      "verdict": "REJECTED: two blank label rectangles wrapped round the curve instead of one ornamented label, but otherwise the cleanest rye render yet (no lettering, no extra objects, correct monochrome). Added a 'front only, no second glimpse' clause; re-rolled at seed 514.",
+      "thumb": "2026-09-09/thumbs/041.jpg"
+    },
+    {
+      "num": "042",
+      "title": "S2v2 bottle library - rye seed 514 - REJECTED (small pseudo-text, diagonal shadow fan) - 7th and final render attempt for this kind",
+      "verdict": "REJECTED: small pseudo-text lines on the label, heavy diagonal shadow fan across the background. 7th and final render attempt for rye - falling back to a code-side finish of seed 513 (the closest miss) rather than spending more of the tightening render budget.",
+      "thumb": "2026-09-09/thumbs/042.jpg"
+    },
+    {
+      "num": "043",
+      "title": "S2v2 bottle library - rye seed 513 - Setting B render + code-finished label",
+      "verdict": "ACCEPTED as a hybrid render+code finish after 7 render attempts. No lettering anywhere (the absolute rule); one label, ornamented with a border, hatch field and star-in-wreath crest. The hand-coded ornament is flatter/cleaner than the AI's own engraving elsewhere on the bottle - a known, disclosed quality compromise made to protect the render budget for the remaining 8 kinds.",
+      "thumb": "2026-09-09/thumbs/043.jpg"
+    },
+    {
+      "num": "044",
+      "title": "S2v2 bottle library - bourbon seed 515 - REJECTED (lettering, background shadow fan)",
+      "verdict": "REJECTED: pseudo-text at top and bottom of the label, heavy diagonal shading fan across the background. Switched all remaining kinds to the small-square-label treatment given the tightening budget; re-rolled at seed 516.",
+      "thumb": "2026-09-09/thumbs/044.jpg"
+    },
+    {
+      "num": "045",
+      "title": "S2v2 bottle library - bourbon seed 516 - Setting B render + code-finished label",
+      "verdict": "ACCEPTED: no lettering anywhere, single object, correct silhouette and monochrome; label ornamented in code with a shield crest. Established this as the standard workflow for the rest of the library - accept any render that is clean of rule violations even with a blank label, finish the ornament in code, since the small-square-label setting is producing 'blank but clean' far more often than 'lettered'.",
+      "thumb": "2026-09-09/thumbs/045.jpg"
+    },
+    {
+      "num": "046",
+      "title": "S2v2 bottle library - rum seed 517 - Setting B render + code-finished label",
+      "verdict": "ACCEPTED: no lettering, correct monochrome and silhouette; a faint ghost second bottle was cropped out (minor residual background shading in the corners, judged acceptable); label ornamented in code with a cross crest.",
+      "thumb": "2026-09-09/thumbs/046.jpg"
+    },
+    {
+      "num": "047",
+      "title": "S2v2 bottle library - gin seed 518 - Setting B render + code-finished label",
+      "verdict": "ACCEPTED on first render. No lettering, single object, clean monochrome; label ornamented in code with a compass crest.",
+      "thumb": "2026-09-09/thumbs/047.jpg"
+    },
+    {
+      "num": "048",
+      "title": "S2v2 bottle library - sherry seed 519 - Setting B render + code-finished label",
+      "verdict": "ACCEPTED on first render. No lettering, single object, clean monochrome; label ornamented in code with a diamond crest.",
+      "thumb": "2026-09-09/thumbs/048.jpg"
+    },
+    {
+      "num": "049",
+      "title": "S2v2 bottle library - absinthe seed 520 - Setting B render + code-built label",
+      "verdict": "ACCEPTED with disclosed deviations: dark glass instead of clear (budget-driven, not re-rolled), ghost bottle cropped out, label constructed and ornamented in code (a circular medallion with a small star) since none was drawn by the render. No lettering anywhere.",
+      "thumb": "2026-09-09/thumbs/049.jpg"
+    },
+    {
+      "num": "050",
+      "title": "S2v2 bottle library - port seed 521 - Setting B render + code-finished label",
+      "verdict": "ACCEPTED on first render. No lettering, single object, clean monochrome; label ornamented in code with an anchor crest.",
+      "thumb": "2026-09-09/thumbs/050.jpg"
+    },
+    {
+      "num": "051",
+      "title": "S2v2 bottle library - whisky seed 522 - REJECTED (total hallucination, no bottle at all)",
+      "verdict": "REJECTED: total hallucination, not a bottle at all. Re-rolled at seed 523. This is render 23 of the 24-render budget; whisky and wine both still needed, so a single disclosed one-render overage (to 25) will be needed if this or the wine roll does not succeed cleanly on the first try.",
+      "thumb": "2026-09-09/thumbs/051.jpg"
+    },
+    {
+      "num": "052",
+      "title": "S2v2 bottle library - whisky seed 523 - Setting B render + code-finished label",
+      "verdict": "ACCEPTED. No lettering, single object, clean monochrome; label ornamented in code with a crossed-keys crest.",
+      "thumb": "2026-09-09/thumbs/052.jpg"
+    },
+    {
+      "num": "053",
+      "title": "S2v2 bottle library - wine seed 524 - Setting B render + code-finished label (25th render, 1 over the 24-render budget)",
+      "verdict": "ACCEPTED, 12th and final bottle. No lettering, single object, clean monochrome; label ornamented in code with a sunburst crest, replacing a smudge mark. Render count: 25 of a 24-render budget (see thought above).",
+      "thumb": "2026-09-09/thumbs/053.jpg"
+    },
+    {
+      "num": "054",
+      "title": "S2v2 back-bar shelf composite - delivered plate",
+      "verdict": "Delivered. Chalky-tone problem (S2's median 103/p95 254) fixed by construction: every sticker solved to its own exact median 50 / p95 200 before placement, whole-composite bottle-area measures 47/209 against duo's 38/199. 12 distinct crests placed, zero adjacent same-kind neighbours on either shelf (validated in code), front rank wall-to-wall on both shelves (inherited from labels.json's own gap-filling construction), 5 back-rank bottles survived a real alpha-silhouette 60pct-occlusion test. 3 variants delivered alongside (denser back rank via a looser occlusion tolerance, darker recess interior via a post-tone-match darken pass restricted to sticker-free background pixels, and a full recrest reassignment) - see S2v2/NOTES or the report images. Open question for the panel: back rank stayed thin (5 of 18 candidate gaps) because the front rank is genuinely wall-to-wall by construction - filling gaps further would mean loosening the occlusion rule past the ~60pct the panel set, which the denser variant does deliberately and discloses.",
+      "thumb": "2026-09-09/thumbs/054.jpg"
+    },
+    {
+      "num": "055",
+      "title": "S2v2 delivered plate - shelf crop 2x",
+      "verdict": "Reference crop, see main plate entry for full verdict.",
+      "thumb": "2026-09-09/thumbs/055.jpg"
+    },
+    {
+      "num": "056",
+      "title": "S2v2 variant - denser back rank",
+      "verdict": "Subtle, honest difference from the base - the front rank's own wall-to-wall packing leaves back-rank slivers thin even at a loosened tolerance; visible mainly as slightly fuller necks/shoulders peeking between front bottles, not a dramatically busier shelf.",
+      "thumb": "2026-09-09/thumbs/056.jpg"
+    },
+    {
+      "num": "057",
+      "title": "S2v2 variant - darker recess interior",
+      "verdict": "Reads as a moodier, deeper recess without touching any bottle pixel - the darkening is visible as deeper shadow in the necked gaps and above shorter bottles.",
+      "thumb": "2026-09-09/thumbs/057.jpg"
+    },
+    {
+      "num": "058",
+      "title": "S2v2 variant - different crest assignment",
+      "verdict": "Genuinely different bottle-to-slot assignment across both shelves - e.g. the tall wine bottle moves from the shelf's right end to its middle, the star-crest bottle moves to the far left - while keeping every other rule (tone, wall-to-wall front rank, occlusion-tested back rank) identical to the base plate.",
+      "thumb": "2026-09-09/thumbs/058.jpg"
+    },
+    {
+      "num": "059",
+      "title": "s3D bottles-crop seed 3 recess-only edit",
+      "verdict": null,
+      "thumb": "2026-09-09/thumbs/059.jpg"
+    },
+    {
+      "num": "060",
+      "title": "s3D bottles-crop seed 11 recess-only edit",
+      "verdict": null,
+      "thumb": "2026-09-09/thumbs/060.jpg"
+    },
+    {
+      "num": "061",
+      "title": "s3D bottles-crop seed 55 recess-only edit",
+      "verdict": null,
+      "thumb": "2026-09-09/thumbs/061.jpg"
+    },
+    {
+      "num": "062",
+      "title": "s3D bottles-crop seed 62 recess-only edit",
+      "verdict": null,
+      "thumb": "2026-09-09/thumbs/062.jpg"
+    },
+    {
+      "num": "063",
+      "title": "s3D bottles-crop seed 77 recess-only edit",
+      "verdict": null,
+      "thumb": "2026-09-09/thumbs/063.jpg"
+    },
+    {
+      "num": "064",
+      "title": "s3D bottles-crop seed 90 recess-only edit",
+      "verdict": null,
+      "thumb": "2026-09-09/thumbs/064.jpg"
+    },
+    {
+      "num": "065",
+      "title": "Bottles: slow-sampler recess shelf, seed 55, letter-like marks patched in code",
+      "verdict": "0-10 vs canon/plates/duo.png shelves: 6/10. Zero lettering confirmed at 8x+ across every label and every bottle body. Good bottle density and shape variety (11-12 per shelf, real diversity of neck/shoulder), but next to duo the backdrop wood paneling reads busier/noisier and the tone is flatter - less of duo's deep-black engraved depth - and a few labels lost their crest entirely in the auto-separation (ended up plain paper rather than paper+crest), which is compliant with the no-lettering rule but a small loss of richness versus duo's fully-crested shelf.",
+      "thumb": "2026-09-09/thumbs/065.jpg"
+    },
+    {
+      "num": "066",
+      "title": "Bottles: slow-sampler recess shelf, seed 90, letter-like marks patched in code",
+      "verdict": "0-10 vs canon/plates/duo.png shelves: 7/10. Zero lettering confirmed at 8x+. Best shape variety of the four - a lantern/cage-caged bottle and a squat decanter alongside the usual rye/cognac/bourbon silhouettes - and most crests (medallions, the nested-diamond lozenge) survived intact since this plate needed the least cleaning. Still a notch below duo on backdrop polish and glass contrast.",
+      "thumb": "2026-09-09/thumbs/066.jpg"
+    },
+    {
+      "num": "067",
+      "title": "Bottles: slow-sampler recess shelf, seed 62, letter-like marks patched in code",
+      "verdict": "0-10 vs canon/plates/duo.png shelves: 8/10, the strongest of the four. Zero lettering confirmed at 8x+, including the corrected arrow patch (verified the bottle's glass foot survived intact). Densest bottle count of the four, wide shape variety (a cut-glass decanter among the usual silhouettes), and almost every crest (concentric medallions, ovals, a diamond) survived untouched since so little needed cleaning. Still shy of duo's smoother wood-grain backdrop and deeper blacks.",
+      "thumb": "2026-09-09/thumbs/067.jpg"
+    },
+    {
+      "num": "068",
+      "title": "Bottles: slow-sampler recess shelf, seed 77, letter-like marks patched in code",
+      "verdict": "0-10 vs canon/plates/duo.png shelves: 7/10. Zero lettering confirmed at 8x+ across every label and bottle body; this plate needed the least intervention of the four, so nearly every crest (medallions, the two diamond lozenges, a chevron-patterned bottle) survived untouched. Good shape variety including a crystal-cut decanter. Backdrop striping and glass contrast still read a step below duo's polish.",
+      "thumb": "2026-09-09/thumbs/068.jpg"
+    },
+    {
+      "num": "069",
+      "title": "whole-plate assembled with bartenders-marble-ledge back-bar-carcass back-bar-lower-shelf bottles-on-lower-shelf bottles-on-upper-shelf back-bar-upper-shelf television-blank chalkboard-blank window-frame-and-reveal window-glass-street-view main-bar-marble-counter left-leather-club-chair right-leather-club-chair and window-sign",
+      "verdict": null,
+      "thumb": "2026-09-09/thumbs/069.jpg"
+    },
+    {
+      "num": "070",
+      "title": "whole-plate assembled with bartenders-marble-ledge back-bar-carcass back-bar-lower-shelf bottles-on-lower-shelf bottles-on-upper-shelf back-bar-upper-shelf television-blank chalkboard-blank window-frame-and-reveal window-glass-street-view main-bar-marble-counter left-leather-club-chair right-leather-club-chair and window-sign",
+      "verdict": null,
+      "thumb": "2026-09-09/thumbs/070.jpg"
+    },
+    {
+      "num": "071",
+      "title": "whole-plate assembled with bartenders-marble-ledge back-bar-carcass back-bar-lower-shelf bottles-on-lower-shelf bottles-on-upper-shelf back-bar-upper-shelf television-blank chalkboard-blank window-frame-and-reveal window-glass-street-view main-bar-marble-counter left-leather-club-chair right-leather-club-chair and window-sign",
+      "verdict": null,
+      "thumb": "2026-09-09/thumbs/071.jpg"
+    },
+    {
+      "num": "072",
+      "title": "whole-plate assembled with bartenders-marble-ledge back-bar-carcass back-bar-lower-shelf bottles-on-lower-shelf bottles-on-upper-shelf back-bar-upper-shelf television-blank chalkboard-blank window-frame-and-reveal window-glass-street-view main-bar-marble-counter left-leather-club-chair right-leather-club-chair and window-sign",
+      "verdict": null,
+      "thumb": "2026-09-09/thumbs/072.jpg"
+    },
+    {
+      "num": "073",
+      "title": "whole-plate assembled with bartenders-marble-ledge back-bar-carcass back-bar-lower-shelf bottles-on-lower-shelf bottles-on-upper-shelf back-bar-upper-shelf television-blank chalkboard-blank window-frame-and-reveal window-glass-street-view main-bar-marble-counter left-leather-club-chair right-leather-club-chair and window-sign",
+      "verdict": null,
+      "thumb": "2026-09-09/thumbs/073.jpg"
+    },
+    {
+      "num": "074",
+      "title": "whole-plate assembled with bartenders-marble-ledge back-bar-carcass back-bar-lower-shelf bottles-on-lower-shelf bottles-on-upper-shelf back-bar-upper-shelf television-blank chalkboard-blank window-frame-and-reveal window-glass-street-view main-bar-marble-counter left-leather-club-chair right-leather-club-chair and window-sign",
+      "verdict": null,
+      "thumb": "2026-09-09/thumbs/074.jpg"
+    },
+    {
+      "num": "075",
+      "title": "whole-plate assembled with bartenders-marble-ledge back-bar-carcass back-bar-lower-shelf bottles-on-lower-shelf bottles-on-upper-shelf back-bar-upper-shelf television-blank chalkboard-blank window-frame-and-reveal window-glass-street-view main-bar-marble-counter left-leather-club-chair right-leather-club-chair and window-sign",
+      "verdict": null,
+      "thumb": "2026-09-09/thumbs/075.jpg"
+    },
+    {
+      "num": "076",
+      "title": "whole-plate assembled with bartenders-marble-ledge back-bar-carcass back-bar-lower-shelf bottles-on-lower-shelf bottles-on-upper-shelf back-bar-upper-shelf television-blank chalkboard-blank window-frame-and-reveal window-glass-street-view main-bar-marble-counter left-leather-club-chair right-leather-club-chair and window-sign",
+      "verdict": null,
+      "thumb": "2026-09-09/thumbs/076.jpg"
+    },
+    {
+      "num": "077",
+      "title": "whole-plate assembled with bartenders-marble-ledge back-bar-carcass back-bar-lower-shelf bottles-on-lower-shelf bottles-on-upper-shelf back-bar-upper-shelf television-blank chalkboard-blank window-frame-and-reveal window-glass-street-view main-bar-marble-counter left-leather-club-chair right-leather-club-chair and window-sign",
+      "verdict": null,
+      "thumb": "2026-09-09/thumbs/077.jpg"
+    },
+    {
+      "num": "078",
+      "title": "APPROVED: the back bar shelf, seed 90 - into the kit as the five recess parts, verbatim",
+      "verdict": "Approved by the founder; in the plate.",
+      "thumb": "2026-09-09/thumbs/078.jpg"
+    }
+  ]
+}
