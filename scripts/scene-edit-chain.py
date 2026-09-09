@@ -704,13 +704,37 @@ def build_references(a, man: dict, p1_path: Path, pass_: str, out_dir: Path, p3_
     return images, roster
 
 
+# ---- --extra-edit NAME:TEXT (repeatable) -----------------------------------
+def parse_extra_edits(values: list[str]) -> dict[str, str]:
+    """--extra-edit's raw NAME:TEXT strings, parsed into {name: sentence}.
+    Repeating the same NAME joins the sentences with a space (so more than
+    one --extra-edit for one character all land, not just the last), and an
+    empty values list (every call before this flag existed) returns {},
+    exactly as if the flag were never touched."""
+    out: dict[str, str] = {}
+    for v in values:
+        if ":" not in v:
+            raise SystemExit(f"--extra-edit: expected NAME:TEXT, got {v!r}")
+        name, text = v.split(":", 1)
+        name, text = name.strip(), text.strip()
+        if name not in ("drew", "barclay", "abby", "bottles"):
+            raise SystemExit(f"--extra-edit: unknown name {name!r} - choose from drew,barclay,abby,bottles")
+        if not text:
+            continue
+        out[name] = f"{out[name]} {text}" if name in out else text
+    return out
+
+
 # ------------------------------------------------------------------ prompt
 def build_prompt(a, roster: str, painted: list[str], edits_selected: list[str], pass_: str, p3_mode: str = "",
                   p2_mode: str = "") -> str:
+    extra = parse_extra_edits(getattr(a, "extra_edit", []))
     edits: list[str] = []
     if pass_ == "R":
         for i, name in enumerate(a.repair):
             edits.append(repair_edit_text(name, i + 2, absent=(name == "abby" and a.abby_absent)))
+            if name in extra:
+                edits.append(extra[name])
     else:
         for key in ("drew", "barclay", "abby", "bottles"):
             if key not in edits_selected:
@@ -723,6 +747,8 @@ def build_prompt(a, roster: str, painted: list[str], edits_selected: list[str], 
                 edits.append(EDIT_TEXT["abby_B"] if pass_ == "B" else abby_a_edit_text(p3_mode))
             else:
                 edits.append(EDIT_TEXT[key])
+            if key in extra:
+                edits.append(extra[key])
         edits.extend(blockin_identity_edits(painted, pass_))
         if a.head_edit and ("drew" in edits_selected or "barclay" in edits_selected):
             edits.append(HEAD_EDIT_TEXT)
@@ -1120,6 +1146,17 @@ def main() -> None:
                      "pass 1's (non-existent, in a dry run) raw render when building pass 2's Picture 1. Every "
                      "later step in a dry run chains from the PREVIOUS step's own Picture 1 instead. Ignored "
                      "outside --dry-run, where a real chain always chains its own actual raw renders.")
+    ap.add_argument("--extra-edit", action="append", default=[], metavar="NAME:TEXT",
+                     help="repeatable, NAME:TEXT where NAME is drew/barclay/abby/bottles: one more sentence "
+                          "appended to THAT character's own numbered EDIT (right after its base sentence, before "
+                          "the block-in identity/head-edit/keep sentences), for a fast pass whose failure needs "
+                          "fixing IN THE PROMPT rather than by a new base sentence - e.g. --extra-edit "
+                          "'abby:she is a dog, not a woman' or --extra-edit 'drew:his head sits on his neck'. "
+                          "Repeating the same NAME joins the sentences with a space, so more than one --extra-edit "
+                          "for one character all land in its edit, not just the last one given. Under --chain, the "
+                          "same list threads through every step unchanged, so one flag naming drew and abby lands "
+                          "each sentence in its own character's own pass automatically - only that pass's own "
+                          "character key ever matches. Every existing call with no --extra-edit renders identically.")
     ap.add_argument("--steps-override", type=int, default=0, help="explicit sampler steps (no Lightning LoRA)")
     ap.add_argument("--cfg-override", type=float, default=0.0, help="explicit guidance (no Lightning LoRA)")
     ap.add_argument("--room-from-plate", action="store_true",

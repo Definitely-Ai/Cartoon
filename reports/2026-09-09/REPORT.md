@@ -2310,3 +2310,535 @@ Built for Rick. Every image the studio generated today, in the order it happened
 
 ---
 
+## 139. p2-7-1 pass A seed 7 whole-plate edit
+
+![p2-7-1 pass A seed 7 whole-plate edit](images/139-p2-7-1-pass-a-seed-7-whole-plate-edit.png)
+
+**The ask.** Founder's note on the seed-7 proof: restore the approved window, gild THE SWINGING DOOR, put Abby behind the ledge and Drew/Barclay seated on the near side in their own chairs, redraw the bottles as a real back shelf - and fix the IDENTITY failure (Drew a vulture/turkey, Barclay a hound/poodle/llama/human).
+
+**The thinking.** Pass A: Picture 1 is the approved plate with Drew's block-in painted in at 100-180 grey, heads full; EDITS carried this pass: ['drew']; p2=drew, p3=none, head-edit=True. After the render, tone-matched to the plate over the room and ['window-frame', 'glass'] restored from the plate through their own masks (tone-matched to the render's own ring just outside each) before the gilded sign went on last.
+
+**Settings.** local/qwen-image-edit-2511, seed 7, fast 8-step cfg 1, aspect 2:3 -> bridge (1232, 1840), blockin-heads full, p2 drew, p3 none, head-edit True, match-keep True, room-from-plate True (dilate 10px), 69.6s
+
+**Prompt.** [prompts/139-p2-7-1-pass-a-seed-7-whole-plate-edit.prompt.txt](prompts/139-p2-7-1-pass-a-seed-7-whole-plate-edit.prompt.txt)
+
+*Logged 12:14.*
+
+---
+
+## 140. p2-21-1 pass A seed 21 whole-plate edit
+
+![p2-21-1 pass A seed 21 whole-plate edit](images/140-p2-21-1-pass-a-seed-21-whole-plate-edit.png)
+
+**The ask.** Founder's note on the seed-7 proof: restore the approved window, gild THE SWINGING DOOR, put Abby behind the ledge and Drew/Barclay seated on the near side in their own chairs, redraw the bottles as a real back shelf - and fix the IDENTITY failure (Drew a vulture/turkey, Barclay a hound/poodle/llama/human).
+
+**The thinking.** Pass A: Picture 1 is the approved plate with Drew's block-in painted in at 100-180 grey, heads full; EDITS carried this pass: ['drew']; p2=drew, p3=none, head-edit=True. After the render, tone-matched to the plate over the room and ['window-frame', 'glass'] restored from the plate through their own masks (tone-matched to the render's own ring just outside each) before the gilded sign went on last.
+
+**Settings.** local/qwen-image-edit-2511, seed 21, fast 8-step cfg 1, aspect 2:3 -> bridge (1232, 1840), blockin-heads full, p2 drew, p3 none, head-edit True, match-keep True, room-from-plate True (dilate 10px), 67.0s
+
+**Prompt.** [prompts/140-p2-21-1-pass-a-seed-21-whole-plate-edit.prompt.txt](prompts/140-p2-21-1-pass-a-seed-21-whole-plate-edit.prompt.txt)
+
+*Logged 12:16.*
+
+---
+
+## 141. p2-44-1 pass A seed 44 whole-plate edit
+
+![p2-44-1 pass A seed 44 whole-plate edit](images/141-p2-44-1-pass-a-seed-44-whole-plate-edit.png)
+
+**The ask.** Founder's note on the seed-7 proof: restore the approved window, gild THE SWINGING DOOR, put Abby behind the ledge and Drew/Barclay seated on the near side in their own chairs, redraw the bottles as a real back shelf - and fix the IDENTITY failure (Drew a vulture/turkey, Barclay a hound/poodle/llama/human).
+
+**The thinking.** Pass A: Picture 1 is the approved plate with Drew's block-in painted in at 100-180 grey, heads full; EDITS carried this pass: ['drew']; p2=drew, p3=none, head-edit=True. After the render, tone-matched to the plate over the room and ['window-frame', 'glass'] restored from the plate through their own masks (tone-matched to the render's own ring just outside each) before the gilded sign went on last.
+
+**Settings.** local/qwen-image-edit-2511, seed 44, fast 8-step cfg 1, aspect 2:3 -> bridge (1232, 1840), blockin-heads full, p2 drew, p3 none, head-edit True, match-keep True, room-from-plate True (dilate 10px), 72.3s
+
+**Prompt.** [prompts/141-p2-44-1-pass-a-seed-44-whole-plate-edit.prompt.txt](prompts/141-p2-44-1-pass-a-seed-44-whole-plate-edit.prompt.txt)
+
+*Logged 12:18.*
+
+---
+
+## 142. p2-7-1h pass A seed 7 whole-plate edit
+
+![p2-7-1h pass A seed 7 whole-plate edit](images/142-p2-7-1h-pass-a-seed-7-whole-plate-edit.png)
+
+**The ask.** Founder's note on the seed-7 proof: restore the approved window, gild THE SWINGING DOOR, put Abby behind the ledge and Drew/Barclay seated on the near side in their own chairs, redraw the bottles as a real back shelf - and fix the IDENTITY failure (Drew a vulture/turkey, Barclay a hound/poodle/llama/human).
+
+**The thinking.** Pass A: Picture 1 is the approved plate with Drew's block-in painted in at 100-180 grey, heads none; EDITS carried this pass: ['drew']; p2=drew, p3=none, head-edit=True. After the render, tone-matched to the plate over the room and ['window-frame', 'glass'] restored from the plate through their own masks (tone-matched to the render's own ring just outside each) before the gilded sign went on last.
+
+**Settings.** local/qwen-image-edit-2511, seed 7, fast 8-step cfg 1, aspect 2:3 -> bridge (1232, 1840), blockin-heads none, p2 drew, p3 none, head-edit True, match-keep True, room-from-plate True (dilate 10px), 70.4s
+
+**Prompt.** [prompts/142-p2-7-1h-pass-a-seed-7-whole-plate-edit.prompt.txt](prompts/142-p2-7-1h-pass-a-seed-7-whole-plate-edit.prompt.txt)
+
+*Logged 12:30.*
+
+---
+
+## 143. p2-7-2 pass B seed 7 whole-plate edit
+
+![p2-7-2 pass B seed 7 whole-plate edit](images/143-p2-7-2-pass-b-seed-7-whole-plate-edit.png)
+
+**The ask.** Founder's note on the seed-7 proof: restore the approved window, gild THE SWINGING DOOR, put Abby behind the ledge and Drew/Barclay seated on the near side in their own chairs, redraw the bottles as a real back shelf - and fix the IDENTITY failure (Drew a vulture/turkey, Barclay a hound/poodle/llama/human).
+
+**The thinking.** Pass B: Picture 1 is a previous render (canon/room-kit/v2/work/p2-7-1h-s7-raw.png) with Barclay's block-in painted in at 100-180 grey, heads none - everyone else already drawn in it kept exactly as is; EDITS carried this pass: ['barclay']; p2=barclay, p3=none, head-edit=True. After the render, tone-matched to the plate over the room and ['window-frame', 'glass'] restored from the plate through their own masks (tone-matched to the render's own ring just outside each) before the gilded sign went on last.
+
+**Settings.** local/qwen-image-edit-2511, seed 7, fast 8-step cfg 1, aspect 2:3 -> bridge (1232, 1840), blockin-heads none, p2 barclay, p3 none, head-edit True, match-keep True, room-from-plate True (dilate 10px), 70.4s
+
+**Prompt.** [prompts/143-p2-7-2-pass-b-seed-7-whole-plate-edit.prompt.txt](prompts/143-p2-7-2-pass-b-seed-7-whole-plate-edit.prompt.txt)
+
+*Logged 12:35.*
+
+---
+
+## 144. p2-21-1h pass A seed 21 whole-plate edit
+
+![p2-21-1h pass A seed 21 whole-plate edit](images/144-p2-21-1h-pass-a-seed-21-whole-plate-edit.png)
+
+**The ask.** Founder's note on the seed-7 proof: restore the approved window, gild THE SWINGING DOOR, put Abby behind the ledge and Drew/Barclay seated on the near side in their own chairs, redraw the bottles as a real back shelf - and fix the IDENTITY failure (Drew a vulture/turkey, Barclay a hound/poodle/llama/human).
+
+**The thinking.** Pass A: Picture 1 is the approved plate with Drew's block-in painted in at 100-180 grey, heads none; EDITS carried this pass: ['drew']; p2=drew, p3=none, head-edit=True. After the render, tone-matched to the plate over the room and ['window-frame', 'glass'] restored from the plate through their own masks (tone-matched to the render's own ring just outside each) before the gilded sign went on last.
+
+**Settings.** local/qwen-image-edit-2511, seed 21, fast 8-step cfg 1, aspect 2:3 -> bridge (1232, 1840), blockin-heads none, p2 drew, p3 none, head-edit True, match-keep True, room-from-plate True (dilate 10px), 73.0s
+
+**Prompt.** [prompts/144-p2-21-1h-pass-a-seed-21-whole-plate-edit.prompt.txt](prompts/144-p2-21-1h-pass-a-seed-21-whole-plate-edit.prompt.txt)
+
+*Logged 12:42.*
+
+---
+
+## 145. p2-44-1h pass A seed 44 whole-plate edit
+
+![p2-44-1h pass A seed 44 whole-plate edit](images/145-p2-44-1h-pass-a-seed-44-whole-plate-edit.png)
+
+**The ask.** Founder's note on the seed-7 proof: restore the approved window, gild THE SWINGING DOOR, put Abby behind the ledge and Drew/Barclay seated on the near side in their own chairs, redraw the bottles as a real back shelf - and fix the IDENTITY failure (Drew a vulture/turkey, Barclay a hound/poodle/llama/human).
+
+**The thinking.** Pass A: Picture 1 is the approved plate with Drew's block-in painted in at 100-180 grey, heads none; EDITS carried this pass: ['drew']; p2=drew, p3=none, head-edit=True. After the render, tone-matched to the plate over the room and ['window-frame', 'glass'] restored from the plate through their own masks (tone-matched to the render's own ring just outside each) before the gilded sign went on last.
+
+**Settings.** local/qwen-image-edit-2511, seed 44, fast 8-step cfg 1, aspect 2:3 -> bridge (1232, 1840), blockin-heads none, p2 drew, p3 none, head-edit True, match-keep True, room-from-plate True (dilate 10px), 69.2s
+
+**Prompt.** [prompts/145-p2-44-1h-pass-a-seed-44-whole-plate-edit.prompt.txt](prompts/145-p2-44-1h-pass-a-seed-44-whole-plate-edit.prompt.txt)
+
+*Logged 12:44.*
+
+---
+
+## 146. STRATEGY P3 - Drew pose study, cropped from the accepted duo plate, redrawn as his re-inked portrait
+
+![STRATEGY P3 - Drew pose study, cropped from the accepted duo plate, redrawn as his re-inked portrait](images/146-strategy-p3-drew-pose-study-cropped-from-the-accepted-duo-plate-redrawn-as-his-re-inked-portrait.png)
+
+**The ask.** Founder's brief, Strategy P3: pose studies off the ACCEPTED duo plate instead of a fresh scene composition - Picture 1 = the duo plate cropped to Drew alone (x0-600,y560-1600), Picture 2 = the re-inked drew.png; EDIT: redraw the same seated figure/pose/crop in the house model's own pen as Picture 2, plain paper instead of the room.
+
+**The thinking.** Every previous route (scene-edit-chain's block-in passes, cast-place route S) lost Drew's bird head at the fast band. This one sends the model far less to invent: Picture 1 is already the correct pose and crop straight out of the plate Rick accepted, so the only real ask is 'draw Picture 2's head/bill/eye/vest onto this same figure' - closer to a reink than a scene composite. Ran at reink-portrait.py's own settings (steps 20, cfg 2.5, no Lightning LoRA) since that recipe is what got all three characters right before.
+
+**Settings.** local/qwen-image-edit-2511, steps 20, cfg 2.5, no Lightning LoRA, aspect 2:3, seed 7
+
+**Prompt.** [prompts/146-strategy-p3-drew-pose-study-cropped-from-the-accepted-duo-plate-redrawn-as-his-re-inked-portrait.prompt.txt](prompts/146-strategy-p3-drew-pose-study-cropped-from-the-accepted-duo-plate-redrawn-as-his-re-inked-portrait.prompt.txt)
+
+**Verdict.** Identity exact - head, bill, eye, vest all match Picture 2. Kept a suggestion of the chair/marble instead of true blank paper (the house pen lays a faint wash over 'blank paper' too), which is fine - it is masked into the plate's own figure block-in next, not used verbatim.
+
+*Logged 12:46.*
+
+---
+
+## 147. STRATEGY P3 - Barclay pose study, cropped from the accepted duo plate, redrawn as his re-inked portrait
+
+![STRATEGY P3 - Barclay pose study, cropped from the accepted duo plate, redrawn as his re-inked portrait](images/147-strategy-p3-barclay-pose-study-cropped-from-the-accepted-duo-plate-redrawn-as-his-re-inked-portrait.png)
+
+**The ask.** Same P3 brief as Drew's, mirrored: Picture 1 = the duo plate's right half (x600-1200,y560-1600), Picture 2 = the re-inked barclay.png.
+
+**The thinking.** Barclay already came back as himself on the fast scene-edit-chain pass, so this was the lower-risk half of the pair; ran it at the same steps-20/cfg-2.5 settings as Drew and Abby for consistency across the strategy.
+
+**Settings.** local/qwen-image-edit-2511, steps 20, cfg 2.5, no Lightning LoRA, aspect 2:3, seed 7
+
+**Prompt.** [prompts/147-strategy-p3-barclay-pose-study-cropped-from-the-accepted-duo-plate-redrawn-as-his-re-inked-portrait.prompt.txt](prompts/147-strategy-p3-barclay-pose-study-cropped-from-the-accepted-duo-plate-redrawn-as-his-re-inked-portrait.prompt.txt)
+
+**Verdict.** Identity exact - head, muzzle, eye, blazer all match Picture 2, drink in hand. Best of the three pose studies for mask-fit: 99.99% of the block-in mask landed on real ink at placement, no manual nudge needed.
+
+*Logged 12:46.*
+
+---
+
+## 148. STRATEGY P3 - Abby pose study, standing behind the counter, redrawn from her re-inked portrait alone
+
+![STRATEGY P3 - Abby pose study, standing behind the counter, redrawn from her re-inked portrait alone](images/148-strategy-p3-abby-pose-study-standing-behind-the-counter-redrawn-from-her-re-inked-portrait-alone.png)
+
+**The ask.** Founder's brief: for Abby, no plate crop exists (she is not in duo.png) - make the pose study from her re-ink alone: 'the same dog, now standing behind a bar counter facing us, waist up, hands on the counter, plain paper.'
+
+**The thinking.** Every prior route (scene-edit-chain, cast-place route S) turned Abby into a human woman, sometimes with a small dog beside her. Sending ONLY her own re-inked portrait as Picture 1 - no scene, no room paragraph, nothing to restage - and asking for one pose change tests the founder's own diagnosis: the model copies what it is shown in Picture 1 far more faithfully than what it is told.
+
+**Settings.** local/qwen-image-edit-2511, steps 20, cfg 2.5, no Lightning LoRA, aspect 4:5, seed 7
+
+**Prompt.** [prompts/148-strategy-p3-abby-pose-study-standing-behind-the-counter-redrawn-from-her-re-inked-portrait-alone.prompt.txt](prompts/148-strategy-p3-abby-pose-study-standing-behind-the-counter-redrawn-from-her-re-inked-portrait-alone.prompt.txt)
+
+**Verdict.** SHE STAYED A DOG. Westie face, collar and pendant all match Picture 1 exactly; hands (paws) on a simple counter edge, facing the room, plain paper - confirms the P3 premise for the one character every other route lost.
+
+*Logged 12:46.*
+
+---
+
+## 149. STRATEGY P3 - the three pose studies keyed and laid into the approved plate (code composite, no render)
+
+![STRATEGY P3 - the three pose studies keyed and laid into the approved plate (code composite, no render)](images/149-strategy-p3-the-three-pose-studies-keyed-and-laid-into-the-approved-plate-code-composite-no-render.png)
+
+**The ask.** Founder's brief: key each study by white into a sticker (hole-filled), scale it to the block-in's own bounding box, and lay it into the approved plate through the room's masks (chair-left/chair-right in front of the seated two, the counter in front of Abby) with the code passes for window and sign.
+
+**The thinking.** A flat/local-contrast white key could not isolate a bbox off these renders - the house pen lays a faint engraved wash over the WHOLE 'blank paper', so the largest connected ink blob measured edge to edge at every threshold tried (10-60). The real key here is room-part.py's own hand-authored mask_of(part) - each study is placed unkeyed (a density-trimmed crop, scaled to its block-in's own bbox height, centred), and assemble(override=...) confines it to the mask exactly as route A/route S's flat-field composites do. Measured against each mask directly: Barclay 99.99% real ink, Abby 88%, Drew 83% after a manual nudge (his content bbox includes the chair on one side and the reaching arm on the other, so bbox-centring alone put his own neck about 95px off the block-in's).
+
+**Settings.** code composite: room-part.py's manifest()/mask_of()/assemble(override) imported as a module (never run), ring tone-match + feather 3 + cast shadow per part exactly as the approved plate's own parts; scripts/sign-on-glass.py run last for the gilded window text
+
+**Verdict.** All three identities and seats read correctly at a glance - candidate for the founder, ahead of the unify pass. Known seam: Drew's bill/hand-transition still shows a little raw plate through the mask (his content's own arm reach does not exactly match the block-in's thin diagonal arm line).
+
+*Logged 12:47.*
+
+---
+
+## 150. p2-44-2 pass B seed 44 whole-plate edit
+
+![p2-44-2 pass B seed 44 whole-plate edit](images/150-p2-44-2-pass-b-seed-44-whole-plate-edit.png)
+
+**The ask.** Founder's note on the seed-7 proof: restore the approved window, gild THE SWINGING DOOR, put Abby behind the ledge and Drew/Barclay seated on the near side in their own chairs, redraw the bottles as a real back shelf - and fix the IDENTITY failure (Drew a vulture/turkey, Barclay a hound/poodle/llama/human).
+
+**The thinking.** Pass B: Picture 1 is a previous render (canon/room-kit/v2/work/p2-44-1h-s44-raw.png) with Barclay's block-in painted in at 100-180 grey, heads none - everyone else already drawn in it kept exactly as is; EDITS carried this pass: ['barclay']; p2=barclay, p3=none, head-edit=True. After the render, tone-matched to the plate over the room and ['window-frame', 'glass'] restored from the plate through their own masks (tone-matched to the render's own ring just outside each) before the gilded sign went on last.
+
+**Settings.** local/qwen-image-edit-2511, seed 44, fast 8-step cfg 1, aspect 2:3 -> bridge (1232, 1840), blockin-heads none, p2 barclay, p3 none, head-edit True, match-keep True, room-from-plate True (dilate 10px), 68.3s
+
+**Prompt.** [prompts/150-p2-44-2-pass-b-seed-44-whole-plate-edit.prompt.txt](prompts/150-p2-44-2-pass-b-seed-44-whole-plate-edit.prompt.txt)
+
+*Logged 12:47.*
+
+---
+
+## 151. STRATEGY P3 - unify pass, whole-render finish, seed 7
+
+![STRATEGY P3 - unify pass, whole-render finish, seed 7](images/151-strategy-p3-unify-pass-whole-render-finish-seed-7.png)
+
+**The ask.** Founder's brief: ONE whole-plate fast pass on the composite with 'keep everything exactly as it is, just unify the pen and the light', so the figures are integrated rather than pasted.
+
+**The thinking.** Picture 1 is the code composite (pre-sign); one numbered EDIT asks to keep the room/cast/poses/identities exactly as given and redraw the whole panel in one continuous engraved hand and one consistent light, at the Lightning fast band (8 steps, cfg 1) as instructed. After the render: percentile tone-match to the plate over the non-figure room (scene-edit.py's own non_figure_mask), window/glass restored from the plate, sign gilded last.
+
+**Settings.** local/qwen-image-edit-2511, fast (Lightning 8-step, cfg 1), aspect 2:3 -> bridge 1232x1840, seed 7, 61.1s
+
+**Prompt.** [prompts/151-strategy-p3-unify-pass-whole-render-finish-seed-7.prompt.txt](prompts/151-strategy-p3-unify-pass-whole-render-finish-seed-7.prompt.txt)
+
+**Verdict.** Pen and light DID unify - the whole panel reads as one continuous engraving now, all three identities held. Cost: Drew's vest/torso is thin in this seed (the fast pass under-committed to the weakest-inked part of the composite) - see seed 41 and the --room-from-plate variant for comparison.
+
+*Logged 12:47.*
+
+---
+
+## 152. STRATEGY P3 - unify pass, --room-from-plate finish, seed 7
+
+![STRATEGY P3 - unify pass, --room-from-plate finish, seed 7](images/152-strategy-p3-unify-pass-room-from-plate-finish-seed-7.png)
+
+**The ask.** Same submission as the whole-render finish above, --room-from-plate's own restraint applied after: the APPROVED PLATE everywhere except inside the three seated-figure masks (dilated 10px) and the back-bar recess, the plate's own chair/counter furniture re-applied on top.
+
+**The thinking.** One render, two finishes: this one guarantees the room can never drift from the approved plate.png - only the cast's own footprint gets the unified render, so the join is the only thing left to judge.
+
+**Settings.** same render as seed 7 whole-render finish; scene-edit.py's build_room_from_plate/room_from_plate_mask, dilate-figures 10, --keep window-frame,glass
+
+**Verdict.** Cleanest room fidelity of the four unify outputs - shelves, chairs and window are pixel-exact to plate.png. Same Drew-torso softness as the whole finish, since both come off the same render.
+
+*Logged 12:47.*
+
+---
+
+## 153. STRATEGY P3 - unify pass, whole-render finish, seed 41
+
+![STRATEGY P3 - unify pass, whole-render finish, seed 41](images/153-strategy-p3-unify-pass-whole-render-finish-seed-41.png)
+
+**The ask.** Same brief as seed 7's unify pass, after nudging Drew's placement in the composite (his content bbox includes the chair on one side and his reaching arm on the other, so bbox-centring alone put his neck ~95px off the block-in's own - fixed with a measured -95,-15 nudge before re-running the fast pass).
+
+**The thinking.** Same prompt and settings as seed 7, run on the corrected composite to see whether the improved input placement carries through the fast pass.
+
+**Settings.** local/qwen-image-edit-2511, fast (Lightning 8-step, cfg 1), aspect 2:3 -> bridge 1232x1840, seed 41, 56.6s
+
+**Prompt.** [prompts/153-strategy-p3-unify-pass-whole-render-finish-seed-41.prompt.txt](prompts/153-strategy-p3-unify-pass-whole-render-finish-seed-41.prompt.txt)
+
+**Verdict.** Drew's hand now reads clearly on the marble (it did not in seed 7), but the fast pass still thinned his vest between neck and hand more than the composite itself has. Two seeds off two composites both point the same way: the FAST band unifies pen/light well but is inconsistent at fully reconstructing the least-inked part of a three-character composite - a --full (mid-band) unify pass is the next thing to try, budget permitting.
+
+*Logged 12:47.*
+
+---
+
+## 154. STRATEGY P3 - unify pass, --room-from-plate finish, seed 41
+
+![STRATEGY P3 - unify pass, --room-from-plate finish, seed 41](images/154-strategy-p3-unify-pass-room-from-plate-finish-seed-41.png)
+
+**The ask.** Same seed-41 submission, --room-from-plate's restraint applied: the approved plate everywhere outside the three figure masks and the recess.
+
+**The thinking.** Paired with seed 7's room-from-plate finish for the founder to compare directly - same guarantee (room pixel-exact to plate.png), different cast render underneath.
+
+**Settings.** same render as seed 41 whole-render finish; build_room_from_plate, dilate-figures 10, --keep window-frame,glass
+
+**Verdict.** candidate - to the founder alongside seed 7's pair and the plain composite, for the call on which (if any) unify result replaces the pasted composite as the round's deliverable.
+
+*Logged 12:47.*
+
+---
+
+## 155. STRATEGY P3 - contact sheet: pose studies, composite, and both unify seeds
+
+![STRATEGY P3 - contact sheet: pose studies, composite, and both unify seeds](images/155-strategy-p3-contact-sheet-pose-studies-composite-and-both-unify-seeds.png)
+
+**The ask.** Founder's brief asked for the composite and the unified pass delivered together; this sheet is the round's own summary for the daily report.
+
+**The thinking.** One sheet, four rows: the three pose studies as rendered, the code composite they were keyed and laid into, the fast unify pass's whole-render finish (two seeds), and its --room-from-plate finish (same two seeds) - so the founder can compare all of STRATEGY P3's outputs at a glance.
+
+**Settings.** PIL contact sheet, no render
+
+**Verdict.** for Rick's review alongside the individual full plates
+
+*Logged 12:47.*
+
+---
+
+## 156. P1 combo full-tone paste, seed 90 (Drew+Barclay+Abby in one pass)
+
+![P1 combo full-tone paste, seed 90 (Drew+Barclay+Abby in one pass)](images/156-p1-combo-full-tone-paste-seed-90-drew-barclay-abby-in-one-pass.png)
+
+**The ask.** Founder's strategy P1: put the character itself into Picture 1 as the under-drawing - cut each re-inked portrait out of its paper, scale it to the block-in's bbox, paste it into the approved plate at its place (behind the plate's own chair/ledge pixels), then run a whole-plate fast pass asking the model to redraw each figure in place, in the room's own pen, turning Drew and Barclay to face each other. Try both a full-tone paste and a pale 150-215 under-drawing band; chain one character per pass if a combined pass doesn't hold identity.
+
+**The thinking.** Picture 1: the approved plate with all three re-inked portraits pasted in at full tone (keyed off their paper by border-connected flood fill, scaled to each character's own block-in bbox, furniture re-pasted from the plate on top). Picture 2 Drew's portrait, Picture 3 a Barclay+Abby tile (MAX_REFS=3 caps it there). Numbered edits: 'the figures already in the picture ARE Drew, Barclay and Abby - redraw each in place... turning Drew and Barclay to face each other', plus explicit DOG/BIRD identity guards and scene-edit.py's own HEAD_EDIT_TEXT. Post: percentile tone-match, window/glass restored from the plate (restoring the shelf too was tried first and erased the characters' heads where their masks overlap the recess - dropped).
+
+**Settings.** local/qwen-image-edit-2511, fast 8-step cfg 1, aspect 2:3 (bridge 1232x1840 -> plate 1200x1800)
+
+**Prompt.** [prompts/156-p1-combo-full-tone-paste-seed-90-drew-barclay-abby-in-one-pass.prompt.txt](prompts/156-p1-combo-full-tone-paste-seed-90-drew-barclay-abby-in-one-pass.prompt.txt)
+
+**Verdict.** Barclay and Abby read as themselves, roughly seated/standing in place. Drew came out as a human man in his vest, standing OUTSIDE the counter near the window, not seated, not a bird - one instance of the identity failure this whole run is chasing.
+
+*Logged 12:51.*
+
+---
+
+## 157. P1 combo pale-band paste, seed 90 (Drew+Barclay+Abby in one pass)
+
+![P1 combo pale-band paste, seed 90 (Drew+Barclay+Abby in one pass)](images/157-p1-combo-pale-band-paste-seed-90-drew-barclay-abby-in-one-pass.png)
+
+**The ask.** Founder's strategy P1: put the character itself into Picture 1 as the under-drawing - cut each re-inked portrait out of its paper, scale it to the block-in's bbox, paste it into the approved plate at its place (behind the plate's own chair/ledge pixels), then run a whole-plate fast pass asking the model to redraw each figure in place, in the room's own pen, turning Drew and Barclay to face each other. Try both a full-tone paste and a pale 150-215 under-drawing band; chain one character per pass if a combined pass doesn't hold identity.
+
+**The thinking.** Same as the full-tone combo pass, except each pasted figure's tone is remapped into the 150-215 grey band first, so it reads as a pale under-drawing rather than a finished sketch.
+
+**Settings.** local/qwen-image-edit-2511, fast 8-step cfg 1, aspect 2:3 (bridge 1232x1840 -> plate 1200x1800)
+
+**Prompt.** [prompts/157-p1-combo-pale-band-paste-seed-90-drew-barclay-abby-in-one-pass.prompt.txt](prompts/157-p1-combo-pale-band-paste-seed-90-drew-barclay-abby-in-one-pass.prompt.txt)
+
+**Verdict.** Same split as the full-tone combo: Barclay and Abby read as dogs, Drew reads as a human man (mostly cropped off-frame by the window sign here). Tone of the under-drawing (full vs pale) did not change which character failed.
+
+*Logged 12:51.*
+
+---
+
+## 158. P1 chain step 1/3 - Drew alone, seed 90
+
+![P1 chain step 1/3 - Drew alone, seed 90](images/158-p1-chain-step-1-3-drew-alone-seed-90.png)
+
+**The ask.** Founder's strategy P1: put the character itself into Picture 1 as the under-drawing - cut each re-inked portrait out of its paper, scale it to the block-in's bbox, paste it into the approved plate at its place (behind the plate's own chair/ledge pixels), then run a whole-plate fast pass asking the model to redraw each figure in place, in the room's own pen, turning Drew and Barclay to face each other. Try both a full-tone paste and a pale 150-215 under-drawing band; chain one character per pass if a combined pass doesn't hold identity.
+
+**The thinking.** Chained variant: one character per pass, like scene-edit-chain.py. Picture 1 is the bare plate with ONLY Drew's portrait pasted into the left chair (full tone) - no Barclay/Abby content at all, so no other dog reference competes. Picture 2 is Drew's portrait alone.
+
+**Settings.** local/qwen-image-edit-2511, fast 8-step cfg 1, aspect 2:3 (bridge 1232x1840 -> plate 1200x1800)
+
+**Prompt.** [prompts/158-p1-chain-step-1-3-drew-alone-seed-90.prompt.txt](prompts/158-p1-chain-step-1-3-drew-alone-seed-90.prompt.txt)
+
+**Verdict.** Still a human man wearing Drew's knit vest and bow tie in the left chair; two DIFFERENT ghost flamingo heads appear elsewhere in the frame (by the shelf) instead of being the seated figure's own head. Isolating him from the other characters did not fix it.
+
+*Logged 12:51.*
+
+---
+
+## 159. P1 chain step 2/3 - Barclay onto the Drew pass, seed 90
+
+![P1 chain step 2/3 - Barclay onto the Drew pass, seed 90](images/159-p1-chain-step-2-3-barclay-onto-the-drew-pass-seed-90.png)
+
+**The ask.** Founder's strategy P1: put the character itself into Picture 1 as the under-drawing - cut each re-inked portrait out of its paper, scale it to the block-in's bbox, paste it into the approved plate at its place (behind the plate's own chair/ledge pixels), then run a whole-plate fast pass asking the model to redraw each figure in place, in the room's own pen, turning Drew and Barclay to face each other. Try both a full-tone paste and a pale 150-215 under-drawing band; chain one character per pass if a combined pass doesn't hold identity.
+
+**The thinking.** Picture 1 is step 1's own render with Barclay's portrait now pasted into the right chair; the edit says Barclay is the figure there and Drew (already drawn) stays exactly as he is.
+
+**Settings.** local/qwen-image-edit-2511, fast 8-step cfg 1, aspect 2:3 (bridge 1232x1840 -> plate 1200x1800)
+
+**Prompt.** [prompts/159-p1-chain-step-2-3-barclay-onto-the-drew-pass-seed-90.prompt.txt](prompts/159-p1-chain-step-2-3-barclay-onto-the-drew-pass-seed-90.prompt.txt)
+
+**Verdict.** Barclay came out exactly right - golden retriever, right chair, turned toward Drew, old fashioned in hand. The chain's per-character isolation works cleanly for him.
+
+*Logged 12:51.*
+
+---
+
+## 160. P1 chain step 3/3 - Abby onto the Barclay pass, seed 90 (chain final plate)
+
+![P1 chain step 3/3 - Abby onto the Barclay pass, seed 90 (chain final plate)](images/160-p1-chain-step-3-3-abby-onto-the-barclay-pass-seed-90-chain-final-plate.png)
+
+**The ask.** Founder's strategy P1: put the character itself into Picture 1 as the under-drawing - cut each re-inked portrait out of its paper, scale it to the block-in's bbox, paste it into the approved plate at its place (behind the plate's own chair/ledge pixels), then run a whole-plate fast pass asking the model to redraw each figure in place, in the room's own pen, turning Drew and Barclay to face each other. Try both a full-tone paste and a pale 150-215 under-drawing band; chain one character per pass if a combined pass doesn't hold identity.
+
+**The thinking.** Picture 1 is step 2's render with Abby's portrait pasted behind the ledge; edit says she's the figure there and Drew+Barclay (already drawn) stay as they are. This is the finished chain: window/glass restored from the plate, THE SWINGING DOOR gilded last.
+
+**Settings.** local/qwen-image-edit-2511, fast 8-step cfg 1, aspect 2:3 (bridge 1232x1840 -> plate 1200x1800)
+
+**Prompt.** [prompts/160-p1-chain-step-3-3-abby-onto-the-barclay-pass-seed-90-chain-final-plate.prompt.txt](prompts/160-p1-chain-step-3-3-abby-onto-the-barclay-pass-seed-90-chain-final-plate.prompt.txt)
+
+**Verdict.** Abby came out correctly as a West Highland terrier behind the ledge - first time in this project's whole history she has NOT come out as a human woman. Barclay stayed correct. Drew stayed a human man with a duplicated ghost flamingo head nearby. Best full-plate candidate from this seed: 2 of 3 characters solved.
+
+*Logged 12:51.*
+
+---
+
+## 161. P1 Drew alone, FULL 40-step pass (not fast), seed 90
+
+![P1 Drew alone, FULL 40-step pass (not fast), seed 90](images/161-p1-drew-alone-full-40-step-pass-not-fast-seed-90.png)
+
+**The ask.** Founder's strategy P1: put the character itself into Picture 1 as the under-drawing - cut each re-inked portrait out of its paper, scale it to the block-in's bbox, paste it into the approved plate at its place (behind the plate's own chair/ledge pixels), then run a whole-plate fast pass asking the model to redraw each figure in place, in the room's own pen, turning Drew and Barclay to face each other. Try both a full-tone paste and a pale 150-215 under-drawing band; chain one character per pass if a combined pass doesn't hold identity.
+
+**The thinking.** Same Drew-alone Picture 1 as chain step 1, but sent with fast:false (40 steps, cfg 4) to test whether the fast Lightning pass's known weak reference adherence (and its inert negative prompt at cfg 1 - cast-study.py's own LOCAL_NEGATIVE comment) was the cause.
+
+**Settings.** local/qwen-image-edit-2511, FULL 40-step cfg 4, aspect 2:3
+
+**Prompt.** [prompts/161-p1-drew-alone-full-40-step-pass-not-fast-seed-90.prompt.txt](prompts/161-p1-drew-alone-full-40-step-pass-not-fast-seed-90.prompt.txt)
+
+**Verdict.** Broke completely: ignored Picture 1's scene entirely and drew a plain bust portrait of a young man in a white sweater on a blank grey background. --full is not viable for this two-reference whole-plate compositing request; the mid/full bands are confirmed only for portraits and the shelf, not whole-scene cast work, matching the studio's own prior finding.
+
+*Logged 12:51.*
+
+---
+
+## 162. P1 Drew alone at 1.6x paste scale, seed 90
+
+![P1 Drew alone at 1.6x paste scale, seed 90](images/162-p1-drew-alone-at-1-6x-paste-scale-seed-90.png)
+
+**The ask.** Founder's strategy P1: put the character itself into Picture 1 as the under-drawing - cut each re-inked portrait out of its paper, scale it to the block-in's bbox, paste it into the approved plate at its place (behind the plate's own chair/ledge pixels), then run a whole-plate fast pass asking the model to redraw each figure in place, in the room's own pen, turning Drew and Barclay to face each other. Try both a full-tone paste and a pale 150-215 under-drawing band; chain one character per pass if a combined pass doesn't hold identity.
+
+**The thinking.** Same as chain step 1, but Drew's pasted portrait is scaled 1.6x past a plain contain-fit to his block-in bbox, so the under-drawing is large and unmistakably a flamingo head/neck filling the chair, on the theory that a bigger, more dominant bird signal would out-compete the model's pull toward a human torso.
+
+**Settings.** local/qwen-image-edit-2511, fast 8-step cfg 1, aspect 2:3 (bridge 1232x1840 -> plate 1200x1800)
+
+**Prompt.** [prompts/162-p1-drew-alone-at-1-6x-paste-scale-seed-90.prompt.txt](prompts/162-p1-drew-alone-at-1-6x-paste-scale-seed-90.prompt.txt)
+
+**Verdict.** Did not help: the model drew a human head+torso directly beside/overlapping the oversized flamingo head rather than replacing it - the same 'separate bird head, human body' split seen throughout this studio's history with Drew, now at a larger scale.
+
+*Logged 12:51.*
+
+---
+
+## 163. P1 Drew alone, seed 41 (seed check)
+
+![P1 Drew alone, seed 41 (seed check)](images/163-p1-drew-alone-seed-41-seed-check.png)
+
+**The ask.** Founder's strategy P1: put the character itself into Picture 1 as the under-drawing - cut each re-inked portrait out of its paper, scale it to the block-in's bbox, paste it into the approved plate at its place (behind the plate's own chair/ledge pixels), then run a whole-plate fast pass asking the model to redraw each figure in place, in the room's own pen, turning Drew and Barclay to face each other. Try both a full-tone paste and a pale 150-215 under-drawing band; chain one character per pass if a combined pass doesn't hold identity.
+
+**The thinking.** Same as chain step 1 (full-tone, contain-fit scale) but seed 41 instead of 90, to check whether the human-not-bird failure was seed luck rather than systemic.
+
+**Settings.** local/qwen-image-edit-2511, fast 8-step cfg 1, aspect 2:3 (bridge 1232x1840 -> plate 1200x1800)
+
+**Prompt.** [prompts/163-p1-drew-alone-seed-41-seed-check.prompt.txt](prompts/163-p1-drew-alone-seed-41-seed-check.prompt.txt)
+
+**Verdict.** Same failure at a different seed: a human man seated properly in the left chair, the flamingo now drawn as a bird PERCHED ON the counter like a prop rather than the seated figure. Confirms this is not seed-dependent.
+
+*Logged 12:51.*
+
+---
+
+## 164. P1 chain(seed41) step - Barclay onto the Drew(seed41) pass
+
+![P1 chain(seed41) step - Barclay onto the Drew(seed41) pass](images/164-p1-chain-seed41-step-barclay-onto-the-drew-seed41-pass.png)
+
+**The ask.** Founder's strategy P1: put the character itself into Picture 1 as the under-drawing - cut each re-inked portrait out of its paper, scale it to the block-in's bbox, paste it into the approved plate at its place (behind the plate's own chair/ledge pixels), then run a whole-plate fast pass asking the model to redraw each figure in place, in the room's own pen, turning Drew and Barclay to face each other. Try both a full-tone paste and a pale 150-215 under-drawing band; chain one character per pass if a combined pass doesn't hold identity.
+
+**The thinking.** Resumed the seed-41 Drew-alone render as Picture 1's base (no extra render spent re-doing Drew) and chained Barclay in, exactly as the seed-90 chain did.
+
+**Settings.** local/qwen-image-edit-2511, fast 8-step cfg 1, aspect 2:3 (bridge 1232x1840 -> plate 1200x1800)
+
+**Prompt.** [prompts/164-p1-chain-seed41-step-barclay-onto-the-drew-seed41-pass.prompt.txt](prompts/164-p1-chain-seed41-step-barclay-onto-the-drew-seed41-pass.prompt.txt)
+
+**Verdict.** Barclay correct again - golden retriever, right chair. Confirms the chain technique's Barclay result is repeatable across seeds.
+
+*Logged 12:51.*
+
+---
+
+## 165. P1 chain(seed41) final - Abby onto the chain, seed 41 (second full-plate candidate)
+
+![P1 chain(seed41) final - Abby onto the chain, seed 41 (second full-plate candidate)](images/165-p1-chain-seed41-final-abby-onto-the-chain-seed-41-second-full-plate-candidate.png)
+
+**The ask.** Founder's strategy P1: put the character itself into Picture 1 as the under-drawing - cut each re-inked portrait out of its paper, scale it to the block-in's bbox, paste it into the approved plate at its place (behind the plate's own chair/ledge pixels), then run a whole-plate fast pass asking the model to redraw each figure in place, in the room's own pen, turning Drew and Barclay to face each other. Try both a full-tone paste and a pale 150-215 under-drawing band; chain one character per pass if a combined pass doesn't hold identity.
+
+**The thinking.** Abby's portrait pasted behind the ledge on top of the seed-41 chain; finished plate with window/glass restored and the sign gilded last.
+
+**Settings.** local/qwen-image-edit-2511, fast 8-step cfg 1, aspect 2:3 (bridge 1232x1840 -> plate 1200x1800)
+
+**Prompt.** [prompts/165-p1-chain-seed41-final-abby-onto-the-chain-seed-41-second-full-plate-candidate.prompt.txt](prompts/165-p1-chain-seed41-final-abby-onto-the-chain-seed-41-second-full-plate-candidate.prompt.txt)
+
+**Verdict.** Abby correct again (with one small duplicate westie ghost on the counter). Barclay stayed correct. Drew stayed human. Second full-plate candidate, same 2-of-3 result as seed 90 - the chain technique is repeatable for Barclay and Abby but Drew fails identically across every variant tried in this strategy (combo/chained, full-tone/pale, 1x/1.6x scale, fast/full pass, seed 90/41).
+
+*Logged 12:51.*
+
+---
+
+## 166. p2-abby-1h pass A seed 7 whole-plate edit
+
+![p2-abby-1h pass A seed 7 whole-plate edit](images/166-p2-abby-1h-pass-a-seed-7-whole-plate-edit.png)
+
+**The ask.** Founder's note on the seed-7 proof: restore the approved window, gild THE SWINGING DOOR, put Abby behind the ledge and Drew/Barclay seated on the near side in their own chairs, redraw the bottles as a real back shelf - and fix the IDENTITY failure (Drew a vulture/turkey, Barclay a hound/poodle/llama/human).
+
+**The thinking.** Pass A: Picture 1 is the approved plate with Abby's block-in painted in at 100-180 grey, heads none; EDITS carried this pass: ['abby']; p2=abby, p3=none, head-edit=True. After the render, tone-matched to the plate over the room and ['window-frame', 'glass'] restored from the plate through their own masks (tone-matched to the render's own ring just outside each) before the gilded sign went on last.
+
+**Settings.** local/qwen-image-edit-2511, seed 7, fast 8-step cfg 1, aspect 2:3 -> bridge (1232, 1840), blockin-heads none, p2 abby, p3 none, head-edit True, match-keep True, room-from-plate True (dilate 10px), 169.9s
+
+**Prompt.** [prompts/166-p2-abby-1h-pass-a-seed-7-whole-plate-edit.prompt.txt](prompts/166-p2-abby-1h-pass-a-seed-7-whole-plate-edit.prompt.txt)
+
+*Logged 12:52.*
+
+---
+
+## 167. cd2 Drew detail pass, seed 7 - redrawn in place at full resolution
+
+![cd2 Drew detail pass, seed 7 - redrawn in place at full resolution](images/167-cd2-drew-detail-pass-seed-7-redrawn-in-place-at-full-resolution.png)
+
+**The ask.** Founder: 'they must look perfect, it must be an amazing looking cartoon, the characters are the centerpiece' - redraw each character at the same full resolution the portrait itself gets, in a crop of their own place in the composed plate, and paste back without risking the room.
+
+**The thinking.** Picture 1 is a (0, 640, 640, 1440) crop of canon/room-kit/v2/work/base3-headless-blockins.png upscaled to 1344x1680; Picture 2 is drew's approved portrait. After the render, the crop was scaled back to the box and tone-matched to the ring just outside it (room-part.py's own tone_match, gain 0.92 offset -7), then pasted through drew's own figure mask dilated 24 px and feathered 4.0 px, minus the chair-left mask in front of them, before the gilded sign went on last.
+
+**Settings.** local/qwen-image-edit-2511, seed 7, fast Lightning, box (0, 640, 640, 1440) -> 1344x1680, 179.0s
+
+**Prompt.** [prompts/167-cd2-drew-detail-pass-seed-7-redrawn-in-place-at-full-resolution.prompt.txt](prompts/167-cd2-drew-detail-pass-seed-7-redrawn-in-place-at-full-resolution.prompt.txt)
+
+**Verdict.** candidate - to the founder beside the plate
+
+*Logged 13:15.*
+
+---
+
+## 168. cd2 Drew detail pass, seed 44 - redrawn in place at full resolution
+
+![cd2 Drew detail pass, seed 44 - redrawn in place at full resolution](images/168-cd2-drew-detail-pass-seed-44-redrawn-in-place-at-full-resolution.png)
+
+**The ask.** Founder: 'they must look perfect, it must be an amazing looking cartoon, the characters are the centerpiece' - redraw each character at the same full resolution the portrait itself gets, in a crop of their own place in the composed plate, and paste back without risking the room.
+
+**The thinking.** Picture 1 is a (0, 640, 640, 1440) crop of canon/room-kit/v2/work/base3-headless-blockins.png upscaled to 1344x1680; Picture 2 is drew's approved portrait. After the render, the crop was scaled back to the box and tone-matched to the ring just outside it (room-part.py's own tone_match, gain 0.88 offset -4), then pasted through drew's own figure mask dilated 24 px and feathered 4.0 px, minus the chair-left mask in front of them, before the gilded sign went on last.
+
+**Settings.** local/qwen-image-edit-2511, seed 44, fast Lightning, box (0, 640, 640, 1440) -> 1344x1680, 55.3s
+
+**Prompt.** [prompts/168-cd2-drew-detail-pass-seed-44-redrawn-in-place-at-full-resolution.prompt.txt](prompts/168-cd2-drew-detail-pass-seed-44-redrawn-in-place-at-full-resolution.prompt.txt)
+
+**Verdict.** candidate - to the founder beside the plate
+
+*Logged 13:16.*
+
+---
+
+## 169. cd2 Drew detail pass, seed 21 - redrawn in place at full resolution
+
+![cd2 Drew detail pass, seed 21 - redrawn in place at full resolution](images/169-cd2-drew-detail-pass-seed-21-redrawn-in-place-at-full-resolution.png)
+
+**The ask.** Founder: 'they must look perfect, it must be an amazing looking cartoon, the characters are the centerpiece' - redraw each character at the same full resolution the portrait itself gets, in a crop of their own place in the composed plate, and paste back without risking the room.
+
+**The thinking.** Picture 1 is a (0, 640, 640, 1440) crop of canon/room-kit/v2/work/base3-headless-blockins.png upscaled to 1344x1680; Picture 2 is drew's approved portrait. After the render, the crop was scaled back to the box and tone-matched to the ring just outside it (room-part.py's own tone_match, gain 0.90 offset -1), then pasted through drew's own figure mask dilated 24 px and feathered 4.0 px, minus the chair-left mask in front of them, before the gilded sign went on last.
+
+**Settings.** local/qwen-image-edit-2511, seed 21, fast Lightning, box (0, 640, 640, 1440) -> 1344x1680, 68.9s
+
+**Prompt.** [prompts/169-cd2-drew-detail-pass-seed-21-redrawn-in-place-at-full-resolution.prompt.txt](prompts/169-cd2-drew-detail-pass-seed-21-redrawn-in-place-at-full-resolution.prompt.txt)
+
+**Verdict.** candidate - to the founder beside the plate
+
+*Logged 13:17.*
+
+---
+
