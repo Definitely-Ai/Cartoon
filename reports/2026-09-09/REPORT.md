@@ -2150,3 +2150,19 @@ Built for Rick. Every image the studio generated today, in the order it happened
 
 ---
 
+## 129. APPROVED: Abby's re-inked portrait (v2 seed 7) is the reference for this model
+
+![APPROVED: Abby's re-inked portrait (v2 seed 7) is the reference for this model](images/129-approved-abby-s-re-inked-portrait-v2-seed-7-is-the-reference-for-this-model.png)
+
+**The ask.** Founder: 'yes she looks a lot better'.
+
+**The thinking.** Second round with the founder's note written into the edit; seed 7 approved. All three references are now the house model's own hand. Next: the three in the room.
+
+**Settings.** reink-portrait.py --character abby --tag abby-reink-v2, 20 steps, cfg 2.5, seed 7
+
+**Verdict.** Approved by the founder.
+
+*Logged 11:42.*
+
+---
+
