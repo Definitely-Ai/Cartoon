@@ -1,0 +1,19 @@
+{
+  "character": "barclay",
+  "seed": 90,
+  "steps": 20,
+  "cfg": 2.5,
+  "fast": false,
+  "picture1": "canon/vision/studies/barclay.png",
+  "picture1_meta": {
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 675121,
+    "sha256": "451790e5abbe22d2"
+  },
+  "model": "local/qwen-image-edit-2511",
+  "seconds": 112.931144,
+  "generated_at": "2026-09-09T09:46:49"
+}

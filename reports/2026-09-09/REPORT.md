@@ -1472,3 +1472,163 @@ Built for Rick. Every image the studio generated today, in the order it happened
 
 ---
 
+## 091. APPROVED: Drew's re-inked portrait (seed 90) is the reference for this model
+
+![APPROVED: Drew's re-inked portrait (seed 90) is the reference for this model](images/091-approved-drew-s-re-inked-portrait-seed-90-is-the-reference-for-this-model.png)
+
+**The ask.** Founder: 'yes'.
+
+**The thinking.** Ten seeds of the house model redrawing the official portrait in its own pen, two Opus judge rounds, my own read; seed 90 approved. It replaces canon/vision/studies/drew.png (the previous portrait kept beside it) and is filed in the flamingo kit with a version snapshot. Barclay next, the same loop.
+
+**Settings.** scripts/reink-portrait.py --character drew, 20 steps, cfg 2.5, seed 90
+
+**Verdict.** Approved by the founder.
+
+*Logged 09:35.*
+
+---
+
+## 092. Barclay re-inked by the house model in its own pen, seed 7
+
+![Barclay re-inked by the house model in its own pen, seed 7](images/092-barclay-re-inked-by-the-house-model-in-its-own-pen-seed-7.png)
+
+**The ask.** Founder: 'do it' - the cast regenerated for this model, one character at a time, Drew first.
+
+**The thinking.** The official portrait is Picture 1 and the only reference; the house model redraws it feature for feature in its own engraved hand at the slow sampler band, so the reference used in every scene pass is in the same pen as the plate.
+
+**Settings.** local/qwen-image-edit-2511, steps 20, cfg 2.5, no Lightning LoRA, 4:5, seed 7
+
+**Prompt.** [prompts/092-barclay-re-inked-by-the-house-model-in-its-own-pen-seed-7.prompt.txt](prompts/092-barclay-re-inked-by-the-house-model-in-its-own-pen-seed-7.prompt.txt)
+
+**Verdict.** candidate - to the founder beside the original
+
+*Logged 09:37.*
+
+---
+
+## 093. Barclay re-inked by the house model in its own pen, seed 21
+
+![Barclay re-inked by the house model in its own pen, seed 21](images/093-barclay-re-inked-by-the-house-model-in-its-own-pen-seed-21.png)
+
+**The ask.** Founder: 'do it' - the cast regenerated for this model, one character at a time, Drew first.
+
+**The thinking.** The official portrait is Picture 1 and the only reference; the house model redraws it feature for feature in its own engraved hand at the slow sampler band, so the reference used in every scene pass is in the same pen as the plate.
+
+**Settings.** local/qwen-image-edit-2511, steps 20, cfg 2.5, no Lightning LoRA, 4:5, seed 21
+
+**Prompt.** [prompts/093-barclay-re-inked-by-the-house-model-in-its-own-pen-seed-21.prompt.txt](prompts/093-barclay-re-inked-by-the-house-model-in-its-own-pen-seed-21.prompt.txt)
+
+**Verdict.** candidate - to the founder beside the original
+
+*Logged 09:39.*
+
+---
+
+## 094. Barclay re-inked by the house model in its own pen, seed 41
+
+![Barclay re-inked by the house model in its own pen, seed 41](images/094-barclay-re-inked-by-the-house-model-in-its-own-pen-seed-41.png)
+
+**The ask.** Founder: 'do it' - the cast regenerated for this model, one character at a time, Drew first.
+
+**The thinking.** The official portrait is Picture 1 and the only reference; the house model redraws it feature for feature in its own engraved hand at the slow sampler band, so the reference used in every scene pass is in the same pen as the plate.
+
+**Settings.** local/qwen-image-edit-2511, steps 20, cfg 2.5, no Lightning LoRA, 4:5, seed 41
+
+**Prompt.** [prompts/094-barclay-re-inked-by-the-house-model-in-its-own-pen-seed-41.prompt.txt](prompts/094-barclay-re-inked-by-the-house-model-in-its-own-pen-seed-41.prompt.txt)
+
+**Verdict.** candidate - to the founder beside the original
+
+*Logged 09:41.*
+
+---
+
+## 095. Barclay re-inked by the house model in its own pen, seed 44
+
+![Barclay re-inked by the house model in its own pen, seed 44](images/095-barclay-re-inked-by-the-house-model-in-its-own-pen-seed-44.png)
+
+**The ask.** Founder: 'do it' - the cast regenerated for this model, one character at a time, Drew first.
+
+**The thinking.** The official portrait is Picture 1 and the only reference; the house model redraws it feature for feature in its own engraved hand at the slow sampler band, so the reference used in every scene pass is in the same pen as the plate.
+
+**Settings.** local/qwen-image-edit-2511, steps 20, cfg 2.5, no Lightning LoRA, 4:5, seed 44
+
+**Prompt.** [prompts/095-barclay-re-inked-by-the-house-model-in-its-own-pen-seed-44.prompt.txt](prompts/095-barclay-re-inked-by-the-house-model-in-its-own-pen-seed-44.prompt.txt)
+
+**Verdict.** candidate - to the founder beside the original
+
+*Logged 09:43.*
+
+---
+
+## 096. Barclay re-inked by the house model in its own pen, seed 62
+
+![Barclay re-inked by the house model in its own pen, seed 62](images/096-barclay-re-inked-by-the-house-model-in-its-own-pen-seed-62.png)
+
+**The ask.** Founder: 'do it' - the cast regenerated for this model, one character at a time, Drew first.
+
+**The thinking.** The official portrait is Picture 1 and the only reference; the house model redraws it feature for feature in its own engraved hand at the slow sampler band, so the reference used in every scene pass is in the same pen as the plate.
+
+**Settings.** local/qwen-image-edit-2511, steps 20, cfg 2.5, no Lightning LoRA, 4:5, seed 62
+
+**Prompt.** [prompts/096-barclay-re-inked-by-the-house-model-in-its-own-pen-seed-62.prompt.txt](prompts/096-barclay-re-inked-by-the-house-model-in-its-own-pen-seed-62.prompt.txt)
+
+**Verdict.** candidate - to the founder beside the original
+
+*Logged 09:44.*
+
+---
+
+## 097. Barclay re-inked by the house model in its own pen, seed 90
+
+![Barclay re-inked by the house model in its own pen, seed 90](images/097-barclay-re-inked-by-the-house-model-in-its-own-pen-seed-90.png)
+
+**The ask.** Founder: 'do it' - the cast regenerated for this model, one character at a time, Drew first.
+
+**The thinking.** The official portrait is Picture 1 and the only reference; the house model redraws it feature for feature in its own engraved hand at the slow sampler band, so the reference used in every scene pass is in the same pen as the plate.
+
+**Settings.** local/qwen-image-edit-2511, steps 20, cfg 2.5, no Lightning LoRA, 4:5, seed 90
+
+**Prompt.** [prompts/097-barclay-re-inked-by-the-house-model-in-its-own-pen-seed-90.prompt.txt](prompts/097-barclay-re-inked-by-the-house-model-in-its-own-pen-seed-90.prompt.txt)
+
+**Verdict.** candidate - to the founder beside the original
+
+*Logged 09:46.*
+
+---
+
+## 098. Barclay re-inked by the house model in its own pen, seed 3
+
+![Barclay re-inked by the house model in its own pen, seed 3](images/098-barclay-re-inked-by-the-house-model-in-its-own-pen-seed-3.png)
+
+**The ask.** Founder: 'do it' - the cast regenerated for this model, one character at a time, Drew first.
+
+**The thinking.** The official portrait is Picture 1 and the only reference; the house model redraws it feature for feature in its own engraved hand at the slow sampler band, so the reference used in every scene pass is in the same pen as the plate.
+
+**Settings.** local/qwen-image-edit-2511, steps 20, cfg 2.5, no Lightning LoRA, 4:5, seed 3
+
+**Prompt.** [prompts/098-barclay-re-inked-by-the-house-model-in-its-own-pen-seed-3.prompt.txt](prompts/098-barclay-re-inked-by-the-house-model-in-its-own-pen-seed-3.prompt.txt)
+
+**Verdict.** candidate - to the founder beside the original
+
+*Logged 09:48.*
+
+---
+
+## 099. Barclay re-inked by the house model in its own pen, seed 77
+
+![Barclay re-inked by the house model in its own pen, seed 77](images/099-barclay-re-inked-by-the-house-model-in-its-own-pen-seed-77.png)
+
+**The ask.** Founder: 'do it' - the cast regenerated for this model, one character at a time, Drew first.
+
+**The thinking.** The official portrait is Picture 1 and the only reference; the house model redraws it feature for feature in its own engraved hand at the slow sampler band, so the reference used in every scene pass is in the same pen as the plate.
+
+**Settings.** local/qwen-image-edit-2511, steps 20, cfg 2.5, no Lightning LoRA, 4:5, seed 77
+
+**Prompt.** [prompts/099-barclay-re-inked-by-the-house-model-in-its-own-pen-seed-77.prompt.txt](prompts/099-barclay-re-inked-by-the-house-model-in-its-own-pen-seed-77.prompt.txt)
+
+**Verdict.** candidate - to the founder beside the original
+
+*Logged 09:50.*
+
+---
+
