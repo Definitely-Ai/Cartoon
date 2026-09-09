@@ -1,0 +1,194 @@
+{
+  "generated_at": "2026-09-08T19:34:25",
+  "script": "scripts/cast-place.py",
+  "character": "barclay",
+  "pose": "seated-right",
+  "route": "S",
+  "flat_field": {
+    "white": 255.0,
+    "under_blend": 0.0,
+    "under_lines": false,
+    "under_remap": [
+      100.0,
+      180.0
+    ],
+    "sheet_grey": 255.0,
+    "occluder_fraction": 0.1321,
+    "figure_fraction": 0.2666,
+    "line_fraction": 0.0037,
+    "under_line_fraction": null,
+    "white_fraction": 0.5992,
+    "figure_part": "figure-barclay-02-toward",
+    "line_ink": 70.0,
+    "occluder": "right leather club chair"
+  },
+  "paste_feather": null,
+  "under_blend": 0.0,
+  "under_lines": false,
+  "under_remap": [
+    100.0,
+    180.0
+  ],
+  "sheet_grey": 255.0,
+  "white_thresh": 232.0,
+  "fill": true,
+  "cut_by_blockin": true,
+  "also": [
+    "figure-abby-01-ledge=Z:\\ImageGenerator\\Cartoon\\canon\\room-kit\\v2\\figures\\abby-ledge-rS-t5r1-s44.png",
+    "figure-drew-02-toward=Z:\\ImageGenerator\\Cartoon\\canon\\room-kit\\v2\\figures\\drew-seated-left-rS-t5r1-s44.png"
+  ],
+  "staging_solo": false,
+  "staging_reference": null,
+  "staging_label": null,
+  "staging_label_overridden": false,
+  "plate": "Z:\\ImageGenerator\\Cartoon\\canon\\room-kit\\v2\\plate.png",
+  "box": [
+    560,
+    700,
+    1200,
+    1500
+  ],
+  "box_size": [
+    640,
+    800
+  ],
+  "seat_region": [
+    620,
+    1240,
+    1200,
+    1800
+  ],
+  "roi": [
+    660,
+    720,
+    1120,
+    1420
+  ],
+  "seed": 7,
+  "rules_mode": "pen",
+  "keep_first": false,
+  "edit_override": null,
+  "extra_edit": [
+    "Draw ONLY Barclay himself on the sheet. Outside his own outline the sheet stays blank white paper: no counter, no marble top, no bar front, no table, no tray, no chair, no sofa, no settee, no rail, no studs, no glass, no bottle and no object of any kind anywhere on it, and the thin horizon line and the chair already printed on the sheet are not to be extended, thickened, re-drawn or added to."
+  ],
+  "canon_missed": [],
+  "server": "http://127.0.0.1:8000",
+  "request": {
+    "prompt": "REFERENCES. Picture 1 is A BLANK WHITE SHEET OF PAPER - this IS the picture being edited - carrying three things and nothing else: the right leather club chair's own already-finished pixels, in the studio's own engraved pen, at exactly the size, the place and the perspective the finished picture uses; one thin ink line marking the marble counter's near top edge, so the seat has a horizon; and a very PALE, faint pencil UNDER-DRAWING of the figure already down in place, waiting to be drawn in finished line. EVERYWHERE ELSE ON THE SHEET IS BLANK WHITE PAPER: no room, no wall, no window, no shelf, no second character, no bottle, no lettering. Picture 2 is BARCLAY, the studio's official portrait — copy THIS dog identically: the broad soft-eyed retriever face, the freckled muzzle with true black dog lips and his mouth closed, the fringed drop ears, warm bright eyes with worry only in the raised inner brows, the dark suit jacket over a pale open-collared shirt, the small USA flag pin on the left lapel, and the fur-backed hands with four fingers and an opposed thumb and no claws.\n\nMAKE THESE CHANGES TO PICTURE 1 AND KEEP EVERYTHING ELSE. The result is Picture 1 itself with EXACTLY ONE character added into it, one unbroken scene edge to edge, in the same engraved black-and-white pen.\n1. DRAW BARCLAY (Picture 2), the golden retriever gentleman, EXACTLY FILLING the pale pencil under-drawing already on the page - the same size, the same seat in that chair, the same turn of the head, nothing restaged. He is seen FROM BEHIND and a little to his RIGHT, over his shoulder, his dark suit jacket running across his shoulder blades. Turn his head to his LEFT, toward where the other chair (Drew's) would be, so his face reads in three-quarter at the very most, toward Drew. Carry his neck, his shirt collar and the shoulder of his jacket up ABOVE the chair back, into the gap the under-drawing already leaves clear for them. The chair back stays IN FRONT of his lower body, exactly as the chair's own pixels already show it - do not draw any part of him in front of the chair. Draw him in the SAME engraved pen, the same size and the same light as the chair. NOTHING ELSE: the page stays BLANK WHITE PAPER everywhere the under-drawing does not reach - no room, no wall, no window, no table, no more of the marble than the one thin line already on the page, no second character, no bottle, no lettering of any kind. At the top of the neck the under-drawing already carries a small ROUND SKULL with a wedge-shaped MUZZLE reaching out from it, a dark NOSE marked at the muzzle's tip and both eyes marked where the muzzle joins the skull, and one rectangular DROP EAR hanging beside it - that IS his head: draw a solid, small, softly rounded retriever head exactly filling it, joined to the neck, the muzzle growing from it along the line already there with his black nose at its tip and true black dog lips beneath it, the fringed drop ear falling naturally where it is marked, both warm bright eyes where the eyes are marked. His head is never a flat mask, a snoutless blob or a stiff floating ear, and never floats free of the neck.\n2. KEEP EVERYTHING ELSE EXACTLY AS PICTURE 1. The right leather club chair keeps every one of its own pixels exactly as given, and the thin ink line marking the near edge of the marble stays exactly where it is and exactly that thin. THE REST OF THE PAGE STAYS BLANK WHITE PAPER - it is not a room seen through fog and not fog either, it is empty paper. Do not invent anything on it: no window, no street, no shelves, no bottles, no mirror, no lettering, no hatching, no shading, no floor, no second figure, no table, no more of the marble than the one line already given. Nothing whatever is added anywhere except finishing the one figure whose pale under-drawing is already on the page.\n3. Draw ONLY Barclay himself on the sheet. Outside his own outline the sheet stays blank white paper: no counter, no marble top, no bar front, no table, no tray, no chair, no sofa, no settee, no rail, no studs, no glass, no bottle and no object of any kind anywhere on it, and the thin horizon line and the chair already printed on the sheet are not to be extended, thickened, re-drawn or added to.\n\nTHE RULES THE FINISHED PICTURE OBEYS:\n\nA single-panel gag cartoon drawn like an antique steel engraving: fine pen crosshatching and stippling on every surface — wood grain, knit stitches, fur and feathers laid in individual strokes, glass catching light — with a full tonal range from deep rich blacks through silvery greys to bright paper highlights. Confident contour lines over the hatching. The panel is composed full, corner to corner. Black-and-white only; no flat fills, no cel shading, no photographic rendering, no color.\n\nBARCLAY is exactly the golden retriever gentleman of his reference: fine layered fur, drop ears with long fringe, a freckled muzzle with black dog lips and his MOUTH CLOSED, bright warm eyes with worry only in the raised inner brows, a dark suit jacket over a pale open-collared shirt with no tie, a small USA flag pin on the LEFT lapel, a wristwatch on the left wrist, fur-backed hands with no nails, and absolutely no tail.",
+    "model": "local/qwen-image-edit-2511",
+    "provider": "local",
+    "aspect_ratio": "4:5",
+    "input_images": "<2 data URIs - see references>",
+    "negative_prompt": "color, colour, photograph, photorealistic, 3D render, oil painting, watercolor, soft airbrush shading, blurry, low detail, flat cel shading, extra people, humans, a second bartender, duplicate character, merged characters, deformed hands, extra fingers, claws, nails, tail, garbled text, misspelled words, gibberish lettering, speech bubble, caption text, watermark, signature, legs, feet",
+    "output_format": "png",
+    "fast": true,
+    "tag": "t5r2",
+    "seed": 7
+  },
+  "references": [
+    {
+      "picture": 1,
+      "path": "C:\\Users\\admin\\AppData\\Local\\Temp\\claude\\Z--ImageGenerator\\7e90a839-5703-42df-8007-3e3f206ae0ae\\scratchpad\\cast-scene\\barclay\\round-8\\picture1.png",
+      "label": "A BLANK WHITE SHEET OF PAPER - this IS the picture being edited - carrying three things and nothing else: the right leather club chair's own already-finished pixels, in the studio's own engraved pen, at exactly the size, the place and the perspective the finished picture uses; one thin ink line marking the marble counter's near top edge, so the seat has a horizon; and a very PALE, faint pencil UNDER-DRAWING of the figure already down in place, waiting to be drawn in finished line. EVERYWHERE ELSE ON THE SHEET IS BLANK WHITE PAPER: no room, no wall, no window, no shelf, no second character, no bottle, no lettering",
+      "size": [
+        1024,
+        1280
+      ],
+      "bytes": 95391,
+      "sha256": "0d1c7061c214603c"
+    },
+    {
+      "picture": 2,
+      "path": "Z:\\ImageGenerator\\Cartoon\\canon\\vision\\studies\\barclay.png",
+      "label": "BARCLAY, the studio's official portrait — copy THIS dog identically: the broad soft-eyed retriever face, the freckled muzzle with true black dog lips and his mouth closed, the fringed drop ears, warm bright eyes with worry only in the raised inner brows, the dark suit jacket over a pale open-collared shirt, the small USA flag pin on the left lapel, and the fur-backed hands with four fingers and an opposed thumb and no claws",
+      "size": [
+        1024,
+        1536
+      ],
+      "bytes": 675121,
+      "sha256": "451790e5abbe22d2"
+    }
+  ],
+  "prompt": "REFERENCES. Picture 1 is A BLANK WHITE SHEET OF PAPER - this IS the picture being edited - carrying three things and nothing else: the right leather club chair's own already-finished pixels, in the studio's own engraved pen, at exactly the size, the place and the perspective the finished picture uses; one thin ink line marking the marble counter's near top edge, so the seat has a horizon; and a very PALE, faint pencil UNDER-DRAWING of the figure already down in place, waiting to be drawn in finished line. EVERYWHERE ELSE ON THE SHEET IS BLANK WHITE PAPER: no room, no wall, no window, no shelf, no second character, no bottle, no lettering. Picture 2 is BARCLAY, the studio's official portrait — copy THIS dog identically: the broad soft-eyed retriever face, the freckled muzzle with true black dog lips and his mouth closed, the fringed drop ears, warm bright eyes with worry only in the raised inner brows, the dark suit jacket over a pale open-collared shirt, the small USA flag pin on the left lapel, and the fur-backed hands with four fingers and an opposed thumb and no claws.\n\nMAKE THESE CHANGES TO PICTURE 1 AND KEEP EVERYTHING ELSE. The result is Picture 1 itself with EXACTLY ONE character added into it, one unbroken scene edge to edge, in the same engraved black-and-white pen.\n1. DRAW BARCLAY (Picture 2), the golden retriever gentleman, EXACTLY FILLING the pale pencil under-drawing already on the page - the same size, the same seat in that chair, the same turn of the head, nothing restaged. He is seen FROM BEHIND and a little to his RIGHT, over his shoulder, his dark suit jacket running across his shoulder blades. Turn his head to his LEFT, toward where the other chair (Drew's) would be, so his face reads in three-quarter at the very most, toward Drew. Carry his neck, his shirt collar and the shoulder of his jacket up ABOVE the chair back, into the gap the under-drawing already leaves clear for them. The chair back stays IN FRONT of his lower body, exactly as the chair's own pixels already show it - do not draw any part of him in front of the chair. Draw him in the SAME engraved pen, the same size and the same light as the chair. NOTHING ELSE: the page stays BLANK WHITE PAPER everywhere the under-drawing does not reach - no room, no wall, no window, no table, no more of the marble than the one thin line already on the page, no second character, no bottle, no lettering of any kind. At the top of the neck the under-drawing already carries a small ROUND SKULL with a wedge-shaped MUZZLE reaching out from it, a dark NOSE marked at the muzzle's tip and both eyes marked where the muzzle joins the skull, and one rectangular DROP EAR hanging beside it - that IS his head: draw a solid, small, softly rounded retriever head exactly filling it, joined to the neck, the muzzle growing from it along the line already there with his black nose at its tip and true black dog lips beneath it, the fringed drop ear falling naturally where it is marked, both warm bright eyes where the eyes are marked. His head is never a flat mask, a snoutless blob or a stiff floating ear, and never floats free of the neck.\n2. KEEP EVERYTHING ELSE EXACTLY AS PICTURE 1. The right leather club chair keeps every one of its own pixels exactly as given, and the thin ink line marking the near edge of the marble stays exactly where it is and exactly that thin. THE REST OF THE PAGE STAYS BLANK WHITE PAPER - it is not a room seen through fog and not fog either, it is empty paper. Do not invent anything on it: no window, no street, no shelves, no bottles, no mirror, no lettering, no hatching, no shading, no floor, no second figure, no table, no more of the marble than the one line already given. Nothing whatever is added anywhere except finishing the one figure whose pale under-drawing is already on the page.\n3. Draw ONLY Barclay himself on the sheet. Outside his own outline the sheet stays blank white paper: no counter, no marble top, no bar front, no table, no tray, no chair, no sofa, no settee, no rail, no studs, no glass, no bottle and no object of any kind anywhere on it, and the thin horizon line and the chair already printed on the sheet are not to be extended, thickened, re-drawn or added to.\n\nTHE RULES THE FINISHED PICTURE OBEYS:\n\nA single-panel gag cartoon drawn like an antique steel engraving: fine pen crosshatching and stippling on every surface — wood grain, knit stitches, fur and feathers laid in individual strokes, glass catching light — with a full tonal range from deep rich blacks through silvery greys to bright paper highlights. Confident contour lines over the hatching. The panel is composed full, corner to corner. Black-and-white only; no flat fills, no cel shading, no photographic rendering, no color.\n\nBARCLAY is exactly the golden retriever gentleman of his reference: fine layered fur, drop ears with long fringe, a freckled muzzle with black dog lips and his MOUTH CLOSED, bright warm eyes with worry only in the raised inner brows, a dark suit jacket over a pale open-collared shirt with no tie, a small USA flag pin on the LEFT lapel, a wristwatch on the left wrist, fur-backed hands with no nails, and absolutely no tail.",
+  "clean_prompt": null,
+  "clean_pass": false,
+  "expected_size": [
+    1344,
+    1680
+  ],
+  "key": {
+    "thresh": 18.0,
+    "measure_thresh": 12.0,
+    "blur": 1.5,
+    "close": 4,
+    "open": 3,
+    "min_area": 400,
+    "gap": 8,
+    "feather": 2.0,
+    "align": 6
+  },
+  "result": {
+    "seed_used": 7,
+    "elapsed_seconds": 70.6,
+    "server_local_path": "Z:\\ImageGenerator\\outputs\\gen_1788910536393510900_62fb1a_t5r2_local_qwen-image-edit-2511.png",
+    "raw_size": [
+      1344,
+      1510
+    ],
+    "raw": "C:\\Users\\admin\\AppData\\Local\\Temp\\claude\\Z--ImageGenerator\\7e90a839-5703-42df-8007-3e3f206ae0ae\\scratchpad\\cast-scene\\barclay\\round-8\\barclay-seated-right-rS-t5r2-s7-raw.png"
+  },
+  "key_result": {
+    "route": "S",
+    "keyed_against": "white-sheet (absolute threshold key, no tone fit)",
+    "tone_fit": "none",
+    "join_mean_abs_levels": 48.04,
+    "join_seam_px": 17439,
+    "plate_fraction_replaced": 0.0655,
+    "key_tone_gain": 1.0,
+    "key_tone_offset": 0.0,
+    "composite_tone_gain": 1.0159,
+    "composite_tone_offset": 0.0,
+    "shift_applied": [
+      0,
+      0
+    ],
+    "blobs": 53,
+    "raw_fraction": 0.4587,
+    "kept": 1,
+    "kept_px": 132759,
+    "seat_touched": null,
+    "white_thresh": 232.0,
+    "sheet_grey": 255.0,
+    "white_thresh_effective": 232.0,
+    "min_figure_overlap_px": 400,
+    "fill": true,
+    "cut_by_blockin": true,
+    "cut_by_blockin_px": 12,
+    "cut_by_blockin_removed_px": 12510,
+    "figure_mask_px": 136495,
+    "figure_mask_dilated_px": 198157,
+    "occluder_mask_px": 67637,
+    "alpha_fraction_inside_figure_mask": 0.8934,
+    "figure_mask_fraction_covered": 0.869,
+    "scale_topmost_blob_alpha_over_mask": 1.0245,
+    "topmost_blob_height_alpha_px": 628,
+    "topmost_blob_height_mask_px": 613,
+    "sticker_px": 141537,
+    "sticker_fraction_of_box": 0.2764,
+    "sticker_bbox_plate": [
+      693,
+      716,
+      1129,
+      1431
+    ],
+    "cleanliness_outside_sticker_gt12": 0.2091,
+    "room_drift_vs_plate_outside_sticker": 0.926,
+    "changed_fraction_whole_box": 0.4587
+  },
+  "outputs": {
+    "sticker": "Z:\\ImageGenerator\\Cartoon\\canon\\room-kit\\v2\\figures\\barclay-seated-right-rS-t5r2-s7.png",
+    "laid": "Z:\\ImageGenerator\\Cartoon\\canon\\room-kit\\v2\\figures\\barclay-seated-right-rS-t5r2-s7-laid.png",
+    "crop2x": "Z:\\ImageGenerator\\Cartoon\\canon\\room-kit\\v2\\figures\\barclay-seated-right-rS-t5r2-s7-crop2x.png",
+    "picture1": "C:\\Users\\admin\\AppData\\Local\\Temp\\claude\\Z--ImageGenerator\\7e90a839-5703-42df-8007-3e3f206ae0ae\\scratchpad\\cast-scene\\barclay\\round-8\\picture1.png"
+  }
+}

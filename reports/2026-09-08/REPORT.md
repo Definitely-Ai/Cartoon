@@ -1316,3 +1316,509 @@ Built for Rick. Every image the studio generated today, in the order it happened
 
 ---
 
+## 087. Abby route S team 5 round 2 seed 44 - one terrier lady, but the far eye is gone
+
+![Abby route S team 5 round 2 seed 44 - one terrier lady, but the far eye is gone](images/087-abby-route-s-team-5-round-2-seed-44-one-terrier-lady-but-the-far-eye-is-gone.png)
+
+**The ask.** Team 5, Abby round 2. Round 1 proved the settled route-S recipe draws the room and the staging right but keeps handing back a HUMAN WOMAN standing at the ledge with a live westie sitting beside her as a pet (seeds 7, 21, 41); only seed 44 drew a single terrier lady. Round 2 changes exactly one thing: an extra numbered EDIT that tells the model Abby is ONE creature whose head IS the westie head of Picture 2, never a woman with a dog, and that exactly one figure stands on the sheet. Same four seeds, 44 / 7 / 21 / 41, everything else untouched.
+
+**The thinking.** The failure was never the block-in or the key - it was that the model read 'West Highland terrier lady' as a woman plus her dog, and obligingly drew both. So the edit does not describe her better, it forbids the split: her head IS the terrier head, drawn on her own shoulders directly above the studded collar, never a human head, never human hair, never a second dog or puppy anywhere on the page, EXACTLY ONE figure. Nothing else moved: still --route S, still the mid-grey remapped block-in at 100,180 with no pencil lines and no staging picture, still the counter as the occluder and her own ledge ROI. Scored 0-5 on identity / pose / seat / cleanliness against the official portrait and the abby.txt eye rule.
+
+**Settings.** scripts/cast-place.py --character abby --route S --seed 44 --tag t5r2 --extra-edit "ABBY IS ONE SINGLE CREATURE, NOT A WOMAN WITH A DOG..." | local/qwen-image-edit-2511 via AuraVision 127.0.0.1:8000, 4:5, fast 8-step | box 420,620,900,1220 roi 520,680,800,1220, under-remap 100,180, no under-lines, no staging | 42.3s, sticker 71652px in 33 blobs, kept 2, cleanliness 0.2536
+
+**Prompt.** [prompts/087-abby-route-s-team-5-round-2-seed-44-one-terrier-lady-but-the-far-eye-is-gone.prompt.txt](prompts/087-abby-route-s-team-5-round-2-seed-44-one-terrier-lady-but-the-far-eye-is-gone.prompt.txt)
+
+**Verdict.** 12/20. identity 3 - one creature at last, no pet, collar and pendant and blouse right, but the muzzle drifts wheaten rather than westie and the head is turned so far that the FAR EYE IS NOT DRAWN AT ALL, which breaks her own eye rule; the hand on the ledge is a human hand with painted nails, not a fur-backed dog hand. pose 3 - body square to the room, head past three-quarter into near profile. seat 4 - right place, right scale, counter across the lower body, nothing floating. cleanliness 2 - the sticker carries a slab of invented back-bar, the marble ledge and the studded counter lip along with her.
+
+*Logged 19:35.*
+
+---
+
+## 088. Abby route S team 5 round 2 seed 7 - the edit did not take, still a woman and her dog
+
+![Abby route S team 5 round 2 seed 7 - the edit did not take, still a woman and her dog](images/088-abby-route-s-team-5-round-2-seed-7-the-edit-did-not-take-still-a-woman-and-her-dog.png)
+
+**The ask.** Team 5, Abby round 2, second of four seeds on the one-creature edit.
+
+**The thinking.** Same command, seed 7. Round 1's seed 7 drew a smiling human woman with a westie pet; this seed is the direct test of whether the one-creature edit is strong enough to break that habit on a seed that has it badly.
+
+**Settings.** scripts/cast-place.py --character abby --route S --seed 7 --tag t5r2 --extra-edit "ABBY IS ONE SINGLE CREATURE..." | local/qwen-image-edit-2511, 4:5, fast | 42.4s, sticker 80105px in 28 blobs, kept 1, cleanliness 0.4098, dirty key (41% of the room re-inked)
+
+**Prompt.** [prompts/088-abby-route-s-team-5-round-2-seed-7-the-edit-did-not-take-still-a-woman-and-her-dog.prompt.txt](prompts/088-abby-route-s-team-5-round-2-seed-7-the-edit-did-not-take-still-a-woman-and-her-dog.prompt.txt)
+
+**Verdict.** 5/20. identity 1 - a human woman with dark hair and a human face wearing Abby's studded collar and pendant, with a separate live westie sitting on the ledge beside her; the exact split the edit forbids, drawn anyway. pose 1 - she faces the reader and smiles out of the panel, nothing like the block-in. seat 2 - she is at the ledge at the block-in's scale with the counter in front, but a dog sits ON the ledge and a stirred glass floats at her hand. cleanliness 1 - the sticker carries a whole second figure, the glass, the marble slab and the ledge.
+
+*Logged 19:36.*
+
+---
+
+## 089. Abby route S team 5 round 2 seed 21 - a woman with no face and a westie at her elbow
+
+![Abby route S team 5 round 2 seed 21 - a woman with no face and a westie at her elbow](images/089-abby-route-s-team-5-round-2-seed-21-a-woman-with-no-face-and-a-westie-at-her-elbow.png)
+
+**The ask.** Team 5, Abby round 2, third of four seeds on the one-creature edit.
+
+**The thinking.** Same command, seed 21. Round 1's seed 21 collapsed the head entirely; this checks whether the one-creature edit rescues a seed that was losing the head as well as the species.
+
+**Settings.** scripts/cast-place.py --character abby --route S --seed 21 --tag t5r2 --extra-edit "ABBY IS ONE SINGLE CREATURE..." | local/qwen-image-edit-2511, 4:5, fast | 42.4s, sticker 66141px in 42 blobs, kept 2, cleanliness 0.4278, dirty key (43% re-inked)
+
+**Prompt.** [prompts/089-abby-route-s-team-5-round-2-seed-21-a-woman-with-no-face-and-a-westie-at-her-elbow.prompt.txt](prompts/089-abby-route-s-team-5-round-2-seed-21-a-woman-with-no-face-and-a-westie-at-her-elbow.prompt.txt)
+
+**Verdict.** 5/20. identity 1 - a human woman in long black hair, no terrier head at all, and a westie pet standing at her left; both halves of the banned split present at once. pose 1 - the head is a smear of hair with no face, no eye and no muzzle, and she hunches square over the ledge. seat 2 - right place and scale, counter in front, but the pet floats at the left edge. cleanliness 1 - second figure, marble slab, a solid black hatched block and bottle shapes all keyed in; the head is not solid.
+
+*Logged 19:36.*
+
+---
+
+## 090. Abby route S team 5 round 2 seed 41 - BEST - the westie lady herself, one figure, both eyes
+
+![Abby route S team 5 round 2 seed 41 - BEST - the westie lady herself, one figure, both eyes](images/090-abby-route-s-team-5-round-2-seed-41-best-the-westie-lady-herself-one-figure-both-eyes.png)
+
+**The ask.** Team 5, Abby round 2, fourth of four seeds on the one-creature edit. Round 1's seed 41 was the worst of the round - a human woman flanked by TWO westies.
+
+**The thinking.** Same command, seed 41. If the one-creature edit works anywhere it should show most on the seed that was previously drawing the most dogs. It did: the seed that gave a woman with two pets now gives one terrier lady and nothing else.
+
+**Settings.** scripts/cast-place.py --character abby --route S --seed 41 --tag t5r2 --extra-edit "ABBY IS ONE SINGLE CREATURE, NOT A WOMAN WITH A DOG..." | local/qwen-image-edit-2511 via AuraVision 127.0.0.1:8000, 4:5, fast 8-step | box 420,620,900,1220 roi 520,680,800,1220, under-remap 100,180, no under-lines, no staging | 42.4s, sticker 84163px in 27 blobs, kept 1, cleanliness 0.4255
+
+**Prompt.** [prompts/090-abby-route-s-team-5-round-2-seed-41-best-the-westie-lady-herself-one-figure-both-eyes.prompt.txt](prompts/090-abby-route-s-team-5-round-2-seed-41-best-the-westie-lady-herself-one-figure-both-eyes.prompt.txt)
+
+**Verdict.** 16/20, best of the round and one point short of PASS. identity 5 - this is the official portrait's Abby: a groomed show-westie skull with two small pricked ears, a short square muzzle and a small black nose, and both eyes drawn to her own rule - white showing at each side of a drawn circular iris, a smaller round pupil, one catchlight, a lashed upper lid - over a closed-lip mouth, with the studded leather collar and its teardrop gem pendant at her throat and the pale blouse with rolled sleeves; fur laid in individual strokes, huggable and professional. pose 4 - standing behind the ledge facing the room as the block-in stages her, head turned a touch to her right, both eyes and the muzzle fully readable, though she reads closer to frontal than to a true three-quarter. seat 4 - dead on the block-in's place and scale, the counter across her lower body, nothing floating. cleanliness 3 - THE ONLY THING KEEPING HER FROM A PASS: the sticker carries a vertical strip of invented back-bar shelving beside her right arm, a small fur-or-foliage tuft at that shoulder, and the black studded counter lip along the bottom. The key cannot cut them out - the sidecar says kept 1 blob of 84163px, so the model drew that furniture JOINED to her body on a sheet that should have stayed blank paper behind her.
+
+*Logged 19:36.*
+
+---
+
+## 091. Abby route S team 5 round 2 seed 41 - the keyed RGBA sticker on white
+
+![Abby route S team 5 round 2 seed 41 - the keyed RGBA sticker on white](images/091-abby-route-s-team-5-round-2-seed-41-the-keyed-rgba-sticker-on-white.png)
+
+**The ask.** Show the best seed's cut sticker on its own so the contamination is visible away from the room behind it.
+
+**The thinking.** The laid preview flatters the key, because invented back-bar ink lands on top of the plate's real back-bar and hides there. On white the fault is plain: a vertical strip of shelving ink beside her right sleeve and the studded counter lip along the bottom edge. Measured on the alpha, her own sleeve runs out to sticker x365 and the strip sits in the same columns, so tightening her ROI would clip her arm before it clipped the furniture - the fix has to stop the model drawing the room in the first place.
+
+**Settings.** cut by the counter occluder's mask and the block-in, ROI 520,680,800,1220; alpha bbox 122,74-367,559, coverage 0.31
+
+**Verdict.** Head solid and joined to the neck, nothing of her cut off, no second figure and no glassware - a real improvement on round 1. Remaining dirt is furniture only: the back-bar strip, one fur tuft at that shoulder, and the counter lip. cleanliness 3/5.
+
+*Logged 19:36.*
+
+---
+
+## 092. Abby team 5 round 2 contact sheet - four laid crops with seed and total
+
+![Abby team 5 round 2 contact sheet - four laid crops with seed and total](images/092-abby-team-5-round-2-contact-sheet-four-laid-crops-with-seed-and-total.png)
+
+**The ask.** One contact sheet of the four laid crops with seed and total in the caption.
+
+**The thinking.** Read left to right the sheet says the one-creature edit is real but not yet reliable: it converted seed 41 outright (round 1's woman-with-two-westies is now the westie lady herself, 6/20 to 16/20) and held seed 44 as a single creature, while seeds 7 and 21 ignored it and drew the woman-plus-pet anyway. Two of four seeds are now on model, against one of four in round 1.
+
+**Settings.** laid previews cropped x380-940 y560-1300 at 1x, four up; PASS = total >= 17 with no score below 4
+
+**Verdict.** Round 2 does NOT pass: best is seed 41 at 16/20, held one point short by cleanliness 3. Next round changes one thing only - a second numbered EDIT that keeps the paper behind her blank, so the model stops drawing a back-bar and a counter lip that the key then cannot separate from her body.
+
+*Logged 19:36.*
+
+---
+
+## 093. Drew round 2 seed 44 - white flamingo gentleman seated in the left chair, laid with Abby
+
+![Drew round 2 seed 44 - white flamingo gentleman seated in the left chair, laid with Abby](images/093-drew-round-2-seed-44-white-flamingo-gentleman-seated-in-the-left-chair-laid-with-abby.png)
+
+**The ask.** Team 5, round 2 for Drew: re-run route S at the lab's settled recipe with the key tightened one notch (--white-thresh 226, from round 1's 232) and Abby's accepted round-1 ledge sticker laid into the preview, so Drew is judged in a room that already has the barmaid in it. Seeds 44, 7, 21 and 41.
+
+**The thinking.** Round 1 proved the recipe: the block-in goes in as a mid-grey band (--under-remap 100,180), no pencil lines, no staging picture - that is the one Picture 1 that makes the model draw the portrait's head rather than a hood. Round 2 changes one thing, the ink test: 226 instead of 232, so a pale rendered pixel has to be a touch darker before it counts as ink, which should stop the marble slab and the chair rail wandering into the sticker. Abby's own accepted sticker is laid at her part so this is judged as a real two-hander, not a solo. Seed 44 is the seed that worked in round 1, carried forward as the control.
+
+**Settings.** scripts/cast-place.py --character drew --route S --seed 44 --tag t5r2 --white-thresh 226 --also figure-abby-01-ledge=canon/room-kit/v2/figures/abby-ledge-rS-t5r1-s44.png | model local/qwen-image-edit-2511 via AuraVision 127.0.0.1:8000 | under-blend 0, under-remap 100,180, no under-lines, no staging, sheet-grey 255, fill on, cut-by-blockin on | 42.4s | sticker 99683px, blobs 217, kept 1, head blob 0.78 of the block-in's own height, alpha inside figure mask 0.84, cleanliness outside sticker 0.0852
+
+**Prompt.** [prompts/093-drew-round-2-seed-44-white-flamingo-gentleman-seated-in-the-left-chair-laid-with-abby.prompt.txt](prompts/093-drew-round-2-seed-44-white-flamingo-gentleman-seated-in-the-left-chair-laid-with-abby.prompt.txt)
+
+**Verdict.** KEEP - the best Drew the studio has made. identity 4, pose 5, seat 5, cleanliness 4, total 18/20, PASSES. The head is the official portrait's: small refined skull under a feather stipple, heavy-lidded eye with a real pupil and a catchlight, a nostril slit, the bill bending down to a solid black tip. He is seated in the left chair from behind and a little to his left with his head turned to his right in three-quarter, at the block-in's scale, the chair in front of his lower body, both wing-hands landing on the marble. Knit V-neck vest, white collar and a black bow tie all read. Faults: two thin marble-edge slivers ride along to the right of his hands and a dark hatched shadow wedge sits at the lower right of the sticker; the skull and neck are a little heavier than the study's.
+
+*Logged 19:40.*
+
+---
+
+## 094. Drew round 2 seed 7 - the model drew no head at all
+
+![Drew round 2 seed 7 - the model drew no head at all](images/094-drew-round-2-seed-7-the-model-drew-no-head-at-all.png)
+
+**The ask.** Team 5, round 2 for Drew: same command, seed 7 - one of the three fresh seeds testing whether the tighter ink test also rescues the seeds that collapsed the head in round 1.
+
+**The thinking.** Seed 7 is a control on the failure mode, not on the recipe: round 1 showed some seeds read the grey band as a thing to erase rather than a head to paint. Nothing about Picture 1 changed here, only the key's threshold, so if 7 still collapses it tells us the fault is in what the model is being asked, not in how the render is cut.
+
+**Settings.** scripts/cast-place.py --character drew --route S --seed 7 --tag t5r2 --white-thresh 226 --also figure-abby-01-ledge=canon/room-kit/v2/figures/abby-ledge-rS-t5r1-s44.png | 74.7s | sticker 83654px, blobs 119, kept 3, head blob only 0.157 of the block-in's own height (106px against 675), cleanliness outside sticker 0.1888, room drift 0.7991
+
+**Prompt.** [prompts/094-drew-round-2-seed-7-the-model-drew-no-head-at-all.prompt.txt](prompts/094-drew-round-2-seed-7-the-model-drew-no-head-at-all.prompt.txt)
+
+**Verdict.** REJECT - identity 0, pose 0, seat 1, cleanliness 0, total 1/20. There is no bird. The neck ends in a stump; a severed piece of bill floats in the air above and to the right of it with a grey smear behind it, and the torso is a bare knit hump. The cut is as bad as the drawing: the sticker carries the studded chair rail along its whole bottom edge, a wedge of the marble slab, and a small card lying on the counter. The tighter ink test did not touch this failure, which confirms it is the drawing collapsing, not the key.
+
+*Logged 19:40.*
+
+---
+
+## 095. Drew round 2 seed 21 - a stub head on a neck that never joins the body
+
+![Drew round 2 seed 21 - a stub head on a neck that never joins the body](images/095-drew-round-2-seed-21-a-stub-head-on-a-neck-that-never-joins-the-body.png)
+
+**The ask.** Team 5, round 2 for Drew: same command, seed 21.
+
+**The thinking.** The third of the fresh seeds. Watching for the second failure mode round 1 named: the head arrives but shrinks, so the bill grows to fill the space the skull should have taken.
+
+**Settings.** scripts/cast-place.py --character drew --route S --seed 21 --tag t5r2 --white-thresh 226 --also figure-abby-01-ledge=canon/room-kit/v2/figures/abby-ledge-rS-t5r1-s44.png | 72.7s | sticker 89068px, blobs 202, kept 2, head blob 0.307 of the block-in's own height (207px against 675), cleanliness outside sticker 0.1903, room drift 0.8118
+
+**Prompt.** [prompts/095-drew-round-2-seed-21-a-stub-head-on-a-neck-that-never-joins-the-body.prompt.txt](prompts/095-drew-round-2-seed-21-a-stub-head-on-a-neck-that-never-joins-the-body.prompt.txt)
+
+**Verdict.** REJECT - identity 1, pose 1, seat 2, cleanliness 1, total 5/20. The head collapsed to a stub and the bill swelled to a great dark hook to fill the gap; there is no eye, and the neck is drawn in hard scales, a reptile's neck, not a flamingo's feathered one. Worse, the neck never joins the torso - there is clear white between the two, so the sticker is a head floating above a body. It also carries a fragment of cracked marble off to the right and the chair rail's studs along the bottom.
+
+*Logged 19:40.*
+
+---
+
+## 096. Drew round 2 seed 41 - the wardrobe is right and the head was never painted
+
+![Drew round 2 seed 41 - the wardrobe is right and the head was never painted](images/096-drew-round-2-seed-41-the-wardrobe-is-right-and-the-head-was-never-painted.png)
+
+**The ask.** Team 5, round 2 for Drew: same command, seed 41 - the last of the four.
+
+**The thinking.** Seed 41 is the most useful failure of the round. Its numbers look like seed 44's - the head blob is the full height of the block-in, 0.78 of the mask - so by measurement it passed; only looking at it shows what actually happened.
+
+**Settings.** scripts/cast-place.py --character drew --route S --seed 41 --tag t5r2 --white-thresh 226 --also figure-abby-01-ledge=canon/room-kit/v2/figures/abby-ledge-rS-t5r1-s44.png | 74.7s | sticker 100835px, blobs 169, kept 1, head blob 0.78 of the block-in's own height, alpha inside figure mask 0.84, cleanliness outside sticker 0.1015
+
+**Prompt.** [prompts/096-drew-round-2-seed-41-the-wardrobe-is-right-and-the-head-was-never-painted.prompt.txt](prompts/096-drew-round-2-seed-41-the-wardrobe-is-right-and-the-head-was-never-painted.prompt.txt)
+
+**Verdict.** REJECT - identity 1, pose 2, seat 4, cleanliness 2, total 9/20. From the neck down this is the best-dressed Drew of the four: knit V-neck vest, a crisp white collar, a black bow tie, seated at the right scale with the chair in front of his lower body. From the neck up the model never painted anything - the head and neck are the mid-grey band of the block-in itself, passed through as a flat hatched shape with no skull, no eye and no feather, only the bill's silhouette and its black tip surviving. Because that band is darker than the ink test, the key happily kept it and the measurements read it as a full-height head. The sticker also carries the tumbler in his hand and a marble sliver at the right.
+
+*Logged 19:40.*
+
+---
+
+## 097. Drew round 2 contact sheet - four seeds side by side, seed 44 is the one
+
+![Drew round 2 contact sheet - four seeds side by side, seed 44 is the one](images/097-drew-round-2-contact-sheet-four-seeds-side-by-side-seed-44-is-the-one.png)
+
+**The ask.** Team 5: put round 2's four laid previews on one sheet with the seed and the score under each, so the round can be read at a glance.
+
+**The thinking.** One seed in four is a keeper, which matches round 1. The three failures are three different ways of losing the head - not drawn at all (7), drawn too small so the bill takes over (21), or not drawn over at all so the grey block-in survives as the head (41) - while the body, the seat and the wardrobe come out right in nearly every seed. So the recipe is placing him correctly and the remaining risk is entirely in the head. Seed 44 also proves the tighter ink test did its job: it is the cleanest cut of the day, with only two thin marble slivers left riding along. One note for the desk: the round's command carried --also with a bare file path, and the script requires PART=PATH, so it was run as --also figure-abby-01-ledge=<path>, which is Abby's own part id and the reading the command clearly intended.
+
+**Settings.** PIL contact sheet, four laid previews cropped x0-800 y600-1600 at 1x then halved for the sheet; source renders as logged in entries 093-096
+
+**Verdict.** Round 2 PASSES on seed 44 at 18/20. Seed 44's sticker and laid preview go forward as Drew; seeds 7, 21 and 41 are rejected. Recommend showing the founder seed 44 for approval rather than spending another round, and if he wants the last two points, a round 3 that only tightens the head - a --extra-edit naming the small refined skull, the heavy-lidded eye and the feather stipple - rather than touching Picture 1, which is now working.
+
+*Logged 19:41.*
+
+---
+
+## 098. Barclay round 2 - route S seed 44 (t5r2), laid with Abby + Drew
+
+![Barclay round 2 - route S seed 44 (t5r2), laid with Abby + Drew](images/098-barclay-round-2-route-s-seed-44-t5r2-laid-with-abby-drew.png)
+
+**The ask.** Team 5 round 2 for Barclay: run the settled route-S recipe (white sheet, block-in remapped into a mid-grey band 100,180, no pencil lines, no staging picture) at seeds 44, 7, 21, 41 with one added EDIT that forbids every object outside Barclay's own outline, and judge him in the laid preview with Abby's and Drew's approved t5r1 s44 stickers already in the room.
+
+**The thinking.** Seed 44 was the seed that worked for Drew, so it was the first to try with the new no-objects EDIT. The EDIT did not stop the model inventing furniture; it invented a whole second seating group instead, and the head collapsed the way the lab warned some seeds still do.
+
+**Settings.** scripts/cast-place.py --character barclay --route S --seed 44 --tag t5r2 --extra-edit "Draw ONLY Barclay himself on the sheet...no object of any kind anywhere on it..." --also figure-abby-01-ledge=abby-ledge-rS-t5r1-s44.png --also figure-drew-02-toward=drew-seated-left-rS-t5r1-s44.png | model local/qwen-image-edit-2511, 4:5, fast 8-step, under-blend 0, under-remap 100,180, no under-lines, no staging, fill on, cut-by-blockin on, white-thresh 232, box 560,700,1200,1500
+
+**Prompt.** [prompts/098-barclay-round-2-route-s-seed-44-t5r2-laid-with-abby-drew.prompt.txt](prompts/098-barclay-round-2-route-s-seed-44-t5r2-laid-with-abby-drew.prompt.txt)
+
+**Verdict.** REJECT - total 3/20 (identity 1, pose 1, seat 1, cleanliness 0). The head collapsed into a long duck bill grafted onto a retriever skull at giant scale, and a whole second scene rode along in the sticker: a tufted club chair, a side table, a tumbler, a rug and a small correct-looking second Barclay seated in it. Nothing is at the block-in's staging.
+
+*Logged 19:41.*
+
+---
+
+## 099. Barclay round 2 - route S seed 7 (t5r2), laid with Abby + Drew
+
+![Barclay round 2 - route S seed 7 (t5r2), laid with Abby + Drew](images/099-barclay-round-2-route-s-seed-7-t5r2-laid-with-abby-drew.png)
+
+**The ask.** Team 5 round 2 for Barclay: run the settled route-S recipe (white sheet, block-in remapped into a mid-grey band 100,180, no pencil lines, no staging picture) at seeds 44, 7, 21, 41 with one added EDIT that forbids every object outside Barclay's own outline, and judge him in the laid preview with Abby's and Drew's approved t5r1 s44 stickers already in the room.
+
+**The thinking.** Second seed of the round, same command. The failure mode is the head collapse the lab predicted plus the sticker swallowing the chair - evidence the darker grey band is what is needed, not more words in the EDIT.
+
+**Settings.** scripts/cast-place.py --character barclay --route S --seed 7 --tag t5r2 --extra-edit "Draw ONLY Barclay himself on the sheet...no object of any kind anywhere on it..." --also figure-abby-01-ledge=abby-ledge-rS-t5r1-s44.png --also figure-drew-02-toward=drew-seated-left-rS-t5r1-s44.png | model local/qwen-image-edit-2511, 4:5, fast 8-step, under-blend 0, under-remap 100,180, no under-lines, no staging, fill on, cut-by-blockin on, white-thresh 232, box 560,700,1200,1500
+
+**Prompt.** [prompts/099-barclay-round-2-route-s-seed-7-t5r2-laid-with-abby-drew.prompt.txt](prompts/099-barclay-round-2-route-s-seed-7-t5r2-laid-with-abby-drew.prompt.txt)
+
+**Verdict.** REJECT - total 3/20 (identity 1, pose 1, seat 1, cleanliness 0). A small bird-billed head with retriever ears sits on a long scaled neck wearing a bib; below it the torso IS a tufted chesterfield arm with a cuff and a wristwatch. No readable body, no correct species, furniture is most of the sticker.
+
+*Logged 19:41.*
+
+---
+
+## 100. Barclay round 2 - route S seed 21 (t5r2), laid with Abby + Drew
+
+![Barclay round 2 - route S seed 21 (t5r2), laid with Abby + Drew](images/100-barclay-round-2-route-s-seed-21-t5r2-laid-with-abby-drew.png)
+
+**The ask.** Team 5 round 2 for Barclay: run the settled route-S recipe (white sheet, block-in remapped into a mid-grey band 100,180, no pencil lines, no staging picture) at seeds 44, 7, 21, 41 with one added EDIT that forbids every object outside Barclay's own outline, and judge him in the laid preview with Abby's and Drew's approved t5r1 s44 stickers already in the room.
+
+**The thinking.** This is the first Barclay whose head did not collapse - the portrait's face survived the edit at the block-in's scale. It confirms the recipe is right and that the remaining fight is the sticker's cut, not the drawing: everything that fails here is furniture inside the silhouette that the block-in cut cannot remove.
+
+**Settings.** scripts/cast-place.py --character barclay --route S --seed 21 --tag t5r2 --extra-edit "Draw ONLY Barclay himself on the sheet...no object of any kind anywhere on it..." --also figure-abby-01-ledge=abby-ledge-rS-t5r1-s44.png --also figure-drew-02-toward=drew-seated-left-rS-t5r1-s44.png | model local/qwen-image-edit-2511, 4:5, fast 8-step, under-blend 0, under-remap 100,180, no under-lines, no staging, fill on, cut-by-blockin on, white-thresh 232, box 560,700,1200,1500
+
+**Prompt.** [prompts/100-barclay-round-2-route-s-seed-21-t5r2-laid-with-abby-drew.prompt.txt](prompts/100-barclay-round-2-route-s-seed-21-t5r2-laid-with-abby-drew.prompt.txt)
+
+**Verdict.** BEST OF THE ROUND but still short - total 14/20 (identity 4, pose 4, seat 4, cleanliness 2). A real golden retriever gentleman: refined muzzle with whisker dots, dark nose, floppy ear, heavy-lidded human-looking eye with one catchlight, closed-lip smile, dark blazer over an open-collared shirt with the small flag pin. Seen from behind and a little to his right with the head turned to his left toward Drew, sitting on the block-in almost exactly (93.5% of the block-in covered) with the right club chair in front of his lower body. The sticker still carries the chair's studded top rail across his lap, a hatched marble wedge at his right and a cuff/stem fragment at his left, and the laid preview shows that rail doubled against the plate's own.
+
+*Logged 19:41.*
+
+---
+
+## 101. Barclay round 2 - route S seed 41 (t5r2), laid with Abby + Drew
+
+![Barclay round 2 - route S seed 41 (t5r2), laid with Abby + Drew](images/101-barclay-round-2-route-s-seed-41-t5r2-laid-with-abby-drew.png)
+
+**The ask.** Team 5 round 2 for Barclay: run the settled route-S recipe (white sheet, block-in remapped into a mid-grey band 100,180, no pencil lines, no staging picture) at seeds 44, 7, 21, 41 with one added EDIT that forbids every object outside Barclay's own outline, and judge him in the laid preview with Abby's and Drew's approved t5r1 s44 stickers already in the room.
+
+**The thinking.** Last seed of the round. Same collapse as 44 and 7 but milder, and the only run this round to trip the dirty-key guard, so the model was fighting the sheet as well as the head.
+
+**Settings.** scripts/cast-place.py --character barclay --route S --seed 41 --tag t5r2 --extra-edit "Draw ONLY Barclay himself on the sheet...no object of any kind anywhere on it..." --also figure-abby-01-ledge=abby-ledge-rS-t5r1-s44.png --also figure-drew-02-toward=drew-seated-left-rS-t5r1-s44.png | model local/qwen-image-edit-2511, 4:5, fast 8-step, under-blend 0, under-remap 100,180, no under-lines, no staging, fill on, cut-by-blockin on, white-thresh 232, box 560,700,1200,1500
+
+**Prompt.** [prompts/101-barclay-round-2-route-s-seed-41-t5r2-laid-with-abby-drew.prompt.txt](prompts/101-barclay-round-2-route-s-seed-41-t5r2-laid-with-abby-drew.prompt.txt)
+
+**Verdict.** REJECT - total 8/20 (identity 2, pose 2, seat 3, cleanliness 1). The wardrobe is right - dark blazer, open collar, flag pin - but the head is a goose/duck bill with retriever ears instead of a muzzle, the body is turned to the camera rather than seen from behind, and a tumbler and two grey marble wedges plus a rail band ride along. The run also tripped the dirty-key warning (the model re-inked 59% of the room).
+
+*Logged 19:41.*
+
+---
+
+## 102. Barclay round 2 contact sheet - four seeds side by side, seed 21 is the one
+
+![Barclay round 2 contact sheet - four seeds side by side, seed 21 is the one](images/102-barclay-round-2-contact-sheet-four-seeds-side-by-side-seed-21-is-the-one.png)
+
+**The ask.** Make one contact sheet of the four round-2 laid crops (x 500-1200, y 600-1600) with the seed and the total in each caption.
+
+**The thinking.** Side by side the round reads at a glance: three of the four seeds grafted a bird's bill onto the retriever's skull, and only seed 21 drew the portrait's own head. Every one of the four still smuggled furniture inside the silhouette, so the fight has moved from the face to the cut and to how faithfully the model obeys the no-objects EDIT.
+
+**Settings.** scripts\ (local PIL compose), out C;C:\Program Files\Git\Users\admin\AppData\Local\Temp\claude\Z--ImageGenerator\7e90a839-5703-42df-8007-3e3f206ae0ae\scratchpad\cast-scene\team5\barclay\round-2-sheet.png
+
+**Prompt.** [prompts/102-barclay-round-2-contact-sheet-four-seeds-side-by-side-seed-21-is-the-one.prompt.txt](prompts/102-barclay-round-2-contact-sheet-four-seeds-side-by-side-seed-21-is-the-one.prompt.txt)
+
+**Verdict.** Seed 21 (14/20) is the round's only usable Barclay; 44 and 7 are 3/20, 41 is 8/20. Round 2 does not PASS - the threshold is 17 with nothing below 4, and seed 21's cleanliness is 2.
+
+*Logged 19:42.*
+
+---
+
+## 103. Abby route S team 5 round 3 seed 44 - one creature, but the skull has no ears and a toothy grin
+
+![Abby route S team 5 round 3 seed 44 - one creature, but the skull has no ears and a toothy grin](images/103-abby-route-s-team-5-round-3-seed-44-one-creature-but-the-skull-has-no-ears-and-a-toothy-grin.png)
+
+**The ask.** Team 5, Abby round 3. Round 2 got her to 16/20 on seed 41 and was held one point short by cleanliness 3 - the sticker carried a strip of invented back-bar shelving, a fur tuft and the studded counter lip, drawn joined to her body on paper that should have stayed blank. Round 3 changes exactly one thing: a SECOND numbered EDIT that says the paper behind and beside her stays blank white, the counter already printed on the sheet is the only furniture, and no back-bar, shelves, bottles, panelling, wall, mirror, marble slab or counter lip of the model's own may be drawn anywhere around her. The one-creature edit from round 2 is unchanged, the same four seeds 44 / 7 / 21 / 41, and this round also lays Drew (t5r1 s44) and Barclay (t5r1 s21) into the preview through their own parts so she is judged in the room with the two gentlemen already in it.
+
+**The thinking.** First of four seeds. Round 2's seed 44 gave one terrier lady whose far eye was never drawn; the question here is whether the blank-paper edit costs anything on a seed that was already borderline. It did not help: the model draws one creature and no pet, so the one-creature edit still holds, but the head comes back wrong - a rounded fur blob with NO PRICKED EARS AT ALL, the top of the skull ending flat at the block-in's ceiling, small eyes shoved up against that edge, and a wide open toothy grin where the canon asks for a closed-lip half-smile. The blank-paper edit did cut the back-bar, but the sheet still comes back with a marble slab, the studded counter lip and two dark panel scraps at her elbows, and the key kept them in 3 blobs.
+
+**Settings.** scripts/cast-place.py --character abby --route S --seed 44 --tag t5r3 --extra-edit (one-creature) --extra-edit (blank-paper) --also figure-drew-02-toward=drew-seated-left-rS-t5r1-s44.png --also figure-barclay-02-toward=barclay-seated-right-rS-t5r1-s21.png | local/qwen-image-edit-2511 via AuraVision 127.0.0.1:8000, 4:5, fast 8-step | box 420,620,900,1220 roi 520,680,800,1220, under-remap 100,180, no under-lines, no staging | 42.4s, sticker 62571px in 54 blobs, kept 3, cleanliness 0.2243, room drift 0.7600
+
+**Prompt.** [prompts/103-abby-route-s-team-5-round-3-seed-44-one-creature-but-the-skull-has-no-ears-and-a-toothy-grin.prompt.txt](prompts/103-abby-route-s-team-5-round-3-seed-44-one-creature-but-the-skull-has-no-ears-and-a-toothy-grin.prompt.txt)
+
+**Verdict.** 10/20. identity 2 - one creature and no pet, and the studded collar, teardrop pendant and open pale blouse are all right, but the head is not Abby: no pricked ears anywhere, the skull cut flat across the top, the eyes tiny and crowded against that edge, and a wide open toothy grin instead of her closed-lip half-smile. pose 2 - body square to the room and both eyes on the paper, but the head is malformed and truncated rather than staged. seat 4 - right place, right scale, the counter across her lower body, nothing floating. cleanliness 2 - 3 blobs kept: a marble slab, the black studded counter lip and dark panel scraps at both elbows ride along with her, and the head is not whole.
+
+*Logged 19:51.*
+
+---
+
+## 104. Abby route S team 5 round 3 seed 7 - still a young woman and her westie, exactly as forbidden
+
+![Abby route S team 5 round 3 seed 7 - still a young woman and her westie, exactly as forbidden](images/104-abby-route-s-team-5-round-3-seed-7-still-a-young-woman-and-her-westie-exactly-as-forbidden.png)
+
+**The ask.** Team 5, Abby round 3, second of four seeds on the one-creature edit plus the new blank-paper edit, laid with Drew and Barclay already in the room.
+
+**The thinking.** Same command, seed 7. This seed drew a human woman with a westie pet in round 1 and again in round 2; it is the direct test of whether adding a second edit about the paper changes anything about the figure itself. It does not - the blank-paper edit governs the background, not the split, and seed 7 hands back the same banned pair: a young human woman smiling out of the panel wearing Abby's studded collar and pendant, with a live westie propped at her right shoulder as a pet. The room behind her is cleaner than round 2, so the new edit is doing its job; this seed's fault is the figure.
+
+**Settings.** scripts/cast-place.py --character abby --route S --seed 7 --tag t5r3, same two extra edits and the same two --also stickers | local/qwen-image-edit-2511, 4:5, fast 8-step | 42.5s, sticker 81066px in 26 blobs, kept 3, cleanliness 0.3831, room drift 0.7254, dirty key (38% of the room re-inked)
+
+**Prompt.** [prompts/104-abby-route-s-team-5-round-3-seed-7-still-a-young-woman-and-her-westie-exactly-as-forbidden.prompt.txt](prompts/104-abby-route-s-team-5-round-3-seed-7-still-a-young-woman-and-her-westie-exactly-as-forbidden.prompt.txt)
+
+**Verdict.** 5/20. identity 1 - a human woman with a human face, human hair and human hands, plus a separate westie sitting against her shoulder; both halves of the split the edit forbids, drawn anyway. pose 1 - she faces the reader and smiles out of the panel, nothing like the block-in's staging. seat 2 - she is at the ledge at the block-in's scale with the counter in front, but the pet sits up on the ledge beside her. cleanliness 1 - the sticker carries a whole second figure and a marble slab across the bottom.
+
+*Logged 19:52.*
+
+---
+
+## 105. Abby route S team 5 round 3 seed 21 - a woman with half a head, a westie at her elbow and a wine glass
+
+![Abby route S team 5 round 3 seed 21 - a woman with half a head, a westie at her elbow and a wine glass](images/105-abby-route-s-team-5-round-3-seed-21-a-woman-with-half-a-head-a-westie-at-her-elbow-and-a-wine-glass.png)
+
+**The ask.** Team 5, Abby round 3, third of four seeds on the one-creature edit plus the new blank-paper edit, laid with Drew and Barclay already in the room.
+
+**The thinking.** Same command, seed 21. This is the seed that has failed hardest in both previous rounds - round 1 lost the head entirely, round 2 gave a faceless woman with a westie at her elbow. Round 3 repeats round 2's failure almost exactly and adds a prop: a human woman in long black hair whose skull simply stops above the brow, a live westie standing at her left, and a stemmed wine glass held in two human hands. The new blank-paper edit did not reach this seed either - a marble slab and a black hatched block are drawn under her arms.
+
+**Settings.** scripts/cast-place.py --character abby --route S --seed 21 --tag t5r3, same two extra edits and the same two --also stickers | local/qwen-image-edit-2511, 4:5, fast 8-step | 42.5s, sticker 68340px in 35 blobs, kept 2, cleanliness 0.3998, room drift 0.6630, dirty key (40% of the room re-inked)
+
+**Prompt.** [prompts/105-abby-route-s-team-5-round-3-seed-21-a-woman-with-half-a-head-a-westie-at-her-elbow-and-a-wine-glass.prompt.txt](prompts/105-abby-route-s-team-5-round-3-seed-21-a-woman-with-half-a-head-a-westie-at-her-elbow-and-a-wine-glass.prompt.txt)
+
+**Verdict.** 5/20. identity 1 - a human woman, human face and long human hair, no terrier head at all, with a westie pet standing at her left; the banned split again, and the top of her skull is never painted. pose 1 - she hunches square over the ledge with the crown of her head missing, no muzzle, no readable staging. seat 2 - right place and scale with the counter in front, but the pet and a stemmed glass sit on the ledge with her. cleanliness 1 - second figure, glassware, a marble slab and a solid black hatched block all keyed in; the head is not solid.
+
+*Logged 19:52.*
+
+---
+
+## 106. Abby route S team 5 round 3 seed 41 - PASS - the westie lady herself on blank paper, 17/20
+
+![Abby route S team 5 round 3 seed 41 - PASS - the westie lady herself on blank paper, 17/20](images/106-abby-route-s-team-5-round-3-seed-41-pass-the-westie-lady-herself-on-blank-paper-17-20.png)
+
+**The ask.** Team 5, Abby round 3, fourth of four seeds. Seed 41 is the one round 2 converted outright - it went from a woman flanked by two westies to the terrier lady herself at 16/20, held one point short of a pass by cleanliness 3. The single change this round is the blank-paper edit, aimed at exactly that fault.
+
+**The thinking.** The one thing round 2 could not fix by keying was that the model drew a strip of back-bar shelving JOINED to her body, so the key had no seam to cut on. The blank-paper edit attacks it at the source: the counter already printed on the sheet is the only furniture in the picture, everything else stays untouched white paper. It worked. Seed 41 comes back as one figure with no invented shelving, no bottles, no wall and no second creature - the key kept ONE blob of 79625px at cleanliness 0.1837, against round 2's 0.4255. What survives is a black studded counter lip drawn across her waist with a faint marble smear under it, and two short stubs of the ledge horizon line running out past her sleeves into blank paper. The head is the best Abby route S has drawn: a groomed show-westie skull, two small pricked ears, a short square muzzle, a small black nose, a closed-lip mouth, and both eyes built like human eyes - almond opening, drawn iris, round pupil, one catchlight, a lashed upper lid over fine brow strokes - though the white of the eye is a thinner sliver than the official portrait shows, and thinnest on the far eye. Wardrobe is exact: studded leather collar with the teardrop gem pendant, pale blouse open two buttons with rolled sleeves, fur-backed hand on the ledge.
+
+**Settings.** scripts/cast-place.py --character abby --route S --seed 41 --tag t5r3 --extra-edit (one-creature) --extra-edit (blank-paper) --also figure-drew-02-toward=drew-seated-left-rS-t5r1-s44.png --also figure-barclay-02-toward=barclay-seated-right-rS-t5r1-s21.png | local/qwen-image-edit-2511 via AuraVision 127.0.0.1:8000, 4:5, fast 8-step | box 420,620,900,1220 roi 520,680,800,1220, under-remap 100,180, no under-lines, no staging | 42.5s, sticker 79625px in 16 blobs, kept 1, cleanliness 0.1837, room drift 0.8365, alpha inside figure mask 0.874, mask covered 0.985
+
+**Prompt.** [prompts/106-abby-route-s-team-5-round-3-seed-41-pass-the-westie-lady-herself-on-blank-paper-17-20.prompt.txt](prompts/106-abby-route-s-team-5-round-3-seed-41-pass-the-westie-lady-herself-on-blank-paper-17-20.prompt.txt)
+
+**Verdict.** 17/20 - PASS, the first Abby to clear the bar. identity 5 - the official portrait's Abby: groomed westie skull, two pricked ears, short square muzzle, small black nose, closed-lip mouth, large eyes with iris, pupil, catchlight and lashed lid, studded collar and teardrop pendant, pale blouse with rolled sleeves, fur laid in individual strokes; huggable and professional. The only drift from canon is thin whites on the far eye and a slightly furry sweep in the open collar where the canon asks for smooth close-lying fur. pose 4 - standing behind the ledge facing the room as the block-in stages her, both eyes and the muzzle fully readable, one hand on the ledge; she reads dead frontal rather than turned into a true three-quarter. seat 4 - dead on the block-in's place and scale, the counter across her lower body, nothing floating, and she now shares the room with Drew in the left chair and Barclay in the right. cleanliness 4 - one blob, head solid and joined to the neck, nothing cut off, no second figure, no glassware, no back-bar and no shelving; what remains is the black studded counter lip across her waist, a faint marble smear beneath it and two short ledge-line stubs past her sleeves.
+
+*Logged 19:52.*
+
+---
+
+## 107. Abby round 3 seed 41 - the keyed RGBA sticker on white, the back-bar finally gone
+
+![Abby round 3 seed 41 - the keyed RGBA sticker on white, the back-bar finally gone](images/107-abby-round-3-seed-41-the-keyed-rgba-sticker-on-white-the-back-bar-finally-gone.png)
+
+**The ask.** Show the winning seed's cut sticker on its own, the way round 2's was shown, so the blank-paper edit can be judged where the laid preview cannot flatter it.
+
+**The thinking.** On the laid preview invented back-bar ink hides on top of the plate's real back-bar, so the sticker on white is the only honest test. Round 2's sticker carried a vertical strip of shelving beside her right sleeve, a fur tuft at that shoulder and the counter lip; round 3's carries none of the shelving and no tuft. Measured on the alpha: one blob, 79625px, bbox 121,73-365,562 inside a 480x600 box, so nothing is clipped at the box edge and the head is whole and joined to the neck. The remaining ink that is not her is the black studded counter lip along the bottom with a faint marble smear under it, and two short stubs of the ledge horizon line at the left and right edges.
+
+**Settings.** cut by the counter occluder's mask and the block-in, ROI 520,680,800,1220, white_thresh 232, fill on; alpha bbox 121,73-365,562, kept 1 blob 79625px, cleanliness 0.1837
+
+**Verdict.** cleanliness 4/5. The fault that held round 2 at 16 is gone - no invented shelving, no bottles, no wall, no second figure, no glassware, no halo, nothing cut off. What is left is furniture the model still insists on drawing at her waist: the studded counter lip and the two ledge-line stubs. Good enough to pass; the next thing to chase if the founder wants a 5.
+
+*Logged 19:52.*
+
+---
+
+## 108. Abby team 5 round 3 contact sheet - four laid crops with seed and total, seed 41 passes at 17
+
+![Abby team 5 round 3 contact sheet - four laid crops with seed and total, seed 41 passes at 17](images/108-abby-team-5-round-3-contact-sheet-four-laid-crops-with-seed-and-total-seed-41-passes-at-17.png)
+
+**The ask.** One contact sheet of the four laid crops with seed and total in the caption.
+
+**The thinking.** Read left to right the sheet says the blank-paper edit did exactly the one job it was given and nothing more. On seed 41, the seed that was already on model, it removed the invented back-bar and the fur tuft and lifted cleanliness from 3 to 4, taking her from 16/20 to 17/20 and over the pass line. It changed nothing about the figure on the seeds that were drawing the wrong figure: 7 and 21 hand back the woman-plus-pet split again, and 44 draws one creature with a malformed earless head. So the recipe is now proven on one seed rather than reliable across four - two of four were on model in round 2, one of four here, and the one that is on model is the same seed both times. This is also the first sheet where Abby is judged in the finished room: Drew's approved sticker sits in the left chair and Barclay's in the right, and she reads correctly in scale and staging between them.
+
+**Settings.** laid previews cropped x380-940 y560-1300 at 1x, four up, Drew t5r1 s44 and Barclay t5r1 s21 laid in at their own parts; PASS = total >= 17 with no score below 4
+
+**Verdict.** Round 3 PASSES on seed 41 at 17/20 with identity 5, pose 4, seat 4, cleanliness 4 - no score below 4. Seed 44 10/20, seeds 7 and 21 5/20 each. Abby's sticker for the scene is canon/room-kit/v2/figures/abby-ledge-rS-t5r3-s41.png. If the founder wants the last point, the one change to make is a third edit forbidding the studded counter lip and the ledge horizon line specifically, since that is the only ink left in the sticker that is not her.
+
+*Logged 19:53.*
+
+---
+
+## 109. Barclay round 3 seed 44 - route S at 40 steps, the block-in inked as a grey cutout
+
+![Barclay round 3 seed 44 - route S at 40 steps, the block-in inked as a grey cutout](images/109-barclay-round-3-seed-44-route-s-at-40-steps-the-block-in-inked-as-a-grey-cutout.png)
+
+**The ask.** Team 5, Barclay round 3: place Barclay (golden retriever gentleman, dark blazer over an open-collared shirt, small flag pin) into the approved room on route S - right club chair, seen from behind and a little to his right, head turned to his left toward Drew - and cut him out as a sticker. Four seeds (44, 7, 21, 41), scored on identity / pose / seat / cleanliness, laid against the plate with Abby and Drew already in it.
+
+**The thinking.** Round 3 keeps today lab recipe (block-in remapped into a mid-grey band, no pencil lines, no staging picture) and adds --full: the 40-step cfg 4 pass instead of the Lightning 8-step one, on the theory that more steps would stop the head collapsing. It did the opposite. At cfg 4 the model treats Picture 1 as something to reproduce rather than something to finish, so the flat mid-grey block-in came back as a flat grey cutout: a pale slab body with a rectangular ear-board, no fur, no blazer, no shirt, no flag pin, and a paper label reading BARCLEY pasted on the chest where the portrait should be. The staging is right - the figure fills the block-in at its own scale, seat and head turn (mask coverage 0.91, scale 1.02) - but the character is not there, and the key kept the whole leather chair back, the marble slab edge and a glass inside the sticker.
+
+**Settings.** scripts/cast-place.py --character barclay --route S --seed 44 --tag t5r3 --full --also figure-abby-01-ledge=abby-ledge-rS-t5r2-s44.png --also figure-drew-02-toward=drew-seated-left-rS-t5r1-s44.png | local/qwen-image-edit-2511 via AuraVision 127.0.0.1:8000 | 40-step cfg 4 (--full) | under-blend 0, under-remap 100,180, no under-lines, no staging picture, white-thresh 232, fill on, cut-by-blockin on | box 560,700,1200,1500
+
+**Prompt.** [prompts/109-barclay-round-3-seed-44-route-s-at-40-steps-the-block-in-inked-as-a-grey-cutout.prompt.txt](prompts/109-barclay-round-3-seed-44-route-s-at-40-steps-the-block-in-inked-as-a-grey-cutout.prompt.txt)
+
+**Verdict.** FAIL - total 7/20 (identity 1, pose 2, seat 3, cleanliness 1). Not Barclay: a grey cutout with a printed name label instead of a retriever, and furniture inside the sticker.
+
+*Logged 20:11.*
+
+---
+
+## 110. Barclay round 3 seed 7 - the whole sheet re-inked, a transparent grey dummy in the chair
+
+![Barclay round 3 seed 7 - the whole sheet re-inked, a transparent grey dummy in the chair](images/110-barclay-round-3-seed-7-the-whole-sheet-re-inked-a-transparent-grey-dummy-in-the-chair.png)
+
+**The ask.** Team 5, Barclay round 3, seed 7: same command, next seed - Barclay into the right club chair on route S, sticker plus laid preview against the plate with Abby and Drew already in it.
+
+**The thinking.** Same recipe, seed 7. The model re-inked 97 percent of the sheet outside the figure (cleanliness 0.95), so the absolute white-sheet key had almost nothing white left to cut against and simply returned the dilated block-in silhouette as one blob. What is inside it is a see-through grey mannequin - a wedge bill with a dark ball at the tip, a dark bar for the eyes, a rectangular ear plate - with the marble and the chair studs showing through the body, plus a black wedge of chair rail carried along at the bottom left. No fur, no jacket, no collar, no pin.
+
+**Settings.** scripts/cast-place.py --character barclay --route S --seed 7 --tag t5r3 --full --also figure-abby-01-ledge=abby-ledge-rS-t5r2-s44.png --also figure-drew-02-toward=drew-seated-left-rS-t5r1-s44.png | local/qwen-image-edit-2511 via AuraVision | 40-step cfg 4 | under-blend 0, under-remap 100,180, no under-lines, no staging picture
+
+**Prompt.** [prompts/110-barclay-round-3-seed-7-the-whole-sheet-re-inked-a-transparent-grey-dummy-in-the-chair.prompt.txt](prompts/110-barclay-round-3-seed-7-the-whole-sheet-re-inked-a-transparent-grey-dummy-in-the-chair.prompt.txt)
+
+**Verdict.** FAIL - total 6/20 (identity 1, pose 2, seat 2, cleanliness 1). A ghost of the block-in, not a character; sticker is semi-transparent and carries chair and marble.
+
+*Logged 20:11.*
+
+---
+
+## 111. Barclay round 3 seed 21 - a photographic human man in the blazer, square to camera
+
+![Barclay round 3 seed 21 - a photographic human man in the blazer, square to camera](images/111-barclay-round-3-seed-21-a-photographic-human-man-in-the-blazer-square-to-camera.png)
+
+**The ask.** Team 5, Barclay round 3, seed 21: same command, next seed - Barclay into the right club chair on route S, sticker plus laid preview against the plate with Abby and Drew already in it.
+
+**The thinking.** Third seed of the 40-step pass and the third different way of losing him. Here the model read the block-in as a person and drew a photographic middle-aged HUMAN man - real skin, real hair - wearing the wardrobe it did take from the portrait (dark blazer, pale open collar, the small flag pin on the left lapel, a wristwatch). He is also square to the camera with both hands flat on the marble, which is the one staging the pinned brief forbids: the block-in asks for him from behind and a little to his right with the head turned left toward Drew. The sticker carries the marble slab, the chair rail and a glass with him.
+
+**Settings.** scripts/cast-place.py --character barclay --route S --seed 21 --tag t5r3 --full --also figure-abby-01-ledge=abby-ledge-rS-t5r2-s44.png --also figure-drew-02-toward=drew-seated-left-rS-t5r1-s44.png | local/qwen-image-edit-2511 via AuraVision | 40-step cfg 4 | under-blend 0, under-remap 100,180, no under-lines, no staging picture
+
+**Prompt.** [prompts/111-barclay-round-3-seed-21-a-photographic-human-man-in-the-blazer-square-to-camera.prompt.txt](prompts/111-barclay-round-3-seed-21-a-photographic-human-man-in-the-blazer-square-to-camera.prompt.txt)
+
+**Verdict.** FAIL - total 5/20 (identity 1, pose 1, seat 2, cleanliness 1). Wrong species and photographic: a human face in Barclay clothes, facing the camera, with furniture in the sticker.
+
+*Logged 20:11.*
+
+---
+
+## 112. Barclay round 3 seed 41 - the block-in traced exactly, as a wooden mannequin
+
+![Barclay round 3 seed 41 - the block-in traced exactly, as a wooden mannequin](images/112-barclay-round-3-seed-41-the-block-in-traced-exactly-as-a-wooden-mannequin.png)
+
+**The ask.** Team 5, Barclay round 3, seed 41: same command, last seed of the round - Barclay into the right club chair on route S, sticker plus laid preview against the plate with Abby and Drew already in it.
+
+**The thinking.** The clearest picture of what --full does to route S. At 40 steps and cfg 4 the model copies Picture 1 instead of finishing it: the mid-grey block-in came back line for line as a wooden artist mannequin - the round skull, the wedge muzzle with a ball nose, the two dot eyes, the rectangular drop-ear plate, the blocky torso and the flat triangle of a glass - hatched in the house pen but with no fur, no jacket, no shirt, no pin and no face. Nothing of Barclay portrait survived Picture 2. On the round scoring this is the best of the four only because everything except identity is right: the figure fills the block-in exactly (mask coverage 1.00, scale 1.02), the chair sits in front of his lower body, and the sticker holds only the figure (no chair, no marble). It is the right statue of the wrong thing.
+
+**Settings.** scripts/cast-place.py --character barclay --route S --seed 41 --tag t5r3 --full --also figure-abby-01-ledge=abby-ledge-rS-t5r2-s44.png --also figure-drew-02-toward=drew-seated-left-rS-t5r1-s44.png | local/qwen-image-edit-2511 via AuraVision | 40-step cfg 4 | under-blend 0, under-remap 100,180, no under-lines, no staging picture
+
+**Prompt.** [prompts/112-barclay-round-3-seed-41-the-block-in-traced-exactly-as-a-wooden-mannequin.prompt.txt](prompts/112-barclay-round-3-seed-41-the-block-in-traced-exactly-as-a-wooden-mannequin.prompt.txt)
+
+**Verdict.** FAIL - total 9/20 (identity 0, pose 3, seat 3, cleanliness 3). Best total of round 3 and still not a character: the staging is exact, the character is absent.
+
+*Logged 20:11.*
+
+---
+
+## 113. Barclay team 5 round 3 contact sheet - four laid crops, --full traced the block-in on every seed
+
+![Barclay team 5 round 3 contact sheet - four laid crops, --full traced the block-in on every seed](images/113-barclay-team-5-round-3-contact-sheet-four-laid-crops-full-traced-the-block-in-on-every-seed.png)
+
+**The ask.** One contact sheet of the four round-3 laid crops (x 500-1200, y 600-1600) with the seed and the total in each caption.
+
+**The thinking.** Read left to right the sheet is a single verdict on --full. Round 2 ran this same recipe on the Lightning 8-step pass and got one real golden retriever gentleman (seed 21, 14/20, identity 4 / pose 4 / seat 4) held back only by furniture in the cut. Round 3 changed the pass to 40 steps at cfg 4 and every seed lost the character instead: 44 is a flat grey cutout with a paper label reading BARCLEY on its chest, 7 is a see-through mannequin, 21 is a photographic human man in the blazer, 41 is the block-in traced line for line as a wooden artist dummy. The staging numbers went the other way - the figures now fill the block-in exactly (mask coverage 0.86 to 1.00, scale 1.02) - which is the tell: at cfg 4 the model reproduces Picture 1 rather than finishing it, and Picture 1 is a solid mid-grey silhouette. The remapped band that reads as a helpful ghost at 8 steps reads as an object to ink at 40. Round 3 also dropped round 2 no-objects EDIT, and the chair, the marble and a glass came back inside three of the four stickers.
+
+**Settings.** four laid previews cropped x500-1200 y600-1600 at 1x, four up, local PIL compose; Abby t5r2 s44 and Drew t5r1 s44 laid in at their own parts; PASS = total >= 17 with no score below 4; out C:\Users\admin\AppData\Local\Temp\claude\Z--ImageGenerator\7e90a839-5703-42df-8007-3e3f206ae0ae\scratchpad\cast-scene\team5\barclay\round-3-sheet.png
+
+**Verdict.** Round 3 does NOT pass. Best seed 41 at 9/20 (identity 0, pose 3, seat 3, cleanliness 3), then 44 at 7, 7 at 6, 21 at 5 - every one far below the round-2 best of 14. --full is the wrong dial for route S: it buys staging fidelity by copying the under-drawing, and the under-drawing is not a character. Next round: take the 40-step pass off (or blend the block-in back toward white with --under-blend 0.55 if it stays on) and restore the no-objects EDIT that round 2 was carrying.
+
+*Logged 20:12.*
+
+---
+
+## 114. RETHINK: one whole-scene pass by the house model from the approved room and the three portraits (seed 7)
+
+![RETHINK: one whole-scene pass by the house model from the approved room and the three portraits (seed 7)](images/114-rethink-one-whole-scene-pass-by-the-house-model-from-the-approved-room-and-the-three-portraits-seed-7.png)
+
+**The ask.** Founder, on seeing the all-three composite and the emblem bottles: 'thats one of the worst things ive ever seen the bottles are terrible the characters are even worse you need to rethink your approach.'
+
+**The thinking.** The patchwork was the problem: every object rendered separately by the weaker model from a flat block-in and pasted through a mask, the characters keyed out as stickers. The plates Rick accepted were drawn WHOLE by the house edit model in one hand. So: scripts/scene-edit.py sends the approved room (its 4:5 crop) as Picture 1, Drew's portrait as Picture 2 and a Barclay+Abby tile as Picture 3, with five numbered edits (add each character at their place, redraw the bottles as a real bar shelf, keep everything else) and the studio's LOCAL rules. Seed 7: all three read as their portraits at once, one engraved hand, real bottles, the room's layout kept. Faults to fix next: the cast stands in a row facing the camera instead of Drew and Barclay seated in the chairs from behind; the pasted crop's top seam. Seed 41 drifted to a sketchbook page and is rejected. Also learned tonight: the house model's FIRST step after a fresh load streams weights for ~10-20 minutes (the 'wedge'); once resident a pass is ~60 s.
+
+**Settings.** local/qwen-image-edit-2511 via AuraVision, fast Lightning 8-step cfg 1, 4:5 1344x1680, Picture 1 = plate crop y 300-1800, seed 7 (646 s incl. load) / seed 41 (57 s)
+
+**Verdict.** Direction confirmed by the proof; the founder decides whether the house model draws the whole plate from here.
+
+*Logged 20:36.*
+
+---
+
+## 115. Whole-scene pass, seed 41: rejected (drifted to a sketchbook page)
+
+![Whole-scene pass, seed 41: rejected (drifted to a sketchbook page)](images/115-whole-scene-pass-seed-41-rejected-drifted-to-a-sketchbook-page.png)
+
+**The ask.** Same pass, second seed.
+
+**The thinking.** The model abandoned Picture 1 and drew the three as a sketchbook illustration; a seed to discard, logged for the record.
+
+**Settings.** as seed 7
+
+**Verdict.** Rejected.
+
+*Logged 20:36.*
+
+---
+

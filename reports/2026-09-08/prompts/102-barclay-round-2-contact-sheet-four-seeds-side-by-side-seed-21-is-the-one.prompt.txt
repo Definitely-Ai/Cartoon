@@ -1,0 +1,1 @@
+No render - composed locally with PIL from the four laid previews barclay-seated-right-rS-t5r2-s{44,7,21,41}-laid.png, cropped x 500-1200 y 600-1600 at 1x and scaled to 0.62 for the sheet.

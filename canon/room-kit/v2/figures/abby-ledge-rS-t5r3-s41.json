@@ -1,0 +1,190 @@
+{
+  "generated_at": "2026-09-08T19:46:21",
+  "script": "scripts/cast-place.py",
+  "character": "abby",
+  "pose": "ledge",
+  "route": "S",
+  "flat_field": {
+    "white": 255.0,
+    "under_blend": 0.0,
+    "under_lines": false,
+    "under_remap": [
+      100.0,
+      180.0
+    ],
+    "sheet_grey": 255.0,
+    "occluder_fraction": 0.0838,
+    "figure_fraction": 0.2453,
+    "line_fraction": 0.005,
+    "under_line_fraction": null,
+    "white_fraction": 0.6687,
+    "figure_part": "figure-abby-01-ledge",
+    "line_ink": 70.0,
+    "occluder": "bar counter"
+  },
+  "paste_feather": null,
+  "under_blend": 0.0,
+  "under_lines": false,
+  "under_remap": [
+    100.0,
+    180.0
+  ],
+  "sheet_grey": 255.0,
+  "white_thresh": 232.0,
+  "fill": true,
+  "cut_by_blockin": true,
+  "also": [
+    "figure-drew-02-toward=Z:/ImageGenerator/Cartoon/canon/room-kit/v2/figures/drew-seated-left-rS-t5r1-s44.png",
+    "figure-barclay-02-toward=Z:/ImageGenerator/Cartoon/canon/room-kit/v2/figures/barclay-seated-right-rS-t5r1-s21.png"
+  ],
+  "staging_solo": false,
+  "staging_reference": null,
+  "staging_label": null,
+  "staging_label_overridden": false,
+  "plate": "Z:\\ImageGenerator\\Cartoon\\canon\\room-kit\\v2\\plate.png",
+  "box": [
+    420,
+    620,
+    900,
+    1220
+  ],
+  "box_size": [
+    480,
+    600
+  ],
+  "seat_region": null,
+  "roi": [
+    520,
+    680,
+    800,
+    1220
+  ],
+  "seed": 41,
+  "rules_mode": "pen",
+  "keep_first": false,
+  "edit_override": null,
+  "extra_edit": [
+    "ABBY IS ONE SINGLE CREATURE, NOT A WOMAN WITH A DOG: her head IS the West Highland terrier head of Picture 2, drawn on her own shoulders directly above the studded collar - never a human head, never human hair, never a human face, and never a second dog, puppy or pet anywhere on the page. EXACTLY ONE figure stands on this sheet, the terrier lady herself.",
+    "THE PAPER BEHIND AND BESIDE HER STAYS BLANK WHITE. The bar counter already printed on this sheet is the ONLY furniture in this picture: draw NO back-bar, no shelves, no bottles, no panelling, no wall, no mirror, no marble slab, and no counter lip, rail or edge of your own anywhere around her. Every part of the sheet she does not stand on is left untouched white paper."
+  ],
+  "canon_missed": [],
+  "server": "http://127.0.0.1:8000",
+  "request": {
+    "prompt": "REFERENCES. Picture 1 is A BLANK WHITE SHEET OF PAPER - this IS the picture being edited - carrying three things and nothing else: the bar counter's own already-finished pixels, in the studio's own engraved pen, at exactly the size, the place and the perspective the finished picture uses; one thin ink line marking the marble ledge's near top edge behind her, so her stance has a horizon; and a very PALE, faint pencil UNDER-DRAWING of the figure already down in place, waiting to be drawn in finished line. EVERYWHERE ELSE ON THE SHEET IS BLANK WHITE PAPER: no room, no wall, no window, no shelf, no second character, no bottle, no lettering. Picture 2 is ABBY, the studio's official portrait — copy THIS terrier identically: the round soft westie face with a big black nose close under large glamorous human-style eyes with whites, iris, lashes and a clear catchlight, the two small pricked ears, the warm closed-lip smile, the studded leather collar with its teardrop gem pendant, the fitted light blouse open two buttons over a smooth sleek throat, and the fur-backed hands with four fingers and an opposed thumb and no claws.\n\nMAKE THESE CHANGES TO PICTURE 1 AND KEEP EVERYTHING ELSE. The result is Picture 1 itself with EXACTLY ONE character added into it, one unbroken scene edge to edge, in the same engraved black-and-white pen.\n1. DRAW ABBY (Picture 2), the West Highland terrier proprietor, EXACTLY FILLING the pale pencil under-drawing already on the page - the same size, the same stance BEHIND the marble ledge, nothing restaged. She is seen FACING THE ROOM, standing at her working ledge, one hand busy on a bar object exactly where the under-drawing already places it. Carry her shoulders, her collar and the studded leather collar with its teardrop gem up ABOVE the bar counter, into the gap the under-drawing already leaves clear for them. The bar counter stays IN FRONT of her lower body, exactly as the counter's own pixels already show it - do not draw any part of her in front of the counter. Draw her in the SAME engraved pen, the same size and the same light as the counter. NOTHING ELSE: the page stays BLANK WHITE PAPER everywhere the under-drawing does not reach - no room, no wall, no window, no shelf, no second character, no bottle, no lettering of any kind. At the top of the neck the under-drawing already carries a small ROUND, SOFT SKULL with two small pricked EARS standing up from it and a dark NOSE marked low on the face, both eyes marked either side of the nose, the far eye smaller than the near one where the head turns three-quarter - that IS her head: draw a solid, small, round westie head exactly filling it, joined to the neck, her short square muzzle rounding gently down to her black nose exactly where it is marked, both pricked ears standing up from the skull, and her eyes drawn EXACTLY TO HER OWN EYE RULE where the eyes are marked: white showing both sides of a drawn iris, a smaller round pupil, one catchlight, a lashed upper lid, closing in her warm closed-lip half-smile. Her head is never a flat disc, a bare eyeless skull or drooping ears, and never floats free of the neck.\n2. KEEP EVERYTHING ELSE EXACTLY AS PICTURE 1. The bar counter keeps every one of its own pixels exactly as given, and the thin ink line marking the near edge of the marble stays exactly where it is and exactly that thin. THE REST OF THE PAGE STAYS BLANK WHITE PAPER - it is not a room seen through fog and not fog either, it is empty paper. Do not invent anything on it: no window, no street, no shelves, no bottles, no mirror, no lettering, no hatching, no shading, no floor, no second figure, no table, no more of the marble than the one line already given. Nothing whatever is added anywhere except finishing the one figure whose pale under-drawing is already on the page.\n3. ABBY IS ONE SINGLE CREATURE, NOT A WOMAN WITH A DOG: her head IS the West Highland terrier head of Picture 2, drawn on her own shoulders directly above the studded collar - never a human head, never human hair, never a human face, and never a second dog, puppy or pet anywhere on the page. EXACTLY ONE figure stands on this sheet, the terrier lady herself.\n4. THE PAPER BEHIND AND BESIDE HER STAYS BLANK WHITE. The bar counter already printed on this sheet is the ONLY furniture in this picture: draw NO back-bar, no shelves, no bottles, no panelling, no wall, no mirror, no marble slab, and no counter lip, rail or edge of your own anywhere around her. Every part of the sheet she does not stand on is left untouched white paper.\n\nTHE RULES THE FINISHED PICTURE OBEYS:\n\nA single-panel gag cartoon drawn like an antique steel engraving: fine pen crosshatching and stippling on every surface — wood grain, knit stitches, fur and feathers laid in individual strokes, glass catching light — with a full tonal range from deep rich blacks through silvery greys to bright paper highlights. Confident contour lines over the hatching. The panel is composed full, corner to corner. Black-and-white only; no flat fills, no cel shading, no photographic rendering, no color.\n\nABBY is exactly the West Highland terrier proprietor of her reference: a round soft fluffy westie head with a big black nose close under large glamorous human-style eyes with whites, iris, lashes and catchlights, a warm closed-lip smile — NEVER sad or downcast — a studded leather collar with a teardrop gem pendant, a fitted light blouse open two buttons over a smooth sleek throat, rolled sleeves, a pearl bracelet, a plain white towel over her LEFT shoulder with no lettering on it, and no tail. She stands on the FAR service side directly across the marble from the gentlemen, mid-task with one hand closed on a working object — a glass, a bottle, a towel or chalk — the counter's far edge crossing her at the waist and hiding her below it; she stands while they sit, so her head is higher in the frame than theirs.",
+    "model": "local/qwen-image-edit-2511",
+    "provider": "local",
+    "aspect_ratio": "4:5",
+    "input_images": "<2 data URIs - see references>",
+    "negative_prompt": "color, colour, photograph, photorealistic, 3D render, oil painting, watercolor, soft airbrush shading, blurry, low detail, flat cel shading, extra people, humans, a second bartender, duplicate character, merged characters, deformed hands, extra fingers, claws, nails, tail, garbled text, misspelled words, gibberish lettering, speech bubble, caption text, watermark, signature, legs, feet",
+    "output_format": "png",
+    "fast": true,
+    "tag": "t5r3",
+    "seed": 41
+  },
+  "references": [
+    {
+      "picture": 1,
+      "path": "C:\\Users\\admin\\AppData\\Local\\Temp\\claude\\Z--ImageGenerator\\7e90a839-5703-42df-8007-3e3f206ae0ae\\scratchpad\\cast-scene\\abby\\round-19\\picture1.png",
+      "label": "A BLANK WHITE SHEET OF PAPER - this IS the picture being edited - carrying three things and nothing else: the bar counter's own already-finished pixels, in the studio's own engraved pen, at exactly the size, the place and the perspective the finished picture uses; one thin ink line marking the marble ledge's near top edge behind her, so her stance has a horizon; and a very PALE, faint pencil UNDER-DRAWING of the figure already down in place, waiting to be drawn in finished line. EVERYWHERE ELSE ON THE SHEET IS BLANK WHITE PAPER: no room, no wall, no window, no shelf, no second character, no bottle, no lettering",
+      "size": [
+        1024,
+        1280
+      ],
+      "bytes": 63012,
+      "sha256": "cb1bcf65cee354ca"
+    },
+    {
+      "picture": 2,
+      "path": "Z:\\ImageGenerator\\Cartoon\\canon\\vision\\studies\\abby.png",
+      "label": "ABBY, the studio's official portrait — copy THIS terrier identically: the round soft westie face with a big black nose close under large glamorous human-style eyes with whites, iris, lashes and a clear catchlight, the two small pricked ears, the warm closed-lip smile, the studded leather collar with its teardrop gem pendant, the fitted light blouse open two buttons over a smooth sleek throat, and the fur-backed hands with four fingers and an opposed thumb and no claws",
+      "size": [
+        1024,
+        1536
+      ],
+      "bytes": 502733,
+      "sha256": "541e6a5a659b14cb"
+    }
+  ],
+  "prompt": "REFERENCES. Picture 1 is A BLANK WHITE SHEET OF PAPER - this IS the picture being edited - carrying three things and nothing else: the bar counter's own already-finished pixels, in the studio's own engraved pen, at exactly the size, the place and the perspective the finished picture uses; one thin ink line marking the marble ledge's near top edge behind her, so her stance has a horizon; and a very PALE, faint pencil UNDER-DRAWING of the figure already down in place, waiting to be drawn in finished line. EVERYWHERE ELSE ON THE SHEET IS BLANK WHITE PAPER: no room, no wall, no window, no shelf, no second character, no bottle, no lettering. Picture 2 is ABBY, the studio's official portrait — copy THIS terrier identically: the round soft westie face with a big black nose close under large glamorous human-style eyes with whites, iris, lashes and a clear catchlight, the two small pricked ears, the warm closed-lip smile, the studded leather collar with its teardrop gem pendant, the fitted light blouse open two buttons over a smooth sleek throat, and the fur-backed hands with four fingers and an opposed thumb and no claws.\n\nMAKE THESE CHANGES TO PICTURE 1 AND KEEP EVERYTHING ELSE. The result is Picture 1 itself with EXACTLY ONE character added into it, one unbroken scene edge to edge, in the same engraved black-and-white pen.\n1. DRAW ABBY (Picture 2), the West Highland terrier proprietor, EXACTLY FILLING the pale pencil under-drawing already on the page - the same size, the same stance BEHIND the marble ledge, nothing restaged. She is seen FACING THE ROOM, standing at her working ledge, one hand busy on a bar object exactly where the under-drawing already places it. Carry her shoulders, her collar and the studded leather collar with its teardrop gem up ABOVE the bar counter, into the gap the under-drawing already leaves clear for them. The bar counter stays IN FRONT of her lower body, exactly as the counter's own pixels already show it - do not draw any part of her in front of the counter. Draw her in the SAME engraved pen, the same size and the same light as the counter. NOTHING ELSE: the page stays BLANK WHITE PAPER everywhere the under-drawing does not reach - no room, no wall, no window, no shelf, no second character, no bottle, no lettering of any kind. At the top of the neck the under-drawing already carries a small ROUND, SOFT SKULL with two small pricked EARS standing up from it and a dark NOSE marked low on the face, both eyes marked either side of the nose, the far eye smaller than the near one where the head turns three-quarter - that IS her head: draw a solid, small, round westie head exactly filling it, joined to the neck, her short square muzzle rounding gently down to her black nose exactly where it is marked, both pricked ears standing up from the skull, and her eyes drawn EXACTLY TO HER OWN EYE RULE where the eyes are marked: white showing both sides of a drawn iris, a smaller round pupil, one catchlight, a lashed upper lid, closing in her warm closed-lip half-smile. Her head is never a flat disc, a bare eyeless skull or drooping ears, and never floats free of the neck.\n2. KEEP EVERYTHING ELSE EXACTLY AS PICTURE 1. The bar counter keeps every one of its own pixels exactly as given, and the thin ink line marking the near edge of the marble stays exactly where it is and exactly that thin. THE REST OF THE PAGE STAYS BLANK WHITE PAPER - it is not a room seen through fog and not fog either, it is empty paper. Do not invent anything on it: no window, no street, no shelves, no bottles, no mirror, no lettering, no hatching, no shading, no floor, no second figure, no table, no more of the marble than the one line already given. Nothing whatever is added anywhere except finishing the one figure whose pale under-drawing is already on the page.\n3. ABBY IS ONE SINGLE CREATURE, NOT A WOMAN WITH A DOG: her head IS the West Highland terrier head of Picture 2, drawn on her own shoulders directly above the studded collar - never a human head, never human hair, never a human face, and never a second dog, puppy or pet anywhere on the page. EXACTLY ONE figure stands on this sheet, the terrier lady herself.\n4. THE PAPER BEHIND AND BESIDE HER STAYS BLANK WHITE. The bar counter already printed on this sheet is the ONLY furniture in this picture: draw NO back-bar, no shelves, no bottles, no panelling, no wall, no mirror, no marble slab, and no counter lip, rail or edge of your own anywhere around her. Every part of the sheet she does not stand on is left untouched white paper.\n\nTHE RULES THE FINISHED PICTURE OBEYS:\n\nA single-panel gag cartoon drawn like an antique steel engraving: fine pen crosshatching and stippling on every surface — wood grain, knit stitches, fur and feathers laid in individual strokes, glass catching light — with a full tonal range from deep rich blacks through silvery greys to bright paper highlights. Confident contour lines over the hatching. The panel is composed full, corner to corner. Black-and-white only; no flat fills, no cel shading, no photographic rendering, no color.\n\nABBY is exactly the West Highland terrier proprietor of her reference: a round soft fluffy westie head with a big black nose close under large glamorous human-style eyes with whites, iris, lashes and catchlights, a warm closed-lip smile — NEVER sad or downcast — a studded leather collar with a teardrop gem pendant, a fitted light blouse open two buttons over a smooth sleek throat, rolled sleeves, a pearl bracelet, a plain white towel over her LEFT shoulder with no lettering on it, and no tail. She stands on the FAR service side directly across the marble from the gentlemen, mid-task with one hand closed on a working object — a glass, a bottle, a towel or chalk — the counter's far edge crossing her at the waist and hiding her below it; she stands while they sit, so her head is higher in the frame than theirs.",
+  "clean_prompt": null,
+  "clean_pass": false,
+  "expected_size": [
+    1344,
+    1680
+  ],
+  "key": {
+    "thresh": 18.0,
+    "measure_thresh": 12.0,
+    "blur": 1.5,
+    "close": 4,
+    "open": 3,
+    "min_area": 400,
+    "gap": 8,
+    "feather": 2.0,
+    "align": 6
+  },
+  "result": {
+    "seed_used": 41,
+    "elapsed_seconds": 42.5,
+    "server_local_path": "Z:\\ImageGenerator\\outputs\\gen_1788911223638036200_26039f_t5r3_local_qwen-image-edit-2511.png",
+    "raw_size": [
+      1344,
+      1680
+    ],
+    "raw": "C:\\Users\\admin\\AppData\\Local\\Temp\\claude\\Z--ImageGenerator\\7e90a839-5703-42df-8007-3e3f206ae0ae\\scratchpad\\cast-scene\\abby\\round-19\\abby-ledge-rS-t5r3-s41-raw.png"
+  },
+  "key_result": {
+    "route": "S",
+    "keyed_against": "white-sheet (absolute threshold key, no tone fit)",
+    "tone_fit": "none",
+    "join_mean_abs_levels": 53.35,
+    "join_seam_px": 11969,
+    "plate_fraction_replaced": 0.0397,
+    "key_tone_gain": 1.0,
+    "key_tone_offset": 0.0,
+    "composite_tone_gain": 1.0453,
+    "composite_tone_offset": -9.41,
+    "shift_applied": [
+      0,
+      0
+    ],
+    "blobs": 16,
+    "raw_fraction": 0.406,
+    "kept": 1,
+    "kept_px": 79625,
+    "seat_touched": null,
+    "white_thresh": 232.0,
+    "sheet_grey": 255.0,
+    "white_thresh_effective": 232.0,
+    "min_figure_overlap_px": 300,
+    "fill": true,
+    "cut_by_blockin": true,
+    "cut_by_blockin_px": 12,
+    "cut_by_blockin_removed_px": 3613,
+    "figure_mask_px": 70657,
+    "figure_mask_dilated_px": 112601,
+    "occluder_mask_px": 24135,
+    "alpha_fraction_inside_figure_mask": 0.8739,
+    "figure_mask_fraction_covered": 0.9848,
+    "scale_topmost_blob_alpha_over_mask": 0.9959,
+    "topmost_blob_height_alpha_px": 481,
+    "topmost_blob_height_mask_px": 483,
+    "sticker_px": 85669,
+    "sticker_fraction_of_box": 0.2975,
+    "sticker_bbox_plate": [
+      501,
+      653,
+      824,
+      1221
+    ],
+    "cleanliness_outside_sticker_gt12": 0.1837,
+    "room_drift_vs_plate_outside_sticker": 0.8365,
+    "changed_fraction_whole_box": 0.406
+  },
+  "outputs": {
+    "sticker": "Z:\\ImageGenerator\\Cartoon\\canon\\room-kit\\v2\\figures\\abby-ledge-rS-t5r3-s41.png",
+    "laid": "Z:\\ImageGenerator\\Cartoon\\canon\\room-kit\\v2\\figures\\abby-ledge-rS-t5r3-s41-laid.png",
+    "crop2x": "Z:\\ImageGenerator\\Cartoon\\canon\\room-kit\\v2\\figures\\abby-ledge-rS-t5r3-s41-crop2x.png",
+    "picture1": "C:\\Users\\admin\\AppData\\Local\\Temp\\claude\\Z--ImageGenerator\\7e90a839-5703-42df-8007-3e3f206ae0ae\\scratchpad\\cast-scene\\abby\\round-19\\picture1.png"
+  }
+}
