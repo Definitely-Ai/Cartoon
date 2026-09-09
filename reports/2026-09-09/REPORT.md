@@ -990,3 +990,163 @@ Built for Rick. Every image the studio generated today, in the order it happened
 
 ---
 
+## 059. s3D bottles-crop seed 3 recess-only edit
+
+![s3D bottles-crop seed 3 recess-only edit](images/059-s3d-bottles-crop-seed-3-recess-only-edit.png)
+
+**The ask.** Redraw the bottles as a real back shelf without risking the room, the window or the seated cast that a whole-plate re-roll would put at risk.
+
+**The thinking.** Picture 1 is a 4:5 crop of the recess alone from plate (box (427, 284, 1186, 1233)); Picture 2 is the look reference duo-shelf-ref2.png. After the render, the crop was scaled back and tone-matched to the ring just outside the recess (room-part.py's own tone_match, gain 1.14 offset -16), then pasted through the feathered union of the recess's five masks; ['window-frame', 'glass'] restored from the plate before the gilded sign went on last.
+
+**Settings.** local/qwen-image-edit-2511, seed 3, full 30-step cfg 4 [steps override -> 20] [cfg override -> 2.5] [negative override], actual steps=20 cfg=2.5 sampler=euler, crop (427, 284, 1186, 1233) -> 4:5, bottles-p2 plate, bottles-ref True, match-keep False, 153.0s
+
+**Prompt.** [prompts/059-s3d-bottles-crop-seed-3-recess-only-edit.prompt.txt](prompts/059-s3d-bottles-crop-seed-3-recess-only-edit.prompt.txt)
+
+*Logged 03:22.*
+
+---
+
+## 060. s3D bottles-crop seed 11 recess-only edit
+
+![s3D bottles-crop seed 11 recess-only edit](images/060-s3d-bottles-crop-seed-11-recess-only-edit.png)
+
+**The ask.** Redraw the bottles as a real back shelf without risking the room, the window or the seated cast that a whole-plate re-roll would put at risk.
+
+**The thinking.** Picture 1 is a 4:5 crop of the recess alone from plate (box (427, 284, 1186, 1233)); Picture 2 is the look reference duo-shelf-ref2.png. After the render, the crop was scaled back and tone-matched to the ring just outside the recess (room-part.py's own tone_match, gain 1.14 offset -17), then pasted through the feathered union of the recess's five masks; ['window-frame', 'glass'] restored from the plate before the gilded sign went on last.
+
+**Settings.** local/qwen-image-edit-2511, seed 11, full 30-step cfg 4 [steps override -> 20] [cfg override -> 2.5] [negative override], actual steps=20 cfg=2.5 sampler=euler, crop (427, 284, 1186, 1233) -> 4:5, bottles-p2 plate, bottles-ref True, match-keep False, 152.9s
+
+**Prompt.** [prompts/060-s3d-bottles-crop-seed-11-recess-only-edit.prompt.txt](prompts/060-s3d-bottles-crop-seed-11-recess-only-edit.prompt.txt)
+
+*Logged 03:24.*
+
+---
+
+## 061. s3D bottles-crop seed 55 recess-only edit
+
+![s3D bottles-crop seed 55 recess-only edit](images/061-s3d-bottles-crop-seed-55-recess-only-edit.png)
+
+**The ask.** Redraw the bottles as a real back shelf without risking the room, the window or the seated cast that a whole-plate re-roll would put at risk.
+
+**The thinking.** Picture 1 is a 4:5 crop of the recess alone from plate (box (427, 284, 1186, 1233)); Picture 2 is the look reference duo-shelf-ref2.png. After the render, the crop was scaled back and tone-matched to the ring just outside the recess (room-part.py's own tone_match, gain 1.14 offset -18), then pasted through the feathered union of the recess's five masks; ['window-frame', 'glass'] restored from the plate before the gilded sign went on last.
+
+**Settings.** local/qwen-image-edit-2511, seed 55, full 30-step cfg 4 [steps override -> 20] [cfg override -> 2.5] [negative override], actual steps=20 cfg=2.5 sampler=euler, crop (427, 284, 1186, 1233) -> 4:5, bottles-p2 plate, bottles-ref True, match-keep False, 153.2s
+
+**Prompt.** [prompts/061-s3d-bottles-crop-seed-55-recess-only-edit.prompt.txt](prompts/061-s3d-bottles-crop-seed-55-recess-only-edit.prompt.txt)
+
+*Logged 03:27.*
+
+---
+
+## 062. s3D bottles-crop seed 62 recess-only edit
+
+![s3D bottles-crop seed 62 recess-only edit](images/062-s3d-bottles-crop-seed-62-recess-only-edit.png)
+
+**The ask.** Redraw the bottles as a real back shelf without risking the room, the window or the seated cast that a whole-plate re-roll would put at risk.
+
+**The thinking.** Picture 1 is a 4:5 crop of the recess alone from plate (box (427, 284, 1186, 1233)); Picture 2 is the look reference duo-shelf-ref2.png. After the render, the crop was scaled back and tone-matched to the ring just outside the recess (room-part.py's own tone_match, gain 1.14 offset -18), then pasted through the feathered union of the recess's five masks; ['window-frame', 'glass'] restored from the plate before the gilded sign went on last.
+
+**Settings.** local/qwen-image-edit-2511, seed 62, full 30-step cfg 4 [steps override -> 20] [cfg override -> 2.5] [negative override], actual steps=20 cfg=2.5 sampler=euler, crop (427, 284, 1186, 1233) -> 4:5, bottles-p2 plate, bottles-ref True, match-keep False, 152.8s
+
+**Prompt.** [prompts/062-s3d-bottles-crop-seed-62-recess-only-edit.prompt.txt](prompts/062-s3d-bottles-crop-seed-62-recess-only-edit.prompt.txt)
+
+*Logged 03:29.*
+
+---
+
+## 063. s3D bottles-crop seed 77 recess-only edit
+
+![s3D bottles-crop seed 77 recess-only edit](images/063-s3d-bottles-crop-seed-77-recess-only-edit.png)
+
+**The ask.** Redraw the bottles as a real back shelf without risking the room, the window or the seated cast that a whole-plate re-roll would put at risk.
+
+**The thinking.** Picture 1 is a 4:5 crop of the recess alone from plate (box (427, 284, 1186, 1233)); Picture 2 is the look reference duo-shelf-ref2.png. After the render, the crop was scaled back and tone-matched to the ring just outside the recess (room-part.py's own tone_match, gain 1.14 offset -14), then pasted through the feathered union of the recess's five masks; ['window-frame', 'glass'] restored from the plate before the gilded sign went on last.
+
+**Settings.** local/qwen-image-edit-2511, seed 77, full 30-step cfg 4 [steps override -> 20] [cfg override -> 2.5] [negative override], actual steps=20 cfg=2.5 sampler=euler, crop (427, 284, 1186, 1233) -> 4:5, bottles-p2 plate, bottles-ref True, match-keep False, 151.1s
+
+**Prompt.** [prompts/063-s3d-bottles-crop-seed-77-recess-only-edit.prompt.txt](prompts/063-s3d-bottles-crop-seed-77-recess-only-edit.prompt.txt)
+
+*Logged 03:32.*
+
+---
+
+## 064. s3D bottles-crop seed 90 recess-only edit
+
+![s3D bottles-crop seed 90 recess-only edit](images/064-s3d-bottles-crop-seed-90-recess-only-edit.png)
+
+**The ask.** Redraw the bottles as a real back shelf without risking the room, the window or the seated cast that a whole-plate re-roll would put at risk.
+
+**The thinking.** Picture 1 is a 4:5 crop of the recess alone from plate (box (427, 284, 1186, 1233)); Picture 2 is the look reference duo-shelf-ref2.png. After the render, the crop was scaled back and tone-matched to the ring just outside the recess (room-part.py's own tone_match, gain 1.14 offset -17), then pasted through the feathered union of the recess's five masks; ['window-frame', 'glass'] restored from the plate before the gilded sign went on last.
+
+**Settings.** local/qwen-image-edit-2511, seed 90, full 30-step cfg 4 [steps override -> 20] [cfg override -> 2.5] [negative override], actual steps=20 cfg=2.5 sampler=euler, crop (427, 284, 1186, 1233) -> 4:5, bottles-p2 plate, bottles-ref True, match-keep False, 151.0s
+
+**Prompt.** [prompts/064-s3d-bottles-crop-seed-90-recess-only-edit.prompt.txt](prompts/064-s3d-bottles-crop-seed-90-recess-only-edit.prompt.txt)
+
+*Logged 03:34.*
+
+---
+
+## 065. Bottles: slow-sampler recess shelf, seed 55, letter-like marks patched in code
+
+![Bottles: slow-sampler recess shelf, seed 55, letter-like marks patched in code](images/065-bottles-slow-sampler-recess-shelf-seed-55-letter-like-marks-patched-in-code.png)
+
+**The ask.** Founder's absolute rule for the shelf: no lettering of any kind, labels carry a crest or emblem only. Of the four slow-sampler recess redraws (seeds 55/90/62/77), find every letter-like mark on seed 55 and patch it in code, no re-render.
+
+**The thinking.** Looked at the shelf at 2x, then 4x quarter crops, then ran clean-labels.py scan (18 candidates) and zoomed every candidate to 8x-16x, plus manual checks of the two dark bottles at the left edge (busy-black-label risk per the script's own docstring - both turned out to be plain dark glass with an engraved grape/floral texture, no label). One label (x683-726,y695-719) carried a single isolated check/V-mark with no separate crest at all - blanked outright. Twelve more labels showed the model's usual fake type-row(s) or an ambiguous stray mark (a bowtie/hourglass glyph, a diagonal smudge, a small shield) under or beside a crest; ran clean-labels.py clean over all 13 boxes so clean_label's own crest-pick+inpaint did the separation - true crests (medallions, a wreath, a diamond pair with its ribbon flourish) survived, and every row/rule/ambiguous mark that didn't cleanly separate from its crest was inpainted back to plain paper from the label's own margin. Re-zoomed every patched box to 8x-16x/26x after: zero letter-like marks remain anywhere on either shelf. clean-labels.py also swept 39 small stray marks directly off the glass (--glass-marks, default on).
+
+**Settings.** scripts/clean-labels.py clean, 13 boxes (12 default crest-pick + 1 --blank at x683-726,y695-719), source canon/room-kit/v2/work/s3D-s55-final.png -> s3D-s55-patched-final.png / -shelf.png, seed 55 (RNG), no render, no model call; 7429px changed, bbox x457-1115 y575-941 (fully inside the recess)
+
+**Verdict.** 0-10 vs canon/plates/duo.png shelves: 6/10. Zero lettering confirmed at 8x+ across every label and every bottle body. Good bottle density and shape variety (11-12 per shelf, real diversity of neck/shoulder), but next to duo the backdrop wood paneling reads busier/noisier and the tone is flatter - less of duo's deep-black engraved depth - and a few labels lost their crest entirely in the auto-separation (ended up plain paper rather than paper+crest), which is compliant with the no-lettering rule but a small loss of richness versus duo's fully-crested shelf.
+
+*Logged 03:53.*
+
+---
+
+## 066. Bottles: slow-sampler recess shelf, seed 90, letter-like marks patched in code
+
+![Bottles: slow-sampler recess shelf, seed 90, letter-like marks patched in code](images/066-bottles-slow-sampler-recess-shelf-seed-90-letter-like-marks-patched-in-code.png)
+
+**The ask.** Same founder rule, seed 90 of the four slow-sampler recess candidates: find every letter-like mark and patch it in code, no re-render.
+
+**The thinking.** 2x shelf, 4x quarters, then clean-labels.py scan (10 candidates) at 8x-16x, plus one manual add: a small nested-diamond/checkerboard lozenge on a busy black label at x622-662,y692-732 that the automatic scanner missed (dense ink leaves no flat margin for its uniformity test, per the script's own docstring) - reviewed at 22x and it is a purely geometric diaper pattern with no letterforms, so left untouched as a genuine emblem. One label (x750-776,y684-712) carried an isolated 4-pointed compass/asterisk mark with no separate crest - blanked outright. Two more labels (x996-1027,y864-896 and x1057-1097,y693-713) had a crest plus a faint type-row; ran clean-labels.py clean over 9 boxes total so the crest-pick+inpaint handled the separation. Re-zoomed every patched box to 8x-20x after: zero letter-like marks remain. 21 stray glass marks swept automatically.
+
+**Settings.** scripts/clean-labels.py clean, 9 boxes (8 default crest-pick + 1 --blank at x750-776,y684-712), source canon/room-kit/v2/work/s3D-s90-final.png -> s3D-s90-patched-final.png / -shelf.png, seed 90 (RNG), no render; 2313px changed, bbox x457-1105 y575-909 (fully inside the recess)
+
+**Verdict.** 0-10 vs canon/plates/duo.png shelves: 7/10. Zero lettering confirmed at 8x+. Best shape variety of the four - a lantern/cage-caged bottle and a squat decanter alongside the usual rye/cognac/bourbon silhouettes - and most crests (medallions, the nested-diamond lozenge) survived intact since this plate needed the least cleaning. Still a notch below duo on backdrop polish and glass contrast.
+
+*Logged 03:53.*
+
+---
+
+## 067. Bottles: slow-sampler recess shelf, seed 62, letter-like marks patched in code
+
+![Bottles: slow-sampler recess shelf, seed 62, letter-like marks patched in code](images/067-bottles-slow-sampler-recess-shelf-seed-62-letter-like-marks-patched-in-code.png)
+
+**The ask.** Same founder rule, seed 62 of the four slow-sampler recess candidates - the busiest of the four (21 scan candidates): find every letter-like mark and patch it in code, no re-render.
+
+**The thinking.** 2x shelf, 4x quarters, then clean-labels.py scan (21 candidates) at 8x-16x. Every label but one is crest-only or plain paper already - the densest, cleanest of the four plates. The one exception: a label at roughly x1077-1106,y663-719 carries a clear upward arrow with no separate crest. First patch attempt used too generous a box (down to y755) and, because --blank floods its rectangle flat with no paper-mask/silhouette check, it overran the label's own bottom edge into the bottle's glass foot below - caught this at 6x wide-context review (the flat card sat past the bottle's visible base, over what should have stayed the glass highlight) and re-derived the true label extent from a raw pixel brightness profile (bright panel row 677-718 only; everything below is glass, confirmed by a direct 16x crop showing the bottle's own foot/highlight, not paper). Re-ran with the corrected box (x1076-1108,y674-719); the arrow is gone and the bottle's glass base is untouched. All 21 boxes were run through clean-labels.py clean (default crest-pick+inpaint) for safety; the other 20 needed no real change. Re-zoomed every box to 8x-16x after: zero letter-like marks remain.
+
+**Settings.** scripts/clean-labels.py clean, 21 boxes (20 default crest-pick + 1 --blank at x1076-1108,y674-719, corrected after an over-wide first attempt), source canon/room-kit/v2/work/s3D-s62-final.png -> s3D-s62-patched-final.png / -shelf.png, seed 62 (RNG), no render; 6224px changed, bbox x457-1141 y575-940 (fully inside the recess)
+
+**Verdict.** 0-10 vs canon/plates/duo.png shelves: 8/10, the strongest of the four. Zero lettering confirmed at 8x+, including the corrected arrow patch (verified the bottle's glass foot survived intact). Densest bottle count of the four, wide shape variety (a cut-glass decanter among the usual silhouettes), and almost every crest (concentric medallions, ovals, a diamond) survived untouched since so little needed cleaning. Still shy of duo's smoother wood-grain backdrop and deeper blacks.
+
+*Logged 03:54.*
+
+---
+
+## 068. Bottles: slow-sampler recess shelf, seed 77, letter-like marks patched in code
+
+![Bottles: slow-sampler recess shelf, seed 77, letter-like marks patched in code](images/068-bottles-slow-sampler-recess-shelf-seed-77-letter-like-marks-patched-in-code.png)
+
+**The ask.** Same founder rule, seed 77 of the four slow-sampler recess candidates: find every letter-like mark and patch it in code, no re-render.
+
+**The thinking.** 2x shelf, 4x quarters, then clean-labels.py scan (18 candidates) at 8x-22x. This plate turned out to need no blanking at all. Two labels (x985-1018,y718-741 and x896-926,y721-742) carry a small solid diamond mark alone on the paper - reviewed at high zoom, both are plain geometric lozenges with no letterforms, the same device already cleared as a genuine emblem on seed 90, so left untouched. A soft diagonal smudge at x568-598,y868-905 first looked like a chevron/checkmark in the 4x quarter pass; a 22x-24x crop showed it sitting on the bottle's clear shoulder with the striped backdrop showing through, not on any label paper - a glass shadow/highlight artifact, not a mark, left alone. One faint grey blob (x692-714,y692-738) and two faint smudges (x529-554,y710-739) were mild enough to be no-ops for a human call either way; ran all 18 boxes through clean-labels.py clean (default crest-pick+inpaint) anyway as a safety net and both were quietly smoothed to plain paper. Re-zoomed every box to 8x after: zero letter-like marks remain, both diamonds intact.
+
+**Settings.** scripts/clean-labels.py clean, 18 boxes, all default crest-pick+inpaint (no --blank needed), source canon/room-kit/v2/work/s3D-s77-final.png -> s3D-s77-patched-final.png / -shelf.png, seed 77 (RNG), no render; 4542px changed, bbox x457-1123 y576-921 (fully inside the recess)
+
+**Verdict.** 0-10 vs canon/plates/duo.png shelves: 7/10. Zero lettering confirmed at 8x+ across every label and bottle body; this plate needed the least intervention of the four, so nearly every crest (medallions, the two diamond lozenges, a chevron-patterned bottle) survived untouched. Good shape variety including a crystal-cut decanter. Backdrop striping and glass contrast still read a step below duo's polish.
+
+*Logged 03:54.*
+
+---
+
