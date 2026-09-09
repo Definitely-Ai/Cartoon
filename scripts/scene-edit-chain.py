@@ -965,6 +965,10 @@ def run_bottles_crop(a, man: dict, out_dir: Path) -> None:
             "input_images": images, "negative_prompt": cs.LOCAL_NEGATIVE + ", " + NEGATIVE_EXTRA,
             "output_format": "png", "fast": not a.full, "tag": f"{a.tag}-s{seed}-bottles", "seed": seed,
         }
+        if getattr(a, "steps_override", 0):
+            req["steps"] = a.steps_override; req["fast"] = False
+        if getattr(a, "cfg_override", 0.0):
+            req["guidance"] = a.cfg_override; req["fast"] = False
         t0 = time.time()
         res = cs.post(req, a.server)
         png = cs.fetch(res["image_url"], a.server)
@@ -1116,6 +1120,8 @@ def main() -> None:
                      "pass 1's (non-existent, in a dry run) raw render when building pass 2's Picture 1. Every "
                      "later step in a dry run chains from the PREVIOUS step's own Picture 1 instead. Ignored "
                      "outside --dry-run, where a real chain always chains its own actual raw renders.")
+    ap.add_argument("--steps-override", type=int, default=0, help="explicit sampler steps (no Lightning LoRA)")
+    ap.add_argument("--cfg-override", type=float, default=0.0, help="explicit guidance (no Lightning LoRA)")
     ap.add_argument("--room-from-plate", action="store_true",
                      help="also save <tag>-s<seed>-room.png (or <prefix>-room.png under --composite-only): the "
                           "APPROVED PLATE everywhere, with the (plate-tone-matched) render showing only inside "
@@ -1230,6 +1236,10 @@ def run_pass(a, man: dict, out_dir: Path) -> tuple[Path, list[tuple[Path, Path]]
             "input_images": images, "negative_prompt": cs.LOCAL_NEGATIVE + ", " + NEGATIVE_EXTRA,
             "output_format": "png", "fast": not a.full, "tag": f"{a.tag}-s{seed}", "seed": seed,
         }
+        if getattr(a, "steps_override", 0):
+            req["steps"] = a.steps_override; req["fast"] = False
+        if getattr(a, "cfg_override", 0.0):
+            req["guidance"] = a.cfg_override; req["fast"] = False
         t0 = time.time()
         res = cs.post(req, a.server)
         png = cs.fetch(res["image_url"], a.server)
