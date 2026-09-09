@@ -847,11 +847,19 @@ def run_bottles_crop(a, man: dict, out_dir: Path) -> None:
     soft_union = backbar_union_mask(man, feather=3.0)
     keep_ids = [k.strip() for k in a.keep.split(",") if k.strip()]
     for seed in a.seed:
+        neg_override = getattr(a, "negative_override", "").strip()
         req = {
             "prompt": prompt, "model": cs.MODEL, "provider": "local", "aspect_ratio": "4:5",
-            "input_images": images, "negative_prompt": cs.LOCAL_NEGATIVE + ", " + NEGATIVE_EXTRA,
+            "input_images": images,
+            "negative_prompt": neg_override if neg_override else (cs.LOCAL_NEGATIVE + ", " + NEGATIVE_EXTRA),
             "output_format": "png", "fast": not a.full, "tag": f"{a.tag}-s{seed}-bottles", "seed": seed,
         }
+        # [S3] sampler-settings sweep: only sent when non-zero, so every caller that
+        # never passes these flags gets byte-identical behaviour to before.
+        if getattr(a, "steps_override", 0):
+            req["steps"] = a.steps_override
+        if getattr(a, "cfg_override", 0.0):
+            req["guidance"] = a.cfg_override
         t0 = time.time()
         res = cs.post(req, a.server)
         png = cs.fetch(res["image_url"], a.server)
@@ -893,7 +901,13 @@ def run_bottles_crop(a, man: dict, out_dir: Path) -> None:
                         + (" (tone-matched to the render's own ring)" if a.match_keep else "")
                         + " before the gilded sign went on last."),
                prompt_file=prompt_path,
-               settings=f"{cs.MODEL}, seed {seed}, {'fast 8-step cfg 1' if not a.full else 'full 40-step cfg 4'}, "
+               settings=f"{cs.MODEL}, seed {seed}, {'fast 8-step cfg 1' if not a.full else 'full 30-step cfg 4'}"
+                        + (f" [steps override -> {a.steps_override}]" if getattr(a, "steps_override", 0) else "")
+                        + (f" [cfg override -> {a.cfg_override}]" if getattr(a, "cfg_override", 0.0) else "")
+                        + (f" [negative override]" if neg_override else "")
+                        + f", actual steps={(sidecar['server_metadata'] or {}).get('steps')} "
+                          f"cfg={(sidecar['server_metadata'] or {}).get('cfg')} "
+                          f"sampler={(sidecar['server_metadata'] or {}).get('sampler')}, "
                         f"crop {box} -> 4:5, bottles-p2 {a.bottles_p2}, bottles-ref {bool(bottles_ref_src)}, "
                         f"match-keep {a.match_keep}, {seconds}s")
         print(f"  {final_path.relative_to(ROOT)}  seed={seed}  {seconds}s  + {shelf_path.relative_to(ROOT)}")
@@ -1012,6 +1026,19 @@ def main() -> None:
                      "--room-from-plate is set), where <prefix> is that file's own name minus '-raw'")
     ap.add_argument("--tag", default="scene2")
     ap.add_argument("--full", action="store_true", help="40-step cfg 4 instead of the Lightning 8-step pass")
+    ap.add_argument("--steps-override", type=int, default=0,
+                     help="[S3] explicit KSampler steps for --bottles-crop, overriding the fast/full model default "
+                          "either way (0 = no override); the bridge already honours req.steps when it differs from "
+                          "the request schema's own default of 25")
+    ap.add_argument("--cfg-override", type=float, default=0.0,
+                     help="[S3] explicit CFG for --bottles-crop, overriding the fast/full model default either way "
+                          "(0 = no override); the bridge already honours req.guidance when it differs from the "
+                          "request schema's own default of 7.0 - this is what lets the Lightning LoRA (--fast, "
+                          "implied when --full is absent) run at a cfg above 1 so its negative prompt stops being "
+                          "ignored")
+    ap.add_argument("--negative-override", default="",
+                     help="[S3] replace LOCAL_NEGATIVE+NEGATIVE_EXTRA for --bottles-crop's render only (blank = no "
+                          "override, unchanged behaviour)")
     ap.add_argument("--head-edit", action=argparse.BooleanOptionalAction, default=True,
                      help="default ON: one extra numbered EDIT, after the character edits, naming both heads as "
                           "drawn from the portraits alone, not the grey block-ins")
