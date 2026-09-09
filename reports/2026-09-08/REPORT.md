@@ -2972,3 +2972,131 @@ Built for Rick. Every image the studio generated today, in the order it happened
 
 ---
 
+## 184. b3B bottles-crop seed 7 recess-only edit
+
+![b3B bottles-crop seed 7 recess-only edit](images/184-b3b-bottles-crop-seed-7-recess-only-edit.png)
+
+**The ask.** Redraw the bottles as a real back shelf without risking the room, the window or the seated cast that a whole-plate re-roll would put at risk.
+
+**The thinking.** Picture 1 is a 4:5 crop of the recess alone from plate (box (427, 284, 1186, 1233)); Picture 2 is the look reference duo-shelf-ref2.png. After the render, the crop was scaled back and tone-matched to the ring just outside the recess (room-part.py's own tone_match, gain 1.07 offset -6), then pasted through the feathered union of the recess's five masks; ['window-frame', 'glass'] restored from the plate before the gilded sign went on last.
+
+**Settings.** local/qwen-image-edit-2511, seed 7, fast 8-step cfg 1, crop (427, 284, 1186, 1233) -> 4:5, bottles-p2 plate, bottles-ref True, match-keep False, 49.8s
+
+**Prompt.** [prompts/184-b3b-bottles-crop-seed-7-recess-only-edit.prompt.txt](prompts/184-b3b-bottles-crop-seed-7-recess-only-edit.prompt.txt)
+
+*Logged 23:23.*
+
+---
+
+## 185. b3B bottles-crop seed 21 recess-only edit
+
+![b3B bottles-crop seed 21 recess-only edit](images/185-b3b-bottles-crop-seed-21-recess-only-edit.png)
+
+**The ask.** Redraw the bottles as a real back shelf without risking the room, the window or the seated cast that a whole-plate re-roll would put at risk.
+
+**The thinking.** Picture 1 is a 4:5 crop of the recess alone from plate (box (427, 284, 1186, 1233)); Picture 2 is the look reference duo-shelf-ref2.png. After the render, the crop was scaled back and tone-matched to the ring just outside the recess (room-part.py's own tone_match, gain 1.07 offset -5), then pasted through the feathered union of the recess's five masks; ['window-frame', 'glass'] restored from the plate before the gilded sign went on last.
+
+**Settings.** local/qwen-image-edit-2511, seed 21, fast 8-step cfg 1, crop (427, 284, 1186, 1233) -> 4:5, bottles-p2 plate, bottles-ref True, match-keep False, 49.9s
+
+**Prompt.** [prompts/185-b3b-bottles-crop-seed-21-recess-only-edit.prompt.txt](prompts/185-b3b-bottles-crop-seed-21-recess-only-edit.prompt.txt)
+
+*Logged 23:24.*
+
+---
+
+## 186. b3B bottles-crop seed 41 recess-only edit
+
+![b3B bottles-crop seed 41 recess-only edit](images/186-b3b-bottles-crop-seed-41-recess-only-edit.png)
+
+**The ask.** Redraw the bottles as a real back shelf without risking the room, the window or the seated cast that a whole-plate re-roll would put at risk.
+
+**The thinking.** Picture 1 is a 4:5 crop of the recess alone from plate (box (427, 284, 1186, 1233)); Picture 2 is the look reference duo-shelf-ref2.png. After the render, the crop was scaled back and tone-matched to the ring just outside the recess (room-part.py's own tone_match, gain 1.06 offset -4), then pasted through the feathered union of the recess's five masks; ['window-frame', 'glass'] restored from the plate before the gilded sign went on last.
+
+**Settings.** local/qwen-image-edit-2511, seed 41, fast 8-step cfg 1, crop (427, 284, 1186, 1233) -> 4:5, bottles-p2 plate, bottles-ref True, match-keep False, 49.9s
+
+**Prompt.** [prompts/186-b3b-bottles-crop-seed-41-recess-only-edit.prompt.txt](prompts/186-b3b-bottles-crop-seed-41-recess-only-edit.prompt.txt)
+
+*Logged 23:25.*
+
+---
+
+## 187. b3B bottles-crop seed 44 recess-only edit
+
+![b3B bottles-crop seed 44 recess-only edit](images/187-b3b-bottles-crop-seed-44-recess-only-edit.png)
+
+**The ask.** Redraw the bottles as a real back shelf without risking the room, the window or the seated cast that a whole-plate re-roll would put at risk.
+
+**The thinking.** Picture 1 is a 4:5 crop of the recess alone from plate (box (427, 284, 1186, 1233)); Picture 2 is the look reference duo-shelf-ref2.png. After the render, the crop was scaled back and tone-matched to the ring just outside the recess (room-part.py's own tone_match, gain 0.93 offset +10), then pasted through the feathered union of the recess's five masks; ['window-frame', 'glass'] restored from the plate before the gilded sign went on last.
+
+**Settings.** local/qwen-image-edit-2511, seed 44, fast 8-step cfg 1, crop (427, 284, 1186, 1233) -> 4:5, bottles-p2 plate, bottles-ref True, match-keep False, 49.8s
+
+**Prompt.** [prompts/187-b3b-bottles-crop-seed-44-recess-only-edit.prompt.txt](prompts/187-b3b-bottles-crop-seed-44-recess-only-edit.prompt.txt)
+
+*Logged 23:26.*
+
+---
+
+## 188. b3B bottles-crop seed 3 recess-only edit
+
+![b3B bottles-crop seed 3 recess-only edit](images/188-b3b-bottles-crop-seed-3-recess-only-edit.png)
+
+**The ask.** Redraw the bottles as a real back shelf without risking the room, the window or the seated cast that a whole-plate re-roll would put at risk.
+
+**The thinking.** Picture 1 is a 4:5 crop of the recess alone from plate (box (427, 284, 1186, 1233)); Picture 2 is the look reference duo-shelf-ref2.png. After the render, the crop was scaled back and tone-matched to the ring just outside the recess (room-part.py's own tone_match, gain 1.00 offset +3), then pasted through the feathered union of the recess's five masks; ['window-frame', 'glass'] restored from the plate before the gilded sign went on last.
+
+**Settings.** local/qwen-image-edit-2511, seed 3, fast 8-step cfg 1, crop (427, 284, 1186, 1233) -> 4:5, bottles-p2 plate, bottles-ref True, match-keep False, 49.8s
+
+**Prompt.** [prompts/188-b3b-bottles-crop-seed-3-recess-only-edit.prompt.txt](prompts/188-b3b-bottles-crop-seed-3-recess-only-edit.prompt.txt)
+
+*Logged 23:27.*
+
+---
+
+## 189. b3B bottles-crop seed 11 recess-only edit
+
+![b3B bottles-crop seed 11 recess-only edit](images/189-b3b-bottles-crop-seed-11-recess-only-edit.png)
+
+**The ask.** Redraw the bottles as a real back shelf without risking the room, the window or the seated cast that a whole-plate re-roll would put at risk.
+
+**The thinking.** Picture 1 is a 4:5 crop of the recess alone from plate (box (427, 284, 1186, 1233)); Picture 2 is the look reference duo-shelf-ref2.png. After the render, the crop was scaled back and tone-matched to the ring just outside the recess (room-part.py's own tone_match, gain 1.04 offset -4), then pasted through the feathered union of the recess's five masks; ['window-frame', 'glass'] restored from the plate before the gilded sign went on last.
+
+**Settings.** local/qwen-image-edit-2511, seed 11, fast 8-step cfg 1, crop (427, 284, 1186, 1233) -> 4:5, bottles-p2 plate, bottles-ref True, match-keep False, 49.9s
+
+**Prompt.** [prompts/189-b3b-bottles-crop-seed-11-recess-only-edit.prompt.txt](prompts/189-b3b-bottles-crop-seed-11-recess-only-edit.prompt.txt)
+
+*Logged 23:28.*
+
+---
+
+## 190. b3B bottles-crop seed 55 recess-only edit
+
+![b3B bottles-crop seed 55 recess-only edit](images/190-b3b-bottles-crop-seed-55-recess-only-edit.png)
+
+**The ask.** Redraw the bottles as a real back shelf without risking the room, the window or the seated cast that a whole-plate re-roll would put at risk.
+
+**The thinking.** Picture 1 is a 4:5 crop of the recess alone from plate (box (427, 284, 1186, 1233)); Picture 2 is the look reference duo-shelf-ref2.png. After the render, the crop was scaled back and tone-matched to the ring just outside the recess (room-part.py's own tone_match, gain 0.98 offset +5), then pasted through the feathered union of the recess's five masks; ['window-frame', 'glass'] restored from the plate before the gilded sign went on last.
+
+**Settings.** local/qwen-image-edit-2511, seed 55, fast 8-step cfg 1, crop (427, 284, 1186, 1233) -> 4:5, bottles-p2 plate, bottles-ref True, match-keep False, 49.8s
+
+**Prompt.** [prompts/190-b3b-bottles-crop-seed-55-recess-only-edit.prompt.txt](prompts/190-b3b-bottles-crop-seed-55-recess-only-edit.prompt.txt)
+
+*Logged 23:28.*
+
+---
+
+## 191. b3B bottles-crop seed 62 recess-only edit
+
+![b3B bottles-crop seed 62 recess-only edit](images/191-b3b-bottles-crop-seed-62-recess-only-edit.png)
+
+**The ask.** Redraw the bottles as a real back shelf without risking the room, the window or the seated cast that a whole-plate re-roll would put at risk.
+
+**The thinking.** Picture 1 is a 4:5 crop of the recess alone from plate (box (427, 284, 1186, 1233)); Picture 2 is the look reference duo-shelf-ref2.png. After the render, the crop was scaled back and tone-matched to the ring just outside the recess (room-part.py's own tone_match, gain 1.01 offset -2), then pasted through the feathered union of the recess's five masks; ['window-frame', 'glass'] restored from the plate before the gilded sign went on last.
+
+**Settings.** local/qwen-image-edit-2511, seed 62, fast 8-step cfg 1, crop (427, 284, 1186, 1233) -> 4:5, bottles-p2 plate, bottles-ref True, match-keep False, 49.9s
+
+**Prompt.** [prompts/191-b3b-bottles-crop-seed-62-recess-only-edit.prompt.txt](prompts/191-b3b-bottles-crop-seed-62-recess-only-edit.prompt.txt)
+
+*Logged 23:29.*
+
+---
+
