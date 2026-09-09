@@ -1,6 +1,6 @@
 # Cast placement study — 9 September 2026
 
-Recommended review candidate: **cast-in-room-v2.png** (1024 x 1536).
+Current review pair: **duo-seated-v6.png** and **trio-seated-v7.png** (1024 x 1536 each). See `REVIEW-v6.md` for the chair reconstruction, species-specific hands, and exact prompt chain. Earlier seating assessments were too generous: the owner correctly identified the exposed empty cushions and implausible body-chair contact in v2 and v4.
 
 Generated using Codex's built-in image generator in reference-image edit mode. This is a cast placement proof, not a published cartoon or an owner-approved replacement for the room or canon.
 

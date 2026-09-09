@@ -2842,3 +2842,291 @@ Built for Rick. Every image the studio generated today, in the order it happened
 
 ---
 
+## 170. cd3 Drew detail pass, seed 7 - redrawn in place at full resolution
+
+![cd3 Drew detail pass, seed 7 - redrawn in place at full resolution](images/170-cd3-drew-detail-pass-seed-7-redrawn-in-place-at-full-resolution.png)
+
+**The ask.** Founder: 'they must look perfect, it must be an amazing looking cartoon, the characters are the centerpiece' - redraw each character at the same full resolution the portrait itself gets, in a crop of their own place in the composed plate, and paste back without risking the room.
+
+**The thinking.** Picture 1 is a (0, 480, 816, 1500) crop of canon/room-kit/v2/work/base3-headless-blockins.png upscaled to 1344x1680; Picture 2 is drew's approved portrait. After the render, the crop was scaled back to the box and tone-matched to the ring just outside it (room-part.py's own tone_match, gain 0.94 offset +1), then pasted through drew's own figure mask dilated 24 px and feathered 4.0 px, minus the chair-left mask in front of them, before the gilded sign went on last.
+
+**Settings.** local/qwen-image-edit-2511, seed 7, fast Lightning, box (0, 480, 816, 1500) -> 1344x1680, 52.1s
+
+**Prompt.** [prompts/170-cd3-drew-detail-pass-seed-7-redrawn-in-place-at-full-resolution.prompt.txt](prompts/170-cd3-drew-detail-pass-seed-7-redrawn-in-place-at-full-resolution.prompt.txt)
+
+**Verdict.** candidate - to the founder beside the plate
+
+*Logged 13:19.*
+
+---
+
+## 171. cd3 Drew detail pass, seed 44 - redrawn in place at full resolution
+
+![cd3 Drew detail pass, seed 44 - redrawn in place at full resolution](images/171-cd3-drew-detail-pass-seed-44-redrawn-in-place-at-full-resolution.png)
+
+**The ask.** Founder: 'they must look perfect, it must be an amazing looking cartoon, the characters are the centerpiece' - redraw each character at the same full resolution the portrait itself gets, in a crop of their own place in the composed plate, and paste back without risking the room.
+
+**The thinking.** Picture 1 is a (0, 480, 816, 1500) crop of canon/room-kit/v2/work/base3-headless-blockins.png upscaled to 1344x1680; Picture 2 is drew's approved portrait. After the render, the crop was scaled back to the box and tone-matched to the ring just outside it (room-part.py's own tone_match, gain 0.93 offset -2), then pasted through drew's own figure mask dilated 24 px and feathered 4.0 px, minus the chair-left mask in front of them, before the gilded sign went on last.
+
+**Settings.** local/qwen-image-edit-2511, seed 44, fast Lightning, box (0, 480, 816, 1500) -> 1344x1680, 55.2s
+
+**Prompt.** [prompts/171-cd3-drew-detail-pass-seed-44-redrawn-in-place-at-full-resolution.prompt.txt](prompts/171-cd3-drew-detail-pass-seed-44-redrawn-in-place-at-full-resolution.prompt.txt)
+
+**Verdict.** candidate - to the founder beside the plate
+
+*Logged 13:20.*
+
+---
+
+## 172. cd3 Drew detail pass, seed 21 - redrawn in place at full resolution
+
+![cd3 Drew detail pass, seed 21 - redrawn in place at full resolution](images/172-cd3-drew-detail-pass-seed-21-redrawn-in-place-at-full-resolution.png)
+
+**The ask.** Founder: 'they must look perfect, it must be an amazing looking cartoon, the characters are the centerpiece' - redraw each character at the same full resolution the portrait itself gets, in a crop of their own place in the composed plate, and paste back without risking the room.
+
+**The thinking.** Picture 1 is a (0, 480, 816, 1500) crop of canon/room-kit/v2/work/base3-headless-blockins.png upscaled to 1344x1680; Picture 2 is drew's approved portrait. After the render, the crop was scaled back to the box and tone-matched to the ring just outside it (room-part.py's own tone_match, gain 0.93 offset +6), then pasted through drew's own figure mask dilated 24 px and feathered 4.0 px, minus the chair-left mask in front of them, before the gilded sign went on last.
+
+**Settings.** local/qwen-image-edit-2511, seed 21, fast Lightning, box (0, 480, 816, 1500) -> 1344x1680, 60.1s
+
+**Prompt.** [prompts/172-cd3-drew-detail-pass-seed-21-redrawn-in-place-at-full-resolution.prompt.txt](prompts/172-cd3-drew-detail-pass-seed-21-redrawn-in-place-at-full-resolution.prompt.txt)
+
+**Verdict.** candidate - to the founder beside the plate
+
+*Logged 13:21.*
+
+---
+
+## 173. cd3 Barclay detail pass, seed 7 - redrawn in place at full resolution
+
+![cd3 Barclay detail pass, seed 7 - redrawn in place at full resolution](images/173-cd3-barclay-detail-pass-seed-7-redrawn-in-place-at-full-resolution.png)
+
+**The ask.** Founder: 'they must look perfect, it must be an amazing looking cartoon, the characters are the centerpiece' - redraw each character at the same full resolution the portrait itself gets, in a crop of their own place in the composed plate, and paste back without risking the room.
+
+**The thinking.** Picture 1 is a (400, 480, 1200, 1480) crop of canon/room-kit/v2/work/base3-headless-blockins.png upscaled to 1344x1680; Picture 2 is barclay's approved portrait. After the render, the crop was scaled back to the box and tone-matched to the ring just outside it (room-part.py's own tone_match, gain 0.91 offset +16), then pasted through barclay's own figure mask dilated 24 px and feathered 4.0 px, minus the chair-right mask in front of them, before the gilded sign went on last.
+
+**Settings.** local/qwen-image-edit-2511, seed 7, fast Lightning, box (400, 480, 1200, 1480) -> 1344x1680, 55.3s
+
+**Prompt.** [prompts/173-cd3-barclay-detail-pass-seed-7-redrawn-in-place-at-full-resolution.prompt.txt](prompts/173-cd3-barclay-detail-pass-seed-7-redrawn-in-place-at-full-resolution.prompt.txt)
+
+**Verdict.** candidate - to the founder beside the plate
+
+*Logged 13:22.*
+
+---
+
+## 174. cd3 Barclay detail pass, seed 44 - redrawn in place at full resolution
+
+![cd3 Barclay detail pass, seed 44 - redrawn in place at full resolution](images/174-cd3-barclay-detail-pass-seed-44-redrawn-in-place-at-full-resolution.png)
+
+**The ask.** Founder: 'they must look perfect, it must be an amazing looking cartoon, the characters are the centerpiece' - redraw each character at the same full resolution the portrait itself gets, in a crop of their own place in the composed plate, and paste back without risking the room.
+
+**The thinking.** Picture 1 is a (400, 480, 1200, 1480) crop of canon/room-kit/v2/work/base3-headless-blockins.png upscaled to 1344x1680; Picture 2 is barclay's approved portrait. After the render, the crop was scaled back to the box and tone-matched to the ring just outside it (room-part.py's own tone_match, gain 0.88 offset +13), then pasted through barclay's own figure mask dilated 24 px and feathered 4.0 px, minus the chair-right mask in front of them, before the gilded sign went on last.
+
+**Settings.** local/qwen-image-edit-2511, seed 44, fast Lightning, box (400, 480, 1200, 1480) -> 1344x1680, 58.3s
+
+**Prompt.** [prompts/174-cd3-barclay-detail-pass-seed-44-redrawn-in-place-at-full-resolution.prompt.txt](prompts/174-cd3-barclay-detail-pass-seed-44-redrawn-in-place-at-full-resolution.prompt.txt)
+
+**Verdict.** candidate - to the founder beside the plate
+
+*Logged 13:23.*
+
+---
+
+## 175. cd3 Abby detail pass, seed 7 - redrawn in place at full resolution
+
+![cd3 Abby detail pass, seed 7 - redrawn in place at full resolution](images/175-cd3-abby-detail-pass-seed-7-redrawn-in-place-at-full-resolution.png)
+
+**The ask.** Founder: 'they must look perfect, it must be an amazing looking cartoon, the characters are the centerpiece' - redraw each character at the same full resolution the portrait itself gets, in a crop of their own place in the composed plate, and paste back without risking the room.
+
+**The thinking.** Picture 1 is a (380, 520, 940, 1220) crop of canon/room-kit/v2/work/base3-headless-blockins.png upscaled to 1344x1680; Picture 2 is abby's approved portrait. After the render, the crop was scaled back to the box and tone-matched to the ring just outside it (room-part.py's own tone_match, gain 0.92 offset -26), then pasted through abby's own figure mask dilated 24 px and feathered 4.0 px, minus the counter mask in front of them, before the gilded sign went on last.
+
+**Settings.** local/qwen-image-edit-2511, seed 7, fast Lightning, box (380, 520, 940, 1220) -> 1344x1680, 52.8s
+
+**Prompt.** [prompts/175-cd3-abby-detail-pass-seed-7-redrawn-in-place-at-full-resolution.prompt.txt](prompts/175-cd3-abby-detail-pass-seed-7-redrawn-in-place-at-full-resolution.prompt.txt)
+
+**Verdict.** candidate - to the founder beside the plate
+
+*Logged 13:24.*
+
+---
+
+## 176. cd3 Abby detail pass, seed 44 - redrawn in place at full resolution
+
+![cd3 Abby detail pass, seed 44 - redrawn in place at full resolution](images/176-cd3-abby-detail-pass-seed-44-redrawn-in-place-at-full-resolution.png)
+
+**The ask.** Founder: 'they must look perfect, it must be an amazing looking cartoon, the characters are the centerpiece' - redraw each character at the same full resolution the portrait itself gets, in a crop of their own place in the composed plate, and paste back without risking the room.
+
+**The thinking.** Picture 1 is a (380, 520, 940, 1220) crop of canon/room-kit/v2/work/base3-headless-blockins.png upscaled to 1344x1680; Picture 2 is abby's approved portrait. After the render, the crop was scaled back to the box and tone-matched to the ring just outside it (room-part.py's own tone_match, gain 0.91 offset -26), then pasted through abby's own figure mask dilated 24 px and feathered 4.0 px, minus the counter mask in front of them, before the gilded sign went on last.
+
+**Settings.** local/qwen-image-edit-2511, seed 44, fast Lightning, box (380, 520, 940, 1220) -> 1344x1680, 62.5s
+
+**Prompt.** [prompts/176-cd3-abby-detail-pass-seed-44-redrawn-in-place-at-full-resolution.prompt.txt](prompts/176-cd3-abby-detail-pass-seed-44-redrawn-in-place-at-full-resolution.prompt.txt)
+
+**Verdict.** candidate - to the founder beside the plate
+
+*Logged 13:25.*
+
+---
+
+## 177. cd4 Drew detail pass, seed 7 - redrawn in place at full resolution
+
+![cd4 Drew detail pass, seed 7 - redrawn in place at full resolution](images/177-cd4-drew-detail-pass-seed-7-redrawn-in-place-at-full-resolution.png)
+
+**The ask.** Founder: 'they must look perfect, it must be an amazing looking cartoon, the characters are the centerpiece' - redraw each character at the same full resolution the portrait itself gets, in a crop of their own place in the composed plate, and paste back without risking the room.
+
+**The thinking.** Picture 1 is a (0, 480, 816, 1500) crop of canon/room-kit/v2/work/base3-heads-blockins.png upscaled to 1344x1680; Picture 2 is drew's approved portrait. After the render, the crop was scaled back to the box and tone-matched to the ring just outside it (room-part.py's own tone_match, gain 0.96 offset -0), then pasted through drew's own figure mask dilated 24 px and feathered 4.0 px, minus the chair-left mask in front of them, before the gilded sign went on last.
+
+**Settings.** local/qwen-image-edit-2511, seed 7, fast Lightning, box (0, 480, 816, 1500) -> 1344x1680, 68.0s
+
+**Prompt.** [prompts/177-cd4-drew-detail-pass-seed-7-redrawn-in-place-at-full-resolution.prompt.txt](prompts/177-cd4-drew-detail-pass-seed-7-redrawn-in-place-at-full-resolution.prompt.txt)
+
+**Verdict.** candidate - to the founder beside the plate
+
+*Logged 13:27.*
+
+---
+
+## 178. cd4 Drew detail pass, seed 44 - redrawn in place at full resolution
+
+![cd4 Drew detail pass, seed 44 - redrawn in place at full resolution](images/178-cd4-drew-detail-pass-seed-44-redrawn-in-place-at-full-resolution.png)
+
+**The ask.** Founder: 'they must look perfect, it must be an amazing looking cartoon, the characters are the centerpiece' - redraw each character at the same full resolution the portrait itself gets, in a crop of their own place in the composed plate, and paste back without risking the room.
+
+**The thinking.** Picture 1 is a (0, 480, 816, 1500) crop of canon/room-kit/v2/work/base3-heads-blockins.png upscaled to 1344x1680; Picture 2 is drew's approved portrait. After the render, the crop was scaled back to the box and tone-matched to the ring just outside it (room-part.py's own tone_match, gain 0.90 offset +8), then pasted through drew's own figure mask dilated 24 px and feathered 4.0 px, minus the chair-left mask in front of them, before the gilded sign went on last.
+
+**Settings.** local/qwen-image-edit-2511, seed 44, fast Lightning, box (0, 480, 816, 1500) -> 1344x1680, 54.6s
+
+**Prompt.** [prompts/178-cd4-drew-detail-pass-seed-44-redrawn-in-place-at-full-resolution.prompt.txt](prompts/178-cd4-drew-detail-pass-seed-44-redrawn-in-place-at-full-resolution.prompt.txt)
+
+**Verdict.** candidate - to the founder beside the plate
+
+*Logged 13:27.*
+
+---
+
+## 179. cd4 Drew detail pass, seed 21 - redrawn in place at full resolution
+
+![cd4 Drew detail pass, seed 21 - redrawn in place at full resolution](images/179-cd4-drew-detail-pass-seed-21-redrawn-in-place-at-full-resolution.png)
+
+**The ask.** Founder: 'they must look perfect, it must be an amazing looking cartoon, the characters are the centerpiece' - redraw each character at the same full resolution the portrait itself gets, in a crop of their own place in the composed plate, and paste back without risking the room.
+
+**The thinking.** Picture 1 is a (0, 480, 816, 1500) crop of canon/room-kit/v2/work/base3-heads-blockins.png upscaled to 1344x1680; Picture 2 is drew's approved portrait. After the render, the crop was scaled back to the box and tone-matched to the ring just outside it (room-part.py's own tone_match, gain 0.92 offset +7), then pasted through drew's own figure mask dilated 24 px and feathered 4.0 px, minus the chair-left mask in front of them, before the gilded sign went on last.
+
+**Settings.** local/qwen-image-edit-2511, seed 21, fast Lightning, box (0, 480, 816, 1500) -> 1344x1680, 54.2s
+
+**Prompt.** [prompts/179-cd4-drew-detail-pass-seed-21-redrawn-in-place-at-full-resolution.prompt.txt](prompts/179-cd4-drew-detail-pass-seed-21-redrawn-in-place-at-full-resolution.prompt.txt)
+
+**Verdict.** candidate - to the founder beside the plate
+
+*Logged 13:28.*
+
+---
+
+## 180. cd4 Barclay detail pass, seed 7 - redrawn in place at full resolution
+
+![cd4 Barclay detail pass, seed 7 - redrawn in place at full resolution](images/180-cd4-barclay-detail-pass-seed-7-redrawn-in-place-at-full-resolution.png)
+
+**The ask.** Founder: 'they must look perfect, it must be an amazing looking cartoon, the characters are the centerpiece' - redraw each character at the same full resolution the portrait itself gets, in a crop of their own place in the composed plate, and paste back without risking the room.
+
+**The thinking.** Picture 1 is a (400, 480, 1200, 1480) crop of canon/room-kit/v2/work/base3-heads-blockins.png upscaled to 1344x1680; Picture 2 is barclay's approved portrait. After the render, the crop was scaled back to the box and tone-matched to the ring just outside it (room-part.py's own tone_match, gain 0.88 offset +14), then pasted through barclay's own figure mask dilated 24 px and feathered 4.0 px, minus the chair-right mask in front of them, before the gilded sign went on last.
+
+**Settings.** local/qwen-image-edit-2511, seed 7, fast Lightning, box (400, 480, 1200, 1480) -> 1344x1680, 54.4s
+
+**Prompt.** [prompts/180-cd4-barclay-detail-pass-seed-7-redrawn-in-place-at-full-resolution.prompt.txt](prompts/180-cd4-barclay-detail-pass-seed-7-redrawn-in-place-at-full-resolution.prompt.txt)
+
+**Verdict.** candidate - to the founder beside the plate
+
+*Logged 13:29.*
+
+---
+
+## 181. cd4 Barclay detail pass, seed 44 - redrawn in place at full resolution
+
+![cd4 Barclay detail pass, seed 44 - redrawn in place at full resolution](images/181-cd4-barclay-detail-pass-seed-44-redrawn-in-place-at-full-resolution.png)
+
+**The ask.** Founder: 'they must look perfect, it must be an amazing looking cartoon, the characters are the centerpiece' - redraw each character at the same full resolution the portrait itself gets, in a crop of their own place in the composed plate, and paste back without risking the room.
+
+**The thinking.** Picture 1 is a (400, 480, 1200, 1480) crop of canon/room-kit/v2/work/base3-heads-blockins.png upscaled to 1344x1680; Picture 2 is barclay's approved portrait. After the render, the crop was scaled back to the box and tone-matched to the ring just outside it (room-part.py's own tone_match, gain 0.88 offset +15), then pasted through barclay's own figure mask dilated 24 px and feathered 4.0 px, minus the chair-right mask in front of them, before the gilded sign went on last.
+
+**Settings.** local/qwen-image-edit-2511, seed 44, fast Lightning, box (400, 480, 1200, 1480) -> 1344x1680, 54.4s
+
+**Prompt.** [prompts/181-cd4-barclay-detail-pass-seed-44-redrawn-in-place-at-full-resolution.prompt.txt](prompts/181-cd4-barclay-detail-pass-seed-44-redrawn-in-place-at-full-resolution.prompt.txt)
+
+**Verdict.** candidate - to the founder beside the plate
+
+*Logged 13:30.*
+
+---
+
+## 182. cd5 Drew detail pass, seed 7 - redrawn in place at full resolution
+
+![cd5 Drew detail pass, seed 7 - redrawn in place at full resolution](images/182-cd5-drew-detail-pass-seed-7-redrawn-in-place-at-full-resolution.png)
+
+**The ask.** Founder: 'they must look perfect, it must be an amazing looking cartoon, the characters are the centerpiece' - redraw each character at the same full resolution the portrait itself gets, in a crop of their own place in the composed plate, and paste back without risking the room.
+
+**The thinking.** Picture 1 is a (0, 480, 816, 1500) crop of canon/room-kit/v2/work/base3-headless-blockins.png upscaled to 1344x1680; Picture 2 is drew's approved portrait. After the render, the crop was scaled back to the box and tone-matched to the ring just outside it (room-part.py's own tone_match, gain 0.96 offset +1), then pasted through drew's own figure mask dilated 24 px and feathered 4.0 px, minus the chair-left mask in front of them, before the gilded sign went on last.
+
+**Settings.** local/qwen-image-edit-2511, seed 7, fast Lightning, box (0, 480, 816, 1500) -> 1344x1680, 86.5s
+
+**Prompt.** [prompts/182-cd5-drew-detail-pass-seed-7-redrawn-in-place-at-full-resolution.prompt.txt](prompts/182-cd5-drew-detail-pass-seed-7-redrawn-in-place-at-full-resolution.prompt.txt)
+
+**Verdict.** candidate - to the founder beside the plate
+
+*Logged 13:42.*
+
+---
+
+## 183. cd5 Drew detail pass, seed 44 - redrawn in place at full resolution
+
+![cd5 Drew detail pass, seed 44 - redrawn in place at full resolution](images/183-cd5-drew-detail-pass-seed-44-redrawn-in-place-at-full-resolution.png)
+
+**The ask.** Founder: 'they must look perfect, it must be an amazing looking cartoon, the characters are the centerpiece' - redraw each character at the same full resolution the portrait itself gets, in a crop of their own place in the composed plate, and paste back without risking the room.
+
+**The thinking.** Picture 1 is a (0, 480, 816, 1500) crop of canon/room-kit/v2/work/base3-headless-blockins.png upscaled to 1344x1680; Picture 2 is drew's approved portrait. After the render, the crop was scaled back to the box and tone-matched to the ring just outside it (room-part.py's own tone_match, gain 0.91 offset +9), then pasted through drew's own figure mask dilated 24 px and feathered 4.0 px, minus the chair-left mask in front of them, before the gilded sign went on last.
+
+**Settings.** local/qwen-image-edit-2511, seed 44, fast Lightning, box (0, 480, 816, 1500) -> 1344x1680, 64.6s
+
+**Prompt.** [prompts/183-cd5-drew-detail-pass-seed-44-redrawn-in-place-at-full-resolution.prompt.txt](prompts/183-cd5-drew-detail-pass-seed-44-redrawn-in-place-at-full-resolution.prompt.txt)
+
+**Verdict.** candidate - to the founder beside the plate
+
+*Logged 13:43.*
+
+---
+
+## 184. cd5 Drew detail pass, seed 21 - redrawn in place at full resolution
+
+![cd5 Drew detail pass, seed 21 - redrawn in place at full resolution](images/184-cd5-drew-detail-pass-seed-21-redrawn-in-place-at-full-resolution.png)
+
+**The ask.** Founder: 'they must look perfect, it must be an amazing looking cartoon, the characters are the centerpiece' - redraw each character at the same full resolution the portrait itself gets, in a crop of their own place in the composed plate, and paste back without risking the room.
+
+**The thinking.** Picture 1 is a (0, 480, 816, 1500) crop of canon/room-kit/v2/work/base3-headless-blockins.png upscaled to 1344x1680; Picture 2 is drew's approved portrait. After the render, the crop was scaled back to the box and tone-matched to the ring just outside it (room-part.py's own tone_match, gain 0.95 offset +3), then pasted through drew's own figure mask dilated 24 px and feathered 4.0 px, minus the chair-left mask in front of them, before the gilded sign went on last.
+
+**Settings.** local/qwen-image-edit-2511, seed 21, fast Lightning, box (0, 480, 816, 1500) -> 1344x1680, 55.0s
+
+**Prompt.** [prompts/184-cd5-drew-detail-pass-seed-21-redrawn-in-place-at-full-resolution.prompt.txt](prompts/184-cd5-drew-detail-pass-seed-21-redrawn-in-place-at-full-resolution.prompt.txt)
+
+**Verdict.** candidate - to the founder beside the plate
+
+*Logged 13:44.*
+
+---
+
+## 185. cd5 Barclay detail pass, seed 7 - redrawn in place at full resolution
+
+![cd5 Barclay detail pass, seed 7 - redrawn in place at full resolution](images/185-cd5-barclay-detail-pass-seed-7-redrawn-in-place-at-full-resolution.png)
+
+**The ask.** Founder: 'they must look perfect, it must be an amazing looking cartoon, the characters are the centerpiece' - redraw each character at the same full resolution the portrait itself gets, in a crop of their own place in the composed plate, and paste back without risking the room.
+
+**The thinking.** Picture 1 is a (400, 480, 1200, 1480) crop of canon/room-kit/v2/work/base3-headless-blockins.png upscaled to 1344x1680; Picture 2 is barclay's approved portrait. After the render, the crop was scaled back to the box and tone-matched to the ring just outside it (room-part.py's own tone_match, gain 0.96 offset -3), then pasted through barclay's own figure mask dilated 24 px and feathered 4.0 px, minus the chair-right mask in front of them, before the gilded sign went on last.
+
+**Settings.** local/qwen-image-edit-2511, seed 7, fast Lightning, box (400, 480, 1200, 1480) -> 1344x1680, 55.7s
+
+**Prompt.** [prompts/185-cd5-barclay-detail-pass-seed-7-redrawn-in-place-at-full-resolution.prompt.txt](prompts/185-cd5-barclay-detail-pass-seed-7-redrawn-in-place-at-full-resolution.prompt.txt)
+
+**Verdict.** candidate - to the founder beside the plate
+
+*Logged 13:45.*
+
+---
+
