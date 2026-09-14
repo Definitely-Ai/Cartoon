@@ -2,6 +2,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import {createHash, randomUUID} from 'node:crypto';
 import {execFileSync} from 'node:child_process';
+import {workProgress} from './work-progress.mjs';
 
 export const hash = value => createHash('sha256').update(Buffer.isBuffer(value) ? value : typeof value === 'string' ? value : JSON.stringify(value)).digest('hex');
 export const delay = (ms, signal) => new Promise((resolve, reject) => {
@@ -120,9 +121,9 @@ export class JobContext {
     if(!/^[a-z0-9_-]{1,80}$/.test(name))throw new WorkerError('Invalid checkpoint stage.');
     const requestHash=hash(request),old=this.state.stages[name];
     if(old&&old.requestHash!==requestHash)throw new WorkerError('A retained stage request changed.');
+    this.progress=workProgress(name,this.job.input.quantity);
     if(old?.status==='done')return old.value;
     if(old?.status==='running'&&!recover)throw new WorkerError('An interrupted effect has no verified recovery route.');
-    this.progress={...this.progress,stage:name};
     if(old?.status==='running')await recover(old);
     this.state.stages[name]={requestHash,status:'running',startedAt:old?.startedAt||new Date().toISOString()};await this.flush();
     const value=await operation();this.assertLease();
@@ -189,7 +190,7 @@ export async function processJob(config,job,api,adapter,{signal=new AbortControl
   try {
     await verifyRuntime(config);ctx.assertLease();
     const artifacts=await adapter(ctx);
-    ctx.progress={stage:'uploading',completed:job.input.quantity,total:job.input.quantity};
+    ctx.progress=workProgress('uploading',job.input.quantity);
     await deliverArtifacts(ctx,artifacts,fetchImpl);
     await log({event:'completed',jobId:job.id,count:job.input.quantity});
     return {status:'completed'};

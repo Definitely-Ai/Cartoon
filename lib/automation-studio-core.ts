@@ -37,7 +37,7 @@ export type SavedEditionPlan = {
 
 export type PlannedRun = { at: string; localDate: string; label: string };
 export type LocationCoverage = {
-  status: 'configured' | 'pilot' | 'needs-setup';
+  status: 'configured' | 'pilot' | 'discovery' | 'needs-setup';
   label: string;
   detail: string;
 };
@@ -244,6 +244,9 @@ export function locationCoverage(input: EditionInput): LocationCoverage {
       status: 'pilot', label: 'Sarasota source pilot',
       detail: 'A limited Sarasota discovery pilot exists. Source coverage and audience direction need review before production; this is not a proven end-to-end city edition.',
     };
+  }
+  if (us && ['city','town'].includes(place.coverage) && /^[\p{L} .'-]{2,80}$/u.test(place.name) && /^[\p{L} .'-]{2,80}$/u.test(place.region)) {
+    return {status:'discovery',label:'Dated local headline discovery',detail:'The worker searches recent local money and everyday-life topics. Headline context is limited evidence, not full-article verification. Coverage varies; a request stops if suitable evidence cannot be found. Saving a plan alone does not start production.'};
   }
   return {
     status: 'needs-setup', label: 'Local source setup needed',

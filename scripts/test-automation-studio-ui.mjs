@@ -73,6 +73,8 @@ function harness({ input = fixture(), now = initialNow, fetchImpl = async () => 
     if (name === 'react/jsx-runtime') return { jsx, jsxs: jsx };
     if (name === '@/lib/automation-studio-core') return core;
     if (name === 'next/image' || name === 'next/link') return { default: 'next-component' };
+    // These independently tested children do not participate in planner state.
+    if (name === './ProductionQueue' || name === './ScheduleQueue') return { default: 'queue-component' };
     throw Error(`Unexpected client import: ${name}`);
   });
   return {

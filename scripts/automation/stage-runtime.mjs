@@ -52,7 +52,7 @@ for (let index = 0; index < queue.length; index++) {
 }
 if (dryRun) { console.log(JSON.stringify({ sourceFiles: pins.length, files: pins.map(pin => pin.path), written: false })); process.exit(0); }
 const packageFile = { name: 'swinging-door-local-worker', version: '1.0.0', private: true, type: 'module',
-  dependencies: { sharp: '0.34.5', 'opentype.js': '2.0.0' } };
+  dependencies: { sharp: '0.35.4', 'opentype.js': '2.0.0' } };
 await fs.writeFile(path.join(destination, 'package.json'), JSON.stringify(packageFile, null, 2) + '\n', { flag: 'wx' });
 const tokenFile = path.join(configRoot, 'worker-token.txt');
 try { await fs.writeFile(tokenFile, randomBytes(32).toString('base64url'), { flag: 'wx', mode: 0o600 }); }
@@ -65,8 +65,9 @@ catch (error) { if (error.code !== 'EEXIST') throw error; }
 const config = {
   apiOrigin: 'https://cartoon-brown-seven.vercel.app', storageOrigin: 'https://ypecehqzzxhdpiesteaw.supabase.co',
   workerId: 'studio-4090', tokenFile, workspaceRoot: destination, stateRoot: path.join(configRoot, 'state'),
-  sharedGpuLockRoot: 'Z:/ImageGenerator/local-studio/locks', pollMs: 15_000, heartbeatMs: 30_000,
-  production: { writerModel: 'qwen3.8:27b', criticModel: 'gpt-oss:20b', visionModel:'mistral-small3.2:24b-instruct-2506-q4_K_M', captionAttempts: 3 },
+  sharedGpuLockRoot: 'Z:/ImageGenerator/local-studio/locks', pollMs: 5_000, heartbeatMs: 5_000,
+  production: { writerModel: 'qwen3.8:27b', criticModel: 'gpt-oss:20b', visionModel:'mistral-small3.2:24b-instruct-2506-q4_K_M', captionAttempts: 6,
+    locations: JSON.parse(await fs.readFile(path.join(release,'scripts/automation/city-demo-sources.json'),'utf8')) },
   runtimePins: pins.sort((a, b) => a.path.localeCompare(b.path)),
   windowsLauncher: { startupTimeoutSeconds: 600, requireGpu: true,
     readinessUrl: 'https://cartoon-brown-seven.vercel.app/gallery/automation', modelServices: [

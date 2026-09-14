@@ -140,7 +140,10 @@ test('location coverage is narrowly qualified, not inferred from near-matching n
   assert.equal(locationCoverage(fixture()).status, 'configured');
   assert.equal(locationCoverage(fixture({ location: { ...fixture().location, name: ' Naples ', region: 'FL', country: 'U.S.A.' } })).status, 'configured');
   assert.equal(locationCoverage(fixture({ location: { ...fixture().location, name: 'Sarasota' } })).status, 'pilot');
-  for (const change of [{ name: 'North Naples' }, { name: 'Naples, Florida' }, { region: 'Texas' }, { country: 'Italy' }, { coverage: 'county' }]) {
+  for (const change of [{ name: 'North Naples' }, { region: 'Texas' }]) {
+    assert.equal(locationCoverage(fixture({ location: { ...fixture().location, ...change } })).status, 'discovery');
+  }
+  for (const change of [{ name: 'Naples, Florida' }, { country: 'Italy' }, { coverage: 'county' }]) {
     assert.equal(locationCoverage(fixture({ location: { ...fixture().location, ...change } })).status, 'needs-setup');
   }
 });

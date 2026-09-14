@@ -1,3 +1,5 @@
 # Print deliverables must remain byte-exact across Windows and Linux checkouts.
 public/gallery/cast-september-2026/*.pdf binary
 public/gallery/cast-dossiers-20260914-v1/*.pdf binary
+public/gallery/presentation-20260914/*.pdf binary
+public/gallery/presentation-20260914/*.pptx binary
