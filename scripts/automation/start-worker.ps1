@@ -3,7 +3,8 @@
 param(
     [Parameter(Mandatory = $true)][string]$RuntimeRoot,
     [Parameter(Mandatory = $true)][string]$Config,
-    [Parameter(Mandatory = $true)][string]$NodePath
+    [Parameter(Mandatory = $true)][string]$NodePath,
+    [switch]$Once
 )
 
 Set-StrictMode -Version Latest
@@ -72,7 +73,9 @@ try {
     if ($timeout -lt 30 -or $timeout -gt 3600) { throw 'windowsLauncher.startupTimeoutSeconds must be 30-3600.' }
     $deadline = [datetime]::UtcNow.AddSeconds($timeout)
     $receiptPath = Join-Path $logRoot 'worker-process.json'
-    $nodeArguments = @($workerPath, '--config', $Config) | ForEach-Object { QuoteArgument $_ }
+    $rawNodeArguments = @($workerPath, '--config', $Config)
+    if ($Once) { $rawNodeArguments += '--once' }
+    $nodeArguments = $rawNodeArguments | ForEach-Object { QuoteArgument $_ }
     $nodeArgumentText = $nodeArguments -join ' '
     # Reconcile an orphan Node child even if the supervisor died between process
     # creation and writing its PID receipt. The worker also owns its independent

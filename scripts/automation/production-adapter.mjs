@@ -165,7 +165,9 @@ async function historyFor(ctx) {
   }
   return history.slice(-250);
 }
-function castAt(input,index) {
+export function castAt(input,index,editionKey='') {
+  // Keep retry behavior stable while varying the opening speaker across jobs.
+  if(editionKey)index+=parseInt(hash(editionKey).slice(0,8),16)%10;
   if(input.cast==='duo')return {variant:'duo',speaker:index%2?'Barclay':'Drew'};
   if(input.cast==='trio')return {variant:'trio',speaker:['Drew','Barclay','Abby','Drew','Barclay'][index%5]};
   return index%5===2?{variant:'trio',speaker:'Abby'}:{variant:index%5===4?'trio':'duo',speaker:index%2?'Barclay':'Drew'};
@@ -203,7 +205,7 @@ export async function generateProductionEdition(ctx) {
   const direction='Warm adult money/lifestyle newspaper humor. Drew is a dry observer; Barclay speaks from his own wallet; Abby is the proprietor giving a final word. No partisan persuasion, named-person attacks, mocking poverty, grief, health or suffering. No profanity. Caption must work alone in under ten seconds; one distinct comic turn; <=20 words, no questions/exclamations. The fixed room and cast actions cannot change. TV is a literal subject-only heading and a newly invented wordless, human-free engraving. Board is simple hand chalk: plausible food/drink item, separate price, small connected menu turn; no elaborate art or repeated punchline. All dialogue, prices and footage are fictional. Dated sources give context, not proof of a character experience or popularity trend. Natural template variations are allowed; noun-swapped old jokes are not.';
   const cartoons=[];
   for(let index=0;index<ctx.job.input.quantity;index++) {
-    ctx.assertLease();const n=String(index+1).padStart(2,'0'),cast=castAt(ctx.job.input,index);
+    ctx.assertLease();const n=String(index+1).padStart(2,'0'),cast=castAt(ctx.job.input,index,ctx.job.id);
     const actor=acting.reports.find(row=>row.id===cast.variant+'-'+cast.speaker.toLowerCase());
     if(!actor)throw new WorkerError('No matching speaker/listener plate is installed.');
     let selected;

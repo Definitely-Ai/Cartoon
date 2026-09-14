@@ -6,7 +6,15 @@ import os from 'node:os';
 import {spawn} from 'node:child_process';
 import {fileURLToPath,pathToFileURL} from 'node:url';
 import {hash,atomicWrite,readJSON,inside,acquireSingleton,verifyRuntime,WorkerAPI,WorkerError,JobContext,processJob,deliverArtifacts,safeMessage,delay} from './automation/worker-core.mjs';
-import {validateDraft} from './automation/production-adapter.mjs';
+import {validateDraft,castAt} from './automation/production-adapter.mjs';
+
+test('opening speakers vary across editions but stay stable across retries',()=>{
+  const input={cast:'mixed'};
+  const speakers=Array.from({length:20},(_,i)=>castAt(input,0,'edition-'+i).speaker);
+  assert.deepEqual([...new Set(speakers)].sort(),['Abby','Barclay','Drew']);
+  assert.deepEqual(castAt(input,0,'same-job'),castAt(input,0,'same-job'));
+  for(let i=0;i<20;i++)assert.notEqual(castAt({cast:'duo'},0,'edition-'+i).speaker,'Abby');
+});
 
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const png=Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAusB9Wl6AAAAAElFTkSuQmCC','base64');

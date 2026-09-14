@@ -59,8 +59,6 @@ Machine scores must clear 8/10 with >=0.85 declared confidence and no identified
 
 Naples has a default NABOR/BLS source setup. Other places require a reviewed source registry. Future/repeated occasions belong to the cloud dispatcher; the adapter executes the specific claimed job. Arbitrary-city production and first-pass humor reliability are not assumed from the Naples setup. Sources retained beyond 24 hours stop the edition rather than silently reuse stale evidence.
 
-## Verification boundary
-
 ## Cloud recurrence
 
 Apply the three additive SQL migrations in order: `automation-studio.sql`, `automation-queue.sql`, then `automation-schedules.sql`. Only the explicit owner may activate or pause schedules. The once-daily authenticated Vercel tick and each worker claim materialize dated occurrences up to seven days ahead. A persisted exclusive cursor, transaction lock and unique schedule/occurrence key prevent duplicate jobs. Missed dates remain behind the cursor and are processed in bounded batches after an outage. Pausing prevents new claims without cancelling a currently leased job; resuming preserves the backlog. All due times are UTC instants computed from the requested location's wall clock, including daylight-saving rules.
@@ -70,5 +68,9 @@ The cloud cron requires a separate random `CRON_SECRET` in Vercel production, no
 ## Runtime handoff
 
 `stage-runtime.mjs` copies the reviewed dependency closure and approved local artwork into a new immutable release directory; it refuses an existing destination. Use `--config-name worker-v2.json` when staging a successor with the same private token and durable state root. Install its exact npm dependencies, restrict ACLs, verify pins, then deliberately update the stopped task to the new runtime. A fresh Git checkout alone does not contain every approved local acting asset: migration to a future GPU host must transfer the reviewed pinned runtime bundle and model weights, not just the website source.
+
+## Verification boundary
+
+The PowerShell launcher accepts `-Once` for a bounded current-session acceptance run. This does not register a task or establish S4U/startup behavior. It starts only missing services and executes one worker queue poll.
 
 `node --test scripts/test-automation-worker.mjs` uses isolated temporary directories, stub HTTP, and an explicitly identified tiny fixture image. It includes an actual killed child-process/checkpoint recovery test. These are engineering tests, not demonstrations of a real generated cartoon. The real acceptance run must separately show a fresh queue job, actual local model and vision responses, a new TV image, assembled PNGs, cloud read-back hashes, and restart/recovery evidence. No actual machine reboot is required or performed by these tests.
