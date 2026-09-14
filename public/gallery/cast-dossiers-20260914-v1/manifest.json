@@ -1,0 +1,375 @@
+{
+  "edition": "September 14, 2026",
+  "method": "Unretouched pixel crops; no retired concept sheets, no resampling, no cast redraw. Pose cards are facial acting crops, not new full-body gestures.",
+  "assets": [
+    {
+      "character": "drew",
+      "key": "bow-tie",
+      "kind": "detail",
+      "filename": "drew-bow-tie.png",
+      "width": 355,
+      "height": 210,
+      "source": "public/gallery/cast-september-2026/drew.png",
+      "sourceSha256": "c7e192ae2903f2e42926f30db8f6b2354ee06e5077a01944ea1098dccec93b96",
+      "sha256": "d8fc28da162acf461ec3aeb4178b99be826eaf6174c3abb253a50e04c71131c0",
+      "crop": [
+        345,
+        685,
+        355,
+        210
+      ],
+      "actorId": null,
+      "acting": null
+    },
+    {
+      "character": "drew",
+      "key": "feathers",
+      "kind": "detail",
+      "filename": "drew-feathers.png",
+      "width": 430,
+      "height": 360,
+      "source": "public/gallery/cast-september-2026/drew.png",
+      "sourceSha256": "c7e192ae2903f2e42926f30db8f6b2354ee06e5077a01944ea1098dccec93b96",
+      "sha256": "5b8fc28790f49287a7afb21541011d5940db60444ceb07f6b195b75da90423e4",
+      "crop": [
+        55,
+        870,
+        430,
+        360
+      ],
+      "actorId": null,
+      "acting": null
+    },
+    {
+      "character": "drew",
+      "key": "bill",
+      "kind": "detail",
+      "filename": "drew-bill.png",
+      "width": 505,
+      "height": 455,
+      "source": "public/gallery/cast-september-2026/drew.png",
+      "sourceSha256": "c7e192ae2903f2e42926f30db8f6b2354ee06e5077a01944ea1098dccec93b96",
+      "sha256": "e520ef005f12e21e67b6f2ccf6fdd77f3000b53724debc33ab9d5fcc6cb507d5",
+      "crop": [
+        345,
+        45,
+        505,
+        455
+      ],
+      "actorId": null,
+      "acting": null
+    },
+    {
+      "character": "drew",
+      "key": "speaking",
+      "kind": "pose",
+      "filename": "drew-speaking.png",
+      "width": 365,
+      "height": 475,
+      "source": "output/fixed-set-v1/best-of-v1/acting/trio-drew.png",
+      "sourceSha256": "747619eda36b6a68fe21463035dceb6539cca87da6c3afa2d40e05e7787efeaf",
+      "sha256": "2b9775be26f083d1e69ed688b23b1adf8c1ea94ec4fdd2ca21fc187ca2b6f328",
+      "crop": [
+        0,
+        550,
+        365,
+        475
+      ],
+      "actorId": "trio-drew",
+      "acting": {
+        "mouth": "open",
+        "lookAt": "Barclay"
+      }
+    },
+    {
+      "character": "drew",
+      "key": "listening-barclay",
+      "kind": "pose",
+      "filename": "drew-listening-barclay.png",
+      "width": 365,
+      "height": 475,
+      "source": "output/fixed-set-v1/best-of-v1/acting/trio-barclay.png",
+      "sourceSha256": "0d32418a43f8f4d748df38f9bb676ad0bb3aae3a26278485d90c7e172c1c2159",
+      "sha256": "296f0851b7a97c8980f6d9e8e2fa89b1b0f814a813a5f8ead099de88221d9a43",
+      "crop": [
+        0,
+        550,
+        365,
+        475
+      ],
+      "actorId": "trio-barclay",
+      "acting": {
+        "mouth": "closed",
+        "lookAt": "Barclay"
+      }
+    },
+    {
+      "character": "drew",
+      "key": "listening-abby",
+      "kind": "pose",
+      "filename": "drew-listening-abby.png",
+      "width": 365,
+      "height": 475,
+      "source": "output/fixed-set-v1/best-of-v1/acting/trio-abby.png",
+      "sourceSha256": "96349c8f74f77330e2a5e70f7f4d7d69bb868d088ce5a0dc642eeffa639501f2",
+      "sha256": "7aa17cebb8d14f18f61ca964dec4501e2cbea0500dc76b5c4b184b730e1c78a2",
+      "crop": [
+        0,
+        550,
+        365,
+        475
+      ],
+      "actorId": "trio-abby",
+      "acting": {
+        "mouth": "closed",
+        "lookAt": "Abby"
+      }
+    },
+    {
+      "character": "barclay",
+      "key": "flag-pin",
+      "kind": "detail",
+      "filename": "barclay-flag-pin.png",
+      "width": 185,
+      "height": 190,
+      "source": "public/gallery/cast-september-2026/barclay.png",
+      "sourceSha256": "2a04b67ddff80147168fc24f7e8ed94ffef0a42ce6821beb7feab658fcceb305",
+      "sha256": "370949e28f7fd82030e009092c8fafc8c81aaf5b0f2f1e3f77677dc06476729c",
+      "crop": [
+        600,
+        710,
+        185,
+        190
+      ],
+      "actorId": null,
+      "acting": null
+    },
+    {
+      "character": "barclay",
+      "key": "face",
+      "kind": "detail",
+      "filename": "barclay-face.png",
+      "width": 675,
+      "height": 625,
+      "source": "public/gallery/cast-september-2026/barclay.png",
+      "sourceSha256": "2a04b67ddff80147168fc24f7e8ed94ffef0a42ce6821beb7feab658fcceb305",
+      "sha256": "14205faccbd7726b1763b2e0e48302df48f381c8793d86d9f1cecbaa82f0c743",
+      "crop": [
+        155,
+        100,
+        675,
+        625
+      ],
+      "actorId": null,
+      "acting": null
+    },
+    {
+      "character": "barclay",
+      "key": "hands",
+      "kind": "detail",
+      "filename": "barclay-hands.png",
+      "width": 650,
+      "height": 375,
+      "source": "public/gallery/cast-september-2026/barclay.png",
+      "sourceSha256": "2a04b67ddff80147168fc24f7e8ed94ffef0a42ce6821beb7feab658fcceb305",
+      "sha256": "8520bb2304f268af38b25bf8c00f0af3465ce739e2c4a741ed78b4f1435afe81",
+      "crop": [
+        70,
+        1110,
+        650,
+        375
+      ],
+      "actorId": null,
+      "acting": null
+    },
+    {
+      "character": "barclay",
+      "key": "speaking",
+      "kind": "pose",
+      "filename": "barclay-speaking.png",
+      "width": 306,
+      "height": 455,
+      "source": "output/fixed-set-v1/best-of-v1/acting/trio-barclay.png",
+      "sourceSha256": "0d32418a43f8f4d748df38f9bb676ad0bb3aae3a26278485d90c7e172c1c2159",
+      "sha256": "45ebdaef17470ed09cdf127949997e60dc5e859b61c4abb8e9af45d8a2519f3b",
+      "crop": [
+        718,
+        620,
+        306,
+        455
+      ],
+      "actorId": "trio-barclay",
+      "acting": {
+        "mouth": "open",
+        "lookAt": "Drew"
+      }
+    },
+    {
+      "character": "barclay",
+      "key": "listening-drew",
+      "kind": "pose",
+      "filename": "barclay-listening-drew.png",
+      "width": 306,
+      "height": 455,
+      "source": "output/fixed-set-v1/best-of-v1/acting/trio-drew.png",
+      "sourceSha256": "747619eda36b6a68fe21463035dceb6539cca87da6c3afa2d40e05e7787efeaf",
+      "sha256": "d07e6903cbae3364a0931b867e2748a0ae1fdb691e675d37d313a5e8cbe8f80e",
+      "crop": [
+        718,
+        620,
+        306,
+        455
+      ],
+      "actorId": "trio-drew",
+      "acting": {
+        "mouth": "closed",
+        "lookAt": "Drew"
+      }
+    },
+    {
+      "character": "barclay",
+      "key": "listening-abby",
+      "kind": "pose",
+      "filename": "barclay-listening-abby.png",
+      "width": 306,
+      "height": 455,
+      "source": "output/fixed-set-v1/best-of-v1/acting/trio-abby.png",
+      "sourceSha256": "96349c8f74f77330e2a5e70f7f4d7d69bb868d088ce5a0dc642eeffa639501f2",
+      "sha256": "5f2ac1a544d5cc24eb1ed7813238e1d24b3968dd4147f6bbe488b428405addda",
+      "crop": [
+        718,
+        620,
+        306,
+        455
+      ],
+      "actorId": "trio-abby",
+      "acting": {
+        "mouth": "closed",
+        "lookAt": "Abby"
+      }
+    },
+    {
+      "character": "abby",
+      "key": "collar",
+      "kind": "detail",
+      "filename": "abby-collar.png",
+      "width": 450,
+      "height": 275,
+      "source": "public/gallery/cast-september-2026/abby.png",
+      "sourceSha256": "e10b9ff74e8c5d6d6d11ed0d891801a9a9aa9393ce40a14b09c7eb726eeb12f5",
+      "sha256": "3253c8866ae5dc1a999b77c932c95767db09365d6b854b182965b8217c1172bf",
+      "crop": [
+        275,
+        480,
+        450,
+        275
+      ],
+      "actorId": null,
+      "acting": null
+    },
+    {
+      "character": "abby",
+      "key": "glass-towel",
+      "kind": "detail",
+      "filename": "abby-glass-towel.png",
+      "width": 430,
+      "height": 700,
+      "source": "public/gallery/cast-september-2026/abby.png",
+      "sourceSha256": "e10b9ff74e8c5d6d6d11ed0d891801a9a9aa9393ce40a14b09c7eb726eeb12f5",
+      "sha256": "0dec56a831661e280010c08fc57363ecd2ed3b153ca66a05079d7e92916bf3a6",
+      "crop": [
+        330,
+        695,
+        430,
+        700
+      ],
+      "actorId": null,
+      "acting": null
+    },
+    {
+      "character": "abby",
+      "key": "fur",
+      "kind": "detail",
+      "filename": "abby-fur.png",
+      "width": 465,
+      "height": 300,
+      "source": "public/gallery/cast-september-2026/abby.png",
+      "sourceSha256": "e10b9ff74e8c5d6d6d11ed0d891801a9a9aa9393ce40a14b09c7eb726eeb12f5",
+      "sha256": "5e953f3bc1b9d8ccee37acd8ec0e4eda5c481401f2aa7a943c6f13067f69dcba",
+      "crop": [
+        95,
+        1020,
+        465,
+        300
+      ],
+      "actorId": null,
+      "acting": null
+    },
+    {
+      "character": "abby",
+      "key": "speaking",
+      "kind": "pose",
+      "filename": "abby-speaking.png",
+      "width": 335,
+      "height": 470,
+      "source": "output/fixed-set-v1/best-of-v1/acting/trio-abby.png",
+      "sourceSha256": "96349c8f74f77330e2a5e70f7f4d7d69bb868d088ce5a0dc642eeffa639501f2",
+      "sha256": "029fd3d56c28cdaec094285fec3d73f33e71dced440981f278021fd01c0de0bd",
+      "crop": [
+        368,
+        430,
+        335,
+        470
+      ],
+      "actorId": "trio-abby",
+      "acting": {
+        "mouth": "open",
+        "lookAt": "Drew"
+      }
+    },
+    {
+      "character": "abby",
+      "key": "listening-drew",
+      "kind": "pose",
+      "filename": "abby-listening-drew.png",
+      "width": 335,
+      "height": 470,
+      "source": "output/fixed-set-v1/best-of-v1/acting/trio-drew.png",
+      "sourceSha256": "747619eda36b6a68fe21463035dceb6539cca87da6c3afa2d40e05e7787efeaf",
+      "sha256": "0b2f76901cba3766ed0602f00b136ee2017ea68bc8311daeebd0ec6934be8f31",
+      "crop": [
+        368,
+        430,
+        335,
+        470
+      ],
+      "actorId": "trio-drew",
+      "acting": {
+        "mouth": "closed",
+        "lookAt": "Drew"
+      }
+    },
+    {
+      "character": "abby",
+      "key": "listening-barclay",
+      "kind": "pose",
+      "filename": "abby-listening-barclay.png",
+      "width": 335,
+      "height": 470,
+      "source": "output/fixed-set-v1/best-of-v1/acting/trio-barclay.png",
+      "sourceSha256": "0d32418a43f8f4d748df38f9bb676ad0bb3aae3a26278485d90c7e172c1c2159",
+      "sha256": "0a445bb4287036658b88204eba24210a22df9502303751f77fe03e4f9a98045d",
+      "crop": [
+        368,
+        430,
+        335,
+        470
+      ],
+      "actorId": "trio-barclay",
+      "acting": {
+        "mouth": "closed",
+        "lookAt": "Barclay"
+      }
+    }
+  ]
+}

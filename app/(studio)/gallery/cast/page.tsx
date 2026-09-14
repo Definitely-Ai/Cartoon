@@ -6,7 +6,7 @@ import "./cast.css";
 
 export const metadata: Metadata = {
   title: "The Cast · Drew, Barclay & Abby",
-  description: "Meet Drew, Barclay and Abby. Individual character portraits and printable character sheets from The Swinging Door.",
+  description: "Meet Drew, Barclay and Abby: character backgrounds, signature details, current acting poses and professional printable dossiers.",
 };
 
 export default function CastPage() {
@@ -16,10 +16,10 @@ export default function CastPage() {
         <div>
           <p className="cast-kicker">The Swinging Door · {CAST_EDITION}</p>
           <h1>Meet the cast.</h1>
-          <p>Two gentlemen. One proprietor. Three ways of seeing the same news.</p>
+          <p>Two gentlemen. One proprietor. Their stories, signature details and current acting poses.</p>
         </div>
         <div className="cast-actions">
-          <a className="cast-button" href={castPDF("all")} download>Download all three · PDF</a>
+          <a className="cast-button" href={castPDF("all")} download>Complete cast packet · 9-page PDF</a>
           <Link className="cast-text-link" href="/gallery/cast/print/all">Print the cast</Link>
         </div>
       </header>
@@ -36,8 +36,8 @@ export default function CastPage() {
               <p className="cast-role">{member.role}</p>
               <p className="cast-bio">{member.bio}</p>
               <div className="cast-card-actions">
-                <Link className="cast-button" href={`/gallery/cast/print/${member.id}`}>View &amp; print {member.name}</Link>
-                <a className="cast-text-link" href={castPDF(member.id)} download>Download {member.name}&rsquo;s PDF</a>
+                <Link className="cast-button" href={`/gallery/cast/print/${member.id}`}>Explore {member.name}: story, details &amp; poses</Link>
+                <a className="cast-text-link" href={castPDF(member.id)} download>Download {member.name}&rsquo;s 3-page dossier</a>
               </div>
             </div>
           </article>
@@ -45,7 +45,7 @@ export default function CastPage() {
       </section>
 
       <footer className="cast-notes">
-        <div><h2>Made for paper.</h2><p>Each PDF is one US Letter page: a large portrait, a short introduction and the details that make the character their own. Print all three or choose one.</p></div>
+        <div><h2>Made for paper.</h2><p>Each character has a three-page US Letter dossier: a portrait and background, illustrated signature details, and current speaking/listening studies with personality, voice and continuity notes. Print one dossier or the complete nine-page cast packet.</p></div>
         <div><h2>Inside the cartoon.</h2><p>The speaker&rsquo;s mouth is open. The others look toward whoever is speaking. Drew&rsquo;s feathers and the dogs&rsquo; fur remain distinct.</p>
           <Link className="cast-text-link" href="/gallery/best-of">See them in the cartoons</Link>
         </div>

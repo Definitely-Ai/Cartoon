@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 import type { BestOfCartoon } from "@/lib/best-of-cartoons";
 
@@ -195,6 +196,7 @@ export default function BestOfClient({ cartoons, edition }: BestOfClientProps) {
                     </figure>
 
                     <div className="best-of-card-bottom">
+                      <Link className="best-of-print-link" href={`/gallery/best-of/print/${cartoon.id}`}>Print &amp; size options <span aria-hidden="true">↗</span><span className="sr-only">: {cartoon.title}</span></Link>
                       <details className="best-of-scene-details">
                         <summary>On the TV &amp; chalkboard</summary>
                         <dl>

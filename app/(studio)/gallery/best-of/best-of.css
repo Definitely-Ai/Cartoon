@@ -349,6 +349,9 @@
   padding: 0 20px;
 }
 
+.best-of-print-link { display:flex;justify-content:space-between;padding:14px 0;border-top:1px solid #e5e2d9;color:var(--collection-ink);font:600 12px/1.5 Arial,sans-serif;text-decoration:none; }
+.best-of-print-link:hover { text-decoration:underline; }
+
 .best-of-scene-details {
   padding: 13px 0;
   border-top: 1px solid #e5e2d9;

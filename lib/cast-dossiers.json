@@ -1,0 +1,86 @@
+[
+  {
+    "id": "drew",
+    "age": "Mid-forties",
+    "premise": "A gentleman who has seen the cycle before.",
+    "backstory": [
+      "Drew is a successful, well-heeled gentleman with money, time and the calm of someone who has watched the same promises come around before. The Swinging Door gives him a familiar place to consider the news without surrendering his composure. He is a flamingo first, a gentleman second, and never a mascot.",
+      "He notices how an ordinary expense acquires an impressive new name. A headline supplies the occasion; Drew finds the mechanism underneath it. He does not need to win the argument or make anyone feel small. One precise observation, a slight lift of the eyebrow, and he can return to his martini."
+    ],
+    "temperament": ["Composed, observant and quietly amused", "Dry rather than loud; knowing rather than smug", "Warm company, even when the verdict is merciless"],
+    "relationships": [
+      {"name": "Barclay", "text": "Drew names the mechanism; Barclay supplies the receipt. Their two perspectives turn the same headline into a conversation rather than a lecture."},
+      {"name": "Abby", "text": "Her practical authority punctures his elegant theories. Drew is a regular in her room, not its master of ceremonies."}
+    ],
+    "voiceNotes": ["Use one clean, understandable observation.", "Let the comic turn come from a reclassification or a revealing comparison.", "Keep his delivery unhurried. He does not need a huge gesture to land a line."],
+    "signature": [
+      {"key": "bow-tie", "title": "The black silk bow tie", "text": "His permanent identifying accessory: a clearly formed knot and two wings, sitting naturally above the V of his sleeveless sweater vest. It is part of his everyday character, not a costume change.", "crop": [345, 685, 355, 210]},
+      {"key": "feathers", "title": "Feathers, never sleeves", "text": "Fine layered plumage continues from shoulder to fingertip. The vest armhole is the garment edge; a feathered forearm must not turn into a fabric sleeve or a smooth human arm.", "crop": [55, 870, 430, 360]},
+      {"key": "bill", "title": "A refined bill and a measured gaze", "text": "The long S-shaped neck, slender downward-curving black-tipped bill and composed eyes identify Drew at a glance. His expression stays approachable, not sinister.", "crop": [345, 45, 505, 455]}
+    ],
+    "continuity": ["Frame-left, with his body clearly on the patron side of the marble.", "Martini in a conical stemmed glass: one olive on one pick.", "Feather-backed, articulated hands; no bare skin or mammal claws.", "The bill is open when he speaks and closed when he listens; his gaze stays inside the scene."],
+    "poses": [
+      {"key": "speaking", "actor": "trio-drew", "title": "Speaking to Barclay", "text": "Bill open; gaze toward Barclay. The delivery stays restrained and conversational."},
+      {"key": "listening-barclay", "actor": "trio-barclay", "title": "Listening to Barclay", "text": "Bill closed; attention across the counter toward Barclay, who has the line."},
+      {"key": "listening-abby", "actor": "trio-abby", "title": "Listening to Abby", "text": "Bill closed; eyes lift toward Abby as she delivers the proprietor's verdict."}
+    ],
+    "poseCrop": [0, 550, 365, 475],
+    "canonSources": ["canon/characters/flamingo/CHARACTER-BIBLE.md", "canon/fixed-set/OWNER-DIRECTION-2026-09-11.md"]
+  },
+  {
+    "id": "barclay",
+    "age": "Mid-forties",
+    "premise": "He understands the headline. He also pays the bill.",
+    "backstory": [
+      "Barclay is a successful gentleman and unmistakably a golden retriever. He understands money, but experience has not made him immune to surprise at what things cost. The familiar company at The Swinging Door gives him room to say the practical thing everyone else is thinking.",
+      "He brings the news down to the scale of a household, a purchase or a receipt. The joke does not depend on making him foolish: his dignity is precisely what makes the observation land. His current expression is confident, happy and warm. Financial concerns may drive a line, but a sad or confused face is not his default."
+    ],
+    "temperament": ["Mature, self-assured and good-humored", "Practical about money without being cynical about people", "Soft-featured and approachable, never puppyish"],
+    "relationships": [
+      {"name": "Drew", "text": "Drew sees the system; Barclay feels its consequences in his wallet. Neither is the other's fool. Their friendship gives the joke a human scale."},
+      {"name": "Abby", "text": "He respects the owner of the room. Her matter-of-fact answer can settle a debate that even his most sensible question could not."}
+    ],
+    "voiceNotes": ["Speak from his own experience or wallet.", "Prefer a concrete purchase, bill or everyday consequence to financial jargon.", "Let him be candid and dignified at the same time."],
+    "signature": [
+      {"key": "flag-pin", "title": "The American flag lapel pin", "text": "A permanent small flag on his left lapel, or left chest when he is not wearing a jacket. The dark canton and alternating stripes must remain recognizable in black and white; the pin is attached to the cloth, not floating above it.", "crop": [600, 710, 185, 190]},
+      {"key": "face", "title": "A mature, warm retriever face", "text": "A black nose and dog lip line, softly freckled muzzle and expressive eyes with visible whites. Short natural crown fur and a modest neck ruff keep him groomed and upright, without a human hairstyle or an oversized neck beard.", "crop": [155, 100, 675, 625]},
+      {"key": "hands", "title": "Soft furry hands and a wristwatch", "text": "Broad, fur-backed hands articulate like hands: fingers and an opposed thumb, with soft fingertips and no visible nails or claws. A plain wristwatch and relaxed jacket complete the gentleman's silhouette.", "crop": [70, 1110, 650, 375]}
+    ],
+    "continuity": ["Frame-right; seated upright with believable clearance from the bar.", "Dark jacket over a pale open-collared shirt, without a tie.", "Old fashioned in a short rocks glass, with one large cube and a dark cherry.", "Flag pin retained, both hands accounted for, and no tail.", "Mouth open for his line; closed when listening, with his eyes on the speaker."],
+    "poses": [
+      {"key": "speaking", "actor": "trio-barclay", "title": "Speaking to Drew", "text": "Mouth open; gaze toward Drew. His expression remains warm and assured."},
+      {"key": "listening-drew", "actor": "trio-drew", "title": "Listening to Drew", "text": "Mouth closed; eyes on Drew, retaining the relaxed, mature face."},
+      {"key": "listening-abby", "actor": "trio-abby", "title": "Listening to Abby", "text": "Mouth closed; attention lifts toward Abby while she has the last word."}
+    ],
+    "poseCrop": [718, 620, 306, 455],
+    "canonSources": ["canon/characters/dog/CHARACTER-BIBLE.md", "canon/fixed-set/OWNER-DIRECTION-2026-09-11.md"]
+  },
+  {
+    "id": "abby",
+    "age": "Mid-forties",
+    "premise": "It is her bar, even when she is out of the frame.",
+    "backstory": [
+      "Abby owns The Swinging Door and works its bar. She is the proprietor, not background scenery or somebody else's employee. The welcome, the standards and the rhythm of the room are hers. She is fond of the gentlemen, values their conversation and is intimidated by neither of them.",
+      "While Drew notices the mechanism and Barclay considers the bill, Abby keeps a real business running. That practical viewpoint gives her the authority to close the conversation with one warm, decisive line. She need not appear in every cartoon for the room to feel like hers; when she joins the exchange, her contribution matters."
+    ],
+    "temperament": ["Warm, quick-witted and entirely in command", "Elegant and feminine, without a frightening or exaggerated expression", "An attentive proprietor whose welcome has standards"],
+    "relationships": [
+      {"name": "Drew", "text": "She hears his polished observations without being overawed by them. Her practical answer brings the conversation back to the counter."},
+      {"name": "Barclay", "text": "She understands his wallet-level concerns, but she also knows what it takes to keep the lights on. Affection never makes her surrender the last word."}
+    ],
+    "voiceNotes": ["Speak with authority, delivered warmly.", "A proprietor's decision or practical rule makes a natural comic ending.", "She may address them as gentlemen; her line settles the matter rather than begging for agreement."],
+    "signature": [
+      {"key": "collar", "title": "The studded collar and teardrop", "text": "One even row of rounded studs, a front buckle and one teardrop pendant. This is her signature accessory; the retired pearl-necklace design is not the current Abby.", "crop": [275, 480, 450, 275]},
+      {"key": "glass-towel", "title": "One empty glass, one plain towel", "text": "Her current work action is polishing an empty wine glass. One hand supports the glass while the other works the towel. No liquid, no duplicate towel on the shoulder and no lettering on the cloth.", "crop": [330, 695, 430, 700]},
+      {"key": "fur", "title": "Soft terrier fur and capable hands", "text": "Short, fine mammal fur covers the forearms and hands, never feather shapes. Her fingers have a believable grip. Welcoming eyes, a proportional head and a fitted blouse complete the current character.", "crop": [95, 1020, 465, 300]}
+    ],
+    "continuity": ["Behind the bar on the service side, standing higher than the seated gentlemen.", "A fitted light blouse with rolled sleeves, a dark skirt and no tail.", "A small proportional West Highland terrier head with bright, welcoming eyes.", "A plain towel in exactly one place, actively polishing an empty wine glass.", "Mouth open for her line; otherwise closed, looking at Drew or Barclay rather than the reader."],
+    "poses": [
+      {"key": "speaking", "actor": "trio-abby", "title": "Delivering the last word", "text": "Mouth open; attention toward the gentlemen, with the glass-polishing action retained."},
+      {"key": "listening-drew", "actor": "trio-drew", "title": "Listening to Drew", "text": "Mouth closed; face and eyes turn toward Drew while her hands stay at their work."},
+      {"key": "listening-barclay", "actor": "trio-barclay", "title": "Listening to Barclay", "text": "Mouth closed; attention shifts to Barclay. She remains the host of the room."}
+    ],
+    "poseCrop": [368, 430, 335, 470],
+    "canonSources": ["canon/characters/abby/CHARACTER-BIBLE.md", "canon/fixed-set/OWNER-DIRECTION-2026-09-11.md"]
+  }
+]
