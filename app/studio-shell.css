@@ -1,0 +1,54 @@
+/* Compact production navigation. No oversized invisible targets: adjacent
+   tabs must never overlap. Older tool routes remain recoverable. */
+.workspace-shell > .br-head {
+  display: flex; align-items: center; justify-content: space-between; gap: 24px;
+  padding: 22px max(24px, calc((100vw - 1216px) / 2)); text-align: left;
+}
+.workspace-shell .studio-brand { flex-shrink: 0; text-decoration: none; }
+.workspace-shell .studio-brand .br-title {
+  display: block; font-size: 29px; line-height: 1.15; letter-spacing: -.8px;
+}
+.workspace-shell .studio-brand .br-sub {
+  display: block; margin: 5px 0 0; font-size: 10px; line-height: 1.5; letter-spacing: 1.8px;
+}
+.workspace-shell .br-nav { display: flex; flex-wrap: nowrap; align-items: center; gap: 5px; margin: 0; }
+.workspace-shell .br-nav a {
+  display: flex; align-items: center; justify-content: center;
+  padding: 12px 17px; min-height: 46px; border: 1px solid transparent; border-radius: 5px;
+  font: 14px/1.4 Arial, sans-serif; text-decoration: none; white-space: nowrap;
+}
+.workspace-shell .br-nav a::after, .workspace-shell .br-logout button::after { content: none; }
+.workspace-shell .br-nav a[aria-current=page] {
+  border-color: var(--desk-ink); background: var(--desk-ink); color: #fff; font-weight: 600;
+}
+.workspace-shell .br-nav a:not([aria-current]):hover { background: #e8e5dd; color: var(--desk-ink); }
+.workspace-shell .br-nav a:focus-visible, .workspace-shell .studio-brand:focus-visible,
+.studio-footer :focus-visible { outline: 2px solid var(--desk-ink); outline-offset: 4px; }
+.studio-footer {
+  width: min(1216px, calc(100% - 48px)); display: flex; align-items: baseline; flex-wrap: wrap;
+  gap: 8px 26px; margin: auto auto 0; padding: 22px 0; border-top: 1px solid var(--desk-line);
+  font: 12px/1.6 Arial, sans-serif; color: var(--desk-muted);
+}
+.studio-footer > p { margin-right: auto; }
+.studio-resources summary { min-height: 44px; padding: 12px 0; cursor: pointer; }
+.studio-resources nav { display: grid; gap: 0; padding-bottom: 8px; }
+.studio-resources a { padding: 10px 0; min-height: 44px; text-underline-offset: 4px; }
+.studio-footer .br-logout { margin: 0; }
+.studio-footer .br-logout button {
+  min-height: 44px; padding: 12px 4px; border: 0; color: var(--desk-muted);
+  font: 12px/1.6 Arial, sans-serif; letter-spacing: 0; text-transform: none;
+}
+@media (max-width: 760px) {
+  .workspace-shell > .br-head { display: block; padding: 19px 20px 13px; }
+  .workspace-shell .studio-brand { display: inline-block; margin-bottom: 17px; }
+  .workspace-shell .studio-brand .br-title { font-size: 27px; }
+  .workspace-shell .br-nav { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 3px; }
+  .workspace-shell .br-nav a { padding: 12px 4px; font-size: 13px; }
+  .studio-footer { width: calc(100% - 40px); gap: 0 24px; }
+  .studio-footer > p { flex-basis: 100%; margin-bottom: 8px; }
+}
+@media (max-width: 360px) {
+  .workspace-shell > .br-head { padding-inline: 14px; }
+  .workspace-shell .br-nav a { font-size: 12px; }
+}
+@media print { .workspace-shell > .studio-footer { display: none !important; } }

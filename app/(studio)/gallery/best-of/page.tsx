@@ -6,7 +6,7 @@ import type { BestOfCartoon } from "@/lib/best-of-cartoons";
 import "./best-of.css";
 
 export const metadata: Metadata = {
-  title: "Selected Cartoons",
+  title: "Cartoons",
   description:
     "Spend a little time at The Swinging Door: a collection of black-and-white cartoons about money, modern life, and the people around the bar.",
 };

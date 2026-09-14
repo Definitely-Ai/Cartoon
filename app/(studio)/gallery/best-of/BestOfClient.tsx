@@ -30,6 +30,8 @@ export default function BestOfClient({ cartoons, edition }: BestOfClientProps) {
   const [speaker, setSpeaker] = useState<SpeakerFilter>("all");
   const [cast, setCast] = useState<CastFilter>("all");
   const [query, setQuery] = useState("");
+  const [filtersOpen, setFiltersOpen] = useState(false);
+  const activeFilterCount = Number(speaker !== "all") + Number(cast !== "all");
   const searchWords = query.trim().toLocaleLowerCase("en-US").split(/\s+/).filter(Boolean);
   const hasFilters = speaker !== "all" || cast !== "all" || searchWords.length > 0;
 
@@ -60,24 +62,16 @@ export default function BestOfClient({ cartoons, edition }: BestOfClientProps) {
     <main className="best-of-page" id="content">
       <header className="best-of-intro" aria-labelledby="best-of-heading">
         <div className="best-of-intro-copy">
-          <p className="best-of-eyebrow">The collection · Selected cartoons</p>
-          <h1 id="best-of-heading">From the bar,<br /><em>with perspective.</em></h1>
+          <p className="best-of-eyebrow">The collection · {edition.count} cartoons</p>
+          <h1 id="best-of-heading">Cartoons.</h1>
           <p className="best-of-deck">
-            Money, modern life, and the occasional martini. Settle in with
-            Drew, Barclay, and Abby for a little perspective and a good laugh.
+            Money, modern life, and the occasional martini. Browse the collection,
+            find a favorite, and make it ready for print.
           </p>
-          <a className="best-of-download-all" href={edition.zipUrl} download>
-            Download original {edition.archiveCount} cartoons <span aria-hidden="true">↓</span>
-          </a>
-          <p className="best-of-download-note">Original collection · ZIP. New city editions are downloadable individually below.</p>
-          <p className="best-of-local-intro">New editions: Austin, Texas &amp; Los Angeles, California · September 14, 2026</p>
-          <p className="best-of-download-note"><a href="/gallery/automation">Plan a local edition in the Automation Studio →</a></p>
         </div>
-        <div className="best-of-edition" role="img" aria-label={`${edition.count} cartoons in ${edition.title}`}>
-          <span className="best-of-edition-number" aria-hidden="true">{edition.count}</span>
-          <span aria-hidden="true">Cartoons</span>
-          <span className="best-of-edition-rule" aria-hidden="true" />
-          <p aria-hidden="true">One familiar bar.<br />Plenty to talk about.</p>
+        <div className="best-of-primary-actions">
+          <Link className="best-of-download-all" href="/gallery/automation">Generate cartoons <span aria-hidden="true">→</span></Link>
+          <Link href="/gallery/presentation">Present &amp; print the collection</Link>
         </div>
       </header>
 
@@ -102,6 +96,10 @@ export default function BestOfClient({ cartoons, edition }: BestOfClientProps) {
             </div>
           </div>
 
+          <button className="best-of-filter-toggle" type="button" aria-expanded={filtersOpen} aria-controls="best-of-filter-fields" onClick={() => setFiltersOpen(open => !open)}>
+            Filters{activeFilterCount > 0 ? ` (${activeFilterCount})` : ""} <span aria-hidden="true">{filtersOpen ? "−" : "+"}</span>
+          </button>
+          <div id="best-of-filter-fields" className="best-of-filter-fields" hidden={!filtersOpen}>
           <fieldset className="best-of-filter">
             <legend>Who’s speaking?</legend>
             <div className="best-of-filter-options">
@@ -135,6 +133,7 @@ export default function BestOfClient({ cartoons, edition }: BestOfClientProps) {
               ))}
             </div>
           </fieldset>
+          </div>
         </div>
 
         <div className="best-of-results-heading">
@@ -223,6 +222,7 @@ export default function BestOfClient({ cartoons, edition }: BestOfClientProps) {
 
       <footer className="best-of-note">
         <div>
+          <a className="best-of-archive-download" href={edition.zipUrl} download>Download the original {edition.archiveCount}-cartoon archive · ZIP</a>
           <p className="best-of-eyebrow">A familiar setting. A fresh conversation.</p>
           <p>
             These cartoons are fiction. Dialogue, menu prices, and illustrated TV scenes are

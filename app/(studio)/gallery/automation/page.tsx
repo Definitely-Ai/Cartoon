@@ -5,8 +5,8 @@ import GenerateStudio from "./GenerateStudio";
 import "./generate.css";
 
 export const metadata: Metadata = {
-  title: "Automation Studio",
-  description: "Plan local cartoon editions, explore the fixed-set production workflow, and prepare a dated or recurring edition brief for The Swinging Door.",
+  title: "Generate cartoons",
+  description: "Choose a city, state, and quantity. Follow real production progress and see your finished cartoons in The Swinging Door studio.",
 };
 export const dynamic = "force-dynamic";
 
