@@ -68,6 +68,7 @@ export default function BestOfClient({ cartoons, edition }: BestOfClientProps) {
             Download all {edition.count} cartoons <span aria-hidden="true">↓</span>
           </a>
           <p className="best-of-download-note">The complete collection, in full-size PNGs · ZIP</p>
+          <p className="best-of-download-note"><a href="/gallery/automation">Plan a local edition in the Automation Studio →</a></p>
         </div>
         <div className="best-of-edition" role="img" aria-label={`${edition.count} cartoons in ${edition.title}`}>
           <span className="best-of-edition-number" aria-hidden="true">{edition.count}</span>
