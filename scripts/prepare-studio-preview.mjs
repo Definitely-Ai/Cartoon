@@ -135,6 +135,23 @@ export async function prepareStudioPreview({ source, out, dryRun = false }) {
   for (const relative of ["lib/gallery-manifest.json", "public/gallery/manifest.json"]) {
     galleryFiles(JSON.parse(await fs.readFile(path.join(root, relative), "utf8")), gallery);
   }
+  // Historical packages have no best-of collection. When present, retain its
+  // reviewed originals and previews without scanning unrelated gallery files.
+  const bestOfManifest = "lib/best-of-cartoons.json";
+  if (planned.has(bestOfManifest)) {
+    const editions = JSON.parse(await fs.readFile(planned.get(bestOfManifest).absolute, "utf8"));
+    if (!Array.isArray(editions)) throw new Error("Best-of manifest must be an array.");
+    for (const item of editions) {
+      const images = [item?.src, item?.previewSrc];
+      if (!images.every((url) => typeof url === "string" && url.startsWith("/gallery/best-of-v1/"))) {
+        throw new Error("Best-of entries require original and preview gallery image URLs.");
+      }
+      galleryFiles(images, gallery);
+    }
+    // Deliberately separate from the image-only URL scanner; do not permit
+    // arbitrary downloads or weaken its extension/traversal checks.
+    await add("public/gallery/best-of-v1/swinging-door-best-of-38-pngs.zip");
+  }
   for (const relative of gallery) await add(relative);
 
   let vercel = {};

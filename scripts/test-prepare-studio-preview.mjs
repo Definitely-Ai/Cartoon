@@ -97,6 +97,61 @@ test("existing destinations, inventories, nested output and manifest traversal a
   } finally { await f.cleanup(); }
 });
 
+test("optional best-of originals, previews and fixed ZIP survive packaging and the snapshot hook", async () => {
+  const f = await fixture();
+  try {
+    const original = "public/gallery/best-of-v1/originals/example.png";
+    const preview = "public/gallery/best-of-v1/previews/example.webp";
+    const archive = "public/gallery/best-of-v1/swinging-door-best-of-38-pngs.zip";
+    const manifest = JSON.stringify([{ id: "example", src: `/${original.slice(7)}`, previewSrc: `/${preview.slice(7)}` }]);
+    await f.write("lib/best-of-cartoons.json", manifest);
+    for (const file of [original, preview, archive]) await f.write(file, `Exact bytes: ${file}`);
+    await f.write("public/gallery/best-of-v1/originals/unselected.png");
+    await f.write("public/gallery/best-of-v1/unselected.zip");
+    await f.write("scripts/prepare-best-of.mjs", 'import { writeFileSync } from "node:fs"; if (process.env.STUDIO_ASSET_MODE !== "snapshot") throw Error("missing snapshot mode"); writeFileSync("best-of-hook-ran.txt", "snapshot");');
+    await f.write("scripts/prebuild.mjs", 'await import("./prepare-best-of.mjs"); if (process.env.STUDIO_ASSET_MODE === "snapshot") process.exit(0); throw Error("missing snapshot mode");');
+    const dry = await prepareStudioPreview({ ...f, dryRun: true });
+    assert.equal(dry.galleryImages, 4);
+    await assert.rejects(fs.stat(f.out), { code: "ENOENT" });
+    const result = await prepareStudioPreview(f);
+    assert.equal(result.galleryImages, 4);
+    for (const file of [original, preview, archive]) {
+      assert.deepEqual(await fs.readFile(path.join(f.out, file)), await fs.readFile(path.join(f.source, file)));
+    }
+    assert.equal(await fs.readFile(path.join(f.out, "lib/best-of-cartoons.json"), "utf8"), manifest);
+    assert.equal(await fs.readFile(path.join(f.out, "lib/gallery-manifest.json"), "utf8"), f.manifest);
+    assert.equal(await fs.readFile(path.join(f.out, "public/gallery/manifest.json"), "utf8"), f.manifest);
+    for (const file of ["public/gallery/best-of-v1/originals/unselected.png", "public/gallery/best-of-v1/unselected.zip"]) {
+      await assert.rejects(fs.stat(path.join(f.out, file)), { code: "ENOENT" });
+    }
+    const build = spawnSync(process.execPath, ["scripts/build-studio-snapshot.mjs"], { cwd: f.out, encoding: "utf8", timeout: 20_000 });
+    assert.equal(build.status, 0, build.stderr || build.stdout);
+    assert.equal(await fs.readFile(path.join(f.out, "best-of-hook-ran.txt"), "utf8"), "snapshot");
+  } finally { await f.cleanup(); }
+});
+
+test("best-of missing files and unsafe image URLs fail before creating a package", async () => {
+  const f = await fixture();
+  try {
+    const src = "/gallery/best-of-v1/originals/example.png";
+    const previewSrc = "/gallery/best-of-v1/previews/example.webp";
+    await f.write(src.slice(1).replace(/^gallery\//, "public/gallery/"));
+    await f.write("lib/best-of-cartoons.json", JSON.stringify([{ src, previewSrc }]));
+    await assert.rejects(prepareStudioPreview(f), /Missing required source file: public\/gallery\/best-of-v1\/swinging-door-best-of-38-pngs\.zip/);
+    await f.write("public/gallery/best-of-v1/swinging-door-best-of-38-pngs.zip");
+    await assert.rejects(prepareStudioPreview(f), /Missing required source file: public\/gallery\/best-of-v1\/previews\/example\.webp/);
+    for (const unsafe of ["/gallery/best-of-v1/%2e%2e/.env.local", "/gallery/best-of-v1/unselected.zip", "/gallery/best-of-v1/previews/example.webp?download=1"]) {
+      await f.write("lib/best-of-cartoons.json", JSON.stringify([{ src, previewSrc: unsafe }]));
+      await assert.rejects(prepareStudioPreview(f), /Unsafe gallery URL/);
+    }
+    await f.write("lib/best-of-cartoons.json", JSON.stringify([{ src }]));
+    await assert.rejects(prepareStudioPreview(f), /require original and preview/);
+    await f.write("lib/best-of-cartoons.json", "{}");
+    await assert.rejects(prepareStudioPreview(f), /must be an array/);
+    await assert.rejects(fs.stat(f.out), { code: "ENOENT" });
+  } finally { await f.cleanup(); }
+});
+
 test("missing referenced art and directory junctions are rejected before copying", async () => {
   const f = await fixture();
   try {

@@ -1,0 +1,682 @@
+[
+  {
+    "id": "suitcase-first-class",
+    "title": "suitcase first class",
+    "speaker": "Barclay",
+    "variant": "duo",
+    "caption": "I can afford the flight; it's my suitcase that wants to travel first class.",
+    "src": "/gallery/best-of-v1/originals/suitcase-first-class.png",
+    "previewSrc": "/gallery/best-of-v1/previews/suitcase-first-class.webp",
+    "width": 1024,
+    "height": 1536,
+    "sha256": "b9258ae4826b9ea1e466ca22de2c1348009da4e87da7de79d1a99b7a1b40fe14",
+    "tv": "BAGGAGE FEES",
+    "board": [
+      "To-go lunch $14",
+      "Bag travels free"
+    ]
+  },
+  {
+    "id": "individual-flakes",
+    "title": "individual flakes",
+    "speaker": "Drew",
+    "variant": "duo",
+    "caption": "The cereal's the same price, but I'm beginning to recognize the individual flakes.",
+    "src": "/gallery/best-of-v1/originals/individual-flakes.png",
+    "previewSrc": "/gallery/best-of-v1/previews/individual-flakes.webp",
+    "width": 1024,
+    "height": 1536,
+    "sha256": "4d8a18f0ecc87f99ae95d8df51be2181b46746fbd9e87bc50da93a0df0edbd99",
+    "tv": "GROCERY PRICES",
+    "board": [
+      "Granola $7",
+      "Small bowl",
+      "Same spoon"
+    ]
+  },
+  {
+    "id": "professional-opposition",
+    "title": "professional opposition",
+    "speaker": "Barclay",
+    "variant": "trio",
+    "caption": "I pay for financial advice so my second-guessing has professional opposition.",
+    "src": "/gallery/best-of-v1/originals/professional-opposition.png",
+    "previewSrc": "/gallery/best-of-v1/previews/professional-opposition.webp",
+    "width": 1024,
+    "height": 1536,
+    "sha256": "012e5a9a3e3163b0a093046fc61a2f5a4fcf50c5b91a3f3eb3e7a85671c6756d",
+    "tv": "FINANCIAL PLANNING",
+    "board": [
+      "Chef's choice",
+      "$18",
+      "Feel free to",
+      "disagree"
+    ]
+  },
+  {
+    "id": "zero-proof-full-bill",
+    "title": "zero proof full bill",
+    "speaker": "Abby",
+    "variant": "trio",
+    "caption": "I've priced the nonalcoholic cocktails to preserve the full experience of reading the bill.",
+    "src": "/gallery/best-of-v1/originals/zero-proof-full-bill.png",
+    "previewSrc": "/gallery/best-of-v1/previews/zero-proof-full-bill.webp",
+    "width": 1024,
+    "height": 1536,
+    "sha256": "80270403b434c0a0bd0124d442e80d985d06a0761b3a6a213ddc275ccc7ac4a2",
+    "tv": "ZERO-PROOF MENUS",
+    "board": [
+      "Spritz $14",
+      "No spirits",
+      "Full glass"
+    ]
+  },
+  {
+    "id": "quiet-arrivals",
+    "title": "quiet arrivals",
+    "speaker": "Drew",
+    "variant": "duo",
+    "caption": "I'm against airport noise, except when it's bringing my grandchildren.",
+    "src": "/gallery/best-of-v1/originals/quiet-arrivals.png",
+    "previewSrc": "/gallery/best-of-v1/previews/quiet-arrivals.webp",
+    "width": 1024,
+    "height": 1536,
+    "sha256": "61a628d9cddd20085f0c58e68b513f9ed40ccfbff625fb66ae22a9e45fb33c6b",
+    "tv": "AIRPORT NOISE",
+    "board": [
+      "Lunch $14",
+      "Free cookies",
+      "Crumbs OK"
+    ]
+  },
+  {
+    "id": "company-olive-oil",
+    "title": "company olive oil",
+    "speaker": "Barclay",
+    "variant": "duo",
+    "caption": "I used to save the good wine for company. Now it's the olive oil.",
+    "src": "/gallery/best-of-v1/originals/company-olive-oil.png",
+    "previewSrc": "/gallery/best-of-v1/previews/company-olive-oil.webp",
+    "width": 1024,
+    "height": 1536,
+    "sha256": "98d23ec45c5ec07d65f3777ca1687f505079a1e10d97ee9aaa383276c09ca964",
+    "tv": "GROCERY PRICES",
+    "board": [
+      "Bread $7",
+      "Butter free",
+      "Oil: market",
+      "price"
+    ]
+  },
+  {
+    "id": "rare-opportunity-street",
+    "title": "rare opportunity street",
+    "speaker": "Drew",
+    "variant": "trio",
+    "caption": "The listing calls it a ‘rare opportunity’—there are twelve more on the same street.",
+    "src": "/gallery/best-of-v1/originals/rare-opportunity-street.png",
+    "previewSrc": "/gallery/best-of-v1/previews/rare-opportunity-street.webp",
+    "width": 1024,
+    "height": 1536,
+    "sha256": "92134c368c138052c939265d5a27f3e58dfea19d573e8e128e5a081bd84307bf",
+    "tv": "HOME LISTINGS",
+    "board": [
+      "Soup $14",
+      "Limited offer",
+      "Every day"
+    ]
+  },
+  {
+    "id": "fitted-excuses",
+    "title": "fitted excuses",
+    "speaker": "Barclay",
+    "variant": "duo",
+    "caption": "I've invested in better golf clubs; my excuses are now professionally fitted.",
+    "src": "/gallery/best-of-v1/originals/fitted-excuses.png",
+    "previewSrc": "/gallery/best-of-v1/previews/fitted-excuses.webp",
+    "width": 1024,
+    "height": 1536,
+    "sha256": "16dca7e9e31ebacd278bfd83ef3229b36b0a5a8c048960446ca0bfb776a0c281",
+    "tv": "GOLF EQUIPMENT",
+    "board": [
+      "Club sandwich",
+      "$15",
+      "Cut to fit"
+    ]
+  },
+  {
+    "id": "divide-the-credit",
+    "title": "divide the credit",
+    "speaker": "Abby",
+    "variant": "trio",
+    "caption": "I'll split the bill. You can divide the credit for predicting the market.",
+    "src": "/gallery/best-of-v1/originals/divide-the-credit.png",
+    "previewSrc": "/gallery/best-of-v1/previews/divide-the-credit.webp",
+    "width": 1024,
+    "height": 1536,
+    "sha256": "49627a1adf5a41f57f076523f1d9d17f414177c470b26a1f49747405bfe3664f",
+    "tv": "MARKET FORECASTS",
+    "board": [
+      "Platter $24",
+      "Two forks",
+      "Last shrimp"
+    ]
+  },
+  {
+    "id": "savings-subscription",
+    "title": "savings subscription",
+    "speaker": "Barclay",
+    "variant": "duo",
+    "caption": "I canceled my subscriptions, then subscribed to an app that tracks the savings.",
+    "src": "/gallery/best-of-v1/originals/savings-subscription.png",
+    "previewSrc": "/gallery/best-of-v1/previews/savings-subscription.webp",
+    "width": 1024,
+    "height": 1536,
+    "sha256": "48095bc1f4ace81d8f9cdfcab3b121a6a60f8a30e51987368c8cdca3960a9f4e",
+    "tv": "SUBSCRIPTION COSTS",
+    "board": [
+      "Tea $4",
+      "One cup",
+      "No renewal"
+    ]
+  },
+  {
+    "id": "seasonal-one-chair",
+    "title": "seasonal one chair",
+    "speaker": "Drew",
+    "variant": "duo",
+    "caption": "Our idea of seasonal living is paying two utility bills while occupying one chair.",
+    "src": "/gallery/best-of-v1/originals/seasonal-one-chair.png",
+    "previewSrc": "/gallery/best-of-v1/previews/seasonal-one-chair.webp",
+    "width": 1024,
+    "height": 1536,
+    "sha256": "535b420b1e7a525a635103edf3f80620a311da4e74175023adf0182e4c4e4baf",
+    "tv": "SECOND-HOME BUDGETS",
+    "board": [
+      "Lunch $16",
+      "Inside: $0",
+      "Outside: $0"
+    ]
+  },
+  {
+    "id": "private-golf-budget",
+    "title": "private golf budget",
+    "speaker": "Barclay",
+    "variant": "duo",
+    "caption": "I want full transparency on city spending. My golf bill is a personal matter.",
+    "src": "/gallery/best-of-v1/originals/private-golf-budget.png",
+    "previewSrc": "/gallery/best-of-v1/previews/private-golf-budget.webp",
+    "width": 1024,
+    "height": 1536,
+    "sha256": "9c21ebe96eb9a0d2b215b4ccf8c5ee97bd5485e84c344b7d4c1e04cdbfc986d7",
+    "tv": "CITY SPENDING",
+    "board": [
+      "Club $14",
+      "Receipt in",
+      "plain",
+      "envelope"
+    ]
+  },
+  {
+    "id": "policy-suspense",
+    "title": "policy suspense",
+    "speaker": "Barclay",
+    "variant": "duo",
+    "caption": "I read my insurance policy for reassurance and stayed for the suspense.",
+    "src": "/gallery/best-of-v1/originals/policy-suspense.png",
+    "previewSrc": "/gallery/best-of-v1/previews/policy-suspense.webp",
+    "width": 1024,
+    "height": 1536,
+    "sha256": "8a47b65e06110a9d19cc04bca916c3d0c94b21deab41e63072f7e26c743f22f0",
+    "tv": "HOME INSURANCE",
+    "board": [
+      "Soup $9",
+      "With bread",
+      "No fine print"
+    ]
+  },
+  {
+    "id": "independent-club",
+    "title": "independent club",
+    "speaker": "Drew",
+    "variant": "trio",
+    "caption": "Our investment club values independent thinking, once we've checked what everyone else is buying.",
+    "src": "/gallery/best-of-v1/originals/independent-club.png",
+    "previewSrc": "/gallery/best-of-v1/previews/independent-club.webp",
+    "width": 1024,
+    "height": 1536,
+    "sha256": "d44052ada1895e255a69f65beb83a2cbc1b60c241a74e0aa3cba1fa90f2d199e",
+    "tv": "INVESTMENT RESEARCH",
+    "board": [
+      "Chef's choice $14",
+      "As seen next door"
+    ]
+  },
+  {
+    "id": "boat-show-confidence",
+    "title": "boat show confidence",
+    "speaker": "Barclay",
+    "variant": "duo",
+    "caption": "I've budgeted for everything except the confidence I get at a boat show.",
+    "src": "/gallery/best-of-v1/originals/boat-show-confidence.png",
+    "previewSrc": "/gallery/best-of-v1/previews/boat-show-confidence.webp",
+    "width": 1024,
+    "height": 1536,
+    "sha256": "317b1fdd0bcba803fc22767fddbbd4a75a853a0e6a8d157c9461b5ac7348c7c3",
+    "tv": "BOAT SHOPPING",
+    "board": [
+      "Lobster roll",
+      "From $26"
+    ]
+  },
+  {
+    "id": "certain-tab",
+    "title": "certain tab",
+    "speaker": "Abby",
+    "variant": "trio",
+    "caption": "Before we discuss your guaranteed investment, I'd like to settle this uncertain bar tab.",
+    "src": "/gallery/best-of-v1/originals/certain-tab.png",
+    "previewSrc": "/gallery/best-of-v1/previews/certain-tab.webp",
+    "width": 1024,
+    "height": 1536,
+    "sha256": "258b36901a488bb166970d0694bc8f67aa30800ebb15f1d1295a9c2b4c44ea8b",
+    "tv": "INVESTMENT CLAIMS",
+    "board": [
+      "Espresso $4",
+      "Talk futures",
+      "Pay today"
+    ]
+  },
+  {
+    "id": "quiet-mortgage-barclay",
+    "title": "quiet mortgage barclay",
+    "speaker": "Barclay",
+    "variant": "duo",
+    "caption": "I paid extra for a quiet neighborhood. Now I can hear myself worrying about the mortgage.",
+    "src": "/gallery/best-of-v1/originals/quiet-mortgage-barclay.png",
+    "previewSrc": "/gallery/best-of-v1/previews/quiet-mortgage-barclay.webp",
+    "width": 1024,
+    "height": 1536,
+    "sha256": "8d2b2a7f6acfcb95bc5ae3313775bee939cd7bac8aa7aeff061a82a53b54f115",
+    "tv": "NEIGHBORHOOD PRICES",
+    "board": [
+      "Lunch $12",
+      "Quiet: 12-2",
+      "Bill at 2:01"
+    ]
+  },
+  {
+    "id": "loyalty-adjectives",
+    "title": "loyalty adjectives",
+    "speaker": "Drew",
+    "variant": "duo",
+    "caption": "Our loyalty points buy less every year, but our status keeps acquiring adjectives.",
+    "src": "/gallery/best-of-v1/originals/loyalty-adjectives.png",
+    "previewSrc": "/gallery/best-of-v1/previews/loyalty-adjectives.webp",
+    "width": 1024,
+    "height": 1536,
+    "sha256": "9e71b76bf954d5d9f0269cb6109bee4ab667c2ba7b8414001d5eef742d3eefda",
+    "tv": "TRAVEL REWARDS",
+    "board": [
+      "Preferred: coffee $4",
+      "Valued: coffee $4"
+    ]
+  },
+  {
+    "id": "bulk-commitment",
+    "title": "bulk commitment",
+    "speaker": "Barclay",
+    "variant": "duo",
+    "caption": "Buying in bulk is how I made mayonnaise a long-term commitment.",
+    "src": "/gallery/best-of-v1/originals/bulk-commitment.png",
+    "previewSrc": "/gallery/best-of-v1/previews/bulk-commitment.webp",
+    "width": 1024,
+    "height": 1536,
+    "sha256": "a3b8e2cf17534c439a6630da1e5a8902f5b50326233de7875298c385bdcb992b",
+    "tv": "BULK SHOPPING",
+    "board": [
+      "Family dip $12",
+      "Party optional"
+    ]
+  },
+  {
+    "id": "reliable-amenity",
+    "title": "reliable amenity",
+    "speaker": "Drew",
+    "variant": "duo",
+    "caption": "Our condo's most reliable amenity is the automatic payment system.",
+    "src": "/gallery/best-of-v1/originals/reliable-amenity.png",
+    "previewSrc": "/gallery/best-of-v1/previews/reliable-amenity.webp",
+    "width": 1024,
+    "height": 1536,
+    "sha256": "67820038ea576bc2646762cb51a7bbe4efcb3056ca54f59d35cae88173056c95",
+    "tv": "CONDO AMENITIES",
+    "board": [
+      "Club lunch $15",
+      "Kitchen: 12-2",
+      "Billing: 24/7"
+    ]
+  },
+  {
+    "id": "password-inheritance",
+    "title": "password inheritance",
+    "speaker": "Barclay",
+    "variant": "trio",
+    "caption": "I've left my children everything, including the password recovery questions.",
+    "src": "/gallery/best-of-v1/originals/password-inheritance.png",
+    "previewSrc": "/gallery/best-of-v1/previews/password-inheritance.webp",
+    "width": 1024,
+    "height": 1536,
+    "sha256": "cba6a253fcbc4623dda42e08d8b9a702d33ef318a7a186546f0295b72deb23d8",
+    "tv": "DIGITAL ESTATES",
+    "board": [
+      "Family pie",
+      "$12",
+      "Recipe hint:",
+      "Grandma"
+    ]
+  },
+  {
+    "id": "karaoke-absence",
+    "title": "karaoke absence",
+    "speaker": "Abby",
+    "variant": "trio",
+    "caption": "I've stopped calling it a cover charge; you're funding the absence of karaoke.",
+    "src": "/gallery/best-of-v1/originals/karaoke-absence.png",
+    "previewSrc": "/gallery/best-of-v1/previews/karaoke-absence.webp",
+    "width": 1024,
+    "height": 1536,
+    "sha256": "7f6d3e7a4e1ec04f123f3b1ddd8f4c43d0ebaab99c922108e2a48f0a62ca054a",
+    "tv": "AN EVENING OUT",
+    "board": [
+      "Dinner $24",
+      "Quiet table",
+      "Same price"
+    ]
+  },
+  {
+    "id": "dues-day-job",
+    "title": "dues day job",
+    "speaker": "Barclay",
+    "variant": "trio",
+    "caption": "Playing enough golf to justify the dues has become my full-time job.",
+    "src": "/gallery/best-of-v1/originals/dues-day-job.png",
+    "previewSrc": "/gallery/best-of-v1/previews/dues-day-job.webp",
+    "width": 1024,
+    "height": 1536,
+    "sha256": "47ed89ff88aa1cb073ca7159eaddecf61efa013b4081d8ff46734b708ca04c32",
+    "tv": "GOLF MEMBERSHIPS",
+    "board": [
+      "Club sandwich",
+      "Member $16",
+      "Guest $16"
+    ]
+  },
+  {
+    "id": "premium-uncertainty",
+    "title": "premium uncertainty",
+    "speaker": "Drew",
+    "variant": "duo",
+    "caption": "Our investment newsletter is always confident; uncertainty must be in the premium edition.",
+    "src": "/gallery/best-of-v1/originals/premium-uncertainty.png",
+    "previewSrc": "/gallery/best-of-v1/previews/premium-uncertainty.webp",
+    "width": 1024,
+    "height": 1536,
+    "sha256": "c24625b6966ab275fed93b57e03edfd29da3b6617592f1bf2ec4be0cb54d323a",
+    "tv": "INVESTMENT COMMENTARY",
+    "board": [
+      "Chef's guess $17",
+      "Chef's special $17"
+    ]
+  },
+  {
+    "id": "suspicious-savings",
+    "title": "suspicious savings",
+    "speaker": "Barclay",
+    "variant": "trio",
+    "caption": "My home insurance premium went down, so I called to report suspicious activity.",
+    "src": "/gallery/best-of-v1/originals/suspicious-savings.png",
+    "previewSrc": "/gallery/best-of-v1/previews/suspicious-savings.webp",
+    "width": 1024,
+    "height": 1536,
+    "sha256": "0d9a95e2de999f21b3ac8737b3072154acc0502232a53215ea2569078d5da63a",
+    "tv": "HOME INSURANCE",
+    "board": [
+      "Soup $8",
+      "Was $9",
+      "Not a typo"
+    ]
+  },
+  {
+    "id": "miscellaneous-lifestyle",
+    "title": "miscellaneous lifestyle",
+    "speaker": "Drew",
+    "variant": "duo",
+    "caption": "My budget has a miscellaneous category. That is where I keep the lifestyle.",
+    "src": "/gallery/best-of-v1/originals/miscellaneous-lifestyle.png",
+    "previewSrc": "/gallery/best-of-v1/previews/miscellaneous-lifestyle.webp",
+    "width": 1024,
+    "height": 1536,
+    "sha256": "180fc0ba232e9582bd471665a12c2cfc4a8191e4257769dcc9a37c76652ad6f7",
+    "tv": "PERSONAL BUDGETS",
+    "board": [
+      "Small extras",
+      "Caviar toast $22"
+    ]
+  },
+  {
+    "id": "waterfront-by-the-hour",
+    "title": "waterfront by the hour",
+    "speaker": "Barclay",
+    "variant": "duo",
+    "caption": "I finally rented something near the beach I could afford: a parking space.",
+    "src": "/gallery/best-of-v1/originals/waterfront-by-the-hour.png",
+    "previewSrc": "/gallery/best-of-v1/previews/waterfront-by-the-hour.webp",
+    "width": 1024,
+    "height": 1536,
+    "sha256": "9dd79c0c7a12be66f98d59982fec681e3ebcf42b5f618b0744d81e3345a874d8",
+    "tv": "BEACH PARKING",
+    "board": [
+      "Iced tea $4",
+      "Coaster $2/hour"
+    ]
+  },
+  {
+    "id": "airfare-steak",
+    "title": "airfare steak",
+    "speaker": "Drew",
+    "variant": "duo",
+    "caption": "We now book flights the way we order steak: everything else costs extra.",
+    "src": "/gallery/best-of-v1/originals/airfare-steak.png",
+    "previewSrc": "/gallery/best-of-v1/previews/airfare-steak.webp",
+    "width": 1024,
+    "height": 1536,
+    "sha256": "4c0a6b73127b22dc9995600ab74ef7b6e780367215aec81c0644b8fc3c3baaa2",
+    "tv": "AIRFARE ADD-ONS",
+    "board": [
+      "Lunch special $15",
+      "Window table +$3"
+    ]
+  },
+  {
+    "id": "cheese-counter-draft",
+    "title": "cheese counter draft",
+    "speaker": "Barclay",
+    "variant": "trio",
+    "caption": "I go grocery shopping with a list; the cheese counter treats it as a draft.",
+    "src": "/gallery/best-of-v1/originals/cheese-counter-draft.png",
+    "previewSrc": "/gallery/best-of-v1/previews/cheese-counter-draft.webp",
+    "width": 1024,
+    "height": 1536,
+    "sha256": "d1b54e1d8139e16c28cacf8c6d250fcc42683a46affff464f0ea212d5a77502e",
+    "tv": "GROCERY PLANNING",
+    "board": [
+      "Soup $9",
+      "Cheese +$3",
+      "Chef's suggestion"
+    ]
+  },
+  {
+    "id": "city-salad",
+    "title": "city salad",
+    "speaker": "Drew",
+    "variant": "duo",
+    "caption": "Our city budget is a group dinner where everyone insists they only had the salad.",
+    "src": "/gallery/best-of-v1/originals/city-salad.png",
+    "previewSrc": "/gallery/best-of-v1/previews/city-salad.webp",
+    "width": 1024,
+    "height": 1536,
+    "sha256": "3af7e4bbff549ef5faf95867cf797d9a05332764ff05020b5b94ea723dc431be",
+    "tv": "CITY BUDGETS",
+    "board": [
+      "Platter $24",
+      "Four forks",
+      "One check",
+      "Four vetoes"
+    ]
+  },
+  {
+    "id": "boat-allowance",
+    "title": "boat allowance",
+    "speaker": "Barclay",
+    "variant": "duo",
+    "caption": "My boat's paid for; it still expects an allowance.",
+    "src": "/gallery/best-of-v1/originals/boat-allowance.png",
+    "previewSrc": "/gallery/best-of-v1/previews/boat-allowance.webp",
+    "width": 1024,
+    "height": 1536,
+    "sha256": "97092448107263cec39e11bb89dcdb417de6e8d21693e050fd95d21c2f5d9dc4",
+    "tv": "BOAT OWNERSHIP",
+    "board": [
+      "Dockside lunch $16",
+      "No upkeep fees"
+    ]
+  },
+  {
+    "id": "services-watching",
+    "title": "services watching",
+    "speaker": "Drew",
+    "variant": "duo",
+    "caption": "My streaming services are now watching me for signs of cancellation.",
+    "src": "/gallery/best-of-v1/originals/services-watching.png",
+    "previewSrc": "/gallery/best-of-v1/previews/services-watching.webp",
+    "width": 1024,
+    "height": 1536,
+    "sha256": "c7d1646449eab45c11d117d639d0719dd749cb79a409bc42ecb54fe89141a10a",
+    "tv": "TV SUBSCRIPTIONS",
+    "board": [
+      "Coffee $4",
+      "Leaving already?",
+      "Free biscuit"
+    ]
+  },
+  {
+    "id": "paid-off-condo",
+    "title": "paid off condo",
+    "speaker": "Barclay",
+    "variant": "duo",
+    "caption": "I paid off my condo. The monthly fees haven't heard the news.",
+    "src": "/gallery/best-of-v1/originals/paid-off-condo.png",
+    "previewSrc": "/gallery/best-of-v1/previews/paid-off-condo.webp",
+    "width": 1024,
+    "height": 1536,
+    "sha256": "9e270a3ab0237be39e6ae7cdfc6f6e1d4b8f2173c0987aaca6bde715ce6ba31c",
+    "tv": "CONDO COSTS",
+    "board": [
+      "Martini $18",
+      "Coaster dues",
+      "$2"
+    ]
+  },
+  {
+    "id": "inheritance-boat-vote",
+    "title": "inheritance boat vote",
+    "speaker": "Barclay",
+    "variant": "duo",
+    "caption": "My financial plan includes leaving something for the children. They're voting against my new boat.",
+    "src": "/gallery/best-of-v1/originals/inheritance-boat-vote.png",
+    "previewSrc": "/gallery/best-of-v1/previews/inheritance-boat-vote.webp",
+    "width": 1024,
+    "height": 1536,
+    "sha256": "9bf4936b27890883bb96ee84940a256ccb94fe15cb333b11a107c1491b945f5f",
+    "tv": "BOAT SHOPPING",
+    "board": [
+      "Family meal",
+      "$24",
+      "One order",
+      "Three votes"
+    ]
+  },
+  {
+    "id": "fond-of-mortgage",
+    "title": "fond of mortgage",
+    "speaker": "Barclay",
+    "variant": "trio",
+    "caption": "I'd sell the house, but I've grown fond of the mortgage.",
+    "src": "/gallery/best-of-v1/originals/fond-of-mortgage.png",
+    "previewSrc": "/gallery/best-of-v1/previews/fond-of-mortgage.webp",
+    "width": 1024,
+    "height": 1536,
+    "sha256": "665e67152c0c940829ddb333f26777f99a32959cea7034fc209592f5648e5bb3",
+    "tv": "HOME MORTGAGES",
+    "board": [
+      "Lunch $12",
+      "New menu $16",
+      "Stay put"
+    ]
+  },
+  {
+    "id": "exclusions-imagination",
+    "title": "exclusions imagination",
+    "speaker": "Barclay",
+    "variant": "trio",
+    "caption": "I bought coverage for everything I could imagine; the exclusions have better imaginations.",
+    "src": "/gallery/best-of-v1/originals/exclusions-imagination.png",
+    "previewSrc": "/gallery/best-of-v1/previews/exclusions-imagination.webp",
+    "width": 1024,
+    "height": 1536,
+    "sha256": "97d82610aad86e1892efc446861299b3907819070e75d641267bac1a11386cdd",
+    "tv": "READING THE POLICY",
+    "board": [
+      "Rainy-day",
+      "soup $10",
+      "Indoors only"
+    ]
+  },
+  {
+    "id": "thanksgiving-receipt",
+    "title": "thanksgiving receipt",
+    "speaker": "Barclay",
+    "variant": "duo",
+    "caption": "I went in for milk and eggs. The receipt thinks I hosted Thanksgiving.",
+    "src": "/gallery/best-of-v1/originals/thanksgiving-receipt.png",
+    "previewSrc": "/gallery/best-of-v1/previews/thanksgiving-receipt.webp",
+    "width": 1024,
+    "height": 1536,
+    "sha256": "6c9997bdfddb927d80d92122aa10cfdecf6972a555dfaa69d10d30949f659d13",
+    "tv": "GROCERY BILLS",
+    "board": [
+      "Brunch $18",
+      "Two eggs",
+      "One candle"
+    ]
+  },
+  {
+    "id": "cancellation-season",
+    "title": "cancellation season",
+    "speaker": "Barclay",
+    "variant": "duo",
+    "caption": "I subscribed for one show; canceling has become the second season.",
+    "src": "/gallery/best-of-v1/originals/cancellation-season.png",
+    "previewSrc": "/gallery/best-of-v1/previews/cancellation-season.webp",
+    "width": 1024,
+    "height": 1536,
+    "sha256": "9e0697ef431efe3ded3c0fe2dc00d5086cc62db402bf108ef0ae26103803b06a",
+    "tv": "STREAMING PLANS",
+    "board": [
+      "Tea $4",
+      "One cup",
+      "No account needed"
+    ]
+  }
+]

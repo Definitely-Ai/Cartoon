@@ -1,7 +1,15 @@
 "use client";
 
 import { useEffect, useState, useTransition, useCallback } from "react";
+import Link from "next/link";
 import type { GalleryItem } from "@/app/api/gallery/route";
+
+function captionText(caption: string) {
+  const dialogue = caption.trim().replace(/^(?:Drew|Barclay|Abby)\s*:\s*/i, "");
+  const quoted = (dialogue.startsWith('"') && dialogue.endsWith('"'))
+    || (dialogue.startsWith("“") && dialogue.endsWith("”"));
+  return quoted ? dialogue.slice(1, -1) : dialogue;
+}
 
 export default function GalleryClient({
   initialItems,
@@ -17,7 +25,7 @@ export default function GalleryClient({
   const [search, setSearch] = useState<string>("");
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const [page, setPage] = useState<number>(1);
-  const [hasMore, setHasMore] = useState<boolean>(true);
+  const [hasMore, setHasMore] = useState<boolean>(initialItems.length < initialCounts.total);
   const [loading, setLoading] = useState<boolean>(false);
   const [failedImages, setFailedImages] = useState<Set<string>>(new Set());
   const [copiedPrompt, setCopiedPrompt] = useState<boolean>(false);
@@ -143,8 +151,9 @@ export default function GalleryClient({
             <p className="gallery-eyebrow">Studio Archive & Process</p>
             <h1 className="gallery-title">The Image Vault</h1>
             <p className="gallery-sub">
-              Every cartoon cataloged with its generation prompt, background context, and design changes made.
+              The latest cartoons alongside earlier editions and master reference artwork.
             </p>
+            <p><Link href="/gallery/best-of" className="desk-text-link">Explore the 38-cartoon collection →</Link></p>
           </div>
           <div className="gallery-actions">
             <button
@@ -225,10 +234,10 @@ export default function GalleryClient({
               </div>
               <div className="gallery-card-body">
                 <h3 className="gallery-card-title">{item.title}</h3>
-                {item.caption && <p className="gallery-card-caption">&ldquo;{item.caption.replace(/^.*:\s*["“]?|["”]?$/g, "")}&rdquo;</p>}
+                {item.caption && <p className="gallery-card-caption">&ldquo;{captionText(item.caption)}&rdquo;</p>}
                 <div className="gallery-card-meta-row">
                   <span>{item.formattedTime}</span>
-                  <span style={{ color: "#c5a059" }}>Inspect Prompt & Changes →</span>
+                  <span style={{ color: "#c5a059" }}>{item.prompt ? "Inspect Prompt & Changes →" : "View cartoon →"}</span>
                 </div>
               </div>
             </div>
@@ -261,7 +270,7 @@ export default function GalleryClient({
               </button>
 
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={selectedItem.src} alt={selectedItem.title} className="gallery-modal-img" />
+              <img src={selectedItem.originalSrc || selectedItem.src} alt={selectedItem.title} className="gallery-modal-img" />
 
               <button
                 className="gallery-modal-nav-btn gallery-modal-next"
@@ -379,7 +388,7 @@ export default function GalleryClient({
 
               <div className="gallery-modal-actions">
                 <a
-                  href={selectedItem.src}
+                  href={selectedItem.originalSrc || selectedItem.src}
                   target="_blank"
                   download
                   className="gallery-btn-primary"

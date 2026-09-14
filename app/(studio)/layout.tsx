@@ -13,6 +13,7 @@ import "../workspace-legacy.css";
 // came from instead of leaving the whole row dark.
 const PLACES: Place[] = [
   { href: "/", label: "Rick’s studio" },
+  { href: "/gallery/best-of", label: "Cartoons", under: ["/gallery"] },
   { href: "/library", label: "Image library" },
   { href: "/reports", label: "Daily report" },
   { href: "/room", label: "Drawing room" },

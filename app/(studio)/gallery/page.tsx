@@ -1,6 +1,7 @@
 ﻿import GalleryClient from "./GalleryClient";
 import type { GalleryItem } from "@/app/api/gallery/route";
 import manifestData from "@/lib/gallery-manifest.json";
+import { bestOfGalleryItems } from "@/lib/best-of-cartoons";
 import "./gallery.css";
 
 export const metadata = {
@@ -11,7 +12,8 @@ export const metadata = {
 export const dynamic = "force-dynamic";
 
 export default function GalleryPage() {
-  const all = manifestData as GalleryItem[];
+  const all: GalleryItem[] = [...bestOfGalleryItems, ...(manifestData as GalleryItem[])];
+  all.sort((a, b) => (new Date(b.timestamp).getTime() || 0) - (new Date(a.timestamp).getTime() || 0));
   const initialItems = all.slice(0, 40);
   const initialCounts = {
     total: all.length,

@@ -51,3 +51,7 @@ canon/room-kit/v2/decisions/.last-pull.json
 canon/plates/work/
 tmp/
 reports/*/SHOW-images/
+
+# Derived from the selected, tracked PNG originals on every build.
+public/gallery/best-of-v1/previews/
+public/gallery/best-of-v1/*.zip

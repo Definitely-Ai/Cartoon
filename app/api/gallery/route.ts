@@ -1,11 +1,13 @@
 import { NextRequest, NextResponse } from "next/server";
 import manifestItems from "@/lib/gallery-manifest.json";
+import { bestOfGalleryItems } from "@/lib/best-of-cartoons";
 
 export interface GalleryItem {
   id: string;
   title: string;
   category: "final" | "master";
   src: string;
+  originalSrc?: string;
   caption?: string;
   tv?: string;
   tvPicture?: string;
@@ -27,7 +29,8 @@ export async function GET(request: NextRequest) {
   const page = parseInt(searchParams.get("page") || "1", 10);
   const limit = parseInt(searchParams.get("limit") || "40", 10);
 
-  let items = [...(manifestItems as GalleryItem[])];
+  const allItems: GalleryItem[] = [...bestOfGalleryItems, ...(manifestItems as GalleryItem[])];
+  let items = [...allItems];
 
   // Filter by category
   if (category !== "all") {
@@ -60,8 +63,6 @@ export async function GET(request: NextRequest) {
   const totalPages = Math.ceil(total / limit);
   const start = (page - 1) * limit;
   const pagedItems = items.slice(start, start + limit);
-
-  const allItems = manifestItems as GalleryItem[];
 
   return NextResponse.json({
     items: pagedItems,

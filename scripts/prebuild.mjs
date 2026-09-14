@@ -20,6 +20,8 @@ import { fileURLToPath } from "node:url";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const repoRoot = path.resolve(here, "..");
+// Only the selected public edition is processed, never the private studio archive.
+await import("./prepare-best-of.mjs");
 // A reviewed release package already contains its generated serving assets.
 // Rebuilding from its deliberately smaller source set would erase the archive
 // and replace the curated gallery. Validate and retain that exact snapshot.
@@ -211,11 +213,8 @@ if (fs.existsSync(ogImage)) rejectRetiredAsset(ogImage);
 // import runs the deterministic Sharp/SVG generator as part of every build.
 await import("./generate-brand-assets.mjs");
 
-// Build gallery manifest indexing all images
-try {
-  await import("./build-gallery-manifest.mjs");
-} catch (e) {
-  console.warn("prebuild: gallery manifest build notice:", e.message);
-}
+// Preserve the reviewed gallery manifests. The historical generator targets an
+// obsolete workstation path and must not silently replace curated metadata.
+// New editions have independent, validated manifests (see prepare-best-of).
 
 console.log(`prebuild: copied ${copied} cartoon(s), ${sheets} model sheet(s)`);
