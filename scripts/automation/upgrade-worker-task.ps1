@@ -19,6 +19,7 @@ $PreviousConfig=[IO.Path]::GetFullPath($PreviousConfig)
 $RuntimeRoot=[IO.Path]::GetFullPath($RuntimeRoot).TrimEnd('\')
 $Config=[IO.Path]::GetFullPath($Config)
 if($RuntimeRoot -eq $PreviousRuntimeRoot){throw 'Use a new versioned runtime.'}
+if(-not $WhatIfPreference){Start-Transcript -LiteralPath (Join-Path $RuntimeRoot ('upgrade-'+[DateTime]::UtcNow.ToString('yyyyMMddTHHmmssfffZ')+'.log')) -NoClobber | Out-Null}
 $task=Get-ScheduledTask -TaskName $TaskName -TaskPath '\'
 $sid=[Security.Principal.WindowsIdentity]::GetCurrent().User.Value
 $owner=([Security.Principal.NTAccount]::new($task.Principal.UserId)).Translate([Security.Principal.SecurityIdentifier]).Value
@@ -38,6 +39,7 @@ if($status.event -ne 'idle' -or ([DateTime]::UtcNow-[DateTime]::Parse($status.at
 $receipt=Get-Content -LiteralPath (Join-Path $PreviousRuntimeRoot 'logs\worker\worker-process.json') -Raw | ConvertFrom-Json
 $process=Get-Process -Id $receipt.pid -ErrorAction Stop
 $cim=Get-CimInstance Win32_Process -Filter "ProcessId=$($receipt.pid)"
+if($null -eq $process.StartTime -or [string]::IsNullOrEmpty($cim.CommandLine)){throw 'Run this upgrade in an elevated PowerShell window so the noninteractive process identity can be verified.'}
 if($process.StartTime.ToUniversalTime().ToString('o') -ne $receipt.startedAt -or $cim.ExecutablePath -ne $NodePath -or -not $cim.CommandLine.Contains($PreviousConfig) -or -not $cim.CommandLine.Contains($PreviousRuntimeRoot+'\scripts\automation\worker.mjs')){throw 'Worker process identity differs; left unchanged.'}
 if($PSCmdlet.ShouldProcess($TaskName,'Back up and upgrade this idle worker to the new versioned runtime')) {
   $backup=Join-Path $RuntimeRoot 'task-backups'
