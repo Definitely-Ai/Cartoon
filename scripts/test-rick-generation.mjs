@@ -30,8 +30,16 @@ test('review schema explicitly defines numeric scales and rejects percentage res
 });
 const require=createRequire(import.meta.url);
 function loadTS(file){const code=ts.transpileModule(fs.readFileSync(file,'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022,esModuleInterop:true}}).outputText;const m={exports:{}};new Function('require','module','exports',code)(id=>id.startsWith('./')?loadTS('lib/'+id.slice(2)+'.ts'):require(id),m,m.exports);return m.exports;}
-const {immediateEdition,generationProgress,US_STATES}=loadTS('lib/automation-simple.ts');
+const {immediateEdition,generationProgress,matchingActiveEdition,US_STATES}=loadTS('lib/automation-simple.ts');
 const {showcasePDF}=loadTS('lib/showcase-pdf.ts');
+
+test('different city batches can queue while identical active inputs are protected from duplicate clicks',()=>{
+  const job={status:'queued',dueAt:new Date(Date.now()-1000).toISOString(),input:{location:{name:'Denver',region:'Colorado'},quantity:2,cast:'mixed'}};
+  assert.equal(matchingActiveEdition([job],' Denver ','COLORADO',2),job);
+  assert.equal(matchingActiveEdition([job],'Seattle','Washington',2),undefined);
+  assert.equal(matchingActiveEdition([job],'Denver','Colorado',1),undefined);
+  assert.equal(matchingActiveEdition([{...job,status:'succeeded'}],'Denver','Colorado',2),undefined);
+});
 test('simple form validates city/state/count and uses the correct immediate local date',()=>{
   const now=new Date('2026-09-15T02:00:00Z');
   assert.equal(US_STATES.length,51);

@@ -24,3 +24,7 @@ export function generationProgress(job: AutomationJob) {
   // Only the worker's actual milestone counter drives this bar. Never a timer.
   return {percent:job.progress.total>0?Math.min(99,Math.floor(job.progress.completed/job.progress.total*100)):0,label:labels[kind]||'Working in the studio',detail:count?`Cartoon ${Number(count)} of ${job.input.quantity}`:'Your request and completed steps are saved.'};
 }
+export function matchingActiveEdition(jobs:AutomationJob[],city:string,state:string,quantity:number) {
+  const key=(value:string)=>value.trim().toLocaleLowerCase('en-US');
+  return jobs.find(j=>(j.status==='running'||j.status==='queued')&&Date.parse(j.dueAt)<=Date.now()&&key(j.input.location.name)===key(city)&&key(j.input.location.region)===key(state)&&j.input.quantity===quantity&&j.input.cast==='mixed');
+}

@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useCallback, useEffect, useRef, useState } from 'react';
-import { immediateEdition, generationProgress, US_STATES } from '@/lib/automation-simple';
+import { immediateEdition, generationProgress, matchingActiveEdition, US_STATES } from '@/lib/automation-simple';
 import { validateEditionInput, type EditionInput } from '@/lib/automation-studio-core';
 import type { AutomationJob } from '@/lib/automation-queue-core';
 import { PRINT_SIZES, printMetrics, type PrintSizeId } from '@/lib/cartoon-print';
@@ -71,6 +71,7 @@ export default function GenerateStudio({canManage}:{canManage:boolean}) {
   },[canManage,refresh]);
   const job=focused?jobs.find(j=>j.id===focused):jobs.find(j=>j.status==='running')||jobs.find(j=>j.status==='queued'&&Date.parse(j.dueAt)<=Date.now())||jobs.find(j=>j.status==='succeeded');
   const active=jobs.some(j=>(j.status==='running'||j.status==='queued')&&Date.parse(j.dueAt)<=Date.now());
+  const duplicateActive=matchingActiveEdition(jobs,city,state,quantity);
   async function submit(event:React.FormEvent) {
     event.preventDefault();if(inFlight.current||!ready)return;inFlight.current=true;setSending(true);setError('');
     try {
@@ -80,8 +81,8 @@ export default function GenerateStudio({canManage}:{canManage:boolean}) {
           const check=await fetch('/api/gallery/automation/jobs',{cache:'no-store',signal:AbortSignal.timeout(12000)});
           if(!check.ok)throw Error('The queue cannot be checked yet. No new request was sent.');
           const queue=await check.json();
-          const alreadyActive=queue.jobs.find((j:AutomationJob)=>(j.status==='queued'||j.status==='running')&&Date.parse(j.dueAt)<=Date.now());
-          if(alreadyActive){setJobs(queue.jobs);setFocused(alreadyActive.id);localStorage.setItem(FOCUS,alreadyActive.id);throw Error('An edition is already in progress. Its current status is shown below.');}
+          const alreadyActive=matchingActiveEdition(queue.jobs,city,state,quantity);
+          if(alreadyActive){setJobs(queue.jobs);setFocused(alreadyActive.id);localStorage.setItem(FOCUS,alreadyActive.id);throw Error('This same edition is already queued or running. Its current status is shown below; no duplicate was created.');}
           receipt={requestId:crypto.randomUUID(),input:immediateEdition(city,state,quantity),recordedAt:new Date().toISOString()};
         }
         localStorage.setItem(RECEIPT,JSON.stringify(receipt));setPending(receipt);
@@ -103,9 +104,9 @@ export default function GenerateStudio({canManage}:{canManage:boolean}) {
         <label>City or town<input required maxLength={80} value={city} onChange={e=>setCity(e.target.value)} disabled={!!pending||sending} autoComplete="address-level2" /></label>
         <label>State<select value={state} onChange={e=>setState(e.target.value)} disabled={!!pending||sending}>{US_STATES.map(s=><option key={s}>{s}</option>)}</select></label>
         <label>Cartoons<select value={quantity} onChange={e=>setQuantity(Number(e.target.value))} disabled={!!pending||sending}>{Array.from({length:12},(_,i)=><option key={i+1} value={i+1}>{i+1}</option>)}</select></label>
-        <button type="submit" disabled={!ready||sending||(active&&!pending)}>{sending?'Saving request…':pending?'Resume saved request':active?'Edition in progress':'Generate cartoons'}</button>
+        <button type="submit" disabled={!ready||sending||(!!duplicateActive&&!pending)}>{sending?'Saving request…':pending?'Resume saved request':duplicateActive?'Edition already queued':active?'Queue cartoons':'Generate cartoons'}</button>
       </form>
-      <p className="generate-note">One click starts production. Each cartoon takes several minutes on the local RTX 4090. Larger batches run in sequence. You can close this page and return.</p>
+      <p className="generate-note">One click saves your request. The studio works through queued editions, waiting for other GPU work when needed. Each cartoon takes several minutes; larger batches run in sequence. You can close this page and return.</p>
       {pending&&<p role="status">Unconfirmed request: {pending.input.quantity} for {pending.input.location.name}, {pending.input.location.region}. Resume uses the same request ID.</p>}
       {error&&<p role="alert">{error}</p>}{pollError&&<p role="status">{pollError}</p>}
       {job&&progress&&<section className="generation-progress" aria-label="Generation progress">
