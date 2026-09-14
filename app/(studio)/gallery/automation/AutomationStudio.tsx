@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
+import ProductionQueue from "./ProductionQueue";
 import { locationCoverage, nextPlannedRuns, validateEditionInput,
   type EditionInput, type SavedEditionPlan } from "@/lib/automation-studio-core";
 
@@ -124,7 +125,7 @@ export default function AutomationStudio({ canManage, initialNow, examples }: Pr
       const data = await response.json();
       if (!response.ok) throw Error(data.error || "The save was not confirmed. Keep your brief and try again later.");
       setPlans((previous) => [data.plan, ...previous.filter((plan) => plan.id !== data.plan.id)]);
-      setListError(""); setNotice("Plan saved to the studio. It is not active: the website-to-worker connection still needs setup.");
+      setListError(""); setNotice("Plan saved. Saving a plan does not start production; use the production desk to queue an edition.");
     } catch (error) { setSaveError(error instanceof Error ? error.message : "The save was not confirmed. Download your brief to keep it."); }
     finally { setSaving(false); }
   }
@@ -134,7 +135,7 @@ export default function AutomationStudio({ canManage, initialNow, examples }: Pr
       <div><p className="automation-kicker">The Swinging Door · Automation Studio</p>
         <h1>Same bar.<br /><em>A new local conversation.</em></h1>
         <p>Plan an edition for a city, a town, or your own patch of the world.</p></div>
-      <aside className="automation-readiness"><strong>Edition planner available</strong><span>Generation worker not connected to this website.</span><span>Plans do not run until that connection is enabled.</span></aside>
+      <aside className="automation-readiness"><strong>Plan. Queue. Review.</strong><span>The cloud holds requests; the local workstation produces private proofs.</span><span>Sign in to see live worker and job status below.</span></aside>
     </header>
 
     <div className="automation-workbench">
@@ -180,17 +181,19 @@ export default function AutomationStudio({ canManage, initialNow, examples }: Pr
       </aside>
     </div>
 
-    <section className="automation-workflow" aria-labelledby="workflow-heading"><div className="automation-section-title"><span>03 / From local news to the finished panel</span><h2 id="workflow-heading">What happens between the brief and the cartoon?</h2></div>
+    <ProductionQueue canManage={canManage} mode={input.timing.mode} getInput={cleanCurrentInput} />
+
+    <section className="automation-workflow" aria-labelledby="workflow-heading"><div className="automation-section-title"><span>04 / From local news to the finished panel</span><h2 id="workflow-heading">What happens between the brief and the cartoon?</h2></div>
       <div className="automation-stage-controls" role="group" aria-label="Explore production stages">{stages.map((item, index) => <button type="button" key={item.title} aria-pressed={stage === index} aria-controls="automation-stage-detail" onClick={() => setStage(index)}><span>0{index + 1}</span>{item.title}</button>)}</div>
       <div className="automation-stage-detail" id="automation-stage-detail" aria-live="polite"><h3>{stages[stage].heading}</h3><p>{stages[stage].text}</p><p className="automation-small">{stages[stage].foot}</p></div>
     </section>
 
-    <section className="automation-evidence" aria-labelledby="evidence-heading"><div className="automation-section-title"><span>04 / What is already demonstrated</span><h2 id="evidence-heading">Built on real production work.</h2></div>
-      <div className="automation-evidence-columns"><div><h3>The local pipeline</h3><p>Research, local caption writing, matching TV art, chalk lettering, cast selection, and protected image composition have produced real review proofs.</p><p>Retained September 11–12 runs: six jobs, five awaiting owner review, one requiring proof changes. Verified September 14, 2026.</p></div><div><h3>The next connection</h3><p>This website does not yet dispatch jobs to the 4090 workstation. Saved dates are plans, not armed schedules. New areas need source setup, and the worker needs the latest approved cast pinned before a new edition.</p><p>The workstation must be available at run time. Reviews are still required; unattended humor and physical newspaper quality are not guaranteed.</p></div></div>
+    <section className="automation-evidence" aria-labelledby="evidence-heading"><div className="automation-section-title"><span>05 / What is already demonstrated</span><h2 id="evidence-heading">Built on real production work.</h2></div>
+      <div className="automation-evidence-columns"><div><h3>The local pipeline</h3><p>Research, local caption writing, matching TV art, chalk lettering, cast selection, and protected image composition have produced real review proofs.</p><p>Retained September 11–12 runs: six jobs, five awaiting owner review, one requiring proof changes. Verified September 14, 2026.</p></div><div><h3>The production connection</h3><p>Production requests have durable receipts, worker leases, recovery attempts, and private proof storage. The live production desk distinguishes a saved plan from an actual queued job.</p><p>New areas still need attributable sources. The workstation must be online to generate; requests can wait while it is offline. Review remains required—an unattended humor score is not a promise of newspaper quality.</p></div></div>
       <p className="automation-small">Those historical automation proofs used earlier cast studies and editorial revisions. The current gallery shows the visual benchmark, not a claim that all 38 cartoons were produced unattended.</p>
     </section>
 
-    {canManage && <section className="automation-saved" aria-labelledby="plans-heading"><div className="automation-section-title"><span>05 / Shared edition plans</span><h2 id="plans-heading">Saved in the studio.</h2></div>
+    {canManage && <section className="automation-saved" aria-labelledby="plans-heading"><div className="automation-section-title"><span>06 / Shared edition plans</span><h2 id="plans-heading">Saved in the studio.</h2></div>
       {loadingPlans ? <p role="status">Loading shared plans…</p> : listError ? <p className="automation-error" role="alert">{listError}</p> : plans.length === 0 ? <p>No plans saved yet. Start with a place and an edition above.</p> : <ul>{plans.map((plan) => <li key={plan.id}><div><h3>{plan.input.location.name}, {plan.input.location.region}</h3><p>{plan.input.quantity} cartoons · {plan.input.timing.mode === "now" ? "On demand" : plan.input.timing.mode} · {plan.input.location.timezone}</p><p className="automation-small">Start: {plan.input.timing.date} · {plan.status === "archived" ? "Archived" : "Saved plan — not active"}</p></div><button className="automation-button secondary" type="button" onClick={() => downloadText(`swinging-door-plan-${plan.id.slice(0, 12)}.json`, { schema: "swinging-door-edition-plan-v1", ...plan, executionEnabled: false, automaticPublication: false })}>Download plan</button></li>)}</ul>}
     </section>}
     <footer className="automation-footer"><Link href="/gallery/best-of">Explore all 38 selected cartoons →</Link><span>One fixed set. Location-specific ideas. A deliberate quality check.</span></footer>
