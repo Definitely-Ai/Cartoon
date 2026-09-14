@@ -14,9 +14,9 @@
       "id": "barclay",
       "width": 1024,
       "height": 1536,
-      "sourceSha256": "830a074e3a62520280c151be05f777a171ec5adbce6ddbabbd95c475810290f1",
-      "sha256": "2a04b67ddff80147168fc24f7e8ed94ffef0a42ce6821beb7feab658fcceb305",
-      "bytes": 1260226,
+      "sourceSha256": "938dcdb8d4fb191ddd7551c2a231b13596db645995fe57e722dfac5ebfb88493",
+      "sha256": "938dcdb8d4fb191ddd7551c2a231b13596db645995fe57e722dfac5ebfb88493",
+      "bytes": 1632201,
       "strictGrayscale": true
     },
     {
@@ -29,5 +29,6 @@
       "strictGrayscale": true
     }
   ],
-  "method": "Built-in image generation from current Best Of cast; grayscale delivery conversion only. Presentation portraits, not a replacement of cartoon acting plates."
+  "barclayIdentity": "barclay-reference-v1",
+  "method": "Current presentation portraits. Barclay uses the exact owner-approved September 14 reference portrait, matched by the versioned cartoon acting plates. Strict grayscale delivery."
 }

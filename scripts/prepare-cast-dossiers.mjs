@@ -6,7 +6,8 @@ import sharp from 'sharp';
 const root=process.cwd(),studio=path.resolve(process.argv[2]||'Z:/ImageGenerator/Cartoon');
 const publicDir=path.join(root,'public/gallery/cast-dossiers-20260914-v1');
 const data=JSON.parse(await fs.readFile('lib/cast-dossiers.json','utf8'));
-const acting=JSON.parse(await fs.readFile(path.join(studio,'output/fixed-set-v1/best-of-v1/acting/verification.json'),'utf8'));
+const identity=JSON.parse(await fs.readFile(path.join(root,'lib/cast-identity.json'),'utf8'));
+const acting=JSON.parse(await fs.readFile(path.join(studio,identity.actingManifest),'utf8'));
 const hash=b=>createHash('sha256').update(b).digest('hex'),records=[];
 await fs.mkdir(publicDir,{recursive:true});
 for(const member of data){

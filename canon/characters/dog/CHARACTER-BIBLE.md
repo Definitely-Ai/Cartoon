@@ -1,5 +1,11 @@
 # Barclay — Character Bible
 
+> **Current approved face, September 14, 2026:** The owner approved the earlier
+> reference likeness for full rollout. `canon/fixed-set/barclay-reference-v1/`
+> contains the exact approved portrait and all five speaking/listening plates.
+> This approval supersedes conflicting historical face studies below. “Older”
+> means the previous design, not extra age or wrinkles.
+
 **Definitive study:** `canon/vision/barclay-reference.jpg` — a close photograph of
 **plate 2's lower panel**, not a separate drawing. Everything in it can be found
 again in the plate; the two are one Barclay and must never be counted as two

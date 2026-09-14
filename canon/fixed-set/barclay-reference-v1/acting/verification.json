@@ -1,0 +1,638 @@
+{
+  "crop": {
+    "left": 30,
+    "top": 95,
+    "width": 994,
+    "height": 1340
+  },
+  "reports": [
+    {
+      "id": "duo-drew",
+      "sourcePath": "output/fixed-set-v1/best-of-v1/acting/duo-drew.png",
+      "sourceSha256": "751ea44084dbc7152d73cf873b07a2734ac4bfcbe690dd16b1d12c76f99076a7",
+      "framePath": "canon/fixed-set/barclay-reference-v1/acting/duo-drew.png",
+      "sha256": "ed4d51d8eef08734373c77a5b9e02bbbc36b95719c8b223872b39c2aec62e942",
+      "copiedFacialPixels": 0,
+      "mismatches": 0,
+      "audit": {
+        "changedPixels": 37708,
+        "protectedChangedPixels": 0,
+        "coloredPixels": 0
+      },
+      "acting": {
+        "Drew": {
+          "mouth": "open",
+          "lookAt": "Barclay"
+        },
+        "Barclay": {
+          "mouth": "closed",
+          "lookAt": "Drew"
+        }
+      },
+      "polygons": [],
+      "preferredBarclayState": "listen-drew"
+    },
+    {
+      "id": "duo-barclay",
+      "sourcePath": "output/fixed-set-v1/best-of-v1/acting/duo-barclay.png",
+      "sourceSha256": "032b6567557739e22039ccae46e1a25df44f281875f1c796a332de4de3ec63ea",
+      "framePath": "canon/fixed-set/barclay-reference-v1/acting/duo-barclay.png",
+      "sha256": "2c679596c24cf5dabf71b951f6e3c1a6d108c74b7b0628224d7004bce4eee152",
+      "copiedFacialPixels": 15428,
+      "mismatches": 0,
+      "audit": {
+        "changedPixels": 39143,
+        "protectedChangedPixels": 0,
+        "coloredPixels": 0
+      },
+      "acting": {
+        "Drew": {
+          "mouth": "closed",
+          "lookAt": "Barclay"
+        },
+        "Barclay": {
+          "mouth": "open",
+          "lookAt": "Drew"
+        }
+      },
+      "polygons": [
+        [
+          [
+            754,
+            839
+          ],
+          [
+            779,
+            835
+          ],
+          [
+            813,
+            841
+          ],
+          [
+            840,
+            841
+          ],
+          [
+            858,
+            846
+          ],
+          [
+            873,
+            858
+          ],
+          [
+            882,
+            879
+          ],
+          [
+            876,
+            901
+          ],
+          [
+            851,
+            917
+          ],
+          [
+            818,
+            921
+          ],
+          [
+            793,
+            915
+          ],
+          [
+            765,
+            905
+          ],
+          [
+            751,
+            887
+          ],
+          [
+            756,
+            865
+          ]
+        ],
+        [
+          [
+            259,
+            713
+          ],
+          [
+            303,
+            722
+          ],
+          [
+            336,
+            752
+          ],
+          [
+            362,
+            785
+          ],
+          [
+            366,
+            824
+          ],
+          [
+            360,
+            852
+          ],
+          [
+            344,
+            860
+          ],
+          [
+            328,
+            849
+          ],
+          [
+            318,
+            817
+          ],
+          [
+            302,
+            794
+          ],
+          [
+            271,
+            767
+          ],
+          [
+            257,
+            747
+          ]
+        ]
+      ],
+      "preferredBarclayState": "speak"
+    },
+    {
+      "id": "trio-abby",
+      "sourcePath": "output/fixed-set-v1/best-of-v1/acting/trio-abby.png",
+      "sourceSha256": "96349c8f74f77330e2a5e70f7f4d7d69bb868d088ce5a0dc642eeffa639501f2",
+      "framePath": "canon/fixed-set/barclay-reference-v1/acting/trio-abby.png",
+      "sha256": "590d2a300a3e88b3fea447f87b34fb9b7ddb3d04ca30346c8bfcc41348977a42",
+      "copiedFacialPixels": 0,
+      "mismatches": 0,
+      "audit": {
+        "changedPixels": 37932,
+        "protectedChangedPixels": 0,
+        "coloredPixels": 0
+      },
+      "acting": {
+        "Drew": {
+          "mouth": "closed",
+          "lookAt": "Abby"
+        },
+        "Barclay": {
+          "mouth": "closed",
+          "lookAt": "Abby"
+        },
+        "Abby": {
+          "mouth": "open",
+          "lookAt": "Drew"
+        }
+      },
+      "polygons": [],
+      "preferredBarclayState": "listen-abby"
+    },
+    {
+      "id": "trio-barclay",
+      "sourcePath": "output/fixed-set-v1/best-of-v1/acting/trio-barclay.png",
+      "sourceSha256": "0d32418a43f8f4d748df38f9bb676ad0bb3aae3a26278485d90c7e172c1c2159",
+      "framePath": "canon/fixed-set/barclay-reference-v1/acting/trio-barclay.png",
+      "sha256": "7cedfbc23239323102b1588cbbbac9e8c7ec551646f45cf5146082ffb3a5ec62",
+      "copiedFacialPixels": 13002,
+      "mismatches": 0,
+      "audit": {
+        "changedPixels": 39143,
+        "protectedChangedPixels": 0,
+        "coloredPixels": 0
+      },
+      "acting": {
+        "Drew": {
+          "mouth": "closed",
+          "lookAt": "Barclay"
+        },
+        "Barclay": {
+          "mouth": "open",
+          "lookAt": "Drew"
+        },
+        "Abby": {
+          "mouth": "closed",
+          "lookAt": "Barclay"
+        }
+      },
+      "polygons": [
+        [
+          [
+            754,
+            839
+          ],
+          [
+            779,
+            835
+          ],
+          [
+            813,
+            841
+          ],
+          [
+            840,
+            841
+          ],
+          [
+            858,
+            846
+          ],
+          [
+            873,
+            858
+          ],
+          [
+            882,
+            879
+          ],
+          [
+            876,
+            901
+          ],
+          [
+            851,
+            917
+          ],
+          [
+            818,
+            921
+          ],
+          [
+            793,
+            915
+          ],
+          [
+            765,
+            905
+          ],
+          [
+            751,
+            887
+          ],
+          [
+            756,
+            865
+          ]
+        ],
+        [
+          [
+            785,
+            775
+          ],
+          [
+            799,
+            772
+          ],
+          [
+            813,
+            780
+          ],
+          [
+            814,
+            796
+          ],
+          [
+            801,
+            805
+          ],
+          [
+            788,
+            797
+          ]
+        ],
+        [
+          [
+            830,
+            778
+          ],
+          [
+            849,
+            778
+          ],
+          [
+            866,
+            791
+          ],
+          [
+            868,
+            803
+          ],
+          [
+            850,
+            809
+          ],
+          [
+            832,
+            800
+          ]
+        ],
+        [
+          [
+            221,
+            676
+          ],
+          [
+            258,
+            675
+          ],
+          [
+            280,
+            689
+          ],
+          [
+            282,
+            720
+          ],
+          [
+            257,
+            731
+          ],
+          [
+            225,
+            721
+          ]
+        ],
+        [
+          [
+            535,
+            651
+          ],
+          [
+            573,
+            650
+          ],
+          [
+            594,
+            660
+          ],
+          [
+            601,
+            678
+          ],
+          [
+            584,
+            696
+          ],
+          [
+            551,
+            689
+          ],
+          [
+            533,
+            674
+          ]
+        ]
+      ],
+      "preferredBarclayState": "speak"
+    },
+    {
+      "id": "trio-drew",
+      "sourcePath": "output/fixed-set-v1/best-of-v1/acting/trio-drew.png",
+      "sourceSha256": "747619eda36b6a68fe21463035dceb6539cca87da6c3afa2d40e05e7787efeaf",
+      "framePath": "canon/fixed-set/barclay-reference-v1/acting/trio-drew.png",
+      "sha256": "3b60f92d275cffe1512edbe9d73a43745e7d81e6dc5702fd7ba520c6fe5f87da",
+      "copiedFacialPixels": 35665,
+      "mismatches": 0,
+      "audit": {
+        "changedPixels": 37708,
+        "protectedChangedPixels": 0,
+        "coloredPixels": 0
+      },
+      "acting": {
+        "Drew": {
+          "mouth": "open",
+          "lookAt": "Barclay"
+        },
+        "Barclay": {
+          "mouth": "closed",
+          "lookAt": "Drew"
+        },
+        "Abby": {
+          "mouth": "closed",
+          "lookAt": "Drew"
+        }
+      },
+      "polygons": [
+        [
+          [
+            754,
+            839
+          ],
+          [
+            779,
+            835
+          ],
+          [
+            813,
+            841
+          ],
+          [
+            840,
+            841
+          ],
+          [
+            858,
+            846
+          ],
+          [
+            873,
+            858
+          ],
+          [
+            882,
+            879
+          ],
+          [
+            876,
+            901
+          ],
+          [
+            851,
+            917
+          ],
+          [
+            818,
+            921
+          ],
+          [
+            793,
+            915
+          ],
+          [
+            765,
+            905
+          ],
+          [
+            751,
+            887
+          ],
+          [
+            756,
+            865
+          ]
+        ],
+        [
+          [
+            785,
+            775
+          ],
+          [
+            799,
+            772
+          ],
+          [
+            813,
+            780
+          ],
+          [
+            814,
+            796
+          ],
+          [
+            801,
+            805
+          ],
+          [
+            788,
+            797
+          ]
+        ],
+        [
+          [
+            830,
+            778
+          ],
+          [
+            849,
+            778
+          ],
+          [
+            866,
+            791
+          ],
+          [
+            868,
+            803
+          ],
+          [
+            850,
+            809
+          ],
+          [
+            832,
+            800
+          ]
+        ],
+        [
+          [
+            221,
+            676
+          ],
+          [
+            258,
+            675
+          ],
+          [
+            280,
+            689
+          ],
+          [
+            282,
+            720
+          ],
+          [
+            257,
+            731
+          ],
+          [
+            225,
+            721
+          ]
+        ],
+        [
+          [
+            259,
+            713
+          ],
+          [
+            303,
+            722
+          ],
+          [
+            336,
+            752
+          ],
+          [
+            362,
+            785
+          ],
+          [
+            366,
+            824
+          ],
+          [
+            360,
+            852
+          ],
+          [
+            344,
+            860
+          ],
+          [
+            328,
+            849
+          ],
+          [
+            318,
+            817
+          ],
+          [
+            302,
+            794
+          ],
+          [
+            271,
+            767
+          ],
+          [
+            257,
+            747
+          ]
+        ],
+        [
+          [
+            410,
+            485
+          ],
+          [
+            634,
+            485
+          ],
+          [
+            634,
+            740
+          ],
+          [
+            410,
+            740
+          ]
+        ]
+      ],
+      "preferredBarclayState": "listen-drew"
+    }
+  ],
+  "preferredBarclay": "barclay-reference-face-v1; owner-approved September 14, 2026",
+  "identitySha256": "938dcdb8d4fb191ddd7551c2a231b13596db645995fe57e722dfac5ebfb88493",
+  "identitySource": "output/fixed-set-v1/barclay-reference-face-v1/portrait-monochrome.png",
+  "method": "Reference-conditioned head restoration; one common head donor, bounded speaking-mouth and upward-gaze edits; deterministic protected-pixel compositing.",
+  "noPriorFilesOverwritten": true
+}

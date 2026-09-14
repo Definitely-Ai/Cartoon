@@ -8,8 +8,10 @@ const {Presentation,PresentationFile}=await import(pathToFileURL(path.join(runti
 const {finalizePresentation}=await import(pathToFileURL(path.join(skill,'container_tools/artifact_tool_utils.mjs')).href);
 const content=JSON.parse(await fs.readFile('docs/presentation/rick-showcase.json','utf8'));
 const cartoons=[...JSON.parse(await fs.readFile('lib/city-editions.json','utf8')),...JSON.parse(await fs.readFile('lib/best-of-cartoons.json','utf8'))];
-const tmp=path.join(root,'output/rick-showcase-build');await fs.mkdir(tmp,{recursive:true});
-const output=path.join(root,'output/presentation');await fs.mkdir(output,{recursive:true});
+const revision=process.argv.find(a=>a.startsWith('--revision='))?.split('=')[1];
+if(revision&&!/^[a-z0-9-]+$/.test(revision))throw Error('Invalid revision name');
+const tmp=path.join(root,'output/rick-showcase-build',revision||'');await fs.mkdir(tmp,{recursive:true});
+const output=path.join(root,'output/presentation',revision||'');await fs.mkdir(output,{recursive:true});
 const deck=Presentation.create({slideSize:{width:1280,height:720}});
 const font='Georgia',ink='#26312a',bg='#F8F6F0';
 function text(slide,value,x,y,w,h,size=24,bold=false,color=ink){const shape=slide.shapes.add({geometry:'textbox',position:{left:x,top:y,width:w,height:h},fill:'none',line:{fill:'none',width:0}});shape.text=value;shape.text.style={typeface:font,fontSize:size,bold,color,autoFit:'none'};return shape;}
@@ -37,6 +39,6 @@ for(const [i,item] of content.entries()){
 }
 const candidate=path.join(tmp,'candidate.pptx');await(await PresentationFile.exportPptx(deck)).save(candidate);
 const final=path.join(output,'rick-system-showcase.pptx');
-await finalizePresentation({workspaceDir:root,candidatePath:candidate,finalPath:final,pythonExecutable:path.join(runtime,'python/python.exe'),integrityValidatorPath:path.join(skill,'container_tools/inspect_presentation_package_integrity.py'),layoutValidatorPath:path.join(skill,'container_tools/inspect_presentation_layout_geometry.py'),layoutArgs:['--expected-slide-size-emu','12192000,6858000','--validate-heading-fit','--require-native-table-slide','9'],requiredNativeTableOwnerSlides:[9],fontPolicy:{basis:'design',families:[font]},verifyArtifactToolImport:true,receiptPath:path.join(tmp,'validation.json')});
+await finalizePresentation({workspaceDir:root,candidatePath:candidate,finalPath:final,explicitTotalSlideCount:10,pythonExecutable:path.join(runtime,'python/python.exe'),integrityValidatorPath:path.join(skill,'container_tools/inspect_presentation_package_integrity.py'),layoutValidatorPath:path.join(skill,'container_tools/inspect_presentation_layout_geometry.py'),layoutArgs:['--expected-slide-size-emu','12192000,6858000','--validate-heading-fit','--require-native-table-slide','9'],requiredNativeTableOwnerSlides:[9],fontPolicy:{basis:'design',families:[font]},verifyArtifactToolImport:true,receiptPath:path.join(tmp,'validation.json')});
 for(let i=0;i<deck.slides.items.length;i++){const preview=await deck.export({slide:deck.slides.items[i],format:'png',scale:1});await fs.writeFile(path.join(tmp,`slide-${i+1}.png`),new Uint8Array(await preview.arrayBuffer()));}
 console.log('Finalized',final);

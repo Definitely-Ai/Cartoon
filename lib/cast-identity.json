@@ -1,0 +1,9 @@
+{
+  "id": "barclay-reference-v1",
+  "approvedOn": "2026-09-14",
+  "portraitSha256": "938dcdb8d4fb191ddd7551c2a231b13596db645995fe57e722dfac5ebfb88493",
+  "portraitPath": "canon/fixed-set/barclay-reference-v1/approved-portrait.png",
+  "actingManifest": "canon/fixed-set/barclay-reference-v1/acting/verification.json",
+  "actingRoot": "canon/fixed-set/barclay-reference-v1/acting",
+  "scope": "Approved earlier reference face, including speaking and listening variants. Older means previous design, not increased age."
+}

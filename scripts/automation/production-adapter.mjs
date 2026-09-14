@@ -16,9 +16,10 @@ export const REQUIRED_PRODUCTION_FILES=[
   'canon/fonts/Anton-Regular.ttf','canon/fonts/RockSalt-Regular.ttf','canon/fonts/CrimsonText-Italic.ttf',
   'canon/comedy/COMEDY-BIBLE.md','canon/fixed-set/OWNER-DIRECTION-2026-09-11.md',
   'canon/settings/elements/TELEVISION.md','canon/settings/elements/CHALKBOARD.md',
-  'canon/fixed-set/v1/regions.json','output/fixed-set-v1/best-of-v1/acting/verification.json',
+  'canon/fixed-set/v1/regions.json','canon/fixed-set/barclay-reference-v1/acting/verification.json',
   'output/fixed-set-v1/best-of-v1/episodes.json',
-  ...['duo-drew','duo-barclay','trio-drew','trio-barclay','trio-abby'].map(id=>`output/fixed-set-v1/best-of-v1/acting/${id}.png`),
+  ...['duo-drew','duo-barclay','trio-drew','trio-barclay','trio-abby'].map(id=>`canon/fixed-set/barclay-reference-v1/acting/${id}.png`),
+  'canon/fixed-set/barclay-reference-v1/approved-portrait.png',
 ];
 const WRITER='http://127.0.0.1:11435',COMFY='http://127.0.0.1:8188';
 const STABLE_WRITER='qwen3.8:27b',STABLE_CRITIC='gpt-oss:20b';
@@ -210,7 +211,7 @@ export function castAt(input,index,editionKey='') {
   if(input.cast==='trio')return {variant:'trio',speaker:['Drew','Barclay','Abby','Drew','Barclay'][index%5]};
   return index%5===2?{variant:'trio',speaker:'Abby'}:{variant:index%5===4?'trio':'duo',speaker:index%2?'Barclay':'Drew'};
 }
-async function compose(ctx,m,episode,tvPath,actor,acting,regions,index) {
+export async function composeProductionPanel(ctx,m,episode,tvPath,actor,acting,regions,index) {
   const W=1024,H=1536,{crop}=acting,scaleX=W/crop.width,scaleY=Math.round(crop.height*scaleX)/crop.height;
   const map=p=>p.map(([x,y])=>[(x-crop.left)*scaleX,(y-crop.top)*scaleY]);
   const tvQuad=map(regions.tv),boardQuad=map(regions.board),foot=[[0,1365],[W,1365],[W,H],[0,H]];
@@ -233,7 +234,8 @@ async function compose(ctx,m,episode,tvPath,actor,acting,regions,index) {
 }
 export async function generateProductionEdition(ctx) {
   const m=await modulesFor(ctx);
-  const acting=await readJSON(await inside(ctx.config.workspaceRoot,'output/fixed-set-v1/best-of-v1/acting/verification.json'));
+  const acting=await readJSON(await inside(ctx.config.workspaceRoot,'canon/fixed-set/barclay-reference-v1/acting/verification.json'));
+  if(acting.identitySha256!=='938dcdb8d4fb191ddd7551c2a231b13596db645995fe57e722dfac5ebfb88493')throw Error('Worker cast identity is not the owner-approved reference face.');
   const regions=await readJSON(await inside(ctx.config.workspaceRoot,'canon/fixed-set/v1/regions.json'));
   // Never mutate the persisted history snapshot as this edition accumulates lines.
   const history=[...await ctx.step('history',{jobId:ctx.job.id},()=>historyFor(ctx),{recover:async()=>{}})];
@@ -292,7 +294,7 @@ export async function generateProductionEdition(ctx) {
     if(!approvedMachineReview(visual?.value,{visual:true}))throw new WorkerError('The TV drawing did not pass visual review after two candidates. No incomplete image was delivered.');
     const timestamp=new Intl.DateTimeFormat('en-US',{timeZone:ctx.job.input.location.timezone,hour:'numeric',minute:'2-digit'}).format(new Date(ctx.job.dueAt));
     const episode={id:'cartoon-'+n,...cast,line:selected.caption,tv:{headline:selected.tvHeadline,timestamp,picture:selected.tvBrief},board:{lines:selected.boardLines}};
-    const rendered=await ctx.step('compose-'+n,{episode,tvSha256:generated.sha256,actorSha256:actor.sha256},()=>compose(ctx,m,episode,generated.path,actor,acting,regions,index),{recover:async()=>{}});
+    const rendered=await ctx.step('compose-'+n,{episode,tvSha256:generated.sha256,actorSha256:actor.sha256},()=>composeProductionPanel(ctx,m,episode,generated.path,actor,acting,regions,index),{recover:async()=>{}});
     cartoons.push({caption:selected.caption,speaker:cast.speaker,variant:cast.variant,tv:episode.tv,board:episode.board,explanation:selected.explanation,
       source:{url:selected.source.url,publishedAt:selected.source.publishedAt,retrievedAt:selected.source.retrievedAt,scope:selected.source.scope,evidenceQuoteSha256:hash(selected.sourceQuote)},
       newLocalCaption:true,newLocalTvImage:true,retainedStaticCast:true,editorialReview:selected.critique.value,visionReview:visual.value,generatedTvSha256:generated.sha256,...rendered});
@@ -301,6 +303,7 @@ export async function generateProductionEdition(ctx) {
   const report={schema:1,jobId:ctx.job.id,createdAt:new Date().toISOString(),input:ctx.job.input,method:'Fresh local caption and TV generation; deterministic chalk, caption and preferred static cast composition.',
     status:'machine-reviewed-private-drafts',humanEditorialApproval:false,ownerApproval:false,automaticPublication:false,audienceRatingClaim:false,
     sources:sourceData.documents.map(({text,...d})=>d),sourceFailures:sourceData.failures,cartoons,runtimePinsHash:hash(ctx.config.runtimePins),
+    castIdentity:'barclay-reference-v1',castIdentitySha256:acting.identitySha256,
     limits:['Machine review is fallible and is not owner approval.','Current source availability is not evidence of popularity.','Static cast poses remain retained artwork; no cast redraw is claimed.','Print output is 1024x1536; 300 DPI metadata is not physical press certification.']};
   await atomicWrite(path.join(ctx.dir,'edition-report.json'),report);
   return [...await Promise.all(cartoons.map(c=>ctx.artifact(c.name,'image','image/png'))),await ctx.artifact('edition-report.json','report','application/json')];

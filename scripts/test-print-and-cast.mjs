@@ -84,7 +84,7 @@ test('cast packet uses nine current speaking/listening crops and nine matching s
       const meta = await sharp(bytes).metadata();
       assert.equal(meta.width, a.width); assert.equal(meta.height, a.height);
       if (a.kind === 'pose') {
-        assert.match(a.source, /^output\/fixed-set-v1\/best-of-v1\/acting\/trio-(drew|barclay|abby)\.png$/);
+        assert.match(a.source, /^canon\/fixed-set\/barclay-reference-v1\/acting\/trio-(drew|barclay|abby)\.png$/);
         const pose = member.poses.find(p => p.key === a.key);
         assert.equal(pose.actor, a.actorId);
         assert.equal(a.acting.mouth, a.key === 'speaking' ? 'open' : 'closed');
