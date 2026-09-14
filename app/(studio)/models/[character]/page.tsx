@@ -102,7 +102,7 @@ export default async function CharacterBiblePage({ params }: { params: Promise<{
             }}
           />
           <p style={{ fontFamily: serif, fontStyle: "italic", fontSize: 13.5, color: "#6b6153", margin: "8px 0 0" }}>
-            The definitive study — the drawing every panel is checked against.
+            Current presentation portrait · September 2026.
           </p>
         </div>
         <div

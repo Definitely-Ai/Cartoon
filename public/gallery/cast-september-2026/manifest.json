@@ -1,0 +1,33 @@
+{
+  "edition": "September 2026",
+  "portraits": [
+    {
+      "id": "drew",
+      "width": 1024,
+      "height": 1536,
+      "sourceSha256": "5cc1ba5ff5312ac947f8320a83aac3803c8cb2ca54ad519626e5b76f7d8ff700",
+      "sha256": "c7e192ae2903f2e42926f30db8f6b2354ee06e5077a01944ea1098dccec93b96",
+      "bytes": 1101723,
+      "strictGrayscale": true
+    },
+    {
+      "id": "barclay",
+      "width": 1024,
+      "height": 1536,
+      "sourceSha256": "830a074e3a62520280c151be05f777a171ec5adbce6ddbabbd95c475810290f1",
+      "sha256": "2a04b67ddff80147168fc24f7e8ed94ffef0a42ce6821beb7feab658fcceb305",
+      "bytes": 1260226,
+      "strictGrayscale": true
+    },
+    {
+      "id": "abby",
+      "width": 1024,
+      "height": 1536,
+      "sourceSha256": "57e916bdc93c0a1d8844bae22ce7360edc8e6c462bc38de979668a80cd4f6ff4",
+      "sha256": "e10b9ff74e8c5d6d6d11ed0d891801a9a9aa9393ce40a14b09c7eb726eeb12f5",
+      "bytes": 1071596,
+      "strictGrayscale": true
+    }
+  ],
+  "method": "Built-in image generation from current Best Of cast; grayscale delivery conversion only. Presentation portraits, not a replacement of cartoon acting plates."
+}

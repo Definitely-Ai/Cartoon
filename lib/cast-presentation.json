@@ -1,0 +1,35 @@
+[
+  {
+    "id": "drew",
+    "bibleKey": "flamingo",
+    "name": "Drew",
+    "species": "Flamingo",
+    "role": "The dry observer",
+    "bio": "Drew sees the mechanism behind the headline. A composed, well-heeled gentleman with a raised eyebrow and a dry sense of humor, he can sum up an expensive absurdity in one sentence. Then he returns to his martini.",
+    "details": ["A graceful S-shaped neck and finely layered feathers", "Black bow tie and a textured, sleeveless sweater vest", "A martini, one olive, and an unhurried point of view"],
+    "voice": "He finds the absurdity in the system.",
+    "alt": "Drew, a mature flamingo with layered feathers, a long curved neck, black-tipped beak, black bow tie and knitted vest, in black-and-white linework."
+  },
+  {
+    "id": "barclay",
+    "bibleKey": "dog",
+    "name": "Barclay",
+    "species": "Golden retriever",
+    "role": "The gentleman paying the bill",
+    "bio": "Barclay brings the headline down to the price on his own receipt. Mature, confident and good-humored, he is a successful gentleman who understands money without pretending that everything it buys makes sense. His warmth is as important as his wit.",
+    "details": ["A warm retriever face, black dog lip line and neatly groomed neck fur", "Dark jacket, open collar and a small American flag lapel pin", "Soft, furry hands and an old fashioned within reach"],
+    "voice": "He feels the absurdity in his wallet.",
+    "alt": "Barclay, a warm, mature golden retriever with short groomed neck fur, a dark suit, open shirt collar and a small grayscale American flag lapel pin."
+  },
+  {
+    "id": "abby",
+    "bibleKey": "abby",
+    "name": "Abby",
+    "species": "West Highland terrier",
+    "role": "The proprietor with the last word",
+    "bio": "The Swinging Door is Abby's bar. Warm, elegant and entirely in command, she hears the gentlemen out while keeping the room running. She is fond of both of them, intimidated by neither, and usually the one who settles the matter.",
+    "details": ["Bright, welcoming eyes and soft terrier fur", "A fitted blouse and a studded collar with one teardrop pendant", "An empty wine glass and one plain polishing towel"],
+    "voice": "She settles the absurdity from behind the bar.",
+    "alt": "Abby, an elegant adult West Highland terrier with welcoming eyes, a fitted blouse, studded collar and teardrop pendant, polishing an empty wine glass with a plain towel."
+  }
+]

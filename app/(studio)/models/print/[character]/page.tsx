@@ -13,6 +13,7 @@ import path from "node:path";
 import { renderMarkdown } from "@/lib/markdown";
 
 import PrintButton from "../PrintButton";
+import { castPresentation, castPortrait } from "@/lib/cast-presentation";
 
 const serif = "Georgia, 'Times New Roman', serif";
 const repoRoot = process.cwd();
@@ -35,8 +36,9 @@ function read(key: string): Sheet | null {
   const file = path.join(repoRoot, "canon", "characters", key, "CHARACTER-BIBLE.md");
   if (!fs.existsSync(file)) return null;
   const body = fs.readFileSync(file, "utf8").replace(/^#\s+.*\n/, "");
-  const drawn = fs.existsSync(path.join(repoRoot, "canon", "vision", source.study));
-  return { name: source.name, study: drawn ? source.study : source.concept, bible: renderMarkdown(body) };
+  const current = castPresentation.find(member => member.bibleKey === key);
+  if (!current) return null;
+  return { name: source.name, study: castPortrait(current.id), bible: renderMarkdown(body) };
 }
 
 export default async function PrintBiblePage({ params }: { params: Promise<{ character: string }> }) {
@@ -99,8 +101,8 @@ export default async function PrintBiblePage({ params }: { params: Promise<{ cha
 
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src={`/vision/${sheet.study}`}
-            alt={`${sheet.name}, drawn in ink — the definitive study every panel is checked against`}
+            src={sheet.study}
+            alt={`${sheet.name} — September 2026 presentation portrait`}
             style={{
               display: "block",
               width: "58%",

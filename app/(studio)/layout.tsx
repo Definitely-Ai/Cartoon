@@ -14,6 +14,7 @@ import "../workspace-legacy.css";
 const PLACES: Place[] = [
   { href: "/", label: "Rick’s studio" },
   { href: "/gallery/best-of", label: "Cartoons" },
+  { href: "/gallery/cast", label: "Cast", under: ["/models"] },
   { href: "/gallery/automation", label: "Automation Studio" },
   { href: "/library", label: "Image library" },
   { href: "/reports", label: "Daily report" },
@@ -26,7 +27,6 @@ const PLACES: Place[] = [
 
 const ELSEWHERE: Place[] = [
   { href: "/review", label: "Review cartoons" },
-  { href: "/models", label: "The cast" },
   { href: "/collection", label: "Daily batches", under: ["/day"] },
   { href: "/keepers", label: "Keepers" },
   { href: "/gallery", label: "Selected prints" },
