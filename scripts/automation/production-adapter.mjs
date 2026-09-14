@@ -8,6 +8,7 @@ import {hash,atomicWrite,readJSON,inside,WorkerError} from './worker-core.mjs';
 import {durableTV} from './durable-tv.mjs';
 import {localNewsURL,parseLocalNews} from './local-news.mjs';
 import {workProgress} from './work-progress.mjs';
+import {waitForStudio} from './studio-availability.mjs';
 
 export const REQUIRED_PRODUCTION_FILES=[
   'scripts/fixed-set/core.mjs','scripts/fixed-set/typography.mjs',
@@ -79,9 +80,12 @@ async function verifyIdle(ctx) {
   return true;
 }
 async function recoverGPU(ctx,Lease) {
+  return waitForStudio(ctx,()=>recoverGPUOnce(ctx,Lease));
+}
+async function recoverGPUOnce(ctx,Lease) {
   const lease=new Lease();const owner=await lease.inspect();
   if(!owner)return verifyIdle(ctx);
-  let alive=true;try{process.kill(owner.pid,0);}catch(error){if(error.code==='ESRCH')alive=false;else throw error;}
+  let alive=true;try{process.kill(owner.pid,0);}catch(error){if(error.code==='ESRCH')alive=false;else if(error.code!=='EPERM')throw error;}
   if(alive)throw new WorkerError('A live process still owns the shared GPU.',{retryable:true});
   await lease.recover(owner.token,()=>verifyIdle(ctx));
 }

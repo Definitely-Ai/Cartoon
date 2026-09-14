@@ -7,6 +7,18 @@ import {PDFDocument} from 'pdf-lib';
 import {localNewsURL,parseLocalNews} from './automation/local-news.mjs';
 import {workProgress} from './automation/work-progress.mjs';
 import {reviewSchema,approvedMachineReview} from './automation/production-adapter.mjs';
+import {waitForStudio} from './automation/studio-availability.mjs';
+
+test('a busy GPU preserves milestones, waits without consuming attempts, then resumes',async()=>{
+  const ctx={progress:{stage:'critique-01-1',completed:2,total:7},signal:new AbortController().signal};
+  let checks=0,waits=0;
+  const busy=Object.assign(new Error('Another task is active'),{retryable:true});
+  await waitForStudio(ctx,async()=>{if(++checks<3)throw busy;},{pause:async()=>{waits++;assert.equal(ctx.progress.stage,'waiting-gpu');assert.equal(ctx.progress.completed,2);}});
+  assert.equal(waits,2);assert.equal(ctx.progress.stage,'critique-01-1');
+  await assert.rejects(waitForStudio(ctx,async()=>{throw busy;},{maxWaitMs:0}),/Another task/);
+  const abort=new AbortController();abort.abort();
+  await assert.rejects(waitForStudio({...ctx,signal:abort.signal},async()=>{throw Error('must not dispatch');}),{name:'AbortError'});
+});
 
 test('review schema explicitly defines numeric scales and rejects percentage responses',()=>{
   for(const visual of [false,true]) {

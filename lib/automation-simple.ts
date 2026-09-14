@@ -18,6 +18,7 @@ export function generationProgress(job: AutomationJob) {
   if(job.status==='failed')return {percent:0,label:'This edition needs attention',detail:job.lastError || 'No incomplete cartoon was delivered.'};
   if(job.status==='queued')return {percent:0,label:job.attempt?'Waiting to resume':'Request saved in the queue',detail:job.lastError || 'The studio will pick this up automatically when it is available.'};
   const stage=job.progress.stage;
+  if(stage==='waiting-gpu')return {percent:job.progress.total>0?Math.min(99,Math.floor(job.progress.completed/job.progress.total*100)):0,label:'Waiting for the local GPU',detail:'Another local render is active. Completed work is saved; production resumes when the studio is free.'};
   const labels:Record<string,string>={starting:'Checking the studio',history:'Checking previous captions',sources:'Researching local subjects',draft:'Writing the caption',critique:'Reviewing the humor and grammar',tv:'Drawing the television artwork',vision:'Checking the television artwork',compose:'Assembling the cartoon',composed:'Cartoon assembled',uploading:'Saving your finished images'};
   const kind=stage.split('-')[0], count=stage.match(/^(?:draft|critique|tv|vision|compose)-(\d+)/)?.[1];
   // Only the worker's actual milestone counter drives this bar. Never a timer.

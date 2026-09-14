@@ -69,7 +69,7 @@ export default function GenerateStudio({canManage}:{canManage:boolean}) {
     const resume=()=>void refresh(controller.signal);document.addEventListener('visibilitychange',resume);
     return()=>{controller.abort();clearInterval(timer);document.removeEventListener('visibilitychange',resume);};
   },[canManage,refresh]);
-  const job=focused?jobs.find(j=>j.id===focused):jobs.find(j=>j.status==='running')||jobs.find(j=>j.status==='succeeded');
+  const job=focused?jobs.find(j=>j.id===focused):jobs.find(j=>j.status==='running')||jobs.find(j=>j.status==='queued'&&Date.parse(j.dueAt)<=Date.now())||jobs.find(j=>j.status==='succeeded');
   const active=jobs.some(j=>(j.status==='running'||j.status==='queued')&&Date.parse(j.dueAt)<=Date.now());
   async function submit(event:React.FormEvent) {
     event.preventDefault();if(inFlight.current||!ready)return;inFlight.current=true;setSending(true);setError('');
