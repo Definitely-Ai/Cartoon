@@ -1,0 +1,46 @@
+[
+  {
+    "id": "austin-taking-offers",
+    "title": "Taking Offers",
+    "cityLabel": "Austin, Texas",
+    "editionDate": "September 14, 2026",
+    "speaker": "Barclay",
+    "variant": "duo",
+    "caption": "My Austin house finally got an offer. From my realtor, to lower the price.",
+    "src": "/gallery/city-editions-20260914/austin-taking-offers.png",
+    "previewSrc": "/gallery/city-editions-20260914/austin-taking-offers.webp",
+    "width": 1024,
+    "height": 1536,
+    "sha256": "a4e2b7826b9153f695bfa0f98917a2379dfc22e8e980c750e6a0a925fa10cce8",
+    "tv": "AUSTIN HOME PRICE CUTS",
+    "board": [
+      "House Margarita",
+      "$9",
+      "Taking offers"
+    ],
+    "sourceUrl": "https://www.realtor.com/news/local/austin-tx/real-estate-market-austin-tx-august-2026/",
+    "sourceTitle": "Austin housing market — August 2026"
+  },
+  {
+    "id": "los-angeles-view-included",
+    "title": "The View Is Extra",
+    "cityLabel": "Los Angeles, California",
+    "editionDate": "September 14, 2026",
+    "speaker": "Drew",
+    "variant": "trio",
+    "caption": "In L.A., I’m renting the view. The house costs extra.",
+    "src": "/gallery/city-editions-20260914/los-angeles-view-included.png",
+    "previewSrc": "/gallery/city-editions-20260914/los-angeles-view-included.webp",
+    "width": 1024,
+    "height": 1536,
+    "sha256": "12e38445e631c4b3b3ab94a772fd1dae08887c8c375758a30d694e34abf59bc5",
+    "tv": "L.A. HOUSING COSTS",
+    "board": [
+      "House Red",
+      "$8",
+      "View included"
+    ],
+    "sourceUrl": "https://gov.car.org/en/aboutus/mediacenter/newsreleases/2026releases/2qtr2026HAI",
+    "sourceTitle": "C.A.R. housing affordability — second quarter 2026"
+  }
+]

@@ -281,6 +281,25 @@
   overflow-wrap: anywhere;
 }
 
+.best-of-local-intro {
+  margin-top: 18px;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.best-of-city-label {
+  display: grid;
+  gap: 5px;
+  margin: -20px -20px 17px;
+  padding: 13px 20px;
+  background: var(--collection-ink);
+  color: #fffdf8;
+  line-height: 1.5;
+}
+
+.best-of-city-label strong { font-size: 15px; }
+.best-of-city-label span { font-size: 10px; }
+
 .best-of-artwork {
   position: relative;
   display: block;

@@ -13,6 +13,10 @@ export interface BestOfCartoon {
   sha256: string;
   tv: string;
   board: string[];
+  cityLabel?: string;
+  editionDate?: string;
+  sourceUrl?: string;
+  sourceTitle?: string;
 }
 
 export const bestOfCartoons = data as BestOfCartoon[];

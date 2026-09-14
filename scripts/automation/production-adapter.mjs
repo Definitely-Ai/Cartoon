@@ -108,7 +108,20 @@ export async function discoverSources(ctx) {
       const url=new URL(source.url);
       if(url.protocol!=='https:'||url.username||url.password||url.hash)throw new WorkerError('Source registry contains an invalid URL.');
       const response=await fetch(url,{redirect:'error',signal:AbortSignal.any([ctx.signal,AbortSignal.timeout(20000)])});
-      const xml=await boundedText(response),items=[...xml.matchAll(/<item\b[^>]*>([\s\S]*?)<\/item>/gi)];
+      const xml=await boundedText(response,source.format==='article'?2000000:200000);
+      if(source.format==='article') {
+        const publishedAt=new Date(source.publishedAt).toISOString();
+        const age=Date.now()-Date.parse(publishedAt);
+        if(age < -86400000 || age > 120*86400000)throw new WorkerError('Configured article is not current enough.');
+        const body=plain(xml.replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi,' '));
+        const start=body.indexOf(source.startText);
+        if(typeof source.startText!=='string'||source.startText.length<30||start<0)throw new WorkerError('Verified article marker was not found.');
+        const text=body.slice(start,start+14000);
+        if(text.length<120)throw new WorkerError('Configured article has insufficient evidence.');
+        documents.push({id:`source-${documents.length+1}`,url:url.href,feedUrl:null,title:source.title,publishedAt,retrievedAt:new Date().toISOString(),publisher:source.publisher,scope:source.scope,text,sha256:hash(text),discovery:'operator-configured primary article; retrieved directly by worker'});
+        continue;
+      }
+      const items=[...xml.matchAll(/<item\b[^>]*>([\s\S]*?)<\/item>/gi)];
       if(!items.length)throw new WorkerError('The installed source must provide a dated RSS feed.');
       for(const [,item] of items.slice(0,12)) {
         const tag=name=>item.match(new RegExp(`<${name}[^>]*>([\\s\\S]*?)<\\/${name}>`,'i'))?.[1]||'';

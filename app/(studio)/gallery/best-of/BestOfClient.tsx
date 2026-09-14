@@ -9,7 +9,7 @@ type CastFilter = "all" | BestOfCartoon["variant"];
 
 type BestOfClientProps = {
   cartoons: Omit<BestOfCartoon, "sha256">[];
-  edition: { title: string; count: number; zipUrl: string };
+  edition: { title: string; count: number; archiveCount: number; zipUrl: string };
 };
 
 const speakers: { value: SpeakerFilter; label: string }[] = [
@@ -38,6 +38,7 @@ export default function BestOfClient({ cartoons, edition }: BestOfClientProps) {
 
     const searchableText = [
       cartoon.title,
+      cartoon.cityLabel ?? "",
       cartoon.caption,
       cartoon.speaker,
       cartoon.variant,
@@ -65,9 +66,10 @@ export default function BestOfClient({ cartoons, edition }: BestOfClientProps) {
             Drew, Barclay, and Abby for a little perspective and a good laugh.
           </p>
           <a className="best-of-download-all" href={edition.zipUrl} download>
-            Download all {edition.count} cartoons <span aria-hidden="true">↓</span>
+            Download original {edition.archiveCount} cartoons <span aria-hidden="true">↓</span>
           </a>
-          <p className="best-of-download-note">The complete collection, in full-size PNGs · ZIP</p>
+          <p className="best-of-download-note">Original collection · ZIP. New city editions are downloadable individually below.</p>
+          <p className="best-of-local-intro">New editions: Austin, Texas &amp; Los Angeles, California · September 14, 2026</p>
           <p className="best-of-download-note"><a href="/gallery/automation">Plan a local edition in the Automation Studio →</a></p>
         </div>
         <div className="best-of-edition" role="img" aria-label={`${edition.count} cartoons in ${edition.title}`}>
@@ -162,6 +164,7 @@ export default function BestOfClient({ cartoons, edition }: BestOfClientProps) {
                 <li key={cartoon.id}>
                   <article className="best-of-card" aria-labelledby={`cartoon-${cartoon.id}`}>
                     <header className="best-of-card-heading">
+                      {cartoon.cityLabel ? <div className="best-of-city-label"><strong>{cartoon.cityLabel}</strong><span>{cartoon.editionDate} · Local edition</span></div> : null}
                       <p>{cartoon.speaker} <span aria-hidden="true">·</span> {cartoon.variant === "duo" ? "Duo" : "Trio"}</p>
                       <h2 id={`cartoon-${cartoon.id}`}>{cartoon.title}</h2>
                     </header>
@@ -200,6 +203,7 @@ export default function BestOfClient({ cartoons, edition }: BestOfClientProps) {
                             <dt>Chalkboard</dt>
                             <dd>{cartoon.board.map((line, lineIndex) => <span key={`${lineIndex}-${line}`}>{line}</span>)}</dd>
                           </div>
+                          {cartoon.sourceUrl ? <div><dt>Local context</dt><dd><a href={cartoon.sourceUrl} target="_blank" rel="noopener noreferrer">{cartoon.sourceTitle} ↗</a><br />Fictional dialogue and illustrated footage; editorially reviewed.</dd></div> : null}
                         </dl>
                       </details>
                       <a className="best-of-save" href={cartoon.src} download={`the-swinging-door-${cartoon.id}.png`}>

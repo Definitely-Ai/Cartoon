@@ -1,0 +1,10 @@
+[
+  {
+    "match":{"name":"Austin","region":"Texas","country":"US","coverage":"city"},
+    "sources":[{"format":"article","url":"https://www.realtor.com/news/local/austin-tx/real-estate-market-austin-tx-august-2026/","title":"Austin Home Prices Drop Sharply as Buyer Leverage Grows","publishedAt":"2026-09-03T12:00:00Z","startText":"Fewer new homes hit the market than buyers might expect","publisher":"Realtor.com housing data report","scope":"Austin housing listing market, August 2026. Listing prices, not closed-sale prices. Longer listings and buyer negotiating leverage. Do not claim a measured social trend or invent exact prices. A locally recognizable Austin financial-life joke, not investment advice."}]
+  },
+  {
+    "match":{"name":"Los Angeles","region":"California","country":"US","coverage":"city"},
+    "sources":[{"format":"article","url":"https://gov.car.org/en/aboutus/mediacenter/newsreleases/2026releases/2qtr2026HAI","title":"Second-quarter 2026 housing affordability","publishedAt":"2026-08-05T12:00:00Z","startText":"Housing affordability in California retreated in the second quarter of 2026","publisher":"California Association of REALTORS","scope":"Use the Los Angeles Metro Area findings as regional housing-cost context, not statewide figures or a city-only estimate. Preserve quarter two 2026 period. A warm Los Angeles housing affordability/lifestyle joke; no invented statistics, no ridicule of hardship or investment advice."}]
+  }
+]
