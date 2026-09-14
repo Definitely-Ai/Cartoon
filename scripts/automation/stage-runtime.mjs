@@ -66,7 +66,7 @@ const config = {
   apiOrigin: 'https://cartoon-brown-seven.vercel.app', storageOrigin: 'https://ypecehqzzxhdpiesteaw.supabase.co',
   workerId: 'studio-4090', tokenFile, workspaceRoot: destination, stateRoot: path.join(configRoot, 'state'),
   sharedGpuLockRoot: 'Z:/ImageGenerator/local-studio/locks', pollMs: 15_000, heartbeatMs: 30_000,
-  production: { writerModel: 'gemma4:31b', criticModel: 'qwen3.8:27b', captionAttempts: 3 },
+  production: { writerModel: 'qwen3.8:27b', criticModel: 'gpt-oss:20b', visionModel:'mistral-small3.2:24b-instruct-2506-q4_K_M', captionAttempts: 3 },
   runtimePins: pins.sort((a, b) => a.path.localeCompare(b.path)),
   windowsLauncher: { startupTimeoutSeconds: 600, requireGpu: true,
     readinessUrl: 'https://cartoon-brown-seven.vercel.app/gallery/automation', modelServices: [

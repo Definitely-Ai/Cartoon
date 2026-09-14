@@ -1,6 +1,6 @@
 # Persistent Windows cartoon worker
 
-These scripts prepare a Task Scheduler installation for the existing Windows GPU workstation. They do not install anything merely by being committed or deployed to Vercel. The implementation was prepared without registering tasks, starting processes, stopping model servers, changing power settings, or collecting Windows credentials.
+These scripts prepare a Task Scheduler installation for the existing Windows GPU workstation. They do not install anything merely by being committed or deployed to Vercel. On September 14, the Windows UAC registration was canceled by the user; **no scheduled task was installed**. Do not retry elevation or substitute a logon-only task without renewed approval. Bounded manual `-Once` tests subsequently started a missing Ollama server, reused healthy shared servers, and generated/uploaded one private proof cartoon. No Windows credentials were collected, no shared model server was stopped, and no reboot or power setting change was performed.
 
 Use a stable, separately staged runtime such as `Z:\ImageGenerator\CartoonRuntime`, containing the worker, launcher and required pipeline dependencies. Do not point a permanent task at a temporary release worktree. The runtime configuration and bearer-token file belong outside Git; restrict their access to the intended worker user, administrators and SYSTEM. The installer does not grant access or copy the repository, models, secrets, or assets.
 
@@ -74,7 +74,7 @@ The launcher starts only services whose ports are free. Healthy existing listene
 After staging and reviewing the stable runtime/configuration, an ordinary shell can preview the exact task setup without changing Task Scheduler:
 
 ```powershell
-& 'Z:\ImageGenerator\CartoonRuntime\scripts\automation\install-worker.ps1' -RuntimeRoot 'Z:\ImageGenerator\CartoonRuntime' -Config 'Z:\ImageGenerator\CartoonRuntime\config\worker.json' -Mode BootS4U -WhatIf
+& 'Z:\ImageGenerator\CartoonRuntime\releases\20260914-v9\scripts\automation\install-worker.ps1' -RuntimeRoot 'Z:\ImageGenerator\CartoonRuntime\releases\20260914-v9' -Config 'Z:\ImageGenerator\CartoonRuntime\config\worker-v9.json' -Mode BootS4U -WhatIf
 ```
 
 After the owner approves UAC, run the same command in an elevated Windows PowerShell window for `AIDB-LAB\admin`, omitting `-WhatIf`. It registers a disabled task named `\SwingingDoor-CartoonWorker`, using `C:\Program Files\nodejs\node.exe` by default. No runtime is executed elevated and no task is immediately started by the installer. Use `-NodePath` for an explicitly staged alternative Node 22+ executable.
@@ -92,7 +92,7 @@ The launcher writes unique stdout/stderr/transcript logs and process receipts un
 To prevent future task starts without interrupting running work:
 
 ```powershell
-& 'Z:\ImageGenerator\CartoonRuntime\scripts\automation\uninstall-worker.ps1' -RuntimeRoot 'Z:\ImageGenerator\CartoonRuntime' -Config 'Z:\ImageGenerator\CartoonRuntime\config\worker.json'
+& 'Z:\ImageGenerator\CartoonRuntime\releases\20260914-v9\scripts\automation\uninstall-worker.ps1' -RuntimeRoot 'Z:\ImageGenerator\CartoonRuntime\releases\20260914-v9' -Config 'Z:\ImageGenerator\CartoonRuntime\config\worker-v9.json'
 ```
 
 This backs up and disables only the matching task. Pause production through its normal control and let the worker exit cleanly. Repeat with `-RemoveTask` when it is no longer running to unregister it. Runtime files, config, tokens, logs, state and model processes are retained. The XML backup supports reviewed restoration; S4U requires the same identity and privileges at restoration. There is no automatic cleanup that can terminate a shared model process.

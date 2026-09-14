@@ -6,7 +6,22 @@ import os from 'node:os';
 import {spawn} from 'node:child_process';
 import {fileURLToPath,pathToFileURL} from 'node:url';
 import {hash,atomicWrite,readJSON,inside,acquireSingleton,verifyRuntime,WorkerAPI,WorkerError,JobContext,processJob,deliverArtifacts,safeMessage,delay} from './automation/worker-core.mjs';
-import {validateDraft,castAt} from './automation/production-adapter.mjs';
+import {validateDraft,castAt,localJSON,approvedMachineReview} from './automation/production-adapter.mjs';
+
+test('reviewer None sentinel is empty but actual concerns and failed criteria remain blocking',()=>{
+  const review={accept:true,score:9,confidence:.98,noHumans:true,noWriting:true,clearSubject:true,sharpAndCoherent:true,reason:'A clear and coherent monochrome illustration.',problems:['None']};
+  assert.equal(approvedMachineReview(review,{visual:true}),true);
+  assert.equal(approvedMachineReview({...review,problems:['None except a blurry window']},{visual:true}),false);
+  assert.equal(approvedMachineReview({...review,problems:['None','Visible text']},{visual:true}),false);
+  assert.equal(approvedMachineReview({...review,noWriting:false},{visual:true}),false);
+  assert.equal(approvedMachineReview({...review,score:7},{visual:true}),false);
+});
+
+test('Comfy memory-release success accepts an empty body without parsing JSON',async t=>{
+  t.mock.method(globalThis,'fetch',async()=>new Response(null,{status:200}));
+  assert.deepEqual(await localJSON('http://127.0.0.1:8188/free',{method:'POST'},undefined,true),{ok:true});
+  await assert.rejects(localJSON('http://127.0.0.1:8188/queue'));
+});
 
 test('opening speakers vary across editions but stay stable across retries',()=>{
   const input={cast:'mixed'};

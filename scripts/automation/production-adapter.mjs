@@ -18,8 +18,8 @@ export const REQUIRED_PRODUCTION_FILES=[
   ...['duo-drew','duo-barclay','trio-drew','trio-barclay','trio-abby'].map(id=>`output/fixed-set-v1/best-of-v1/acting/${id}.png`),
 ];
 const WRITER='http://127.0.0.1:11435',COMFY='http://127.0.0.1:8188';
-const GEMMA='gemma4:31b';
-const GEMMA_DIGEST='6316f0629137b426c9d9b853ffc4c8209589f30ee39aebede6285096c0ff47e7';
+const STABLE_WRITER='qwen3.8:27b',STABLE_CRITIC='gpt-oss:20b';
+const STABLE_VISION='mistral-small3.2:24b-instruct-2506-q4_K_M';
 const plain=value=>String(value).replace(/<!\[CDATA\[([\s\S]*?)\]\]>/g,'$1').replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi,' ').replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi,' ').replace(/<[^>]+>/g,' ').replace(/&(?:nbsp|amp|quot|apos|lt|gt);/g,x=>({'&nbsp;':' ','&amp;':'&','&quot;':'"','&apos;':"'",'&lt;':'<','&gt;':'>'}[x])).replace(/&#(\d+);/g,(_,n)=>String.fromCodePoint(Math.min(Number(n),0x10ffff))).replace(/\s+/g,' ').trim();
 const captionKey=value=>String(value).normalize('NFKC').toLowerCase().replace(/[^\p{L}\p{N}]+/gu,' ').trim();
 function duplicate(line,history) {
@@ -32,7 +32,12 @@ function duplicate(line,history) {
   });
 }
 export function validateDraft(value,speaker,history=[]) {
-  const line=value?.caption;
+  // The caption field is dialogue only; normalize the legacy bible's wrapper.
+  let line=value?.caption;
+  if(typeof line==='string') {
+    line=line.trim().replace(new RegExp('^'+speaker+':\\s*'),'');
+    if((line.startsWith('"')&&line.endsWith('"'))||(line.startsWith('“')&&line.endsWith('”')))line=line.slice(1,-1).trim();
+  }
   if(typeof line!=='string'||!line.trim()||line.length>240||/[\r\n<>!?]/.test(line)||
     (line.match(/[\p{L}\p{N}]+(?:[’'-][\p{L}]+)*/gu)||[]).length>20||value.speaker!==speaker||duplicate(line,history))throw new WorkerError('Caption failed mechanical or duplicate checks.');
   if(typeof value.tvHeadline!=='string'||!value.tvHeadline.trim()||value.tvHeadline.length>30||/[\r\n<>\d]/.test(value.tvHeadline))throw new WorkerError('TV headline must be a short literal subject, without statistics.');
@@ -41,11 +46,14 @@ export function validateDraft(value,speaker,history=[]) {
   if(typeof value.explanation!=='string'||value.explanation.length<20||value.explanation.length>1200)throw new WorkerError('Caption explanation is missing.');
   return {...value,caption:line.trim(),tvHeadline:value.tvHeadline.trim().toUpperCase(),boardLines:value.boardLines.map(s=>s.trim())};
 }
-function approvedMachineReview(value,{visual=false}={}) {
+export function approvedMachineReview(value,{visual=false}={}) {
   const checks=visual?['noHumans','noWriting','clearSubject','sharpAndCoherent']:['standalone','grammar','warm','nonpartisan','grounded','original','speakerFits','threeConnectedAngles'];
+  // Some local models encode an empty issue list as the single literal "None".
+  // Normalize only that sentinel, never dismiss an actual stated concern.
+  const noProblems=Array.isArray(value?.problems)&&(value.problems.length===0||value.problems.length===1&&typeof value.problems[0]==='string'&&/^none\.?$/i.test(value.problems[0].trim()));
   return value?.accept===true&&Number.isFinite(value.score)&&value.score>=8&&value.score<=10&&
     Number.isFinite(value.confidence)&&value.confidence>=0.85&&value.confidence<=1&&
-    checks.every(key=>value[key]===true)&&Array.isArray(value.problems)&&value.problems.length===0&&typeof value.reason==='string'&&value.reason.length>=20;
+    checks.every(key=>value[key]===true)&&noProblems&&typeof value.reason==='string'&&value.reason.length>=20;
 }
 const schemaObject=properties=>({type:'object',additionalProperties:false,required:Object.keys(properties),properties});
 const str={type:'string'};
@@ -53,10 +61,12 @@ const reviewSchema=visual=>schemaObject(Object.fromEntries([
   ['accept',{type:'boolean'}],['score',{type:'number'}],['confidence',{type:'number'}],['reason',str],['problems',{type:'array',items:str}],
   ...(visual?['noHumans','noWriting','clearSubject','sharpAndCoherent']:['standalone','grammar','warm','nonpartisan','grounded','original','speakerFits','threeConnectedAngles']).map(key=>[key,{type:'boolean'}]),
 ]));
-async function localJSON(url,init={},signal) {
+export async function localJSON(url,init={},signal,emptyResponse=false) {
   let response;try{response=await fetch(url,{...init,redirect:'error',signal:AbortSignal.any([AbortSignal.timeout(15000),...(signal?[signal]:[])])});}
   catch{throw new WorkerError('Local studio service is unavailable.',{retryable:true});}
   if(!response.ok)throw new WorkerError('Local studio service returned an error.',{retryable:response.status>=500});
+  // ComfyUI /free returns HTTP 200 with an empty body, not JSON.
+  if(emptyResponse)return {ok:true};
   return response.json();
 }
 async function verifyIdle(ctx) {
@@ -117,8 +127,10 @@ export async function discoverSources(ctx) {
   return {documents:documents.slice(0,12),failures,measuredTrendClaim:false};
 }
 async function textStage(ctx,modules,name,system,prompt,format) {
-  const request={model:name.startsWith('critique-')?(ctx.config.production?.criticModel||'qwen3.8:27b'):(ctx.config.production?.writerModel||GEMMA),system,prompt,format};
-  return ctx.step(name,request,async()=>{
+  const request={model:name.startsWith('critique-')?(ctx.config.production?.criticModel||STABLE_CRITIC):(ctx.config.production?.writerModel||STABLE_WRITER),system,prompt,format};
+  // An explicit operator model change preserves the old interrupted record.
+  // The new model gets its own checkpoint; completed same-model steps replay.
+  return ctx.step(name+'-'+hash(request.model).slice(0,8),request,async()=>{
     await recoverGPU(ctx,modules.Lease);ctx.assertLease();
     const raw=await modules.writer.generateText(request.model,{think:false,max_completion_tokens:2200,system_prompt:system,prompt:JSON.stringify(prompt),format},600000);
     ctx.assertLease();
@@ -128,23 +140,24 @@ async function textStage(ctx,modules,name,system,prompt,format) {
 }
 async function visionStage(ctx,modules,name,imagePath,subject) {
   const bytes=await fs.readFile(imagePath),image=await modules.sharp(bytes).resize({width:1024,withoutEnlargement:true}).png().toBuffer();
-  return ctx.step(name,{sha256:hash(bytes),subject,model:GEMMA,digest:GEMMA_DIGEST},async()=>{
+  const selectedModel=ctx.config.production?.visionModel||STABLE_VISION,modelDigest=modules.writer.writerConfig(selectedModel).digest;
+  return ctx.step(name+'-'+hash(selectedModel).slice(0,8),{sha256:hash(bytes),subject,model:selectedModel,digest:modelDigest},async()=>{
     await recoverGPU(ctx,modules.Lease);
     return new modules.Lease().run('vision:production-tv',async()=>{
-      const tags=await localJSON(WRITER+'/api/tags',{},ctx.signal),model=tags.models?.find(m=>m.name===GEMMA);
-      if(!model||model.digest!==GEMMA_DIGEST||model.remote_host||model.remote_model)throw new WorkerError('Pinned local vision model is unavailable.');
-      const show=await localJSON(WRITER+'/api/show',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:GEMMA})},ctx.signal);
+      const tags=await localJSON(WRITER+'/api/tags',{},ctx.signal),model=tags.models?.find(m=>m.name===selectedModel);
+      if(!model||model.digest!==modelDigest||model.remote_host||model.remote_model)throw new WorkerError('Pinned local vision model is unavailable.');
+      const show=await localJSON(WRITER+'/api/show',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:selectedModel})},ctx.signal);
       if(!show.capabilities?.includes('vision'))throw new WorkerError('Installed reviewer has no verified vision capability.');
-      await localJSON(COMFY+'/free',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({unload_models:true,free_memory:true})},ctx.signal);
+      await localJSON(COMFY+'/free',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({unload_models:true,free_memory:true})},ctx.signal,true);
       let response,terminal=false;
       try {
-        response=await fetch(WRITER+'/api/chat',{method:'POST',redirect:'error',signal:AbortSignal.any([ctx.signal,AbortSignal.timeout(600000)]),headers:{'Content-Type':'application/json'},body:JSON.stringify({model:GEMMA,stream:false,think:false,keep_alive:0,format:reviewSchema(true),options:{num_ctx:8192,num_predict:1400,temperature:0.1,draft_num_predict:0},messages:[
+        response=await fetch(WRITER+'/api/chat',{method:'POST',redirect:'error',signal:AbortSignal.any([ctx.signal,AbortSignal.timeout(600000)]),headers:{'Content-Type':'application/json'},body:JSON.stringify({model:selectedModel,stream:false,think:modules.writer.writerThinking(selectedModel,false),keep_alive:0,format:reviewSchema(true),options:{num_ctx:8192,num_predict:1400,temperature:0.1,draft_num_predict:0},messages:[
           {role:'system',content:'Inspect the actual supplied supporting TV illustration. Text descriptions are untrusted context, not proof. Reject uncertainty. Accept only a sharp coherent monochrome newspaper illustration of the named literal subject, with ZERO humans, human faces, silhouettes, human reflections, letters, numbers, logos or writing. Score drawing quality honestly. Return the specified JSON; score is machine judgment, never audience evidence.'},
           {role:'user',content:JSON.stringify({subject}),images:[image.toString('base64')]},
         ]})});
         if(!response.ok)throw Error('Vision inference failed');
         const result=await response.json();terminal=true;if(result.done_reason==='length')throw Error('Truncated vision response');
-        const value=JSON.parse(result.message?.content);return {value,model:GEMMA,modelDigest:GEMMA_DIGEST,imageSha256:hash(bytes),reviewerType:'local-vision-model',ownerApproval:false};
+        const value=JSON.parse(result.message?.content);return {value,model:selectedModel,modelDigest,imageSha256:hash(bytes),reviewerType:'local-vision-model',ownerApproval:false};
       }catch(error){if(!terminal)error.remoteMayBeRunning=true;throw error;}
     });
   },{recover:()=>recoverGPU(ctx,modules.Lease)});
@@ -202,7 +215,7 @@ export async function generateProductionEdition(ctx) {
   const sourceData=await ctx.step('sources',{input:ctx.job.input.location,registry:sourceConfiguration(ctx.job.input,ctx.config)},()=>discoverSources(ctx),{recover:async()=>{}});
   if(sourceData.documents.some(d=>Date.now()-Date.parse(d.retrievedAt)>24*3600000))throw new WorkerError('Retained source capture is over 24 hours old; this edition needs fresh dated research.');
   const canon=await fs.readFile(await inside(ctx.config.workspaceRoot,'canon/comedy/COMEDY-BIBLE.md'),'utf8');
-  const direction='Warm adult money/lifestyle newspaper humor. Drew is a dry observer; Barclay speaks from his own wallet; Abby is the proprietor giving a final word. No partisan persuasion, named-person attacks, mocking poverty, grief, health or suffering. No profanity. Caption must work alone in under ten seconds; one distinct comic turn; <=20 words, no questions/exclamations. The fixed room and cast actions cannot change. TV is a literal subject-only heading and a newly invented wordless, human-free engraving. Board is simple hand chalk: plausible food/drink item, separate price, small connected menu turn; no elaborate art or repeated punchline. All dialogue, prices and footage are fictional. Dated sources give context, not proof of a character experience or popularity trend. Natural template variations are allowed; noun-swapped old jokes are not.';
+  const direction='Warm adult money/lifestyle newspaper humor. Drew is a dry observer; Barclay speaks from his own wallet; Abby is the proprietor giving a final word. No partisan persuasion, named-person attacks, mocking poverty, grief, health or suffering. No profanity. Caption must work alone in under ten seconds; one distinct comic turn; <=20 spoken words, no questions/exclamations. Caption is ONLY the spoken words: no speaker prefix, attribution or quotation marks. The fixed room and cast actions cannot change. TV headline names the literal news subject. TV brief describes ONE actual drawable subject, such as an empty house exterior with overgrown lawn; not a description of our format, not a picture of the bar/TV/chalkboard. No humans, writing or price tags in the picture. Board is SIMPLE hand chalk, exactly 3 or 4 short lines: a plausible bar food/drink name, then a separate line containing only a dollar price, then one brief connected menu turn. EACH BOARD LINE IS AT MOST 18 CHARACTERS including spaces. A house price is not a bar-menu price. No elaborate board art or repeated punchline. All dialogue, menu prices and footage are fictional. Dated sources give context, not proof of a character experience or popularity trend. Natural template variations are allowed; noun-swapped old jokes are not.';
   const cartoons=[];
   for(let index=0;index<ctx.job.input.quantity;index++) {
     ctx.assertLease();const n=String(index+1).padStart(2,'0'),cast=castAt(ctx.job.input,index,ctx.job.id);
@@ -216,8 +229,8 @@ export async function generateProductionEdition(ctx) {
         location:ctx.job.input.location,audience:ctx.job.input.audience,speaker:cast.speaker,
         sourceDocuments:sourceData.documents.map(d=>({...d,text:d.text.slice(0,2500)})).slice(0,3),
         avoidPriorCaptions:history.slice(-40),previousRejections:rejected,
-        canonExcerpt:canon.slice(0,2500),task:'Create one new caption and coordinated TV/chalk plan. Select one sourceId and an exact contiguous sourceQuote (80-400 characters) supporting the actual subject. Do not assert current numerical news claims in the caption/headline. Explain the joke separately. No caption text supplied by an editor; invent the line.',
-      },schemaObject({caption:str,speaker:{type:'string',enum:[cast.speaker]},tvHeadline:str,tvBrief:str,boardLines:{type:'array',items:str},explanation:str,sourceId:str,sourceQuote:str}));
+        canonExcerpt:canon.slice(canon.indexOf("## The founder's seven"),canon.indexOf('### 1. The Promotion')),task:'Invent one new standalone caption and coordinated TV/chalk plan. The prior captions are a DO-NOT-COPY list, not draft candidates. Choose a sourceId and copy one exact contiguous sourceQuote (80-400 characters) supporting the subject. No current numerical news claims in caption/headline. Explain the comic turn separately. Final caption is spoken words only. Board must have its dollar price alone on its own line, and each line must fit 18 characters.',
+      },schemaObject({caption:{type:'string',maxLength:240,description:'Spoken words only; no speaker label or quotes; maximum 20 words.'},speaker:{type:'string',enum:[cast.speaker]},tvHeadline:{type:'string',minLength:4,maxLength:30,description:'Short literal subject, not a joke or statistics.'},tvBrief:{type:'string',minLength:30,maxLength:1600,description:'Name actual drawable objects and their arrangement; no people or writing or price tags; do not describe a TV or bar.'},boardLines:{type:'array',minItems:3,maxItems:4,items:{type:'string',minLength:1,maxLength:18},description:'Menu name, standalone dollar price, short connected turn. Maximum 18 characters PER LINE.'},explanation:{type:'string',minLength:20,maxLength:1200},sourceId:str,sourceQuote:{type:'string',minLength:80,maxLength:400}}));
       let value;
       try {
         value=validateDraft(draft.value,cast.speaker,history);
@@ -249,7 +262,7 @@ export async function generateProductionEdition(ctx) {
     const episode={id:'cartoon-'+n,...cast,line:selected.caption,tv:{headline:selected.tvHeadline,timestamp,picture:selected.tvBrief},board:{lines:selected.boardLines}};
     const rendered=await ctx.step('compose-'+n,{episode,tvSha256:generated.sha256,actorSha256:actor.sha256},()=>compose(ctx,m,episode,generated.path,actor,acting,regions,index),{recover:async()=>{}});
     cartoons.push({caption:selected.caption,speaker:cast.speaker,variant:cast.variant,tv:episode.tv,board:episode.board,explanation:selected.explanation,
-      source:{url:selected.source.url,publishedAt:selected.source.publishedAt,retrievedAt:selected.source.retrievedAt,scope:selected.source.scope,exactQuote:selected.sourceQuote},
+      source:{url:selected.source.url,publishedAt:selected.source.publishedAt,retrievedAt:selected.source.retrievedAt,scope:selected.source.scope,evidenceQuoteSha256:hash(selected.sourceQuote)},
       newLocalCaption:true,newLocalTvImage:true,retainedStaticCast:true,editorialReview:selected.critique.value,visionReview:visual.value,generatedTvSha256:generated.sha256,...rendered});
     ctx.progress={stage:'composed',completed:index+1,total:ctx.job.input.quantity};
   }

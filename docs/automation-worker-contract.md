@@ -19,8 +19,9 @@ Use `--once` for one bounded queue poll. Config fields:
 | `sharedGpuLockRoot` | Absolute common GPU lease directory used by the existing studio. |
 | `runtimePins` | `{path,sha256}` records for all installed code, canon, fonts, catalog and cast assets. |
 | `pollMs`, `heartbeatMs` | Defaults 10 seconds and 30 seconds. Heartbeat maximum 30 seconds. |
-| `production.writerModel` | Optional pinned local writer; default `gemma4:31b`. |
-| `production.criticModel` | Optional different pinned critic; default `qwen3.8:27b`. |
+| `production.writerModel` | Optional pinned local writer; default `qwen3.8:27b`. |
+| `production.criticModel` | Optional different pinned critic; default `gpt-oss:20b`. |
+| `production.visionModel` | Optional pinned image-capable reviewer; default `mistral-small3.2:24b-instruct-2506-q4_K_M`. Its installed digest and vision capability are checked before inference. |
 | `production.captionAttempts` | Up to three fresh caption candidates per requested panel. |
 | `production.locations` | Optional installed location/source registries. Each `{match:{name,region,country,coverage},sources:[{url,publisher,scope}]}` must use dated authoritative RSS feeds. These URLs are operator configuration, never instructions from a news page. |
 | `windowsLauncher` | Optional supervisor configuration; ignored by worker logic. |
@@ -51,11 +52,13 @@ Local text requests do not have provider-side exactly-once IDs. A response lost 
 
 ## Real production adapter
 
-The adapter independently captures dated source text, selects an exact quotation, asks a local model for new captions and coordinated TV/chalk plans, runs a separate-context local editorial critique, creates a **new FLUX TV illustration**, and sends actual image pixels to the pinned local Gemma vision model. It does not use a finished old panel as output. Existing approved-direction cast plates are explicitly retained, with the selected speaker mouth/gaze state.
+The adapter independently captures dated source text, selects an exact quotation, asks a local model for new captions and coordinated TV/chalk plans, runs a separate-context local editorial critique, creates a **new FLUX TV illustration**, and sends actual image pixels to the pinned local vision model. It does not use a finished old panel as output. Existing approved-direction cast plates are explicitly retained, with the selected speaker mouth/gaze state. The private checkpoint retains the exact evidence; the delivered report carries its hash and source URL instead of reproducing a long quotation.
 
-The TV stays human-free and monochrome. Chalk is font-outlined grainy hand lettering, two to four short logical menu lines and a separate fictional price. Captions are outlined with the house font in the existing lower image band. Deterministic composition rejects any changed pixel outside TV, chalk and caption masks and any introduced color. PNGs use lossless compression; oversized files fail delivery rather than being truncated.
+The TV stays human-free and monochrome. The writer is instructed to produce three or four short logical chalk-menu lines (at most 18 characters per line) with a separate fictional price. Chalk is font-outlined grainy hand lettering. Captions are outlined with the house font in the existing lower image band. Deterministic composition rejects any changed pixel outside TV, chalk and caption masks and any introduced color. PNGs use lossless compression; oversized files fail delivery rather than being truncated.
 
 Machine scores must clear 8/10 with >=0.85 declared confidence and no identified problems; these are **machine judgments, not audience ratings or human approval**. Rejected candidates are retained. A bounded failed quality gate does not silently lower the bar or fill the quota with placeholders. The adapter preserves source geography/data periods and does not describe mere relevance as a measured trend.
+
+The September 14 acceptance run proved delivery, not editorial readiness: the first delivered joke was too abstract and its chalk menu too vague despite passing the model review. Keep outputs private for human review; calibrating those judgments against the approved best-of collection remains necessary. A literal single-item `None` issue list is normalized to empty, but any actual concern or failed criterion still rejects the review. See `automation-acceptance-2026-09-14.md` for tested behavior and open limits.
 
 Naples has a default NABOR/BLS source setup. Other places require a reviewed source registry. Future/repeated occasions belong to the cloud dispatcher; the adapter executes the specific claimed job. Arbitrary-city production and first-pass humor reliability are not assumed from the Naples setup. Sources retained beyond 24 hours stop the edition rather than silently reuse stale evidence.
 
