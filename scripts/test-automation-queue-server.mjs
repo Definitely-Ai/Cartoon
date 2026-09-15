@@ -56,12 +56,42 @@ function load({ fetch = async () => { throw Error("Unexpected request"); }, sign
     return module.exports;
   }
   return { core: compile("lib/automation-queue-core.ts"), server: compile("lib/automation-queue-server.ts"),
+    retry: compile("app/api/gallery/automation/retry/route.ts"),
     jobs: compile("app/api/gallery/automation/jobs/route.ts"), worker: compile("app/api/gallery/automation/worker/route.ts"),
     assets: compile("app/api/gallery/automation/assets/route.ts") };
 }
 const request = (endpoint, body, extraHeaders = {}) => new Request(`https://studio.example/api/gallery/automation/${endpoint}`, {
   method: body === undefined ? "GET" : "POST", headers: { Origin: "https://studio.example", "Content-Type": "application/json", ...extraHeaders },
   ...(body === undefined ? {} : { body: JSON.stringify(body) }),
+});
+test('fresh-pass retry is authorized, idempotent, keeps the original and uses a new checkpoint identity',async()=>{
+  const original=row({status:'failed',attempt:3,last_error:'Caption review needs another pass.',finished_at:now});
+  let saved,writes=0;
+  const {retry}=load({fetch:async(url,options)=>{
+    const query=new URL(url).searchParams;
+    if(options.method==='POST'){
+      const body=JSON.parse(options.body);
+      assert.equal(body.input.timing.mode,'now');assert.equal(body.input.timing.date,'2026-09-14');
+      assert.notEqual(body.request_id,original.request_id);
+      if(!saved){saved=row({...body,id:'55555555-5555-4555-8555-555555555555'});writes++;}
+      return new Response(null,{status:201});
+    }
+    return Response.json(query.has('id')?[original]:saved?[saved]:[]);
+  }});
+  const first=await retry.POST(request('retry',{jobId}));assert.equal(first.status,200);
+  const a=(await first.json()).job;
+  const b=(await (await retry.POST(request('retry',{jobId}))).json()).job;
+  assert.equal(writes,1);assert.equal(a.id,b.id);assert.notEqual(a.id,original.id);assert.equal(original.status,'failed');assert.equal(original.attempt,3);
+  assert.equal((await retry.POST(request('retry',{jobId},{Origin:'https://evil.example'}))).status,403);
+  assert.equal((await retry.POST(request('retry',{jobId,reset:true}))).status,400);
+  assert.equal((await load({signedIn:false}).retry.POST(request('retry',{jobId}))).status,401);
+});
+test('fresh-pass retry never resets active or completed work',async()=>{
+  for(const status of ['queued','running','succeeded']){
+    const data=status==='running'?liveRow():status==='succeeded'?row({status,artifacts:[{name:'one.png',kind:'image',contentType:'image/png',bytes:1,sha256:'a'.repeat(64),path:`${jobId}/1/one.png`}],attempt:1}):row();
+    const {retry}=load({fetch:async(url,options)=>{assert.notEqual(options.method,'POST');return Response.json([data]);}});
+    assert.equal((await retry.POST(request('retry',{jobId}))).status,409);
+  }
 });
 const workerRequest = body => request("worker", body, { Authorization: `Bearer ${token}` });
 const workerAuth = url => new URL(url).pathname === "/rest/v1/automation_workers";

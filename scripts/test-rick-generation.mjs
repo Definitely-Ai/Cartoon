@@ -30,7 +30,7 @@ test('review schema explicitly defines numeric scales and rejects percentage res
 });
 const require=createRequire(import.meta.url);
 function loadTS(file){const code=ts.transpileModule(fs.readFileSync(file,'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022,esModuleInterop:true}}).outputText;const m={exports:{}};new Function('require','module','exports',code)(id=>id.startsWith('./')?loadTS('lib/'+id.slice(2)+'.ts'):require(id),m,m.exports);return m.exports;}
-const {immediateEdition,generationProgress,matchingActiveEdition,US_STATES}=loadTS('lib/automation-simple.ts');
+const {immediateEdition,generationProgress,matchingActiveEdition,US_STATES,queueGroups,requestLabel,recoveryReason}=loadTS('lib/automation-simple.ts');
 const {showcasePDF}=loadTS('lib/showcase-pdf.ts');
 
 test('different city batches can queue while identical active inputs are protected from duplicate clicks',()=>{
@@ -53,10 +53,28 @@ test('real stage counters never report completion before server delivery succeed
   assert.equal(generationProgress(job).percent,99);
   assert.equal(generationProgress({...job,status:'succeeded'}).percent,100);
   assert.equal(generationProgress({...job,status:'queued'}).percent,0);
+  assert.equal(generationProgress({...job,status:'queued',attempt:2}).percent,99);
   assert.equal(workProgress('tv-02-1',2).completed,8);
   assert.equal(workProgress('vision-01-1-v2',2).completed,4);
   assert.equal(workProgress('uploading',2).completed,11);
   assert.equal(workProgress('uploading',2).total,12);
+});
+test('the production desk separates ready, scheduled and recoverable work without concealing incomplete jobs',()=>{
+  const now=Date.parse('2026-09-15T14:00:00Z');
+  const base={id:'a',createdAt:'2026-09-15T12:00:00Z',dueAt:'2026-09-15T12:00:00Z',availableAt:'2026-09-15T12:00:00Z',status:'queued',attempt:0};
+  const scheduled={...base,id:'s',dueAt:'2026-09-16T12:00:00Z'};
+  const retry={...base,id:'r',attempt:1,availableAt:'2026-09-15T14:05:00Z'};
+  const work={...base,id:'w',status:'running',progress:{stage:'waiting-gpu'}};
+  const stopped={...base,id:'f',status:'failed',lastError:'Caption quality gate rejected candidates'};
+  const ready={...base,id:'d',status:'succeeded'};
+  const groups=queueGroups([scheduled,stopped,retry,base,ready,work],now);
+  assert.deepEqual(groups.active.map(j=>j.id),['w','a','r','s']);
+  assert.deepEqual(groups.eligible.map(j=>j.id),['a']);
+  assert.equal(groups.ready[0],ready);assert.equal(groups.attention[0],stopped);
+  assert.equal(requestLabel(scheduled,now),'Scheduled');
+  assert.equal(requestLabel(retry,now),'Auto-retry queued');
+  assert.equal(requestLabel(work,now),'Waiting for GPU');
+  assert.match(recoveryReason(stopped),/editorial review/);
 });
 test('city discovery fetches one fixed public host and accepts only dated local money topics',()=>{
   const place={name:'Denver',region:'Colorado'},now=Date.parse('2026-09-14');

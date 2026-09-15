@@ -10,7 +10,7 @@ import {
 
 const OWNER = "backroom-owner";
 export { configuration as queueDatabaseConfig, data as queueDatabaseData, upstream as queueDatabaseRequest };
-const JOB_FIELDS = "id,owner_key,request_id,input_hash,input,input_validated_at,schedule_id,occurrence_at,status,created_at,updated_at,due_at,available_at,attempt,progress,last_error,artifacts,lease_expires_at,finished_at";
+const JOB_FIELDS = "id,owner_key,request_id,input_hash,input,input_validated_at,schedule_id,occurrence_at,status,created_at,updated_at,due_at,available_at,attempt,progress,last_error,artifacts,lease_expires_at,finished_at,automation_schedules(status)";
 const unavailable = () => new AutomationError(503, "The durable queue is temporarily unavailable. Keep this request and retry with the same request ID.");
 const stale = () => new AutomationError(409, "This worker lease is no longer current. Claim again before continuing.");
 const digest = (value: string | Uint8Array) => createHash("sha256").update(value).digest("hex");
@@ -93,6 +93,8 @@ function toJob(raw: unknown): AutomationJob {
       artifacts: resultArtifacts, leaseExpiresAt: date(row.lease_expires_at, true), finishedAt: date(row.finished_at, true),
     };
     if (result.status === "running" && !result.leaseExpiresAt) throw unavailable();
+    const scheduleStatus=(row.automation_schedules as {status?:unknown}|null)?.status;
+    if(scheduleStatus==='active'||scheduleStatus==='paused')result.scheduleStatus=scheduleStatus;
     return result;
   } catch { throw unavailable(); }
 }
@@ -150,6 +152,31 @@ export async function createJob(requestId: string, rawInput: unknown): Promise<A
   if (stored.length !== 1) throw unavailable();
   if (digest(JSON.stringify(stored[0].input)) !== inputHash) throw new AutomationError(409, "This request ID already belongs to another edition.");
   return stored[0];
+}
+// A fresh creative pass must not replay exhausted local checkpoints. Keep the
+// original job immutable and derive ONE follow-up request ID per original job.
+// Database request_id uniqueness fences double clicks and lost HTTP responses.
+export async function retryJob(jobId: string): Promise<AutomationJob> {
+  uuid(jobId);
+  const config=configuration();
+  const original=(await readJobs(config,new URLSearchParams({id:`eq.${jobId}`,limit:'2'}),1))[0];
+  if(!original)throw new AutomationError(404,'The saved request was not found.');
+  if(original.status!=='failed')throw new AutomationError(409,'This request is already queued, running, or ready. Open its current status.');
+  const hex=digest(`swinging-door-fresh-pass-v1:${jobId}`);
+  const requestId=`${hex.slice(0,8)}-${hex.slice(8,12)}-5${hex.slice(13,16)}-8${hex.slice(17,20)}-${hex.slice(20,32)}`;
+  const existing=(await readJobs(config,new URLSearchParams({request_id:`eq.${requestId}`,limit:'2'}),1))[0];
+  if(existing)return existing;
+  const now=new Date();
+  const date=new Intl.DateTimeFormat('en-CA',{timeZone:original.input.location.timezone,year:'numeric',month:'2-digit',day:'2-digit'}).format(now);
+  const input={...original.input,timing:{mode:'now',date,time:'09:00',weekdays:[]}};
+  try{return await createJob(requestId,input);}catch(error){
+    // Another tab can win across local midnight. Its exact saved input wins.
+    if(error instanceof AutomationError&&error.status===409){
+      const winner=(await readJobs(config,new URLSearchParams({request_id:`eq.${requestId}`,limit:'2'}),1))[0];
+      if(winner)return winner;
+    }
+    throw error;
+  }
 }
 export async function authenticateWorker(request: Request): Promise<WorkerIdentity> {
   const authorization = request.headers.get("authorization");

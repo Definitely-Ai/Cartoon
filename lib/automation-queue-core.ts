@@ -13,6 +13,7 @@ export type AutomationJob = {
   id: string; requestId: string; status: "queued" | "running" | "succeeded" | "failed";
   input: EditionInput; createdAt: string; updatedAt: string; dueAt: string; availableAt: string;
   inputValidatedAt: string; scheduleId: string | null; occurrenceAt: string | null;
+  scheduleStatus?: 'active' | 'paused' | null;
   attempt: number; progress: JobProgress; lastError: string | null; artifacts: JobArtifact[];
   leaseExpiresAt: string | null; finishedAt: string | null;
 };

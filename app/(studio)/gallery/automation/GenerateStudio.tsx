@@ -6,6 +6,7 @@ import { immediateEdition, generationProgress, matchingActiveEdition, US_STATES 
 import { validateEditionInput, type EditionInput } from '@/lib/automation-studio-core';
 import type { AutomationJob } from '@/lib/automation-queue-core';
 import { PRINT_SIZES, printMetrics, type PrintSizeId } from '@/lib/cartoon-print';
+import RequestBoard, { MilestoneBar } from './RequestBoard';
 const RECEIPT='swinging-door-quick-generation-v1';
 const FOCUS='swinging-door-active-edition-v1';
 type Receipt={requestId:string;input:EditionInput;recordedAt:string};
@@ -48,6 +49,8 @@ export default function GenerateStudio({canManage,presentation=false}:{canManage
   const [city,setCity]=useState('Naples'),[state,setState]=useState('Florida'),[quantity,setQuantity]=useState(1);
   const [jobs,setJobs]=useState<AutomationJob[]>([]),[focused,setFocused]=useState(''),[connected,setConnected]=useState<boolean|null>(null);
   const [pending,setPending]=useState<Receipt|null>(null),[ready,setReady]=useState(false),[sending,setSending]=useState(false),[error,setError]=useState(''),[pollError,setPollError]=useState('');
+  const [retrying,setRetrying]=useState('');
+  const detailRef=useRef<HTMLElement>(null),retryLock=useRef(false);
   const inFlight=useRef(false),polling=useRef(false);
   const refresh=useCallback(async(signal?:AbortSignal)=>{
     if(polling.current)return;polling.current=true;
@@ -69,9 +72,26 @@ export default function GenerateStudio({canManage,presentation=false}:{canManage
     const resume=()=>void refresh(controller.signal);document.addEventListener('visibilitychange',resume);
     return()=>{controller.abort();clearInterval(timer);document.removeEventListener('visibilitychange',resume);};
   },[canManage,presentation,refresh]);
-  const job=focused?jobs.find(j=>j.id===focused):presentation?undefined:jobs.find(j=>j.status==='running')||jobs.find(j=>j.status==='queued'&&Date.parse(j.dueAt)<=Date.now())||jobs.find(j=>j.status==='succeeded');
-  const active=jobs.some(j=>(j.status==='running'||j.status==='queued')&&Date.parse(j.dueAt)<=Date.now());
+  const job=focused?jobs.find(j=>j.id===focused):presentation?undefined:jobs.find(j=>j.status==='running')||jobs.find(j=>j.status==='queued'&&j.scheduleStatus!=='paused'&&Date.parse(j.dueAt)<=Date.now())||jobs.find(j=>j.status==='succeeded');
+  const active=jobs.some(j=>(j.status==='running'||j.status==='queued'&&j.scheduleStatus!=='paused')&&Date.parse(j.dueAt)<=Date.now());
   const duplicateActive=matchingActiveEdition(jobs,city,state,quantity);
+  function selectJob(selected:AutomationJob){
+    setFocused(selected.id);
+    try{localStorage.setItem(FOCUS,selected.id);}catch{/* The in-memory selection still works. */}
+    requestAnimationFrame(()=>{detailRef.current?.scrollIntoView({behavior:'smooth',block:'start'});detailRef.current?.focus({preventScroll:true});});
+  }
+  async function retry(original:AutomationJob){
+    if(retryLock.current)return;retryLock.current=true;setRetrying(original.id);setError('');
+    try{
+      const response=await fetch('/api/gallery/automation/retry',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({jobId:original.id}),signal:AbortSignal.timeout(20000)});
+      const body=await response.json();
+      if(!response.ok)throw Error(body.error||'The fresh pass is not confirmed yet. Retry the same saved request safely.');
+      const resumed=body.job as AutomationJob;
+      if(!resumed?.id)throw Error('The fresh pass is being confirmed. Retry the same saved request safely.');
+      setJobs(old=>[resumed,...old.filter(j=>j.id!==resumed.id)]);selectJob(resumed);void refresh();
+    }catch(e){setError(e instanceof Error?e.message:'Connection interrupted. Retry this same request; it will not create a duplicate fresh pass.');}
+    finally{retryLock.current=false;setRetrying('');}
+  }
   async function submit(event:React.FormEvent) {
     event.preventDefault();if(inFlight.current||!ready)return;inFlight.current=true;setSending(true);setError('');
     try {
@@ -109,18 +129,19 @@ export default function GenerateStudio({canManage,presentation=false}:{canManage
       <p className="generate-note">One click saves your request. The studio works through queued editions, waiting for other GPU work when needed. Each cartoon takes several minutes; larger batches run in sequence. You can close this page and return.</p>
       {pending&&<p role="status">Unconfirmed request: {pending.input.quantity} for {pending.input.location.name}, {pending.input.location.region}. Resume uses the same request ID.</p>}
       {error&&<p role="alert">{error}</p>}{pollError&&<p role="status">{pollError}</p>}
-      {job&&progress&&<section className="generation-progress" aria-label="Generation progress">
-        <div><h2>{progress.label}</h2><strong>{job.status==='failed'?'Stopped':`${progress.percent}%`}</strong></div>
-        {job.status!=='failed'&&<progress max={100} value={progress.percent} aria-label="Completed production milestones" />}
+      {job&&progress&&<section ref={detailRef} tabIndex={-1} className="generation-progress" aria-label="Generation progress">
+        <div><h2>{progress.label}</h2><strong>{job.status==='failed'?'Review':`${progress.percent}%`}</strong></div>
+        {job.status!=='failed'&&<MilestoneBar job={job}/>}
         <p role="status">{progress.detail}</p>
+        {job.status==='failed'&&<><button type="button" disabled={!!retrying} onClick={()=>void retry(job)}>{retrying===job.id?'Confirming fresh pass…':'Retry / open fresh pass'}</button>{!pending&&<button type="button" className="request-edit-place" onClick={()=>{setCity(job.input.location.name);setState(job.input.location.region);setQuantity(job.input.quantity);const field=document.querySelector<HTMLInputElement>('.generate-form input');field?.scrollIntoView({behavior:'smooth',block:'center'});field?.focus({preventScroll:true});}}>Edit place and start again</button>}<p className="generate-note">Starts a new edition for today, or opens the existing fresh pass. The original record is preserved.</p></>}
         {job.status==='running'&&(!connected||Date.parse(job.leaseExpiresAt||'')<Date.now())&&<p>Studio connection lost. The bar is paused at the last confirmed milestone; saved steps will resume when the worker reconnects.</p>}
         <p className="generate-note">{job.input.location.name}, {job.input.location.region} · {job.input.quantity} requested · Progress counts completed stages, not time remaining.</p>
-        <details><summary>Request details</summary><p>Request {job.id} · attempt {job.attempt} · {job.progress.stage}</p></details>
+        <details><summary>Request details</summary><p>Request {job.id} · attempt {job.attempt} · {job.progress.stage}</p>{job.lastError&&<p>Last production check: {job.lastError}</p>}</details>
       </section>}
       {job?.status==='succeeded'&&<CompletedImages key={job.id} job={job}/>}
-      {!!jobs.length&&<details className="generation-history"><summary>Previous requests ({jobs.length})</summary><ul>{jobs.map(j=><li key={j.id}><button type="button" onClick={()=>{setFocused(j.id);localStorage.setItem(FOCUS,j.id);}}>{j.input.location.name}, {j.input.location.region} · {j.input.quantity} · {j.status}</button></li>)}</ul></details>}
+      {connected!==null&&<RequestBoard jobs={jobs} focused={job?.id} connected={connected} pollError={pollError} retrying={retrying} onSelect={selectJob} onRetry={j=>void retry(j)}/>}
     </>}
     {!presentation&&<footer className="generate-links"><Link href="/gallery/automation/planner">Advanced plans and schedules</Link><Link href="/gallery/presentation">Presentation for Rick</Link></footer>}
-    <p className="generate-note">Local news availability varies. Dedicated sources are preferred; other cities use dated headline discovery, limited to the reported subject. If evidence or quality checks fail, the request stops with a reason instead of producing a placeholder.</p>
+    <p className="generate-note">Progress reflects confirmed production milestones, not an estimated wait. Finished images appear automatically. Editions that need more research or creative work remain saved with a recovery option. Publication still needs your review.</p>
   </section>;
 }
