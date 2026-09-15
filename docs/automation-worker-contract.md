@@ -22,7 +22,7 @@ Use `--once` for one bounded queue poll. Config fields:
 | `production.writerModel` | Optional pinned local writer; default `qwen3.8:27b`. |
 | `production.criticModel` | Optional different pinned critic; default `gpt-oss:20b`. |
 | `production.visionModel` | Optional pinned image-capable reviewer; default `mistral-small3.2:24b-instruct-2506-q4_K_M`. Its installed digest and vision capability are checked before inference. |
-| `production.captionAttempts` | Up to three fresh caption candidates per requested panel. |
+| `production.captionAttempts` | Installed v18 uses twelve fresh caption candidates per requested panel, with an eighteen-attempt hard ceiling. |
 | `production.locations` | Optional installed location/source registries. Each `{match:{name,region,country,coverage},sources:[{url,publisher,scope}]}` must use dated authoritative RSS feeds. These URLs are operator configuration, never instructions from a news page. |
 | `windowsLauncher` | Optional supervisor configuration; ignored by worker logic. |
 

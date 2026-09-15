@@ -25,10 +25,11 @@ The existing 40 curated cartoons are unchanged.
 - Approval binds the exact image and report hashes, requested edition, approved
   `barclay-reference-v2` portrait/head/acting pose, unchanged protected set,
   monochrome audit, and 1024 × 1536 print dimensions.
-- Older or unverified cast releases cannot be approved. The running v14 PC
-  worker is still the known source of the earlier wrong-Barclay Chicago draft;
-  activating the corrected runtime is a separate startup change, not performed
-  by this website release.
+- Older or unverified cast releases cannot be approved. The v14 PC worker was
+  the source of the earlier wrong-Barclay Chicago draft. After explicit owner
+  approval on September 15, the idle worker was upgraded to `20260915-v18`;
+  the replacement authenticated successfully under the existing startup task.
+  See `automation-worker-v18-20260915.md` for evidence and remaining trial limits.
 - PostgreSQL serializes decisions, rejects stale versions, and records an
   append-only decision history. Retrying a lost response cannot resurrect work
   subsequently withdrawn by a reviewer.

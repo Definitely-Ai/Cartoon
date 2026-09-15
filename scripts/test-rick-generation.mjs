@@ -6,7 +6,7 @@ import ts from 'typescript';
 import {PDFDocument} from 'pdf-lib';
 import {localNewsURL,parseLocalNews} from './automation/local-news.mjs';
 import {workProgress} from './automation/work-progress.mjs';
-import {reviewSchema,approvedMachineReview} from './automation/production-adapter.mjs';
+import {reviewSchema,approvedMachineReview,editorialReviewSchema,approvedEditorialReview,validateDraft} from './automation/production-adapter.mjs';
 import {waitForStudio} from './automation/studio-availability.mjs';
 
 test('a busy GPU preserves milestones, waits without consuming attempts, then resumes',async()=>{
@@ -27,6 +27,15 @@ test('review schema explicitly defines numeric scales and rejects percentage res
     assert.equal(properties.confidence.maximum,1);
   }
   assert.equal(approvedMachineReview({accept:true,score:100,confidence:100,problems:[],reason:'The subject is drawn clearly.',noHumans:true,noWriting:true,clearSubject:true,sharpAndCoherent:true},{visual:true}),false);
+});
+test('the revised editor rejects unexplained rankings and compliance-only praise',()=>{
+  const draft={caption:'I checked the construction schedule, then the tap list.',speaker:'Drew',tvHeadline:'ILLINOIS RANKS SECOND TO LAST',tvBrief:'An empty concrete slab with a single wooden post',boardLines:['Sourdough Loaf','$6.00','Baked on site'],explanation:'A construction-themed bar menu.'};
+  assert.throws(()=>validateDraft(draft,'Drew'),/unexplained ranking/);
+  const old={accept:true,score:8,confidence:.9,reason:'The draft satisfies all constraints and meets the specified format.',problems:[],standalone:true,grammar:true,warm:true,nonpartisan:true,grounded:true,original:true,speakerFits:true,threeConnectedAngles:true};
+  assert.equal(approvedEditorialReview(old),false);
+  assert.equal(approvedEditorialReview({...old,readerMeaning:'The caption meets all constraints and has a correct word count.',tvConnection:'The television shows the topic clearly.',chalkConnection:'The chalkboard contains a short menu.',captionStrength:8,combinedCoherence:8,cityRelevance:8}),false);
+  assert.ok(editorialReviewSchema().required.includes('readerMeaning'));
+  assert.ok(editorialReviewSchema().required.includes('combinedCoherence'));
 });
 const require=createRequire(import.meta.url);
 function loadTS(file){const code=ts.transpileModule(fs.readFileSync(file,'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022,esModuleInterop:true}}).outputText;const m={exports:{}};new Function('require','module','exports',code)(id=>id.startsWith('./')?loadTS('lib/'+id.slice(2)+'.ts'):require(id),m,m.exports);return m.exports;}
