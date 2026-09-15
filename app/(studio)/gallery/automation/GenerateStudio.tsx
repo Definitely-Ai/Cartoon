@@ -5,7 +5,8 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { immediateEdition, generationProgress, matchingActiveEdition, US_STATES } from '@/lib/automation-simple';
 import { validateEditionInput, type EditionInput } from '@/lib/automation-studio-core';
 import type { AutomationJob } from '@/lib/automation-queue-core';
-import { PRINT_SIZES, printMetrics, type PrintSizeId } from '@/lib/cartoon-print';
+import {generationTimeline} from '@/lib/generation-timeline';
+import EditionPreview from './EditionPreview';
 import RequestBoard, { MilestoneBar } from './RequestBoard';
 const RECEIPT='swinging-door-quick-generation-v1';
 const FOCUS='swinging-door-active-edition-v1';
@@ -16,40 +17,12 @@ function readReceipt():Receipt|null {
   if(!/^[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89ab][a-f0-9]{3}-[a-f0-9]{12}$/.test(value.requestId)||!Number.isFinite(Date.parse(value.recordedAt)))throw Error('The saved request needs checking before another is sent.');
   return {...value,input:validateEditionInput(value.input,new Date(value.recordedAt))};
 }
-function asset(job:AutomationJob,name:string){return `/api/gallery/automation/assets?jobId=${job.id}&name=${encodeURIComponent(name)}`;}
-function CompletedImages({job}:{job:AutomationJob}) {
-  const [size,setSize]=useState<PrintSizeId>('fine'),[busy,setBusy]=useState(''),[error,setError]=useState('');
-  const metrics=printMetrics(1024,1536,size,'letter');
-  async function download(name:string,sha256:string) {
-    setBusy(name);setError('');
-    try {
-      const response=await fetch(asset(job,name),{cache:'no-store'});if(!response.ok)throw Error('The image could not be downloaded. Please sign in again if your session expired.');
-      const bytes=new Uint8Array(await response.arrayBuffer());
-      const hash=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',bytes))).map(n=>n.toString(16).padStart(2,'0')).join('');
-      if(hash!==sha256)throw Error('The saved image did not pass its integrity check.');
-      const {cartoonPrintPDF}=await import('@/lib/cartoon-print-pdf');
-      const pdf=await cartoonPrintPDF(bytes,`${job.input.location.name} - ${name}`,1024,1536,size,'letter');
-      const url=URL.createObjectURL(new Blob([pdf as BlobPart],{type:'application/pdf'}));const link=document.createElement('a');link.href=url;link.download=`${job.input.location.name}-${name.replace('.png','')}-${size}.pdf`;link.click();setTimeout(()=>URL.revokeObjectURL(url),30000);
-    }catch(e){setError(e instanceof Error?e.message:'Download failed.');}finally{setBusy('');}
-  }
-  return <section className="generation-results" aria-label="Finished cartoons">
-    <h3>{job.input.location.name}, {job.input.location.region}</h3>
-    <p>New, machine-reviewed drafts. Review the joke, source context, and artwork before publishing.</p>
-    <label>PDF artwork size <select value={size} onChange={e=>setSize(e.target.value as PrintSizeId)}>{PRINT_SIZES.map(s=><option key={s.id} value={s.id}>{s.width} × {s.height} inches</option>)}</select></label>
-    <p className="generate-note">{metrics.ppi} effective PPI · US Letter · print at Actual size. Enlarging does not add detail.</p>
-    {error&&<p role="alert">{error}</p>}
-    <div className="generation-image-grid">{job.artifacts.filter(a=>a.kind==='image').map((a,i)=><figure key={a.name}>
-      <Image src={asset(job,a.name)} alt={`${job.input.location.name} generated cartoon ${i+1}; review draft`} width={1024} height={1536} unoptimized onError={()=>setError('A saved image could not load. Check your connection or sign in again; the completed request remains saved.')} />
-      <figcaption><a href={asset(job,a.name)} target="_blank" rel="noreferrer">Open original {i+1}</a> <button type="button" disabled={!!busy} onClick={()=>void download(a.name,a.sha256)}>{busy===a.name?'Preparing PDF…':'Download print PDF'}</button></figcaption>
-    </figure>)}</div>
-    {job.artifacts.filter(a=>a.kind==='report').map(a=><a key={a.name} href={asset(job,a.name)} target="_blank" rel="noreferrer">Source evidence and production report</a>)}
-  </section>;
-}
 export default function GenerateStudio({canManage,presentation=false}:{canManage:boolean;presentation?:boolean}) {
   const [city,setCity]=useState('Naples'),[state,setState]=useState('Florida'),[quantity,setQuantity]=useState(1);
   const [jobs,setJobs]=useState<AutomationJob[]>([]),[focused,setFocused]=useState(''),[connected,setConnected]=useState<boolean|null>(null);
   const [pending,setPending]=useState<Receipt|null>(null),[ready,setReady]=useState(false),[sending,setSending]=useState(false),[error,setError]=useState(''),[pollError,setPollError]=useState('');
-  const [retrying,setRetrying]=useState('');
+  const [retrying,setRetrying]=useState(''),[lastChecked,setLastChecked]=useState<string|null>(null);
+  const formRef=useRef<HTMLFormElement>(null);
   const detailRef=useRef<HTMLElement>(null),retryLock=useRef(false);
   const inFlight=useRef(false),polling=useRef(false);
   const refresh=useCallback(async(signal?:AbortSignal)=>{
@@ -58,7 +31,7 @@ export default function GenerateStudio({canManage,presentation=false}:{canManage
       const response=await fetch('/api/gallery/automation/jobs',{cache:'no-store',signal:AbortSignal.any([AbortSignal.timeout(12000),...(signal?[signal]:[])])});
       if(!response.ok)throw Error(response.status===401?'Sign in to view your saved requests.':'Connection interrupted. Saved work is safe; reconnecting automatically.');
       const data=await response.json();if(signal?.aborted)return;
-      setJobs(data.jobs);setConnected(data.workerConnected);setPollError('');
+      setJobs(data.jobs);setConnected(data.workerConnected);setLastChecked(new Date().toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'}));setPollError('');
       const receipt=readReceipt();
       const found=receipt&&data.jobs.find((j:AutomationJob)=>j.requestId===receipt.requestId);
       if(found){localStorage.removeItem(RECEIPT);localStorage.setItem(FOCUS,found.id);setPending(null);setFocused(found.id);}
@@ -116,32 +89,52 @@ export default function GenerateStudio({canManage,presentation=false}:{canManage
     }catch(e){setError(e instanceof Error?e.message:'Could not confirm the request. Resume it without creating a duplicate.');}finally{inFlight.current=false;setSending(false);}
   }
   const progress=job?generationProgress(job):null;
-  return <section className="generate-studio" id="generate">
-    <header><p className="generate-eyebrow">Your local edition</p><h1>Choose a place. Make a cartoon.</h1><p>The room and cast stay familiar. The caption, television picture, and chalkboard change together.</p></header>
-    {!canManage?<p className="generate-callout"><Link href="/login?next=/gallery/automation">Sign in to generate cartoons</Link>. The presentation and existing cartoons are available to view.</p>:<>
-      <p className="studio-connection" role="status">{connected===null?'Checking the local studio…':connected?'● Local studio connected':'○ Local studio offline · requests stay saved until it returns'}</p>
-      <form className="generate-form" onSubmit={submit}>
-        <label>City or town<input required maxLength={80} value={city} onChange={e=>setCity(e.target.value)} disabled={!!pending||sending} autoComplete="address-level2" /></label>
-        <label>State<select value={state} onChange={e=>setState(e.target.value)} disabled={!!pending||sending}>{US_STATES.map(s=><option key={s}>{s}</option>)}</select></label>
-        <label>Cartoons<select value={quantity} onChange={e=>setQuantity(Number(e.target.value))} disabled={!!pending||sending}>{Array.from({length:12},(_,i)=><option key={i+1} value={i+1}>{i+1}</option>)}</select></label>
-        <button type="submit" disabled={!ready||sending||(!!duplicateActive&&!pending)}>{sending?'Saving request…':pending?'Resume saved request':duplicateActive?'Edition already queued':active?'Queue cartoons':'Generate cartoons'}</button>
-      </form>
-      <p className="generate-note">One click saves your request. The studio works through queued editions, waiting for other GPU work when needed. Each cartoon takes several minutes; larger batches run in sequence. You can close this page and return.</p>
-      {pending&&<p role="status">Unconfirmed request: {pending.input.quantity} for {pending.input.location.name}, {pending.input.location.region}. Resume uses the same request ID.</p>}
-      {error&&<p role="alert">{error}</p>}{pollError&&<p role="status">{pollError}</p>}
-      {job&&progress&&<section ref={detailRef} tabIndex={-1} className="generation-progress" aria-label="Generation progress">
-        <div><h2>{progress.label}</h2><strong>{job.status==='failed'?'Review':`${progress.percent}%`}</strong></div>
-        {job.status!=='failed'&&<MilestoneBar job={job}/>}
-        <p role="status">{progress.detail}</p>
-        {job.status==='failed'&&<><button type="button" disabled={!!retrying} onClick={()=>void retry(job)}>{retrying===job.id?'Confirming fresh pass…':'Retry / open fresh pass'}</button>{!pending&&<button type="button" className="request-edit-place" onClick={()=>{setCity(job.input.location.name);setState(job.input.location.region);setQuantity(job.input.quantity);const field=document.querySelector<HTMLInputElement>('.generate-form input');field?.scrollIntoView({behavior:'smooth',block:'center'});field?.focus({preventScroll:true});}}>Edit place and start again</button>}<p className="generate-note">Starts a new edition for today, or opens the existing fresh pass. The original record is preserved.</p></>}
-        {job.status==='running'&&(!connected||Date.parse(job.leaseExpiresAt||'')<Date.now())&&<p>Studio connection lost. The bar is paused at the last confirmed milestone; saved steps will resume when the worker reconnects.</p>}
-        <p className="generate-note">{job.input.location.name}, {job.input.location.region} · {job.input.quantity} requested · Progress counts completed stages, not time remaining.</p>
-        <details><summary>Request details</summary><p>Request {job.id} · attempt {job.attempt} · {job.progress.stage}</p>{job.lastError&&<p>Last production check: {job.lastError}</p>}</details>
-      </section>}
-      {job?.status==='succeeded'&&<CompletedImages key={job.id} job={job}/>}
-      {connected!==null&&<RequestBoard jobs={jobs} focused={job?.id} connected={connected} pollError={pollError} retrying={retrying} onSelect={selectJob} onRetry={j=>void retry(j)}/>}
-    </>}
-    {!presentation&&<footer className="generate-links"><Link href="/gallery/automation/planner">Advanced plans and schedules</Link><Link href="/gallery/presentation">Presentation for Rick</Link></footer>}
-    <p className="generate-note">Progress reflects confirmed production milestones, not an estimated wait. Finished images appear automatically. Editions that need more research or creative work remain saved with a recovery option. Publication still needs your review.</p>
+
+  const waiting=job?.status==='queued'||job?.progress.stage==='waiting-gpu';
+  const connectionText=pollError?'Reconnecting':connected===null?'Connecting to studio':connected?'Local studio connected':'Local studio offline';
+  function newEdition(){setFocused('new');try{localStorage.removeItem(FOCUS);}catch{}formRef.current?.querySelector('input')?.focus();}
+  return <section className={`generate-studio${presentation?' generate-presentation':''}`} id="generate">
+    <header className="generation-header"><div><p className="generate-eyebrow">The Swinging Door / Production studio</p><h1>A local point of view.</h1><p>Choose the place. We’ll find the conversation.</p></div>
+      <div className="generation-header-tools">{canManage&&<div className={`studio-connection${connected&&!pollError?' is-connected':''}`} role="status"><span aria-hidden="true"/>{connectionText}</div>}
+      {!presentation&&<Link href="/gallery/presentation">Presentation mode ↗</Link>}</div>
+    </header>
+    <div className="generation-workspace">
+      <aside className="edition-composer">
+        <div className="composer-title"><span className="studio-overline">01 / The brief</span><span className="studio-pill">Local edition</span></div>
+        <h2>Create an edition</h2><p className="composer-description">Money, everyday life, and a little perspective. Made for the people who live there.</p>
+        <form ref={formRef} className="generate-form" onSubmit={submit}>
+          <fieldset disabled={!canManage||!!pending||sending}><label>City or town<input required maxLength={80} value={city} onChange={e=>setCity(e.target.value)} autoComplete="address-level2" placeholder="e.g. Naples"/></label>
+          <label>State<select value={state} onChange={e=>setState(e.target.value)}>{US_STATES.map(s=><option key={s}>{s}</option>)}</select></label>
+          <label>Cartoons<select value={quantity} onChange={e=>setQuantity(Number(e.target.value))}>{Array.from({length:12},(_,i)=><option key={i+1} value={i+1}>{i+1} {i===0?'cartoon':'cartoons'}</option>)}</select></label></fieldset>
+          <div className="edition-spec"><span>Today’s edition</span><strong>{quantity} {quantity===1?'cartoon':'cartoons'} · Black & white</strong></div>
+          {canManage?<button className="studio-primary generate-submit" type="submit" disabled={!ready||sending||(!!duplicateActive&&!pending)}><span>{sending?'Saving request…':pending?'Resume saved request':duplicateActive?'Edition already queued':active?'Queue cartoons':'Generate cartoons'}</span><span aria-hidden="true">{sending?'…':'↗'}</span></button>:<Link className="studio-primary generate-signin" href="/login?next=/gallery/automation">Sign in to generate ↗</Link>}
+        </form>
+        <p className="generate-note">{connected===false?'Your PC is offline. You can still save an edition; it waits safely until the studio returns.':'Saved to the queue first. Safe to leave this page—your edition keeps its place.'}</p>
+        {pending&&<p className="studio-notice" role="status">Unconfirmed request: {pending.input.quantity} for {pending.input.location.name}, {pending.input.location.region}. Resume uses the same request ID.</p>}
+        {error&&<p role="alert" className="studio-notice">{error}</p>}
+        <div className="composer-guidelines"><span className="studio-overline">The editorial direction</span><p>Smart. Warm. Politically balanced.</p><ul><li>Local subjects with a human connection</li><li>Caption, TV, and chalkboard in conversation</li><li>A draft for your review—not auto-published</li></ul></div>
+        <Link className="composer-schedule" href="/gallery/automation/planner">Plan a date or recurring edition <span aria-hidden="true">→</span></Link>
+      </aside>
+      <div className="edition-workspace-panel">
+        <div className="workspace-toolbar"><span className="studio-overline">02 / The edition</span>{canManage&&<button type="button" onClick={newEdition}>New edition +</button>}</div>
+        {pollError&&<div className="studio-notice connection-notice" role="status"><span>{pollError} {lastChecked&&`Last checked at ${lastChecked}.`}</span><button type="button" onClick={()=>void refresh()}>Reconnect now</button></div>}
+        {job&&progress?<section ref={detailRef} tabIndex={-1} className={`generation-progress ${waiting?'is-waiting':''}`} aria-label="Generation progress">
+          <div className="progress-topline"><span>{job.input.location.name}, {job.input.location.region}</span><span className="studio-pill">{job.status==='succeeded'?'Edition saved':job.status==='failed'?'Needs review':waiting?'In the queue':'In production'}</span></div>
+          <div className="progress-title"><h2>{progress.label}</h2><strong>{job.status==='failed'?'Review':`${progress.percent}%`}</strong></div>
+          {job.status!=='failed'&&<MilestoneBar job={job}/>}
+          <p role="status" className="progress-detail">{progress.detail}</p>
+          {job.status!=='succeeded'&&<ol className="production-timeline" aria-label="Production phases">{generationTimeline(job).map((step,i)=><li key={step.label} data-state={step.state} aria-current={step.state==='current'?'step':undefined}><span aria-hidden="true">{step.state==='complete'?'✓':String(i+1).padStart(2,'0')}</span><div>{step.label}<small>{step.state==='current'?'In progress':step.state==='complete'?'Checked':'Upcoming'}</small></div></li>)}</ol>}
+          {waiting&&<p className="generate-note">No artificial countdown. This view advances when the studio confirms a completed step.</p>}
+          {job.status==='failed'&&<div className="recovery-actions"><button className="studio-primary" type="button" disabled={!!retrying} onClick={()=>void retry(job)}>{retrying===job.id?'Confirming fresh pass…':'Retry / open fresh pass'}</button>{!pending&&<button type="button" onClick={()=>{setCity(job.input.location.name);setState(job.input.location.region);setQuantity(job.input.quantity);const field=formRef.current?.querySelector<HTMLInputElement>('input');field?.scrollIntoView({behavior:'smooth',block:'center'});field?.focus({preventScroll:true});}}>Edit place and start again</button>}<p className="generate-note">A fresh pass starts a new edition for today, or opens the existing retry. The original stays saved.</p></div>}
+          {job.status==='running'&&(connected===false||!!pollError||Date.parse(job.leaseExpiresAt||'')<Date.now())&&<p className="studio-notice">Studio connection lost. Progress stays at the last confirmed milestone. Saved steps resume when the worker reconnects.</p>}
+          <p className="generate-note">{job.input.location.name}, {job.input.location.region} · {job.input.quantity} requested · Progress counts completed stages, not time remaining.</p>
+          <details className="request-technical"><summary>Production record</summary><dl><div><dt>Request</dt><dd>{job.id}</dd></div><div><dt>Attempt / worker stage</dt><dd>{job.attempt} / {job.progress.stage}</dd></div><div><dt>Confirmed milestones</dt><dd>{job.progress.completed} / {job.progress.total}</dd></div></dl>{job.lastError&&<p>Last production check: {job.lastError}</p>}</details>
+        </section>:<div className="studio-idle"><div className="studio-idle-copy"><span className="studio-overline">{canManage?'Your next edition starts here':'A familiar room. A new conversation.'}</span><h2>One room.<br/>A thousand<br/><em>conversations.</em></h2><p>Choose a city to start a new edition. Follow production here, then inspect every cartoon at full size.</p><span className="idle-caption">Shown: an existing gallery cartoon.<br/>Your new artwork will appear after production.</span></div><Image src="/gallery/best-of-v1/previews/professional-opposition.webp" width={512} height={768} sizes="(max-width: 700px) 70vw, 350px" alt="Existing gallery example: Barclay says, I pay for financial advice so my second-guessing has professional opposition." priority/></div>}
+        {job?.status==='succeeded'&&<EditionPreview key={job.id} job={job}/>}
+        {job&&job.status!=='succeeded'&&<div className="studio-production-note"><span aria-hidden="true">↳</span><p>Your completed artwork will appear here automatically.<br/><span>Research, writing, and illustration can take several minutes. Larger editions run in sequence.</span></p></div>}
+      </div>
+    </div>
+    {canManage&&<RequestBoard jobs={jobs} focused={job?.id} connected={connected} pollError={pollError} loading={connected===null} retrying={retrying} onSelect={selectJob} onRetry={j=>void retry(j)}/>}
+    <footer className="generate-links"><p>Built for a recurring place on the page.<span>Machine-reviewed drafts. Human editorial approval.</span></p><Link href="/gallery/best-of">Browse the approved collection ↗</Link></footer>
   </section>;
 }

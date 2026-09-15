@@ -16,6 +16,7 @@ export type AutomationJob = {
   scheduleStatus?: 'active' | 'paused' | null;
   attempt: number; progress: JobProgress; lastError: string | null; artifacts: JobArtifact[];
   leaseExpiresAt: string | null; finishedAt: string | null;
+  editorial?: {draft:number;approved:number;rejected:number;withdrawn:number};
 };
 export type WorkerHealth = { id: string; name: string; enabled: boolean; lastSeenAt: string | null; connected: boolean };
 export type WorkerCommand = { action: "claim" } | {

@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
 import { bestOfEdition } from "@/lib/best-of-cartoons";
-import {cartoonCollection} from '@/lib/cartoon-collection';
 import BestOfClient from "./BestOfClient";
 import "./best-of.css";
 import {cookies} from 'next/headers';
 import {BACKROOM_COOKIE,isDoorOpen} from '@/lib/backroom-auth';
-import {hiddenCartoonIds} from '@/lib/gallery-visibility-server';
+import {hiddenCartoonIds,galleryCollection} from '@/lib/gallery-visibility-server';
 export const dynamic='force-dynamic';
 
 export const metadata: Metadata = {
@@ -15,16 +14,16 @@ export const metadata: Metadata = {
 };
 
 export default async function BestOfPage() {
-  const [canManage,hiddenIds]=await Promise.all([isDoorOpen((await cookies()).get(BACKROOM_COOKIE)?.value),hiddenCartoonIds()]);
-  const collection = canManage?cartoonCollection:cartoonCollection.filter(c=>!hiddenIds.includes(c.id));
+  const [canManage,hiddenIds,all]=await Promise.all([isDoorOpen((await cookies()).get(BACKROOM_COOKIE)?.value),hiddenCartoonIds(),galleryCollection()]);
+  const collection = canManage?all:all.filter(c=>!hiddenIds.includes(c.id));
   const cartoons = collection.map((cartoon) => ({
     id: cartoon.id,
     title: cartoon.title,
     speaker: cartoon.speaker,
     variant: cartoon.variant,
     caption: cartoon.caption,
-    src: cartoon.src,
-    previewSrc: cartoon.previewSrc,
+    src: canManage&&hiddenIds.includes(cartoon.id)&&cartoon.id.startsWith('generated-')?`/api/gallery/automation/assets?jobId=${cartoon.id.slice(10,46)}&name=${cartoon.id.slice(47)}.png`:cartoon.src,
+    previewSrc: canManage&&hiddenIds.includes(cartoon.id)&&cartoon.id.startsWith('generated-')?`/api/gallery/automation/assets?jobId=${cartoon.id.slice(10,46)}&name=${cartoon.id.slice(47)}.png`:cartoon.previewSrc,
     width: cartoon.width,
     height: cartoon.height,
     tv: cartoon.tv,

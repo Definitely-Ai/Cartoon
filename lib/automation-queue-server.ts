@@ -120,6 +120,18 @@ export async function listQueue(): Promise<{ jobs: AutomationJob[]; workers: Wor
     return { id: uuid(raw.id), name: raw.name, enabled: raw.enabled, lastSeenAt,
       connected: raw.enabled && lastSeenAt !== null && Date.now() - Date.parse(lastSeenAt) < 120_000 };
   });
+  const completed=jobs.filter(j=>j.status==='succeeded');
+  if(completed.length){
+    const reviews=await data(config,`/rest/v1/cartoon_reviews?${new URLSearchParams({select:'job_id,image_name,decision',owner_key:`eq.${OWNER}`,job_id:`in.(${completed.map(j=>j.id).join(',')})`,limit:'1201'})}`);
+    if(!Array.isArray(reviews)||reviews.length>1200)throw unavailable();
+    for(const job of completed)job.editorial={draft:job.input.quantity,approved:0,rejected:0,withdrawn:0};
+    const seen=new Set<string>();
+    for(const review of reviews){
+      const job=completed.find(j=>j.id===review.job_id),key=`${review.job_id}/${review.image_name}`;
+      if(!job?.editorial||!job.artifacts.some(a=>a.kind==='image'&&a.name===review.image_name)||!['approved','rejected','withdrawn'].includes(review.decision)||seen.has(key))throw unavailable();
+      seen.add(key);job.editorial.draft--;job.editorial[review.decision as 'approved'|'rejected'|'withdrawn']++;
+    }
+  }
   return { jobs, workers, checkedAt: new Date().toISOString(), workerConnected: workers.some(worker => worker.connected) };
 }
 export async function createJob(requestId: string, rawInput: unknown): Promise<AutomationJob> {
@@ -209,7 +221,7 @@ function signedStorageUrl(config: Configuration, raw: unknown, path: string, upl
     return url.toString();
   } catch { throw unavailable(); }
 }
-async function verifyArtifact(config: Configuration, item: JobArtifact, signal: AbortSignal): Promise<void> {
+async function verifyArtifact(config: Configuration, item: JobArtifact, signal: AbortSignal): Promise<Buffer> {
   let response: Response;
   try {
     response = await fetch(`${config.url}/storage/v1/object/authenticated/${ARTIFACT_BUCKET}/${item.path}`, {
@@ -250,6 +262,7 @@ async function verifyArtifact(config: Configuration, item: JobArtifact, signal: 
       if (item.contentType === "application/json") JSON.parse(value);
     }
   } catch { throw new AutomationError(400, "Stored artifact could not be decoded as its declared type."); }
+  return bytes;
 }
 export async function runWorkerCommand(worker: WorkerIdentity, command: WorkerCommand): Promise<unknown> {
   const config = configuration();
@@ -317,4 +330,17 @@ export async function ownerArtifactUrl(jobId: string, name: string): Promise<str
   if (!item) throw new AutomationError(404, "The completed draft artifact was not found.");
   const result = await data(config, `/storage/v1/object/sign/${ARTIFACT_BUCKET}/${item.path}`, { expiresIn: 60 });
   return signedStorageUrl(config, (result as { signedURL?: unknown })?.signedURL, item.path, false);
+}
+
+// Server-only readers for the editorial gate. Never accept a client storage path.
+export async function completedOwnerJob(jobId: string): Promise<AutomationJob> {
+  uuid(jobId);
+  const job=(await readJobs(configuration(),new URLSearchParams({id:`eq.${jobId}`,limit:'2'}),1))[0];
+  if(!job||job.status!=='succeeded')throw new AutomationError(404,'This completed edition was not found.');
+  return job;
+}
+export async function verifiedOwnerArtifact(job:AutomationJob,name:string):Promise<Buffer>{
+  const item=job.artifacts.find(a=>a.name===name);
+  if(!item)throw new AutomationError(404,'This saved artifact was not found.');
+  return verifyArtifact(configuration(),item,AbortSignal.timeout(15000));
 }

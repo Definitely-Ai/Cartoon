@@ -5,6 +5,7 @@ http.createServer(async(req,res)=>{
   const url=new URL(req.url,'http://127.0.0.1:21369');
   res.setHeader('Content-Type','application/json');
   if(req.headers.apikey!=='gallery-qa-only'){res.writeHead(401);res.end('{}');return;}
+  if(url.pathname==='/rest/v1/cartoon_reviews'){res.end('[]');return;}
   if(url.pathname!=='/rest/v1/gallery_visibility'){res.writeHead(503);res.end('{}');return;}
   if(req.method==='POST'){
     const chunks=[];let size=0;for await(const part of req){size+=part.length;if(size>4096){res.writeHead(413);res.end('{}');return;}chunks.push(part);}
