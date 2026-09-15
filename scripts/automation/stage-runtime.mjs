@@ -65,7 +65,7 @@ catch (error) { if (error.code !== 'EEXIST') throw error; }
 const config = {
   apiOrigin: 'https://cartoon-brown-seven.vercel.app', storageOrigin: 'https://ypecehqzzxhdpiesteaw.supabase.co',
   workerId: 'studio-4090', tokenFile, workspaceRoot: destination, stateRoot: path.join(configRoot, 'state'),
-  sharedGpuLockRoot: 'Z:/ImageGenerator/local-studio/locks', pollMs: 5_000, heartbeatMs: 5_000,
+  sharedGpuLockRoot: 'Z:/ImageGenerator/local-studio/locks', pollMs: 5_000, heartbeatMs: 5_000, buildPreviews: true,
   production: { writerModel: 'qwen3.8:27b', criticModel: 'gpt-oss:20b', visionModel:'mistral-small3.2:24b-instruct-2506-q4_K_M', captionAttempts: 12,
     locations: JSON.parse(await fs.readFile(path.join(release,'scripts/automation/city-demo-sources.json'),'utf8')) },
   runtimePins: pins.sort((a, b) => a.path.localeCompare(b.path)),

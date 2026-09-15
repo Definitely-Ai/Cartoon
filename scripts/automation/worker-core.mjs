@@ -97,7 +97,7 @@ export class WorkerAPI {
   async call(body,{signal}={}) {
     let response;
     try {response=await this.fetch(this.config.apiOrigin+'/api/gallery/automation/worker',{
-      method:'POST',redirect:'error',signal:AbortSignal.any([AbortSignal.timeout(body.action==='complete'?90000:15000),...(signal?[signal]:[])]),
+      method:'POST',redirect:'error',signal:AbortSignal.any([AbortSignal.timeout(body.action==='complete'?90000:body.action==='build'?45000:15000),...(signal?[signal]:[])]),
       headers:{Authorization:`Bearer ${this.config.token}`,'Content-Type':'application/json'},body:JSON.stringify(body),
     });} catch(error) {if(signal?.aborted)throw signal.reason;throw new WorkerError('Worker API unavailable; local progress retained.',{retryable:true});}
     if(!response.ok)throw new WorkerError(response.status===409?'Job lease no longer belongs to this worker.':response.status===401?'Worker authorization failed.':'Worker API rejected the operation.',{status:response.status,retryable:response.status>=500||response.status===429,leaseLost:[401,409].includes(response.status)});
@@ -135,8 +135,8 @@ export class JobContext {
     return {file,name,kind,contentType,bytes:bytes.length,sha256:hash(bytes)};
   }
 }
-export async function deliverArtifacts(ctx, artifacts, fetchImpl=fetch) {
-  if(!Array.isArray(artifacts)||artifacts.length>24||artifacts.filter(a=>a.kind==='image').length!==ctx.job.input.quantity)throw new WorkerError('The completed image count does not match the request.');
+export async function uploadArtifacts(ctx, artifacts, fetchImpl=fetch) {
+  if(!Array.isArray(artifacts)||!artifacts.length||artifacts.length>24)throw new WorkerError('Invalid upload batch.');
   const delivered=[];
   for(const artifact of artifacts) {
     ctx.assertLease();
@@ -163,6 +163,11 @@ export async function deliverArtifacts(ctx, artifacts, fetchImpl=fetch) {
     }
     const {uploaded,...item}=receipt;delivered.push(item);
   }
+  return delivered;
+}
+export async function deliverArtifacts(ctx, artifacts, fetchImpl=fetch) {
+  if(!Array.isArray(artifacts)||artifacts.length>24||artifacts.filter(a=>a.kind==='image').length!==ctx.job.input.quantity)throw new WorkerError('The completed image count does not match the request.');
+  const delivered=await uploadArtifacts(ctx,artifacts,fetchImpl);
   ctx.assertLease();
   const result=await ctx.api.call({action:'complete',jobId:ctx.job.id,leaseToken:ctx.job.leaseToken,artifacts:delivered},{signal:ctx.signal});
   ctx.state.completed={at:new Date().toISOString(),manifestHash:hash(delivered),artifacts:delivered};await ctx.flush();

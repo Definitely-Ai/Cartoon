@@ -7,6 +7,7 @@ import { validateEditionInput, type EditionInput } from '@/lib/automation-studio
 import type { AutomationJob } from '@/lib/automation-queue-core';
 import {generationTimeline} from '@/lib/generation-timeline';
 import EditionPreview from './EditionPreview';
+import CartoonAssembly from './CartoonAssembly';
 import RequestBoard, { MilestoneBar } from './RequestBoard';
 const RECEIPT='swinging-door-quick-generation-v1';
 const FOCUS='swinging-door-active-edition-v1';
@@ -118,6 +119,7 @@ export default function GenerateStudio({canManage,presentation=false}:{canManage
       <div className="edition-workspace-panel">
         <div className="workspace-toolbar"><span className="studio-overline">02 / The edition</span>{canManage&&<button type="button" onClick={newEdition}>New edition +</button>}</div>
         {pollError&&<div className="studio-notice connection-notice" role="status"><span>{pollError} {lastChecked&&`Last checked at ${lastChecked}.`}</span><button type="button" onClick={()=>void refresh()}>Reconnect now</button></div>}
+        {job&&<CartoonAssembly key={`build-${job.id}`} job={job} connected={connected===true&&!pollError}/>}
         {job&&progress?<section ref={detailRef} tabIndex={-1} className={`generation-progress ${waiting?'is-waiting':''}`} aria-label="Generation progress">
           <div className="progress-topline"><span>{job.input.location.name}, {job.input.location.region}</span><span className="studio-pill">{job.status==='succeeded'?'Edition saved':job.status==='failed'?'Needs review':waiting?'In the queue':'In production'}</span></div>
           <div className="progress-title"><h2>{progress.label}</h2><strong>{job.status==='failed'?'Review':`${progress.percent}%`}</strong></div>
@@ -131,7 +133,6 @@ export default function GenerateStudio({canManage,presentation=false}:{canManage
           <details className="request-technical"><summary>Production record</summary><dl><div><dt>Request</dt><dd>{job.id}</dd></div><div><dt>Attempt / worker stage</dt><dd>{job.attempt} / {job.progress.stage}</dd></div><div><dt>Confirmed milestones</dt><dd>{job.progress.completed} / {job.progress.total}</dd></div></dl>{job.lastError&&<p>Last production check: {job.lastError}</p>}</details>
         </section>:<div className="studio-idle"><div className="studio-idle-copy"><span className="studio-overline">{canManage?'Your next edition starts here':'A familiar room. A new conversation.'}</span><h2>One room.<br/>A thousand<br/><em>conversations.</em></h2><p>Choose a city to start a new edition. Follow production here, then inspect every cartoon at full size.</p><span className="idle-caption">Shown: an existing gallery cartoon.<br/>Your new artwork will appear after production.</span></div><Image src="/gallery/best-of-v1/previews/professional-opposition.webp" width={512} height={768} sizes="(max-width: 700px) 70vw, 350px" alt="Existing gallery example: Barclay says, I pay for financial advice so my second-guessing has professional opposition." priority/></div>}
         {job?.status==='succeeded'&&<EditionPreview key={job.id} job={job}/>}
-        {job&&job.status!=='succeeded'&&<div className="studio-production-note"><span aria-hidden="true">↳</span><p>Your completed artwork will appear here automatically.<br/><span>Research, writing, and illustration can take several minutes. Larger editions run in sequence.</span></p></div>}
       </div>
     </div>
     {canManage&&<RequestBoard jobs={jobs} focused={job?.id} connected={connected} pollError={pollError} loading={connected===null} retrying={retrying} onSelect={selectJob} onRetry={j=>void retry(j)}/>}

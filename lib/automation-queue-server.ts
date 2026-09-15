@@ -1,6 +1,7 @@
 import "server-only";
 import { createHash } from "node:crypto";
 import sharp from "sharp";
+import {buildFrame,latestBuildFrames,type SavedBuildFrame} from './cartoon-build-core';
 import { AutomationError, nextPlannedRuns, validateEditionInput } from "./automation-studio-core";
 import { materializeDueSchedules } from "./automation-schedules-server";
 import {
@@ -281,6 +282,18 @@ export async function runWorkerCommand(worker: WorkerIdentity, command: WorkerCo
     return { job: raw === null ? null : leaseJob(raw, worker), ...(scheduleWarning ? { scheduleWarning } : {}) };
   }
   const base = { p_job_id: command.jobId, p_lease_token: command.leaseToken };
+  if(command.action==='build'){
+    const frame=buildFrame(command.frame);
+    const job=leaseJob(await rpc(config,worker,{...base,p_action:'heartbeat'}),worker);
+    if(frame.index>job.input.quantity||frame.artifact.path!==artifactPath(job.id,job.attempt,frame.artifact.name))throw new AutomationError(400,'Build artwork must belong to this edition and attempt.');
+    const bytes=await verifyArtifact(config,frame.artifact,AbortSignal.timeout(20000));
+    const metadata=await sharp(bytes).metadata();
+    if(metadata.width!==1024||metadata.height!==1536)throw new AutomationError(400,'Build previews must be 1024 × 1536 pixels.');
+    const rgb=await sharp(bytes).removeAlpha().toColourspace('srgb').raw().toBuffer();
+    for(let pixel=0;pixel<rgb.length;pixel+=3)if(rgb[pixel]!==rgb[pixel+1]||rgb[pixel]!==rgb[pixel+2])throw new AutomationError(400,'Build artwork must remain strictly black and white.');
+    const saved=await data(config,'/rest/v1/rpc/save_cartoon_build_frame',{p_worker_id:worker.id,p_token_hash:worker.tokenHash,...base,p_frame:frame});
+    return {saved:true,frame:saved};
+  }
   if (command.action === "heartbeat" || command.action === "fail") {
     const raw = await rpc(config, worker, { ...base, p_action: command.action,
       ...(command.action === "heartbeat" ? { p_progress: command.progress } : { p_error: command.error, p_retryable: command.retryable }),
@@ -343,4 +356,23 @@ export async function verifiedOwnerArtifact(job:AutomationJob,name:string):Promi
   const item=job.artifacts.find(a=>a.name===name);
   if(!item)throw new AutomationError(404,'This saved artifact was not found.');
   return verifyArtifact(configuration(),item,AbortSignal.timeout(15000));
+}
+
+export async function ownerBuildFrames(jobId:string):Promise<SavedBuildFrame[]>{
+  uuid(jobId);const config=configuration();
+  const job=(await readJobs(config,new URLSearchParams({id:`eq.${jobId}`,limit:'2'}),1))[0];
+  if(!job)throw new AutomationError(404,'This edition was not found.');
+  // Newest attempts first; bound the history, then keep the newest saved stage.
+  const rows=await data(config,`/rest/v1/cartoon_build_frames?${new URLSearchParams({job_id:`eq.${jobId}`,select:'attempt,cartoon_index,stage,frame,created_at',order:'attempt.desc,cartoon_index.asc,stage.asc',limit:'600'})}`);
+  if(!Array.isArray(rows)||rows.length>600)throw unavailable();
+  return latestBuildFrames(rows.map(row=>{
+    const frame=buildFrame(row.frame);
+    if(!Number.isSafeInteger(row.attempt)||row.attempt<1||row.attempt>job.attempt||frame.index!==row.cartoon_index||frame.stage!==row.stage||frame.index>job.input.quantity||frame.artifact.path!==artifactPath(jobId,row.attempt,frame.artifact.name))throw unavailable();
+    return {...frame,attempt:row.attempt,savedAt:date(row.created_at)!};
+  }));
+}
+export async function ownerBuildImage(jobId:string,index:number,stage:string,sha256:string):Promise<Buffer>{
+  const frame=(await ownerBuildFrames(jobId)).find(f=>f.index===index&&f.stage===stage&&f.artifact.sha256===sha256);
+  if(!frame)throw new AutomationError(404,'This saved build image was not found.');
+  return verifyArtifact(configuration(),frame.artifact,AbortSignal.timeout(15000));
 }

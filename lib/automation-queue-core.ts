@@ -19,7 +19,7 @@ export type AutomationJob = {
   editorial?: {draft:number;approved:number;rejected:number;withdrawn:number};
 };
 export type WorkerHealth = { id: string; name: string; enabled: boolean; lastSeenAt: string | null; connected: boolean };
-export type WorkerCommand = { action: "claim" } | {
+export type WorkerCommand = { action: "claim" } | {action:"build";jobId:string;leaseToken:string;frame:unknown} | {
   action: "heartbeat"; jobId: string; leaseToken: string; progress: JobProgress;
 } | { action: "upload"; jobId: string; leaseToken: string; artifact: Omit<JobArtifact, "path"> } |
 { action: "complete"; jobId: string; leaseToken: string; artifacts: JobArtifact[] } |
@@ -122,10 +122,11 @@ export function workerCommand(raw: unknown): WorkerCommand {
   if (!raw || typeof raw !== "object" || Array.isArray(raw)) queueFail("Invalid worker command.");
   const action = (raw as Record<string, unknown>).action;
   if (action === "claim") { exactKeys(raw, ["action"], "Claim"); return { action }; }
-  const extra = action === "heartbeat" ? ["progress"] : action === "upload" ? ["artifact"] :
+  const extra = action === "build" ? ["frame"] : action === "heartbeat" ? ["progress"] : action === "upload" ? ["artifact"] :
     action === "complete" ? ["artifacts"] : action === "fail" ? ["error", "retryable"] : queueFail("Unknown worker action.");
   const value = exactKeys(raw, ["action", "jobId", "leaseToken", ...extra], "Worker command");
   const base = { jobId: uuid(value.jobId), leaseToken: uuid(value.leaseToken) };
+  if (action === "build") return {...base,action,frame:value.frame};
   if (action === "heartbeat") return { ...base, action, progress: progress(value.progress) };
   if (action === "upload") return { ...base, action, artifact: artifact(value.artifact, false) };
   if (action === "complete") return { ...base, action, artifacts: artifacts(value.artifacts) };

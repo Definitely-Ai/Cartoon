@@ -9,6 +9,7 @@ import {durableTV} from './durable-tv.mjs';
 import {localNewsURL,parseLocalNews} from './local-news.mjs';
 import {workProgress} from './work-progress.mjs';
 import {waitForStudio} from './studio-availability.mjs';
+import {buildCanvas,saveBuildFrame} from './build-progress.mjs';
 
 export const REQUIRED_PRODUCTION_FILES=[
   'scripts/fixed-set/core.mjs','scripts/fixed-set/typography.mjs',
@@ -227,17 +228,15 @@ export function castAt(input,index,editionKey='') {
   if(input.cast==='trio')return {variant:'trio',speaker:['Drew','Barclay','Abby','Drew','Barclay'][index%5]};
   return index%5===2?{variant:'trio',speaker:'Abby'}:{variant:index%5===4?'trio':'duo',speaker:index%2?'Barclay':'Drew'};
 }
-export async function composeProductionPanel(ctx,m,episode,tvPath,actor,acting,regions,index) {
-  const W=1024,H=1536,{crop}=acting,scaleX=W/crop.width,scaleY=Math.round(crop.height*scaleX)/crop.height;
-  const map=p=>p.map(([x,y])=>[(x-crop.left)*scaleX,(y-crop.top)*scaleY]);
-  const tvQuad=map(regions.tv),boardQuad=map(regions.board),foot=[[0,1365],[W,1365],[W,H],[0,H]];
-  const baseBytes=await fs.readFile(await inside(ctx.config.workspaceRoot,actor.framePath));
-  if(hash(baseBytes)!==actor.sha256)throw new WorkerError('Preferred cast plate changed.');
-  const base=await m.core.readRGB(baseBytes,W,H);let pixels=Buffer.from(base);
+export async function composeProductionPanel(ctx,m,episode,tvPath,actor,acting,regions,index,selected) {
+  const canvas=await buildCanvas(ctx,m,actor,acting,regions);
+  const {W,H,tvQuad,boardQuad,foot,base}=canvas;let pixels=canvas.pixels;
+  const cast={variant:episode.variant,speaker:episode.speaker};
   const art=await m.sharp(await fs.readFile(tvPath)).grayscale().resize(1056,465,{fit:'cover'}).png().toBuffer();
   for(const [kind,quad] of [['tv',tvQuad],['board',boardQuad]]) {
     const surface=await m.typography.displayArt(episode,kind,kind==='tv'?art:undefined,{profile:'print-study-v1',boardUnderline:false});
     pixels=m.core.warp(pixels,W,H,surface.data,surface.width,surface.height,quad);
+    await saveBuildFrame(ctx,m,{stage:kind==='tv'?'tv':'chalk',index,cast,actor,selected,pixels});
   }
   const strip=await m.typography.captionStrip(episode.speaker,episode.line,W,{transparent:true});
   const {height}=await m.sharp(strip).metadata();if(height>161)throw new WorkerError('Caption exceeds the exact two-line print band.');
@@ -246,6 +245,7 @@ export async function composeProductionPanel(ctx,m,episode,tvPath,actor,acting,r
   if(audit.protectedChangedPixels!==0||audit.coloredPixels!==0)throw new WorkerError('Composition altered protected art or introduced color.');
   const name=`cartoon-${String(index+1).padStart(2,'0')}.png`;
   await atomicWrite(path.join(ctx.dir,name),output);
+  await saveBuildFrame(ctx,m,{stage:'lettering',index,cast,actor,selected,png:output});
   return {name,sha256:hash(output),audit,actorId:actor.id,actorSha256:actor.sha256,intendedActing:m.core.actingFor(episode.variant,episode.speaker)};
 }
 export async function generateProductionEdition(ctx) {
@@ -253,6 +253,12 @@ export async function generateProductionEdition(ctx) {
   const acting=await readJSON(await inside(ctx.config.workspaceRoot,'canon/fixed-set/barclay-reference-v2/acting/verification.json'));
   if(acting.identitySha256!=='938dcdb8d4fb191ddd7551c2a231b13596db645995fe57e722dfac5ebfb88493')throw Error('Worker cast identity is not the owner-approved reference face.');
   const regions=await readJSON(await inside(ctx.config.workspaceRoot,'canon/fixed-set/v1/regions.json'));
+  if(ctx.config.buildPreviews===true){
+    const cast=castAt(ctx.job.input,0,ctx.job.id),actor=acting.reports.find(row=>row.id===cast.variant+'-'+cast.speaker.toLowerCase());
+    if(!actor)throw new WorkerError('No approved cast pose is installed.');
+    const {pixels}=await buildCanvas(ctx,m,actor,acting,regions);
+    await saveBuildFrame(ctx,m,{stage:'cast',index:0,cast,actor,pixels});
+  }
   // Never mutate the persisted history snapshot as this edition accumulates lines.
   const history=[...await ctx.step('history',{jobId:ctx.job.id},()=>historyFor(ctx),{recover:async()=>{}})];
   const sourceData=await ctx.step('sources',{input:ctx.job.input.location,registry:sourceConfiguration(ctx.job.input,ctx.config)},()=>discoverSources(ctx),{recover:async()=>{}});
@@ -264,6 +270,8 @@ export async function generateProductionEdition(ctx) {
     ctx.assertLease();const n=String(index+1).padStart(2,'0'),cast=castAt(ctx.job.input,index,ctx.job.id);
     const actor=acting.reports.find(row=>row.id===cast.variant+'-'+cast.speaker.toLowerCase());
     if(!actor)throw new WorkerError('No matching speaker/listener plate is installed.');
+    const canvas=ctx.config.buildPreviews===true?await buildCanvas(ctx,m,actor,acting,regions):null;
+    if(canvas)await saveBuildFrame(ctx,m,{stage:'cast',index,cast,actor,pixels:canvas.pixels});
     let selected;
     const rejected=[];
     for(let attempt=1;attempt<=Math.min(18,ctx.config.production?.captionAttempts||12);attempt++) {
@@ -292,6 +300,7 @@ export async function generateProductionEdition(ctx) {
     }
     if(!selected)throw new WorkerError('Caption quality gate rejected the bounded candidate attempts; no weak placeholder was delivered.');
     history.push(selected.caption);
+    if(canvas)await saveBuildFrame(ctx,m,{stage:'story',index,cast,actor,selected,pixels:canvas.pixels});
     const seed=parseInt(hash({jobId:ctx.job.id,index,brief:selected.tvBrief}).slice(0,8),16);
     let generated,visual;
     for(let tvAttempt=1;tvAttempt<=2;tvAttempt++) {
@@ -312,7 +321,13 @@ export async function generateProductionEdition(ctx) {
     if(!approvedMachineReview(visual?.value,{visual:true}))throw new WorkerError('The TV drawing did not pass visual review after two candidates. No incomplete image was delivered.');
     const timestamp=new Intl.DateTimeFormat('en-US',{timeZone:ctx.job.input.location.timezone,hour:'numeric',minute:'2-digit'}).format(new Date(ctx.job.dueAt));
     const episode={id:'cartoon-'+n,...cast,line:selected.caption,tv:{headline:selected.tvHeadline,timestamp,picture:selected.tvBrief},board:{lines:selected.boardLines}};
-    const rendered=await ctx.step('compose-'+n,{episode,tvSha256:generated.sha256,actorSha256:actor.sha256},()=>composeProductionPanel(ctx,m,episode,generated.path,actor,acting,regions,index),{recover:async()=>{}});
+    const rendered=await ctx.step('compose-'+n,{episode,tvSha256:generated.sha256,actorSha256:actor.sha256},()=>composeProductionPanel(ctx,m,episode,generated.path,actor,acting,regions,index,selected),{recover:async()=>{}});
+    if(ctx.config.buildPreviews===true&&!ctx.state.buildReceipts?.[`${ctx.job.attempt}:${index+1}:lettering`]){
+      // Recover previews from retained inputs after an attempt change. This is
+      // deterministic compositing, never another caption or model generation.
+      const replay=await composeProductionPanel(ctx,m,episode,generated.path,actor,acting,regions,index,selected);
+      if(replay.sha256!==rendered.sha256)throw new WorkerError('Recovered composition differs from the saved original.');
+    }
     cartoons.push({caption:selected.caption,speaker:cast.speaker,variant:cast.variant,tv:episode.tv,board:episode.board,explanation:selected.explanation,
       source:{url:selected.source.url,publishedAt:selected.source.publishedAt,retrievedAt:selected.source.retrievedAt,scope:selected.source.scope,evidenceQuoteSha256:hash(selected.sourceQuote)},
       newLocalCaption:true,newLocalTvImage:true,retainedStaticCast:true,editorialReview:selected.critique.value,visionReview:visual.value,generatedTvSha256:generated.sha256,...rendered});

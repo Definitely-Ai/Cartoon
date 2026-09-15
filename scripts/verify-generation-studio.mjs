@@ -24,6 +24,7 @@ try{
   const errors=[];page.on('pageerror',e=>errors.push(e.message));
   await page.route('**/api/gallery/automation/**',async route=>{
     const url=new URL(route.request().url());
+    if(url.pathname.endsWith('/build'))return route.fulfill({json:{frames:[]}});
     if(url.pathname.endsWith('/reviews')){
       if(route.request().method()==='GET'){const job=jobs.find(j=>j.id===url.searchParams.get('jobId'));return route.fulfill({json:{jobId:job.id,reviews:job.artifacts.map(a=>reviewFor(job,a))}});}
       const b=route.request().postDataJSON(),job=jobs.find(j=>j.id===b.jobId),a=job.artifacts.find(a=>a.name===b.imageName),old=reviewFor(job,a);

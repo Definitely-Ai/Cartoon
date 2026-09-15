@@ -47,7 +47,7 @@ function load({ fetch = async () => { throw Error("Unexpected request"); }, sign
       if (name === "next/headers") return { cookies: async () => ({ get: () => ({ value: "stub" }) }) };
       if (name.endsWith("backroom-auth")) return { BACKROOM_COOKIE: "sd_backroom", isDoorOpen: async () => signedIn };
       const local = name.replace(/^@\/lib\//, "").replace(/^\.\//, "");
-      if (/^automation-(?:studio-core|queue-core|queue-server)$/.test(local)) return compile(`lib/${local}.ts`);
+      if (/^(?:automation-(?:studio-core|queue-core|queue-server)|cartoon-(?:build-core|review-core))$/.test(local)) return compile(`lib/${local}.ts`);
       throw Error(`Unexpected module ${name}`);
     };
     vm.runInNewContext(compiled, { module, exports: module.exports, require, fetch, Request, Response, URL, URLSearchParams,
