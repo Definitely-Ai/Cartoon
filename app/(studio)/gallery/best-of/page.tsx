@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import { bestOfCartoons, bestOfEdition } from "@/lib/best-of-cartoons";
+import { bestOfEdition } from "@/lib/best-of-cartoons";
+import {cartoonCollection} from '@/lib/cartoon-collection';
 import BestOfClient from "./BestOfClient";
-import cityEditions from "@/lib/city-editions.json";
-import type { BestOfCartoon } from "@/lib/best-of-cartoons";
 import "./best-of.css";
 
 export const metadata: Metadata = {
@@ -12,7 +11,7 @@ export const metadata: Metadata = {
 };
 
 export default function BestOfPage() {
-  const collection = [...cityEditions as BestOfCartoon[], ...bestOfCartoons];
+  const collection = cartoonCollection;
   const cartoons = collection.map((cartoon) => ({
     id: cartoon.id,
     title: cartoon.title,

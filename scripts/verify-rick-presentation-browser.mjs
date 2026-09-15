@@ -14,7 +14,7 @@ try {
   const errors=[];page.on('pageerror',e=>errors.push(e.message));
   await page.goto(base+'/gallery/presentation');
   await page.getByRole('combobox',{name:/^Choose a cartoon/}).waitFor();
-  assert.equal(await page.getByRole('combobox',{name:/^Choose a cartoon/}).locator('option').count(),40);
+  assert.equal(await page.getByRole('combobox',{name:/^Choose a cartoon/}).locator('option').count(),52);
   for(const [id,ppi] of [['fine',301],['classic',256],['medium',205],['large',171]]) {
     await page.getByRole('combobox',{name:/^Artwork size/}).selectOption(id);
     await page.getByText(`${ppi} effective PPI`,{exact:true}).waitFor();
@@ -57,16 +57,16 @@ try {
   assert.equal(news.getPageCount(),6);assert.deepEqual(news.getPages()[0].getSize(),{width:792,height:1224});
   await page.getByRole('button',{name:'Full-screen slides',exact:true}).click();
   await page.getByRole('button',{name:'Next cartoon',exact:true}).click();
-  await page.getByText('2 / 40 · Los Angeles, California',{exact:true}).waitFor();
+  await page.getByText('2 / 52 · Los Angeles, California',{exact:true}).waitFor();
   await page.getByRole('button',{name:'Exit slides',exact:true}).click();
   // Browser-denied fullscreen must remain usable without scrolling the page behind it.
   await page.evaluate(()=>{Element.prototype.requestFullscreen=()=>Promise.reject(new Error('QA fullscreen unavailable'));});
   await page.getByRole('button',{name:'Full-screen slides',exact:true}).click();
   assert.equal(await page.evaluate(()=>document.body.style.overflow),'hidden');
   await page.keyboard.press('ArrowLeft');
-  await page.getByText('1 / 40 · Austin, Texas',{exact:true}).waitFor();
+  await page.getByText('1 / 52 · New York, New York',{exact:true}).waitFor();
   await page.keyboard.press('ArrowLeft');
-  await page.getByText('40 / 40 · Cancellation Season',{exact:true}).waitFor();
+  await page.getByText('52 / 52 · Cancellation Season',{exact:true}).waitFor();
   await page.keyboard.press('Tab');
   assert.equal(await page.evaluate(()=>document.activeElement.getAttribute('aria-label')),'Previous cartoon');
   await page.keyboard.press('Shift+Tab');
@@ -77,7 +77,7 @@ try {
   assert.equal(await page.evaluate(()=>document.activeElement.textContent),'Full-screen slides');
   // Walk every original and require completed native-resolution image loads.
   await page.getByLabel('Preview in a newspaper',{exact:true}).uncheck();
-  for(let i=0;i<40;i++){
+  for(let i=0;i<52;i++){
     await page.getByRole('combobox',{name:/^Choose a cartoon/}).selectOption(String(i));
     await page.waitForFunction(()=>{const img=document.querySelector('.showcase-paper-art');return img?.complete&&img.naturalWidth===1024&&img.naturalHeight===1536;});
   }
@@ -93,6 +93,6 @@ try {
   await page.getByRole('button',{name:'Exit slides',exact:true}).click();
   const anonymous=await page.request.get(base+'/api/gallery/automation/jobs');assert.equal(anonymous.status(),401);
   assert.deepEqual(errors,[]);
-  const result={base,checkedAt:new Date().toISOString(),collection:40,printSizes:4,papers:2,exactSizeCombinations:8,letterPages:6,newspaperPages:6,selectionLimit:12,fullscreenFallback:true,keyboard:true,slides:true,downloadsMatch:true,mobile:true,anonymousQueue:401,errors};
+  const result={base,checkedAt:new Date().toISOString(),collection:52,printSizes:4,papers:2,exactSizeCombinations:8,letterPages:6,newspaperPages:6,selectionLimit:12,fullscreenFallback:true,keyboard:true,slides:true,downloadsMatch:true,mobile:true,anonymousQueue:401,errors};
   await fs.writeFile(dir+'/verification.json',JSON.stringify(result,null,2));console.log(JSON.stringify(result));
 }finally{await browser.close();}

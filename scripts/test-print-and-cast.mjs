@@ -21,7 +21,7 @@ function loadTS(file) {
 const { printMetrics, PRINT_SIZES, PRINT_PAPERS } = loadTS('lib/cartoon-print.ts');
 const { cartoonPrintPDF } = loadTS('lib/cartoon-print-pdf.ts');
 const json = async file => JSON.parse(await fs.readFile(file, 'utf8'));
-const cartoons = [...await json('lib/city-editions.json'), ...await json('lib/best-of-cartoons.json')];
+const cartoons = [...await json('lib/city-showcase-20260915.json'), ...await json('lib/city-editions.json'), ...await json('lib/best-of-cartoons.json')];
 const hash = bytes => createHash('sha256').update(bytes).digest('hex');
 
 test('four physical sizes preserve the whole cartoon and report native effective PPI on both papers', () => {
@@ -57,9 +57,9 @@ test('exact-size PDFs retain native embedded pixels, correct paper and no automa
   await assert.rejects(cartoonPrintPDF(bytes, 'Mismatch', 1000, 1536, 'fine', 'letter'), /dimensions changed/);
 });
 
-test('all 40 print sources match the existing published cartoons', async () => {
-  assert.equal(cartoons.length, 40);
-  assert.equal(new Set(cartoons.map(c => c.id)).size, 40);
+test('all 52 print sources match their immutable originals', async () => {
+  assert.equal(cartoons.length, 52);
+  assert.equal(new Set(cartoons.map(c => c.id)).size, 52);
   for (const c of cartoons) {
     const bytes = await fs.readFile('public' + c.src);
     assert.equal(hash(bytes), c.sha256, c.id);

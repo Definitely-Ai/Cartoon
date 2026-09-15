@@ -44,7 +44,7 @@ function CompletedImages({job}:{job:AutomationJob}) {
     {job.artifacts.filter(a=>a.kind==='report').map(a=><a key={a.name} href={asset(job,a.name)} target="_blank" rel="noreferrer">Source evidence and production report</a>)}
   </section>;
 }
-export default function GenerateStudio({canManage}:{canManage:boolean}) {
+export default function GenerateStudio({canManage,presentation=false}:{canManage:boolean;presentation?:boolean}) {
   const [city,setCity]=useState('Naples'),[state,setState]=useState('Florida'),[quantity,setQuantity]=useState(1);
   const [jobs,setJobs]=useState<AutomationJob[]>([]),[focused,setFocused]=useState(''),[connected,setConnected]=useState<boolean|null>(null);
   const [pending,setPending]=useState<Receipt|null>(null),[ready,setReady]=useState(false),[sending,setSending]=useState(false),[error,setError]=useState(''),[pollError,setPollError]=useState('');
@@ -63,13 +63,13 @@ export default function GenerateStudio({canManage}:{canManage:boolean}) {
   },[]);
   useEffect(()=>{
     if(!canManage)return;
-    try {const saved=readReceipt();setPending(saved);if(saved){setCity(saved.input.location.name);setState(saved.input.location.region);setQuantity(saved.input.quantity);}setFocused(localStorage.getItem(FOCUS)||'');if(!navigator.locks)throw Error('This browser cannot safely save a duplicate-proof request. Use a current browser.');setReady(true);}catch(e){setError(e instanceof Error?e.message:'Browser storage is unavailable.');}
+    try {const saved=readReceipt();setPending(saved);if(saved){setCity(saved.input.location.name);setState(saved.input.location.region);setQuantity(saved.input.quantity);}setFocused(presentation?'':localStorage.getItem(FOCUS)||'');if(!navigator.locks)throw Error('This browser cannot safely save a duplicate-proof request. Use a current browser.');setReady(true);}catch(e){setError(e instanceof Error?e.message:'Browser storage is unavailable.');}
     const controller=new AbortController();void refresh(controller.signal);
     const timer=setInterval(()=>{if(!document.hidden)void refresh(controller.signal);},4000);
     const resume=()=>void refresh(controller.signal);document.addEventListener('visibilitychange',resume);
     return()=>{controller.abort();clearInterval(timer);document.removeEventListener('visibilitychange',resume);};
-  },[canManage,refresh]);
-  const job=focused?jobs.find(j=>j.id===focused):jobs.find(j=>j.status==='running')||jobs.find(j=>j.status==='queued'&&Date.parse(j.dueAt)<=Date.now())||jobs.find(j=>j.status==='succeeded');
+  },[canManage,presentation,refresh]);
+  const job=focused?jobs.find(j=>j.id===focused):presentation?undefined:jobs.find(j=>j.status==='running')||jobs.find(j=>j.status==='queued'&&Date.parse(j.dueAt)<=Date.now())||jobs.find(j=>j.status==='succeeded');
   const active=jobs.some(j=>(j.status==='running'||j.status==='queued')&&Date.parse(j.dueAt)<=Date.now());
   const duplicateActive=matchingActiveEdition(jobs,city,state,quantity);
   async function submit(event:React.FormEvent) {
@@ -120,7 +120,7 @@ export default function GenerateStudio({canManage}:{canManage:boolean}) {
       {job?.status==='succeeded'&&<CompletedImages key={job.id} job={job}/>}
       {!!jobs.length&&<details className="generation-history"><summary>Previous requests ({jobs.length})</summary><ul>{jobs.map(j=><li key={j.id}><button type="button" onClick={()=>{setFocused(j.id);localStorage.setItem(FOCUS,j.id);}}>{j.input.location.name}, {j.input.location.region} · {j.input.quantity} · {j.status}</button></li>)}</ul></details>}
     </>}
-    <footer className="generate-links"><Link href="/gallery/automation/planner">Advanced plans and schedules</Link><Link href="/gallery/presentation">Presentation for Rick</Link></footer>
+    {!presentation&&<footer className="generate-links"><Link href="/gallery/automation/planner">Advanced plans and schedules</Link><Link href="/gallery/presentation">Presentation for Rick</Link></footer>}
     <p className="generate-note">Local news availability varies. Dedicated sources are preferred; other cities use dated headline discovery, limited to the reported subject. If evidence or quality checks fail, the request stops with a reason instead of producing a placeholder.</p>
   </section>;
 }

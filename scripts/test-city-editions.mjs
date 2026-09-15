@@ -5,15 +5,19 @@ import {createHash} from 'node:crypto';
 import sharp from 'sharp';
 import {discoverSources} from './automation/production-adapter.mjs';
 
-test('two labeled city editions precede the untouched original 38',async()=>{
+test('the national twelve precede the two labeled city editions and untouched original 38',async()=>{
+  const national=JSON.parse(await fs.readFile('lib/city-showcase-20260915.json','utf8'));
   const cities=JSON.parse(await fs.readFile('lib/city-editions.json','utf8'));
   const original=JSON.parse(await fs.readFile('lib/best-of-cartoons.json','utf8'));
   assert.deepEqual(cities.map(c=>c.cityLabel),['Austin, Texas','Los Angeles, California']);
   assert.equal(cities.length+original.length,40);
-  assert.equal(new Set([...cities,...original].map(c=>c.id)).size,40);
+  assert.equal(national.length,12);
+  assert.equal(new Set([...national,...cities,...original].map(c=>c.id)).size,52);
   const page=await fs.readFile('app/(studio)/gallery/best-of/page.tsx','utf8');
-  assert.match(page,/\[\.\.\.cityEditions as BestOfCartoon\[\], \.\.\.bestOfCartoons\]/);
-  for(const c of cities){
+  assert.match(page,/const collection = cartoonCollection/);
+  const collection=await fs.readFile('lib/cartoon-collection.ts','utf8');
+  assert.match(collection,/\[\.\.\.nationalEdition as BestOfCartoon\[\], \.\.\.cities as BestOfCartoon\[\], \.\.\.bestOfCartoons\]/);
+  for(const c of [...national,...cities]){
     const bytes=await fs.readFile('public'+c.src);
     assert.equal(createHash('sha256').update(bytes).digest('hex'),c.sha256);
     const {data,info}=await sharp(bytes).removeAlpha().toColourspace('srgb').raw().toBuffer({resolveWithObject:true});
@@ -37,6 +41,6 @@ test('configured article retrieval preserves evidence and rejects missing or sta
   assert.ok(result.documents[0].text.startsWith(start));
   assert.equal(result.documents[0].feedUrl,null);
   assert.match(result.documents[0].discovery,/operator-configured/);
-  await assert.rejects(discoverSources(ctx({...source,startText:'A sufficiently long missing marker that is not in the page.'})),/No current dated/);
-  await assert.rejects(discoverSources(ctx({...source,publishedAt:'2000-01-01'})),/No current dated/);
+  await assert.rejects(discoverSources(ctx({...source,startText:'A sufficiently long missing marker that is not in the page.'})),/No suitable current local source/);
+  await assert.rejects(discoverSources(ctx({...source,publishedAt:'2000-01-01'})),/No suitable current local source/);
 });

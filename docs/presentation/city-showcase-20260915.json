@@ -1,0 +1,135 @@
+{
+  "editionDate": "2026-09-15",
+  "displayDate": "September 15, 2026",
+  "method": "Editor-curated captions and source briefs; fresh local RTX 4090 TV illustrations; deterministic composition with the approved reference-v2 cast. Prepared examples, not a recording of the live demonstration.",
+  "audienceRatingClaim": false,
+  "sourceNote": "Sources checked September 15. Edition date is not the publication date of every source. Dialogue, menu prices and TV illustrations are fictional; illustrations are not documentary photographs.",
+  "cities": [
+    {
+      "id": "nyc-whole-tour", "title": "The Whole Tour", "cityLabel": "New York, New York", "city": "New York", "state": "New York", "theme": "Making room for a life", "variant": "duo", "speaker": "Drew",
+      "line": "The apartment has an open floor plan. You open the door and that’s the floor plan.",
+      "alternatives": ["The listing had room for a dining table. The apartment has room for the listing.", "We found a place with room for a family. The family just has to take turns."],
+      "tv": {"headline": "NYC APARTMENT HUNT", "timestamp": "9:00 AM", "picture": "An intimate compact New York apartment interior seen through its open doorway. One small sofa, a narrow table with two chairs tucked underneath, and one tall sash window overlooking distant brick buildings. The furniture fits plausibly but leaves very little spare floor space. Clean ordinary lived-in architecture, no luxury penthouse, no clutter and no people."},
+      "board": {"lines": ["SMALL PLATES", "$9", "ROOM FOR ONE MORE"]},
+      "sourceUrl": "https://home4.nyc.gov/site/dca/news/050-26/mayor-mamdani-releases-rental-ripoff-report-outlining-new-actions-crack-down-hazardous",
+      "sourceTitle": "NYC rental-listing and housing proposals · July 16, 2026",
+      "context": "New York’s July housing report includes proposed disclosure of AI-altered rental listings. This panel explores the familiar gap between an apartment listing and the space itself, without making a rent statistic or legal claim.",
+      "sourceKind": "dated local context", "connection": "The little negotiations people make to live where they want to be."
+    },
+    {
+      "id": "la-new-excuse", "title": "A New Excuse", "cityLabel": "Los Angeles, California", "city": "Los Angeles", "state": "California", "theme": "Time is a kind of wealth", "variant": "trio", "speaker": "Barclay",
+      "line": "I took the train. Now I need a new excuse for being late.",
+      "alternatives": ["I got there without parking. I hardly knew what to complain about.", "The train got me there early. I’m still adjusting to the responsibility."],
+      "tvRevision": 3,
+      "tv": {"headline": "L.A. SUBWAY EXPANSION", "timestamp": "6:00 AM", "picture": "An entirely empty modern underground subway station viewed along the length of a wide central platform. Two straight parallel railway tracks run on either side of the platform and disappear into dark tunnel openings. A simple broad staircase rises at the far end. Tiled walls, an elegant high vaulted ceiling and plain square columns create a crisp coherent architectural space. No train or vehicles. No people, mannequins, silhouettes, reflections of people or portraits. Every wall is bare with no signs, letters, numbers or logos. No artist signature, no corner annotation, no caption or margin."},
+      "board": {"lines": ["EXPRESS LUNCH", "$12", "NO PARKING NEEDED"]},
+      "sourceUrl": "https://www.metro.net/projects/westside/", "sourceTitle": "LA Metro · D Line extension status",
+      "context": "Metro says the first D Line extension section opened May 8, 2026, with three new stations. Later sections remain in development. The caption is a fictional commuter’s reaction, not a guarantee of punctual service.",
+      "sourceKind": "current project status", "connection": "A familiar commute, and a small change in the stories we tell about it."
+    },
+    {
+      "id": "chicago-bigger-plans", "title": "Bigger Plans", "cityLabel": "Chicago, Illinois", "city": "Chicago", "state": "Illinois", "theme": "Small savings. Bigger possibilities.", "variant": "trio", "speaker": "Abby",
+      "line": "Her bus fare went down. Her plans got bigger.",
+      "alternatives": ["The student fare got smaller. The city didn’t.", "A cheaper ride gives a kid more places to imagine going."],
+      "tvRevision": 3,
+      "tv": {"headline": "CHICAGO STUDENT FARES", "timestamp": "8:00 AM", "picture": "A close architectural still life of one school backpack resting on a simple wooden bench in a glass bus shelter beneath a riveted Chicago elevated-railway support. Frame the backpack, bench, two glass shelter panels and a single massive riveted steel column clearly. A plain blank masonry wall fills the entire background directly behind the shelter, with no distant street, windows or open vista. The bench and backpack dominate the frame. Completely empty of humans, bodies, faces or reflections. No vehicles. No advertising, writing, numbers, symbols or signatures on any surface."},
+      "board": {"lines": ["GRILLED CHEESE", "$5", "ROOM TO GROW"]},
+      "sourceUrl": "https://www.transitchicago.com/with-new-funding-from-the-northern-illinois-transit-authority-act-transit-agencies-team-up-to-make-student-fare-policies-more-coordinated-and-affordable/?categoryid=2",
+      "sourceTitle": "CTA · Coordinated student fares · August 14, 2026",
+      "context": "CTA’s release describes expanded student eligibility and coordinated fares across CTA, Metra and Pace; Pace’s student fare decreases. This fictional family moment concerns the regional change, not a claim that every CTA fare fell.",
+      "sourceKind": "dated regional development", "connection": "A parent sees an opportunity where a spreadsheet sees a small amount."
+    },
+    {
+      "id": "houston-reading-fee", "title": "The Reading Fee", "cityLabel": "Houston, Texas", "city": "Houston", "state": "Texas", "theme": "The fine print of everyday life", "variant": "duo", "speaker": "Barclay",
+      "line": "My utility bill has an administrative fee. I’m thinking of charging it a reading fee.",
+      "alternatives": ["My utility bill needs a cover letter. I need a cup of tea.", "The bill has an administrative fee. Apparently opening it is the part I do for free."],
+      "tvRevision": 2,
+      "tv": {"headline": "HOUSTON UTILITY BILLS", "timestamp": "8:00 AM", "picture": "A simple household still life: an opened plain envelope and three perfectly blank sheets of paper lie neatly on a wooden kitchen table. A single ordinary kitchen faucet and sink are visible in the background. The paper and envelope are the clear foreground subject. No glasses, cups, calculator or other objects. No text, no marks, no numbers, no signatures anywhere. Entirely empty of people. Crisp believable paper edges and quiet restrained metal highlights."},
+      "board": {"lines": ["HOUSE COFFEE", "$4", "CUP INCLUDED"]},
+      "sourceUrl": "https://houstontx.gov/moc/2026/pass-fy2027-budget.html", "sourceTitle": "Houston · Adopted FY2027 budget · June 10, 2026",
+      "context": "Houston’s adopted budget adds an administrative user fee associated with solid-waste service, appearing on water bills from August. The panel jokes about reading household bills, not about water quality or a fee charged only for water.",
+      "sourceKind": "dated local development", "connection": "Everyone knows the feeling of opening one more bill."
+    },
+    {
+      "id": "dallas-budget-dinner", "title": "The Budget Hearing", "cityLabel": "Dallas, Texas", "city": "Dallas", "state": "Texas", "theme": "Big budgets. Familiar conversations.", "variant": "trio", "speaker": "Abby",
+      "line": "The city has a budget hearing. At our house, we call it dinner.",
+      "alternatives": ["We have a household budget committee. It meets whenever the dishwasher breaks.", "Our budget is balanced. We just haven’t told the grocery list."],
+      "tv": {"headline": "DALLAS BUDGET SEASON", "timestamp": "8:00 AM", "picture": "An empty municipal meeting chamber with a broad curved council desk, orderly empty chairs and several neat stacks of completely blank budget binders. Beyond a tall window, a modest distant Dallas skyline with the recognizable spherical observation tower. No seals, flags with symbols, names, numbers or writing, no humans or portraits. Simple credible room perspective."},
+      "board": {"lines": ["FAMILY SUPPER", "$14", "LET’S TALK"]},
+      "sourceUrl": "https://dallascityhall.com/departments/budget/Pages/budget-engagement.aspx", "sourceTitle": "Dallas · FY2026–27 budget engagement",
+      "context": "Dallas is presenting its proposed FY2026–27 budget through public engagement. The cartoon draws a household parallel; it does not imply that a proposed tax rate or budget has already been adopted.",
+      "sourceKind": "current local budget process", "connection": "Different priorities at the same table. No party labels required."
+    },
+    {
+      "id": "phoenix-smart-tree", "title": "The Smartest Upgrade", "cityLabel": "Phoenix, Arizona", "city": "Phoenix", "state": "Arizona", "theme": "Some investments are beautifully simple", "variant": "duo", "speaker": "Barclay",
+      "line": "My smartest home improvement is a tree. It works even when the Wi-Fi doesn’t.",
+      "alternatives": ["The house has smart everything. The tree is still doing most of the cooling.", "Around here, the best parking space is the one under a tree."],
+      "tv": {"headline": "PHOENIX SHADE INVESTMENT", "timestamp": "6:00 AM", "picture": "A modest single-story stucco home in Phoenix with a broad mature desert shade tree casting a clearly coherent leafy shadow over the front window and porch. Gravel desert landscaping and one small cactus establish the Sonoran setting. An empty shaded chair on the porch. Late-summer sun, crisp architectural lines, no people, no letters or labels. The tree canopy is the unmistakable main subject."},
+      "board": {"lines": ["ICED TEA", "$4", "SHADE INCLUDED"]},
+      "sourceUrl": "https://www.phoenix.gov/newsroom/heat-news/phoenix-wins-grant-for--water-for-shade--project.html", "sourceTitle": "Phoenix · Water for Shade grant · August 21, 2026",
+      "context": "Phoenix’s Water for Shade project will explore financing and maintenance for tree-canopy expansion in Sunnyslope. The panel is about the practical value of shade, not a numerical energy-savings claim.",
+      "sourceKind": "dated neighborhood initiative", "connection": "Comfort at home can matter more than the newest gadget."
+    },
+    {
+      "id": "miami-rest-of-building", "title": "Beyond the View", "cityLabel": "Miami, Florida", "city": "Miami", "state": "Florida", "theme": "What it means to own a view", "variant": "duo", "speaker": "Barclay",
+      "line": "We bought the view. Now we’re getting to know the rest of the building.",
+      "alternatives": ["The ocean view was the easy part of the inspection.", "I know the condo’s roof better than I know the neighbors."],
+      "tv": {"headline": "FLORIDA CONDO RESERVES", "timestamp": "9:00 AM", "picture": "An empty Miami-style waterfront condominium balcony overlooking a calm bay with palm-lined shore. Show a well-maintained balcony railing and a portion of the neighboring building's solid concrete facade and roof, not structural damage. One empty outdoor chair. The architecture, railings and sea are crisp and plausible. No people, no construction workers, no signs or writing."},
+      "board": {"lines": ["HOUSE SPECIAL", "$12", "UPKEEP INCLUDED"]},
+      "sourceUrl": "https://condos.myfloridalicense.com/faqs/", "sourceTitle": "Florida DBPR · Condominium reserve information",
+      "context": "Florida’s condominium guidance explains reserve studies and budgeting for building components. This is statewide context relevant to Miami; it is not a claim about a specific building, owner’s assessment, or legal deadline.",
+      "sourceKind": "current statewide context", "connection": "The dream purchase and the ordinary responsibilities that come with it."
+    },
+    {
+      "id": "atlanta-one-destination", "title": "One Destination", "cityLabel": "Atlanta, Georgia", "city": "Atlanta", "state": "Georgia", "theme": "The destination that matters", "variant": "trio", "speaker": "Barclay",
+      "line": "I don’t need a flight to everywhere. Just a nonstop to the grandchildren.",
+      "alternatives": ["I collect frequent-flyer miles. The grandchildren collect the hugs.", "The airport connects me to the world. I mostly use it to get to one house."],
+      "tvRevision": 2,
+      "tv": {"headline": "ATLANTA AIR CONNECTIONS", "timestamp": "9:00 AM", "picture": "An entirely empty modern airport departure lounge with two simple rows of empty seats and one modest wheeled carry-on suitcase in the foreground. Broad floor-to-ceiling windows look across an open airport runway toward low distant terminal buildings. A single very small unmarked passenger airplane takes off far in the distance, seen as a plain complete aircraft shape. No close-up aircraft, no jet bridges. No airline logos, lettering, signs, numbers, people, pilots or reflected figures. Quiet anticipation, crisp coherent airport architecture, blank surfaces everywhere."},
+      "board": {"lines": ["HOME COOKING", "$14", "WORTH THE TRIP"]},
+      "sourceUrl": "https://www.atl.com/about-atl/", "sourceTitle": "Hartsfield-Jackson · Airport connections",
+      "context": "ATL is a major domestic and international air gateway. This reflective panel concerns family travel, not the availability of any particular nonstop route or today’s fares.",
+      "sourceKind": "current local identity", "connection": "An enormous travel network becomes personal when someone you love is at the other end."
+    },
+    {
+      "id": "dc-every-penny", "title": "Worth Every Penny", "cityLabel": "Washington, D.C.", "city": "Washington", "state": "District of Columbia", "theme": "A little common ground", "variant": "trio", "speaker": "Drew",
+      "line": "We finally agreed on something. The free museum was worth every penny.",
+      "alternatives": ["The museum was free. We still came home richer.", "We spent the afternoon at the museum. For once, history didn’t send us a bill."],
+      "tv": {"headline": "D.C. MUSEUM DAYS", "timestamp": "9:00 AM", "picture": "A dignified empty museum gallery inspired by Washington's natural-history collections: a large polished mineral specimen on a low plinth and a beautifully articulated dinosaur skeleton farther back beneath a high vaulted ceiling. No human statues, portraits or people. Blank information plaques, no letters or numerals. Clear spatial depth, calm inviting public space, strong easily read forms."},
+      "board": {"lines": ["COMMON GROUND", "$4", "COFFEE FOR TWO"]},
+      "sourceUrl": "https://naturalhistory.si.edu/visit", "sourceTitle": "Smithsonian Natural History · Free admission",
+      "context": "The Smithsonian National Museum of Natural History in Washington offers free admission. This panel celebrates shared enjoyment, not a political party or a blanket claim that every museum in the region is free.",
+      "sourceKind": "current visitor information", "connection": "A shared experience can be valuable without being expensive."
+    },
+    {
+      "id": "boston-boxes-missed-meeting", "title": "Still Unpacking", "cityLabel": "Boston, Massachusetts", "city": "Boston", "state": "Massachusetts", "theme": "A fresh start, with a few boxes", "variant": "duo", "speaker": "Drew",
+      "line": "We downsized. The moving boxes apparently missed the meeting.",
+      "alternatives": ["We moved to a smaller place. Our belongings are appealing the decision.", "The new apartment is perfect. Most of our furniture disagrees."],
+      "tv": {"headline": "BOSTON MOVING SEASON", "timestamp": "9:00 AM", "picture": "A quiet Boston brick rowhouse entrance with a short brownstone stoop. A compact moving van is parked normally at the curb with its rear door open, revealing neatly packed plain cardboard boxes and a small upholstered armchair. A few boxes at the stoop, all completely blank. September sunlight, no people, no brand marks, no written parking signs. Believable curb, stairs and van proportions."},
+      "board": {"lines": ["TAKEOUT SUPPER", "$12", "ONE MORE BOX"]},
+      "sourceUrl": "https://www.boston.gov/moving", "sourceTitle": "Boston · September moving guide",
+      "context": "Boston’s moving guide notes that most leases turn over at the beginning of September. The downsizing story is fictional and does not imply that all September movers are students or retirees.",
+      "sourceKind": "current seasonal context", "connection": "What we bring with us when life changes."
+    },
+    {
+      "id": "sf-reason-to-stay", "title": "A Reason to Stay", "cityLabel": "San Francisco, California", "city": "San Francisco", "state": "California", "theme": "A second life for familiar places", "variant": "duo", "speaker": "Drew",
+      "line": "They want to turn my old office into apartments. Finally, a reason to stay late.",
+      "alternatives": ["My old office may become apartments. I always said it needed a better break room.", "They’re planning bedrooms where our cubicles were. The nap policy is finally catching up."],
+      "tv": {"headline": "S.F. OFFICE-TO-HOME PLANS", "timestamp": "6:00 AM", "picture": "An elegant older San Francisco commercial building on a gently sloping street, with tall repetitive windows and a restrained stone cornice. Several window bays show ordinary empty interior rooms with curtains and one potted plant, suggesting a possible residential reuse without presenting a specific real project. No people or traffic, no flags, no writing, no signage. Clear coherent historic architecture."},
+      "board": {"lines": ["LATE SUPPER", "$12", "STAY A WHILE"]},
+      "sourceUrl": "https://sfstandard.com/2026/08/10/sf-office-to-housing-conversion-150-hayes/", "sourceTitle": "The San Francisco Standard · Conversion plans · August 10, 2026",
+      "context": "Reporting describes a proposed office-to-housing conversion at 150 Hayes. The cartoon imagines a former employee’s response. It does not claim this or all proposed conversions are completed.",
+      "sourceKind": "dated local reporting", "connection": "The same building can hold a different chapter of somebody’s life."
+    },
+    {
+      "id": "seattle-bench-with-view", "title": "A Bench with a View", "cityLabel": "Seattle, Washington", "city": "Seattle", "state": "Washington", "theme": "Enjoying a place without owning it", "variant": "trio", "speaker": "Abby",
+      "line": "I thought I wanted waterfront property. Turns out I wanted a bench with a view.",
+      "alternatives": ["My favorite waterfront address is the bench anyone can sit on.", "I came for the view. For once, I didn’t need to ask about the mortgage."],
+      "tv": {"headline": "SEATTLE WATERFRONT PARK", "timestamp": "6:00 AM", "picture": "One empty public park bench beside Seattle's broad waterfront promenade, overlooking calm Elliott Bay. A modest ferry crosses in the middle distance and a hazy mountain ridge sits on the horizon. Paved path, restrained native planting and a simple safe railing. Generous open space, peaceful inviting composition, no people or statues, no words or logos. The bench and accessible public view are the main subject."},
+      "board": {"lines": ["COFFEE", "$4", "TAKE YOUR TIME"]},
+      "sourceUrl": "https://www.seattle.gov/parks/parks/waterfront-park", "sourceTitle": "Seattle Parks · Waterfront Park",
+      "context": "Seattle’s central waterfront is a public park with open spaces, Elliott Bay views and free public programming. The caption celebrates access, without claiming a particular property value or a brand-new opening today.",
+      "sourceKind": "current public-space information", "connection": "A moment of contentment instead of another thing to buy."
+    }
+  ]
+}

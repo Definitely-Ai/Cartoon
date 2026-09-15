@@ -17,6 +17,12 @@ export interface BestOfCartoon {
   editionDate?: string;
   sourceUrl?: string;
   sourceTitle?: string;
+  theme?: string;
+  context?: string;
+  connection?: string;
+  sourceKind?: string;
+  checkedOn?: string;
+  productionMethod?: string;
 }
 
 export const bestOfCartoons = data as BestOfCartoon[];
