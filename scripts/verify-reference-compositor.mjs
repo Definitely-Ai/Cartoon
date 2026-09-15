@@ -15,7 +15,7 @@ await verifyRuntime(config);
 const {composeProductionPanel}=await load('scripts/automation/production-adapter.mjs');
 process.chdir(root);
 const m={core:await load('scripts/fixed-set/core.mjs'),typography:await load('scripts/fixed-set/typography.mjs'),sharp:createRequire(path.join(root,'package.json'))('sharp')};
-const acting=JSON.parse(await fs.readFile(path.join(root,'canon/fixed-set/barclay-reference-v1/acting/verification.json'),'utf8'));
+const acting=JSON.parse(await fs.readFile(path.join(root,'canon/fixed-set/barclay-reference-v2/acting/verification.json'),'utf8'));
 assert.equal(acting.identitySha256,'938dcdb8d4fb191ddd7551c2a231b13596db645995fe57e722dfac5ebfb88493');
 const regions=JSON.parse(await fs.readFile(path.join(root,'canon/fixed-set/v1/regions.json'),'utf8'));
 await fs.mkdir(out,{recursive:false});
@@ -33,6 +33,6 @@ for(const [index,actor] of acting.reports.entries()){
   assert.ok(actual.equals(expected),'Approved head must survive the real composition unchanged.');
   results.push(result);
 }
-const report={method:'Actual production compositor replay with retained TV artwork; no fresh inference or cloud delivery',at:new Date().toISOString(),castIdentity:'barclay-reference-v1',identitySha256:acting.identitySha256,runtimePinsHash:hash(config.runtimePins),results};
+const report={method:'Actual production compositor replay with retained TV artwork; no fresh inference or cloud delivery',at:new Date().toISOString(),castIdentity:'barclay-reference-v2',identitySha256:acting.identitySha256,approvedHeadSha256:acting.approvedHeadSha256,runtimePinsHash:hash(config.runtimePins),results};
 await fs.writeFile(path.join(out,'verification.json'),JSON.stringify(report,null,2)+'\n');
 console.log(JSON.stringify({poses:results.length,protectedChangedPixels:0,coloredPixels:0,report:path.join(out,'verification.json')}));

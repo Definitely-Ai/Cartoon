@@ -1,21 +1,34 @@
 {
-  "identity": "barclay-reference-v1",
+  "identity": "barclay-reference-v2",
   "approvedOn": "2026-09-14",
-  "ownerApproval": "I like it fully implement him in all of the cartoons and update the 38 cartoons with him",
+  "ownerApproval": "perfect fix all of the cartoons",
   "portraitSha256": "938dcdb8d4fb191ddd7551c2a231b13596db645995fe57e722dfac5ebfb88493",
-  "method": "Built-in reference-conditioned image edits followed by deterministic, protected-pixel compositing. All previous art retained in the studio and Git history.",
+  "approvedHeadSha256": "ab76ccbf36c54b1bb3b8aaebecb3913089d70cc162b865d0beedb199c6c89ce8",
+  "method": "Complete corrected head with union silhouette replacement. Speaking mouth and upward eyes are bounded edits of that same approved head.",
   "scope": {
     "bestOf": 38,
     "cityEditions": 2,
     "actingPlates": 5
   },
+  "visualReview": {
+    "checked": [
+      "rounded crown",
+      "far-eye outline",
+      "near ear and nape",
+      "single chin outline",
+      "collar join",
+      "open speaking mouth",
+      "listener gaze"
+    ],
+    "allFivePlatesReviewed": true
+  },
   "cartoons": [
     {
       "id": "suitcase-first-class",
-      "sourceSha256": "b9258ae4826b9ea1e466ca22de2c1348009da4e87da7de79d1a99b7a1b40fe14",
-      "sha256": "317010f8004ca4ec8104c0ef5bdcc2c1cbb42699d130ab67ccdcde77e965797d",
+      "sourceSha256": "317010f8004ca4ec8104c0ef5bdcc2c1cbb42699d130ab67ccdcde77e965797d",
+      "sha256": "14ef9940078099995de15fc8032f425f026e2529f56f375c8035244e7fe99ffc",
       "audit": {
-        "changedPixels": 39143,
+        "changedPixels": 46689,
         "protectedChangedPixels": 0,
         "coloredPixels": 0
       },
@@ -23,10 +36,10 @@
     },
     {
       "id": "individual-flakes",
-      "sourceSha256": "4d8a18f0ecc87f99ae95d8df51be2181b46746fbd9e87bc50da93a0df0edbd99",
-      "sha256": "a0b4b260ec658db4bc7efdca4e107f40444de0885988a19e0c3ac01c21316196",
+      "sourceSha256": "a0b4b260ec658db4bc7efdca4e107f40444de0885988a19e0c3ac01c21316196",
+      "sha256": "adfcc50681ff0a46c95d1340c6e864a0ed272d9de81f9a585634af1b955ae630",
       "audit": {
-        "changedPixels": 37708,
+        "changedPixels": 46331,
         "protectedChangedPixels": 0,
         "coloredPixels": 0
       },
@@ -34,10 +47,10 @@
     },
     {
       "id": "professional-opposition",
-      "sourceSha256": "012e5a9a3e3163b0a093046fc61a2f5a4fcf50c5b91a3f3eb3e7a85671c6756d",
-      "sha256": "6252ece7ecb19a61286e8dd0a40264d4bdbeed82eebc901814ed8213a789d394",
+      "sourceSha256": "6252ece7ecb19a61286e8dd0a40264d4bdbeed82eebc901814ed8213a789d394",
+      "sha256": "8c78c5f3f81a82436e08a8a7d2aae3f6635449a31d02e48671eb5f6c54fa0697",
       "audit": {
-        "changedPixels": 39143,
+        "changedPixels": 46689,
         "protectedChangedPixels": 0,
         "coloredPixels": 0
       },
@@ -45,10 +58,10 @@
     },
     {
       "id": "zero-proof-full-bill",
-      "sourceSha256": "80270403b434c0a0bd0124d442e80d985d06a0761b3a6a213ddc275ccc7ac4a2",
-      "sha256": "670b5a8f94ca15dd65435564d6ac32d84ae6edddc7343eedd79d8c61e8205a06",
+      "sourceSha256": "670b5a8f94ca15dd65435564d6ac32d84ae6edddc7343eedd79d8c61e8205a06",
+      "sha256": "12c42c52da92a9e697fb48fddb67c9e3f6a03fcca2627a919476744734ca36ac",
       "audit": {
-        "changedPixels": 37932,
+        "changedPixels": 46344,
         "protectedChangedPixels": 0,
         "coloredPixels": 0
       },
@@ -56,10 +69,10 @@
     },
     {
       "id": "quiet-arrivals",
-      "sourceSha256": "61a628d9cddd20085f0c58e68b513f9ed40ccfbff625fb66ae22a9e45fb33c6b",
-      "sha256": "7a3cf3ef39793be1b9a427289112a649ce5586b4bc3833886a3d45141aa28ca0",
+      "sourceSha256": "7a3cf3ef39793be1b9a427289112a649ce5586b4bc3833886a3d45141aa28ca0",
+      "sha256": "a454a12cc2c3af2304f6d40c21917aeea11850f6b9cf632a094e106ffe71cf18",
       "audit": {
-        "changedPixels": 37708,
+        "changedPixels": 46331,
         "protectedChangedPixels": 0,
         "coloredPixels": 0
       },
@@ -67,10 +80,10 @@
     },
     {
       "id": "company-olive-oil",
-      "sourceSha256": "98d23ec45c5ec07d65f3777ca1687f505079a1e10d97ee9aaa383276c09ca964",
-      "sha256": "c88c94b500b9fc1b23197d00149b1421a43d3e82d1975de96064052dbbb5e532",
+      "sourceSha256": "c88c94b500b9fc1b23197d00149b1421a43d3e82d1975de96064052dbbb5e532",
+      "sha256": "150c9dca86e568603446ad8c6cd687a96bfffcefca3e84b26730a46e2e504b02",
       "audit": {
-        "changedPixels": 39143,
+        "changedPixels": 46689,
         "protectedChangedPixels": 0,
         "coloredPixels": 0
       },
@@ -78,10 +91,10 @@
     },
     {
       "id": "rare-opportunity-street",
-      "sourceSha256": "92134c368c138052c939265d5a27f3e58dfea19d573e8e128e5a081bd84307bf",
-      "sha256": "6f0cdb81189684dc2f322a980132a6645a2038d76869dc76380262cefb039dc9",
+      "sourceSha256": "6f0cdb81189684dc2f322a980132a6645a2038d76869dc76380262cefb039dc9",
+      "sha256": "bb04effe46f3e710a1f60b814bd21e3232e38b827107b3f23d3fdacc27c0cf17",
       "audit": {
-        "changedPixels": 37708,
+        "changedPixels": 46331,
         "protectedChangedPixels": 0,
         "coloredPixels": 0
       },
@@ -89,10 +102,10 @@
     },
     {
       "id": "fitted-excuses",
-      "sourceSha256": "16dca7e9e31ebacd278bfd83ef3229b36b0a5a8c048960446ca0bfb776a0c281",
-      "sha256": "055ba4ec79c6ae1b5b9bdf0382da46683625c6cc9de479bab71e8dd12eb7036d",
+      "sourceSha256": "055ba4ec79c6ae1b5b9bdf0382da46683625c6cc9de479bab71e8dd12eb7036d",
+      "sha256": "8e62c7737079f4037d991738db7fed92c5f966f27f5b2359eb730f3694ed5747",
       "audit": {
-        "changedPixels": 39143,
+        "changedPixels": 46689,
         "protectedChangedPixels": 0,
         "coloredPixels": 0
       },
@@ -100,10 +113,10 @@
     },
     {
       "id": "divide-the-credit",
-      "sourceSha256": "49627a1adf5a41f57f076523f1d9d17f414177c470b26a1f49747405bfe3664f",
-      "sha256": "a138e271c51fb1dda2eae85f1c06a61990517ff5f11acf5d16ca83602b02df57",
+      "sourceSha256": "a138e271c51fb1dda2eae85f1c06a61990517ff5f11acf5d16ca83602b02df57",
+      "sha256": "32ad9fda6833aeb3692ea0c3593bc821feeb64ab1b019157be80897e2847af7f",
       "audit": {
-        "changedPixels": 37932,
+        "changedPixels": 46344,
         "protectedChangedPixels": 0,
         "coloredPixels": 0
       },
@@ -111,10 +124,10 @@
     },
     {
       "id": "savings-subscription",
-      "sourceSha256": "48095bc1f4ace81d8f9cdfcab3b121a6a60f8a30e51987368c8cdca3960a9f4e",
-      "sha256": "091db6ef4fd37f0b90ba4c1caf882866ef294b7c6295f447028a0e9ceaf3bc6d",
+      "sourceSha256": "091db6ef4fd37f0b90ba4c1caf882866ef294b7c6295f447028a0e9ceaf3bc6d",
+      "sha256": "f979f7e1bb8a92f974663c17986b93390ed17b0dc3842437f2b0fcdc4cf5c2eb",
       "audit": {
-        "changedPixels": 39143,
+        "changedPixels": 46689,
         "protectedChangedPixels": 0,
         "coloredPixels": 0
       },
@@ -122,10 +135,10 @@
     },
     {
       "id": "seasonal-one-chair",
-      "sourceSha256": "535b420b1e7a525a635103edf3f80620a311da4e74175023adf0182e4c4e4baf",
-      "sha256": "e6ad2164ac7b80d18fbf3e94ff253e402facf6ce50b3fb7893183005b807a985",
+      "sourceSha256": "e6ad2164ac7b80d18fbf3e94ff253e402facf6ce50b3fb7893183005b807a985",
+      "sha256": "2456a9a1b346e9aab4dedaddd21d054cfa6f33583942b5ee4fee5c4482746747",
       "audit": {
-        "changedPixels": 37708,
+        "changedPixels": 46331,
         "protectedChangedPixels": 0,
         "coloredPixels": 0
       },
@@ -133,10 +146,10 @@
     },
     {
       "id": "private-golf-budget",
-      "sourceSha256": "9c21ebe96eb9a0d2b215b4ccf8c5ee97bd5485e84c344b7d4c1e04cdbfc986d7",
-      "sha256": "729c4f894eaf5e3c18fd61823955d199a0c5033a5ea0bf33b549eb5ea2b2dc38",
+      "sourceSha256": "729c4f894eaf5e3c18fd61823955d199a0c5033a5ea0bf33b549eb5ea2b2dc38",
+      "sha256": "2b1d81e4d3677cdd089f65087f725ea7d7a52e70d340810b49d3735d47d2f40b",
       "audit": {
-        "changedPixels": 39143,
+        "changedPixels": 46689,
         "protectedChangedPixels": 0,
         "coloredPixels": 0
       },
@@ -144,10 +157,10 @@
     },
     {
       "id": "policy-suspense",
-      "sourceSha256": "8a47b65e06110a9d19cc04bca916c3d0c94b21deab41e63072f7e26c743f22f0",
-      "sha256": "efba3cfb54018df315ebe1d4ae32820ed2bb732f2fe7a8112d95754e70c1ad0a",
+      "sourceSha256": "efba3cfb54018df315ebe1d4ae32820ed2bb732f2fe7a8112d95754e70c1ad0a",
+      "sha256": "38d2468e4532f4c76a0b43985737a8c025b2f33974a4cd81b8dc19d49be00898",
       "audit": {
-        "changedPixels": 39143,
+        "changedPixels": 46689,
         "protectedChangedPixels": 0,
         "coloredPixels": 0
       },
@@ -155,10 +168,10 @@
     },
     {
       "id": "independent-club",
-      "sourceSha256": "d44052ada1895e255a69f65beb83a2cbc1b60c241a74e0aa3cba1fa90f2d199e",
-      "sha256": "27d0c4204b2909e6c88438ec94b56bf1d1cddb1a36616526addb73b99c664260",
+      "sourceSha256": "27d0c4204b2909e6c88438ec94b56bf1d1cddb1a36616526addb73b99c664260",
+      "sha256": "2dc0f86916af14c0178c6965d25753dbdb6f7d828785f12f385374f4168ee05e",
       "audit": {
-        "changedPixels": 37708,
+        "changedPixels": 46331,
         "protectedChangedPixels": 0,
         "coloredPixels": 0
       },
@@ -166,10 +179,10 @@
     },
     {
       "id": "boat-show-confidence",
-      "sourceSha256": "317b1fdd0bcba803fc22767fddbbd4a75a853a0e6a8d157c9461b5ac7348c7c3",
-      "sha256": "24fbf6fa02c652fc3c5b4650da321973bd1f1ae8d067aee702aee74b3e0913fd",
+      "sourceSha256": "24fbf6fa02c652fc3c5b4650da321973bd1f1ae8d067aee702aee74b3e0913fd",
+      "sha256": "dcbc9af882a1a562525ee649c149c202221ddfd3a9302a65c037a7cb8dbe48b9",
       "audit": {
-        "changedPixels": 39143,
+        "changedPixels": 46689,
         "protectedChangedPixels": 0,
         "coloredPixels": 0
       },
@@ -177,10 +190,10 @@
     },
     {
       "id": "certain-tab",
-      "sourceSha256": "258b36901a488bb166970d0694bc8f67aa30800ebb15f1d1295a9c2b4c44ea8b",
-      "sha256": "f5ab1dc51bd5c99aa941c9849458dd2c963157925799112a808a9843d155b8fe",
+      "sourceSha256": "f5ab1dc51bd5c99aa941c9849458dd2c963157925799112a808a9843d155b8fe",
+      "sha256": "63e9e9b886fa7bbb6db4431e1595b5387a8a59c59e0a662b793d197241f165d1",
       "audit": {
-        "changedPixels": 37932,
+        "changedPixels": 46344,
         "protectedChangedPixels": 0,
         "coloredPixels": 0
       },
@@ -188,10 +201,10 @@
     },
     {
       "id": "quiet-mortgage-barclay",
-      "sourceSha256": "8d2b2a7f6acfcb95bc5ae3313775bee939cd7bac8aa7aeff061a82a53b54f115",
-      "sha256": "88bb2ba6ed37ac77274a9f13dcfdffb65d7242ac62bc00575190820f3b244154",
+      "sourceSha256": "88bb2ba6ed37ac77274a9f13dcfdffb65d7242ac62bc00575190820f3b244154",
+      "sha256": "761020e08b67cb067872005817d814810199ebccffa69c1ec3b7a022a480c064",
       "audit": {
-        "changedPixels": 39143,
+        "changedPixels": 46689,
         "protectedChangedPixels": 0,
         "coloredPixels": 0
       },
@@ -199,10 +212,10 @@
     },
     {
       "id": "loyalty-adjectives",
-      "sourceSha256": "9e71b76bf954d5d9f0269cb6109bee4ab667c2ba7b8414001d5eef742d3eefda",
-      "sha256": "5d05ca8ac709ca4f512b455d6c4174266b306552b3de8c79cba354466e3997cd",
+      "sourceSha256": "5d05ca8ac709ca4f512b455d6c4174266b306552b3de8c79cba354466e3997cd",
+      "sha256": "489ff4a19e373eecc5adac6a6138e78dcb260f72dcc1b1ff47a8c54a50f86900",
       "audit": {
-        "changedPixels": 37708,
+        "changedPixels": 46331,
         "protectedChangedPixels": 0,
         "coloredPixels": 0
       },
@@ -210,10 +223,10 @@
     },
     {
       "id": "bulk-commitment",
-      "sourceSha256": "a3b8e2cf17534c439a6630da1e5a8902f5b50326233de7875298c385bdcb992b",
-      "sha256": "ca094d631edacb22c3b53bc5bb53ae41b852b49e8e0aad004d98d00e76973cde",
+      "sourceSha256": "ca094d631edacb22c3b53bc5bb53ae41b852b49e8e0aad004d98d00e76973cde",
+      "sha256": "26b140f0f97cb155c4043cd411ac087dcd8d90e920d916526d0efa235c87599e",
       "audit": {
-        "changedPixels": 39143,
+        "changedPixels": 46689,
         "protectedChangedPixels": 0,
         "coloredPixels": 0
       },
@@ -221,10 +234,10 @@
     },
     {
       "id": "reliable-amenity",
-      "sourceSha256": "67820038ea576bc2646762cb51a7bbe4efcb3056ca54f59d35cae88173056c95",
-      "sha256": "d11f4f4d10c8e087387d860810fd19ce1f2df97ac44e056b672670ed663012f5",
+      "sourceSha256": "d11f4f4d10c8e087387d860810fd19ce1f2df97ac44e056b672670ed663012f5",
+      "sha256": "eb40c1b134d55d13dbae318e2ec9b99024f7076a99fd14855728653332dd002d",
       "audit": {
-        "changedPixels": 37708,
+        "changedPixels": 46331,
         "protectedChangedPixels": 0,
         "coloredPixels": 0
       },
@@ -232,10 +245,10 @@
     },
     {
       "id": "password-inheritance",
-      "sourceSha256": "cba6a253fcbc4623dda42e08d8b9a702d33ef318a7a186546f0295b72deb23d8",
-      "sha256": "3e0f38de1c9bd2ebd747c730a22cfd631472e16823be4f7393f80f1d78dc4afd",
+      "sourceSha256": "3e0f38de1c9bd2ebd747c730a22cfd631472e16823be4f7393f80f1d78dc4afd",
+      "sha256": "f0ae64d4b5c6551761ad1a4c9714a6bbc145545b1f9c1ac5f51f808fb4c1cff3",
       "audit": {
-        "changedPixels": 39143,
+        "changedPixels": 46689,
         "protectedChangedPixels": 0,
         "coloredPixels": 0
       },
@@ -243,10 +256,10 @@
     },
     {
       "id": "karaoke-absence",
-      "sourceSha256": "7f6d3e7a4e1ec04f123f3b1ddd8f4c43d0ebaab99c922108e2a48f0a62ca054a",
-      "sha256": "395a05e28bef49dc5a957084ed4fd59bb065ed85b2f47339b4d90184251627b6",
+      "sourceSha256": "395a05e28bef49dc5a957084ed4fd59bb065ed85b2f47339b4d90184251627b6",
+      "sha256": "aef2e9824d8cf1954e0c1420cfbe1c6c8ae8ccfa94d201bf3dd933f123899883",
       "audit": {
-        "changedPixels": 37932,
+        "changedPixels": 46344,
         "protectedChangedPixels": 0,
         "coloredPixels": 0
       },
@@ -254,10 +267,10 @@
     },
     {
       "id": "dues-day-job",
-      "sourceSha256": "47ed89ff88aa1cb073ca7159eaddecf61efa013b4081d8ff46734b708ca04c32",
-      "sha256": "209bea89560f99e3e1f089d3e5dcc193d9ebaa406f263e12ef3b2899e84d3fdb",
+      "sourceSha256": "209bea89560f99e3e1f089d3e5dcc193d9ebaa406f263e12ef3b2899e84d3fdb",
+      "sha256": "7149dbabfae9326556f9751e028b01bb180aaa175df27ef5a806e29852b716a4",
       "audit": {
-        "changedPixels": 39143,
+        "changedPixels": 46689,
         "protectedChangedPixels": 0,
         "coloredPixels": 0
       },
@@ -265,10 +278,10 @@
     },
     {
       "id": "premium-uncertainty",
-      "sourceSha256": "c24625b6966ab275fed93b57e03edfd29da3b6617592f1bf2ec4be0cb54d323a",
-      "sha256": "dd9d7d60a384cc664846fb8a0055e641b6035521aac3321123fbb14327970c84",
+      "sourceSha256": "dd9d7d60a384cc664846fb8a0055e641b6035521aac3321123fbb14327970c84",
+      "sha256": "ba3538cddda391cf9b5abc9969ad929e28c84977831d6191c297b95bf4687006",
       "audit": {
-        "changedPixels": 37708,
+        "changedPixels": 46331,
         "protectedChangedPixels": 0,
         "coloredPixels": 0
       },
@@ -276,10 +289,10 @@
     },
     {
       "id": "suspicious-savings",
-      "sourceSha256": "0d9a95e2de999f21b3ac8737b3072154acc0502232a53215ea2569078d5da63a",
-      "sha256": "419622a73d4ca9d80e3aa94989493b92b06b6ca7e9153996e13714b99c3761ab",
+      "sourceSha256": "419622a73d4ca9d80e3aa94989493b92b06b6ca7e9153996e13714b99c3761ab",
+      "sha256": "999420b72d6e605a346e863a06a8dc8c57a7e4230796831f056a6a76a49c1649",
       "audit": {
-        "changedPixels": 39143,
+        "changedPixels": 46689,
         "protectedChangedPixels": 0,
         "coloredPixels": 0
       },
@@ -287,10 +300,10 @@
     },
     {
       "id": "miscellaneous-lifestyle",
-      "sourceSha256": "180fc0ba232e9582bd471665a12c2cfc4a8191e4257769dcc9a37c76652ad6f7",
-      "sha256": "2e27011c9fa7608cc55ebdbb6acce65edf44b85aee0c4bb53b35c4bc58f08335",
+      "sourceSha256": "2e27011c9fa7608cc55ebdbb6acce65edf44b85aee0c4bb53b35c4bc58f08335",
+      "sha256": "10e882bdfe959f5f5ab1e3465696e9aed79dc0896ea14aad1dd6375b95650655",
       "audit": {
-        "changedPixels": 37708,
+        "changedPixels": 46331,
         "protectedChangedPixels": 0,
         "coloredPixels": 0
       },
@@ -298,10 +311,10 @@
     },
     {
       "id": "waterfront-by-the-hour",
-      "sourceSha256": "9dd79c0c7a12be66f98d59982fec681e3ebcf42b5f618b0744d81e3345a874d8",
-      "sha256": "2ce04d3b26643386a9d3c7ee20b68699b6edfe97b36ad1a1840a0061bb5fcc84",
+      "sourceSha256": "2ce04d3b26643386a9d3c7ee20b68699b6edfe97b36ad1a1840a0061bb5fcc84",
+      "sha256": "64245cd54d77f27897184db8c7d92c53cd75e69da79bb5926e8141ed1042f48b",
       "audit": {
-        "changedPixels": 39143,
+        "changedPixels": 46689,
         "protectedChangedPixels": 0,
         "coloredPixels": 0
       },
@@ -309,10 +322,10 @@
     },
     {
       "id": "airfare-steak",
-      "sourceSha256": "4c0a6b73127b22dc9995600ab74ef7b6e780367215aec81c0644b8fc3c3baaa2",
-      "sha256": "08d31234fa3b0bfa924edd730f77a5e12f15b4aee43c0db6398ff4a677a438d0",
+      "sourceSha256": "08d31234fa3b0bfa924edd730f77a5e12f15b4aee43c0db6398ff4a677a438d0",
+      "sha256": "88d2da32075897ea9cdf380473f5306a343d61486f35c996e457d23edf6c8f25",
       "audit": {
-        "changedPixels": 37708,
+        "changedPixels": 46331,
         "protectedChangedPixels": 0,
         "coloredPixels": 0
       },
@@ -320,10 +333,10 @@
     },
     {
       "id": "cheese-counter-draft",
-      "sourceSha256": "d1b54e1d8139e16c28cacf8c6d250fcc42683a46affff464f0ea212d5a77502e",
-      "sha256": "9f338d79ea604aced409419a8eab2d1641f250605f61cc440e9183c416614311",
+      "sourceSha256": "9f338d79ea604aced409419a8eab2d1641f250605f61cc440e9183c416614311",
+      "sha256": "1f06bcd90b9b2c1a29f24ec41fbc4645432bf5b9dcd5a9a8d4a86ad15ac4aae4",
       "audit": {
-        "changedPixels": 39143,
+        "changedPixels": 46689,
         "protectedChangedPixels": 0,
         "coloredPixels": 0
       },
@@ -331,10 +344,10 @@
     },
     {
       "id": "city-salad",
-      "sourceSha256": "3af7e4bbff549ef5faf95867cf797d9a05332764ff05020b5b94ea723dc431be",
-      "sha256": "6ffe094ba2f6f29b127472ac0115a48638ae8c7a094225fd0c48a6279fdb1f63",
+      "sourceSha256": "6ffe094ba2f6f29b127472ac0115a48638ae8c7a094225fd0c48a6279fdb1f63",
+      "sha256": "a67f485be5fd7ff55d87f19d4acf9127af8dcd2368c178f6e9f374b115a77e99",
       "audit": {
-        "changedPixels": 37708,
+        "changedPixels": 46331,
         "protectedChangedPixels": 0,
         "coloredPixels": 0
       },
@@ -342,10 +355,10 @@
     },
     {
       "id": "boat-allowance",
-      "sourceSha256": "97092448107263cec39e11bb89dcdb417de6e8d21693e050fd95d21c2f5d9dc4",
-      "sha256": "054926d8c64e5e9a8727d7cfa52aedded59239836efa789ab0726d47bbb044e1",
+      "sourceSha256": "054926d8c64e5e9a8727d7cfa52aedded59239836efa789ab0726d47bbb044e1",
+      "sha256": "d3f701d62c0a1df444e21ca95cb7f98ec3968e5dcb84ad7ded504c26dca0f3e7",
       "audit": {
-        "changedPixels": 39143,
+        "changedPixels": 46689,
         "protectedChangedPixels": 0,
         "coloredPixels": 0
       },
@@ -353,10 +366,10 @@
     },
     {
       "id": "services-watching",
-      "sourceSha256": "c7d1646449eab45c11d117d639d0719dd749cb79a409bc42ecb54fe89141a10a",
-      "sha256": "eb3bdaa2ed0e0e8da5766f23bd5441c8cbb9059ce0f7a1ce3304a397bf92d1d4",
+      "sourceSha256": "eb3bdaa2ed0e0e8da5766f23bd5441c8cbb9059ce0f7a1ce3304a397bf92d1d4",
+      "sha256": "90ce7abcb14719213d12d6c8a885815688b8e291edd3b23f193d90f13159b3e2",
       "audit": {
-        "changedPixels": 37708,
+        "changedPixels": 46331,
         "protectedChangedPixels": 0,
         "coloredPixels": 0
       },
@@ -364,10 +377,10 @@
     },
     {
       "id": "paid-off-condo",
-      "sourceSha256": "9e270a3ab0237be39e6ae7cdfc6f6e1d4b8f2173c0987aaca6bde715ce6ba31c",
-      "sha256": "0c5cca9d22858a8cb25d0c84c004000fc44007fed1afc4c68d85bb7c4621bd9a",
+      "sourceSha256": "0c5cca9d22858a8cb25d0c84c004000fc44007fed1afc4c68d85bb7c4621bd9a",
+      "sha256": "14acb4c993c8e0701bdbbd84c4d62a122ac901a3235d0142a142d1c870a40a1e",
       "audit": {
-        "changedPixels": 39143,
+        "changedPixels": 46689,
         "protectedChangedPixels": 0,
         "coloredPixels": 0
       },
@@ -375,10 +388,10 @@
     },
     {
       "id": "inheritance-boat-vote",
-      "sourceSha256": "9bf4936b27890883bb96ee84940a256ccb94fe15cb333b11a107c1491b945f5f",
-      "sha256": "8c8a66f354c3b5c87ad03d03e8ca0274455e1bb6ba9336d11a03d8151289e6ce",
+      "sourceSha256": "8c8a66f354c3b5c87ad03d03e8ca0274455e1bb6ba9336d11a03d8151289e6ce",
+      "sha256": "b03e33e8c250adce2375241d7385d4de83915a9a39be141fd8ddc14296f65aea",
       "audit": {
-        "changedPixels": 39143,
+        "changedPixels": 46689,
         "protectedChangedPixels": 0,
         "coloredPixels": 0
       },
@@ -386,10 +399,10 @@
     },
     {
       "id": "fond-of-mortgage",
-      "sourceSha256": "665e67152c0c940829ddb333f26777f99a32959cea7034fc209592f5648e5bb3",
-      "sha256": "a3a53e2bdd8a01607ef6c898a553c4b570d8a567e3094054deaaeb6a2eef2310",
+      "sourceSha256": "a3a53e2bdd8a01607ef6c898a553c4b570d8a567e3094054deaaeb6a2eef2310",
+      "sha256": "cb6505b04da31c5ebe81d35497fb099a6e7adb391607832215f0697f69fcddb7",
       "audit": {
-        "changedPixels": 39143,
+        "changedPixels": 46689,
         "protectedChangedPixels": 0,
         "coloredPixels": 0
       },
@@ -397,10 +410,10 @@
     },
     {
       "id": "exclusions-imagination",
-      "sourceSha256": "97d82610aad86e1892efc446861299b3907819070e75d641267bac1a11386cdd",
-      "sha256": "c0675d36a1947657cd6b5086dd5946b58b87e8586d298a8c181d615362427099",
+      "sourceSha256": "c0675d36a1947657cd6b5086dd5946b58b87e8586d298a8c181d615362427099",
+      "sha256": "6e35f52e86658136d652d4ad3166318bf7c4ffa5cf431e8a7fc0ceb030ab9e96",
       "audit": {
-        "changedPixels": 39143,
+        "changedPixels": 46689,
         "protectedChangedPixels": 0,
         "coloredPixels": 0
       },
@@ -408,10 +421,10 @@
     },
     {
       "id": "thanksgiving-receipt",
-      "sourceSha256": "6c9997bdfddb927d80d92122aa10cfdecf6972a555dfaa69d10d30949f659d13",
-      "sha256": "837d836bf4aceeaf4695c52b86e3f06bfcd5b8c698bcf02b2741cea7e23e71e7",
+      "sourceSha256": "837d836bf4aceeaf4695c52b86e3f06bfcd5b8c698bcf02b2741cea7e23e71e7",
+      "sha256": "743d296521cd2a452b64ada736e6fe75447e2866578623ccaebfd62b9865faa8",
       "audit": {
-        "changedPixels": 39143,
+        "changedPixels": 46689,
         "protectedChangedPixels": 0,
         "coloredPixels": 0
       },
@@ -419,10 +432,10 @@
     },
     {
       "id": "cancellation-season",
-      "sourceSha256": "9e0697ef431efe3ded3c0fe2dc00d5086cc62db402bf108ef0ae26103803b06a",
-      "sha256": "33002aa7f4f1979089ccc3e522170b3bfc35f74f7d1d368ba09ffb2a7bd1b09a",
+      "sourceSha256": "33002aa7f4f1979089ccc3e522170b3bfc35f74f7d1d368ba09ffb2a7bd1b09a",
+      "sha256": "c09a7bed0b68f1c4fa8067c326bae6fbd5c49fe1867f1e561e0d594e4bcab8e1",
       "audit": {
-        "changedPixels": 39143,
+        "changedPixels": 46689,
         "protectedChangedPixels": 0,
         "coloredPixels": 0
       },
@@ -430,10 +443,10 @@
     },
     {
       "id": "austin-taking-offers",
-      "sourceSha256": "a4e2b7826b9153f695bfa0f98917a2379dfc22e8e980c750e6a0a925fa10cce8",
-      "sha256": "c25c7650324830938e8c223a2fbf95a4376b84ce56af5910a882bc477a6d1a41",
+      "sourceSha256": "c25c7650324830938e8c223a2fbf95a4376b84ce56af5910a882bc477a6d1a41",
+      "sha256": "b33432cfc632547bedc0cd5c28f5686c6a6b34daa981207ea85b07f7947cce27",
       "audit": {
-        "changedPixels": 39143,
+        "changedPixels": 46689,
         "protectedChangedPixels": 0,
         "coloredPixels": 0
       },
@@ -441,10 +454,10 @@
     },
     {
       "id": "los-angeles-view-included",
-      "sourceSha256": "12e38445e631c4b3b3ab94a772fd1dae08887c8c375758a30d694e34abf59bc5",
-      "sha256": "843e9a2b615704ecb8d4b8100cc3dff397189144da0fcb6a42a0d009632cf84c",
+      "sourceSha256": "843e9a2b615704ecb8d4b8100cc3dff397189144da0fcb6a42a0d009632cf84c",
+      "sha256": "1cb44c3ed8bc34629c1ca84674cb56b6604202305189019f624b0a1c3d1dbb4d",
       "audit": {
-        "changedPixels": 37708,
+        "changedPixels": 46331,
         "protectedChangedPixels": 0,
         "coloredPixels": 0
       },
@@ -454,45 +467,45 @@
   "acting": [
     {
       "id": "duo-drew",
-      "sha256": "ed4d51d8eef08734373c77a5b9e02bbbc36b95719c8b223872b39c2aec62e942",
+      "sha256": "0b26d5c5d123d0a85d7a69c8bae87df64ae693980e2ebf430d72f956722d7660",
       "audit": {
-        "changedPixels": 37708,
+        "changedPixels": 46331,
         "protectedChangedPixels": 0,
         "coloredPixels": 0
       }
     },
     {
       "id": "duo-barclay",
-      "sha256": "2c679596c24cf5dabf71b951f6e3c1a6d108c74b7b0628224d7004bce4eee152",
+      "sha256": "3f643713bf3700e8802295ff658df8f52a8c974efc8f514b1447e8de5efef889",
       "audit": {
-        "changedPixels": 39143,
+        "changedPixels": 46689,
         "protectedChangedPixels": 0,
         "coloredPixels": 0
       }
     },
     {
       "id": "trio-abby",
-      "sha256": "590d2a300a3e88b3fea447f87b34fb9b7ddb3d04ca30346c8bfcc41348977a42",
+      "sha256": "28e1a5870da8da0dce382eb42c1ed980ebd96eb8982c3e8ce10ce0a391ec0b7f",
       "audit": {
-        "changedPixels": 37932,
+        "changedPixels": 46344,
         "protectedChangedPixels": 0,
         "coloredPixels": 0
       }
     },
     {
       "id": "trio-barclay",
-      "sha256": "7cedfbc23239323102b1588cbbbac9e8c7ec551646f45cf5146082ffb3a5ec62",
+      "sha256": "8c433b161af35fe1d0e830134a1e12a6b5779ebd5847cb0258524cb70213804e",
       "audit": {
-        "changedPixels": 39143,
+        "changedPixels": 46689,
         "protectedChangedPixels": 0,
         "coloredPixels": 0
       }
     },
     {
       "id": "trio-drew",
-      "sha256": "3b60f92d275cffe1512edbe9d73a43745e7d81e6dc5702fd7ba520c6fe5f87da",
+      "sha256": "78cb4bc8ea085620f3ae42dfa69b2e8ca586616d34fe97dcefba6cdb866f88ff",
       "audit": {
-        "changedPixels": 37708,
+        "changedPixels": 46331,
         "protectedChangedPixels": 0,
         "coloredPixels": 0
       }

@@ -19,7 +19,23 @@ test('the exact approved portrait is shared by the website and versioned automat
  assert.equal(sha(await fs.readFile('public/gallery/cast-september-2026/barclay.png')),identity.portraitSha256);
  assert.equal(acting.identitySha256,identity.portraitSha256);
  assert.equal(proof.portraitSha256,identity.portraitSha256);
- assert.match(proof.ownerApproval,/fully implement/);
+ assert.match(proof.ownerApproval,/perfect fix all of the cartoons/);
+ assert.equal(identity.id,'barclay-reference-v2');
+ assert.equal(identity.approvedHeadSha256,'ab76ccbf36c54b1bb3b8aaebecb3913089d70cc162b865d0beedb199c6c89ce8');
+ assert.equal(sha(await fs.readFile(identity.approvedHeadPath)),identity.approvedHeadSha256);
+ assert.equal(acting.approvedHeadSha256,identity.approvedHeadSha256);
+});
+
+test('forehead, far-ear removal and near ear retain the approved whole-head pixels',async()=>{
+ const approved=await sharp(identity.approvedHeadPath).resize(crop.width,crop.height,{fit:'fill'}).grayscale().png().toBuffer();
+ const regions=[{left:128,top:44,width:46,height:28},{left:66,top:84,width:10,height:20},{left:202,top:108,width:42,height:54}];
+ for(const a of acting.reports){
+  const integrated=await sharp(a.framePath).extract(crop).png().toBuffer();
+  for(const region of regions){
+   const raw=async img=>sharp(img).extract(region).removeAlpha().toColourspace('srgb').raw().toBuffer();
+   assert.deepEqual(await raw(integrated),await raw(approved),a.id+' approved contour region '+JSON.stringify(region));
+  }
+ }
 });
 
 test('all five pinned poses preserve the speaking and gaze contract',async()=>{

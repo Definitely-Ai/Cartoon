@@ -1,5 +1,5 @@
 """The shared presentation content as a native-image, landscape PDF handout."""
-import json
+import json, os
 from pathlib import Path
 from reportlab.pdfgen import canvas
 from reportlab.pdfbase import pdfmetrics
@@ -13,7 +13,9 @@ pdfmetrics.registerFont(TTFont('Georgia','C:/Windows/Fonts/georgia.ttf'))
 pdfmetrics.registerFont(TTFont('GeorgiaBold','C:/Windows/Fonts/georgiab.ttf'))
 rows=json.loads((ROOT/'docs/presentation/rick-showcase.json').read_text(encoding='utf-8'))
 cartoons={c['id']:c for p in ['lib/city-editions.json','lib/best-of-cartoons.json'] for c in json.loads((ROOT/p).read_text(encoding='utf-8'))}
-out=ROOT/'output/pdf/rick-system-showcase.pdf';out.parent.mkdir(parents=True,exist_ok=True)
+revision=os.environ.get('CARTOON_ART_REVISION','')
+if revision and not revision.replace('-','').isalnum(): raise ValueError('Invalid revision')
+out=ROOT/'output/pdf'/revision/'rick-system-showcase.pdf';out.parent.mkdir(parents=True,exist_ok=True)
 c=canvas.Canvas(str(out),pagesize=(960,540));c.setTitle('The Swinging Door - Cartoons and local edition production');c.setAuthor('Zechariah Myrick, AI Dream Builders LLC')
 ink=HexColor('#26312a');bg=HexColor('#f8f6f0')
 def para(value,x,y,width,size=18,bold=False):

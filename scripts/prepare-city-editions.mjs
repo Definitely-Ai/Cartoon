@@ -13,7 +13,8 @@ const core=await import(pathToFileURL(path.join(runtime,'scripts/fixed-set/core.
 const type=await import(pathToFileURL(path.join(runtime,'scripts/fixed-set/typography.mjs')));
 const tv=await import(pathToFileURL(path.join(runtime,'lib/local-tv-art.mjs')));
 const {LocalStudioLease}=await import(pathToFileURL(path.join(runtime,'lib/local-studio-lease.mjs')));
-const acting=JSON.parse(await fs.readFile('canon/fixed-set/barclay-reference-v1/acting/verification.json','utf8'));
+const identity=JSON.parse(await fs.readFile('lib/cast-identity.json','utf8'));
+const acting=JSON.parse(await fs.readFile(identity.actingManifest,'utf8'));
 const regions=JSON.parse(await fs.readFile('canon/fixed-set/v1/regions.json','utf8'));
 const specs=[
   {id:'austin-taking-offers',title:'Taking Offers',cityLabel:'Austin, Texas',speaker:'Barclay',variant:'duo',

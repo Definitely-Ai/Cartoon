@@ -1,9 +1,11 @@
 {
-  "id": "barclay-reference-v1",
+  "id": "barclay-reference-v2",
   "approvedOn": "2026-09-14",
   "portraitSha256": "938dcdb8d4fb191ddd7551c2a231b13596db645995fe57e722dfac5ebfb88493",
-  "portraitPath": "canon/fixed-set/barclay-reference-v1/approved-portrait.png",
-  "actingManifest": "canon/fixed-set/barclay-reference-v1/acting/verification.json",
-  "actingRoot": "canon/fixed-set/barclay-reference-v1/acting",
-  "scope": "Approved earlier reference face, including speaking and listening variants. Older means previous design, not increased age."
+  "portraitPath": "canon/fixed-set/barclay-reference-v2/approved-portrait.png",
+  "actingManifest": "canon/fixed-set/barclay-reference-v2/acting/verification.json",
+  "actingRoot": "canon/fixed-set/barclay-reference-v2/acting",
+  "scope": "Earlier reference identity with owner-approved complete forehead, ear and under-chin repair. Original portrait retained; all five scene poses use the corrected whole head.",
+  "approvedHeadPath": "canon/fixed-set/barclay-reference-v2/approved-head.png",
+  "approvedHeadSha256": "ab76ccbf36c54b1bb3b8aaebecb3913089d70cc162b865d0beedb199c6c89ce8"
 }

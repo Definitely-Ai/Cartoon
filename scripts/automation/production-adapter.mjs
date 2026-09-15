@@ -16,10 +16,11 @@ export const REQUIRED_PRODUCTION_FILES=[
   'canon/fonts/Anton-Regular.ttf','canon/fonts/RockSalt-Regular.ttf','canon/fonts/CrimsonText-Italic.ttf',
   'canon/comedy/COMEDY-BIBLE.md','canon/fixed-set/OWNER-DIRECTION-2026-09-11.md',
   'canon/settings/elements/TELEVISION.md','canon/settings/elements/CHALKBOARD.md',
-  'canon/fixed-set/v1/regions.json','canon/fixed-set/barclay-reference-v1/acting/verification.json',
+  'canon/fixed-set/v1/regions.json','canon/fixed-set/barclay-reference-v2/acting/verification.json',
   'output/fixed-set-v1/best-of-v1/episodes.json',
-  ...['duo-drew','duo-barclay','trio-drew','trio-barclay','trio-abby'].map(id=>`canon/fixed-set/barclay-reference-v1/acting/${id}.png`),
-  'canon/fixed-set/barclay-reference-v1/approved-portrait.png',
+  ...['duo-drew','duo-barclay','trio-drew','trio-barclay','trio-abby'].map(id=>`canon/fixed-set/barclay-reference-v2/acting/${id}.png`),
+  'canon/fixed-set/barclay-reference-v2/approved-portrait.png',
+  'canon/fixed-set/barclay-reference-v2/approved-head.png',
 ];
 const WRITER='http://127.0.0.1:11435',COMFY='http://127.0.0.1:8188';
 const STABLE_WRITER='qwen3.8:27b',STABLE_CRITIC='gpt-oss:20b';
@@ -234,7 +235,7 @@ export async function composeProductionPanel(ctx,m,episode,tvPath,actor,acting,r
 }
 export async function generateProductionEdition(ctx) {
   const m=await modulesFor(ctx);
-  const acting=await readJSON(await inside(ctx.config.workspaceRoot,'canon/fixed-set/barclay-reference-v1/acting/verification.json'));
+  const acting=await readJSON(await inside(ctx.config.workspaceRoot,'canon/fixed-set/barclay-reference-v2/acting/verification.json'));
   if(acting.identitySha256!=='938dcdb8d4fb191ddd7551c2a231b13596db645995fe57e722dfac5ebfb88493')throw Error('Worker cast identity is not the owner-approved reference face.');
   const regions=await readJSON(await inside(ctx.config.workspaceRoot,'canon/fixed-set/v1/regions.json'));
   // Never mutate the persisted history snapshot as this edition accumulates lines.
@@ -303,7 +304,7 @@ export async function generateProductionEdition(ctx) {
   const report={schema:1,jobId:ctx.job.id,createdAt:new Date().toISOString(),input:ctx.job.input,method:'Fresh local caption and TV generation; deterministic chalk, caption and preferred static cast composition.',
     status:'machine-reviewed-private-drafts',humanEditorialApproval:false,ownerApproval:false,automaticPublication:false,audienceRatingClaim:false,
     sources:sourceData.documents.map(({text,...d})=>d),sourceFailures:sourceData.failures,cartoons,runtimePinsHash:hash(ctx.config.runtimePins),
-    castIdentity:'barclay-reference-v1',castIdentitySha256:acting.identitySha256,
+    castIdentity:'barclay-reference-v2',castIdentitySha256:acting.identitySha256,castHeadSha256:acting.approvedHeadSha256,
     limits:['Machine review is fallible and is not owner approval.','Current source availability is not evidence of popularity.','Static cast poses remain retained artwork; no cast redraw is claimed.','Print output is 1024x1536; 300 DPI metadata is not physical press certification.']};
   await atomicWrite(path.join(ctx.dir,'edition-report.json'),report);
   return [...await Promise.all(cartoons.map(c=>ctx.artifact(c.name,'image','image/png'))),await ctx.artifact('edition-report.json','report','application/json')];

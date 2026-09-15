@@ -1,5 +1,5 @@
 """Three-page, canon-grounded cast dossiers. Art is placed, never regenerated."""
-import json, shutil
+import json, shutil, os
 from pathlib import Path
 from xml.sax.saxutils import escape
 from reportlab.pdfgen import canvas
@@ -13,6 +13,10 @@ from pypdf import PdfReader
 ROOT=Path(__file__).resolve().parents[1]
 PUBLIC=ROOT/'public/gallery/cast-dossiers-20260914-v1'
 OUTPUT=ROOT/'output/pdf/cast-dossiers-20260914-v1'
+if os.environ.get('CARTOON_ART_REVISION'):
+    revision=os.environ['CARTOON_ART_REVISION']
+    if not revision.replace('-','').isalnum(): raise ValueError('Invalid revision')
+    OUTPUT=OUTPUT/revision
 OUTPUT.mkdir(parents=True,exist_ok=True)
 base=json.loads((ROOT/'lib/cast-presentation.json').read_text(encoding='utf-8'))
 details=json.loads((ROOT/'lib/cast-dossiers.json').read_text(encoding='utf-8'))
