@@ -11,6 +11,8 @@ type CastFilter = "all" | BestOfCartoon["variant"];
 type BestOfClientProps = {
   cartoons: Omit<BestOfCartoon, "sha256">[];
   edition: { title: string; count: number; archiveCount: number; zipUrl: string };
+  canManage?:boolean;
+  hiddenIds?:string[];
 };
 
 const speakers: { value: SpeakerFilter; label: string }[] = [
@@ -26,7 +28,21 @@ const casts: { value: CastFilter; label: string }[] = [
   { value: "trio", label: "Trio" },
 ];
 
-export default function BestOfClient({ cartoons, edition }: BestOfClientProps) {
+export default function BestOfClient({ cartoons, edition,canManage=false,hiddenIds=[] }: BestOfClientProps) {
+  const [hidden,setHidden]=useState(hiddenIds),[managing,setManaging]=useState(false),[removedView,setRemovedView]=useState(false);
+  const [confirmId,setConfirmId]=useState(''),[busy,setBusy]=useState(''),[message,setMessage]=useState(''),[error,setError]=useState('');
+  const publishedCount=cartoons.filter(c=>!hidden.includes(c.id)).length;
+  const removedCount=cartoons.filter(c=>hidden.includes(c.id)).length;
+  async function changeVisibility(id:string,remove:boolean){
+    if(busy)return;setBusy(id);setError('');setMessage('');
+    try{
+      const response=await fetch('/api/gallery/visibility',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({id,hidden:remove}),signal:AbortSignal.timeout(20000)});
+      const body=await response.json();if(!response.ok)throw Error(body.error||'The change is not confirmed. Retry the same action safely.');
+      if(body.id!==id||body.hidden!==remove)throw Error('The gallery change is not confirmed yet.');
+      setHidden(old=>remove?[...new Set([...old,id])]:old.filter(x=>x!==id));setConfirmId('');
+      setMessage(remove?'Removed from the gallery and presentation. You can restore it under Removed.':'Restored to the gallery and presentation.');
+    }catch(e){setError(e instanceof Error?e.message:'Connection interrupted. Retry the same action safely.');}finally{setBusy('');}
+  }
   const [speaker, setSpeaker] = useState<SpeakerFilter>("all");
   const [cast, setCast] = useState<CastFilter>("all");
   const [query, setQuery] = useState("");
@@ -36,6 +52,7 @@ export default function BestOfClient({ cartoons, edition }: BestOfClientProps) {
   const hasFilters = speaker !== "all" || cast !== "all" || searchWords.length > 0;
 
   const visibleCartoons = cartoons.filter((cartoon) => {
+    if(hidden.includes(cartoon.id)!==(canManage&&removedView))return false;
     if (speaker !== "all" && cartoon.speaker !== speaker) return false;
     if (cast !== "all" && cartoon.variant !== cast) return false;
 
@@ -62,7 +79,7 @@ export default function BestOfClient({ cartoons, edition }: BestOfClientProps) {
     <main className="best-of-page" id="content">
       <header className="best-of-intro" aria-labelledby="best-of-heading">
         <div className="best-of-intro-copy">
-          <p className="best-of-eyebrow">The collection · {edition.count} cartoons</p>
+          <p className="best-of-eyebrow">The collection · {publishedCount} cartoons</p>
           <h1 id="best-of-heading">Cartoons.</h1>
           <p className="best-of-deck">
             Money, modern life, and the occasional martini. Browse the collection,
@@ -76,6 +93,7 @@ export default function BestOfClient({ cartoons, edition }: BestOfClientProps) {
       </header>
 
       <section className="best-of-collection" aria-label="Browse the cartoon collection">
+        {canManage&&<section className="gallery-management" aria-label="Gallery management"><div><button type="button" onClick={()=>{setManaging(v=>!v);setRemovedView(false);setConfirmId('');}} aria-expanded={managing}>{managing?'Finish managing':'Manage gallery'}</button>{managing&&<button type="button" aria-pressed={removedView} onClick={()=>{setRemovedView(v=>!v);setConfirmId('');}}>{removedView?'Back to published cartoons':`Removed (${removedCount})`}</button>}</div>{managing&&<p>Remove cartoons from the gallery and presentation, or restore them here. Original image files and earlier ZIP archives are kept; this does not make those files private.</p>}{message&&<p role="status">{message}</p>}{error&&<p role="alert">{error}</p>}</section>}
         <div className="best-of-controls">
           <div className="best-of-search">
             <label htmlFor="best-of-search">Find a cartoon</label>
@@ -139,7 +157,7 @@ export default function BestOfClient({ cartoons, edition }: BestOfClientProps) {
         <div className="best-of-results-heading">
           <p role="status" aria-live="polite" aria-atomic="true">
             <strong>{visibleCartoons.length}</strong>
-            {hasFilters ? ` of ${cartoons.length}` : ""}
+            {hasFilters ? ` of ${removedView?removedCount:publishedCount}` : ""}
             {visibleCartoons.length === 1 ? " cartoon" : " cartoons"}
           </p>
           {hasFilters ? (
@@ -152,7 +170,7 @@ export default function BestOfClient({ cartoons, edition }: BestOfClientProps) {
         <div id="best-of-results">
           {visibleCartoons.length === 0 ? (
             <div className="best-of-empty">
-              <h2>No cartoons at this table.</h2>
+              <h2>{removedView?'No removed cartoons.':'No cartoons at this table.'}</h2>
               <p>Try another subject, speaker, or cast—or bring everyone back.</p>
               <button type="button" className="best-of-download-all" onClick={clearFilters}>
                 Show all {cartoons.length} cartoons <span aria-hidden="true">↗</span>
@@ -195,6 +213,7 @@ export default function BestOfClient({ cartoons, edition }: BestOfClientProps) {
                     </figure>
 
                     <div className="best-of-card-bottom">
+                      {canManage&&managing&&<div className="gallery-card-management">{removedView?<button type="button" disabled={!!busy} onClick={()=>void changeVisibility(cartoon.id,false)}>{busy===cartoon.id?'Restoring…':'Restore to gallery'}</button>:confirmId===cartoon.id?<div role="group" aria-label={`Confirm removal of ${cartoon.title}`}><p>Remove “{cartoon.title}” from the gallery? You can restore it later.</p><button type="button" disabled={!!busy} onClick={()=>void changeVisibility(cartoon.id,true)}>{busy===cartoon.id?'Removing…':'Confirm removal'}</button><button type="button" disabled={!!busy} onClick={()=>setConfirmId('')}>Cancel</button></div>:<button type="button" onClick={()=>setConfirmId(cartoon.id)}>Remove from gallery<span className="sr-only">: {cartoon.title}</span></button>}</div>}
                       <Link className="best-of-print-link" href={`/gallery/best-of/print/${cartoon.id}`}>Print &amp; size options <span aria-hidden="true">↗</span><span className="sr-only">: {cartoon.title}</span></Link>
                       <details className="best-of-scene-details">
                         <summary>On the TV &amp; chalkboard</summary>

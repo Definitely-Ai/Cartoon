@@ -5,7 +5,7 @@ import {createHash} from 'node:crypto';
 import sharp from 'sharp';
 import {discoverSources} from './automation/production-adapter.mjs';
 
-test('the national twelve precede the two labeled city editions and untouched original 38',async()=>{
+test('the published forty retain Austin and LA; withdrawn twelve remain recoverable on disk',async()=>{
   const national=JSON.parse(await fs.readFile('lib/city-showcase-20260915.json','utf8'));
   const cities=JSON.parse(await fs.readFile('lib/city-editions.json','utf8'));
   const original=JSON.parse(await fs.readFile('lib/best-of-cartoons.json','utf8'));
@@ -14,9 +14,10 @@ test('the national twelve precede the two labeled city editions and untouched or
   assert.equal(national.length,12);
   assert.equal(new Set([...national,...cities,...original].map(c=>c.id)).size,52);
   const page=await fs.readFile('app/(studio)/gallery/best-of/page.tsx','utf8');
-  assert.match(page,/const collection = cartoonCollection/);
+  assert.match(page,/hiddenCartoonIds/);
   const collection=await fs.readFile('lib/cartoon-collection.ts','utf8');
-  assert.match(collection,/\[\.\.\.nationalEdition as BestOfCartoon\[\], \.\.\.cities as BestOfCartoon\[\], \.\.\.bestOfCartoons\]/);
+  assert.match(collection,/\[\.\.\.cities as BestOfCartoon\[\], \.\.\.bestOfCartoons\]/);
+  assert.doesNotMatch(collection,/import nationalEdition/);
   for(const c of [...national,...cities]){
     const bytes=await fs.readFile('public'+c.src);
     assert.equal(createHash('sha256').update(bytes).digest('hex'),c.sha256);

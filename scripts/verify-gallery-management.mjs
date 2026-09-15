@@ -1,0 +1,45 @@
+// Local fixture only. Removal/restore never contacts production.
+import fs from 'node:fs/promises';
+import {createRequire} from 'node:module';
+import assert from 'node:assert/strict';
+const require=createRequire(import.meta.url),{chromium}=require(process.env.PLAYWRIGHT_MODULE||'playwright');
+const base='http://localhost:21368',out='output/gallery-management-verified';await fs.mkdir(out,{recursive:true});
+const browser=await chromium.launch({channel:'chrome',headless:true});
+try{
+  const owner=await browser.newPage({viewport:{width:1440,height:1000}}),publicPage=await browser.newPage();
+  const errors=[];owner.on('pageerror',e=>errors.push(e.message));publicPage.on('pageerror',e=>errors.push(e.message));
+  await owner.goto(base+'/login');await owner.getByLabel('Username',{exact:true}).fill(process.env.ADMIN_USERNAME||'theswingingdoor');await owner.getByLabel('Password',{exact:true}).fill(process.env.ADMIN_PASSWORD.trim());
+  await Promise.all([owner.waitForURL(base+'/gallery/best-of'),owner.getByRole('button',{name:'Sign in',exact:true}).click()]);
+  assert.equal(await owner.locator('.best-of-card').count(),40);
+  const withdrawn=JSON.parse(await fs.readFile('lib/city-showcase-20260915.json','utf8')).map(c=>c.id);
+  assert.equal(await owner.locator('.best-of-artwork').evaluateAll((links,ids)=>links.some(l=>ids.some(id=>l.href.includes(id))),withdrawn),false);
+  await owner.getByRole('button',{name:'Manage gallery',exact:true}).click();
+  const card=owner.locator('article').filter({has:owner.locator('#cartoon-professional-opposition')});
+  await card.getByRole('button',{name:/Remove from gallery/}).click();
+  await card.getByRole('button',{name:'Cancel',exact:true}).click();assert.equal(await owner.locator('.best-of-card').count(),40);
+  await card.getByRole('button',{name:/Remove from gallery/}).click();
+  await card.getByRole('button',{name:'Confirm removal',exact:true}).click();
+  await owner.getByRole('status').filter({hasText:'Removed from the gallery'}).waitFor();assert.equal(await owner.locator('.best-of-card').count(),39);
+  await publicPage.goto(base+'/gallery/best-of');assert.equal(await publicPage.locator('.best-of-card').count(),39);assert.equal(await publicPage.getByRole('button',{name:'Manage gallery',exact:true}).count(),0);
+  await publicPage.goto(base+'/gallery/presentation');assert.equal(await publicPage.getByRole('combobox',{name:/^Choose a cartoon/}).locator('option').count(),39);
+  assert.equal(await publicPage.getByRole('combobox',{name:/^Choose a cartoon/}).locator('option').filter({hasText:'Professional Opposition'}).count(),0);
+  await publicPage.getByRole('button',{name:'Start presentation',exact:true}).click();assert.equal(await publicPage.getByRole('combobox',{name:'Jump to presentation slide',exact:true}).locator('option').count(),10);
+  await publicPage.getByRole('button',{name:'Exit presentation',exact:true}).click();
+  const hiddenPrint=await publicPage.goto(base+'/gallery/best-of/print/professional-opposition');assert.equal(hiddenPrint.status(),404);
+  const anonymous=await publicPage.request.post(base+'/api/gallery/visibility',{data:{id:'professional-opposition',hidden:false}});assert.equal(anonymous.status(),401);
+  const cross=await owner.request.post(base+'/api/gallery/visibility',{headers:{Origin:'https://untrusted.example'},data:{id:'professional-opposition',hidden:false}});assert.equal(cross.status(),403);
+  const invalid=await owner.request.post(base+'/api/gallery/visibility',{headers:{Origin:base},data:{id:'not-in-gallery',hidden:false}});assert.equal(invalid.status(),400);
+  await owner.getByRole('button',{name:'Removed (1)',exact:true}).click();assert.equal(await owner.locator('.best-of-card').count(),1);
+  await owner.screenshot({path:out+'/removed-desktop.png',fullPage:true});
+  await owner.getByRole('button',{name:'Restore to gallery',exact:true}).click();await owner.getByRole('status').filter({hasText:'Restored to the gallery'}).waitFor();
+  await owner.getByRole('button',{name:'Back to published cartoons',exact:true}).click();assert.equal(await owner.locator('.best-of-card').count(),40);
+  await owner.reload();assert.equal(await owner.locator('.best-of-card').count(),40);
+  await owner.setViewportSize({width:390,height:844});await owner.getByRole('button',{name:'Manage gallery',exact:true}).click();await owner.screenshot({path:out+'/mobile.png'});
+  assert.ok(await owner.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
+  await publicPage.goto(base+'/gallery/presentation');assert.equal(await publicPage.getByRole('combobox',{name:/^Choose a cartoon/}).locator('option').count(),40);assert.equal(await publicPage.getByText('Today’s city edition',{exact:true}).count(),0);
+  await publicPage.getByRole('button',{name:'Start presentation',exact:true}).click();assert.equal(await publicPage.getByRole('combobox',{name:'Jump to presentation slide',exact:true}).locator('option').count(),11);
+  await publicPage.screenshot({path:out+'/presentation-restored.png'});
+  assert.deepEqual(errors,[]);
+  await fs.writeFile(out+'/result.json',JSON.stringify({fixtureOnly:true,restored40:true,withdrawn12Absent:true,ownerRemoveRestore:true,anonymousCannotWrite:true,crossOriginBlocked:true,publicGalleryRespectsRemoval:true,presentationRespectsRemoval:true,print404WhenRemoved:true,noMissingCoverCrash:true,mobile:true,errors},null,2));
+  console.log('PASS: 40-cartoon gallery, withdrawn cities absent, owner removal/restore, public/print/presentation filtering, auth and CSRF, mobile.');
+}finally{await browser.close();}
