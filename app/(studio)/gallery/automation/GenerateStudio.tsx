@@ -6,11 +6,13 @@ import { immediateEdition, generationProgress, matchingActiveEdition, US_STATES 
 import { validateEditionInput, type EditionInput } from '@/lib/automation-studio-core';
 import type { AutomationJob } from '@/lib/automation-queue-core';
 import {generationTimeline} from '@/lib/generation-timeline';
+import {defaultGenerationJob} from '@/lib/generation-preview';
 import EditionPreview from './EditionPreview';
 import CartoonAssembly from './CartoonAssembly';
 import RequestBoard, { MilestoneBar } from './RequestBoard';
 const RECEIPT='swinging-door-quick-generation-v1';
-const FOCUS='swinging-door-active-edition-v1';
+// The old key could reopen a superseded Chicago result on every visit.
+const FOCUS='swinging-door-active-edition-v2';
 type Receipt={requestId:string;input:EditionInput;recordedAt:string};
 function readReceipt():Receipt|null {
   const raw=localStorage.getItem(RECEIPT);if(!raw)return null;
@@ -46,7 +48,7 @@ export default function GenerateStudio({canManage,presentation=false}:{canManage
     const resume=()=>void refresh(controller.signal);document.addEventListener('visibilitychange',resume);
     return()=>{controller.abort();clearInterval(timer);document.removeEventListener('visibilitychange',resume);};
   },[canManage,presentation,refresh]);
-  const job=focused?jobs.find(j=>j.id===focused):presentation?undefined:jobs.find(j=>j.status==='running')||jobs.find(j=>j.status==='queued'&&j.scheduleStatus!=='paused'&&Date.parse(j.dueAt)<=Date.now())||jobs.find(j=>j.status==='succeeded');
+  const job=focused?jobs.find(j=>j.id===focused):presentation?undefined:defaultGenerationJob(jobs);
   const active=jobs.some(j=>(j.status==='running'||j.status==='queued'&&j.scheduleStatus!=='paused')&&Date.parse(j.dueAt)<=Date.now());
   const duplicateActive=matchingActiveEdition(jobs,city,state,quantity);
   function selectJob(selected:AutomationJob){

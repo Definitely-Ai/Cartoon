@@ -14,7 +14,7 @@ const now=new Date().toISOString();
 const record=(n,city,status,extra={})=>({id:`00000000-0000-4000-8000-${String(n).padStart(12,'0')}`,requestId:`10000000-0000-4000-8000-${String(n).padStart(12,'0')}`,status,input:{location:{name:city,region:'Florida',country:'US',timezone:'America/New_York',coverage:'city'},quantity:1,cast:'mixed',audience:'Local newspaper readers.',timing:{mode:'now',date:now.slice(0,10),time:'09:00',weekdays:[]}},createdAt:now,updatedAt:now,dueAt:now,availableAt:now,inputValidatedAt:now,scheduleId:null,occurrenceAt:null,attempt:1,progress:{stage:'tv-01-1',completed:3,total:7},lastError:null,artifacts:[],leaseExpiresAt:new Date(Date.now()+180000).toISOString(),finishedAt:null,...extra});
 const artifact={name:'cartoon-01.png',kind:'image',contentType:'image/png',bytes:image.length,sha256,path:'fixture'};
 let jobs=[record(1,'Naples','running'),record(2,'Tampa','queued',{attempt:0,progress:{stage:'Waiting for worker',completed:0,total:0}}),record(3,'Miami','succeeded',{progress:{stage:'Ready',completed:1,total:1},artifacts:[artifact],finishedAt:now}),record(4,'Sarasota','failed',{lastError:'Caption quality gate rejected the bounded candidate attempts.'}),record(5,'Orlando','queued',{dueAt:new Date(Date.now()+86400000).toISOString(),availableAt:new Date(Date.now()+86400000).toISOString(),attempt:0,progress:{stage:'Queued',completed:0,total:0}})];
-let connected=true,retries=0,submissions=0;
+let connected=true,retries=0,submissions=0,legacyAssetReads=0;
 let networkError=false;
 const decisions=new Map();let editorialWrites=0;
 const reviewFor=(job,a)=>decisions.get(job.id+'/'+a.name)||{imageName:a.name,imageSha256:sha256,decision:'draft',version:0,updatedAt:null,eligible:job.input.location.name!=='Miami',blockReason:job.input.location.name==='Miami'?'Older or unverified cast release. Regenerate with the approved Barclay worker before publication.':null,caption:'An isolated browser-fixture caption.',tv:'FIXTURE ONLY',board:['TODAY / $6'],sourceUrl:'https://example.org/fixture',sourceTitle:'QA fixture only',explanation:'Not a real generated cartoon.',publicId:'fixture-'+job.id+'-'+a.name,title:job.input.location.name+' review fixture'};
@@ -34,7 +34,7 @@ try{
     if(url.pathname.endsWith('/jobs')&&route.request().method()==='POST'){const body=route.request().postDataJSON();submissions++;assert.equal(body.input.location.name,'Boston');assert.equal(body.input.location.region,'Massachusetts');assert.equal(body.input.quantity,2);const made=record(8,'Boston','queued',{input:body.input,requestId:body.requestId,attempt:0,progress:{stage:'Queued',completed:0,total:0}});jobs=[made,...jobs];return route.fulfill({json:{job:made}});}
     if(url.pathname.endsWith('/jobs')&&networkError)return route.fulfill({status:503,json:{error:'QA connection interruption'}});
     if(url.pathname.endsWith('/jobs'))return route.fulfill({json:{jobs,workers:[],workerConnected:connected,checkedAt:new Date().toISOString()}});
-    if(url.pathname.endsWith('/assets'))return route.fulfill({body:image,contentType:'image/png'});
+    if(url.pathname.endsWith('/assets')){if(url.searchParams.get('jobId')===record(3,'Miami','succeeded').id)legacyAssetReads++;return route.fulfill({body:image,contentType:'image/png'});}
     if(url.pathname.endsWith('/retry')){assert.equal(route.request().postDataJSON().jobId,jobs.find(j=>j.input.location.name==='Sarasota').id);retries++;const retry=record(6,'Sarasota','queued',{attempt:0,progress:{stage:'Queued',completed:0,total:0}});if(!jobs.some(j=>j.id===retry.id))jobs=[retry,...jobs];return route.fulfill({json:{job:retry}});}
     throw Error('Unexpected fixture request '+url.pathname);
   });
@@ -43,7 +43,16 @@ try{
   assert.ok(process.env.ADMIN_PASSWORD,'Local QA credential missing');
   await page.getByLabel('Password',{exact:true}).fill(process.env.ADMIN_PASSWORD.trim());
   await Promise.all([page.waitForURL(base+'/gallery/best-of'),page.getByRole('button',{name:'Sign in',exact:true}).click()]);
+  const originalJobs=jobs; jobs=jobs.filter(j=>j.input.location.name==='Miami');
+  await page.evaluate(id=>localStorage.setItem('swinging-door-active-edition-v1',id),jobs[0].id);
   await page.goto(base+'/gallery/automation');
+  await page.locator('.request-ready-card').waitFor();
+  assert.equal(await page.getByRole('region',{name:'Generation progress'}).count(),0);
+  assert.ok(await page.locator('.studio-idle').isVisible());
+  assert.equal(await page.locator('.request-ready-card img').count(),0);
+  assert.equal(legacyAssetReads,0);
+  await page.screenshot({path:out+'/legacy-not-default.png',fullPage:true});
+  jobs=originalJobs;await page.reload();
   const board=page.getByRole('region',{name:'Your cartoon requests'});
   await board.getByRole('heading',{name:'Your requests',exact:true}).waitFor();
   await page.locator('.request-queue-card').first().waitFor();
@@ -62,7 +71,13 @@ try{
   await page.getByRole('button',{name:'View 1 completed cartoon for Miami',exact:true}).click();
   await page.getByRole('region',{name:'Finished cartoons'}).waitFor();
   assert.equal(await detail.getByRole('progressbar').getAttribute('value'),'100');
-  await page.getByText(/Older or unverified cast release/).waitFor();assert.ok(await page.getByRole('button',{name:'Approve & publish',exact:true}).isDisabled());assert.equal(editorialWrites,0);
+  await page.locator('.editorial-block').waitFor();assert.ok(await page.getByRole('button',{name:'Approve & publish',exact:true}).isDisabled());assert.equal(editorialWrites,0);
+  assert.equal(await page.locator('.generation-image-grid img').count(),0);
+  assert.equal(await page.getByRole('button',{name:'Download print PDF',exact:true}).count(),0);
+  assert.equal(legacyAssetReads,0);
+  await page.screenshot({path:out+'/legacy-hidden.png',fullPage:true});
+  await page.getByRole('button',{name:'Inspect older draft',exact:true}).click();
+  await page.getByRole('link',{name:'Open original 1',exact:true}).waitFor();
   const download=page.waitForEvent('download');await page.getByRole('button',{name:'Download print PDF',exact:true}).click();
   const pdf=await download;assert.equal(await pdf.failure(),null);await pdf.saveAs(out+'/fixture-print.pdf');
   await page.getByRole('button',{name:'Tampa, Florida',exact:true}).click();
@@ -78,7 +93,7 @@ try{
   connected=true;Object.assign(tampa,{status:'succeeded',artifacts:[artifact],progress:{stage:'Ready',completed:1,total:1},finishedAt:now});
   await detail.getByRole('heading',{name:'Your cartoons are ready',exact:true}).waitFor({timeout:12000});
   assert.equal(await page.locator('.request-ready-card').count(),2);
-  assert.equal(await page.locator('.generation-image-grid img').count(),1);
+  await page.locator('.generation-image-grid img').waitFor();assert.equal(await page.locator('.generation-image-grid img').count(),1);
   await page.reload();await page.getByRole('region',{name:'Finished cartoons'}).getByRole('heading',{name:'Tampa, Florida',exact:true}).waitFor();
   await page.locator('.request-attention summary').click();
   await page.locator('.request-attention').getByRole('button',{name:'Retry / open fresh pass',exact:true}).click();
@@ -97,9 +112,9 @@ try{
   Object.assign(boston,{status:'succeeded',artifacts:[artifact,{...artifact,name:'cartoon-02.png'}],progress:{stage:'Ready',completed:1,total:1},finishedAt:now});
   await page.getByRole('region',{name:'Finished cartoons'}).getByRole('heading',{name:'Boston, Massachusetts',exact:true}).waitFor({timeout:12000});
   await page.getByRole('button',{name:'Next generated cartoon',exact:true}).click();
-  assert.ok(await page.getByRole('link',{name:'Open original 2',exact:true}).isVisible());
+  await page.getByRole('link',{name:'Open original 2',exact:true}).waitFor();
   await page.getByRole('button',{name:'View cartoon 1',exact:true}).click();
-  assert.ok(await page.getByRole('link',{name:'Open original 1',exact:true}).isVisible());
+  await page.getByRole('link',{name:'Open original 1',exact:true}).waitFor();
   const editorial=page.getByRole('region',{name:'Human editorial approval'});
   await editorial.getByRole('checkbox').first().waitFor();assert.ok(await editorial.getByRole('button',{name:'Approve & publish',exact:true}).isDisabled());
   for(const checkbox of await editorial.getByRole('checkbox').all())await checkbox.check();

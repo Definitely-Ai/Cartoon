@@ -4,6 +4,7 @@ import Link from 'next/link';
 import {useState} from 'react';
 import {generationProgress,queueGroups,recoveryReason,requestLabel} from '@/lib/automation-simple';
 import type {AutomationJob} from '@/lib/automation-queue-core';
+import {approvedThumbnail} from '@/lib/generation-preview';
 
 export const artifactURL=(job:AutomationJob,name:string)=>`/api/gallery/automation/assets?jobId=${job.id}&name=${encodeURIComponent(name)}`;
 function when(value:string){return new Date(value).toLocaleString('en-US',{month:'short',day:'numeric',hour:'numeric',minute:'2-digit'});}
@@ -13,9 +14,10 @@ export function MilestoneBar({job}:{job:AutomationJob}){
 }
 function ReadyPreview({job,selected,onSelect}:{job:AutomationJob;selected:boolean;onSelect:()=>void}){
   const images=job.artifacts.filter(a=>a.kind==='image');
+  const thumbnail=approvedThumbnail(job);
   return <article className={`request-ready-card${selected?' request-selected':''}`}>
     <button type="button" className="request-preview" onClick={onSelect} aria-pressed={selected} aria-label={`View ${images.length} completed cartoon${images.length===1?'':'s'} for ${job.input.location.name}`}>
-      {images[0]?<Image src={artifactURL(job,images[0].name)} width={1024} height={1536} unoptimized alt={`${job.input.location.name} completed cartoon preview`}/>:<span>No preview in record</span>}
+      {thumbnail?<Image src={artifactURL(job,thumbnail.name)} width={1024} height={1536} unoptimized alt={`${job.input.location.name} human-approved cartoon preview`}/>:<span className="request-private-cover"><span className="studio-overline">Private edition</span><strong>{job.input.location.name}</strong><span>{images.length} saved {images.length===1?'cartoon':'cartoons'}</span><small>Artwork checked when opened</small></span>}
       <span className="request-preview-action">Review edition <span aria-hidden="true">↗</span></span>
     </button>
     <div className="request-ready-info"><div><h4>{job.input.location.name}</h4><p>{job.input.location.region} · {job.input.timing.date}</p></div><span className="studio-pill">{images.length} {images.length===1?'cartoon':'cartoons'}</span></div>
