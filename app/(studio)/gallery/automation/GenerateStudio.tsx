@@ -48,6 +48,14 @@ export default function GenerateStudio({canManage,presentation=false}:{canManage
     const resume=()=>void refresh(controller.signal);document.addEventListener('visibilitychange',resume);
     return()=>{controller.abort();clearInterval(timer);document.removeEventListener('visibilitychange',resume);};
   },[canManage,presentation,refresh]);
+  useEffect(()=>{
+    if(focused||presentation)return;
+    const current=defaultGenerationJob(jobs);
+    if(!current)return;
+    // Remember a live edition once observed so its completed result remains
+    // selected. This never adopts a historical completed job on page load.
+    setFocused(current.id);try{localStorage.setItem(FOCUS,current.id);}catch{}
+  },[jobs,focused,presentation]);
   const job=focused?jobs.find(j=>j.id===focused):presentation?undefined:defaultGenerationJob(jobs);
   const active=jobs.some(j=>(j.status==='running'||j.status==='queued'&&j.scheduleStatus!=='paused')&&Date.parse(j.dueAt)<=Date.now());
   const duplicateActive=matchingActiveEdition(jobs,city,state,quantity);

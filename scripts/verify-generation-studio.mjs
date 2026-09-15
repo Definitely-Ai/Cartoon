@@ -140,6 +140,14 @@ try{
   await page.goto(base+'/gallery/automation');
   await page.getByRole('button',{name:'New edition +',exact:true}).click();
   await page.screenshot({path:out+'/empty.png',fullPage:true});
+  // A live job adopted on page load must stay selected after completion, even
+  // without a submit receipt or a manual card selection in this browser.
+  const adopted=record(21,'Seattle','running');jobs=[adopted];
+  await page.evaluate(()=>localStorage.removeItem('swinging-door-active-edition-v2'));
+  await page.reload();await page.getByRole('region',{name:'Generation progress'}).getByText('Seattle, Florida',{exact:true}).waitFor();
+  Object.assign(adopted,{status:'succeeded',artifacts:[artifact],progress:{stage:'Ready',completed:1,total:1},finishedAt:now});
+  await page.getByRole('region',{name:'Finished cartoons'}).getByRole('heading',{name:'Seattle, Florida',exact:true}).waitFor({timeout:12000});
+  await page.locator('.generation-image-grid img').waitFor();
   assert.deepEqual(errors,[]);
   await fs.writeFile(out+'/result.json',JSON.stringify({fixtureOnly:true,submit:true,duplicatePrevented:true,search:true,filters:true,batchNavigation:true,queue:true,realMilestoneCounters:true,gpuWaiting:true,offlineRetention:true,readyPreviews:true,clickToOpen:true,autoAppeared:true,reloadRecovered:true,retryAction:true,pdf:true,mobile:true,presentation:true,errors},null,2));
   console.log('PASS: redesigned studio, submit, duplicates, search/filters, real milestones, GPU/offline/reconnect, automatic completion, batch viewer, verified PDF, retry, reload, responsive and presentation.');
