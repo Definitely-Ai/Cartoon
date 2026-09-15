@@ -27,8 +27,12 @@ for index,item in enumerate(rows):
     if item.get('cartoon'):
         art=cartoons[item['cartoon']]
         para(item['title'],45,438 if item.get('cover') else 486,460,42 if item.get('cover') else 32,True)
-        if item.get('subtitle'):para(item['subtitle'],45,319 if item.get('cover') else 386,440,20)
-        para(item['body'],45,232 if item.get('cover') else 313 if item.get('subtitle') else 350,438,18)
+        if item.get('subtitle'):para(item['subtitle'],45,319 if item.get('cover') else 410 if item.get('featureCaption') else 386,440,20)
+        if item.get('featureCaption'):
+            para(art['speaker']+':',45,355,438,18,True)
+            para('“'+art['caption']+'”',45,316,469,25.5)
+            para(item['body'],45,139,469,17.25)
+        else:para(item['body'],45,232 if item.get('cover') else 313 if item.get('subtitle') else 350,438,18)
         c.drawImage(str(ROOT/'public'/art['src'].lstrip('/')),585,27,width=324,height=486,preserveAspectRatio=True,mask='auto')
     elif item.get('steps'):
         para(item['title'],45,504,870,32,True)

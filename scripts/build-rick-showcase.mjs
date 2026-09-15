@@ -19,8 +19,12 @@ for(const [i,item] of content.entries()){
   const slide=deck.slides.add();slide.background.fill=bg;
   if(item.cartoon){const c=cartoons.find(c=>c.id===item.cartoon);if(!c)throw Error('Missing cartoon');
     text(slide,item.title,58,item.cover?136:72,660,150,item.cover?56:43,true);
-    if(item.subtitle)text(slide,item.subtitle,60,item.cover?294:205,605,70,27);
-    text(slide,item.body,60,item.cover?405:item.subtitle?302:252,585,item.cover?225:390,24);
+    if(item.subtitle)text(slide,item.subtitle,60,item.cover?294:item.featureCaption?173:205,605,70,27);
+    if(item.featureCaption){
+      text(slide,`${c.speaker}:`,60,247,585,46,24,true);
+      text(slide,`“${c.caption}”`,60,299,625,210,34);
+      text(slide,item.body,60,535,625,155,23);
+    }else text(slide,item.body,60,item.cover?405:item.subtitle?302:252,585,item.cover?225:390,24);
     slide.images.add({blob:new Uint8Array(await fs.readFile(path.join(root,'public',c.src))),contentType:'image/png',alt:c.caption,fit:'contain',position:{left:780,top:36,width:432,height:648}});
     slide.speakerNotes.textFrame.setText(`Original artwork: ${c.src}\nCaption: ${c.caption}\nSpeaker: ${c.speaker}. ${c.sourceUrl?'Source context: '+c.sourceUrl:'Retained selected cartoon. Not a record of a real conversation.'}\nNo claim that this existing selected image was created by the new unattended run.`);
   }else if(item.steps){
